@@ -1,0 +1,107 @@
+Timestamp: 2024-12-31T10:51:52.635436
+Title: Python (FastAPI) vs Go (Golang) Performance Benchmark
+URL: https://youtube.com/watch?v=CdkAMceuoBg&si=ko2z1ca4fNLUD1S9
+Status: success
+
+Description:
+*   **Core Ideas Summary:**
+
+    1.  **Test Setup:**  The video compares FastAPI (Python) and Go standard library web applications using two tests on AWS Kubernetes. Metrics include latency, throughput, CPU/memory usage, availability, and CPU throttling.
+    2.  **Test 1 (Baseline):** Simple JSON response with hardcoded data. Go significantly outperformed FastAPI in throughput, latency, and resource usage. FastAPI quickly reached CPU limits and degraded, while Go handled much higher load.
+    3.  **Test 2 (Database & Cache):** POST request parsing, database insert (PostgreSQL), and caching (Memcached).  Go again outperformed FastAPI in throughput, database latency, cache latency, and overall request latency, even with FastAPI's worker increase from 2 to 4.
+    4.  **Overall Performance:** Go consistently demonstrated superior performance compared to FastAPI in both tests.
+    5.  **Call to Action:** The presenter encourages others to try to optimize FastAPI and submit improvements.
+
+*   **Core Point (conclusion):**  Go demonstrated markedly superior performance to FastAPI in both the baseline and database/cache performance tests, highlighting Go's efficiency in handling higher loads with better resource utilization.
+
+*   **Fundamental Point (conclusion):** The tests provide strong evidence that Go’s architecture and concurrency model enable it to handle web requests more efficiently and at a greater scale compared to the tested Python-based FastAPI framework.
+
+
+Content:
+In this video, we'll compare FastAPI, 
+one of the fastest Python web frameworks,   with the Golang standard library. For our first test to establish 
+a baseline, we'll just test the   performance of the frameworks themselves by 
+using a few hardcoded objects in each app,   which are then returned to clients in JSON format. We'll measure latency from the client side using 
+the 99th percentile, throughput by counting   requests per second, CPU usage, memory usage, 
+error rate or availability, and CPU throttling.   Since we'll deploy these applications 
+on production-ready Kubernetes in AWS. The second test gets a bit more interesting. 
+When each app receives a POST request,   it parses the body of the request, 
+generates a UUID and a timestamp,   and then inserts a record into a 
+relational database—in our case,   PostgreSQL. This is also the first time I've added 
+a cache to the test. So, after inserting a record,   the app saves that object, including the 
+database-generated ID, to the cache. I used   Memcached due to its high performance, but you 
+can see the comparison with Redis in this video. I've instrumented each application with Prometheus 
+metrics so we can measure each function,   like database inserts as well as set operations 
+for the cache. We'll also measure CPU usage for   both PostgreSQL and Memcached, along with the 
+connection pool size created by each application. I run all my tests on AWS. For this test, I 
+used an m7a.xlarge instance for Memcached,   a specialized 2xlarge EC2 instance for 
+PostgreSQL, and created an EKS cluster   with two node groups. The first node group 
+uses general-purpose m7a.large instances to   run the applications. For the second instance 
+group, I used compute-optimized Graviton   instances to deploy Prometheus, Grafana, and the 
+clients that generate load. Compute-optimized   instances are based on the same hardware as 
+general-purpose instances but have less memory,   and in this case, they're $0.10 cheaper per 
+hour than general-purpose instances. Since   I don't really need all that memory, I try to 
+make these tests as cost-efficient as possible.  1st Test
+Alright, let's   go ahead and run the first test. Here, we don't 
+have any dependencies or even business logic in   the endpoint; we're just returning hardcoded 
+devices to the client. Right from the start,   you can see a huge difference in performance. 
+The latency we measure from the client side is   at least twice as high for the Go application. 
+Traditionally, all Python applications I've   tested in the past use way more CPU than any 
+other applications I've compared them with. At around 13,000 requests per second, you 
+can notice that FastAPI is falling behind   and can't handle any more additional 
+requests. Its latency also goes way up,   and Kubernetes starts to throttle it since 
+it's reached full CPU usage of the node. At around 25,000 requests per second 
+for the Go application, Python fails,   and its availability drops to zero for some time. 
+This happens when the application is overloaded,   and all the requests from the client either 
+time out or fail with 500 status codes. At   this same time, you won't see latency because 
+the application isn't processing any requests,   and the client receives failing status codes, 
+which I intentionally filter out from that graph. I would say FastAPI's performance is similar 
+to Django, maybe a little bit better but not by   much. If you can improve it, please send a Pull 
+Request, and I'll rerun the test. But so far,   I'm disappointed; I expected much 
+better performance from FastAPI. Alright, let me run it for a few more 
+minutes until the Go app reaches its limit. So it's very consistent with all other tests 
+I've run with Go applications; it reaches around   60-62,000 requests per second. And when you’re 
+running Go in Kubernetes don't forget to improve   it by limiting Go user threads to the pod limit. 
+This way, Kubernetes won't throttle it as much. Let me open each graph for 
+the entire test duration. First, we have requests per second. You can 
+see FastAPI reached around 13,000 requests   per second, while the Go app reached 
+around 62,000 requests per second. Next, we have latency, and 
+you can see a gap where the   app failed. But overall, Go has way lower latency. Next is CPU usage. FastAPI very 
+quickly reached full CPU usage   within the first 10 or 15 minutes and 
+started to degrade from that point. Next is availability, which 
+is the ratio of successful   requests divided by the total number 
+of all requests received by the app. Then we have memory usage, with a spike in 
+memory for Go before it started to fail. And finally, we have CPU throttling. 
+It's much higher for FastAPI since   it reached full CPU usage very early in the test. That's pretty much it. Please give it 
+a try, and if you can improve FastAPI,   I'll definitely rerun the test and 
+explain to others how you avoid the   same mistakes. But to be honest, 
+I don't think a lot can be done. 2nd Test
+This is the first time   I've added a cache for the second test. Each time 
+the app receives a request, it parses the body of   the request, inserts that item into PostgreSQL, 
+and saves the result with the ID generated by the   database in Memcached. I used Memcached simply 
+because it's much more efficient than Redis,   allowing me to use smaller instances 
+and save money on infrastructure. The first time I ran this test, I used 2 workers 
+for the FastAPI app, and it only reached 60% CPU   usage. There are lots of I/O operations like 
+database and cache interactions, so to improve   performance, I increased the workers to 4. This 
+way, FastAPI was able to reach 80% CPU usage. Overall, in this test, the Go app also performs 
+much better. Database latency is much lower, as   well as cache set operations, and of course, the 
+overall POST request latency is much lower too. In this test, FastAPI reached 
+only 800 requests per second. So,   in terms of performance, these two 
+applications are very different,   and it's hard even to compare because FastAPI 
+reaches its limit within the first 10 to 15   minutes of the test, while I would need to 
+run it for another hour to reach the Go limit. In this test, I also measured PostgreSQL 
+database CPU usage and Memcached CPU usage,   as well as the connection pool size 
+created by each application. In both cases,   I limited the connection pool to 500 each 
+and increased database connections to over   1,000. I have all the source code along with 
+PostgreSQL and Memcached configs in my repo. At 35,000 requests per second, the Go app started 
+to fail as well, just because I forgot to increase   the file descriptor limit on the Linux box 
+where I run Memcached. With the proper limit,   Go would reach many more thousands of requests 
+per second, but I didn't see the point in   rerunning since FastAPI isn't even close in the 
+second test. So that wraps up the second test. Let me open each graph as 
+well for the full duration. First, we have requests per second. Post request latency. The latency spikes for 
+Go at the end are due to file descriptors. Next, we have database latency. Memcached latency. CPU usage of applications. Then we have CPU usage of 
+PostgreSQL and Memcached. Connection pool size. And finally, we have memory usage. If you want to try to improve it, you can 
+find the link to the source code in the video   description. I did expect much better results 
+from FastAPI, and I hope someone can improve it. I have other benchmarks on my channel 
+that you might find interesting,   like Rust vs. Go. Anyway, thank you for 
+watching, and I'll see you in the next video.
