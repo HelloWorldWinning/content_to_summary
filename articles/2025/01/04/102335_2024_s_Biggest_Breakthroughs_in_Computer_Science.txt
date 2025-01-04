@@ -1,0 +1,187 @@
+Timestamp: 2025-01-04T10:23:35.380105
+Title: 2024's Biggest Breakthroughs in Computer Science
+URL: https://youtu.be/fTMMsreAqX0?si=a8Ke613F36P-cEQo
+Status: success
+Duration: 10:47
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**1. 大语言模型的理解能力与涌现现象**
+
+   *   **1.1 大语言模型快速发展:** 自2022年ChatGPT发布以来，大型语言模型（LLM）发展迅速，出现了许多不可预测的能力。
+   *   **1.2 挑战：** 这些能力是否代表真正的理解，还是仅仅是重复训练数据（“随机鹦鹉”）？
+   *   **1.3 研究需求:** 迫切需要对大型语言模型的能力和特性进行科学评估，特别是与通用智能和语言理解相关的评估。
+   *   **1.4 数学框架和方法:** 普林斯顿和谷歌DeepMind的研究人员创建了数学框架，以解释语言模型如何发展出如此多的技能，并设计了测试方法。
+   *   **1.5 训练方式：** 语言模型通过预测下一个单词来训练，通过微小的调整逐步学习，经过大量的训练后，模型能够预测下一个单词。
+   *   **1.6 神经缩放规律：** 语言模型的性能与其训练数据量之间存在经验关系，称为神经缩放规律。
+   *   **1.7 涌现现象：** 随着模型性能的提高，会出现新的行为（涌现现象），但其背后的科学解释尚不明确。
+   *  **1.8 组合泛化:**  研究人员试图通过“组合泛化”来解释GPT-4的涌现现象。
+   *   **1.9  随机图模型:**  研究人员使用随机图模型来建立数学框架。
+   *    **1.10 二分图模型:** 该模型包含两种节点：文本块和语言技能，边表示理解文本所需的技能。
+
+**2. Skill Mix 测试**
+
+   *   **2.1 目标:**  Skill Mix测试旨在评估大型语言模型是否能泛化到它们可能从未见过的技能组合。
+   *   **2.2 测试过程:** 模型被赋予一系列技能和主题，然后它需要使用这些技能来创建关于该主题的文本。
+   *   **2.3 测试结果:** 小型模型难以组合技能，中型模型能组合少量技能，而大型模型（如GPT-4）能组合多个技能。
+   *   **2.4 结论:** Skill Mix测试表明，大型语言模型通过涌现现象发展出了组合泛化能力，表明它们并非只是“随机鹦鹉”。
+   *   **2.5 应用前景：** 研究人员正努力将Skill Mix测试扩展到其他领域，如数学和编程。
+
+**3. 量子系统的哈密顿量学习**
+
+   *   **3.1 挑战：** 计算量子系统的哈密顿量（描述粒子相互作用的超方程）非常困难，特别是由于纠缠的存在。
+   *  **3.2 解决思路：**  麻省理工学院和加州大学伯克利分校的研究人员开发了一种算法，可以在任何恒定温度下计算量子系统的哈密顿量。
+   *    **3.3 算法原理:** 该算法从经典机器学习中引入了多项式优化工具，将量子系统的测量近似为多项式方程组。
+   *   **3.4 松弛方法：** 使用“平方和松弛”方法来解决多项式系统，将硬问题转化为较容易的问题。
+   *   **3.5 成果:**  研究人员证明了该算法可以有效地学习低温量子系统的哈密顿量，这在以前是做不到的。
+   *   **3.6 意义：** 该研究为理解奇异量子行为和量子计算的未来提供了重要启示。
+
+**4. 核心观点 (Core Point):**
+
+大型语言模型能够通过涌现现象，发展出组合泛化能力，超越了“随机鹦鹉”的局限；而量子系统的哈密顿量学习也取得了重要进展，体现了理论计算机科学与量子力学的交叉融合。
+
+**5. 基本观点 (Fundamental Point):**
+
+通过数学建模和算法设计，我们能够更深入地理解复杂系统（如大型语言模型和量子系统）的行为和内在机制。
+
+**6. 总体框架 (Overarching Framework):**
+
+  *  该内容围绕对复杂系统（语言模型和量子系统）的理解展开，运用数学和计算机科学的方法，揭示了涌现、组合泛化以及高效学习算法等重要概念。
+   *   **主要构成要素:**
+        *   **大型语言模型:** 核心关注其能力、理解、涌现行为和测试方法。
+        *   **量子系统:** 核心关注哈密顿量的学习和计算难题以及解决方案。
+        *   **数学框架:** 包括随机图模型、神经缩放规律、多项式优化和平方和松弛等方法，用于分析和解决复杂问题。
+        *   **涌现与组合泛化:** 是理解语言模型能力的关键概念，也是研究人员的关注焦点。
+        *   **跨学科融合:** 体现了计算机科学、数学、物理学等多学科的交叉融合。
+
+
+Content:
+Since ChatGPT launched in 2022, large language 
+models have progressed at a rapid pace,   often developing unpredictable abilities.
+When GPT-4 came out, it clearly felt like the   chatbot had some level of understanding.
+But do these abilities reflect actual   understanding? Or are the models 
+simply repeating their training   data like so-called stochastic parrots?
+There's a lot of scientific interest and   understanding the capabilities and the 
+properties of large language models.  How do we evaluate these large language 
+models? We need evaluations that are   clearly relevant to general purpose 
+intelligence and language understanding.  Recently, researchers from Princeton and Google 
+DeepMind created a mathematically provable   argument for how language models develop so many 
+skills – and designed a method for testing them. The results suggest that the 
+largest models develop new skills   in a way that hints at understanding.
+Language models are basically trained   to solve next-word prediction tasks.
+So they are given a lot of text and at   every step it has some idea of what the 
+next word is. And that idea is expressed   in terms of a probability. And, and if the 
+next word that you actually see didn't get   high enough probability, there's 
+a slight adjustment that's done.  And after many, many, many trillions of such small 
+adjustments, it learns to predict the next word.  Over time, researchers have observed neural 
+scaling laws, an empirical relationship between   the performance of language models and the 
+data used to train them. As models improve,   they minimize training loss, or make fewer errors. 
+This sudden increase in performance produces new   behaviors – a phenomenon called emergence.
+There’s no kind of a scientific explanation   as to why that's happening. So this 
+phenomena is not well understood.  The researchers wondered if GPT-4’s 
+sudden improvements could be   explained by emergence. Perhaps the model had 
+learned compositional generalization -- the   ability to combine language skills.
+This was some kind of meta capability.   There was no mathematical framework to 
+think about that. And so we had to come   up with a mathematical framework.
+The researchers found their first   hint by considering neural scaling laws.
+So the scaling laws already suggest that there is   some statistical phenomenon going on underneath.
+So random graphs have a long history in terms of   thinking about statistical phenomena.
+So that was one reason to   think of a random graph model.
+Random graphs are made of nodes,   which are connected by randomly generated edges. 
+The researchers built their mathematical model   with bipartite graphs, which contain two types 
+of nodes: one representing chunks of text,   and the other, language skills.
+The edges of the graph – the   connections – correspond to which skill is 
+needed to understand that piece of text.  Now, the researchers needed to connect these 
+bipartite graphs to actual language models.   But there was a problem.
+We don't have access to   the training data. So if I'm evaluating 
+that language model on my evaluation set,   how do I know that the language model hasn't 
+seen that data into the training corpus?  There was one crucial piece of information 
+that the researchers could access.  Using that scaling law, we made a prediction:
+As models get better at predicting the next word,   they will be able to combine 
+more of the underlying skills.  According to random graph theory, every 
+combination arises from a random sampling   of possible skills. If there are 100 skill nodes 
+in the graph, and you want to combine four skills,   then there are about 100 to the fourth power, 
+or one hundred million, ways to combine them.  The researchers developed a test called 
+Skill Mix to evaluate if large language   models can generalize to combinations of 
+skills they likely hadn’t seen before.  So the model is given a list of skills and 
+a topic. And then it's supposed to create a   piece of text on that topic 
+using that list of skills.  For example, the researchers asked GPT-4 
+to generate a short text about sewing   that exhibits spatial reasoning, 
+self-serving bias, and metaphor. Here’s what it answered: “In the labyrinth of 
+sewing, I am the needle navigating between the   intricate weaves. Any errors are due to the faulty 
+compass of low-quality thread, not my skill.”  We showed in our mathematical framework that as we 
+scale up, the model is able to learn these skills.  You would see this increase in compositional 
+capability as you scale up the models.  When given the Skill Mix test, small language 
+models struggled to combine just a couple of   skills. Medium-sized models could combine two 
+skills more comfortably. But the largest models,   like GPT-4, could combine five or six 
+skills. Because these models couldn’t have   seen all possible combinations of skills, the 
+researchers argue that it must have developed   compositional generalization through emergence.
+Once the model has learned these language skills,   model can generalize to random 
+unseen compositions of these   skills, because of which we see sudden emergence.
+What they showed was that their mathematical model   had this property of compositionality, 
+and that by itself gives this ability   to compose new combinations from existing 
+pieces. And that is really the hallmark   of novelty and the hallmark of creativity.
+And so the argument is that, in fact, large   language models can move beyond 
+being stochastic parrots.  The researchers are already working to extend 
+the Skill Mix evaluation to other domains as   part of a larger effort to understand the 
+capabilities of large language models.  Can we create an ecosystem of Skill Mix 
+which is not just valid for language skills,   but mathematical skills as well as coding skills?
+Skill Mix was one example where we made a   prediction by just mathematical thinking, and 
+that was correct. But there are all kinds of   other phenomena that we probably are not aware 
+of, and we need some understanding of that. Quantum systems are some of the 
+most complex structures in nature. To model them, you need to compute 
+a Hamiltonian – a super-equation   that describes how particles interact locally to 
+produce the system’s possible physical properties. But entanglement spreads information 
+across the system, correlating particles   that are far apart. This makes computing 
+Hamiltonians exceptionally difficult.  You have a giant system of atoms. It's a very 
+big problem to learn all those parameters. You could never hope to write down the 
+Hamiltonian because it's too large. If you ever even tried to write it down, 
+the game would be over and you wouldn't   have an efficient algorithm.
+People were actually trying to   prove that efficient algorithms 
+were impossible in this regime.  But a team of computer scientists from 
+MIT and UC Berkeley cracked the problem.  They created an algorithm that can 
+produce the Hamiltonian of a quantum   system at any constant temperature.
+The results could have big implications   for the future of quantum computing and 
+understanding exotic quantum behavior.  So when we have systems that 
+behave and do interesting   things like superfluidity and superconductivity,
+you want to understand the building blocks and how   they fit together to create those properties that 
+you want to harness for technological reasons.  So we're trying to learn this object, 
+which is the Hamiltonian. It's defined by   a small set of parameters. And what we're 
+trying to do is learn these parameters.  What we have access to is these experimental 
+measurements of the quantum system. So   the question then becomes can you learn a 
+description of the system through experiments?  Previous efforts in Hamiltonian learning 
+produced algorithms that could measure   particles at high temperatures. But 
+these systems are largely classical,   so there’s no entanglement between the particles. The MIT and Berkeley team set their sights 
+on the low-temperature quantum regimes.  I wanted to understand what kinds of strategies 
+worked algorithmically on the classical side,   and what could be manifestations of 
+those strategies on the quantum side?  Once you look at the problem in the right 
+way and you bring to bear these tools,  it turns out that you can really 
+make progress on these problems.  First, the team ported over a tool from classical 
+machine learning called polynomial optimization.   This allowed them to approximate 
+the measurements of their system   as a family of polynomial equations.
+We were like, maybe we can write Hamiltonian   learning as a polynomial optimization problem, 
+and if we manage to do this, maybe we can try   to optimize this polynomial system efficiently.
+So all of a sudden it's in a domain that's more   familiar, and you have a bunch of 
+algorithmic tools at your disposal.  You can't solve polynomial systems, 
+but what you can do is you can sort   of solve a relaxation of them.
+We use something called the sum   of squares relaxation to actually 
+solve this polynomial system.  Starting with a challenging polynomial 
+optimization problem, the team used the   sum of squares method to relax its constraints. 
+This expanded the equations to a larger allowable   set of solutions, effectively converting 
+it from a hard problem to an easier one.  The real trick is to argue that when 
+you've expanded the set of solutions,   you can still find a good solution inside it.
+So you need a procedure to take that approximate,   relaxed solution and round it back into an actual 
+solution to the problem you really cared about.  So that’s where the coolest 
+parts of the proof happen.  The researchers proved that the sum of squares 
+relaxation could solve their learning problem,   resulting in the first efficient Hamiltonian 
+algorithm in a low-temperature regime.  So we first make some set of measurements of 
+the macroscopic properties of the system. And   then we use these measurements to set up a 
+system of polynomial equations. And then we   solve this system of polynomial equations for the 
+unknown Hamiltonian. The output is a description   of the local interactions in the system.
+It was quite eye-opening that there are actually   some very interesting learning problems that are 
+at the heart of understanding quantum systems.  This combination of tools is really 
+interesting – is something I haven't   seen before. I'm hoping it's 
+like a useful perspective with   which to tackle other questions as well.
+I think we find ourselves at the start   of this new bridge between theoretical 
+computer science and quantum mechanics.
