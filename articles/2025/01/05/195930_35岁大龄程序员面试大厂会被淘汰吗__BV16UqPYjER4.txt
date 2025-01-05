@@ -1,0 +1,64 @@
+Timestamp: 2025-01-05T19:59:30.465372
+Title: 35岁大龄程序员面试大厂会被淘汰吗？ BV16UqPYjER4
+URL: https://b23.tv/kbAz7f2
+Status: success
+Duration: 9:45
+
+Description:
+Okay, here's a structured summary of the provided Chinese text, as per your instructions:
+
+**Summary:**
+
+**1. Interview Introduction & Background:**
+    *  The interviewee is a 35-year-old with 10 years of experience, primarily in real estate (龙部地产), focusing on team management.
+    *  They have transitioned from hands-on coding to management, though still write code.
+    * The interview starts with a self introduction and discussion about current role.
+
+**2. Technical Discussion:**
+    *  **Code Practices:** They enforce coding standards like StrictPromise/useQ over `useQ`, because with `useQ`, the tool controls aspects of data flow.
+    *  **Concurrency & OOM:**
+        *   `SingleThreadPool` can lead to Out-of-Memory (OOM) errors if the task queue becomes too large.
+        *   They prefer manual construction of thread pools for better control.
+        *  `CachedThreadPool`, while having a large thread limit, can still overload system resources due to memory usage and context switching.
+        * They actively monitor task quantities and thread pool configurations to prevent these issues.
+    * **Java Memory Model:**
+       *  Discusses the importance of visibility when working with multi-core CPU architectures.
+        *  Explains how CPU optimizations like Store Buffers and Write Queues can cause visibility problems.
+        *  The interviewee is familiar with CPU level cache consistency mechanisms (MESI protocol) and Java synchronization tools for ensuring memory visibility.
+    *  **Algorithm Scenario - WeChat Friends:**
+        *   Discusses how to store the relationship between users with an approach that would reduce the amount of data needing to be loaded at once, instead using an index to reference the related users.
+        *  Designs how to send a WeChat message to all friend networks by broadcasting the message using the relationship database.
+         * Considers storage options for WeChat friend relationship, preferring indexed relationship in memory for better performance.
+        *  Discussions how to store a single copy of a published message using both efficiency and read performance in mind.
+        *  Analyzes tradeoffs between storage and performance for WeChat's needs.
+
+**3. Career Reflection & Expectations:**
+    *  **Mid-Career Crisis:** Recognizes the need to stay updated with technology; actively makes time to learn and use current technologies.
+    *  **Management vs. Technical Roles:** Expresses a continued interest in technology, even while in a management position.
+    *  **Value to Company:** Highlights their experience and stability as beneficial to the company's growth, in particular to prevent mistakes from inexperienced staff.
+    *   **Salary Expectations:** Has a salary expectation around 1 million, for a role managing a 50-person tech team.
+    *   **Family Situation:** Has children, but seems financially stable and highly motivated to continue working.
+
+**4. Conclusion Points:**
+* **Core Point:** The interviewee demonstrates a strong understanding of both technical concepts and team management, making them a suitable candidate for a management role with hands on coding experience.
+* **Fundamental Point:** The key to long-term career success lies in balancing management skills with continuous technical learning to remain relevant in a dynamic industry.
+
+**5. Overarching Framework:**
+    *   The interview is structured as a technical assessment combined with a discussion about career goals and expectations. The interviewer was trying to determine the candidates knowledge of the technology, and the interviewee was able to demonstrate and discuss the concepts clearly.
+    *   It moves from specific technical questions to broader career-related inquiries, highlighting the importance of both technical competency and management experience for the role at hand.
+
+**6. Conceptual Map:**
+   *   **Experience:** 10 Years in Real Estate (Team Management + Code), transitioning to more managerial role
+    *   **Technical Competency:**  Coding Standards -> Concurrency/Memory Model -> Algorithms/Data Structures
+        * Coding Standards (useQ vs StrictPromise)
+        * Concurrency, thread pools, OOM scenarios, and Java Memory Model issues.
+        * Algorithm scenarios for WeChat relationships and message broadcasting.
+    *  **Career Aspirations:** Manage 50-person Team + Maintain Technical Awareness + Family Support.
+    *   **Company Needs:**  Experienced Manager to Minimize Mistakes + Stable Employee.
+    *   **Salary Expectation:** 1 Million
+
+This conceptual map visualizes how the core elements of the interview (Experience, Technical Competency, Aspirations, Company Needs) are interconnected and feed into the overall assessment of the interviewee's suitability for the role.
+
+
+Content:
+那什么让你觉得你能给我管理50个人的团队我之前为了一个人的团队怎么看但是我在多年我已经到了35岁到达不到你未来的职业规划是什么很久的前段的做一下自我介绍面关你好我叫工作的话大概有十个年了最近这一十年左右一直是在龙部地产这边然后是做管理的党会管理党会就一直在团队在团队什么对第一期大的两年过之后就一直是在做管理员一块那代码平时还写吗也写但这可能其实是比之前要少很多的像我们这种码平的切对代码有很多规范比如说我们会强制使用就是StreetPro useQ的我们不允许用那个 useQ的那你觉得这两种方式有什么利弊吗昨天说的话其实那个excuses他里面是提供了基金生命好的有个这种基金生命好的切他本身是一个StreetPro XQ的如果我用这种拎剧去生成的话可能会导致一些数习不是我去主动指定的而是那个工具类集间给我说着好的所以说我在控制层面上可能会差一些小力度就比如说最基本的我想给这个现场去试试一个农场如果说我用GetsTress的话就比较罢如果要是自己去固件的话其实本身功能都是一样的这样的话可能我对他的控制力度或者说对我的整个线能提升会一个更大的帮助从你刚才的描述上来说就是因为的比较前层次我这么问嘛一个Q的词比如说穿件一个Single Sire的Pope那么它会产生OM如果试制不当在什么情况下试制什么情况下会产生OM因为首先现成试这个这个OOM你用SIMO的话我也是你把大量的任务都选到了组织对列里面然后脑制你们的每个任务可能都不少这个那这个情况下如果任务量太多可能会出于那种无案目玩小孩大事不会存在的所以说这个也是我们自己去手动的去构建Single S 批试了一个模拟我可以根据我现在的一个任务的体谅比如说我每秒大概有多有多少任务以及我大概连连秒都出于任务的数量去看一下我的和机现场怎么去说之下我的组织对列长度怎么去到以及我的一些拒绝社会等到你要怎么去考虑那你想问这个问题吗就是当时的SidePo和Fings的SidePo它里面有那个会设置一个请求对列的长度的一个参数第一如果请求对任务对的请求多了是不是会引起我是吧那那个Catch的SidePo呢Catch的SidePo的话它是不会的因为这个东西太会特点它用的那个先直的话去一个Side因为它并不是把任务轮到整个组织和这个队伍而是把整个生涯的水这个方案里面然后有些位置过来我就去处理而这个Catch的差小事以每一个任务我都会把一个飞回键中去报应处理如果它的任务的话基本上来的就不敢就是Catch的SidePo允许创建的最大现场数量是这个应接200次外一点那这么大的话现场数是这么大一个DOM讯例里面用这么多的现场我懂我也不会对外吗对我懂你意思这段第一个的话内存肯定会不够了对吧是因为整个现场的话它本日些是你操作系统整样的一半内存就选了如果说你够这样的打用了现场的肯定会道具我玩不了你的也也请问大家是咱们的上去对吧能喜欢一部BOOM而另外有别多什么呢另外一回路就是当你的现场数量那么多的时候其实咱们的Catch是照顾不过来的它可能跟我们的时间中浪贝在的现场的刷枪没期望上而这样的话它又显示了目的本人是给的请小鲁的是你怎么一玩的话它反而不能够你手里边的特别低行这我大概知道了对就是我感觉就是从我们刚才聊到这个问题中来说就是你平时对技术的自己做总结吗肯定会做总结的因为整个杖瓦生态体强太大了对吧每个人在意固动出保证每个东西去玩喜欢节奏技术对吧对说要去记不记录对那我们聊一个再聊一个WOLIN太有用过吗自己没有用过因为这个用过的不多但是很多要法上面上就可以体现出来的特别是在这个G-O之下等下可以给我讲一下它怎么保证这个可监性其实可监的对可监系列是要从两个迷路去聊一个迷路的话咱们可能要披开这个MG的CPU因为本质上这个内存不可下的话因为咱们CPU里面有这个所有的RVLR还有RX做同样的话CPU才有一个混水一直顺利息就懂咱们以还在本质上图的这种协议它是会保证每一片缓缩哈利的数据都是同步的不会出现可能不要的情况但是的话很多CPU查上它类的去优化它的CPU的处理效率我举下来利息这个Stoll Buffer或者Emailed的Q之类的就有东西的话它会导致你的本质号同步造成一些延迟可能说我这边要把当前的混合好许多的无效和弹然后发送一个公伙消息但能够因为Emailed的Q知道我的同步就是我这个缓存的数据修改了但是我没有继续的通知到其他的那个位置而且它没有去做重新去主力修拿取数据的一个情况据中导致的一个这样的问题所以说就是因为这些优化懂这可能每个CPU它有一个不同的情况在咱们Garver上面容器然后再次去保重这种所谓的可见性的话我就上桌了而这个我最主要的最主要换到CPU上面上其实就是一个Nl不准这个Nl不准的话它会强振的CPU把那些豆花粉还有Emailed的Q去取取然后强振的同步CPU你要做会基于MESI去做一个一个或者好像同步那这样的话CPU的话能够狗狗这种可见性那技术的机会要不然是没上也就给问题了准备了你做了这么多年管理感觉竞速也没太丢结果该去还得学要不然开这个开会进步走对啊那这个该开个问题吧就是感觉你你这么想场景就算法手不手在公司待了这么多年其实平时开发的法用不到这么算法那我们说一个场景有微信朋友圈你和你的好友之间怎么把它存在顺带顺利后列就是这个不要怎么去设计也都临不去吧对微信好友怎么去恢复这些关系是吧那首先这种用物体料是比较大的如果要存的话那其实如果关于一个教堂的思维度十位独立来做当前不考虑数据体验表达的一个情况其实就是一个所谓的多多的关系可能有这个A跟B然后有一个A压座好友然后能可能用这种多多的关系去为互以下就可以了它可能会因为这个体当规考哪有可能我这个卷会有13亿的用户那这种关系格的话就是一个机场的关系如果说所有人都是好友的话那可能13亿从13亿的移输去一般是有顾客可能每个顾客都那么大的体量这种小一下就得把这发挂了那像这种书记为互的话可能关系无数有顾它能做级别税在经小的话可能在书记上调大的时候把眼看不住这种关系的流户所以一般像这种面封这种突然化的是有顾客可能跟选合做这种关系的流户我们再聊一个那个朋友圈比如你发一个朋友圈让你所有的好友都能刷到你这个消息怎么发给它吗像这种情况的话咱们也需要从几个减确保第二的话咱们要主动的去通知可不断在这段话咱们可能要解决反正它是什么方向有些你可以用利用金黄三发或者说用其他东西当然微信的话可能有它自己的一种你最重要的一个渠道另外的一个点的话其实就是我当前的这个用户发送了一个消息那同时我要去广播到所有我跟我学好有的一个用户那当然可能你们还有这条件比如说它可以看我的朋友圈里然后已经融合我的钱去走正当来的话如果说简单的情况像安全入行学住有类似于广播的一个效果可能我发送完这一个消息是针对哪有到底然后对于哪一个有求然后最终我这边可以做一个消费去做一些同时的那这条朋友圈怎么存储你想过吗这条朋友圈中这是我发了我是一个微信里的用户我发了一个朋友圈这个朋友将来怎么存但是你是我的好友你怎么看到我这个朋友圈一个朋友圈就发了一个字一 刚刚存这个东西那咱们还是从几个围图去考虑第有一个如果说是考虑效率的话在而是人类的这个策定内心比较好但是可能底下表跑这个就看经济实力了然后另外有一部分可能还是这种随的关系为护的一个问题了那这边的话还是可能就比如说我这个用户它跟来说我标识而用户和用户界的关键应该也像用丢时去表示的比如说我的逼用户和用户可能是好友的可能我伸出这个关系的绿绝就带有这个用户的一个标识那么我就把这个数据最好的方式那当然有些优先伸到内心里面去然后呢国际内发展之后我根据我当前用户的六十去存到这个内心里面去然后其他用户有看的话可以根据这个过程区域搞到当前这个用户之前发过的一些信息比如说这个用这个信息就是从你的身体来说这个信息在数据户里存一份是吧比如说我发现了朋友想他的数据户是只存一份不过前提是你想的因为你要是绒于去的伸的话他肯定要让咱们的擦凶别的动方便都可能我单不得伸出的话那曾从今天可能会赏很多少一些待遇的话可能我的擦凶过程可能要比较腐胎一点那你说微信他看重的是查询还是说存重从微信世界的角度来说那你现在应该是伸出可能你跟我们偏重一些吧微信不就是为了让人更好的刷出来吗老外主人那他也要做一些流程他万一数据举了怎么办我知道举个例子 伸处可能麻烦就是发朋友现在这个人可能发的慢一点但是他刷朋友就在人家刷的快你说要保证哪个没那如果从这个回头来比如在聊的话那可能效率可以连减是公众要的一点对那咱们也可以做一些所谓的荣誉的伸出然后让咱们更方便的去查先或者更效率的去做一些查询那行 善临工作十多年也快到了三十五岁这个中年危机了怎么看这个问题其实所谓的中印名机啊我个人意义就是这么考虑的就是比如说现在我做过这个的话可能我还在通技术但是有的人做一些关系之后他会把几乎别的冤然的因为我中间也有一个这样的想法就是我都做上快乐港可能我更多经历还是要放在下方会罗网以及继续管理肯队去发入我的上门进入一个情况还是过来的话有过街对比金网有一次开会的话我进入他们在说一些技术搞这个话可能我的参与党会一整丢了然后呢我后来又把技术业补上了然后等我再看一些其他的就是跟我同样一块儿出了一个人那他们做的关系之后真的又是把技术相路却掉了然后这的话他的能力可能是跟这家公司挂考的他的公众能力是主要他的意义我为了可以接关于什么样他可能放到了另外一个意义什么样他就没有现在的能力了那其实咱们开着行最重要的是技术其实你到了三路最拿半你到了四十五岁主要你能的技术为度能够红入其实我感觉问题多是不大更多的可能是针对定习可能混到了三十五岁到最后可能技术跟现在的行形不太体费可能会出现做到不到工作来的情况可能说确实找不到很高可能高新的工作但是各样他拿一个能够收集的奥特给你开始问题不大的就是像你这样的这工作停下比较久的人像我们这种这种级别的公司其实是需要的为什么因为我们现在公司发展到这个体量是不允许出错的需要一个人经验丰富然后做事业稳中从这个角度考虑我们是才给你打开面试的邀约那么你对你的期望的心资有要求吗你大家一百左右吧看咱们对有的岗位把自己学成这样的亲自贩命一百左右的岗位在我们这是要带五十人团队这个没有问题之前刚好我带了团队比这个还要打你这五十个团队里面都是技术吗对都是技术有孩子吗有几个了对啊小的都大了是有的八星上景点几了要上景点那这样的话家庭压力是不是家庭负担是不是挺大的开桑花没有什么家庭负担连这个年轻的时候的话也讨了基础银现在的话生活压力是没啥问题的这样的话你还愿意分动吗那该肯读得分动啊对吧毕竟两个儿子呀这特别一样
