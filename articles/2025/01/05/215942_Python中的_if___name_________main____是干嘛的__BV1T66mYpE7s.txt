@@ -1,0 +1,48 @@
+Timestamp: 2025-01-05T21:59:42.452683
+Title: Python中的 if __name__ == '__main__' 是干嘛的？ BV1T66mYpE7s
+URL: https://b23.tv/AN2aypc
+Status: success
+Duration: 3:51
+
+Description:
+**Summary:**
+
+**I. Core Idea:**
+
+*   **`__name__` Variable:** Python's `__name__` variable stores different values depending on how a script is executed.
+    *   When run directly (via IDE or command line), `__name__` is set to `"__main__"`.
+    *   When imported as a module, `__name__` is set to the module's filename (without the `.py` extension).
+
+*   **`if __name__ == "__main__":` Conditional Statement:** This construct leverages the `__name__` variable to determine if a script is being run directly or imported as a module.
+
+**II.  Purpose of `if __name__ == "__main__":`**
+
+*   **Not an Entry Point:** Unlike languages like Java or C++, Python doesn't have a specific "entry point" function. This construct is not intended to define a unique main function.
+*   **Conditional Execution:** It enables code to be executed only when the script is run directly, and not when imported as a module.
+
+**III. Use Cases:**
+
+*   **Module Reuse:** Allows developers to write reusable modules that can be imported without running the module's primary code.
+*   **Testing/Example Code:**  Often used to include test or example code within a module, which will only run when the file is executed on its own.
+*   **Multiprocessing Safety:** Prevents issues in multiprocessing by ensuring that the code creating new processes isn't executed in each child process.
+*   **Code Flexibility and Maintainability:** Provides better code organization, modularity, and reusability.
+*   **Best Practice:** Is considered good practice for those aspiring to be professional programmers.
+
+**IV. Core Point:** The `if __name__ == "__main__":` construct in Python is used to determine if a script is being run directly or as a module, allowing for different behaviors in each case.
+
+**V. Fundamental Point:**  This conditional allows Python scripts to be both directly executable programs and reusable modules with flexible code execution.
+
+**VI. Overarching Framework:**
+  The content discusses the `if __name__ == "__main__":` pattern in Python by contrasting it with languages like Java and C++, illustrating the difference between a traditional entry point and the conditional execution mechanism in Python. It then expands on the purpose and practical use cases of this structure, as well as explaining best practices when working with Python and multiple processes.
+
+**VII. Conceptual Map:**
+
+*   **`__name__` Variable:** Central to the whole idea, its value is the key to differentiating direct execution and module import.
+*   **Direct Execution:** `__name__` is "__main__".
+*   **Module Import:** `__name__` is the module filename.
+*   **Conditional Logic:** `if __name__ == "__main__":` allows programmers to trigger specific code paths conditionally based on whether the file is a main program or a module.
+*   **Use Cases:** Module reuse, testing, multiprocessing safety, and best practices are all applications based on the above concepts.
+
+
+Content:
+如果你写过加瓦,就一定知道Public Static and Why的Man就会如绕口另一般的陈续入口韩束即使写一个Hallow World也不可避免相比之下,Python就简单多了林真寄手直接Print但如果你的Python的练习市场超过两周半就一定见过这样的写法不管是教程里的势力给它op上别人的项目还是AI深层的代码都可能出现这行判断语句看起来很像加瓦或C加加的语言里陈续入口的魅韩束可既然Python不需要入口韩束为何还要多辞一句加上这一句而且,Print一下下花线下花线内幕下花线下花线变量就会发现不管放在陈续的哪个位置它的值都是自负串下花线下花线Main下花线下花线那么,这个EF条件判断其不是毫无疑疑先别着急在搞清楚这行单码前我先问你个问题一个Py电码环境可以怎样执行青通选手都知道点击ID里的运行按钮就可以执行一个Py文件白映选手会告诉你也可以在控制台下通过Python命令执行代码假如你达到了黄金以上肯定还知道一个Py文件也是一个模块可以像其他库一样被InPort倒入到另一个Py文件中而被倒入的同时文件中的代码也会被执行现在在被倒入的代码中输出这个双下花线内容编辆有趣的事情发生了输出的结果不再是双下花线面而是成了Hello看到这里,你明白了吗?双下花线内容这个编辆如果锁在代码是直接被运行不管是通过ID还是命令航它的执都是自复串双下花线面而如果锁在代码是被别的代码调用执行比如作为模块倒入它的执就是锁在文件的文件名所以一副双下花线内容等于等于领号双下花线面这个判断不是用来指定程序的入口而是判断当前的文件是否是被直接运行那它有什么用的?对于一些继续要直接运行又可能作为模块被其他代码复用的文件就可以通过这个判断来控制在不同情况下执行不同的代码另外也有很多模块会把调用的势力或者测试的代码放在这个条件判断里即方便又不影响使用那我只是写一些自己用的小胶本不被引泡的是不是就没必要这么写了绝大多数的小胶本比如你的课程作业确实没有加这一句的必要不过虽然是选手要说了程序被调用执行的情况并不只有引泡的倒入这一种比如这个采用进程池创建多进程的代码如果直接这么运行你的ID就会卡到爆炸因为每个进程都会重新执行整个脚本再次创建一堆新的进程直到炸干你的电脑这时候同样可以通过对双下画线内幕的判断让紫进程不要执行创建进程的代码总结一下拍上代码中双下画线内幕这个编量的直在直接运行时是自负串双下画线面而在被倒入或创建紫进程的直行时它的直就是所在的文件名于是就可以通过条件判断来区分不同的直行方式增加了代码的灵活性和可为互行在初学变成时你当然可以不去用它或者简单地照护了画条但出于一名程序人的自我修养我们应该知己人跟这些所依然并在合适的场景下使用它让我们的代码更加露棒和优雅好了今天的视频就到这里我是Crossing想了解更多变成知识请点赞评论转发收藏下课
