@@ -1,0 +1,70 @@
+Timestamp: 2025-01-05T22:02:18.359599
+Title: Python中的 if __name__ == '__main__' 是干嘛的？ BV1T66mYpE7s
+URL: https://b23.tv/MiTipoB
+Status: success
+Duration: 3:51
+
+Description:
+好的，这是对你提供的内容的总结：
+
+**I. Summary Outline**
+
+   *   **Introduction:**
+        *   Python 看起来比 Java 简单，不需要像 Java 那样的 `public static void main` 入口函数。
+        *   但是，Python 代码中经常出现 `if __name__ == "__main__":` 这样的判断语句，这引起了一些困惑。
+   *   **The `__name__` Variable:**
+        *   `__name__` 是一个内置变量，其值取决于代码的运行方式。
+        *   如果代码**直接运行**（例如，通过 IDE 或命令行），`__name__` 的值为字符串 `"__main__"`。
+        *   如果代码**作为模块导入**到其他文件中，`__name__` 的值为**模块的文件名**。
+   *   **Purpose of the `if __name__ == "__main__":` Condition:**
+        *   该条件判断语句**不是**用来指定程序入口。
+        *   而是用来判断**当前文件是否被直接执行**。
+        *   该语句允许文件在**直接运行**和**作为模块导入**时执行不同的代码。
+   *   **Use Cases:**
+        *   **控制不同情况下的代码执行:** 例如，有些代码只在文件被直接运行时执行，而有些代码则在被导入时执行。
+        *   **模块的调用和测试代码:**  模块通常会将调用或测试代码放在该判断语句内，这既方便又不影响模块本身的使用。
+        *   **多进程编程:** 在多进程编程中，可以使用该判断语句来防止子进程重复执行主进程的代码。
+   *   **Conclusion:**
+        *   虽然新手可能不需要用到这个判断语句，但是了解其作用并适时使用可以提高代码的灵活性和可维护性。
+        *   作者鼓励程序员理解并使用这种机制。
+
+**II. Core Point**
+   *   The core point is that the `if __name__ == "__main__":` condition in Python is used to determine whether the current file is being run directly or imported as a module, enabling conditional code execution.
+
+**III. Fundamental Point**
+   *   The fundamental point is the built-in variable `__name__` which changes its value depending on how the python script is executed, which provides a way for python programs to behave differently based on the context.
+
+**IV. Overarching Framework**
+   *   The overarching framework is understanding how Python interprets the execution context of a script and how to leverage this understanding to create more flexible and maintainable code. This framework goes beyond the basic "entry point" understanding, and delves into the dual roles a python script can play: as a standalone program, and as a module library.
+
+**V. Conceptual Map**
+
+```
+                                  +------------------+
+                                  |  Python Script   |
+                                  +------------------+
+                                       /        \
+                                      /          \
+               +-------------------------+    +-----------------------------+
+               | Directly Executed      |    |   Imported as a Module     |
+               +-------------------------+    +-----------------------------+
+                          |                          |
+          +---------------------------+        +-----------------------------+
+          |  __name__ == "__main__"   |        |   __name__ ==  "filename"   |
+          +---------------------------+        +-----------------------------+
+                       |                                     |
+         +---------------------------+        +------------------------------+
+         | Code under condition runs |        |  Different code runs/or       |
+         |      (Main logic)          |        |  function definitions       |
+         +---------------------------+        +------------------------------+
+                                                       |
+                                                       v
+                                           +---------------------------+
+                                           |   Avoid duplicate execution   |
+                                           |   Module level definitions  |
+                                           +---------------------------+
+```
+
+
+Content:
+如果你写过加瓦,就一定知道Public Static and Why的Man就会如绕口另一般的陈续入口韩束即使写一个Hallow World也不可避免相比之下,Python就简单多了林真寄手直接Print但如果你的Python的练习市场超过两周半就一定见过这样的写法不管是教程里的势力给它op上别人的项目还是AI深层的代码都可能出现这行判断语句看起来很像加瓦或C加加的语言里陈续入口的魅韩束可既然Python不需要入口韩束为何还要多辞一句加上这一句而且,Print一下下花线下花线内幕下花线下花线变量就会发现不管放在陈续的哪个位置它的值都是自负串下花线下花线Main下花线下花线那么,这个EF条件判断其不是毫无疑疑先别着急在搞清楚这行单码前我先问你个问题一个Py电码环境可以怎样执行青通选手都知道点击ID里的运行按钮就可以执行一个Py文件白映选手会告诉你也可以在控制台下通过Python命令执行代码假如你达到了黄金以上肯定还知道一个Py文件也是一个模块可以像其他库一样被InPort倒入到另一个Py文件中而被倒入的同时文件中的代码也会被执行现在在被倒入的代码中输出这个双下花线内容编辆有趣的事情发生了输出的结果不再是双下花线面而是成了Hello看到这里,你明白了吗?双下花线内容这个编辆如果锁在代码是直接被运行不管是通过ID还是命令航它的执都是自复串双下花线面而如果锁在代码是被别的代码调用执行比如作为模块倒入它的执就是锁在文件的文件名所以一副双下花线内容等于等于领号双下花线面这个判断不是用来指定程序的入口而是判断当前的文件是否是被直接运行那它有什么用的?对于一些继续要直接运行又可能作为模块被其他代码复用的文件就可以通过这个判断来控制在不同情况下执行不同的代码另外也有很多模块会把调用的势力或者测试的代码放在这个条件判断里即方便又不影响使用那我只是写一些自己用的小胶本不被引泡的是不是就没必要这么写了绝大多数的小胶本比如你的课程作业确实没有加这一句的必要不过虽然是选手要说了程序被调用执行的情况并不只有引泡的倒入这一种比如这个采用进程池创建多进程的代码如果直接这么运行你的ID就会卡到爆炸因为每个进程都会重新执行整个脚本再次创建一堆新的进程直到炸干你的电脑这时候同样可以通过对双下画线内幕的判断让紫进程不要执行创建进程的代码总结一下拍上代码中双下画线内幕这个编量的直在直接运行时是自负串双下画线面而在被倒入或创建紫进程的直行时它的直就是所在的文件名于是就可以通过条件判断来区分不同的直行方式增加了代码的灵活性和可为互行在初学变成时你当然可以不去用它或者简单地照护了画条但出于一名程序人的自我修养我们应该知己人跟这些所依然并在合适的场景下使用它让我们的代码更加露棒和优雅好了今天的视频就到这里我是Crossing想了解更多变成知识请点赞评论转发收藏下课
