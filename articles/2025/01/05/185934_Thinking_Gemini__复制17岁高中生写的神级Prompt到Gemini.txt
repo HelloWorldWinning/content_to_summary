@@ -1,0 +1,69 @@
+Timestamp: 2025-01-05T18:59:34.064142
+Title: Thinking Gemini| 复制17岁高中生写的神级Prompt到Gemini
+URL: https://www.youtube.com/watch?v=GkkWtA6MLXs
+Status: success
+Duration: 7:38
+
+Description:
+好的，这是对您提供的内容的总结：
+
+**1. 概述:**
+    *  一位17岁高中生创造了一个强大的提示词（prompt），能显著提升 Claude AI 的性能。
+    *  作者尝试将这个 prompt 应用于 Google 的 Gemini 2.0 模型，并取得了类似的效果。
+
+**2. 具体内容:**
+
+    * **2.1 原生 Prompt:**
+        *  该 prompt 被描述为“神级”，能使 Claude 表现出更高级的推理和问题解决能力。
+        *  该 prompt 的效果包括：
+            * 创建可玩的游戏 (如迷宫、Flappy Bird、德州扑克)。
+            *  展现清晰的思维链，能分解任务、提出假设、验证假设。
+    * **2.2 GitHub 上的 Prompt:**
+        * 20 岁的高中生 Richard Tu Jinhao 将该 prompt 上传到了 GitHub。
+        *  GitHub 上包含 prompt 本身以及 Chrome 和 Firefox 插件。
+    * **2.3 Gemini 2.0 的应用:**
+        *  作者由于无法使用 Claude 3.5 付费版，转而使用 Gemini 2.0。
+        *  通过替换 prompt 中的 "Claude" 和 "Anthropic" 等关键词为 "Gemini" 和 "Google", 将该 prompt 移植到 Gemini 2.0。
+        *  将修改后的 prompt 作为 Gemini 的系统指令。
+    * **2.4 Gemini 的实验结果:**
+        *  **音乐 Web App:** Gemini 能够根据指令生成一个简单的可播放音乐的 Web App，并展现清晰的思考过程。
+        *  **Flappy Bird 游戏:** Gemini 能够生成一个基本的 Flappy Bird HTML 游戏，即使没有提供图片素材。
+        *  **小说续写:** Gemini 可以根据 prompt 续写《1984》，并保持原有主题的深度，体现现代社会的关联。
+        *  **对比实验:** 在没有系统指令的情况下，Gemini 的反馈明显变差，内容空泛且简单。
+    *  **2.5 结论：**证明了“神级”prompt在 Gemini 2.0 模型中依旧有效。
+**3. 总结性结论：**
+
+*   **核心点：** 一个强大的 prompt 可以显著提升大型语言模型的推理和创造力，并且可以在不同模型间移植使用。
+*   **根本点：** Prompt 工程在充分发挥大型语言模型能力方面至关重要，理解和优化提示词是提升 AI 表现的关键。
+
+**4. 总体框架:**
+    *  **问题提出:**  一个 17 岁高中生创造的“神级”prompt 如何提升 Claude 的性能？
+    *  **实验探索:**  在 Gemini 2.0 上尝试使用该 prompt，并进行效果验证。
+    *  **结果分析:**  在 Gemini 2.0 上使用该 prompt 能够达到类似 Claude 的效果，证明 prompt 的强大之处。
+    *  **结论:**  强大的 prompt 在 AI 模型中非常重要，掌握 prompt 工程非常关键。
+
+**5. 概念图:**
+
+```mermaid
+graph LR
+    A[17岁高中生"神级"Prompt] --> B(Claude AI);
+    A --> C(GitHub);
+    B --> D[游戏开发,思维链];
+    C --> E(插件, Prompt文件);
+    D --> F(功能增强);
+    E --> G(Gemini 2.0移植);
+    G --> H(替换关键词);
+    H --> I[Gemini 应用];
+    I --> J(音乐Web App, Flappy Bird,小说续写);
+    J --> K[有效性验证];
+    K --> L(核心结论:prompt的重要性);
+    L --> M(根本结论:Prompt工程是关键);
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+```
+这个图表展示了内容的主要流程，从 prompt 的起源到在 Gemini 2.0 上的应用，并最终得出结论。
+
+
+Content:
+Today I saw a post where a 17-year-old high school student wrote a god-level prompt that directly strengthened Claude to a full-blooded O1. In other words, in Claude, he was given a god-level prompt. This function of Claude has been greatly improved. Let's look at some of the effects it has given, such as a maze game and a game called flappy bird. It can be played and some people have even made it into Texas Hold'em. It seems that it can also be played.  The game is over. What's the next song? It feels really strong. What kind of prompt is this? It's probably like this. It's very long. Basically, you can tell what he is doing by just glancing at it. It's a prompt for Claude. How should you go?  Think about how to carry out the next task, how to decompose the task, how to propose a hypothesis, and how to verify it. This is a very long prompt. What's more terrifying is that the author of this prompt is a person who was born in 2007 and is now 17.  Richard Tu Jinhao, a 20-year-old high school student, also put his promt on GitHub. So this is the address of the github project here. We can see that he put the instruction in this folder. Here is its prompt word. And we can see that it also has this plug-in. In addition to the Chrome plug-in, there is also a Firefox plug-in. If you are interested, you can try it. I am very interested in this prompt, so I want to try it myself, but unfortunately, I didn’t spend money to buy the license for Claude 3.5. I am using the free version, but the length of the context displayed by the free version is not enough, so I can't use its prompt. But I thought of a way. Instead of using Claude, I used Gemini 2.0 because Gemini 2.0  The length of its context window is also very long, and I can also embed instructions in Google's ai stuido. So what I do is this: First, I find the prompt template provided by the original author. In this template, we can see some keywords, such as Anthropic and Claude. These are the keywords of the Claude model. Then I replaced them all with either Google or Gemini. What was the effect after the replacement? It was roughly like this. For example, I replaced the sentence anthropic thinking Protocol with Google's AI thinking Protocol. Then I replaced Claude with Gemini and kept the rest as it is. Then I put the prompt into the system instruction of Google's AI studio for chatting with Gemini. After the system instruction was put in, I started chatting with him. My first experiment was to ask him to develop a web app that could play music by pressing keys and play Alice with a built-in template.  A short paragraph will do. From the feedback from Gemini, it is clear that after we put the system instruction in, it clearly expresses its thinking process. For example, let me think about how to develop a key-playing  Music Web APP, etc. His chain of thinking is very clear and he finally showed me such a basic APP. I debugged this framework a little bit. What is the final effect? Let's take a look at the effect. This is the interface of this APP. Let's click on it a little bit. Then let it  Let's put this Favourite Alice aside, it's just a short clip, it's okay. Then I asked him to develop a complete game called Flappy Bird. At the beginning, he used Passion to develop it for me. I said don't use it.  passion You just need to use a web page to make an HTML game. Finally, he gave me this piece of code. At the beginning, he asked for a picture. I said I didn’t have the picture. Could you please not have the picture and just give me the game to develop? He said it was OK but the effect might not be very good, etc. Then let's take a look at the effect of this game. This is the interface of the game he developed. This small one  The yellow circle is actually his flappy bird. It's a little bird that keeps jumping there. Let's see how this works. Restart. I click on the screen and it bounces up. My skills are really bad, but this  The effect is still good. He can really move in this game. Besides writing programs, I also asked him to try writing. I gave him a prompt and asked him to write a book about 1984 that takes place in modern society.  A sequel needs to extend the meaning of the theme of 1984 and still have strong references to modern society to express such an idea. Then he gave it to me and I think it is very well written.  It was a process of thinking. Then he conceived some protagonists and designed some scenes. He had an outline and also talked about what perspective he would use to write such a story. He also  I think the content of the first, second, third and fourth stages written in stages is very detailed. I feel that the effect of doing it this way is very good.  My friend asked me if I could achieve the same effect without the system instruction. I tried it and found that when I didn't give the system instruction at all, it was completely empty. He also wrote about the effect of writing. But the content is very blank and monotonous. The content is also very simple. The feedback is much thinner than before. So the god-level prompt just now is still in our Gemini's big model dialogue. I think it worked. That’s all for today’s video sharing. I also put the gemini prompt I used today on github. It’s in this project address. If you are interested in this prompt, you can look at this folder. This file contains the prompt I used when I was talking to Gemini.
