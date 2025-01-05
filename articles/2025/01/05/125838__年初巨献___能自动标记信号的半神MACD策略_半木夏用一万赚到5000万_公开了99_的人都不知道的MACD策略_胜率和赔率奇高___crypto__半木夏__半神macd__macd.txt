@@ -1,0 +1,83 @@
+Timestamp: 2025-01-05T12:58:38.429486
+Title: 【年初巨献！！】能自动标记信号的半神MACD策略，半木夏用一万赚到5000万，公开了99%的人都不知道的MACD策略，胜率和赔率奇高！！#crypto #半木夏 #半神macd #macd
+URL: https://youtube.com/watch?v=UxWe9T3kqlk&si=AnuUQggeK6hmkZhs
+Status: success
+Duration: 6:16
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**1. 核心要点：**
+    *   作者介绍了一种名为“半神MACD”的交易策略，并提供了一个自动标记MACD信号的指标。
+
+**2. 总结：**
+    *   **背景：**
+        *   该策略在YouTube上广受欢迎，简单易用，胜率高。
+        *   作者开发了一个自动标记MACD信号的指标，并授权少量用户测试。
+        *   该策略基于一个交易者从1万元本金赚取400倍利润的真实案例。
+    *   **指标：**
+        *   该指标基于MACD，用于确认价格趋势。
+        *   它通过观察MACD柱状图的连续增加或减少来寻找交易信号。
+        *   重点关注柱状图的峰值差异（而不是金叉死叉）。
+        *   指标使用 `ta.pivothigh` 和 `ta.pivotlow` 函数计算峰值，并过滤无效背离。
+        *   使用ATR计算止损点。
+    *   **交易规则：**
+        *   **多单：** 寻找MACD柱状图在零线下方，具有较大差异且连续上升的两个或三个谷底；同时观察K线是否连续下降。当MACD实心柱状图变为虚线柱状图时，标记买入信号，在关键K线的下一个K线开盘附近入场，止损设在关键K线的低点减去ATR值。
+        *   **空单：** 寻找MACD柱状图在零线上方，具有较大差异且连续下降的两个或三个峰值；同时观察K线是否连续上升。当MACD实心柱状图变为虚线柱状图时，标记卖出信号，在关键K线的下一个K线开盘附近入场，止损设在关键K线的高点加上ATR值。
+        *   止盈可以分批进行，例如风险回报比为1:1或1:2。
+    *  **总结**
+        * 该策略基于MACD的背离概念，并针对背离的有效性进行了优化，并使用ATR来辅助设置止损。
+
+**3. 核心结论（一句话）：**
+    *   “半神MACD”策略利用MACD柱状图的峰值差异和K线的对应关系，结合ATR设置止损，提供高胜率的交易信号。
+
+**4. 基本结论（一句话）：**
+    *   该策略通过优化MACD指标和背离概念，旨在提高交易的准确性和盈利能力。
+
+**5. 总体框架：**
+    *   **I. 策略背景和指标介绍:**
+        *  A. YouTube爆款策略，简单易用
+        *  B. 历史背景与案例
+        *  C. 自动化指标开发
+    *   **II.  指标原理与功能:**
+        * A. 基于MACD和背离的概念
+        * B. 峰值计算与过滤
+        * C. ATR止损计算
+    *   **III. 具体交易规则:**
+         * A. 多头入场规则
+             * i. 基于柱状图低谷的差异和持续上升
+             * ii. 对应的K线形态与确认
+             * iii. 止损设置
+         * B. 空头入场规则
+             * i. 基于柱状图峰值的差异和持续下降
+             * ii. 对应的K线形态与确认
+             * iii. 止损设置
+         * C. 止盈规则
+
+**6. 概念图（缩进层级结构）：**
+    *   **半神MACD策略**
+        *   **基础指标：MACD**
+            *   柱状图分析
+                *   峰值/谷底差异
+                *   连续增/减趋势
+            *   零轴参考
+                *   多头/空头市场判断
+        *   **核心概念：背离**
+            *   峰值差异分析
+                *   `ta.pivothigh` / `ta.pivotlow` 函数
+                *   比率过滤 (默认 1:1.2)
+                *   阈值过滤
+            *   连续背离识别
+        *   **辅助指标：ATR**
+            *   止损点计算
+        *   **交易信号**
+            *   多头信号
+            *   空头信号
+        *  **交易规则**
+            *   入场点
+            *   止损点
+            *   分批止盈
+
+
+Content:
+The Demigod MACD strategy has been viewed nearly 500,000 times on YouTube since its release. It is very popular. The strategy is also very simple and easy to use. The odds and winning rate are very high. I estimate that there are no people who use this strategy as a reference for daily trading.  There must be 8,000 of them. For your convenience, I made an indicator that automatically marks the MACD signal of the demigod overnight. I have authorized 100 friends to test the previous video, and fixed some loopholes. It has also been updated to the latest version of Pine V6.  You can leave your Tradingview username and 100 permissions will be authorized in chronological order. Here I come, welcome to the speculation laboratory. Some people may not know who is the demigod. In a word, this is a starting point with a capital of 10,000 yuan. At the peak, the real market alone had a profit of more than 400 times. The man whose assets were close to 50 million before he retired was very strong. Next, I will disclose all the strategies and indicators of the automatic marking of the demigod MACD to you. Remember to click the subscription button and stick to the end. Behavior may save your wallet this year. After you get the authorization, open the indicator search bar in Tradingview and find MACD in the invitation-only section.  Divergence can be added to the chart with a single click. The green energy column of MACD indicates bullish momentum. When it is below the zero line, the energy column is red, indicating bearish momentum. MACD can not only show which side controls the market, but also the comparison of long and short forces can be very intuitive. If the upward or downward trend gains a lot of momentum, the peak of the MACD histogram will become very high or deep. When the momentum weakens, the peak of the histogram will shorten. In this strategy, MACD plays a role in confirming the price trend. We can find trading signals by observing the continuous increase or decrease of the MACD histogram. In fact, it is the same as the concept of divergence, but there is a detail that determines success or failure. 99% of people don't know that is to find only the difference between the peaks. The default parameters of the indicator are that the length of the fast line is 13 and the length of the slow line is 34. The golden cross and dead cross are not used here. You can uncheck the automatic marking of the MACD indicator and use ta.pivothigh/ta in pine.  The pivotlow function calculates the peak, avoiding the need to redraw the indicator to confirm that there are two K-lines, that is, the signal will appear at the closing price of the first dotted line. However, when we watch the market, we can actually judge whether the divergence meets the strategy requirements from the first dotted line. In order to avoid invalid divergences that are too small, the peak size defaults to the MACD standard deviation.  The ratio between the two peaks is 0.1 times. The default ratio is 1:1.2. If the value is smaller than this, it will not be drawn. This can filter out invalid divergences . The threshold can control the noise. The default value is 0. Different-colored bars smaller than this value will be ignored. When there are three or more consecutive peak divergences, the indicator will show a green or red label and trigger an alarm. If you do not need continuous divergence, you can turn off the switch of continuous divergence in the settings. ATR mainly plays the role of calculating the stop loss point here. Parameters  Set to 13 This is our tool. It can provide us with very accurate entry and exit signals. Next, I will explain the trading rules with examples. This is the 15-minute chart of Bitcoin. The rules for entering long positions are that we first need to Find two or three MACD bar charts with large differences in troughs and continuous rises below the line. Three is the best. Here we first look at the example of three peaks. Then we find the K line corresponding to MACD. See if the K-line trough continues to decrease. If the conditions are met, the first column of the MACD solid column turning into a virtual column will mark a buy signal after closing. The K-line corresponding to the virtual column is the key K-line. We can  The entry stop loss range is near the opening price of the next K-line. Subtract the corresponding ATR value from the low point of the entry K-line to get the stop loss. Short orders also need to meet these conditions. First, find the stop loss above the zero line.  The MACD bar chart shows that the three peaks are very different and continuously decreasing. Then see whether the K-line peak corresponding to the MACD is continuously rising. After the conditions are met, a sell signal will appear after the first column of the MACD solid column turns into a hollow column.  The K-line corresponding to the virtual column is the key K-line. We can enter a short position near the opening price of the next K-line of the key K-line. The high point of the key K-line plus the value of ATR is our stop loss range and profit stop.  You can choose to take profits in batches when the risk-return ratio is 1:1, 1:2, or even higher. This is the divergence of the three peaks. This divergence has a high winning rate but occurs less frequently.  The most commonly used one is the divergence of two peaks. The MACD bull rule of two peaks is that the first step is to see whether the two columnar troughs below the zero line are very different and rise continuously. The second step is to see the K-line trough corresponding to MACD.  If the two conditions are continuously reduced, a buy signal will appear after the first column of the MACD solid column turns into a virtual column. The K line corresponding to this virtual column is the key K line. We can buy at the next K line of the key K line.  Enter long orders near the opening price of the key candlestick. The low point of the key candlestick plus the value of ATR is our stop loss range. Then set the risk-reward ratio of 1:2 as the profit target and wait for your wallet to start to get fat. Then you can go short. The first step is to see if the two columnar peaks above the zero line are very different and continue to decrease. The second step is to see if the K-line peak corresponding to MACD continues to rise. The first step is to see if the two conditions are met. After the column closes, a sell signal will appear. The K-line corresponding to this virtual column is the key K-line. We can enter a short order near the opening price of the next K-line of the key K-line.  The high point of the key K-line plus the value of ATR is our stop loss range. The profit-taking method is also batch profit-taking. Okay, trading is so simple. There is no investment advice in the entertainment program. Check whether you have clicked the subscription button to avoid missing more.  More profitable trading strategies. Good morning, good afternoon, good night, bye.
