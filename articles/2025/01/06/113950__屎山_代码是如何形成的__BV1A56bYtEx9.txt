@@ -1,0 +1,60 @@
+Timestamp: 2025-01-06T11:39:50.378645
+Title: “屎山”代码是如何形成的？ BV1A56bYtEx9
+URL: https://b23.tv/DtpNxmJ
+Status: success
+Duration: 4:49
+
+Description:
+好的，这是对你提供的内容的总结：
+
+**1. Outline and Structure:**
+
+*   **Introduction:**
+    *   程序员在接手维护老项目时常遇到的困境：难以理解的复杂代码，修改困难。
+    *   导致宁愿开发新功能也不维护旧功能的“冷跑”现象。
+    *   引出“屎山代码”的概念。
+*   **The Formation of "Shit Mountain Code" (屎山代码):**
+    *   **初始阶段:** 代码通常结构清晰，易于维护。
+    *   **需求增长:**
+        *   合理需求导致架构调整困难。
+        *   选择：
+            *   修改架构（长期可维护性，开发时间长）。
+            *   绕路实现功能（快速满足需求，牺牲可维护性）。
+        *   商业决策通常选择后者，即先满足业务需求。
+    *   **恶性循环:**
+        *   用户反馈好：新需求不断涌现，无暇优化架构，代码日益复杂。
+        *   用户反馈不好：代码保留，成为无用代码，技术债务增加。
+    *  **矛盾:** 商业决策和软件开发本身的矛盾导致代码走向 “屎山代码”
+*   **Challenges in Maintaining Code Maintainability:**
+    *   即使抛开商业决策，保持代码可维护性依然困难。
+    *   代码量和复杂性随时间增加，个人难以了解全局逻辑。
+    *   认知局限性导致无法保证代码正确性。
+    *   即使有架构设计、编码规范等，在实际开发中难以发挥作用。
+    *   技术过时：新的开源技术可能轻易超越旧系统。
+*   **Conclusion:**
+    *  软件开发没有银弹，增加是事物发展的必然结果。
+    *   需要通过规则在项目生命周期内尽可能保证其可维护性。
+    *   强调合理架构设计、编码规范、代码审查、文档等重要性。
+
+**2. Core Point:**
+
+The accumulation of "shit mountain code" is an inevitable consequence of the conflict between business pressures for rapid development and the need for maintainable software, compounded by human limitations and technological advancements.
+
+**3. Fundamental Point:**
+
+While perfect maintainability is unattainable, adopting disciplined practices throughout the software lifecycle is critical to mitigating the accumulation of technical debt and maintaining code health.
+
+**4. Overarching Framework:**
+
+The content presents a problem-solution framework. It starts by identifying the problem of difficult-to-maintain "shit mountain code," explores the reasons for its formation, explains the inherent challenges in maintaining code maintainability, and concludes with possible solutions to mitigate the issue.
+
+**5. Conceptual Map:**
+
+```
+Initial Code Quality -->  Growing Business Needs  --> Difficult Architecture Changes --> Choices: (1. Re-architecture; (2. Quick Fix) --> Business Priority (Quick Fix) -->  Code Complexity Growth -->  Technical Debt Accumulation  -->  Maintainability Challenges  -->  Need for Disciplined Practices
+
+```
+
+
+Content:
+Hello 大家好这不是要快点的嘛咱们来聊点轻松的相信所有的陈学雄要都有过这样的经历给了Boss的让你接手维护魔不项目随后你发现这个项目的某些功能维护起来非常的困难甚至无法理解有的功能逻辑为什么会写成现在这个样子但是却能够正常的运行于是你每修改一个功能都需要非常的小心翼翼时间球你就会发现与其维护这个功能不如利用现有的数据开发一套新的功能出来反正能满足业务需求也就是我们常说的冷跑就行怎么样大家是不是都遇到过这样的情况呢针对上述这种情况我们俗称在史三上拉斯为什么这么说呢我们想一想如果有一天这份代码交给其他人来维护他现在面临一个问题就是有一个功能有两个相似的接口两个接口冷访会相似的数据但又不完全相同那么他应该如何维护这份代码呢这也是史三代码形成的原因之一在新旅学上我们叫他破创效益这如果一份代码已经难以维护那么我们通常更可能放松对代码智能的要求进一步的破坏代码的可维护性好啦回过头来我们来思考一下史三到底是如何形成的要知道每个程序员在从民到医涉及自己的项目的时候都是会做精心的涉及的并且还会以一种富有基辛精英球精的态度去写代码因为创造新的事务是快乐的项目创立的初期无论是从业务量还是代码量相对来说都是比较少的而且是合理的容易维护的但是接下来你的用户增长了业务需求也增加了我们抛开尾需求不谈即使是合理的用户需求总社会出现一些加构涉及初期是没有想到的地方这些地方修改起来通常来说是比较困难的需要调整架构在这种情况下我们通常有两种选择第一修改架构合理的架构可以带来未来的可维护性但是需要更长开发时间第二我们绕路实现功能牺牲一些可维护性但是可以快速的满足需求好了大家会怎么选呢大家的公司会怎么选我相信我们在面临这种选择的时候听到最多的话就是先满足业务需求后面再进行优化比如说上线后我们看看用户防馈如果用户防馈不错我们再做优化如果用户防馈不好那就没有必要改架构浪费时间了其实是从商业和公司的角度来说这个事情这个决策挑不出什么毛病商场如战场在这个极度内卷的时代对手和用户是不会等产品的但是从软件开发的角度来说史山就是这样慢慢形成的以上数的情况为例如果用户防馈很好那么新需求会一个接著一个的到来几乎不可能给你机会做架构的优化和升级只能在现有的功能上做跌在开发这样技术在也就越来越大了最终形成了史山代码如果用户防馈不好通常情况下也不会马上删除这份代码你看无用的代码就这么增加了但是新需求还是会继续要做技术在还是越来越大最终形成的史山代码我们可以发现从节发展和软件开发的角度来看本身就存在了一些矛盾这也助使代码朝著史山的方向发展好啦即使我们抛开喜业决策对于代码开发的影响让软件代码具有持续的可维护性也是一件非常困难的事情因为随著软件代码跌代代码量会越来越多越来越复杂总有一天一个人不可能了解到软件内部所有的逻辑和功能那么问题就来了在不了解全局的情况下很难保证代码的正确性因为一个人是不可能保证对未知事物认知的正确性的这是人乐局现性合理了架构设计编码规范完善的代码审查充分的文档和注视给有效的让软件更容易维护但是在巨大的代码量复杂的又逻辑多人的开发团队紧张的开发时间面前显然这些是有些无力的更何况我们的技术可能过时我有个朋友曾经告诉过我他们的团队以前精心维护了一套会议系统但是在Google的外巴RTC开源后一个新的团队使用外巴RTC做出来了新项目可以很容易地就超过他们的会议系统的效果总之无论从企业的决策需求的负财度人乐局现性上看想将项目保持在可维护的状态是非常困难的一件事情就像商增定率是宇宙都无法避免的无需的增加是事物发展的必然结果这也硬正的软件开发了一条铁率软件开发没有银弹我们能做的就是通过合理的规则在项目的整个声明周期内尽可能地保证其可维护性那么我们上面提到的合理的价格设计和变满规范完善的代码审查充分的文档和注视就显得尤其的重要了好啦以上就是本期视频的全部列容了如果对自己的家性能优化软件调适感兴趣欢迎加入粉丝群我们一起讨论最后祝大家二零二五年信念快乐新的一年远离史三代码
