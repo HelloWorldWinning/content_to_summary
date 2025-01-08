@@ -1,0 +1,96 @@
+Timestamp: 2025-01-08T20:34:10.935472
+Title: 職場救星-AI Agent + n8n &amp; NocoDB 打造 10 倍數據洞察，圖表視覺化秒完成 d3bWrYAkyuE
+URL: https://youtube.com/watch?v=d3bWrYAkyuE&si=J8XobiQ8AIUyUs0y
+Status: success
+Duration: 35:01
+
+Description:
+Okay, here's a structured summary of the provided content, along with the requested elements:
+
+**I. Core Ideas**
+
+*   **Data Analysis with AI Agents:** The primary focus is demonstrating how to use AI agents within an automation platform (N8N) to analyze data from various sources (financial and key metrics).
+*   **Data Source Flexibility:** The system handles data from local databases (NocoDB) and, as a backup, retrieves information from the web using perplexity API.
+*   **Customizable Queries:** The system uses natural language processing to translate user questions into database queries (SQL-like) to retrieve specific data based on user needs.
+*   **AI-Powered Visualization:** The system generates various charts and graphs based on user questions, using `QuickChart.io`, and allows for adjustments based on user feedback.
+*   **Data Streamlining:** The process automates data gathering, analysis, and presentation, saving users time and increasing efficiency.
+*   **Double Data Source Handling** Two types of data, financial data and key matrix data are handled by two different tables. AI will route to either of the two tables based on the question.
+*   **Learning Community:** The presenter offers a community (AIScoer) where users can learn and share pre-built workflows and templates for their use case.
+
+**II. Summary Outline**
+
+1.  **Introduction:**
+    *   Traditional data analysis tools can be difficult to use with data residing in various sources (Excel, Google Sheets).
+    *   This video demonstrates using AI to easily analyze data through natural language.
+2.  **Core Components:**
+    *   **Data Sources:** NocoDB (local DB), Perplexity (web data).
+    *   **AI Agents:**
+        *   Classifier: Routes questions to financial data or key metrics data paths.
+        *   Data Fetcher: Retrieve data from local DB or the internet.
+        *   Analyzer: Translates user questions into database queries.
+        *   Chart Generator: Creates visualizations using QuickChart.
+    *   **Tools:**
+        *  NocoDB: local database.
+        *  Perplexity API: Web-based data source.
+        *  QuickChart.io: Chart generation service.
+    *   **N8N Workflow:** Orchestrates the entire process.
+3.  **Process Flow:**
+    *   User poses a question in natural language.
+    *   AI agent classifies the question.
+    *   Data is retrieved based on question.
+    *   AI agent generates and displays graphs, charts, or tables.
+4.  **Detailed Demonstrations:**
+    *   Retrieving financial data for Apple and NVIDIA.
+    *   Drawing line charts and bar charts.
+    *   Comparing multiple companies on a single chart.
+    *   Retrieving data through a backup data source when it's not in the local database.
+    *   Comparison of different chart types: line, bar, radar, and bubble.
+5.  **Community & Learning:**
+    *   AIScoer community provides ready-made templates and workflows.
+    *   The community focuses on practice and consistent learning.
+
+**III. Key Conclusions**
+
+*   **Core Point:** AI agents, when integrated into an automation workflow, greatly enhance data analysis by making it accessible, efficient, and flexible.
+*   **Fundamental Point:** Automating data retrieval, analysis, and visualization with AI enables users to gain insights from their data more quickly and with less manual effort.
+
+**IV. Overarching Framework**
+
+The overarching framework is an AI-powered automation pipeline built using the N8N platform. The pipeline connects:
+  1.  User queries in natural language
+  2.  AI agent to classify the question type.
+  3.  AI powered data fetcher
+  4.  AI agent to analyze the data based on questions.
+  5.  Chart generation engine.
+  6. Presentation of final results.
+
+**V. Conceptual Map (Mermaid Diagram)**
+
+<Mermaid_Diagram>
+graph LR
+    A[User Question] --> B(AI Agent Classifier);
+    B -- Financial Data --> C[Fetch From Local DB - Financial];
+    B -- Key Metrics Data --> D[Fetch From Local DB - Key Metrics];
+    C --> E{Data Analysis Agent};
+    D --> E
+    E -->|Local DB Data| F[Data Analysis & Query Generation];
+    E -->|Perplexity Backup| G[Fetch Data from Perplexity];
+    G --> F;
+    F --> H(Chart Generation AI Agent);
+    H --> I[QuickChart.io API];
+    I --> J(Display Charts);
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:1px
+    style C fill:#ccf,stroke:#333,stroke-width:1px
+    style D fill:#ccf,stroke:#333,stroke-width:1px
+    style E fill:#ccf,stroke:#333,stroke-width:1px    
+    style F fill:#ccf,stroke:#333,stroke-width:1px
+    style G fill:#ccf,stroke:#333,stroke-width:1px
+    style H fill:#ccf,stroke:#333,stroke-width:1px
+    style I fill:#ccf,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+这边问他说 Apple 营收大于3000美金的年份这边他都是走上面这一条路表示他判断他是财务数据因为我是问他EPS所以你就会看到他是取限的图表这边大约20秒的时间数据回来了我们来测一下雷达图那比较这两家公司在2024的R1,R1跟附载率好 像这边就是雷达图我再来测一下巴伯图巴伯大小是用银艘所以你就会看到这里的X走跟Y走都有按照我的要求然后你会看到银艘越大的泡泡越大来 大家数据就是21世纪的黑金那你一定有很多Data是存在XaleGoogleShit 甚至是传统的观点式资料库里面那这几影片将会告诉你怎么样透过AIAG的方式来很轻松的利用自然语言去分析你的数据那如果我已经看过我的影片老观众应该对于RH都不陌生那RH其实他比较适合用在PDF或是Word这种以大量文字的文件为主那如果你有用过RH的话你一定会有一个深刻的痛点就是假如我今天的数据不是PDF这类的文件而是我有大量的Data像画面中这类的不管是Xale或是GoogleShit的数据可能是你的销售数据可能是生产上面的Data那即使我之前的AIG是可以处理Xale它会把这些数据转成这上的格式纯净相量资料库但是我们来看一下这些数据那你就会看到像这个是第一笔资料它是有表头的但是后面的数据是没有表头的那光用想像的你到时候用AIG去查询的话几乎很难查到数据那就算你把每一行的数据都把表头塞进去虽然说这样子可以提升找到数据的机率但是也可以想像它的准确率也不会到太好那如果你今天的Xale的资料是类似像这样它比较适合拿来做克服的像Lybo或是你网站上面的Q&A的资料那像这一类的资料即使你放在Xale里面准确率也会很搞为什么因为它是一个question配一个answer但是跟这种数据的情况就完全不一样因为它不是以问一答一个问题一个答案的资料格式所以我们就来测试一下例如我查询2024年Apple的营收看看查不查得到数据那这里你就会看到它有提到它找不到Data那这个其实已经是有包含表头的数据因为你看Apple在这里然后2024年好那我来换另外一个公司例如MVD我们来查查看能不能查到数据那这边你可以看到它有查到数据但是这个数据其实是我之前会进去PDF的采报的Data那为什么我会知道它这个数据是从采报来的呢从这里然后你可以看到这边它有列出所它的数据是从这一个片段来的因为RH它就是会先把你的文件里面先拆成一小块一小块那像这边就是其中的一小块然后像亮化之后再拆进像亮式条库所以这边测试下来的结果其实是满不理想的那今天我要Demo的数据也是跟美股的财务数据相关那这个数据怎么来呢之前我也已经介绍过非常多次非常推荐FNP这个App里面有相当大量金融的数据那你要捞这些数据你总需要有个介面或者你要写个拍照的小程式不过现在其实不用这么麻烦了之前我也有介绍过这款RipLab的AICoding工具那大家如果感兴趣的话你可以复制我这个Prompt那大约很快3到5分钟你就可以建立起来一个查询的介面简单我用30秒的时间介绍一下我的长期赞助上Interactive Brokers银透证券作为全球最大的网路券商之一我使用IB已经超过10年了它是我主要的投资平台为什么选择IB呢因为它提供了左右的专业服务和用户体验IB的核心优势包括1 24小时全天后交易超过1万档的美股和ETF有效应对突发市场事件2提供0岁股交易最低仅需一美元几个投资高价3单一赞护可交易全球高达150个市场的多样化金融商品4衔质资金享有最高4.83%的利率最大化你的资金效益5直观的选择权交易界面便与执行复杂的策略和转舱操作6最新的创新Focus Trader功能让市场预测转化为实际的交易机会强烈建议你点击下方连结深入了解 Interactive Brokers选择IB不仅是名字的投资决策也是对本频道的支持哦所以像这边我这是把我的需求贴进去然后直接告诉他说你可以去用哪个API那像这里我有把Document给他参考那中间的过程就是我跟AI的互动了我会告诉他说我还需要什么蓝卫或者是我还需要什么功能等等等等所以我就可以很方便来在这边把我想要的投票单号打进去然后按下按钮他就会把数据抓回来那这边的话我抓了两类的资料上面这个表格呢是跟财务数据相关的例如营收啊尽力啊等等这类存数字的然后下面这里我还有多拉了Mathrix就是指标类的例如指力率啊本义比啊OE啊OIC等等的这类指标类的数字那这里我都有设置按钮所以刚刚大家看到的这个数字就是这样子很轻松的就可以把数据捞回来那当然未来你也可以设计成自动化就是我固定不断的一直去把新资料塞进资料库那这样子也会很方便你未来指距利用N-BAN上面的AI一卷去帮助你分析你的Data那数据有了之后呢推荐大家使用一款免费开源的资料库而且他现在非常的佛心如果你的数据量不够大小于一万比的话也是3那他现在包括Tim版跟Business版都是3当然我不知道他什么时候会开始收费但即使如此你使用3版也可以满足满多人去分析资料的需求了那他使用的方式也非常简单你一开始你有了CSB之后就按下Import Data然后就给他CSB档案那像他也可以连结AirTable或是Xail跑其他的数据而且还更棒的是他的整合这边如果你本身原本就有在用关联式资料库的话他有资源连接你的买系统跟PortSquateSyco所以他是一个非常非常方便的DataBase满推荐大家使用的那为什么推荐一定要使用这类的关联式资料库呢因为这种资料库你才可以下Syco就是一种资料库的查询语言你用Xail或者是Google Suite都比较难做到这一点那如果可以去下查询语言的话你在做资料分析的时候就可以让AIAgent去帮你很方便的把资料抓出了待会我们再看Agent的细节的时候等一下会看到他的语法像是我们来看一下他的文件这里有提到就是你可以透过他的AI然后去下向这个会儿的条件你就可以针对某一个条件比方说大于多少小于多少等于多少然后你也可以把你的每个两位例如时间区间、日期等等的都可以放进这个查询条件里面你就可以更精确地去捞出你想要的数据那老观众就知道我都会把我的范本放在我的AISgoer社群里面包括这个劳资料去抓FNBA API的城市嘛以及今天N8N上面的AIAgent我同样都会放在Sgoer社群里面那因为今天的案例他是比较进阶一点所以我会把它放在Label Fold讲立里面那升级到Label Fold是需要花一些时间的所以如果你没有心想要好好的学好AI自动化的技能的话千万不要加入我的社群因为这个社群不是像线上课程你付了一笔钱然后很快的你把课程看完然后你可能也没有实作这个社群主打的是实作而且长期式的备办我会帮助你渐进式的慢慢打好你的基础而不是以下把一堆东西都丢给你然后把你轰炸的失去信息此外除了有各式各样的应用的模板之外更棒的是我还会持续新增主体式的课程像这个是Mac加AirTable非常完整的课程然后陆陆续续我还会加入其他相当的方式或者是Flowwise这类的主体式课程那你只需要每个月付79美金你就可以持续学到新的内容所以也不用担心你学的东西会过时所以再次强调如果你没有新学习的话千万千万不要加入我的社群因为你进来之后再跟我RQ也是让费大家的时间好 那我们就直接进入今天的案例怎么样利用AIA园去帮你分析你的数据那数据就是黑金那从数据当中你可以动查到非常多可以帮助你公司的营业跟顺利帮助你公司的生产的两率更好好 那我们进入今天的案例首先一样告诉你一下整个流程一开始你的chat就是你要问的问题进来之后这边做一些参数的设定那比较不一样的是因为我这一次有用到两个资料园哪两个呢一个就是财务的数据Finalntual Data另外一个是key matrix刚刚就有提过是指标类的数据我把它分在不同的 table里面所以第一个AIA园这边它会帮我判断现在使用者问的问题是跟财务相关的还是跟指标相关的那这边就会做分流其实比较大的差别会是在他们的 tableID会不一样所以这边分流主要会根据不同的 tableID你到时候在呼叫 API的时候它会根据不同的 tableID去把对应的 table的资料抓回来那这两条路其实只会选其中一条走所以我这边把它 merge起来会比你如果没有这个东西的话你到时候进到 AIA园很容易产生一些错误那接下来就把这些参数资料丢进数据分析式里面那先来看一下它下面有的兔第一个就是去 local db 抓资料然后再来的话你会看到这里有一个 fetch perplexity那如果还有印象的话这个是上一部影片刚做出来的新功能你看到这里也有一个 fetch perplexity那它就是我们上一部影片在 flowwise AI里面做的新的助理那如果你不知道这个 assistant有多好用的话可以去看一下这部影片复习一下那这一个助理它其实里面包含了非常多的功能它一样会去我的下量资料库里面抓资料然后下面这里我还有配给它各式各样的兔它可以去帮我做技术分析然后也可以用 perplexity去网路上面找资料或者帮我从 Yahoo Finance 抓选择选的数据那为什么这里要多一个 perplexity的工具呢我一样是做备员因为我的 local db 里面的资料比方说我有微软的有 nvdr的但我可能目前里面没有 Walmart 或是 Costco 的 data那这时候我就可以调用我的备员的数据员就是从 perplexity 去帮我从网路上面找那这样子就可以帮助我在做数据比对的时候即使我的 local db 里面没有这家公司的 data我还是可以做分析当然从网路上面查的数据一定没有你自己的 database的资料来的准确所以在使用上面自己要稍微留意一下这个就是增加一个方便性那当然如果你的 local db 里面数据非常的丰富了全部都从 local db 来绝对会是最准确的最后一个 tool 就是专门画图的那你看到这个图示就知道它是呼叫 n8 里面的workflow那它呼叫workflow就是下面这一串所以这边就是它使用的三个 tool那 agent 里面的 prompt 我们待会再来看再来介绍一下画图表的部分那这里主要会用到画图表的工具是非常有名的quick chat那quick chat 它的好处就是你只要把图表的参数给它然后直接呼叫quick chat 这是它的文件后面这边就是图表的参数所以你看它这里也有案例你就是固定前面这边都是quick chat 点 i 哦然后恰的问号然后后面这边这一串就是跟图表有关的参数像是 label 然后你的 data 的数值等等所以这里的 aiag 的工作呢它就是帮你把后面这串东西组出来然后丢给quick chat 它就会反回你一张图片那再来我们就来看一下里面的细节那这边刚刚就有提到 根据 user 的提问帮我区分成两大类好 先用 aiag 帮我分类然后这边是 switch 它就可以根据 ai 回回来的然后去分成两条路 是 financial 的还是 matrix那这个就可以从这边去做分流那这里也可以看到这个动作就是去Noco DB 把资料抓回来那资料抓回来之后呢 还要做一个动作我们会去把他的表头存下来那为什么要存下表头呢因为到时候我们还要传给后面这个 aiag 就是在这边让他知道说我的资料两位有哪些然后我在读取Noco DB 的时候在这边有没有 我会告诉他说怎么样去做资料的筛选所以这里的 expression 我有告诉他说例如N1Q 就指的是 not equal然后 gt 就是 greater than那这个其实就是对照著刚刚给大家看的这份文件指的就是这件事所以下面这里我也有举例有没有Revenue GT 指的就是营收大于这个数字或者是营收小于这个数字或者是营收 eq 就是等于某个数字或者是某个年份等于2024 或等于2023之类的所以这个就是为什么这里要把狼位给他这样子到时候 aiag 就知道如何根据你的问题然后再加上你有给他狼位的名称他就可以准确的去帮你下资料库的查询语言好 再来看一下数据分析师的 prompt这里比较重要的是这两段第一个是资料读取的质疑主要就是告诉他说主要用 no code DB来找那如果找不到的话才用 perplexity来找资料然后画图的话就是当使用者有提到关键字画图或是视觉画的时候用 generate 查来画图然后深圳图的时候最后要把图片的 url 放回给我这样子我们在画面上面才可以看到画出来的图表再来的话我们来看一下 no code DB这边刚刚有秀过就是告诉他说怎么样去下资料库的查询语言然后 perplexity这里这里就是 flowwise的 api 的位置就是我们在 flowwise 这边然后到 cursory可以去找到 api 的位置然后下面这边就固定要传入 hader 参数然后这边就是使用者在聊天室床要问的问题然后这里因为他的 walkthrough 是同一直所以你只要打新号 walkthrough 点 id 就可以了然后最下面这边就是到时候要传去给画图的 agent 的资料格式那给大家看一下他就是会根据你想要画的图比方说是长条图还是泡泡图然后你的 exx 找是什么外找是什么还有你的数据有哪些这些东西就会变成一串嘴上就像这边是一个范例有没有这里他就有很清楚的去写下跟要会图有关的所有资讯那这个当然是数据分析十 agent 写出来的那在最后就介绍一下画图的 agent那他的重点主要是在里面的 prompt这里就是提到输入的要求包括什么格式 文字大小 标题 等等然后做标的资讯应该包括 exx 找是什么外找是什么然后你的单位是多少然后输出的内容是个 j 上格式而且是可以给差点 j 使用的格式所以这边我有做一个范例就告诉他说如果你要画一个五年的销售数据的长条图的话那下面就是显示年 然后销售额那 exx 找是年份 外找是销售额给他一个案例 aiag 它通常就会做得更好那最后就是一些额外的规范那 structure output parts 顾名思义就是告诉他反回的资料格式要长什么样如果你没有设定的话你会发现你每次反回的资料格式都不太一样那如果你需要固定的资料格式再去做下一步动作或者是你要再去解析里面的内容的话固定的资料格式一定会比较好用那下面这一串一场串这个就是官方提供的 scheme那最后我们就是把 aiag 它会重新在把图片所有的残数它会转换成稍早我们在官方文件这边看的这一种这种格式然后在前面接著quickchat.io 的这个网址就接在它后面然后像我这边是讲图片的宽度是无法那后面这一场串就是前面这边 aiag 把图表里面所有的残数全部都放在这个j-上alput里面所以这样一整串网址打出去之后它就会返回一张图片回来给我们所以到这边整个流程都介绍完毕再来就是比较有趣的 Day Mode 部分那我们先来做个简单的测试这边问他说 Apple 营收大于3000美金的年份那这里我们看一下它这里会去NocoDB那这个就是我讲的 aiag 会帮我们组资料的查询语源所以你会看到它有提到 symbol 就是股票大号是 Apple然后营收 greater than 3,000亿美元那这个是很简单的案例再来我也可以问他说 2020-2024 Apple的全年 EPS 多傻那这里我们可以先看一下这边它都是走上面这一条路表示它判断它是财务数据因为我是问它 EPS那待会我会做一些其他不同的测试它就会走下面这一条路接著你可以直接问它那 NVIDIA那其实因为 aiag 很聪明它就会知道你其实是在问 EPS然后营 2020-2024所以它也是列出这五年的 EPS接下来我请它画图表那图表就会稍微等久一点点它会约二三十秒左右这里我有特别告诉它我是要用 line 的图表就是线图所以你就会看到它是曲线的图表这边大约20秒的时间数据回来了你也可以直接跟它说改用爸的图表来比较好这边回来了图表就已经改成长条图了再来比较有趣的是我直接跟它说加入微软一起比较那它就会等一下你看到右边这边它会去读三次 no code db因为变成三家公司了原本有 Apple NVIDIA现在再加上微软因为我们这里是有八分 memory的所以它其实只多去读了微软的 data那这样当然是比较聪明不用一直重复做一样的事情那下面就可以看到结果现在微软已经被加进来了再来我们来做一个更有趣的测试这个是 cusco那我的 no code db里面并没有 cusco的 data所以我这里有讲说它是会用到 perplexity那后面这边其实不用因为它自己会判断等一下你就看它找得到它等一下会去引用这边的 api那就是因为它发现这里看到它说一样找不到正常它应该要去读 perplexity那我刚刚有稍微修改一下prom那我们再重新试试看这一次它就有去调用fetch perplexity的 tool应该就可以抓到资料不过必须讲一下如果你今天是要抓这种几年到几年的其实用 perplexity没有那么好抓资料所以有时候其实是会有问题的因为它毕竟是上网站去查所以你看像它这一次虽然说有查到但是只有查到2024年的所以我们在测最后一次看看这个就是你上网去查除了说你要担心资料的正确性比较有疑虑之外还有可能在查询多年的资料范围里面会很容易找不到资料你如果单一单一年或者是查某一年的某一个记录的资料的话还比较容易查到那我们一样来看2024年有找到但是其他年份它还是找不到那我们再来做另外一个测试好了欢迎加工师加入 Warmer试试看这里我有点拼错不过AI都看得到倒不是太大的问题比较大的问题在数据这种多年一次抓的 perplexity在这方面比较弱那我们就等吧那你看这边其实它一样只抓到单一年度那不然我在补充一下好了我就写说2020到2024eps这样子可能会有帮助ok bingo这一次就有顺利了吧Worma五年的data全部拿回来所以这边就是测试让大家看到说当它资料在NocoDB找不到的时候我的备案就是去 perplexity找那接下来我们来测另外一种case就是去看它是不是能够根据我想要查询的数据然后去判断出应该走上面这一条路还是下面这一条路因为它的Table是不一样的一开始我问一下营收那营收是属于上面这一个Table所以你看到它是走上面这一条路所以是正确的那接下来我就问它R1R1属于指标所以它会走下面那接下来我就问它那NVIDIA怎么样然后最后我就请它比较一下这两家公司的R1那在画图的同时呢跟大家补充一下因为我的这个Scenario是有可能会走上面或下面所以你在询问的时候最好可以把问题写得比较清楚例如我这边有讲比较两家公司的R1或者是像这边好有包NVIDIA其实比较好的写法应该是写完整让AI清楚的知道说你想问的是哪家公司以及哪个指标那是因为我这里有这样子双数据元的设计如果你今天只有单数据元的话其实你问的过程可以比较轻松例如这边好有包2020到2024你也不用再写更清楚让它知道说是指什么就是你可以问得比较随意那有一些关键词比方说年份也好然后是哪个数据也好你都可以比较轻松的去写但是因为我今天就是有这样子的设计所以想要回答的精准的话最好就是都写得很清楚否则如果没写清楚的话它就有可能走错应该走下面的走到上面应该走下面的然后也走到上面就是就会比较不可控制那这边R1的部分我们已经画出来了最后我来做另外一种不一样的测试我们来测一下雷达图那比较这两家公司在2024的R1、R1跟附载率那这个测试主要就是让大家看不一样的图片类型好像这边就是雷达图那你就可以以更方便的拿来多微度的比较多家公司再来的话我再来测一下巴勃图那你看像我这边也写得比较清楚有没有我有写说这几家公司然后我后面把公司都带出来那这个就是我讲的写得比较细那比较轻松的话就是只要讲说使用巴勃圈重画那其实AI就听得懂主要就是如果刚刚讲的因为我这边有做了双数最远的测试所以变成在下指定的时候要写得更清楚像我这边连这个营收都有写出来所以这个刚好是做一个很好的案例那这个案例同时也有特别提到说X轴是什么Y轴是什么然后甚至告诉他说巴勃大小是用营收所以你就会看到这里的X轴跟Y轴都好按照我的要求然后你会看到营收越大的泡泡越大那当然你可以把泡泡的大小又改成其他两位这样子你就可以有一个围度两个围度然后加上泡泡你就可以有三个围度所以透过今天我Demo的这个案例之后你都可以很轻松的利用AI来帮你分析资料以及绘制图表那当然像CheckGPD或者是Cloud自己内建都可以做资料分析但是你利用N8这样子的自动化平台你可以把这件事情整个融合在你的自动化工作流里面例如你后面还可以再去串把资料传到G-Mail或者再去把资料传到你的额外的DataBase或者是去串你的通讯软体等等等等的所以这个跟单纯的去使用像CheckGPD里面内建的DataNalysis的功能是完全不同等级的应用相信今天的案例可以大幅提升你做资料分析的能力帮助你数十倍杠杠AI提升你在工作以及学习上面的效率你也有在使用AI自动化工具吗欢迎你在下方留言经验跟我分享如果你想要持续经济AI技能推荐你看上方这些影片最后别忘了按赞订阅开启小铃铛不错过我最新内容我们下次影片再见掰掰
