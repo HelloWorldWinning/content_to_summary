@@ -1,0 +1,3352 @@
+Timestamp: 2025-01-09T01:26:47.017153
+Title: 吳恩達探討 AI Agent 和代理推理的興起 | BUILD 2024
+URL: https://youtu.be/osJuf_X9ibk?si=ce6Z0cj_RXl7QWIk
+Status: success
+Duration: 26:52
+
+Description:
+好的，这是对您提供的文本内容的总结：
+
+**Outline and Structured Summary:**
+
+1.  **Introduction:**
+    *   欢迎回到雪花，现在是成为建设者的好时机。
+    *   分享对人工智能机遇的看法，人工智能如同新电力，具有广泛应用潜力。
+
+2.  **AI Stack and Opportunities:**
+    *   AI 堆栈底层是半导体，向上依次是云信息（如 Snowflake），基础模型。
+    *   技术层面讨论激烈，但真正的机遇在于应用层。
+    *   应用层创造价值和收入，支撑底层技术提供商。
+
+3.  **Rapid Development with Generative AI:**
+    *   生成式AI加速了机器学习模型开发。
+    *   过去需要数月构建的AI系统，现在几天即可完成。
+    *   快速实验成为发明新用户体验的重要途径。
+
+4.  **Evals as a Bottleneck:**
+    *   评估(evals)正成为构建AI系统的新瓶颈。
+    *   测试数据的收集变得与开发并行。
+    *   需要对评估方法进行创新。
+
+5.  **Agentic AI Workflows:**
+    *   最令人兴奋的趋势是代理AI工作流。
+    *   零样本提示，让AI直接输出，效果并不好。
+    *   代理工作流使AI可以进行更复杂的思考和研究。
+    *   代理工作流能处理法律文件、医疗诊断和合规性文书等复杂任务。
+        *   主要设计模式：
+            *   反射：AI评估和改进自身输出。
+            *   工具使用：AI调用API来执行任务。
+            *   规划/推理：AI选择一系列操作来完成复杂任务。
+            *   多代理协作：不同AI角色协同完成任务。
+        *   视觉AI的代理：可处理图像和视频数据。
+            *   可以编写代码来创建元数据和索引视频。
+
+6. **AI Trends to Watch:**
+    *  Token Generation:  加速 Token 生成，通过半导体、软件和硬件等方面的努力，促进代理工作流。
+    *  Tool-Tuning of LLMs：大型语言模型(LLM)不仅为了回答人类问题，还要支持工具使用，这将改进代理工作流。
+    *  Data Engineering：数据工程的重要性日益增加，尤其是在管理非结构化数据方面。
+    *  Visual AI Revolution：图像处理革命正在到来，将使企业从视觉数据中获取更多价值。
+
+7.  **Conclusion:**
+    *   现在是成为建设者的好时机，Gen AI 加速实验。
+    *   Gen AI 正在扩展可能性，包括视觉 AI。
+    *   鼓励大家尝试Landing AI的视觉AI演示。
+
+**Core Point (One Sentence):**
+The most significant opportunity in AI lies in developing applications using agentic workflows, which are significantly accelerated by generative AI and supported by improvements in areas like data engineering and visual AI.
+
+**Fundamental Point (One Sentence):**
+Rapid experimentation, particularly in the application layer of AI using agentic workflows, will unlock value and drive innovation.
+
+**Overarching Framework:**
+
+The content presents a structured view of the AI landscape, progressing from fundamental infrastructure to advanced applications. It emphasizes the shift from a focus on core models and technology towards application development, highlighting the role of agentic workflows as a key technology enabler. Furthermore, it stresses the importance of faster iteration cycles, data management, and the emerging potential of visual AI.
+
+**Conceptual Map (Beautiful Mermaid Map):**
+<Mermaid_Diagram>
+    graph LR
+        A[AI Landscape] --> B(AI Stack);
+        B --> C[Semiconductors];
+        C --> D(Cloud);
+        D --> E(Foundation Models);
+        E --> F(Application Layer);
+        F --> G{Agentic Workflows};
+        G --> H[Reflection];
+        G --> I[Tool Use];
+        G --> J[Planning/Reasoning];
+        G --> K[Multi-Agent Collaboration];
+        F --> L(Rapid Development);
+        L --> M(Generative AI);
+        M --> N(Prototyping);
+        A --> O[Bottlenecks]
+        O --> P(Evals);
+        A --> Q[AI Trends]
+        Q --> R(Token Generation);
+        Q --> S(Tool-Tuning of LLMs);
+         Q --> T(Data Engineering);
+          Q --> U(Visual AI Revolution);
+        A --> V(Visual AI);
+        V --> W(Image Processing);
+        V --> X(Video Processing);
+        W --> Y{Data Value};
+          X --> Y
+        
+        Y --> Z(Landing AI Demo);
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT
+Kind: captions
+Language: zh-Hans
+ align:start position:0%
+欢迎安德鲁
+ align:start position:0%
+欢迎安德鲁
+ align:start position:0%
+欢迎安德鲁
+[掌声]
+ align:start position:0%
+[掌声]
+ align:start position:0%
+[掌声]
+谢谢你， 现在是
+ align:start position:0%
+谢谢你， 现在是
+ align:start position:0%
+谢谢你， 现在是
+成为一名建设者的好时机， 所以我很高兴回到
+ align:start position:0%
+成为一名建设者的好时机， 所以我很高兴回到
+ align:start position:0%
+成为一名建设者的好时机， 所以我很高兴回到
+雪花
+ align:start position:0%
+雪花
+ align:start position:0%
+雪花
+建设这里， 今天我想做的是
+ align:start position:0%
+建设这里， 今天我想做的是
+ align:start position:0%
+建设这里， 今天我想做的是
+与大家分享我认为人工智能
+ align:start position:0%
+与大家分享我认为人工智能
+ align:start position:0%
+与大家分享我认为人工智能
+最大的
+ align:start position:0%
+最大的
+ align:start position:0%
+最大的
+机遇 你可能听我说过， 
+ align:start position:0%
+机遇 你可能听我说过， 
+ align:start position:0%
+机遇 你可能听我说过， 
+我认为人工智能在新电力中的作用， 
+ align:start position:0%
+我认为人工智能在新电力中的作用， 
+ align:start position:0%
+我认为人工智能在新电力中的作用， 
+这是因为作为一项通用
+ align:start position:0%
+这是因为作为一项通用
+ align:start position:0%
+这是因为作为一项通用
+技术， 比如电力， 如果我问你
+ align:start position:0%
+技术， 比如电力， 如果我问你
+ align:start position:0%
+技术， 比如电力， 如果我问你
+电力有什么用处， 总是
+ align:start position:0%
+电力有什么用处， 总是
+ align:start position:0%
+电力有什么用处， 总是
+很难回答， 因为它对
+ align:start position:0%
+很难回答， 因为它对
+ align:start position:0%
+很难回答， 因为它对
+很多不同的东西都有用， 而新的人工智能
+ align:start position:0%
+很多不同的东西都有用， 而新的人工智能
+ align:start position:0%
+很多不同的东西都有用， 而新的人工智能
+技术正在创造一个
+ align:start position:0%
+技术正在创造一个
+ align:start position:0%
+技术正在创造一个
+我们有大量的机会去开发以前不可能实现的新
+ align:start position:0%
+我们有大量的机会去开发以前不可能实现的新
+ align:start position:0%
+我们有大量的机会去开发以前不可能实现的新
+应用。
+
+ align:start position:0%
+应用。
+
+ align:start position:0%
+应用。
+
+人们经常问我， 嘿， 安德鲁， 
+ align:start position:0%
+人们经常问我， 嘿， 安德鲁， 
+ align:start position:0%
+人们经常问我， 嘿， 安德鲁， 
+最大的人工智能机会在哪里？
+
+ align:start position:0%
+最大的人工智能机会在哪里？
+
+ align:start position:0%
+最大的人工智能机会在哪里？
+
+我认为， 人工智能堆栈
+ align:start position:0%
+我认为， 人工智能堆栈
+ align:start position:0%
+我认为， 人工智能堆栈
+中最低层是
+ align:start position:0%
+中最低层是
+ align:start position:0%
+中最低层是
+半导体， 然后是
+ align:start position:0%
+半导体， 然后是
+ align:start position:0%
+半导体， 然后是
+很多云信息， 包括
+ align:start position:0%
+很多云信息， 包括
+ align:start position:0%
+很多云信息， 包括
+Course Snowflake， 然后在其之上
+ align:start position:0%
+Course Snowflake， 然后在其之上
+ align:start position:0%
+Course Snowflake， 然后在其之上
+是许多基础模型
+ align:start position:0%
+是许多基础模型
+ align:start position:0%
+是许多基础模型
+训练师和模型， 事实证明， 
+ align:start position:0%
+训练师和模型， 事实证明， 
+ align:start position:0%
+训练师和模型， 事实证明， 
+很多媒体炒作和
+ align:start position:0%
+很多媒体炒作和
+ align:start position:0%
+很多媒体炒作和
+兴奋以及社交媒体热议都
+ align:start position:0%
+兴奋以及社交媒体热议都
+ align:start position:0%
+兴奋以及社交媒体热议都
+出现在这些堆栈层上
+ align:start position:0%
+出现在这些堆栈层上
+ align:start position:0%
+出现在这些堆栈层上
+每当
+ align:start position:0%
+每当
+ align:start position:0%
+每当
+出现像生成式人工智能这样的新技术时， 就会出现很多新技术层
+ align:start position:0%
+出现像生成式人工智能这样的新技术时， 就会出现很多新技术层
+ align:start position:0%
+出现像生成式人工智能这样的新技术时， 就会出现很多新技术层
+这些技术层面的讨论很激烈， 
+ align:start position:0%
+这些技术层面的讨论很激烈， 
+ align:start position:0%
+ align:start position:0%
+这并没有错， 但我认为， 几乎按照
+ align:start position:0%
+这并没有错， 但我认为， 几乎按照
+ align:start position:0%
+这并没有错， 但我认为， 几乎按照
+定义， 堆栈的另一层
+ align:start position:0%
+定义， 堆栈的另一层
+ align:start position:0%
+定义， 堆栈的另一层
+必须更好地发挥作用
+ align:start position:0%
+必须更好地发挥作用
+ align:start position:0%
+必须更好地发挥作用
+， 那就是应用层， 因为
+ align:start position:0%
+， 那就是应用层， 因为
+ align:start position:0%
+， 那就是应用层， 因为
+我们需要应用程序来创造
+ align:start position:0%
+我们需要应用程序来创造
+ align:start position:0%
+我们需要应用程序来创造
+更多的价值， 甚至 更多的收入， 这样
+ align:start position:0%
+更多的价值， 甚至 更多的收入， 这样
+ align:start position:0%
+更多的价值， 甚至 更多的收入， 这样
+你才能真正负担得起
+ align:start position:0%
+你才能真正负担得起
+ align:start position:0%
+你才能真正负担得起
+下面的技术提供商， 所以我
+ align:start position:0%
+下面的技术提供商， 所以我
+ align:start position:0%
+下面的技术提供商， 所以我
+花了很多时间思考人工智能
+ align:start position:0%
+花了很多时间思考人工智能
+ align:start position:0%
+花了很多时间思考人工智能
+应用， 我认为这里有
+ align:start position:0%
+应用， 我认为这里有
+ align:start position:0%
+应用， 我认为这里有
+很多最好的机会， 可以
+ align:start position:0%
+很多最好的机会， 可以
+ align:start position:0%
+很多最好的机会， 可以
+创造新的
+ align:start position:0%
+创造新的
+ align:start position:0%
+创造新的
+东西， 这是一直存在的趋势之一
+ align:start position:0%
+东西， 这是一直存在的趋势之一
+ align:start position:0%
+东西， 这是一直存在的趋势之一
+过去几年的增长
+ align:start position:0%
+过去几年的增长
+ align:start position:0%
+过去几年的增长
+很大程度上是因为生成式人工智能的速度
+ align:start position:0%
+很大程度上是因为生成式人工智能的速度
+ align:start position:0%
+很大程度上是因为生成式人工智能的速度
+越来越快， 机器学习模型的开发速度越来越快， 
+ align:start position:0%
+越来越快， 机器学习模型的开发速度越来越快， 
+ align:start position:0%
+越来越快， 机器学习模型的开发速度越来越快， 
+特别是
+ align:start position:0%
+特别是
+ align:start position:0%
+特别是
+生成式人工智能让我们能够以前所未有的速度构建事物， 
+ align:start position:0%
+生成式人工智能让我们能够以前所未有的速度构建事物， 
+ align:start position:0%
+ align:start position:0%
+比如构建一个情绪分类器， 
+ align:start position:0%
+比如构建一个情绪分类器， 
+ align:start position:0%
+比如构建一个情绪分类器， 
+你从文本中获取 决定这
+ align:start position:0%
+你从文本中获取 决定这
+ align:start position:0%
+你从文本中获取 决定这
+对声誉监控来说是正面的还是负面的情绪， 
+ align:start position:0%
+对声誉监控来说是正面的还是负面的情绪， 
+ align:start position:0%
+对声誉监控来说是正面的还是负面的情绪， 
+比如说， 
+ align:start position:0%
+比如说， 
+ align:start position:0%
+比如说， 
+使用监督学习的典型工作流程可能
+ align:start position:0%
+使用监督学习的典型工作流程可能
+ align:start position:0%
+使用监督学习的典型工作流程可能
+需要一个月的时间来获取一些
+ align:start position:0%
+需要一个月的时间来获取一些
+ align:start position:0%
+需要一个月的时间来获取一些
+标签数据， 然后训练人工智能
+ align:start position:0%
+标签数据， 然后训练人工智能
+ align:start position:0%
+标签数据， 然后训练人工智能
+模型， 这可能需要几个月的时间， 
+ align:start position:0%
+模型， 这可能需要几个月的时间， 
+ align:start position:0%
+模型， 这可能需要几个月的时间， 
+然后找到一个云服务或类似的东西
+ align:start position:0%
+然后找到一个云服务或类似的东西
+ align:start position:0%
+然后找到一个云服务或类似的东西
+部署还需要
+ align:start position:0%
+部署还需要
+ align:start position:0%
+部署还需要
+几个月的时间， 因此在很长一段时间内， 非常
+ align:start position:0%
+几个月的时间， 因此在很长一段时间内， 非常
+ align:start position:0%
+几个月的时间， 因此在很长一段时间内， 非常
+有价值的人工智能系统可能需要
+ align:start position:0%
+有价值的人工智能系统可能需要
+ align:start position:0%
+有价值的人工智能系统可能需要
+6 到 12 个优秀的人工智能团队 几个月的时间来构建
+ align:start position:0%
+6 到 12 个优秀的人工智能团队 几个月的时间来构建
+ align:start position:0%
+6 到 12 个优秀的人工智能团队 几个月的时间来构建
+， 这没有错， 我
+ align:start position:0%
+， 这没有错， 我
+ align:start position:0%
+， 这没有错， 我
+认为很多人以这种方式创建非常有价值的
+ align:start position:0%
+认为很多人以这种方式创建非常有价值的
+ align:start position:0%
+认为很多人以这种方式创建非常有价值的
+人工智能系统， 但对于生成式
+ align:start position:0%
+人工智能系统， 但对于生成式
+ align:start position:0%
+人工智能系统， 但对于生成式
+人工智能， 有些应用程序
+ align:start position:0%
+人工智能， 有些应用程序
+ align:start position:0%
+人工智能， 有些应用程序
+你可以在几天内编写提示， 
+ align:start position:0%
+你可以在几天内编写提示， 
+ align:start position:0%
+你可以在几天内编写提示， 
+然后在几天内部署它。
+
+ align:start position:0%
+然后在几天内部署它。
+
+ align:start position:0%
+然后在几天内部署它。
+
+这意味着
+ align:start position:0%
+这意味着
+ align:start position:0%
+这意味着
+很多应用程序过去需要我
+ align:start position:0%
+很多应用程序过去需要我
+ align:start position:0%
+很多应用程序过去需要我
+和非常优秀的人工智能团队花费
+ align:start position:0%
+和非常优秀的人工智能团队花费
+ align:start position:0%
+和非常优秀的人工智能团队花费
+数月时间才能开发出来， 而今天你
+ align:start position:0%
+数月时间才能开发出来， 而今天你
+ align:start position:0%
+数月时间才能开发出来， 而今天你
+只需要 10 天左右就可以开发出来， 这为
+ align:start position:0%
+只需要 10 天左右就可以开发出来， 这为
+ align:start position:0%
+只需要 10 天左右就可以开发出来， 这为
+尝试构建
+ align:start position:0%
+尝试构建
+ align:start position:0%
+尝试构建
+新的原型提供了机会， 并推出新的人工智能
+ align:start position:0%
+新的原型提供了机会， 并推出新的人工智能
+ align:start position:0%
+新的原型提供了机会， 并推出新的人工智能
+产品， 这当然是
+ align:start position:0%
+产品， 这当然是
+ align:start position:0%
+产品， 这当然是
+原型设计方面的问题， 这些都是
+ align:start position:0%
+原型设计方面的问题， 这些都是
+ align:start position:0%
+原型设计方面的问题， 这些都是
+这种趋势带来的一些后果， 
+ align:start position:0%
+这种趋势带来的一些后果， 
+ align:start position:0%
+这种趋势带来的一些后果， 
+快速实验正在
+ align:start position:0%
+快速实验正在
+ align:start position:0%
+快速实验正在
+成为一条更有希望的
+ align:start position:0%
+成为一条更有希望的
+ align:start position:0%
+成为一条更有希望的
+发明之路， 以前如果花了
+ align:start position:0%
+发明之路， 以前如果花了
+ align:start position:0%
+发明之路， 以前如果花了
+六个月的时间建造某样东西， 那么你知道
+ align:start position:0%
+六个月的时间建造某样东西， 那么你知道
+ align:start position:0%
+六个月的时间建造某样东西， 那么你知道
+我们最好研究它 确保有用户
+ align:start position:0%
+我们最好研究它 确保有用户
+ align:start position:0%
+我们最好研究它 确保有用户
+需求， 让产品经理查看
+ align:start position:0%
+需求， 让产品经理查看
+ align:start position:0%
+需求， 让产品经理查看
+它， 记录它， 然后花费所有
+ align:start position:0%
+它， 记录它， 然后花费所有
+ align:start position:0%
+它， 记录它， 然后花费所有
+精力去构建它， 希望它
+ align:start position:0%
+精力去构建它， 希望它
+ align:start position:0%
+精力去构建它， 希望它
+是
+ align:start position:0%
+是
+ align:start position:0%
+是
+值得的， 但现在对于快速发展的人工智能
+ align:start position:0%
+值得的， 但现在对于快速发展的人工智能
+ align:start position:0%
+值得的， 但现在对于快速发展的人工智能
+团队， 我看到一种设计模式， 你
+ align:start position:0%
+团队， 我看到一种设计模式， 你
+ align:start position:0%
+团队， 我看到一种设计模式， 你
+可以说你知道什么 我们花了一个
+ align:start position:0%
+可以说你知道什么 我们花了一个
+ align:start position:0%
+可以说你知道什么 我们花了一个
+周末的时间来制作原型， 
+ align:start position:0%
+周末的时间来制作原型， 
+ align:start position:0%
+周末的时间来制作原型， 
+让我们构建 20 个原型， 看看
+ align:start position:0%
+让我们构建 20 个原型， 看看
+ align:start position:0%
+让我们构建 20 个原型， 看看
+SS 和 18 如果不成功， 
+ align:start position:0%
+SS 和 18 如果不成功， 
+ align:start position:0%
+SS 和 18 如果不成功， 
+我们就会将它们拼接起来， 坚持
+ align:start position:0%
+我们就会将它们拼接起来， 坚持
+ align:start position:0%
+我们就会将它们拼接起来， 坚持
+有效的方法， 因此快速迭代和快速
+ align:start position:0%
+有效的方法， 因此快速迭代和快速
+ align:start position:0%
+有效的方法， 因此快速迭代和快速
+实验正在成为
+ align:start position:0%
+实验正在成为
+ align:start position:0%
+实验正在成为
+发明新用户
+ align:start position:0%
+发明新用户
+ align:start position:0%
+发明新用户
+体验的新途径， 一个有趣的
+ align:start position:0%
+体验的新途径， 一个有趣的
+ align:start position:0%
+体验的新途径， 一个有趣的
+暗示是， 评估（简称 evals）
+ align:start position:0%
+暗示是， 评估（简称 evals）
+ align:start position:0%
+暗示是， 评估（简称 evals）
+正在成为一个更大的
+ align:start position:0%
+正在成为一个更大的
+ align:start position:0%
+正在成为一个更大的
+瓶颈 就我们如何构建事物而言， 
+ align:start position:0%
+瓶颈 就我们如何构建事物而言， 
+ align:start position:0%
+瓶颈 就我们如何构建事物而言， 
+在监督学习的
+ align:start position:0%
+在监督学习的
+ align:start position:0%
+在监督学习的
+世界里， 如果你收集了 10,000 个数据点
+ align:start position:0%
+世界里， 如果你收集了 10,000 个数据点
+ align:start position:0%
+世界里， 如果你收集了 10,000 个数据点
+来交易一个模型， 那么你
+ align:start position:0%
+来交易一个模型， 那么你
+ align:start position:0%
+来交易一个模型， 那么你
+知道如果你需要收集额外的
+ align:start position:0%
+知道如果你需要收集额外的
+ align:start position:0%
+知道如果你需要收集额外的
+1,000 个数据点进行测试， 这是
+ align:start position:0%
+1,000 个数据点进行测试， 这是
+ align:start position:0%
+1,000 个数据点进行测试， 这是
+没问题的， 而额外的 10% 会增加 成本， 
+ align:start position:0%
+没问题的， 而额外的 10% 会增加 成本， 
+ align:start position:0%
+没问题的， 而额外的 10% 会增加 成本， 
+但对于许多基于语言的大型
+ align:start position:0%
+但对于许多基于语言的大型
+ align:start position:0%
+但对于许多基于语言的大型
+应用程序来说， 如果不需要
+ align:start position:0%
+应用程序来说， 如果不需要
+ align:start position:0%
+应用程序来说， 如果不需要
+任何训练数据， 如果你让我放慢速度
+ align:start position:0%
+任何训练数据， 如果你让我放慢速度
+ align:start position:0%
+任何训练数据， 如果你让我放慢速度
+去收集一千个测试示例， 
+ align:start position:0%
+去收集一千个测试示例， 
+ align:start position:0%
+去收集一千个测试示例， 
+这似乎是一个巨大的瓶颈， 所以
+ align:start position:0%
+这似乎是一个巨大的瓶颈， 所以
+ align:start position:0%
+这似乎是一个巨大的瓶颈， 所以
+新的开发工作流程常常感觉
+ align:start position:0%
+新的开发工作流程常常感觉
+ align:start position:0%
+新的开发工作流程常常感觉
+好像 我们正在并行构建和收集数据， 
+ align:start position:0%
+好像 我们正在并行构建和收集数据， 
+ align:start position:0%
+好像 我们正在并行构建和收集数据， 
+而不是
+ align:start position:0%
+而不是
+ align:start position:0%
+而不是
+按顺序构建和收集数据， 我们将构建一个
+ align:start position:0%
+按顺序构建和收集数据， 我们将构建一个
+ align:start position:0%
+按顺序构建和收集数据， 我们将构建一个
+原型， 然后随着它变得
+ align:start position:0%
+原型， 然后随着它变得
+ align:start position:0%
+原型， 然后随着它变得
+越来越重要， 随着稳健性和
+ align:start position:0%
+越来越重要， 随着稳健性和
+ align:start position:0%
+越来越重要， 随着稳健性和
+可靠性变得越来越重要， 
+ align:start position:0%
+可靠性变得越来越重要， 
+ align:start position:0%
+可靠性变得越来越重要， 
+我们逐渐并行建立测试数据， 
+ align:start position:0%
+我们逐渐并行建立测试数据， 
+ align:start position:0%
+我们逐渐并行建立测试数据， 
+但我 看到令人兴奋的创新
+ align:start position:0%
+但我 看到令人兴奋的创新
+ align:start position:0%
+但我 看到令人兴奋的创新
+仍然存在于我们如何构建 评估嗯， 
+ align:start position:0%
+仍然存在于我们如何构建 评估嗯， 
+ align:start position:0%
+仍然存在于我们如何构建 评估嗯， 
+然后我还看到
+ align:start position:0%
+然后我还看到
+ align:start position:0%
+然后我还看到
+机器学习的原型设计已经
+ align:start position:0%
+机器学习的原型设计已经
+ align:start position:0%
+机器学习的原型设计已经
+变得更快了， 但是构建一个软件
+ align:start position:0%
+变得更快了， 但是构建一个软件
+ align:start position:0%
+变得更快了， 但是构建一个软件
+应用程序有很多步骤， 
+ align:start position:0%
+应用程序有很多步骤， 
+ align:start position:0%
+应用程序有很多步骤， 
+产品是否工作， 你知道设计工作， 
+ align:start position:0%
+产品是否工作， 你知道设计工作， 
+ align:start position:0%
+产品是否工作， 你知道设计工作， 
+软件集成是否工作， 很多
+ align:start position:0%
+软件集成是否工作， 很多
+ align:start position:0%
+软件集成是否工作， 很多
+管道工作嗯然后 在
+ align:start position:0%
+管道工作嗯然后 在
+ align:start position:0%
+管道工作嗯然后 在
+部署 DevOps 和 L Ops 之后， 
+ align:start position:0%
+部署 DevOps 和 L Ops 之后， 
+ align:start position:0%
+部署 DevOps 和 L Ops 之后， 
+其他一些部分正在变得更快， 
+ align:start position:0%
+其他一些部分正在变得更快， 
+ align:start position:0%
+其他一些部分正在变得更快， 
+但它们并没有以与
+ align:start position:0%
+但它们并没有以与
+ align:start position:0%
+但它们并没有以与
+机器学习
+ align:start position:0%
+机器学习
+ align:start position:0%
+机器学习
+建模部分相同的速度变得更快， 所以你
+ align:start position:0%
+建模部分相同的速度变得更快， 所以你
+ align:start position:0%
+建模部分相同的速度变得更快， 所以你
+采取一个流程， 其中的一个部分
+ align:start position:0%
+采取一个流程， 其中的一个部分
+ align:start position:0%
+采取一个流程， 其中的一个部分
+会变得更快， 嗯什么 我看到
+ align:start position:0%
+会变得更快， 嗯什么 我看到
+ align:start position:0%
+会变得更快， 嗯什么 我看到
+原型设计现在真的非常快， 
+ align:start position:0%
+原型设计现在真的非常快， 
+ align:start position:0%
+原型设计现在真的非常快， 
+但有时你会用 God Rails 将原型投入到
+ align:start position:0%
+但有时你会用 God Rails 将原型投入到
+ align:start position:0%
+但有时你会用 God Rails 将原型投入到
+可靠生产中， 
+ align:start position:0%
+可靠生产中， 
+ align:start position:0%
+可靠生产中， 
+而其他步骤仍然
+ align:start position:0%
+而其他步骤仍然
+ align:start position:0%
+而其他步骤仍然
+需要一些时间， 但
+ align:start position:0%
+需要一些时间， 但
+ align:start position:0%
+需要一些时间， 但
+我看到的有趣的动态是
+ align:start position:0%
+我看到的有趣的动态是
+ align:start position:0%
+我看到的有趣的动态是
+机器学习部分 速度如此之快， 
+ align:start position:0%
+机器学习部分 速度如此之快， 
+ align:start position:0%
+机器学习部分 速度如此之快， 
+给组织带来很大压力， 迫使它们也
+ align:start position:0%
+给组织带来很大压力， 迫使它们也
+ align:start position:0%
+给组织带来很大压力， 迫使它们也
+加快所有
+ align:start position:0%
+加快所有
+ align:start position:0%
+加快所有
+其他 PS 的速度， 这对
+ align:start position:0%
+其他 PS 的速度， 这对
+ align:start position:0%
+其他 PS 的速度， 这对
+我们少数人来说是令人兴奋的进步， 就
+ align:start position:0%
+我们少数人来说是令人兴奋的进步， 就
+ align:start position:0%
+我们少数人来说是令人兴奋的进步， 就
+机器学习的发展而言， 
+ align:start position:0%
+机器学习的发展而言， 
+ align:start position:0%
+机器学习的发展而言， 
+我认为 Mantra 的
+ align:start position:0%
+我认为 Mantra 的
+ align:start position:0%
+我认为 Mantra 的
+进展很快， 而且打破了 事情得到了不好的
+ align:start position:0%
+进展很快， 而且打破了 事情得到了不好的
+ align:start position:0%
+进展很快， 而且打破了 事情得到了不好的
+名声， 因为你知道它破坏了事情嗯， 
+ align:start position:0%
+名声， 因为你知道它破坏了事情嗯， 
+ align:start position:0%
+名声， 因为你知道它破坏了事情嗯， 
+我认为有些人认为这对我来说
+ align:start position:0%
+我认为有些人认为这对我来说
+ align:start position:0%
+我认为有些人认为这对我来说
+不应该行动过快， 但我不同意
+ align:start position:0%
+不应该行动过快， 但我不同意
+ align:start position:0%
+不应该行动过快， 但我不同意
+这一点， 我认为更好的做法是
+ align:start position:0%
+这一点， 我认为更好的做法是
+ align:start position:0%
+这一点， 我认为更好的做法是
+行动过快， 负责任， 我看到
+ align:start position:0%
+行动过快， 负责任， 我看到
+ align:start position:0%
+行动过快， 负责任， 我看到
+很多团队能够快速制作原型， 
+ align:start position:0%
+很多团队能够快速制作原型， 
+ align:start position:0%
+很多团队能够快速制作原型， 
+进行评估和稳健的测试， 这样就不需要
+ align:start position:0%
+进行评估和稳健的测试， 这样就不需要
+ align:start position:0%
+进行评估和稳健的测试， 这样就不需要
+向外界发布任何东西， 
+ align:start position:0%
+向外界发布任何东西， 
+ align:start position:0%
+向外界发布任何东西， 
+你知道 造成损害或
+ align:start position:0%
+你知道 造成损害或
+ align:start position:0%
+你知道 造成损害或
+造成有意义的伤害我发现
+ align:start position:0%
+造成有意义的伤害我发现
+ align:start position:0%
+造成有意义的伤害我发现
+聪明的团队能够快速构建
+ align:start position:0%
+聪明的团队能够快速构建
+ align:start position:0%
+聪明的团队能够快速构建
+和行动， 但也能以
+ align:start position:0%
+和行动， 但也能以
+ align:start position:0%
+和行动， 但也能以
+非常负责任的方式做到这一点， 我发现
+ align:start position:0%
+非常负责任的方式做到这一点， 我发现
+ align:start position:0%
+ align:start position:0%
+以负责任的方式更快地构建和运送东西令人兴奋
+ align:start position:0%
+以负责任的方式更快地构建和运送东西令人兴奋
+ align:start position:0%
+以负责任的方式更快地构建和运送东西令人兴奋
+比以往任何时候都多， 
+ align:start position:0%
+比以往任何时候都多， 
+ align:start position:0%
+比以往任何时候都多， 
+现在人工智能领域正在发生很多事情， 在
+ align:start position:0%
+现在人工智能领域正在发生很多事情， 在
+ align:start position:0%
+现在人工智能领域正在发生很多事情， 在
+人工智能领域发生的所有事情中， 就
+ align:start position:0%
+人工智能领域发生的所有事情中， 就
+ align:start position:0%
+人工智能领域发生的所有事情中， 就
+技术趋势而言， 
+ align:start position:0%
+技术趋势而言， 
+ align:start position:0%
+技术趋势而言， 
+我最兴奋的一个趋势是代理人工智能
+ align:start position:0%
+我最兴奋的一个趋势是代理人工智能
+ align:start position:0%
+我最兴奋的一个趋势是代理人工智能
+工作流程， 所以如果你问
+ align:start position:0%
+工作流程， 所以如果你问
+ align:start position:0%
+工作流程， 所以如果你问
+最重要的人工智能技术是什么
+ align:start position:0%
+最重要的人工智能技术是什么
+ align:start position:0%
+最重要的人工智能技术是什么
+我要说的是代理人工智能， 
+ align:start position:0%
+我要说的是代理人工智能， 
+ align:start position:0%
+我要说的是代理人工智能， 
+嗯， 我想当我在今年年初开始说这个的时候， 
+ align:start position:0%
+嗯， 我想当我在今年年初开始说这个的时候， 
+ align:start position:0%
+ align:start position:0%
+这是一个有点争议的
+ align:start position:0%
+这是一个有点争议的
+ align:start position:0%
+这是一个有点争议的
+说法， 但现在人工智能代理这个词已经
+ align:start position:0%
+说法， 但现在人工智能代理这个词已经
+ align:start position:0%
+说法， 但现在人工智能代理这个词已经
+被广泛使用， 呃， 通过
+ align:start position:0%
+被广泛使用， 呃， 通过
+ align:start position:0%
+被广泛使用， 呃， 通过
+技术 和非技术人员已经
+ align:start position:0%
+技术 和非技术人员已经
+ align:start position:0%
+技术 和非技术人员已经
+成为一个有点夸张的
+ align:start position:0%
+成为一个有点夸张的
+ align:start position:0%
+成为一个有点夸张的
+术语， 但是让我 我只是想和
+ align:start position:0%
+术语， 但是让我 我只是想和
+ align:start position:0%
+术语， 但是让我 我只是想和
+大家分享一下我如何看待人工智能代理， 以及为什么我认为
+ align:start position:0%
+大家分享一下我如何看待人工智能代理， 以及为什么我认为
+ align:start position:0%
+大家分享一下我如何看待人工智能代理， 以及为什么我认为
+它们很重要。
+从
+ align:start position:0%
+它们很重要。
+从
+ align:start position:0%
+它们很重要。
+从
+技术
+ align:start position:0%
+技术
+ align:start position:0%
+技术
+角度来看， 我们大多数人
+ align:start position:0%
+角度来看， 我们大多数人
+ align:start position:0%
+角度来看， 我们大多数人
+今天使用大型语言模型的方式是
+ align:start position:0%
+今天使用大型语言模型的方式是
+ align:start position:0%
+今天使用大型语言模型的方式是
+所谓的零样本提示
+ align:start position:0%
+所谓的零样本提示
+ align:start position:0%
+所谓的零样本提示
+， 这大致意味着我们会问
+ align:start position:0%
+， 这大致意味着我们会问
+ align:start position:0%
+， 这大致意味着我们会问
+给它一个提示， 写一篇文章或者
+ align:start position:0%
+给它一个提示， 写一篇文章或者
+ align:start position:0%
+给它一个提示， 写一篇文章或者
+为我们写一个输出， 这有点
+ align:start position:0%
+为我们写一个输出， 这有点
+ align:start position:0%
+为我们写一个输出， 这有点
+像我们去找一个人， 或者在
+ align:start position:0%
+像我们去找一个人， 或者在
+ align:start position:0%
+像我们去找一个人， 或者在
+这种情况下去找一个人工智能， 让它
+ align:start position:0%
+这种情况下去找一个人工智能， 让它
+ align:start position:0%
+这种情况下去找一个人工智能， 让它
+为我们打出一篇文章， 
+ align:start position:0%
+为我们打出一篇文章， 
+ align:start position:0%
+为我们打出一篇文章， 
+从 第一个字从
+ align:start position:0%
+从 第一个字从
+ align:start position:0%
+从 第一个字从
+第一个字到最后一个字
+ align:start position:0%
+第一个字到最后一个字
+ align:start position:0%
+第一个字到最后一个字
+一气呵成， 从不曾使用退格键， 就这样
+ align:start position:0%
+一气呵成， 从不曾使用退格键， 就这样
+ align:start position:0%
+一气呵成， 从不曾使用退格键， 就这样
+从头到尾就这样写， 结果
+ align:start position:0%
+从头到尾就这样写， 结果
+ align:start position:0%
+从头到尾就这样写， 结果
+人们知道我们不是以
+ align:start position:0%
+人们知道我们不是以
+ align:start position:0%
+人们知道我们不是以
+这种方式写出最好的文章， 但是尽管
+ align:start position:0%
+这种方式写出最好的文章， 但是尽管
+ align:start position:0%
+这种方式写出最好的文章， 但是尽管
+被迫以这种方式写作的难度
+ align:start position:0%
+被迫以这种方式写作的难度
+ align:start position:0%
+被迫以这种方式写作的难度
+你知道 Lish 模型还不错， 
+ align:start position:0%
+你知道 Lish 模型还不错， 
+ align:start position:0%
+ align:start position:0%
+这是一个代理工作， 
+ align:start position:0%
+这是一个代理工作， 
+ align:start position:0%
+这是一个代理工作， 
+呃为了生成一篇文章， 我们要求人工智能
+ align:start position:0%
+呃为了生成一篇文章， 我们要求人工智能
+ align:start position:0%
+呃为了生成一篇文章， 我们要求人工智能
+首先写一篇文章大纲， 然后问它
+ align:start position:0%
+首先写一篇文章大纲， 然后问它
+ align:start position:0%
+首先写一篇文章大纲， 然后问它
+你需要做一些网络 研究如果
+ align:start position:0%
+你需要做一些网络 研究如果
+ align:start position:0%
+你需要做一些网络 研究如果
+是的话让我们下载一些网页并
+ align:start position:0%
+是的话让我们下载一些网页并
+ align:start position:0%
+是的话让我们下载一些网页并
+放入大型 hange
+ align:start position:0%
+放入大型 hange
+ align:start position:0%
+放入大型 hange
+模型的上下文中然后让我们写第一稿
+ align:start position:0%
+模型的上下文中然后让我们写第一稿
+ align:start position:0%
+模型的上下文中然后让我们写第一稿
+然后我们阅读初稿， 
+ align:start position:0%
+然后我们阅读初稿， 
+ align:start position:0%
+然后我们阅读初稿， 
+对其进行评论， 修改初稿
+ align:start position:0%
+对其进行评论， 修改初稿
+ align:start position:0%
+对其进行评论， 修改初稿
+等等， 这个工作流程看起来更像是
+ align:start position:0%
+等等， 这个工作流程看起来更像是
+ align:start position:0%
+等等， 这个工作流程看起来更像是
+做一些思考或研究， 
+ align:start position:0%
+做一些思考或研究， 
+ align:start position:0%
+做一些思考或研究， 
+然后进行一些修改， 然后回去
+ align:start position:0%
+然后进行一些修改， 然后回去
+ align:start position:0%
+然后进行一些修改， 然后回去
+做更多的思考和研究
+ align:start position:0%
+做更多的思考和研究
+ align:start position:0%
+做更多的思考和研究
+， 通过这个过程 一遍又一
+ align:start position:0%
+， 通过这个过程 一遍又一
+ align:start position:0%
+， 通过这个过程 一遍又一
+遍地循环， 虽然需要更长的时间， 但这会带来
+ align:start position:0%
+遍地循环， 虽然需要更长的时间， 但这会带来
+ align:start position:0%
+遍地循环， 虽然需要更长的时间， 但这会带来
+更好的工作产出， 所以在
+ align:start position:0%
+更好的工作产出， 所以在
+ align:start position:0%
+更好的工作产出， 所以在
+我合作的一些团队中， 我们将这种代理工作
+ align:start position:0%
+我合作的一些团队中， 我们将这种代理工作
+ align:start position:0%
+我合作的一些团队中， 我们将这种代理工作
+流程应用于处理复杂棘手的
+ align:start position:0%
+流程应用于处理复杂棘手的
+ align:start position:0%
+流程应用于处理复杂棘手的
+法律文件， 或者进行医疗保健
+ align:start position:0%
+法律文件， 或者进行医疗保健
+ align:start position:0%
+法律文件， 或者进行医疗保健
+诊断援助， 或者进行非常
+ align:start position:0%
+诊断援助， 或者进行非常
+ align:start position:0%
+诊断援助， 或者进行非常
+复杂的合规性 政府
+ align:start position:0%
+复杂的合规性 政府
+ align:start position:0%
+复杂的合规性 政府
+文书工作很多次， 我看到这
+ align:start position:0%
+文书工作很多次， 我看到这
+ align:start position:0%
+文书工作很多次， 我看到这
+带来了比以往更好的结果， 
+ align:start position:0%
+带来了比以往更好的结果， 
+ align:start position:0%
+ align:start position:0%
+我将在本次演讲中重点讨论的一件事
+ align:start position:0%
+我将在本次演讲中重点讨论的一件事
+ align:start position:0%
+我将在本次演讲中重点讨论的一件事
+是视觉人工智能， 其中
+ align:start position:0%
+是视觉人工智能， 其中
+ align:start position:0%
+是视觉人工智能， 其中
+代理代表让我们处理
+ align:start position:0%
+代理代表让我们处理
+ align:start position:0%
+代理代表让我们处理
+图像 和视频数据， 
+ align:start position:0%
+图像 和视频数据， 
+ align:start position:0%
+图像 和视频数据， 
+但稍后再回过头来看， 
+ align:start position:0%
+但稍后再回过头来看， 
+ align:start position:0%
+但稍后再回过头来看， 
+事实证明， 有一些基准测试
+ align:start position:0%
+事实证明， 有一些基准测试
+ align:start position:0%
+事实证明， 有一些基准测试
+表明， 基因工作流程似乎可以
+ align:start position:0%
+表明， 基因工作流程似乎可以
+ align:start position:0%
+表明， 基因工作流程似乎可以
+提供更好的结果， 这是
+ align:start position:0%
+提供更好的结果， 这是
+ align:start position:0%
+提供更好的结果， 这是
+人类评估基准， 这是
+ align:start position:0%
+人类评估基准， 这是
+ align:start position:0%
+人类评估基准， 这是
+开放式基准， 用于衡量
+ align:start position:0%
+开放式基准， 用于衡量
+ align:start position:0%
+开放式基准， 用于衡量
+学习 模型
+ align:start position:0%
+学习 模型
+ align:start position:0%
+学习 模型
+解决这类编码难题的能力， 
+ align:start position:0%
+解决这类编码难题的能力， 
+ align:start position:0%
+解决这类编码难题的能力， 
+我的团队收集了一些 数据显示， 
+ align:start position:0%
+我的团队收集了一些 数据显示， 
+ align:start position:0%
+我的团队收集了一些 数据显示， 
+在这个基准测试中， 我使用的是 posic
+ align:start position:0%
+在这个基准测试中， 我使用的是 posic
+ align:start position:0%
+在这个基准测试中， 我使用的是 posic
+K 基准测试 posic K 度量标准 GB 3.5， 
+ align:start position:0%
+K 基准测试 posic K 度量标准 GB 3.5， 
+ align:start position:0%
+K 基准测试 posic K 度量标准 GB 3.5， 
+在这个编码基准测试 gb4 上获得了 48% 的正确率， 这是一个
+ align:start position:0%
+在这个编码基准测试 gb4 上获得了 48% 的正确率， 这是一个
+ align:start position:0%
+在这个编码基准测试 gb4 上获得了 48% 的正确率， 这是一个
+巨大的改进， 你知道
+ align:start position:0%
+巨大的改进， 你知道
+ align:start position:0%
+巨大的改进， 你知道
+67%， 但是从 GB 3.5 到
+ align:start position:0%
+67%， 但是从 GB 3.5 到
+ align:start position:0%
+67%， 但是从 GB 3.5 到
+gbd4 的改进与从 GB 3.5 的改进相比相形见绌
+ align:start position:0%
+gbd4 的改进与从 GB 3.5 的改进相比相形见绌
+ align:start position:0%
+gbd4 的改进与从 GB 3.5 的改进相比相形见绌
+到 GB 3.5 使用代理工作流， 
+ align:start position:0%
+到 GB 3.5 使用代理工作流， 
+ align:start position:0%
+到 GB 3.5 使用代理工作流， 
+效率可达到 95% 左右， 而
+ align:start position:0%
+效率可达到 95% 左右， 而
+ align:start position:0%
+效率可达到 95% 左右， 而
+使用代理工作流的 gbd4 也表现得
+ align:start position:0%
+使用代理工作流的 gbd4 也表现得
+ align:start position:0%
+使用代理工作流的 gbd4 也表现得
+更好， 所以事实证明， 
+ align:start position:0%
+更好， 所以事实证明， 
+ align:start position:0%
+更好， 所以事实证明， 
+在构建者
+ align:start position:0%
+在构建者
+ align:start position:0%
+在构建者
+在其应用程序中构建代理推理或代理工作流的方式中， 
+ align:start position:0%
+在其应用程序中构建代理推理或代理工作流的方式中， 
+ align:start position:0%
+在其应用程序中构建代理推理或代理工作流的方式中， 
+我想要 说
+ align:start position:0%
+我想要 说
+ align:start position:0%
+我想要 说
+四种主要的设计模式， 即
+ align:start position:0%
+四种主要的设计模式， 即
+ align:start position:0%
+四种主要的设计模式， 即
+反射、使用规划和
+ align:start position:0%
+反射、使用规划和
+ align:start position:0%
+反射、使用规划和
+多代理协作， 并
+ align:start position:0%
+多代理协作， 并
+ align:start position:0%
+多代理协作， 并
+稍微揭开代理工作流的神秘面纱， 
+ align:start position:0%
+稍微揭开代理工作流的神秘面纱， 
+ align:start position:0%
+稍微揭开代理工作流的神秘面纱， 
+让我快速介绍一下这些
+ align:start position:0%
+让我快速介绍一下这些
+ align:start position:0%
+让我快速介绍一下这些
+工作流的含义， 嗯， 我发现
+ align:start position:0%
+工作流的含义， 嗯， 我发现
+ align:start position:0%
+工作流的含义， 嗯， 我发现
+代理工作流有时看起来
+ align:start position:0%
+代理工作流有时看起来
+ align:start position:0%
+代理工作流有时看起来
+有点神秘， 直到你真正
+ align:start position:0%
+有点神秘， 直到你真正
+ align:start position:0%
+有点神秘， 直到你真正
+阅读其中一两个的代码， 
+ align:start position:0%
+阅读其中一两个的代码， 
+ align:start position:0%
+阅读其中一两个的代码， 
+哦， 就是这样， 你这真的
+ align:start position:0%
+哦， 就是这样， 你这真的
+ align:start position:0%
+哦， 就是这样， 你这真的
+很酷， 但是， 哦， 这就是全部了， 但是让
+ align:start position:0%
+很酷， 但是， 哦， 这就是全部了， 但是让
+ align:start position:0%
+很酷， 但是， 哦， 这就是全部了， 但是让
+我 只需逐步了解
+ align:start position:0%
+我 只需逐步了解
+ align:start position:0%
+我 只需逐步了解
+ls 的反射是什么
+ align:start position:0%
+ls 的反射是什么
+ align:start position:0%
+ls 的反射是什么
+样子的， 所以我可能会开始
+ align:start position:0%
+样子的， 所以我可能会开始
+ align:start position:0%
+样子的， 所以我可能会开始
+提示 LM 有一个编码代理 l， 
+ align:start position:0%
+提示 LM 有一个编码代理 l， 
+ align:start position:0%
+提示 LM 有一个编码代理 l， 
+所以也许助理会向你的
+ align:start position:0%
+所以也许助理会向你的
+ align:start position:0%
+所以也许助理会向你的
+角色发送消息， 让你成为一名编码员并编写代码， 所以
+ align:start position:0%
+角色发送消息， 让你成为一名编码员并编写代码， 所以
+ align:start position:0%
+角色发送消息， 让你成为一名编码员并编写代码， 所以
+你告诉你知道 为
+ align:start position:0%
+你告诉你知道 为
+ align:start position:0%
+你告诉你知道 为
+某些任务编写代码， 然后 L 可能会生成
+ align:start position:0%
+某些任务编写代码， 然后 L 可能会生成
+ align:start position:0%
+某些任务编写代码， 然后 L 可能会生成
+代码， 然后你会发现你可以
+ align:start position:0%
+代码， 然后你会发现你可以
+ align:start position:0%
+代码， 然后你会发现你可以
+构建一个提示， 该提示采用
+ align:start position:0%
+构建一个提示， 该提示采用
+ align:start position:0%
+构建一个提示， 该提示采用
+刚刚生成的代码， 然后将代码复制粘贴
+ align:start position:0%
+刚刚生成的代码， 然后将代码复制粘贴
+ align:start position:0%
+刚刚生成的代码， 然后将代码复制粘贴
+回舞会并询问它， 
+ align:start position:0%
+回舞会并询问它， 
+ align:start position:0%
+回舞会并询问它， 
+你知道他有一些代码用于 TS
+ align:start position:0%
+你知道他有一些代码用于 TS
+ align:start position:0%
+你知道他有一些代码用于 TS
+检查此代码并对其进行批评， 
+ align:start position:0%
+检查此代码并对其进行批评， 
+ align:start position:0%
+检查此代码并对其进行批评， 
+结果发现您以
+ align:start position:0%
+结果发现您以
+ align:start position:0%
+结果发现您以
+这种方式提示相同的 Elum 有时会发现
+ align:start position:0%
+这种方式提示相同的 Elum 有时会发现
+ align:start position:0%
+这种方式提示相同的 Elum 有时会发现
+一些问题， 或者
+ align:start position:0%
+一些问题， 或者
+ align:start position:0%
+一些问题， 或者
+对校对代码提出一些有用的建议， 
+ align:start position:0%
+对校对代码提出一些有用的建议， 
+ align:start position:0%
+对校对代码提出一些有用的建议， 
+然后您使用反馈提示相同的 L
+ align:start position:0%
+然后您使用反馈提示相同的 L
+ align:start position:0%
+然后您使用反馈提示相同的 L
+并要求您 改进代码
+ align:start position:0%
+并要求您 改进代码
+ align:start position:0%
+并要求您 改进代码
+， 推出新版本
+ align:start position:0%
+， 推出新版本
+ align:start position:0%
+， 推出新版本
+， 呃， 也许可以大喊两声， 如果
+ align:start position:0%
+， 呃， 也许可以大喊两声， 如果
+ align:start position:0%
+， 呃， 也许可以大喊两声， 如果
+可以让 LM 运行一些单元测试， 并将
+ align:start position:0%
+可以让 LM 运行一些单元测试， 并将
+ align:start position:0%
+可以让 LM 运行一些单元测试， 并将
+单元测试的反馈反馈
+ align:start position:0%
+单元测试的反馈反馈
+ align:start position:0%
+单元测试的反馈反馈
+给 LM， 那么这可以是额外的
+ align:start position:0%
+给 LM， 那么这可以是额外的
+ align:start position:0%
+给 LM， 那么这可以是额外的
+反馈， 以帮助它进一步迭代
+ align:start position:0%
+反馈， 以帮助它进一步迭代
+ align:start position:0%
+反馈， 以帮助它进一步迭代
+进一步改进代码， 
+ align:start position:0%
+进一步改进代码， 
+ align:start position:0%
+进一步改进代码， 
+结果发现这种反射
+ align:start position:0%
+结果发现这种反射
+ align:start position:0%
+结果发现这种反射
+工作流程并不神奇 虽然不能解决所有
+ align:start position:0%
+工作流程并不神奇 虽然不能解决所有
+ align:start position:0%
+工作流程并不神奇 虽然不能解决所有
+问题， 但它通常会将
+ align:start position:0%
+问题， 但它通常会将
+ align:start position:0%
+问题， 但它通常会将
+基线水平的表现提升
+ align:start position:0%
+基线水平的表现提升
+ align:start position:0%
+基线水平的表现提升
+到更好的水平， 而且
+ align:start position:0%
+到更好的水平， 而且
+ align:start position:0%
+到更好的水平， 而且
+事实证明， 在这种类型的
+ align:start position:0%
+事实证明， 在这种类型的
+ align:start position:0%
+事实证明， 在这种类型的
+工作流程中， 我们考虑
+ align:start position:0%
+工作流程中， 我们考虑
+ align:start position:0%
+工作流程中， 我们考虑
+促使 LM 批评他自己的
+ align:start position:0%
+促使 LM 批评他自己的
+ align:start position:0%
+促使 LM 批评他自己的
+输出使用 他自己的批评来改进
+ align:start position:0%
+输出使用 他自己的批评来改进
+ align:start position:0%
+输出使用 他自己的批评来改进
+它， 这也可能预示着
+ align:start position:0%
+它， 这也可能预示着
+ align:start position:0%
+它， 这也可能预示着
+多智能体规划或多智能体
+ align:start position:0%
+多智能体规划或多智能体
+ align:start position:0%
+多智能体规划或多智能体
+工作流程， 你可以提示一个人
+ align:start position:0%
+工作流程， 你可以提示一个人
+ align:start position:0%
+工作流程， 你可以提示一个人
+提示一个有时扮演程序员的角色， 
+ align:start position:0%
+提示一个有时扮演程序员的角色， 
+ align:start position:0%
+提示一个有时扮演程序员的角色， 
+有时 PR 扮演
+ align:start position:0%
+有时 PR 扮演
+ align:start position:0%
+有时 PR 扮演
+批评家 CR 的角色 审查
+ align:start position:0%
+批评家 CR 的角色 审查
+ align:start position:0%
+批评家 CR 的角色 审查
+代码， 所以实际上是相同的
+ align:start position:0%
+代码， 所以实际上是相同的
+ align:start position:0%
+代码， 所以实际上是相同的
+对话， 但我们可以提示 LM 以
+ align:start position:0%
+对话， 但我们可以提示 LM 以
+ align:start position:0%
+对话， 但我们可以提示 LM 以
+不同的方式告诉有时
+ align:start position:0%
+不同的方式告诉有时
+ align:start position:0%
+不同的方式告诉有时
+处理代码， 有时尝试
+ align:start position:0%
+处理代码， 有时尝试
+ align:start position:0%
+处理代码， 有时尝试
+提供有用的建议， 这同样可以
+ align:start position:0%
+提供有用的建议， 这同样可以
+ align:start position:0%
+提供有用的建议， 这同样可以
+提高性能， 所以这
+ align:start position:0%
+提高性能， 所以这
+ align:start position:0%
+提高性能， 所以这
+是一个反射设计模式， 嗯， 
+ align:start position:0%
+是一个反射设计模式， 嗯， 
+ align:start position:0%
+是一个反射设计模式， 嗯， 
+第二个主要 设计模式是使用
+ align:start position:0%
+第二个主要 设计模式是使用
+ align:start position:0%
+第二个主要 设计模式是使用
+语言模型
+ align:start position:0%
+语言模型
+ align:start position:0%
+语言模型
+来生成
+ align:start position:0%
+来生成
+ align:start position:0%
+来生成
+API 调用请求， 让它决定何时需要
+ align:start position:0%
+API 调用请求， 让它决定何时需要
+ align:start position:0%
+API 调用请求， 让它决定何时需要
+搜索网页、执行代码或
+ align:start position:0%
+搜索网页、执行代码或
+ align:start position:0%
+搜索网页、执行代码或
+执行其他任务， 比如
+ align:start position:0%
+执行其他任务， 比如
+ align:start position:0%
+执行其他任务， 比如
+退款或发送 电子邮件或
+ align:start position:0%
+退款或发送 电子邮件或
+ align:start position:0%
+退款或发送 电子邮件或
+调出日历条目， 因此使用是一种主要的
+ align:start position:0%
+调出日历条目， 因此使用是一种主要的
+ align:start position:0%
+调出日历条目， 因此使用是一种主要的
+设计模式 是让大型
+ align:start position:0%
+设计模式 是让大型
+ align:start position:0%
+设计模式 是让大型
+语言模型进行函数调用， 
+ align:start position:0%
+语言模型进行函数调用， 
+ align:start position:0%
+语言模型进行函数调用， 
+我认为这扩展了我们可以
+ align:start position:0%
+我认为这扩展了我们可以
+ align:start position:0%
+我认为这扩展了我们可以
+用这些代理工作流程做的事情， 
+ align:start position:0%
+用这些代理工作流程做的事情， 
+ align:start position:0%
+用这些代理工作流程做的事情， 
+嗯， 这是一个规划或推理的
+ align:start position:0%
+嗯， 这是一个规划或推理的
+ align:start position:0%
+嗯， 这是一个规划或推理的
+设计模式， 如果你要
+ align:start position:0%
+设计模式， 如果你要
+ align:start position:0%
+设计模式， 如果你要
+提出一个相当复杂的请求， 你的通用
+ align:start position:0%
+提出一个相当复杂的请求， 你的通用
+ align:start position:0%
+提出一个相当复杂的请求， 你的通用
+形象或女孩 阅读一
+ align:start position:0%
+形象或女孩 阅读一
+ align:start position:0%
+形象或女孩 阅读一
+本书等等， 然后 LM 这个例子
+ align:start position:0%
+本书等等， 然后 LM 这个例子
+ align:start position:0%
+本书等等， 然后 LM 这个例子
+改编自 GTP 论文， LM
+ align:start position:0%
+改编自 GTP 论文， LM
+ align:start position:0%
+改编自 GTP 论文， LM
+可以查看图片并决定
+ align:start position:0%
+可以查看图片并决定
+ align:start position:0%
+可以查看图片并决定
+首先使用 um 开放姿势模型来检测
+ align:start position:0%
+首先使用 um 开放姿势模型来检测
+ align:start position:0%
+首先使用 um 开放姿势模型来检测
+姿势， 然后使用
+ align:start position:0%
+姿势， 然后使用
+ align:start position:0%
+姿势， 然后使用
+女孩的一般图片 um 之后 你知道
+ align:start position:0%
+女孩的一般图片 um 之后 你知道
+ align:start position:0%
+女孩的一般图片 um 之后 你知道
+描述图像， 然后你
+ align:start position:0%
+描述图像， 然后你
+ align:start position:0%
+描述图像， 然后你
+设置 spe 或 TTS 来生成音频， 
+ align:start position:0%
+设置 spe 或 TTS 来生成音频， 
+ align:start position:0%
+设置 spe 或 TTS 来生成音频， 
+但在规划中， 你会有一个 L 查看
+ align:start position:0%
+但在规划中， 你会有一个 L 查看
+ align:start position:0%
+但在规划中， 你会有一个 L 查看
+一个复杂的请求， 并选择一系列
+ align:start position:0%
+一个复杂的请求， 并选择一系列
+ align:start position:0%
+一个复杂的请求， 并选择一系列
+操作执行以完成一个
+ align:start position:0%
+操作执行以完成一个
+ align:start position:0%
+操作执行以完成一个
+复杂的任务， 然后最后 多
+ align:start position:0%
+复杂的任务， 然后最后 多
+ align:start position:0%
+复杂的任务， 然后最后 多
+代理协作是一种设计
+ align:start position:0%
+代理协作是一种设计
+ align:start position:0%
+代理协作是一种设计
+模式， 它不是
+ align:start position:0%
+模式， 它不是
+ align:start position:0%
+模式， 它不是
+让 LM 只做一件事， 而是
+ align:start position:0%
+让 LM 只做一件事， 而是
+ align:start position:0%
+让 LM 只做一件事， 而是
+让 LM 在不同的时间点扮演不同的角色， 
+ align:start position:0%
+让 LM 在不同的时间点扮演不同的角色， 
+ align:start position:0%
+让 LM 在不同的时间点扮演不同的角色， 
+这样
+ align:start position:0%
+这样
+ align:start position:0%
+这样
+不同的代理就可以模拟代理之间的
+ align:start position:0%
+不同的代理就可以模拟代理之间的
+ align:start position:0%
+不同的代理就可以模拟代理之间的
+交互， 并
+ align:start position:0%
+交互， 并
+ align:start position:0%
+交互， 并
+共同解决任务 我知道
+ align:start position:0%
+共同解决任务 我知道
+ align:start position:0%
+共同解决任务 我知道
+有些人可能会想， 如果
+ align:start position:0%
+有些人可能会想， 如果
+ align:start position:0%
+有些人可能会想， 如果
+你用了一个， 为什么需要 为了使
+ align:start position:0%
+你用了一个， 为什么需要 为了使
+ align:start position:0%
+你用了一个， 为什么需要 为了使
+这个角色能够与多个代理一起发挥作用， 
+ align:start position:0%
+这个角色能够与多个代理一起发挥作用， 
+ align:start position:0%
+这个角色能够与多个代理一起发挥作用， 
+许多团队已经
+ align:start position:0%
+许多团队已经
+ align:start position:0%
+许多团队已经
+证明了使用这种设计模式可以显著提高
+ align:start position:0%
+证明了使用这种设计模式可以显著提高
+ align:start position:0%
+证明了使用这种设计模式可以显著提高
+各种任务的性能
+ align:start position:0%
+各种任务的性能
+ align:start position:0%
+各种任务的性能
+， 事实证明
+ align:start position:0%
+， 事实证明
+ align:start position:0%
+， 事实证明
+， 如果你有一个 LM， 它有时会
+ align:start position:0%
+， 如果你有一个 LM， 它有时会
+ align:start position:0%
+， 如果你有一个 LM， 它有时会
+专注于不同的任务， 也许一次一个， 就会与
+ align:start position:0%
+专注于不同的任务， 也许一次一个， 就会与
+ align:start position:0%
+专注于不同的任务， 也许一次一个， 就会与
+许多代理进行交互 团队
+ align:start position:0%
+许多代理进行交互 团队
+ align:start position:0%
+许多代理进行交互 团队
+似乎真的用这个得到了更好的结果
+ align:start position:0%
+似乎真的用这个得到了更好的结果
+ align:start position:0%
+似乎真的用这个得到了更好的结果
+我觉得也许嗯有
+ align:start position:0%
+我觉得也许嗯有
+ align:start position:0%
+我觉得也许嗯有
+一个类比如果你在
+ align:start position:0%
+一个类比如果你在
+ align:start position:0%
+一个类比如果你在
+CPU 上的处理器上运行作业你为什么我们需要
+ align:start position:0%
+CPU 上的处理器上运行作业你为什么我们需要
+ align:start position:0%
+CPU 上的处理器上运行作业你为什么我们需要
+多个进程它都是同一个
+ align:start position:0%
+多个进程它都是同一个
+ align:start position:0%
+多个进程它都是同一个
+处理器你知道在最后
+ align:start position:0%
+处理器你知道在最后
+ align:start position:0%
+处理器你知道在最后
+但我们发现， 拥有多个 FS
+ align:start position:0%
+但我们发现， 拥有多个 FS
+ align:start position:0%
+但我们发现， 拥有多个 FS
+进程对于开发人员来说是一个有用的抽象， 他们可以
+ align:start position:0%
+进程对于开发人员来说是一个有用的抽象， 他们可以
+ align:start position:0%
+进程对于开发人员来说是一个有用的抽象， 他们可以
+将任务
+ align:start position:0%
+将任务
+ align:start position:0%
+将任务
+分解为子任务， 我认为多智能体
+ align:start position:0%
+分解为子任务， 我认为多智能体
+ align:start position:0%
+分解为子任务， 我认为多智能体
+协作也有点像这样， 如果
+ align:start position:0%
+协作也有点像这样， 如果
+ align:start position:0%
+协作也有点像这样， 如果
+你有一个大任务， 那么如果你想
+ align:start position:0%
+你有一个大任务， 那么如果你想
+ align:start position:0%
+你有一个大任务， 那么如果你想
+雇佣 一组代理执行不同的
+ align:start position:0%
+雇佣 一组代理执行不同的
+ align:start position:0%
+雇佣 一组代理执行不同的
+任务， 然后有时进行交互， 
+ align:start position:0%
+任务， 然后有时进行交互， 
+ align:start position:0%
+任务， 然后有时进行交互， 
+这有助于开发人员构建复杂的
+ align:start position:0%
+这有助于开发人员构建复杂的
+ align:start position:0%
+这有助于开发人员构建复杂的
+系统以提供良好的结果， 所以我
+ align:start position:0%
+系统以提供良好的结果， 所以我
+ align:start position:0%
+系统以提供良好的结果， 所以我
+认为有了这四种主要的代理
+ align:start position:0%
+认为有了这四种主要的代理
+ align:start position:0%
+认为有了这四种主要的代理
+设计模式， 代理推理
+ align:start position:0%
+设计模式， 代理推理
+ align:start position:0%
+设计模式， 代理推理
+工作流设计模式， 它给了我们
+ align:start position:0%
+工作流设计模式， 它给了我们
+ align:start position:0%
+工作流设计模式， 它给了我们
+一个巨大的发挥空间 建立
+ align:start position:0%
+一个巨大的发挥空间 建立
+ align:start position:0%
+一个巨大的发挥空间 建立
+Rich 代理来做一些坦白地说在
+ align:start position:0%
+Rich 代理来做一些坦白地说在
+ align:start position:0%
+Rich 代理来做一些坦白地说在
+一年前根本不可能的事情， 
+ align:start position:0%
+一年前根本不可能的事情， 
+ align:start position:0%
+一年前根本不可能的事情， 
+嗯， 我想
+ align:start position:0%
+嗯， 我想
+ align:start position:0%
+嗯， 我想
+我特别兴奋的一个方面是， 
+ align:start position:0%
+我特别兴奋的一个方面是， 
+ align:start position:0%
+ align:start position:0%
+这些代理的兴起不仅仅是大型语言模型， 还有
+ align:start position:0%
+这些代理的兴起不仅仅是大型语言模型， 还有
+ align:start position:0%
+这些代理的兴起不仅仅是大型语言模型， 还有
+大型多模态模型， 
+ align:start position:0%
+大型多模态模型， 
+ align:start position:0%
+大型多模态模型， 
+所以
+ align:start position:0%
+所以
+ align:start position:0%
+所以
+如果你想使用一个
+ align:start position:0%
+如果你想使用一个
+ align:start position:0%
+如果你想使用一个
+lmm 大模型， 请给出这样的图像 多模态模型， 你
+ align:start position:0%
+lmm 大模型， 请给出这样的图像 多模态模型， 你
+ align:start position:0%
+lmm 大模型， 请给出这样的图像 多模态模型， 你
+实际上可以做零样本提示， 
+ align:start position:0%
+实际上可以做零样本提示， 
+ align:start position:0%
+实际上可以做零样本提示， 
+这有点像告诉它， 你知道
+ align:start position:0%
+这有点像告诉它， 你知道
+ align:start position:0%
+这有点像告诉它， 你知道
+看一眼图像， 然后告诉
+ align:start position:0%
+看一眼图像， 然后告诉
+ align:start position:0%
+看一眼图像， 然后告诉
+输出， 对于简单的图像
+ align:start position:0%
+输出， 对于简单的图像
+ align:start position:0%
+输出， 对于简单的图像
+想法， 没关系， 你实际上可以
+ align:start position:0%
+想法， 没关系， 你实际上可以
+ align:start position:0%
+想法， 没关系， 你实际上可以
+拥有它， 你知道看看图像， 
+ align:start position:0%
+拥有它， 你知道看看图像， 
+ align:start position:0%
+拥有它， 你知道看看图像， 
+呃， 对 给你
+ align:start position:0%
+呃， 对 给你
+ align:start position:0%
+呃， 对 给你
+跑步者的数字或者其他东西， 但事实证明， 
+ align:start position:0%
+跑步者的数字或者其他东西， 但事实证明， 
+ align:start position:0%
+跑步者的数字或者其他东西， 但事实证明， 
+就像基于大型语言模型的
+ align:start position:0%
+就像基于大型语言模型的
+ align:start position:0%
+就像基于大型语言模型的
+代理一样， 基于大型多模型的
+ align:start position:0%
+代理一样， 基于大型多模型的
+ align:start position:0%
+代理一样， 基于大型多模型的
+代理可以通过
+ align:start position:0%
+代理可以通过
+ align:start position:0%
+代理可以通过
+迭代工作流程做得更好， 你可以一步
+ align:start position:0%
+迭代工作流程做得更好， 你可以一步
+ align:start position:0%
+迭代工作流程做得更好， 你可以一步
+一步地解决这个问题， 所以为了
+ align:start position:0%
+一步地解决这个问题， 所以为了
+ align:start position:0%
+一步地解决这个问题， 所以为了
+检测面部 数字把它们放在一起， 
+ align:start position:0%
+检测面部 数字把它们放在一起， 
+ align:start position:0%
+检测面部 数字把它们放在一起， 
+所以有了这个更多的 IR 工作流程， 你
+ align:start position:0%
+所以有了这个更多的 IR 工作流程， 你
+ align:start position:0%
+所以有了这个更多的 IR 工作流程， 你
+实际上可以让一个代理做一些
+ align:start position:0%
+实际上可以让一个代理做一些
+ align:start position:0%
+实际上可以让一个代理做一些
+规划测试编写代码计划测试
+ align:start position:0%
+规划测试编写代码计划测试
+ align:start position:0%
+规划测试编写代码计划测试
+编写代码并想出一个最
+ align:start position:0%
+编写代码并想出一个最
+ align:start position:0%
+编写代码并想出一个最
+复杂的计划， 就像
+ align:start position:0%
+复杂的计划， 就像
+ align:start position:0%
+复杂的计划， 就像
+表达代码一样清晰地表达更
+ align:start position:0%
+表达代码一样清晰地表达更
+ align:start position:0%
+表达代码一样清晰地表达更
+复杂的想法， 那又怎么样 我喜欢
+ align:start position:0%
+复杂的想法， 那又怎么样 我喜欢
+ align:start position:0%
+复杂的想法， 那又怎么样 我喜欢
+向你们展示一些
+ align:start position:0%
+向你们展示一些
+ align:start position:0%
+向你们展示一些
+Dan Malone 的作品 我和 H AI 团队
+ align:start position:0%
+Dan Malone 的作品 我和 H AI 团队
+ align:start position:0%
+Dan Malone 的作品 我和 H AI 团队
+一直致力于
+ align:start position:0%
+一直致力于
+ align:start position:0%
+一直致力于
+为视觉 AI 任务构建遗传工作流程， 
+ align:start position:0%
+为视觉 AI 任务构建遗传工作流程， 
+ align:start position:0%
+为视觉 AI 任务构建遗传工作流程， 
+所以如果我们切换到我的
+ align:start position:0%
+所以如果我们切换到我的
+ align:start position:0%
+所以如果我们切换到我的
+笔记本电脑， 
+ align:start position:0%
+笔记本电脑， 
+ align:start position:0%
+笔记本电脑， 
+嗯， 让我在这里放一张
+ align:start position:0%
+嗯， 让我在这里放一张
+ align:start position:0%
+嗯， 让我在这里放一张
+足球比赛或橄榄球比赛的图片， 嗯， 我
+ align:start position:0%
+足球比赛或橄榄球比赛的图片， 嗯， 我
+ align:start position:0%
+足球比赛或橄榄球比赛的图片， 嗯， 我
+要说的是 让我们看看
+ align:start position:0%
+要说的是 让我们看看
+ align:start position:0%
+要说的是 让我们看看
+vi 中的玩家数量哦， 这很有趣如果
+ align:start position:0%
+vi 中的玩家数量哦， 这很有趣如果
+ align:start position:0%
+vi 中的玩家数量哦， 这很有趣如果
+你不知道如何在上传图片后提示它
+ align:start position:0%
+你不知道如何在上传图片后提示它
+ align:start position:0%
+你不知道如何在上传图片后提示它
+这个小
+ align:start position:0%
+这个小
+ align:start position:0%
+这个小
+灯泡在这里你知道给出一些建议的
+ align:start position:0%
+灯泡在这里你知道给出一些建议的
+ align:start position:0%
+灯泡在这里你知道给出一些建议的
+提示你可能会问这个呃但是让
+ align:start position:0%
+提示你可能会问这个呃但是让
+ align:start position:0%
+提示你可能会问这个呃但是让
+我运行这个所以 C 球场上的球员， 
+ align:start position:0%
+我运行这个所以 C 球场上的球员， 
+ align:start position:0%
+我运行这个所以 C 球场上的球员， 
+然后这开始的
+ align:start position:0%
+然后这开始的
+ align:start position:0%
+然后这开始的
+过程实际上
+ align:start position:0%
+过程实际上
+ align:start position:0%
+过程实际上
+需要几分钟来思考
+ align:start position:0%
+需要几分钟来思考
+ align:start position:0%
+需要几分钟来思考
+如何编写代码， 以便制定一个
+ align:start position:0%
+如何编写代码， 以便制定一个
+ align:start position:0%
+如何编写代码， 以便制定一个
+计划来准确
+ align:start position:0%
+计划来准确
+ align:start position:0%
+计划来准确
+计算球员人数 一些
+ align:start position:0%
+计算球员人数 一些
+ align:start position:0%
+计算球员人数 一些
+这实际上有点复杂， 
+ align:start position:0%
+这实际上有点复杂， 
+ align:start position:0%
+这实际上有点复杂， 
+因为你不希望背景中的球员
+ align:start position:0%
+因为你不希望背景中的球员
+ align:start position:0%
+因为你不希望背景中的球员
+只出现在一些我
+ align:start position:0%
+只出现在一些我
+ align:start position:0%
+只出现在一些我
+之前已经运行过这个所以我们直接跳到
+ align:start position:0%
+之前已经运行过这个所以我们直接跳到
+ align:start position:0%
+之前已经运行过这个所以我们直接跳到
+结果嗯但它说 Cod 已经
+ align:start position:0%
+结果嗯但它说 Cod 已经
+ align:start position:0%
+结果嗯但它说 Cod 已经
+在场上选择了七名球员
+ align:start position:0%
+在场上选择了七名球员
+ align:start position:0%
+在场上选择了七名球员
+我觉得应该是正确的 1 2 3 4 5 6
+ align:start position:0%
+我觉得应该是正确的 1 2 3 4 5 6
+ align:start position:0%
+我觉得应该是正确的 1 2 3 4 5 6
+ align:start position:0%
+ align:start position:0%
+嗯， 如果 我要放大模型
+ align:start position:0%
+嗯， 如果 我要放大模型
+ align:start position:0%
+嗯， 如果 我要放大模型
+输出现在 1 2 3 4 5 6 7 我认为这
+ align:start position:0%
+输出现在 1 2 3 4 5 6 7 我认为这
+ align:start position:0%
+输出现在 1 2 3 4 5 6 7 我认为这
+实际上是正确的， 并且输出的一部分
+ align:start position:0%
+实际上是正确的， 并且输出的一部分
+ align:start position:0%
+实际上是正确的， 并且输出的一部分
+是， 嗯， 它还
+ align:start position:0%
+是， 嗯， 它还
+ align:start position:0%
+是， 嗯， 它还
+生成了代码， 你可以反复运行
+ align:start position:0%
+生成了代码， 你可以反复运行
+ align:start position:0%
+生成了代码， 你可以反复运行
+， 嗯， 实际上生成了 Python
+ align:start position:0%
+， 嗯， 实际上生成了 Python
+ align:start position:0%
+ align:start position:0%
+如果你愿意的话， 你可以
+ align:start position:0%
+如果你愿意的话， 你可以
+ align:start position:0%
+如果你愿意的话， 你可以
+在大量的图像集合上反复运行代码
+ align:start position:0%
+在大量的图像集合上反复运行代码
+ align:start position:0%
+在大量的图像集合上反复运行代码
+， 我认为这很令人兴奋， 因为
+ align:start position:0%
+， 我认为这很令人兴奋， 因为
+ align:start position:0%
+， 我认为这很令人兴奋， 因为
+有很多公司和
+ align:start position:0%
+有很多公司和
+ align:start position:0%
+有很多公司和
+团队实际上拥有大量的视觉
+ align:start position:0%
+团队实际上拥有大量的视觉
+ align:start position:0%
+团队实际上拥有大量的视觉
+人工智能数据， 有很多图像
+ align:start position:0%
+人工智能数据， 有很多图像
+ align:start position:0%
+人工智能数据， 有很多图像
+很多视频都存储在某个地方， 
+ align:start position:0%
+很多视频都存储在某个地方， 
+ align:start position:0%
+很多视频都存储在某个地方， 
+到目前为止， 要从
+ align:start position:0%
+到目前为止， 要从
+ align:start position:0%
+到目前为止， 要从
+这些数据中获取价值一直非常困难， 所以对于
+ align:start position:0%
+这些数据中获取价值一直非常困难， 所以对于
+ align:start position:0%
+这些数据中获取价值一直非常困难， 所以对于
+很多拥有大量视觉数据的小型团队或大型
+ align:start position:0%
+很多拥有大量视觉数据的小型团队或大型
+ align:start position:0%
+很多拥有大量视觉数据的小型团队或大型
+企业来说， 
+ align:start position:0%
+企业来说， 
+ align:start position:0%
+企业来说， 
+视觉代理等视觉人工智能功能
+ align:start position:0%
+视觉代理等视觉人工智能功能
+ align:start position:0%
+视觉代理等视觉人工智能功能
+可以让你 把所有这些数据都
+ align:start position:0%
+可以让你 把所有这些数据都
+ align:start position:0%
+可以让你 把所有这些数据都
+先放到 blob 存储中
+ align:start position:0%
+先放到 blob 存储中
+ align:start position:0%
+先放到 blob 存储中
+， 然后获得真正的价值， 
+ align:start position:0%
+， 然后获得真正的价值， 
+ align:start position:0%
+， 然后获得真正的价值， 
+我认为这对人工智能来说是一个巨大的
+ align:start position:0%
+我认为这对人工智能来说是一个巨大的
+ align:start position:0%
+我认为这对人工智能来说是一个巨大的
+转变， 嗯， 这是另一个
+ align:start position:0%
+转变， 嗯， 这是另一个
+ align:start position:0%
+转变， 嗯， 这是另一个
+例子， 你知道， 这是给定一个
+ align:start position:0%
+例子， 你知道， 这是给定一个
+ align:start position:0%
+例子， 你知道， 这是给定一个
+视频分割， 这是另一场足球比赛
+ align:start position:0%
+视频分割， 这是另一场足球比赛
+ align:start position:0%
+视频分割， 这是另一场足球比赛
+或橄榄球
+ align:start position:0%
+或橄榄球
+ align:start position:0%
+或橄榄球
+比赛， 所以 给定视频分割
+ align:start position:0%
+比赛， 所以 给定视频分割
+ align:start position:0%
+比赛， 所以 给定视频分割
+5 秒的视频片段， 找到 go 所在的片段
+ align:start position:0%
+5 秒的视频片段， 找到 go 所在的片段
+ align:start position:0%
+5 秒的视频片段， 找到 go 所在的片段
+被评分显示一个帧
+ align:start position:0%
+被评分显示一个帧
+ align:start position:0%
+被评分显示一个帧
+输出， 所以兰德已经因为六
+ align:start position:0%
+输出， 所以兰德已经因为六
+ align:start position:0%
+输出， 所以兰德已经因为六
+运行了一点时间， 然后这将
+ align:start position:0%
+运行了一点时间， 然后这将
+ align:start position:0%
+运行了一点时间， 然后这将
+生成代码评估代码一段时间， 
+ align:start position:0%
+生成代码评估代码一段时间， 
+ align:start position:0%
+生成代码评估代码一段时间， 
+这是输出， 它说的是真正的
+ align:start position:0%
+这是输出， 它说的是真正的
+ align:start position:0%
+这是输出， 它说的是真正的
+1015， 所以那些事情是圣你知道
+ align:start position:0%
+1015， 所以那些事情是圣你知道
+ align:start position:0%
+1015， 所以那些事情是圣你知道
+在这里 在
+ align:start position:0%
+在这里 在
+ align:start position:0%
+在这里 在
+右边和那里之间， 就是这样， 
+ align:start position:0%
+右边和那里之间， 就是这样， 
+ align:start position:0%
+右边和那里之间， 就是这样， 
+并且按照指示， 你知道
+ align:start position:0%
+并且按照指示， 你知道
+ align:start position:0%
+并且按照指示， 你知道
+提取了一些与此相关的帧， 
+ align:start position:0%
+提取了一些与此相关的帧， 
+ align:start position:0%
+提取了一些与此相关的帧， 
+这对于
+ align:start position:0%
+这对于
+ align:start position:0%
+这对于
+处理视频数据非常有用， 也许
+ align:start position:0%
+处理视频数据非常有用， 也许
+ align:start position:0%
+处理视频数据非常有用， 也许
+这是最后一个例子， 嗯， 
+ align:start position:0%
+这是最后一个例子， 嗯， 
+ align:start position:0%
+这是最后一个例子， 嗯， 
+视觉代理， 嗯， 你 也可以
+ align:start position:0%
+视觉代理， 嗯， 你 也可以
+ align:start position:0%
+视觉代理， 嗯， 你 也可以
+要求程序
+ align:start position:0%
+要求程序
+ align:start position:0%
+要求程序
+每 6 秒将输入视频分割成小块， 
+ align:start position:0%
+每 6 秒将输入视频分割成小块， 
+ align:start position:0%
+每 6 秒将输入视频分割成小块， 
+描述每个块， 并
+ align:start position:0%
+描述每个块， 并
+ align:start position:0%
+描述每个块， 并
+在 Panda 的数据框中安装信息， 
+ align:start position:0%
+在 Panda 的数据框中安装信息， 
+ align:start position:0%
+在 Panda 的数据框中安装信息， 
+剪辑名称为 Su， 及时返回
+ align:start position:0%
+剪辑名称为 Su， 及时返回
+ align:start position:0%
+剪辑名称为 Su， 及时返回
+Panda 的数据框， 所以这是一种
+ align:start position:0%
+Panda 的数据框， 所以这是一种
+ align:start position:0%
+Panda 的数据框， 所以这是一种
+查看视频数据的方法 你可能已经
+ align:start position:0%
+查看视频数据的方法 你可能已经
+ align:start position:0%
+查看视频数据的方法 你可能已经
+为此生成了元数据， 
+ align:start position:0%
+为此生成了元数据， 
+ align:start position:0%
+为此生成了元数据， 
+然后你可以将其存储在 snowfake 或
+ align:start position:0%
+然后你可以将其存储在 snowfake 或
+ align:start position:0%
+然后你可以将其存储在 snowfake 或
+某个地方， 然后
+ align:start position:0%
+某个地方， 然后
+ align:start position:0%
+某个地方， 然后
+在其上构建其他应用程序， 但只是为了向
+ align:start position:0%
+在其上构建其他应用程序， 但只是为了向
+ align:start position:0%
+在其上构建其他应用程序， 但只是为了向
+你展示这个的输出， 所以你知道
+ align:start position:0%
+你展示这个的输出， 所以你知道
+ align:start position:0%
+你展示这个的输出， 所以你知道
+剪辑名称开始时间结束时间以及 然后
+ align:start position:0%
+剪辑名称开始时间结束时间以及 然后
+ align:start position:0%
+剪辑名称开始时间结束时间以及 然后
+实际上是写代码嗯这里
+ align:start position:0%
+实际上是写代码嗯这里
+ align:start position:0%
+实际上是写代码嗯这里
+写代码你 然后可以在
+ align:start position:0%
+写代码你 然后可以在
+ align:start position:0%
+写代码你 然后可以在
+其他地方运行， 如果你想的话， 把
+ align:start position:0%
+其他地方运行， 如果你想的话， 把
+ align:start position:0%
+其他地方运行， 如果你想的话， 把
+标签或其他东西放在流中， 然后你可以
+ align:start position:0%
+标签或其他东西放在流中， 然后你可以
+ align:start position:0%
+标签或其他东西放在流中， 然后你可以
+用它来写很多你知道的文本
+ align:start position:0%
+用它来写很多你知道的文本
+ align:start position:0%
+用它来写很多你知道的文本
+描述， 嗯， 使用
+ align:start position:0%
+描述， 嗯， 使用
+ align:start position:0%
+描述， 嗯， 使用
+视觉代理的这种能力来帮助
+ align:start position:0%
+视觉代理的这种能力来帮助
+ align:start position:0%
+视觉代理的这种能力来帮助
+我在 Landing 的团队编写代码 AI
+ align:start position:0%
+我在 Landing 的团队编写代码 AI
+ align:start position:0%
+我在 Landing 的团队编写代码 AI
+实际上构建了这个小型演示应用程序， 
+ align:start position:0%
+实际上构建了这个小型演示应用程序， 
+ align:start position:0%
+实际上构建了这个小型演示应用程序， 
+它使用了视觉代理的代码， 所以
+ align:start position:0%
+它使用了视觉代理的代码， 所以
+ align:start position:0%
+它使用了视觉代理的代码， 所以
+我们不需要编写代码， 
+ align:start position:0%
+我们不需要编写代码， 
+ align:start position:0%
+我们不需要编写代码， 
+视觉代理会编写代码来构建元
+ align:start position:0%
+视觉代理会编写代码来构建元
+ align:start position:0%
+视觉代理会编写代码来构建元
+数据， 然后索引
+ align:start position:0%
+数据， 然后索引
+ align:start position:0%
+数据， 然后索引
+一堆视频， 让我们看看她如何
+ align:start position:0%
+一堆视频， 让我们看看她如何
+ align:start position:0%
+一堆视频， 让我们看看她如何
+浏览， 所以斯卡空中 是的， 我
+ align:start position:0%
+浏览， 所以斯卡空中 是的， 我
+ align:start position:0%
+浏览， 所以斯卡空中 是的， 我
+之前确实运行过这个， 希望它能正常工作， 
+ align:start position:0%
+之前确实运行过这个， 希望它能正常工作， 
+ align:start position:0%
+之前确实运行过这个， 希望它能正常工作， 
+所以这个演示展示的是， 我们已经
+ align:start position:0%
+所以这个演示展示的是， 我们已经
+ align:start position:0%
+所以这个演示展示的是， 我们已经
+运行了代码， 将视频分割成
+ align:start position:0%
+运行了代码， 将视频分割成
+ align:start position:0%
+运行了代码， 将视频分割成
+块， 存储元数据， 然后
+ align:start position:0%
+块， 存储元数据， 然后
+ align:start position:0%
+块， 存储元数据， 然后
+当我搜索 skier Airborne 时， 
+ align:start position:0%
+当我搜索 skier Airborne 时， 
+ align:start position:0%
+当我搜索 skier Airborne 时， 
+你知道它会显示剪辑， 呃
+ align:start position:0%
+你知道它会显示剪辑， 呃
+ align:start position:0%
+你知道它会显示剪辑， 呃
+相似度很高， 
+ align:start position:0%
+相似度很高， 
+ align:start position:0%
+相似度很高， 
+对吧， 马克， 这里的绿色
+ align:start position:0%
+对吧， 马克， 这里的绿色
+ align:start position:0%
+对吧， 马克， 这里的绿色
+相似度很高， 
+ align:start position:0%
+相似度很高， 
+ align:start position:0%
+相似度很高， 
+看到我这样做， 我的心跳加速， 哦， 
+ align:start position:0%
+看到我这样做， 我的心跳加速， 哦， 
+ align:start position:0%
+看到我这样做， 我的心跳加速， 哦， 
+这里还有一个， 哇， 
+ align:start position:0%
+这里还有一个， 哇， 
+ align:start position:0%
+这里还有一个， 哇， 
+好吧， 好吧， 
+ align:start position:0%
+好吧， 好吧， 
+ align:start position:0%
+好吧， 好吧， 
+时间轴的绿色部分显示滑雪者在
+ align:start position:0%
+时间轴的绿色部分显示滑雪者在
+ align:start position:0%
+时间轴的绿色部分显示滑雪者在
+空中的位置， 让我们看看 晚上的灰狼我
+ align:start position:0%
+空中的位置， 让我们看看 晚上的灰狼我
+ align:start position:0%
+空中的位置， 让我们看看 晚上的灰狼我
+其实觉得很有趣你什么时候
+ align:start position:0%
+其实觉得很有趣你什么时候
+ align:start position:0%
+其实觉得很有趣你什么时候
+当你有视频收藏来
+ align:start position:0%
+当你有视频收藏来
+ align:start position:0%
+当你有视频收藏来
+索引它， 然后浏览它， 
+ align:start position:0%
+索引它， 然后浏览它， 
+ align:start position:0%
+索引它， 然后浏览它， 
+这里是晚上的灰太狼， 
+ align:start position:0%
+这里是晚上的灰太狼， 
+ align:start position:0%
+这里是晚上的灰太狼， 
+这条绿色的时间线显示了一只灰太
+ align:start position:0%
+这条绿色的时间线显示了一只灰太
+ align:start position:0%
+这条绿色的时间线显示了一只灰太
+狼和尼蒂斯， 如果我
+ align:start position:0%
+狼和尼蒂斯， 如果我
+ align:start position:0%
+狼和尼蒂斯， 如果我
+跳到视频的不同部分， 还有
+ align:start position:0%
+跳到视频的不同部分， 还有
+ align:start position:0%
+跳到视频的不同部分， 还有
+许多其他的 东西也在那里， 
+ align:start position:0%
+许多其他的 东西也在那里， 
+ align:start position:0%
+许多其他的 东西也在那里， 
+晚上没有 Dre wolf， 所以
+ align:start position:0%
+晚上没有 Dre wolf， 所以
+ align:start position:0%
+晚上没有 Dre wolf， 所以
+这很酷， 
+ align:start position:0%
+这很酷， 
+ align:start position:0%
+这很酷， 
+嗯， 让我们看最后一个例子， 
+ align:start position:0%
+ align:start position:0%
+嗯， 是的， 如果我真的经常上路， 
+ align:start position:0%
+嗯， 是的， 如果我真的经常上路， 
+ align:start position:0%
+嗯， 是的， 如果我真的经常上路， 
+但是如果特别是如果你的行李
+ align:start position:0%
+但是如果特别是如果你的行李
+ align:start position:0%
+但是如果特别是如果你的行李
+这个黑色行李箱， 嗯， 
+ align:start position:0%
+这个黑色行李箱， 嗯， 
+ align:start position:0%
+这个黑色行李箱， 嗯， 
+那里 但事实证明， 
+ align:start position:0%
+那里 但事实证明， 
+ align:start position:0%
+那里 但事实证明， 
+实际上有很多黑色行李箱， 所以
+ align:start position:0%
+实际上有很多黑色行李箱， 所以
+ align:start position:0%
+实际上有很多黑色行李箱， 所以
+如果你想要你的行李箱， 比如说带
+ align:start position:0%
+如果你想要你的行李箱， 比如说带
+ align:start position:0%
+ align:start position:0%
+彩虹带的黑色行李箱， 那里有很多黑色
+ align:start position:0%
+彩虹带的黑色行李箱， 那里有很多黑色
+ align:start position:0%
+彩虹带的黑色行李箱， 那里有很多黑色
+行李箱， 
+ align:start position:0%
+行李箱， 
+ align:start position:0%
+行李箱， 
+ align:start position:0%
+ align:start position:0%
+那么你知道那里有带
+ align:start position:0%
+那么你知道那里有带
+ align:start position:0%
+那么你知道那里有带
+彩虹带的黑色行李箱， 所以有很多有趣的
+ align:start position:0%
+彩虹带的黑色行李箱， 所以有很多有趣的
+ align:start position:0%
+彩虹带的黑色行李箱， 所以有很多有趣的
+东西 嗯， 我认为
+ align:start position:0%
+东西 嗯， 我认为
+ align:start position:0%
+东西 嗯， 我认为
+这的好处是， 
+ align:start position:0%
+这的好处是， 
+ align:start position:0%
+这的好处是， 
+构建这样的应用程序所需的工作量比
+ align:start position:0%
+构建这样的应用程序所需的工作量比
+ align:start position:0%
+构建这样的应用程序所需的工作量比
+以往任何时候都要少， 所以让我们回到幻灯片上， 
+ align:start position:0%
+以往任何时候都要少， 所以让我们回到幻灯片上， 
+ align:start position:0%
+以往任何时候都要少， 所以让我们回到幻灯片上， 
+ align:start position:0%
+ align:start position:0%
+嗯
+ align:start position:0%
+嗯
+ align:start position:0%
+嗯
+， 在人工智能机会方面， 我谈了
+ align:start position:0%
+， 在人工智能机会方面， 我谈了
+ align:start position:0%
+， 在人工智能机会方面， 我谈了
+一些关于代理工作流程以及嗯， 这是如何实现
+ align:start position:0%
+一些关于代理工作流程以及嗯， 这是如何实现
+ align:start position:0%
+一些关于代理工作流程以及嗯， 这是如何实现
+的 改变人工智能堆栈就像
+ align:start position:0%
+的 改变人工智能堆栈就像
+ align:start position:0%
+的 改变人工智能堆栈就像
+事实证明， 除了
+ align:start position:0%
+事实证明， 除了
+ align:start position:0%
+事实证明， 除了
+我展示的这个堆栈之外， 实际上还有
+ align:start position:0%
+我展示的这个堆栈之外， 实际上还有
+ align:start position:0%
+我展示的这个堆栈之外， 实际上还有
+一个新出现的代理编排
+ align:start position:0%
+一个新出现的代理编排
+ align:start position:0%
+一个新出现的代理编排
+层， 以及
+ align:start position:0%
+层， 以及
+ align:start position:0%
+层， 以及
+像 L chain 这样的小编排层， 它们已经存在了
+ align:start position:0%
+像 L chain 这样的小编排层， 它们已经存在了
+ align:start position:0%
+像 L chain 这样的小编排层， 它们已经存在了
+一段时间， 并且
+ align:start position:0%
+一段时间， 并且
+ align:start position:0%
+一段时间， 并且
+通过 Langra 变得越来越代理化， 
+ align:start position:0%
+通过 Langra 变得越来越代理化， 
+ align:start position:0%
+通过 Langra 变得越来越代理化， 
+例如， 这个新的代理
+ align:start position:0%
+例如， 这个新的代理
+ align:start position:0%
+例如， 这个新的代理
+编排层也让
+ align:start position:0%
+编排层也让
+ align:start position:0%
+编排层也让
+开发人员更容易
+ align:start position:0%
+开发人员更容易
+ align:start position:0%
+开发人员更容易
+在其上构建应用程序， 我希望
+ align:start position:0%
+在其上构建应用程序， 我希望
+ align:start position:0%
+在其上构建应用程序， 我希望
+Landing ai 的 Vision 代理能对此做出另一项
+ align:start position:0%
+Landing ai 的 Vision 代理能对此做出另一项
+ align:start position:0%
+Landing ai 的 Vision 代理能对此做出另一项
+贡献， 让
+ align:start position:0%
+贡献， 让
+ align:start position:0%
+贡献， 让
+您更轻松地构建视觉 AI
+ align:start position:0%
+您更轻松地构建视觉 AI
+ align:start position:0%
+您更轻松地构建视觉 AI
+应用程序来处理所有这些图像
+ align:start position:0%
+应用程序来处理所有这些图像
+ align:start position:0%
+应用程序来处理所有这些图像
+和视频数据， 这些图像和视频数据可能是您 有， 但
+ align:start position:0%
+和视频数据， 这些图像和视频数据可能是您 有， 但
+ align:start position:0%
+ align:start position:0%
+直到最近才真正获得价值， 所以， 
+ align:start position:0%
+直到最近才真正获得价值， 所以， 
+ align:start position:0%
+直到最近才真正获得价值， 所以， 
+当你想到我认为
+ align:start position:0%
+当你想到我认为
+ align:start position:0%
+当你想到我认为
+最重要的四个人工智能趋势时， 
+ align:start position:0%
+最重要的四个人工智能趋势时， 
+ align:start position:0%
+最重要的四个人工智能趋势时， 
+人工智能领域发生了很多事情， 不可能
+ align:start position:0%
+人工智能领域发生了很多事情， 不可能
+ align:start position:0%
+人工智能领域发生了很多事情， 不可能
+在一张幻灯片中总结所有内容 你
+ align:start position:0%
+在一张幻灯片中总结所有内容 你
+ align:start position:0%
+在一张幻灯片中总结所有内容 你
+必须让我选择一个最
+ align:start position:0%
+必须让我选择一个最
+ align:start position:0%
+必须让我选择一个最
+重要的趋势， 我会说是代理
+ align:start position:0%
+重要的趋势， 我会说是代理
+ align:start position:0%
+重要的趋势， 我会说是代理
+人工智能， 但这里有另外四件事我
+ align:start position:0%
+人工智能， 但这里有另外四件事我
+ align:start position:0%
+人工智能， 但这里有另外四件事我
+认为首先值得关注， 
+ align:start position:0%
+认为首先值得关注， 
+ align:start position:0%
+认为首先值得关注， 
+事实证明代理工作流程
+ align:start position:0%
+事实证明代理工作流程
+ align:start position:0%
+事实证明代理工作流程
+需要读取大量文本或图像并
+ align:start position:0%
+需要读取大量文本或图像并
+ align:start position:0%
+需要读取大量文本或图像并
+生成大量 所以我们说这会
+ align:start position:0%
+生成大量 所以我们说这会
+ align:start position:0%
+生成大量 所以我们说这会
+产生大量的标记， 并且他们
+ align:start position:0%
+产生大量的标记， 并且他们
+ align:start position:0%
+产生大量的标记， 并且他们
+令人兴奋的努力会加速 代币
+ align:start position:0%
+令人兴奋的努力会加速 代币
+ align:start position:0%
+令人兴奋的努力会加速 代币
+生成包括
+ align:start position:0%
+生成包括
+ align:start position:0%
+生成包括
+Sova 服务 BR 和其他公司的半导体工作， 以及许多
+ align:start position:0%
+Sova 服务 BR 和其他公司的半导体工作， 以及许多
+ align:start position:0%
+Sova 服务 BR 和其他公司的半导体工作， 以及许多
+软件和其他类型的硬件
+ align:start position:0%
+软件和其他类型的硬件
+ align:start position:0%
+软件和其他类型的硬件
+工作， 这将使遗传工作
+ align:start position:0%
+工作， 这将使遗传工作
+ align:start position:0%
+工作， 这将使遗传工作
+流程更好地工作。
+第二个趋势让
+ align:start position:0%
+流程更好地工作。
+第二个趋势让
+ align:start position:0%
+流程更好地工作。
+第二个趋势让
+我感到兴奋的是， 今天的大型
+ align:start position:0%
+我感到兴奋的是， 今天的大型
+ align:start position:0%
+我感到兴奋的是， 今天的大型
+语言模型已经开始被
+ align:start position:0%
+语言模型已经开始被
+ align:start position:0%
+语言模型已经开始被
+优化 回答人类的问题和
+ align:start position:0%
+优化 回答人类的问题和
+ align:start position:0%
+优化 回答人类的问题和
+人类生成的指令， 比如
+ align:start position:0%
+人类生成的指令， 比如
+ align:start position:0%
+人类生成的指令， 比如
+你知道莎士比亚为什么写《
+ align:start position:0%
+你知道莎士比亚为什么写《
+ align:start position:0%
+你知道莎士比亚为什么写《
+麦克比斯》或者解释莎士比亚为什么写《
+ align:start position:0%
+麦克比斯》或者解释莎士比亚为什么写《
+ align:start position:0%
+麦克比斯》或者解释莎士比亚为什么写《
+麦克比斯》， 这些都是
+ align:start position:0%
+麦克比斯》， 这些都是
+ align:start position:0%
+麦克比斯》， 这些都是
+大型语言模型
+ align:start position:0%
+大型语言模型
+ align:start position:0%
+大型语言模型
+经常在互联网上询问和回答的问题， 但
+ align:start position:0%
+经常在互联网上询问和回答的问题， 但
+ align:start position:0%
+经常在互联网上询问和回答的问题， 但
+代理工作流需要其他
+ align:start position:0%
+代理工作流需要其他
+ align:start position:0%
+代理工作流需要其他
+操作， 比如 事实上， 
+ align:start position:0%
+操作， 比如 事实上， 
+ align:start position:0%
+操作， 比如 事实上， 
+大型语言模型现在通常经过
+ align:start position:0%
+大型语言模型现在通常经过
+ align:start position:0%
+大型语言模型现在通常经过
+明确调整以支持工具使用， 或者
+ align:start position:0%
+明确调整以支持工具使用， 或者
+ align:start position:0%
+明确调整以支持工具使用， 或者
+就在几周前， 人类
+ align:start position:0%
+就在几周前， 人类
+ align:start position:0%
+就在几周前， 人类
+发布了一个可以支持
+ align:start position:0%
+发布了一个可以支持
+ align:start position:0%
+发布了一个可以支持
+计算机使用的模型， 我认为这些令人兴奋的
+ align:start position:0%
+计算机使用的模型， 我认为这些令人兴奋的
+ align:start position:0%
+计算机使用的模型， 我认为这些令人兴奋的
+发展创造了很多提升， 
+ align:start position:0%
+发展创造了很多提升， 
+ align:start position:0%
+发展创造了很多提升， 
+为 我们
+ align:start position:0%
+为 我们
+ align:start position:0%
+为 我们
+现在可以让一个基因工作流
+ align:start position:0%
+现在可以让一个基因工作流
+ align:start position:0%
+现在可以让一个基因工作流
+与语言模型一起做， 这些语言模型
+ align:start position:0%
+与语言模型一起做， 这些语言模型
+ align:start position:0%
+与语言模型一起做， 这些语言模型
+不仅可以回答人类的查询， 还可以
+ align:start position:0%
+不仅可以回答人类的查询， 还可以
+ align:start position:0%
+不仅可以回答人类的查询， 还可以
+明确地调整 EXA 以适应这些迭代
+ align:start position:0%
+明确地调整 EXA 以适应这些迭代
+ align:start position:0%
+明确地调整 EXA 以适应这些迭代
+代理工作流。
+第三个
+ align:start position:0%
+代理工作流。
+第三个
+ align:start position:0%
+代理工作流。
+第三个
+数据工程的重要性正在上升， 
+ align:start position:0%
+数据工程的重要性正在上升， 
+ align:start position:0%
+数据工程的重要性正在上升， 
+特别是对于非结构化数据， 
+ align:start position:0%
+特别是对于非结构化数据， 
+ align:start position:0%
+特别是对于非结构化数据， 
+事实证明 很多价值
+ align:start position:0%
+事实证明 很多价值
+ align:start position:0%
+事实证明 很多价值
+机器学习是结构化数据， 
+ align:start position:0%
+机器学习是结构化数据， 
+ align:start position:0%
+机器学习是结构化数据， 
+即数字表格， 但有了 Geni， 
+ align:start position:0%
+即数字表格， 但有了 Geni， 
+ align:start position:0%
+即数字表格， 但有了 Geni， 
+我们在
+ align:start position:0%
+我们在
+ align:start position:0%
+我们在
+处理文本、图像、视频甚至
+ align:start position:0%
+处理文本、图像、视频甚至
+ align:start position:0%
+处理文本、图像、视频甚至
+音频方面比以往任何时候都要好得多， 因此， 就如何管理非结构化数据
+ align:start position:0%
+音频方面比以往任何时候都要好得多， 因此， 就如何管理非结构化数据
+ align:start position:0%
+音频方面比以往任何时候都要好得多， 因此， 就如何管理非结构化数据
+而言， 数据工程的重要性日益增加
+ align:start position:0%
+而言， 数据工程的重要性日益增加
+ align:start position:0%
+ align:start position:0%
+以及元数据和
+ align:start position:0%
+以及元数据和
+ align:start position:0%
+以及元数据和
+部署， 以便将非结构化数据放到
+ align:start position:0%
+部署， 以便将非结构化数据放到
+ align:start position:0%
+部署， 以便将非结构化数据放到
+需要的地方去创造价值， 
+ align:start position:0%
+需要的地方去创造价值， 
+ align:start position:0%
+需要的地方去创造价值， 
+这对许多大型企业来说是一项重大努力， 
+ align:start position:0%
+这对许多大型企业来说是一项重大努力， 
+ align:start position:0%
+ align:start position:0%
+最后， 我想我们都看到了
+ align:start position:0%
+最后， 我想我们都看到了
+ align:start position:0%
+最后， 我想我们都看到了
+文本 处理革命
+ align:start position:0%
+文本 处理革命
+ align:start position:0%
+文本 处理革命
+已经到来， 图像处理
+ align:start position:0%
+已经到来， 图像处理
+ align:start position:0%
+已经到来， 图像处理
+革命还处于早期阶段， 
+ align:start position:0%
+革命还处于早期阶段， 
+ align:start position:0%
+革命还处于早期阶段， 
+但它正在到来， 随着它的到来， 许多
+ align:start position:0%
+但它正在到来， 随着它的到来， 许多
+ align:start position:0%
+但它正在到来， 随着它的到来， 许多
+人、许多企业将能够
+ align:start position:0%
+人、许多企业将能够
+ align:start position:0%
+人、许多企业将能够
+从视觉数据中获取比以往更多的价值， 
+ align:start position:0%
+从视觉数据中获取比以往更多的价值， 
+ align:start position:0%
+ align:start position:0%
+我 我很兴奋， 因为我认为
+ align:start position:0%
+我 我很兴奋， 因为我认为
+ align:start position:0%
+我 我很兴奋， 因为我认为
+这将大大增加
+ align:start position:0%
+这将大大增加
+ align:start position:0%
+这将大大增加
+我们可以构建的应用程序空间， 
+ align:start position:0%
+我们可以构建的应用程序空间， 
+ align:start position:0%
+我们可以构建的应用程序空间， 
+所以总结一下， 这是一个
+ align:start position:0%
+所以总结一下， 这是一个
+ align:start position:0%
+所以总结一下， 这是一个
+成为建设者的好时机， 
+ align:start position:0%
+成为建设者的好时机， 
+ align:start position:0%
+成为建设者的好时机， 
+gen 让我们比以往任何时候都更快地进行实验， 
+ align:start position:0%
+gen 让我们比以往任何时候都更快地进行实验， 
+ align:start position:0%
+gen 让我们比以往任何时候都更快地进行实验， 
+gentic AI 正在扩展一系列
+ align:start position:0%
+gentic AI 正在扩展一系列
+ align:start position:0%
+gentic AI 正在扩展一系列
+事物 现在可能了， 而且
+ align:start position:0%
+事物 现在可能了， 而且
+ align:start position:0%
+事物 现在可能了， 而且
+我们现在可以
+ align:start position:0%
+我们现在可以
+ align:start position:0%
+我们现在可以
+在视觉人工智能中构建很多新应用， 或者不构建视觉人工智能， 
+ align:start position:0%
+在视觉人工智能中构建很多新应用， 或者不构建视觉人工智能， 
+ align:start position:0%
+在视觉人工智能中构建很多新应用， 或者不构建视觉人工智能， 
+这些在以前都是不可能实现的
+ align:start position:0%
+这些在以前都是不可能实现的
+ align:start position:0%
+这些在以前都是不可能实现的
+如果您有兴趣查看
+ align:start position:0%
+如果您有兴趣查看
+ align:start position:0%
+如果您有兴趣查看
+我运行的视觉 AI 演示， 请
+ align:start position:0%
+我运行的视觉 AI 演示， 请
+ align:start position:0%
+我运行的视觉 AI 演示， 请
+访问 va。
+ landing.ai
+ align:start position:0%
+访问 va。
+ landing.ai
+ align:start position:0%
+访问 va。
+ landing.ai
+我运行的确切演示， 你最好自己
+ align:start position:0%
+我运行的确切演示， 你最好自己
+ align:start position:0%
+我运行的确切演示， 你最好自己
+在线尝试一下， 获取代码， 然后
+ align:start position:0%
+在线尝试一下， 获取代码， 然后
+ align:start position:0%
+在线尝试一下， 获取代码， 然后
+在自己的应用程序中运行代码， 
+ align:start position:0%
+在自己的应用程序中运行代码， 
+ align:start position:0%
+在自己的应用程序中运行代码， 
+因此， 让我非常感谢大家， 
+ align:start position:0%
+因此， 让我非常感谢大家， 
+ align:start position:0%
+因此， 让我非常感谢大家， 
+也请和我一起
+ align:start position:0%
+也请和我一起
+ align:start position:0%
+也请和我一起
+欢迎 Elsa 回到 舞台谢谢
+ align:start position:0%
+欢迎 Elsa 回到 舞台谢谢
+ align:start position:0%
+欢迎 Elsa 回到 舞台谢谢
