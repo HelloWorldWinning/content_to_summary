@@ -1,0 +1,94 @@
+Timestamp: 2025-01-08T17:25:08.735976
+Title: Gemini 2.0 Multimodal Live API实战 - 随时随地，多语种免费实时语音畅聊，还能网络搜索 F1BxBac5iqA
+URL: https://www.youtube.com/watch?v=F1BxBac5iqA
+Status: success
+Duration: 15:45
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**Outline and Structure:**
+
+1.  **Introduction:**
+    *   小木头 introduces a new AI-powered language practice tool.
+    *   It's built on top of the author's open-source project, Chat Alama.
+    *   The tool supports multiple languages using Gemini 2.0's multimodal API.
+
+2.  **Demonstration of Usage in Chat Alama:**
+    *   Access "Real-Time Conversation" in settings.
+    *   Two options: Gemini 2.0 (Charlie Jemeline) and OpenAI's API.
+    *   Focus on using Gemini 2.0's real-time API.
+    *   Charlie Jemeline allows for real-time conversation using the Gemini 2.0 Flash model.
+    *   Tavley search API is integrated for accessing real-time information.
+
+3.  **Tavley Search API Integration:**
+    *   Users need a Tavley API key, obtained from their official website.
+    *   This API allows Gemini 2.0 to access real-time web data.
+
+4.  **Live Conversation Example:**
+    *   The speaker engages in a conversation about English Premier League soccer.
+    *   They discuss the results, player performance, and media feedback.
+    *   The tool uses both spoken word and text to respond and understand.
+
+5.  **Gemini 2.0's Tool Usage and Limitations**
+    *   Gemini uses tool calling via Tavley search API to get information.
+    *   Information may not always be accurate or up to date, depending on Tavley source.
+    *   The accuracy issue is from the information sourcing mechanism, not the language model or the API.
+
+6.  **Technical Breakdown of Implementation**
+    *   The implementation uses WebSocket for real-time communication.
+    *   It leverages the Google Gemini SDK (JavaScript version).
+    *   The author references an example project for WebSocket implementation, which includes audio management.
+    *   The implementation involves:
+        *   WebSocket URL using API key passed as a URL parameter.
+        *   Capturing and processing incoming real-time messages.
+        *   Audio recording and streaming.
+        *   Tool registration and API key management.
+
+7.  **Configuration and Future Expansion:**
+    *   Tavley API key is configured as a Nox environment variable.
+    *   Current implementation is a basic integration of tool usage.
+    *   Plans to expand tool support and integration in the future for both Gemini and OpenAI APIs.
+
+8.  **Conclusion**
+    *   Gemini 2.0 API provides a free and efficient way for real-time communication.
+    *   The technology enhances the way we practice languages and access real-time information.
+    *   Code links are in the description for the viewer to explore and use.
+
+**Core Point:**
+
+The core point is that a real-time, multimodal language interaction tool has been created using Gemini 2.0's API, offering a free and convenient way to practice languages and access real-time information by utilizing tool calling.
+
+**Fundamental Point:**
+
+The fundamental point is that real-time, cloud-based AI-powered language tools, with integrations to real-time search API, can significantly improve language practice and information retrieval efficiency.
+
+**Overarching Framework:**
+
+The overarching framework of the content is the development and implementation of a real-time AI-powered language practice tool using the Gemini 2.0 multimodal API, focusing on its practical application and underlying technical details.
+
+**Conceptual Map:**
+
+<Mermaid_Diagram>
+graph LR
+    A[Chat Alama] --> B(Real-time Conversation);
+    B --> C{Choose Model};
+    C --> D[Gemini 2.0 (Charlie Jemeline)];
+    C --> E[OpenAI API];
+    D --> F(Multimodal Live API);
+    F --> G(WebSocket Connection);
+    G --> H[Google Gemini SDK];
+    H --> I(Audio Input/Output);
+    I --> J(Tool Calling);
+    J --> K[Tavley Search API];
+    K --> L(Real-time Information);
+    L --> D;
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+     style F fill:#ccf,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+大家好 我是小木头欢迎大家来到我的视频频道在过去一个周末我为自己和家人打造了一款基于AI的口语练习老师他支持多重语言不仅包含了音语还有西班牙语 德语 法语等等这个功能其实是我的开源项目恰到阿拉马中新增的一款基于了加密来2.0多模台实施一PI现在我就来演示一番看看在恰到阿拉马中如何使用它大家来看看在实施的口语交流中效果究竟如何现在我所分享的就是本地运行的恰到阿拉马要使用实施的聊天与Jemeline模型对话非常简单第一步来到Settings在这里使用实施的对话使用后 页面的右侧会看到一个话统的小按钮点击它会谈出两个选项粉红色的小图标正是代表的与Jemeline 2.0模型的对话上面这个图标是与OpenEI的实施一PI交流这在过去的一期视频分享中我们已经有所介绍有请就同时可以点击视频上方的电界回到当时的分享今天我们来演示与Jemeline 2.0模型基于多模台实施一PI如何实现对话点击它会谈出这么一个窗口大家可以了解使用的是什么模型目前用的是Jemeline 2.0 Flash我将这个小图件秘密为了Charlie Jemeline目的是与OpenEI的Charlie做个小小的区分话不多说 赶紧打开Charlie Jemeline在交流前咱们需要确保Jemeline的API key做的正确的配置只要我们有一个有效的API key就可以点击画统开解回话在目前的本地配置中我还起于用了Tavley搜索APIJemeline模型还可以通过搜索来获得网络信息或数据更好的丰富咱们的对话内容现在我所分享的就是Tavley官方网站在这里大家可以完成注册登录并获得有效的API key在随后的分享中我会介绍如何进行配置现在赶紧回到Charlie Jemeline来进行一番对话看看效果如何过去的一个周末英超完成了新一轮的赛试我非常想了解一下赛识的赛课其中焦点站16帖和慢点的比赛我想了解一下赛课以及球员的表现还有赛课各方媒体和焦点对这场比赛的评价反馈现在我就通过实施云的形式与Jemeline交流看看它能够帮助到我吗通过这个过程我也尝试来提高国电系我的口语点击画统开解回话对我可以用赛课的赛课你喜欢我找赛课的赛课吗对所以我会找赛课的赛课在第一次约合的2020年我会找赛课的赛课在第一次约合的初约的2025年请给我一辈子在第一次约合的赛课的赛课在第一次约合的2025年约合的2025年觉得是一个很大的玩具与同一样的比赛你喜欢认为什么想想看什么吗对我希望你能知道谁是最高约合的赛课在最高约合的赛课我会找赛课的最高约合的赛课在最高约合的赛课在最高约合的赛课在最高约合的赛课请给我一辈子在我认为当时马上是一 mapping位置出了 bands院戏下应误这是一bars市场前方四开兼顺舞台文雯看哪里我还要我们看一下音乐丹彩做问题由马上或者黑瓜哥OK在关于关节务或黑尤其是马上路 knights贝尔和 带过 spell在往 skal请如何路 knights我不知道男人而 四氧中焉 自行吸引 是以容仱最低 加幅减低谁 选开的能 что詹娅詹娅的愿里指 大际他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演他想要看他的表演请给我一个问题请给我一个问题请给我一个问题请给我一个问题阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯阿宝贝斯新 liboga.net基于改召造需要更新的分析官 then妳可以去看更新的什么确保之前作的包括有另外一个希臀加 esty这 一个解'm跟家有效在这个过程当中Tavlet搜搜引擎能够帮助到我JAMENI能够利用工具调用或韩束调用的方式来用到Tavlet搜搜引擎或取相关信息比如六部和慢恋比赛的结果在后的一些评价同时我也针对OpenEI的CEOSAMO Outerman接受到的关于OpenEI正在亏钱原因是预期之外的Pro版本的会员的订阅订阅量太大导致了可能理论真的缩减或者被清晰调这方面的对话JAMENI都利用到了工具调用通过了Tavlet搜搜API或者相关信息但这些搜走中有的信息或取的会是正确的及时的有的并不一定这就跟刚才我在交流中大家听到的关于慢恋的教练一定不是疼哈哥当然也不是那个SAMO现在是Armeling这部分的内容它并没有正确的补货到这些信息也有可能搜走以前没有给到最新的信息或数据不过信息的缺失或不准确并不由模型或者是多摩坦实施聊天的API来决定这是第三方的信息减所的机制和工具导致的我们可以通过工程化的方式来解决提高它的信息补货的正确率重点是我们能够利用兼乱多摩坦的实施API实现时时的云交流非常的方便在未来的扩展中咱们还可以在这个聊天机前还可以在这款聊天机型中集成更多的工具帮助我们能够在聊天中使用更多有趣的功能感兴趣的同学请来到我的恰特Alamah给他带马昌顾这里克龙或者通过到开的形式运行Chart Alama配置有效的OpenE-N或GEMININE EPIC就能够开启实实的对话了最重要的一点是GEMININE模型目前还是处于免费使用状态这是非常非常好的一个事情几乎咱们可以实现免费的畅流在结束今天的视频分享前我计划通过这次工程开发的合遍请求来分享究竟做到哪些改动来支持到GEMININE多摩坦的是谁Pi现在所分享的就是我这次改动的合遍请求所有Viu主建的开发都涉及到了揭灭上相关的一些功能在这里咱们不做过多介绍重点我们来看看在功能代码部分如何调用的EPI首先还是要来到谷歌的官方门档对多摩坦的是谁Pi也就是MultiModel Live API最翻减样的介绍底层机制是WebSocket连接在文档中使用的是PiS and SDK只需要安装Google GEMINI这个 SDK就好我们在Channel Alarmadon用的是JavaScript对应的也有JavaScript版本的 SDK我依赖包这个一会咱们在合遍请求重再来看在文档中并没有对WebSocket URL等做非常好的清晰的描述至少在目前这份文档中我们是没有捕捕到这些信息的这些信息的想起都被包裹在了 SDK不过有一个非常好的项目可供我们参考也是现在有所分享的我会将相关的电影界都放在视频描述中Channel Alarmad也是参考了这个势力项目并引用了它其中做的代码实现非常好用有兴趣同学可以直接客龙和下载这个项目运行它具有非常完善的Socket连接以及语音的管理在视频中还包含了一系列其他工具的支持比如天气等等现在我们回到Channel Alarmad的合遍请求快速流浪一下一些核心的技术点第一是WebSocket连接的 URL大家可以通过MultiModel Live Client这个类看到默认连接的是这个 URLAPI-K是通过 URL 参数传递的因此大家如果要在榴栏器的开发工具中定位或者是官策网络通信只需要去定位到对应的WebSocket连接就好比如在我们现在的Channel Alarmad这里如果我打开Network点击WS并常识建立一个连接这样我们就建立了一个WebSocket连接大家可以通过这种方式来实施的官策目前与API的交互情况所有WebSocket连接上的消息在这里都能查看到在这其中对所有接收到的消息或事件都做了补货根据不同类型的消息做了不同类型的处理在这里我们也参考了刚才的演示项目中关于不同的实时消息类型的定义并对不同的类型做了解读可以通过消息中不同的资段来定位这是一个什么类型的消息是一个内容消息还是一个工具调用的消息还是工具调用取消的消息等等在实施对话中我们既要补货用户的语音输入以阿博或模型给到我们的语音的输出或想应这样咱们就需要两部分第一部分是Audio Recorder在这里实现了对语音的补货并以实时的输入的形式来发送给精闻的模型或者是实时的多摩太的API另一部分就是语音的流氏输出Audio Streamer这个类做的这个工作它也是来自于实力项目中的代码实现其中还有一个Worklid它是实现的语音的处理帮助应用程序将语音输入打包分块成期望的数据格式这样才能够正确通过WebSocker连接发送给多摩太的实时API最后是关于工具的注册模型怎么知道有什么工具可以使用呢我们来到Charlie Jam的这个组件在这个组件里就用到了MultiModel Live Client这个类在这里在这个类的实力化时会给到它一组工具我们在这里默认已经定义好了一个Tavis Search这么一个工具调用的参数声明这个参数就会被作为API调用时工具调用部分的数据交付给API我们并不总是将它交给API首先会去判断目前是否有它的API key如果已经配置才会将这个工具组册到API调用中我们在这里来看看当配置中配置了Tavis API key才会在工具列表中添加刚才我们介绍的Tavis搜索的工具参数这个工具列表会交给默论连接这个网络连接在这里提供一个工具列表如果没有API key那么Tavis搜索工具并不会添加到这次对话中模型自然也就无法通过工具调用的方式来使用所做引擎最后来介绍一下这个参数Tavis API key在哪里配置在NoxConfig TST里添加了一个辨量Tavis API key默认识控制付串我们可以通过这个环境辨量NoxPublic Tavis API key配置一个有效的密药这个秘密规则是Nox规范的秘密规则通过这种方式咱们就可以在聊天中提供搜索引擎目前的实现还是一个非常基本的对于插件或搜索引擎等工具的应编码的集成将来我们会对这部分做扩展使得大家能够更方便的集成API作为工具后续我们也会将这类的工具支持添加到OpenEI的使识 API交互中这就是今天分享主要内容希望GEMLIT多摩泰实施API的使用能够给大家一个更好的云交流的用户体验一方面能够通过它来练习口语当然这只是很小的应用场景更多的是能够通过云交流的方式或取信息月度信息帮助大家解放双手更进一步的提高工作学习生活的效率我会将今天用到的所有文档或带码链间都放在视频描述中感兴趣的同学就在描述中取用那咱们就下期视频分享再见同学们 拜拜
