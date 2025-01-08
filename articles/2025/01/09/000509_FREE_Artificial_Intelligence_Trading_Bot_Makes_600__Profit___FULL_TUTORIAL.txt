@@ -1,0 +1,938 @@
+Timestamp: 2025-01-09T00:05:09.174640
+Title: FREE Artificial Intelligence Trading Bot Makes 600% Profit ( FULL TUTORIAL )
+URL: https://www.youtube.com/watch?v=zgOhAtvB0Mw
+Status: success
+Duration: 6:52
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**Outline:**
+
+1.  **交易策略概述:**
+    *   一种简单的交易策略，在5分钟图表上胜率高达70%-80%。
+    *   该策略在五天内可实现143%的利润（不包括费用）。
+    *   如果胜率保持不变，月回报率可达600%-700%。
+    *   该策略在Solana和以太坊上都有成功案例。
+    *   该策略可以完全自动化成交易机器人。
+
+2.  **交易策略的工具和规则:**
+    *   使用edry 极点买卖指标， 结合CCI, 动量和RSI。
+    *   使用指数移动平均线（EMA），长度为100。
+    *   买入条件：极点买卖指标给出买入信号，且价格低于EMA。
+    *   卖出条件：极点买卖指标给出卖出信号，且价格高于EMA。
+    *   不使用止损，建议杠杆率不超过5:1。
+
+3. **策略的自动化：**
+   * 使用PionexGPT帮助生成Pine Script代码。
+   * 将代码复制到TradingView的Pine编辑器。
+   * 可以自定义修改指标的输入参数。
+   * 在TradingView上进行回测，查看策略表现。
+   * 使用Pionex的信号机器人自动化交易。
+   * 通过TradingView的警报系统将信号传递到Pionex。
+
+4. **风险和改进:**
+    *   不使用止损可能导致亏损。
+    *   建议使用交易量过滤器来减少亏损交易。
+    *   可以考虑加入抛物线SAR指标等退出指标，以控制亏损。
+    *   该策略也适用于外汇交易，特别是横盘整理的货币对。
+    *   建议在模拟账户上测试交易机器人。
+
+**Core Point:**  This trading strategy, using specific indicators and rules, boasts a high win rate and significant profit potential, especially when automated, although it is important to manage risks.
+
+**Fundamental Point:**  The core of this strategy lies in its rules based on indicator signals and their relationship to price, which can be automated, but the importance of managing risks by adding proper stop-loss is highlighted.
+
+**Overarching Framework:** The content introduces a trading strategy and shows how to automate it with a trading robot. It covers the core mechanics of the strategy itself, the process of coding it, backtesting, and automating through external platforms, finally talking about its limitations and risks.
+
+**Conceptual Map:**
+
+<Mermaid_Diagram>
+graph LR
+    A[交易策略] --> B(edry 极点买卖指标);
+    A --> C(100 EMA);
+    B --> D{买入条件:信号 & 价格低于EMA};
+    C --> D;
+    D --> E{卖出条件: 信号 & 价格高于EMA};
+     E --> A;
+    A --> F[策略自动化];
+    F --> G(Pine Script代码);
+    G --> H(TradingView);
+    H --> I(回测);
+    I --> J(Pionex 信号机器人);
+     J --> K(TradingView警报系统);
+     K --> J;
+     A --> L{风险：不使用止损};
+     L -->M(改进措施：止损指标,交易量过滤器);
+    M --> A;
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT
+Kind: captions
+Language: zh-Hans
+ align:start position:0%
+这种简单的交易策略
+ align:start position:0%
+这种简单的交易策略
+ align:start position:0%
+这种简单的交易策略
+在五分钟图表上的胜率为 70% 到 80%， 
+ align:start position:0%
+在五分钟图表上的胜率为 70% 到 80%， 
+ align:start position:0%
+ align:start position:0%
+扣除费用前， 它可以让您在短短五天内获得 143% 的利润， 
+ align:start position:0%
+扣除费用前， 它可以让您在短短五天内获得 143% 的利润， 
+ align:start position:0%
+扣除费用前， 它可以让您在短短五天内获得 143% 的利润， 
+如果胜率保持不变， 该
+ align:start position:0%
+如果胜率保持不变， 该
+ align:start position:0%
+如果胜率保持不变， 该
+策略可以为您带来高达 600 到 700 的
+ align:start position:0%
+策略可以为您带来高达 600 到 700 的
+ align:start position:0%
+策略可以为您带来高达 600 到 700 的
+投资回报率 每月听起来很疯狂， 
+ align:start position:0%
+投资回报率 每月听起来很疯狂， 
+ align:start position:0%
+投资回报率 每月听起来很疯狂， 
+看看最近的这些交易， 这个
+ align:start position:0%
+看看最近的这些交易， 这个
+ align:start position:0%
+看看最近的这些交易， 这个
+算法在 Solana 上捕捉到了
+ align:start position:0%
+算法在 Solana 上捕捉到了
+ align:start position:0%
+算法在 Solana 上捕捉到了
+这笔交易 3.4% 的利润， 另一笔获胜的
+ align:start position:0%
+这笔交易 3.4% 的利润， 另一笔获胜的
+ align:start position:0%
+这笔交易 3.4% 的利润， 另一笔获胜的
+交易使账户收益 2.7%， 
+ align:start position:0%
+交易使账户收益 2.7%， 
+ align:start position:0%
+交易使账户收益 2.7%， 
+ align:start position:0%
+ align:start position:0%
+ align:start position:0%
+在市场起飞之前， 通过完美的交易入场获得了 17% 的利润， 
+ align:start position:0%
+在市场起飞之前， 通过完美的交易入场获得了 17% 的利润， 
+ align:start position:0%
+在市场起飞之前， 通过完美的交易入场获得了 17% 的利润， 
+它在以太坊上也很有效 在五分钟
+ align:start position:0%
+它在以太坊上也很有效 在五分钟
+ align:start position:0%
+它在以太坊上也很有效 在五分钟
+和十五分钟的图表上， 
+ align:start position:0%
+和十五分钟的图表上， 
+ align:start position:0%
+和十五分钟的图表上， 
+但这种交易策略最好的部分
+ align:start position:0%
+但这种交易策略最好的部分
+ align:start position:0%
+但这种交易策略最好的部分
+是， 你可以将它完全自动化， 
+ align:start position:0%
+是， 你可以将它完全自动化， 
+ align:start position:0%
+是， 你可以将它完全自动化， 
+变成一个机器人， 为你完成所有的工作， 
+ align:start position:0%
+变成一个机器人， 为你完成所有的工作， 
+ align:start position:0%
+变成一个机器人， 为你完成所有的工作， 
+ align:start position:0%
+ align:start position:0%
+不再浪费时间等待交易
+ align:start position:0%
+不再浪费时间等待交易
+ align:start position:0%
+不再浪费时间等待交易
+机会， 
+ align:start position:0%
+机会， 
+ align:start position:0%
+机会， 
+一旦你创建了机器人， 只需要两分钟的时间 插入它
+ align:start position:0%
+一旦你创建了机器人， 只需要两分钟的时间 插入它
+ align:start position:0%
+一旦你创建了机器人， 只需要两分钟的时间 插入它
+后， 它将自动遵循
+ align:start position:0%
+后， 它将自动遵循
+ align:start position:0%
+后， 它将自动遵循
+策略给出的信号并增加您的
+ align:start position:0%
+策略给出的信号并增加您的
+ align:start position:0%
+策略给出的信号并增加您的
+帐户， 而无需您动动手指， 
+ align:start position:0%
+帐户， 而无需您动动手指， 
+ align:start position:0%
+帐户， 而无需您动动手指， 
+ align:start position:0%
+ align:start position:0%
+在本分步教程中， 我将向
+ align:start position:0%
+在本分步教程中， 我将向
+ align:start position:0%
+在本分步教程中， 我将向
+您展示如何做到这一点， 所以请观看到最后
+ align:start position:0%
+您展示如何做到这一点， 所以请观看到最后
+ align:start position:0%
+您展示如何做到这一点， 所以请观看到最后
+ align:start position:0%
+ align:start position:0%
+指标是这个策略
+ align:start position:0%
+指标是这个策略
+ align:start position:0%
+指标是这个策略
+使用的第一个工具被称为 edry
+ align:start position:0%
+使用的第一个工具被称为 edry
+ align:start position:0%
+使用的第一个工具被称为 edry
+极值点买卖 spudo
+ align:start position:0%
+极值点买卖 spudo
+ align:start position:0%
+极值点买卖 spudo
+这是一种技术分析工具， 
+ align:start position:0%
+这是一种技术分析工具， 
+ align:start position:0%
+这是一种技术分析工具， 
+结合了各种
+ align:start position:0%
+结合了各种
+ align:start position:0%
+结合了各种
+指标 CCI 动量和 RSI 的元素， 以
+ align:start position:0%
+指标 CCI 动量和 RSI 的元素， 以
+ align:start position:0%
+指标 CCI 动量和 RSI 的元素， 以
+生成潜在的交易入场信号， 
+ align:start position:0%
+生成潜在的交易入场信号， 
+ align:start position:0%
+生成潜在的交易入场信号， 
+它提供易于跟踪的
+ align:start position:0%
+它提供易于跟踪的
+ align:start position:0%
+它提供易于跟踪的
+买卖信号， 第二个工具是
+ align:start position:0%
+买卖信号， 第二个工具是
+ align:start position:0%
+买卖信号， 第二个工具是
+指数移动平均线， 长度
+ align:start position:0%
+指数移动平均线， 长度
+ align:start position:0%
+指数移动平均线， 长度
+设置为 100。
+
+ align:start position:0%
+设置为 100。
+
+ align:start position:0%
+设置为 100。
+
+对于此交易算法， 您
+ align:start position:0%
+对于此交易算法， 您
+ align:start position:0%
+对于此交易算法， 您
+无需设置止盈或止损， 
+ align:start position:0%
+ align:start position:0%
+该策略在满足两个条件时买入， 
+ align:start position:0%
+该策略在满足两个条件时买入， 
+ align:start position:0%
+该策略在满足两个条件时买入， 
+首先， 极点
+ align:start position:0%
+首先， 极点
+ align:start position:0%
+首先， 极点
+买卖指标给出买入信号， 其次， 
+ align:start position:0%
+买卖指标给出买入信号， 其次， 
+ align:start position:0%
+买卖指标给出买入信号， 其次， 
+价格 低于 EMA， 这是以
+ align:start position:0%
+价格 低于 EMA， 这是以
+ align:start position:0%
+ align:start position:0%
+尽可能低的价格买入股票， 一旦开仓， 
+ align:start position:0%
+尽可能低的价格买入股票， 一旦开仓， 
+ align:start position:0%
+尽可能低的价格买入股票， 一旦开仓， 
+仓位就会一直维持， 直到发出卖出信号。
+
+ align:start position:0%
+仓位就会一直维持， 直到发出卖出信号。
+
+ align:start position:0%
+仓位就会一直维持， 直到发出卖出信号。
+
+这些简单的规则可以帮助你抓住
+ align:start position:0%
+这些简单的规则可以帮助你抓住
+ align:start position:0%
+这些简单的规则可以帮助你抓住
+真正的大趋势， 但是你必须
+ align:start position:0%
+真正的大趋势， 但是你必须
+ align:start position:0%
+真正的大趋势， 但是你必须
+记住， 不使用止损
+ align:start position:0%
+记住， 不使用止损
+ align:start position:0%
+记住， 不使用止损
+可能会导致 绘制下跌， 因此我建议
+ align:start position:0%
+可能会导致 绘制下跌， 因此我建议
+ align:start position:0%
+可能会导致 绘制下跌， 因此我建议
+使用此策略， 杠杆率不
+ align:start position:0%
+使用此策略， 杠杆率不
+ align:start position:0%
+使用此策略， 杠杆率不
+高于五比一
+ align:start position:0%
+高于五比一
+ align:start position:0%
+高于五比一
+[音乐]
+ align:start position:0%
+[音乐]
+ align:start position:0%
+[音乐]
+当极值点
+ align:start position:0%
+当极值点
+ align:start position:0%
+当极值点
+发出卖出警报且价格
+ align:start position:0%
+发出卖出警报且价格
+ align:start position:0%
+发出卖出警报且价格
+高于 EMA 时， 策略卖出
+ align:start position:0%
+高于 EMA 时， 策略卖出
+ align:start position:0%
+高于 EMA 时， 策略卖出
+当出现买入信号时， 卖出仓位关闭 现在没问题 让
+ align:start position:0%
+当出现买入信号时， 卖出仓位关闭 现在没问题 让
+ align:start position:0%
+当出现买入信号时， 卖出仓位关闭 现在没问题 让
+我向你展示如何将这两个
+ align:start position:0%
+我向你展示如何将这两个
+ align:start position:0%
+我向你展示如何将这两个
+指标组合成一个脚本， 这
+ align:start position:0%
+指标组合成一个脚本， 这
+ align:start position:0%
+指标组合成一个脚本， 这
+对于那些没有编码知识的人来说非常有用， 
+ align:start position:0%
+对于那些没有编码知识的人来说非常有用， 
+ align:start position:0%
+对于那些没有编码知识的人来说非常有用， 
+所以首先 我打开并
+ align:start position:0%
+所以首先 我打开并
+ align:start position:0%
+所以首先 我打开并
+复制了 edury 极点
+ align:start position:0%
+复制了 edury 极点
+ align:start position:0%
+复制了 edury 极点
+买卖指标代码， 
+ align:start position:0%
+ align:start position:0%
+然后我登录 pionex 并打开
+ align:start position:0%
+然后我登录 pionex 并打开
+ align:start position:0%
+然后我登录 pionex 并打开
+pionexgpt， 这是一个
+ align:start position:0%
+pionexgpt， 这是一个
+ align:start position:0%
+pionexgpt， 这是一个
+专门为编码
+ align:start position:0%
+专门为编码
+ align:start position:0%
+专门为编码
+交易策略而开发的聊天 GPT 替代品， 
+ align:start position:0%
+交易策略而开发的聊天 GPT 替代品， 
+ align:start position:0%
+交易策略而开发的聊天 GPT 替代品， 
+所以我要求它用 pine 脚本为我编写一个简单的
+ align:start position:0%
+所以我要求它用 pine 脚本为我编写一个简单的
+ align:start position:0%
+所以我要求它用 pine 脚本为我编写一个简单的
+策略
+ align:start position:0%
+策略
+ align:start position:0%
+策略
+以下代码以 100 EMA 作为
+ align:start position:0%
+以下代码以 100 EMA 作为
+ align:start position:0%
+以下代码以 100 EMA 作为
+信号过滤器， 
+ align:start position:0%
+信号过滤器， 
+ align:start position:0%
+信号过滤器， 
+我将代码复制粘贴到
+ align:start position:0%
+我将代码复制粘贴到
+ align:start position:0%
+我将代码复制粘贴到
+松树编辑器中， 并将其添加到图表中， 以
+ align:start position:0%
+松树编辑器中， 并将其添加到图表中， 以
+ align:start position:0%
+松树编辑器中， 并将其添加到图表中， 以
+修改策略的输入， 转到
+ align:start position:0%
+修改策略的输入， 转到
+ align:start position:0%
+修改策略的输入， 转到
+策略测试器并单击
+ align:start position:0%
+策略测试器并单击
+ align:start position:0%
+ align:start position:0%
+输入部分中的设置按钮， 您可以更改
+ align:start position:0%
+输入部分中的设置按钮， 您可以更改
+ align:start position:0%
+输入部分中的设置按钮， 您可以更改
+条目 信号源从 CCI 到动量， 
+ align:start position:0%
+条目 信号源从 CCI 到动量， 
+ align:start position:0%
+条目 信号源从 CCI 到动量， 
+您还可以修改指标的
+ align:start position:0%
+您还可以修改指标的
+ align:start position:0%
+您还可以修改指标的
+长度 RSI 超买和超卖
+ align:start position:0%
+长度 RSI 超买和超卖
+ align:start position:0%
+长度 RSI 超买和超卖
+水平， RSI 长度我喜欢设置
+ align:start position:0%
+水平， RSI 长度我喜欢设置
+ align:start position:0%
+水平， RSI 长度我喜欢设置
+为 15。
+完成输入后， 
+ align:start position:0%
+为 15。
+完成输入后， 
+ align:start position:0%
+为 15。
+完成输入后， 
+打开策略属性并将
+ align:start position:0%
+打开策略属性并将
+ align:start position:0%
+打开策略属性并将
+账户规模设置为 100， 设置订单 大小设置
+ align:start position:0%
+账户规模设置为 100， 设置订单 大小设置
+ align:start position:0%
+账户规模设置为 100， 设置订单 大小设置
+为 100， 并将订单类型更改为
+ align:start position:0%
+为 100， 并将订单类型更改为
+ align:start position:0%
+为 100， 并将订单类型更改为
+usdt， 您还可以
+ align:start position:0%
+usdt， 您还可以
+ align:start position:0%
+usdt， 您还可以
+通过将此数字增加到 5 来启用金字塔选项， 
+ align:start position:0%
+通过将此数字增加到 5 来启用金字塔选项， 
+ align:start position:0%
+通过将此数字增加到 5 来启用金字塔选项， 
+例如， 完成
+ align:start position:0%
+例如， 完成
+ align:start position:0%
+例如， 完成
+设置后， 单击“确定”， 
+ align:start position:0%
+ align:start position:0%
+这样我们就可以在 Solana usdt 价格图表上看到
+ align:start position:0%
+这样我们就可以在 Solana usdt 价格图表上看到
+ align:start position:0%
+这样我们就可以在 Solana usdt 价格图表上看到
+时间范围是五 分钟和 以下是
+ align:start position:0%
+时间范围是五 分钟和 以下是
+ align:start position:0%
+时间范围是五 分钟和 以下是
+回测结果， 你可以看到
+ align:start position:0%
+回测结果， 你可以看到
+ align:start position:0%
+回测结果， 你可以看到
+胜率为 75%， 我们已完成 81 笔
+ align:start position:0%
+胜率为 75%， 我们已完成 81 笔
+ align:start position:0%
+胜率为 75%， 我们已完成 81 笔
+交易， 净利润为 143， 
+ align:start position:0%
+交易， 净利润为 143， 
+ align:start position:0%
+交易， 净利润为 143， 
+最大亏损为 15， 对于这样一个简单的
+ align:start position:0%
+最大亏损为 15， 对于这样一个简单的
+ align:start position:0%
+最大亏损为 15， 对于这样一个简单的
+策略， 结果相当
+ align:start position:0%
+策略， 结果相当
+ align:start position:0%
+策略， 结果相当
+令人满意， 顺便提一下， 你可以添加
+ align:start position:0%
+令人满意， 顺便提一下， 你可以添加
+ align:start position:0%
+令人满意， 顺便提一下， 你可以添加
+交易量过滤器 为了
+ align:start position:0%
+交易量过滤器 为了
+ align:start position:0%
+ align:start position:0%
+进一步减少亏损交易的数量， 让我们看看以太坊的
+ align:start position:0%
+进一步减少亏损交易的数量， 让我们看看以太坊的
+ align:start position:0%
+进一步减少亏损交易的数量， 让我们看看以太坊的
+五分钟图表， 这里的获胜率有点
+ align:start position:0%
+五分钟图表， 这里的获胜率有点
+ align:start position:0%
+五分钟图表， 这里的获胜率有点
+低， 顺便说一下， 如果我们
+ align:start position:0%
+低， 顺便说一下， 如果我们
+ align:start position:0%
+低， 顺便说一下， 如果我们
+进一步回到过去， 数字保持
+ align:start position:0%
+进一步回到过去， 数字保持
+ align:start position:0%
+进一步回到过去， 数字保持
+一致， 有时该策略会
+ align:start position:0%
+一致， 有时该策略会
+ align:start position:0%
+一致， 有时该策略会
+产生负面影响 结果， 但再次
+ align:start position:0%
+产生负面影响 结果， 但再次
+ align:start position:0%
+产生负面影响 结果， 但再次
+有效的成交量指标可以解决这个
+ align:start position:0%
+有效的成交量指标可以解决这个
+ align:start position:0%
+有效的成交量指标可以解决这个
+问题， 
+ align:start position:0%
+问题， 
+ align:start position:0%
+问题， 
+我看到的唯一缺点是
+ align:start position:0%
+我看到的唯一缺点是
+ align:start position:0%
+我看到的唯一缺点是
+由于没有使用止损而导致的亏损， 但是如果
+ align:start position:0%
+由于没有使用止损而导致的亏损， 但是如果
+ align:start position:0%
+由于没有使用止损而导致的亏损， 但是如果
+你能找到一个退出指标， 让
+ align:start position:0%
+你能找到一个退出指标， 让
+ align:start position:0%
+你能找到一个退出指标， 让
+你比策略信号更早地退出亏损交易
+ align:start position:0%
+你比策略信号更早地退出亏损交易
+ align:start position:0%
+ align:start position:0%
+回撤将大幅减少， 
+ align:start position:0%
+回撤将大幅减少， 
+ align:start position:0%
+回撤将大幅减少， 
+例如， 您可以将抛物线
+ align:start position:0%
+例如， 您可以将抛物线
+ align:start position:0%
+例如， 您可以将抛物线
+SAR 指标纳入
+ align:start position:0%
+SAR 指标纳入
+ align:start position:0%
+SAR 指标纳入
+退出亏损交易的策略中， 
+ align:start position:0%
+退出亏损交易的策略中， 
+ align:start position:0%
+退出亏损交易的策略中， 
+这样， 如果买入交易处于
+ align:start position:0%
+这样， 如果买入交易处于
+ align:start position:0%
+这样， 如果买入交易处于
+亏损状态， 而不是关闭， 当
+ align:start position:0%
+亏损状态， 而不是关闭， 当
+ align:start position:0%
+亏损状态， 而不是关闭， 当
+极点指标发出卖出
+ align:start position:0%
+极点指标发出卖出
+ align:start position:0%
+极点指标发出卖出
+信号时， 您可以关闭它 在抛物线型
+ align:start position:0%
+信号时， 您可以关闭它 在抛物线型
+ align:start position:0%
+信号时， 您可以关闭它 在抛物线型
+警报下， 通过这种交易管理， 
+ align:start position:0%
+警报下， 通过这种交易管理， 
+ align:start position:0%
+警报下， 通过这种交易管理， 
+你将保持较小的损失， 并且 你的
+ align:start position:0%
+你将保持较小的损失， 并且 你的
+ align:start position:0%
+你将保持较小的损失， 并且 你的
+赢家大
+ align:start position:0%
+赢家大
+ align:start position:0%
+赢家大
+顺便说一下， 这个策略对一些
+ align:start position:0%
+顺便说一下， 这个策略对一些
+ align:start position:0%
+顺便说一下， 这个策略对一些
+外汇对也有效， 特别是那些
+ align:start position:0%
+外汇对也有效， 特别是那些
+ align:start position:0%
+外汇对也有效， 特别是那些
+经常横盘整理的货币对， 
+ align:start position:0%
+经常横盘整理的货币对， 
+ align:start position:0%
+经常横盘整理的货币对， 
+我建议检查
+ align:start position:0%
+我建议检查
+ align:start position:0%
+我建议检查
+这些时间范围内的所有加密货币对以及
+ align:start position:0%
+这些时间范围内的所有加密货币对以及
+ align:start position:0%
+这些时间范围内的所有加密货币对以及
+外汇对和股票， 
+ align:start position:0%
+外汇对和股票， 
+ align:start position:0%
+外汇对和股票， 
+数字可能会
+ align:start position:0%
+数字可能会
+ align:start position:0%
+数字可能会
+更高
+ align:start position:0%
+更高
+ align:start position:0%
+更高
+好的， 那么我们如何才能将这个
+ align:start position:0%
+好的， 那么我们如何才能将这个
+ align:start position:0%
+好的， 那么我们如何才能将这个
+算法自动化到交易机器人中呢？
+这个
+ align:start position:0%
+算法自动化到交易机器人中呢？
+这个
+ align:start position:0%
+算法自动化到交易机器人中呢？
+这个
+过程非常简单， 首先将这个
+ align:start position:0%
+过程非常简单， 首先将这个
+ align:start position:0%
+过程非常简单， 首先将这个
+交易策略添加到你的收藏夹中， 你
+ align:start position:0%
+交易策略添加到你的收藏夹中， 你
+ align:start position:0%
+交易策略添加到你的收藏夹中， 你
+可以在评论中找到它的链接， 
+ align:start position:0%
+可以在评论中找到它的链接， 
+ align:start position:0%
+可以在评论中找到它的链接， 
+然后进入交易视图并打开
+ align:start position:0%
+然后进入交易视图并打开
+ align:start position:0%
+然后进入交易视图并打开
+指标， 
+ align:start position:0%
+指标， 
+ align:start position:0%
+指标， 
+将策略添加到 图表并修改
+ align:start position:0%
+将策略添加到 图表并修改
+ align:start position:0%
+将策略添加到 图表并修改
+其设置， 就像我之前做的那样
+ align:start position:0%
+ align:start position:0%
+接下来注册一个免费的 pionex 账户我也会
+ align:start position:0%
+接下来注册一个免费的 pionex 账户我也会
+ align:start position:0%
+接下来注册一个免费的 pionex 账户我也会
+在评论中留下链接
+ align:start position:0%
+在评论中留下链接
+ align:start position:0%
+在评论中留下链接
+导航到交易菜单并点击
+ align:start position:0%
+导航到交易菜单并点击
+ align:start position:0%
+导航到交易菜单并点击
+右侧的交易机器人
+ align:start position:0%
+右侧的交易机器人
+ align:start position:0%
+右侧的交易机器人
+你会发现很多交易机器人选项
+ align:start position:0%
+你会发现很多交易机器人选项
+ align:start position:0%
+你会发现很多交易机器人选项
+您需要选择的是一个信号机器人， 
+ align:start position:0%
+您需要选择的是一个信号机器人， 
+ align:start position:0%
+您需要选择的是一个信号机器人， 
+该机器人允许您从
+ align:start position:0%
+该机器人允许您从
+ align:start position:0%
+该机器人允许您从
+交易视图策略中复制信号， 下一步
+ align:start position:0%
+交易视图策略中复制信号， 下一步
+ align:start position:0%
+交易视图策略中复制信号， 下一步
+是单击添加交易视图自定义
+ align:start position:0%
+是单击添加交易视图自定义
+ align:start position:0%
+是单击添加交易视图自定义
+信号， 设置信号名称并输入
+ align:start position:0%
+信号， 设置信号名称并输入
+ align:start position:0%
+信号， 设置信号名称并输入
+描述， 单击确认， 然后您
+ align:start position:0%
+描述， 单击确认， 然后您
+ align:start position:0%
+描述， 单击确认， 然后您
+需要配置 您的交易视图
+ align:start position:0%
+需要配置 您的交易视图
+ align:start position:0%
+需要配置 您的交易视图
+脚本这里有详细的说明
+ align:start position:0%
+脚本这里有详细的说明
+ align:start position:0%
+脚本这里有详细的说明
+如何操作您基本上需要设置
+ align:start position:0%
+如何操作您基本上需要设置
+ align:start position:0%
+如何操作您基本上需要设置
+您的账户和订单规模如果这些
+ align:start position:0%
+您的账户和订单规模如果这些
+ align:start position:0%
+您的账户和订单规模如果这些
+数字相同 每次收到入场信号时， 您的 100% 机器人
+ align:start position:0%
+数字相同 每次收到入场信号时， 您的 100% 机器人
+ align:start position:0%
+数字相同 每次收到入场信号时， 您的 100% 机器人
+资金将用于开仓
+ align:start position:0%
+资金将用于开仓
+ align:start position:0%
+ align:start position:0%
+下一步是创建警报
+ align:start position:0%
+下一步是创建警报
+ align:start position:0%
+下一步是创建警报
+首先复制此 webhook URL 地址
+ align:start position:0%
+首先复制此 webhook URL 地址
+ align:start position:0%
+首先复制此 webhook URL 地址
+返回交易视图打开
+ align:start position:0%
+返回交易视图打开
+ align:start position:0%
+返回交易视图打开
+策略警报并将其粘贴到此
+ align:start position:0%
+策略警报并将其粘贴到此
+ align:start position:0%
+策略警报并将其粘贴到此
+窗口中最后复制 消息并将
+ align:start position:0%
+窗口中最后复制 消息并将
+ align:start position:0%
+窗口中最后复制 消息并将
+其粘贴到您的策略警报
+ align:start position:0%
+其粘贴到您的策略警报
+ align:start position:0%
+其粘贴到您的策略警报
+消息中完成后， 单击创建
+ align:start position:0%
+消息中完成后， 单击创建
+ align:start position:0%
+消息中完成后， 单击创建
+返回 pionex 并自动执行
+ align:start position:0%
+返回 pionex 并自动执行
+ align:start position:0%
+返回 pionex 并自动执行
+信号强烈建议您
+ align:start position:0%
+信号强烈建议您
+ align:start position:0%
+ align:start position:0%
+首先在模拟账户上测试此交易机器人， 如果您对结果感到满意， 
+ align:start position:0%
+首先在模拟账户上测试此交易机器人， 如果您对结果感到满意， 
+ align:start position:0%
+首先在模拟账户上测试此交易机器人， 如果您对结果感到满意， 
+请尝试一下 在真实账户上
+ align:start position:0%
+请尝试一下 在真实账户上
+ align:start position:0%
+请尝试一下 在真实账户上
+几周后， pionex 会提供一定数量的
+ align:start position:0%
+几周后， pionex 会提供一定数量的
+ align:start position:0%
+几周后， pionex 会提供一定数量的
+存款奖金， 作为
+ align:start position:0%
+存款奖金， 作为
+ align:start position:0%
+存款奖金， 作为
+该平台的长期用户， 我可以
+ align:start position:0%
+该平台的长期用户， 我可以
+ align:start position:0%
+该平台的长期用户， 我可以
+证明其服务质量， 
+ align:start position:0%
+证明其服务质量， 
+ align:start position:0%
+证明其服务质量， 
+尝试一下， 
+ align:start position:0%
+尝试一下， 
+ align:start position:0%
+尝试一下， 
+如果你发现这个视频有用， 你不会失望的
+ align:start position:0%
+如果你发现这个视频有用， 你不会失望的
+ align:start position:0%
+如果你发现这个视频有用， 你不会失望的
+请点赞并订阅《
+ align:start position:0%
+请点赞并订阅《
+ align:start position:0%
+请点赞并订阅《
+魔法指标策略》， 谢谢
+ align:start position:0%
+魔法指标策略》， 谢谢
+ align:start position:0%
+魔法指标策略》， 谢谢
+观看， 下次再见
