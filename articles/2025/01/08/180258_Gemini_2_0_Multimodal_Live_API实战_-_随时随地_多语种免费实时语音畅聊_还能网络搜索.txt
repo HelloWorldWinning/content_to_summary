@@ -1,0 +1,507 @@
+Timestamp: 2025-01-08T18:02:58.691954
+Title: Gemini 2.0 Multimodal Live API实战 - 随时随地，多语种免费实时语音畅聊，还能网络搜索
+URL: https://www.youtube.com/watch?v=F1BxBac5iqA
+Status: success
+Duration: 15:45
+
+Description:
+```mermaid
+graph LR
+    A[用户] --> B(ChatOllama);
+    B --> C{设置};
+    C -- 启用实时对话 --> D[麦克风图标];
+    D -- 点击 --> E{选择模型};
+    E -- Gemini 2.0 --> F[Charlie Gemini];
+     F --> G[API Key 配置];
+    G -- 有效 API Key --> H[开启对话];
+    H --> I{语音输入};
+    I --> J[Audio Recorder];
+    J --> K[WebSocket 连接];
+    K --> L[Gemini 多模态 API];
+     L -- 工具调用 --> M[Tavily 搜索 API];
+    M --> L;
+     L --> N[语音输出];
+    N --> O[Audio Streamer];
+    O --> P[用户];
+    K -- 消息处理 --> Q{消息类型分析};
+    Q -- 内容消息 --> L;
+    Q -- 工具调用消息 --> L;
+    Q -- 工具调用取消消息 --> L;
+    L -->R{信息搜索结果};
+    R --> P;
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+     style P fill:#f9f,stroke:#333,stroke-width:2px
+```
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    A[用户] --> B(ChatOllama);
+    B --> C{设置};
+    C -- 启用实时对话 --> D[麦克风图标];
+    D -- 点击 --> E{选择模型};
+    E -- Gemini 2.0 --> F[Charlie Gemini];
+     F --> G[API Key 配置];
+    G -- 有效 API Key --> H[开启对话];
+    H --> I{语音输入};
+    I --> J[Audio Recorder];
+    J --> K[WebSocket 连接];
+    K --> L[Gemini 多模态 API];
+     L -- 工具调用 --> M[Tavily 搜索 API];
+    M --> L;
+     L --> N[语音输出];
+    N --> O[Audio Streamer];
+    O --> P[用户];
+    K -- 消息处理 --> Q{消息类型分析};
+    Q -- 内容消息 --> L;
+    Q -- 工具调用消息 --> L;
+    Q -- 工具调用取消消息 --> L;
+    L -->R{信息搜索结果};
+    R --> P;
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+     style P fill:#f9f,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+**Summary:**
+
+1.  **Introduction of AI-Powered Speaking Practice Tool:**
+    *   The speaker introduces a new AI-powered speaking practice tool integrated into their open-source project, ChatOllama.
+    *   This tool supports multiple languages and utilizes Google's Gemini 2.0 Multimodal Live API.
+    *   The primary use case is real-time spoken language interaction with the AI model.
+
+2.  **ChatOllama Setup and Usage:**
+    *   The user needs to enable real-time chat in ChatOllama settings.
+    *   A microphone icon allows the user to choose between Gemini 2.0 (named "Charlie Gemini") and OpenAI models.
+    *   Gemini API key is required for usage and can be configured in settings.
+    *   Tavily search API can also be configured to enrich the conversation with web data.
+
+3.  **Real-Time Conversation Example:**
+    *   The speaker demonstrates a conversation by asking questions about a recent soccer match.
+    *   Gemini responds using real-time information retrieved from the internet via Tavily search.
+    *   The example shows Gemini can provide match results, player scores, media reviews and even identify the manager.
+     * Gemini may provide inaccurate information due to third-party data retrieval limitations and search API data freshness.
+    *   The conversation also covers other topics such as OpenAI's financial status.
+    *   The interaction serves as an example of both speaking and listening practice and a tool for real-time information access.
+
+4.  **Technical Implementation:**
+    *   The implementation uses WebSocket for real-time communication with Gemini.
+    *   The project relies on Google's GNAI SDK.
+    *   The speaker referenced code implementation from a third party project.
+    *   Key components include:
+        *   `Multimodal Live Client` class handles the WebSocket connection, passing the API key through URL parameters.
+        *   `Audio Recorder` captures and sends the user's voice input.
+        *   `Audio Streamer` manages the model's audio output, utilizing a worklet for data formatting.
+    *   Tool registration for Tavily API happens dynamically if an API key is configured.
+
+5.  **Future Expansions and Conclusion:**
+    *   The current implementation is a basic integration with hard-coded tool API integration and will be extended to support more API integrations in the future.
+    *   The speaker highlights that Gemini is currently free to use, making it a great tool for free conversational experience.
+    *   The tool aims to enable a better voice conversation experience, improve speech skills, enhance efficiency and promote information access.
+
+**Core Point:** The presenter showcases a new real-time AI-powered spoken language tool integrating Gemini 2.0 Multimodal Live API into ChatOllama, emphasizing its application in practicing spoken languages and real time information access.
+
+**Fundamental Point:**  This project demonstrates a practical application of real-time AI in spoken language interaction by combining live voice conversation, data retrieval, and model integration using Gemini 2.0's Multimodal API.
+
+**Overarching Framework:**  The content is structured around a demonstration and technical explanation of a new real-time speech interaction feature built using Gemini's Multimodal API within ChatOllama, highlighting its functionality, setup, and technical implementation.
+
+
+Content:
+WEBVTT
+Kind: captions
+Language: zh
+大家好， 我是小木头
+欢迎大家来到我的视频频道
+在过去的一个周末
+我为自己和家人
+打造了一款基于 AI 的口语练习老师
+它支持多种语言
+不仅包含了英语
+还有西班牙语、德语、法语等等
+这个功能
+其实是我的开源项目 ChatOllama 中
+新增的一款
+基于了 Gemini 2.0 多模态实时 API
+现在呢我就来演示一番
+看看在 ChatOllama 中如何使用它
+大家来看看在实时的口语交流中
+效果究竟如何
+现在我所分享的
+就是本地运行的 ChatOllama
+要启用实时的聊天与 Gemini 模型对话
+非常简单
+第一步， 来到 Settings
+在这里启用实时的对话
+启用后
+页面的右侧会看到一个话筒的小按钮
+点击它会弹出两个选项
+粉红色的小图标
+正是代表着与 Gemini 2.0 模型的对话
+上面这个图标是与 OpenAI 的 API 交流
+这在过去的一期视频分享中
+我们已经有所介绍
+有兴趣的同学可以点击视频上方链接
+回到当时的分享
+今天呢我们来演示与 Gemini 2.0 模型
+基于多模态 API 如何实现对话
+点击它会弹出这么一个窗口
+大家可以了解使用的是什么模型
+目前用的呢是 Gemini 2.0 Flash
+我将这个小组件命名为 Charlie Gemini
+目的是与 OpenAI 的这个 Charlie
+做个小小的区分
+话不多说
+赶紧打开 Charlie Gemini
+在交流前
+咱们需要确保 Gemini 的 API key
+做个正确的配置
+只要我们有一个有效的 API key
+就可以点击话筒开启对话
+在目前的本地配置中
+我还启用了 Tavily 这部分的内容呢
+搜索 API
+Gemini 模型
+还可以通过搜索
+来获得网络信息或数据
+更好地丰富咱们的对话内容
+现在我所分享的就是 Tavily 官方网站
+在这里大家可以完成注册登录
+并获得有效的 API Key
+在随后的分享中
+我会介绍如何进行配置
+现在赶紧回到 ChatOllama
+来进行一番对话
+看看效果如何
+过去的一个周末
+英超完成了新一轮的赛事
+那我非常想了解一下赛事的赛况
+其中焦点战是利物浦和曼联的比赛
+我想了解一下赛果以及球员的
+表现还有赛后各方媒体或焦点
+对这场比赛的
+评价反馈
+那现在
+我就通过实时语音的形式与 Gemini 交流
+看看他能够帮助到我吗
+通过这个过程
+我也尝试来提高或练习我的口语
+点击话筒
+开启对话
+你好
+有什么我可以帮忙的吗
+今天你可以使用 Tavily 搜索吗
+是的， 我可以使用 Tavily 搜索工具
+你想让我搜索什么具体内容吗
+是的， 所以
+查找曼联对利物浦比赛的结果
+在 2025 年第一周
+好的
+我将为您查询曼联对利物浦的比赛结果
+在 2025 年第一周
+请稍等片刻
+在 2025 年第一周曼联对利物浦的比赛
+以 2 比 2 平局结束
+这似乎是一场激动人心的比赛， 双方都有进球
+您还想了解比赛的其他信息吗
+是的
+我想知道比赛后评分最高的球员是谁
+我会查询比赛后评分最高的球员
+在 2025 年第一周曼彻斯特联队与
+利物浦的比赛之后
+请稍等一下， 根据我的搜索
+穆罕默德·萨拉赫是比赛后评分最高的球员
+他得到了一次 8.5 的评分
+满分 10 分， 他进了一球并有一次助攻， 还有什么
+你想知道的吗？
+
+媒体或赛后新闻发布会有什么看法
+好的， 我将搜索媒体和新闻发布会
+对比赛和穆罕默德·萨拉赫表现的评价
+请稍等一下
+媒体似乎对穆罕默德·萨拉赫的表现给予了好评
+突出他的进球
+和助攻是利物浦平局的关键因素
+新闻界也注意到
+他的高评分和整场比赛的出色表现
+你还想了解其他评价吗？
+
+我忘了曼联主教练的名字
+他的名字是什么， 他对比赛有什么看法？
+
+好的， 我将搜索曼彻斯特
+联队主教练的名字及他对比赛的看法
+请稍等
+一下， 曼彻斯特联队的主教练是埃里克·滕哈赫
+他在比赛后的看法是
+他的球队在防守上可以做得更好
+但他也称赞了球队的进攻表现， 你想了解
+更多他的评论吗？
+你确定
+主教练是滕哈赫吗？
+
+我认为他已经被辞退了
+可能我的信息有些过时
+让我再搜索一下确认当前曼彻斯特
+联队的主教练
+请稍等
+看来你是对的
+埃里克·滕哈赫在 2025 赛季前被尤利安·纳格尔斯曼取代
+很抱歉我的错误， 你想了解
+尤利安·纳格尔斯曼对比赛的看法吗？
+
+我的下一个问题是关于 OpenAI 近期的
+听说 OpenAI 的 CEO Sam Altman 是的
+我明白你想问关于什么的问题
+你的问题是什么
+关于 Sam Altman
+他说过
+OpenAI 因为意外的
+Pro 订阅的使用导致亏损
+他们具体怎么说？
+
+好的， 我将搜索 Sam Altman
+关于 OpenAI 说的话
+AI 因专业订阅而亏损
+请稍等， 根据我的搜索
+萨姆·奥尔特曼表示运行他们的 AI 模型的成本
+特别是专业订阅用户的高使用率
+目前正在超过他们的收入
+他提到他们正在寻找优化成本的方式
+同时保持服务的质量
+你想让我找更多的细节吗
+不， 这就是全部， 谢谢
+不客气， 还有其他我可以帮助你的事情吗
+好了
+这就是我与 Gemini 进行的一段对话
+一方面呢
+练习口语
+另一方面呢
+练习听力
+在对话中
+我也期望
+他能够更多地
+帮我捕获到一些实时的信息
+这样呢能在对话中更加有效
+在这个过程当中
+他的搜索引擎能够帮助到我
+Gemini 能够利用工具调用
+或函数调用的方式来用
+到最后是关于工具的注册
+它可以通过搜索引擎获取相关信息
+比如利物浦和曼联比赛的结果
+赛后的一些评价
+同时呢我也针对 OpenAI 的 CEO 萨姆
+奥尔特曼介绍到的
+关于 OpenAI 正在亏钱
+原因呢
+是预期之外的 Pro 版本的会员订阅
+订阅量太大
+导致了可能利润正在缩减
+或者被侵蚀掉
+这方面的对话呢
+Gemini 都利用到的工具调用通过了
+它被搜索 API 呢
+获得了相关信息
+当然这些搜索中呢
+有的信息获取的会是正确的及时的
+有的呢并不一定
+这就跟刚才我在交流中大家听到的
+关于曼联的教练
+当然也不是纳格尔斯曼
+现在呢是阿莫林
+它并没有正确地捕获到这些信息
+也有可能呢
+搜索引擎没有给到最新的信息或数据
+不过信息的缺失或不准确呢
+并不由模型
+或者是多模态实时聊天的 API 来决定
+这是第三方的信息检索的机制
+或工具导致的
+我们可以通过工程化的方式来解决
+提高它的信息捕获的正确率
+重点是
+我们能够利用 Gemini 多模态的实时 API
+实现实时的语音交流非常的方便
+在未来的扩展中
+咱们还可以在这个聊天机型
+还可以在这款聊天机型中
+集成更多的工具
+帮助我们能够在聊天中
+使用更多有趣的功能
+感兴趣的同学
+请来到我的 ChatOllama GitHub 代码仓库这里
+克隆或者通过 Docker 的形式运行
+ChatOllama 配置有
+效的 OpenAI 或 Gemini API
+就能够开启实时的对话了
+最重要的一点是
+Gemini 模型目前还是处于免费使用状态
+这是非常非常好的一个事情
+几乎咱们可以实现免费的畅聊
+在结束今天视频分享前
+我计划通过这次功能开发的合并请求
+来分享究竟做的哪些改动
+来支持到 Gemini 多模态的实时 API
+现在所分享的
+就是我这次改动的合并请求
+所有 view 组件的开发呢
+都涉及到了界面上相关的一些功能
+在这里呢咱们不做过多介绍
+重点我们来看看在功能代码部分
+如何调用的
+首先呢还是要来到谷歌的官方文档
+对多模态的实时 API
+也就是 Multimodal Live API
+做一番简要的介绍
+底层机制是 WebSocket 连接
+在文档中使用的是 Python SDK
+只需要安装 Google GNAI 这个 SDK 就好啊
+我们在 ChatOllama 中用的是 JavaScript
+对应的
+也有 JavaScript 版本的 SDK 或依赖包
+这个呢
+一会儿咱们在合并请求中再来看
+在文档中
+并没有对 WebSocket
+URL 等作非常清晰的描述
+至少在目前这份文档中
+我们是没有捕获到这些信息的
+这些信息的详情呢
+都被包裹在了 SDK
+不过
+有一个非常好的项目可供我们参考
+也就是现在我所分享的
+我会将相关的链接都放在视频描述中
+ChatOllama 也是参考了这个实例项目
+并引用了它其中的代码实现
+非常的好用
+有兴趣的同学可以直接克隆或下载
+这个项目运行
+它具有非常完善的 Socket 连接
+以及语音的管理
+在适配中
+还包含了一系列其他工具的支持
+比如说天气呀等等
+现在我们回到 ChatOllama 的合并请求
+快速浏览一下一些核心的技术点
+第一是 WebSocket 连接的 URL
+大家可以通过 Multimodal Live Client 这个类
+看到默认连接的是这个与 26
+API Key 是通过 URL 参数传递的
+因此
+大家如果要在浏览器的开发工具中
+定位或者是观测网络通信呢
+只需要去定位到
+对应的 WebSocket 连接就好
+比如在我们现在的 ChatOllama 这里
+如果我打开 Network
+点击 WS 并尝试建立一个连接
+这样我们就建立了一个 WebSocket 连接
+大家可以通过这种方式
+来实时地观测目前与 API 的交互情况
+所有 Web
+Socket 连接上的消息在这里都能查看到
+在这其中
+对所有接收到的消息或事件呢
+都做了捕获
+根据不同类型的消息
+做了不同类型的处理
+在这里呢
+我们也参考了刚才的演示项目中
+关于不同的实时消息类型的定义
+并对不同的类型呢做了解读
+可以通过消息中不同的字段来定位
+这是一个什么类型的消息
+是一个内容消息
+还是一个工具调用的消息
+还是工具调用取消的消息等等
+在实时对话中
+我们既要捕获用户的语音输入
+也要捕获模型
+给到我们的语音的输出或响应
+这样呢咱们就需要两部分
+第一部分是 Audio Recorder
+在这里实现了对语音的捕获
+并以实时的输入的形式
+来发送给 Gemini 模型
+或者是实时的多模态的 API
+另一部分就是语音的流式输出
+Audio Streamer 这个类做的这个工作
+它也是来自于视力项目中的代码实现
+其中还有一个 worklet
+它是实现着语音的处理模型
+帮助应用程序将语音输入打包
+分块成期望的数据格式
+这样呢才能够正确通过 WebSocket 连接
+发送给多模态的实时 API
+最后是关于工具的注册
+怎么知道有什么工具可以使用呢
+我们来到 ChatOllama 这个组件
+在这个组件里
+就用到了 Multimodal Live Client 这个类
+在这里
+在这个类的实例化时
+会给到它一组工具
+我们在这里呢
+默认已经定义好了一个 target search
+这么一个工具调用的参数
+声明这个参数就会被作为 API 调用时
+工具调用部分的数据交付给 API
+我们并不总是将它交给 API
+首先会去判断
+目前是否已有他们的 API key
+如果已经配置
+才会将这个工具注册到的
+API 调用中
+我们在这里来看看
+当配置中配置了 Tavily API key
+才会在工具列表中添加
+刚才我们介绍的 Tavily 搜索的
+工具参数
+这个工具列表呢会交给网络连接
+这个网络连接
+在这里提供一个工具列表
+如果没有 API
+那么 type 搜索工具
+并不会添加到这次对话中
+模型
+自然也就无法通过工具调用的方式
+来使用搜索引擎
+最后来介绍一下这个参数
+API 在哪里配置
+在 noxconfig.js 这里
+添加了一个变量 Tab 的 API
+key 默认是空字符串
+我们可以通过这个环境变量
+nox_public_tab_API_key
+配置一个有效的密钥
+这个命名规则呢
+是 Nox 规范的命名规则
+通过这种方式
+咱们就可以在聊天中启用搜索引擎
+目前的实现
+还是一个非常基本的
+对于插件
+或搜索引擎等工具的硬编码的集成
+将来呢我们会对这部分做扩展
+使得大家能够更方便地集成 API
+作为工具
+后续我们也会将这类的工具支持
+添加到 OpenAI 的实时 API 交互中
+好了这就是今天分享的主要内容
+希望 Gemini 多模态实时 API 的使用
+能够给到大家
+一个更好的语音交流的用户体验
+一方面能够通过它来练习口语
+当然这只是很小的一个应用场景
+更多的是能够通过语音交流的方式
+获取信息
+阅读信息
+帮助大家解放双手
+更进一步地提高工作学习生活的效率
+我会将今天用到的所有文档或代码
+链接呢都放在视频描述中
+感兴趣的同学呢就在描述中取用
+那咱们就下期视频分享
+再见同学们拜拜
