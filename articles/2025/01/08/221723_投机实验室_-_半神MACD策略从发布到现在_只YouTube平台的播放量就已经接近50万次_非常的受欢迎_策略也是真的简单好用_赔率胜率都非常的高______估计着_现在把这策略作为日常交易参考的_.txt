@@ -1,0 +1,109 @@
+Timestamp: 2025-01-08T22:17:23.693692
+Title: 投机实验室 - 半神MACD策略从发布到现在，只YouTube平台的播放量就已经接近50万次，非常的受欢迎。策略也是真的简单好用，赔率胜率都非常的高！！😘😍  估计着，现在把这策略作为日常交易参考的， 1876421725207789569
+URL: https://x.com/LabSpeculation/status/1876427320396804209
+Status: success
+Duration: 6:16
+
+Description:
+**Outline:**
+
+1.  **Introduction to "Half-God" MACD Strategy:**
+    *   Popularity: The strategy has gained significant traction with almost 500,000 views on YouTube.
+    *   Simplicity and Effectiveness: The strategy is described as easy to use and has a high win rate.
+    *   Automated Indicator: An indicator has been created to automatically mark signals based on the "Half-God" MACD strategy and recently updated to Pine V6 version.
+    *   Creator: The strategy is attributed to a trader called "Half-God" who is known for achieving substantial returns with small capital.
+
+2.  **Core Concepts of the Strategy:**
+    *   MACD as Confirmation Tool: The MACD is used to confirm price trend continuation, primarily by observing the histogram's increase/decrease.
+    *   "Divergence" (倍离): The core concept revolves around identifying significant divergences between MACD histogram peaks and corresponding price peaks/valleys.
+    *   Specific Divergence Rules:
+        *   Only consider divergences where peaks are substantially different.
+        *   Avoid using default MACD parameters.
+        *   Focus on continuous peaks for better signals.
+    *   Noise Reduction: The indicator filters out minor divergences to reduce noise.
+    *   AT2 Indicator: Used for precise entry/exit signal calculation and stop loss placement.
+
+3.  **Trading Rules (Long Position):**
+    *   Three-Peak Divergence (Preferred):
+        *   MACD histogram: Find 3 consecutive rising peaks below zero line, that are different in size.
+        *   Price Chart: Corresponding price peaks must be decreasing.
+    *   Two-Peak Divergence:
+        *   MACD histogram: Find 2 consecutive rising peaks below zero line, that are different in size.
+        *   Price Chart: Corresponding price peaks must be decreasing.
+    *   Entry: Enter a long position at the open price of the candle after the "key candle".
+    *   Stop Loss: Set the stop loss at the low point of the "key candle" minus the AT2 value.
+
+4.  **Trading Rules (Short Position):**
+    *   Three-Peak Divergence (Preferred):
+        *   MACD histogram: Find 3 consecutive falling peaks above zero line, that are different in size.
+        *   Price Chart: Corresponding price peaks must be increasing.
+    *   Two-Peak Divergence:
+        *   MACD histogram: Find 2 consecutive falling peaks above zero line, that are different in size.
+        *    Price Chart: Corresponding price peaks must be increasing.
+    *   Entry: Enter a short position at the open price of the candle after the "key candle".
+    *   Stop Loss: Set the stop loss at the high point of the "key candle" plus the AT2 value.
+
+5.  **Profit Taking:**
+    *   Use a risk-reward ratio of 1:1, 1:2 or higher and use laddered take profit approach.
+6.  **Concluding Remarks:**
+    *   The strategy is presented as simple but effective.
+    *   The author encourages viewers to subscribe and try the strategy.
+    *   Disclaimer: The content is for entertainment and is not investment advice.
+
+**Core Point:** The "Half-God" MACD strategy uses specific divergences between the MACD histogram and price action, along with the AT2 indicator, to identify high-probability trading opportunities with defined entry and stop loss points.
+
+**Fundamental Point:** This strategy emphasizes divergence between momentum (MACD) and price to find potential turning points, focusing on the strength of signals, rather than just traditional MACD crossovers.
+
+**Overarching Framework:** The content presents a trading strategy based on technical analysis, specifically using a modified MACD indicator and a secondary indicator (AT2) to identify and execute trades with clear rules for entry, stop loss, and take profit.
+
+<Mermaid_Diagram>
+graph LR
+    A[Half-God MACD Strategy] --> B(MACD Divergence);
+    B --> C[Histogram Peaks];
+    C --> D{Significant Difference?};
+    D -- Yes --> E[Price Peak/Valley];
+    E --> F{Opposite Direction?};
+     F -- Yes --> G[Key Candle];
+    G --> H[Entry Signal];
+    H --> I[AT2 for Stop Loss];
+    D -- No --> B
+      F -- No --> B
+       A -->J(Automated Indicator);
+    J--> K(Pine V6);
+    A --> L[Trading Rules];
+       L --> M[Long Position];
+        L --> N[Short Position];
+       M -->O[MACD Histograms below 0];
+    O -->P[Consecutive rising peaks];
+           N -->Q[MACD Histograms above 0];
+    Q -->R[Consecutive falling peaks];
+      M -->S[Price peaks decreasing];
+         N -->T[Price peaks increasing];
+      H --> U[1:1 1:2 or more Risk:Reward];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+     style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#ccf,stroke:#333,stroke-width:2px
+       style D fill:#ccf,stroke:#333,stroke-width:2px
+        style E fill:#ccf,stroke:#333,stroke-width:2px
+     style F fill:#ccf,stroke:#333,stroke-width:2px
+          style G fill:#ccf,stroke:#333,stroke-width:2px
+      style H fill:#ccf,stroke:#333,stroke-width:2px
+       style I fill:#ccf,stroke:#333,stroke-width:2px
+     style J fill:#ccf,stroke:#333,stroke-width:2px
+          style K fill:#ccf,stroke:#333,stroke-width:2px
+          style L fill:#ccf,stroke:#333,stroke-width:2px
+          style M fill:#ccf,stroke:#333,stroke-width:2px
+           style N fill:#ccf,stroke:#333,stroke-width:2px
+               style O fill:#ccf,stroke:#333,stroke-width:2px
+                style P fill:#ccf,stroke:#333,stroke-width:2px
+                 style Q fill:#ccf,stroke:#333,stroke-width:2px
+                   style R fill:#ccf,stroke:#333,stroke-width:2px
+                    style S fill:#ccf,stroke:#333,stroke-width:2px
+                       style T fill:#ccf,stroke:#333,stroke-width:2px
+                       style U fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+半神MACD策略从发布到现在只YouTube平台的播放量就已经接近50万次非常的受欢迎策略也是真的简单好用培育胜率都非常的高估计著现在把这策略作为日常交易参考的没有1万人也得有8000为了方便各位使用我连夜做了个自动标记半神MACD信号的指标上上的视频已经授权了100位朋友测试迷捕了一些漏洞也更新到了PineV6的最新版本需要的可以留下TradeViu的用户名会在按时间顺序授权100个权限Yo 我来了欢迎来到投机实验室可能也有人不知道谁是半神一句话讲这是一个用1万块本金起步高峰时候仅是盘就有400多倍利润退圈前资产已经接近5000万的男人非常强悍接下来我就把策略和自动标记半神MACD的指标全部泄露给各位记得点击订阅按钮并坚持到最后这个行为或许可以拯救你今年的钱包各位拿到授权后打开TradeViu的指标搜索栏找到仅先邀请里的MACD divergence单机就可以添加到图表MACD的绿色能量助表示看长试头低于零线时能量助就是红色表示看跌的试头MACD不仅可以显示当前多空哪方控制了市场多空力量的对比也能很直观地展现出来如果上升趋势或是下降趋势获得比较大的动力MACD注状图的波峰会变得很高或是很深动量减弱的时候注状图的波峰就会缩短在这个策略中MACD起到了确认价格走势是否还在延续的作用我们可以通过观察MACD注状图的连续增加或者延续减少来寻找交易信号其实与倍利的概念一样只是有一个决定承败的细节99%的人都不知道那就是一定只找波峰相差较大的延续倍利不延续的不要指标的默认参数快线长度是13慢线长度是34今差和死差这里用不到可以勾掉自动标记MACD指标用派中的他PVTi他PVTL韩数计算波峰避免了重会指标确认是2根K线也就是信号会在第一根虚线的收盘价出现但是在第二根虚K线的收盘价确定信号有效我们盯盘的时候其实在第一根虚线就可以判断出倍利是否符合策略要求为了避免出现过小的无效倍利波峰的大小默认为MACD标准差的0.1倍两个波峰之间的比例默认11.2小于这个值就不会会出这样就可以筛选无效倍利Fresh old可以调控噪音默认为0小于这个值的意思调驻会被忽略不计当出现3个或以上的连续波峰倍利时指标会出现绿色或是红色标签并触发警报如果不需要连续倍利可以在设置里关闭连续倍利的开关AT2在这里主要起到了计算直酸点位的作用参数设置成13这就是我们的作案工具它可以提供给我们非常精确的进场和出场信号接下来我就结合实力解释一下交易规则这是比特币的15分钟图表进入多头的规则是首先我们要在零线下方找到两个或三个波骨相差较大且连续升高的MACD注状图三个的最好这里先看三个波峰的例子接著我们找到与MACD对应的K线看K线波骨的是否连续降低如果条件满足那MACD实行驻转虚星驻的第一根驻子收盘后就会标记出买入信号这根虚驻对应的K线就是关键K线我们可以在关键K线的下一根K线的开盘价附进入场直损幅度用入场K线的低点简直对应的AT2数值就能得到直损是多少空单同样需要满足这些条件首先要在零线上方找到三个波峰相差较大且连续降低的MACD注状图再看与MACD对应的K线波峰是否连续太高条件满足后MACD实行驻转虚星驻的第一根驻子收盘后就会出现卖出信号这根虚驻所对应的K线就是关键K线我们可以在关键K线的下一根K线的开盘价附近入场空单关键K线的高点加上AT2的数值就是我们的直损幅度直迎K选择在风险回报比是1比11比2甚至更多的比例分梯直迎这是三个波峰的倍离这种倍离胜率高但是出现的频率较低我们最常用的还是两个波峰的倍离两个波峰的MACD多头规则是第一步是看零线下方的两个注状波骨是否相差悬殊且连续升高第二步是看与MACD对应的K线波骨是否连续降低两个条件满足MACD实行驻转虚星驻的第一根驻子收盘后就会出现卖入信号这根虚驻所对应的K线就是关键K线我们可以在关键K线的下一根K线的开盘架附近入场多单关键K线的低点加上AT2的数值就是我们的直损幅度再将风险回报比1比2设置成收益目标之后等著钱包开始变骨就可以了做空的规则相反第一步是看零线上方的两个注状波峰相差悬殊且连续降低第二步是看与MACD对应的K线波峰是否连续抬高两个条件满足MACD实星驻转虚星驻的第一根驻子收盘后就会出现卖出信号这根虚驻所对应的K线就是关键K线我们可以在关键K线的下一根K线的开盘架附近入场空单关键K线的高点加上AT2的数值就是我们的直损幅度指引同样式分屁指引的方式好了交易就是这么简单娱乐节目没有任何投资建议检查一下是否点击了订阅按钮以脸错过更更有力可图的交易策略祝你早安晚晚拜拜
