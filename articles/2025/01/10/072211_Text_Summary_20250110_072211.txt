@@ -1,0 +1,65 @@
+Timestamp: 2025-01-10T07:22:11.955601
+Title: Text Summary 20250110_072211
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1. **Problem:**
+    *  The rise of small-scale urban distributed solar generation (DSG) necessitates accurate, site-adaptive forecasting models.
+    *  Developing individual models for each DSG is economically impractical due to the large number of DSGs and limited historical data.
+
+2. **Solution:**
+    *  Adapt a state-of-the-art attention-based Temporal Fusion Transformer (TFT) model for solar (STFT).
+    *  Validate the self-attention mechanism's generalizability for multi-step time series forecasting using data from 188 real-world DSGs.
+    *  Test the model's ability to forecast unseen DSGs (without training data for those specific locations).
+
+3. **Results:**
+    *  STFT outperforms persistence models by 11.07%, 17.58%, and 22.76% at 10-, 20-, and 30-minute forecast horizons, respectively.
+    *  STFT outperforms a Long Short-Term Memory (LSTM) model by 3.34%, 4.18%, and 5.85% at 10-, 20-, and 30-minute forecast horizons, respectively.
+    *  STFT excels in high variability periods, especially during weather transitions, where baseline models struggle.
+    *  STFT's model architecture is more complex and computationally costly than other deep learning models.
+
+4. **Key Trade-off:**
+    *  STFT offers improved accuracy but comes with higher computational costs, which must be considered in practical applications.
+
+**Core Point:**  An adapted attention-based TFT model demonstrates improved forecasting accuracy for unseen distributed solar generation compared to persistence and LSTM models, particularly during weather transitions.
+
+**Fundamental Point:**  Self-attention mechanisms can provide robust and generalizable solutions for multi-step time series forecasting of distributed solar generation, despite its high complexity.
+
+**Overarching Framework:** The overarching framework is to explore and develop a site-adaptive forecasting model that utilizes a self-attention-based approach (STFT) to overcome limitations in conventional forecasting methods when dealing with a large number of small-scale, data-scarce, distributed solar generations. The work focuses on the effectiveness of STFT in generalization to unseen locations and its performance under different weather conditions, also considering computational complexity.
+
+<Mermaid_Diagram>
+graph LR
+    A[Problem: DSG Forecasting] --> B(Site-Adaptive Models Needed);
+    B --> C(Limited Historical Data);
+    C --> D(Conventional Methods Infeasible);
+    D --> E[Solution: Adapt TFT];
+    E --> F(Solar TFT (STFT));
+    F --> G{Self-Attention Mechanism};
+    G --> H(Multi-step Time Series);
+    H --> I[Validation: 188 Real DSGs];
+    I --> J[Testing: Unseen DSGs];
+    J --> K{Results};
+    K --> L[Outperforms Persistence Model];
+    K --> M[Outperforms LSTM Model];
+    K --> N[Excels in High Variability];
+    N --> O(Weather Transition Periods);
+    K --> P[Higher Computational Cost];
+    P --> Q(Accuracy vs. Efficiency);
+    Q --> R(Trade-off);
+    R --> S{Core Point: Improved Accuracy with STFT};
+    S --> T{Fundamental Point: Generalizable Self-Attention};
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#9f9,stroke:#333,stroke-width:2px
+    style R fill:#ffc,stroke:#333,stroke-width:2px
+    style S fill:#ff9,stroke:#333,stroke-width:2px
+    style T fill:#9cc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+The emergence of small-scale urban distributed solar generation (DSG) has urged the exploration of site- adaptive forecasting models designed to accurately predict future power outputs for unseen DSGs. In such scenarios, with numerous DSGs spread across utility-scale cities and a lack of historical data, it is not economically viable to use conventional approaches that develop individual models for each DSG. Therefore, this work aims to tackle this real-world challenge by adapting the state-of-the-art, attention-based temporal fusion transformer (TFT) model to 188 real-world operational DSG data, thereby validating the generalizability of self-attention mechanism for multi-step time series forecasting. When adapted to unseen DSGs without training data, the experiment results demonstrate that the proposed solar TFT (STFT) improves by 11.07%, 17.58%, and 22.76% over the persistence model at the 10-, 20-, and 30-minute forecasts, respectively. Even when compared to representative deep-learning models, such as a long short-term memory model specialized in time series forecasting, STFT has demonstrated improved forecast accuracy, achieving 3.34%, 4.18%, and 5.85% enhancements at the 10-, 20-, and 30-minute forecast horizons, respectively. However, the model architecture of STFT is more complex, and the computational cost associated with it is relatively higher compared to other deep learning models. This trade-off between accuracy and computational efficiency should be considered in practical applications. The forecast performance is analyzed in three typical weather conditions, namely, clear, partly cloudy, and overcast. STFT demonstrates advantages in high variability periods, especially during weather transition periods, where reference models experience lagged predictions yielding relatively large errors.
