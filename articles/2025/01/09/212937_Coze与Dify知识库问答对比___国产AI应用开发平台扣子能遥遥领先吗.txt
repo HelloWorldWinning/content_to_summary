@@ -1,0 +1,114 @@
+Timestamp: 2025-01-09T21:29:37.648672
+Title: Coze与Dify知识库问答对比 | 国产AI应用开发平台扣子能遥遥领先吗？
+URL: https://youtube.com/watch?v=yThgq4OdTdw&si=3ly-_KefXOLqoy8m
+Status: success
+Duration: 18:20
+
+Description:
+好的，这是对您提供的视频内容的总结：
+
+**1. Outline and Structure:**
+
+*   **Introduction:**
+    *   The video discusses updates to RAG (Retrieval-Augmented Generation) and knowledge bases, specifically focusing on the parent-child retrieval mode.
+    *   It compares two popular platforms, Dify and Coze, in terms of their knowledge base capabilities.
+*   **Review of Parent-Child Retrieval:**
+    *   **Basic RAG:**
+        *   Documents are divided into chunks.
+        *   Chunks are converted into vector embeddings and stored in a vector database.
+        *   User queries are also converted into vectors.
+        *   The system retrieves relevant chunks based on vector similarity.
+        *   Retrieved chunks are used as context for the large language model (LLM).
+        *   Limitations: Context truncation due to chunking; difficulty in choosing optimal chunk sizes.
+    *   **Parent-Child RAG:**
+        *   Documents are initially divided into larger parent chunks.
+        *   Each parent chunk is further divided into smaller child chunks.
+        *   Only child chunks are converted to vector embeddings and stored.
+        *   Parent chunks are stored in a key-value store.
+        *   Retrieval: Relevant child chunks are retrieved, and their associated parent chunks are returned.
+        *   Benefits: More focused context from child chunks while retaining wider context from parent chunks.
+*   **Platform Comparison (Dify vs. Coze):**
+    *   **Coze:**
+        *   Knowledge base creation is demonstrated using a NVIDIA report.
+        *   The parent-child document configuration with 10% overlap is explored.
+        *   Initial tests reveal small, fragmented retrieval results.
+        *   Tests with adjusted larger chunk sizes show inconsistencies and poor retrieval.
+        *   Knowledge base performs poorly at answering specific questions, including about business strategies.
+    *   **Dify:**
+        *   Parent-child retrieval configuration is shown, and default parameters are used.
+        *   Testing also does not find the answers about key business strategies for 2023Q4.
+        *   It identified  two of the key business strategies, but missed others in the same document.
+        *   Analysis of the referenced blocks shows they are small, fragmented parts of the original document.
+*   **Conclusion:**
+    *   Both platforms support RAG with document chunking.
+    *   Dify supports parent-child retrieval.
+    *   Document chunking (regardless of method) can cause context truncation.
+    *   Larger chunks help, but do not fully resolve the problem.
+    *   Current document retrieval quality in Dify and Coze should not be expected to be high.
+
+**2. Core Point:**
+
+The core point is that despite the improvements offered by parent-child retrieval, the fundamental issue of information loss due to document chunking in RAG systems remains a significant challenge for both Dify and Coze.
+
+**3. Fundamental Point:**
+
+The fundamental point is that current RAG implementations are limited by the inherent challenges of breaking down documents into discrete chunks, which can cause information loss and hinder the ability of LLMs to generate comprehensive and contextualized responses.
+
+**4. Overarching Framework:**
+
+The overarching framework is the evaluation of the practical application and limitations of RAG systems, particularly focusing on the comparison of two popular platforms (Dify and Coze) and the analysis of parent-child retrieval, as they try to improve information retrieval from knowledge bases with document chunking.
+
+**5. Conceptual Map:**
+
+<Mermaid_Diagram>
+graph LR
+    A[Document] --> B(Chunking);
+    B -- Basic RAG --> C[Vector Embeddings];
+    C --> D(Vector DB);
+    E[User Query] --> F[Vector Embedding];
+    F --> D;
+    D --> G{Similarity Search};
+    G --> H[Retrieved Chunks];
+    H --> I[LLM Context];
+    I --> J[Response];
+
+    B -- Parent-Child RAG --> K[Parent Chunks];
+    K --> L(Key-Value Store);
+    B --> M[Child Chunks];
+    M --> N[Vector Embeddings];
+    N --> O(Vector DB);
+    E --> F;
+    F --> O;
+    O --> P{Similarity Search};
+    P --> Q[Retrieved Child Chunks];
+    Q --> R[Retrieve Parent Chunks from Key-Value Store]
+    R --> S[LLM Context]
+    S --> J;
+
+    subgraph Basic RAG
+    C; D; G; H; I;
+    end
+
+    subgraph Parent-Child RAG
+    K; L; M; N; O; P; Q; R; S;
+    end
+
+    subgraph Platforms
+    T[Dify];
+    U[Coze];
+    end
+
+  	T-->B;
+	  U-->B;
+	  style D fill:#f9f,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style R fill:#ccf,stroke:#333,stroke-width:2px
+    style T fill:#aaf,stroke:#333,stroke-width:2px
+    style U fill:#aaf,stroke:#333,stroke-width:2px
+    style J fill:#afa,stroke:#333,stroke-width:2px
+    style B fill:#cfc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT Kind: captions Language: zh 大家好， 我是小木头 欢迎大家来到我的视频频道 今天我们继续聊聊 RAG 聊聊知识库 在 1 月 7 日的更新中 Dify 为 RAG 和知识库带来重大更新 现在它已经支持父子检索模式 从而帮助用户或开发者 进一步提高应用的文档 或信息的检索质量 今天这期视频我们就 来比对目前大语言模型应用开发平台中 最知名的两款 Dify 与 Coze 我们通过实际的应用场景 看看究竟他们的知识库 是否能够满足用户日常的问答需求 帮助我们 在文档的检索中 得到高质量的回答 现在 我分别登录到了云端的 Dify 以及 Coze 大家注意 我在这里用到的 Coze 是国际版 但不妨碍大家通过使用国内版 与 Dify 进行比对 在分享前 咱们还是回顾一下 什么是父子检索模式 关于这个话题 咱们其实在一年多以前 在 RAG 的介绍中已经有所涉及 现在呢 我们就拿出当时的古老的文献资料 来回顾一下什么是父子检索模式 有兴趣的同学 也可以点击视频上方链接 回到当时我关于 RAG 的视频分享 来了解什么是 父子检索 在回顾父子检索模式前 我们先回到最原始 最基本款的 RAG 究竟是怎么做的 RAG 也就是检索增强生成 它是如何通过检索 来帮助我们来增强生成效果呢 针对一份文档 我们要定位其中的内容 由于上下文窗口的限制 大模型无法将整个文档消化掉 对于尺寸较大文档 我们需要对其分块 在图中我们对文档可以分成 123 到 n 块 每个分块呢 通过文本嵌入模型 也就是 embedding model 将其转换为可计算的数学表达模式 也就是向量数据 向量数据存储到向量存储中 在这里我们通常会使用向量数据库 来帮助我们进行向量数据的存储 这就完成了数据的索引 当用户提出一个问题 我们需要从文档中 定位到相关的语料或数据 帮助大模型来完成推理并回答 这个数据检索就需要用到检索器 也就是我们图中现在标识的 retriever 通过检索器 来获得文档中的相关的文档片段 这些文档片段通常就是分块了 相关文档的计算 是通过向量数据与用户提问 向量数据的相似度来 进行排序 相似度最高的文档 则被认为是最相关的文档 从向量数据库中获得这些文档片段 再组合成大语言模型上下文的一部分 这样呢给到大语言模型 帮助我们完成推理 得到回答 这种方式的弊端在于 文档的分块 总是或多或少 会造成上下文信息的截断 另一方面 文档分块的大小 难以适应所有的应用场景 太大的文档分块 可能会包含足够的上下文信息 但是会导致信息不聚焦 太小的文档分块 虽然能保证语料中的数据或信息 相对单一 上下文信息相对聚焦 但是为了解决这些问题 潜在的会导致 必要的上下文信息丢失 缺失这些上下文信息呢 可能就被切分在了不同的方块中 这就是最基本的 RAG 以及它所存在的问题 为了解决这些问题 就提出了父子文档的检索机制 在现在我所分享的这个图表中 就演示了什么是父子文档模式 或父子文档检索 在刚才介绍的最原始 最基础的 RAG 场景中 是对文档进行一级的分块 刚才我们介绍了文档方块太大或太小 它会存在的问题 那怎么解决这个问题呢 我们既想让分块数据能够相对聚焦 又不想错失掉必要的上下文信息 那提出的一种解决方案是 对文档进行二级分块 首先呢将文档分成较大的块 这样期望他能够尽可能的 保有足够的上下文信息 再将每一个方块切分为较小的方块 这样期望更小的文档分块中 信息更加聚焦 在数据存储方面 父子分块中 子分块的数据 依然是会转换成向量数据 存到向量存储中 父文档并不需要转换成向量数据 我们只需要有一个文档存储 能够维护好父文档的 ID 与对应的文档方块内容的映射关系 一个键值存储 或许就能满足我们的需求 在检索时 咱们首先在子文档的向量数据存储中 检索相关的文档 通过相关文档中关联的父 文档的 ID 再得到对应的父文档分块 从而将父文档作为相关文档 返回给调用方 这样做的好处是 在子文档这些方块中 能够通过相对聚焦的上下文信息 捕获到最匹配的小方块 再将它们的父文档作为相关文档返回 这样呢 这就是父子检索模式 为什么会出现在 RAG 或知识库的构建中 在 Dify 和 Coze 平台知识库的创建 特别是在 Dify 平台 我看看父子文档模式是如何使用 同时呢回到 Dify 我会用到父子文档的检索模式 首先来到 Coze 的工作区 这里在知识库 我们创建一个新的知识 取名为 NVIDIA report 这种父子文档的支持 我们保留 10%的重叠 在文档分块 间隙上产生的分割 在每个分块中 那配置就这样吧 下一步确定这个处理呢 会花一些时间 那现在利用这个时间 咱们就回到 Dify 来创建一个知识库 同样的语料创建同样的知识库 在 Dify knowledge 这里创建一个知识库 将文件同样拖拽过来 8 个文件 下一步 在这里 我们应该能看到 parent child 这个选项 这正是父子模式的配置界面 打开它来看看 关于这个分块 大家想怎么调整 按照自己需求或偏好来 大家也可以通过不同的参数来测试 看看它的检索质量究竟有什么不同 我们保留这个默认参数 在这里还有个选项 Fordock 他表示每个子分块的副文档呢 就是当前的整个文档 但是要注意 这里也有一个介绍 基于性能考虑呢 文本超过 1 万 TOKEN 的会被截取掉 这个是大家测试的时候 需要特别注意的 我们现在保有这个默认参数 其他的我们就不做调整 比如锁影的方式 以及文本嵌入模型 还有检索的设置 TOPK 呢设置的是 3 也就是最相关的三个文档 会被检索出来 保存 同样这里呢 会花一些时间完成索引 我们等待一下 现在我们回到 Coze 看看处理情况 这边已经处理完毕 我们赶紧创建一个聊天机器人 将知识库挂载到聊天机器人上 看看它的问答效果怎么样 来到 Coze 的开发界面 我们可以创建一个新的聊天 Agent 确认在 knowledge 这里呢 文本类型添加知识库 NVIDIA report 现在就可以在右边进行调试 我们可以测试一下问答 看看效果如何 我在这里已经打开了本地的几个文档 比如在 2023 年 这个财报数据当中 在这个文档当中 咱们能看到关于 NVIDIA 的介绍 自己的业务以及市场 那我想来问问 NVIDIA 的市场 点击这个箭头 能看到知识库的搜索得到的信息 召回的最相关的三个文档片段 分别来自于 2022 Q4、 2023 Q4 四个第四季度 我们来看看这个信息跟 2023 年第四季度的 PDF 有多大的相关性 来看看文档中的介绍吧 原始文档中 这里列到了庞大的市场 四个庞大的市场 其中包含了数据中心、 游戏 专业的可视化以及汽车 我发现在这里呢 他并没有提到数据中心 感觉这是一个蛮遗憾的事情 这也反映了在知识库这个应用 常与 Dify 进行比对 这也反映了在知识库上目前的现状 毕竟知识库的主要实现方式 还是以文档分块 无论是复制分块还是单一层的分块 总会产生信息截断 特别是 我们在知识库中添加了众多的文件 文件中具有不少相似的内容 是必要的上下文信息 往往会导致咱们在检索数据时 得到不完整的信息 而且根据在 Coze 平台上问答 得到的数据检索结果来看 每一个相关文档片段呢 还是非常短小的 这也使得 我们在检索或获取信息的时候 不能得到足够的上下文信息 在这个问题上 咱们可以通过知识库创建时 调高每个分块大小来解决 毕竟现在 在大模型的上下文窗口 足够大的情况下 我们在不少情况下 都可以甚至将整个文档交给大模型 帮助我们来进行问答 这是第一个提问 接下来呢 我还想针对某一个文档来提问 当咱们将文档添加到一个知识库时 理想状态下 它应该能够很好地理解这些文档内容 给到我理论上任何问题的回答 那现在 我期望针对 2023 年第四季度的 PDF 文件 提一些问题 比如商业策略 我想问问在 2023 年第四季度的数据中 是如何定义商业策略的 我期望得到在 2023 年第四季度的报告中 制定的商业策略 通过搜索可以看到 这里并没有得到任何相关的信息 点击这个箭头也能看到搜索结果 这里呢 首先咱们的文档分块切分得非常小 因此呢在得到的分块中 只有短短的一个标题或者引言 并没有得到实际的内容 这使得咱们在数据检索时 很难得到有效上下文信息 因此呢 它并没有很好地回答到我这个问题 同样的解决方案 咱们在知识库构建时 将文档分块设置得尽可能大一些 那我们现在如果回到知识库来 看看是否能对它作调整 比如这里最大的方块我们设为 5,000 点击下一步 这个呢只是针对单一文件的处理 如果我们想要对每一个文件 都能够进行调整呢 需要主页的做设置 同样 我将第二个文档也设置为 5,000 的方块 现在 我将所有文档都已经调整为了最大 文档方块呢 是 5,000 TOKEN 我们给他一些时间完成数据的处理 我们现在来看看 在文档分块为 5,000 TOKEN 时 它的表现如何 同样打开 NVD 聊天进行这个应用 现在呢我清空了聊天历史 并重新将知识库挂载到聊天机器上 我们现在呢 来问问刚才同样的问题 2023 年第四季度 商业策略是如何制定的 非常有趣的是 这次的搜索呢 并没有定位到任何的文档分块 因此咱们可以大胆的判断 在这次的回答中 是大模型自己推想出来的 那这就是咱们在 Coze 平台上 知识库的使用 我们使用了较小的分块 以及较大的分块 理论上较大分块 能够帮助我们 更好地定位到一些相关的信息 但根据咱们的测试 会意外地发现 将文档分块调大以后 反而同样的问题 定位不到相关文档片段 不清楚这个是 Coze 平台的 bug 还是什么原因 至少从目前的演示来看呢 在 Coze 平台上 知识库的问答质量还是不够高的 那现在我们回到 Dify 看看数据的处理情况 全部处理完毕 现在可以来到 Studio 创建一个聊天机器人 添加一个知识库 是咱们刚才创建的模型呢 使用 Coze 重点其实我们还是看的知识库的检索 它得到文档分块是什么 现在咱们就直接提刚才的那个问题 what key business strategies defined in Q4 重点是来看看他检索到的信息有哪些 很遗憾的是 这个问题他也不能够回答 他倒是给到了我一些关联 分别来自于这 3 份 PDF 那如果我不指定 2023Q4 呢 看看能得到什么 能得到这些信息 但是呢只给了我两个商业决策 回到 PDF 我们来看一下 在 2023Q4 这份文档中 关于商业决策呢 第一个是 advanced Nvidia Accelerated computing platform 好像刚才回答中有这个对 Driving extending technology and platform leadership in AI 是这一段 从这次对话的演示来看呢 他至少命中了商业角色中的前两点 但很可惜的是 非常大的概率由于分块机制的局限性 导致他并没有定位到后续的几点 我们可以来看看 它引用的分块分别是什么 2023Q4 那在这里呢 看看最后一句话 GPU uniquely suited to AI 我们复制这段 然后到 PDF 来搜索一下 大家可以看到它关联到的呢 就正好是在这里 这也说明 文档的方块 就截取到了咱们现在搜索的部分 那现在呢 咱们就总结一下吧 从咱们的演示来看 Coze 和 Dify 平台都对知识库有支持 他们都使用了同样的实现机制 通过文档分块 实现 RAG， 从而帮助我们在问答中 能够从知识库检索到相关文档 目前 Dify 已经支持到了父子文档 的检索模式 使得我们既能够定位到 相对聚焦的上下文信息 又能够在检索中 最终拿到更大的文档方块 也就是更多的上下文信息 核心问题并没有解决 文档方块 依然会导致上下文信息的截断 一种可能的解决方案是 咱们尽可能地将文档分块做得大一些 这样呢 能够降低上下文信息截断的概率 但它依然会存在 现在的大模型 上下文窗口都已经非常的大了 这能够使得咱们的应用或开发者 能够对相对规模较小的文档呢 更好地进行处理 但是对于多文档知识库来讲 无论在 Dify 还是在 Coze 大家对它的文档检索质量 都不宜报太高的期望值 好了这就是今天分享主要内容 希望这些内容呢 能帮助到一些正在构建自己的 RAG 或知识库应用的朋友 大家在开发中或使用中有什么问题呢 也欢迎在评论区给我们留言 那咱们就下期视频分享 再见 同学们拜拜
