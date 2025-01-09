@@ -1,0 +1,1299 @@
+Timestamp: 2025-01-09T14:24:12.016162
+Title: Highly Profitable Stochastic + RSI + MACD Trading Strategy (Proven 100x)
+URL: https://youtu.be/hh3BKTFE1dc?si=YDwIvZ-SFZXcNNCr
+Status: success
+Duration: 10:22
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**Outline and Structure:**
+
+1.  **Introduction:**
+    *   The video presents a trading strategy claimed to be simple and profitable with a high win rate.
+    *   The strategy's win rate is supposedly proven through 100 backtests.
+
+2.  **Indicators Used:**
+    *   **Stochastic Indicator:** Used to identify overbought and oversold levels, generating primary entry signals.
+        *   Blue line (%K) and orange line (%D).
+        *   Traditional usage of trading solely on overbought/oversold is deemed ineffective; additional indicators needed.
+    *   **RSI:** Used for trend confirmation, not for identifying overbought/oversold levels.
+        *   RSI levels adjusted to 50 for trend confirmation: Above 50 indicates uptrend; below 50 indicates downtrend.
+    *   **MACD:** Used for momentum confirmation, not for primary entry/exit signals.
+        *   MACD line crossing above the signal line confirms bullish momentum; crossing below confirms bearish momentum.
+        *   Avoid using MACD signals when the market is ranging.
+
+3.  **Trading Strategy (Entry Signals):**
+    *   **Buy Signal:**
+        *   Stochastic in oversold territory (K & D lines).
+        *   RSI above the 50 midline.
+        *   MACD line crossing above the signal line.
+        *   Stochastic lines should not yet be in overbought levels.
+    *   **Sell Signal:**
+        *   Stochastic in overbought territory (K & D lines).
+        *   RSI below the 50 midline.
+        *    MACD line crossing below the signal line.
+         *    Stochastic lines should not yet be in oversold levels.
+
+4.  **Trading Strategy (Stop Loss and Profit Target):**
+    *   **Buy Position:**
+        *   Stop loss set below the recent swing low.
+        *   Profit target set at 1.5 times the stop-loss distance.
+    *   **Sell Position:**
+        *   Stop loss set above the recent swing high.
+        *   Profit target set at 1.5 times the stop-loss distance.
+
+5.  **Backtesting Results:**
+    *   100 backtests on EURUSD 30-minute chart.
+    *   Starting capital of $1000 with 2% risk per trade and 200x leverage.
+    *    Win rate of 56% over 100 trades.
+    *   Maximum of 5 consecutive wins and 3 consecutive losses.
+    *    Total profit of $280.41 (approx. 28% return on initial capital).
+
+6.  **Strategy Optimizations:**
+    *   **Limit stop-loss:**  Do not use recent swing high/low as stop-loss if they are too far from price. limit stop loss to 0.15%.
+    *   **Limit Trades:** Stick to one trade at a time to avoid overcomplicating analysis.
+
+7.  **Call to Action:**
+    *   Like the video and subscribe to the channel.
+
+**Core Point:**
+This video presents a trading strategy using a combination of Stochastic, RSI, and MACD indicators, aiming for a high win rate through specific entry rules, stop-loss placement, and profit-taking targets, backed up by backtesting.
+
+**Fundamental Point:**
+The core of this strategy lies in not using indicators in isolation, but rather combining the signals of Stochastics for overbought/oversold, RSI for trend confirmation, and MACD for momentum, for more reliable trading entry and exits.
+
+**Overarching Framework:**
+This content outlines a specific technical trading strategy for financial markets, utilizing multiple indicators to identify potential trading opportunities.
+
+**Conceptual Map:**
+<Mermaid_Diagram>
+graph LR
+    A[Trading Strategy] --> B(Stochastic);
+    A --> C(RSI);
+    A --> D(MACD);
+    B --> E[Overbought/Oversold];
+    C --> F[Trend Confirmation];
+    D --> G[Momentum Confirmation];
+    E --> H{Primary Entry Signal};
+    F --> I{Trend Filter};
+    G --> J{Momentum Filter};
+    H --> K{Buy/Sell Signal};
+    I --> K;
+    J --> K;
+     K --> L[Entry Point];
+     L --> M[Stop Loss];
+     L --> N[Profit Target];
+    M --> O[Risk Management];
+    N --> O;
+    O --> P(Backtesting Results);
+     P --> Q[Optimizations];
+      Q --> R[Improved Strategy];
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT
+Kind: captions
+Language: zh-Hans
+ align:start position:0%
+在这个视频中， 我将展示一个简单
+ align:start position:0%
+在这个视频中， 我将展示一个简单
+ align:start position:0%
+在这个视频中， 我将展示一个简单
+且有利可图的交易策略， 该策略已
+ align:start position:0%
+且有利可图的交易策略， 该策略已
+ align:start position:0%
+且有利可图的交易策略， 该策略已
+被证明具有很高的胜率， 
+ align:start position:0%
+被证明具有很高的胜率， 
+ align:start position:0%
+被证明具有很高的胜率， 
+在视频的最后， 我将
+ align:start position:0%
+在视频的最后， 我将
+ align:start position:0%
+ align:start position:0%
+ align:start position:0%
+ align:start position:0%
+通过对该策略进行 100 次回溯测试来证明它具有很高的胜率 次， 
+ align:start position:0%
+通过对该策略进行 100 次回溯测试来证明它具有很高的胜率 次， 
+ align:start position:0%
+通过对该策略进行 100 次回溯测试来证明它具有很高的胜率 次， 
+事不宜迟， 
+ align:start position:0%
+事不宜迟， 
+ align:start position:0%
+事不宜迟， 
+让我们继续观看视频， 对于这一
+ align:start position:0%
+让我们继续观看视频， 对于这一
+ align:start position:0%
+让我们继续观看视频， 对于这一
+策略， 
+ align:start position:0%
+策略， 
+ align:start position:0%
+策略， 
+我们使用了三个指标的组合， 即
+ align:start position:0%
+我们使用了三个指标的组合， 即
+ align:start position:0%
+我们使用了三个指标的组合， 即
+ align:start position:0%
+ align:start position:0%
+随机 RSI
+ align:start position:0%
+随机 RSI
+ align:start position:0%
+随机 RSI
+和 MACD， 首先让我们从
+ align:start position:0%
+和 MACD， 首先让我们从
+ align:start position:0%
+和 MACD， 首先让我们从
+随机指标开始， 
+ align:start position:0%
+随机指标开始， 
+ align:start position:0%
+随机指标开始， 
+因为这将生成我们的主要
+ align:start position:0%
+因为这将生成我们的主要
+ align:start position:0%
+因为这将生成我们的主要
+入场信号， 
+ align:start position:0%
+入场信号， 
+ align:start position:0%
+入场信号， 
+随机指标是一个非常简单易用的
+ align:start position:0%
+随机指标是一个非常简单易用的
+ align:start position:0%
+随机指标是一个非常简单易用的
+指标
+ align:start position:0%
+指标
+ align:start position:0%
+指标
+它可以很好地识别
+ align:start position:0%
+它可以很好地识别
+ align:start position:0%
+它可以很好地识别
+ align:start position:0%
+ align:start position:0%
+市场上的超买和超卖水平， 
+ align:start position:0%
+市场上的超买和超卖水平， 
+ align:start position:0%
+市场上的超买和超卖水平， 
+它由两部分组成， 蓝线
+ align:start position:0%
+它由两部分组成， 蓝线
+ align:start position:0%
+它由两部分组成， 蓝线
+称为 k
+ align:start position:0%
+称为 k
+ align:start position:0%
+称为 k
+百分比， 橙线
+ align:start position:0%
+百分比， 橙线
+ align:start position:0%
+百分比， 橙线
+称为 d 百分比， 这是
+ align:start position:0%
+称为 d 百分比， 这是
+ align:start position:0%
+ align:start position:0%
+交易者在使用时最常犯的错误之一 这个指标
+ align:start position:0%
+交易者在使用时最常犯的错误之一 这个指标
+ align:start position:0%
+交易者在使用时最常犯的错误之一 这个指标
+是他们自己交易随机指标， 
+ align:start position:0%
+是他们自己交易随机指标， 
+ align:start position:0%
+ align:start position:0%
+所以每次指标达到超卖时他们就买入
+ align:start position:0%
+所以每次指标达到超卖时他们就买入
+ align:start position:0%
+ align:start position:0%
+， 每次指标达到超买时他们就卖出。
+
+ align:start position:0%
+， 每次指标达到超买时他们就卖出。
+
+ align:start position:0%
+ align:start position:0%
+如果你仍然以这种方式使用指标， 
+ align:start position:0%
+如果你仍然以这种方式使用指标， 
+ align:start position:0%
+如果你仍然以这种方式使用指标， 
+你将得到一个 胜率很低， 
+ align:start position:0%
+你将得到一个 胜率很低， 
+ align:start position:0%
+你将得到一个 胜率很低， 
+你需要结合
+ align:start position:0%
+你需要结合
+ align:start position:0%
+你需要结合
+随机指标与
+ align:start position:0%
+随机指标与
+ align:start position:0%
+随机指标与
+其他指标一起进一步确认你的
+ align:start position:0%
+其他指标一起进一步确认你的
+ align:start position:0%
+其他指标一起进一步确认你的
+分析， 
+ align:start position:0%
+分析， 
+ align:start position:0%
+分析， 
+那么让我们继续讨论
+ align:start position:0%
+那么让我们继续讨论
+ align:start position:0%
+那么让我们继续讨论
+我们的策略的第二个指标， 
+ align:start position:0%
+我们的策略的第二个指标， 
+ align:start position:0%
+我们的策略的第二个指标， 
+即 RSI。
+RSI
+ align:start position:0%
+即 RSI。
+RSI
+ align:start position:0%
+即 RSI。
+RSI
+是交易中最常用的指标之一
+ align:start position:0%
+是交易中最常用的指标之一
+ align:start position:0%
+ align:start position:0%
+， 使用 RSI 的一种流行方法是将
+ align:start position:0%
+， 使用 RSI 的一种流行方法是将
+ align:start position:0%
+， 使用 RSI 的一种流行方法是将
+其作为交易 超买
+ align:start position:0%
+其作为交易 超买
+ align:start position:0%
+其作为交易 超买
+和超卖指标， 然而
+ align:start position:0%
+和超卖指标， 然而
+ align:start position:0%
+和超卖指标， 然而
+对于这种组合策略， 我们已经
+ align:start position:0%
+对于这种组合策略， 我们已经
+ align:start position:0%
+对于这种组合策略， 我们已经
+有随机指标来完成这项工作， 
+ align:start position:0%
+有随机指标来完成这项工作， 
+ align:start position:0%
+有随机指标来完成这项工作， 
+因此， 有两个指标给出
+ align:start position:0%
+因此， 有两个指标给出
+ align:start position:0%
+因此， 有两个指标给出
+相同的信号是毫无用处的， 
+ align:start position:0%
+相同的信号是毫无用处的， 
+ align:start position:0%
+相同的信号是毫无用处的， 
+相反， 我们使用 rsi 作为趋势
+ align:start position:0%
+相反， 我们使用 rsi 作为趋势
+ align:start position:0%
+相反， 我们使用 rsi 作为趋势
+确认指标， 
+ align:start position:0%
+确认指标， 
+ align:start position:0%
+确认指标， 
+为此， 我们首先需要 转到
+ align:start position:0%
+为此， 我们首先需要 转到
+ align:start position:0%
+为此， 我们首先需要 转到
+指标设置
+ align:start position:0%
+指标设置
+ align:start position:0%
+指标设置
+并将这两个级别都更改为 50。
+
+ align:start position:0%
+并将这两个级别都更改为 50。
+
+ align:start position:0%
+并将这两个级别都更改为 50。
+
+所以现在我们在中间有一条这样的线， 
+ align:start position:0%
+所以现在我们在中间有一条这样的线， 
+ align:start position:0%
+ align:start position:0%
+我们用它来确认趋势的方式
+ align:start position:0%
+我们用它来确认趋势的方式
+ align:start position:0%
+我们用它来确认趋势的方式
+非常简单， 
+ align:start position:0%
+非常简单， 
+ align:start position:0%
+非常简单， 
+如果 rsi 高于中线， 则
+ align:start position:0%
+如果 rsi 高于中线， 则
+ align:start position:0%
+如果 rsi 高于中线， 则
+意味着 价格处于上升趋势， 
+ align:start position:0%
+意味着 价格处于上升趋势， 
+ align:start position:0%
+意味着 价格处于上升趋势， 
+因此您只需买入仓位， 如果
+ align:start position:0%
+因此您只需买入仓位， 如果
+ align:start position:0%
+因此您只需买入仓位， 如果
+rsi 低于中线， 
+ align:start position:0%
+rsi 低于中线， 
+ align:start position:0%
+rsi 低于中线， 
+则意味着价格处于
+ align:start position:0%
+则意味着价格处于
+ align:start position:0%
+则意味着价格处于
+下降趋势， 因此您只需买入
+ align:start position:0%
+下降趋势， 因此您只需买入
+ align:start position:0%
+下降趋势， 因此您只需买入
+仓位， 现在让我们转到
+ align:start position:0%
+仓位， 现在让我们转到
+ align:start position:0%
+仓位， 现在让我们转到
+第三个指标， 
+ align:start position:0%
+第三个指标， 
+ align:start position:0%
+第三个指标， 
+即 macd macd 是
+ align:start position:0%
+即 macd macd 是
+ align:start position:0%
+即 macd macd 是
+最受欢迎的指标之一， 
+ align:start position:0%
+最受欢迎的指标之一， 
+ align:start position:0%
+最受欢迎的指标之一， 
+检测动量的好方法
+ align:start position:0%
+检测动量的好方法
+ align:start position:0%
+检测动量的好方法
+， 使用 macd 的常见方法是， 
+ align:start position:0%
+， 使用 macd 的常见方法是， 
+ align:start position:0%
+， 使用 macd 的常见方法是， 
+如果 macd 线
+ align:start position:0%
+如果 macd 线
+ align:start position:0%
+如果 macd 线
+穿过信号线上方
+ align:start position:0%
+穿过信号线上方
+ align:start position:0%
+穿过信号线上方
+， 则采取买入仓位， 如果 macd
+ align:start position:0%
+， 则采取买入仓位， 如果 macd
+ align:start position:0%
+， 则采取买入仓位， 如果 macd
+线穿过信号线下方， 则采取单元格仓位， 
+ align:start position:0%
+线穿过信号线下方， 则采取单元格仓位， 
+ align:start position:0%
+线穿过信号线下方， 则采取单元格仓位， 
+然而， 这种策略只有在
+ align:start position:0%
+然而， 这种策略只有在
+ align:start position:0%
+然而， 这种策略只有在
+市场
+ align:start position:0%
+市场
+ align:start position:0%
+市场
+如果市场横向移动， 
+ align:start position:0%
+如果市场横向移动， 
+ align:start position:0%
+如果市场横向移动， 
+MACD
+ align:start position:0%
+MACD
+ align:start position:0%
+MACD
+通常会发出错误信号， 因此， 
+ align:start position:0%
+通常会发出错误信号， 因此， 
+ align:start position:0%
+通常会发出错误信号， 因此， 
+对于这种组合策略， 
+ align:start position:0%
+对于这种组合策略， 
+ align:start position:0%
+对于这种组合策略， 
+我们不会仅仅
+ align:start position:0%
+我们不会仅仅
+ align:start position:0%
+我们不会仅仅
+因为 MACD 交叉而买入或卖出， 
+ align:start position:0%
+因为 MACD 交叉而买入或卖出， 
+ align:start position:0%
+因为 MACD 交叉而买入或卖出， 
+而是使用它来提供额外的
+ align:start position:0%
+而是使用它来提供额外的
+ align:start position:0%
+而是使用它来提供额外的
+确认， 
+ align:start position:0%
+确认， 
+ align:start position:0%
+确认， 
+并确保 动量在
+ align:start position:0%
+并确保 动量在
+ align:start position:0%
+并确保 动量在
+我们这边， 
+ align:start position:0%
+我们这边， 
+ align:start position:0%
+我们这边， 
+所以这是随机 rsi
+ align:start position:0%
+所以这是随机 rsi
+ align:start position:0%
+所以这是随机 rsi
+和 macd 策略的工作方式， 首先
+ align:start position:0%
+和 macd 策略的工作方式， 首先
+ align:start position:0%
+和 macd 策略的工作方式， 首先
+让我们从它们的进入信号开始， 以
+ align:start position:0%
+让我们从它们的进入信号开始， 以
+ align:start position:0%
+让我们从它们的进入信号开始， 以
+确定
+ align:start position:0%
+确定
+ align:start position:0%
+确定
+买入信号， 第一步是
+ align:start position:0%
+买入信号， 第一步是
+ align:start position:0%
+买入信号， 第一步是
+查看随机指标
+ align:start position:0%
+查看随机指标
+ align:start position:0%
+查看随机指标
+， 等待 k 线和 d 线 如果
+ align:start position:0%
+， 等待 k 线和 d 线 如果
+ align:start position:0%
+， 等待 k 线和 d 线 如果
+出现超卖， 
+ align:start position:0%
+出现超卖， 
+ align:start position:0%
+出现超卖， 
+那么你需要使用 rsi 来确认
+ align:start position:0%
+那么你需要使用 rsi 来确认
+ align:start position:0%
+那么你需要使用 rsi 来确认
+上涨趋势， 
+ align:start position:0%
+上涨趋势， 
+ align:start position:0%
+上涨趋势， 
+确保它位于中线上方， 
+ align:start position:0%
+确保它位于中线上方， 
+ align:start position:0%
+ align:start position:0%
+下一步你需要使用
+ align:start position:0%
+下一步你需要使用
+ align:start position:0%
+下一步你需要使用
+macd 来确认上涨势头， 
+ align:start position:0%
+macd 来确认上涨势头， 
+ align:start position:0%
+macd 来确认上涨势头， 
+等待 macd 线穿过
+ align:start position:0%
+等待 macd 线穿过
+ align:start position:0%
+等待 macd 线穿过
+信号线
+ align:start position:0%
+信号线
+ align:start position:0%
+信号线
+一次 然而， 你仍然需要
+ align:start position:0%
+一次 然而， 你仍然需要
+ align:start position:0%
+一次 然而， 你仍然需要
+确保 随机指标
+ align:start position:0%
+确保 随机指标
+ align:start position:0%
+确保 随机指标
+线还没有达到超买水平
+ align:start position:0%
+线还没有达到超买水平
+ align:start position:0%
+线还没有达到超买水平
+， 如果所有规则都得到满足， 你就采取
+ align:start position:0%
+， 如果所有规则都得到满足， 你就采取
+ align:start position:0%
+， 如果所有规则都得到满足， 你就采取
+买入仓位， 
+ align:start position:0%
+买入仓位， 
+ align:start position:0%
+买入仓位， 
+让我们继续寻找蜂窝信号， 
+ align:start position:0%
+让我们继续寻找蜂窝信号， 
+ align:start position:0%
+让我们继续寻找蜂窝信号， 
+ align:start position:0%
+ align:start position:0%
+第一步是查看
+ align:start position:0%
+第一步是查看
+ align:start position:0%
+第一步是查看
+随机指标
+ align:start position:0%
+随机指标
+ align:start position:0%
+随机指标
+， 等待 k 线和 d 线
+ align:start position:0%
+， 等待 k 线和 d 线
+ align:start position:0%
+， 等待 k 线和 d 线
+达到超买， 
+ align:start position:0%
+达到超买， 
+ align:start position:0%
+达到超买， 
+那么你需要使用 rsi 来确认
+ align:start position:0%
+那么你需要使用 rsi 来确认
+ align:start position:0%
+那么你需要使用 rsi 来确认
+下行趋势， 
+ align:start position:0%
+下行趋势， 
+ align:start position:0%
+下行趋势， 
+确保它低于中线， 
+ align:start position:0%
+确保它低于中线， 
+ align:start position:0%
+ align:start position:0%
+下一步你需要使用
+ align:start position:0%
+下一步你需要使用
+ align:start position:0%
+下一步你需要使用
+macd 来确认下行势头， 
+ align:start position:0%
+macd 来确认下行势头， 
+ align:start position:0%
+macd 来确认下行势头， 
+等待 macd 线穿过
+ align:start position:0%
+等待 macd 线穿过
+ align:start position:0%
+等待 macd 线穿过
+信号线下方， 
+ align:start position:0%
+信号线下方， 
+ align:start position:0%
+信号线下方， 
+然后 你仍然需要确保 K
+ align:start position:0%
+然后 你仍然需要确保 K
+ align:start position:0%
+然后 你仍然需要确保 K
+和 N 线仍然处于超卖状态， 
+ align:start position:0%
+和 N 线仍然处于超卖状态， 
+ align:start position:0%
+和 N 线仍然处于超卖状态， 
+ align:start position:0%
+ align:start position:0%
+一旦满足所有规则， 你就采取
+ align:start position:0%
+一旦满足所有规则， 你就采取
+ align:start position:0%
+一旦满足所有规则， 你就采取
+卖出仓位
+ align:start position:0%
+卖出仓位
+ align:start position:0%
+卖出仓位
+[音乐]
+ align:start position:0%
+[音乐]
+ align:start position:0%
+[音乐]
+现在， 如果你采取
+ align:start position:0%
+现在， 如果你采取
+ align:start position:0%
+现在， 如果你采取
+买入仓位， 
+ align:start position:0%
+买入仓位， 
+ align:start position:0%
+买入仓位， 
+你想将止损设在下方
+ align:start position:0%
+你想将止损设在下方
+ align:start position:0%
+你想将止损设在下方
+最近的波动低点， 
+ align:start position:0%
+最近的波动低点， 
+ align:start position:0%
+最近的波动低点， 
+并将你的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+并将你的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+ align:start position:0%
+同样， 如果你采取了单元格
+ align:start position:0%
+同样， 如果你采取了单元格
+ align:start position:0%
+同样， 如果你采取了单元格
+位置， 
+ align:start position:0%
+位置， 
+ align:start position:0%
+位置， 
+你想将止损设在
+ align:start position:0%
+你想将止损设在
+ align:start position:0%
+你想将止损设在
+最近的波动高点之上， 
+ align:start position:0%
+最近的波动高点之上， 
+ align:start position:0%
+最近的波动高点之上， 
+并将你的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+并将你的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+ align:start position:0%
+所以现在在我们回测之前 策略
+ align:start position:0%
+所以现在在我们回测之前 策略
+ align:start position:0%
+所以现在在我们回测之前 策略
+100 次
+ align:start position:0%
+100 次
+ align:start position:0%
+100 次
+让我们看看它 在这张图表中， 
+ align:start position:0%
+让我们看看它 在这张图表中， 
+ align:start position:0%
+让我们看看它 在这张图表中， 
+ align:start position:0%
+ align:start position:0%
+我们可以看到 K 线和 D
+ align:start position:0%
+我们可以看到 K 线和 D
+ align:start position:0%
+我们可以看到 K 线和 D
+线都处于超卖状态， 这
+ align:start position:0%
+线都处于超卖状态， 这
+ align:start position:0%
+线都处于超卖状态， 这
+意味着我们将采取买入
+ align:start position:0%
+意味着我们将采取买入
+ align:start position:0%
+意味着我们将采取买入
+仓位， 然后
+ align:start position:0%
+仓位， 然后
+ align:start position:0%
+仓位， 然后
+您需要通过
+ align:start position:0%
+您需要通过
+ align:start position:0%
+您需要通过
+确保 RSI
+ align:start position:0%
+确保 RSI
+ align:start position:0%
+确保 RSI
+位于中线上方来确认上升趋势。
+ 步骤
+ align:start position:0%
+位于中线上方来确认上升趋势。
+ 步骤
+ align:start position:0%
+位于中线上方来确认上升趋势。
+ 步骤
+是， 你想使用 MACD 进一步
+ align:start position:0%
+是， 你想使用 MACD 进一步
+ align:start position:0%
+是， 你想使用 MACD 进一步
+确认上涨势头， 
+ align:start position:0%
+确认上涨势头， 
+ align:start position:0%
+确认上涨势头， 
+等待 MACD 线
+ align:start position:0%
+等待 MACD 线
+ align:start position:0%
+等待 MACD 线
+穿过信号线
+ align:start position:0%
+穿过信号线
+ align:start position:0%
+穿过信号线
+， 你仍然需要确保
+ align:start position:0%
+， 你仍然需要确保
+ align:start position:0%
+ align:start position:0%
+ align:start position:0%
+一旦所有规则都满足， 两条随机线仍未达到超买状态 满足条件后， 
+ align:start position:0%
+一旦所有规则都满足， 两条随机线仍未达到超买状态 满足条件后， 
+ align:start position:0%
+一旦所有规则都满足， 两条随机线仍未达到超买状态 满足条件后， 
+ align:start position:0%
+ align:start position:0%
+您现在就买入止损， 
+ align:start position:0%
+您现在就买入止损， 
+ align:start position:0%
+ align:start position:0%
+将其置于最近的波动低点下方， 
+ align:start position:0%
+将其置于最近的波动低点下方， 
+ align:start position:0%
+将其置于最近的波动低点下方， 
+并将您的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+并将您的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+ align:start position:0%
+让我们看看此图表中的另一个例子， 
+ align:start position:0%
+让我们看看此图表中的另一个例子， 
+ align:start position:0%
+让我们看看此图表中的另一个例子， 
+ align:start position:0%
+ align:start position:0%
+我们可以看到 K 线和 D
+ align:start position:0%
+我们可以看到 K 线和 D
+ align:start position:0%
+我们可以看到 K 线和 D
+线 处于超买状态
+ align:start position:0%
+线 处于超买状态
+ align:start position:0%
+线 处于超买状态
+意味着我们将采取单元格
+ align:start position:0%
+意味着我们将采取单元格
+ align:start position:0%
+意味着我们将采取单元格
+位置， 然后
+ align:start position:0%
+位置， 然后
+ align:start position:0%
+位置， 然后
+您要通过
+ align:start position:0%
+您要通过
+ align:start position:0%
+您要通过
+确保 RSI
+ align:start position:0%
+确保 RSI
+ align:start position:0%
+确保 RSI
+低于中线来确认下行趋势， 下一步
+ align:start position:0%
+低于中线来确认下行趋势， 下一步
+ align:start position:0%
+低于中线来确认下行趋势， 下一步
+您要使用 MACD 进一步
+ align:start position:0%
+您要使用 MACD 进一步
+ align:start position:0%
+您要使用 MACD 进一步
+确认下行势头， 
+ align:start position:0%
+确认下行势头， 
+ align:start position:0%
+确认下行势头， 
+等待 MACD 线穿过
+ align:start position:0%
+等待 MACD 线穿过
+ align:start position:0%
+等待 MACD 线穿过
+信号线下方， 
+ align:start position:0%
+信号线下方， 
+ align:start position:0%
+信号线下方， 
+并确保 k 线和 d
+ align:start position:0%
+并确保 k 线和 d
+ align:start position:0%
+并确保 k 线和 d
+线仍然没有达到超卖， 
+ align:start position:0%
+线仍然没有达到超卖， 
+ align:start position:0%
+线仍然没有达到超卖， 
+一旦发生这种情况， 您就采取一个单元格
+ align:start position:0%
+一旦发生这种情况， 您就采取一个单元格
+ align:start position:0%
+一旦发生这种情况， 您就采取一个单元格
+位置， 
+ align:start position:0%
+位置， 
+ align:start position:0%
+位置， 
+并将止损
+ align:start position:0%
+并将止损
+ align:start position:0%
+并将止损
+置于最近的波动高点之上， 
+ align:start position:0%
+置于最近的波动高点之上， 
+ align:start position:0%
+置于最近的波动高点之上， 
+并将您的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+并将您的利润目标设置为止损的 1.5 倍， 
+ align:start position:0%
+ align:start position:0%
+所以现在我要证明 这项
+ align:start position:0%
+所以现在我要证明 这项
+ align:start position:0%
+所以现在我要证明 这项
+策略确实有效， 
+ align:start position:0%
+策略确实有效， 
+ align:start position:0%
+策略确实有效， 
+通过回溯测试 100 次， 在这次
+ align:start position:0%
+通过回溯测试 100 次， 在这次
+ align:start position:0%
+通过回溯测试 100 次， 在这次
+回溯测试中， 
+ align:start position:0%
+回溯测试中， 
+ align:start position:0%
+回溯测试中， 
+我将使用欧元美元 30 分钟
+ align:start position:0%
+我将使用欧元美元 30 分钟
+ align:start position:0%
+我将使用欧元美元 30 分钟
+时间框架， 
+ align:start position:0%
+时间框架， 
+ align:start position:0%
+时间框架， 
+起始资金为 1000， 
+ align:start position:0%
+起始资金为 1000， 
+ align:start position:0%
+起始资金为 1000， 
+对于我们的资金管理， 我们
+ align:start position:0%
+对于我们的资金管理， 我们
+ align:start position:0%
+对于我们的资金管理， 我们
+每笔交易冒着总资本的 2% 的风险
+ align:start position:0%
+每笔交易冒着总资本的 2% 的风险
+ align:start position:0%
+每笔交易冒着总资本的 2% 的风险
+ align:start position:0%
+ align:start position:0%
+对于每笔交易， 我们使用 200
+ align:start position:0%
+对于每笔交易， 我们使用 200
+ align:start position:0%
+对于每笔交易， 我们使用 200
+倍杠杆， 
+ align:start position:0%
+倍杠杆， 
+ align:start position:0%
+倍杠杆， 
+顺便说一下， 您可以在下面的说明中免费下载此回
+ align:start position:0%
+顺便说一下， 您可以在下面的说明中免费下载此回
+ align:start position:0%
+顺便说一下， 您可以在下面的说明中免费下载此回
+测工具， 
+ align:start position:0%
+测工具， 
+ align:start position:0%
+测工具， 
+因此
+ align:start position:0%
+因此
+ align:start position:0%
+因此
+事不宜迟， 让我们开始回测
+ align:start position:0%
+ align:start position:0%
+[音乐]， 
+ align:start position:0%
+ align:start position:0%
+最后在对策略进行 100 次回测后， 
+ align:start position:0%
+最后在对策略进行 100 次回测后， 
+ align:start position:0%
+ align:start position:0%
+结果如下 我们花了 134 天的时间
+ align:start position:0%
+结果如下 我们花了 134 天的时间
+ align:start position:0%
+结果如下 我们花了 134 天的时间
+才完成 100 笔交易
+ align:start position:0%
+才完成 100 笔交易
+ align:start position:0%
+才完成 100 笔交易
+， 在这 100 笔交易中， 我们的
+ align:start position:0%
+， 在这 100 笔交易中， 我们的
+ align:start position:0%
+， 在这 100 笔交易中， 我们的
+胜率非常高， 
+ align:start position:0%
+胜率非常高， 
+ align:start position:0%
+胜率非常高， 
+为 56%， 连续获胜次数最多为 5 次
+ align:start position:0%
+为 56%， 连续获胜次数最多为 5 次
+ align:start position:0%
+为 56%， 连续获胜次数最多为 5 次
+， 连续亏损次数最多为 3 次
+ align:start position:0%
+， 连续亏损次数最多为 3 次
+ align:start position:0%
+， 连续亏损次数最多为 3 次
+， 总共获利 ​​280
+ align:start position:0%
+， 总共获利 ​​280
+ align:start position:0%
+， 总共获利 ​​280
+美元
+ align:start position:0%
+美元
+ align:start position:0%
+美元
+和 41 美分， 相当于
+ align:start position:0%
+和 41 美分， 相当于
+ align:start position:0%
+和 41 美分， 相当于
+我们 1,000 资本的总收益约为 28%， 
+ align:start position:0%
+ align:start position:0%
+因此在回溯测试后， 我发现了
+ align:start position:0%
+因此在回溯测试后， 我发现了
+ align:start position:0%
+因此在回溯测试后， 我发现了
+一些优化和变化， 你可以实施这些优化和变化， 
+ align:start position:0%
+一些优化和变化， 你可以实施这些优化和变化， 
+ align:start position:0%
+ align:start position:0%
+以进一步提高该策略的胜率， 
+ align:start position:0%
+以进一步提高该策略的胜率， 
+ align:start position:0%
+以进一步提高该策略的胜率， 
+ align:start position:0%
+ align:start position:0%
+第一个是限制你的止损， 
+ align:start position:0%
+第一个是限制你的止损， 
+ align:start position:0%
+第一个是限制你的止损， 
+所以通常 如果你正在卖出， 
+ align:start position:0%
+所以通常 如果你正在卖出， 
+ align:start position:0%
+所以通常 如果你正在卖出， 
+ align:start position:0%
+ align:start position:0%
+你想将止损设置在
+ align:start position:0%
+你想将止损设置在
+ align:start position:0%
+你想将止损设置在
+最近的波动高点， 
+ align:start position:0%
+最近的波动高点， 
+ align:start position:0%
+最近的波动高点， 
+然而在这笔特定的交易中， 你可以
+ align:start position:0%
+然而在这笔特定的交易中， 你可以
+ align:start position:0%
+然而在这笔特定的交易中， 你可以
+看到波动高点离价格太远， 
+ align:start position:0%
+看到波动高点离价格太远， 
+ align:start position:0%
+ align:start position:0%
+因此你的风险会太大， 
+ align:start position:0%
+因此你的风险会太大， 
+ align:start position:0%
+因此你的风险会太大， 
+而且
+ align:start position:0%
+而且
+ align:start position:0%
+而且
+可能会 给你带来巨大的
+ align:start position:0%
+可能会 给你带来巨大的
+ align:start position:0%
+可能会 给你带来巨大的
+损失， 这就是为什么我建议
+ align:start position:0%
+损失， 这就是为什么我建议
+ align:start position:0%
+损失， 这就是为什么我建议
+将你的止损限制在 0.15， 
+ align:start position:0%
+将你的止损限制在 0.15， 
+ align:start position:0%
+将你的止损限制在 0.15， 
+所以无论你的止损是多少， 
+ align:start position:0%
+所以无论你的止损是多少， 
+ align:start position:0%
+所以无论你的止损是多少， 
+你的损失都不会超过 0.15%。
+
+ align:start position:0%
+你的损失都不会超过 0.15%。
+
+ align:start position:0%
+你的损失都不会超过 0.15%。
+
+另一个你可以使用的技巧是， 
+ align:start position:0%
+另一个你可以使用的技巧是， 
+ align:start position:0%
+ align:start position:0%
+如果你 还没有平仓， 
+ align:start position:0%
+如果你 还没有平仓， 
+ align:start position:0%
+如果你 还没有平仓， 
+让我解释一下， 
+ align:start position:0%
+让我解释一下， 
+ align:start position:0%
+让我解释一下， 
+如果你正在持仓， 你
+ align:start position:0%
+如果你正在持仓， 你
+ align:start position:0%
+如果你正在持仓， 你
+只有在价格达到
+ align:start position:0%
+只有在价格达到
+ align:start position:0%
+只有在价格达到
+止损
+ align:start position:0%
+止损
+ align:start position:0%
+止损
+或盈利目标时才会退出交易， 然而
+ align:start position:0%
+或盈利目标时才会退出交易， 然而
+ align:start position:0%
+或盈利目标时才会退出交易， 然而
+有时交易需要很
+ align:start position:0%
+有时交易需要很
+ align:start position:0%
+有时交易需要很
+长时间才能达到目标， 
+ align:start position:0%
+长时间才能达到目标， 
+ align:start position:0%
+长时间才能达到目标， 
+而且 因此， 你会错过
+ align:start position:0%
+而且 因此， 你会错过
+ align:start position:0%
+而且 因此， 你会错过
+几个入场信号， 
+ align:start position:0%
+几个入场信号， 
+ align:start position:0%
+几个入场信号， 
+这完全没问题， 我建议
+ align:start position:0%
+这完全没问题， 我建议
+ align:start position:0%
+这完全没问题， 我建议
+只坚持一次交易
+ align:start position:0%
+只坚持一次交易
+ align:start position:0%
+只坚持一次交易
+因为管理多个交易
+ align:start position:0%
+因为管理多个交易
+ align:start position:0%
+因为管理多个交易
+非常困难， 
+ align:start position:0%
+ align:start position:0%
+所以我只向你透露了一个非常简单的
+ align:start position:0%
+所以我只向你透露了一个非常简单的
+ align:start position:0%
+所以我只向你透露了一个非常简单的
+高胜率策略， 
+ align:start position:0%
+高胜率策略， 
+ align:start position:0%
+高胜率策略， 
+你可以立即使用
+ align:start position:0%
+你可以立即使用
+ align:start position:0%
+你可以立即使用
+， 
+ align:start position:0%
+， 
+ align:start position:0%
+， 
+我所要求的回报就是你
+ align:start position:0%
+我所要求的回报就是你
+ align:start position:0%
+我所要求的回报就是你
+花 2 秒钟的时间来
+ align:start position:0%
+花 2 秒钟的时间来
+ align:start position:0%
+花 2 秒钟的时间来
+喜欢 观看视频
+ align:start position:0%
+喜欢 观看视频
+ align:start position:0%
+喜欢 观看视频
+并订阅频道
+ align:start position:0%
+并订阅频道
+ align:start position:0%
+并订阅频道
+只需点击两下， 
+ align:start position:0%
+只需点击两下， 
+ align:start position:0%
+只需点击两下， 
+但这对我来说意义重大， 你
+ align:start position:0%
+但这对我来说意义重大， 你
+ align:start position:0%
+但这对我来说意义重大， 你
+也可以看看我的其他视频， 
+ align:start position:0%
+也可以看看我的其他视频， 
+ align:start position:0%
+也可以看看我的其他视频， 
+谢谢大家的观看， 
+ align:start position:0%
+谢谢大家的观看， 
+ align:start position:0%
+谢谢大家的观看， 
+下个视频见
