@@ -1,0 +1,2381 @@
+Timestamp: 2025-01-10T02:42:17.606092
+Title: The authors declare no conflict of interest.
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的内容的总结：
+
+**1. 核心思想概述:**
+
+*   **背景:** 随着技术进步，算法交易在金融市场中广泛应用，产生了高频(HF)数据，为理解市场行为、动态和微观结构提供了精细视角。
+*   **挑战:** 高频交易(HFT)数据具有不规则时间间隔、日内效应、非负性和时间依赖性等特点，使得传统统计方法难以直接应用。
+*   **主要内容:** 本文回顾了高频交易数据的统计建模方法，重点讨论了持续时间模型，以及如何基于价格和交易量定义事件。
+*   **应用:**  HFT数据可用于市场微观结构研究，例如价格发现、信息交易和风险管理。
+
+**2. 总结概要:**
+
+   *   **导言:**
+        *   高频交易的兴起和重要性。
+        *   高频数据的信息价值，包括对市场波动率、微观结构和信息交易的洞察。
+        *   高频数据的独特挑战：不规则时间间隔、日内效应、非负性、时间依赖性。
+    *   **高频交易的背景:**
+        *   高频交易的特点：高速度和高交易量。
+        *   交易策略：限价订单、订单簿的动态性。
+        *   高频交易如何利用信息。
+        *   高频交易策略示例：pinging、欺骗、套利。
+    *  **高频交易数据的特征:**
+        *   不规则的时间间隔：交易时间并非均匀分布，存在时间集群。
+        *   日内效应：交易活跃度在开盘和收盘时较高，中午较低。
+        *   非负性和时间依赖性：交易量等变量是非负的，并具有时间自相关性。
+        *   异步交易：不同资产的交易频率不同步，导致数据分析复杂性。
+        *   价格跳跃：价格过程中存在由于宏观事件或意外消息导致的突然跳跃。
+   *   **高频交易数据建模方法:**
+       *   **常规时间序列模型:**
+            *   将高频数据聚合到规则的时间间隔，然后应用GARCH等模型。
+            *   GARCH模型及其扩展、随机波动率模型，包括引入已实现波动率的方法。
+       *  **价格过程中的跳跃:**
+            *   跳跃扩散模型：用扩散过程捕捉正常价格波动，用泊松过程捕捉大市场波动。
+            *   允许无限次跳跃的模型，如方差伽马模型和双曲模型。
+       *  **点过程方法:**
+           *   基于历史信息建模事件的发生，包括强度过程、风险过程、持续时间过程。
+           *   强度模型、风险模型以及计数过程模型。
+       *   **持续时间模型:**
+           *   模型化连续事件发生之间的持续时间。
+           *   自回归条件持续时间(ACD)模型及其扩展，包括Log ACD模型、AACD模型、SCD模型、基于极值理论的建模。
+   *   **高频交易应用的挑战:**
+        *   构造和建模持续时间的挑战，包括如何定义事件。
+        *   持续时间中的持久性：使用分数积分ACD模型建模持久性。
+        *   多变量关系与异步数据：考虑如何处理数据同步，以估计多个股票之间的协方差，并研究股票之间的领先滞后关系。
+   *   **高频交易的经济视角:**
+        *   高频数据在金融和经济中的应用：包括市场微观结构的理论验证、对知情交易概率的估计（PIN/VPIN）、计算日内风险价值（IVaR）和预期损失（ES）。
+        *   强调了日内数据在风险管理和投资决策中的重要作用。
+   *   **讨论与总结:**
+        *   总结了高频数据建模的主要方法和挑战，强调了持续时间模型的重要性。
+        *   指出了异步多变量高频数据分析的未来研究方向。
+
+**3. 核心结论:**
+
+*   **核心点:** 高频交易数据的分析需要专门的统计方法，特别关注不规则时间间隔和事件驱动的建模，持续时间模型为此提供了强大的工具。
+*   **根本点:** 理解和应用高频交易数据中的复杂性和动态性，对于市场参与者、监管机构和学术研究都至关重要，因为它能够提供对金融市场微观结构的更深入的理解。
+
+**4.  总体框架:**
+
+   *   **高频交易数据及其挑战** → **统计建模方法（时间序列、跳跃、点过程、持续时间）** → **建模中的实际问题（事件定义、持久性、异步性）** → **经济应用（市场微观结构、风险管理）**
+
+**5. 概念图:**
+
+<Mermaid_Diagram>
+graph LR
+    A[高频交易 (HFT)] --> B(高频数据特性);
+    B --> B1(不规则时间间隔);
+    B --> B2(日内效应);
+    B --> B3(非负性与时间依赖);
+    B --> B4(异步交易);
+    B --> B5(价格跳跃);
+    A --> C(统计建模方法);
+    C --> C1(常规时间序列);
+    C1 --> C1a(GARCH模型);
+    C1 --> C1b(随机波动率模型);
+     C --> C2(价格跳跃模型);
+    C2 --> C2a(跳跃扩散);
+    C2 --> C2b(无限跳跃);
+    C --> C3(点过程模型);
+    C3 --> C3a(强度模型);
+    C3 --> C3b(风险模型);
+    C3 --> C3c(计数模型);
+    C --> C4(持续时间模型);
+     C4 --> C4a(ACD模型);
+    C4 --> C4b(Log ACD);
+    C4 --> C4c(AACD模型);
+    C4 --> C4d(SCD模型);
+     C4 --> C4e(极值模型);
+    A --> D(实际挑战);
+      D --> D1(构造和建模持续时间);
+    D --> D2(持续性分析);
+    D --> D3(多变量异步数据处理);
+    A --> E(经济应用);
+       E --> E1(市场微观结构分析);
+    E --> E2(知情交易概率估计);
+    E --> E3(日内风险管理);
+
+style A fill:#f9f,stroke:#333,stroke-width:2px
+style B fill:#ccf,stroke:#333,stroke-width:2px
+style C fill:#cfc,stroke:#333,stroke-width:2px
+style D fill:#ffc,stroke:#333,stroke-width:2px
+style E fill:#cff,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+希望这个总结对您有所帮助！
+
+
+Content:
+
+SankhyaÌ B : The Indian Journal of Statistics
+https://doi.org/10.1007/s13571-022-00280-7
+cÂ© 2022, Indian Statistical Institute
+
+Review of Statistical Approaches for Modeling
+High-Frequency Trading Data
+
+Chiranjit Dutta and Nalini Ravishanker
+University of Connecticut, Storrs, USA
+
+Kara Karpman
+Middlebury College, Middlebury, USA
+
+Sumanta Basu
+Cornell University, Ithaca, USA
+
+Abstract
+
+Due to technological advancements over the last two decades, algorithmic
+trading strategies are now widely used in financial markets. In turn, these
+strategies have generated high-frequency (HF) data sets, which provide in-
+formation at an extremely fine scale and are useful for understanding market
+behaviors, dynamics, and microstructures. In this paper, we discuss how in-
+formation flow impacts the behavior of high-frequency (HF) traders and how
+certain high-frequency trading (HFT) strategies significantly impact mar-
+ket dynamics (e.g., asset prices). The paper also reviews several statistical
+modeling approaches for analyzing HFT data. We discuss four popular ap-
+proaches for handling HFT data: (i) aggregating data into regularly spaced
+bins and then applying regular time series models, (ii) modeling jumps in
+price processes, (iii) point process approaches for modeling the occurrence
+of events of interest, and (iv) modeling sequences of inter-event durations.
+We discuss two methods for defining events, one based on the asset price,
+and the other based on both price and volume of the asset. We construct
+durations based on these two definitions, and apply models to tick-by-tick
+data for assets traded on the New York Stock Exchange (NYSE). We discuss
+some open challenges arising in HFT data analysis including some empirical
+analysis, and also review applications of HFT data in finance and economics,
+outlining several research directions.
+
+AMS (2000) subject classification. Primary 62M10, 62M05; Secondary 62P20.
+Keywords and phrases. Asynchronous data, durations, GARCH models,
+high-frequency trading data, jumps, volatility.
+
+1 Introduction
+
+With advances in automation, algorithmic trading has largely replaced
+floor-based trading in many financial markets. These automated trading
+
+http://crossmark.crossref.org/dialog/?doi=10.1007/s13571-022-00280-7&domain=pdf
+
+
+2 C. Dutta et al.
+
+platforms allow for unprecedented speed of order placement and execution,
+thereby creating financial data sets that are of increasingly higher frequency
+(Cont, 2011). While a small firm may have traded tens of times each day
+in the 1990s, high-frequency trading (HFT) firms today can execute several
+thousand trades each day.
+
+The advent of high-frequency trading (HFT) has triggered substantial in-
+terest among financial traders and policymakers alike, due to HFTâs promise
+of offering deeper insights into the workings of financial markets. Informa-
+tion contained in high-frequency financial data has been shown to predict
+market movements such as realized volatility and certain higher-order mo-
+ments of returns distributions (Easley et al., 2021). In addition, this data
+is useful for studying market microstructure, which examines the process
+by which assets are traded and the resulting consequences (OâHara, 1997).
+For example, access to high-frequency (HF) data sets can provide greater
+insight into price discovery mechanisms (Tay et al., 2004) and the presence
+of informed traders (Easley et al., 2012b). All of these aspects are valuable
+for regulators and policymakers.
+
+Tick-by-tick (high-frequency) data sets are more information-rich than
+asset price data collected at regular intervals, e.g., monthly, daily, or even
+intra-day. This is becauseâin addition to the trajectory of the price processâ
+these high-frequency data sets provide us with the number of trades executed
+for a particular stock within a small time interval. Trade volumes provide
+additional information about how attractive a particular stock is to investors.
+Thus, analyzing the number of events that occur in a certain time windowâ
+or equivalently, the duration between trades or other eventsâis at the heart
+of statistical modeling of HFT data and is precisely what makes analysis of
+HFT data both unique and challenging.
+
+Since trades can occur at any point in time, HFT data on asset prices are
+usually irregularly spaced time series. These data sets also exhibit some styl-
+ized features that contribute to new modeling challenges. For instance, HFT
+data exhibit intra-day diurnal effects, i.e., higher activity during the start
+and close of the market and less activity during the middle of the trading
+day. Moreover, most variables used in HFT data analyses (e.g., volumes and
+bid-ask spreads) are non-negative and exhibit strong temporal dependence,
+which introduces non-trivial challenges in modeling and estimation.
+
+Statistical modeling of HFT data broadly falls into three categories.
+The first approach aggregates HFT data into regularly spaced bins (1 min,
+5 min, etc.) and then applies models to the regular time series. Such mod-
+els include the autoregressive conditional heteroscedastic (ARCH) model,
+
+
+
+Review of statistical approaches... 3
+
+the generalized ARCH (GARCH) model, and the stochastic volatility (SV)
+model (Tsay, 2005). The second approach builds on the point process ana-
+lysis literature to model the occurrence of events of interest (e.g.,
+a single trade of an asset). The third approach models sequences of dura-
+tions between consecutive occurrences of events. Both the second and third
+families have tailored strategies to incorporate other relevant information
+into the modeling framework, e.g., information about the relative occur-
+rence of buys versus sells, as well as the direction and magnitude of price
+changes.
+
+In this paper, we focus primarily on the third approach: duration mod-
+els. We describe two common methods for defining events of interest and
+thereby constructing inter-event durations: (i) using a pre-specified thresh-
+old on price changes in the asset, and (ii) explicitly including information on
+the assetâs order flow. We review existing statistical methods for duration
+modeling and contrast the two event definition methods through the lens of
+a popular class of conditional duration models, which we apply on HFT data
+sets.
+
+The rest of the paper is organized as follows. Section 2 provides examples
+of how HF traders use available information to determine when to place and
+change orders. Section 3 details some of the stylized features of HFT data.
+Section 4 briefly reviews the models for regularly spaced time series and dis-
+cusses modeling event times using point processes. Section 5 discusses some
+of the existing open challenges in HFT data. Section 6 describes economet-
+ric applications where HFT data are routinely used. Section 7 presents a
+summary and discussion.
+
+2 Background on High-Frequency Trading (HFT)
+
+Technological innovations, combined with a series of regulatory changes
+in the early 2000s, ushered in the era of high-frequency trading. HFT is
+characterized by both high speeds and high volumes: traders operate on the
+order of micro- or nanoseconds, which they achieve through a combination of
+sophisticated technology and co-location, the practice of placing computers
+in the same area as an exchangeâs servers. To cover these fixed costsâand
+since HF traders earn very small profits per tradeâfirms place large volumes
+of orders. These firms aim to generate profits by exploiting small amounts
+of predictive power on large quantities of orders (Easley et al., 2012a).
+
+Most HFT firms use limit orders, meaning the trader sets a price above
+(below) which she is unwilling to (buy) sell. These limit prices are referred to
+as the bid and ask prices, respectively. If a counterparty is not immediately
+
+
+
+4 C. Dutta et al.
+
+willing to take the opposite side of the trade, then the order is placed in
+a limit order book. Many exchanges govern their books using automated
+rule-based order-matching. Most often this means that orders are executed
+first according to price priority and then according to time priority. Limit
+orders can remain on the book for a substantial period of time before the
+limit price is reached and the trade executed; however, traders may modify
+or cancel existing orders as part of their trading strategies. Hence the order
+book is highly dynamic.
+
+HFT firms implement these strategies using automated algorithms that
+introduce, adjust, and cancel orders as new information is received. Im-
+portantly, these algorithms do not operate in clock time, placing an order
+every minute, for example. Instead the algorithms speed up or slow down
+their rate of activity based on information they glean from external sources
+(e.g., macroeconomic events, company earnings announcements) and from
+other market participants. Consider the HFT strategy known as pinging.
+Pinging involves placing small immediate-or-cancel limit orders: if liquidity
+is available at the limit price or better, the order is executed immediately;
+otherwise the order is canceled. To understand why this might be useful,
+suppose that firm A places a large buy order and firm B detects this liquid-
+ity using immediate-or-cancel limit orders. Firm B can then frontrun firm
+Aâs buy order and sell the shares back to firm A at a higher price, thereby
+generating a profit.
+
+Other HFT strategies include spoofing (placing a large number of orders
+on one side of the book, with the intention of moving the securityâs price),
+redirecting liquidity to the firmâs own dark pool, and performing statistical
+arbitrage (taking advantage of short-lived price differences across trading
+venues or between related securities). See Goldstein et al. (2014) for further
+discussion. A significant number of trades are block trades, i.e., high-volume
+trades that are typically defined as 10,000 or more shares. Large trades
+may cause a significant price impact, hence block trades are often negoti-
+ated through experienced intermediaries who can fragment the order and/or
+search for counterparties before sending the trade for execution (Keim and
+Madhavan, 1996; Hasbrouck, 2007).
+
+Since they can place orders at ultra low latencies, HF traders are able to
+swiftly react to information events. When a trader believes that the price
+of an asset will rise (fall), she may want to buy (sell) that asset in large
+quantities and as quickly as possible in order to maximize her short-term
+profits. Thus greater trading intensity, or equivalently shorter durations
+between transactions, can signal that an information event has occurred and
+that there are informed traders in the market. Indeed Easley and OâHara
+
+
+
+Review of statistical approaches... 5
+
+(1992) develops a theoretical microstructure model in which longer durations
+are correlated with the absence of information events. Dufour and Engle
+(2000) and Manganelli (2005) provide empirical evidence confirming these
+propositions.
+
+3 Stylized Features of HFT Data
+
+The availability of HFT data has opened new avenues for empirical stud-
+ies of market microstructure. Before embarking on such analyses, it is im-
+portant to understand the underlying features of such data that are not
+observed at lower frequencies. These unique characteristics of HFT data are
+referred to as stylized facts and are usually formulated in terms of qualitative
+properties of asset returns and durations. These properties are commonly
+observed across many financial assets, financial markets, and intra-day time
+periods. In this section, we review some stylized features of HFT data that
+are discussed in the literature.
+
+Irregular Spacing High-frequency financial transactions typically occur
+at irregularly spaced time points as trading takes place. Therefore the time
+durations between consecutive data points are not the same, leading to ir-
+regular time series. In any given time interval, transactions for a given stock
+may arrive rapidly, separated by short durations, or arrive slowly, with longer
+durations between arrival times (see Fig. 1, top and bottom left). Empir-
+ical evidence shows that market activity tends to peak around the market
+opening and closing times, and exhibits varying patterns of intra-day and
+intra-week behavior (Yan and Zivot, 2003).
+
+Diurnal Effect Intra-day transactions, and hence durations, often exhibit
+a periodic pattern. For instance, consider inter-event durations, such as trade
+durations, mid-quote (change) durations, price durations, volume durations,
+excess volume durations, or excess depth durations, all of which have been
+well studied in the literature. Such durations often exhibit a diurnal effect,
+which refers to high trading intensity (shorter durations) during the opening
+and closing periods of the trading day, with relatively lower trading activity
+(longer durations) around noon (see Fig. 1, top right) (Engle and Russell,
+1998). There are many approaches discussed in literature for adjusting du-
+rations for the diurnal effect (Tsay, 2005).
+
+Non-negativity and Temporal Dependence Most variables related
+to HFT data are non-negative (e.g., prices, volumes). Moreover, many
+
+
+
+6 C. Dutta et al.
+
+Figure 1: Features of high-frequency financial transactions, illustrated on
+Bank of America data. Top left: histogram of inter-trade durations for the
+first quarter of 2018. The median time between trades is 0.000118 seconds,
+with minimum and maximum durations of 0.000005 and 19.963947 seconds,
+respectively. Top right: cubic spline fitted to durations over the course of
+a single trading day. Notice the increased activity (shorter durations) near
+the market opening and closing. Bottom left: durations between 10:00 and
+10:30 AM on a single trading day. Financial durations tend to be clustered,
+with short (long) durations following other short (long) durations. Bottom
+right: sample autocorrelation function of the duration series
+
+variables, including volumes, spreads, and market depth are positively au-
+tocorrelated, i.e., high (low) values tend to be followed by high (low) values.
+Let Ïk be the autocorrelation between the k lags of a stationary time series
+Xt, with mean Î¼. The autocorrelation is written as Ïk = Î³(k)
+
+Î³(0) , where Î³(k)
+
+= cov(Xt+k, Xt) = E[(Xt+k â Î¼)(Xt â Î¼)]. Often Xt exhibits strong persis-
+tence; that is, the temporal dependence is non-zero over a long range of lags,
+with the autocorrelations, Ïk, decaying in hyperbolic fashion rather than in
+exponential decay: limkââ Ïk/ck
+
+âÎ± = 1 , with Î± â (0, 1) and c > 0 (Beran,
+1994) (see Fig. 1, bottom right).
+
+
+
+Review of statistical approaches... 7
+
+Asynchronous Trading Asynchronous (also referred to as non-synchronous)
+trading of multiple assets is an important stylized feature of HFT data (Fan
+et al., 2012). In general, different stocks have different trading frequencies,
+and a single stockâs trading intensity often varies intra-day and intra-week.
+Since the exact timing of transactions within any two stocks are likely to
+occur independently, we do not expect the trading to be synchronous. Non-
+synchronous data typically occur due to trading effects (e.g., some assets
+do not trade at certain periods of the day) or timing effects (e.g., trading
+happens in different time zones). Suppose there are two stocks A and B and
+that they are independent, that A trades more frequently than B, and that B
+stops trading two hours before the market closes. Also suppose that a news
+item arrives just before closing time on a Monday. Stock A is more likely to
+show the effect of the news on the same day, while stock B may react with a
+dayâs lag. This will in turn differentiate the autocorrelations of the returns of
+A and B and affect the nature of their cross-correlation function. These fea-
+tures become relevant when we consider models for multivariate HFT time
+series. The Epps effect has been discussed as the decreasing estimated corre-
+lation between two stocks when the sampling frequency increases primarily
+due to asynchronicity of price observations and possible lead-lag relation-
+ships between asset prices (Epps, 1979; RenoÌ, 2003). Hayashi et al. (2005)
+discuss the bias in estimates of the covolatility based on non-synchronous
+data.
+
+Jumps in Price Processes The presence of jumps in price processes is
+one of the stylized features of financial data, and can occur due to specific
+macroeconomic events (Evans, 2011) or some unexpected news announce-
+ments. In empirical studies, it has been shown that the decomposition of
+daily variation into its continuous and jump components can better explain
+the volatility dynamics (Andersen et al., 2007; AÄ±Ìt-sahalia et al., 2012; Song
+et al., 2021). Many statistical tests have been developed to detect jumps
+from discretely observed prices, see Jiang and Oomen (2005), Barndorff-
+Nielsen and Shephard (2006), Lee and Mykland (2008), and AÄ±Ìt-sahalia et
+al. (2012).
+
+Modeling jumps is related to addressing sudden and relatively large
+changes observed in real stock prices and the implied volatility smile phe-
+nomenon (Cont and Tankov, 2004).
+
+4 Approaches for Modeling HFT Data
+
+As mentioned in Section 1, there are several approaches for modeling
+HFT data. One way to accommodate HFT data in volatility modeling is by
+
+
+
+8 C. Dutta et al.
+
+aggregating tick-by-tick data into regularly-spaced bins (e.g., 1 min, 5 min)
+and then applying models for regularly spaced time series (Tsay, 2005), as
+discussed in Section 4.1. Although this is a useful approach, it is not gener-
+ally preferred since aggregation can induce loss of information. Furthermore,
+traditional time series models of volatility do not account for the intra-day
+periodicity exhibited by return volatility, i.e., for the systematic patterns
+that occur over the course of a trading day and that may lead to model mis-
+specification, as illustrated by Andersen and Bollerslev (1997). The classical
+volatility models are discussed and followed by their extensions to include
+realized measures of volatility, see So et al. (2021) for an excellent review of
+univariate and multivariate volatility models for HFT data.
+
+4.1. Regularly Spaced Time Series Models for Aggregated Data Let {yt}nt=1
+
+denote a real-valued, discrete-time stochastic process, and let Ft be the infor-
+mation set up to time t. In most financial applications, yt is the log-return of
+an asset at time t, defined as yt = lnPtâ lnPtâ1, where Pt is the price of the
+asset at time t, and ln denotes natural logarithm. The conditional variance
+of yt is ht = Var(yt|Ftâ1) and the conditional mean of yt is Î¼t = E(yt|Ftâ1).
+
+The volatility at time t is given by h
+1/2
+t .
+
+GARCH and its Extensions The seminal work of Engle (1982) on the
+autoregressive conditional heteroscedastic (ARCH) model laid the founda-
+tions for modeling the heteroscedasticity (changing variance) of the log-
+returns process. Later, Bollerslev (1986) proposed a more flexible model,
+an extension of ARCH known as generalized ARCH (GARCH). The key fea-
+ture of both models is the ability to accommodate volatility clustering, a key
+stylized fact of financial time series.
+
+Let yt denote the (mean-subtracted) returns at time t. Then yt is said
+to follow a GARCH(P,Q) model if
+
+yt = h
+1/2
+t zt,
+
+ht = Î±0 +
+
+Pâ
+
+i=1
+
+Î±iy
+2
+tâi +
+
+Qâ
+
+j=1
+
+Î²jhtâj , t = 1, . . . , T, (4.1)
+
+where {zt} is a sequence of i.i.d. random variables with zero mean and unit
+variance. In Eq. 4.1, P refers to the lag orders of the returns series while Q
+refers to the lag orders of the conditional variance series. Sufficient conditions
+
+
+
+Review of statistical approaches... 9
+
+for the conditional variance ht to be positive are Î±0 > 0, Î±i â¥ 0 for i =
+
+1, . . . , P , and Î²j â¥ 0 for j = 1, . . . , Q. The constraint
+âmax(P,Q)
+
+i=1 (Î±i+Î²i) < 1
+ensures stationarity. ForQ = 0, this process reduces to the ARCH(P ) model.
+
+There have been numerous extensions of the GARCH model that are
+important for modeling the stylized features of financial returns. One such
+improvement is to use a different distribution for the random variable, zt,
+in order to capture the distributionâs heavier tails (e.g., we may use Stu-
+dent t-distribution with low degrees of freedom). To capture the asymmetry
+phenomenon in volatility and to overcome a restrictive model specification,
+the exponential GARCH (EGARCH) model was proposed by Nelson (1991).
+Detailed discussions on GARCH modeling and its extensions are provided in
+Tsay (2005). GARCH models have also been used extensively in the context
+of high frequency data. Hansen and Lunde (2005), Hansen et al. (2003),
+and Andersen and Bollerslev (1998) are useful references and the R packages
+rugarch by Ghalanos (2020) and MSGARCH by Ardia et al. (2019) contains
+several useful functions that allow users to fit different GARCH models.
+
+Stochastic Volatility Models Stochastic volatility (SV) models were de-
+veloped to model the heteroscedasticity of yt by considering a latent (unob-
+served) stochastic process for volatility, see Taylor (1982, 1994), and Harvey
+and Shephard (1996). In particular, the evolution of the logarithm of ytâs
+conditional variance is described by a stochastic process whose dynamics are
+assumed to be autoregressive. The basic form of SV model is the following:
+
+yt = h
+1/2
+t Îµt, lnht+1 = Î±+ Ï lnht + Î·t,
+
+(Îµt, Î·t) â¼ N (0,Î£), Î£ =
+
+(
+1 0
+0 Ï2
+
+Î·,
+
+)
+t = 1, . . . , T, (4.2)
+
+where lnht is assumed to follow a stationary AR(1) process with |Ï| < 1.
+The latent process ht can be interpreted as a random flow of information in
+financial markets and Ï is the persistence in the volatility. The error terms,
+Îµt and Î·t, are independent Gaussian white noise sequences. A fundamental
+difference between GARCH and SV models is that, in the GARCH frame-
+work, given the information set Ftâ1, the time-varying volatility is assumed
+to follow a deterministic, rather than stochastic, evolution.
+
+The usefulness of using SV models lies in the fact that they provide
+greater flexibility in describing stylized facts. The volatility asymmetry,
+which refers to the different impacts of positive and negative shocks of equal
+
+
+
+10 C. Dutta et al.
+
+magnitude on volatility, has been addressed in Jacquier et al. (2004), who
+proposed an alternate specification of Î£ as:
+
+(Îµt, Î·t) â¼ N (0,Î£), Î£ =
+
+(
+1 ÏÏÎ·
+
+ÏÏÎ· Ï2
+Î·,
+
+)
+t = 1, . . . , T. (4.3)
+
+If the correlation Ï is negative, then a decrease in Îµt will be associated with
+an increase in Î·t and hence associated with higher contemporaneous and
+subsequent volatilities through ht. This will allow us to model the lever-
+age effect, which is the association of negative return with an increase in
+volatility (Black, 1976). Most financial time series exhibit kurtosis higher
+than the one resulting by incorporating conditional heteroscedasticity into
+a normal process. This has been studied in Chib et al. (2002), Harvey et al.
+(1994), and Jacquier et al. (2004), where Îµt in Eq. 4.2 is allowed to follow a
+Student t-distribution. Detailed extensions of the SV models including its
+multivariate extensions are discussed in Yu and Meyer (2006), Chib et al.
+(2009), among others. The R package stochvol (Hosszejni and Kastner, 2019)
+contains several functions that allow users to fit different stochastic volatil-
+ity (SV) models estimated using Bayesian methods. Amongst many others,
+Barndorff-Nielsen and Shephard (2002), Takahashi et al. (2009), and Stroud
+and Johannes (2014) are useful references for the applications of stochastic
+volatility models for high-frequency data.
+
+Realized GARCH Models With the availability of HF data, numer-
+ous realized measures of volatility has been introduced in literature includ-
+ing realized variance, bipower variation, realized range and many others
+(Andersen and Bollerslev 1998; Barndorff-Nielsen and Shephard 2002, 2004;
+Martens and Van Dijk 2007). Realized measures are more informative than
+squared returns and hence found more useful for modeling and forecasting
+future volatility. Andersen and Bollerslev (1998) found realized volatility
+to be a better measure of volatility than the measures based on daily re-
+turns since the former measure provides noise reduction and more temporal
+stability.
+
+Let Pt be the observed price of an asset for day t = 1, . . . , n. Divide each
+day into fixed M sub-intervals and let Î = 1
+
+M denote the length of time
+between the two consecutive observations. To obtain realized variances at
+5-min sampling frequency, set Î = 300 (seconds) and similarly for 1-min
+sampling frequency, set Î = 60 (seconds). Let {Ptâ1+jÎ}Mj=1 denote the
+
+sequence of observed prices for a day t at the sampling frequency Î = 1
+M . In
+
+case of missing observed prices, previous tick method or linear interpolation
+
+
+
+Review of statistical approaches... 11
+
+between adjacent ticks (Zivot and Wang, 2007) can be used to estimate the
+missing observations. The jth intraday return for day t is defined as
+
+yj,t = lnPtâ1+jÎ â lnP(tâ1)+(jâ1)Î, j = 1, . . . ,M. (4.4)
+
+RVt (realized variance for day t) is defined as the cumulative squared
+sum of the intraday returns yj,t
+
+RVt =
+Mâ
+
+j=1
+
+y2j,t; (4.5)
+
+â
+RVt is known as the realized volatility.
+Hansen et al. (2012) proposed Realized GARCH for the joint modeling of
+
+returns and realized measures of volatility. This model can also be referred
+to as a GARCH model that makes use of realized measures. The main idea
+is a measurement equation given by Eq. 4.6 for RVt that relates the realized
+measure (e.g., realized variance) to the conditional variance of returns and
+facilitates modeling of the dependence between returns and future volatil-
+ity. The realized GARCH model for simultaneous modeling of returns and
+realized variance is
+
+yt = h
+1/2
+t zt,
+
+ht = Î±0 + Î²1htâ1 + Î³RVtâ1,
+
+RVt = Î¾0 + Î¾1ht + Ï(zt) + ut, (4.6)
+
+where ht is the volatility of the asset at time t, zt â¼ i.i.d.(0, 1) and ut â¼
+i.i.d.(0, Ï2
+
+u), with zt and ut being mutually independent. Ï(zt) is known
+as the leverage function that captures the leverage effect, the dependence
+between returns and future volatility. The empirical results in Hansen et al.
+(2012) shows that Realized GARCH outperforms GARCH when applied to
+Dow Jones Industrial Average stocks and an exchange traded index fund.
+
+In the literature, there have been several extensions and applications of
+Realized GARCH. Gerlach and Wang (2016) extended the class of Realized
+GARCH models to include more efficient realized measures such as realized
+range (RR). So and Xu (2013) proposed to model the intraday returns yj,t
+in Eq. 4.4 and intraday volatility using a GARCH-RV model with realized
+volatility to forecast intraday Value-at-Risk (VaR) and intraday volatility.
+
+Realized Stochastic Volatility (SV) Models Takahashi et al. (2009)
+extended the well-known Stochastic volatility models to jointly model daily
+
+
+
+12 C. Dutta et al.
+
+returns and the realized volatility. The proposed model also takes into ac-
+count the bias in the realized volatility induced by the presence of non-
+trading hours and market microstructure noise in transaction prices. The
+specification of the joint model is
+
+yt = exp(ht/2)Îµt,
+
+ht+1 = Î¼+ Ï(ht â Î¼) + Î·t,
+
+RVt = Î¾ + ht + ut,
+
+h1 = Î¼+ Î·0, Î·0 â¼ N
+
+(
+0,
+
+Ï2
+Î·
+
+1â Ï2
+
+)
+,
+
+â
+
+â
+Îµt
+Î·t
+Ït
+
+â
+
+â  â¼ N
+
+â
+
+â0,
+
+â
+
+â
+1 ÏÏÎ· 0
+
+ÏÏÎ· Ï2
+Î· 0
+
+0 0 Ï2
+u
+
+â
+
+â 
+
+â
+
+â  . (4.7)
+
+In the equation for RVt, the inclusion of the constant term Î¾ and the noise
+term corrects the bias due to microstructure noise and non-trading hours.
+The parameter Ï captures the correlation between the returns yt and the
+future volatility ht+1. The above is an extension of the SV model in Eq. 4.3
+to include realized measures.
+
+Asai et al. (2017) proposed a new model to take into account both
+asymmetry and long memory in which the unobserved time series of log-
+volatility lnht follows an AutoRegressive Fractionally Integrated Moving Av-
+erage (ARFIMA) process similar to the approach by Shirota et al. (2014) and
+the observed series of returns follows the stochastic volatility model with a
+heavy-tailed distribution. Extreme value distributions have also been incor-
+porated in realized stochastic volatility models by employing the generalized
+hyperbolic skew Studentâs t-distribution (Takahashi et al., 2016).
+
+4.2. Modeling Jumps in Price Process The analysis of jumps (instan-
+taneous and discrete moves) in asset price processes is well discussed in the
+literature; see Cont and Tankov (2004), Carr et al. (2002), Vasileios (2015)
+and references therein. There are two broad categories of financial models
+with jumps. The first category consists of jump-diffusion models, where a
+diffusion process captures normal asset price variations while the Poisson-
+driven jump part captures large market movements. Different jump-diffusion
+models arise depending upon the distributional assumptions. The second
+category consists of jump models that allow for infinitely many jumps in fi-
+nite time intervals. Examples of this category of models include the variance
+
+
+
+Review of statistical approaches... 13
+
+gamma model (Madan and Seneta, 1990; Carr et al., 1998), the hyperbolic
+model (Eberlein and Keller, 1995), the CGMY model (Carr et al., 2002),
+and the finite moment log stable process (Carr and Wu, 2003).
+
+Models with finite jumps Let X = (Xt)tâ¥0 be the logarithmic price of a
+financial asset that is defined on a filtered probability space (Ï,F , (Ft)tâ¥0,P).
+Here Ft represents the information available at time t, t â¥ 0. Following the
+model setup in Christensen et al. (2014), we assume that X operates in an
+arbitrage-free frictionless market, implying that X belongs to the class of
+semimartingale process. We assume that X can be represented by a jump-
+diffusion model to allow for stochastic volatility and finite price jumps as
+
+Xt = X0 +
+
+â« t
+
+0
+asds+
+
+â« t
+
+0
+ÏsdWs +
+
+NJ
+tâ
+
+i=1
+
+Ji t â¥ 0, (4.8)
+
+where Xt is the log price at time t, a = (at)tâ¥0 is a locally bounded and
+predictable drift term, Ï = (Ït)tâ¥0 is an adapted caÌdlaÌg volatility process,
+and W = (Wt)tâ¥0 is a standard Brownian motion. Here NJ = (NJ
+
+t )tâ¥0
+
+is a counting process representing the total number of jumps in X and
+J = (Ji)i=1,...,NJ
+
+t
+is a sequence of nonzero random variables denoting the
+
+corresponding jump sizes.
+The model specified in Eq. 4.8 nests many popular continuous models
+
+as special cases such as the geometric Brownian motion with an Ornstein-
+Uhlenbeck process for log-volatility (Alizadeh et al., 2002), the stochastic
+volatility model with log- normal jumps generated by a non-homogeneous
+Poisson process (Andersen et al., 2002), and the affine class of models (Duffie
+et al., 2000). In practice, we observe discretely sampled observations which
+at an individual level can contain substantial noise. One source of noise
+is from microstructure effects that arise due to bid-ask spreads, or price
+discreteness (Black, 1986). The other source is due to the presence of outliers
+which can be attributed to delayed trade reporting on block trades, fat-finger
+errors, bugs in the data feed, misprints, decimal misplacement, incorrect
+ordering of data, etc. (Christensen et al., 2014). The model setup for the
+tick level data that takes into account the sources of noise and restricting to
+the unit time interval t â [0, 1] can be specified as
+
+Yi/N = Xi/N + ui/N +Oi/N i = 1, . . . , N, (4.9)
+
+where u is i.i.d. noise process such that E(u) = 0, E(u2) = w2 and u and X
+are independent(Christensen et al., 2014). Here, Oi/N = Ii/NâAN
+
+Si, where
+AN is a random set containing the number of occurrences of outliers and
+
+
+
+14 C. Dutta et al.
+
+their sizes are given by (Si)i=1,...,N0
+1
+. Assuming AN to be a.s. finite, model
+
+it by
+
+AN =
+
+{
+[NTi]
+
+N
+: 0 â¤ Ti â¤ 1
+
+}
+, (4.10)
+
+where (Ti)i=1,...,N0
+1
+are the arrival times of another counting process NO =
+
+(NO
+t )tâ¥0. We assume that O is mutually independent of X and u, which
+
+implies that NJ is independent of NO meaning that the counting process
+generating jumps and counting process generating outliers are independent
+of each other. The model in Eq. 4.9 can be considered as an extension to
+the standard microstructure component formulation considered in the high
+frequency finance literature (Barndorff-Nielsen and Shephard, 2005) which
+also accommodates the outlier process.
+
+Models with Infinite Jumps Recently, several studies based on real
+asset returns have suggested the use of infinite activity models.
+
+Consider a LeÌvy process with infinite jump activity and microstructure
+noise, which is considered as one of the simplest models for high frequency
+financial data. Following the model setup in Wang et al. (2021), consider
+a one-dimensional LeÌvy process X = {Xt}tâ¥0 defined on some probability
+space (Î©,F , (Ft)tâ¥0, P ) over a fixed time horizon t â [0, T ]. The model can
+be represented as
+
+Xt = Î¼t+ ÏWt + Jt, (4.11)
+
+where Î¼ â R and Ï â [0,â) are respectively the drift and the variance
+parameters, W = {Wt}tâ¥0 is a Wiener process, and J = {Jt}tâ¥0 is an
+independent pure-jump LeÌvy process. The jump component J is defined as
+
+Jt = J1t + JÌ2t, J1t =
+
+â« t
+
+0
+
+â«
+
+|x|>1
+xÎ¼(dx, ds),
+
+JÌ2t =
+
+â« t
+
+0
+
+â«
+
+0<|x|â¤1
+x(Î¼(dx, ds)â Î½(dx)ds), (4.12)
+
+where Î¼ is a Poisson random measure on R+ Ã R\0 with mean measure
+Î½(dx)dt such that
+
+â«
+R\0(|x|2â§1)Î½(dx) < â. Typically, Xt represents the log-
+
+return or log-price process log(St/S0) of an asset with price process {St}tâ¥0.
+In this case, the parameter Ï is called the constant volatility of the process
+and contributes to the total âvariabilityâ of the process X. The model frame-
+work (4.11)â(4.12) can also be used to accommodate the observations of the
+
+
+
+Review of statistical approaches... 15
+
+process which may be contaminated by random errors. Let us assume that
+the observations take the form
+
+Ytj = Xtj + Îµtj j = 0, . . . , n, (4.13)
+
+with equally-spaced discrete times 0 = t0 < t1 Â· Â· Â· < tn = T such that
+tj â tjâ1 = T/n. The assumption of constant volatility is quite restrictive
+and can be relaxed to stochastic volatility when the microstructure noise
+can be ignored. It is generally believed that when using medium range
+frequencies such as 5-min or daily observations, the microstructure noise is
+negligible. For such data, we may consider the model
+
+dXt = Î²tdt+ ÏtdWt + dJt, t â [0, T ], (4.14)
+
+where W = {Wt}tâ¥0 is a Weiner process, J = {Jt}tâ¥0 is a suitable pure-
+jump semimartingale, and Î² = {Î²t}tâ¥0 and Ï = {Ït}tâ¥0 are caÌdlaÌg adapted
+processes. A more detailed discussion about the statistical inference for
+processes with infinitely many jumps can be found in (Mies et al., 2020).
+
+The R package yuima (Brouste et al., 2014) has a comprehensive frame-
+work for the simulation and inference of stochastic differential equations
+and other stochastic processes. It allows one to specify stochastic differen-
+tial equations of abstract types, including one- or multidimensional diffusion
+processes driven by a Wiener process or a fractional Brownian motion with
+general Hurst parameter, with or without jumps (i.e. driven by LeÌvy pro-
+cesses). Iacus and Yoshida (2018) provide more details on the usage of yuima
+package.
+
+Jump Testing Identification and testing of price jumps in asset prices
+are very important in the context of financial and economic activities such
+as portfolio re-balancing and risk management, Barndorff-Nielsen and Shep-
+hard (2006) proposed a non-parametric test for the existence of jumps based
+on the ratio of bipower variation and realized quadratic variation, while
+Lee and Mykland (2008) proposed a non-parametric procedure to detect the
+exact timing of jumps at the intra-day level using the ratio of realized re-
+turn to estimated instantaneous volatility. Jiang and Oomen (2008) used
+an approach based on âswap varianceâ (accumulated difference between the
+simple return and log return) to detect the presence of jumps. Sen (2009)
+proposed a non-parametric method for detecting jumps using the functional
+data analysis (FDA) technique, which requires no assumptions from the func-
+tional volatility process beyond smoothness and integrability. AÄ±Ìt-Sahalia
+and Jacod (2009) compared two higher order realized power variations with
+
+
+
+16 C. Dutta et al.
+
+different sampling intervals to develop a test statistic for the null hypothesis
+of no jumps. More recently, a rank jump test has been proposed by (Li et
+al., 2019). In this procedure, the jump matrix is tested for its rank at simul-
+taneous jump events in market returns, as well as in individual assets. A
+more detailed review of jump tests can be found in (Mukherjee et al., 2020;
+Tsai and Shackleton, 2016; Bjursell and Gentle, 2012)
+
+In R, the highfrequency package (Boudt et al., 2021a), provides func-
+tionality and a comprehensive framework to manage high-frequency data.
+It helps to clean and match high-frequency trades and quotes data, calcu-
+late various liquidity measures, estimate and forecast volatility, detect price
+jumps and investigate microstructure noise and intraday periodicity. The
+function AJjumpTest implements the jump test proposed by AÄ±Ìt-Sahalia
+and Jacod (2009) while the function BNSjumpTest examines the proce-
+dure based on Barndorff-Nielsen and Shephard (2006). The function in-
+tradayJumpTest can be used to test jumps using the theory of Lee and
+Mykland (2008) and JOjumpTest examines the jumps based on Jiang and
+Oomen (2008). The function rankJumpTest implements the rank jump test
+of Li et al. (2019).
+
+4.3. Modeling Event Times with Point Processes Let t denote the cal-
+endar time and let ti, i = 1, 2, . . ., be the random time of occurrence for the
+ith event. We assume 0 â¤ ti < ti+1, thereby excluding the possibility of si-
+multaneous occurrence of events. The sequence {ti} is a simple point process
+in R. If we also observe a mark, Wi, then we refer to {ti,Wi, i = 1, 2, . . .}
+as a marked point process. Marks can indicate different types of events,
+such as the arrival of buys, sells or certain limit orders. The ith dura-
+tion is a non-negative random variable defined as the time interval between
+the events occurring at times tiâ1 and ti: xi = ti â tiâ1, for i = 1, 2, . . .,
+with t0 = 0. A counting process N(t) associated with {ti} is defined by
+
+, which is a right-continuous step function with up-
+ward jumps of magnitude one at each ti. These three views of high-frequency
+data (the point process, durations, and the counting process) are often inter-
+changeable, allowing for rich modeling scenarios and interpretations. How
+well we can model and predict will of course depend on the quality and for-
+mat of the data, which in turn depend on underlying institutional settings
+and recording systems (Harris, 2003; Hautsch, 2011).
+
+Hautsch (2011) discusses four broad approaches for modeling a point
+process as a function of its history, Ft: (i) models for intensity processes,
+(ii) models for hazard processes, (iii) models for duration processes, and
+(iv) models for counting processes. Exogenous predictors, if available, may
+
+
+
+Review of statistical approaches... 17
+
+be used as well. There is a distinction between discrete-time models and
+continuous-time models.
+
+The intensity is the instantaneous arrival rate of an event at time t,
+conditional on the history, Ft (Daley and Vere-Jones, 2003):
+
+Î»(t;Ft) = limÎtâ0 P (1 event in [t, t+Ît] |Ft),
+
+and may be modeled by an autoregressive conditional intensity model (Engle
+and Russell, 1998). A general class of intensity models can be defined, as in
+Hautsch (2011), by
+
+Î»(t;Ft) = Î»0(t; g2(Ft))g1(t;Ft), (4.15)
+
+where Î»0(.) denotes a baseline intensity, and g1(.) and g2(.) enable us to cap-
+ture dependence on time-varying covariates or past history. Various choices
+of Î»0, g1 and g2 give rise to well-known models, including the proportional
+intensity, proportional hazards, and accelerated failure time models. These
+models can be extended to accommodate long range dependence (Hautsch
+et al., 2006), for multivariate marked counting process modeling (Russell,
+1999), or for stochastic conditional intensity (SCI) models (Bauwens and
+Hautsch, 2006). Hautsch (2011) discusses dynamic versions of intensity mod-
+els, defined in continuous time, for univariate and multivariate cases. These
+include the autoregressive conditional intensity (ACI) modelâwhich is a dy-
+namic extension of the proportional intensity (PI) model (Russell, 1999)âas
+well as models based on linear self-exciting Hawkes processes (Hawkes, 1971),
+where the intensity is governed by the sum of negative exponential functions
+of time to all previous events (Swishchuk and Huffman, 2020). The R package
+hawkes by Zaatour (2014) can be used to simulate Hawkes processes both
+in univariate and multivariate settings. The package contains functions that
+can be used to compute various moments of the number of jumps on a given
+interval, separated by a lag.
+
+Given the sequence of inter-event durations, {xi}, where xi has p.d.f.
+f(xi;Fiâ1) and survival function S(xi;Fiâ1), the hazard function, h(xi;Fiâ1),
+is defined as the conditional instantaneous risk that the ith event happens
+in a small time interval (xi, xi +Î],
+
+h(xi;Fiâ1) = f(xi;Fiâ1)/S(xi;Fiâ1).
+
+There are close connections between intensity models and hazard models. As
+mentioned earlier, by setting specific forms for the terms in Eq. 4.15, we can
+obtain the proportional intensity (PI), proportional hazards (PH), or acceler-
+ated failure time (AFT) models. Kalbfleisch and Prentice (2011), Kleinbaum
+
+
+
+18 C. Dutta et al.
+
+and Klein (2010), Cox and Oakes (2018), Cox (1972) provide excellent dis-
+cussions of several hazard process models, including the Cox proportional
+hazards model and accelerated failure time models. These models have been
+applied in a variety of settings. For example, the duration of unemployment
+is studied in a wide range of theoretical and empirical econometric papers,
+including Lancaster (1979) and Heckman and Singer (1984). Lane et al.
+(1986) also demonstrates a novel application of the proportional hazards
+model to the study of bank failure. The R package survival by Therneau
+(2021) contains several functions that allow users to fit these models.
+
+The count process model is obtained by specifying the joint distribution
+of the number of points in equally spaced intervals of length Î. A simple
+count data model is given by
+
+NÎ
+j |zÎj â¼ Po(Î»),
+
+where zÎj is a vector of covariates associated with NÎ
+j and NÎ
+
+j is defined as
+the number of events in the interval [jÎ, (j + 1)Î] for j = 1, 2, . . . . Flem-
+ing and Harrington (2011) provides an excellent introduction to counting
+processes. Cameron and Trivedi (2013) discusses more general models by
+using the negative-binomial distribution and double Poisson distribution in-
+troduced by Efron (1986). Dynamic count approaches are also used to model
+the behaviour of discrete, positive-valued time series, such as bid-ask spreads
+(the magnitude of trade-to-trade price changes). Let {yi}ni=1 be a time se-
+ries of counts. Autoregressive conditional Poisson (ACP) models are useful
+for modeling dynamic intensity processes based on aggregated data. These
+models can be defined as
+
+yi|Fiâ1 â¼ Poi(Î»i), Î»i = Ï +
+Pâ
+
+j=1
+
+Î±jyiâj +
+
+Qâ
+
+j=1
+
+Î²jÎ»iâj . (4.16)
+
+This specification was proposed by Rydberg and Shephard (2000) and its
+extensions are considered by Heinen (2003). Detailed extensions of the dy-
+namic models for discrete data and its multivariate extensions are discussed
+in Hautsch (2011). The R packages acp by Vasileios (2015) and tscount by
+Liboschik et al. (2017) can be used to fit Autoregressive Conditional Poisson
+models.
+
+4.4. Modeling Durations Conditional on Past Information Engle and
+Russell (1998) introduces a general class of time series models for positive-
+valued random variables, referred to as multiplicative error models (MEM).
+MEM express the dynamics of the variables of interest (e.g., durations, vol-
+ume, volatility) as the product of the expectation of the processâconditional
+
+
+
+Review of statistical approaches... 19
+
+on the available informationâand an i.i.d. positive-valued error term with
+unit mean. This model specification parallels the GARCH specification.
+The autoregressive conditional duration (ACD) model was the first univari-
+ate MEM model introduced in high-frequency econometrics to model the
+dynamic behavior of the random times between trades (Engle and Russell,
+1998). This model was generalized to any non-negative valued process by
+Engle (2002b).
+
+Let {Di}ni=1 be a discrete time series of raw inter-event durations, defined
+as Di = tiâtiâ1. Let {xi}ni=1 be a discrete time series of adjusted inter-event
+durations on (0,â), where xi =
+
+Di
+f(ti)
+
+, f(ti) is a deterministic function (Tsay
+
+(2005)) consisting of the cyclical component of ti. Here n is the number of
+events. Let Fiâ1 be the information set available at the (iâ 1)th event and
+let the conditional mean function be Ïi = E(xi|Fiâ1). This notation is used
+throughout Section 4.4.
+
+Autoregressive Conditional Duration Models (ACD) The ACDmodel
+proposed by Engle and Russell (1998) is one of the most popular methods for
+modeling inter-event durations and acts as a benchmark model for further
+developments of conditional duration models. We say that {xi}ni=1 follows
+an ACD(p, q) model if it can be expressed as
+
+xi = ÏiÎµi, (4.17)
+
+where, conditional on Fiâ1, Ïi can dynamically evolve as
+
+Ïi = Ï +
+
+pâ
+
+j=1
+
+Î±jxiâj +
+
+qâ
+
+j=1
+
+Î²jÏiâj . (4.18)
+
+The ACD model specification assumes that the standardized inter-event
+durations Îµi follow an i.i.d. process defined on positive support and that
+E(Îµi) = 1. The conditions Ï > 0, Î±j â¥ 0 for j = 1, . . . , p, and Î²j â¥ 0 for
+j = 1, . . . , q ensure that the conditional inter-event durations are positive.
+By letting Î·i = xi â Ïi (a martingale difference sequence by construction),
+the ACD(p, q) model can be formulated as an ARMA(max(p, q), q) model
+for xi as
+
+xi = Ï +
+
+max(p,q)â
+
+j=1
+
+(Î±j + Î²j)xiâj â
+qâ
+
+j=1
+
+Î²jÎ·iâj + Î·i. (4.19)
+
+Hence a sufficient condition for xi to be covariance-stationary is given byâp
+j=1 Î±j +
+
+âq
+j=1 Î²j < 1 (Pacurar, 2008).
+
+
+
+20 C. Dutta et al.
+
+Engle and Russell (1998) discusses parameter estimation using the method
+of maximum likelihood. Many variations of ACD model specifications have
+been used in the literature with the assumption that the innovations follow
+exponential, Weibull, gamma and generalized gamma distributions. Engle
+and Russell (1998) also discusses the application of WACD and EACD mod-
+els to IBM transactions data, where WACD and EACD refers to the ACD
+model with Weibull and exponential innovations, respectively.
+
+Log ACD Models The model specification of ACD(p, q) is quite restric-
+tive since it requires non-negativity constraints on the model parameters
+to ensure positive-valued inter-event durations. Log ACD1 and Log ACD2
+
+models were introduced by Bauwens and Giot (2000) to (i) provide a more
+flexible structure without any sign restrictions on model parameters, and (ii)
+to facilitate the inclusion of exogenous variables in the model. The general
+Log ACD1(p, q) model can be written as
+
+xi = eÏiÎµi,
+
+Ïi = Ï +
+
+pâ
+
+j=1
+
+Î±j lnxiâj +
+
+qâ
+
+j=1
+
+Î²jÏiâj , (4.20)
+
+where
+âmax(p,q)
+
+j=1 (Î±j + Î²j) < 1 is required for weak stationarity of xi. Simi-
+larly, for the model specification of Log ACD2(p, q), Ïi takes the form
+
+Ïi = Ï +
+
+pâ
+
+j=1
+
+Î±j
+xiâj
+
+eÏiâj
++
+
+qâ
+
+j=1
+
+Î²jÏiâj , (4.21)
+
+where
+âq
+
+j=1 Î²j < 1 is required to ensure weak stationarity of xi. Here Îµi are
+assumed to be an i.i.d. process defined on positive support with E(Îµi) = 1.
+Both specifications of the Log ACD model are more flexible but retain many
+of the characteristics of the ACD model. Bauwens and Giot (2000) applies
+the Log ACD2 model to price durations, relative to the bid-ask quote process,
+of three securities listed on the New York Stock Exchange: IBM, DISNEY,
+and BOEING. It also investigates the influence of certain characteristics of
+the trade process (e.g., trading intensity, average volume per trade, and
+average spread) on the bid-ask quote process.
+
+Other Types of ACD Models Fernandes and Grammig (2006) proposes
+a new family of ACD models known as augmented autoregressive conditional
+duration (AACD) models, which allow asymmetric responses to small and
+
+
+
+Review of statistical approaches... 21
+
+large shocks. This is a generalization of the ACD process that applies a
+Box-Cox transformation with parameter Î» â¥ 0 to the conditional inter-event
+duration process, Ïi. The AACD model can be written as
+
+xi = ÏiÎµi,
+
+ÏÎ»
+i = Ï + Î±ÏÎ»
+
+iâ1[|Îµiâ1 â b|+ c(Îµiâ1 â b)]Î½ + Î²ÏÎ»
+iâ1, (4.22)
+
+where Ï > 0, Î± > 0, and Î² > 0 and Îµi are assumed to be an i.i.d. process
+defined on positive support. The shocks impact curve is given by g(Îµi) =
+[|Îµi â b|+ c(Îµi â b)]Î½ . The shift parameter, b, helps identify the asymmetric
+response implied by the shocks impact curve, while the rotation parameter,
+c, determines the clockwise (c < 0) and anti-clockwise (c > 0) rotation. The
+shape parameter, Î½, induces concavity (Î½ â¤ 1) or convexity (Î½ â¥ 1) in the
+shocks impact curve. AACD models nest many existing ACD models, such
+as the ACD model of Engle and Russell (1998) and both specifications of
+the Log ACD models from Bauwens and Giot (2000).
+
+The Stochastic Conditional Duration (SCD) model was introduced by
+Bauwens and Veredas (2004) under the assumption that a dynamic stochastic
+latent variable governs the evolution of inter-event durations. The general
+model specification of SCD(p, q), as in Thavaneswaran et al. (2015), is given
+by:
+
+xi = eÏiÎµi,
+
+Ïi = Ï +
+
+pâ
+
+j=1
+
+Î±jxiâj +
+
+qâ
+
+j=1
+
+Î²jÏiâj + zi, (4.23)
+
+where zi|Fiâ1 are i.i.d. N(0, Ï2
+z) variables, Îµi|Fiâ1 follows a distribution with
+
+positive support, and the ziâs and Îµj |Fiâ1 are independently distributed for
+all i, j. This model is a generalized version of the model proposed in Bauwens
+and Veredas (2004). One of the most important features of the latent variable
+is that it helps to capture the random flow of information, which in the
+case of financial markets is very difficult to observe directly but drives the
+duration process. This model is a counterpart to the stochastic volatility
+model introduced by Taylor (1982).
+
+The major difference between an ACD process and an SCD process is
+that SCD processes are doubly stochastic processes. The conditional ex-
+pected duration in the case of SCD models is a random variable, while for
+ACD models, it is a fixed function of unknown parameters. Parameter esti-
+mation in SCD models is a difficult task since it requires integrating out the
+latent variable. Bauwens and Veredas (2004) estimates the model param-
+eters based on the quasi-maximum likelihood technique using the Kalman
+
+
+
+22 C. Dutta et al.
+
+filter. In empirical studies, SCD models have been applied to various inter-
+event durations (e.g., trade durations, price durations and volume durations)
+of BOEING, COCA COLA, DISNEY, and EXXON stocks (Bauwens and
+Veredas (2004)). The authors compare the SCD model with the Log ACD
+model and find that the SCD model provides a superior fit when the Weibull
+distribution is used for innovations.
+
+Extreme Value Modeling of Durations Modeling extreme events is
+popular in finance for quantifying risk, stock market shocks, and large fluc-
+tuations in financial data. Embrechts et al. (2013) is an excellent reference
+outlining the theory on the subject of extreme events modeling. Rocco (2014)
+provides an extensive survey of the distributional assumptions for calculat-
+ing different risk measures (e.g., Value-at-Risk, Expected Shortfall) and for
+the study of dependence and contagion across markets under stress.
+
+Block trades are one example of how extreme value theory is used in mod-
+eling durations. Block trades occur when there is a high-volume transaction
+in a security that is privately negotiated and traded outside of the open
+market. Typically block trades consist of at least 10,000 shares of a stock
+or $100,000 of bonds. Zheng et al. (2016) shows that duration sequences of
+such block trades may exhibit both heavy tails and extreme values; thus it
+proposes modeling such durations using the FreÌchet ACD model, i.e., the
+usual ACD model with FreÌchet innovations. The FreÌchet distribution is a
+special case of a generalized extreme value distribution, and has a heav-
+ier right tail than other non-negative distributions such as the gamma and
+Weibull distributions. Zheng et al. (2016) analyzes durations of block trades
+from the Hong Kong Stock Exchange (SEHK) and the London Stock Ex-
+change (LSE), demonstrating a better fit using the FreÌchet ACD model as
+compared to the Weibull ACD model.
+
+In R, the ACDm package, created by Belfrage (2016), can be used to fit
+autoregressive conditional duration models and several extensions thereof,
+including the Log ACD model, additive and multiplicative ACD model
+(Hautsch, 2011), augmented box-Cox model (Hautsch, 2011) and spline news
+impact ACD model (Hautsch, 2011). The function diurnalAdj is used to
+create diurnally adjusted duration series, while the function acdFit allows
+different specifications for the error distribution and fits the models primarily
+using maximum likelihood estimation.
+
+5 Practical Challenges in HFT Applications
+
+HFT data pose a set of new challenges for researchers and practition-
+ers as mentioned in Section 1. In this section, we discuss a few interesting
+
+
+
+Review of statistical approaches... 23
+
+applications of HFT data and mention a few open challenges that are yet
+to be resolved. Comprehensive statistical modeling and inference of the du-
+ration process can give insight into the marketâs buyer and seller trading
+activity patterns, which is a topic of considerable interest in market mi-
+crostructure theory. One of the important questions in this context is how
+to best construct and model inter-event durations. Long range dependence
+(persistent memory) in durations is also an important stylized feature of
+HFT data, and adequate modeling of persistence is still an open problem.
+Furthermore, the asynchronicity problem poses several challenges in multi-
+variate modeling of HFT data, including covariance estimation of multiple
+assets, which has several applications in trading, risk management and port-
+folio rebalancing. The following sections discuss these issues.
+
+5.1. Constructing and Modeling Durations High-frequency trading has
+yielded massive amounts of dense irregular data, leading to the question of
+how best to subsample or aggregate the data to facilitate effective data anal-
+ysis. Indeed most statistical approaches involve some form of subsampling or
+aggregation. This not only reduces the amount of data to be processed, but
+also limits the effect of noise and allows researchers to create economically
+meaningful variables (e.g., realized volatility). Many practitioners subsam-
+ple the data according to clock time; for example, Bloomberg allows users to
+retrieve intra-day data over fixed time intervals ranging from 1 min to 24 h.
+For each interval, referred to as a bar, there are several associated quanti-
+ties, including the volume traded over the bar, and the opening and closing
+prices. These values can then be used to compute variables of interest; for
+instance, closing prices over successive bars can be used to calculate squared
+returns, which are then averaged to produce an estimate of volatility.
+
+Time bars, however, can have undesirable empirical and theoretical prop-
+erties. For instance, when data is sampled uniformly in time, the resulting
+price changes often display volatility clustering (i.e., large price changes tend
+to be followed by other large price changes), which makes modeling more
+challenging. Furthermore, HF traders may have little need for data analysis
+that is performed with time bars: forecasts over fixed time horizons (e.g.,
+1 h) are less useful than forecasts over fixed volumes (e.g., 100,000 shares),
+since execution algorithms typically consider volume without regard to how
+quickly or slowly that volume can be traded (Easley et al., 2012a).1
+
+1Indeed this is one of the criticisms of HFT. The May 6, 2010 âFlash Crash,â in which the
+Dow Jones Industrial Average dropped by almost 1,000 points in 30 min, was the result
+of an execution algorithm that considered only volume, not time. As a result, $4.1 billion
+of E-Mini S&P 500 futures contracts were sold on the Chicago Mercantile Exchange in a
+mere 20 min interval (Goldstein et al. (2014)).
+
+
+
+24 C. Dutta et al.
+
+Event aggregation, i.e., aggregation of a process based on some specific
+trading event, is one of the most popular approaches to forming durations.
+There are many ways of defining events and hence inter-event durations, e.g.,
+price durations, volume durations, trade durations etc. (Hautsch, 2011). In
+constructing trade durations for stocks with low liquidity, we may define
+events as successive trades. For more liquid stocks, however, we need to use
+alternative event definitions to reduce the impact of market microstructure
+effects. In what follows, we discuss two such approaches for constructing
+durations: the price threshold approach and the dollar-volume approach.
+The two methods differ in how events are defined. The price threshold
+approach considers the price at which trades are executed, while the dollar-
+volume approach incorporates information both on price and volume traded.
+
+Defining Events Based on Price Threshold Under this method, an
+event is said to have occurred when the change in price between successive
+trades exceeds a certain threshold, say Î´p. Consider a particular trading day.
+Let P0 be the opening price of the stock on that day and let Pi denote the
+price of the stock at time ti. Let the total number of trades that day be
+denoted by T . Then we define the set of events as
+
+E = {i : |Pi â Piâ1| > Î´p, i = 1, . . . T}. (5.1)
+
+Typically modelers choose the threshold, Î´p, in such a way that it captures
+realistic price movements. For instance, Bauwens and Giot (2000) use a
+value of $0.125 and Engle and Russell (1998) set Î´p to be one-half the largest
+observed price spread (see Fig. 2, left).
+
+Defining Events Using Dollar-Volume Bars The dollar-volume method
+defines an event as occurring when the change in cumulative dollar-volume
+exceeds a given threshold, Î´v. Let Pj and Vj denote the price and volume of
+the stock at trade j. Their product, PjVj , is then the dollar-volume of trade
+j. If event (iâ 1) occurs with the execution of trade riâ1, then event i takes
+place whenever trade ri occurs, where
+
+ri := argmin
+râ
+
+â§
+â¨
+
+â©
+
+rââ
+
+j=riâ1+1
+
+PjVj
+
+â£â£â£â£â£
+
+rââ
+
+j=riâ1+1
+
+PjVj â¥ Î´v
+
+â«
+â¬
+
+â­ . (5.2)
+
+In other words, ri is the first trade at which the total dollar-volume (summed
+over all trades that took place since event i â 1) exceeds the threshold, Î´v
+
+
+
+Review of statistical approaches... 25
+
+Figure 2: Constructing durations for Bank of America (BAC) based on
+trades that took place around the market opening on January 2, 2018. Left:
+Under the price threshold approach, an event occurs when the price change
+exceeds some threshold, Î´p. Trades are marked with circles and the first
+three inter-event durations (D1 -D3) are shown. A plot of BACâs full price
+trajectory is inlaid. Right: Under the dollar volume approach, an event
+occurs when the cumulative dollar volume exceeds some threshold, Î´v. As
+on the left, the first three inter-event durations are marked
+
+(see Fig. 2, right). The ith dollar-volume bar consists of all trades between
+events (i â 1) and i. Notice that Î´v varies from stock to stock, with larger
+firms tending to have greater daily dollar-volume and thus higher thresholds.
+Moreover, a stock will have fewer events on days when it is relatively inactive
+and more events on days when it is highly traded. The selection of the
+threshold Î´v to be 1
+
+100 would mean that on average each stock will have 100
+dollar-volume bars each day.
+
+The dollar-volume approach for constructing durations has several ap-
+pealing properties. First, Easley et al. (2012a, b) show that this technique
+yields series of price changes that exhibit less heteroscedasticity and less
+serial correlation, and whose distribution is closer to normal, than what
+results from sampling in clock time. With approximate normality and in-
+dependence, practitioners can use standard statistical methods, which may
+be faster to implement and thus provide a time advantage over competitors
+(Easley et al., 2012a). Second, Easley et al. (2021) argue that sampling
+by volume acts as a proxy for sampling by information content. A tradeâs
+dollar-volume is correlated with the amount of news entering the market;
+thus, by defining events based on a constant amount of cumulative dollar-
+volume, we ensure that each bar represents the same amount of underlying
+information. Dollar-volume sampling has been used to address a variety of
+
+
+
+26 C. Dutta et al.
+
+market microstructure questions, e.g., to improve on PIN (Probability of
+Informed Trading) (see Section 6).
+
+Empirical Analysis of Durations We demonstrate two approaches for
+constructing durations (price threshold and dollar-volume threshold) on real
+data. We use HF transaction-by-transaction stock price data for two assets,
+Bank of America (BAC) and 3M (MMM). This data was obtained from
+the Trade and Quotes (TAQ) database at Wharton Research Data Services
+(WRDS) (N.Y.S.E. Trade and Quote Database, 2019). We consider data
+from all trading days in June 2018 (N = 21). For each of these days, raw
+durations were obtained from the transactions data as Di = ti â tiâ1, where
+we have assumed the occurrence of an event occurs in two different ways,
+as described below. BAC is a highly liquid stock with trading volumes
+(100,000 to 200,000 transactions per day on average) and with a relatively
+low price spread of about $0.5 per day on average. On the other hand,
+MMM is a relatively lesser liquid stock with trading volumes (15,000 to
+30,000 transactions per day on average) and with a price spread of about $3
+per day on average.
+
+â¢ Price threshold: as in the method described earlier, we compute the
+threshold using data from January 2018 to May 2018. For each month,
+we calculate the average turnover ratio as the average daily volume,
+divided by total shares outstanding. Then we compute the average of
+those values to obtain Î´p (see Eq. 5.1). We find that Î´p is 0.0054 for
+BAC and 0.0040 for MMM. As expected, the lengths of the duration
+time series depend on the liquidity of the stock.
+
+â¢ Dollar-volume threshold: using the data from January 2018 to May
+2018, we calculate the mean daily dollar-volume. Then, we set the
+value of Î´v (see Eq. 5.2) to be 1
+
+700th of the stockâs mean daily dollar-
+volume. Note that we do not use a fraction of 1
+
+50th, as originally
+suggested in Easley et al. (2012a). This is because we experience con-
+vergence issues when we try to fit multiplicative error models to a time
+series with less than 500 data points.
+
+Using price and dollar-volume thresholds, we obtain for each stock two
+time series of different lengths for each trading day. For example, for BAC
+on June 6, 2018, we obtain a time series of length 13,181 using the price
+threshold approach and a time series of length 696 using the dollar-volume
+threshold approach. We fit different ACD(p, q) models to the adjusted du-
+rations, select the best model based on the Bayesian Information Criterion
+
+
+
+Review of statistical approaches... 27
+
+(BIC), and use the best fitted model to calculate in-sample errors. More
+specifically, we have fitted 16 different ACD(p, q) models using Weibull in-
+novations, where p, q can take values in {0, 1, 2, 3, 4}. We fit these models
+for each trading day in June 2018 and for both stocks.
+
+Table 1 shows the in-sample errors for BAC and MMM, using differ-
+ent threshold methods. The in-sample error is calculated as the relative
+mean absolute difference between the actual adjusted durations and the fit-
+ted adjusted durations. In the case of MMM, in-sample performance using
+the price threshold method is superior, while in the case of BAC, we ob-
+serve that the dollar-volume and price threshold methods exhibit comparable
+performance.
+
+5.2. Persistence in Durations Long memory behavior in time series has
+been well documented in Beran (1994), Palma (2007), & Robinson (2003).
+Although long memory patterns have been explored extensively in return
+and volatility series (Baillie, 1996), only a few approaches have focused on
+such effects in HFT data. Long range dependence is a key stylized feature in
+time series of durations as noted in Section 3. Ever since the seminal paper
+of Engle and Russell (1998), who proposed ACD models for modeling dura-
+tions and also provided empirical evidence for the persistence in durations,
+a number of studies have documented the slowly decaying autocorrelation
+function of transaction, price, and volume durations. More recently, studies
+of durations in Sun et al. (2008), Deo et al. (2010), Chen et al. (2013), Cartea
+and Jaimungal (2013), and ZÌikesÌ et al. (2017) have produced compelling ev-
+idence of long memory in equities and currencies.
+
+Jasiak (1999) proposed a class of fractionally integrated ACD (FIACD)
+models, (which are analogous to fractionally integrated GARCH (FIGARCH)
+models proposed by Baillie et al. (1996)), and studied long memory behav-
+ior in IBM trade durations. Hautsch et al. (2006) generalized the idea of
+long memory in the Log ACD model, referred to as Long memory Log ACD
+(LM-Log ACD) model. The LM-Log ACD(p, d, q) model is specified as
+
+xi = eÏiÎµi,
+
+Ïi = Ï + (1â Î²(L))â1(1â L)âdÎ±(L)Îµi, (5.3)
+
+where Î²(L) =
+âq
+
+i=1 Î²iL
+i, Î±(L) =
+
+âp
+i=1 Î±iL
+
+i denote polynomials of lag
+operator L and Îµi follows an i.i.d. process defined on the positive sup-
+port with E[Îµi] = 1. The parameter d is the long memory parameter with
+d â (â0.5, 0.5). The stationarity conditions for the LM-Log ACD are de-
+rived in Feng and Zhou (2015). The Log ACD2(1, 1) model in Eq. 4.21 is
+obtained by letting d = 0, p = 1 and q = 1 in Eq. 5.3.
+
+
+
+28 C. Dutta et al.
+
+Table 1: In-sample errors for BAC and MMM, using both dollar-volume and
+price threshold durations
+Day of Date BAC MMM
+
+week Dollar- Price Dollar- Price
+Volume Threshold Volume Threshold
+Threshold Threshold
+
+Friday 2018-06-01 0.51% 0.97% 2.10% 0.99%
+Monday 2018-06-04 0.98% 0.94% 1.07% 0.34%
+Tuesday 2018-06-05 0.98% 0.90% 1.47% 1.08%
+Wednesday 2018-06-06 0.06% 1.21% 1.02% 0.51%
+Thursday 2018-06-07 1.05% 1.12% 2.84% 0.80%
+Friday 2018-06-08 1.55% 0.91% 0.38% 0.91%
+Monday 2018-06-11 1.44% 1.03% 1.57% 0.83%
+Tuesday 2018-06-12 1.53% 0.88% 0.27% 0.72%
+Wednesday 2018-06-13 0.05% 1.25% 1.60% 0.26%
+Thursday 2018-06-14 1.24% 1.00% 0.79% 1.07%
+Friday 2018-06-15 1.78% 0.91% 2.60% 0.50%
+Monday 2018-06-18 2.26% 1.00% 0.86% 0.51%
+Tuesday 2018-06-19 0.70% 1.13% 3.13% 0.66%
+Wednesday 2018-06-20 1.12% 1.02% 1.16% 0.71%
+Thursday 2018-06-21 0.18% 1.14% 1.71% 0.60%
+Friday 2018-06-22 0.50% 1.03% 1.73% 0.88%
+Monday 2018-06-25 2.41% 0.91% 0.86% 1.22%
+Tuesday 2018-06-26 0.24% 1.16% 0.38% 0.97%
+Wednesday 2018-06-27 0.91% 0.97% 1.64% 0.43%
+Thursday 2018-06-28 1.21% 0.76% 1.39% 0.90%
+Friday 2018-06-29 0.31% 1.82% 0.53% 1.05%
+
+We present preliminary results from an investigation of persistence in du-
+rations using the same data that we used in Section 5.1, i.e., dollar-volume
+threshold and price threshold based durations for BAC and MMM. We fit
+the LM-Log ACD (1, d, 0) model in Eq. 5.3 to the durations data using our
+R code (available upon request) and obtain the conditional MLEs of the
+unknown model parameters including the persistence parameter d. Table 2
+shows the estimated values of d with their estimated standard errors. These
+results show that the estimated persistence for BAC (higher liquidity) is
+higher than that of MMM (lower liquidity) for any day, both for the dollar-
+volume threshold and price threshold based durations. A day-of-the-week
+
+
+
+Review of statistical approaches... 29
+
+Table 2: Estimated values of d from LM-Log ACD(1, d, 0) model and their
+standard errors in brackets for two types of threshold. dÌDV is the estimate
+of d for Dollar-Volume threshold whereas dÌP is the estimate of d for Price
+threshold
+Day of Date BAC MMM
+
+Week dÌDV dÌP dÌDV dÌP
+Friday 2018-06-01 0.241 (0.038) 0.226 (0.016) 0.117 (0.052) 0.189 (0.027)
+Monday 2018-06-04 0.225 (0.055) 0.210 (0.024) 0.172 (0.037) 0.133 (0.03)
+Tuesday 2018-06-05 0.159 (0.053) 0.262 (0.027) 0.108 (0.054) 0.187 (0.029)
+Wednesday 2018-06-06 0.262 (0.048) 0.172 (0.021) 0.179 (0.041) 0.224 (0.031)
+Thursday 2018-06-07 0.242 (0.038) 0.234 (0.013) 0.102 (0.057) 0.162 (0.041)
+Friday 2018-06-08 0.154 (0.056) 0.215 (0.021) 0.128 (0.044) 0.128 (0.038)
+Monday 2018-06-11 0.218 (0.062) 0.221 (0.024) 0.172 (0.036) 0.116 (0.053)
+Tuesday 2018-06-12 0.145 (0.076) 0.105 (0.037) 0.156 (0.049) 0.085 (0.055)
+Wednesday 2018-06-13 0.201 (0.035) 0.154 (0.017) 0.147 (0.054) 0.053 (0.043)
+Thursday 2018-06-14 0.244 (0.027) 0.204 (0.017) 0.175 (0.039) 0.123 (0.033)
+Friday 2018-06-15 0.236 (0.034) 0.231 (0.019) 0.242 (0.026) 0.119 (0.026)
+Monday 2018-06-18 0.268 (0.038) 0.251 (0.020) 0.137 (0.049) 0.182 (0.026)
+Tuesday 2018-06-19 0.266 (0.053) 0.195 (0.016) 0.158 (0.039) 0.218 (0.026)
+Wednesday 2018-06-20 0.271 (0.049) 0.228 (0.015) 0.164 (0.042) 0.221 (0.019)
+Thursday 2018-06-21 0.138 (0.044) 0.160 (0.024) 0.164 (0.047) 0.184 (0.032)
+Friday 2018-06-22 0.192 (0.037) 0.173 (0.016) 0.135 (0.054) 0.161 (0.03)
+Monday 2018-06-25 0.170 (0.041) 0.220 (0.023) 0.129 (0.04) 0.077 (0.034)
+Tuesday 2018-06-26 0.239 (0.041) 0.244 (0.014) 0.201 (0.035) 0.099 (0.036)
+Wednesday 2018-06-27 0.179 (0.038) 0.190 (0.018) 0.098 (0.057) 0.082 (0.043)
+Thursday 2018-06-28 0.134 (0.074) 0.199 (0.019) 0.14 (0.063) 0.174 (0.023)
+Friday 2018-06-29 0.216 (0.027) 0.204 (0.019) 0.241 (0.028) 0.131 (0.031)
+
+analysis similar to Zhang et al. (2019) shows that that on average, the per-
+sistence appears to be higher (lower) for BAC at the start (end) of the week,
+while the reverse is true for MMM. More detailed analysis following these
+preliminary results for durations will be a useful avenue of research.
+
+Other avenues of research can also be pursued along the following di-
+rections. Deo et al. (2010) proposed a long memory version of stochastic
+conditional duration (SCD) model (Bauwens and Veredas, 2004) known as
+Long-memory Stochastic Duration model (LMSD) by letting the latent fac-
+tor to follow a long-memory process. Empirical analyses show that LMSD
+is a better fit than the autoregressive conditional duration (ACD) model.
+Thavaneswaran et al. (2015) considered modeling long range dependence
+in durations using long memory stochastic conditional duration (LMSCD)
+model, which is defined along the lines of FIACD model. There is an emerg-
+ing body of literature which considers modeling persistence in pure jump
+processes (Cao et al., 2017; Hsieh et al., 2019).
+
+5.3. Multivariate Relationship with Asynchronous Data Asynchronic-
+ity is one of the stylized features of HFT data as referred to in Section 3.
+
+
+
+30 C. Dutta et al.
+
+Tick-by-tick transactions of assets are not homogeneously spaced like low-
+frequency (e.g., daily) time series. Instead, they usually occur randomly and
+asynchronously and are accompanied by microstructure noise. As a conse-
+quence, it is not straightforward to apply the existing multivariate time
+series models to intraday data and hence the covariance estimation is chal-
+lenging. In econometrics literature, the price dynamics of high frequency
+assets are known to be characterized by âlead-lagâ effects, which means that
+some assets (laggers) tend to follow the movements of other assets (leaders).
+This is an important phenomenon as noted in the empirical finance liter-
+ature (Chan, 1992; De Jong and Nijman, 1997; Dobrev and Schaumburg,
+2017) and in the statistics literature (Hoffmann et al., 2013; Hayashi and
+Koike, 2017) among many others. The estimation of contemporaneous and
+lagged correlations among assets traded at high-frequency is more complex
+than with lower frequency (e.g., daily) data, due to asynchronous trading,
+which prevents the usage of traditional methods. The asynchronous nature
+of trading results in two main types of spurious lead-lag correlations when
+standard estimators are used (Buccheri et al., 2021b). First, due to fre-
+quent trading activity of some assets, they seem to lead other assets. This
+effect is due to different levels of trading activity and is not necessarily re-
+lated to cross-asset pricing. Second, even when the assets are traded at
+similar levels, there exist spurious nonzero lead-lag correlations that are un-
+related to true lead-lag dependencies. A combination of autocorrelation and
+contemporaneous correlations might also be a source of spurious lead-lag
+correlations.
+
+Estimating Contemporaneous Relationships Among Multiple Stocks
+from HFT Data In high-frequency finance, the problem of estimating
+and forecasting intraday volatilities and correlations is of prime importance.
+For example, a high-frequency trader may be interested in rebalancing the
+portfolio on an intraday basis and therefore requires accurate forecasts of
+short-term covariance. Likewise, presence of highly correlated stocks as con-
+stituents in a portfolio might increase the probability of a large loss and
+hence precise estimation of the covariance matrix of the stocks is necessary.
+Additionally, the study of intraday dependencies of financial assets offers in-
+sight into the marketâs reaction to external information and is theoretically
+relevant to the study of market microstructure.
+
+Several conditional covariance models have been proposed in economet-
+ric literature for regularly spaced time series, and they are widely used
+in risk and portfolio management at daily or lower frequencies. Popular
+multivariate dynamic time-series models include the class of multivariate
+
+
+
+Review of statistical approaches... 31
+
+extensions of the univariate GARCH model of Engle (1982) and Boller-
+slev (1986), the Dynamic Conditional Correlation (DCC) model of Engle
+(2002a) and multivariate stochastic volatility model (MSV) of Harvey et al.
+(1994). A limitation of these models is that they are misspecified in cases
+where data are recorded with observational noise and require synchroniza-
+tion when data are irregularly spaced. Therefore, it is not straightforward
+to apply these models to HFT data, since the HF prices are contaminated
+by microstructure noise and assets are traded asynchronously. These ef-
+fects may lead to significant data loss and underestimation of correlations
+(Buccheri et al., 2021a).
+
+Often analysts have trouble dealing with the multiple HFT data at once
+when conducting multivariate analysis since assets do not trade on a fixed
+grid, trades and quotes donât arrive synchronously. Hence synchronization
+of HF data from multiple assets is necessary. Data synchronization includes
+explicit schemes, such as previous tick, refresh time (Barndorff-Nielsen et al.,
+2011), generalization sampling time (AÄ±Ìt-sahalia et al., 2010), implicit ap-
+proaches used in Hayashi-Yoshida estimator Hayashi et al. (2005), and pre-
+averaging estimators (Christensen et al., 2010; Jacod et al., 2009). Here
+we give a brief review of the refresh time sampling procedure. More de-
+tailed discussion about the other synchronization procedures can be found
+in (Wang and Zou, 2014). We also illustrate refresh time sampling pro-
+cedure using three stocks Intel, General Electric (GE) and Cisco (Fig. 3).
+Assume there are p stocks, and trading time of the ith stock is given by
+tiï¿½, ï¿½ = 1, . . . , ni, i = 1, . . . , p. For a given time t, define N i
+
+t = the number
+of tie â¤ t, ï¿½ = 1, Â· Â· Â· , ni, which counts the number of distinct data points
+tiï¿½ available for the ith asset up to time t. The first refresh time is defined
+as Ï1 = max {t11, . . . , tp1}, which is the first time taken to trade all assets
+
+Figure 3: Refresh Time Sampling for Intel, GE and Cisco.The dotted vertical
+blue lines represent the refresh time points
+
+
+
+32 C. Dutta et al.
+
+and refresh their posted prices. The subsequent refresh times are defined as
+follows. Given the jth refresh time Ïj , define the (j + 1)th refresh time
+
+Ïj+1 = max
+
+{
+t1,N1
+
+Ïj
++1, . . . , t
+
+p
+p,Np
+
+Ïj
++1
+
+}
+(5.4)
+
+Suppose there are m refresh time points Ï1, Â· Â· Â· , Ïm. Intuitively, Ï2 is the se-
+cond time when all the assets are traded and their prices are refreshed. The
+following figure illustrates the refresh time sampling idea and in this example
+Ï1 = 09 : 45 : 00.08, Ï2 = 09 : 45 : 00.69, Ï1 = 09 : 45 : 02.20 and Ï4 = 09 :
+45 : 04.58 are the first four refresh times. The refresh time sampling proce-
+dure reduces the Epps effect (Boudt et al., 2021b). A limitation of refresh time
+sampling procedure is that the least liquid stock determines the sampling
+grid and one tend to lose many observations and even with same liquidity,
+because of random arrivals, large data losses may occur in high dimensions.
+
+Although intraday covariance estimation from HFT data is a difficult task
+due to asynchronicity, there have been several studies which has been de-
+voted to the estimation of the covariance from HFT data (AÄ±Ìt-sahalia et al.,
+2010; Zhang, 2011; Mancino and Sanfelici, 2011; Bibinger, 2011; Corsi and
+Audrino, 2012; Peluso et al., 2014; Buccheri et al., 2021a). More recently,
+there has been an interest in exploring non-linear dependence structures in
+high frequency asset returns through copula (Chakrabarti and Sen, 2019).
+
+Estimating Lead-Lag Relationships Among Multiple Stocks from
+HFT Data Understanding lead-lag relationships between the time series
+of different stocksâ returns or volatilities can provide insight into the underly-
+ing network structure of an interlinked financial market. For regularly spaced
+daily or monthly time series, such strategies have received significant inter-
+est in the empirical finance and econometrics literature (Billio et al., 2012;
+Diebold and YÄ±lmaz, 2014). There is robust empirical evidence that networks
+built on lead-lag relationships tend to be denser during market downturns
+and systemic events such as a financial crisis, and can be useful in monitor-
+ing systemic risk build-up in the financial markets. While building similar
+networks based on HFT data can potentially provide deeper insight into im-
+portant linkages in financial markets, the asynchronous nature of HFT data
+poses considerable challenge in developing statistical techniques to measure
+such lead-lag relationships. To the best of our knowledge, common meth-
+ods such as Granger causality (Granger, 1969) have not been generalized
+to build financial networks from HFT data. Developing rigorous statistical
+methods for measuring lead-lag relationships from asynchronous HFT data
+of multiple stocks is a promising research direction.
+
+
+
+Review of statistical approaches... 33
+
+6 Econometric Perspectives of HFT
+
+Academics and practitioners have used HFT data in a range of appli-
+cations. Some of these applications involve testing competing hypotheses
+about market microstructure or assessing the likelihood of informed trading
+in a financial market. Other applications are more econometric in nature,
+where HFT data is used to provide intra-day versions of commonly used risk
+assessment measures such as Value-at-Risk (VaR) and Expected Shortfall
+(ES).
+
+Testing Theory About Market Microstructure Tay et al. (2004) in-
+troduces autoregressive conditional marked durations (ACMD) models to
+analyze marked duration processes, using events such as tick movements and
+trade directions (buy/sell) as marks. This model helps explain how trade
+direction, size, and frequency are transmitted into prices through durations.
+
+Let there be N + 1 transactions (events) and let ti denote the time of
+occurrence of the ith event. Assume that there are m discrete states of
+the marks associated with {ti}, and let the state of the mark when the
+ith event occurs be denoted by Wi (and its realization wi), i = 1, . . . N .
+These marks are useful in classifying each event occurrence, so that there
+are m underlying stochastic processes, each governing one of these m states
+of the mark. The flexibility of ACMD models lies in the fact that other
+exogenous market variables can be augmented into the model, depending on
+the market hypotheses we want to examine. Denote the vector of exogenous
+variables, observed after the ith event, occurs by vi, where i = 1, . . . N . The
+information set after the ith event is Î¦i = {tr, wr,vr; r = 1, 2, . . . , i}. Let
+the duration between the (iâ1)th and ith events be Xi (with realizations xi,
+i = 1, . . . , N). The adjusted durations are obtained after the data cleansing
+and diurnal effect adjustments described in Section 3.
+
+Let Tji be the random time duration between the (iâ1)th and ith events
+when the state j of the mark is observed, and assume thatâconditional on
+the past information set, Î¦iâ1âthe Tjiâs are independent over j, where
+j = 1, . . .m. The joint distribution of the mark, Wi, and duration, Xi, can
+be expressed as
+
+pi(k, xi|Î¦iâ1) = P (Wi = k â©Xi = xi|Î¦iâ1) =
+â
+
+jâÎ©
+STji|Î¦iâ1
+
+(xi).
+fTki|Î¦iâ1
+
+(xi)
+
+STki|Î¦iâ1
+(xi)
+
+(6.1)
+for all k â Î© = {k1, . . . , km}, where fTki|Î¦iâ1
+
+(xi) and STki|Î¦iâ1
+(xi) are the
+
+density function and the survival function of Tji|Î¦iâ1, respectively. With
+
+
+
+34 C. Dutta et al.
+
+appropriate distributional assumptions on Tji|Î¦iâ1, one can derive the ex-
+plicit form of the joint distribution and marginals of Xi and Wi, conditional
+on the past information set, Î¦iâ1. The log-likelihood function for the ACMD
+model is
+
+l(Î¸) =
+
+Nâ
+
+i=1
+
+ln pi(k, xi|Î¦iâ1) =
+
+Nâ
+
+i=1
+
+â¡
+
+â£
+â
+
+jâÎ©
+lnSTji|Î¦iâ1
+
+(xi) + ln
+fTwi,i
+
+|Î¦iâ1
+(xi)
+
+STwi,i
+|Î¦iâ1
+
+(xi)
+
+â¤
+
+â¦ ,
+
+where Î¸ denotes the set of parameters of the underlying distribution. Let
+E(Tji|Î¦iâ1) = Ïji be the expected marked duration, which is governed by
+m ACD models, as discussed in Section 4.4. Then Ïji is updated according
+to the following dynamics:
+
+lnÏji =
+â
+
+kâÎ©
+vjkDk(wiâ1) +Î±j lnÏj,iâ1 + Î²j lnxiâ1 + f(xiâ1,viâ1;Ïj) (6.2)
+
+for all j â Î©. The function f is linear in the natural logarithm of the
+exogenous variables in v, contains possible interactions with xiâ1, and each
+term is weighted by elements in the vector Ïj The variable Dk(z) is an
+indicator variable of the state k for the mark, which assumes value 1 if z = k
+and 0 otherwise, k â Î©. The parameters of this model can be estimated
+using the maximum likelihood approach.
+
+Tay et al. (2004) uses ACMDmodels to study competing hypotheses from
+Easley et al. (2002) and Diamond and Verrecchia (1987) about whether low
+transaction rates indicate bad news or no news. The empirical results are
+in favor of Diamond and Verrecchia (1987). This model has been used for
+estimating the probability of informed trading (PIN), as described in the
+next subsection, using high-frequency transaction data. Kwok et al. (2009)
+demonstrates an application of ACMD models using stocks traded on the
+Hong Kong Stock Exchange (SEHK).
+
+Estimating the Probability of Informed Trading (PIN) PIN is de-
+fined as the probability that a counterparty in the trading process has private
+information on the value of the asset exchanged. It serves as a proxy for the
+proportion of informed traders in the market. The parameters needed to
+compute PIN are obtained from the estimation of a theoretical model of the
+trading process. This is a key concept in market microstructure theory and
+is widely used as an indicator of asymmetric risk information related to asset
+trading. Easley et al. (1996, 2002) build a structural model for the trading
+process which assumes that the market is composed of a heterogeneous pop-
+ulation of traders, with informed traders, market makers, and uninformed
+
+
+
+Review of statistical approaches... 35
+
+traders. For a given stock on the ith trading day, let Bi denote the buy or-
+ders and Si denote the sell orders. An information event for a given stock is
+assumed to follow a Bernoulli distribution with success probability Î±. This
+event reveals either a signal for a low stock value (with probability Î´) or a
+signal for a high stock value (with probability 1 - Î´). The informed traders
+enter the market when an information-revealing event happens and they are
+assumed to place buy (sell) orders at a rate of Î¼. Uninformed traders are
+assumed to place buy orders at a rate of Îµb and sell orders at a rate of
+Îµs, independent of the information event and the signal. The orders from
+the informed and uninformed traders are both assumed to follow Poisson
+processes.
+
+For the ith trading day, the joint probability distribution of (Bi, Si),
+given the parameter vector Î = (Î±, Î´, Î¼, Îµb, Îµs), is
+
+f(Bi, Si|Î) = Î±Î´ exp(âÎµb)
+ÎµBt
+b
+
+Bt!
+exp(â(Îµs + Î¼))
+
+(Îµs + Î¼)St
+
+St!
+
++Î±(1â Î´) exp(â(Îµb + Î¼))
+(Îµb + Î¼)Bt
+
+Bt!
+exp(âÎµs)
+
+ÎµSt
+s
+
+St!
+
++(1â Î´) exp(âÎµb)
+ÎµBt
+b
+
+Bt!
+exp(âÎµs)
+
+ÎµSt
+s
+
+St!
+. (6.3)
+
+Hence, by assuming the trading activity to be independent across T days,
+the log-likelihood is given by
+
+L(Î|T ) =
+Tâ
+
+i=1
+
+log(f(Bi, Si|Î)).
+
+Using the maximum likelihood approach, along with the boundary conditions
+Î±, Î´ â [0, 1] and Î¼, Îµb, Îµs â [0,â), we obtain the estimates ÎÌ = (Î±Ì, Î´Ì, Î¼Ì, ÎµÌb, ÎµÌs).
+The PIN estimate is then given by
+
+PÌIN =
+Î±ÌÎ¼Ì
+
+Î±ÌÎ¼Ì+ ÎµÌb + ÎµÌs
+. (6.4)
+
+Thus PIN is the ratio of the expected number of trades per day initiated by
+informed traders to the expected total number of trades per day.
+
+Dollar-volume bars can be used to calculate an extension of PIN known as
+the volume-synchronized probability of informed trading (VPIN), introduced
+in Easley et al. (2012b). By comparing the amount of buyer- and seller-
+initiated trades,2 VPIN measures the extent to which there is information
+
+2A number of approaches can be used to classify trades as buyer- or seller-initiated, in-
+cluding the Lee-Ready algorithm, the tick rule, and bulk volume classification (see Easley
+et al. 2016 and references therein).
+
+
+
+36 C. Dutta et al.
+
+asymmetry in the market. (For example, if a group of traders knows that
+a stockâs price is about to rise, we may observe a preponderance of buyer-
+initiated trades.) The VPIN at bar i is given by
+
+VPINi =
+1
+
+W
+
+iâ
+
+k=iâW+1
+
+|VÌ S
+k â VÌ B
+
+k |
+Vk
+
+, (6.5)
+
+where Vk is the total volume traded over bar k, VÌ B
+k is the estimated total
+
+buyer-initiated volume over bar k, VÌ S
+k = Vk â VÌ B
+
+k is the estimated total
+seller-initiated volume over bar k, and W is the length of a lookback win-
+dow. Notice that VPIN can be calculated directly from trade data, whereas
+computing PIN requires us to first estimate unobservable parameters of a
+theoretical microstructure model: Î±, Î¼, Îµb, and Îµs in Eq. 6.3.
+
+Estimating Intra-day Value-at-Risk (IVaR) Value at Risk (VaR) is a
+popular risk management tool used by financial institutions to quantify the
+level of financial risk within a firm, portfolio, or position, over a specific time
+frame. It measures the worst expected loss of a risky asset over a certain
+period of time and at a given confidence level. Formally, VaR can be defined
+as the conditional quantile of the asset return distribution for a given horizon
+and a given shortfall probability, Î±, whose value is typically between 1% and
+5%.
+
+Let rt denote the return of the asset over the time period tâ 1 to t. The
+ex-ante VaR forecast with a target probability of Î± solves the following:
+
+PM
+tâ1(rt < âVaRt(Î±)) = Î±, (6.6)
+
+where PM
+tâ1 is the probability derived from model M using the information
+
+up to time t â 1. The negative sign in the above equation is due to the
+convention of reporting VaR as a positive number. Unlike the daily VaR, the
+use of high-frequency data in computing intra-day VAR (IVaR) poses many
+challenges, including irregular spacing and intra-day periodicity. Details of
+the stylized facts of high-frequency data has been highlighted in Section 3
+of this paper.
+
+Giot (2005) considers the estimation of IVaR using equally spaced intra-
+day returns, employing Normal GARCH, t-GARCH, and RiskMetrics mod-
+els for comparison. Using irregularly spaced tick-by-tick data, Dionne et al.
+(2009) proposes a Monte Carlo simulation procedure to estimate IVaR. Coro-
+neo and Veredas (2012) proposes quantile regression for regularly spaced
+high-frequency data. The approaches in Giot (2005) and Dionne et al. (2009)
+
+
+
+Review of statistical approaches... 37
+
+have some important shortcomings. Giotâs method of calculating IVaR is
+based on regularly spaced time series of returns and hence does not account
+for the effect of durations. On the other hand, Dionneâs method is based on
+irregularly spaced time series of returns and takes durations into account, but
+the returns and durations are modeled separately. This imposes restrictions
+on the behavioral assumption of traders. To overcome these limitations,
+Liu and Tse (2015) proposes a simulation-based approach to estimate IVaR,
+which assumes price movement and durations follow a two-state asymmetric
+autoregressive conditional duration (AACD) model. In this framework, the
+price movements and durations are modeled jointly. The AACD model has
+been used to model stock price dynamics in Tay et al. (2011).
+
+Let {ti}Ni=0 be a sequence of times in which ti is the time of occurrence of
+the ith event, which occurs whenever the cumulative change in the logarith-
+mic transaction price exceeds a threshold Î´, similar to the price threshold
+discussed in Section 5.1. Let yi denote the direction of the price movement
+of the ith event, such that yi â {â1, 1}, representing downward and up-
+ward price movement, respectively. Let xj,i, j = â1, 1, be the two latent
+variables corresponding to the two possible states of yi = â1 or yi = 1, re-
+spectively. With two possible states at the ith event, there can only be one
+realized state, which is the shortest of the two latent durations. Let xi be
+the observed duration, where xi = min(xâ1,i, x1,i). Let Ïj,i = E(xj,i|Î¦iâ1),
+j = â1, 1, be the conditional expected duration of the latent variable xj,i,
+with Î¦iâ1 being the information set up to time tiâ1. The basic two state
+AACD model specification is
+
+xj,i = Ïj,iÎµj,i,
+
+log(Ïj,i) =
+â
+
+k=â1,1
+
+(vj,k + Î±j,k log(xiâ1))Dk(yiâ1) + Î²j log(Ïj,iâ1),
+
+(6.7)
+
+where j = â1, 1; i = 1, . . . , N ; and Dk(z) = 1 if z = k and 0 otherwise.
+Assume that the innovations corresponding to each state (Îµâ1,i and Îµ1,i for
+i = 1, . . . , N) are independently distributed with a Weibull distribution hav-
+ing unit mean. The parameters of the AACD model can be estimated using
+maximum likelihood estimation.
+
+Suppose we have the estimated model and we want to compute, at time
+T1, the IVaR at time T2 (T2 > T1), using the simulation-based algorithm
+presented in Liu and Tse (2015). We can do so by following these steps:
+
+Step 0: Initialize x0, Ïâ1,0, Ï1,0, and y0 based on the information
+prior to T1. Then begin the simulation.
+
+
+
+38 C. Dutta et al.
+
+Step 1: Set i = 1, t0 = 0 and compute Ïâ1,1, Ï1,1 using Eq. 6.7.
+
+Step 2: Randomly draw Îµâ1,i and Îµ1,i from independent Weibull dis-
+
+tributions with shape parameters ÏÌâ1 and ÏÌ1, respectively. Compute
+xj,i = Ïj,iÎµj,i and Ïj,i+1 for j = â1, 1. Set xi = min{xâ1,i, x1,i} and
+yi = j, corresponding to the shorter xj,i, where j = â1, 1.
+
+Step 3: Collect the time, ti = tiâ1+xi, and set log pi = log piâ1+jÎ´ for
+the observed j value in the previous step. Note that Î´ is the threshold
+mentioned earlier in this subsection.
+
+Step 4: Set i = i+ 1 and iterate the second and the third steps until
+obtaining the first ti that exceeds T2 â T1. At this point we obtain a
+simulated return over the interval (T1, T2).
+
+These simulation steps are repeated to obtain an empirical distribution of
+returns over the interval (T1, T2). IVaR(Î¾) is obtained by computing the
+Î¾-quantile of the empirical return distribution over the interval (T1, T2).
+
+Expected Shortfall Using Intra-day Range Expected Shortfall (ES)
+is a popular market risk measure that conveys information about the possi-
+ble exceedances beyond the VaR. Formally, ES can be defined for any loss
+distribution as
+
+ES(Î±) =
+
+â« Î±
+0 VaR(x)dx
+
+Î±
+, (6.8)
+
+which is the average of VaR(x) over all x that are less than or equal to Î±.
+Both VaR and ES are popular and important market risk measures, but,
+despite being widely used, VaR has some significant shortcomings. Firstly,
+it does not take into account the magnitude of the potential losses beyond
+VaR. Secondly, it lacks the sub-additive property, i.e., the risk measure for
+a portfolio can be less than the sum of the risk measures of the components
+of the portfolio (Gordy and Juneja, 2010). Estimating these risk measures
+forms an integral part of portfolio optimization (Huang et al., 2010).
+
+One of the fundamental problems of ES estimation is that it is not elic-
+itable, meaning there do not exist scoring functions for its estimation and
+evaluation. Fissler and Ziegel (2016) shows that VaR and ES are jointly
+
+
+
+Review of statistical approaches... 39
+
+elicitable and presents a set of consistent joint scoring functions for these
+two risk measures:
+
+(6.9)
+
+where yt is the daily return, Î¸ is the probability level, and qt and et are the
+VaR and ES at the same probability level, Î¸. Moreover, G1, G2,G2, and a
+are real-valued functions, G1 is weakly increasing, G2 is strictly increasing
+and positive, and Gâ²
+
+2 = G2. These are referred to as FZ scores, which allow
+the joint estimation of VaR and ES.
+
+Most earlier methods for forecasting ES did not involve any intra-day
+information. Recently, though, Gerlach and Chen (2015) and Meng and
+Taylor (2020) incorporate such information in the form of intra-day range,
+the difference between the highest and lowest intra-day log prices. One
+desirable characteristic of the intra-day range is that it is a more efficient
+volatility estimator than the daily returns (Parkinson, 1980).
+
+Chen (2012) considers several non-linear threshold conditional autore-
+gressive VaR (CAViaR) models that incorporate intra-day price ranges but
+do not consider ES forecasting. Meng and Taylor (2020) rectifies that by
+proposing a CAViaR-FZ-Range model for ES predictions, as described by
+the following equations:
+
+qt(Î²) = Î²1 + Î²2qtâ1(Î²) + Î²3Rangetâ1,
+
+et(Î²) = Î²4qt(Î²), (6.10)
+
+where Î² is a vector of parameters and qt and et represent the VaR and ES
+at the same probability level. This model is estimated by minimizing FZ
+scores, as in Eq. 6.9.
+
+7 Discussion and Summary
+
+Tick-by-tick, high-frequency data sets have become the new normal in
+modern financial markets dominated by algorithmic trading. While these
+data sets provide high-resolution information about the trading process, their
+analysis poses unique challenges due to stylized features such as irregular
+spacing. In this paper, we discussed examples of trading behaviors that give
+rise to such irregular spacing and reviewed existing approaches to model
+irregularly spaced HFT data. We focused primarily on models for inter-
+event durations. In addition to reviewing their mathematical expositions
+
+
+
+40 C. Dutta et al.
+
+and software implementations, we discussed two methods of defining events,
+one based only on asset price and the other based on both asset price and
+order volume. We illustrated duration models based on these two types of
+events using real HFT data sets. We also surveyed some applications of HFT
+data sets in economics and finance.
+
+In this work, we mainly focused on irregularly spaced univariate HFT
+time series. There is an emerging body of work on analyzing asynchronous
+multivariate HFT data that we have not discussed here. For instance, non-
+parametric machine learning methods such as biclustering have been ex-
+plored in the literature, complementing traditional model-based approaches
+(Liu et al. 2018, 2021). Another important research direction is synchro-
+nizing HFT data on multiple assets to perform meaningful investigation of
+lead-lag patterns. We expect that the vast body of existing work on univari-
+ate HFT models will provide a natural starting point to build informative
+analytic approaches to tackle asynchronous multivariate HFT data sets.
+
+Acknowledgements. The authors are very grateful to the reviewers and
+editors for their helpful suggestions for improving the paper.
+
+Funding. This paper was based upon work partially supported by the
+National Science Foundation under Grant DMS-1638521 to the Statistical
+and Applied Mathematical Sciences Institute. Any opinions, findings, and
+conclusions or recommendations expressed in this material are those of the
+author(s) and do not necessarily reflect the views of the National Science
+Foundation. In addition, the work of SB was supported in part by an NSF
+award (DMS-1812128).
+
+Compliance with Ethical Standards.
+Conflict of Interest. The authors declare no conflict of interest.
+
