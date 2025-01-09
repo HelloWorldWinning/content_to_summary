@@ -1,0 +1,378 @@
+Timestamp: 2025-01-09T18:16:10.870127
+Title: Probabilistic time series forecasting with deep no
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**1. Introduction to Probabilistic Time Series Forecasting and State Space Models (SSM):**
+    *   Probabilistic time series forecasting aims to predict future probability distributions based on past observations.
+    *   SSMs provide a general framework to analyze time series data, modeling unobserved underlying dynamics.
+    *   Traditional statistical SSMs are limited by the difficulty in selecting appropriate functions for complex real-world data.
+
+**2. The Challenge of Non-Linearity in Real-World Data:**
+    *   Real-world time series data is often irregular, noisy, and governed by unknown, complicated non-linear processes.
+    *   Existing approaches either use pre-defined linear SSMs or struggle to model complex non-linear relationships.
+    *   Investigating time-variant non-linear SSMs remains a challenge in real-world scenarios.
+
+**3. Proposed Solution: Deep Non-Linear State Space Model (DNLSSM):**
+    *   The DNLSSM is a new framework combining deep neural networks and statistical methods for time series forecasting.
+    *   It iteratively estimates non-linear state and observation functions from raw time series data.
+    *   Unlike traditional methods, DNLSSM doesn't require pre-defined function structures.
+
+**4. Key Components of DNLSSM:**
+    *   **Unscented Kalman Filter (UKF):** Used to recursively update distributions and calculate marginal likelihoods for non-linear functions.
+    *   **Non-linear Joseph Form Covariance Update:** Developed to enhance the robustness of UKF to round-off errors, ensuring symmetric and positive definite covariance matrices.
+    *   **Neural Networks (LSTM):** Employed to capture the non-linearity and time variance of dynamic processes in state and observation functions.
+
+**5. DNLSSM Training and Inference:**
+    *   The model is trained by maximizing the marginal log-likelihood.
+    *   During inference, the DNLSSM uses learned SSM to predict future latent variables and observed variables.
+    *   Monte Carlo sampling is used to approximate predicted distribution.
+
+**6. Experimental Results:**
+    *   DNLSSM demonstrates improved accuracy compared to baseline methods on both synthetic and real-world datasets.
+    *   The model is tested on exchange rate, PM2.5, and S&P 500 datasets and shows promising results.
+    *   Ablation studies show the importance of using LSTMs to parameterize both the state and observation functions for capturing time-variant patterns.
+
+**7. Core Point:**
+The Deep Non-linear State Space Model (DNLSSM) effectively captures the complex, non-linear dynamics of time series data by integrating deep neural networks with statistical methods, offering improved probabilistic forecasting accuracy compared to traditional approaches.
+
+**8. Fundamental Point:**
+The ability to learn non-linear state and observation functions directly from data, coupled with a robust approach to handling numerical instability during Kalman filter updates, addresses the challenge of applying state space models in complex real-world scenarios.
+
+**9. Overarching Framework:**
+The core framework is the iterative estimation of state and observation functions using a combination of deep learning (LSTM networks) and statistical methods (UKF), which addresses the complex non-linearities in real world time series.
+
+<Mermaid_Diagram>
+graph LR
+    A[Time Series Data] --> B(DNLSSM Framework);
+    B --> C{Deep Learning (LSTM)};
+    B --> D{Statistical Methods (UKF)};
+    C --> E[Parameterize State Function];
+    C --> F[Parameterize Observation Function];
+    D --> G[Calculate Marginal Likelihood];
+    D --> H[Update Posterior Distribution];
+    H --> I[Non-linear Joseph Form Covariance Update];
+    I --> D
+    E --> D;
+    F --> D;
+    G --> C;
+    B --> J[Probabilistic Forecasting];
+    J --> K[Future Probability Distributions]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#aaf,stroke:#333,stroke-width:2px
+    style D fill:#aaf,stroke:#333,stroke-width:2px
+    style E fill:#ddf,stroke:#333,stroke-width:1px
+    style F fill:#ddf,stroke:#333,stroke-width:1px
+    style G fill:#ddf,stroke:#333,stroke-width:1px
+    style H fill:#ddf,stroke:#333,stroke-width:1px
+    style I fill:#ddf,stroke:#333,stroke-width:1px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+     style K fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Probabilistic time series forecasting with deep non-linear state space models
+Heming Du, Shouguo Du, Wen Li
+First published: 01 April 2022 https://doi.org/10.1049/cit2.12085Citations: 3
+SectionsPDFTools Share
+Abstract
+Probabilistic time series forecasting aims at estimating future probabilistic distributions based on given time series observations. It is a widespread challenge in various tasks, such as risk management and decision making. To investigate temporal patterns in time series data and predict subsequent probabilities, the state space model (SSM) provides a general framework. Variants of SSM achieve considerable success in many fields, such as engineering and statistics. However, since underlying processes in real-world scenarios are usually unknown and complicated, actual time series observations are always irregular and noisy. Therefore, it is very difficult to determinate an SSM for classical statistical approaches. In this paper, a general time series forecasting framework, called Deep Non-linear State Space Model (DNLSSM), is proposed to predict the probabilistic distribution based on estimated underlying unknown processes from historical time series data. We fuse deep neural networks and statistical methods to iteratively estimate states and network parameters and thus exploit intricate temporal patterns of time series data. In particular, the unscented Kalman filter (UKF) is adopted to calculate marginal likelihoods and update distributions recursively for non-linear functions. After that, a non-linear Joseph form covariance update is developed to ensure that calculated covariance matrices in UKF updates are symmetric and positive definitive. Therefore, the authors enhance the tolerance of UKF to round-off errors and manage to combine UKF and deep neural networks. In this manner, the DNLSSM effectively models non-linear correlations between observed time series data and underlying dynamic processes. Experiments in both synthetic and real-world datasets demonstrate that the DNLSSM consistently improves the accuracy of probability forecasts compared to the baseline methods.
+
+1 INTRODUCTION
+The goal of probabilistic time series forecasting is to predict unseen distributions of events based on its history. In recent decades, time series forecasting [1] has seemingly caught the attention of researchers in various fields, for example, economy and industry. The state space model (SSM) [2] provides a framework to model and analyse time series data and is widely used to explore unobserved underlying dynamics and issue probabilistic forecasting. It is effective when the data might be contaminated by measurement error and noise. However, due to the nonlinearity and unknown hidden variables of actual time series observations, selecting appropriate SSM functions is difficult, and thus the application of SSM in real data is limited. Therefore, identifying an SSM to model underlying dynamics has an important role in time series forecasting.
+
+Traditional statistical non-linear SSMs describe the dynamic process based on the known relationship between time series observations and unobserved latent states [3]. Although the Deep State Space Model (DSSM) [4] has made a progress in linking a linear SSM and deep neural networks, they utilise pre-defined functions to decompose trend and seasonality of time series data and adopt recurrent neural networks to mimic random noise. In many complex real-world scenarios, both state and observation functions are usually unknown and non-linear [3], and thus it is difficult to manually design the function of SSMs. In other words, investigating time-variant non-linear SSM in real-world cases remains an open challenge. For example, dynamic processes and hidden variables of economy are implicitly demonstrated via many economic indicators, such as gross domestic product (GDP) and unemployment rate [3]. Therefore, estimating and forecasting through a non-linear SSM without pre-defined functions is extremely important [5].
+
+In this paper, we propose a general framework named Deep Non-linear State Space Model (DNLSSM) for time series forecasting by fusing statistical methods and deep learning techniques. Our DNLSSM is designed to estimate time-variant non-linear functions of SSM from raw time series data. Unlike the estimation of traditional non-linear SSM parameters with pre-defined function structures, for a dynamic system, our DNLSSM captures patterns of dynamic processes from observed values progressively. Specifically, our DNLSSM iteratively estimates both non-linear state and observation equations without any restriction on functions. Given raw time series observations, we adopt the unscented Kalman filter (UKF) to estimate the non-linear SSM. UKF is a further extension of Kalman filter (KF) and a combination of Unscented Transformation (UT) and KF. Meanwhile, we design non-linear Joseph form covariance update to overcome the round-off errors during UKF calculation. In order to capture the nonlinearity and time variance of dynamic processes, we employ neural networks (i.e. Long Short-Term Memory [LSTM]). Once parameters are obtained, our DNLSSM is able to predict the distribution of time series in the future period.
+
+Inspired by the nonlinearity of actual time series observations, we aim to estimate non-linear functions of SSM with deep neural networks. Therefore, we adopt the UKF to update networks through the calculated marginal likelihood and then update the posterior distribution of the latent state. Unlike previous studies [6, 7] estimate the lower bound of the marginal likelihood or calculate the likelihood in the forecasting period, we directly compute the marginal likelihood based on historical observations. In this manner, our DNLSSM extracts the temporal patterns from sequential raw data.
+
+Due to round-off errors caused by the computation precision limitation, the UKF usually fails to update posterior probability. This motivates us to develop non-linear Joseph form covariance update. To be specific, Taylor expansion is introduced in the Joseph form covariance update to enhance numerical robustness of posterior distribution update. Given our proposed non-linear algorithm, posterior covariance matrices are symmetric and positive definitive during the UKF updating, and thus we increase the tolerance of UKF to round-off errors. By doing so, we increase DNLSSM's tolerance to round-off errors, and our DNLSSM is able to exploit non-linear dynamic processes.
+
+We apply the DNLSSM to synthetic datasets and three real-world publicly time series datasets. Experiments on forecasting unseen periods demonstrate that our method achieves superior performance to existing methods.
+
+Overall, our major contributions are summarised as below.
+We propose a general time series forecasting framework, named DNLSSM, to model unknown time-variant non-linear dynamic processes from time series observations.
+
+We extend Joseph form covariance update to non-linear state transitions. Benefiting from our non-linear Joseph form covariance update, we increase the tolerance of UKF to round-off error during the posterior distribution update. Along with our non-linear algorithm and UKF, we are able to fuse statistical approaches and deep neural networks.
+
+Experiments demonstrate that the DNLSSM outperforms other baseline methods on both synthetic and real-world datasets with various patterns.
+
+2 RELATED WORK
+2.1 Time series forecasting
+Time series forecasting aims to estimate probability distribution based on given time series observation values at future time points. It is a key task of risk management and decision making and plays an important role in various fields [8-12], including statistics, machinery learning, data mining, econometrics, and operation research. For example, predicting the supply and demand of products can be used to optimise inventory management, vehicle scheduling, and topology planning, which are critical to most aspects of supply chain optimisation [4].
+
+The auto-regressive integrated moving average model (ARIMA) [13] is one of the classical statistical approaches, combining the autoregressive model (AR) and the moving average model (MA). Moreover, variations of the ARIMA model are widely used to capture patterns from different time series. For instance, the airline model [14] extends the ARIMA model to the seasonal time series. Meanwhile, because the classical AR model and its variants struggle to capture non-linear time series patterns, various non-linear models, such as Factorisation [15] and Support Vector Regression (SVR) [16] are proposed. Besides, exponential smoothing (ETS) [17] decomposes a time series into interpretable components, that is, level, trend and seasonality.
+
+For multivariate prediction in time series forecasting, Yu et al. [18] propose a neural sequence structure Higher-Order Tensor RNN to learn higher-order moments. Rogers et al. [19] develop a multi-linear dynamic system method that can process time and data structure information at the same time.
+
+2.2 Deep learning
+Benefiting from the significant progress of Deep Neural Networks, such as LSTM) and DeepAR [7] employs an auto-regressive recurrent network model to predict probabilistic distributions based on a large number of sequential data. Yi et al. [20] propose a multi-stage network that makes the estimation much better. Meanwhile, Borovykh et al. [21] adopt Convolutional Neural Networks (CNNs) to exploit correlation among multivariate time series. Shi et al. [22] introduce low-rank block Hankel tensors to exploit mutual correlations. Besides, Lai et al. [23] adopt attention mechanisms and propose Long-and Short-term Time-series networks for multivariate time series forecasting. Sen et al. [24] propose DeepGLO to combine global and local patterns for prediction. N-BEATS [25] employs an interpretable and applicable deep neural architecture. Moreover, Vincent et al. [26] introduce a differentiable loss function to predict sudden changes in time series. Du [9]propose a Visual Transformer Network (VTNet) for navigation policy learning. Furthermore, unlike one-step-ahead forecasting research studies, Janek et al. [27] propose a time-variant architecture for multi-step-ahead forecasting.
+
+2.3 State space model
+Different from other time series forecasting architectures, SSMs provide a general framework for time series analysis, including measurement error contaminated data. Durbin et al. [2] demonstrate that classical AR models can be reformed as SSMs. Yu et al. [28] introduce a temporal regularised matrix factorisation framework to forecast time series with missing values.
+
+In terms of linear SSM models, Rangapuram et al. [4] propose the DSSM to combine SSM and deep neural networks. DSSM is a linear Gaussian SSM, in which the coefficient matrix of the conversion equation and the observation equation are given according to the exponential smoothing method. What is more, the hidden variable is a vector time series composed of the level, trend and seasonal factors of the given time series data sequence. Meanwhile, to exploit the exogenous variable, Li et al. [29] adopt the automatic relevance determination network (ARD) to include the uncertainty of the exogenous variables.
+
+Moreover, several studies adopt neural networks to approximate variational evidence lower bound (ELBO) of likelihood because of the restriction of non-linear functions. Wang et al. [30] propose a hybrid model to learn complex patterns and interrelationships of time series. Krishnan et al. [31] propose structure inference networks to mimic likelihoods of Gaussian state space. Eleftheriadis et al. [6] employ structured Gaussian variational posterior distributions to compute a lower bound on the likelihood for Gaussian process SSM. Some previous studies [32-34] utilise variational inference networks to approximate posterior distributions. Unlike previous pre-defined function of SSMs, our proposed DNLSSM parameterises both state and observation functions by time-variant neural networks. Furthermore, we adopt UKF to calculate the posterior distributions instead of predicting through an additional network.
+
+3 PRELIMINARIES
+3.1 Task definition
+Given a set of historical time series data, our task is to forecast the probabilistic distributions of time series in the future period. Let 
+ be a time series set. It consists of N univariate time series, where 
+ and 
+ represents the observation value of ith time series at time t. Let T i be the forecast origin and τ > 0 be the forecast horizon. Each time series 
+ has its associated time-varying covariate vectors 
+. Therefore, the goal of time series forecasting is to predict probability distributions of the future window 
+ given the history observation 
+ and covariate 
+,
+(1)
+where Φ denotes the model parameters.
+3.2 Non-linear state space model
+Sequential data of time series often include indirect observation values of an unobservable non-linear dynamic system. In order to investigate the non-linear dynamic process, consider a Markovian SSM [3] consisting of state function and observation function, which are given in Equation (2) and Equation (3), respectively, as
+(2)
+(3)
+where x t is the unobserved state variable, y t is the observed value, and both x t and y t can be multi-dimensional. At time t, the state variable x t is evolved via the state function f t (⋅) and a state innovation R t r t . Besides, y t is generated from state variable x t via the observation function g t (x t ) and an observational noise V t v t . Thus, the state variable x t is indirectly described through the observation y t . It is assumed that both E(r t ) and E(v t ) are 0, variances of both r t and v t are identity matrices, and Cov(x t , v t ) = 0.
+In classical statistics, it is assumed that both the state function f t (⋅) and observation function g t (⋅) are known and time-invariant [3]. Moreover, distributions of R t r t and V t v t are assumed to be known in most cases. Therefore, since underlying dynamic processes are unknown in most cases, it is hard to employ classical statistical methods in real-world practices.
+
+4 DEEP NON-LINEAR STATE SPACE MODELS
+This paper introduces a DNLSSM for probabilistic time series forecasting. As illustrated in Figure 1, our DNLSSM is designed to learn underlying dynamic processes from historical observations and thus predicts the future distribution.
+
+Details are in the caption following the image
+FIGURE 1
+Open in figure viewer
+PowerPoint
+Overview of our time series forecasting framework. The Deep Non-linear State Space Model is a recursive scheme from time 1 to T + τ, where T and τ represent forecast start point and forecast horizon, respectively. At each time step t in training, x t|t and y t|t−1, which represent the distribution P(x t |y 1:t ) and P(y t |y 1:t−1), are passed through the unscented Kalman filter (UKF). Meanwhile, the marginal likelihood is calculated during UKF approximation and used to estimate functions of the state space model. (1) Unscented Kalman Filter: Given the distribution x t−1|t−1 and true observation y t , we adopt UKF to calculate marginal likelihood L(Φ) and the posterior distribution x t|t . (2) Distribution Propagation: To propagate a distribution through a non-linear function, we sample sigma points from the original distribution. Then, we obtain the propagated mean and covariance based on propagated sigma points and corresponding weights
+
+4.1 Inference and forecasting
+In inference stage, the DNLSSM uses the distribution x t−1|t−1, which represents the distribution P(x t−1|y 1:t−1) of the latent variable x t−1 conditioned on y 1:t−1 at time t − 1, to estimate the prior distribution x t|t−1 = P(x t |y 1:t−1) and the conditional distribution y t|t−1 = P(y t |y 1:t−1). Then, we obtain the posterior distribution x t|t and likelihood from the conditional distribution y t|t−1 and raw observation y t . Note that the posterior distribution x t|t will be used in the inference at the next time step t + 1 and the DNLSSM will use the likelihood to update parameters of the model. After determining the distribution x T|T at time T, the DNLSSM predicts distributions of future latent variables and observed variables via the learnt SSM.
+
+In order to model time-variant non-linear dynamic processes, state and observation functions are parameterised by neural networks (i.e. LSTM). Due to the nonlinearity, we present the UKF to calculate the posterior distribution and likelihood of the non-linear SSM. To be specific, we transfer the posterior distribution x t−1|t−1 at last time step t − 1 to the prior distribution x t|t−1 via state function f t (⋅). Then, we apply observation function g t (⋅) to calculating the conditional distribution y t|t−1. Given the conditional distribution y t|t−1 and the observation y t , we are able to obtain marginal likelihood and the posterior distribution x t|t .
+
+Since both state and observation functions are non-linear functions, the propagated distribution might be complicated. It is often difficult to obtain any meaningful inference in an analytical form. Therefore, we sample sigma points to compute posterior distributions during propagation. We first sample multiple sigma points from the distribution P(x t−1|y 1:t−1) and transfer sigma points via the learnt state function to obtain the prior distribution P(x t |y 1:t−1). Then, we obtain the new sigma points from P(x t |y 1:t−1) and transfer sigma points via the learnt observation function to obtain the posterior distribution P(x t |y 1:t ).
+
+4.2 Non-linear system estimation
+Due to the difficulty of defining state and observation functions for real-world time series observations, it is critical to design an effective non-linear system to exploit the non-linear dynamic process in forecasting. We consider two restrictions of parameter estimation in statistical non-linear SSMs [3]. First, it requires pre-defined non-linear state and observation functions. Second, parameters of statistical non-linear SSMs are time-invariant. To fully exploit the shared non-linear time-variant correlation underlying time series observations, we integrate deep neural networks and marginal likelihood to estimate parameters of non-linear systems. Specifically, we aim to learn all unknown parameters related with the non-linear functions f t (⋅) and g t (⋅) and R t r t and V t v t .
+
+To estimate 
+, which represents parameters of the state innovation 
+ and observation noise 
+, we develop a projection ψ from the covariate vectors 
+ to the parameters 
+. Given covariate vectors, for example, a set of variables relative to time series data, we adopt an LSTM to parameterise the projection ψ, formulated as
+(4)
+where 
+ represents the hidden state of the LSTM for ith time series with parameters ϕ. Moreover, we map the first LSTM hidden state to initial states of the latent state, including mean 
+ and covariance 
+.
+After obtaining parameters 
+, we introduce two other LSTMs with Tanh activation that separately learn time-variant non-linear state function f t (⋅) and observation function g t (⋅). Given a latent state 
+ at time t − 1, we obtain the predicted distribution 
+ and the latent state 
+ via recurrent functions f t (⋅) and g t (⋅) as
+(5)
+(6)
+where 
+ and 
+ denote the hidden states of the two LSTMs, respectively.
+To optimise this non-linear system, we maximise log-likelihood to estimate system parameters. Formally, we denote the collection of all the parameters in the non-linear system as 
+ at time t, including the parameters of the non-linear functions f t (⋅) and g t (⋅), and parameters 
+ related with the state innovation 
+ and observation noise 
+. Let Φ denote all the parameters of models at all times. The marginal log-likelihood is expressed as
+ 
+(7)
+4.3 Unscented Kalman filter
+For non-linear SSMs, it is difficult to compute marginal likelihoods in an analytical form because of the high dimensional integration requirement [3]. Therefore, we resort to the UKF for statistical inference objectives associated with non-linear SSMs. Traditional approaches using a linear approximation for the non-linear system is computational consuming. In contrast, we choose UKF in our paper because of nonlinearity, statistical properties and computational complexity. Previous research studies [5, 35] prove that UKF is able to achieve a third-order approximation to the true non-linear state equation (Taylor series expansion). Meanwhile, the work in Ref [36, 37] studies the convergence and stability of UKF, which show that the estimation error and prediction error of UKF are bounded in the sense of mean square by accurately constructing sigma points and choosing appropriate initial values.
+
+We adopt discrete distributions to propagate through a non-linear function. Given the prior distribution, we select sigma points to obtain the mean μ x and covariance Σ x of the posterior distribution.
+
+We provide detailed information about sigma point selection. The UKF uses a discrete distribution to approximate the conditional means and conditional variance of the propagated distributions. Thus, the selection of sigma points will influence the accuracy of the approximation. Following Wan et al. [38], to capture mean and covariance accurately, we select sigma points, and associated weights 
+, where L denotes the dimension of state and 
+ and 
+ represent corresponding weights for mean and covariance, based on prior mean and covariance. Let α determine the distance between sigma points, and μ x and β are used to match the prior knowledge of distribution x.
+ 
+(8)
+where 
+ denotes the ith column of the matrix square root. Meanwhile, we express the weights of mean 
+ and covariance 
+ as
+ 
+ 
+ 
+(9a)
+ 
+ 
+ 
+(9b)
+where λ = α 2 L − L represents a scaling parameter. After selecting sigma points, we adopt a recursive scheme similar to the linear Kalman filter (LKF) to estimate the conditional means and conditional variances of posterior distributions.
+After selecting sigma points, we adopt a recursive scheme similar with the LKF to estimate the conditional means and conditional variances of posterior distributions. Since the posterior distributions are applied to univariate time series, we omit the superscript i in this section. At time t − 1, suppose we obtain prior mean μ t−1|t−1 and covariance Σ t−1|t−1 of p(x t−1|y 1:t−1), we can choose the corresponding sigma points. Then, the conditional mean μ t|t−1 and covariance Σ t|t−1 of p(x t |y 1:t−1) are expressed as
+(10)
+(11)
+Given μ t|t−1 and Σ t|t−1 of p(x t |y 1:t−1), we aim at updating the distribution p(x t |y 1:t ) based on true observation y t . Similar to the previous prediction step, we select 2L + 1 sigma points (x j,t|t−1, w j,t|t−1), j = 0, …, 2L for the conditional distribution p(x t |y 1:t−1). In order to update the posterior mean μ t|t and covariance Σ t|t , we compute conditional covariance Σ x y,t|t−1 = Cov(x t , y t |y 1:t−1) of random variables x t and y t . Thus, the posterior distribution updating step can be expressed as
+(12)
+(13)
+where , and Σ yy,t|t−1 = Var(y t |y 1:t−1) denotes the conditional variance of p(y t |y 1:t−1).
+4.4 Non-linear Joseph form covariance update
+In order to enhance numerical robustness in the unscented Kalman update, we extend linear Joseph form covariance update [39] to non-linear. Despite the theoretical correctness of the UKF, there are vulnerabilities in practical implementations. For instance, both covariance matrices Σ t|t−1 and Σ t|t must obtain symmetric and positive definite for likelihood computation and sigma point selection during the UKF updating. However, regarding the Equation (13), subtraction might result in a non-positive definite Σ t|t because of round-off error. Meanwhile, due to the computation precision limitation, it is impossible to eliminate round-off errors in computer implementation. To increase tolerance to round-off errors, we need to reformulate the equation of Σ t|t . Inspired by linear Joseph form covariance update, we replace the subtraction in Equation (13) with addition.
+
+Given the observation Equation (3), we adopt Taylor expansion of non-linear function g t (⋅) around x t  = μ t|t−1 as
+(14)
+where
+ 
+represents the Jacobi matrix of the non-linear function g t (⋅). We left multiply 
+ by Equation (14) to get
+(15)
+Considering both g t (μ t|t−1) and 
+ are constant values and E(v t ) = 0, we take conditional expectation on both sides as
+(16)
+(17)
+where Σ xy,t|t−1 denotes the covariance of the state variable and observation, and Σ t|t−1 represents the conditional variance of the state variable. Moreover, let Σ yy,t|t−1 = Var(y t |y 1:t−1) be the conditional variance of observation.
+To ensure that posterior covariance matrices are symmetric and positive definitive, we develop the non-linear Joseph form covariance update [39] as
+ 
+(18)
+where 
+ denotes the variance of observation noise V t v t , I denotes an identity matrix and 
+ represents the Kalman gain.
+In doing so, the covariance results are less sensitive to round-off errors because (i) the result of adding two positive definite matrices together maintains its positive definiteness and (ii) the result of multiply matrices in symmetrical form can avoid loss of symmetry.
+
+4.5 Training and testing
+We train our model by maximising the marginal likelihood Equation (7). To be specific, each training step at time t consists of three stages: (i) computing the prior distribution of the latent state 
+ and the observation 
+ at time t; (ii) updating the posterior distribution of the latent state 
+ by adopting the UKF and non-linear Joseph form covariance update. In this step, given 
+, we adopt the UKF to calculate marginal likelihood for non-linear system parameters Φ optimisation; (iii) calculating the distribution of the latent state 
+ for next iteration.
+
+After obtaining the optimised parameters of the non-linear system, we use Monte Carlo samples to approximate the predicted distribution in practice [4]. In order to generate prediction samples from the SSM, we adopt the UKF to obtain the posterior distribution of latent variable 
+ at forecast origin T and then iteratively use the state and observation function to generate prediction samples.
+
+5 EXPERIMENTS
+5.1 Task setup
+We use the task setup in Ref. [4]. To ensure the generalisation of our method, there should be no overlap between our training time series data and testing ones. We set the forecast horizon τ as 30, 196, 30 for three datasets, respectively, and forecast origin T is three times the forecast horizon. During the evaluation, our trained model predicts four different unseen time series subsets per time series.
+
+We use Pytorch to implement our model on a single RTX 2080Ti GPU. Meanwhile, we select Adam optimiser [40] with a learning rate of 0.0001 and set the dimension of latent states as 32. To estimate the predicted distribution, we sample 100 predicted points via Monte Carlo sampling.
+
+5.2 Datasets
+We choose three real-world and publicly available datasets, including economy, environment and finance, with a suitable scale to evaluate our method.
+
+The Exchange Rate dataset [23] contains daily exchange rates between 8 eight countries (Australia, British, Canada, China, Japan, New Zealand, Singapore, and Switzerland) from 1990 to 2016. This dataset is derived from Ref. [23]. y is the daily exchange rate between 8 currencies, which is an 8-dimensional multivariate time series.
+
+The PM 2.5 dataset [42] consists of hourly PM 2.5 data from 12 air-quality monitoring sites ranging from March 2013 to February 2017. The dataset is derived from Ref. [42]. Specifically, y is the PM 2.5 observation representing 12 monitoring sites data. This dataset is a multivariate time series.
+
+The S&P 500 dataset [43] includes historical stock price (USD) for 483 Standard & Poor's 500 companies ranging from 2013 to 2018. To be specific, we use the highest price per day of each company to build a multivariate time series for our experiments.
+
+5.3 Evaluation metrics
+We select two probabilistic forecasting evaluation metrics to evaluate the prediction accuracy of different models for univariate time series, detailed below.
+
+5.3.1 Continuous ranked probability score [44, 45]
+We use the continuous ranked probability score (CRPS) on each individual time series for performance evaluation. Different from point forecasting accuracy metrics, for example, mean absolute error (MAE) and root mean square error (RMSE), CRPS focusses on the evaluation of probability forecasting. It measures the consistency of an observation y with the predictive distribution F(Expressed by its quantile function F −1),
+ 
+(19)
+where ρ ∈ (0, 1) is a quantile level, 
+ represents the binary indicator of whether 
+, y denotes true observation value, and 
+ denotes a predicted ρ-th quantile value.
+5.3.2 Quantile loss (QL) [4]
+We use the 50th and 90th percentile loss (QL 50 and QL 90). Given a set of time series values y and corresponding predictions 
+, the QL ρ is defined as
+ 
+ 
+ 
+(20)
+where ρ ∈ (0, 1). For both evaluation metrics, lower values indicate higher prediction accuracy.
+5.4 Competing methods
+We select six methods to compare, detailed below.
+
+Auto-Regressive Integrated Moving Average Model (ARIMA) [13] uses a differential method to encode a non-stationary sequence into a stationary sequence and then establishes an Auto-Regressive Moving Average Model (ARMA) for the stationary time series. ARIMA is one of the commonly used time series prediction methods, also known as the Box-Jenkins method.
+
+Exponential Smoothing (ETS) [17] adopts the exponential smoothing value, a weighted average of past observations, as prediction. It calculates the exponential smoothing value and cooperates with a certain time series forecasting model to predict the future of the phenomenon. The principle is that the exponential smoothing value of any period is the weighted average of the actual observation value of the current period and the exponential smoothing value of the previous period.
+
+DeepAR [7] uses an auto-regressive recurrent neural network to obtain probabilistic forecasts. DeepAR can easily introduce covariates and predict the sequence with only a small amount of historical data by learning the similarity between time series. The prediction goal is the probability distribution of the sequence at each time point.
+
+DSSM [4] combines the innovation state space model and recurrent neural networks to predict probability distributions of time series. Multiple time series share both network parameters and independent state space parameters. The state space model is used to predict the probability distribution of the sequence values at each time point. This method can learn similar patterns from multiple sequences.
+
+MQ-RNN [41] uses the Seq2Seq model framework, that is, the encoder-decoder structure. The encode part of MQRNN uses RNN, and the decode part uses multilayer perceptrons (MLP). Thus, MQ-RNN has capability to extract higher order features related with seasonality.
+
+N-BEATS [25] is a new univariate time series prediction architecture. It is a deep neural network structure based on forward and backward residual connections and a deep fully connected layer stack. The architecture has versatility, flexibility, good performance for multiple time series prediction problems, and a very deep fully connected layer stack.
+
+5.5 Comparisons on synthetic data
+We demonstrate the performance comparison of seven model, that is, ARIMA, ETS, DeepAR, DSSM, MQ-RNN, N-BEATS and DNLSSM, on synthetic data in Figure 2. Considering that the underlying dynamic process of real-world cases is difficult to identify and confused by undetermined noise, we adopt synthetic data to ensure the nonlinearity of dynamic processes by defining state and observation functions.
+
+Details are in the caption following the image
+FIGURE 2
+Open in figure viewer
+PowerPoint
+Comparing seven methods on synthetic datasets. Numbers n = 1, …, 5 on the horizontal axis denote different synthetic datasets, which are generated by different observation functions, that is, 
+. The first and second rows represent synthetic datasets generated by two different state functions, that is, x t  = x t−1 + η t and x t  = sin(x t−1) + η t . Our Deep Non-linear State Space Model overall yields superior accuracy to the other four
+
+We present experiments on three types of synthetic data, including (i) f(⋅) is a linear function, while g(⋅) is a non-linear function; (ii) f(⋅) is a non-linear function, and while g(⋅) is a linear function; (iii) both f(⋅) and g(⋅) are nonlinear functions. Since non-linear functions can be approximated by multiple polynomials (or local approximation) according to the Taylor formula, we select the basic polynomial 
+ to form g(⋅). Let ϵ t ∼ N(0, 1); g(⋅) is defined as 
+. Note that when n = 1, g(⋅) is a linear equation y t  = x t  + ϵ t . We formulate the linear f(⋅) as x t  = x t−1 + η t , η t ∼ U(−1, 1) at time t and x 1 = 1. Furthermore, we select the function x t  = sin(x t−1) + η t as the non-linear f(⋅). We generate 5 different time series data, and each time series consists of 2000 observations.
+
+As illustrated in Figure 2, the DNLSSM overall outperforms other models in most three types of synthetic data in terms of CRPS and QL loss. This manifests that DNLSSM is able to model the underlying dynamic processes from observations.
+
+Given the increase of power n in observation equations, the prediction accuracy of all models decrease. In other words, when the nonlinearity of the time series observations increases, the prediction ability of all methods decreases, as demonstrated in Figure 2. The DNLSSM has a better performance on most synthetic data due to likelihoods calculated by the UKF; thus, DNLSSM generally predicts better than other models on the high-order synthetic data.
+
+Since the non-linear state function x t  = sin(x t−1) + η t produces negative numbers, compared with odd numbers, when the power n of 
+ is an even number (i.e. 2 and 4), the observation values produced by the same latent states become denser. Benefiting from dense observations, the prediction accuracy of all methods is relatively high when n is an even number, as illustrated in the second row of Figure 2. Note that the DNLSSM achieves better forecasting accuracy, while both DeepAR and DSSM suffer from huge fluctuations. This indicates that our DNLSSM is effective and robust.
+
+5.6 Comparisons on real-world data
+We compare DNLSSM with the six competitors on three real-world datasets. Results are summarised in Table 1. We observe that the DNLSSM yields very competitive forecasting accuracy, and in most cases, outperforms the compared methods. Below, we provide detailed discussions and comparisons with each of these six methods.
+
+TABLE 1. Comparison of average time series forecasting results after five times
+Method	Exchange rate	PM 2.5	S&P 500
+CRPS ↓	QL 50 ↓	QL 90 ↓	CRPS ↓	QL 50 ↓	QL 90 ↓	CRPS ↓	QL 50 ↓	QL 90 ↓
+ARIMA [13]	0.0146	0.0146	0.0093	1.0071	1.0071	0.6999	0.9992	0.9992	1.0243
+ETS [17]	0.0182	0.0182	0.0208	0.9882	0.9882	0.8036	1.0003	1.0003	1.0084
+DeepAR [7]	0.0112	0.0144	0.0065	0.7546	0.9700	0.5194	0.8455	1.0360	0.5338
+DSSM [4]	0.0139	0.0116	0.0130	0.8076	1.0718	0.5433	0.8398	1.0319	0.5319
+MQ-RNN [41]	0.0205	0.0240	0.0140	0.8543	1.0907	0.5547	0.9575	1.1568	0.6267
+N-BEATS [25]	0.0360	0.0360	0.0247	0.8689	0.8689	1.4698	1.1891	1.1891	1.1873
+DNLSSM	0.0106	0.0133	0.0056	0.7005	0.9072	0.6308	0.8185	1.0029	0.5195
+Note: We report the probabilistic forecasting accuracy CRPS, QL 50 and QL 90. Our proposed DNLSSM outperforms other methods in most cases.
+Abbreviations: ARIMA, Auto-regressive Integrated Moving Average Model; CRPS, Continuous Ranked Probability Score; DNLSSM, Deep Non-linear State Space Model; DSSM, Deep State Space Model; ETS, Exponential Smoothing.
+5.6.1 Comparison with ARIMA and ETS
+Since both ARIMA [13] and ETS [17] focus on point forecasting, they are hard to capture uncertainty in the future period. In contrast, the DNLSSM aims at predicting probabilistic distributions. Although the QL 50 result of ARIMA in S&P 500 is lower than other models, the gap among comparison models is small. Our DNLSSM outperforms both ARIMA and ETS on the exchange rate and PM 2.5 in terms of the CRPS and QL loss. The experiment indicates that the DNLSSM captures shared informative temporal patterns, thus increasing the prediction accuracy of time series forecasting.
+
+5.6.2 Comparison with DeepAR
+DeepAR [7] adopts an auto-regressive model to learn the seasonality and uncertainty growth purely from time series data. However, DeepAR is designed to maximise likelihoods in prediction periods, while our DNLSSM focusses on maximising the marginal likelihood of past observations due to the introduction of statistical methods. Thus, the DNLSSM is able to extract correlations between underlying dynamic processes and noisy observations.
+
+5.6.3 Comparison with DSSM
+The DSSM [4] employs a pre-defined innovation state space model (ISSM) to encode latent states into the level, trend and seasonal components with linear state and observation functions. On the contrary, benefiting from learnable state and observation functions, our DNLSSM is able to exploit time-variant non-linear dynamic processes behind time series observations without limitation on time series and thus achieves better performance in most cases on three metrics.
+
+5.6.4 Comparison with MQ-RNN and N-BEATS
+Similar to ARIMA and ETS, N-BEATS focus on time series point forecasting problem instead of probabilistic prediction. Unlike that both MQ-RNN [41] and N-BEATS [25] adopt deep neural architecture for time series forecasting, our DNLSSM combines the advantages of deep neural networks and statistical method and thus improves forecasting accuracy in most scenarios. In comparison, benefiting from the UKF and non-linear Joseph covariance update, the DNLSSM combines the advantages of deep neural networks and statistical method and thus outperforms both methods in most terms. This implies that our method is robust with irregular noise and measurement error in the real-world practice.
+
+5.7 Ablation study
+We propose a general deep non-linear SSM framework which is capable of parameterising state functions f(⋅) and observation functions g(⋅) by various neural networks. In our paper, we adopt LSTMs to model time-variant non-linear dynamic processes in real-world cases. To illustrate the compatibility with different networks of our framework, as seen in Figure 3, we parameterise f(⋅) or g(⋅) by MLP on Exchange Rate dataset, including (a) parameterising f(⋅) by MLP, (b) parameterising g(⋅) by MLP, and (c) parameterising both f(⋅) and g(⋅) by MLP.
+
+Details are in the caption following the image
+FIGURE 3
+Open in figure viewer
+PowerPoint
+Different structures in ablation study. We adopt two different structures of distribution propagation to demonstrate the impact of replacing functions with different network architecture. The parameterising function by an LSTM network endows DNLSSM with the capability to capture time-variant patterns
+
+As demonstrated in Table 2, in actual time series data, the underlying dynamic processes are usually unknown and non-linear. Replacing both f(⋅) and g(⋅) with LSTMs achieves the lowest prediction error than other combinations. Therefore, the experiment demonstrates the necessity to represent functions of SSMs with deep neural networks in real-world scenarios. Since we endow DNLSSM with the capability to capture the time variance pattern of the time series data by adopting LSTMs, DNLSSM with dual LSTM outperforms other models in terms of CRPS and QL loss.
+
+TABLE 2. Impacts of parameterising state f(⋅) and observation g(⋅) function with different network components on Exchange Rate dataset.
+f(⋅)	g(⋅)	CRPS ↓	QL 50 ↓	QL 90 ↓
+MLP	LSTM	0.0119	0.143	0.0069
+LSTM	MLP	0.0127	0.0161	0.0065
+MLP	MLP	0.0146	0.0190	0.0074
+LSTM	LSTM	0.0106	0.0133	0.0056
+Abbeviations: CRPS, Continuous Ranked Probability Score; LSTM, Long Short-Term Memory; MLP, Multilayer Perceptron.
+6 CONCLUSIONS
+In this paper, we propose a general probabilistic time series forecasting framework, DNLSSM, to predict the unseen probability following given time series data.
+
+We combine the statistical model SSM and neural network to give a time series forecasting model. We parameterise state and observation equations by deep neural networks to iteratively model unknown non-linear functions of SSMs. Meanwhile, we introduce the UKF to progressively approximate non-linear functions and update marginal likelihoods. To overcome collapses in UKF update caused by round-off errors, we extend the classical Joseph form covariance update to non-linear form via introducing Taylor expansion.
+
+All of these improvements result in the DNLSSM that can explore time-variant non-linear dynamic processes from raw time series observations. Experimental results demonstrate that our proposed DNLSSM outperforms other comparison methods in both synthetic and real-world datasets.
