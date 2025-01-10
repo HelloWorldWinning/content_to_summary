@@ -1,0 +1,109 @@
+Timestamp: 2025-01-10T20:43:33.645524
+Title: 好用，但也没太神！小白也能听懂的DeepSeek深度解析，带你了解它的神秘，顺便还教你怎么用 AiBv9K_eO-I
+URL: https://youtube.com/watch?v=AiBv9K_eO-I&si=x1KLxnIQbCG5QP5u
+Status: success
+Duration: 11:17
+
+Description:
+Okay, here's the summary of the provided content, fulfilling all the given requirements:
+
+**Summary:**
+
+1.  **Introduction of DeepSeek V3**
+    *   The video discusses the newly released DeepSeek V3 large language model.
+    *   It highlights the model's impressive specs: 671B parameters, 14.8T token training on 2000 GPUs, and 5.57 million training cost.
+    *   DeepSeek has been known for its cost-effectiveness and rapid development.
+
+2.  **DeepSeek's History and Evolution**
+    *   **DeepSeek Coder (Nov 2023):** Initial open-source model without coding support.
+    *   **DeepSeek RRM (Late 2023):** 67B parameter model, entering the competitive LLM market.
+    *   **DeepSeek V2 (May 2024):** Introduced price disruption, drastically lowering inference costs.
+        *   It became known as the "Pinduoduo" of AI, initiating a price war.
+    *   **DeepSeek V3 (Dec 2024):** Significant performance improvements and lower training costs.
+
+3.  **User Experience with DeepSeek V3**
+    *   **Web Interface:** Simple interface with depth-thinking and web search features.
+    *   **Performance:** Compared favorably to ChatGPT and Kimi in Chinese text generation.
+    *   **Issues:**
+        *   Inconsistent language switching (sometimes outputs in English).
+        *   Unreliable web search results in some instances.
+        *   Short context window.
+
+4.  **DeepSeek API**
+    *   **Price:** Extremely affordable compared to other providers.
+    *   **Compatibility:** Seamlessly integrates with OpenAI APIs, allowing existing tools to use DeepSeek.
+    *   **Functionality:** Primarily focused on core conversation capabilities.
+
+5.  **API Use Cases**
+    *   **Translation:**  Integrating with translation tools, like immersive translation.
+    *   **Development:** Using with code assistants like Cursor and Klan for code generation, it integrates with vscode to develop a game.
+
+6.  **DeepSeek V3 Technical Highlights**
+    *   **Optimization Strategies:**
+        *   **Compression:** MRA (reducing computational load), FP8 training framework (reduced precision but faster).
+        *   **Parallelism:** DeepSeek MoE and complex parallel strategies (optimizing the processing of data on the production line), pipeline parallelism.
+        *   **MTP:** Multi-token prediction.
+        *   **Distillation:** Training new models based on older models, refining and improving models.
+    *   **Key Technologies:**
+        *   Leverages existing technologies (MRA, MTP) and prior strategies for model training.
+
+7.  **Conclusion and Outlook**
+    *   While there is criticism of DeepSeek, such affordable models encourage innovation and healthy competition.
+    *   DeepSeek's disruptive pricing is good for the Chinese open-source large model sector.
+
+**Core Point:** DeepSeek V3 achieves significant cost reduction and performance improvement in the LLM space by leveraging various optimization strategies.
+
+**Fundamental Point:** DeepSeek's approach showcases that optimizing and refining existing technologies can be as impactful as brand-new innovations, especially when cost efficiency is prioritized.
+
+**Overarching Framework:**
+The content follows a narrative framework that starts with the introduction of a new product (DeepSeek V3) and then gradually reveals its historical context, its usage experience, its technology and finally its position in the market.
+
+<Mermaid_Diagram>
+graph LR
+    A[DeepSeek V3] --> B(Introduction & Specs);
+    B --> C[Performance & Cost];
+    A --> D[DeepSeek History];
+    D --> E[DeepSeek Coder];
+    E --> F[DeepSeek RRM];
+    F --> G[DeepSeek V2];
+        G-->H[Price Disruption];
+    G-->I[DeepSeek V3];
+    I-->J[Web Interface];
+    J-->K[User Experience]
+    K-->L[Performance Comparison];
+    K-->M[Issues]
+        I-->N[API];
+    N-->O[Price Comparison]
+    O-->P[Affordability]
+    N-->Q[OpenAI Compatibility];
+    Q-->R[Easy Integration];
+    N-->S[Core Functionality];
+    S-->T[Conversational AI];
+    R --> U[Use Cases];
+    U --> V[Translation];
+    V --> W[Development Assistance];
+        I-->X[Technical Highlights];
+    X --> Y[Compression];
+    Y --> Z[MRA];
+    Y --> AA[FP8];
+        X --> BB[Parallelism];
+    BB-->CC[MoE];
+       BB-->DD[Complex Parallelism Strategies];
+           X --> EE[MTP];
+                X --> FF[Distillation];
+    FF-->GG[Teacher-Student model];
+         I-->HH[Market Impact]
+        HH-->JJ[Affordable AI];
+        JJ-->KK[Encourages Competition];
+        KK-->LL[Chinese open source large model evolution]
+style A fill:#f9f,stroke:#333,stroke-width:2px
+style D fill:#ccf,stroke:#333,stroke-width:1px
+style I fill:#ccf,stroke:#333,stroke-width:1px
+style N fill:#ccf,stroke:#333,stroke-width:1px
+style X fill:#ccf,stroke:#333,stroke-width:1px
+style HH fill:#ccf,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+朋友们,我们今天要聊聊开源大魔形领域的新卷王671B参数,14.8T偷肯训练2000张卡,557万的训练成本听到这些数字,你猜到我要说谁了吗?没错,就是最近开源的DipSync V3今天我们就一块来看看,它到底有什么神奇?在24年的尾巴上,DipSync放了一把大招发布了V3版本它不仅各方面的性能超过了之前的开源模型还公开了非常多的细节信息53亿的论文把细节和盘拖出可以说是非常的诈猎如果你之前不是很关注大魔形领域那可能对DipSync这个名字稍感墨生我们把时间回播2023年11月2日DipSync发布了首个开源模型DipSyncCoder是一个未编程提供支持的开源模型紧虽其后DipSync又推出了DipSync RRM是一个参数规模达到670亿的大魔形正式开始与其他大元模型竞争到2024年的5月DipSync发布了V2版本也正式开启了价格突浮的模式推理成本被降到没百万偷套件一块钱直接把价格达到了Lamma370B的1%GPT4 Turbo的170%当时也开启了一波国内大魔形的降价潮多个厂商分分岸纳不入开始降价DipSync也被惯以了AI界的拼多多之名但是还要说一句之前我看到一篇采访DipSync的创始人表示即使在如此低的价格下他依然是有利润的到了2024年的12月可能是为了让2024结束的不那么草率或者是为了让2025开始的更加精彩DipSync发布了V3版本各种侧品表现非常出色并且最野人关注的地方就是训练成本的大幅境地也一举震惊了国内和归谷的AI圈说了很多厉害的地方但是作为一般的使用者我更关注的是到底好处用接下来我就以一个普通人的角度来去体验一下到底DipSync是怎么样的一般使用有两种方式一个是DipSync提供的网页版另外一个就是通过API我们就以最简单的网页版来开始首先打开网页就是一个比较简单的使用页面这里比较好的是可以直接使用深度思考和连网搜索我们就先试用一下我就让它写一个DipSync的发展历史文章为了体现出效果的对比我也会用同样的提示词来让差的GBT和KIMI来写从结果来看我觉得它写的还不错还更有一些文学的气息从中文的角度来说我觉得可能比差的GBT要稍微好一点点分享一点使用时候需要注意的地方首先来说深度思考是阿异模型并不是B3模型接下来我要说两点我用的时候比较奇怪的地方第一个是我一开始写文章的时候我开起了深度思考然后它给我的结果不是太好我就让它进一步完善但是突然它输出的结果就变成了英文的内容这个又很奇怪第二个就是搜索的结果开记了连网搜索之后它返回的内容我觉得很多是不太可靠的内容比如这里面的2021和2022它的参考是非常不可信的尤其是2022整片文章没有任何提到2022的地方只有底间有一个网页时间是2022但是它却把它当成了这条新文的参考时间这个我觉得应该是有错误的但是这是我第一次试用的时候遇到了这个问题后来当我正式录频做视频的时候它返回的结果就是正确的了也许是这段时间DipSync后台又有了一些优化除了基本的内容生成我也测了一些其他的方向比如让它去写代码还有去做一些数学体我是在Github上找的一个数学体的数据籍如果大家感兴趣的话也可以去试一下这里我感觉它做的效果还不错但是之前评论区有朋友说它在做数学体的时候表现不加我觉得有可能在有些题目上它确实还不太行有兴趣的朋友也可以去深入多试一试还有让它去处理一些图片相关的内容以及让它去制定一些计划主要还是围绕着我们能看到几个常用的场景这里我就不足一去细说了会总一下来和大家说一下我的试用体验好的地方就是想用速度确实很快比较符合DipSync公开的三倍的速度提升第二就是理解还不错第三就是它的数据时间很新大家可以这里看到我问了一下它它告诉我的数据是到2024年7月份的第四就是可以使用深度思考和连用查询而且这都是免费的接来我说一些不好的地方首先就是上下文的长度不太够当然它是128K的上下文这个没有问题不过这里可能也是它前端的优化不够因为比如说像我们用差的GBT的时候它不会直接来提示你的上下文长度已经用进了它会在后台去给你做一些处理第二个就是一些细节性的问题我怕有的时候会自动的切换成英文还有就是一些体验性上的问题比如说我让它做一些计划的时候对比Kimi我们就能直观地看到对于用户来说哪一个反回结果更好更加的易用第三就是它目前是不支持多么态的虽然你可以上船图片但是它对图片应该不是去做一些理解而是去做一些文字的OCR因为我个人的角度来去做一些总结像我这种开了差的GBTPlus的用户我觉得还是差的GBT更好用但如果你是之前完全没有用过AI的用你从Depsyc开始使用的话也是一个不错的选择所以我个人的综合感觉还是那句话它的表现不错但绝对没有超神明当然熟悉Depsyc的人都知道网页版其实基本算是复送的Depsyc的核心还是在API上我们接下来就来看看Depsyc的API这里首先是价格价格方面是真的便宜我们可以横向的对比一下Depsyc的价格要便宜很多但是也要注意这里的公告因为现在是优惠期到2月8号以后是要调价的但是调价之后其实还正便宜第二个就是接口方面这里Depsyc就非常的简单粗暴它直接接融OPENAI的接口所以你可以使用和OPENAI接融的任何工具来去调用Depsyc这应该也算是比较方便的一种方式了第三就是功能的覆盖范围我是根据稳囊来去查看的内容目前主要提供的还是对话不只是多摩泰所以算是比较纯粹你可以把它当成是一个AI功能的处理核心然后其他的能力还是通过自己的方声靠来去实现综合来说我觉得API最主打的还是一个新价比还是一如既往的这种价格的优势我们说了一堆API便不便宜好不好用它到底能用来做什么这可能是很多朋友更关心的问题我这里举两个例子第一个就是用Depsyc的API来做翻译比如你把API的Key配置到沉浸室翻译里面那么就可以用大模型来做翻译了体验还是很好的第二个比较常见的使用Depsyc API的方式就是在开发当中我们可以通过Depsyc加Klan来去构建一个属于个人的Cursor这里首先我们在VS Code的扩展当中搜索一下Klan然后安装一下安装好了之后我们进入Page在设置当中我们把API的Provider切换成Depsyc然后在这里填上对应的APIK如果你是首次使用Depsyc的话你的APIK需要自己去创建一下创建好了之后把内容贴过来就OK了配置好了之后我们就可以使用Klan来去开发了我这里让它写一个摊时舌的小游戏用PYGAM来去实现这里它会一步一步的自动去执行任务然后这里每一步需要交互的时候它会提醒你你安装对应的去确认一下就OK了我们可以看到它会一步一步的来帮我们把整个任务全部执行完毕然后在最上方大家可以看到它还会统计目前已经消耗的偷肯和预估的一个费用最后我们就可以获得一个可以执行的太师舌小游戏当然它看起来还是比较简单因为在这个过程当中我的提示词也是比较简单的如果你想让它完成更复杂的任务可以去优化你的提示词还有一点比较好我们可以看到这个成本最后还花了三分钱OK接下来我们来说一说V3的技术亮点比如架构方面它有三招RM A Dipsick M.O.E优化的复杂军行策略具体的内容我建议你直接去看其他的铁子里面会有很详细的专业性的技术描述而我这里为了避免让大家有一种听军一席画圣识一席画的感觉我决定会一种更通俗的说法来和大家解释Dipsick相关联的技术内容通过我在网上调查学习和汇总我觉得Dipsick其实就是通过压缩并行和提升硬件使用率来极致的压缩性能既然降低了这次大模型训练的成本首先压缩方面通过MRA来降低传统Transformer当中美层的计算量练一个就是使用FP8和精度的训练框架它相比传统的32W和16W的精度低了但是占用的空间就小了计算速度也就快了再有就是并行方面刚刚提到的Dipsick M.O.E和复载军行错虑所以一个比喻就是训练的过程相当于一个工厂流水线Dipsick就让流水线上没有咸人再加上尽可能的优化工序让数据进入了流水线马上就会被处理掉还有论文当中提到的周派它就是让流水线不咸下来在等待数据传书的时候就去处理另外一批的数据这样降低空线再有就是MTP技术多偷肯预测目标它就像是让模型从远有的一个字一个字的预测转化为了一段一段的预测然后还有在后续练方面的征流这个其实就是让大模型来去训练新的模型也就是让老师来教学上进而去踩成一个更好的模型Dipsick也提到了B3就是在R1的基础之上征流而出来的一个模型但是我们也要看到其实DipsickB3所采用的这些核心技术比如MRA是存在已久的技术MTP也是今年4月份META的论文当中提到的还有R1的征流其实在OpenAI之前也已经使用过了也就是说如果说之前的OpenAI是摸着石头过河的话Dipsick其实算是摸着前人的经验过河最后随着Dipsick热度的不断上升也有一些负面的声音在不断的传出但我还是希望可以有更多的像Dipsick一样的产品永陷出来毕竟价格便宜量有足的好产品谁不喜欢呢同时这样的产品出现才能真正的出进中国的开源大模型领域更好的发展起来那么好了我们这期就到这里下次再见
