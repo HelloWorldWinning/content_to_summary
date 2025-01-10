@@ -1,0 +1,114 @@
+Timestamp: 2025-01-11T02:25:58.152879
+Title: 给大模型新人的血泪建议，看完少走90%的弯路！大模型可以往哪些方向走！ BV1ChrpYLEJP
+URL: https://b23.tv/8nM2hbY
+Status: success
+Duration: 7:27
+
+Description:
+Okay, here's a summary of the provided text, adhering to your requirements:
+
+**Summary:**
+
+1.  **Introduction for Newcomers to Large Language Models (LLMs)**
+    *   This video aims to guide individuals new to LLMs, helping them understand the various directions within the field and their corresponding skill requirements.
+    *   It emphasizes avoiding common pitfalls in early career planning.
+
+2.  **Four Major Directions in LLM Engineering:**
+    *   **Data Engineering:**
+        *   Focuses on cleaning, building, and managing data for LLMs (ETL).
+        *   Crucial for creating high-quality training datasets.
+    *   **Platform Engineering:**
+        *   Deals with infrastructure for LLM training, including distributed training and foundational engineering.
+        *   Ensures efficient and scalable model development.
+    *   **Applications & Algorithm Development:**
+        *   Encompasses areas such as search, recommendation, chatbot, and AI opportunities.
+        *   Focuses on using LLMs to create end-user products.
+    *   **Deployment Engineering:**
+        *   Involves optimizing model inference, cross-platform deployment, and embedded systems.
+        *   Makes LLMs usable in real-world applications.
+
+3.  **Challenges with the "Applications & Algorithms" Path for Newcomers:**
+    *   While appealing, it often requires prior domain experience (e.g., speech, chatbots).
+    *   Newcomers are unlikely to directly work on model tuning or SFT initially.
+    *   New hires typically start with foundational tasks like environment setup and data management.
+    *   Career progression involves a gradual transition toward more advanced tasks.
+
+4.  **Alternative Entry Points:**
+    *   **Data Engineering** is often an easier entry point for those transitioning into LLMs
+    *   The author suggests that new learners should not go down a "one-way street".
+    *   **Platform Engineering** is also a good option, especially for those with engineering backgrounds.
+        *   It involves computational infrastructure, hardware management, and MLOps.
+    *   **Deployment Engineering:**
+        *   Focuses on cost-effective model inference.
+        *   Includes cloud and edge deployment.
+        *   More suitable for experienced individuals, not beginners.
+
+5.  **Importance of Data and Engineering Skills:**
+    *   In the current landscape, while algorithmic knowledge is more widely distributed now compared to a few years back, two crucial aspects prevail are still data and engineering skills.
+    *   The source and quality of data is key to training effective LLMs; data cleansing, management, and curation, especially in industry-specific LLMs such as finance or healthcare, is an invaluable skill.
+    *    For industry settings, the focus of LLM work is increasingly on engineering aspects, with the platform engineering and deployment being crucial.
+
+6.  **Recommendations for Newcomers:**
+    *   Do not focus solely on model tuning (e.g., SFT).
+    *   Focus on specific vertical industries for application development, e.g. chatbot systems or healthcare.
+    *   Value practical data experience to enhance your team, with a focus on data quality and testing.
+    *   Realize that LLM work includes significant engineering, not just algorithms.
+    *   Consider exploring data engineering or platform engineering as alternatives to algorithm development for newcomers, particularly those with less practical experience.
+
+7.  **Call to Action:**
+    *   A comprehensive LLM learning roadmap, videos, and data is offered upon request.
+
+**Core Point:**
+
+The path into the LLM field is not exclusively through algorithms; data and engineering skills are equally crucial, and often offer more accessible entry points for newcomers.
+
+**Fundamental Point:**
+
+For newcomers, focusing on building practical skills in data and infrastructure within a specific industry, is a pragmatic approach to build a career in the LLM domain, rather than solely targeting algorithm-focused roles at the outset.
+
+**Overarching Framework:**
+
+The content establishes a career guidance framework for LLM newcomers, categorizing four major engineering directions within the LLM domain and suggesting realistic ways to enter the industry based on the practical needs and the industry landscape.
+
+<Mermaid_Diagram>
+graph LR
+    A[LLM Newcomer Guidance] --> B(LLM Engineering Directions);
+    B --> C[Data Engineering];
+    B --> D[Platform Engineering];
+    B --> E[Applications & Algorithms];
+    B --> F[Deployment Engineering];
+
+    C --> C1(Data Cleaning, ETL)
+    C --> C2(Data Quality, Curation)
+     D --> D1(Distributed Training);
+    D --> D2(Infrastructure Management);
+    D --> D3(MLOps)
+    E --> E1(Search);
+    E --> E2(Recommendation);
+    E --> E3(Chatbots);
+     E --> E4(AI Opportunities);
+
+    F --> F1(Inference Optimization);
+    F --> F2(Cloud Deployment);
+    F --> F3(Edge Deployment);
+    
+    A --> G[Practical Advice];
+    G --> G1(Don't Focus Only on SFT);
+    G --> G2(Specialize Vertically);
+    G --> G3(Value Data Experience);
+     G --> G4(LLM is also Engineering);
+    G --> G5(Alternatives to Algorithm);
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:1px
+    style B fill:#ccf,stroke:#333,stroke-width:1px
+    style C fill:#ccf,stroke:#333,stroke-width:1px
+     style D fill:#ccf,stroke:#333,stroke-width:1px
+    style E fill:#ccf,stroke:#333,stroke-width:1px
+    style F fill:#ccf,stroke:#333,stroke-width:1px
+    
+</Mermaid_Diagram>
+
+
+Content:
+这是一篇给大模型新人的经验描述如果说你是一个想入门大模型的新人最不清楚自己适合往哪个大模型方向甚至说都不知道大模型有哪些方向以及每个方向上的能力需求那么请花几分钟看完这个视频它会让你在后期的学习和职业规划中可以扫走很多很多的弯路你去求职网站去搜索大模型的关键词看一下相关的招聘基地基本上就可以了解到目前我们业内对大模型工程式的需求方向大致可以分为四类第一类做数据的被成为大模型的数据工程式主要做大模型的清晰数据的清晰构建ETL等等等等第二做平台的也叫做大模型的平台工程式主要做分部式训练大模型的基金工程基建第三类做应用或做算法的大家所熟知的搜索推荐对话机器前AI机会都属于这类范愁第四类做部署的也叫大模型部署工程式主要做推理加速跨平台端自能牵入式等等的如果是你你会怎么去选很多人一看可能首先直接笨地三去了做应用和算法坚决要做应用就在所有工程的最前延做出让老板用户都看得到的核心产品不过这里我可能给大家要破一点的冷水因为在AI的算法这个行业里面它是很要求业务经验的如果说你之前本身就做算法的比如说做语音做所对话机器人你带着知情的业务经验再往大模型算法这个方向去走是比较合适的那么在这身业务里面你去融入大模型拿到实际的业务产品或者拿到实际的产出在路的简历上面那么这种人才在所在这身上面非常非常吃香但是说如果说你是一个CS方向的实际生或者硬节生或者其他方向转大模型三就未必是你刚转大模型的时候最平坏的一个选择大家不要带着一个误取也就是说大模型算法工程师就是说调模型调调参做一座预讯练微调SFT之类其实这部分工作只要很少人做基本上一个TIML里面只有个位数的人或者说只是整个算法工中的一小部分大家租聚新人进去90%以上都是不可能直接让你去干算法微调油化的活的大部分可能还让你配环境把练路做一些数据相关的事情这些体力活动干熟了以后才会让你跑一些模型试念然后对于其中比较优秀的同学才会让你们慢慢地开始接触现场义务对于刚入行的新人如果说你的学历背景不错可以去大公司然后转针背景差异的同学可以去中小公司去积累一下业务经验所以很多人往往就忽视了上面所说的1、2、4别我学了这么算法知识学了机器学习深度学习还会大模型再去做数据有点驱彩了但是我想告诉大家比如说1大数据工程师可能是很多刚转行大模型的同学更容易上岸的方式调调大陆通过吧不要一条路走到黑首先国外的大模型技术谁敢叫国内领先但是就算法本身来讲GPT已经不是个秘密了那身权还有什么呢1是数据2是工程技巧数据来说你说先说通用大模型新的练的数据它数据来从哪里踩数据的质量怎么把控如何过虑有毒信息语言的衰强于比例数据的去从以及数据的规范化处理等等等等这些技术体力会有些技术会而对于锤子率率比如说金融电商医疗法律撤起这种锤子数据购件就更考虑技术了业务数据怎么来数据不够怎么办完全没有数据又怎么办如何购件高s上的微调数据能够把这些问题解决好了模型也就成功了一大大因此就目前的线账来讲对于数据工程师特别是有经验的数据工程师其实非常非常稀缺的然后来看一下2大模型的平台工程师如果说你之前是做工程的或者说对工程比较感兴趣我比较建议一选二其实这两者之间并没有什么本质的区别都是为了大模型业务服务的也叫做大模型的基础设施建设基础设施建设作用就是让大模型跑得更好跑得更快那么这块主要做什么顺分三个层面来讲计算层面有分不是计算并行计算高性能计算当然有些公司对这三者也不加区分那么硬件层面有搞大模型的训练集权的GPU集权或者说是CPUGPU的混合集权需要管理几百上千张卡还要负责他们的一个利用率极其的健康状况有没有挂那么中校公司关于这一款的基本上是开发运为一把抓一个工作改两个公主的活而平台层面则有做LMLMOPS包括了数据IW模型的训练预测上线的监控那么这个时候就需要跟着业务团队走造很多高校的轮子给业务团队使用减少业务团队的一个重复开发的时间那么这个方向从整体上来说在大模型时代是稳中有生体上很多公司搞这颗的人都是之前从深度学习平台那边找过来的这顿的差距相对比较小因此对AI工程改形成同学可以考虑这个方向最后我们来看一下大模型的部署工程师这个岗位之前也有不过在大模型时代的油气火热什么原因呢因为部署一个大模型太费钱了首先模型的延迟本身就很高那么300亿以上的模型对算率显存的要求就很高老板关心什么一方面是大模型产品也就是说业务的指标要好看方便批二立方面还要控制成本将本争下近两年的几乎是所有工事的一个组续力所以老板很关心也节约了多少钱如果说你把推理效率提升了一倍那就是实打实的降升了降低了一倍的成本那么回到大模型部署这个岗位总体上来讲有两个方向的工作云端部署和端测部署云端很好理解可以做推理加速平台也可以随着业务做大模型的进化加速还可以做大模型的推理引擎比如说所问答所所问答的推理引擎另一个方向是端测部署也就是在消费级CPU和边缘端这种情况下去部署大模型同时让大模型小型化让业务能够实际的工程落地这个岗位一般来讲不太推荐新人路程因为比较时尽念可以先从二进场转到大模型的部署工程师最后给大家总结一下给准备路程的新人级点建议低不要只关心微调、SFT等等作为系统系学习肯定是ok的但是没有必要花太多的经历第二想做应用的同学的建议聚焦在某个垂直领域比如讲对话机器人问大系统金融医疗教育等方向找一个聚焦的场景把它做好、做生第三多关心数据期内高质量的数据训练及测试机的购件经验对数据感觉是最直接也是最适合用到未来公布团队的第四大模型并不是只有算法也可以有工程大公司拼的是基建平台这对业务的支撑牛逼的基建都是大模型产品不可获却的因素另外如果你想系统的学习大模型这里给大家准理了一套从入门到就业的大模型的学习路线以及相关的学习视频和数据需要的可以在评论区留言义官加求分享进而领取
