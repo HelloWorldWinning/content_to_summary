@@ -1,0 +1,808 @@
+Timestamp: 2025-01-10T17:08:47.206887
+Title: Stock Market Forecasting Using Deep Learning
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Introduction**
+   *   Stock market forecasting is challenging due to the complex, noisy, and dynamic nature of financial time series.
+   *   Deep learning (DL) models are being explored to address this challenge, utilizing historical data and technical indicators.
+   *   Validation through profitability metrics and model performance is essential.
+   *   This review focuses on DL models for stock market forecasting using technical analysis (TA).
+   *   TA uses price data and technical indicators, while fundamental analysis (FA) uses company data.
+   *   Technical indicators (TI) and candlestick patterns are used by technical analysts.
+   *   The use of AI models outperforms traditional statistical models for stock market forecasting.
+   *   Initial studies using neural networks faced issues like overfitting and low complexity.
+   *   Deep learning (DL) is increasingly seen as promising, with Recurrent Neural Networks (RNNs) being common.
+   *   Sentiment analysis from news is also used for financial market prediction.
+   *   Many studies do not validate profitability, and lack trading strategies.
+   *  A complete methodology should incorporate trading strategies and profitability evaluation.
+
+**II. Research Methodology**
+   *   The review follows a systematic approach to identify, evaluate, and discuss relevant works.
+   *   A three-step process was followed: planning, conducting, and analysis.
+   *   Inclusion, exclusion, and quality criteria were established.
+   *   Scopus, Web of Science (WoS), and IEEE Xplore databases were searched with specific keywords.
+   *   Duplicate articles were removed, and criteria were applied, resulting in 34 publications.
+   *   Extracted information includes market, period, timeframe, attributes, predictor, DL technique, comparison, and profitability metrics, trading strategies and risk management.
+
+**III. Analysis of Results**
+   *   **Predictor Techniques:**
+      *   LSTM is the most widely used (73.5%), followed by hybrid models with CNN.
+      *   TIs improve prediction when included and preprocessed effectively.
+      *  CNNs were used to create image like input with TIs, other CNN were used to extract textual patterns.
+      *   Some models use attention mechanisms and market vectors.
+      *   Autoencoders are used to reduce noise.
+      *   Some studies use a PCA or elastic net models to reduce dimensionality.
+      *   Some integrate sentiment analysis from textual data.
+   *   **Trading Strategies:**
+      *   Most use simple buy/sell rules based on forecasts.
+      *   Some include a neutral/hold class.
+      *   Time frames varies.
+      *    Day Trading (DT) with short timeframes (5/1 minute) is also present.
+      * Some strategies set thresholds for price movements to execute trades.
+   *   **Profitability Metrics:**
+      *   Gross profit is commonly used, but not necessarily indicative of profitability.
+      *   Some use ROI or net profit to account for costs.
+       *   Some use  annual transactions, percentage of success, average profit per operation, Sharpe ratio, among others.
+      *   Weighted-F-Score is used as an improved metric over tradional ML metrics for financial models.
+   *   **Risk Management:**
+       *  Very few works implement risk management (stop loss (ST) and take profit (TP) by operation or period).
+
+**IV. Discussions**
+   *   Most publications are from 2017-2020, highlighting recent interest in DL with technical analysis.
+   *  LSTM is the most used model (73.5%).
+   *   A variety of markets, timeframes, and datasets are used, mostly Yahoo Finance, Python, Tensorflow.
+   *  The use of trading strategy and profitability evaluation are not consistently implemented.
+  *   DT enables larger datasets and more frequent testing, also can reduce capital exposure.
+   *    Most models do not test in real trading environments.
+    *   Future works should include algotrading, costing, textual data and more markets.
+
+**V. Conclusion**
+   *   This review highlights the use of DL and TA in financial time series forecasting.
+   *    LSTM is the most common DL technique used.
+   *   The lack of comprehensive profitability analysis and risk management are limitations.
+   *   Many studies need to be validated in real market environments to ensure actual profitability.
+   *   Gaps in the literature include the need for more sophisticated trading strategies, risk management, real-world application, and consensus on which technical indicators to use.
+
+**Core Point:** Deep learning, especially LSTM, is frequently used for stock market forecasting with technical analysis, but many studies lack proper validation with profitability metrics and risk management strategies.
+
+**Fundamental Point:** While deep learning offers promising solutions for stock market prediction, its real-world effectiveness is limited without incorporating practical trading strategies and risk management techniques validated through real-world application.
+
+**Overarching Framework:** The content follows a structured approach to review the use of deep learning and technical analysis in stock market forecasting. It starts by identifying the problem, then dives into research methodologies, dissects findings into categories like techniques, trading strategies, and metrics, discusses the implications of these results, and provides a concise conclusion.
+
+<Mermaid_Diagram>
+graph LR
+    A[Stock Market Forecasting] --> B(Challenges: Complex Time Series);
+    B --> C(Need for Intelligent Models);
+    C --> D[Deep Learning Models];
+    D --> E[Technical Analysis];
+    E --> F(Technical Indicators & Candlesticks);
+     D --> G(Validation: Profitability Metrics & Performance);
+     G --> H(Trading Strategies);
+    G --> I(Risk Management);
+    H --> J(Simple Rules or Hold class);
+    I -->K(Stop Loss & Take Profit);
+   A --> L(Systematic Review);
+  L --> M(Methodology: Planning, Conducting, Analysis);
+   M --> N(Predictor Techniques);
+   N --> O(LSTM as main technique);
+     N --> P(Hybrid Models);
+   M --> Q(Trading Strategies);
+   M --> R(Profitability Metrics);
+    R --> S(Gross/Net Profit & ROI);
+    M --> T(Risk Management);
+   T --> U(Stop Loss & Take Profit);
+   L--> V(Findings);
+  V--> W(Lack of Risk Management, Real-World Application);
+    V --> X(LSTM Dominance);
+    V --> Y(Need for Advanced Strategies);
+     Y --> Z(Future Research);
+    Z --> AA(Algotrading, Costing, Sentiment Analysis, Markets);
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style N fill:#afa,stroke:#333,stroke-width:2px
+    style Q fill:#afa,stroke:#333,stroke-width:2px
+    style R fill:#afa,stroke:#333,stroke-width:2px
+     style T fill:#afa,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+Stock Market Forecasting Using Deep Learning
+and Technical Analysis: A Systematic Review
+AUDELIANO WOLIAN LI AND GUILHERME SOUSA BASTOS , (Member, IEEE)
+Institute of Systems Engineering and Information Technology, Federal University of Itajubá, Itajubá 37500-903, Brazil
+Corresponding author: Audeliano Wolian Li (audeliano@unifei.edu.br)
+This work was supported by the Brazilian Coordination of Improvement of Higher Level Personnel (CAPES).
+ABSTRACT Stock market forecasting is one of the biggest challenges in the financial market since its
+time series has a complex, noisy, chaotic, dynamic, volatile, and non-parametric nature. However, due to
+computing development, an intelligent model can help investors and professional analysts reduce the risk of
+their investments. As Deep Learning models have been extensively studied in recent years, several studies
+have explored these techniques to predict stock prices using historical data and technical indicators. However,
+as the objective is to generate forecasts for the financial market, it is essential to validate the model through
+profitability metrics and model performance. Therefore, this systematic review focuses on Deep Learning
+models implemented for stock market forecasting using technical analysis. Discussions were made based on
+four main points of view: predictor techniques, trading strategies, profitability metrics, and risk management.
+This study showed that the LSTM technique is widely applied in this scenario (73.5%). This work significant
+contribution is to highlight some limitations found in the literature, such as only 35.3% of the studies analysed
+profitability, and only two articles implemented risk management. Therefore, despite the widely explored
+theme, there are still interesting open areas for research and development.
+INDEX TERMS Deep learning, profitability metrics, risk management, stock market forecasting, systematic
+review, technical analysis, technical indicators.
+I. INTRODUCTION
+Asset prices forecasting for stock market is a very difficult
+and complicated task [1] since several micro and macroeco-
+nomic attributes and characteristics influence the price forma-
+tion, such as political events, news, company balance sheets,
+among others [2]. These factors contribute to the nonlinear
+and non-stationary characteristics presented by the market,
+favoring the proposed task complexity [3], [4].
+Therefore, the studies of these influences are made through
+market analysis, and their main objective is to predict future
+directions to assist decision making based on market behav-
+ior [5]. The literature presents two main approaches: Fun-
+damental Analysis (FA) and Technical Analysis (TA). Both
+have the same primary objective, and the difference is the
+information set used for forecasting and decision making.
+The first focuses on studying company data and seeks to
+determine whether it has growth potential in the medium to
+long term [6].
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Wei Liu.
+185232 In contrast, TA does not consider the company data, since
+investors who use this approach believe that information
+capable of moving the market is absorbed and reflected in
+the share price [7]. In other words, company balance sheets,
+accounting scandals, financial crises, or any relevant infor-
+mation capable of generating volatility in an asset is reflected
+in their price. Therefore, it is possible to avoid the FA data,
+which are often subjective, to identify patterns present in the
+asset graph through this strategy type.
+Technical analysts make extensive use of Technical Indi-
+cators (TI) and candlestick pattern analysis to assist in price
+movement forecast. Several scientific articles used price
+information (Open, High, Low, Close prices – OHLC), trad-
+ing volume, and indicators set as model input based on
+these techniques. However, when modeling these analyses,
+two different approaches are used; the works that used TIs
+generally adopted regression techniques [8]–[10] and those
+that analysed candlestick patterns adopted image processing
+techniques [11]–[13].
+A computational intelligence techniques survey for fore-
+casting prices in the stock market was proposed by
+Kumar et al. [14] and the authors identified that TIs play an
+This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/ VOLUME 8, 2020
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+essential role; however, identifying an adequate TIs set is still
+an open problem.
+Regarding works based on statistical methods, several
+authors stated that they did not perform efficiently and gen-
+erated inferior results to models based on artificial intelli-
+gence (AI) [15]–[18], as statistical techniques treat financial
+time series as linear systems. Additionally, the survey
+of Cavalcante et al. [5] stated that some financial time series
+characteristics are responsible for the difficult task of fore-
+casting compared to other time series. Thus, traditional sta-
+tistical methods are not effectively applied to the economic
+context.
+White [19] was the pioneer in implementing an artificial
+neural network (ANN) for financial market forecasting. The
+author used the daily prices of IBM company as a database.
+As it was just an initial study, it did not achieve the expected
+results. It highlighted the difficulties encountered, such as
+the overfitting problem and low complexity of the neural
+network, since only a few entries and one hidden layer were
+used. It was also mentioned possible future works, such as
+adding a higher number of features in the ANN, working
+with different forecasting horizons, and evaluating model
+profitability.
+Besides, Cavalcante et al. [5] selected publications on
+computational intelligence from 2009 to 2015 and noted
+that ANNs were widely used and highlighted Deep Learn-
+ing (DL) as future work. Then, the survey of Kumar et al. [14]
+presented works that addressed computational intelligence
+and explored publications from 2016 to 2019, that is, a contin-
+uation of the previous work. They highlighted several hybrid
+implementations and some based on ANN, fuzzy, and DL.
+Additionally, Gandhmal and Kumar [20] and Nti et al. [21]
+noted that ANNs were widely used and performed better
+than fuzzy, support vector machine (SVM) and decision trees
+since ANNs had more significant potential for generalization.
+Besides that, Fawaz et al. [22] concluded that DL techniques
+were able to achieve performance similar to the state-of-the-
+art for time series classification.
+TA is often used for investments with a shorter horizon,
+trend forecasts, and reversal points identification [5]. There-
+fore, the timeframe used for model training must be taken
+into account. The vast majority of previous works used daily
+candles for a one-day forecast horizon or more. In the review
+by Nti et al. [21], the 81 publications using TA only 5 worked
+with intraday candles, showing a differential potential for
+future works.
+The justification for the lack of research that explores
+smaller timeframes can be either positive (a study yet to
+be explored) or negative (not showing exciting results).
+However, it is possible to justify, in principle, the advan-
+tage of using a smaller graphic period through the work of
+Kumar et al. [14], which presented the instances number of
+each reviewed articles and the one with the highest num-
+ber was 4818, between the years 1986 and 2005, that is,
+267 instances per year on average. As for training, DL models
+require large data volumes, and this amount of daily candles
+is relatively small. However, when training with intraday
+data, the 267 annual instances increase to 28836, considering
+9 hours of trading and a 5-minute timeframe.
+Sezer et al. [23] conducted a DL techniques survey for
+forecasting financial time series and concluded that recurrent
+neural networks (RNN) are the most explored by researchers.
+However, in their review, the authors did not limit the entry
+attributes set and used FA data, news, price history, market
+behavior, and TIs. The work focus was to present and analyse
+the techniques used, including the performance criteria and
+platforms adopted.
+Nowadays, with the development of natural language pro-
+cessing (NLP) and the large volume of news available, sen-
+timent analysis has been applied with relative success in the
+financial market [24]. Several works use news information
+together with historical prices for forecasts and have shown
+results superior to models that use only OHLCV [25]–[27].
+Cavalcante et al. [5] identified the works generally did
+not use trading strategies. Also, they did not evaluate the
+profitability, reinforcing the conclusion of White [19] and
+the affirmation of Vanstone and Finnie [6], which say there
+is much research that does not validate the profitability,
+resulting in several inconsistent models in the long term.
+Thus, these issues have generated the greatest contribution
+of Cavalcante et al. [5] work, which added two final phases
+for the financial forecasting standard methodology: trading
+strategy and profitability evaluation.
+To reinforce the need for this new methodology is possible
+to cite the Nazário et al. [28] work, which analysed 85 articles
+and only 31 used some trading strategy. Also, Wang et al. [10]
+identified that the metrics used for Machine Learning (ML)
+models have a low correlation with financial metrics, rein-
+forcing the great importance of a completely autonomous
+system for correct financial validation.
+Finally, this systematic review aims to gather and analyse
+existing articles in the literature, focusing on DL techniques
+for forecasting prices in the stock market, highlighting the
+accuracy and profitability metrics used to validate the model
+and trading strategies adopted.
+II. RESEARCH METHODOLOGY
+Kitchenham and Charters [29] presented a guide for prepar-
+ing a systematic review and emphasized that the objective is
+to identify, evaluate, and discuss relevant works to answer
+the research questions. Also, they stated that a review of the
+literature needs to be complete and fair, otherwise it has little
+scientific value.
+A systematic review has some advantages, such as research
+with less biased results through a well-defined methodology.
+In the case of quantitative studies, the data can be combined
+using meta-analytic techniques, thus increasing the probabil-
+ity of detecting new insights.
+Therefore, given the information collected, the criteria
+adopted in this work are justified and the methodology used
+for this systematic review will be detailed below.
+VOLUME 8, 2020 185233
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+To select the main publications to be used in this
+work, some strict criteria must be respected and follow
+a well-defined research protocol. Three steps were pro-
+posed by [29] for the development of a systematic review:
+1) planning, 2) conducting, and 3) analysis of results.
+A. PLANNING THE REVIEW
+Therefore, the first stage must bring some questions to be
+answered at the end of the systematic review and the inclu-
+sion, exclusion, and quality criteria. The defined questions are
+listed in the Table 1.
+TABLE 1. Research questions.
+The inclusion (IC), exclusion (EC) and quality (QC) crite-
+ria are presented in Tables 2, 3 and 4, respectively.
+TABLE 2. Inclusion criteria.
+TABLE 3. Exclusion criteria.
+TABLE 4. Quality criteria.
+Thus, the Scopus platform was used to extract publications,
+as it is a reference in academia [30], and the Web of Sci-
+ence (WoS) database was also added to complement the
+previous platform since it is one of the oldest [31]. In addition,
+the IEEE Xplore database was also used, as it is a platform
+widely used in the engineering area. As keywords for the
+search descriptors were used ‘‘Stock Market’’, ‘‘Deep Learn-
+ing’’, ‘‘Forecasting’’ and ‘‘Technical Analysis’’. In order to
+cover the largest number of articles related to the themes,
+probable variations were also used for this selection. Thus,
+the search string used was:
+((‘‘Stock Market’’) OR (‘‘Stock Index’’) OR (‘‘Financial
+Market’’) OR (‘‘Future Market’’) OR (‘‘Equity Market’’) OR
+(‘‘Share Market’’) OR (‘‘Stock Exchange’’) OR (Finance)
+OR (‘‘Foreign Exchange’’)) AND ((‘‘Deep Learning’’)) AND
+((‘‘Technical Analysis’’) OR (‘‘Graphical Analysis’’) OR
+(‘‘Technical Indicators’’) OR (‘‘Candlestick Analysis’’) OR
+(‘‘Candlestick Technique’’) OR (‘‘Charting Technique’’)
+OR (‘‘Quantitative Analysis’’)) AND ((‘‘Forecasting’’) OR
+(‘‘Predict’’) OR (‘‘Forecast’’)).
+In relation to Scopus, each search was set to select these
+terms only on keywords, abstract, and title documents. Addi-
+tionally, as a limiter for data collection, ‘‘articles’’, ‘‘con-
+gresses’’ and ‘‘reviews’’ were used. For the other databases,
+it was decided not to impose limitations due to the limited
+number of publications.
+The publications on each platform based on the keywords
+were made on May 3, 2020, totaling 111 articles. It is possible
+to observe a significant number of documents present in
+Scopus concerning the platforms WoS and IEEE Xplore: 82,
+18, and 11, respectively.
+With the aid of the Start software,1 a tool developed espe-
+cially for systematic reviews and based on the work proposed
+by [32], it was possible to remove duplicate publications,
+resulting in 84 articles. After reading the abstract (and other
+sections, when necessary), the inclusion and exclusion crite-
+ria were applied, resulting in 46 documents.
+Among the 46 studies, only published in the English lan-
+guage and available through consultation by Capes Portal for
+periodicals2 were used, leaving 37 publications.
+Finally, the integral reading was made of the remaining
+articles, excluding those that did not fit quality criteria.
+Besides, works belonging to the same authors and developed
+as a continuation of the study, the complete work was con-
+sidered. In this way, three publications were excluded and the
+remaining 34 will be analysed in the next step. Figure 1, based
+on [33], illustrates the number of articles separated during the
+described process.
+After a complete reading of the publications selected,
+Table 5 was filled with all relevant information for each
+work. Such as the market, period, and timeframe used. The
+attributes extracted for training/testing the proposed forecast
+B. CONDUCTING THE REVIEW
+model, the predictor name, and which DL technique used.
+The second stage consists of extracting the relevant publica-
+tions for the systematic review and selecting the works based
+on the criteria previously defined.
+1http://lapes.dc.ufscar.br/tools/start_tool
+2http://www.periodicos.capes.gov.br
+185234 VOLUME 8, 2020
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+FIGURE 1. Number of articles separated during the conducting stage.
+Techniques to compare results, which are measured using
+accuracy or profitability metrics; it was also analysed whether
+the authors used trading strategies and risk management.
+C. ANALYSIS OF RESULTS
+The third and final step consists of analysing the selected arti-
+cles, separating them in predictor techniques, implemented
+trading strategies, profitability metrics, and risk management.
+1) ANALYSIS BASED ON PREDICTOR TECHNIQUES
+This subsection aims to analyse techniques based on fore-
+casting stock market prices or trends. Once the focus of the
+work is DL techniques, the analysis will cover deep neural
+network (DNN), convolutional neural network (CNN), long
+short-term memory (LSTM), hybrid algorithms, and others.
+Comparative studies were done by [39], demonstrating that
+TIs improved the ML model prediction. In the proposed work,
+several TIs were generated through 1-hour intraday data and
+a 24-hour forecast window. During the pre-processing step,
+the data were normalized and an autocorrelation function was
+used to select only the relevant input data, resulting in 9 TIs.
+Then, 14 ML models, including CNNs, were implemented
+and the results obtained by the authors demonstrated that the
+TIs inclusion increased the next day price forecast accuracy.
+A different model was proposed by [52], which uses a CNN
+network with graph theory implemented. Two models were
+proposed for tests and comparisons, the first based on corre-
+lation and the second on causality. Besides, an ML predictor
+with linear regression and another using ARIMA also served
+to compare the results of root-mean-square error (RMSE),
+mean absolute percentage error (MAPE) e mean absolute
+error (MAE). The results showed that the proposed model
+presented smaller errors than traditional techniques, but did
+not perform tests with a simple CNN network or an LSTM
+network.
+On the other hand, Sezer and Ozbayoglu [55] implemented
+a CNN network and used several models to compare the
+work developed performance, including an LSTM network.
+The significant difference lies in creating a 15 × 15 matrix
+formed by 15 TIs and 15 different periods, resulting in CNN
+input like an image. Finally, they obtained accuracy, preci-
+sion, and profitability superior to the comparative models.
+However, Sim et al. [56] proposed a similar CNN but using
+the information of 1-minute. In the experimental tests, CNN
+showed better results than ANN and SVM, but when varying
+the amount of TIs, there were no improvements in results.
+Unlike most published works, Wang et al. [10] proposed
+a new predictor model based on a one-dimensional CNN
+(1D CNN) capable of extracting data characteristics; that is,
+it is not necessary to create TIs. Also, to classify the market
+as upward, downward, or consolidating, they used a function
+based on closing price and volatility.
+Regarding the works that implemented the LSTM
+technique, which are more than half of the analysed publi-
+cations, some approached the pre-processing, results com-
+parisons, and accuracy metrics in similar ways. The authors
+by [40], [43], [44], [47], [53] used asset prices and TIs as
+network attributes, and the data were normalized to feed the
+model input based on the LSTM network. Among them, only
+Qiu et al. [53] proposed a new model: a combination of
+LSTM and GRU (Gated Recurrent Unit), to explore LSTM
+ability to process sequential data and the simplicity of GRU,
+reducing training time and computational cost.
+In contrast, the works developed by [38], [41], [54] opted
+to use standardization in the pre-processing stage. Also,
+Chen et al. [38] proposed a predictive model based on
+LSTM with Attention Mechanism (AM) and Market Vec-
+tor (MV), with the MV being responsible for capturing
+correlations between assets. The results showed that this
+predictor obtained the smallest errors, being more effective
+than the commonly implemented LSTM with TIs. In turn,
+JuHyok et al. [41] used 16 candlesticks patterns modeled in
+the TI format to feed an LSTM network, performing better
+than a CNN.
+AutoSLSTM was developed by [35], which had as its
+first layer an LSTM network with autoencoder followed by
+two other simple LSTM layers. The autoencoder technique
+proved to be very useful in reducing input data noise, resulting
+in minor errors concerning a simple LSTM network and a
+traditional MLP. During the tests, the forecast horizon was
+varied between 1, 5, and 10 days. There were concluded that
+the higher the parameter value, the more error is accumulated.
+Moreover, Labiad et al. [44] also obtained precision values
+that decreased with the increase of the forecast horizon, 10,
+30, and 60-minutes.
+A model with two layers of LSTM stacked and generated
+400 characteristics based on market information was pro-
+posed by [37]. However, for training, only 250 were randomly
+selected. Thus, a different attribute set was selected for each
+new training, resulting in different training data. In contrast,
+Agrawal et al. [34] developed an optimized LSTM, and
+through the correlation-tensor technique, adaptive TIs were
+generated, resulting in better accuracy and lower MSE.
+Reference [45] used OHLCV information to generate
+4 TIs and feed the input of an ARIMA model, then the
+VOLUME 8, 2020 185235
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+TABLE 5. Analysed articles.
+185236 VOLUME 8, 2020
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+TABLE 5. (Continued.) Analysed articles.
+output was used for the model based on LSTM. In contrast,
+Wen et al. [63] proposed the PCA-LSTM, whose the PCA
+(Principal Component Analysis) technique was responsible
+for extracting TI characteristics and reducing dimensional-
+ity, resulting in better predictions concerning the compared
+models.
+In turn, Tan et al. [59] reduced dimensionality through an
+elastic net model and used LSTM as a predictor, but inte-
+grated with the Sharpe-Optimized method to achieve a bal-
+anced investment strategy with the risk-return. They obtained
+a financial accumulation of 75% higher than the traditional
+linear model and performance above the ML models.
+Despite Nelson et al. [8] used the same predictor of other
+studies, the authors generated a large number of indicators
+and normalized them using the log-return transform. The
+results showed an accuracy slightly above 50%, but it reduced
+the maximum drawdown in most studied assets.
+Works that made use of textual data, such as news, also
+obtained good results as shown in [48], [49], [62], [64], which
+used predictors based on LSTM, autoencoders, deep belief
+network (DBN), and AM, respectively. In all models, textual
+data is pre-processed using sentiment analysis techniques and
+later concatenated with the price and TI data.
+Several authors have developed research using hybrid
+models for forecasting, and all models had LSTM or RNN
+layers linked to CNN layers. In the works of [46], [50],
+[51], [60], [61], the authors used CNN to extract textual data
+patterns, such as news channels and social networks, thus
+generating more information than just the asset price. All of
+them showed better results than a network with only LSTM
+implemented.
+It is worth highlighting the work of Oncharoen and
+Vateekul [51] since it was proposed to change the loss func-
+tion by adding Sharpe ratio information to the cross-entropy
+equation. Thus, the risk-return was calculated and weighted
+during the training. A metric based on the Sharpe ratio and
+F1 score, called Sharpe-F1 score, was proposed to select the
+best models based on risks presented.
+Finally, Alonso-Monsalve et al. [36] used CNN layers to
+extract patterns in an 18 TIs set and OHLCV formed by
+six cryptocurrency, and an LSTM layer to generate a trend.
+Kelotra and Pandey [42] proposed an optimization algorithm,
+Rider-based monarch butterfly optimization, used to train the
+predictor based on a Convolutional LSTM Network (ConvL-
+STM), an algorithm used for sequential images. Furthermore,
+Zhou et al. [65] used a network with LSTM layers linked to
+CNN layers to market direction forecasting and implemented
+the GAN (Generative Adversarial Network) technique for the
+training process.
+2) ANALYSIS BASED ON TRADING STRATEGIES
+A trading strategy is understood as the logic used by the
+authors to buy or sell an asset. Most works used a simple rule
+of the type: if the forecaster indicates a buy signal, the algo-
+rithm makes the purchase and waits for a sell indication to
+effectuate the profit or loss. As can be seen in the publications
+of [34], [40], [41], [55].
+Other authors also addressed the neutral, or hold, class in
+addition to the buy and sell classes. This is used not to perform
+any action; that is, if the system is not positioned, it waits for
+the buy class to make a transaction. If the system has a long
+transaction open and the forecasting indicates a neutral class,
+the algorithm maintains the transaction until the sell signal.
+This is the case with works like [47], [51], [59].
+According to the model forecasting, other works imple-
+mented long or short strategies and finished the operation
+after a certain period. Matsubara et al. [49] and Oncharoen
+and Vateekul [50] chose to buy or sell the asset at the trading
+session opening and closed the operation at the end of the
+same day. While Lee and Soo [46] made the purchase and
+closed it after five days, once that they trained the model
+with a 5-day forecast horizon. Nelson et al. [8] proposed
+VOLUME 8, 2020 185237
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+slippage, the difference between the desired price and the
+price executed in the trading.
+4) ANALYSIS BASED ON RISK MANAGEMENT
+Risk management is understood as techniques used to avoid
+a significant loss of capital (stop loss (ST) by operation or
+period) or techniques to maximize profit (take profit (TP) by
+operation or period). Only two publications presented these
+procedures in their studies.
+Reference [49] adopted in their tests two different thresh-
+olds for TP and SL: 1% and 2%. Thus, according to the fore-
+casting, the trading strategy executed the asset long or short
+at the trading session opening and concluded the transaction
+at the end of the same day. However, if the asset price were
+to increase or decrease by more than 1%, the TP or SL would
+be triggered. For the threshold of 2%, the logic is analogous.
+In turn, Song and Lee [58] used an SL of -12%, TP of 24%,
+and maximum days positioned. For example, set up a maxi-
+mum of days positioned equal to ten and if the asset has not
+reached the SL or TP within this period, the operation was
+closed.
+III. DISCUSSIONS
+From the analyses made in previous subsections and the infor-
+mation obtained through Table 5, it is possible to visualize
+the most used tools for this review, the research trend over
+the years, besides mentioning several possible gaps to be
+explored in future works.
+Although this systematic research does not limit publica-
+tion year, after carrying out the inclusion and exclusion crite-
+ria, the remaining articles date from 2017 to 2020, showing
+that studies involving DL with technical analysis for the stock
+market are relatively recent. There was an increase in the
+number of publications over the years, as shown in Figure 2.
+a model classified as upward or not an upward trend and
+only bought the stock. Although the transactions are intraday,
+the authors did not work on sold transactions. After 15 min-
+utes, the algorithm ended the operation. Finally, the trading
+system developed by [61] bought or sold an asset at the close
+of the current day and discontinued the transaction at the close
+of the next day.
+Regarding Day Trading (DT), Borovkova and Tsiamas [37]
+and Sim et al. [56] carried out buying and selling operations
+with 5 and 1-minute timeframes, respectively. With inputs
+and outputs based on the high and low classifications pro-
+vided by the predictors. In turn, Wang et al. [10] and Alonso-
+Monsalve et al. [36] traded similarly, but with a hold class
+forecast, in addition to the buy and sell.
+Finally, unlike previous works, Song et al. [57] and
+Song and Lee [58] made purchases and stipulated the asset
+appreciation and devaluation; thus, once the price reached the
+model predicted valuation, profit was made and vice versa.
+3) ANALYSIS BASED ON PROFITABILITY METRICS
+As it is a study focused on the stock market, it is crucial to
+analyse the metrics used to calculate profitability. A model
+with high precision and accuracy is not necessarily a prof-
+itable model.
+The works usually show gross profit, regardless of oper-
+ating costs and fees, as well as [8], [49], [57], [58], as it
+is the most trivial way to analyse and compare profitability
+between models. Song et al. [57] presented an exciting result,
+where one of the tested models obtained 81.6% accuracy,
+but its profitability was close to zero. If costs were taken
+into account, the model would report losses, despite the high
+accuracy. While Matsubara et al. [49] showed a test with
+accuracy above 60% but obtaining a loss of -22%.
+Considering the costs, Fazeli and Houghten [40] presented
+the results using ROI, percentage of profit as a function of
+costs. While the publications by [46], [50], [51], [61] pro-
+vided the net profitability, that is, the gross profit discounted
+the costs. Oncharoen and Vateekul [50] and Vargas et al. [61]
+obtained losses in some of their tests, despite the models
+reaching accuracy above 50% (69% and 51%, respectively).
+Some works were not limited to presenting only accu-
+mulated profit, Sezer and Ozbayoglu [55] analysed the total
+annual transactions, percentage of success, average profit per
+operation, number of days positioned, average profit and loss
+per operation, and Sharpe ratio, in addition to considering
+costs. While Tan et al. [59] showed the average annual volatil-
+ity, the maximum drawdown, annual Sharpe ratio, Sortino
+ratio, and Calmar ratio, but did not cost account.
+Finally, Wang et al. [10] proposed a profitability met-
+ric called Weighted-F-Score, since the authors stated, and
+proved with experimental results, that the commonly used
+ML metrics, such as accuracy and F1 score, do not apply
+to financial market forecasting. Since different forecasting
+types, errors impact financial performance in different ways;
+therefore, different weights are applied for each type of error.
+It was also the only work analysed that took into account
+FIGURE 2. Number of publications per year.
+Another interesting point to analyse is the DL technique
+used in each proposed model, thus answering the first ques-
+tion (RQ1 - Which DL techniques are mostly used to
+forecast prices in the stock market?). Most studies used the
+LSTM network, since it is an ideal algorithm for time series
+forecasting, as it can store memory and solve the gradient
+vanishing problem. The works that implemented only this
+technique were 17. However, if hybrid models are considered,
+185238 VOLUME 8, 2020
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+which all have this recurrent network, eight articles should
+be added, totaling 25 works and representing 73.5% of the
+analysed publications. Figure 3 illustrates the DL techniques
+used.
+TABLE 6. Database used by the articles.
+FIGURE 3. Deep Learning techniques used in each proposed model.
+Weibo,13 Twitter, Tiingo,14 Kaggle,15 Epoch Times,16 and
+Nihon Keizai Shimbun newspaper.17
+Regarding the timeframe, those who used daily data add up
+to 23 works, while the other 11 chose DT with varying graphic
+times, as can be seen in Figure 4. Most works in the literature
+use daily data, as this information is easily and freely obtained
+from finance sites, such as Yahoo Finance. However, this page
+does not offer the option to import intraday data.
+Regarding the works that mention which tools were used
+to develop the predictor based on historical price data, they
+all did programming in Python3 and Tensorflow.4 Other
+tools also widely used were NumPy,5 Pandas,6 Scikit-Learn,7
+Keras,8 TA-Lib,9 and TA4J10; the last two being libraries to
+generate TIs.
+Answering the second question (RQ2 - Which markets
+and timeframes are most used for price prediction?), there
+is a wide variety of assets from the North American, Indian,
+Chinese, Brazilian, Korean, European, Taiwanese, German,
+Belgian, Moroccan, and cryptocurrency markets. This prob-
+ably occurs due to prior knowledge of each author local
+market; also, for implementation in a real environment and
+trading assets from another country, it is usually necessary to
+open an account in that country, making the process bureau-
+cratic and costly.
+Table 6 shows a variety of datasets used to collect historical
+stock prices. However, most authors choose Yahoo Finance
+due to the ease of acquiring data using a library developed in
+Python, yahoo-finance.11
+In addition, publications that used news data for hybrid
+algorithms with sentiment analysis collected information
+from Reuters, Bloomberg, FiNet,12 Google News, Sina
+3https://www.python.org
+4https://www.tensorflow.org
+5https://numpy.org
+6https://pandas.pydata.org
+7https://scikit-learn.org
+8https://keras.io
+9https://ta-lib.org
+10https://github.com/ta4j/ta4j
+11https://pypi.org/project/yahoo-finance
+12https://www.finet.net/news
+FIGURE 4. Timeframes used in each work.
+The advantage of adopting DT is the large volume of data
+available for training the network, as previously mentioned.
+Furthermore, it is also possible to make a performance anal-
+ysis and measuring the model accuracy degradation since a
+large amount of data make it possible to apply a larger number
+of sliding windows for testing and validation. Also, for high
+volatility assets, it is possible to develop an algotrading to
+13http://weibo.com
+14https://api.tiingo.com
+15https://www.kaggle.com/aaron7sun/stocknews
+16https://www.epochtimes.com/b5/nsc420.htm
+17https://www.japantimes.co.jp/tag/nihon-keizai-shimbun
+18https://finance.yahoo.com
+19https://www.wind.com.cn/en/wft.html
+20http://www.twse.com.tw/zh
+21https://archive.ics.uci.edu/ml/index.php
+22https://www.epexspot.com/en
+23https://www.kesci.com/home/dataset/5bbdc2513631bc00109c29a4/files
+24http://www.resset.cn/endatabases
+25https://www.moneycontrol.com
+VOLUME 8, 2020 185239
+A. W. Li, G. S. Bastos: Stock Market Forecasting Using Deep Learning and Technical Analysis
+generate profitability by exploiting this market characteristic.
+Moreover, as operations are started and closed in a shorter
+period, capital will be less exposed, since assets are sensitive
+to micro and macroeconomic behaviors, news, and other fac-
+tors capable of strongly moving the asset price and resulting
+in losses.
+Figure 5 illustrates the number of studies using perfor-
+mance metrics, profitability, trading strategy, risk manage-
+ment, and application in the real environment. It is possible to
+see that metrics like accuracy, precision, recall, and F1-score
+are the most used to compare models, thus answering the third
+question (RQ3 - What are the metrics used to validate the
+performance of the proposed model?).
+Finally, answering the fifth question (RQ5 - What are
+the metrics used for profitability evaluation?), the most
+used profitability metric is accumulated profit, which can be
+presented as gross or net value, after deducting costs. Only
+12 articles (35.3%) presented this result showing that the
+concern of [5], [6], [19] is still valid since the articles analysed
+comprise from 2017 to 2020 and most do not address this vital
+metric.
+Among these 12 publications, only two works used risk
+management, which used a threshold for both asset valuation
+or devaluation. It is crucial to use this type of technique
+since the data in a financial series show noisy and chaotic
+behaviors, which can go beyond the limit of loss and cause
+severe property damage.
+Although the 34 studies analysed the accuracy, error,
+or profitability, none implemented the proposed model in
+a real environment. It was a significant phase to validate
+if the model would be applicable in the stock market. The
+application using a real trading platform is essential because
+the market is formed by intraday candles, so dynamic and
+sensitive to macroeconomic data and news, generating high
+volatility throughout the day. Without a system to protect
+capital and without carrying out exhaustive tests, doubts may
+arise regarding the model efficiency and, mainly, the prof-
+itability.
+FIGURE 5. Number of studies using performance metrics, profitability,
+trading strategy, risk management and application in the real
+environment.
+Regarding the gaps and future work proposed by the arti-
+cles explored, the most cited are related to implementing an
+algotrading with trading strategy [8], [36], [38], [43], [53],
+[58], [60]–[62]. It shows that the authors realize the impor-
+However, these results cannot be analysed in isolation,
+tance of model validation through a simulated or real envi-
+since the model is used for financial time series, it is essential
+ronment. Alonso-Monsalve et al. [36] and Vargas et al. [60]
+also to analyse the profitability obtained. Works such as [49],
+also consider the cost calculation to be an essential factor
+[50], [57], [61] corroborate this statement, showing that it is
+for the final result of the system profitability. As previously
+possible to create a model with high accuracy, but reporting
+mentioned, works that use qualitative data, such as news, have
+losses.
+gained prominence for financial market forecasting and are
+Answering the fourth question (RQ4 - The works
+proposed as future works in [38], [40], [48], [62]. Another
+using automated trading systems, which the methods
+proposal presented was implementing other markets to test
+employed?), the strategies used for trading are mostly quite
+the model generalization [34], [43], [55], [58]. Finally, it is
+simple and can be:
+possible to note that there is no consensus on which and
+• The trading system does long operation based on the
+how many TIs should be used since some propose to reduce
+forecasting and holds until forecasting change to short;
+the dimensionality [53], [58] and others propose to vary and
+• System buys and maintains the operation for a specific
+increase the TIs quantity [34], [36], [39].
+time;
+• In addition to the long strategy, the system can operate
+short and make a purchase later to effectuate the profit
+or loss.
+Regarding the 18 works that implemented a trading system,
+none used artificial intelligence-based approaches, making a
+decision based on the predictive model estimation, nor do
+they use techniques commonly used by market analysts, such
+as break-even, trailing stop, and dynamic leverage.
+For a unitary forecast horizon, simple strategies can be
+used, but increasing the horizon requires more sophisticated
+techniques due to some assets high volatility. Another disad-
+vantage of a naive strategy is many operations, resulting in
+higher costs and reduced profitability.
+IV. CONCLUSION
+This article aimed to review the academic literature on finan-
+cial time series forecasting using DL and technical analysis.
+Using a research methodology was possible to select 34 arti-
+cles for this study. Thus, analysis and discussions were made
+based on four main points of view: predictor techniques,
+trading strategies, profitability metrics, and risk management.
+It was noted the extensive use of the recurrent neural
+network LSTM due to memory storage capacity and the
+ability to solve the vanishing gradient problem. Some hybrid
+models used LSTM to treat technical indicators and other
+techniques to deal with news, pr
