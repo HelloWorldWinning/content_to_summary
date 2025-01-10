@@ -1,0 +1,81 @@
+Timestamp: 2025-01-11T00:29:04.923385
+Title: A comprehensive review on multiple hybrid deep learning approaches for stock prediction - ScienceDirect
+URL: https://www.sciencedirect.com/science/article/pii/S2667305322000497
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Introduction**
+
+*   Recent research focuses on using machine learning for stock price prediction and portfolio management.
+*   The goal is to maximize investment returns through short-term trading by predicting stock trends.
+*   This paper reviews various AI and ML techniques for stock price forecasting.
+
+**II. Core Methodologies**
+
+*   The review covers techniques including:
+    *   ARIMA
+    *   LSTM (Long Short-Term Memory)
+    *   Hybrid LSTM
+    *   CNN (Convolutional Neural Network)
+    *   Hybrid CNN
+
+**III. Model Evaluation and Comparison**
+
+*   The study discusses the accuracy and limitations of various models:
+    *   ARIMA
+    *   LSTM
+    *   MI-LSTM, Bi-LSTM, LSTM-DRNN
+    *   CNN
+    *   GC-CNN
+    *   CNN-LSTM, CNN-TLSTM, CNN-BiLSTM
+*   Performance is evaluated using standard measures such as RMSE, MAPE, and MAE.
+
+**IV. Model Strengths and Hybrid Benefits**
+
+*   LSTM models excel at forecasting accurate stock rates due to low MSE, RMSE, and MAE.
+*   CNN models are good at capturing swift changes in the system, predicting the general trend and deflection range.
+*   Hybrid models benefit from the combined strengths of different model types, resulting in more accurate and efficient forecasting.
+
+**Core Point:** Hybrid deep learning models, particularly CNN-LSTM, offer enhanced accuracy for stock price forecasting by combining the strengths of individual models.
+
+**Fundamental Point:** This review highlights the advancement in stock prediction achieved through various AI and ML techniques, focusing on the effectiveness of hybrid deep learning approaches for precise and dynamic stock market analysis.
+
+**Overarching Framework:** The content presents an analysis framework for stock market forecasting that first defines its goals and then categorizes and reviews different types of machine learning models, assessing them based on the accuracy and error measurement, lastly, it discusses the benefits of using hybrid models for better performance.
+
+<Mermaid_Diagram>
+    graph LR
+        A[Introduction] --> B(Stock Market Prediction);
+        B --> C{AI/ML Techniques};
+        C --> D[ARIMA];
+        C --> E[LSTM];
+        C --> F[Hybrid LSTM];
+        C --> G[CNN];
+        C --> H[Hybrid CNN];
+        C --> I[Model Evaluation];
+        I --> J[Accuracy and Limitations];
+         J-->K[RMSE, MAPE, MAE];
+        J-->L[Model Comparison];
+        L-->M[LSTM Strengths]
+        L-->N[CNN Strengths]
+        M -->O[Accurate Rate];
+        N-->P[Trend & Deflection];
+         O-->Q[Low MSE, RMSE, MAE];
+        P-->R[Swift Change Capture];
+        I-->S[Hybrid Model Benefits];
+        S-->T[Efficient & Accurate Forecasting];
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#afa,stroke:#333,stroke-width:2px
+        style I fill:#aaf,stroke:#333,stroke-width:2px
+         style S fill:#cfa,stroke:#333,stroke-width:2px
+        
+        
+</Mermaid_Diagram>
+
+
+Content:
+Intelligent Systems with Applications Volume 16 , November 2022 , 200111 Review A comprehensive review on multiple hybrid deep learning approaches for stock prediction Author links open overlay panel Jaimin Shah a , Darsh Vaidya b , Manan Shah c Show more Add to Mendeley Share Cite https://doi.org/10.1016/j.iswa.2022.200111 Get rights and content Under a Creative Commons license open access Highlights • A complete systematic study of stock market forecasting is offered. • Emphasis is placed on the ARIMA, LSTM, and CNN-LSTM methodologies. • A comparison of several types of models for stock market forecasting is provided. • Analyzing the CNN-LSTM Hybrid Model for predicting, which is highly accurate. Abstract Numerous recent studies have attempted to create efficient mechanical trading systems through the use of machine learning approaches for stock price estimation and portfolio management. Using the ability to foresee the future trends of the stock performance, the return of investment can be maximized for short-term trading. This paper will review various Artificial Intelligence (AI) and Machine Learning (ML) strategies for stock price forecasting. The aim of this review is to discuss various techniques for stock price prediction that incorporate ARIMA, LSTM, Hybrid LSTM, CNN, and Hybrid CNN. Additionally, it will also discuss the limitations and accuracy of the various models, including the ARIMA model, the LSTM model, the MI-LSTM model, the Bi-LSTM model, the LSTM-DRNN model, the CNN model, the GC-CNN model, the CNN-LSTM model, the CNN-TLSTM model, and the CNN-BiLSTM model, in terms of percentage of accuracy or error calculation in terms of standard accuracy measures like RMSE, MAPE, MAE. The models can be used to forecast either the accurate stock rate, induced by the low MSE, RMSE and MAE of LSTM models, or the general trend and deflection range of the stock the following day, induced by the ability to dynamically capture swift changes in the system of CNN models. These characteristics consequently illustrate the advantages of the hybrid model at efficiently and accurately forecasting stock attributes. Previous article in issue Next article in issue Keywords Stock Market Machine Learning Deep Learning Recommended articles Cited by (0) © 2022 The Author(s). Published by Elsevier Ltd.
