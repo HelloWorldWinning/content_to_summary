@@ -1,0 +1,65 @@
+Timestamp: 2025-01-11T11:28:27.291294
+Title: 不愧是吴恩达！从入门到进阶，一口气讲透CNN、RNN、GAN、GNN、DQN、Transformer、LSTM等八大深度学习神经网络算法！真的不要太爽！ p01 1. week1-01_计算机视觉 BV151r3YTE9v
+URL: https://b23.tv/HywsqvV
+Status: success
+Duration: 5:43
+
+Description:
+**Summary:**
+
+1.  **Introduction to Deep Learning in Computer Vision:**
+    *   Deep learning is rapidly advancing computer vision.
+    *   Applications include self-driving cars, face recognition, image recommendation, and art creation.
+    *   Two key reasons for excitement: enabling new applications and inspiring cross-fertilization of ideas.
+2.  **Examples of Computer Vision Problems:**
+    *   **Image Classification (Recognition):** Identifying the category of an object in an image. Example: a cat.
+    *   **Object Detection:** Locating and classifying multiple objects within an image. Example: identifying car positions in a self-driving car scenario.
+    *   **Neural Style Transfer:** Applying the style of one image to the content of another. Example: repainting a photo in the style of a Picasso painting.
+3.  **Challenges with Large Images:**
+    *   Large image inputs (e.g., 1000x1000 pixels) result in very high dimensional input feature vectors (e.g., 3 million).
+    *   Standard fully connected networks require massive weight matrices (e.g., 1000 x 3 million), leading to billions of parameters.
+    *   Such large parameter sets cause issues with overfitting due to lack of data, and pose high computational and memory demands.
+    *   Need for better implementations, like the convolution operation.
+4.  **Convolutional Neural Networks:**
+    *   The convolution operation is a fundamental building block for convolutional neural networks.
+    *   Edge detection is an example of how convolutions work and will be explained in the next video.
+
+**Core Point:**
+Deep learning is revolutionizing computer vision, enabling novel applications while presenting challenges with high-dimensional data, addressed by convolutional operations.
+
+**Fundamental Point:**
+The large number of parameters required for standard networks with high-resolution images necessitates the use of convolutional neural networks and their core operation: convolution.
+
+**Overarching Framework:**
+The framework is structured as follows:
+1. Introduction to Computer Vision's Rise Due to Deep Learning
+2. Key Computer Vision Applications
+3. Challenges of Large Images with Traditional Networks
+4. Introduction to Convolutional Operations as a Solution
+
+<Mermaid_Diagram>
+    graph LR
+    A[Deep Learning] --> B(Computer Vision);
+    B --> C[Applications];
+    C --> D[Self-driving Cars];
+    C --> E[Face Recognition];
+    C --> F[Image Recommendation];
+    C --> G[Art Creation];
+    B --> H[Challenges];
+    H --> I[Large Image Inputs];
+    I --> J[High Dimensional Features];
+    J --> K[Massive Weight Matrices];
+    K --> L[Overfitting and Computation];
+    H --> M[Need for Solutions];
+    M --> N[Convolutional Networks];
+    N --> O[Convolution Operation];
+      O --> P[Edge Detection (Example)];
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+      style B fill:#ccf,stroke:#333,stroke-width:2px
+      style H fill:#ccf,stroke:#333,stroke-width:2px
+      style N fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+ Welcome to this course on Convolutional Networks. Computer vision is one of the areas that's been advancing rapidly thanks to deep learning. Deep learning computer vision is now helping self-driving cars figure out where are the other cars and the pedestrians around it so it's to avoid them. It's making face recognition work much better than ever before so that perhaps some of you will soon or perhaps already be able to unlock a phone, unlock even a door using just your face. And if you look on your cell phone, I bet you have many apps that show you pictures of food or pictures of hotel or just fun pictures of scenery and some of the companies that build those apps are using deep learning to help show you the most attractive and the most beautiful or the most relevant pictures. And I think deep learning is even enabling new types of art to be created. So I think the two reasons I'm excited about deep learning for computer vision and why I think you might be too. First, rapid advances in computer vision are enabling brand new applications to build, they just weren't possible a few years ago. And by learning these tools, perhaps you will be able to invent some of these new products and applications. Second, even if you don't end up building computer vision systems per se, I found that because the computer vision research community has been so creative and so inventive and coming up with new neural network architectures and algorithms, it has actually inspired like create a lot of cross-fertilization into other areas as well. For example, when I was working on speech recognition, I sometimes actually took inspiration from ideas from computer vision and borrowed them into the speech literature. So even if you don't end up working on computer vision, I hope that you find some of the ideas you learned about in this course helpful for some of your algorithms and your architectures. So with that, let's get started. Here are some examples of computer vision problems we'll study in this course. You've already seen image classification, sometimes also called image recognition where you might take his input, say a 64 by 64 image and try to figure out if that cat. Another example of a computer vision problem is object detection. So if you're building a self-driving car, maybe you don't just need to figure out if there are other cars in this image, but instead you need to figure out the position of the other cars in this picture so that your car can avoid them. So an object detection, usually we have to not just figure out that these other objects say cars in the picture, but also draw boxes around them, or have some other way of recognizing where in the picture are these objects. And notice also in this example that there can be multiple cars in the same picture, or at least every one of them will be in a certain distance of your car. Here's another example, maybe a more fun one is neural style transfer. Let's say you have a picture and you want this picture, repainted in a different style. So neural style transfer, you have a content image and you have a style image. The image on the right is actually a Picasso. And you can have a neural network, put them together to repaint the content image that is the image on the left, but in the style of the image on the right. And you end up with the image at the bottom. So albums like this are enabling new types of artworks to be created. And in this course, you learn how to do this yourself as well. One of the challenges of computer vision problems is that the inputs can get really big. For example, in previous courses, you've worked with 64 by 64 images. And so that's 64 by 64 by three, because they're three color channels. And if you multiply that out, that's 1228.8. So X, D, input features has dimension 1228.8. And that's not too bad, but 64 by 64 is actually a very small image. If you work with larger images, maybe this is a 1000 pixel by 1000 pixel image. And that's actually just one megapixel. But the dimension of the input features will be 1000 by 1000 by three, because you have three RGB channels, and that's 3 million. Or if you are viewing this on a smaller screen, this might not be apparent, but this is actually a lower risk 64 by 64 image. And this is a higher risk, 1000 by 1000 image. But if you have three million input features, then this means that X here will be three million dimensional. And so if in the first hidden layer, maybe you have just a 1000 hidden units, then the total number of weights, that is the matrix W1. If you use a standard fully connected network, like we have in causes one or two, this matrix will be a 1000 by three million dimensional matrix, right? Because X is now R by three million, three M using it to denote three million. And this means that this matrix here will have three billion parameters, which is just very, very large. And with that many parameters, it's difficult to get enough data to prevent the neural network from overfitting, and also the computational requirements, the memory requirements to train the neural network with the billion parameters is just a bit infeasible. But for computer vision applications, you don't want to be stuck using only tiny little images. You want to use large images. To do that, you need to better implement the convolution operation, which is one of the fundamental building blocks of convolutional neural networks. Let's see what this means and how you can implement this in the next video. I will illustrate convolutions using an example of edge detection.
