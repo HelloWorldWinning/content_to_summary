@@ -1,0 +1,3806 @@
+Timestamp: 2025-01-12T14:58:15.184449
+Title: A Survey of Deep Learning and Its Applications: A
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**1. Introduction to Deep Learning:**
+
+*   Deep learning is a subfield of machine learning, which is itself a subset of AI. It focuses on enabling systems to learn from data without explicit programming.
+*   It uses artificial neural networks (ANNs) with multiple layers for high-level data abstraction.
+*   Deep learning training involves a "training phase" using labeled data and an "inferring phase" for applying knowledge to new data.
+*   The "deep" aspect refers to the multiple layers of data transformation, aiming for complex perception tasks.
+*   It uses nonlinear processing units for feature extraction, with subsequent layers building upon the results of previous layers.
+*   Deep learning is a form of representational learning, but with multiple levels of representation at a more abstract level.
+
+**2. Basic Architectures of Deep Neural Networks (DNN):**
+
+*   Various architectures exist, including Auto-Encoders (AE), Convolutional Neural Networks (CNN), Restricted Boltzmann Machines (RBM), Deep Stacking Networks (DSN), Long Short Term Memory (LSTM)/Gated Recurrent Unit (GRU) networks, and Recurrent Neural Networks (RNN).
+*   **Auto-Encoders (AE):**
+    *   Unsupervised learning method; closely related to PCA (Principal Component Analysis).
+    *   Consists of input, hidden encoding, and decoding layers.
+    *   Aims to reconstruct input by learning best representations in hidden layer.
+    *   Types: de-noising, sparse, variational, and contractive.
+*   **Convolutional Neural Networks (CNN):**
+    *   Based on animal visual cortex; used for image processing and character recognition.
+    *   Uses convolution and pooling layers for feature extraction and classification.
+    *   Offers local connectivity and shared weights for better accuracy and performance.
+*   **Restricted Boltzmann Machines (RBM) & Deep Belief Network:**
+    *   RBM: undirected graphical model with hidden and visible layers, symmetric connections.
+    *   DBN: multilayer network architecture incorporating RBMs and includes unsupervised pre-training and supervised fine-tuning.
+*   **Deep Stacking Networks (DSN):**
+    *   Composed of multiple individual networks, each with hidden layers.
+    *   Trained using a supervised approach, focusing on individual network training.
+*   **LSTM/GRU Networks:**
+    *   LSTM uses a memory unit (cell) with gates to control information flow.
+    *   GRU has an update and reset gate, simplified model compared to LSTM.
+*   **Recurrent Neural Networks (RNN):**
+    *   Has connections with feedback into previous layers.
+    *   Models problems over time using previous input memory.
+
+**3. Advanced Architectures of Deep Neural Networks:**
+
+*   Includes architectures such as AlexNet, Visual Graphic Group Net (VGG), GoogleNet, ResNet, ResNeXt, RCNN, YoLo, SqueezeNet, SegNet, and Generative Adversarial Networks (GANs).
+*   Each of these offers improvements in terms of speed, complexity, accuracy, or specific applications.
+
+**4. Characteristics of Deep Learning:**
+
+*   Strong learning ability, effectively utilizing large datasets.
+*   Automatic feature extraction.
+*   Surpasses human ability to solve complex tasks.
+*   Requires less manual engineering.
+*   Capable of feature extraction from high-dimensional data and generalization.
+*   Strong representation capabilities and good recognition ability in the big data era.
+
+**5. Motivation to Use Deep Learning:**
+
+*   Drives AI adoption, is a collection of ANN-based techniques.
+*   Growth is due to deep layered networks and GPU support.
+*   Achieved eminence in handwriting recognition, healthcare, image/speech, NLP.
+*   More accurate when trained with larger datasets.
+
+**6. Deep Learning vs. Machine Learning:**
+
+*   Deep learning uses multilayer ANNs that learn and decide intelligently; machine learning needs algorithms to learn from data and synthesize decisions.
+*   Deep learning uses large datasets; machine learning uses smaller sets.
+*   Deep learning requires high-performance hardware, while machine learning has fewer hardware constraints.
+*   Deep learning creates new features by itself; machine learning requires feature identification by users.
+*   Deep learning is end-to-end; machine learning decomposes tasks.
+*   Deep networks are often black boxes; machine learning provides more transparency.
+*   Training time for deep learning is significantly longer, but it generally achieves better accuracy.
+
+**7. Deep Learning vs. Conventional Learning:**
+
+*   Deep learning learns features directly from raw data; conventional learning uses manually crafted feature vectors.
+*   Deep learning can extract spatial, scale-invariant features; conventional methods focus on feature selection with dimensionality reduction.
+*   Deep learning requires less data preprocessing; conventional learning uses sensor appearance data.
+*   Deep learning handles intra-class variability with hierarchical features; conventional methods struggle with inter-class variability.
+*   Deep learning requires large datasets, and uses GPUs for training; conventional learning needs less data with less computation.
+
+**8. Reported Work on Various Applications of Deep Learning:**
+
+*   The paper extensively covers various applications, including but not limited to:
+    *   Acoustic modeling, adaptive testing, automotive industry, big data, biological image classification, data flow graphs, deep vision systems, document analysis and recognition, healthcare, human activity recognition, image recognition/classification, medical applications, mobile multimedia, object detection, parking systems, person re-identification, plant classification, power system fault diagnosis, radio wireless networks, remote sensing, semantic image segmentation, smart city, social applications, speech recognition/music discrimination, stock market analysis, structural health monitoring, synthetic aperture radar, text/document summarization, voice activity detection, word spotting, writer identification.
+*   Each application is supported with relevant research findings, specific architectures used, datasets, and conclusions.
+
+**9. Challenges of Deep Learning:**
+
+*   Manages complex input data, ensuring transparency of conclusions is challenging, demands significant resources, suffers from local minima, high computation, large datasets required, and lacks a strong theoretical foundation.
+
+**10. Conclusion and Future Aspects:**
+
+*   Deep learning is a fast-growing field, showing versatility and high accuracy.
+*   Hierarchy of layers and supervision in learning are key for successful applications.
+*   It's effective in areas like image/speech processing.
+*   Future research areas include handling complex scenarios, improving feature diversity, unsupervised learning, deep reinforcement learning, enhancing inference/efficiency, and applications in many fields (autonomous driving, healthcare).
+
+**Core Point:** Deep learning, with its multilayered neural networks and sophisticated architectures, represents a powerful and versatile paradigm shift in machine learning, enabling systems to learn from complex data and achieve human-level performance in numerous applications.
+
+**Fundamental Point:** Deep learning is not simply an incremental improvement over traditional machine learning; it's a transformative approach that fundamentally changes how systems learn, moving beyond explicit programming to self-developed feature extraction and complex data abstraction.
+
+**Overarching Framework:**  The content provides a comprehensive survey of deep learning, spanning its foundational concepts, architectural implementations, practical applications, inherent challenges, and potential future directions, positioning it as a pivotal force in the evolution of artificial intelligence.
+
+<Mermaid_Diagram>
+graph LR
+    A[Deep Learning] --> B(Introduction);
+    A --> C(Basic Architectures);
+    A --> D(Advanced Architectures);
+     A --> E(Characteristics);
+    A --> F(Motivation);
+    A --> G(Deep Learning vs Machine Learning);
+    A --> H(Deep Learning vs Conventional Learning);
+    A --> I(Applications);
+     A --> J(Challenges);
+    A --> K(Conclusion & Future);
+    
+    C --> C1(Auto-Encoders);
+    C --> C2(CNN);
+    C --> C3(RBM/DBN);
+    C --> C4(DSN);
+    C --> C5(LSTM/GRU);
+    C --> C6(RNN);
+    
+    D --> D1(AlexNet);
+    D --> D2(VGG);
+    D --> D3(GoogleNet);
+        D --> D4(ResNet);
+        D --> D5(ResNeXt);
+        D --> D6(RCNN);
+        D --> D7(YoLo);
+    D --> D8(SqueezeNet);
+        D --> D9(SegNet);
+        D --> D10(GANs);
+
+  I --> I1[Acoustic Modeling];
+    I --> I2[Adaptive Testing];
+    I --> I3[Automotive Industry];
+    I --> I4[Big Data];
+        I --> I5[Biological Image Classification];
+        I --> I6[Data Flow Graphs];
+        I --> I7[Deep Vision System];
+        I --> I8[Document Analysis];
+    I --> I9[Healthcare];
+ I --> I10[Human Activity Recognition];
+        I --> I11[Image Recognition];
+    I --> I12[Medical Applications];
+        I --> I13[Mobile Multimedia];
+        I --> I14[Object Detection];
+    I --> I15[Parking System];
+      I --> I16[Person Re-identification];
+      I --> I17[Plant Classification];
+        I --> I18[Power System Fault Diagnosis];
+            I --> I19[Radio Wireless Networks];
+            I --> I20[Remote Sensing];
+    I --> I21[Semantic Image Segmentation];
+     I --> I22[Smart City];
+    I --> I23[Social Applications];
+        I --> I24[Speech Recognition];
+    I --> I25[Stock Market Analysis];
+        I --> I26[Structural Health Monitoring];
+            I --> I27[Synthetic Aperture Radar];
+            I --> I28[Text/Document Summarization];
+            I --> I29[Voice Activity Detection];
+            I --> I30[Word Spotting];
+            I --> I31[Writer Identification];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B,C,D,E,F,G,H,I,J,K fill:#ccf,stroke:#333,stroke-width:1px
+    style C1,C2,C3,C4,C5,C6 fill:#eef,stroke:#333,stroke-width:0.5px
+        style D1,D2,D3,D4,D5,D6,D7,D8,D9,D10 fill:#eef,stroke:#333,stroke-width:0.5px
+    style I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13,I14,I15,I16,I17,I18,I19,I20,I21,I22,I23,I24,I25,I26,I27,I28,I29,I30,I31 fill:#f0f0f0,stroke:#333,stroke-width:0.5px
+</Mermaid_Diagram>
+
+
+Content:
+A Survey of Deep Learning and Its Applications: A New Paradigm 
+to Machine Learning
+ 
+
+Abstract
+
+Nowadays, deep learning is a current and a stimulating field of machine learning. Deep learning is the most effective, super-
+
+vised, time and cost efficient machine learning approach. Deep learning is not a restricted learning approach, but it abides 
+
+various procedures and topographies which can be applied to an immense speculum of complicated problems. The technique 
+
+learns the illustrative and differential features in a very stratified way. Deep learning methods have made a significant break-
+
+through with appreciable performance in a wide variety of applications with useful security tools. It is considered to be the 
+
+best choice for discovering complex architecture in high-dimensional data by employing back propagation algorithm. As 
+
+deep learning has made significant advancements and tremendous performance in numerous applications, the widely used 
+
+domains of deep learning are business, science and government which further includes adaptive testing, biological image 
+
+classification, computer vision, cancer detection, natural language processing, object detection, face recognition, handwrit-
+
+ing recognition, speech recognition, stock market analysis, smart city and many more. This paper focuses on the concepts 
+
+of deep learning, its basic and advanced architectures, techniques, motivational aspects, characteristics and the limitations. 
+
+The paper also presents the major differences between the deep learning, classical machine learning and conventional learn-
+
+ing approaches and the major challenges ahead. The main intention of this paper is to explore and present chronologically, 
+
+a comprehensive survey of the major applications of deep learning covering variety of areas, study of the techniques and 
+
+architectures used and further the contribution of that respective application in the real world. Finally, the paper ends with 
+
+the conclusion and future aspects.
+
+1 Introduction
+
+Machine learning is a subsection of Artificial Intelligence 
+
+(AI) that imparts the system, the benefits to automatically 
+
+learn from the concepts and knowledge without being 
+
+explicitly programmed. It starts with observations such 
+
+as the direct experiences to prepare for the features and 
+
+patterns in data and producing better results and deci-
+
+sions in the future. Deep learning relies on the collec-
+
+tion of machine learning algorithms which models high-
+
+level abstractions in the data with multiple nonlinear 
+
+transformations. A deep learning technology works on 
+
+the artificial neural network system (ANNs). These ANNs 
+
+constantly take learning algorithms and by continuously 
+
+increasing the amounts of data, the efficiency of training 
+
+processes can be improved. The efficiency is dependent on 
+
+the larger data volumes. The training process is called deep 
+
+because the number of levels of neural network increases 
+
+with the time. The working of the deep learning process 
+
+is purely dependent on two phases which are called the 
+
+training phase and inferring phase. The training phase 
+
+includes labeling of large amounts of data and determin-
+
+ing their matching characteristics and the inferring phase 
+
+deals with making conclusions and label new unexposed 
+
+data using their previous knowledge. Deep-learning is 
+
+such an approach that helps the system to understand the 
+
+complex perception tasks with the maximum accuracy. 
+
+Deep learning is also known as deep structured learning 
+
+and hierarchical learning that consists of multiple layers 
+
+which includes nonlinear processing units for the purpose 
+
+of conversion and feature extraction. Every subsequent 
+
+ * Munish Kumar 
+
+ munishcse@gmail.com
+
+1 Department of Computational Sciences, Maharaja Ranjit 
+
+Singh Punjab Technical University, Bathinda, Punjab, India
+
+2 College of Business, University of Dallas, Irving, USA
+
+3 Department of Computer Applications, Shaheed Bhagat 
+
+Singh State Technical Campus, Ferozepur, Punjab, India
+
+http://orcid.org/0000-0003-0115-1620
+http://crossmark.crossref.org/dialog/?doi=10.1007/s11831-019-09344-w&domain=pdf
+
+
+ S. Dargan et al.
+
+1 3
+
+layer takes the results from the previous layer as the input. 
+
+The learning process takes place in either supervised or 
+
+unsupervised way by using distinctive stages of abstraction 
+
+and manifold levels of representations. Deep learning or 
+
+the deep neural network uses the fundamental computa-
+
+tional unit, i.e. the neuron that takes multiple signals as 
+
+input. It integrates these signals linearly with the weight 
+
+and transfers the combined signals over the nonlinear tasks 
+
+to produce outputs.
+
+In the âdeep learningâ methodology, the term âdeepâ 
+
+enumerates the concept of numerous layers through which 
+
+the data is transformed. These systems consist of very spe-
+
+cial credit assignment path (CAP) depth which means the 
+
+steps of conversions from input to output and represents 
+
+the impulsive connection between the input layer and the 
+
+output layer. It must be noted that there is a difference 
+
+between deep learning and representational learning. 
+
+Representational learning includes the set of methods 
+
+that helps the machine to take the raw data as input and 
+
+determines the representations for the detection and clas-
+
+sification purpose. Deep learning techniques are purely 
+
+such kind of learning methods that have multiple levels of 
+
+representation and at more abstract level. Figure 1 depicts 
+
+the differences between the machine learning and deep 
+
+learning.
+
+Deep learning techniques use nonlinear transformations 
+
+and model abstractions at a high level in large databases. It 
+
+also describes that a machine transforms its internal attrib-
+
+utes, which are required to enumerate the descriptions in 
+
+each layer, by accepting the abstractions and representa-
+
+tions from the previous layer. This novel learning approach 
+
+is widely used in the fields of adaptive testing, big data, can-
+
+cer detection, data flow, document analysis and recognition, 
+
+health care, object detection, speech recognition, image clas-
+
+sification, pedestrian detection, natural language processing 
+
+and voice activity detection.
+
+Deep learning paradigm uses a massive ground truth des-
+
+ignated data to find the unique features, combinations of 
+
+features and then constructs an integrated feature extraction 
+
+and classification model to figure out a variety of applica-
+
+tions. The meaningful characteristic of deep learning is the 
+
+data that uses general purpose methods, various extensive 
+
+features and no intervention of human engineers. Facebook 
+
+has also created Deep Text for the classification of the mas-
+
+sive amount of data and cleaning the spam messages.
+
+The key factors on which deep learning methodology is 
+
+based are:
+
+ Nonlinear processing in multiple layers or stages.
+
+ Supervised or unsupervised learning.
+
+Nonlinear processing in multiple layers refers to a hierar-
+
+chical method in which the present layer accepts the results 
+
+from the previous layer and passes its output as input to the 
+
+next layer. Hierarchy is established among layers so as to 
+
+organize the importance of the data. Here supervised and 
+
+unsupervised learning are linked to the class target label. Its 
+
+availability means a supervised system and absence indi-
+
+cates an unsupervised system. Soniya et al. [56] presented 
+
+current trends, models, architecture and the limitations of 
+
+deep learning. They explored some of the characteristics 
+
+like learning techniques, optimization methods and tuning of 
+
+these models. They also focused on the use of large datasets 
+
+for the deep learning. They also discussed the challenges for 
+
+the deep learning.
+
+2  Basic Architectures of Deep Neural 
+Network (DNN)
+
+Different names for deep learning architectures embrace 
+
+deep belief networks, recurrent neural networks and deep 
+
+neural networks. DNN can be constructed by adding mul-
+
+tiple layers which are hidden layers in between the input 
+
+layers and the output layers of Artificial Neural Network 
+
+with various topologies. The deep neural network can model 
+
+convoluted and non-linear relationships and generates mod-
+
+els in which the object is treated as a layered configuration 
+
+of primitives. These are such feed forward networks which 
+
+have no looping and the flow of data is from the input layer 
+
+to the output layer. There are wide varieties of architectures 
+
+and algorithms that are helpful in implementing the concept 
+
+Fig. 1  Difference between 
+
+machine learning and the deep 
+
+learning
+
+MACHINE LEARNING
+
+DEEP LEARNING
+
+Input
+
+(Car)
+
+Feature
+
+Extraction
+Classification
+
+Output
+
+(Car/Not Car)
+
+Input
+
+(Car)
+Feature Extraction + Classification
+
+Output
+
+(Car/Not Car)
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+of deep learning. Table 1 depicts the year wise distribution 
+
+in the architecture of deep learning.
+
+Here, we will discuss six basic types of the deep learning 
+
+architectures and these are:-
+
+ Auto-Encoder (AE)
+
+ Convolutional Neural Network (CNN)
+
+ Restricted Boltzmann Machine (RBM)
+
+ Deep Stacking Network (DSN)
+
+ Long Short Term Memory (LSTM)/Gated Recurrent Unit 
+
+(GRU) Network
+
+ Recurrent Neural Network (RNN)
+
+Out of these, LSTM and CNN are two of the fundamental 
+
+and the most commonly used approaches.
+
+2.1  AutoâEncoder (AE)
+
+An Auto-encoder (AE) is a type of neural network which 
+
+is based on unsupervised learning technique and uses the 
+
+back propagation algorithm. The network first sets the target 
+
+result values to be equal to the input values. The network 
+
+tries to understand an approximation which is equivalent to 
+
+the identity function. Its architecture consists of three lay-
+
+ers which are an input, a hidden called encoding layer, and 
+
+a decoding layer. The network tries to reconstruct its input, 
+
+which forces the hidden layer to learn the best representa-
+
+tions of the input. The hidden layer is used to describe a code 
+
+which helps to represent the input. Auto-encoders are neural 
+
+networks, but they are also closely related to PCA (Principal 
+
+Component Analysis).
+
+Some Key Facts about the Auto-encoder are:-
+
+ Auto-encoders are neural network.
+
+ Auto-encoders are based on the unsupervised machine 
+
+learning algorithm.
+
+ These are closely resembled with the Principal Compo-
+
+nent Analysis (PCA).
+
+ It is more flexible than the PCA.
+
+ It minimizes the same objective function as PCA
+
+ The neural networkâs target output is its input
+
+Although Auto-encoders are same as PCA, but the flex-
+
+ibility of auto-encoder is quite high. Auto-encoders allow 
+
+the representation in both linear and non-linear way in the 
+
+encoding whereas linear transformation is possible in PCA. 
+
+Due to the network representation, Auto-encoders can be 
+
+stacked and layered to produce a deep learning network.
+
+Following are the types of Auto-encoders:
+
+1. De-noising Auto-encoder: It is an advanced version of 
+
+basic auto-encoders. To addresses the identity functions, 
+
+these encoders corrupt the input and afterwards, recon-
+
+struct them. It is also called the stochastic version of the 
+
+auto-encoders.
+
+2. Sparse Auto-encoder: These auto-encoders have the 
+
+learning methods that automatically extract the features 
+
+from the unlabeled data. Here the word sparse indicates 
+
+that hidden units are allowed to fire only for the certain 
+
+type of inputs and not too frequently.
+
+3. Variational Auto-Encoder (VAE): The variational auto-
+
+encoder consists of an encoder, decoder and a loss func-
+
+tion. They are used for the designing of the complex 
+
+models of the data that too with large datasets. It is also 
+
+known as high resolution network.
+
+4. Contractive Auto-encoder (CAE): These are robust net-
+
+works as de-noising auto-encoders but the difference 
+
+is that the contractive auto-encoders generate robust-
+
+ness in the networks through encoder function whereas 
+
+de-noising auto-encoders work with the reconstruction 
+
+process.
+
+Auto-encoders are used to operate with high dimensional 
+
+data and explains the representation of a set of data via 
+
+dimensionality reduction. Auto-encoder (AE) uses mainly 
+
+two structures, called, De-noising Auto-encoder and Sparse 
+
+Auto-encoder. For De-noising Auto-encoder, it uses data 
+
+from noise to experience the network weight and for Sparse 
+
+Auto-encoder, they bound the activation state of hidden 
+
+units. Working of an Auto-encoder considers the input and 
+
+afterwards maps it to an inherent transformation with the 
+
+help of nonlinear mapping.
+
+2.2  Convolutional Neural Network (CNN)
+
+CNN is a neural network with multiple layers and is based 
+
+on the animal visual cortex. The first CNN was developed by 
+
+LeCun et al. [27]. Application areas of CNN include mainly 
+
+image-processing and handwritten character recognition e.g. 
+
+postal code interpretation. Considering the architecture, ear-
+
+lier layers are used for identifying the features such as edges 
+
+and the later layers are used for the recombination of features 
+
+to form high level attributes of the input followed by the 
+
+Table 1  Years with the usage of architectures of deep learning
+
+Year Architecture of deep learning
+
+1990â1995 Recurrent neural network
+
+1995â2000 Long short term memory, convolutional neural network
+
+2000â2005 Long short term memory, convolutional neural network
+
+2005â2010 Deep belief network
+
+2010â2017 Deep stacked network, gated recurrent unit
+
+
+
+ S. Dargan et al.
+
+1 3
+
+classification. Then pooling will be done, which mitigates 
+
+the dimensionality of the extracted features.
+
+The next step is to perform convolution and then again 
+
+pooling, that is fed into a perfectly linked multilayer percep-
+
+tron. Responsibility of the concluding layer called an output 
+
+layer is to recognize the features of the image by using back-
+
+propagation algorithms. In CNN, the advantage of deep lay-
+
+ers of processing, convolutional layer, pooling, and a fully 
+
+connected classification layer reveals various applications 
+
+such as speech recognition, medical applications, video rec-
+
+ognition and various tasks of natural language processing.
+
+CNN produces better accuracy and improves the perfor-
+
+mance of the system due to its exclusive features such as 
+
+local connectivity and shared weights. It works much better 
+
+than any other deep learning methods. It is the most com-
+
+monly used architecture as compared to others. Figure 2 
+
+depicts the working of CNN with the flow of data from the 
+
+inputs, convolutional, pooling layers, hidden layers and the 
+
+outputs.
+
+2.3  Restricted Boltzmann Machines and Deep Belief 
+Network
+
+Restricted Boltzmann Machine (RBM) is such an undirected 
+
+graphical and modeled representation of the hidden layer, 
+
+a visible layer and the symmetric connection between the 
+
+layers. In RBM, there is no connection in between an input 
+
+and the hidden layer. The deep belief network represents 
+
+multilayer network architecture that incorporates a novel 
+
+training method with many hidden layers. Here every pair 
+
+of connected layers is a RBM and is also known as a stack of 
+
+restricted Boltzmann machines. The input layer constitutes 
+
+the basic sensory input, and the hidden layer characterizing 
+
+the abstract description of this input. The job of the output 
+
+layer is to only perform the network classification.
+
+The training part is done in two stages: Unsupervised 
+
+pre training and supervised fine-tuning. In unsupervised pre 
+
+training, from the first hidden layer, RBM is skilled to recon-
+
+struct its input. The next RBM is qualified similar to the 
+
+first one, and the first hidden layer is taken as the input and 
+
+visible layer, and the RBM is worked by taking the outputs 
+
+from the first hidden layer. Hence, every layer is pre skilled 
+
+or pre-trained. Now when the pre training is completed, 
+
+steps of supervised fine-tuning start. In this step, the nodes 
+
+representing the output are marked with the values or labels 
+
+so that they can help in the learning process and later on full 
+
+network training is done with the gradient descent learning 
+
+or back-propagation algorithm.
+
+2.4  Deep Stacking Networks
+
+Deep Stacking Networks (DSN) is also acknowledged as 
+
+deep convex networks. DSN is different from other tradi-
+
+tional deep learning structures. It is called deep because of 
+
+the fact that it contains a large number of deep individual 
+
+networks where each network has its own hidden layers.
+
+The DSN believes that training is not a particular and 
+
+isolated problem, but it holds the combination of individual 
+
+training problems. The DSN is made up of a combination 
+
+of modules which are part of the network and present in 
+
+the architecture. There are three modules that work for the 
+
+DSN. Here every module in the model is having an input 
+
+zone, a single hidden zone and an output zone. Subroutines 
+
+are placed one over the top of another with the input to the 
+
+Fig. 2  Architecture of Convolu-
+
+tional Neural Network
+F
+e
+a
+t
+u
+r
+e
+E
+x
+t
+r
+a
+c
+t
+i
+o
+
+n
+
+Inputs Convolutional-1
+
+Convolutional-1
+
+Pool-2
+
+Hidden
+
+Pool-1
+
+Output
+
+Classification
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+every module is taken as the outputs of the preceding layer 
+
+and the authentic input vector. Figure 3 depicts the process 
+
+of working of the layers that helps to resolve the complex 
+
+classifications. In DSN, every module is trained in isolation 
+
+so as to make it productive and competent with the ability to 
+
+work in coordination. The process of supervised method of 
+
+training is practiced as the back-propagation for each mod-
+
+ule and not for the entire network. DSNs works superior 
+
+than typical DBNs making it suitable and accepted network 
+
+architecture.
+
+2.5  LSTM/GRU Network
+
+The Long Short Term Memory (LSTM) was designed with 
+
+the efforts of Hochreiter and Schimdhuber, and used for 
+
+many applications. IBM selected LSTMs mainly for speech 
+
+recognition. The LSTM uses a memory unit called a cell 
+
+which can hold its value for a sufficient time and treats it as 
+
+a function of its input. This helps the unit to memorize the 
+
+last calculated value.
+
+The memory unit or a cell is made up of three ports called 
+
+gates, which control the movement of information in the 
+
+unit, i.e. into the cell and out of the cell.
+
+ The input port or the gate manages flow of new informa-
+
+tion into the memory.
+
+ The second gate called forgets port controls and is used 
+
+when an existing piece of information is forgotten and 
+
+helps the cell to memorize the new data.
+
+ The job of the output gate is again to control the informa-
+
+tion that is present in the cell and is used as the output of 
+
+the cell.
+
+The weight of the cell can be used for the controlling 
+
+purpose. There is a need for the training method which is 
+
+commonly called as Back propagation through time (BPTT) 
+
+that enhances the weight. The method requires network out-
+
+put error for the optimization.
+
+The Gated Recurrent Unit (GRU) includes two gates 
+
+called as an update gate and a reset gate. Responsibility of 
+
+an update gate is to tell the requirement of the contents of the 
+
+previous cell for the maintenance. The reset gate describes 
+
+the carrying process of previous cell contents with the new 
+
+input. The GRU represents a standard RNN by initializing 
+
+the reset gate to 1 and update gate to 0. Working capability 
+
+of GRU model is simple as compared to the LSTM. It can 
+
+be skilled in a short time and it is considered to be more 
+
+efficient in terms of its execution.
+
+2.6  Recurrent Neural Network
+
+RNN consists of a rich set of architecture and is the basic 
+
+network architecture. The important characteristic of a 
+
+recurrent network is that the recurrent network has a connec-
+
+tion that can be given as feedback into prior layers as com-
+
+pared to the complete feed-forward connections. It takes the 
+
+previous memory of input and models the problems within 
+
+time. These networks can be upgraded, skilled and expanded 
+
+with standard back-propagation called as back-propagation 
+
+through time (BPTT). Table 2, describes the various applica-
+
+tion areas of different architecture of deep neural networks.
+
+3  Advanced Architectures of Deep Neural 
+Network
+
+Owing to many flexibilities provided by the neural network, 
+
+deep neural network can be expressed by a diverse set of 
+
+models. These architectures are called deep models and 
+
+consist of:
+
+ AlexNet The net is named for the researchers. It was the 
+
+earliest deep learning architecture and was developed by 
+
+Alex Krizhevsky, Geoffrey Hinton and his colleagues, 
+
+who gave ground breaking research in deep learning. The 
+
+architecture consists of the convolutional layers and the 
+
+pooling layers which are stacked on one another and then 
+
+followed by completely interlinked layers on the top. The 
+
+benefits and superiority lie in the fact that the scalability 
+
+Outputs
+
+Hidden Layer
+
+InputOutputs
+
+Hidden Layer
+
+Inputs
+
+Fig. 3  Working of DSN
+
+
+
+ S. Dargan et al.
+
+1 3
+
+and the use of GPU are incomparable. AlexNet has high 
+
+speed of processing and training because of the use of 
+
+GPU.
+
+ Visual Graphic Group Net This net was developed by 
+
+the technicians at the Visual Graphics Group from the 
+
+Oxford and is in pyramid shape. The model consists of 
+
+the bottom layers which are wide and the top layers are 
+
+deep. VGG accommodates successive convolutional lay-
+
+ers and then the pooling layers to make the layers narrow.
+
+ GoogleNet The architecture was introduced by the 
+
+researchers at Google and hence the name of the Net. It 
+
+involves 22 layers whereas VGG had 19 layers. Google 
+
+Net is based on the novel technique which is known as 
+
+the inception module. Here single layer carries multiple 
+
+kinds of the feature extractors that help the network to 
+
+perform better. When multiple of these inception mod-
+
+ules are stacked one over the other, it becomes the final 
+
+one. The model converges faster because of the joint and 
+
+the parallel training. Training of GoogleNet is faster than 
+
+VGG with small size of the pre-trained GoogleNet.
+
+ ResNet Residual Network incorporates numerous succes-
+
+sive residual modules also called as the basic building 
+
+block of ResNet. The residual modules are placed on one 
+
+over the other and form a successful and complete node 
+
+to node network. The main benefit of ResNet is that many 
+
+residual layers are capable of forming a trained network.
+
+ ResNeXt It is constructed based on the concepts of 
+
+ResNet with novel and enhanced architecture with 
+
+improved performance.
+
+ RCNN (Regions with Convolutional Neural Network) It 
+
+depends upon designing a bounding box over the objects 
+
+in the image and identifies the object given in the image.
+
+ YoLo (You only look once) This architecture solves image 
+
+detection problems. To identify the class of the object, 
+
+the image is divided into bounding box and then a rec-
+
+ognition algorithm is executed which is common for all 
+
+the boxes. After identification of the classes, the boxes 
+
+are merged very carefully to make a best bounding box 
+
+around the objects. It is used in real time for handling 
+
+day-to-day problems.
+
+ SqueezeNet The SqueezeNet architecture is the most 
+
+powerful architecture to select with the low bandwidth. 
+
+This network architecture takes space of 4.9 MB and the 
+
+inception process will take 100 MB. A fire module is 
+
+used for handling the drastic change.
+
+ SegNet SegNet is considered as the best model for the 
+
+image segmentation problems. SegNet is a deep neural 
+
+network, which is used to solve the image segmentation 
+
+complexities. It is made up of an arrangement of pro-
+
+cessing layers which are called encoders, and interre-
+
+lated set of decoders for pixel wise classification. The 
+
+important feature of SegNet is the ability to retain very 
+
+high frequency details in the segmented image. Herein 
+
+the encoder network and the decoder network, pooling 
+
+indices are connected. The flow of information is also 
+
+straight.
+
+ GAN Generative Adversarial Networks is a unique net-
+
+work architecture, which creates an entirely novel and 
+
+different images, which are not already present in the 
+
+available training dataset.
+
+4  Characteristics of Deep Learning
+
+Deep learning is a broad term used for the machine learning 
+
+and for the artificial intelligence. Because of the following 
+
+mentioned characteristics, deep learning techniques have 
+
+achieved the heights of success in the variety of applica-
+
+tion areas. For example, new areas such as decision fusion, 
+
+on-board mobile devices, transfer learning, class imbal-
+
+ance problems and human activity recognition have gained 
+
+improvement in the performance and the accuracy.
+
+So, here are the following characteristics of deep learning:
+
+ Extensively powerful tool in many fields.
+
+ It is purely based on neural networks with the addition of 
+
+more than two layers and so called deep.
+
+ Have strong learning ability.
+
+ Can make use of datasets more effectively.
+
+Table 2  Architectures of deep neural network and their major application areas
+
+Architecture Major application areas
+
+Auto-encoder Natural language processing, understanding compact representation of data
+
+Convolutional neural networks Document analysis, face recognition, image recognition, natural language processing, video analysis
+
+Deep belief networks Failure prediction, information retrieval, image recognition, natural language understanding
+
+Deep stacking networks Continuous speech recognition, Information retrieval
+
+LSTM/GRU networks Gesture recognition, handwriting recognition, image captioning, natural language text compression, speech 
+
+recognition
+
+Recurrent neural networks Handwriting and speech recognition
+
+Restricted Boltzmann machine Collaborative filtering, classification, dimensionality reduction, feature learning, regression, and topic modeling
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+ Learn feature extraction methods from the data.
+
+ Surpass human ability to solve highly computational 
+
+tasks.
+
+ Very little engineering by hand is required in deep learn-
+
+ing.
+
+ Optimized results.
+
+ Deep learning networks depend upon the nature of the 
+
+network structure, activation function and data represen-
+
+tation.
+
+ Describe highly variant features in a few parameters.
+
+ Prediction performance can be greatly improved.
+
+ Solve highly computational tasks.
+
+ Capability to extract features from high dimensional sen-
+
+sory inputs.
+
+ Secure and robust generalization capability and with less 
+
+requirement of training data.
+
+ Fuse the benefits of multiple features for voice activity 
+
+detection.
+
+ Stronger than machine learning model in feature repre-
+
+sentation.
+
+ Covariance estimation can be improved for the prediction 
+
+applications.
+
+ Deep learning networks do not rely on prior data and 
+
+knowledge.
+
+ DNN has a unique representation and having innovative 
+
+methods to understand the representations even with 
+
+large-scale and unlabeled data.
+
+ With high-level abstraction, these networks can extract 
+
+complicated features.
+
+ Good recognition ability approaches in the big data era.
+
+5  Motivation to Use Deep Learning
+
+Deep learning technology has a conception that there is 
+
+nothing inherently challenging the applications to enhance 
+
+the performance, e.g. handwriting recognition of the 
+
+machines achieves human level of performance, same as for 
+
+face recognition and the object recognition metrics. It is to 
+
+be admitted that the deep learning begins from the hand-
+
+writing recognition. Its architecture called CNN was cre-
+
+ated successfully in order to read handwritten postal codes. 
+
+The motivation for the use of deep learning occurs from the 
+
+many facts as listed below:-
+
+ Undoubtedly, deep learning will definitely drive AI adop-
+
+tion into the enterprise also.
+
+ Deep Learning is the main driver and the most essential 
+
+approach to AI.
+
+ Deep learning is a collection of methods and techniques 
+
+based on artificial neural networks with multiple layers 
+
+and increased functionality.
+
+ Deep learning perceives tremendous growth because 
+
+it has deep layered neural networks and the support of 
+
+graphical processing units to improve the execution.
+
+ Deep neural networks mainly include feed-forward net-
+
+works with convolution and pooling layers.
+
+ There is no sequence and inputs and outputs are inde-
+
+pendent.
+
+ Deep neural networks achieved eminence, 4â5 years 
+
+back when deep models started replacing the traditional 
+
+approaches, especially in handwriting recognition, 
+
+healthcare, image classification, speech recognition 
+
+and natural language processing.
+
+ Deep neural networks can be disciplined and analyzed 
+
+by many researchers and academia.
+
+ Deep learning techniques and methodologies are more 
+
+accurate when skilled with large amount of data.
+
+ NVIDIA will influence the space in 2017 because they 
+
+are having the affluent deep Learning ecosystem. Intel 
+
+Xeon Phi solutions are buried on influx with respect to 
+
+deep learning.
+
+ Designers will depend on meta-learning.
+
+ Reinforcement learning will only become more crea-
+
+tive.
+
+ Adversarial and cooperative learning will be the king.
+
+6  Deep Learning vs. Machine Learning
+
+Deep learning architecture is constructed from many hidden 
+
+layers and multiple neurons per layer. The multilayer archi-
+
+tecture facilitates with the mapping of the input to higher 
+
+level representation. Here we discuss the major differences 
+
+that are found between two learning techniques:-
+
+ Deep learning constructs algorithms in various layers to 
+
+make an artificial neural network, which can learn and 
+
+take intelligent decisions on its own, whereas machine 
+
+learning needs algorithms to interpret data, learn from 
+
+that data and then synthesized informed decisions.
+
+ Deep learning takes a large amount of data while machine 
+
+learning needs a small amount of data to work and arrive 
+
+at a conclusion.
+
+ Deep learning requires hardware with very high perfor-
+
+mance.
+
+ Deep learning creates new features by its own processes 
+
+and techniques, whereas in case of machine learning, 
+
+features are accurately and precisely recognized by the 
+
+users.
+
+ Deep learning solves the problem on end to end basis, 
+
+whereas machine learning solves it by decomposing a 
+
+bigger task into smaller tasks and then combining the 
+
+results.
+
+
+
+ S. Dargan et al.
+
+1 3
+
+ Deep networks are black box networks and their work-
+
+ing is very difficult to understand because of hyper 
+
+parameters and complex network design.
+
+ Time requirement to train is much more in deep learn-
+
+ing than in machine learning.
+
+ Transparency is shown by machine learning methods 
+
+rather than the deep learning methods.
+
+ Accuracy rate achieved by deep learning is very satis-
+
+factory as compared to machine learning.
+
+ Challenging and complex feature engineering phase is 
+
+eliminated in the deep learning which is present in the 
+
+machine learning.
+
+ Deep networks need high-end graphical processing 
+
+units which are very expensive and are skilled in suf-
+
+ficient time with big data.
+
+7  Deep Learning vs. Conventional Learning
+
+The major differences that are present between the deep 
+
+learning methodologies and the conventional learning are 
+
+as described below:-
+
+ Extraction of features and their Representation 
+
+ From the raw sensor, deep learning methods can 
+
+learn features and finds the most suitable pattern 
+
+for improving the recognition accuracy.
+
+ Conventional learning worked on the feature vec-
+
+tors which are manually produced and applications 
+
+dependent. These features are difficult to model in 
+
+complexities.
+
+ Generalization and Diversity
+
+ It is possible to extract spatial, scale invariant and 
+
+temporal features from the unlabeled raw data in 
+
+deep learning.
+
+ Conventional learning used labeled sensor data. 
+
+And also focus on feature selection with dimen-
+
+sionality reduction methods.
+
+ Data preparations
+
+ In deep learning, pre-processing of the data and 
+
+normalization are not mandatory.
+
+ Conventional learning extracts features by using 
+
+sensor appearance and within the active windows.
+
+ Temporal and Spatial changes in Activities
+
+ Use of hierarchical features and translational invari-
+
+ant features can solve the complexities present in 
+
+intra-class variabilityâs in handcrafted features.
+
+ Handcrafted features are not suitable and inefficient 
+
+in solving the inter-class variabilityâs and inter-class 
+
+relations in the conventional learning.
+
+ Model Training and Execution time
+
+ To avoid over fitting, deep learning requires large 
+
+amounts of sensor dataset. It is also used for reduc-
+
+ing high computations. Graphical Processing Unit 
+
+(GPU) is used to speed up the training.
+
+ Less training data is required with less time for com-
+
+putation and memory utilization is also less in con-
+
+ventional training.
+
+8  Reported Work on Various Applications 
+of Deep Learning
+
+The target approach of deep learning is to resolve the sophis-
+
+ticated aspects of the input by using multiple levels of rep-
+
+resentation. This new approach to machine learning has 
+
+already been doing wonders in the applications like face, 
+
+speech, images, handwriting recognition system, natural 
+
+language processing, medical sciences, and many more. Its 
+
+latest researches involve revealing the optimization and fine 
+
+tuning of the model by using gradient descent and evolu-
+
+tionary algorithms. Some major challenges that the deep 
+
+learning technology is facing undoubtedly are the scaling of 
+
+computations, optimization of the parameters of deep neu-
+
+ral network, designing and learning approaches. A detailed 
+
+investigation in various complex deep neural network mod-
+
+els is also a big challenge to this potential research area. 
+
+The combination of fuzzy logic with deep neural network 
+
+is another provoking and demanding area which needs to 
+
+be explored. Numerous applications of deep learning are 
+
+depicted in Fig. 4.
+
+ Acoustic Modeling
+
+Mohamed et al. [37] proposed deep learning network, 
+
+which contains multiple layers of features with many 
+
+parameters for the phone recognition. They replaced 
+
+Gaussian mixture models and used TIMITT dataset. They 
+
+trained deep learning networks as a multilayered genera-
+
+tive model. After designing features of pre-trained deep 
+
+network, the next step was to perform discriminative fine 
+
+tuning with the back propagation, distribution so as to 
+
+adjust the features for the better prediction of probability 
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+distribution. They worked on such applications of acous-
+
+tic modeling where multiple layers of features were pre-
+
+trained. They explicitly exemplary the covariance structure 
+
+of the input features. They were trying to reveal alterna-
+
+tive representations of the input that helps deep neural 
+
+networks to gather the relevant information in the sound-
+
+wave. They also explored various ways of using recurrent 
+
+neural networks for increasing the amount of past detailed 
+
+information that helps in the interpretation of the future.
+
+Ling et al. [29] presented in a very systematically way the 
+
+review of the speech generation approaches. They created 
+
+interest in the mind of readers to learn the existing paramet-
+
+ric speech generation methods and also stimulated for the 
+
+generation of developing new methods. They concluded in 
+
+their findings that for parametric speech recognition, RBM 
+
+and DBN which are called deep joint models and CRBM and 
+
+DNN are better to represent the complicated and nonlinear 
+
+relations. Santana et al. [54] presented a unique method for 
+
+the acoustic modeling. In the presence of noise, they devel-
+
+oped the system for the speech recognition by using deep 
+
+neural network. This is the big challenge for the researchers 
+
+for developing speech recognition system with the presence 
+
+of noise speech signals. For their experiment, they used 
+
+CNN and the recurrent architecture. CNN was used for the 
+
+acoustic modeling and recurrent method with connection-
+
+ist and temporary classification was used for the sequential 
+
+modeling. Their method worked well as compared to the 
+
+classical model such as HMM with the BioChaves datasets.
+
+ Adaptive Testing
+
+Chandra and Sharma [77] presented a novel approach 
+
+to integrate adaptive learning rate and using Laplacian 
+
+score for the updating of the weights. They considered 
+
+that the neurons are important for enhancing the weights 
+
+and the learning rate. These can be taken as a function of 
+
+the parameter and the operations can be possible on the 
+
+basis of the error gradient. Laplacian score of the neuron 
+
+can be used for the incoming weights and to improve the 
+
+complexities in catching the optimum value of the learn-
+
+ing rate. This was implemented on the benchmark datasets 
+
+with linear activation function and the max out. The work 
+
+proved out to achieve an increase in classification accu-
+
+racy. This method had a limitation that they could not use 
+
+Laplacian score in an online mode. They recommended 
+
+that it is better to go for the âExponential LPâ with Recti-
+
+fied Linear activation function when the data was available 
+
+in the streams and the batches, respectively. Xiao et al. 
+
+[65] proposed a new method for adaptive testing based 
+
+on the deep learning. Without manual intervention, these 
+
+techniques can extract the features from the data auto-
+
+matically. For their work, they used DNN which proved 
+
+higher accuracies rate for the failure and pass prediction. 
+
+By using the features from the DNN, they developed two 
+
+applications, i.e. partial testing and dynamic test order-
+
+ing. These applications were used for the decision making 
+
+such as pass or failure and for the dynamic test ordering. 
+
+Experiments results proved improvements in accuracy and 
+
+Fig. 4  Applications of deep 
+
+learning
+
+
+
+ S. Dargan et al.
+
+1 3
+
+effectiveness. Falcini et al. [17] designed a disciplined life 
+
+process based on the deep learning. They designed suc-
+
+cessfully a W model that is dependent on the Software pro-
+
+cess improvement and capability determination and used 
+
+DNN for the achievement of the task in addition with the 
+
+traditional automotive software industry. The improvement 
+
+in the W model really pushed them for achieving future 
+
+aspects like fully autonomous driving.
+
+ Automotive Industry
+
+Luckow et al. [34] presented the applications and the 
+
+tools for implementing deep neural networks in the auto-
+
+motive industry. They focused on the use of CNN and the 
+
+computer vision uses cases. They used labeled datasets. 
+
+The main contribution of this paper was the creation of 
+
+the automotive dataset that helps the users to learn and 
+
+automatically identify and examine the vehicle properties. 
+
+They analyzed both the training time and the accuracy of 
+
+the classifiers and reported that during the manufacturing 
+
+process, the trained classifier were efficient and effective.
+
+ Big Data
+
+Today with the very fast increase in the size of data, 
+
+the application communicates big scope and metamorphic 
+
+possibilities for the various sectors. It widely opens up 
+
+the extraordinary demands to exploit data and information 
+
+for this big data prediction and analytical solutions. Chen 
+
+and Lin [9] noticed and proposed that there are significant 
+
+challenges in front of deep learning. These challenges are 
+
+large scale, heterogeneous, disorderly labels, and non-
+
+static distribution and the requirement is to have trans-
+
+formation solutions. The challenges offered by big data 
+
+were timely and provided many opportunities and searches 
+
+for the deep learning. Gheisari et al. [18] presented that 
+
+the deep learning of the Big Data analysis can produce 
+
+remarkable results and helped in identifying the unknown 
+
+and useful patterns with high level of abstraction which 
+
+were impossible to understand.
+
+ Biological Image Classification
+
+Affonso et al. [3] contributed the analysis of the clas-
+
+sification and peculiarity of wood boards by considering 
+
+the images. For their experiment, they used decision tree 
+
+induction algorithms, CNN, Neural Network, Nearest 
+
+Neighbor and support vector machine on the used dataset. 
+
+The team successfully achieved very promising results and 
+
+concluded that the deep learning when applied to image 
+
+processing tasks accomplished predictive performance 
+
+accuracy. The accuracy also depends on the nature of the 
+
+image dataset.
+
+ Data Flow Graphs
+
+Abadi et al. [1] put forward a TensorFlow Graph that is a 
+
+part of the TensorFlow machine intelligence structure that 
+
+help in understanding the machine learning architecture 
+
+based on the data flow graph. They applied serial transfor-
+
+mations for designing the standard layout for the interactive 
+
+diagram. They developed the coupling on the non-critical 
+
+nodes and built a clustered graph by taking the stepwise 
+
+structure from the source code. They also performed edge 
+
+bundling to make the expansion responsive and stable and 
+
+focused on the modular composition. Ripoll et al. [46] pro-
+
+posed a new screening method based on deep neural net-
+
+work. The method was developed to assess whether a patient 
+
+from the emergency should shift to cardiology. The method 
+
+was studied on 1320 patients that took raw ECG signals 
+
+without annotation. Learning machines, k-Nearest neighbor 
+
+and classification algorithms were used. For the experiment, 
+
+they selected Support vector machines with Gaussian kernel 
+
+and got accuracy of 84%, sensitivity of 94% and specificity 
+
+of 73%. Looks et al. [32] presented a technique known as 
+
+dynamic batching which combined the diverse input graphs 
+
+with dissimilar shapes but with also different nodes that 
+
+were present in single input graph. The technique helped to 
+
+create static graphs that follow dynamic computation graph 
+
+with different size and shapes. The team also worked on the 
+
+library that exhibit batch form implementation for number 
+
+of models.
+
+ Deep Vision System
+
+Puthussery et al. [44] presented a new approach for the 
+
+autonomous navigation using machine learning techniques. 
+
+They used CNN to identify marker from the images and 
+
+also developed a robot operating system and discovered 
+
+a system based on the position of the object to orient to 
+
+the marker. They also evaluated the distance and naviga-
+
+tion towards these markers with the help of depth camera. 
+
+Abbas et al. [2] proposed powerful models of deep learning 
+
+that helps in implementing the real time video processing 
+
+applications. They explained that in the technological era, 
+
+with the powerful facilities of deep learning techniques, the 
+
+real time video processing applications e.g. video entity 
+
+detection, tracing and identification can be made possible 
+
+with great accuracy. Their architecture and novel approach 
+
+solved the problems of computational cost, number of layers, 
+
+precision and accuracy. They used deep learning algorithms 
+
+that give robust powerful architecture with many layers of 
+
+neurons and the efficient manipulation of big video data. 
+
+Sanakoyeu et al. [53] presented a framework for visual simi-
+
+larities with the unsupervised deep learning. They employed 
+
+weak calculations of local similarities and proposed a new 
+
+optimized problem for extracting batch of samples with 
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+mutual relations. The conflicting relations were distributing 
+
+over different batches and similar samples are arranged in a 
+
+separate group. Convolutional neural network was used to 
+
+build up relations within and between the groups and create 
+
+a single representation for all the samples without labels. 
+
+For the posture analysis and the classification of objects, the 
+
+proposed method shows competitive performance.
+
+ Document Analysis & Recognition
+
+Wu et al. [78] presented a new approach for the visual 
+
+and speech recognition. They proposed an R-CNN called 
+
+relaxation convolutional neural network based visual and 
+
+speech recognition system used to regularize CNN for the 
+
+fully interlinked layers. They do not need neurons in a map 
+
+to share the kernel. This architecture requires another archi-
+
+tecture which is called alternately trained relaxation called 
+
+ATR-CNN. The R-CNN increased the total number of 
+
+parameters, so they used ATR-CNN for regularizing the neu-
+
+ral network during training procedure and got the accuracy 
+
+with an error rate of 3.94%. In R-CNN, neurons do not share 
+
+the same convolutional kernel and ATR-CNN also used an 
+
+alternative strategy for the training. For the working of ATR-
+
+CNN, they required handwritten digit dataset MNIST and 
+
+ICDARâ13 competition dataset. Kannan and Subramanian 
+
+[24] presented a review on the deep learning and its appli-
+
+cability for the optical character recognition on the Tamil 
+
+script. They presented a survey on the studies done by the 
+
+experts on the Tamil script. They also mentioned the steps 
+
+required for better OCR development using deep learning 
+
+technology with the big data analysis. LeCun et al. [27] also 
+
+proposed an explanation for the handwritten ZIP code identi-
+
+fication. They employed the back-propagation algorithm into 
+
+a deep neural network with expanded training time. Nguyen 
+
+et al. [39] used deep neural nets for identifying online hand-
+
+written mathematical symbols. Here they used max out 
+
+dependent CNN and bidirectional long short term memory 
+
+to the image patterns. These image patterns have been cre-
+
+ated from online patterns. The experiment was conducted on 
+
+the CHROME database. They concluded that as compared 
+
+with MQDF, the CNN network produces improved results 
+
+to identify the mathematical symbols offline. BLSTM also 
+
+worked better than MRF in case of online patterns. By inte-
+
+grating both online and offline integration methods, clas-
+
+sification performance was improved.
+
+Alwzwazy et al. [4] proposed a deep learning method 
+
+called CNN for the handwritten Arabic pattern digit rec-
+
+ognition. They performed their study on 45,000 samples. 
+
+Deep CNN was used for the classification and proved to 
+
+give more accurate results, i.e. 95.7% for the Arabic hand-
+
+written digit recognition. Xing and Qiao [79] presented an 
+
+effective writer identification system by using multi stream 
+
+deep CNN. It took local handwritten patches as the input 
+
+followed by training using the softmax classification loss. 
+
+They designed and optimized multi stream structure with 
+
+data augmentation learning and hence improved the per-
+
+formance of DeepWriter. For handling variable length text 
+
+images, they created DeepWriter, a deep multi-stream CNN 
+
+to learn a deep powerful representation for recognizing writ-
+
+ers. Experiment was carried out in the IAM and HWDB 
+
+datasets and proved the success with the accuracy rates of 
+
+nearly 99%. Poznanski and Wolf [42] developed a method to 
+
+solve the issues for understanding the images of a handwrit-
+
+ten word. They used CNN to evaluate its n-gram frequency 
+
+profile, which is the set of n-grams contained in the word. 
+
+Frequencies for unigrams, bigrams and trigrams were esti-
+
+mated for the entire word. Canonical correlation analysis 
+
+was used for the comparison of profiles of all words. CNN 
+
+used multiple fully connected branches. After going through 
+
+this process, they got more accurate results without applying 
+
+much effort in atomic tasks like an image binarization and 
+
+the letter segmentation.
+
+Ashiquzzaman and Tushar [7] presented an original work 
+
+on the deep learning for identifying numerals in handwrit-
+
+ten Arabic. They used Multilayer Perceptron method of 
+
+Rectified Linear Unit (ReLu) for the stimulation of neurons 
+
+in the input and the hidden layer, and the softmax func-
+
+tion was used for the classification in the outer layer. They 
+
+selected CNN architecture with the activation function and 
+
+the regularization layer to increase the accuracy. The pro-
+
+posed approach proved 97.4% accuracy rate. Ghosh and 
+
+Maghari [19] proposed three most commonly used NN 
+
+approaches which are deep neural network (DNN), deep 
+
+belief network (DBN) and convolutional neural network 
+
+(CNN). They performed the comparison on the networks by 
+
+considering the factors like recognition rate, execution time 
+
+and the performance. For conducting the experiment, they 
+
+used random and standard dataset of handwritten digits. The 
+
+results proved that out of these three NN approaches, DNN 
+
+provided promising accuracy of 98.08% and the execution 
+
+time of DNN is comparable with the other two algorithms. 
+
+They also reported that the new approach generated an error 
+
+rate of only one to two percent because of the similarity in 
+
+digit shapes. Prabhanjan and Dinesh [43] presented a unique 
+
+approach for the recognition of the Devanagari script. They 
+
+used a deep learning approach for the feature extraction pro-
+
+cess. They used raw pixel values for the selection of features 
+
+and used unsupervised restricted Boltzmann machine with 
+
+deep belief network to improve the performance and the 
+
+accuracy of the system. The method was suited for the char-
+
+acter, numerals, vowels and compound characters. Experi-
+
+ment revealed 83.44% accuracy with unsupervised method 
+
+and with the supervised method, the accuracy of 91.81% 
+
+was reported.
+
+Roy et al. [80] presented an architecture where deep 
+
+belief networks were used to understand the compressed 
+
+
+
+ S. Dargan et al.
+
+1 3
+
+delineation of the sequential data, and the Hidden Markov 
+
+Model was used for the word recognition. For the imple-
+
+mentation of the approach, they used RIMES and IFN/
+
+ENIT which were publicly available datasets on the Latin 
+
+and Arabic languages, respectively and they also worked on 
+
+the dataset in Devanagari. The experiments demonstrated 
+
+that the proposed model was preferred over the MLP-HMMs 
+
+tandem approaches. They combined the discriminating fea-
+
+tures of DBNs with a generative model of HMMs. By using 
+
+an unsupervised pre-training algorithm and the DBN weight, 
+
+they initialized the feed-forward neural network that helped 
+
+in preventing over-fitting and provide better optimization of 
+
+the recognition weights. Yadav et al. [67] designed a con-
+
+temporary deep learning approach for character identifica-
+
+tion from the multimedia document. For the experimental 
+
+study, they used diagonal feature extraction method in the 
+
+convolutional layers. Then they executed genetic algorithm 
+
+to feed forward network for the classification followed by 
+
+the training. For their experiment, they used a dataset which 
+
+consists of 360 training set data with capital letters from 
+
+A to Z, small alphabets from a to z, digits from 0 to 9 and 
+
+some special characters. Dataset may be taken as samples 
+
+of videos and images. Studies proved that diagonal based 
+
+recognition system proved with more accurate results with 
+
+less training time.
+
+ HealthCare
+
+Loh and Then [81] proposed a new approach for heart 
+
+diagnosis and management, in context with rural health-
+
+care, and also discussed the benefits, issues and solutions 
+
+for implementing deep learning algorithms. The develop-
+
+ment of rural healthcare services such as telemedicine and 
+
+health applications were really required. Different solutions 
+
+such as portable medical equipment and mobile technologies 
+
+have been developed to find out the deficiencies present in 
+
+the remote settings. Additionally, computer aided designed 
+
+systems have also been used for assistive interpretation 
+
+and diagnosis of medical imagery. The implementation of 
+
+machine and deep learning algorithms would bring numer-
+
+ous benefits to both physicians and patients. The advance-
+
+ment of mobile technologies would expedite the prolifera-
+
+tion of healthcare services to those residing in impoverished 
+
+regions. Dai and Wang [15] proposed a framework for the 
+
+healthcare application and to reduce the heavy workload 
+
+of doctors and nurses by employing the advantages of the 
+
+technologies of artificial intelligence. They considered that 
+
+the methods of pattern recognition and the deep recogni-
+
+tion module were sufficient enough to diagnose the health 
+
+status based on deep neural networks (DNNs). They also 
+
+worked on the action evaluation module, which is based on 
+
+the Bayesian inference graphs and then developed a simula-
+
+tion environment which includes a body simulator to prepare 
+
+the body for the treatments, and the health state of the simu-
+
+lated patient will be changed by different interventions. So, 
+
+the team worked on the body simulation module, a deep 
+
+recognition module used to diagnose the bodily features 
+
+and an action evaluation module used Bayesian inference 
+
+graphs to maintain the record and calculate the statistical 
+
+evidence. Experiment proved to be the most efficient with 
+
+the increasing statistical data. For the experiment they used 
+
+the dataset consisting of health state representation space of 
+
+9 body constitutional types.
+
+ Human Activity Recognition
+
+Nweke et al. [41] proposed human activity recognition 
+
+systems for the continuous monitoring of human behaviors 
+
+in the environment. For the mobile and wearable sensor-
+
+based human activity recognition pipeline, they extracted 
+
+the relevant features that will influence the performance and 
+
+reduced the computation time and complexity. The com-
+
+bination of mobile or wearable sensors and deep learning 
+
+methods for feature learning really proved diversity, higher 
+
+generalization, and resolved all challenging issues in human 
+
+activity recognition. They presented the review on the in-
+
+depth summaries of deep learning methods for mobile and 
+
+wearable sensor-based human activity recognition and pre-
+
+sented the methods, their uniqueness, advantages and their 
+
+limitations. They categorized the studies into generative, dis-
+
+criminative and hybrid methods and also highlighted their 
+
+important advantages. The review presented classification 
+
+and evaluation procedures and discussed publicly available 
+
+datasets for mobile sensor human activity recognition. They 
+
+reviewed the training and optimization strategies for mobile 
+
+and wearable based human activity recognition. They also 
+
+tested some of the publicly available benchmark datasets 
+
+such as Skoda, and PAMAP2. Ignatov [22] presented an 
+
+online human activity recognition and classification system 
+
+based on the accelerometer. They used CNN for the imple-
+
+mentation of the method for extracting local and statisti-
+
+cal features. They focused the use of time series length for 
+
+examining the activities. The experiment was conducted on 
+
+the WISDM and UCI datasets and used 36 and 30 users 
+
+respectively with labeled data. Proposed model achieved 
+
+good results with less computational cost and without man-
+
+ual feature engineering.
+
+ Image Recognition and Classification
+
+Ciresan et al. [82] presented a method for image classifi-
+
+cation using deep neural networks. Their model was based 
+
+on the architecture of convolutional winner take all neurons. 
+
+Result was sparsely connected neurons layers. Training was 
+
+given to only winner neurons. They used MNIST benchmark 
+
+and successfully achieved great results which were near to 
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+the human performance. For the traffic sign identification 
+
+benchmark it outperforms humans by a factor of two. Liu 
+
+et al. [31] presented different factors for the convolution 
+
+neural network such as network depth, numbers of filters, 
+
+and filter sizes. They implemented their approach on the 
+
+CIFAR dataset. According to their experiments and observa-
+
+tions, different factors are considered. Based on the results of 
+
+their experiments on the CIFAR dataset, they found that the 
+
+network depth is the first priority chosen for improving the 
+
+accuracy. They achieved the same high accuracy with less 
+
+complexity as compared to adding the network width. But, 
+
+the weaker factor states that the excessive increase in the 
+
+depth of the network may degrade the accuracy and result 
+
+in the data-insufficient fitting problem. They also observed 
+
+that the filter size is another important parameter for improv-
+
+ing the accuracy. The replacement of a large filter size with 
+
+stacked convolutional neural networks improves the recogni-
+
+tion accuracy with a decrease in the time complexity. Jia [23] 
+
+presented a review of the deep learning and its usefulness in 
+
+the various applications. He very systematically presented 
+
+the architecture, advantages and the working phenomenon 
+
+of the deep learning. He also reported the uses and the accu-
+
+racies of the CNN for the computer vision and the image 
+
+recognition problem. Liu et al. [31] presented their study on 
+
+the impact of various factors used in the convolutional neural 
+
+network for image classification. They considered depth of 
+
+the network, number and nature of filters, size of filters etc. 
+
+and worked on the CIFAR datasets.
+
+ Medical Applications
+
+Vasconcelos and Vasconcwlos [60] presented how deep 
+
+convolutional neural network (DCNN) based classifier can 
+
+be used to deal with small and unbalanced medical data set. 
+
+They used data augmentation schemes, the inclusion of the 
+
+third class of lesion patterns and an awareness of diversity 
+
+in committee formation. The study validates the accuracy of 
+
+the technique developed. Yuan et al. [70] proposed a deep 
+
+learning method in the regularized ensemble framework. It 
+
+was used to handle the multi class and imbalanced problems. 
+
+They used stratified sampling for the balancing of the classes 
+
+and concentrate on the un-prediction caused by the base 
+
+learners through regularization. For the data distribution, 
+
+sampling procedure selected examples randomly and the reg-
+
+ularization process updates the loss of function to penalize 
+
+the classifiers. It also adjusts the error boundaries keeping in 
+
+view the performance of the classifier. For their experiment, 
+
+they used eleven dissimilar synthetic as well as real-world 
+
+data sets. Their new method had successfully got the highest 
+
+accuracies for the minority classes with the ensemble stabil-
+
+ity. Experimental results proved that the proposed method 
+
+achieved the best accuracy and also explains the dissimi-
+
+larity of the base classifiers present in the ensemble. They 
+
+explained that there is also significant reduction in the com-
+
+putational cost. But as the volume of training data increases, 
+
+the efficiency of their method increases. Razzak et al. [45] 
+
+proposed stimulating solutions and reported with very good 
+
+accuracy for the health care applications such as medical 
+
+imaging, image interpretation, health sector, computer-aided 
+
+diagnosis, medical image processing, image fusion, image 
+
+registration and image segmentation. The machine learn-
+
+ing and artificial intelligence methods provided assistance 
+
+to the doctors to diagnose and predict the disease and its risk 
+
+and prevent them in time. The method helped the doctors in 
+
+understanding the generic variations that lead to the occur-
+
+rence of the disease. These techniques were made up of both 
+
+conventional algorithms and deep learning algorithms such 
+
+as Support Vector Machine (SVM), Neural Network (NN), 
+
+KNN and Convolutional Neural Network (CNN), Extreme 
+
+Learning Model (ELM), Generative Adversarial Networks 
+
+(GANs), Recur-rent Neural Network (RNN), Long Short 
+
+term Memory (LSTM), etc.
+
+ Mobile Multimedia
+
+Ota et al. [83] proposed a survey on the deep learning 
+
+for mobile multimedia. They concluded that less complex 
+
+deep learning algorithms, the software frameworks, and spe-
+
+cialized hardware helped in the processing of deep neural 
+
+network. They presented applications of deep learning in 
+
+mobile multimedia with the different possibilities for real-
+
+life use of this technology. Multimedia processing and deep 
+
+learning can be integrated to work with mobile devices. The 
+
+earlier approach of using mobile devices just as sensor and 
+
+actuator devices and the main processing and data storage 
+
+services for deep learning located in servers would definitely 
+
+support some applications. As mobile devices were more 
+
+dominant, more applications running deep learning engines 
+
+reduced the overhead of maintaining internet connectivity 
+
+and also the complex server infrastructure.
+
+ Object Detection
+
+Ucar et al. [59] put forward a novel hybrid Local Multiple 
+
+system based on Convolutional Neural Networks (CNNs) 
+
+and Support Vector Machines (SVMs) with the feature 
+
+extraction capability and robust classification. In the pro-
+
+posed system, they divided first the whole image into local 
+
+regions by using the multiple CNNs. Secondly, they selected 
+
+discriminating features by using principal component analy-
+
+sis (PCA) and imported into multiple SVMs by both empiri-
+
+cal and structural risk minimization. Finally, they tried to 
+
+fuse SVM outputs. They worked on the pre-trained AlexNet 
+
+and also performed object recognition and pedestrian detec-
+
+tion experiments on the Caltech-101 and Caltech Pedestrian 
+
+datasets. Their proposed system generated better results with 
+
+
+
+ S. Dargan et al.
+
+1 3
+
+the low miss rate and improved object recognition and detec-
+
+tion with an increase in accuracy. Zhou et al. [74] presented 
+
+the architecture and the algorithms of deep learning in an 
+
+application of object detection task. They worked on built-
+
+in datasets such as ImageNet, Pascal Voc, CoCo and deep 
+
+learning methods for object detection. They created their 
+
+own dataset and proved that by using CNN with the deep 
+
+learning algorithm for the object detection, they got good 
+
+results. The requirement of the dataset for the deep learning 
+
+is large, so the applications are continually collecting large 
+
+datasets. Experiment proved that the technology of deep 
+
+learning is an effective tool to pass the man-made feature 
+
+with the large qualitative data. Kaushal et al. [25] proposed 
+
+a comprehensive survey of the object detection and tracking 
+
+in videos techniques based on the deep learning. The survey 
+
+included neural network, deep learning, fuzzy logic, evolu-
+
+tionary algorithms required for detection and tracking. In the 
+
+survey, they discussed various datasets and challenges for 
+
+the object detection and tracking based on the deep neural 
+
+network.
+
+ Parking System
+
+Chen et al. [10] presented a mobile cloud computing 
+
+architecture based on the deep learning that used training 
+
+process and the repository in the clouds. The communication 
+
+was possible with the Git protocol that helps in transmission 
+
+of the data even in the unstable environment. During the 
+
+driving, smart cameras in the car recorded the videos and 
+
+the implementation was done on the NVIDIA Jetson TK1. 
+
+Results of the experiment proved that detection rate was 
+
+improved to four frames per second as compared to R-CNN. 
+
+For detecting parking lot occupation, Amato et al. [5] pro-
+
+posed a new decentralized solution for the classification of 
+
+images of a parking space when occupied directly on the 
+
+smart cameras. It is built on deep convolutional neural net-
+
+work (CNN) suited for the smart cameras. The experiment 
+
+is implemented on the two visual datasets such as PKLot 
+
+and CNRPark-EXT. Actually they required a dataset that 
+
+contains the images of a real parking and is collected by 
+
+nine smart cameras. The images were captured on different 
+
+days under in diverse weather and light conditions. They also 
+
+employed a training and validation dataset for the detection 
+
+of parking occupancy and performed the task in real-time 
+
+directly on the smart cameras. They did not employ a central 
+
+server for the experiment. The method used Raspberry Ri 
+
+platform equipped with camera module. For implementing 
+
+the proposed method, the server needs the binary output of 
+
+the classification. They concluded that CNN received very 
+
+high accuracy with the light condition variations, partial 
+
+occlusions, shadows and noise.
+
+ Person Re-identification
+
+Cheng et al. [12] proposed the method for visual recog-
+
+nition, especially for person re-identification (Re-Id). They 
+
+used distance metric between pairs of examples and pro-
+
+posed contrastive and triplet loss to enhance the discriminat-
+
+ing power of the features with great success. They proposed 
+
+a structured graph Laplacian embedding method, which can 
+
+be formed and evaluated all the structured distance links 
+
+into the graph Laplacian form. By integrating the proposed 
+
+technique with the softmax loss required for the CNN train-
+
+ing, the proposed method produced specific deep features 
+
+by maintaining inter-personal dispersion and intra-personal 
+
+compactness, which were the requirement of personal Re-Id. 
+
+They used the most common and popular networks such as 
+
+AlexNet, DGDNet and ResNet50. They concluded that the 
+
+proposed structure graph Laplacian embedding technique 
+
+was very effective for the person re-identification. Zhao et al. 
+
+[72] put forward a new multiple levels strategy for feature 
+
+extraction to integrate coarse and fine information coming 
+
+from different layers. They also developed a multilevel tri-
+
+plet deep learning model called MT-net to extract multilevel 
+
+features systematically. The results of the experiment, on 
+
+popular datasets it was proved that the method was the most 
+
+effective and robust.
+
+ Plant Classification
+
+Lee et al. [28] presented a new method in which deep 
+
+learning methods are used for the plant classification. It 
+
+helps the botanists to identify the species very accurately 
+
+and quickly. From raw representations of the leaf data, they 
+
+extracted useful leaf features using CNN and Deep Net-
+
+works. After their extensive study, they were able to extract 
+
+hybrid feature extraction models that help in improving the 
+
+discriminant capabilities of the plant classification system.
+
+ Power System Fault Diagnosis
+
+Wang et al. [61] presented a new method for the power 
+
+system fault diagnosis. The major perspective was to extract 
+
+relevant data from the huge collection of un-labeled data fol-
+
+lowed by the preprocessing. The method solved three major 
+
+bottlenecks which are availability of the data, to improve 
+
+the local optimum and diffusion of gradients. They obtained 
+
+the data of the power system from the SCADA under the 
+
+administration of the power supply. Then they extracted, pre-
+
+processed and fed the data to stacked auto-encoder (SAE) for 
+
+training with the hidden features to be found in the different 
+
+dimensions. Then trained SAE is used for the initialization 
+
+where the classifier proved the type of diagnosis. The results 
+
+proved the accuracy and the feasibility of the method. Rudin 
+
+et al. [47] presented a unique approach based on the CNN for 
+
+the power system fault diagnosis. The goal of their research 
+
+was to classify the power system voltage signal samples to 
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+check the faulted or non-faulted state. For the dataset, they 
+
+simulate a simple two bus system and balance load in three 
+
+phases. At the starting of the line and between the two buses, 
+
+the voltage signal is measured. At the middle of the line, the 
+
+fault occurred between the buses. They used wavelet trans-
+
+form to extract the features. CNN was used for the learning 
+
+process which learned the defective features of the power 
+
+system by taking faulty and non-faulty samples.
+
+ Radio Wireless Networks
+
+Lopez et  al. [33] proposed a method to increase the 
+
+forecasting accuracies of licensed users in spectrum chan-
+
+nels. The model was based on the long term short memory 
+
+(LSTM) recurrent neural network. Results of the experiment 
+
+proved that the accuracies achieved by LSTM outperformed 
+
+the multi-layer perceptron network and adaptive neuro fuzzy 
+
+inference systems. The method also allowed the implemen-
+
+tation of the method in cognitive network with centralized 
+
+physical topologies. Yu et al. [69] presented a framework 
+
+for the spectrum prediction by taking two spectrum datasets 
+
+of the real world. They employed Taguchi method for the 
+
+determination of the optimized configuration and channel 
+
+occupancy states of neural network, then they built LSTM 
+
+for the spectrum prediction with perspectives like regression 
+
+and the classification. In case of the second dataset, for the 
+
+channel quality, they compared the prediction performance 
+
+of MLP and LSTM. Results of the experiment proved that 
+
+with the frequency bands, prediction performance varies. 
+
+LSTM worked better in terms of stability and prediction 
+
+with the classification aspect as compared to when taking 
+
+both the regression and classification.
+
+Wang et al. [62] put forward a systematic survey of the 
+
+upbringing studies based on the deep learning based physical 
+
+layer processing, redesigning of a module for the communi-
+
+cational system with the auto encoder. The new architecture 
+
+of deep learning proved promising performance with excel-
+
+lent capacity and good optimization, for the communication 
+
+and implementation.
+
+ Remote Sensing
+
+Deep learning techniques and deep nets have been suc-
+
+cessfully used in remote sensing applications in the physi-
+
+cal models. These are complicated, nonlinear and difficult 
+
+to understand and generalize. Yu et al. [69] proposed a 
+
+technique of deep learning in remote sensing application 
+
+for not only improving the volume and completeness of 
+
+training data for any remote sensing datasets, but also uses 
+
+the datasets to skill out convolutional neural network. The 
+
+proposed method used three operations, which are the 
+
+flipping, translation, and rotation to generate augmented 
+
+data and produced a more descriptive deep model. The 
+
+proposed method also introduced basic data augmenta-
+
+tion operations to solve the data limitation problem for 
+
+remote sensing image processing and contributed with 
+
+potentially revolutionary changes in remote sensing scene 
+
+classification. The results of the experiment significantly 
+
+contributed and improved the diversity of the dataset in 
+
+remote sensing. These also increased visual variability of 
+
+each training in the remote sensing image by taking the 
+
+intrinsic spectral and topological constraints and did not 
+
+generate new information for the remote sensing image. 
+
+Zhu et al. [75] used deep neural nets that put in front of 
+
+the users, the various opportunities for novel areas such 
+
+as supervising global changes or finding out the strategies 
+
+for the decreasing the resource consumption. Deep net-
+
+work has always been an incredible and challenged toolbox 
+
+that assists researchers in the field of remote sensing to 
+
+cross the boundaries and manipulate large-scale, real-life 
+
+problems with implied models. They analyzed large scale 
+
+remote sensing data by considering multi-modal, multi-
+
+aspect, geo located and multi-temporal aspects.
+
+ Semantic Image Segmentation
+
+Chen et al. [11] made efforts to put forward a seman-
+
+tic image segmentation problem with the facilities of deep 
+
+neural network. The study presented three main contribu-
+
+tions to the area. First they worked on convolution with up 
+
+sampled filters that help to maintain the resolution. For the 
+
+prediction task, responses from the features are calculated 
+
+with convolution neural network. They did not enhance the 
+
+amount of computation and effectively enlarged the view of 
+
+filters. Then they proposed Atrous Spatial Pyramid Pooling 
+
+(ASPP) system for the segmentation at the multiple scales. It 
+
+can act as a convolutional feature layer by using filters at the 
+
+multiple sampling rates and capturing objects and images at 
+
+multiple scales. Then the localities of the object boundaries 
+
+were integrated with the procedures for the deep convolu-
+
+tional networks and probabilistic models. The experiment 
+
+reached the invariance with the localization accuracy with 
+
+both quantitative and qualitative improvements. The dataset 
+
+used by the team were PASCAL- Context, PASCAL Person-
+
+Part and the CitySpaces.
+
+ Smart City
+
+Wang and Sng [84] proposed a method of deep learning 
+
+in the video analytics of the city and was used to detect 
+
+the object, tracking of the object, face recognition and the 
+
+image classification. In smart cities, the task of capturing the 
+
+images, videos from the sensors was required to be automati-
+
+cally processed and analyzed. The success of this approach 
+
+was based on the fact that lots of big data were available for 
+
+building a deep neural network. Advantages of Graphical 
+
+
+
+ S. Dargan et al.
+
+1 3
+
+Processing Unit (GPU) would definitely reduce the training 
+
+time. So, the approach of deep learning with the smart cities 
+
+proved wonders as seen from the reviews by the authors.
+
+ Social Applications
+
+Deep learning techniques are widely used for the sen-
+
+timent analysis. Araque et al. [6] proposed a deep learn-
+
+ing technique with surface approaches and is based upon 
+
+the manually extracted features. For this experiment, they 
+
+designed a deep learning based sentiment classifier that is 
+
+dependent on the word embedding architecture and a linear 
+
+machine learning method. Results can be compared using 
+
+the classifier. Then they developed two ensemble techniques 
+
+and two models that were responsible for combining the 
+
+baseline classifier and the surface classifiers. They employed 
+
+total 7 public datasets that were extracted from the micro 
+
+blogging. They proved that performance of these models 
+
+was really remarkable.
+
+ Speech Recognition
+
+Mohamed et al. [37] proposed a novel method and used 
+
+DBNs for acoustic modeling. They used standard TIMIT 
+
+dataset with a phone error rate (PER) of 23.0%. They used 
+
+back propagation algorithm with the network and called BP-
+
+DBN and the associative memory DBN called as AM-DBN 
+
+architecture. The effect of depth of the model and the size of 
+
+the hidden layer were investigated and different techniques, 
+
+were adopted to reduce over fitting. Bottlenecks in the last 
+
+layer of the BP-DBN also helped in avoiding the over fit-
+
+ting. The discriminative and hybrid generative training also 
+
+contributed in preventing the over fitting in the associative 
+
+memory DBN. The results given by the architecture of DBN 
+
+have recorded as the best in comparison with the other. The 
+
+experiment was performed on the TIMIT corpus and used 
+
+1 with 462 speaker training set. Total 50 speakers were 
+
+used for model tuning and the results were shown using the 
+
+24-speaker core test set. The speech was understood using 
+
+a 25-ms hamming window with 10-ms between the left 
+
+edges of successive frames. For all experiments, the Viterbi 
+
+decoder parameters were optimized on the development set 
+
+and to compute the phone error rate (PER) for the test set.
+
+Hamid and Jiang [21] presented an approach which used 
+
+deep neural network (DNN) and Hidden Markov Model 
+
+(HMM) for the speech recognition. They used Convolu-
+
+tional Neural Network models by updating speaker code 
+
+based adaptation method that would be better for CNN 
+
+structure. Noda et al. [40] proposed a novel utilization of 
+
+deep neural networks in audio visual speech recognition. It 
+
+is used specially in the cases when the quality of audio is 
+
+damaged by the noise. Under diverse conditions, deep neural 
+
+networks are able to extract latent and robust features. Their 
+
+work involved connectionist Hidden Markov Model for the 
+
+noised audio visual speech recognition system. By employ-
+
+ing auto-encoders and the CNN, they were able to achieve 
+
+65% word recognition rate under 10 decibel signal to noise 
+
+ratio. Wu et al. [64] proposed a method for statistical para-
+
+metric speech synthesis (SPSS) by considering adaptability 
+
+and controllability with a change in speaker characteristics 
+
+and speaking style. They conducted an experiment for the 
+
+speaker adaptation for speech synthesis with DNN and at 
+
+diverse levels. For the input, they took the low dimensional 
+
+speaker specific vectors with the linguistic features which 
+
+would represent the speaker identity. The model systemati-
+
+cally analyzed the various adaptation techniques. They also 
+
+found that feature transformation at the output layer worked 
+
+well and the adaptation performance can be improved by 
+
+combining with model based adaptation. Experimental 
+
+results proved very good in terms of performance and accu-
+
+racies. Experimental results clearly showed that the adapt-
+
+ability and listening tests of DNN generated better adapta-
+
+tion performance than the hidden Markov model (HMM). 
+
+The method also proved that the feature transformation done 
+
+at the output layer were also worked well. Serizel [55] also 
+
+presented a deep learning model with Hidden Markov Model 
+
+(HMM) to construct a speech recognition system with a het-
+
+erogeneous group of speakers. They used DNN and vocal 
+
+tract length normalization (VTLM) for the experiment. First 
+
+they separately performed the experiment and then hybrid 
+
+approach was used. Combination of approaches proved the 
+
+improvement in the baseline phone error rate by 30 to 35% 
+
+and baseline word error rate by 10%.
+
+Xue et al. [66] presented an adaptation scheme with the 
+
+deep neural network. Here discriminating cods were used 
+
+which are directly fed to the pre trained DNN through con-
+
+nection weight. They also proposed many training methods 
+
+to learn connection codes as well as the adaptation meth-
+
+ods for every test condition. They used three methods to 
+
+use the adaptation scheme based on the codes. Three ways 
+
+were nonlinear feature normalization in feature space, direct 
+
+model adaptation of DNN based on speaker codes and last 
+
+one was joint speaker adaptive training with speaker codes. 
+
+They checked the proposed method with two standard 
+
+speech recognition tasks and from these two, one was TIMIT 
+
+phone recognition and the other was large vocabulary speech 
+
+recognition in the Switchboard task. Results proved that all 
+
+three methods were quite effective with 8 to 10% of error 
+
+reduction. Markovnikov et al. [36] presented a method in 
+
+which the team selected DNN in automatic Russian speech 
+
+recognition. They used CNN, LSTM and RCNN for their 
+
+experiment. For the dataset, they used extremely large 
+
+vocabulary of Russian speech and got remarkable results 
+
+with 7.5% reduction in word error rate.
+
+ Speech Music Discrimination
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+Papakostas and Giannakopoulos [85] presented deep 
+
+visual feature extractor for performing speech and music 
+
+discrimination. From the raw spectrograms, they extracted 
+
+deep visual features. Different CNN based methods for audio 
+
+classifications were used for the task and moreover they were 
+
+compared with traditional and deep learning methods used 
+
+for the handcrafted audio features. They concluded that CNN 
+
+produced very promising results. For the initialization, the 
+
+team used deep architecture and to work out with skill clas-
+
+sifiers with less training data available. They used image Net 
+
+dataset for the experiment and proved that parameter tun-
+
+ing can maintain flexibility and produced dominant results. 
+
+Markovnikov et al. [36] proposed a method for speech rec-
+
+ognition using deep neural network such as convolutional 
+
+neural network, long short term memory residual network 
+
+and recurrent convolutional neural network. Their experi-
+
+ment worked with extra-large vocabulary and successfully 
+
+achieved reduction of 7.5% in error rate.
+
+ Stock Market Analysis
+
+Arevalo et al. [86] proposed a method for the stock market 
+
+prediction, analysis and precision by using data of US Apple 
+
+stock (3 Ã {2 â 15} + 2) and target output will be Stock price 
+
+for 19,109 numbers of samples. They took the sampling 
+
+period of 3 months and used deep neural network methods. 
+
+For measuring the performance they used MSE and direc-
+
+tional accuracy measurements. Chong et al. [13] proposed a 
+
+unique method of deep learning for the stock market analysis 
+
+and prediction. From the input of stock returns, they per-
+
+formed the experiment with the three unsupervised meth-
+
+ods called Principal Component Analysis (PCA), Restricted 
+
+Boltzmann Machine (RBM) and Auto-encoder for predicting 
+
+the future market behavior. The dataset used to be Korea 
+
+KOSPI 38 stock returns and target output produced would 
+
+be Stock return to a number of samples 73,041 and sampling 
+
+period is 4 years. They used deep neural network methods 
+
+for measuring the performance. They used NMSE, RMSE, 
+
+MAE, and Mutual Information (MI). From their study, they 
+
+concluded that DNN perform better than a linear autoregres-
+
+sive model.
+
+ Structural Health Monitoring
+
+Salazar et al. [48] presented a machineâlearning algo-
+
+rithm called Boosted Regression Trees, which is the core 
+
+of methodology for the early detection of problems. The 
+
+method includes some criteria to determine if the discrep-
+
+ancy between predictions and observations is normal, to cal-
+
+culate the realistic estimations of the model accuracy and 
+
+to recognize extraordinary load combinations. Performance 
+
+of non-causal and causal models is assessed to find anoma-
+
+lies and at the end, final method was implemented to check 
+
+and verify the results for the decision making. Salazar et al. 
+
+[49] presented an effective comparison and testing predic-
+
+tion capabilities of the various algorithms for modeling the 
+
+dam behavior with respect to displacement and leakage. 
+
+Models using the concepts such as boosted regression trees 
+
+(BRT), random forests (RF), neural networks (NN), mul-
+
+tivariate adaptive regression splines (MARS) and support 
+
+vector machines (SVM) are employed to predict 14 target 
+
+variables with the prediction of the accuracy as compared 
+
+with the statistical models. BRT stood best as compared to 
+
+the RF and NN. Salazar et al. [50] presented a novel method 
+
+of using promising machine learning techniques called 
+
+Boosted Regression Trees (BRT) to handle four leakage 
+
+flows and eight radial displacements at La Baells Dam. The 
+
+goal was to explore the model interpretation, the impact of 
+
+predictors was computed and the partial dependency plots 
+
+were produced. The results were interpreted to draw the 
+
+conclusion on dam response to the environment variables 
+
+and its growth with time. Results showed that the method 
+
+was working efficiently identifying dam performance and 
+
+the variations with higher flexibility and reliability rate as 
+
+compared to the simple regression models. Salazar et al. 
+
+[51] put in front the comprehensive survey showing the 
+
+usefulness of machine learning algorithm for the analysis 
+
+of dam structural behavior which is based on the monitoring 
+
+data. From the survey several critical issues, accuracy rates 
+
+associated with the algorithms, radial and tangential dis-
+
+placements, leakage flow were identified. The results of this 
+
+survey concluded that BRT i.e. Boosted Regression Trees 
+
+is the most perfect method in terms of accuracy, association 
+
+among the variables and the response of the dam with effect 
+
+of time. Salazar et al. [52] presented a review on the statisti-
+
+cal and machine learning based predictive models which 
+
+are required for the dam safety analysis. They explored the 
+
+state-of-the-art work with many aspects such as nature and 
+
+kind of input variables, division into training sets and vali-
+
+dation sets and hence performed the error analysis. Review 
+
+concluded that firstly, other than Hydrostatic Seasonal Time 
+
+Model (HST), machine learning methods are more suitable 
+
+for achieving accurate results, to represent non-linear effects 
+
+as well as complex interactions in between input variables 
+
+and the dam response. Secondly, the papers covered only one 
+
+output variable with lack of validation data. Thirdly, engi-
+
+neering judgments based on the experiences are critical for 
+
+constructing the model, for interpreting results and decision 
+
+making for the dam safety.
+
+ Synthetic Aperture Radar
+
+Yonel et al. [68] introduced a new deep learning envi-
+
+ronment for the contrary difficulties in an imaging and its 
+
+usefulness in the passive Synthetic Aperture Radar. They 
+
+considered image interpretation as a machine learning task 
+
+
+
+ S. Dargan et al.
+
+1 3
+
+and utilized deep networks for the forward and inverse 
+
+solutions. The team used RNN as an inverse solver which 
+
+depends upon the proximal gradient descent optimization 
+
+methods. The experiment performed quite well in terms 
+
+of computation and reconstruction of the image. They also 
+
+thought of adding some additional layers in conventional 
+
+image solvers for the forward modeling and the image 
+
+reconstruction. This was done to capture the non-linearity 
+
+between the physical measurements. The method was best 
+
+suited for the image formation problems and other real 
+
+world applications in which the forward model was only 
+
+partially known. The experiment proved the geometric 
+
+fidelity, high contrast, reduced reconstruction errors.
+
+ Text/Document Summarization
+
+Zhong et al. [73] put forward a novel query oriented 
+
+approach by using deep learning techniques applicable to 
+
+the multi document summarization. They observed and 
+
+exposed the extraction ability in the real world applica-
+
+tions by using dynamic programming. The model contains 
+
+three parts, i.e. the concept extraction, the summary gen-
+
+eration and the reconstruction validity. Then transforma-
+
+tion of the whole deep architecture was done by reduc-
+
+ing the data loss in the reconstruction validation. They 
+
+did not require the training stage and was the most suit-
+
+able architecture for the industrial applications. For their 
+
+experiment they employed three benchmark datasets DUC 
+
+2005, 2006, 2007 and proved that this method outperforms 
+
+the other extraction methods. Azar and Hamey [8] pre-
+
+sented a method of query oriented summarization on the 
+
+single document by using unsupervised auto-encoder for 
+
+extracting the features and did not require the query at any 
+
+stage of training with small local vocabulary and reduced 
+
+training and deployment computational costs. For their 
+
+experiment, they used SKE and BC3 email datasets and 
+
+concluded that AE provided a more discriminating feature 
+
+space and improved the local term frequency.
+
+ Voice Activity Detection
+
+The main responsibility of a voice activity detector is to 
+
+isolate the speech signal from the disturbing background 
+
+noise. Zhang and Wu [87] proposed an advanced version 
+
+of deep belief networks for the voice activity detection 
+
+(VAD) that separate noise from the speech signals. Deep 
+
+belief networks proved a sufficient model for extracting 
+
+features and showing variant functions. Deep belief net-
+
+works helped VAD to select and produce a different and 
+
+a novel feature that sufficiently explained the benefits of 
+
+acoustic features through multiple nonlinear hidden layers. 
+
+In their experimental work, they used extensive AURORA 
+
+dataset and seven noisy test samples of AURORA for the 
+
+performance analysis. Four signal-to-noise ratios (SNR) 
+
+levels of the audio signals are selected. So, in total, 28 
+
+test samples were used for evaluation with ten different 
+
+features and a linear classifier and believed that with deep 
+
+learning networks, it would be possible to approach the 
+
+real time detection demands of VAD. They realized that 
+
+the deep model would definitely be successful in combin-
+
+ing numerous features in a nonlinear way and the uniform-
+
+ity among the features.
+
+ Word Spotting
+
+Thomas et al. [58] proposed a word spotting system that 
+
+extracts keywords in handwritten documents. They con-
+
+sidered both the segmentation and recognition decisions. 
+
+They used deep neural network with the HMM to judge the 
+
+observation probabilities. The experiment was conducted on 
+
+the handwritten database called the RIMES database. The 
+
+experimental results proved the superiority and improved 
+
+accuracies as compared to their hybrid approaches. Wicht 
+
+et al. [63] presented a method that is suited for handwrit-
+
+ten keyword spotting with the deep learning features. A 
+
+new feature extraction system was generated based on the 
+
+CNN. Sliding window features were skilled from the word 
+
+images in an unsupervised manner. The proposed features 
+
+were calculated for the template word spotting and for the 
+
+learning based word spotting. Here dynamic test wrapping 
+
+and HMM were used. Experiment was conducted on the 
+
+three datasets with modern and historical handwriting. The 
+
+proposed system clearly showed the high performance from 
+
+the different baselines and showing a robust performance 
+
+under all tested conditions. They presented a configuration 
+
+that was stable even with the diverse data sets. Lastly, aug-
+
+menting data set with synthetic distortions also produced 
+
+more robust features.
+
+Sudholt and Fink [57] proposed a novel method for the 
+
+word spotting in handwritten documents. They used deep 
+
+convolutional neural network for their experiment. They 
+
+presented CNN model which is skilled using the proposed 
+
+pyramidal histogram of characters representation and proved 
+
+that the CNN architecture worked really better and proved 
+
+to be a benchmark for maintaining a short training and test-
+
+ing time on the various datasets. They introduced pyramidal 
+
+histogram of characters net which is a deep net designed 
+
+for word spotting and processed input images of varying 
+
+size and to predict the corresponding PHOC representation. 
+
+Experiment revealed better results. The method worked 
+
+better than SVMs in both Query-by-Example and Query-by 
+
+String scenarios with the present datasets and proved good 
+
+for Latin and Arabic script. Gurjar et al. [20] presented a 
+
+new technique for the word spotting under weak supervi-
+
+sion. The new approach used deep networks to reduce the 
+
+manual effort and to retain the high performance. Under 
+
+
+
+A Survey of Deep Learning and Its Applications: A New Paradigm to Machine Learning  
+
+1 3
+
+weak supervision, they used a mixture of synthetically pro-
+
+duced trained data and a small subset of the training par-
+
+tition. With less training time and annotation efforts, new 
+
+method worked well with highly competitive performance. 
+
+Models also suited well for integration with the consumer 
+
+word spotting. Krishnan et al. [26] also employed deep CN 
+
+based features for the word images and textual embedding 
+
+schemes. They proposed an architecture that learnt both the 
+
+text and the images of deep CNN and provided completely 
+
+embedding scheme to learn the representations of the word 
+
+images and the labels and to construct the state of art word 
+
+image descriptor. They successfully proved the utility of the 
+
+method for extracting features for word spotting and used 
+
+IAM handwritten dataset with a mean average precision of 
+
+0.9509 for query-by-string based retrieval task.
+
+ Writer Identification
+
+Chu and Srihari [14] presented a method that used 
+
+deep neural network for the writer identification. They 
+
+proposed a method that was based not only on the human 
+
+defined features but dependent on the automatically gen-
+
+erated word level features given by deep neural network. 
+
+Based on the word level features, they generated writing 
+
+similarity that occurred in the paragraphs. This would also 
+
+help in the development of writing style of a person and 
+
+the differences between the writing styles of a number of 
+
+persons. The method also proved how the writing styles of 
+
+children changed with the age and other factors. They used 
+
+CEDAR-FOX tool for getting the results and concluded that 
+
+the results depend upon the size of training dataset. Dhieb 
+
+et al. [16] proposed a method for online writer identification 
+
+using deep neural network. They used beta elliptic model 
+
+for the text independent writer identification. The method 
+
+computed efficiently the writing movements of the author 
+
+using profile entities. They worked on the beta impulses and 
+
+elliptical arcs. Results of the feature extraction methods were 
+
+used as the input to the classifier. Results obtained clearly 
+
+showed the improvement and the robustness. Mohsen et al. 
+
+[38] presented a new approach for identification of an author 
+
+based on the deep learning. They used deep learning for the 
+
+extraction of the features of the documents which represent 
+
+variable sized characters. They used stack de-noising auto-
+
+encoder for the purpose of extracting features with differ-
+
+ent scenarios. And used support vector machine classifier. 
+
+Zhao et al. [72] proposed a deep learning model based on 
+
+multilevel triplet for person re-identification. They extracted 
+
+coarse and very fine information from the layers for feature 
+
+extraction. This model produced end to end training features 
+
+for the execution and achieved better performance than other 
+
+re-identification methods.
+
+9  Challenges of Deep Learning
+
+Although deep learning techniques are proving its best and 
+
+has been solving various complicated applications with mul-
+
+tiple layers and high level of abstraction. It is surely accepted 
+
+that the accuracy, acuteness, receptiveness and precision of 
+
+deep learning systems are almost equal or may sometimes 
+
+surpass human experts. To feel the exhilaration of victory, 
+
+in todayâs scenario, the technology has to accept many chal-
+
+lenges. So, here is the list of challenges which deep learning 
+
+has to overcome is:
+
+ Deep learning algorithms have to continuously manage 
+
+the input data.
+
+ Algorithms need to ensure the transparency of the con-
+
+clusion.
+
+ Resource is demanding technology like high performance 
+
+GPUs, storage requirements.
+
+ Improved methods for big data analytics. Deep networks 
+
+are called black box networks.
+
+ Presence of hyper parameters and complex design.
+
+ Need very high computation power.
+
+ Suffer from local minima.
+
+ Computationally intractable.
+
+ Need a large amount of data.
+
+ Expensive for the complex problems and computations.
+
+ No strong theoretical foundation.
+
+ Difficult to find the topology, training parameters for the 
+
+deep learning.
+
+ Deep learning provides new tools and infrastructures for 
+
+the computation of the data and enables computers to 
+
+learn objects and representations.
+
+10  Conclusion and Future Aspects
+
+Deep learning is indeed a fast growing application of 
+
+machine learning. The rapid use of the algorithms of deep 
+
+learning in different fields really shows its success and ver-
+
+satility. Achievements and improved accuracy rates with the 
+
+deep learning clearly exhibits the relevance of this technol-
+
+ogy, clearly emphasize the growth of deep learning and the 
+
+tendency for the future advancement and research. Addition-
+
+ally, it is very important to highlight that hierarchy of layers 
+
+and the supervision in learning are the major key factors to 
+
+develop a successful application with deep learning. The 
+
+reason behind is that the hierarchy is essential for appro-
+
+priate data classification and the supervision believes the 
+
+importance of maintaining database.
+
+Deep learning relies on the optimization of existing appli-
+
+cations in machine learning and its innovativeness on hierar-
+
+chical layer processing. Deep learning can deliver effective 
+
+
+
+ S. Dargan et al.
+
+1 3
+
+results for the various applications such as digital image pro-
+
+cessing and speech recognition. During the current era and 
+
+in coming future, deep learning can be executed as a useful 
+
+security tool due to the facial recognition and speech recog-
+
+nition combined. Besides this, digital image processing is a 
+
+kind of research field that can be applied in multiple areas. 
+
+For proving it to be a true optimization, deep learning is a 
+
+contemporary and exciting subject in artificial intelligence.
+
+At last, we conclude here, that if we follow the wave of 
+
+success, we will find that with the increased availability of 
+
+data and computational resources, the use of deep learn-
+
+ing in many applications is genuinely taking off towards 
+
+the acceptance. The technology is really ephebic, young 
+
+and specific and in the next few years, it is expected that 
+
+the rapid advancement of deep learning in more and more 
+
+applications with a great boom and prosperity e.g. natural 
+
+language processing, remote sensing and healthcare will cer-
+
+tainly achieve targets and height of triumph and satisfaction.
+
+Future Aspects of deep learning includes:
+
+ Working of deep networks with the sophisticated and 
+
+non-static noisy scenario and with multiple noise types?
+
+ Raising the performance of the deep networks by improv-
+
+ing the diversity between the features?
+
+ Compatibility of deep neural networks in the unsuper-
+
+vised learning online environment.
+
+ Deep reinforcement kind of learning will be the future 
+
+direction.
+
+ With deep networks, in coming future the factors like 
+
+inferences, efficiency and the accuracies will be desir-
+
+able.
+
+ Maintenance of wide repository of data.
+
+ To develop deep generative models with superior and 
+
+advanced temporal modeling abilities for the parametric 
+
+speech recognition system.
+
+ Automatically assess ECG signal through deep learning.
+
+ Use of deep neural network in object detection and track-
+
+ing in videos.
+
+ Deep neural network with the fully autonomous driving.
+
+It is submitted that the deep learning methodologies have 
+
+got great interest in each and every area where conventional 
+
+machine learning techniques were applicable. It is finally 
+
+to say that deep learning is the most effective, supervised 
+
+and stimulating machine learning approach. It can provide 
+
+researchers a quick evaluation of the hidden and incredible 
+
+issues associated with the application for producing better 
+
+and accurate results.
+
+Compliance with Ethical Standards 
+
+Conflict of interest Authors have no conflict of interest.
+
+
