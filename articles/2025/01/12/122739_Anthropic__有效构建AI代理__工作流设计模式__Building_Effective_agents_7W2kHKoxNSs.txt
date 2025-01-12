@@ -1,0 +1,94 @@
+Timestamp: 2025-01-12T12:27:39.800150
+Title: Anthropic  有效构建AI代理  工作流设计模式  Building Effective agents 7W2kHKoxNSs
+URL: https://youtu.be/7W2kHKoxNSs?si=TNC60zoFFiden4Kc
+Status: success
+Duration: 11:33
+
+Description:
+**Summary Outline:**
+
+1.  **Introduction:**
+    *   The article discusses effective practices for building agents, from a high-level perspective.
+    *   It emphasizes not to overcomplicate initially, but to build incrementally based on needs.
+    *   The article's insights are applicable across various fields, not just software development.
+
+2.  **Key Insights from Experience:**
+    *   Successful agent implementations often rely on simple, composable patterns, not complex frameworks.
+    *   The article shares experiences from working with clients and building agents (AZN).
+
+3.  **Defining Agents and Workflows:**
+    *   **Workflows** are predefined code paths, blueprints, and tools.
+    *   **Agents** are more dynamic, guiding processes and tool use to complete tasks.
+    *   Both are considered "agent systems" in the article.
+
+4.  **When to Use (or Not Use) Agents:**
+    *   Aim for the simplest solutions initially; add complexity only when necessary.
+    *   Agent systems involve a trade-off between task performance and cost.
+    *   Carefully evaluate if an agent system is required.
+
+5.  **Frameworks: When and How to Use Them:**
+    *   Frameworks (e.g., LangChain, Amazon Bedrock, etc.) simplify low-level tasks like invoking LLMs.
+    *   However, they can create abstractions that mask underlying behavior and hinder debugging.
+    *   Start with direct LLM calls (often a few lines of code) and use frameworks only when needed.
+    *   Understand the underlying code to avoid errors.
+
+6.  **Common Workflow Patterns:**
+    *   **Prompt Chaining:** Task decomposition into a series of steps, where each step's output feeds the next LLM call. Includes checks for ensuring the process remains on track. (e.g., generating marketing copy and translating it.)
+    *   **Routing:** Classifying input to guide it to specific downstream processes. (e.g., routing customer service inquiries to appropriate teams or models).
+    *   **Parallelization:** Executing LLM calls in parallel for the same input. Includes two sub-patterns:
+        *   *Scatter/Gather:* tasks are divided and executed independently in parallel.
+        *   *Voting:* same task is performed on the same input via different LLMs for diverse outputs, then votes on the best result.
+    *   **Orchestration:** A central LLM dynamically decomposes tasks and delegates them to worker LLMs, then compiles the results.
+    *   **Evaluator/Refiner:** One LLM generates content and another evaluates it iteratively, refining until an acceptable result is achieved. (e.g., translation with AI tone reduction).
+
+7.  **Agent Development Principles (briefly):**
+    *   Keep designs simple, plan designs thoroughly, and maintain high transparency.
+    *   Provide practical examples.
+
+8.  **Conclusion:**
+    *   The article offers valuable insights for developers engaged in AI projects in the evolving landscape of 2025.
+
+**Core Point:** Start with simple, direct large language model calls and only add complexity using frameworks or elaborate workflows when absolutely necessary for better performance or to address specific needs.
+
+**Fundamental Point:**  Building effective AI agents is often more about thoughtfully combining simple patterns and focusing on core problems rather than relying on complex frameworks.
+
+**Overarching Framework:** This content is structured as a practical guide to building AI agents effectively, focusing on iterative development, sensible use of frameworks, and practical workflow design patterns while cautioning against overcomplication.
+
+<Mermaid_Diagram>
+graph LR
+    A[Introduction] --> B(Key Insights);
+    B --> C(Define Agents & Workflows);
+    C --> D{When to Use Agents?};
+    D --> E[Framework Usage];
+    E --> F(Workflow Patterns);
+    F --> G[Prompt Chaining];
+    F --> H[Routing];
+    F --> I[Parallelization];
+     I --> J[Scatter/Gather]
+      I --> K[Voting];
+    F --> L[Orchestration];
+    F --> M[Evaluator/Refiner];
+   M -->N(Agent Dev Principles);
+    N --> O[Conclusion];
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+     style B fill:#ccf,stroke:#333,stroke-width:2px
+      style C fill:#ccf,stroke:#333,stroke-width:2px
+       style D fill:#ccf,stroke:#333,stroke-width:2px
+        style E fill:#ccf,stroke:#333,stroke-width:2px
+        style F fill:#ccf,stroke:#333,stroke-width:2px
+         style G fill:#aaf,stroke:#333,stroke-width:2px
+          style H fill:#aaf,stroke:#333,stroke-width:2px
+           style I fill:#aaf,stroke:#333,stroke-width:2px
+             style J fill:#aaf,stroke:#333,stroke-width:2px
+            style K fill:#aaf,stroke:#333,stroke-width:2px
+              style L fill:#aaf,stroke:#333,stroke-width:2px
+               style M fill:#aaf,stroke:#333,stroke-width:2px
+                style N fill:#ccf,stroke:#333,stroke-width:2px
+                style O fill:#ccf,stroke:#333,stroke-width:2px
+
+
+</Mermaid_Diagram>
+
+
+Content:
+今天我们来看看这篇文章这篇文章的名字叫做构建有效代理这篇文章也是Answerpick这个公司出品的我个人是非常推荐大家有兴趣都看了这篇文章为什么这个是因为这篇文章它从一个很高的一个角度来讨论在构建代理中间的一个最有效的开发的一个实践比如说你该不该去构建代理那么在构建代理都过程中间你该不该去使用Fremark什么时候使用Fremark以及在构建代理的时候那么这个代理系统里有工作流的话那么工作流有哪些有效的通用的这几模式本来说这篇文章是非常容易堵懂的所以不论您是不是这个行业不论您是不是有程序原来是开发的背景这篇文章到读的话基本上都能读的懂的而且它在中间所提到的一些观点不仅仅是用于程序开发这个领域程序原这个领域也是用于其他的一些领域比如说它提到一个观点不要一开始就使用非常复杂的东西使用复杂的技术而是一点点的根据你的需求去定型构建做出你想要的东西来这个观点我觉得它对于其他的任何领域都是使用的所以快速来读一下这篇文章首先它提到过去一年中我们与几十个团队合作在各个行业构建了一些大新语言的怎么形的代理最终最成功的实施其实它并没有使用复杂的一个框架或者专门的库相反他们确实使用一些简单可以组合的这种模式来进行构建也就是说很多东西你不一定需要一个非常复杂的东西你做出成功的东西有些时候刺适简单的一些组合就能够完成所以这篇文章分享了他们与这个客户以及他们构建代理人就是AZN的经验可以给开发者提供构建有效的代理的一些使用的建议首先什么是代理在这篇文章里面也就是AZN的这个文章里面它把代理跟它两个东西一个是工作流一个是代理工作流最主要是预定义的一个代码的路径原谋型和工具它可以进行工作那么代理就更多的是一种大原谋型能够动态的来指导自己的流程工具的使用保持对完成任务工作的方式的那种控制无论是工作流还有是代理在AZN的这篇文章的观点中间它同意的把他们都称为代理系统都连来了这个地方它介绍的是和时使用代理以及和时不使用代理他们的建议是什么呢在构建代有这个大原谋型能用程序的时候他们建议寻找尽可能简单的解决方案并在必要的时候才增加这个复杂性这也就是说你有可能根本就不需要去构建这种我Flow呀AZN你就直接调用大原谋型用最小最简便的方式去调用就可以了这个时候你需要做出这个平衡代理系统它通常在更好的任务性能严值个成本之间进行全衡所以你应该考虑啊是不是使用这个代理你需要去全衡什么时候应该去使用代理接下来一点是提到了什么时候使用框架以及如何使用框架这个框架呢它举了一些例子啊比如说Languaf on Lenshan用亚马逊的这个Adroker的这个AI的这个代理的框架还有这个Raeward叫什么毛丁这个我还没有用过还有这么一个叫Viler这个是用于构建和测试复杂工作流的这个涂型的用户见面工作这框架的好处是什么呢它是通过减化标准的这个低级任务比如调用大原谋型定义和解析工具以及练试调用来减化这个一些非常低级的这么一些过程但它的问题是在哪里它经常会创建一些额外的抽象程它可能会掩盖底层的体式和效应使得这个调试变得更加困难他们还可能让人轻向于添加不砸性而一个更简单的这次就够了他们的建议是什么呢他们建议还发这首先使用这个大原谋型的AI那就是说直接就要用大原谋型的AI很多它在个模式它通常是几行代码就能够实现了如果你确实让想要使用这个框架请确保你理解这个底层的代码对引擎盖下的内容的错误假设是客户错误的一个航件的一个来源我们用一句陈玉来说的话就是杂机淹用牛刀这个刀子你用来杀牛都可以了对吧你用来去杀机就是高色泡打文字用这句话来表示的话可能是更加的通署和容易理解接下来我们看一下这个工作流中间的几种常见的一这几模式第一种是叫做提示链这个提示链是做什么呢它就是把任务分解为一系列的步骤其中每个按原模型的调用处理上面一个步骤的一个输出然后你可以在中间步骤甚至添加一些腾讯性的这么一个检查以确保过程人在还是按照正轨上面更加运行还有哪一些的这个用力呢这些用力呢比如说声称这里营销的这个符文案然后呢将其翻译成另外一种语言这个相当于就是一个链式的一个操作的这么一个过程然后一内外一种呢是编写一个文长文档的大钢检查文大钢是否符合某些标准然后根据这个大钢是编写进一步编写这个文档那么这个就是链式就是说把一个长的一个工作把一个工作分成一步一步的往前走的这么一个过程那么每一步都是可以通过这个大约模型来完成那么所以每一步呢就相当于是对于一个大约模型的这么一个调用那么一种调用的这个设计模式链式调用的设计模式呢就被称为这个叫提示链提示链式的操作那么第二种的这个工作流的模式呢它叫做路由用路由呢就是说把输入因为这个分类它引导它呢去执行它后续的这些任务它这种工作流的它这个好处呢它能够把这个关注点给分离出来然后也就是说专门的大约模型去做专门的事情专人做专事 专款 专用有这么一种感觉在里面对于专来的例子呢比如说就是说把不同类型的这个客户服务查询的导向不同的这个下游的这个工程流程提示和工具这里还有一个更加好理解就是说常见的问题呢它用比较小的模型去回答比如说这个嗨库那复杂呢不寻常的这个问题呢就用到这个更强大的这个模型比如说3.5的商议用来优化这个成本和速度那么第三种模式呢就叫做这个这个并行化的这个模式这个并行化的模式顾明思议呢就是对于同样的一个输入呢我们并行的去执行在个大原模型的这个调用那具体的使用的这个场景那它分成了两种一种叫做Saxonet一个叫WotingSaxonet最主要是讲这个任务它可以它切分成在可以独立运行的这个执人物去进行所以这种情况下呢它可以去并行的去执行另外一种的是这个投票那投票呢就是说虽然执行的这个任务是相同的但是我们有不同的输出有不同的输出的原因有些时候是因为同一个大原模型就算你是问它同样的问题它就有不同的输出还有一种呢就是我们本来就希望使用不同的大原模型同样的输入让它给出不同的输出那这种情况下呢我们可能都需要对后的这个结果呢我们要进行一个投票看哪个最好我们再反馈给用户在这种情况下呢我们可以使用并行这么一个这几模式那么第四个工作流的这个涉及模式呢叫做编排则工作则模式呢其实相对来说是比较好理解比如说一个中央的这么一个大原模型呢它来动态的去分解任务然后委派给工作则的就是用来具体做工作的而原模型然后终和他们的结果也可以这么说吧那么这个编排则就是一个最强大脑然后去把具体的任务采分出来分解出来然后呢去给一些不那么聪明的这个大原模型让他们去做具体的事情最后再来一个总结最后再给出来一个结果第五个工作流的这个涉及模式呢叫做评估器流化器我们从这样团就可以看出来它过程是什么样的就是说一个大原模型去身份内容然后一个大原模型呢去评估它并且这个过程呢它是反复的不断的这么一个进行的这么一个过程就是直到得到一个可以接受的结果为止那我们这里可以讲一下它是在什么时候我们可以使用这样的一个模型呢比如说这个翻译这个翻译呢它有别说它一步翻不到位还是有那么多AI的这个味道那我们就可以使用这种模式翻译到一个代理一个大原模型翻译过来以后然后用另外一个大原模型去评估它是不是AI的味道太强了如果太强了打回去让它进一步的去进行调优然后接下来再评估直到它这个AI的味道完全去掉为止那么上面呢就是关于工作流的一些常见的设计模式的这么一些介绍这边文章还是挺长的它后面还介绍了关于代理代理的开发的时间在里的一些的设计的这个原则比如说呢它在设计实现代理的时候要保持您的这个代理的设计减节都先规划设计这个代理的规划不走明确一高后明度等等的也是非常的具有这个参考价值呢最后呢还提供了一些具体的这些代理的这些开发了一个实践的用力总体来说这边文章我觉得是2025年的这个彭博发展的AI的一年中间如果您是参与到这些开发活动中间如果是没有参与使用到AI这边文章都将会是一个非常好的就参考意义的文章
