@@ -1,0 +1,584 @@
+Timestamp: 2025-01-12T16:11:18.788745
+Title: paper:  A comprehensive evaluation of ensemble lea
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Core Ideas:**
+
+*   **Ensemble Learning (EL) for Stock Prediction:** The paper investigates the effectiveness of ensemble learning techniques for stock market prediction, aiming to enhance prediction accuracy.
+*   **Comparative Analysis:** A comprehensive comparison is made among different ensemble methods, including bagging, boosting, blending, and stacking, using various base learners (Decision Trees, Support Vector Machines, and Neural Networks).
+*   **Three Key Concerns:** The study addresses three crucial issues in constructing ensemble models: (1) the choice of base learner, (2) the combination technique, and (3) the number of ensembled models.
+*   **Empirical Evaluation:** The proposed models were tested on four stock exchange datasets (GSE, JSE, BSE-SENSEX, NYSE) from 2012 to 2018, evaluating their execution times, accuracy, and error metrics.
+*   **Performance of Ensemble Techniques:** Stacking and blending generally yield higher prediction accuracies and lower errors, while bagging and boosting perform comparatively less well.
+*  **Impact of Data Origin:** The study highlights that the performance of ensemble techniques is dependent on the origin of the data being analysed.
+
+**II. Structured Summary:**
+
+*   **Introduction:**
+    *   Stock market prediction is complex due to numerous factors and large data volumes.
+    *   Traditional methods have limitations, leading to the use of machine learning.
+    *   Ensemble learning, which combines multiple models, is believed to outperform single models.
+    *   This study aims for a comprehensive evaluation of various ensemble techniques for stock market prediction.
+*   **Literature Review:**
+    *   Many studies use ensemble methods for stock prediction.
+    *   Most studies focus on bagging or boosting, and often use a single type of classifier or regressor.
+    *   Few studies compare different combination techniques with diverse base learners on datasets from multiple continents.
+*   **Methodology:**
+    *   Employed Decision Trees (DT), Support Vector Machines (SVM), and Neural Networks (NN) as base learners.
+    *   Compared four combination methods: bagging, boosting, stacking, and blending.
+    *   Utilized stock data from four stock exchanges (GSE, JSE, NYSE, BSE).
+    *   Used data pre-processing techniques such as Wavelet transform and min-max normalization.
+    *   Implemented 10-fold cross-validation for evaluation.
+*   **Empirical Results:**
+    *   Stacking and blending outperformed bagging and boosting in accuracy and error metrics.
+    *   DT ensemble classifiers performed very well when the number of estimators is high
+    *   SVM ensembles performed moderately well, with an observation of suitability in regression tasks with smaller datasets
+    *   Ensemble performance varied across different datasets, indicating that ensemble method performance is domain-dependent.
+*   **Conclusion:**
+    *   Stacking is superior to other ensemble methods.
+    *   The performance of ensemble techniques is data-dependent
+    *   For homogenous ensembles, Decision trees with boosting or bagging are computationally cost-effective and can serve as a good baseline if parameter selection is carefully done.
+     *   When higher accuracy is paramount, stacking is to be prioritized, followed by blending.
+    *   Future work should explore feature selection, SVM parameter optimization, and predicting individual stock prices.
+
+**III. Core Point:**
+
+Stacking, followed by blending, offers the best prediction accuracy and lower error metrics for stock market prediction compared to boosting and bagging.
+
+**IV. Fundamental Point:**
+
+The effectiveness of ensemble learning for stock market prediction is contingent upon the selection of the base learners, combination technique, and the origin of the stock data.
+
+**V. Overarching Framework:**
+
+The overarching framework of the content involves evaluating and comparing ensemble learning methods for stock market prediction. It focuses on examining the impact of diverse base learners, combination techniques, and data origins on model accuracy, error metrics, and execution time. The framework follows a structured approach encompassing a literature review, methodology setup, empirical analysis, results and discussion, and finally, conclusions with suggestions for future research.
+
+<Mermaid_Diagram>
+graph LR
+    A[Stock Market Prediction] --> B(Challenges: Stochastic, Big Data);
+    B --> C[Fundamental Analysis]
+    B --> D[Technical Analysis]
+    B --> E[Computational Models];
+    E --> F[Single ML Models (SVM, DT, NN)]
+    E --> G[Ensemble Learning (EL)]
+    G --> H[EL Techniques]
+    H --> I(Bagging)
+    H --> J(Boosting)
+    H --> K(Stacking)
+    H --> L(Blending)
+    H --> M(Max Voting)
+    G --> N[Core Concerns of EL Models]
+    N --> O(Choice of Base Learner)
+    N --> P(Combination Techniques)
+    N --> Q(Number of Ensembled Models)
+    G --> R[Evaluation]
+    R --> S[Datasets (GSE, JSE, BSE, NYSE)]
+    S --> T[Data Preprocessing]
+    T --> U(Wavelet Transform)
+    T --> V(Min-Max Normalization)
+    R --> W[Metrics (Accuracy, RMSE, AUC, etc.)]
+    W --> X[Results]
+    X --> Y(Stacking & Blending Superior)
+    X --> Z(Bagging & Boosting Lower Accuracy)
+     X --> AA(Performance Varies Across Data Origins)
+    Y --> AB(Computational cost high)
+    Z --> AC(Low computational cost)
+        AA--> AD[Ensemble performance domain dependent]
+   AB -->AE[Stacking and Blending for higher accuracy]
+  AC -->AF[DT with bagging and boosting baseline]
+        
+    Y-->AG[Stacking offers better accuracy for stock market prediction]
+        
+    AF -->AH[DT boosting and bagging serves as a good baseline when computational cost is considered.]
+    AG -->AI[Stacking is preferred if high prediction accuracy is paramount]
+
+        
+</Mermaid_Diagram>
+
+
+Content:
+paper:  A comprehensive evaluation of ensemble learning for stock-market prediction
+https://link.springer.com/content/pdf/10.1186/s40537-020-00299-5.pdf
+https://journalofbigdata.springeropen.com/articles/10.1186/s40537-020-00299-5
+
+
+Abstract
+Stock-market prediction using machine-learning technique aims at developing effective and efficient models that can provide a better and higher rate of prediction accuracy. Numerous ensemble regressors and classifiers have been applied in stock market predictions, using different combination techniques. However, three precarious issues come in mind when constructing ensemble classifiers and regressors. The first concerns with the choice of base regressor or classifier technique adopted. The second concerns the combination techniques used to assemble multiple regressors or classifiers and the third concerns with the quantum of regressors or classifiers to be ensembled. Subsequently, the number of relevant studies scrutinising these previously mentioned concerns are limited. In this study, we performed an extensive comparative analysis of ensemble techniques such as boosting, bagging, blending and super learners (stacking). Using Decision Trees (DT), Support Vector Machine (SVM) and Neural Network (NN), we constructed twenty-five (25) different ensembled regressors and classifiers. We compared their execution times, accuracy, and error metrics over stock-data from Ghana Stock Exchange (GSE), Johannesburg Stock Exchange (JSE), Bombay Stock Exchange (BSE-SENSEX) and New York Stock Exchange (NYSE), from January 2012 to December 2018. The study outcome shows that stacking and blending ensemble techniques offer higher prediction accuracies (90–100%) and (85.7–100%) respectively, compared with that of bagging (53–97.78%) and boosting (52.7–96.32%). Furthermore, the root means square error (RMSE) recorded by stacking (0.0001–0.001) and blending (0.002–0.01) shows a better fit of ensemble classifiers and regressors based on these two techniques in market analyses compared with bagging (0.01–0.11) and boosting (0.01–0.443). Finally, the results undoubtedly suggest that an innovative study in the domain of stock market direction prediction ought to include ensemble techniques in their sets of algorithms.
+
+Introduction
+The stock market is considered to be a stochastic and challenging real-world environment, where the stock-price movements are affected by a considerable number of factors [1, 2]. Billions of structured and unstructured data are generated daily from the stock market around the globe, increasing the “volume”, “velocity”, “variety” and “veracity” of stock market data, and making it complex to analyse [1, 3]. In analysing this “Big Data” from the stock market, two methods have generally been accepted, namely: fundamental analysis and technical analysis. The fundamental analysis focuses on the economic trends of local and international milieus, public sentiments, financial-statement and assets reported by companies, political conditions and companies associations worldwide [1, 4]. The technical analysis is based on statistical analysis, using the historical movement of the stock-prices. Technical indicators such as moving-average, dead cross and golden-cross are employed for effective stock trading decisions. Despite the existence of these techniques, market analysis is still challenging and open [1].
+
+To overcome the challenges in the stock market analysis, several computational models based on soft-computing and machine learning paradigms have been used in the stock-market analysis, prediction, and trading. Techniques like Support Vector Machine (SVM) [2, 5], DTs [6], neural networks [7], Naïve Bayes [8, 9] and artificial neural networks (ANN) [10, 11] were reported to have performed better in stock-market prediction than conventional arithmetic methods like Logistic regression (LR), in respect of error prediction and accuracy. Nevertheless, ensemble learning (EL) based on a learning-paradigm that combines multiple learning algorithms, forming committees to improve-predictions (stacking and blending) or decrease variance (bagging), and bias (boosting) is believed to perform better than single classifiers and regressors [12, 13].
+
+Succinctly, EL techniques have been applied in serval sectors such as health [14], agriculture [15], energy [16], oil and gas [17], and finance [12, 18]. In all these applications, their reported accuracies support the argument that ensemble classifiers or regressors are often far more precise than the discrete classifiers or regressors. For this reason, the need for building a better-ensemble classification and regression models has become a critical and active research area in supervised learning, with boosting and bagging being the most common amalgamation methods used in the literature [16].
+
+Despite numerous works revealing the dominance of ensemble classifier over single classifier, most of these studies only ensemble a specific type of classifier or regressor for stock-market prediction, such as NN [18,19,20], DT [21, 22] and SVM [12, 23]. Also, most previous studies [12, 19, 21, 22, 24,25,26,27,28,29,30], on ensemble methods for stock-market predictions adopted the decrease variance approach (boosting or bagging) and experimented with data from one country. Furthermore, a comparison between bagging (BAG) and boosting (BOT) combination techniques by [12, 21] revealed that the BAG technique outperformed the BOT technique. However, the conclusion of these studies pointed out that the performance of ensemble classifiers using boosting or bagging in stock-market prediction is territory dependent. Thus, the authors foresee that some ensemble methods may perform better on data from some parts of the globe than other parts. This assumption calls for the application of different ensemble techniques to be benchmarked with stock-data from different continents, to ascertain their performance.
+
+Besides, little is known on comparing ensemble classifiers and regressors using different combination techniques with same or diverse base learners in predicting the stock market. Hence, in stock-market prediction, to the best of our knowledge, there is no comprehensive comparative study to evaluate the performances of a good pool of diverse ensembles regressors and classifiers based on stock-data from three or more continents.
+
+Therefore, this study seeks to perform a comprehensive comparative study of ensemble learning methods for classification and regression machine learning tasks in stock market prediction. The following specific objectives aiding this study are as follows:
+
+i.
+To bring together the theory of EL and appreciate the algorithms, which use this technique.
+
+ii.
+To review some of the recently published articles on ensemble techniques for classification and regression machine learning tasks in stock market prediction.
+
+iii.
+To set up ensemble classifiers and regressors with DTs, SVM and NN using stacking, blending, bagging, and boosting combination techniques.
+
+iv.
+To examine and compare execution times, accuracy, and error metric of techniques in (iii) over stock data from GSE, JSE, NYSE and BSE-SENSEX.
+
+Hopefully, this paper brings more clarity on which ensembles techniques is best suitable for machine learning tasks in stock market prediction. Again, offer help to beginners in the machine-learning field, to make an informed choice concerning ensemble methods that quickly offer best and accurate results in stock-market prediction. Furthermore, we probe the arguments made in [12, 21] about the consistency of ensemble learning superiority over stock data from different countries. Finally, this paper contributes to the literature in that it is, to the best of our knowledge, the first in stock market prediction to make such an extensive comparative analysis of ensemble techniques.
+
+The remaining sections of the paper are organised as follows. “Related works evaluation” section presents a review of related works. In “Procedure of proposed method” section, we present a quick dive-into basic and advanced ensemble methods and the study procedure. “Predictive models” section discusses the results of empirical studies. “Ensemble methods (EMs)” section concludes this study and describes avenues for future research.
+
+Related works evaluation
+Literature has shown that the applications of some powerful ML algorithms have significantly improved the accuracy of stock prices classification and prediction [31, 32]. As such, ML has drawn the attention in stock market prediction, and several ensemble ML techniques have recorded high prediction accuracy in current studies.
+
+Sohangir et al. [33] examined the ability of deep learning techniques such as LSTM and CNN to improve the prediction accuracy of the stock using public sentiments. The out of the study showed that deep learning technique (CNN) outperformed ML algorithms like Logistic regression and Doc2vec. Their Simulation outcome demonstrated the attractiveness of their proposed ensemble method compared with auto-regressive integrated moving average, generalised autoregressive conditional heteroscedasticity. Likewise, Abe et al. [34] applied a deep neural network technique to predict stock price and reported that deep technique is more accurate than shallow neural networks.
+
+An ensemble of state-of-the-art ML techniques, including deep neural networks, RF and gradient-boosted trees were proposed in [35], to predict the next day stock price return on the S&P 500. Their experimental findings were hopeful, signifying that a sustainable profit prospect in the short-run is exploitable through ML, even in the case of a developed-market. Qiu et al. [36] presented a stock prediction model based on ensemble ν-Support Vector Regression Model.
+
+Similarly, an ensemble of Bayesian model averaging (BMA), weighted-average least squares (WALS), least absolute shrinkage and selection operator (LASSO) using AdaBagging was proposed in [24] to predict stock price. Pasupulety et al. [37] proposed an ensemble of extra tree regressor and support vector regressor using stacking to predict the stock price based on public sentiment. Pulido et al. [38] ensembled NN with fuzzy incorporation (type-1 and type-2) for predicting the stock market [38], they achieved a high prediction accuracy by the proposed model compared with single NN classifier. An ensemble of trees in an RF using LSboost was carried out [25]; the study achieved reduced prediction error.
+
+A Comparison of single, ensemble and integrated ensemble ML techniques to predict the stock market was carried out in [39]. The study showed that boosting ensemble classifiers outperformed bagged classifiers. Sun et al. [26] proposed an ensemble LSTM using AdaBoost for stock market prediction. Their results show that the proposed AdaBoost-LSTM ensemble outperformed some other single forecasting models. A homogenous ensemble of time-series models including SVM, logistic regression, Lasso regression, polynomial regression, Naive forecast and more was proposed in [40] for predicting stock price movement. Likewise, Yang et al. [41] ensembled SVM, RF and AdaBoost using voting techniques to predict a buy or sell of stocks for intraday, weekly and monthly. The study shows that the ensemble technique outperformed single classifier in terms of accuracy. Gan et al. [42] proposed an ensemble of feedforward neural networks for predicting the stock closing price and reported a higher accuracy in prediction as compared with single feedforward neural networks.
+
+In another study, a 2-phase ensemble framework, including several non-classical disintegration models, namely, ensemble empirical mode decomposition, empirical mode decomposition, and complete ensemble empirical mode decomposition with adaptive noise, and ML models, namely, SVM and NN, was proposed for predicting stock-prices [43]. Implementation and evaluation of RF robustness in stocks selection strategy was carried out [31]. Using the fundamental and technical dataset, they concluded that in sound stocks investment, fundamental features, and long-term technical features are of importance to long-term profit. Mehta et al. [44] proposed a weighted ensemble model using weighted SVM, LSTM and multiple regression for predicting the stock market. Their results show that the ensemble learning technique attained maximum accuracy with lesser variance in stock prediction.
+
+Similarly, Assis et al. [45] proposed an NN ensemble for predicting stock price movement. A deep NN ensemble using bagging for stock market prediction was proposed in [29]. The study revealed that assembling several neural networks to predict stock price movement is highly accurate than a single deep neural network. Jiang et al. [27] implemented different state-of-the-art ML techniques, including a tree-based and LSTM ensemble using stacking combination technique to predict stock price movement based on both information from the macroeconomic conditions and historical transaction data. The authors recorded an accuracy of 60–70% on average. Kohli et al. [46] examined different ML algorithms (SVM, RF, Gradient Boosting and AdaBoost) performance in stock market price prediction. The study showed that AdaBoost outperformed Gradient Boosting in terms of predicting accuracy.
+
+The work in [19] presents an ensemble classifier of NN using bagging. Their results revealed that the ensemble of NN performs much better than a single NN classifier. Equally, Wang et al. [4] proposed an RNN ensemble framework that combines trade-based features deduced from historical trading records and characteristic features of the list companies to perceive stock-price manipulation activities effectively. Their experimental results reveal that the proposed RNN ensemble outperforms state-of-the-art methods in distinguishing stock price manipulation by an average of 29.8% in terms of AUC value. Existing studies have shown that ensemble classifiers and regressors are of higher predicting accuracy than a single classifier and regressor.
+
+In the same way, Ballings et al. [12] compared LR, NN, K-Nearest Neighbour (K-NN), and SVM ensembles using bagging and boosting. The study results revealed that bagging algorithm (random forest) outperformed boosting algorithm (AdaBoost). Nevertheless, the study concluded that the performance of ensemble methods is dependent on the domain of the dataset used for the study. Therefore, to obtain a generalisation of EL methods, a comprehensive comparison among ensemble methods using datasets from different continents are required.
+
+Table 1 (Appendix A), present a summary of pertinent studies on stock market prediction using EL based on different combination techniques. We categorised the relevant literature based on (i) the base (weak) learner and the total number used. (ii) The type of machine learning task (classification or regression). (iii) The origin of the data used for the experimental analysis. (iv) The combination technique used and (v) evaluation metric used to contrast and compare the relative metamorphoses.
+
+Table 1 Comparison of related studies
+Full size table
+As observed in Table 1 (Appendix A), creating of ensemble classifiers and regressors in the domain of stock-market predictions has become an area of interest in recent studies. However, most of these studies [12, 19, 21, 22, 24,25,26,27,28,29,30] were based on boosting (BOT) or bagging (BAG) combination method. Only a few [4, 18, 20, 37] examined ensemble classifiers or regressors based on stacking or blending combinational technique.
+
+Once more, as shown in Table 1 (Appendix A) most of the studies compared between ensemble classifiers [12, 18,19,20, 22, 23, 28] or regressors [21, 30] machine learning algorithms, but not both. On the other hand, literature shows that most machine learning algorithms can be used for classification and regression tasks. However, some are better for classification than regression, while others are vice versa [47, 48]. Hence a good comparison among ensemble methods should cover both regression and classification tasks with same weaker learners.
+
+Concerning combination techniques, Table 1 (Appendix A) affirms that a high percentage of existing literature used either BAG or BOT for classifier ensembles. Thus, only a few minorities examine the performance of different classifier using BAG and BOT and Stacking (STK).
+
+Furthermore, the quantity of assembled classifiers in previous studies is diverse, whiles some used different numbers, other used fixed of say 10 for comparisons, and to the best of our knowledge, previous studies did not compare ensembles classifiers and regressor with same single classifiers using same combinational methods.
+
+Considering the above discussions presented in Table 1 (Appendix) carefully it leaves a gap for conducting a comprehensive comparison study of ensemble classifiers and regressors of the same or a different number of base learners using different combination methods for stock-market prediction.
+
+Procedure of proposed method
+This section presents the details of Machine Learning (ML) algorithms adopted in this study and their implementation for predicting the stock market.
+
+Predictive models
+Like many other studies [18, 19, 21, 23, 49], this study adopts three bases line ML algorithms, namely DT, SVM and NN, based on their superiority for ensemble learning in financial analysis.
+
+Decision tree (DT)
+DT is a flow-chart-like tree structure that uses a branching technique to clarify every single likely result of a decision. The interpretability and simplicity of DT, its low-slung computational cost and the ability to represent them graphically have contributed to the increase in its use for classification task [50]. An information gain approach was used to decide the appropriate property for each node of a generated tree. The test attributes of each current node are selected based on the attribute that has the maximum information. The operation of a DT on a dataset (DS) is expressed in [51] as follows:
+
+1.
+Estimate the entropy E (S) value of the DS as expressed in Eq. (1).
+
+(1)
+where E(S) = entropy of a collection of DS, m = represents the number of classes in the system and pi = represents the number of instances proportion that belongs to class i.
+
+2.
+Calculate the information gain for an attribute K, in a collection S, as expressed in Eq. (2). where E(S) represents the entropy of the entire collection and Su = the set of instances that have value u for attribute K.
+
+(2)
+Support vector machine (SVM)
+SVM is a supervised machine learning tool used for regression and classification tasks [52]. SVM serves as the linear separator sandwiched between two data nodes to detect two different classes in the multidimensional environs. The following steps show the implementation of SVM.
+
+Let DS be the training dataset, 
+ The SVM represents DS as points in an N-dimensional space and then tries to develop a hyperplane that will split the space into specific class labels with a right margin of error [51]. Equations (3) and (4) shows the formula used in the algorithm for the SVM optimisation.
+
+(3)
+(4)
+The function 
+ of vectors 
+ (DS) are mapped in space dimension of higher space. In this dimension, the SVM finds a linear separating hyperplane with the best margin. The kernel function can be formulated 
+ The Radial Basis Function (RBF) kernel expressed in Eq. (5) was adopted for this study.
+
+(5)
+where 
+ is the Euclidian distance between two data point.
+
+Neural networks (NN)
+NN is a network of interrelated components that accepts input, actuates, and then forwards it to the next layer. The NN can be connected in several ways, but in this paper, the Multilayer Perceptron (MLP) for the neural network was adopted. The MLP is a supervised ML algorithm that studies a function 
+ by training on a dataset (DS), where (D) represents the dimension of the input DS, and 
+ represents the number of dimensions of expected output. Given X set of features, and a target 
+, where 
+, the MLP can learn a non-linear function approximator for both regression and classification. MLP trains using Adam, Limited- Memory Broyden-Fletcher-Goldfarb-Shanno (LBFGS) or Stochastic Gradient Descent. However, for this study, the Tikhonov regulariser [53], and Adam (Adaptive Moment Estimation) optimiser were adopted. The logistic sigmoid activation function (Eq. 7) was adopted as an activation function in each layer. The mapping-functions for individual layer l, are given as expressed in Eq. (6). The backpropagation algorithm was used in training the MLP in this study.
+
+(6)
+(7)
+where 
+ represents the weight matrix and bias respectively 
+ is the sum of the weighted inputs.
+
+Ensemble methods (EMs)
+Ensemble methods are prevalent in machine learning and statistics. EMs offers techniques to merge multiple single classifiers or predictors to form a committee, to achieve amassed decision for better and accurate results than any of the single or base predictors [54, 55]. Thus, EMs highlights the strong point and watered-down the feebleness of the single classifiers [54, 55]. Two types of ensemble methods are defined by Opitz and Maclin [55], namely: cooperative and competitive ensemble classifiers. Ensemble involves training diverse single classifiers independently with the same or different dataset, but not with the same parameters. Then, the final prediction (expected output) is obtained by finding an average of all individual single or base classifier output (or other similarities). Whiles the cooperative ensemble is a divide and conquers based approach. The prediction task is subdivided into two or more tasks, where each subtask is sent to the appropriate single classifier based on the characteristics and nature of the subtasks, and the final prediction output is obtained by the sum of all distinct single or base classifiers. In the creation of ensemble classifier and regresses models, three factors need careful consideration. (1) The availability of numerous classification and regression methods makes it difficult to identify which one of them is suitable for the application domain. (2) The number of single classifiers or regressors to assembled for better and higher accuracy. (3) The amalgamation techniques are suitable for combining the outcomes (outputs) of the various single classifiers and regressor to obtain the final prediction or output. We present a brief discussion of some basic and advanced combination techniques for EL in the subsequent section.
+
+Basic ensemble techniques
+In this section, we discuss 3 basic but powerful ensemble methods, namely: (i) Weighted averaging (WA) (ii) Max voting (MV) (iii) Averaging.
+
+Max voting (MV)
+The primary application of MV is for a classification task. In the MV technique, several single classifier models are employed to decide on every data-point. The output of every individual or single classifier is taken as a ‘vote’, the final output (decision) is based on the majority’s answer. Let M1, M1 and M3 represent single different classifier models, and x_train and y_train be training datasets, independent and dependent variables respectively. While x_test and y_test be independent variables and target variables of the testing dataset, respectively. Let M1, M2 and M3 be trained separately with the same training dataset, thus, 
+ and 
+, respectively. Let 
+ represent the predicted output of the respective models. Then, the final prediction (Fp) is a simple majority vote among the predicted output.
+
+Averaging
+The averaging technique is very similar to the MV technique; however, an average of the outputs of all individual or single classifiers represents the final output (decision). However, unlike the MV, the averaging technique can be used for both regression and classification machine learning task. With models {M1, M2 and M3} separately trained and tested with the same dataset, final prediction (Fp) is the average of individual models, as expressed in Eq. (8). where 
+ are the predicted output of individual models.
+
+(8)
+Weighted average (WA)
+The WA is an extension of the averaging techniques. In WA technique, different weights are assigned to every model signifying the prominence of an individual model for prediction. However, with WA, M1, M1 and M3 are assigned with different weights of say (0.5, 0.2 and 0.7) respectively, then, the final prediction (Fp) given as Eq. (9).
+
+(9)
+Advanced EL techniques
+The following section discusses three advanced combination techniques in brief.
+
+Stacking (STK)
+Stacking is an EL technique that makes use of predictions from several models 
+ to construct a new model, where the new model is employed for making predictions on the test dataset. STK seeks to increase the predictive power of a classifier [16]. The basic idea of STK is to “stack” the predictions of 
+ by a linear combination of weights 
+ as expressed in Eq. (10) [16]. The mlens library [56] was used to implement the stacked EL technique in this study.
+
+(10)
+where the weight vector “a” is learned by a meta-learner.
+
+Blending (BLD)
+The blending ensemble approach is like stacking technique. The only difference is that, while stacking uses test dataset for prediction blending uses a holdout (validation) dataset from the training dataset to make predictions. That is predictions take place on only the validation dataset from the training dataset. The outcome of the predicted dataset and validation dataset is used for building the final model for predictions on the test dataset.
+
+Bagging (BAG)
+Bagging also called bootstrap aggregating involves combining the outcome of several models (for instance, N number of K-NNs) to acquire a generalised outcome. Bagging employs bootstrapping-sampling techniques to create numerous subsets (bags) of the original train dataset with replacement. The bags created by the bagging techniques severs as an avenue for the bagging technique to obtain a non-discriminatory idea of the sharing (complete set) [48]. The bags’ sizes are lesser than the original dataset. Some machine learning algorithms that use the bagging techniques are bagging meta-estimator and random forest. BAG seeks to decrease the variance of models.
+
+Boosting (BOT)
+Boosting also called “meta-algorithm” is a chronological or sequential process, where each successive model tries to remedy or correct the errors of the preceding model. Here, every successive model depends on the preceding model [57]. A BOT algorithm seeks to decrease the model’s bias. Hence, the boosting techniques lump together several weak-learners to form a strong leaner. However, the single models might not achieve better accuracy of the entire dataset; they perform well for some fragment of the dataset. Therefore, each of the single models substantially improves (boosts) the performance of the ensemble. Some commonly boosting algorithms are AdaBoost, GBM, XGBM, Light GBM and CatBoost.
+
+Study framework
+Figure 1 shows the study framework. We adopted STK, BLD, BAG, and BOT combination methods and used DTs, SVM and NNs algorithms as discussed above. To build ‘homogeneous’ and ‘heterogeneous’ ensemble classifiers and regressor for predicting stock price and compare their accuracy and error metrics. The study process, as shown in Fig. 1, is grouped into three-phase, namely: (1) Data preprocessing phase. (2) The building of homogenous and heterogeneous ensemble classifiers and regressor models. (3) Comparing the accuracy and error metrics of models. We discuss in detail each phase in the following section.
+
+Fig. 1
+figure 1
+Study Framework
+
+Full size image
+Research data
+Market indices were downloaded from the Ghana stock exchange (GSE), the Johannesburg stock exchange (JSE), the New York Stock Exchange (NYSE) and Bombay Stock Exchange (BSE-SENSEX) from January 2012 to December 2018, to test ensemble methods with datasets from different continents. By doing so, we can verify works that pointed out that some ensemble methods might underperform on datasets from some continents [12, 47]. The datasets consist of daily stock information (year high, year low, previous closing price, opening price, closing price, price change, closing bid price, closing offer). To produce a generalisation of this study, five (5) well-known technical indicators, namely: simple-moving average (SMA), exponential moving average (EMA), Moving average convergence/divergence rules (MACD), relative-strength index (RSI), On-balance-volume (OBV), discussed in [1, 27, 58] were selected and added to some feature from the various dataset. All indicators were calculated from 5 fundamental quantities (opening-price, the highest-price, the lowest-price, closing price, and trading volume). We aimed at predicting a 30-day-ahead closing price and price movement for regression and classification, respectively. The downloaded datasets were preprocessed by going through 2 primary stages, namely: (i) data cleaning, (ii) data transformation.
+
+Data cleaning
+The complexity and stochastic nature of stock data make it always prone to noise, which might disturb the ML algorithm from studying the structure and trends in data. The wavelet transform (WT) expressed in Eq. (11) was applied to free the dataset from noise and data inconsistency. We transformed the data 
+ using WT as follows, remove coefficients (a, b) with values more than standard deviation (STD). Now we inverse transformed the new coefficients to get our new data free from noise. The WT was used based on its reported ability to adopt and developed the localisation-principle of the short-time Fourier-transform technique, as-well-as features of good-time frequency characteristics and multi-resolution [59].
+
+(11)
+Data transformation
+Machine learning algorithms offer higher accuracy and better error metrics when the input data is scaled within the same range [60]. The min–max normalisation techniques expressed in Eq. (12) guarantees all features will have the same scale [0, 1] as compared with other techniques [61], hence adopted for this study.
+
+(12)
+where b is the original data value, 
+ is the value of b after normalisation, 
+ are the maximum and minimum values of the input data.
+
+Empirical analysis and discussion
+In our quest to achieve a comprehensive comparative study among ensemble techniques, four (4) different stock-datasets were downloaded from Ghana, South Africa, United States, and India. Each data had a different number of selected independent variables (features), as shown in Table 2 (Appendix 1). 10-fold cross-validation (10-CV) was adopted and applied in this study to attain an enhanced valuation of training accuracy. With the (10-CV) method, the training set was subdivided into ten subsets of training data, and nine out the ten were used in training each model. Whiles the remaining one (1) was used as test data. This process was repeated ten times, representing the number of folds (10-CV). 80% of each dataset was used for training, whiles the remaining 20% was for testing.
+
+Table 2 Details of dataset
+Full size table
+Figure 2 shows the variation between the open and close stock price of the Bombay stock exchange dataset. The graph shows a close range between the opening and closing stock price. We observed that the price of the stock went up in January 2018 as compared with all other years during the period of this study. Figure 3 shows a graph of the open and close stock price of the NYSE dataset. The graph shows little marginal changes between open and closing stock price.
+
+Fig. 2
+figure 2
+Bombay stock exchange dataset overview
+
+Full size image
+Fig. 3
+figure 3
+NYSE dataset overview
+
+Full size image
+A graph of the open and close price of the GSE data is as shown in Fig. 4. A very close variation between open and close is observed in the dataset. Figure 5 shows a plot of the JSE dataset. A graph shows some variation in open and close price.
+
+Fig. 4
+figure 4
+GSE dataset overview
+
+Full size image
+Fig. 5
+figure 5
+JSE data
+
+Full size image
+Empirical setup
+We constructed twelve homogenous ensemble classifiers and regressors based on bagging and boosting combination techniques and thirteen different classifiers, as seen in (Appendix A Table 4) and regressors using stacking, blending and maximum voting combination techniques, as seen in (Appendix A Table 5). Our base leaners parameters were set as follows: MLP three hidden layer (HL), HL1 and HL2 (with five (5) nodes), and HL3 (with ten (10) nodes), the maximum iteration was set to 5000, optimiser = Adam, activation = logistic. For SVM, the Radial Basis Function (RBF) kernel was used, and the regularisation (C) = 100. The DT setting were, criterion = entropy, max_depth = 4. In all, 25 models were built in this study using the Scikit-learn Library, the mlens library [56] and Python. The number of base-leaners was set in a range of [1–200] for “homogeneous” ensemble experiments based on findings in [1] The parameter setting of the SVM and MLP were based on the findings of [12]. An Intel Core i5 64bit with 8 GB memory laptop was used for the implementation of all experiments.
+
+Model evaluation
+There are several evaluation metrics available for measuring the performance of classifiers and regressors [1]. However, twelve (12) accuracy and closeness evaluation metrics were selected for evaluating the performance among adopted techniques in this study (see Table 3, Appendix 1). These metrics were selected due to their appropriateness and effectiveness for classification and regression ML tasks in stock market prediction [1, 27, 62].
+
+Table 3 Used evaluation metrics
+Full size table
+Results and discussion
+This section presents the results and discussions of our experimental.
+
+Homogenous ensembled classifiers by BAG and BOT
+The prediction accuracies of the ensemble classifiers over the GSE, BSE, NYSE, and JSE datasets are shown in Figs. 6, 7, 8, 9, respectively, where the x-axis represents the number of base-learners, and the y-axis represents the accuracy of prediction.
+
+Fig. 6
+figure 6
+Bagging and boosting classifiers accuracy over the GSE dataset
+
+Full size image
+Fig. 7
+figure 7
+Bagging and boosting classifiers accuracy over the BSE dataset
+
+Full size image
+Fig. 8
+figure 8
+Bagging and boosting classifiers accuracy over the NYSE dataset
+
+Full size image
+Fig. 9
+figure 9
+Bagging and boosting classifiers accuracy over the JSE dataset
+
+Full size image
+We observed that the DT ensemble classifiers by boosting (DTBotc) and bagging (DTBagc) obtain an accuracy of 99.98% with (10–200) estimators over the GSE, BSE, and NYSE dataset (Figs. 6, 7, 8, 9). The accuracy of the MLP ensemble by bagging (MLPBagc) performed better with an accuracy of 100% over the NYSE dataset for estimators from (1 to 200), 94–98% over GSE and 92–100% over BSE, while 80–84% over JSE dataset. The SVM (SVMBagc) recorded 96–97% over NYSE, 53–60% over JSE dataset, 88–89% over GSE dataset.
+
+On an average, the DT ensemble classifier by boosting (DTBotc) recorded an accuracy measure of 100% over NYSE, 95.09% over JSE, and 98.52% over GSE and 99.98 over BSE as shown in Figs. 6, 7, 8 and 9 respectively. While DT ensemble classifier via bagging (DTBagc) obtained an accuracy measure of 100% over the NYSE, 79.95% over JSE, 98.78% over GSE, and 99.93 over BSE. The MLP ensemble classifier by bagging (MLPBagc) obtained an accuracy of 100% over NYSE, 81.53% over JSE, 97.98% over GSE and 98.93 over BSE, while MLP ensemble classifier by boosting (MLPBotc) recorded 96.32% over NYSE, 62.45% over JSE dataset, 88.99% over GSE dataset and 96.45% over BSE dataset. The SVM ensemble classifier by bagging (SVMBagc) recorded an accuracy of 97.43% over NYSE, 54.98% over JSE, 88.87% over GSE and 93.78 over BSE, while SVM ensemble classifier using boosting (SVMBotc) 52.7% over NYSE, 53.02% over JSE dataset, 62.74% over GSE dataset and 62% over BSE dataset.
+
+Likewise, it was observed that the DT ensemble classifiers DTBotc and DTBagc performed very-well over NYSE at 100% accuracy with (1–20) estimators as compared with the JSE, GSE, and BSE. The high accuracy level of the DT ensemble on NYSE might be the fact that the NYSE dataset is the largest (1760) with the highest feature (15) when compared with the rest of all the dataset. This outcome might imply that ensemble classifier performs best with the larger dataset. The MLP ensemble classifier through boosting and bagging did perform well over the NYSE and BSE datasets, as compared with JSE and GSE datasets. On the other hand, the SVM ensemble employing bagging performed very well over NYSE (97.43%), BSE (93.78%) and GSE (88.87%) but low accuracy on the JSE (54.98%). Overall, the SVM ensemble by boosting recorded low accuracy on all datasets.
+
+Furthermore, we observed that the performance of DT ensemble classifiers (DTBotc and DTBagc) increase with the increase in the number of estimators used. This outcome shows that for a higher and better accuracy measure, the number of estimators for DT ensemble should be high. On the other hand, the accuracy SVM ensemble via boosting and bagging was not directly proportional to the number of estimators. Thus, irrespective of the number of estimators, the accuracy of the SVM was stable. Although the performance of SVM ensemble as compared with DT ensemble and MLP ensemble was low, the outcome obtained implies that when building an ensemble of SVM, the accuracy is independent of the number of estimators. The variation in accuracy by classifier ensembles over different dataset shows that the accuracy of ensemble methods in stock-market prediction is dependent on the origin of the data being analysed, which affirms literature [12, 21].
+
+Error metrics analysis of homogenous ensembled classifiers
+Measuring the performance of classifiers and regressors models based on only the accuracy score is not enough for a truthfully [63]. Hence, we further calculated some known error metric. Tables 6, 7, 8, 9, 10, 11, 12 and 13 (Appendix A) shows the error metrics of DT, SVM, and MLP ensemble classifiers based on boosting and bagging over GSE, BSE, NYSE, and the JSE, respectively. The area-under-curve (AUC) of a DT ensemble classifier by boosting and bagging (DTBotc and DTBagc) falls within (0.920–1) for one estimator to 200 estimators over GSE, BSE and NYSE as shown in Tables 6, 7, 8, 10, 11 and 12 (Appendix A). Hence, confirms the accuracy score obtained by the DT ensembles by boosting and bagging over these datasets shown in Figs. 6, 7, 8 and 9. This finding suggests some skill in the prediction by DT ensembles. On the other hand, AUC measure on JSE dataset falls within 0.5 for one estimator to 0.996 for 200 estimators. The F1-score values of the DT ensemble classifiers (DTBotc and DTBagc) shown in Tables 6, 7, 8, 10, 11 and 12 (Appendix A), shows a balance between recall and precision of the DT ensemble classifiers. Again, the values of RMSE and MAE of DT ensembles by bagging and boosting (DTBagc and DTBotc respectively) are approximately 0.00 from 10 estimators to 200 estimators, which again confirms that the accuracy of DT ensembles is highly dependent on the number of estimators used.
+
+The MLP ensemble classifier by boosting (MLPBotc) recorded AUC values of (0.845–0.847), (0.938–0.965), (0.934–0.938) and (0.523–0.626) over GSE, BSE, NYSE and JSE datasets respectively (Appendix A, Tables 6, 7, 8 and 9). Whiles, MLP ensemble classifier by bagging (MLPBagc) recorded AUC values of (0.943–0.99) (1–1), (1–1), (0.810–0.811) over GSE, BSE, NYSE and JSE datasets respectively for estimators within 1–200 (Appendix A, Tables 10, 11, 12 and 13). The results show that MLP ensemble (MLPBagc) outperformed (MLPBotc) over GSE, BSE, NYSE and JSE datasets. This implies that an MLP ensemble classifier with bagging outperforms MLP ensemble classifier with boosting for stock-market prediction.
+
+Though the overall performance of SVM ensemble by boosting and bagging is low as compared to DT and MLP ensembles by same combination methods, the AUC, RMSE MAE and recall values of SVM ensemble classifier were more moderate over the BSE dataset with smaller size of 984 than the GSE, BSE and NYSE datasets, as shown in Tables 6, 7, 8, 9, 10, 11, 12 and 13 (Appendix A). This result shows that the classical SVM classifier in its natural form is not suitable for the larger dataset. Except it is enhanced with techniques such as dimensionality reduction.
+
+Homogenous ensembled regressors by BAG and BOT
+In other to ascertain the superiority of same machine learning algorithm as an ensemble classifier and regressor, the selected machine learning algorithm DT, MLP and SVM were homogeneously ensemble as regressors using bagging and boosting. Table 14, 15, 16 and 17 (Appendix A) shows the error metrics obtained by the DT, MLP and SVM ensemble regressors over GSE, BSE, NYSE and JSE datasets.
+
+We observed that MLP ensemble regressor by boosting (MLPBotr) and bagging (MLPBagr) offered better accuracy of prediction done DT ensemble regressor by bagging (DTBagr) and bossing (DTBotr) over all datasets. This finding shows that MLP as ensemble regressor is suitable than DT ensemble regressor by bagging and boosting. Again, no significant difference was seen between MLP ensemble by boosting (MLPBotr), and that of bagging (MLPBagr) as far as the results of this study is a concern as shown in Tables 14, 15, 16 and 17.
+
+The SVM bagged ensemble regressor (SVMBagr) recorded RMSE values of (0.0685–0.0431), (0.0463–0.0465), (0.11–0.071) and (0.010–0.010) over JSE, NYSE, BSE and GSE datasets as shown in Tables 14, 15, 16 and 17 (Appendix A) respectively. While the boosted SVM ensemble regressor (SVMBotr) recorded RMSE values of (0.0681–0.443), (0.0457–0.0455), (0.081–0.056) and (0.010–0.010) over JSE, NYSE, BSE and GSE datasets as shown in (Appendix A, Tables 14, 15, 16 and 17) respectively.
+
+Despite the below-average performance of the SVM ensemble classifier on all datasets, the results of the SVM ensemble regressor by bagging (SVMBagr) and boosting (SVMBotr) obtained better error metrics, which signifies better accuracy levels. The outcome suggests that the SVM is suitable for regression than classification when the dataset is small. Furthermore, the RMSLE and R2 values of (SVMBotr) compared with (SVMBagr) values as in Tables 14, 15, 16 and 17 (Appendix A), reveals that boosting is more suitable and accurate for SVM ensemble regressors. Subsequently, we observed that the SVM ensemble regressor over GSE outperforms NYSE, BSE and JSE datasets. Once more, this confirms that ensemble techniques, performance is dependents on the origin of the dataset. However, in some cases, the (R2) of the SVM was negative, indicating that SVM at this case is worse than predicting the mean.
+
+Furthermore, the training and testing time of bagged and boosted regressors are higher compared with their counterparts (classifiers). On average, the MLP ensemble (regressor and classifier) requires more time for training and testing as the number of estimators and dataset size increases.
+
+Heterogeneous ensembled classifier by STK and BLD
+The section discusses the empirical results of the heterogeneous selected machine learning algorithms (DTs, SVM and NN (MLP)) using stacking, blending and maximum voting combination techniques.
+
+Accuracy measure of heterogeneous ensembled classifier by STK and BLD
+Figure 10 shows the accuracy measure of stacked and blended classifier ensemble with DT, NN for (MLP) and SVM classifiers. The stacking ensemble was clustered in three models STK_DSN_C (where DT and SVM were the base learners respectively, and MLP the meta-learner), STK_SND_C (where SVM and MLP were the base learners respectively, and DT the meta-learner), and STK_DNS_C (where DT and MLP were the base learners respectively and SVM the meta-learner). On the same way, the blending ensembles were three, namely: BLD_DSN_C (where DT and SVM were the base learners respectively, and MLP the meta-learner), BLD_SND_C (where SVM and MLP were the base learners respectively, and DT the meta-learner) and BLD_DNS_C (where DT and MLP were the base learners respectively and SVM the meta-learner). The maximum voting technique was also used to ensemble DT, SVM and MLP with the name vote (DSN).
+
+Fig. 10
+figure 10
+Heterogeneous ensembles by stacking and blending
+
+Full size image
+The results (Fig. 10) Shows an average accuracy of 100% over BSE and NYSE datasets, 90% and 98% over JSE and GSE dataset by all stacking ensemble classifiers. However, all blending ensemble classifiers recorded an average of 100% accuracy over BSE and NYSE datasets, but 85.7% and 93.14% over JSE and GSE datasets.
+
+The finding reveals that stacking ensemble classifiers outperforms bagging and boosting ensemble classifier over all datasets and blending over GSE dataset. Despite only two base classifiers and one meta-classifier as compared to 200 base learners for bagging and boosting, stacking, and blending offered higher accuracy. However, the training time and testing time are far lesser than boosting and bagging of 100–200 estimators that achieved 100% accuracy.
+
+On the other hand, the accuracy obtained by STK_SND_C (100% and 91.5%), STK_DNS_C (100% and 91.5%) and STK_DSN_C (93.4% and 86.3%) over GSE and JSE respectively, has a massive implication on building stacked and blended ensemble. That is, in building stacking and blending ensemble, the choice of base-learners and meta-learner, and how the base learners are position is a significant determinant of the accuracy level of the classifier. This outcome also implies for blending ensemble classifier, as it is evident in Table 18, 19, 20 and 21 (Appendix A) for (BLD_SND_C).
+
+The higher accuracy obtained by stacking and blending ensemble over BSE and NYSE as compared to the JSE and GS shows that ensemble techniques might not perform well on all datasets. Though the maximum voting is a simple ensemble technique Vote (DSN), it showed its ability with better accuracy measure of 97.1%, 100%, 100% and 87.9% over GSE, BSE, NYSE and JSE respectively.
+
+Error metrics analysis of heterogeneous ensembled classifier by STK and BLD
+Table 18, 19, 20 and 21 (Appendix A) shows the error metrics of stacking and blending ensemble classifier over BSE, GSE, NYSE and JSE, respectively. The average values 0.9936 (mean), 0.0071 (STD), 0 (RMSE), 0 (MAE) 1 (R2), 1 (Precision), 1 (Recall) and 1 (AUC) over BSE and NYSE. These values of R2 reveal that blending and stacking ensemble classifier is good as compared with the naive mean model and are well optimised.
+
+We also observed that the training and testing times of blending classifier ensembles as compared with stacking ensemble classifier overall all datasets were high. However, the accuracy of stacking was higher than blending. The study reveals that the accuracy of ensemble classifiers is not dependent on the time used by the classifier to learn or predict. Again, the cost-efficient of building blended ensemble is high due to higher training and predicting time.
+
+Furthermore, the NYSE dataset was of higher dimension (1760) than the JSE dataset (1749). Nonetheless, the training and predicting the time of blending ensemble classifier over JSE was higher than the NYSE. This result might be due to the noise in the JSE dataset, as shown in Fig. 5.
+
+Tables 22, 23, 24 and 25 (Appendix A), shows the error metrics of ensemble regressors by stacking and blending over BSE, GSE, NYSE and JSE, respectively. The blending and stacking jointly perform well over the NYSE dataset, as shown in Table 24. Oddly, stacking ensemble regressor (STK_DSN_R) outperformed all regressors by stacking and blending over all datasets. Again, this indicates that the selection and position of base learners and the meta-learner is a necessity when building predictive ensemble model by stacking or blending. The training and prediction time of ensemble classifiers and regressors by stacking and blending were quite higher, compared with ensemble classifiers and regressors through other combination techniques.
+
+To sum-up, stacking combination technique outperformed all other combination techniques for ensemble classifier and regressor. However, the DT ensemble with (10–200) estimators by boosting and bagging did offer good accuracy measure. Though DT ensemble by boosting and bagging offered higher accuracy for stock market prediction, the selection of estimators requires careful assessment. The selection of the base-learner and meta-learner for stacking and boosting ensemble needs careful consideration since the wrong choice can profoundly affect model performance in stock-market prediction.
+
+Furthermore, despite the higher accuracy by DT ensembles by boosting and bagging as compared with MLP and SVM ensembles same combination techniques, the MLP and SVM ensembles were more stable than DT ensembles. Thus, the number of estimators less affected MLP and SVM ensembles. Notwithstanding the number of estimators required by the DT ensemble to offer better accuracy as compared to MLP and SVM ensemble, for stacking and blending ensemble, the computational cost of the DT ensemble is lower. The reason is that the design of MLP, SVM, stacking, and blending ensemble is sophisticated, requiring much time in design.
+
+Conclusion
+This paper sought to perform an extensive comparative analysis of ensemble methods such as bagging, boosting, stacking, and blending for stock-market prediction, using stock market indices (dataset) from four countries. Since the performance of ensemble regressors and classifiers based on these techniques for stock market prediction have not wholly been scrutinised in literature. This study attempts to provide answers to the following questions:
+
+1.
+Which of these amalgamation techniques (as bagging, boosting, stacking, and blending) is best suitable for regression and classification tasks in stock market prediction?
+
+2.
+Is the performance of ensemble techniques in stock market prediction associated with the origin of stock data?
+
+3.
+Again, in building ensemble classifiers and regressors, what is the appropriate number of estimators required in building a homogenous ensemble?
+
+To obtain answers to these questions, three well-used machine-learning algorithms, namely; decision trees (DTs), support vector machine (SVM) and a multilayer perceptron (MLP) neural networks, were employed. Using boosting, bagging, stacking, blending and simple maximum voting combination techniques, we, constructed twenty-five (25) different ensemble regressors and classifiers using DT, MLP and SVM for stock market prediction. We experimented our models on four available public stock-data from GSE, BSE, NYSE and JSE, and compared their accuracy and error metrics. The obtained result revealed that the combination technique (stacking) for building an ensemble classifier or regressor outperformed all other combination techniques like boosting, bagging, blending and simple maximum in stock market prediction. They are followed by blending classifier and regressor ensembles and DT ensembles by boosting and bagging. Again, it was found that stacking and blending though offered high accuracy; they are computationally expensive as compared with DT by boosting and bagging, due to their high training and testing time. For that reason, DT ensemble of 50–100 estimators by boosting can be taken as a classifier baseline for low-cost computation. However, where higher and better accuracy is of vital interest, stacking should be preferred, followed by blending. To the best of our knowledge, this study is the first to carry out a comprehensive evaluation of ensemble techniques (bagging, boosting, stacking, and blending) in a stock market prediction.
+
+Though the SVM ensemble by boosting and bagging was stable, it suffered some deficiencies concerning input variables (input features) and dataset sizes. This defect was overcome when DT and MLP were used as base-learner respectively, and SVM as meta-learner for stacking and blending ensemble. Thus, the classical SVM algorithm assumes that all the features of samples give the same contribution to the target value, which is not always accurate in several real problems as pointed out by Chen and Hao [58]. Therefore, the practicality of SVM is impacted, due to the problems of choosing suitable parameters of SVM 
+.
+
+Hence, in future work, some feature selection and SVM parameter optimisation methods such as genetic algorithm (GA), principal component analysis (PCA) can be adapted to assess the effect of carrying-out feature-selection and SVM parameter setting of the classical SVM. Furthermore, we focus on predicting stock market indices, hence we used market indices dataset, where underperforming stocks usually are pulled out from top-line indices and replaced by outperforming stocks to offer market stability. Another focus can be predicting the exact stock prices using ensemble techniques.
+
+Availability of data and materials
+The datasets used and/or analysed during the current study are publicly available.
+
+Abbreviations
+DT:
+Decision trees
+
+SVM:
+Support vector machine
+
+NN:
+Neural network
+
+GSE:
+Ghana stock exchange
+
+JSE:
+Johannesburg stock exchange
+
+NYSE:
+York stock exchange
+
+BSE-SENSEX:
+Bombay stock exchange
+
+ML:
+Machine learning
+
+EL:
+Ensemble learning
+
+BAG:
+Bagging
+
+BOT:
+Boosting
+
+K-NN:
+K-nearest neighbour
+
+STK:
+Stacking
+
+EMs:
+Ensemble methods
+
+WA:
+Weighted averaging
+
+MV:
+Max voting
+
+BLD:
+BLD
+
+SMA:
+Simple-moving average
+
+EMA:
+Exponential moving average
+
+MACD:
+Moving average convergence/divergence rules
+
+RSI:
+Relative-strength index
+
+OBV:
+On-balance-volume
+
+WT:
+Wavelet transform
+
+STD:
+standard deviation
+
+MLP:
+Multi-layer perceptron
+
+LBFGS:
+Broyden–Fletcher–Goldfarb–Shanno
+
+AUC:
+Area-under-curve
+
+LR:
+Logistic regression
+
+RMSE:
+Root mean squared error
+
+MAE:
+Mean absolute error
+
+RMSLE:
+Root mean squared logarithmic error
+
+MedAE:
+Median absolute error
+
+EVS:
+Explained variance score
+
+DTBotc:
+DT ensembles classifier by boosting
+
+SVMBotc:
+SVM ensembles classifier by boosting
+
+MLPBotc:
+MLP ensembles classifier by boosting
+
+DTBotc:
+DT ensembles classifier by bagging
+
+SVMBagc:
+SVM ensembles classifier by bagging
+
+MLPBagc:
+MLP ensembles classifier by bagging
+
+DTBotr:
+DT ensembles regressor by boosting
+
+SVMBotr:
+SVM ensembles regressor by boosting
+
+MLPBotr:
+MLP ensembles regressor classifier by boosting
+
+DTBotr:
+DT ensembles regressor by bagging
+
+SVMBagr:
+SVM ensembles regressor by bagging
+
+MLPBagr:
+MLP ensembles regressor by bagging
+
+PCA:
+principal component analysis
+
+GA:
+Genetic algorithm
+
+BMA:
+Bayesian model averaging
+
+WALS:
+Weighted-average least squares
+
+LASSO:
+Least absolute shrinkage and selection operator
+
+BSE:
+Bombay stock exchange
