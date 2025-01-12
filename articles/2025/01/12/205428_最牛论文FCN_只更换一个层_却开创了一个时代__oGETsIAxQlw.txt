@@ -1,0 +1,78 @@
+Timestamp: 2025-01-12T20:54:28.989655
+Title: 最牛论文FCN：只更换一个层，却开创了一个时代！ oGETsIAxQlw
+URL: https://youtube.com/watch?v=oGETsIAxQlw&si=z4Nk2tFTx9mA8Gum
+Status: success
+Duration: 7:25
+
+Description:
+**Summary**
+
+**I. Core Idea:**
+    *   The video introduces Fully Convolutional Networks (FCNs) for semantic segmentation, contrasting them with traditional convolutional networks.
+
+**II. FCN vs Traditional Networks:**
+    *   **Traditional Networks:**
+        *   Include convolutional layers, max-pooling layers, and fully connected layers at the end.
+        *   Output is a classification vector (e.g., 1000 classes).
+        *   Feature extraction happens in the early layers.
+    *   **FCNs:**
+        *   Replace the fully connected layers with convolutional layers.
+        *   Output is an image (a segmentation map).
+        *   Achieve pixel-level classification.
+
+**III. FCN Process:**
+    *   An input image passes through convolutional layers for feature extraction.
+    *   Fully connected layers are replaced by convolutional layers to generate an output image.
+    *   The output image can be a semantic segmentation map, showing different regions labeled by object class.
+    *   The idea is simple: replace the final fully connected layers with convolution layers.
+
+**IV. Historical Context and Challenges:**
+    *   Developing FCNs required strong mathematical and computer science skills.
+    *   Early implementations were difficult due to the lack of deep learning libraries and GPUs.
+    *   Development required resources (funding, lab, equipment).
+    *   Highlights how current easier access to technology could overshadow the difficulties faced by early researchers.
+
+**V. Applications and Evolution:**
+    *   FCNs evolved into encoder-decoder architectures.
+    *   **U-Net:**
+        *   A symmetrical encoder-decoder network, with skip connections for effective information propagation.
+        *   Achieves good performance with small datasets.
+        *   Used for image segmentation (e.g. medical imaging, cell detection, and also road scene segmentation).
+        *   Also used for predicting depth information from images using paired image depth data for training.
+
+**VI. Core Point:**
+ FCNs achieve pixel-level image segmentation by replacing fully connected layers with convolutional layers, enabling the network to output an image rather than a class vector.
+
+**VII. Fundamental Point:**
+The development of FCNs highlights how advancements in deep learning require not only theoretical insights but also substantial resources and computational power.
+
+**VIII. Overarching Framework:**
+The content is structured around introducing the FCN as a solution for image segmentation, comparing it to previous network structures, and showing its evolution into architectures like U-Net, leading to applications in diverse areas.
+
+**IX. Conceptual Map**
+<Mermaid_Diagram>
+graph LR
+    A[Input Image] --> B(Feature Extraction - Convolutional Layers);
+    B --> C{Traditional Network};
+    C -- Output: Class Vector --> D[Classification];
+    B --> E{FCN};
+    E -- Convolutional Layers instead of FC Layers --> F(Output Image - Segmentation Map);
+    F --> G[Semantic Segmentation];
+    G --> H(Applications);
+    H -- Example: Medical Image Segmentation -->I[Cell Detection];
+    H-- Example: Road Scene Segmentation --> J[Autonomous Driving];
+    H-- Example: Depth Estimation --> K[Depth Prediction];
+    E --> L[Encoder-Decoder Evolution];
+    L -- U-Net, Skip Connections --> M(Symmetrical Encoder-Decoder);
+    M --> N[Effective Information Propagation];
+    N --> O(Improved Segmentation)
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#cff,stroke:#333,stroke-width:2px
+    style O fill:#cfc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+大家好我是PhD味道还想拿个上个粉丝的牌子希望大家能多多关注啊然后今天来给大家讲一下FcN这样一个网络叫fully convolutional new night work这样一个东西他做一个什么事呢他是做一个segmenticsegmentation对吧做一个语义分割做一个图像语义分割你看这个这个文章点是由三个大老显帅的三个都是UC Berkeley这样的大老加州大学博克地分校这样一个学校所以我说呢不然是早期的这个工作还是现在的工作其实一上呢能够坚证接受到前演的还是那些大老尊重是那些名校是那顶校一般一个正常人呢你其实还是接触不到这样的一个最新的这样的一个知识的是吧那只有大老带着你应该是大老板大老带着你然后才能学出这样的文章呢好的那么我们今天来讲一讲这个文章是怎么做的呢就是我们以前在时候呢有像为了这16这样的网络是不是为了这16这个网络是怎么做的呢我从来进来我经过了几个这样的一个转机层还有什么啊上作家实话层这样层然后到最后我们做了一个全电间层里面然后做了叔叔对吧那这个图片呢可能有1000个类所以他叔叔有1000对吧就是一成一成一成一千实际上就是有1000个这样的一个类那1000个这样类的话呢他就是对于猫瓦狗兔子呀人啊马呀房子呀这些东西但是上一学图下那这个东西的主要是说要提取一个v传的所以他把这个v传在那提取就在这个地方提取对吧他给你标了一个箭头那从这个地方的保护们的征调这个地方就可以去这样一个图片的这样的一个把他的一个特征这是我们讲的这样一个危险16的讲一个网络今天我们讲这个网络他有点区别那做了就什么样的区别呢那就是说他把最后的这个地方你看从这个地方应该是提取v传的这个地方对不对所以说他把这个提取v传这个地方后面的东西呢给他把这个全电间层的给他换掉了给他变成了这样的一个cn层于是呢他的叔叔呢就是一张图片叔叔呢依然是一张图片但是你叔的一张图片可以是一张毛和狗的图片叔叔一张图片呢可以是一张我们标助过的图片这样的话呢我们就把这个图片从一个真实的一张图片变成了一张标助的图片哎那我们如果把这个网络虽然出来的话呢我们在叔叔一张新的这样的让被标助的这样的图片需要标助的图片的话呢那会生成这个图片的一个最终的一个结果的是不是是一个非常简单的一个idea呢就是把这个网络就这么我一个层子给替换掉当然他呢在早期的时候呢为什么我说啊就是这些东西都被一些大公司还有一些紧急的需要冷卫啊呢在idea3那个时代你没有PIP的讨识你没有看着服务你也没有差语这笔题那个时候你还想出这样一个网络你必须要去依靠着你的自己极强的数学工体和计算机工体让把这个网络写出来那个时候你还在计算机那个时候库大也不怎么好用你呢库大厂把这个东西写出来那是一件非常非常难的事情所以我说呢有一个人说你看这个我们现在学的机械比较我们当时学什么库德扭称当时地理人和共同决定出来的对吧你得有钱对吧或者你自己有很富有或者有人资助你然后你在那个实验室工作然后你有这样的设备然后你还能写出这样的论文你当中那个阶段你说你又论那个重力很简单对吧那这东西我们对吧回来当时能不能写出来呢你写不出来你得去熟悉当时的社会的这样的一个规则对吧你在今天的社会会能不好那在当年的社会可能会的也不会好在这个社会我觉得它是比较通用的对吧这个社会是能力强的一个人的这样的一个体现当然也不是说对大家有什么意见我的意思有说你看着这个文章我也想不出来那我的意思有说不要老幻想就是我们回到过去对吧然后我们突然一叫醒来发现变成了青朝对吧然后我们就什么我们又是幻想自己是皇帝看那些爽文那东西都是假的那东西都是不存在的真正的我们要在现实中清醒一点好的那我们来看一看这个文章他是怎么做呢就是这个图我不了为什么这个图显示的不正常所以我给他找往上偷的张图那个图是比较正常的这个图是比较正常的这个地方的一个HitMind的不知道怎么上上丢了所以说他的原来的时候是一张猫对不对猫叔叔的时候他告诉我们这个是一支TobyKat是一支虎斑猫那虎斑猫的话是从最后的一个地方说出出来的那我们这个地方可以把那个Cats那个HitMind可能画出来那把那个开的HitMind给他画出来的话我们也可以用HitMind去成一个猫的这样的一个对吧就是我们如果是能画出HitMind能画的替换成这个HitMind这样就进行一个反向翻播这样我这个网络就可以把一张猫和狗的张图片变成一个猫和狗的这样一个分割的图像那是不是这样呢那是这样的这个图呢可以很好做出来所以这个想法其实并不是一个非常负责的一个想法你看它的这个网络如果比较小的话是这样如果是这个网络越做越精细的话它可以做一个非常好的这样一个分割的能力是吧你看这是一个真实的结果这是它的价格价格那么这就是这个网络我讲讲这个网络就讲讲这么多那么来说这个网络之后有些什么发展啊别说有一个东西叫Alton IncoderAlton Incoder包含incoder或者Decoder这个部分其实这个网络其实也包含incoder和Decoder这个部分那么前面就它的incoder对吧那后面是它的DecoderDincoder非常的长Decoder其实非常能小所以说它的是一个不平衡的这样一个网络那么呢我们之后呢有Alton Incoder之后呢根据这个想法我们就可以发明出一个网络这个网络叫优耐优耐优耐的话它的incoderDecoder是对称的变成专家的很多短路线那的话呢星期就可以听个有效的一个传递对不对而且这个网络呢它呢在训练的过程中呢也做的一些改进那这个网络可以一张一张的图片一个拜十一拜十万你们三一个拜十周一张图片啊这样的话我们可以去用了一个小的这个数据级的这样一个挑战对吧那这个网络就很好的就用了这个一锤的图像上那这个网络呢我也给大家去讲过是不是叫优耐那么优耐呢它就可以把一个图片呢它一张这个很复杂的这样图片呢给它变成一个对吧一锤的这个尸地图所以的话中家这些东西的都可以要去掉并且呢它可以做别的事情比如说我们有很多的这个变形虫那我可以把变形虫都给它标记出来是不是可以算它们之间的这样一个关系那些都可以做到除了这件事之外呢我们还可以就是你看看标记这一个变形虫啊可以这样一个细胞啊或者怎么样啊啊而且呢它可以标记各种两样细胞对啊给它们进行一个整个的一个鱼鱼的风格说鱼鱼的风格之外呢我还可以去但我们在有个路上是不是这个路呢它其实是有一个深度信息的对吧那个地方呢比较远那个地方呢比较近那你说呢我们人类呢是能看出来的那是一样比较远这样比较近那么记忆学习算法能不能做到这件事呢其实之前是可以的就是我们假设物体呢都是一样大的然后呢我们去检测物品物物体的这样一个大小但这个方法呢并不是很转因为有的物体它本来就比较大就比较大那我们使用这样的那个深度学习的一个网络呢我们呢去找一些这样的图片和他们的一个深度对应的这样有图片然后呢在中间的讯念上一个U-NITE这样好了我们就可以把这个新的图片给它画出来对不对那除了这个以外呢还可以画什么呢比如说我们在路上对吧有些地方有车有些地方有人那这样做有什么好处呢这样的地方我们就可以做一个自动价值这样一个应用了对不对那除了这个以外呢我们还可以去对你看那个特撒的自动价值那个视频呢就是这样做的那么它呢可能用那些比U-NITE更厉害的网络U-NITE后面的更多的新的版本因为U-NITE它的效果呢还不是特别的好是啊但我们就可以做这样的一些应用今天要给大家讲的一个非常简单的ID你看就算一个简单的ID对吧那其实也需要一个名校来做因为就是说在那个时候你没有机场机资源要不就是你没有这样足够了这样的一个水平去写出这样一个网络因为当时的时候没有谈则的服务没有PF套是那个时候只有咖啡可能咖啡的时候都没有可能都是用CIA自己写出来的所以说呢想要感兴朝呢就我说什么工庭穿越具那种东西都是不现实的是吧希望大家能够就是理性的看来这个社会的这个问题当然当然不是这里不是在屁面大家会怎么样就是说给大家去讲这么件事当然可能就是我这边用了一个那种那种那种样的口味但是呢就是意思就是说把那种工庭剧制的东西都是不存在的是啊不要沉迷在幻想之中好今天视频就到这里感谢大家观看
