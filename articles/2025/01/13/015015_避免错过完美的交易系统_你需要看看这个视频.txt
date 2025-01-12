@@ -1,0 +1,101 @@
+Timestamp: 2025-01-13T01:50:15.021741
+Title: 避免错过完美的交易系统？你需要看看这个视频！
+URL: https://youtu.be/ECm6S10R-aM?si=t79ThDMCGl1KD0l9
+Status: success
+Duration: 12:58
+
+Description:
+Okay, here's a structured summary of the provided content, followed by a conceptual map:
+
+**Summary:**
+
+**I. Introduction and Premise:**
+   * The speaker shares their personal, possibly "immature" opinions on software/strategy development, acknowledging their time away from the industry.
+   * They highlight that similar trading systems can produce vastly different results depending on the development approach.
+   * The core question is: how can one avoid wasting time on ineffective strategies?
+
+**II. The Problem with Waterfall Development:**
+   *  Describes the traditional "waterfall" method used in IT projects: sequential stages (requirements, design, coding, testing, deployment).
+   *  Waterfall issues:
+        * User needs are often unclear and change, leading to wasted effort on incorrect functionalities.
+        * Lack of user feedback during development results in systems not meeting real needs.
+        * Re-work is costly.
+   * Analogy: Many IT projects, including those the speaker was involved in, failed or had short lifespans.
+
+**III. Applying Waterfall to Quantitative Trading Systems:**
+   *  Relates waterfall to the development of trading systems (entry/exit signals, filters, risk management etc.).
+   * Problems of Applying Waterfall:
+        * Time spent developing all components before knowing if the whole system works.
+        *  Difficulty pinpointing which component is causing poor overall performance after backtesting.
+        * Core strategy may be good, but hampered by badly implemented add-ons.
+
+**IV. Agile/Iterative Development as a Solution:**
+    * Introduces agile development as an alternative, emphasizing iterative feedback.
+    *  Functionality is broken down into components; each is developed and tested to a "minimum viable product."
+    *  Development continues with each component cycle.
+    *  Analogy: SpaceX’s rocket development (building small rockets first and iterating).
+    * Benefits of Agile/Iterative:
+        * Each new idea/function is manageable.
+        * Timely feedback allows early problem identification and correction.
+        * Reduced rework and better alignment with needs.
+
+**V. Applying Agile to Trading Strategy Development:**
+   * Each new condition in a trading strategy should be developed, tested, and refined incrementally.
+        * Start with basic entry/exit signals, without filters etc.
+        *  Test for logical correctness of core signals before focusing on performance.
+       * Add a filter, backtest, and verify if it improves performance.
+       * Add Position Size/Stop Loss incrementally, evaluating its effect on performance
+        * Continuously iterate: test each component independently, modify as needed and refine each component before moving on.
+    * If a component doesn't improve overall performance and it sacrifices sample size, it should be removed.
+    * Do not optimize parameters at the early stage. Focus on the logic.
+   *  If at any stage it's clear the strategy cannot be improved, abandon it and move on.
+
+**VI. Conclusion:**
+    * Agile is more time-consuming than waterfall, but it produces more effective results and saves time in the long run by avoiding costly re-works
+    * The speaker invites feedback and discussion on their ideas.
+
+**Core Point:** The iterative agile development approach is more effective for creating trading systems because it allows for early feedback and prevents wasted effort on flawed concepts.
+
+**Fundamental Point:** Continuous, incremental testing and refinement of components within a development process are crucial for building robust and effective systems, whether in software or trading.
+
+**Overarching Framework:**  The content contrasts the traditional "waterfall" development process with agile or iterative development, advocating the latter for its ability to build more effective and efficient trading strategies through focused, incremental testing and refinement.
+
+<Mermaid_Diagram>
+graph LR
+    A[Waterfall Development] --> B(IT Projects);
+    A --> C(Trading Strategies);
+     B --> D[Linear Stages];
+      D --> E{Requirements, Design, Code, Test, Deploy};
+     C --> F[Sequential Implementation];
+       F --> G{Entry, Exit, Filter, Stop Loss};
+    
+    H[Agile Development] --> I(IT Projects);
+      H --> J(Trading Strategies);
+      I --> K[Iterative and Feedback];
+       K --> L{Component Based Design, Test, Refine};
+      J --> M[Incremental Build];
+       M --> N{Entry/Exit, Add Filter, Position Sizing, Stop Loss, Test Each Step};
+    
+    E --> O[Lack of Feedback, Potential Rework];
+    G --> P[Difficulty Identifying Issues];
+
+    L --> Q[Early Feedback, Minimized Rework];
+    N --> R[Focused Improvements];
+    
+    O --> S[Waterfall Ineffective];
+    P --> S;
+    
+    Q --> T[Agile Effective];
+     R --> T;
+    
+    S-->U{Failures, Wasted Effort};
+    T --> V{Effective Strategy Development};
+
+    U-->W[Abandon if not effective]
+        V-->W
+        style W fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+If I don’t talk about strategies today, I’ll talk about development concepts. These are just my immature and childish personal opinions. After all, I’ve been out of the software engineering industry for many years, so if you’re not interested, just leave early. If you’re interested, you can Please give me a like, thank you, thank you. Sometimes a very good trading system may be developed by different people, but the result will be amazing. The difference is the same. How can we avoid spending too much time on the wrong path when exploring strategies and facing these two problems? I believe that today’s practice should be able to give some inspiration to some students. Our process of developing 1A is In fact, the coding process can learn a lot of experience from the traditional IT industry. Let’s take a look at the early days. The development process of individual IT industry projects. Perhaps the way you currently develop quantitative strategies for EA development is this process. The traditional IT development process tends to use a method called waterfall development, which means that each stage of development is like a waterfall flowing from top to bottom. Each stage is carried out one after another, with clear boundaries and irreversible flow, usually It is demand research, demand analysis, architecture design, prototype design, plus a long development phase, coding phase, and testing phase. Generally speaking, only after passing the final deployment limit can the applications we develop reach the user end and gain real user support. Feedback The real world is full of uncertainties. Sometimes users say what they want. In fact, he doesn’t need it at all. You can’t be sure whether he needs it the next second. The user may not know what he really wants, so it is conceivable that for some complex projects, There is a high probability that the things developed after this entire long process will not truly meet the needs of users. This is because no user can participate in the entire process or there is no product that can be tested. We are all busy working. During the whole process, we may have spent a lot of time on some useless functions. And we, the cows and horses, have no feedback on the real needs of functions during the development process. We only have Only after the final set of processes are completed can we truly realize that there is no need to develop this function at all. The original function is what we need to spend time and energy on. When we realize that this project is really When the problem lies, we want to correct the problem, reorganize the requirements, and rework. This is a very big cost issue, and the price it costs is relatively large. This is also one of the reasons why many projects eventually fail. The reason is like many years ago when I was still in this workplace, I participated in many large and small projects, but there are only two that are still alive. Most of the remaining projects can be said to be dead, and 90% of them may be alive. The cycle is only one year. This year may be our development time. So what does this have to do with our development of quantitative programs? Let’s think about it. When we develop these trading systems, there are many different components in them. For example, What are the entry signals, exit signals, filters, capital management, stop loss and take profit? If we also adopt this waterfall flow development method, it means that we must first do it without knowing the result at all. We spend a lot of time developing this series of processes, and we won’t know whether the result of the combination of all these processes is good or bad until we finish writing the strategy and conduct backtesting. If so, we don’t know much about it. Say maybe he can be better but you don’t know where to optimize if the result is At this time, how do we know which link has the problem and which component affects the final performance? Is our factory signal bad, the stop loss method we chose is bad, or our Filters don't fit these It's hard for us to know that maybe what we develop today The core logic of this strategy is very good, but because you have added a lot of useless functions and useless logic, but you don’t know what logic affects it, you may think that this strategy is not working, so you discard it and all these When complex conditions are combined together, it is actually very difficult for us to go without saying anything. It’s difficult, right? It’s difficult to determine whether our system is really following every rule very accurately. So how does the traditional IT industry solve similar problems? They have long developed a This agile development process is called an optimization of the step-by-step model. The biggest difference is iterative feedback. We split all the functions of the application to be developed into components in different stages. Each component must go through a series of work and testing before the development is completed to produce a fully usable minimum. Product only works when we feel comfortable with the smallest product at this stage When we are completely satisfied, we will continue to develop the next component and then continue to cycle and iterate this process until we finally deliver all the requirements. Here I borrow an example from teacher Ruan Yifeng. I think what he said is very good. This is the Spacex company. He wants to build rockets and send humans to Mars, but He didn't say that he would build a big rocket from the beginning. Instead, he first built a version of the simplest small rocket that met the most basic functions. Then it exploded on the first launch. Summarizing the problem, he iterated repeatedly until the fourth time. It successfully entered orbit after the first launch, and based on this version, this medium-sized rocket was developed. The Arrow launched 70 times in 9 years before finally developing a heavy rocket. So if Spacex does not adopt this iterative development method, it adopts this waterfall flow method from the beginning. Once it comes up, it will build a big rocket, then it may be I spent a lot of money but in the end I couldn't get to heaven and the process involved rework. Maybe the cost is very high. Well, the process of agile development means that every new idea or every new function is controllable for our development. It also means that we can Get timely feedback. If this stage does not meet our or the customer's requirements, we can quickly identify the problem and correct it without involving large groups of people. A lot of rework is like the early and late stages of cancer. Although they all have cancer problems, the difficulty of treatment between them is completely different. So we repeatedly perform this iterative process until our product is finally delivered. We already know with a high probability whether it can meet the needs of users. So how can this set of processes or this agile development help us? For some quantitative traders, to put it simply, when we develop quantitative one, every time a new condition is added, we must go through complete testing. For example, we first develop the entry signal and the factory signal, and that’s it. It's just that the signal doesn't have any filters, nor does it have stop-loss, take-profit, fund management, position control, or any of these. It only has entry and exit signals, but it can Completely satisfying the operation of a basic EA. Then we use the default parameters of this EA at this stage to do a simple backtest. In this backtest, you don’t need to pay attention to how good its signs are. Because what we are concerned about at this stage is whether the signal has been executed correctly. During the process of checking the signal, you may find some problems in the entry logic. Question: For example, if your entry is RSI, you initially used this RSI to enter overbought and oversold. When you observe the process of version 1, you will find that RSI actually uses RSI to enter overbought and oversold. It would be better to leave the factory signal of overbought and oversold, or it would be better to use the breakthrough of RSI. Then you can proceed at this stage. Check for gaps in the entry logic and fill in the gaps. During the entire process, you may also find that this system has market conditions that it adapts to and conditions that it does not adapt to. Then when you complete this series of work, you will feel that there is no problem. Once you are satisfied, then move on to the next stage. In the next stage, you may add various filters to let EA do it. If the market is suitable for the trend, do the trend. If it is suitable for the breakthrough, do the breakthrough. If it is suitable for the mean reversion, do the shock. After you complete this stage, you will get a basic EA that is fully working and continue to use the default parameters. Do a simple backtest and in the process you will find out what kind of filters or filters this system is suitable for. The author said whether it is suitable for adding filters. You can compare the backtest results of this stage with the backtest results of the first stage to observe whether there is a very obvious change in your final performance. Those who add filters will eventually The backtest results did not significantly improve the filter. For example, at this stage here, there are only entry and exit signals, and then here I added a filter, and after adding the filter, the performance of all its parameters did not improve significantly, but declined. Well, there may be a slight improvement in the weekly file. For a filter like this, I usually recommend just to remove it directly. No Don't add any functions. Generally speaking, when we add a filter, a significant feature is the o here. Vertrade is our sample number, it will have a certain sacrifice. If there is no good improvement after adding it and the sample number is sacrificed, then I think the gain outweighs the loss. So for those whose performance has been significantly improved after adding it, we will For further development you can add other filters such as What about momentum filter, noise filter, or you just make corresponding modifications to the original filter? You can also just keep iterating this process over and over again to find out the logic that is really effective for this strategy. Please don’t do anything at this stage. For parameter optimization, we only make major logical changes rather than optimization. Then you may make the next The first stage may be adding a position, calculating, adding a stop loss and take profit. Generally speaking, when you execute the process to the stop loss stage, you will find that with a high probability, you will find that your performance is compared to that without a stop loss module. There will be some decline, and sometimes the magnitude of the decline is quite obvious, but there is nothing you can do about it because you want to stop the loss and you want to be mentally prepared. If you want to feel more comfortable, you have to accept this and then continue to iterate this process, add different functions to your refining system, and then test it separately at each stage. In the end, you will get a system that satisfies you. Of course, this process of trading system is different from waterfall development. It takes more time and is more troublesome, and it does not mean that it will satisfy you every time. Maybe after you complete the development at a certain stage and you do a lot of tests, you will find that no matter what kind of logic you add, The strategy at this stage of the component just won’t satisfy you and make it better. If you are not satisfied with the EA produced at one stage, then you should not waste any more time at this time. Just give up the system and find other strategies to develop. It shows that the system you have chosen today is There is no advantage, so don’t waste your time and generally speaking The frequency of giving up is quite high. These are some of my immature, childish and ridiculous personal opinions. I believe there are many talented people related to technology on this network, so if I have something wrong to say today or if you have a better one, Some ideas are welcome. Friendly comments are welcome. Then we will see you in the next video. Bye bye.
