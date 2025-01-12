@@ -1,0 +1,324 @@
+Timestamp: 2025-01-13T01:01:50.222516
+Title: paper: A comprehensive review on multiple hybrid d
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+```mermaid
+graph LR
+    A[Introduction] --> B(Economic Impact of Stock Market);
+    A --> C(Limitations of Traditional Analysis);
+    A --> D(Need for Improved Techniques);
+    B --> B1[Provides Liquidity and Risk Sharing];
+    B --> B2[Allocates Resources Efficiently];
+    B --> B3[Lowers Information and Transaction Costs];
+     C --> C1[Fails to Capture Market Sentiments];
+     C --> C2[Inability to Handle Complex Variables];
+    D --> D1[Leveraging Machine Learning];
+    D --> D2[Handling Massive Data];
+    D2 --> D21[AI for Pattern Identification];
+    D2 --> D22[Technical Indicators for Trend Estimation];
+    D1 --> D11[Time Series Analysis with ARIMA];
+    D1 --> D12[Recurrent Neural Networks like LSTM];
+        D1 --> D13[Convolutional Neural Networks like CNN];
+    D1 --> D14[Hybrid Models Combining Methods];
+    E[ARIMA Model] --> E1[Time Series Analysis];
+    E1 --> E11[Stationarity Check];
+    E11 --> E12[ADF Test];
+    E1 --> E13[Autocorrelation (ACF) & Partial Autocorrelation (PACF)];
+    E --> E2[Limitations: Linearity, Outliers];
+     E2 --> E21[Not Suitable for Non-Linear Data]
+      E2 --> E22[Inaccurate with Data Instability]
+    F[LSTM Model] --> F1[Memory Cells];
+    F1 --> F11[Data Input/Pre-processing];
+    F1 --> F12[Sigmoid/Tanh Activation Function];
+    F1 --> F13[Forget, Input, Output Gates];
+    F --> F2[Advantages: Handling Time Series, Vanishing Gradient];
+        F --> F3[Limitations: Complexity, Runtime, Partial Vanishing Gradients]
+     F3 --> F31[Complex Cell Structure]
+     F3 --> F32[Longer Runtimes]
+    G[CNN Model] --> G1[Feature Extraction];
+    G1 --> G11[Convolutional Layers];
+    G1 --> G12[Pooling Layers];
+       G1 --> G13[Flatten Layer]
+    G --> G2[Advantages: Local Perception, Feature Detection];
+          G --> G3[Limitations: Data Requirement, Computation Resources];
+           G3 --> G31[Needs Large Training Sets]
+           G3 --> G32[High Computation Costs]
+    H[Hybrid Models] --> H1[Combining LSTM and CNN];
+    H1 --> H11[Feature Extraction by CNN];
+       H1 --> H12[Time Series Processing by LSTM];
+    H --> H2[Advantages: Improved Accuracy, Capture Complex Patterns];
+    H --> H3[Limitations:Inherits Limitations from Base Models];
+    I[Sentiment Analysis] --> I1[Impact of Public Opinion];
+    I1 --> I11[Social Media, Financial News];
+    I --> I2[Natural Language Processing (NLP)];
+    I2 --> I21[Tokenization, Stop Word Removal];
+    I2 --> I22[Feature Extraction, Polarity Calculation];
+        I --> I3[Integrating Sentiment with Stock Prediction];
+        I3 --> I31[Affects Trading Decisions and Market Trends]
+    J[Challenges & Future Scope] --> J1[Limitations of Existing Models];
+      J1 --> J11[Data Requirements and Volatility Handling]
+     J1 --> J12[Computational Resources and Manual Parameter Tuning]
+       J --> J2[Future Directions];
+        J2 --> J21[Exploring Hybrid Models];
+         J2 --> J22[Advanced Sentiment Analysis];
+             J2 --> J23[Longer Term Forecasting];
+   K[Conclusion] --> K1[Deep Learning's Influence];
+     K1 --> K11[ARIMA < Deep Learning Models]
+      K1 --> K12[LSTM/Hybrid LSTM for Price, CNN/Hybrid CNN for Trend];
+       K1 --> K13[Hybrid models accurately forecast stock attributes]
+       K --> K2[Importance of Sentiment Analysis for Trading];
+     K2 --> K21[NLP for Sentiment Extraction];
+      K2 --> K22[Impact on Stock Selection and Trading Profit]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+**Summary:**
+
+1.  **Introduction**
+    *   Stock market movements have a significant impact on economies.
+    *   Traditional financial analysis methods are insufficient for predicting stock prices due to market sentiments and complexities.
+    *   Improved techniques are needed, leveraging AI, Machine Learning, and large datasets to identify complex patterns.
+
+2.  **ARIMA Model**
+    *   ARIMA is used for time series analysis but requires stationary data.
+    *   It uses Autocorrelation and Partial Autocorrelation functions to determine model parameters.
+    *   ARIMA has limitations with non-linear data, data instability, and large forecast windows.
+
+3.  **LSTM Model**
+    *   LSTM uses memory cells and gating mechanisms to process sequential data.
+    *   It is better than ARIMA at capturing long-term dependencies and non-linearities.
+    *   LSTM models can still suffer from partial vanishing gradients and increased runtime.
+
+4.  **CNN Model**
+    *   CNNs are used for feature extraction from input data using convolutional and pooling layers.
+    *   They can detect important features but require large amounts of training data and computation.
+
+5.  **Hybrid Models**
+    *   Combines LSTM and CNN to improve prediction accuracy by leveraging CNN’s feature extraction capabilities and LSTM’s sequence processing abilities.
+    *   Hybrid models inherit limitations from the base models.
+
+6.  **Sentiment Analysis**
+    *   Public sentiment from social media impacts stock prices and is extracted through Natural Language Processing (NLP).
+    *   Sentiment polarity analysis involves tokenization, stop-word removal, and feature extraction.
+    *   Sentiment analysis data feeds into deep neural networks to improve stock trend and price predictions.
+
+7.  **Challenges & Future Scope**
+    *   Limitations include data requirements, computational resources, and manual parameter tuning.
+    *   Future scope includes improving hybrid models, advanced sentiment analysis, and longer-term forecasting.
+
+8.  **Conclusion**
+    *   Deep learning algorithms significantly impact time-series prediction models.
+    *   LSTM and hybrid LSTM models are effective at predicting future stock prices, while CNN and hybrid CNN models excel at predicting stock trends.
+    *   Hybrid CNN-LSTM models demonstrate strong accuracy in forecasting future stock behavior and intraday trading.
+    *   Sentiment analysis is crucial for short-term trading decisions.
+
+**Core Point:**
+Hybrid deep learning models, especially CNN-LSTM combinations, offer the most accurate approach for forecasting both stock prices and trends by integrating feature extraction and time series processing, while sentiment analysis further enhances trading decisions.
+
+**Fundamental Point:**
+The integration of diverse deep learning techniques with sentiment analysis addresses the complexity of stock market prediction by capturing both quantitative and qualitative factors, leading to more accurate forecasting.
+
+**Overarching Framework:**
+The overarching framework is the evolution from traditional analysis to advanced deep learning approaches that incorporate time series analysis, sentiment analysis, and hybrid architectures to improve stock market prediction accuracy.
+
+
+Content:
+paper: A comprehensive review on multiple hybrid deep learning approaches for stock prediction
+
+https://www.sciencedirect.com/science/article/pii/S2667305322000497
+
+
+Abstract
+Numerous recent studies have attempted to create efficient mechanical trading systems through the use of machine learning approaches for stock price estimation and portfolio management. Using the ability to foresee the future trends of the stock performance, the return of investment can be maximized for short-term trading. This paper will review various Artificial Intelligence (AI) and Machine Learning (ML) strategies for stock price forecasting. The aim of this review is to discuss various techniques for stock price prediction that incorporate ARIMA, LSTM, Hybrid LSTM, CNN, and Hybrid CNN. Additionally, it will also discuss the limitations and accuracy of the various models, including the ARIMA model, the LSTM model, the MI-LSTM model, the Bi-LSTM model, the LSTM-DRNN model, the CNN model, the GC-CNN model, the CNN-LSTM model, the CNN-TLSTM model, and the CNN-BiLSTM model, in terms of percentage of accuracy or error calculation in terms of standard accuracy measures like RMSE, MAPE, MAE. The models can be used to forecast either the accurate stock rate, induced by the low MSE, RMSE and MAE of LSTM models, or the general trend and deflection range of the stock the following day, induced by the ability to dynamically capture swift changes in the system of CNN models. These characteristics consequently illustrate the advantages of the hybrid model at efficiently and accurately forecasting stock attributes.
+Previous article in issue
+Next article in issue
+Keywords
+Stock MarketMachine LearningDeep Learning
+1. Introduction
+Stock market movements have a substantial economic influence on national and individual consumers' economies. A stock price collapse might lead to widespread economic disturbances (Pettinger, 2020). This widespread view, which forms the basis of Schumpeter's ground-breaking work (1911), holds that stock-market development is beneficial to the economy by providing liquidity, risk-sharing and diversification opportunities, efficiently allocating resources for productive investment, lowering information and transaction costs, and enabling companies to make profitable investments. This view is supported by several previous empirical studies that have identify a positive correlation between stock-market performance and the country's economic growth. Recent studies also supported it using advanced time series and econometrics, which have identified a causal impact of stock-market developments on economic performance (Benson Durham, 2002). The stock market has two major effects on the economy of country. Firstly, it helps to discover prices and, secondly, it gives liquidity. A healthy stock exchange benefits economic activity significantly in terms of growth and savings, efficient investment allocation, and attracting foreign direct investment (Tripathi & Seth, 2014).
+Traditional methods of analysis cannot predict future stock prices since their approaches are purely financial and economical.  The stock market is always get affected by the sentiments of society. Predicting the future is a complex problem. It contains too many variables. There are many models used to estimate the stock price but all fail. Predicting the market is too complex than chess. In chess, 10 to the 120th power moves are possible, so we can understand that predicting the stock price is much more complicated than this problem. Development in web applications like social media spread information too fast, which affects the stock price movement (Xing et al., 2018). To classify this information, the Mean-Variance, Bayesian Asset Allocation, and various other statical computation algorithms are used. In order to better anticipate the stock market, an improved technique must be developed, which contains a more significant number of variables, and the pattern can easily identify and calculate by machines. The fundamental approach of analysis comprises a quantitative study of the stock price, interest rate, inflation, the listed company's finances, the policy of the company, and this parameter is used to analyse future stock trading (Yao et al., 2018; Lu et al., 2020). So, the macro-level stock analysis is effective but not always accurate for prediction. Huge data and knowledge are required to invest in a stock market. Different prospects of stock market investment might be personal interest, company's background and the power to imagine the firm's future and expand or extend their business (Thakkar & Chaudhari, 2020). Purchasing from lower prices on the stock market and selling this stock at a higher price, and generating significant profit is the aim of investing. However, the most crucial feature is selecting stocks, analysing the trend of stocks, the business's policy, the company vision, its purpose, and that includes a massive quantity of data. Advanced technology will analyse this massive amount of data, assisting us in selecting a good stock. Instead, there is a technical indicator that provides an estimate of the stock's future trend. That is based on three assumptions: (1) the stock price reflects all knowledge; (2) the stock price fluctuates following particular rules; and (3) A similar circumstance is likely to arise in the future. To identify this significant amount of data, the indicator covers various features such as Price Change, Volatility Signal, Buy and Sell Signal, Volume Weights, Stock Trend Discovery, Noise Estimation, and Data Smoothing. Different algorithms are available to analyse the data and identify the similarity behind the trends (Di, 2014).
+The volume of data can be handled fast and efficiently due to the rapid advancement of technology. Stock buy and sell, transection and volume may all be measured and evaluated precisely at each step. Due to high-frequency trading, nano trading, and intraday trading, a large stock volume can be purchased for a short period (Gomber & Haferkorn, 2013). Artificial intelligence employs automated sales assistants who work to improve the AI's performance by fine-tuning programming and entering masses of new data. Trading technologies use Artificial intelligence platforms to identify complex patterns in trading across multiple markets in huge quantities. Artificial intelligence is a specific instance technique. When similar historical instances are required, complex and poorly understood processes can aid a black-box approach. Artificial neural networks learn from cases of training and capture data correlations. It is flexible and may be used in a variety of environmental applications such as classification, function approximation, optimization, and prediction. Genetic algorithms develop a series of possible solutions for the global optimum (Chen et al., 2008). The stock market's previous problem has been continual engagement with human agents, which is not always possible, either directly as a trader or indirectly as an investor. Another challenge is continuously fluctuation in the market; understand how the market behaves is one of the central questions for all (Boero et al., 2013). This gap can successfully fill by the Artificial Intelligent technique Multi-Agent System (Lussange et al., 2019). In AI, every agent has three distinct features: 1. a reinforcement learning algorithm for the develop own price and stock trading skills, 2. a process of learning for agents which are framed for a fundamentalist approach to stock price valuation 3. Implementation by the psychology of trader as cognitive and behavioral biases. The framework of improved education has numerous parallels to decision-making processes and allows for the functional integration of decision-making characteristics in order to represent neuroeconomic particular biases (Momennejad et al., 2017).
+Development in machine learning allows us to predict the financial market by automating the existing statical data (de Araújo et al., 2019). Machine Learning is a computer system or programme, which can learn from existing data, recognise patterns from past data, and produce the desired result, forecasting the stock price. The stock market contains time series data, which can be seasonal, so some researchers use a linear forecasting model to predict short-term stock price from long time data based on statistics and probability theory. The shifting trend of the stock price is one of the concerns that investors pay the most attention to the stock market (Li et al., 2019). Stock price fluctuations are often nonlinear. Analysts have always struggled with predicting stock price variations in advance (Xiao et al., 2020). Different Machine Learning techniques, such as Recurrent Neural Networks (RNN), Long Short-Term Networks (LSTM), Convolution Neural Networks (CNN), Autoregressive Integrated Moving Average (ARIMA), and Singular Value Decomposition (SVD), are used to predict stock price more precisely. This allows us to forecast the stock price for the following day (Lu et al., 2020). Artificial intelligence and machine learning play an important role in trade, as new technology facilitates trade. Machine learning is a subset of AI and offers exceptional innovations in the world of commerce. Stock traders use algorithms to achieve high speed and efficiency in securities trading. Algorithms tend to become more complicated, as they can adapt to different trade patterns using artificial intelligence (AI). That algorithm trading will move toward practical machine learning (ML), with the ability to decrypt large amounts of data from many different sources in real-time. A large number of studies on machine learning approaches in finance are presently being performed (Moritz & Zimmermann, 2016). Tree-based models were employed in some studies to estimate portfolio returns, while deep learning was utilised in others to forecast future financial asset prices (Takeuchi & Lee, 2013). Determine the trend using continuous-value data and trend deterministic data are also helpful to develop the portfolio. With the help of indicator, the trend can be estimated and given as input to the machine learning model, and predicting model will return the future trend of the stock (Patel, Shah & Kotecha, 2014). The researcher also uses the 2 stage hybrid model, where the first stage will help predict the future value, which is fed as an input in predicting the model the second stage and achieving the promising result (Patel, Shah & Kotecha, 2014).
+This review is primarily intended to provide a detailed assessment of future trends and stock returns containing various stock market prediction approaches. This study takes into account a list of various stock market forecasting approaches that have been used in previous studies. The review highlights the modelling methodologies, the type of data set and indicators of performance used in revised papers. This review examines the LSTM, CNN, ARIMA, and SVD methods to determine which one is best suited to our problem. The survey is carried out in order to concentrate on the research gap and problems identified in those methodologies. As a result, the survey serves as motivation for the potential development of a growing stock market forecast.
+2. ARIMA in stock market
+To perform time series analysis, the data must be stationary, meaning that statistical features like as mean, variance, and other statistical parameters do not fluctuate over time. Real-world data, like stock prices, is by definition non-stationary. The Box–Jenkins ARIMA(p,d,q) method can be used to deal with this non-stationarity (Makridakis & Hibon, 1997). The Null Hypothesis (NH) ADF (Augmented Dickey-Fuller) Test is used to check for data non-stationarity; if this NH fails, there is a high probability that the data will be stationary. This test yields the p-value; if it is less than 0.05, the NH is rejected and the data is stationary; otherwise, identification of differencing order is required. Autocorrelation (ACF) provides the information to determine the value of differencing terms d. To determine the value of p and q, Partial Autocorrelation (PACF) and Autocorrelation (ACF) test is required respectively. This allows to estimate the ARIMA model's parameter ARIMA (p,d,q). The plot of residuals, which is close to the zero means, is used to examine the data's stationarity. An examination of the residuals evaluated the overall performance of each model. Performance can also be measured by four distinct error measurements, including the absolute error percent (APE), the average absolute error (AAE) and the root-medium-square error (RMSE) (Hegazy et al., 2015) (Fig. 1).
+Fig 1
+Download: Download high-res image (287KB)
+Download: Download full-size image
+Fig. 1. Flowchart for ARIMA
+
+Mondal et al., 2014 examined the Autoregressive Integrated Moving Average (ARIMA) model's performance on 56 Indian stocks from a variety of industries. The aim of this study was to determine the ARIMA model's predictive accuracy for stock market movements. The ARIMA model's order was identify using AICs, and it was revealed that there is little variation in accuracy across varied amounts of the training dataset. The Mean Absolute Error (MAE) is used to determine the model's accuracy. The model achieved an accuracy of 85 percent, but accuracy varies by sector.
+Bandyopadhyay & Guha, 2016 estimated the future gold price using the ARIMA model. The ACF and PACF correlograms are used to determine the model's order, and ARIMA (1,1,1) was chosen as the optimal model parameter because it also meets the statistical requirements. The root mean square error (RMSE), mean absolute percentage error (MAPE), MAE, Bayesian information criterion (BIC), and Lung's box Q statistics are used to evaluate statistical fitness. Several disadvantages of this model include the fact that it only identifies tiny differences and cannot be used in the case of a fast shift, and the model is based on linear historical data, although there is no confirmation of linear gold prices.
+Sen et al., 2013 trained an ARIMA model on five years of data from the NSE – Nifty Midcap50 and four additional firms. Akaike information criterion to forecast model accuracy, the Bayesian Information Criterion (AICBIC) and additional test criteria are utilised. The paper's aims are model identification, model estimation, and model verification. The process of identifying a model is divided into two phases in this section: The first step is to prepare the data, and the second step is to select a model. They make model selections using the ACF and PACF plots. Estimation and testing are performed using the AICBIC criteria, as well as ACF and PACF residuals. Performance is measured using MAPE, PMAD, and % Error Accuracy. This enables the development of new investment strategies or instructions based on the lowest error percentage of performance measures.
+Jadevicius & Huston, 2015 examine Lithuanian house price changes in response to volatile markets and cast doubt on the reliability of model demand fundamentals. ARIMA models with parameters ranging from 1,0,0 to 4,0,4 were constructed based on the fact that the ARIMA (3,0,3) model generated the strongest in- and out-of-sample modelling outcomes, as assessed by the model accuracy evaluation. Their model predicted an annual increase in house prices of 8% in the next year. This is in contrast to prior research, which proved that model fit does not always correspond with accurate prediction.
+Shao & Dai, 2018 advocated for the development of agricultural crop price forecasts to aid in meeting rising food demand. According to research, in real-world data, the ARIMA model could be inadequate in analysing nonlinear relationships. As a result, they incorporated feature selection approaches into ARIMA in order to offer self-predictor (lag or previous values) inputs for ANNs, and they compared the models' predictive ability using MAPE, RMSE, and MAE. Additionally, they pointed up several faults in the trial. Calculating the optimal ARIMA mode may take a long time.
+To estimate sales and build business strategies in the publishing industry, Omar et al., 2016 developed a new hybrid neural network (HNN) model based on article headlines and ARIMA model predictions. The optimum ARIMA mode was determined using the average root mean square error (RMSE) values for normalised data. Additionally, the root mean square error (RMSE) was utilised to calculate the average residuals for expected sales using the suggested methodology.
+Banerjee, 2014 uses the Durbin-Watson (DW) test to determine the type of our data collection and, based on this selection. Determine whether or not time series analysis is utilised to forecast stock prices. Additionally, the model's statistics compute that the weights decay rapidly, indicating that the process is stationary and invertible. Unexpected political turmoil or rapid changes in government policies such as fiscal, monetary, or expert input policies will result in greater volatility in the Sensex, if the model fails.
+Mehrmolaei & Keyvanpour, 2016 proposed a method for time series forecasting that improves ARIMA models by incorporating a mean of estimation error. The model is chosen by analysing the lowest MSE and MAE values obtained for the ARlMA (1, 0, 1) model. On the basis of predicting length, time series forecasting approaches have been categorised and grouped into two groups. Groups have coined the terms "short-lived estimator" and "long-range estimator."
+Ratnayaka et al., 2015 primary objective is to identify behavioral patterns and to develop a new hybrid forecasting technique for projecting CSE price indexes based on ARIMA-ANN. Mean absolute deviation (MAD), mean absolute percentage error (MAPE), MSE, and root mean square error (RMSE) were frequently recommended for assessing the model's correctness. Additionally, they conclude that ARIMA (4, 1, 3) and ARIMA (1, 1, 1) are the most effective models for forecasting short-term trends.
+Du, 2018 has created a technique for forecasting stock price indices that incorporates an ARIMA model with a Back Propagation neural network. As a result, the researchers compared the approach's results to those obtained using a single ARIMA model and the Back Propagation neural network method. The optimal ARIMA type was identified using the least value Schwarz criteria (SC) and BIC. The RMSE and Mean Relative Error are used to determine the accuracy of the created model and traditional approaches.
+Filipe & Mendes, 2019 forecasted the BITCOIN price using the ARIMA model. Time series data is divided into train and test sets by the date "2019-04-01," which means that data prior to this date is considered training data, while data after this date is considered testing data. Although ACF and PACF are used to establish the model's parameters, the model's accuracy remains too low. In contrast, Roy et al., 2019 use the same ARIMA model to forecast the BITCOIN price using ACF and PACF. The model was trained between "2013-06" and "2017-10," and its accuracy is 90.31 percent. The initial model's accuracy is low due to the very volatile market following the training phase. However, because of the volatility in the specific range following the training set, the second model's accuracy is increased (Table 1).
+Table 1. Information on the papers which used the ARIMA model
+
+Method	Model	Application	Accuracy	Error	References
+ARIMA
+GARCH	(4,0,1)
+(1,1)	FOREX price prediction	-	MAPE 0.008221%	Abreu et al., 2019
+ARIMA	-	Internet Traffic Time Series Data obtained for every 30 min	-	MAE- 6.935
+MSE- 70.602	Narendra Babu & Eswara Reddy, 2015
+ARIMA	(3,0,1)	Forecasting Nigerian Stock Market Returns	-	RMSE - 5.07263
+MAE - 3.68315	Isenah & Olubusoye, 2014
+ARIMA	(1,0,1)	Stock Trend Prediction for Nifty-50	Error Accuracy- 16.26%	MAPE - 0.2108	Sen et al., 2013
+ARIMA	(1,0,2)	Prediction of Indian stocks rate from different sectors	85.32% to 95.93%	STD- 2.0353 to 17.4784	Mondal et al., 2014
+ARIMA ANN	-	Time series forecasting of sunspot data, electricity price data, and stock market data	-	MAE- 12.8226
+MSE- 261.6390	Babu & Reddy, 2014
+ARIMA	(1,1,1)	Bitcoin Price Prediction	-	RMSE- 4,725
+MAE- 4,106	Filipe & Mendes, 2019
+ARIMA	(3,1,3)	prediction of China's corn market	Correlation- 97.47%		Zhou, 2021
+ARIMA BPNN	-	Time Series Prediction of the Chinese Stock Market	78.79%	-	Xiong & Lu, 2017
+ARIMA MLP	(1,0,1)	Performance of models for DJIAI in test data sets	-	MAE- 351.77
+MSE- 204104
+MAPE- 3.34%
+RMSE- 451.78	Khashei & Hajirahimi, 2019
+ARIMA	-	Housing Price Prediction
+-	MAE- 3.2
+RMSE- 5.0
+MAPE- 2.5%	Phan, 2019
+For time series forecasting, the ARIMA model uses the ARIMA(p,d,q) values, which stand for Autoregression (p), Integration (d), and Moving Average (q). It's a strange task to estimate this amount. The number of times a derivation must be repeated in order to obtain a flat line result for time series data is referred to as integration. D = 0 for a flat trend, 1 for a slope with moderate fluctuation, and 2 for a parabolic trend. This is how d's value is calculated. The autoregressive section demonstrates how the current value is influenced by the previous time-step. For p = 1, the future stock trend is determined by the previous one time step, and for p = 2, the trend is determined by the past two time steps. Similarly, if d = 1, the future stock trend is determined by one previous time step noise; if d = 2, the future stock trend is determined by two previous time step noise. Additional regression and derivation will aid in estimating the future trend based on these numbers. However, finding the value of p and q is difficult, hence the ACF and PACF tools are employed to estimate that value (Fig. 2).
+Fig 2
+Download: Download high-res image (256KB)
+Download: Download full-size image
+Fig. 2. Mathematical Model of ARIMA
+
+3. LSTM in stock market prediction
+The memory cell is provided by the LSTM, which modifies the traditional ANN design by substituting for conventional artificial neurons in the network's hidden layer. This memory cell is capable of efficiently associating with both memory and input. The LSTM is distinguished from other RNNs by its ability to memorise data sequences. Each node in LSTM is composed of a collection of previously transmitted data streams. At the top of the LSTM model, it saves the cell's prior state, which acts as a memory state, storing and transferring information from the past to the current state. Through pointwise multiplication and addition, the memory state is saved and updated. The sigmoid function is used to remove the previous state and update the current state in memory, appropriately accepting or rejecting the value. When deleting or adding a new state to memory, the forgot gate is employed, which contains the sigmoid function if its value is 0, indicating that the prior state was totally forgotten, or 1, indicating that its value was maintained. This process is performed by undertaking a point-wise multiplication. Memory Gate is responsible for selecting the new data to be stored in the cell. A sigmoid layer called the "input door layer" selects which values are changed first. Then, using a tanh layer, the value that may be coupled with the internal state is identified. The output gate, which stores data from previous inputs, determines the next concealed state (Figs. 3, 4).
+Fig 3
+Download: Download high-res image (390KB)
+Download: Download full-size image
+Fig. 3. LSTM Model
+
+Fig 4
+Download: Download high-res image (204KB)
+Download: Download full-size image
+Fig. 4. Flowchart for LSTM (Nguyen et al., 2019)
+
+As seen in Fig. 3, the first phase is the data gathering phase, during which we locate and obtain relevant data, such as through Google Finance and Yahoo Finance. The subsequent step must be data pre-processing, in which the closing price of the share is transformed across 0 and 1 to facilitate calculation. The dataset is then converted to a matrix using the sliding windows approach, which uses a range of n-1 trading days as an input for the LSTM algorithm and outputs the nth day's closing price. This window advances one day at a time to develop the LSTM model used to calculate the network's endpoints. Post-training prediction from the testing set is carried out, followed by model evaluation using performance metrics. Additionally, the model is typically rebuilt by incorporating a current set of stock price data.
+According to Siami-Namini et al., 2018 research, the RMSE values show that when it comes to stock price prediction, LSTM-based models outperform ARIMA-based models by a sizable margin from about 84 and 87 percent. The authors used data from Yahoo Finance from January 1985 to August 2018 to train and test the LSTM model. The average root mean square error (RMSE) values for ARIMA and LSTM are 5.999 and 0.936, respectively. Additionally, the research indicates that increasing the number of epochs does not improve the model's effectiveness when projecting the stock's time series.
+Yadav et al., 2020 optimised LSTM models by comparing stateful and stateless LSTM models and adjusting for the model's number of hidden layers. According to research, a stateless LSTM model is recommended for time series prediction problems due to its increased stability. When performing language modelling on consecutive batches of text with plausible connections, it is advantageous to build a stateful LSTM. Additionally, the findings suggest that one hidden layer model achieves the best mean RMSE.
+Roondiwala et al., 2015 used LSTM to display, model, and forecast the NIFTY 50′s stock returns. The system is divided into five stages: raw data collection, data pre-processing, feature extraction, neural network training, and output generation. The model is trained using a variety of parameters such as Open/Close, High/Low/Close, and High/Low/Open/Close, as well as a variety of epochs. The root mean square error (RMSE) technique is used to determine the effectiveness of the model. The best results were obtained with a root mean square error (RMSE) of 0.0983 during training and a root mean square error (RMSE) of 0.0859 during testing, using four features (High/Low/Open/Close) and 500 epochs.
+Moghar & Hamiche, 2020 seeks to determine the accuracy with which a learning machine algorithm can predict a trend, and how epochs may help the model perform better. The research covers the opening prices of two stocks traded on the New York Stock Exchange (NYSE) through yahoo finance (GOOGL and NKE). The model's test results may be improved for various data sets by training with less data and more time. For 100 epochs, the loss is 4.97E-04 in the case of GOOGL and 8.74E-04 in the case of NKE.
+Istiake Sunny et al., 2020 evaluate and assess LSTM and Bidirectional LSTM models using a publicly available dataset for stock markets with open, high, low, and closing prices. For the Bidirectional LSTM model, the number of dense layers rises while the number of neurons decreases, resulting in an improvement in the accuracy of the testing data and a reduction in the training time.
+Chen et al., 2015 compare the random method with the LSTM model for forecasting the Chinese stock return. Whereas the LSTM model increased the accuracy of stock prediction from 14.3 percent to 27.2 percent. Numerous methods are compared in the research, the first being Random, which has an accuracy of 14.3 percent, followed by M1 to M5 models based on (Close, Volume), M1 with normalisation, (High, Low, Open, Close, Volume), (SSE Index (Close, High, Low, Open, Close, Volume), and High, Low, Open, Close, Volume), with only stocks from the SSE ETF180 Index being used for training and validation. Additionally, efficiency improves from 15.6 to 27.2 percent.
+Selvin et al., 2017 examine the RNN, LSTM, and CNN models used to forecast revenue for Infosys, TCS, and Cipla. For Infosys, the percentage error is 3.90, 4.18, and 2.36 for RNN, LSTM, and CNN, respectively. Similarly, in the case of TCS and Cipla for RNN, LSTM, and CNN, the percentage error is 7.65, 7.82, 8.96, and 3.83, 3.94, 3.63, respectively. When compared to the ARIMA model, the percentage error for Infosys, TCS, and Cipla is 31.91, 21.16, and 36.53, respectively.
+Nelson et al., 2017 presented the findings of statistical testing on the LSTM model results in comparison to the baselines. The majority of cases with a p-value less than 0.05 showed a significant advantage. This model has an accuracy of 54.6 percent for BOVA11, 55.9 percent for BBDC4, 54.5 percent for ITUB4, 53% for CIEL3, and 53.3 percent for PETR4, and a precision of 47.5 percent to 56.3 percent. Additionally, by monitoring the highest losses, it may be determined that the LSTM model has less hazards than other approaches.
+Li et al., 2018 propose an improved LSTM-based MI-LSTM that outperforms the previous version in terms of extracting potential information and noise from input data. MiLSTM improves by 9.96 percent as compared to the LSTM when it comes to the mean square error. In addition, employing three extra variables and Gaussian noise, researchers have shown improvements over both the original LSTM and the double-stage, attention-based RNN.
+Li et al., 2020 investigate the effect of various factors on the problem of price fluctuations, which can be applied further by investors in a real-world work environment. (1) manually extracted characteristics from a fluctuation period; (2) conventional technical trading indicators; and (3) features derived from the DAEs, which may be implicitly represented. This approach results in a 55.19 percent accuracy and a 55.16 percent precision. Where, Hashish et al., 2019 use Hidden Markov Models to describe the historical behavior of cryptocurrencies in order to forecast future behavior using Long Short Term Memory networks. The rolling LSTM model has a root mean square error and a mean absolute deviation of 59.04 and 0.044, respectively, which outperforms the other models considered. Additionally, conventional technical trading indicators were used in the research, and the results indicated that our proposed model has the lowest MSE, RMSE, and MAE of all implemented models (Table 2, 3).
+Table 2. Errors are calculated by HMAE of Various Hybrid LSTM and Deep feed-forward Network (Kim & Won, 2018)
+
+Empty Cell	1 day ahead prediction Windows length (days)	14 days ahead prediction Windows length (days)	21 days ahead prediction Windows length (days)
+7	15	22	7	15	22	7	15	22
+DFN	0.6825	0.6764	0.6598	0.7056	0.6907	0.6753	0.7177	0.7009	0.6770
+LSTM	0.5559	0.5289	0.5186	0.5617	0.5331	0.5270	0.5889	0.5514	0.5474
+W-DFN	0.6651	0.6410	0.6363	0.6860	0.6673	0.6504	0.6953	0.6892	0.6629
+G-DFN	0.6326	0.6130	0.6086	0.6541	0.6362	0.6204	0.6837	0.6672	0.6450
+E-DFN	0.6111	0.5878	0.5700	0.6346	0.6122	0.6080	0.6524	0.6323	0.6282
+W-LSTM	0.5096	0.5040	0.4912	0.5572	0.5139	0.5100	0.5722	0.5508	0.5108
+G-LSTM	0.5046	0.5001	0.4526	0.5511	0.5095	0.4752	0.5629	0.5393	0.5055
+E-LSTM	0.5014	0.4633	0.4465	0.5355	0.4819	0.4523	0.5363	0.4861	0.4715
+GW-LSTM	0.4990	0.4459	0.4419	0.5249	0.4485	0.4458	0.5331	0.4485	0.4472
+EW-LSTM	0.4653	0.4375	0.4340	0.4851	0.4398	0.4381	0.4919	0.4399	0.4398
+GE-LSTM	0.4498	0.4331	0.4328	0.4637	0.4375	0.4357	0.4774	0.4395	0.4389
+GEW-LSTM	0.4359	0.4305	0.4291	0.4509	0.4364	0.4343	0.4597	0.4376	0.4349
+Table 3. Information on the papers which used the LSTM model.
+
+Data	Frequency	Technique	Output	Performance Measures	References
+HKEX	Daily	LSTM/AttLSTM	Price	Accuracy	S. Chen & Ge, 2019
+NASDAQ	Daily	LSTM	Direction of trend	Accuracy	Sirignano & Cont, 2019
+SSE	Daily	LSTM+CNN	Price	MAPE	Jing et al., 2021
+S&P500	Minute	LSTM	Price	RMSE	Lanbouri & Achchab, 2020
+Yahoo Finance	-	Regression and LSTM	Price	MSE	Parmar et al., 2018
+CSI-300	Daily	MI-LSTM	Price	MSE	Li et al., 2018
+CSI-300	Daily	LSTM	Direction of trend	Accuracy	Wang et al., 2020
+PetroChina and ZTE	Daily	LSTM+DRNN	Direction of trend	MAE	Ding & Qin, 2020
+Brazilian stock exchange	Daily	LSTM	Price	Accuracy	Nelson et al., 2017
+S&P500	Minute	LSTM	Price	RMSE	Lanbouri & Achchab, 2020
+STOXX	Every 5 Days	LSTM	Price	MAPE, RMSE	Lai et al., 2019
+Supply Chain	Daily	Bi-LSTM	Price	MASE, RMSE, MAE, sMASE	Pacella & Papadia, 2021
+S&P500	Daily	LSTM	Price	Percentage Loss	Liang et al., 2019
+Bitcoin	Daily	MRC-LSTM	Price	MAE, RMSE, MAPE	Guo et al., 2021
+For time-series forecasting, LSTM performs extremely well. This model recalls previous values and, using that information, forecasts future stock trends or prices. The model consists of metrics in the input state, which will be passed through the sigmoid activation function and Tanh activation function. This will aid in the memory cell's storage of the present input. It uses the hidden state and memory state from the previous time step. It remembers all relevant historical data in the memory state, but the forgot cell, which is the sigmoid activation of the hidden state, determines which data is important and which is not. And hidden states are Tanh of memory state and Sigmoid of current state, which will aid in comprehending the data's significance. Because of the sigmoid activation function, the output of the forgotten cell ranges from 0 to 1. If the output is 1, the LSTM entirely recalls the previous state; if the output is 0, it completely forgets the prior state; and if the value is in the middle, it can partially remember the significance of that memory state. Which will pass in the next LSTM time step and aid in determining the stock's future trend or price (Fig. 5).
+Fig 5
+Download: Download high-res image (512KB)
+Download: Download full-size image
+Fig. 5. Mathematical Model of LSTM
+
+4. CNN in stock market prediction
+CNNs are one kind of feedforward neural network, which excel at image and video processing, as well as natural language processing. They can also forecast time series data. CNN's local perception and weight sharing are capable of reducing parameter values by a significant amount, allowing the model to improve learning efficiency. Data is given to the input layer for pre-processing, and the output of this layer is passed on to convolutional layers from that, data pass through pooling layers, and a flattening layer, which are all included in the CNN-LSTM model. Convolutional procedures are applied to the input signal in order to extract its properties. Further, the pooling layer may be used to down sample the output feature maps, which allows the convolutional layer to summarise the extracted feature maps. The flatten layer converts all of the given feature maps into single-dimensional vectors, which are then passed on to the LSTM layer as input. This also aids in the model's ability to deduct the problem of overfitting (Fig. 6).
+Fig 6
+Download: Download high-res image (382KB)
+Download: Download full-size image
+Fig. 6. Flowchart for CNN LSTM
+
+Vidal & Kristjanpoller, 2020 Develop the new model using Convolution Layers, which extract the relevant information from the time series data. Model ran various test and compare it with most efficient deep learning model of the stock price prediction. Recent study reveals that LSTM model can increase the prediction ability with the help of memory cell, which can store significant pattern from past experience. The researchers introduced CNN–LSTM, a unique forecasting model for gold price movement prediction. Here proposed model, which consist of two convolution layers, by that model can extract feature from the given data, which contains low MAE and RMSE values, best for regression issue. In classification, this model predicts the future stock moment and outperform to identify future trend (Fig. 7).
+Fig 7
+Download: Download high-res image (274KB)
+Download: Download full-size image
+Fig. 7. Hybrid CNN LSTM model
+
+Lu et al., 2020 propose a CNN-BiLSTM-AM approach to forecast the next day's stock closing price. This approach makes use of convolutional neural networks (CNNs) and an attention mechanism (AM). The article describes a CNN-BiLSTM-AM technique for forecasting the following day's stock closing price based on the chronological properties of stock price data. AM used to represent the feature maps of the given time series data and their effect on the forecasting outcomes over time. The experimental findings indicate that when compared to MLP, CNN, RNN, LSTM, BiLSTM, CNN-LSTM, CNN-BiLSTM, and BiLSTM-AM, the CNN-BiLSTM-AM has the greatest prediction accuracy and performance. It is challenging to obtain best prediction accuracy with a single neural network, therefore complicating or using multi neuron the network can help enhance prediction accuracy. The findings indicate that this technique performs optimally, with the lowest MAE and RMSE (21.952 and 31.694).
+Rezaei et al., (2021) argue that because time series data is nonlinear in nature and highly unpredictable in nature. To analyse the data and precisely estimate the rate, the given data is decomposed into separate frequency spectrums using the Empirical Mode Decomposition (EMD) and Complete Ensemble Empirical Mode Decomposition (CEEMD) methods, which are then used as inputs to many CNN-LSTM pipeline models. A hybrid CEEMD-CNN-LSTM algorithm is then built. This model extracts the deep important features of the data from the input, reconstructs the expected data, and then predicts the stock price. To determine the model's correctness, the standard matrices of RMSE, MAE, and MAPE are calculated. This CNN can enhance the correctness of the training data, the model's performance, and the model's effectiveness. Furthermore, this study reveals that decomposed algorithms outperform models that are not dissected.
+The S&P 500, NASDAQ, DJI, NYSE, and RUSSELL have shown significant improvements in Hoseinzade & Haratizadeh, 2019 performance compared to the state-of-the-art baseline algorithms. The proposed framework was used to forecast the indexes' direction of movement for the following day. When compared to baseline techniques, CNNpred was able to enhance prediction performance in all other indices by around 3% to 11%. Along with proving the utility of the proposed method, these observations imply that structuring CNNs for stock prediction issues may be a fundamental difficulty that merits more investigation.
+Hiransha et al., 2018 predict a company's stock rate using accessible historical data using Multilayer Perceptron (MLP), RNN, LSTM, and CNN deep learning architectures. Even though the neural network was trained on National Stock Exchange (NSE) data, it was still able to forecast for New York Stock Exchange (NYSE). This was feasible due to the fact that both stock markets share some internal characteristics. The models are capable of detecting trends in both the stock and foreign exchange markets. As a result of this finding, it is evident that both stock markets share a same fundamental dynamic. The models give better performance than the ARIMA model. The suggested study demonstrates that, deep learning models are capable of recognising the dynamic feature within time series data. CNN outperformed the other three networks due to its ability to capture rapid changes in the system when a specific window is utilised to forecast the following moment.
+Chen et al., 2021 a unique approach for predicting market trend using a graph convolutional feature-based neural network (GC–CNN) model in this article. Experiments show that the suggested GC–CNN-based approach beats many markets trend forecasts. Research simulated stock trading in financial assessment using various forecasts and other typical stock trading methods. Although the suggested GC–CNN-based technique requires a longer training period, it beats existing algorithms for stock trend prediction. Which conclude that techniques with superior computational performance may not always produce superior trading indications. This approach is capable of generating more consistent, steady, and greater returns than other approaches.
+Cavalli & Amoretti, 2021 have suggested an efficient technique for bitcoin future direction prediction based on one dimensional CNN. They demonstrated a cloud-based system with an extremely efficient distributed architecture that enabled them to gather massive amounts of data and generate several of unique datasets, which enables more precise prediction of the bitcoin future direction than LSTM models, resulting in an increase in profit when the bitcoin trend is upward and a decrease in loss when the trend is downward.
+Soleymani & Paquet, 2020 introduce the DeepBreath portfolio management strategy. This approach is based on deep reinforcement learning. This technique forecasts the stock's direction rely on a specific characteristic and aims to maximise the return on investment. Convolutional networks are used to extract the most salient features from a batch of data and to quantify the risk associated with an investment. Returns on one month's investment are 2.83 percent, two months' investment is 11.14 percent, and three months' investment is 11.93 percent, respectively. This is a more accurate and risk-free indicator than the Dow Jones Industrial (DJI) over the same time span. Additionally, we can conclude that the deep reinforcement learning method is particularly accurate for long-term investment, as demonstrated by findings that conclusively indicate our system's effectiveness.
+According to Wang et al., 2021, Hybrid of CNN-TLSTM (tanh-LSTM) model can predict the stock rate highly effectively for complicated nonlinear data and research conduct on the USD/CNY exchange rate to identifying the rate of following treading day. MLP, CNN, and LSTM models all have some significant drawbacks, which include less forecasting accuracy and a solitary structure of the model. The model is composed of two components: CNN and TLSTM, where the convolution layer is used to extract feature factors from the input data, while the TLSTM component is used to extract feature factors from the TLSTM component. By this model can achieve 0.18945 and 0.00038 MAPE and MSE errors respectively. Which can achieve very low MAPE and MSE errors of 0.18945 and 0.00038, respectively.
+The proposed deep learning model integrates numerous CNN pipelines and bidirectional LSTM units. Each CNN pipeline receives 50 stock price data as input and sends the output to a bidirectional LSTM model. The bi-LSTM model contains 200 pairs of LSTM units, resulting in 400 outputs, and a 50% dropout is provided to avoid overfitting. This model outperforms the more often used SVM model. Additionally, the model demonstrates an increase in predictive performance while minimising overfitting effects.
+Liu et al., 2017 suggested CNN-LSTM model for the purpose of analysing quantitative trading strategies in the stock market. It is utilised to develop a quantitative stock selection approach for assessing stock directions via the use of CNN, and then a quantitative timing strategy for increasing profits through the use of LSTM. The concept may be used effectively to develop quantitative strategies that outperform both the regular momentum approach and Benchmark index by 34% and 54% respectively. Meanwhile, Ghosh et al., 2019 examine the growth of businesses in several sectors and attempt to determine the optimal time period for forecasting the future price of a share using same approach and concluded that if the model is trained on a larger number of data sets, the forecast can be more accurate. This approach is advantageous for conducting market research (Table 4).
+Table 4. Information on the papers which used the CNN model.
+
+Data	Technique	Output	Performance Measures	References
+BLL, CAPLL, BTT	CNN	Trend	Accuracy	Sayavong et al., 2019
+S&P500	CNN-BiLSTM	Direction	Mean	Eapen et al., 2019
+CSI 300	CNN-BiLSTM-ECA	Price	RMSE, MAE	Chen et al., 2021
+Colombian Stock Market	CNN	Direction	Accuracy	Niño et al., 2019
+Bitcoin	CNN	Price	MAE	Mounika et al., 2021
+S&P500	CNN	Price	Accuracy, MSE	Ugur Gudelek et al., 2018
+S&P500	U-CNN, 2-D CNN	Direction	Accuracy	Hoseinzade et al., 2019
+JKMING	CNN	Direction	Accuracy	Artha et al., 2020
+KOSPI	CNN-LSTM	Direction	Returns	Shin et al., 2019
+Gold	LSTM-attention-CNN	Price	RMSE	He et al., 2019
+SPY	MICNN	Trend	Accuracy	Yang et al., 2018
+If we show the CNN model numerically, it takes historical stock price data as an input and determines which dimension to use based on the data. For example, if we wish to forecast the next 10 days stock price, the data set dimension will be (10,1). As a result, this CNN model only considers one attribute from the prior week's data. This single property can be anything, such as the opening or closing price. Which passes through the convolution layer, where we may choose the kernel size. If the kernel size is 5, then 10 days will be divided into 6 time steps, each of which extracts the feature. This layer's output will then be passed through the max pooling layer, which helps in dimensional reduction by converting a vector into a one-dimensional vector. This output single-dimensional vector will be passed via the multilayer perceptron after the feature has been extracted appropriately. This will also assist in determining the stock's future value trend or price (Fig. 8).
+Fig 8
+Download: Download high-res image (280KB)
+Download: Download full-size image
+Fig. 8. Mathematical model of CNN
+
+5. Sentiment analysis
+The opinion of a trustable investor aids in selecting the appropriate stock, which is why people rely on their reviews when making stock selections. Currently, the internet is widely available for investors to view their portfolios, and individuals are accustomed to sharing their thoughts on social media. Numerous studies indicate that financial news affects the stock's future trend. Although opinions are not always correct, people will buy or sell the stock in response to the post, disrupting the stock's financial model. If a significant amount of stock is purchased due to this sentiment, the trend will move upward and vice versa. Thus, it is critical to analyze the sentiment (Xing et al., 2018).
+Carosia et al., 2019 research clearly shows the emotion affect the financial decision. Schumaker et al., 2012 demonstrate that financial news, whether positive or negative, has a greater than 50% chance of moving the market in that direction, indicating that news contains emotion. This demonstrates the importance of monitoring social media changes to forecast trend movements. Dudhat et al., 2013 developed an event-based sentiment analysis method in which they analyzed daily financial news and Twitter tweets and constructed a sentiment classifier using a bag of words and extracting features with a value of 0 or 1. If positive tweets outnumber negative tweets by 50%, they can more accurately classify a stock's sentiment.
+Natural language processing (NLP) is used for sentiment analysis. Classification and analysis become more difficult as the data is purely unstructured. NLP analyses the sentence structure and constructs features from it. This will assist in decoding the meaning of the text data once the analysis process has been completed. Natural language processing (NLP) is used to process basic text and classify tag words. Which aid in text classification and information extraction from completely unstructured data. To begin analysing sentiments, the tweet or financial news item must be tokenized and the statement's stopping words removed. After getting appropriate words, NLP assists in comparing the words to a predefined bag of words that aids in the comprehension of the sentence. However, because data obtained from the internet is not always positive or negative, sentiments should be classified as extremely positive, positive, neutral, negative, or extremely negative. Which assists the Artificial Neural Network in forecasting the stock's future trend.
+The data set is critical when conducting sentiment analysis, which includes historical data as well as current news about the stock market. Pre-processing of data is accomplished by using natural language processing models, which assist in prioritizing and extracting features from unstructured data. Following an analysis of the sentiment expressed in the news, the data is fed into a machine learning model that forecasts the stock's future trend (Mehta et al., 2021). The polarity of a stock can be positive, negative, or zero during data pre-processing, indicating the stock's positive, negative, or neutral sentiment. Yu & Yan, 2019 consider a sentiment polarity value of 0 to be extremely negative, 1 to be neutral, 2 to be neutral, 3 to be positive, and 4 to be extremely positive. Khedr et al., 2017 also conduct sentiment analysis on financial news and determined text polarity using the nave-Bayes algorithm, achieving an accuracy of 72.73 to 86.21 percentage points (Fig. 9).
+Fig 9
+Download: Download high-res image (290KB)
+Download: Download full-size image
+Fig. 9. Predicting stock data by sentiment analyses
+
+Mittal & Goel, 2012 used sentiment analysis and self-organizing fuzzy neural networks to estimate the relationship between trend and sentiment and obtained a model with a 75.56 percent accuracy. DJIA data is sourced from Yahoo and is used to polarise six sentiments using 65 words and then compute a daily score. The model first determines the current sentiment, then the sentiment from the previous three days, and finally, the model predicts the stock's future trend. In terms of profit estimation, naive implementation demonstrates a high MAPE accuracy. Daudpota et al., 2018 employ an SVM model combined with sentiment analysis to identify trends. The data was extracted from StockTwits, and the sentiment score was calculated using a support vector machine model that classified the market trend as bullish or bearish. To calculate sentiment, the model creates a confusion matrix and achieves an accuracy of 76.68 percent.
+Thuy et al., 2012 develop a hybrid model to estimate the opening price of Google, Microsoft, Apple, and Amazon stock. For the sentiment, analysis the researcher uses tweets and previous day's opening and closing to estimate the further trend. Estimating sentiments from unstructured data is difficult. Many times, people tweet like, “iPad 2 is coooooolllllllll”. To normalize the tweet, reduce the multiple characters to three and apply the normalization lexicon to estimate the text. Further pre-processing includes removing the noise. Name, punctuation marks and other stopping words are removed and get accurate data. NLP will further estimate positive or negative features from the data and estimate the future direction.
+6. Challenges
+There are numerous limitations of the given models that need to be acknowledged and through iterative evolution of these models, such constraints should be reduced and finally the models should be superseded by other newer, more accurate models or their hybrids. Other hyperparameters, that have not been taken into consideration, should eventually be included into a potential model or a prospective hybrid to get a more unified approach towards not only effectively predicting the stock price and stock trend but also the overall market sentiment with greater accuracy and efficiency. The ARIMA models are based on the assumption of existence of a linear relationship between future values to current and past values of a given time series, hence, they are not suited for modelling multivariate time-series having non-linear residuals. Furthermore, the availability of a large amount of historical data is also a big factor on which the ability of the models to provide the desired results rests. Lastly, ARIMA models are relatively inaccurate when they experience an instability in data due to the presence of outliers which consequently results in larger forecast windows. Hence, due to the regression-based nature of these models, they require manual analysis of the time series. Furthermore, the different model parameters have to be detected manually. Instead, the RNN better facilitates modelling a multivariate time series with non-linear residuals. Although having superior accuracy in predicting future stock price than ARIMA and being better at solving the problem associated with vanishing gradients in RNN, the LSTM models also have certain limitations of their own. As mentioned previously, the LSTM models are effective at solving the vanishing gradients problem, however, they fail to completely remove it. In addition to that the cell has become much more convoluted due to the addition of supplementary features over RNNs. This further lead to greater runtimes. With the rise of data mining and due to enormous amount of data being used for stock market prediction, there is a greater need for a model that can remember past information for a longer time than LSTMs. CNNs on the other hand are one of the most popular models in use today and although they can detect important features without any human supervision, they require lots of training data to process and train the neural network. Furthermore, they also require significant amount of computational resources compared to other models. Finally, the hybrids of LSTM and CNN models are prone to similar limitations as their standard counterparts.
+7. Future scope
+The method and stages involved in developing such a hybrid model serve as a well-illustrated model for a more complete forecasting of the financial market using time series data analysis, including high stock fluctuation. Which include forecasting with look-back and look-ahead windows of varying lengths to examine how performance changes when the model is given more information about the past but also asked to predict further into the future. Rapid fluctuation can also be estimated via sentiment analysis, which collects data from newspaper headlines and Twitter, allowing us to assess the stock market's high volatility. Additionally, supplementary sorts of social media platforms and online financial news, can be employed as data sources for analysing investor sentiment. By predicting their sentiment using Modified CNN and LSTM, we can forecast future market action. According to Twitter and financial news, people invest in FNO to diversify their portfolios. However, when a company is launching a new product or developing a prototype, this type of news has a significant impact on long-term investment in the company and portfolio development. Thus, estimating the company's vision solely through the analysis of sentiment or economic and financial factors will not always be beneficial. Combining the two will have a significant impact on the developing portfolio and generate enormous profits.
+8. Conclusion
+Deep Learning algorithms have a considerable influence on modern technology, particularly on the development of various time series-based prediction models. Thus, we review the ARIMA, LSTM, CNN, Hybrid LSTM and Hybrid CNN models and quantify their performance using error and accuracy calculations. The classic ARIMA model did not perform as well as another deep learning model in terms of predicting accuracy. The LSTM, CNN, and their hybrid models did not perform equally for every stock price. To develop an outstanding neural network, a large amount of training and testing data is required, which can be used in the Hybrid Model of CNN and LSTM to accurately predict stock prices. Essentially, the LSTM and Hybrid LSTM models outperform when it comes to predicting the future price of the stock, whilst the CNN and Hybrid CNN models outperform when it comes to predicting the stock's trend. The CNN-LSTM Hybrid Model is extremely accurate at forecasting the future trend and range of deflection of the stock price, which may be used to generate portfolios. Both hybrid CNN and LSTM models exhibit good accuracy when dealing with more frequent data because CNN outperformed due to its ability to capture rapid changes in the system, indicating that the hybrid model can be used for estimating intraday trading as well. Hence, the hybrid prediction strategy that we reviewed is both effective and accurate at forecasting future stock prices.
+The stock market is also get affected by the sentiments of the people. The Internet makes things easy to communicate and shares views, which also significantly impacts stock prices. Many social media like Facebook, Twitter, blogs, and financial news website affect the market trend, for that sentiment analysis plays an important role for intraday or short-term trading. For that Nature Language Processing is widely used for analysing the stock, like if the negative review of the stock will affect the future trend. Extracting data from sentiment analysis will feed into Deep Neural Network, further predicting the stock trend and price. This analysis also considerably impacts selecting the stock and making a huge profit in daily trading.
+
+
