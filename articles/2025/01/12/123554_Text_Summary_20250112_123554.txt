@@ -1,0 +1,52 @@
+Timestamp: 2025-01-12T12:35:54.749485
+Title: Text Summary 20250112_123554
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**核心思想总结：**
+
+1.  **ChatGPT 使用平台差异：**
+    *   网页端效果不如客户端，特别是在搜索功能方面。
+    *   网页端可能产生幻觉，而客户端能触发更准确的搜索。
+2.  **搜索指令的重要性：**
+    *   必须明确指定搜索英文信息源，才能获得更准确的结果。
+    *   对话prompt优先级高于记忆功能（RAG），但低于系统指令和对话prompt本身。
+3.  **操作建议：**
+    *   每次搜索都应手动输入 "search in english"。
+
+**结论：**
+
+*   **核心点：** 为了获得最佳结果，使用 ChatGPT 进行搜索时必须使用客户端，并且必须指定英文信息源。
+*   **根本点：** ChatGPT 的搜索能力受平台差异和 prompt 指令的影响，需要在操作中进行明确的控制。
+
+**总括框架：**
+
+此内容围绕在使用 ChatGPT 进行搜索时，用户应该注意的关键点展开，强调了平台差异和指令的重要性，从而获得更好的搜索结果。
+
+<Mermaid_Diagram>
+graph LR
+    A[ChatGPT 使用] --> B(平台差异);
+    B --> C{网页端};
+    B --> D{客户端};
+    C -- 搜索质量较低 --> E[可能产生幻觉];
+    D -- 搜索质量较高 --> F[触发搜索];
+    A --> G(搜索指令);
+    G --> H{必须指定英文信息源 "search in english"};
+    H --> I[对话 prompt 优先级高于 RAG];
+    I --> J[RAG 低于系统指令和对话 prompt];
+    A --> K[操作建议: 每次搜索都添加 "search in english"];
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+      style B fill:#ccf,stroke:#333,stroke-width:2px
+      style G fill:#ccf,stroke:#333,stroke-width:2px
+      style K fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+使用 ChatGPT 一定要记住的事：
+1、网页端的效果是低于客户端的；见图 1和图 2，同样的问题，客户端会触发搜索，网页端就随随便便给你生成一个幻觉（以前没这样，最近才这样）；
+2、使用ChatGPT search一定要指定搜索英文信息源：图 2和图 3，同样的问题，必须指定“search in english”。对话 prompt 的优先级高于记忆功能（本质是 rag，低于系统指令和对话 prompt）；
+
+search in english，这三个单词不麻烦，每次搜索时还是要敲一遍。
