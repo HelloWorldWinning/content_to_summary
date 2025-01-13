@@ -1,0 +1,60 @@
+Timestamp: 2025-01-13T15:49:48.937117
+Title: Text_Summary_20250113_154948
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Introduction:**
+    *  Stock group value prediction is complex due to its dynamic, nonlinear, and multifaceted nature.
+    * This paper focuses on predicting future stock market group values.
+
+**II. Methodology:**
+    * **Data:** 10 years of historical data from four Tehran Stock Exchange groups: diversified financials, petroleum, non-metallic minerals, and basic metals.
+    * **Prediction Horizons:** Predictions were made for 1, 2, 5, 10, 15, 20, and 30 days in advance.
+    * **Machine Learning Algorithms:**
+        * Tree-based models: decision tree, bagging, random forest, Adaboost, gradient boosting, XGBoost.
+        * Neural network models: ANN, RNN, LSTM.
+    * **Input Features:** 10 technical indicators used as input to all models.
+    * **Evaluation Metrics:** Predictions were evaluated using four unspecified metrics.
+
+**III. Results:**
+    * LSTM consistently showed the most accurate results and best model fit among all tested algorithms.
+    *  For tree-based methods, Adaboost, gradient boosting, and XGBoost showed high performance with competitive outcomes.
+
+**Core Point:** LSTM demonstrates superior accuracy and model fitting ability compared to other machine learning algorithms for predicting stock group values.
+
+**Fundamental Point:** The study highlights the effectiveness of advanced machine learning techniques, particularly LSTM, in addressing the complex challenge of stock group value prediction.
+
+**Overarching Framework:** This research uses a comparative machine learning approach to forecast stock group values using a range of techniques, establishing LSTM's superiority, and providing insights for financial analysis.
+
+<Mermaid_Diagram>
+graph LR
+    A[Introduction] --> B(Challenge: Stock Group Prediction);
+    B --> C(Complexity: Dynamics, Non-linearity);
+    A --> D[Focus: Future Stock Market Groups];
+    D --> E[Data Collection: Tehran Stock Exchange];
+    E --> F[Stock Groups: Diversified Financials, Petroleum, Non-Metallic Minerals, Basic Metals];
+    E --> G(Historical Data: 10 Years);
+    D --> H[Prediction Horizons: 1, 2, 5, 10, 15, 20, 30 Days];
+    I[Methodology] --> J{Machine Learning Algorithms};
+    J --> K[Tree-Based: Decision Tree, Bagging, Random Forest, Adaboost, Gradient Boosting, XGBoost];
+    J --> L[Neural Networks: ANN, RNN, LSTM];
+    I --> M[Input Features: 10 Technical Indicators];
+    I --> N[Evaluation Metrics: Four Metrics];
+    O[Results] --> P(LSTM: Most Accurate, Best Model Fit);
+    O --> Q(Tree-Based: Competitive Performance between Adaboost, Gradient Boosting, XGBoost);
+    R[Core Point: LSTM superior for Stock Group Prediction];
+     S[Fundamental Point: Machine Learning Effective, especially LSTM];
+      T[Overarching Framework: Comparative Machine Learning Forecast, LSTM Superiority]
+      P --> R
+      Q --> R
+      R-->S
+      S-->T
+</Mermaid_Diagram>
+
+
+Content:
+The prediction of stock groups values has always been attractive and challenging for shareholders due to its inherent dynamics, non-linearity, and complex nature. This paper concentrates on the future prediction of stock market groups. Four groups named diversified financials, petroleum, non-metallic minerals, and basic metals from Tehran stock exchange were chosen for experimental evaluations. Data were collected for the groups based on 10 years of historical records. The value predictions are created for 1, 2, 5, 10, 15, 20, and 30 days in advance. Various machine learning algorithms were utilized for prediction of future values of stock market groups. We employed decision tree, bagging, random forest, adaptive boosting (Adaboost), gradient boosting, and eXtreme gradient boosting (XGBoost), and artificial neural networks (ANN), recurrent neural network (RNN) and long short-term memory (LSTM). Ten technical indicators were selected as the inputs into each of the prediction models. Finally, the results of the predictions were presented for each technique based on four metrics. Among all algorithms used in this paper, LSTM shows more accurate results with the highest model fitting ability. In addition, for tree-based models, there is often an intense competition between Adaboost, Gradient Boosting, and XGBoost.
