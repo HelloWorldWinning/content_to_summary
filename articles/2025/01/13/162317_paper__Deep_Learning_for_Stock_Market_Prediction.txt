@@ -1,0 +1,520 @@
+Timestamp: 2025-01-13T16:23:17.893780
+Title: paper: Deep Learning for Stock Market Prediction
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Q1. Key discoveries/results:**
+
+*   LSTM outperformed other models with the lowest error rates (MAPE: 0.60-1.52%).
+*   Among tree-based models, AdaBoost generally performed best, followed closely by Gradient Boosting and XGBoost.
+*   Tree-based models performance ranking: AdaBoost > Gradient Boosting ≈ XGBoost > Random Forest > Bagging > Decision Tree
+*   Decision Tree had the lowest runtime.
+*   LSTM, while having the best performance, also had the highest runtime compared to other methods
+*   ANN generally had the worst forecasting performance.
+*   Deep learning models (RNN and LSTM) demonstrate a strong ability to predict stock prices.
+
+**Q2.  Important points for better understanding:**
+
+*   **Data Preprocessing:** The importance of data cleaning (outlier removal using IQR) and normalization (rescaling to 0-1 range) was emphasized in preparing the data for model training.
+*   **Technical Indicators:** The models used 10 technical indicators (SMA, WMA, MOM, STCK, STCD, LWR, MACD, ADO, RSI, CCI) as input features derived from historical stock prices, which are detailed in the paper. Understanding these indicators is helpful.
+*   **Model Parameters:** Parameter tuning for each model is crucial for optimization, and the chosen parameters are provided for reference.
+*   **Evaluation Metrics:** The study utilized four key metrics (MAPE, MAE, RRMSE, MSE) to evaluate model performance. Understanding these metrics is necessary to assess the research findings.
+*   **Dataset Specificity:** The unique characteristics of the Tehran Stock Exchange (e.g., price limitation of ±5%) influence the predictability of the data. This highlights the importance of understanding the domain specific attributes.
+*   **Ensemble Methods & Deep Learning:** The paper demonstrates the power of ensemble learning (boosting and bagging) and deep learning (RNN and LSTM) for time-series prediction.
+
+**Q5. Models used by the author(s):**
+
+The authors used:
+
+*   **Tree-based models:** Decision Tree, Bagging, Random Forest, AdaBoost, Gradient Boosting, XGBoost.
+*   **Neural Network models:** Artificial Neural Network (ANN), Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM).
+
+**Q6. CNN usage:**
+While the paper discusses CNN usage in other research related to stock market prediction in its literature review, it did not directly employ CNN in its own experiments. The paper focuses on tree-based models, ANN, RNN, and LSTM.
+
+**Summary:**
+*   **Outline:**
+    1.  **Introduction**: Stock market prediction is a challenging problem due to inherent complexities.
+    2.  **Methodology**: Explored tree-based models, ANN, RNN, and LSTM for predicting stock market group values.
+    3.  **Data**: Used 10 years of Tehran stock exchange data with 10 technical indicators as input features after data preprocessing.
+    4.  **Evaluation**: Utilized MAPE, MAE, RRMSE, and MSE to assess model performance.
+    5.  **Results**: LSTM performed best overall with lowest error rates; tree-based models ranked as: AdaBoost > Gradient Boosting ≈ XGBoost > Random Forest > Bagging > Decision Tree; ANN was least effective, CNN is not directly employed.
+    6. **Conclusion**: LSTM is the superior model despite high runtime.
+
+*   **Core Point:** LSTM models demonstrate the highest accuracy in predicting stock market group values compared to other methods, despite their higher computational cost.
+
+*   **Fundamental Point:** Effective stock market prediction relies on leveraging advanced machine learning techniques, particularly deep learning models like LSTM, but with careful consideration of computational trade-offs.
+
+*   **Overarching Framework:**
+    The paper establishes a clear framework using machine learning to address time-series forecasting in the financial domain. This is accomplished through a comparative analysis of various methods including tree-based models and deep learning methods, which are trained, tested and evaluated.
+
+<Mermaid_Diagram>
+graph LR
+    A[Stock Market Prediction Problem] --> B(Data Collection & Preprocessing);
+    B --> C{Technical Indicators};
+    C --> D[Decision Tree];
+    C --> E[Bagging];
+    C --> F[Random Forest];
+     C --> G[AdaBoost];
+     C --> H[Gradient Boosting];
+     C --> I[XGBoost];
+   C -->J[ANN];
+    C-->K[RNN];
+     C-->L[LSTM];
+   D-->M[Performance Evaluation];
+     E-->M;
+     F-->M;
+      G-->M;
+       H-->M;
+        I-->M;
+     J-->M;
+      K-->M;
+     L-->M;
+    M --> N{Evaluation Metrics (MAPE, MAE, RRMSE, MSE)};
+    N --> O[Results Analysis];
+    O --> P(LSTM Best Performance);
+     O --> Q(Tree based model Ranking: AdaBoost>Gradient Boosting ≈ XGBoost > Random Forest > Bagging > Decision Tree);
+      O-->R(ANN lowest performace);
+      O-->S(LSTM Highest Runtime);
+    P --> T[Conclusion: LSTM is the top model for stock prediction];
+    T --> U[Future Research];
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+   style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+       style M fill:#ccf,stroke:#333,stroke-width:2px
+     style N fill:#ccf,stroke:#333,stroke-width:2px
+     style O fill:#ccf,stroke:#333,stroke-width:2px
+     style T fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+paper: Deep Learning for Stock Market Prediction
+
+LSTM performed best overall with lowest error rates (MAPE: 0.60-1.52%)
+Tree-based models performance ranking: AdaBoost > Gradient Boosting ≈ XGBoost > Random Forest > Bagging > Decision Tree
+
+
+<Paper>
+Deep Learning for Stock Market Prediction
+
+
+https://doi.org/10.3390/e22080840
+
+Deep Learning for Stock Market Prediction
+Open AccessEditor’s ChoiceArticle
+
+by
+M. Nabipour
+
+1ORCID,
+P. Nayyeri
+
+2,
+H. Jabani
+
+3,
+A. Mosavi
+
+4,5,*ORCID,
+E. Salwana
+
+6 and
+Shahab S.
+
+7,*ORCID
+1
+
+Faculty of Mechanical Engineering, Tarbiat Modares University, Tehran 14115-143, Iran
+
+2
+
+School of Mechanical Engineering, College of Engineering, University of Tehran, Tehran 1439956153, Iran
+
+3
+
+Department of Economics, Payame Noor University, West Tehran Branch, Tehran 1455643183, Iran
+
+4
+
+Faculty of Civil Engineering, Technische Universität Dresden, 01069 Dresden, Germany
+
+5
+
+Department of Informatics, J. Selye University, 94501 Komarno, Slovakia
+
+6
+
+Institute of IR4.0, Universiti Kebangsaan Malaysia, Bangi 43600, Malaysia
+
+7
+
+Institute of Research and Development, Duy Tan University, Da Nang 550000, Vietnam
+
+*
+
+Authors to whom correspondence should be addressed.
+
+Entropy 2020, 22(8), 840; https://doi.org/10.3390/e22080840
+Submission received: 23 June 2020 / Revised: 27 July 2020 / Accepted: 28 July 2020 / Published: 30 July 2020
+
+(This article belongs to the Special Issue Information Transfer in Multilayer/Deep Architectures)
+Abstract
+
+The prediction of stock groups values has always been attractive and challenging for shareholders due to its inherent dynamics, non-linearity, and complex nature. This paper concentrates on the future prediction of stock market groups. Four groups named diversified financials, petroleum, non-metallic minerals, and basic metals from Tehran stock exchange were chosen for experimental evaluations. Data were collected for the groups based on 10 years of historical records. The value predictions are created for 1, 2, 5, 10, 15, 20, and 30 days in advance. Various machine learning algorithms were utilized for prediction of future values of stock market groups. We employed decision tree, bagging, random forest, adaptive boosting (Adaboost), gradient boosting, and eXtreme gradient boosting (XGBoost), and artificial neural networks (ANN), recurrent neural network (RNN) and long short-term memory (LSTM). Ten technical indicators were selected as the inputs into each of the prediction models. Finally, the results of the predictions were presented for each technique based on four metrics. Among all algorithms used in this paper, LSTM shows more accurate results with the highest model fitting ability. In addition, for tree-based models, there is often an intense competition between Adaboost, Gradient Boosting, and XGBoost.
+
+Keywords:
+
+stock market prediction; machine learning; regression analysis; tree-based methods; deep learning; long short-term memory; LSTM; business intelligence; finance; stock market; financial forecast; information economics; economics; information science
+1. Introduction
+
+The prediction process of stock values is always a challenging problem [1] because of its long-term unpredictable nature. The dated market hypothesis believes that it is impossible to predict stock values and that stocks behave randomly, but recent technical analyses show that most stocks values are reflected in previous records; therefore the movement trends are vital to predict values effectively [2]. Moreover, stock market groups and movements are affected by several economic factors such as political events, general economic conditions, commodity price index, investors’ expectations, movements of other stock markets, the psychology of investors, etc. [3]. The value of stock groups is computed with high market capitalization. There are different technical parameters to obtain statistical data from the value of stock prices [4]. Generally, stock indices are gained from prices of stocks with high market investment and they often give an estimation of the economic status in each country. For example, findings prove that economic growth in countries is positively impacted by the stock market capitalization [5]. The nature of the stock values movement is ambiguous and makes investments risky for investors. In addition, it is usually difficult to detect the market status for governments. Indeed, the stock values are generally dynamic, non-parametric, and non-linear; therefore, they often cause the weak performance of the statistical models and disability to predict the accurate values and movements [6,7].
+Popular theories suggest that stock markets are essentially a random walk, especially when it comes to the Iranian stock market, which comes with some rules of the close price of the previous day. Most conventional time series prediction methods are based on stationary trends; hence the prediction of stock prices deal with inherent difficulty. In addition, predicting stock prices is a challenging problem in itself because of the number of variables that are involved. In short term, the market behaves similar to a voting machine, but in the longer term, it acts similar to a weighing machine and hence there is scope for predicting the market movements for a longer timeframe [8]. Machine learning (ML) is the most powerful tool which includes different algorithms to effectively develop their performance on a certain case study. It is a common belief that ML has a significant ability to identify valid information and detecting patterns from the dataset [9]. In contrast with the traditional methods in the ML area, the ensemble models are a machine learning-based way in which some common algorithms are used to work out a particular problem, and have been confirmed to outperform each of the methods when predicting time series [10,11,12]. For prediction problems in the machine learning area, boosting and bagging are effective and popular algorithms among ensemble ways. There is recent progress of tree-based models with introducing gradient boosting and XGBoost algorithms, which have been significantly employed by top data scientists in competitions. Indeed, a modern trend in ML, which is named deep learning (DL), can deem a deep nonlinear topology in its specific structure, and has an excellent ability from the financial time series to extract relevant information [13]. Contrary to a simple artificial neural network, recurrent neural networks (RNNs) have achieved considerable success in the financial area on account of their great performance [14,15]. It is clear that the prediction process of the stock market is not only related to the current information, but the earlier data have a vital role, so the training will be insufficient if only the data are used at the latest time. RNN can employ the network to sustain the memory of recent events and build connections between each unit of a network, so, it is completely proper for the economic predictions [16,17]. Long short-term memory (LSTM) is an improved subset of the RNN method that used in the deep learning area. LSTM has three different gates to remove the problems in RNN cells and can also process single data points or whole sequences of data.
+In academic fields, many studies have been conducted on market prediction ways. Long et al. [18] examined a deep neural network model with public market data and the transaction records to evaluate stock price movement. The experimental results showed that bidirectional LSTM could predict the stock price for financial decisions, and the method acquired the best performance compared to other prediction models. Pang et al. [19] tried to improve an innovative neural network method to get better stock market predictions. They proposed LSTM with an embedded layer and LSTM with an automatic encoder to evaluate the stock market movement. The results showed that the deep LSTM with embedded layer outperformed and the model’s accuracies for the Shanghai composite index are 57.2% and 56.9%, respectively. Kelotra and Pandey [20] used the deep convolutional LSTM model as a predictor to effectively examine stock market movements. The model was trained with a Rider-based monarch butterfly optimization algorithm and they achieved a minimal MSE and RMSE of 7.2487 and 2.6923. Bouktif et al. [21] investigated the predictability of the stock market trend direction with an improved way of sentiments analysis. As the final result, the proposed method outperformed adequately and predicted stock trends with higher accuracy of 60% in comparison with other sentiment-based stock market prediction methods involving deep learning. Zhong and Enke [22] proposed a big comprehensive data of the SPDR S&P 500 ETF to evaluate return direction with 60 economic and financial features. Deep neural networks and artificial neural networks (ANN) were employed via principal component analysis (PCA) to predict the daily future of stock market index returns. The results showed that deep neural networks were superior as classifiers based on PCA-represented data compared to others. Das et al. [23] implemented the feature optimization through considering the social and biochemical aspects of the firefly method. In their approach, they involved the objective value selection in the evolutionary context. The results indicated that firefly, with an evolutionary framework applied to the Online Sequential Extreme Learning Machine (OSELM) prediction method, was the best model among other experimented ones. Hoseinzade and Haratizadeh [24] proposed a Convolutional Neural Networks (CNNs) framework, which can be applied to various data collections (involving different markets) to explore features for predicting the future movement of the markets. From the results, remarkable improvement in prediction’s performance in comparison with other recent baseline methods was achieved. Krishna Kumar and Haider [25] compared the performance of single classifiers with a multi-level classifier, which was a hybrid of machine learning techniques (such as decision tree, support vector machine, and logistic regression classifier). The experimental results revealed that the multi-level classifiers outperformed the other works and led to a more accurate model with the best predictive ability, roughly 10 to 12% growth inaccuracy. Chung and Shin [26] applied one of the deep learning methods (CNNs) for predicting the stock market movement. In addition, the Genetic algorithm (GA) was employed to optimize the parameters of the CNN method systematically, and results showed that the GA-CNN outperformed the comparative models as the hybrid method of GA and CNN. Sim et al. [27] proposed CNN to predict stock prices as a new learning method. The study aimed to solve two problems, using CNNs and optimizing them for stock market data. Wen et al. [28] applied the CNN algorithm on noisy temporal series by frequent patterns as a new method. The results proved that the method was adequately effective and outperformed traditional signal process methods with a 4 to 7% accuracy improvement.
+Rekha et al. [29] employed CNN and RNN to make a comparison between two algorithms’ results and actual results via stock market data. Lee et al. [30] used CNNs to predict the global stock market and then trained and tested their model with data from other countries. The results demonstrated that the model could be trained on the relatively large data and tested on the small markets where there was not enough amount of data. Liu et al. [31] investigated a numerical-based attention method with dual sources stock market data to find the complementarity between numerical data and news in the prediction of stock prices. As a result, the method filtered noises effectively and outperformed prior models in dual sources stock prediction. Baek and Kim [32] proposed an approach for stock market index forecasting, which included a prediction LSTM module and an overfitting prevention LSTM module. The results confirmed that the proposed model had an excellent forecasting accuracy compared to a model without an overfitting prevention LSTM module. Chung and Shin [33] employed a hybrid approach of LSTM and GA to improve a novel stock market prediction model. The final results showed that the hybrid model of the LSTM network and GA was superior in comparison with the benchmark model. Chen et al. [34] used three neural networks, the radial basis function neural network, the extreme learning machine, and three traditional artificial neural networks, to evaluate their performance on high-frequency data of the stock market. Their results indicated that deep learning methods got transaction data from the nonlinear features and could predict the future of the market powerfully. Zhou et al. [35] applied LSTM and CNN on high-frequency data from the stock market with the approach of rolling partition training and testing set to evaluate the update cycle effect on the performance of models. Based on extensive experimental results, Models could effectively reduce errors and increase prediction accuracy. Chong et al. [36] tried to examine the performance of deep learning algorithms for stock market prediction with three unsupervised feature extraction ways, PCA, restricted Boltzmann machine and auto encoder. Final results with significant improvement suggested that additional information could be extracted by deep neural networks from the autoregressive model.
+Long et al. [37] suggested an innovative end-to-end model named multi-filters neural network (MFNN) specifically for price prediction task and feature extraction on financial time series data. Their results indicated that the network outperformed common machine learning methods, statistical models, and convolutional, recurrent, and LSTM networks in terms of accuracy, stability and profitability. Moews et al. [38] proposed employing deep neural networks that use step-wise linear regressions in the preparatory feature engineering with exponential smoothing for this task, with regression slopes as movement strength indicators for a specified time interval. The final results showed the feasibility of the suggested method, with advanced accuracies and accounting for the statistical importance of the results for additional validation, as well as prominent implications for modern economics. Garcia et al. [39] examined the effect of financial indicators on the German DAX-30 stock index by employing a hybrid fuzzy neural network to forecast the one-day ahead direction of the index with various methods. Their experimental works demonstrated that the fall in the dimension through the factorial analysis produces less risky and profitable strategies. Cervelló-Royo and Guijarro [40] compared the performance of four machine learning models to validate the predicting capability of technical indicators in the technological NASDAQ index. The results showed that the random forest outperformed the other models deemed in their study, being able to predict the 10-days ahead market movement, with a normal accuracy of 80%. Konstantinos et al. [41] suggested an ensemble prediction combination method as an alternative approach to forecast time series. The ensemble learning technique combined various learning models. Their results indicated the effectiveness proposed ensemble learning way, and the comparative analysis showed adequate evidence that the method could be used successfully to conduct prediction based on multivariate time series problems.
+Overall, all researchers believe that stock price prediction and modeling have been challenging problems for study and speculators due to noisy and non-stationary characteristics of data. There is a minor difference between papers for choosing the most effective indicators for modeling and predicting the future of stock markets. Feature selection can be an important part of studies to achieve better accuracy; however, all studies indicate that uncertainty is an inherent part of these forecasting tasks because of fundamental variables. Employing new machine learning and deep learning methods such as recent ensemble learning models, CNNs and RNNs with high prediction ability is a significant advantage of recent studies that show the forecasting potential of these methods in comparison with traditional and common approaches such as statistical analyses.
+
+Iran’s stock market has been highly popular recently because of the arising growth of Tehran Stock Exchange Dividend and Price Index-TEDPIX in the last decades, and one of the reasons is that most of the state-owned firms are being privatized under the general policies of article 44 in the Iranian constitution, and people are allowed to buy the shares of newly privatized firms under the specific circumstances. This market has some specific attributes in comparison with other country’s stock markets, one of them being dealing a price limitation of ±5% of the opening price of the day for every index. This issue hinders the abnormal market fluctuation and scatters market shocks, political issues, etc. over a specific time and could make the market smoother and more predictable. Trading takes place through licensed registered private brokers of exchange organization and the opening price of the next day is through the defined base-volume of the companies and transaction volume as well. However, the deficiency of valuable papers on this market to predict future values with machine learning models is clear.
+
+This study concentrates on the process of future value prediction for stock market groups, which are crucial for investors. Despite significant development in Iran’s stock market in recent years, there has been not enough research on the stock price predictions and movements using novel machine learning methods. This paper aims to compare the performance of some regressors which applied on fluctuating data to evaluate predictor models, and the predictions are evaluated for 1, 2, 5, 10, 15, 20, and 30 days in advance. In addition, with tuning parameters, we try to reduce errors and increase the accuracy of models.
+
+Ensemble learning models are broadly employed nowadays for its predictive performance progress. These methods combine multiple forecasts from one or multiple methods to improve the accuracy of simple prediction and to prevent possible overfitting problems. In addition, ANNs are universal approximators and flexible computing frameworks which can be used to an extensive range of time series predicting problems with a great degree of accuracy. Therefore, by considering the literature review, this research work examines the predictability of a set of cutting-edge machine learning methods, which involves tree-based models and deep learning methods. Employing the whole of tree-based methods, RNN, and LSTM techniques for regression problems and comparing their performance in Tehran stock exchange is a recent research activity presented in this study. This paper includes three different sections. At first, through the methodology section, the evolution of tree-based models with the introduction of each one is presented. Besides, the basic structure of neural networks and recurrent ones are described briefly. In the research data section, 10 technical indicators are shown in detail with selected methods parameters. At the final step, after introducing three regression metrics, machine learning results are reported for each group, and the model’s behavior is compared.
+
+2. Materials and Methods
+
+2.1. Tree-Based Models
+
+Since the set of splitting rules employed to differently divide the predictor space can be summarized in a tree, these types of models are known as decision-tree methods. Figure 1, adapted from [42,43] shows the evolution of tree-based algorithms over several years and the following sections introduce them.
+Figure 1. The evolution of tree-based methods.
+
+Decision Trees are a popular supervised learning technique used for classification and regression jobs. The purpose is to make a model that predicts a target value by learning easy decision rules formed from the data features. There are some advantages of using this method, such as it being easy to understand and interpret or able to work out problems with multi-outputs; on the contrary, creating over-complex trees that result in overfitting is a fairly common disadvantage. A schematic illustration of the Decision tree is shown in Figure 2, adapted from [43].
+Figure 2. Schematic illustration of decision tree
+
+A Bagging model (as a regressor model) is an ensemble estimator that fits each basic regressor on random subsets of the dataset and next accumulate their single predictions, either by voting or by averaging, to make the final prediction. This method is a meta-estimator and can commonly be employed as an approach to decrease the variance of an estimator such as a decision tree by using randomization into its construction procedure and then creating an ensemble out of it. In this method, samples are drawn with replacement and predictions and obtained through a majority voting mechanism.
+
+The random forest model is created by a great number of decision trees. This method simply averages the prediction result of trees, which is called a forest. In addition, this model has three random concepts; randomly choosing training data when making trees, selecting some subsets of features when splitting nodes, and considering only a subset of all features for splitting each node in each simple decision tree. During training data in a random forest, each tree learns from a random sample of the data points. A schematic illustration of the random forest, adapted from [43], is indicated in Figure 3.
+Figure 3. Schematic illustration of the random forest.
+
+The boosting method refers to a group of algorithms that converts weak learners to a powerful learner. The method is an ensemble for developing the model predictions of any learning algorithm. The concept of boosting is to sequentially train weak learners to correct their past performance. AdaBoost is a meta-estimator that starts by fitting a model on the main dataset and then fits additional copies of the model on a similar dataset. During the process, the samples’ weights are adapted based on the current prediction error, so subsequent models concentrate more on difficult items. Gradient Boosting method is similar to AdaBoost when it sequentially adds predictors to an ensemble model, each of them correcting its past performance. In contrast with AdaBoost, Gradient Boosting fits a new predictor of the residual errors (made by the prior predictor) using gradient descent to find the failure in the predictions of the previous learner. Overall, the final model is capable of employing the base model to decreases errors over time.
+
+The XGBoost is an ensemble tree method (similar to Gradient Boosting) and the method applies the principle of boosting for weak learners. However, XGBoost was introduced for better speed and performance. In-built cross-validation ability, efficient handling of missing data, regularization for avoiding overfitting, catch awareness, tree pruning, and parallelized tree building are common advantages of the XGBoost algorithm.
+
+2.2. Artificial Neural Networks
+
+ANNs are single or multi-layer neural nets that are fully connected. Figure 4 shows a sample of ANN with an input and output layer and also two hidden layers, adapted from [43]. In a layer, each node is connected to every other node in the next layer. With an increase in the number of hidden layers, it is possible to make the network deeper.
+Figure 4. Schematic illustration of artificial neural networks
+
+Figure 5 is shown for each of the hidden or output nodes, while a node takes the weighted sum of the inputs, added to a bias value, and passes it through an activation function (usually a non-linear function). The result is the output of the node that becomes another node input for the next layer. The procedure moves from the input to the output, and the final output is determined by doing this process for all nodes. The learning process of weights and biases associated with all nodes for training the neural network.
+Figure 5. An illustration of relationship between inputs and output for ANN.
+
+Equation (1) shows the relationship between nodes, weights, and biases [44]. The weighted sum of inputs for a layer passed through a non-linear activation function to another node in the next layer. It can be interpreted as a vector, where X1, X2, …, and Xn are inputs, w1, w2, …, and wn are weights respectively, n is the number of the input for the final node, f is activation function and z is the output.
+Z
+=
+f
+ 
+(
+x
+.
+w
++
+b
+)
+=
+f
+ 
+(
+∑
+i
+=
+1
+n
+x
+i
+T
+w
+i
++
+b
+)
+.
+
+(1)
+
+By calculating weights/biases, the training process is completed by some rules: initialize the weights/biases for all the nodes randomly, performing a forward pass by the current weights/biases and calculating each node output, comparing the final output with the actual target, and modifying the weights/biases consequently by gradient descent with the backward pass, generally known as backpropagation algorithm.
+
+RNN is a very prominent version of neural networks extensively used in various processes. In a common neural network, the input is processed through several layers, and output is made. It is assumed that two consecutive inputs are independent of each other. However, the situation is not correct in all processes. For example, for the prediction of the stock market at a certain time, it is crucial to consider the previous observations.
+
+Simple RNN has multiple neurons to create a network. Each neuron has a time-varying activation function and each connection between nodes has a real-valued weight that can be modified at each step. According to general architecture, the output of the node (at time t − 1) will be passed to the input (at time t) and add the data of itself (at time t) to make the output (at time t); recurrently exploiting the neuron node to flow multiple node elements to create RNN. Figure 6, adapted from [43] shows a simple architecture of RNN. Furthermore, Equations (2) and (3) indicate the recursive formulas of RNN [45].
+ht = tanh (Wtht−1 + Wxxt),
+
+(2)
+
+yt = Wyht,
+
+(3)
+
+where yt, ht, xt, and Wh are output vector, hidden layer vector, input vector, and weighting matrix respectively
+Figure 6. An illustration of recurrent network.
+
+LSTM is a specific kind of RNN with a wide range of applications similar to time series analysis, document classification, speech, and voice recognition. In contrast with feedforward ANNs, the predictions made by RNNs are dependent on previous estimations. In real, RNNs are not employed extensively because they have a few deficiencies which cause impractical evaluations. The difference between LSTM and RNN is that every neuron in LSTM is a memory cell. The LSTM links the prior information to the current neuron. Every neuron has three gates (input gate, forget gate, and output gate). By the internal gate, the LSTM is able to solve the long-term dependence problem of the data. LSTM architecture includes forget gate, input gate, and output gate. The forget gate controls discarding information from the cell, and Equations (4) and (5) show its related formulas where ht−1 is output at the prior time (t − 1), and xt is input at the current time (t) into Sigmoid function (S(t)). All W and b are the weight matrices and bias vectors that require to be learned during the training process. ft defines how much information will be remembered or forgotten. The input gate defines which new information remember in cell state by Equations (5)–(7). the value of it is generated to determine how much new information cell state need to be remembered. A tanh function gains an election message to be added to the cell state by inputting the output (ht−1) at the prior time (t − 1) and adding the current time t input information (xt). Ct gets the updated information that must be added to the cell state (Equation (8)). The output gate defines which information will be output in cell state. The value of ot is between 0 and 1; which is employed to indicate how many cells state information that need to output (Equation (9)). The result of ht is the LSTM block’s output information at time t (Equation (10)) [45].
+ft = σ (Wf · [ht−1, xt] + bf)
+
+(4)
+
+S
+(
+t
+)
+=
+1
+1
++
+e
+−
+t
+
+(5)
+
+it = σ(Wi · [ht−1, xt] + bi)
+
+(6)
+
+Ĉt = tanh(Wc · [ht−1, xt] + bc)
+
+(7)
+
+Ct = ft × Ct−1 + it × Ĉt
+
+(8)
+
+ot = σ(Wo · [ht−1, xt] + bo)
+
+(9)
+
+ht = ot × tanh(Ct)
+
+(10)
+
+3. Research Data
+
+This study aims to make a short run prediction for the emerging Iranian stock market and employ data from November 2009 to November 2019 (10 years) of four stock market groups, Diversified Financials, Petroleum, Non-metallic minerals, and Basic metals, which are completely generous. From the opening, close, low high, and prices of the groups, 10 technical indicators are calculated. The data for this study is supplied from the online repository of the Tehran Securities Exchange Technology Management Co (TSETMC) [46]. Before using information for the training process, it is vital to take a preprocessing step. We employ data cleaning, which is the process of detecting and correcting inaccurate records from a dataset and refers to identifying inaccurate or irrelevant parts of the data and then replacing, modifying, or deleting the dirty data. The interquartile range (IQR score) is a measure of statistical dispersion and is robust against outliers, and this method is used to detect outliers and modify the dataset. Indeed, as an important point, to prevent the effect of the larger value of an indicator on the smaller ones, the values of 10 technical indicators for all groups are normalized independently. Data normalization refers to rescaling actual numeric features into a 0 to 1 range and is employed in machine learning to create a training model less sensitive to the scale of variables. Table 1 indicates all the technical indicators, which are employed as input values based on domain experts and previous studies [47,48,49]; the input values for calculating indicators in the table are opening, high, low and closing prices in each trading day; “t” means current time, and “t + 1” and “t − 1” mean one day ahead and one day before, respectively. Table 2 shows the summary statistics of indicators for the groups.
+Table 1. Selected technical indicators (n is 10 here).
+
+Table 2. Summary statistics of indicators.
+
+SMA is calculated by the average of prices in a selected range, and this indicator can help to determine if a price will continue its trend. WMA gives us a weighted average of the last n values, where the weighting falls with each prior price. MOM calculates the speed of the rise or falls in stock prices and it is a very useful indicator of weakness or strength in evaluating prices. STCK is a momentum indicator over a particular period of time to compare a certain closing price of a stock to its price range. The oscillator sensitivity to market trends can be reduced by modifying that time period or by a moving average of results. STCD measures the relative position of the closing prices in comparison with the amplitude of price oscillations in a certain period. This indicator is based on the assumption that as prices increase, the closing price tends towards the values which belong to the upper part of the area of price movements in the preceding period and when prices decrease, the opposite is correct. LWR is a type of momentum indicator which evaluates oversold and overbought levels. Sometimes LWR is used to find exit and entry times in the stock market. MACD is another type of momentum indicator which indicates the relationship between two moving averages of a share’s price. Traders can usually use it to buy the stock when the MACD crosses above its signal line and sell the shares when the MACD crosses below the signal line. ADO is usually used to find out the flow of money into or out of stock. ADO line is normally employed by traders seeking to determine buying or selling time of stock or verify the strength of a trend. RSI is a momentum indicator that evaluates the magnitude of recent value changes to assess oversold or overbought conditions for stock prices. RSI is showed as an oscillator (a line graph which moves between two extremes) and moves between 0 to 100. CCI is employed as a momentum-based oscillator to determine when a stock price is reaching a condition of being oversold or overbought. CCI also measures the difference between the historical average price and the current price. The indicator determines the time of entry or exit for traders by providing trade signals.
+
+Dataset used for all models—except RNN and LSTM models—are identical. There are 10 features (10 technical indicators) and one target (stock index of the group) for each sample of the dataset. As mentioned, all 10 features are normalized independently before being used to fit models and improve the performance of algorithms. Since the goal is developing models to predict stock group values, datasets are rearranged to incorporate the 10 features of each day to the target value of n-days ahead. In this study, models are evaluated by training them to predict the target value for 1, 2, 5, 10, 15, 20, and 30 days ahead. There are several parameters related to each model, but we tried to choose the most effective ones concerning our experimental works and prior studies. For tree-based models, several trees (ntrees) were the design parameter while other common parameters are set identical between all models. Parameters and their values for each model are listed in Table 3.
+Table 3. Tree-based models parameters.
+
+The number of trees to perform tree-based models is fairly robust to over-fitting, so a large number typically results in better prediction. The maximum depth of the individual regression estimators limits the number of nodes in the tree. The best value depends on the interaction of the input variables. In machine learning, the learning rate is an important parameter in an optimization method that finds out the step size at each iteration while moving toward a minimum of a loss function. For RNN and LSTM networks, because of their time-series behavior, datasets are arranged to include the features of more than just one day. While for the ANN model, all parameters but epochs are constant; for RNN and LSTM models, the variable parameters are several days included in the training dataset and respective epochs. By increasing the number of days in the training set, the number of epochs is increased to train the models with an adequate number of epochs. Table 4 presents all valid values for the parameters of each model. For example, if five days are included in the training set for ANN, RNN, or LSTM models, the number of epochs is set to 300 to thoroughly train the models.
+Table 4. Neural network-based models parameters.
+
+The activation function of a node in ANNs describes the output of that node given an input or set of inputs. Optimizers are methods employed to change the attributes of ANNs, such as learning rate and weights to reduce the losses. An epoch is a term used in ANNs and shows the number of passes of the entire training dataset the ANN model has completed.
+
+4. Evaluation Measures
+
+In this section four metrics used in the study are introduced.
+
+4.1. Mean Absolute Percentage Error
+
+Mean Absolute Percentage Error (MAPE) is often employed to assess the performance of the prediction methods. MAPE is also a measure of prediction accuracy for forecasting methods in the machine learning area, it commonly presents accuracy as a percentage. Equation (11) shows its formula [50].
+MAPE
+=
+1
+n
+∑
+t
+=
+1
+n
+|
+A
+t
+−
+F
+t
+A
+t
+|
+ 
+×
+ 
+100
+,
+
+(11)
+
+where At is the actual value and Ft is the forecast value. In the formula, the absolute value of the difference between those is divided by At. The absolute value is summed for every forecasted value and divided by the number of data. Finally, the percentage error is made by multiplying to 100.
+4.2. Mean Absolute Error
+
+Mean absolute error (MAE) is a measure of the difference between two values. MAE is an average of the difference between the prediction and the actual values. MAE is a usual measure of prediction error for regression analysis in the machine learning area. The formula is shown in Equation (12) [50,51].
+MAE
+=
+1
+n
+∑
+t
+=
+1
+n
+|
+A
+t
+−
+F
+t
+|
+,
+
+(12)
+
+where At is the true value and Ft is the prediction value. In the formula, the absolute value of the difference between those is divided by n (number of samples) and summed for every forecasted value.
+4.3. Relative Root Mean Square Error
+
+Root Mean Square Error (RMSE) is the standard deviation of the prediction errors in regression work. Prediction errors or residuals show the distance between real values and a prediction model, and how they are spread out around the model. The metric indicates how data is concentrated near the best fitting model. RMSE is the square root of the average of squared differences between predictions and actual observations. Relative Root Mean Square Error (RRMSE) is similar to RMSE and this takes the total squared error and normalizes it by dividing by the total squared error of the predictor model. The formula is shown in Equation (13) [50,51].
+RRMSE
+=
+1
+n
+∑
+t
+=
+1
+n
+(
+ 
+A
+t
+−
+F
+t
+A
+t
+)
+2
+,
+
+(13)
+
+where At is the observed value, Ft is the prediction value and n is the number of samples.
+4.4. Mean Squared Error
+
+The Mean Squared Error (MSE) measures the quality of a predictors and its value is always non-negative (values closer to zero are better). The MSE is the second moment of the error (about the origin), and incorporates both the variance of the prediction model (how widely spread the predictions are from one data sample to another) and its bias (how close the average predicted value is from the observation). The formula is shown in Equation (14) [50].
+MSE
+=
+1
+n
+∑
+t
+=
+1
+n
+(
+A
+t
+−
+F
+t
+)
+2
+,
+
+(14)
+
+where At is the observed value, Ft is the prediction value and n is the number of samples.
+5. Results
+
+Six tree-based models namely Decision Tree, Bagging, Random Forest, Adaboost, Gradient Boosting, and XGBoost, and also three neural networks-based algorithms (ANN, RNN, and LSTM) are employed in the prediction of the four stock market groups. For the purpose, prediction experiments for 1, 2, 5, 10, 15, 20, and 30 days in advance of time are conducted. Results for Diversified Financials are depicted in Table 5, Table 6, Table 7, Table 8, Table 9, Table 10 and Table 11 for instance. For better understanding and reduction of the number of result tables, the average performance of algorithms for each group is demonstrated in Table 12, Table 13, Table 14 and Table 15, and also Table 16 shows the average runtime per sample for all models. It is prominent to note that a comprehensive number of experiments are performed for each of the groups and prediction models with various model parameters. The following tables show the best parameters where a minimum prediction error is obtained. Indeed, it is clear from the results that error values generally rise when prediction models are created for a greater number of days ahead. For example, MAPE values of XGBoost are 0.88, 1.14, 1.45, 1.77, 2.03, 2.30, and 2.48 respectively. However, it is possible to observe a less strict ascending trend in some cases (which was seen in previous studies similarly) due to deficiency in the prediction ability of some models in some special cases based on the main dataset.
+Table 5. Diversified financials one day ahead.
+
+Table 6. Diversified financials two days ahead.
+
+Table 7. Diversified financials five days ahead.
+
+Table 8. Diversified financials 10 days ahead.
+
+Table 9. Diversified financials 15 days ahead.
+
+Table 10. Diversified financials 20 days ahead.
+
+Table 11. Diversified financials 30 days ahead.
+
+Table 12. Average performance for diversified financials.
+
+Table 13. Average performance for Petroleum.
+
+Table 14. Average performance for Non-metallic minerals.
+
+Table 15. Average performance for Metals.
+
+Table 16. Average runtime per sample for all models.
+
+In this work, we use all of 10 technical indicators as 10 input features and the number of data is 2600. To prevent overfitting, we randomly split our main dataset into two parts, train data and test data, at the first step and then fit our models on the train data. Seventy percent of the main dataset (1820 data) is assigned to train data. Next, the models are used to predict future values and calculate metrics with test data (780 data). In addition, we employ regularization and validation data (20% of train data) to increase our accuracy and tune our hyperparameters during training (the training process for tree-based models and ANNs is different here). Figure 7 shows the performance of XGBoost for five days ahead of Diversified Financials as an example. The comparison between actual values and predicted values indicate the quality of modeling and the prediction task. It is important to note that the cases are not exactly consecutive trading days because we split our dataset randomly by shuffling.
+Figure 7. Performance of XGBoost for five days ahead of Diversified Financials.
+
+By deeming the literature, our result in this study is one of the most accurate predictions and it can be interpreted by the dataset and the performance of models. It is true that the process of training is totally important, but we believe that the role of the dataset is greater here. The dataset is relatively specific because of some rules in Tehran stock exchange. For example, the value change of each stock is limited to +5% and −5%, or the closing price of a stock is close to the opening price on the next trading day. These rules are learned by machine learning algorithms and then the models are able to significantly predict our dataset from Tehran stock exchange.
+
+Regarding the results of Diversified Financials as an example, Adaboost regressor and LSTM can predict the future prices well with normally 1.59% and 0.60% error; these values become more important when we know that the maximum range of changes is 10% (from −5% to +5%). So, with the specific dataset and powerful models, we still have noticeable errors, which indicate the effect of fundamental parameters. Fundamental analysis is a method of measuring a security’s intrinsic value by examining related economic and financial factors. This method of stock analysis is considered to be in contrast to technical analysis, which forecasts the direction of prices. Noticeably, most non-scientific factors such as policies, increase in tax etc. affect the groups in stock markets; for example, the pharmaceutical industries experience growth with Covid-19 at the present time.
+
+Based on extensive experimental works and reported values the following results are obtained:
+
+Among tree-based models
+
+Decision Tree always has the lowest rank for predictions because it is not an ensemble method (average of MAPE: 2.07, 2.70, 2.18, 1.41)
+
+For Diversified Financials and Petroleum, the best average performance belongs to Adaboost regressor (average of MAPE: 1.59 and 2.22)
+
+For Non-metallic minerals and Basic metals, there is a stiff competition between Adaboost regressor, Gradient Boosting regressor and XGBoost regressor
+
+Decision Tree has the lowest runtime and then Adaboost regressor is the fastest predictor (0.009 ms and 1.308 ms)
+
+The runtime of XGBoost is considerably more than other performers (up to 65%)
+
+Adaboost regressor is the best by considering accuracy, the strength of fitting and runtime all together
+
+Through neural networks
+
+ANN generally occupies the bottom for forecasting (average of MAPE: 3.86, 5.52, 4.67, 3.17)
+
+LSTM model outperforms RNN significantly with lower error values (for example in Diversified Financials, MAPE: 0.60 versus 1.85)
+
+The average runtime of LSTM is noticeably larger than RNN (802.902 ms versus 20.630 ms, roughly four times more)
+
+On the whole
+
+According to MAPE and RRMSE, the models are able to predict future values for Metals and Diversified Financials better than two other groups
+
+Deep learning methods (RNN and LSTM) indicate a powerful ability to predict stock market prices because of using a large number of epochs and values related to some days before.
+
+Based on RRMSE and MSE, the deep learning methods have a high ability to make the best fitting curve with the minimum distribution of residuals around it.
+
+The average runtime of deep learning models is high compared to others
+
+LSTM is powerfully the best model for prediction all stock market groups with the lowest error and the best ability to fit, but the problem is the great runtime
+
+In spite of noticeable efforts to find valuable studies on the same stock market, there is not any important paper to report, and this deficiency is one of the novelties of this research. We believe that this paper can be a baseline to compare for future studies.
+
+6. Conclusions
+
+For all investors, it is always necessary to predict stock market changes for detecting accurate profits and reducing potential mark risks. This study employed tree-based models (Decision Tree, Bagging, Random Forest, Adaboost, Gradient Boosting, and XGBoost) and neural networks (ANN, RNN, and LSTM) to correctly forecast the values of four stock market groups (Diversified Financials, Petroleum, Non-metallic minerals, and Basic metals) as a regression problem. The predictions were made for 1, 2, 5, 10, 15, 20, and 30 days ahead. As far as our belief and knowledge, this study is the most successful and recent research work that involves ensemble learning methods and deep learning algorithms for predicting stock groups as a popular application. To be more detailed, exponentially smoothed technical indicators and features were used as inputs for prediction. In this prediction problem, the methods were able to significantly advance their performance, and LSTM was the top performer in comparison with other techniques. Overall, as a logical conclusion, both tree-based and deep learning algorithms showed remarkable potential in regression problems to predict the future values of the Tehran stock exchange. Among all models, LSTM was our superior model for predicting all stock market groups with the lowest error and the best ability to fit (by average values of MAPE: 0.60, 1.18, 1.52 and 0.54), but the problem was the great runtime (80.902 ms per sample). As future work, we recommend using the algorithms on other stock markets or examining other hyperparameters effects on the final results.
+
+
+</Paper>
+
+------TEXT split------
+
+Below is the most relevant part in the Paper above, answer belowing questions as clear as possible:
+
+Q1.  key discoveries/results (avoid using excessive words.) ?
+Q2.  what else you think are very important to help me better master core ideas in the TEXT above.
+Q5.  what model do the author(s) use?
+Q6. if CNN is uesed in Paper , if so , how?
+
+
+
+
+
