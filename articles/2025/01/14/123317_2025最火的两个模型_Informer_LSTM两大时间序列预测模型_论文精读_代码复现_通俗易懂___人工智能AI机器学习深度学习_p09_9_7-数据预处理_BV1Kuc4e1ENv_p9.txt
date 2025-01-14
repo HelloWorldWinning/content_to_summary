@@ -1,0 +1,83 @@
+Timestamp: 2025-01-14T12:33:17.337525
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p09 9.7-数据预处理 BV1Kuc4e1ENv_p9
+URL: https://b23.tv/AapQqsF
+Status: success
+Duration: 8:03
+
+Description:
+**Summary:**
+
+**I. Core Ideas**
+
+  *   **Data Preprocessing:** The primary focus is on data preprocessing, specifically a normalization process applied to time series data within sliding windows.
+  *   **Normalization Method:** This normalization calculates the change of each data point relative to the first data point in its window, effectively transforming absolute values into relative changes (trends).
+  *   **Column-wise Operation:** This normalization is performed independently on each column (each feature) of the input data.
+  *   **Data Transformation:** The processed data is transformed from a windowed format to a column-based representation.
+  *   **Model Input and Output:** The model learns from these relative trends and also outputs relative trends. The model's output must be transformed back into the original scale using the initial data points.
+  *   **Windowed Predictions:** The system performs two types of predictions:
+      *   A sequence prediction where a sequence is predicted based on prior sequences.
+      *   A single-point prediction where each point is predicted based on preceding sequence data.
+  *   **Network Structure** The network structure remains largely unchanged except for the data preprocessing.
+    
+**II. Outlined Structure**
+    1.  **Data Loading and Windowing:**
+        *   Data is loaded and divided into sliding windows.
+    2. **Normalization:**
+         *   Each windowed data point is normalized relative to the first data point in the window.
+         *   This normalization process is applied separately to each feature (column) of data.
+         *   The core operation is to calculate the difference between the current value and the first value in the time window.
+    3.  **Data Formatting:**
+        *   The data is transposed to a column format after normalization.
+    4.  **Model Training:**
+        *   The model is trained on the transformed, normalized time series data.
+    5.  **Prediction:**
+         *   Model output is relative change.
+         *   Sequence and single-point predictions are generated.
+         *   The model's output is transformed back to the original scale based on initial values in the training and testing sets.
+    6.  **Visualization:**
+        *   The predictions are plotted to show predicted trends against actual data.
+
+**III. Conclusion**
+
+*   **Core Point:** The core is a preprocessing technique that transforms time series data into relative changes within windows, enabling the model to learn patterns of trend.
+*   **Fundamental Point:** The fundamental point is that preprocessing techniques are critical for extracting meaningful patterns from time series data by converting absolute values into relative changes.
+
+**IV. Overarching Framework**
+
+   The overarching framework is a time series forecasting system that uses relative data trends derived from a normalization process. This preprocessing enables a neural network to learn relative changes instead of absolute values and makes predictions about future trends, which are then converted back to the original scale.
+
+**V. Conceptual Map**
+<Mermaid_Diagram>
+graph LR
+    A[Data Loading] --> B(Windowing);
+    B --> C{Normalization};
+    C --> D[Column-wise Calculation];
+    D --> E[Relative Change];
+    E --> F(Transpose Data);
+    F --> G[Model Training];
+    G --> H{Prediction};
+    H --> I[Sequence Prediction];
+    H --> J[Single Point Prediction];
+    I --> K(Trend Output);
+    J --> K;
+    K --> L(Revert to Actual Values);
+    L --> M[Visualization];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#cfc,stroke:#333,stroke-width:2px
+    style D fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#aaf,stroke:#333,stroke-width:2px
+    style F fill:#afa,stroke:#333,stroke-width:2px
+    style G fill:#ffa,stroke:#333,stroke-width:2px
+    style H fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#aaf,stroke:#333,stroke-width:2px
+    style J fill:#afa,stroke:#333,stroke-width:2px
+    style K fill:#ffa,stroke:#333,stroke-width:2px
+    style L fill:#ffc,stroke:#333,stroke-width:2px
+    style M fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+在这里我重新的指定一下咱来看一下我把这里改成一个处置改成这个处置然后呢保存一下保存之后咱们再来运行一下这运行这样为大家看一下他做了一件什么事我看一下在哪去做的应该是读数据的时候我来去在这打上端点吧其实啊就整体数据啊他做法都是一样的在这里打上端点就行了那次Windows时候其中一代码没有任何变化直播说在这里我加上一个归一话的一个操作在体霸个看一下他怎么去做的呃这个Nesle Vindo就是之前我怎么取虚烈都是一样的把属于拿过来然后呢直播说在我取窗口的时候这个Nesle Vindo底板他这一块传进来一个Nomline这个东西吧现在你看他这只是一个处置我F我一旦去看一下在这里F我天然完之后首先第一步先把我Vindo大小做好I等于解LiR零加五十还是这样一个虚烈吧这是我当前的Windows把这个虚烈拿出来接下来我对我虚烈要干什么你看这个只是一个处置吧所以说我要对这个虚烈做一些预处理或者说你做一个归一话操作类似这个F跳进去在这里我们来看首先他先把这个呃够到一个List以后要把够好好的数据传进去然后这里是这样啊就是一个SingleVindo还有一个VindoData还是这个意思就是接来你要做的时候你说咱现在用了一例那你做一个归一话那你说你传进来数据是两例是不是要对分别各自例做各自的如果说A这个例和B这个例比较两个指标A表示的可能收盘价B表示的可能是交易的一个数量你要对它俩做东西的时候是不是分别去做A做A的B做B的它们俩之间没有影响吧所以说在这两个还需要写一个循环就是Fvindo因VindoData相当于就是我们现在要对每一个例分别做上一个东西然后呢做完之后不是还没在还没做完在这里我们要做的第一个事咱们来看这个公式吧这个公式其实做得很简单选择我当前这个数据我当前这个数据当中就是Vop因我的一个Window因Vindo当中这一个直接成理由什么意思现在你看在需要当中第一次是理由你看我Fv我的一个例因stip1是为因什么是为当中理由代表是行数1代表是列数所以说这里表示的是要对每一个例都要执行这样一个操作在对每一个例执行操作过程当中我需要取到当前这个例所有的数据所以说Vindo当中第一位写上个帽号表示着取该列速的数据第二个取上一个实际例的作用表达取当前这个例对于当前比如说我们现在只传讲一例就是对CloseData当中所得P表达所得数据所得Data对所得Data执行这样一个操作首先第一步转成Fv那些就要做一些数据计算我当前这个数P比差什么你看我的Window是我当前的这个为大家看一下吧这Window当中是我刚才传讲的这块码去了这个WindowData是吧这个Window在这里FvWindow因VindoData我们把这个一个个讯例拿出来了在当前这50个训列当中取第几个第0个吧第0个相当于什么第1个位置所以说这里我做一件事相当于什么我每一个值都去判断一下它相当于我训列当中第1个输入它相对变化的一个趋势它的一个大企药是等于多少的所以说你看我我F6放进去这些数据这些数据你看第1个数它是一个理由为什么不要忘记了最后还有简议让我数据变成对都是一个比较小的0.0G付的0G这样一个概念然后呢接来你看当我这个数据经相对变化的时候下面这些值都表什么都表着我当前的一个结果相对于我歧视位置它变化的一个趋势吧这样咱就完成了一个基本的预处理操作最说当代价拿到了一份实验区别数据之后你还得想一想我拿到数据之后该怎么办是不是要做一些预处理你不能啊就是对于股票数据你不能让网络看起来像学的相举随机数据吧得让它学到什么相对的概念这样一个东西那这里你做了一个预处理操作那你说你最终预测穿的结果什么你数据上什么样预测穿结果就是什么样你预测穿的结果也是它相对于第1个数据变化的一个趋势我们要预测结果也是一个趋势让网络学到的东西也是这个趋势所以说最终啊你把结果要进行还原的时候也要把这个结果怎么样还原成它最终的实际的值吧也就是说要用它的一个趋势在还原回我真实的一个数据这就是它要做的一个事情行了把这个月多一专之后我们接下来当这个风原节完之后我们还需要做一个转制的操作也就是说现在你得到的一个数据它是什么它是一个二位的数损吧还得啊把它转换成一个我们实际的一个力啊你看正常应该转换之后我的数据应该是这样传建第一列这样传建第二列吧所以说啊你需要把这个东西再做一个转制我们再来看一下转制完之后你看提变成当前的一列了吧也就是说我把可乐这点难过来做了一个就是遇出一操作又转成一列给它反映回去这就完事了那现在这里啊我们做完了这个事那这个bindle就反映去了咱们把这个bindle就做好了下面有的X和我的by做法跟之前都是以模一样的这个就被带一个去看了然后这一块跟大家说了一下我们怎么样对数据做咱们的一个基本的规划啊不基本的一个遇出的操作然后来这里我们来看吧在这里还是打开这个刚一这一层下面有网络结构我们直接通过这个来看吧这个猫肚点拼剂这个东西这里啊咱们可以看一下罗洛杰欧来说其实上跟之前你看是不是都是一模一样的小还是491吧我当前选的是49个49个就是每一个times太多只的是49每一个数值是1那接来我在这里直播说有了iR1iR2还有R3嘛最终一顿结果是不是还是一个值啊这样咱就把这个事给做完了吧所以说下面整体流程跟之前都是以模一样的在这里啊就不以大家一个去看了但是大家感兴趣可以自己想从到尾底八个去看一遍怎么去做的为了有点不同啊就是咱们什么就是啊在这里的那个什么东西那个预处里操作不太一样然后预测一下咱来看一下结果啊在这里我先把这个结果换一下这是一个1咱们这种JCN1去做的嘛最终写成了1表着咱现在用一个编辆咱先执行一下咱来看一下效果的这里有画两个图啊这两个图分别这个意思啊就是这个 result理解了这个这个这个Motiver这个东西啊相当于就是我们要做的是跟之前一样的基于已有的训列去预测后面连续50点训列跟之前讲那个赛海说尔特斯挣下海说是一样的然后上不得这个东西上不直接这个轻轻轻轻相当于啊它是一个在这里一个是预测的是一个训列的一个预测的是一个点预测训列就要说的从底下到50你说把51预测出来了把51拿过来1到51区则52把跟这样一样那这个下面这个这个帮的by-panda的这个意思通过0到50实际的数据区则51是吧通过1到51实际的数据区则52像这个意思所以说第2个这个东西将来说做起来是不是简单了咱们来看一下它分别的一个效果
