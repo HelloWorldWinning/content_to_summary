@@ -1,0 +1,64 @@
+Timestamp: 2025-01-14T12:19:58.981867
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p03 3.1-时间序列模型 BV1Kuc4e1ENv_p3
+URL: https://b23.tv/ReSeyRf
+Status: success
+Duration: 9:23
+
+Description:
+Okay, here is a summary of the provided content, adhering to all of your requirements:
+
+**1. Outlined Summary:**
+
+*   **Introduction to Recurrent Neural Networks (RNNs):**
+    *   The lesson shifts from image and numerical data processing to time-series data analysis, using RNNs.
+    *   Time-series data is characterized by dependencies between data points, where past data influences future data, unlike traditional methods that assume independence.
+*   **Understanding Time-Series Data:**
+    *   Examples: Sine wave data where each point is related to its neighbors, and sequential text data where the order of words matters.
+    *   Traditional methods treat data points as independent, which is unsuitable for time series.
+    *   RNNs are designed to handle the dependencies in time series, enabling tasks like text analysis and sequential data modeling.
+*  **RNN Application and Objectives:**
+    *   The primary goals for today are: How to prepare time series data, How to construct an RNN model using Keras, and How to evaluate a model's results.
+    *   The exercise involves predicting future points in a sine wave using past points as input.
+*   **Data Preparation for RNNs:**
+    *   A sliding window approach is used, treating a sequence of past data points as input (e.g., 50 data points) to predict the next point.
+    *   Data is input as a series of values (e.g. X0, X1,...,Xt) where X0 represents a single numerical value (0.84).
+* **RNN Input Structure:**
+   *   Key parameters: `time_steps` or `Temp_size` ,`feature_dimension`(represented by the "1" value.) 
+   *   `Temp_size` which represent the size of window, which should be consistent during the training process.
+    *  Feature dimension can be greater than 1, such as in the case of word embedding, when processing the text, each word is represented by a 300 vector, which becomes the feature dimension of 300.
+   *   The input data should be organized to match the model requirements. This involves understanding the number of time steps and the dimensionality of each data point.
+
+**2. Core Point:**
+
+RNNs are specifically designed to handle sequential data by capturing dependencies between data points over time, which is crucial for tasks like time series forecasting and natural language processing.
+
+**3. Fundamental Point:**
+
+The critical step in utilizing RNNs is understanding and appropriately formatting input data to align with the model’s architecture, which requires defining time steps and input dimensions.
+
+**4. Overarching Framework:**
+
+The overarching framework for this content is a transition from traditional, static data processing to dynamic, sequential data processing through the introduction and application of Recurrent Neural Networks (RNNs), focusing on practical aspects of data preparation and model construction using Keras.
+
+**5. Conceptual Map:**
+<Mermaid_Diagram>
+graph LR
+    A[Introduction to RNNs] --> B(Time-Series Data);
+    B --> C[Data Dependencies];
+    B --> D[Examples (Sine Wave, Text)];
+    C --> E[RNNs' Suitability];
+    E --> F(Sequential Data Modeling);
+    A --> G(RNN Objectives);
+    G --> H[Data Preparation];
+    H --> I(Sliding Window);
+    I --> J[Data as Sequences];
+    J --> K(Input Dimensions and time steps);
+     G --> L(Model Construction);
+     G --> M(Result Evaluation);
+      K -->N(consistent input size);
+    N --> L
+</Mermaid_Diagram>
+
+
+Content:
+这节课咱们再说一下在深度学义当中另外的一个分支叫做地规神经网络也就是我们通常所说的这个RN之前我们讲的都是跟图像识别相关的吧或者是一些数日数据啊或者是一些图像数据这回我们要做的是另外一件事还有雷数据啊我们可以把它当作是一个时间续列数据那我先问大家一个问题什么叫做一个时间续列呢说白了就是我们现在这个神经网络我们在之前看的时候是不是说我说第一个数据来了那第一个数据自己把自己的第二数以来之后呢他也自己把自己的第三个一直到地N个是不是说他们之间没有任何的相关性啊那如果说现在这个事变了我说了一和二之间可能有点现二呢会随着一的变化产生也影响三呢会跟一和二也有一些关系说白了就是前面的会对后面产生一个影响那这个数据啊在我们时期时候当中是不是也挺常见的比如说咱们今天比如咱们第一个要说的吧第一个要说的比较简单咱们先来去做一个正显的一个续列也就是啊对于这样一个正显韩术你看他伤着一个规律进行浮动的吧而这个规律啊你看比如说当前我说这个点这个A点吧和他下一个点这个下的下一个点可能坏坚持在大下一个点B点他们之间B然会有些联系吧点要前后之间都有这样的联系那你说我们再用以前的CN或者是再用以前的那个传统时间网络是不是就有点有点不太一样了它会把不同的数一点考虑成他们是独立无关的吧这个也是传统积蓄算法它的一个基本定义就是要求要么之间是一个独立无关的但是呢我们二人网络能处理更多它能做这个时间续列这个事儿大家对于这个时间续列应该是不局限于要光是我们今天数值数据比如说像说的这些正显数据正显数据它无非就是一个作标点贸那还有什么数据啊还有一些文问数据吧比如说说一句话咱们今天来上课来讲低规身经网络是不是有说咱们今天来上课然后去讲什么东西也是有一个就是前后的顺序吧不能说低规身经网络今天来讲咱们这就不对了吧也就是说我们正常的一文文数据也需要考虑前后之间的一个关系所以说这个低规身经网络更广泛的用于各种各样的文本分极当中对文文数据经建模几分数据当中本身就前后之间的关系今天咱们来看一下怎么这样在这个Keros工具包装装把这个二人给的做出来以及呢我们还要把时间须列这个东西给它考虑进去说白了就两个事时间须间数据怎么准备保留模型怎么搭建接下来去练出了一个合设结果这就可以了这个就是咱们今天的目标首先咱们还是先来看第一个事第一个事给大家先看一数据啊我们第一个数据要不要简单就是这样一个一定数据这一列数据啊如果说给的画出来就要该说的它是什么它是这样的一个正线数据画出来就是这个这样的一个结果然后呢你看这是一个每一个个点吧然后每一个点是不是右边它对用了一个纸我们可以把它当成是我该画的这下正线一个正线数据说白了就是你要够预测什么做一个预测任务呗就前面的数据去预测一下接下来下面的一个数据的结果是等于多少的这一个就是我们要去做的一件事了或者说这样我们现在你想你在做预测的时候是不是说按照我们安然网络我这里要准备给大家再看一下这个网络结构这种结果解这个安然点拼制当中给它稍微的放大一点是不是说这里比如说这个XD对照我们数据来帮你看这里点开这里是我们的网络结构吧那XD是什么XD我们可以想一想现在我要输入的是不是一个续电数据在这里你看对于一个余弦来说要你怎么样够造一个时间续电它每一个位置只是一个直而已那你说我说这是第0个指而这是第1个咱如果说所以从零开始这是第0个位置我说这个位置它是第50个位置我把前面再0到50这个数据拿过来我是不是相当于50个数据了50个数据那是不是50个指我通过前面50个指去预测一下我说问你这个第51个指等于多少是不是也可以这是第1个事然后呢进来哎我说我现在又换一种方法我说了现在从这个1到51它们这块11这块是51我说了这个1到51是我下一组续电我要让你问你这52号这个指什么是不是也可以啊所以说咱们现在要做一件事就是基于前面的一个续电而不是简简单单前面的一个指注意点这是一个指吧这也是一个指但是呢我们需要自己做一个组合这个组合没有一个线纸可能有通讯说哎我拿10个数当成一组然后预测第11个在黄东窗口再拿下10个预测下一个都行了在这里选了窗口是暂时定一成50但是大家也可以看一看我的一个窗口大一点好还是小一点好那它这个窗有大小对于这咱们这个图当中哪一部分啊你看这里X01 2打一次T吧这个位置如果写一下按照咱这个说一写吧它是点多少0.84吧下一个数呢是0.87再下一个数是0.90点点一直调哪可能是第50个在这里反正就是一直找第50个第50个什么我们就不管它反正就是一个纸那这里我们来看对于这一个网络当中你想哎当我们在做一个网络的时候我希望大家先明白第一件事第一件事是什么第一件事你需要过搞清楚一点就是咱们的模型输入要求是什么格式咱就是从这个案子同时来看首先第一点你是不是比告诉X0到XT都是什么东西啊那我们大家一个事这里比如说现在我说一个须列长度是十个长度我说下一个须列长度啊它是二十个长度可以吗可以做这个事吗不可以吧为什么因为首先你要跟一网络结构一旦你的网络结构第一出来之后所要求每次输入大小必须都是完全一致的你说不一致不好意思不行对文文来说也是一样的你说一句话有的一话咱们今天上课咱们今天上课三个词吧那换一句话咱们今天下午打篮球咱们今天下午打篮球五个词吧一个三个词一个无词可以吗也是不行的你需要给它们统一在一起按照多退少捕的原则如果说哎五个词那如果说显四个的话都同一上四个那五个词我以最后也去掉给它做一个阶段三个词呢最后不理用清天冲是也可以啊这一个都是一些长规的做法了但是啊在咱们这个任务当中我们设计不到多对少捕我们先设计个窗口做窗口长度我们暂时都定义成是五十的所以说第一点第一点有什么你需要告诉我的输入有个什么东西五十吧一会儿带有当中不一定是五十我先我先随便举例子然后接下来接下来你说前这个五十表示则咱们叫什么我们叫做一个时间不长或者叫做一个Temps Type直Temps Type直它就相当于你X0打Xt一个多少个这个意思取得须列长度是有多大的接下来X0到Xt每一个位置X01 2 3一直要T它是不是都是使技的一个数据在咱们这个任务当中你看X0多少0.84是一个值吧追一点是什么一个值X10.87追一点它也是一个值X21xT都是一个值所以说我们每一个围图它都是一个值那它是不是应该是一个依呀在这里不一定所有东西都是依可能大家会认为那一个输入那不就是一个依嘛在这里不一定的每一个输入它不光可能是依可能是也大点数也可以我决立的比如说咱们说也文本我说第一个词它是一个我们首先计算机不认识我们这个词吧那我们这个词我们可不可以转弹成一个300围的一个项料可以吧如果说它是文本数据你看到的它这一块就不是一个依而是一个300了所以第一步你需要先想清楚了我们的数据节欧当中就是输入的数据节欧当中每一个围图都表示什么样的一个含义强这个半个赛词咱就不说了咱们做一个P咱们暂时先当一个样每一个样本来但是大家一调理解这个templable一个50什么意思这个1表示什么意思在咱们任务当中取50为一个窗口有X0到X50这个X0的X49把这个意思然后呢1表示 X0是一个数X1也是一个数它不是一个项料所以要我希望大家先清楚一点我们有数一之后要够造一个什么样的输入节欧以后大家做事情我已经这样咱们最好到着去推看一下你的网络模型它要求输甚什么咱们按照它的数要求把数据做出来是不是就能训电了所以说咱一定要得想清楚我们要做一件什么事
