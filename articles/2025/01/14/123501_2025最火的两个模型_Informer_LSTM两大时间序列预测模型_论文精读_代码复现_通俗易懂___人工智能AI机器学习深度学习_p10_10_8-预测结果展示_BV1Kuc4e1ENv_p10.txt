@@ -1,0 +1,76 @@
+Timestamp: 2025-01-14T12:35:01.239721
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p10 10.8-预测结果展示 BV1Kuc4e1ENv_p10
+URL: https://b23.tv/Zvuf6LJ
+Status: success
+Duration: 6:24
+
+Description:
+**Summary:**
+
+**I. Core Ideas:**
+
+1.  **Point-to-Point vs. Sequence Prediction:** The discussion centers around time series forecasting using RTM and comparing two approaches:
+    *   **Point-to-point prediction:** Predicting a single data point (e.g., the 51st point given 0-50). This is shown to be simpler and more accurate.
+    *   **Sequence prediction:** Predicting a sequence of data points (e.g., 51-100 based on 0-50). This is more difficult and yields less accurate results.
+
+2.  **Impact of Input Features:** The content explores the effect of adding an additional input feature (e.g., trading volume in addition to price).
+    *   It's not guaranteed that adding more features always improves results; careful analysis and evaluation are necessary.
+    *   Experiments are performed using one vs. two input features, showing mixed results. In some instances, a single input feature did a better job predicting the trend compared to two features.
+
+3.  **Data Preprocessing Importance:** The discussion emphasizes that data preprocessing is crucial in time series prediction.
+    *   The focus is on selecting relevant features and preparing them appropriately rather than just relying on advanced models.
+    *   It suggests that the performance often depends heavily on how the data is handled before being fed into the model.
+
+**II. Summary:**
+*   **Outlined and Structured:**
+    1. **Introduction to Time Series Forecasting:** Focus is on time-series prediction with RTM models.
+    2. **Point-to-Point Prediction:**
+        *   Easier, more accurate.
+        *   Predicting the next single point.
+    3. **Sequence Prediction:**
+        *   More complex, less accurate.
+        *   Predicting an entire sequence of future points.
+    4. **Adding Input Features:**
+        *   Adding a second input (trading volume), to price.
+        *   Doesn't guarantee better results.
+    5. **Comparison and Evaluation:**
+        *   Comparing models with different number of input features visually.
+        *   Not always consistent or easily predictable in model improvement.
+    6. **Data Preprocessing Crucial:**
+        *   Data preprocessing and feature selection are vital for success.
+        *   Model performance heavily relies on preprocessing strategies.
+    7. **K-RER Tool and Time Series Prediction:**
+         * How to use the K-RER package and recurrent neural networks for time-series forecasting.
+         * Discussing point-by-point and sequence prediction approaches.
+
+*   **Core Point:** Point-to-point predictions in time series are generally easier and more accurate than sequence predictions, but adding more features doesn't always improve results and data preprocessing is crucial.
+
+*  **Fundamental Point:** The effectiveness of time series forecasting hinges more on data quality, feature selection, and preprocessing than simply adding model complexity or more input features.
+
+* **Overarching Framework:** The content presents a comparison of different time series forecasting strategies, analyzes the impact of varying input features, and strongly emphasizes the role of data preprocessing and preparation in achieving better model performance.
+
+<Mermaid_Diagram>
+graph LR
+    A[Time Series Forecasting] --> B(Point-to-Point Prediction);
+    A --> C(Sequence Prediction);
+    B --> D{Simpler, More Accurate};
+    C --> E{More Complex, Less Accurate};
+    A --> F(Input Feature Impact);
+    F --> G{Adding Features};
+    G --> H(Not Always Better);
+    A --> I(Data Preprocessing);
+     I --> J{Crucial for Success};
+     J --> K(Feature Selection);
+        K --> M(Data Quality)
+    A --> L(K-RER Tool & RNN)
+    L --> N(Two Prediction Types)
+    N --> B
+    N --> C
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+在这里,它是李噪的衣是不是?李噪衣什么意思?我该说的是一个点对点的吧?通过真实数义当中零到五十这个点预测什么?预测五十一这个点,然后你这个五十一这个点你不拿过来你在真实数义当中一到五十一这个点预测五十二这个点首先来说这个任务比之前在预测要简单哦这是它得到的效果,蓝色的是真实的情况然后这个黄色的是它预测的情况看起来是不是比较简单呢?能达个差别结果吧?然后咱再来看另一张图,另一张图是这个这个你看难度做起来,它相对来说效果就没之前那么好了因为它是输入的是零到五十,它预测结果什么?预测结果五十一,到这一百的结果要做这样一件事吧?要这样一件事,你看这一块它预测结果你看不是特别好吧?这一块预测出来结果有感觉反正从真眼来说,大概有这样一个趋势的感觉但是从你看这一块它是预测错了明明它还要进行一个上升,这块天晶下降了所以说到我们用RTM来去做的时候吧?你用一个预测一个点,那比较容易但是呢,要预测出来一个接下来,某一个时间长度它的一个须列做起来难度就稍微有点大了这个是咱刚讲得到的一个结果然后呢,那边又有关了,咱们再来看第二个事儿第二事儿当中,我把既然它运行吧然后我把这个东西得改成一个JC2在这里把它改成一个2,然后画土的时候咱都标成一个2吧?然后咱来执行一下在这里执行完之后,我让给大家看一下它执行完之后我会把那个保诺极构图保存下来在先执行完之后,它有把极度图保存下来就是这个东西,就是这个摩托展拼制现在它已经保存下了这里就是建完建立完模样之后,它色涨出来了这一回要执行二当中,我们来看一下在这里你看唯一的不同什么,加度一样在这里我的例子是不是选了两个那你就时间训练当中,你选择一个可以选了两个视频也可以别说选两个了,你身边选择100个那么都可以的嘛在这里我选择了两个,只说你就把你的X和你的Y对应好X咱现在变成两地那那个Y是不是还是一个执行这个东西,Y是不必按照这个动现然后再来看咱们网络结构的一个图在这里,首先我的输入边什么了49二吧49个时间训练,每个训练当中有多少个每个时间训练当中,它输入两个执行这两个执,在这边叫什么我的Close,我的一个说盘的价格以及我的交易的一个数量吧所以说这一块它变成了一个二那后面呢,你看中期按变成491百,491百最后是不是还是变成一个执行所以说我预测的最终结果还是不变的直播说我的输入有点不同了现在我的一个输入当中,我传讲的是还是这样一个训练,学大小是一样的直播说,现在我要预测的是传讲预测也不变,传讲的是两个指标这个意思但是大家有问答一个问题你说,在现在要预测一个说盘价我传进来多一个指标,效果一定好吗不一定吧,咱来看看结果这个英雄马赏咱来打开水噪他2和水噪1来对比一下吧这是水噪的1然后这个是水噪他2再配来看看,你看哪个效果好就是看他偏离的一个程度吧给我这个感觉咱们来看哪儿呢好像在这个水噪当中我看得不是特别明显啊好像来说是整点来说是差不太多是不是但是我感觉水噪的2这块好香你合得更好一点,你看这个尖尘咱来看这个,这个尖尘只露了一点这个尖尘露出来一大块是不是你看这个区域这块你看我从今随大家标一标你看这个区域和这个区域数明显水噪的2更你合一点水噪1好像没有那么你合吧然后这一块,再看一看后面感觉好像差不太多但是你看在这里水噪他2的这一块你看你合不太好但是水噪的1在这一块你合得好像来说香一香因为这块出现较大的缺口吧所以说这个东西啊你要从整体的去评估来看不是那么容易我没画这个Losset图只画预测的结果了这个就需要大家通过实际认诊你自己来去对比了我到底是万结果这表示的然后这个是一个指点对点的一个点一个点预测然后咱来看一个训练一个训练局测的时候这个E放左边2放到右边这个这个这个几个差异的这么大呢你看在这里这个几个差太大了一共我率色600多个训练600多个训练出来之后我这个几个差异表大你看这一块这个差异这个雷噪1的预测出来是一个下降的曲视雷噪2预测出来之后它确实一个上升的曲视右边也完全不同左边全预测上下下的曲视右边全预测成出来上升的曲视所以说结果上来是说它的一个差异还是蛮大的但我整体的感觉好像应该都是从这个点应该都是下降的转造的2好像不如雷噪1做得好吧你看雷噪1起码下降的曲视对的但雷噪2的右半部分它曲视预测的是不太对吧这一个就简单给大家对比了一下我们结果它造成了一个差异等大家拿上一数据之后你看一想一想我到底需要哪些个指标以及数据预处理我该怎么去做其实时间训练数据很大程度上拼的就是什么咱们的数据它的一个数据当中你该怎么样执行操作怎么样执行预处理能够得到更好的一个结果了这个任务我觉得大家解释了一下我怎么样用这个K-RER工具包以及而天文网络来去进行一个时间训练的一个预测就是当中两部分点一点的那比较容易预测进来一个训练的那可能还要用到你之前的预测结果这个预测前的一个效果可能就没有一个点那么直接了给大家分别演示了两种情况下它不同结果的一个展示的
