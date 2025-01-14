@@ -1,0 +1,96 @@
+Timestamp: 2025-01-14T20:04:48.649722
+Title: o1 Trend Finder：一款发现实时趋势和商业情报的AI收集工具，可追踪推特、新闻等各种话题，并将趋势推送Slack，可做营销监控、竞品分析、市场研究等 IDYIroUXrEQ
+URL: https://youtube.com/watch?v=IDYIroUXrEQ&si=gnlqmblN5FORZ59O
+Status: success
+Duration: 14:07
+
+Description:
+**Summary Outline:**
+
+1.  **Introduction to OE-trade (AI Trend & Business Intelligence Tool):**
+    *   AIG C-Link's tool for discovering AI news, product intelligence, and industry trends.
+    *   Functions as a PUC (Proof of Concept) of a larger system.
+    *   Tracks trends on platforms like Twitter and news sites.
+    *   Pushes trend information to platforms like Slack or web pages.
+    *   Enables marketing, competitive, and market analysis.
+2.  **Problem Solved by OE-trade:**
+    *   Addresses the need for market analysis and competitive intelligence in marketing departments and BI (Business Intelligence) teams.
+    *   Automates the tracking of competitors, industry influencers, and trends.
+    *   Moves away from manual searches to proactive notifications.
+3.  **How OE-trade Works:**
+    *   Collects data from social media and websites.
+    *   Analyzes key influencers and detects new product releases.
+    *   Sends Slack notifications for timely awareness.
+    *   Uses Twitter API to monitor specific influencers and keywords.
+    *   Uses FairCrow to monitor website news and updates.
+    *   Uses Lama 3.1 70b for analysis.
+    *   Crawls website, analyzes sentiment and trends, and sends notifications.
+4.  **Core Functionalities:**
+    *   Uses Lama 3.1 70b (can be replaced) for analysis.
+    *   Monitors Twitter and websites (using FakeCrawl).
+    *   Sends Slack notifications.
+    *   Performs scheduled monitoring using Crawl jobs.
+5.  **Installation Steps:**
+    *   Configure the `.env` file with:
+        *   特改则 (TeGaiZe) API key.
+        *   FakeCrawl API key.
+        *   Exist API BellToken.
+        *   Slack Webhook URL (requires creating a Slack App).
+    *   Download the code and navigate to the directory.
+    *   Run `npm install` and `npm run start`.
+    *   Customize the `index.js` file with the trends to monitor.
+6.  **Demonstration:**
+    *   Shows real-time monitoring of AI and LM trends across multiple sources (e.g., Twitter, YCombinator news).
+    *   Slack notifications are delivered upon new trend discovery.
+7.  **Other AI tools and project updates mentioned:**
+    *   Data scraping tool for large model formats called LM RTST Jriter.
+    *   Improved RAG tool addressing latency and complexity, CIG.
+    *   Visual model VTAR1.5, which can understand images.
+    *   Depthsick and PlayHT TTS for noodlebooks, Depthsick is highly used for many fields.
+    *   AI try-on and makeup projects.
+    *   AI try-on for clothes, many projects for try-on.
+    *   Automatic video caption and translation tool, AMO.
+    *   Code to format tool for better usage of code in large models, could be to prompt.
+8.  **Call to action:**
+    *   Encourages sharing if the information is useful.
+    *   Announces an AI developers conference (AIDC) on January 12th.
+
+**Core Point:**
+OE-trade is an AI-powered tool that automates trend discovery and delivers timely business intelligence by monitoring social media and websites, providing proactive notifications via Slack.
+
+**Fundamental Point:**
+This tool shifts the paradigm from reactive data retrieval to proactive delivery of key intelligence, thereby enabling more informed and agile business decisions.
+
+**Overarching Framework:**
+The framework revolves around the automation of information gathering, analysis, and delivery to empower businesses with real-time market insights and competitive intelligence.
+
+<Mermaid_Diagram>
+graph LR
+    A[Data Sources] --> B(Data Collection);
+    B --> C{Data Analysis};
+    C --> D[Notifications];
+    A -- Twitter API --> B;
+    A -- FakeCrawl (Websites) --> B;
+    B -- Crawl Jobs--> C;
+    C -- Lama Model --> C;
+    D -- Slack --> E[User];
+   
+    subgraph OE-trade Tool
+        B
+        C
+        D
+    end
+
+    subgraph User
+        E
+    end
+   style A fill:#f9f,stroke:#333,stroke-width:2px
+     style B fill:#ccf,stroke:#333,stroke-width:2px
+   style C fill:#ffc,stroke:#333,stroke-width:2px
+     style D fill:#aaf,stroke:#333,stroke-width:2px
+    style E fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+大家在各行业的应用案例大家好这里是AIG C-Link今天的话我们来聊一个发现实施趋势和商业情报的AI收集工具叫OE-trade翻的这个工具的话其实也能解答很多朋友的问题很多朋友其实一直在问AIG C-Link怎么来发现这个就是每天的最新的一些AI相关的新闻或者消息或者说行业的一些最新的一些个产品的情报那么的话就是说这个工具其实是类似于我们背后做的那套系统的一个PUC是类似的让今天给大家分享一下这个系统通过它的话你就可以追踪向推特了还有新闻等各种话题并且的话能把这种趋势的内容推送给Slike那么的话它这里是Slike当然我们的话你可以推送的网页上或者推送到这个公众号或者说其他的一些个地方都是可以的然后从来可以做这个营销分析了敬品分析或者市场分析OK我们今天的话来看一下这个项目就是说我们都知道其实在很多公司里面一般在市场部门都有一个这个市场分析和研究的一个部门我们有时候也叫情报分析比如说BI部门会有一个情报分析的板块那么情报分析这块的话核心可能要追踪不管你是追踪敬品还是追踪相关的行业官员次等等都是有一套相关的一套的商业的一套所以所以饭市来追踪这些东西对吧那么的话就说你怎么来实现呢我们今天要讲这个项目就干了这个事情然后这个项目叫TradeFund这个挺有意思的TradeFund他干了什么事情呢就说你在市交媒体上他可以帮我们去收集并且分析关键的一些个Inflos就是一些影响者的这个铁则然后检测到新虚式的这个产品发布时比如有一个新的东西发布了那么他就会给你发送这个Slag通知这样的话你就第一时间能够知道发生了一个什么事情这个的话就彻底改变了一些个营销团对的一些个游戏规则那么的话就是比如说通过他的话可以结手通过手动搜索社交渠道学化费的时间比如可以让我们了解相关的实施对话然后能快速地想应新机率和行为变化其实说白了就是请我分析你比如说你用AIS搜索还是被动是搜索对吧然后这个其实就属于主动式的帮你推送拿然后这个里面的话就说给大家看一下结效果比如说最终的话就是说你比如说你实现之后那么的话当你他就会帮你去推送当有一些更新的时候就是帮你推送比如说我这里我推送的是AI和大模型的趋势在X上的趋势那么他这个时候就帮我推送了有通过几个新源帮我推送了这个趋势看到了吧这有这个X上的然后有其他一些最新的新稳等等那么的话这是一个很重要的很好的一个点那么怎么能实现就是说我让他再去指定的一些地方去帮我去监测监测的同时当有新的消息发生的时候的话第一时间通速乱舞的Strek那么我下面给大家介绍一下怎么在实现然后他的整个逻辑是这样的低部首先做数据收集比如使用这个X的就推特的API监控推特或者说这个在监控推特上你指定的一些个影响指定的一些KWL这是一种然后当你也可以使用这个FairCrow来监控网站的一些个新稳或者说一些个新的版本然后再是可以使用这个Crow然后按照作业按照计划之行然后比如说你说我要监控一些东西对吧在哪里配置呢就是这个代码当下来首先把这个代码当下来当下之后的话你可以在这个地方这个地方有一个Guy的CrowSource的这个地方然后这个地方是可以配置这些性源的就是说比如说网站类的网站类的新稳统一可以通过FairCrow就是FairCrow是一个就是抓取的像是一个爬虫的工具爬成网站一些新稳的工具然后的话就说你可以把这些个对应的新稬链接放在这里比如说这里OpenR的YouCrow的有这个其他等等有很多然后的话如果说用X的话那你就可以也对吧就这里它也提供了X的这个相关的配置我这里用了AIDC link的你也可以换了也可以增加其他的只不过说你要增加其他的API的话要增加其他的一些个性源的话你就需要把你的X的那个API的收费要开通不然它免费的这个版本的话只能在15分钟请求一次所以你只能用一个就不能用太多了否则会报错啊这只小一下所以配置是在这个文件里配置然后完之后的话就说它在进行人工总统分析然后通过特改则的这个它用的是Lama用的Lama这个就是Model用的这里它用的Lama3.3.1的70b的Model从这个特改则AID这个地方获取的然后的话就说在10笔通过它是处理收集的内容然后10笔新型的趋势发布的新闻分析情绪和相关性然后最后在进行通知当简单检测到这个重大趋势的时候是用这个Crawl的作业发送Styleic通知提供有关来趋势等等它整个的逻辑这么一个逻辑啊很简单然后这里的话就是说我们看它特点它特点就使用特改则AID也就是Lama3.170b来进行分析的当然也可以换成其他的Model然后的话在这里的话社交的媒体比较推特的监控可以推特监控推特可以监控网站用这个FakeCrawl来进行网站监控然后再进行Styleic的推送重点能力就是三个能力然后再用Crawl作业进行计划监控这几个部分OK然后我们下面看一下怎么安装安装第一步的话你首先做配置要把这个Inv这个文件配置一下配置成这些你需要三个一下解口一个特改则的特改则的话你YouTube特改则官方这块就拿到这个AppK就好了这特改则了特改则这块Model有很多了就它有很多Model你可以跟你自己情况来选用你好了然后玩完周图的话电部是FakeCrawl这是做网站的爬从手机的FakeCrawl这里也一样的你就拿到AppK拿到AppK把它配置上去然后第三个的话是ExistExist的话你需要在这个地方我稍微说一下比如说你需要在这个地方进入Exist这个带捞平台之后然后进入到这个地方这个是它的Project的App然后打开K然后生成这个BellToken记得是BellToken然后Judderita生成之后把它这个Token复制到点Inv这边把这个配置下去好了然后再有一个SlikeSlike这个的话就说会稍复咱一点Slike这边的话你需要这样你需要第一步的话是进入这个我给大家说一下Slike相对麻烦一点你需要干一个事情就是说你需要第一步的话要创建CreatorsSlikeApp学先创建这个东西创建的时候的话就是说这个我是已经创建好的你没有创建的话你可以需要自己创建的比如说FromScratch从这个地方创建然后这个名字写一下这个SlikeWalkplaySpace的话你需要你的Slike里面有一个Walkspace这里注意一下比如说我的我的里面是已经创建了一个就是Space就是所以说我不用再创建了就是我给大家看一下这个Slike比如说你在Slike底下Slike是一个类似于像海外的一个就是相当于即使M-M工具然后你这块的话需要做一个这个频道你可以理解我在Discord里面都频道那么的话你把它就会Space创建然后就创建App就创建出来创建出来之后进入这个地方然后进入这个地方进入这个地方之后的话然后进入这个IncomingWebHooks进入这个地方进入这个地方的话你就可以把这个地方WebHookUiL把这个Copage出来Copage出来放在这个地方就可以配置在这个地方配置OK配置好了之后就OK了然后这是一个然后玩舅路还有一个配置玩舅的话我们下一步就可以快速的进行就可以去运行它了可以运行它了然后这个都配记住配置完成了记住配置玩舅的话然后进入下一步进入下一步那么下一步是什么下一步是这个就是开始我们需要把蛋码当下来当下舅路的话然后你CD到这个对院的M-M-M-LU底下CDM-M-LU底下你用几种安装方式一种是直接圆码安装还有种用刀可我这的话我用圆码安装然后就说你把对院的去CD我这已经CD过来了CD过来的话就是我们下一步干一个事情比如说M-M-LU因stallOK然后让它安装一下安装这个包安装完之后的话然后因为我这个云弄好咱们就不用再管它了然后你输了M-M-RUN start那么就让start之前的话我们需要在蛋码里面稍微看一下你需要在这个地方就说你进入这个index这index对吧就是我们可以看到这个有index然后这里有Cyde这里有CreatorCreator这里Creator这里这样的就说你如果想了解的是AI和LM的趋势那你就这里就是AI和LM趋势当然你这个也可以换成其他的比如说你可以把Hydro换成其他那你就搜索的是其他相关的观念词这个注意一下去配置在这个地方配置比如说我想了解AI的我也可以了解什么互联网的或者了解其他的你可以在这里做相关的观词配置好吧OK然后这个配置完之后的话那么下一步就可以去遇行它了比如MPM的RUNSTART它这个时候帮你去做的是AI目的从这8个信员8个信员就这个地方的8个12345679第1个它在这个地方先看在这个就是FailWale的这个Story我们看看它发现一个对吧一个Stories一个新的然后在opin上这边没有新的然后这个Crawl的这边也没有新的然后这边有两个新的就是YC这边有两个新的然后它会一个一个帮你去执行这里知道执兽一下然后还有Returs然后这块有一些新的然后它的执行完之后我几乎给你推送我们几乎就会看到我的Style这个地方那一乎就看到这个地方这个地方会新增个消息执行完的话这块就发生了一个消息过来咱们稍等它一下执行一下这个执行需要点过程OK我们看到执行完了对吧它这个情况我们看到这是之前的这是刚刚的3.59的你看这3.59就久了对吧然后这有这么多消息AI和LM的一个趋势有这么多看到吗它这个这也给你推送过来了所以这就是这个项目的运行过程很简单那么通过它的话就说你比如说你想增加信员的话你就在这个地方增加多增加一些信员就好了这样的话它会帮你实施的去监控有新东西的话你这个你只要不停有新东西它就会给你第一时间这边给你推送过来推送到Strike上大家知晓一下它的运奏共同就这么一个过程然后这是关于这个就是OE的这个非的非的一个介绍然后它除了它之外的话还有一个很好就是我们在看一下这样的最近消息吧然后第1个的话就说这个是一个数据抓起并且能整理成使用于LM格式的工具加LM RTST的一个JRITER这个也挺有意思的它抓起的数据会经营数据清洗帮你输住从标准格式和这个完整满的格式就是适合于大模型使用的一种格式就帮你清洗好数据了这个对于数据管理数据的一些朋友来说非常有价值然后这个的话是一个解决了RIG的延迟准确读复杂度的问题叫CIG那么的话就说它通过大模型的上下午窗口和KV缓存机制了解决了RIG在延迟准确读复杂上的复杂度上的一问题使用于这些场景比如说克服文达这个反正就说对于提升准确的有价值到这个东西然后再到这个视觉模型叫VTAR1.5就是能看懂图片视觉理解了什么的我们看它这个评分还是蛮高的这个这个帽董就有心意可以自己下去安装试一下然后再到这个Depthsick和PlayHT的TTS实现了一个Noodle布克LM的项目其实进行吸的话这个Depthsick非常火就说可能大家GDepthsick会做各种各样的一些应用其实就说变成方面Depthsick会已经用的很多领域了然后其他的主具体的应用可能很多人会越来越多的硬然后再有一个讯议师穿着项目叫SHMT然后可以把一个人的装融千一的另外一个人脸上就这个就更惊喜了用电商上的试装就说我说说说说试装这个应用我还真是第一次见试装装融并不是服装这个还挺有意思的咱们之前介绍很多项目都是试这个什么就是试这个试穿 对吧是一但这个项目就是化装的属于化装的所以说也是比较特色然后再到这个自己和清华开源的一个多服装的讯议师穿项目叫Iny Jersey这个是穿的是装的是装这个非常多了就是看谁经济化做的好然后再有一个视频字幕工具AMO这个项目自动将视频转化成自目并翻一层多种语对我这种懒人来说的话这个项目还挺有价值的可以把每次把视频转成多语言的然后再有一个就说比较使用的把代码文件转为适合于大模型理解格式的工具就could be to promote然后对需要平凡于模型讨论代码的开发者比较有好这个项目我觉得也蛮有价值的就是你把代码文件就可以任给大模型然后大模型它可以把你变成对用的应该说是相关格式就适合你给它对话它理解好它容易弄成一个就是容易理解的格式那么有了这个格式之后的话你再跟这个代码去对话的时候可能更容易一些所以它是一个中间界的一个作用ok这有这样的最新一些消息的说明然后消息来有一个帮助如果你觉得不错请帮忙一件三年然后最后的话给大家说一下就说我们在1月12号这周日的话会举办第四届的中国AIDC开发大会也欢迎大家一起来报名这个活动在活动型这边活动型官方这边的话就这个就是第四届的中国AIDC开发大会这个活动大家欢迎大家报名有期待中国跟大家一起来交流我们今天的讲究就到这里谢谢大家
