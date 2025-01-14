@@ -1,0 +1,57 @@
+Timestamp: 2025-01-14T12:21:59.188948
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p04 4.2-网络结构与参数定义 BV1Kuc4e1ENv_p4
+URL: https://b23.tv/9LM5SxW
+Status: success
+Duration: 7:52
+
+Description:
+**Summary:**
+
+**I. Overview of the Network Structure and Data Flow**
+
+*   **Input:** The input is a time series data represented by 49 time steps, each with a single value (Type-C, one dimension).
+*   **Layer 1 (R1 - Modified RNN):** The initial layer transforms the single-value input at each step into a 50-dimensional vector, preserving all time steps.
+*   **Layer 2 (R2 - Modified RNN):** This layer further processes the output of R1. A key distinction is that it outputs only the final result (a 100-dimensional vector) instead of preserving all intermediate steps.
+*  **Prediction:** The network is designed for a regression task to predict the value of the 50th time step, given the input of the first 49 steps.
+*  **Output:** A single output value (a one-dimensional value) is the predicted result.
+
+**II.  Configuration and Parameters**
+
+*   **JSON Configuration File (configure.json):** This file defines the model's architecture and training parameters.
+*   **Data Parameters:**  Includes the data folder path, time series length, data split ratios, etc.
+*   **Training Parameters:** Number of epochs, batch size, loss function (regression), optimizer, etc.
+*   **Network Layers:** The network structure is defined by specifying each layer type (e.g., Modified RNN with memory and forgetting, fully connected layer) and their corresponding parameters (input size, output size, and other arguments). Notably, it specifies whether to output all time steps results or just the final result.
+*   **Flexibility:** Users can modify the model architecture by changing parameters in the configuration file.
+
+**III. Model Implementation**
+
+*   The process begins by loading configuration settings from JSON.
+*   The model's network layers will be defined and parameterized by the JSON information.
+*   Data will then be fed into the model to learn the regression task.
+
+**Core Point:** The core point of this content is to explain a specific time series prediction model's architecture, data flow, and configuration for a regression task, highlighting the use of modified RNN layers with different output behaviors (intermediate vs. final).
+
+**Fundamental Point:** The fundamental point is that the model uses a sequence of modified RNN layers to learn patterns in the time series data, with the final layer focusing on predicting a single future value, driven by configurations from a JSON settings.
+
+**Overarching Framework:**
+The overarching framework is the use of a time-series prediction model built from customized RNNs, configured via a JSON file, to predict future values based on an input time-series sequence.
+
+<Mermaid_Diagram>
+graph LR
+    A[Input Time Series (49 steps)] --> B(R1 - Modified RNN (outputs all intermediate 50-dim results));
+    B --> C(R2 - Modified RNN (outputs final 100-dim result));
+    C --> D[Fully Connected Layer (Output 1-dim)];
+    D --> E[Predicted Value for step 50];
+    F[configure.json] --> G[Model Configuration Parameters]
+    G --> B
+    G --> C
+    G --> D
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+     style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#cfc,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+然后行,事儿已经给大家说完了,接来按照咱们常规的做法怎么做税大家从到为DBug看一下我们整体的一个思路是什么样子在我DBug之前,我先给大家砍第一个事儿,就是我们的网络结构图这个网络结构图是在这里,都是大家在职业代码的时候,你可以自己先去软一下在软软软当中,这里,没有来看,在这一款有一个韩束是吧,叫做一个ProModel,它会把你的网络结构图画出来所以它是在你写完代码之后,定义好了模型,你才能把这个东西给它画出来这里咱直接来砍吧首先我的一个输入,这里我叠成了49,就是相当于每一个Type Type-C,就一个区列,它是49的然后呢,这个1,表着它当前是一个职吧,这是我的输入然后呢,我经过了Stype网络,在这里啊,你看我写个R1,我写一个R2我们对的这个R2type,它相当于就是Rtype相当于是R人的一种变形体吧,它加入了一个记忆和遗忘的一个模块吧在这里我们就暂时把它当成R模块也可以然后呢,这个R1R2,像那是什么,我不光对的一层吧,我可以对的多层,首先我第一步先把这个一个职,我转了什么因为这是个中间结果,可以转成一个50位的一个相量吧但是在这里大家需要注意点,就是,当我们在输出的时候可能大家需要注意点有些时候我们需要什么,有些时候我们只需要最终的一个结果HT是不是足够了,你说这个H0到H2到HT1吧这中间结果我们需要吗,很多时候都不需要的这个都是大家根据我们自己实际任务去指定了这第一步我得到了一个中间的一个相量结果,辞职财这个4090的接下来照泡的最不说了,下面一层我再加上一个R的TM,把它干什么,再转换成一个特征吧50为我觉得可能还不够了,辞职辞职辞职50啊这个50比20吧,这个49先比20吧49个,我的一个时间不长,Pelstype值50呢,每一个时间不长,它就不是一个值,而是转换成50为例的一个相量了下面我转了什么,转换成一个100为例的一个相量吧在这里100为例的相量,但是大家注意点这个100为例的相量你看它是什么,它前面还有这个49吗49比例什么意思啊,咱们回到这个图当桌来看一下首先,哎,这里首先,第一个位置,你看你所有中间结果是不是可以拿出来在第一层R1当桌,我们是不是把每一个中间结果都拿出来了但是呢,在第二层我这个R2当中,这R1这R2在R2当中我取了什么是不是只取了最后的一个结果,没说把所有的时间不长都拿出来吧相当于什么,相当于第二次,那第二次相当于就是RTM当中最后一层卖最后一层当中,我只要它的一个输入结果所有中间结果就来说我是不需要的只需要一个最终结果,那一个相量就可以了那最终是不是说我现在,我输入了49个时间不长我想预测一下,就是输入了是0,比例别之间写49了输入了是0,1,对对对对,一直到49是不是然后呢,我需要预测什么,第50步等于多少吧所以说最后要预测结果是什么相当于是一个回归任务,要预测一个职吧在这里一个职,我们最后连了一个圈点结测,输出结果是几样就是一个一尾的吧,一个一尾的相当于什么,它就是一个职在这里这个职,就是我们进行了一个次预测任务须测一下,就当前的这么一个须利,看一下下一个时间不长,它的一个职是等于多少的在这里大家通所解释了一下,我们整个网络模型它从整体上的一个定义,接下来我们要做一事情其实很简单,就是按照我们定义按照给大家的数据以及说了一下我们整体要做的一个东西,再把代码给它写出来这就ok了行了,咱们来看吧,在这里还有大家介绍另外一个东西首先,再进入体发我们块儿吧,然后边接入,大家说在这里,就是我们的数字,这是我们整个零文件夹叫做一个time service,我们时间须列还有这个configure.json,我们点开看一下在这里,这一段小是不是,没关系小小,我们这一来看吧第一个就是在这里,我们所有的一些参数和网络结果的定义全是在这里,就是在这里进行展示的,我们可以先植下一下第一步,我们Json点漏的一下相当于要我去把它读进来是不是,你看叫configure.json是吧我先读一下一家看一下,它是什么首先它这个字点结构,把所有这个东西按照字点格式读进来了我看这里,这里开完小,咱在这个TNT当中去看吧首先你需要指定些东西,这个都是大家可以暂时先不用去改等后续你要用的时候你可以再去改首先,你的一个Data,你的一个文件夹的一个名字在这里名字已经给大家写好了然后呢,须列的一个长度,还有我们数据级的一个切分在这里都写出来了训练的时候做几个Epoch,每一个Epoch,它的每一次叠带,它的一个Basicize都写好了这个任务有一比较简单,所以说咱两Epoch就已经足够了接来先完了我们就写了你的一个Loss function,回归吧然后呢,优化器,Basicize保存位置下面定一网络的层,定网络层就这样保存这个层,点开,打开这个Model点PNG打开这个东西,然后呢,再对照这个再对照这个格,咱就可以来看一下它俩就是一个事吧,我把它移右边吧这点张害,行,这样能看到它就是完全要去写的首先,第一个层是什么,这是MSTN层吧第二个层是什么,JOPALTJOPALT买什么,又MSTN吧,最后又JOPALT,最后一个全天街吧参数都是对应浅的吧第一个MSTN墓,输入的一个时间不长,49吧输入的一个尾度,都是一个纸吧然后呢,它中间的一键层是原来50表示着我得到50倍的一个相量吧下面,下面再练MSTN墓再练MSTN墓当中,你看我指定了一个东西这是什么,诽退什么,一个虚烈吧指定是出路,现在是什么为什么这块指定是出啊指定是出,会得到什么东西在这里,这个东西指定是出路得到的是什么,这个东西吧,4950会把整个虚烈所有的结果都返回回去吧你看再看下面这个,这是R1,这是R2我指定了一个Foss返回的是什么就是最后的一个纸吧所以说当大家倒是自己玩的时候,追一点哦你中间的时候,就是这个东西反正得跟你自己定一来哦你看你这块它是中间结果你想把虚烈全部反了又在时候你把虚烈整合处置到最后一步的时候,你说前面中间结果就有两面下用了指定是个Foss,只要是最后结果就可以了吧最后连全粘接层,全接层输出结果是几啊回回任务要预测一个纸吧,就是一个一夜这是不是就完事了这个就是我们这个configure 这次当中还是怎么去定一的定一了一下我们一会儿要去年网上当中所有的参数端着一去洗了但是大家如果说你想把这个结构经改变你可以用这种这次的格式或者用命令和书参讯的格式或者这些在带玩中销都行不限制我们自己去定一任何的结构这个这个大家说了一下我们怎么样去读所需要的一个参数
