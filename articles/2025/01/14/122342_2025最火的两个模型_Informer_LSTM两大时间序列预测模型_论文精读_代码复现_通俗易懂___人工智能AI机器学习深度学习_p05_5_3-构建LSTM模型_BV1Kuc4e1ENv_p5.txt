@@ -1,0 +1,71 @@
+Timestamp: 2025-01-14T12:23:42.643928
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p05 5.3-构建LSTM模型 BV1Kuc4e1ENv_p5
+URL: https://b23.tv/oU9Hk52
+Status: success
+Duration: 6:41
+
+Description:
+**Summary:**
+
+**I. Data Preparation:**
+
+*   **A. Data Loading:** Reads data from a CSV file using Pandas, resulting in a DataFrame.
+*   **B. Data Splitting:** Splits the dataset into training and testing sets, with an 80/20 split (4000 training samples, 1000 testing samples).
+
+**II. Model Building:**
+
+*   **A. Model Class Definition:** A custom model class is defined to encapsulate the model architecture and training logic.
+*   **B. Model Configuration:** The model architecture is defined in a configuration file which include layers like LSTM, Dropout and Dense layers.
+*   **C. Layer Creation:** The model layers are created sequentially based on the configuration, including layers like:
+    *   LSTM (with a specified number of hidden units and input shapes)
+    *   Dropout (with a set ratio)
+    *   Dense layers (with a specific number of output units)
+*   **D. Model Compilation:** The model is compiled by defining the loss function (MSE) and optimizer (Adam).
+*   **E. Model Output:** Returns the entire model for later use (e.g., for visualization).
+
+**III. Core Point:**
+The core point is the sequential construction of a neural network model by reading a config and using its parameters to build layer by layer.
+
+**IV. Fundamental Point:**
+The fundamental point is the structured process of preparing data, defining the model architecture, and compiling it for further training or prediction.
+
+**V. Overarching Framework:**
+The content describes a typical machine learning workflow, involving data ingestion, preprocessing, model definition, and compilation.
+
+<Mermaid_Diagram>
+graph LR
+    A[Data CSV] --> B(Data Loading)
+    B --> C{DataFrame}
+    C --> D[Data Splitting]
+    D --> E(Training Data)
+    D --> F(Testing Data)
+    E --> G[Model Class Def]
+    F --> G
+    G --> H[Config File]
+    H --> I(Model Building Loop)
+    I --> J{LSTM Layer}
+    I --> K{Dropout Layer}
+    I --> L{Dense Layer}
+    J --> I
+    K --> I
+    L --> I
+    I --> M(Model Compilation)
+    M --> N[Model Output]
+    N --> O(Visualization)
+    style O fill:#f9f,stroke:#333,stroke-width:2px
+    style N fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#cfc,stroke:#333,stroke-width:2px
+    style I fill:#ffc,stroke:#333,stroke-width:2px
+    style H fill:#fcc,stroke:#333,stroke-width:2px
+    style G fill:#cfc,stroke:#333,stroke-width:2px
+    style F fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#fcc,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style B fill:#cfc,stroke:#333,stroke-width:2px
+    style A fill:#ffc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+第一步把我的所需的所有参与刷都拿到手了下面接来,咱们第一步是不是我先里把数据堵进来咱这个数据Data文言假下是不是有一个我们的正显的一个曲线CSV下咱人家就通过它把数据先堵进来在这里我们F我跳进去,怎么跳这来了我先走出去,这个跳到一个工具包当中了然后在这里先进入到我们的数据与处理们块这一点就在这里我们按照中还有工具包当中有一个数据与处理在这里先进入到数据处理,包括下在这里我们要对数据先进行一个读取首先用Pandace.JSV,指定好他的路径先把数据给他读进来读点数据,Data Frame格式第一个,他是所以第二个是他的一个实际的直吧这是我的一个数据,一共呢咱有五千条数据首先第一步,要把我的数据据切分成测试级还有训练级切分的一个比例随意要在这里咱先按照0.8作为训练级0.2作为测试级那就是4千1千这样一个比例好了,第二数当中这就是我们前4千个数据在这里你看通过一个所也从往后到4千 m前4千个数据拿过来组成一期这是一个区利这是前4千个数据然后这是后一千个测试的数据完成了你看这个,来指着4千这指1千完成了这是我们当前我的一个数据行了,先把Data读进来了就是我的一个数据读好了接下来我们先在这里要去勾渐我的一个模型了勾渐模型公众当中先指定好勾渐模型的方法接下来,这里这个模糯注意点我自己定义了一个类要在这个模糯当中有很多实现的寒座就是首先我定一个模糯这个模糯用一个区利模式来今天定义就是点爱的第二的咱一会儿往里一顿去加这里边这些寒座一会再要去用核心的就是这个 build 模糯在这里我们跳入到就是先把这个类使励化出来用这个类去调用我 build 模糯的方法并且把我所需要的所有的配置的参数传进去就可以了来看一下在这里你可以指定它需要花费的一个时间只不是凝睹这个好首先第一步第一步我要去创建什么创建层就创建我的一个网络结构吧在创建网络结构的过程当中咱是不是说所有结构的定义小哪了写到了这个config 点这一次你们念当中吗这边当中你看这个模糯底边是个layerslayers有是不是暗顺于写的第一层rtm 第二层周泡腿它的tm 全年间是不是是不暗顺于写的按顺取去写的时候你就可以复均环以一个一个调用了首先在config当中moldoce 你看在这里找吧config当中moldoce layers当中第一个什么rtm吧所以说第一个层你看这叠写了rtm 50个神经圆案时间不长了49每一个输弱它都是一个直反为寿区列为处这是我当前所需的参数吧用这些参数我来够见网络这就可以了首先第一步拿参数第六参数隐存身体来数量等于50先拿到手招泡腿这个直这个直没指定是吧没指定咱在这里先战时用用用用乱指来去当然后机会罕数这里也没指定这一个是个处置这149这是一个1咱现在等于指定好了吧如果说在这里进行判断因为咱们这个真正当中有三种格式吧rstm第一种招泡的第二种还有一个全天接第三种是不是如果说他是什么在这里往下去判断第一个判断应该是rstm吧那我就把rtm往落加进去这就可以了这儿rtm在这儿来的在这里他也可以大家看一下位置就可以了在这个位置当中有这里kiris当中类似当中你可以直接把rtm掉进来但是大家如果说你对这个东西不在熟悉咱可以回头翻一翻人家一篇文导这点我就不给大家就一个去看老人的这也来用就可以了居然指定有几个东西第个东西隐存成员数量是50你Input的一个社会值在这里Input社会值注意随代钱随代轰饶InputStab值就是tmStab我这个时间不长49代钱嘛然后都好这几啊一把是我下午该说的在跟当前构造的一个数据结构应该长什么样子接下来指定好要返回全部区列的一个结果吧现在第一个丑是不加满了第一个从加安之后加第二个丑第二层当中叫什么看一下6当中招泡头吧此时有招泡头那前面这些东西都是乱值吧只有招泡的这个东西有值吧对于等于就是你造出自己的设置吧开什么指额是在这里就是暂时随便一些指都可以的这个任务比较简单如果是任务比较难了还有自己的慢慢来去调一调这个东西行然后也这里招泡头调这里是不是加上一个招泡头就完事了在这里加上了一个招泡头第三个层又连RTN吧又连RTN吧是不是还是重新走一遍在这里又走RTN吧最后一个层是每样的相当于在你的这次的念当中你把所有结构都列好了之后他就会一步一步去走这就完事了这一步咱就走了把所有层都定一好了吧定一毫之后这个猫舞当中现在我是不是说最后的时候我爱得完最后一层了咱整个结构就出来了出来之后定一一下我训练了一个方法把方神自己来去指定一下在这里是不是用MSE去做的王特宁这次用1DMAM去做的吧行咱现在就已经做什么咱现在就已经把这个模型全部做好了然后这一块其实这样就是你不反悔这个self-d amodot其实也行在这里因为我吃直接的去bue的了一下这个mode我是在这里啊直接都就是把这东西都写完了把所有mode直接挨得进去了吧Return回去啊它是为了这个东西啊你看Return回去我为了指定一个指叫一个每mode我是为了画图只能操作的如果说你要不进行画图操作这个东西这一步其实你都可以省队跳也是可以的得这一步当中但是我们要画图所以说那把这个mode传进去在这里又Return了一个指回来
