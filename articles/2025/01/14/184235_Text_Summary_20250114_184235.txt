@@ -1,0 +1,74 @@
+Timestamp: 2025-01-14T18:42:35.906988
+Title: Text_Summary_20250114_184235
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Study Objective:**
+    *   To reduce the risk of stock trend prediction using machine learning and deep learning.
+
+**II. Data & Methodology:**
+    *   **Stock Groups:** Four groups from Tehran stock exchange (diversified financials, petroleum, non-metallic minerals, basic metals).
+    *   **Algorithms:** Nine machine learning models (Decision Tree, Random Forest, Adaboost, XGBoost, SVC, Naive Bayes, KNN, Logistic Regression, ANN) and two deep learning models (RNN, LSTM).
+    *   **Input Data:** Ten technical indicators based on ten years of historical data.
+    *   **Input Methods:**
+        *   Continuous data (indicators calculated directly from stock values).
+        *   Binary data (indicators converted to binary values).
+    *   **Evaluation Metrics:** Three metrics to evaluate each model based on both input ways.
+
+**III. Key Findings:**
+    *   **Continuous Data:** RNN and LSTM significantly outperform other models.
+    *   **Binary Data:** Deep learning methods (RNN, LSTM) remain superior, but the performance gap narrows due to improvements in other models.
+
+**IV. Core Point:** Deep learning models, particularly RNN and LSTM, demonstrate superior performance in stock trend prediction, especially when using continuous technical indicator data.
+
+**V. Fundamental Point:** Converting to binary data improves the performance of simpler machine learning algorithms, but deep learning methods maintain a slight edge in prediction accuracy.
+
+**VI. Overarching Framework:** The study employs a comparative analysis of various machine learning and deep learning algorithms to predict stock market trends based on different forms of technical indicator input data, evaluating their performance through a set of metrics.
+
+<Mermaid_Diagram>
+graph LR
+    A[Study Objective] --> B(Reduce Trend Prediction Risk);
+    B --> C[Machine Learning & Deep Learning];
+    C --> D[Data & Methodology];
+    D --> E(Stock Groups);
+    D --> F(Algorithms);
+    D --> G(Input Data);
+    D --> H(Input Methods);
+    D --> I(Evaluation Metrics);
+    E --> J[Tehran Stock Exchange];
+    F --> K[9 Machine Learning Models];
+    F --> L[2 Deep Learning Models];
+    G --> M[10 Technical Indicators];
+    G --> N[10 Years Historical Data];
+    H --> O(Continuous Data);
+    H --> P(Binary Data);
+    I --> Q[Metrics for Evaluation];
+    C --> R[Key Findings];
+    R --> S[Continuous Data Analysis];
+    R --> T[Binary Data Analysis];
+    S --> U[RNN & LSTM Outperform];
+    T --> V[Deep Learning Superior, Gap Reduced];
+    C --> W[Core Point];
+    W --> X[Deep Learning Superior, Especially Continuous Data];
+    C --> Y[Fundamental Point];
+    Y --> Z[Binary Data improves ML, DL retains edge];
+    C --> AA[Overarching Framework];
+    AA --> AB[Comparative Analysis];
+    AB --> AC[Stock Prediction];
+    AC --> AD[Varying Input Data];
+    AD --> AE[Evaluation Metrics];
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style R fill:#cfc,stroke:#333,stroke-width:2px
+    style W fill:#fcc,stroke:#333,stroke-width:2px
+    style Y fill:#ffc,stroke:#333,stroke-width:2px
+    style AA fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+The nature of stock market movement has always been ambiguous for investors because of various influential factors. This study aims to significantly reduce the risk of trend prediction with machine learning and deep learning algorithms. Four stock market groups, namely diversified financials, petroleum, non-metallic minerals and basic metals from Tehran stock exchange, are chosen for experimental evaluations. This study compares nine machine learning models (Decision Tree, Random Forest, Adaptive Boosting (Adaboost), eXtreme Gradient Boosting (XGBoost), Support Vector Classifier (SVC), Naive Bayes, K-Nearest Neighbors (KNN), Logistic Regression and Artificial Neural Network (ANN)) and two powerful deep learning methods (Recurrent Neural Network (RNN) and Long short-term memory (LSTM). Ten technical indicators from ten years of historical data are our input values, and two ways are supposed for employing them. Firstly, calculating the indicators by stock trading values as continuous data, and secondly converting indicators to binary data before using. Each prediction model is evaluated by three metrics based on the input ways. The evaluation results indicate that for the continuous data, RNN and LSTM outperform other prediction models with a considerable difference. Also, results show that in the binary data evaluation, those deep learning methods are the best; however, the difference becomes less because of the noticeable improvement of models' performance in the second way.
