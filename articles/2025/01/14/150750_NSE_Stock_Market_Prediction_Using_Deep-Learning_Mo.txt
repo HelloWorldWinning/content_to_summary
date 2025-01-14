@@ -1,0 +1,424 @@
+Timestamp: 2025-01-14T15:07:50.170648
+Title: NSE Stock Market Prediction Using Deep-Learning Mo
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1.  **Introduction:**
+    *   Stock market prediction is crucial in today's economy.
+    *   Traditional linear models (AR, MA, ARIMA, ARMA) have limitations, especially with non-linear data.
+    *   Deep learning (DL) models (ANNs) are effective due to their function approximation capabilities.
+    *   Prior research explores various ANN architectures for stock market prediction.
+
+2.  **Artificial Neural Networks (ANN):**
+    *   ANNs mimic biological neurons, identifying trends and generalizing from data.
+    *   They consist of input, hidden, and output layers with non-linear activation functions.
+    *   The basic unit is a neuron that sums weighted inputs and applies an activation function.
+
+3.  **Deep Learning Architectures Used:**
+    *   **Multi-layer Perceptron (MLP):** A simple feedforward network with weighted connections.
+    *   **Recurrent Neural Network (RNN):**  Processes sequential data using feedback loops, incorporating memory.
+    *   **Long Short-Term Memory (LSTM):** A specialized RNN that handles long-term dependencies with memory cells and gates.
+    *   **Convolutional Neural Network (CNN):** Extracts features from local regions of the input.
+
+4.  **Methodology:**
+    *   **Dataset 1 (NSE):** Training data from Tata Motors (1996-2015) using daily closing prices, normalized to range [0,1].
+    *   A sliding window approach (200-day window) used for training and prediction (10 days ahead).
+    *   Testing was performed on three different sectors : Automobile (Maruti), Banking (Axis Bank), and IT (HCL Tech), data between 2007 and 2017.
+    *   **Dataset 2 (NYSE):** Data from Bank of America (BAC) and Chesapeake Energy (CHK) (2011-2016), using daily closing prices.
+    *   Mean Absolute Percentage Error (MAPE) is used to measure the models performance
+
+5.  **Results & Discussion:**
+    *   CNN generally outperformed MLP, RNN, and LSTM models.
+    *   DL models outperformed the ARIMA model, as ARIMA fail to identify non-linear data
+    *   Models trained on NSE data were able to predict trends in NYSE data, suggesting shared underlying dynamics in both markets.
+
+6. **Conclusion**
+    *   The models showed good capabilities in identifying pattern in both NSE and NYSE.
+    *   Deep learning model are better than linear models
+    *  CNN is the best deep learning model for stock market prediction.
+
+**Core Point:** Deep learning models, particularly CNNs, demonstrate superior performance compared to linear models like ARIMA in predicting stock market prices, even across different stock exchanges, due to their ability to capture non-linear patterns.
+
+**Fundamental Point:** The study highlights the capacity of deep neural networks to uncover shared underlying dynamics in stock market data, enabling cross-market predictions and suggesting an alternative to traditional linear forecasting methods.
+
+**Overarching Framework:** The content presents a comparative study of different deep learning models (MLP, RNN, LSTM, and CNN) against a traditional linear model (ARIMA) for stock market prediction, using historical data from the National Stock Exchange (NSE) and the New York Stock Exchange (NYSE). The overarching goal is to assess the effectiveness of each model in capturing non-linear trends in stock market data.
+
+<Mermaid_Diagram>
+graph LR
+    A[Stock Market Prediction] --> B(Data);
+    B --> C[NSE Data (Tata Motors)];
+    B --> D[NYSE Data (BAC, CHK)];
+    A --> E[Forecasting Models];
+    E --> F[Linear Models (ARIMA)];
+    E --> G[Deep Learning Models];
+    G --> H[Multilayer Perceptron (MLP)];
+    G --> I[Recurrent Neural Network (RNN)];
+    G --> J[Long Short-Term Memory (LSTM)];
+    G --> K[Convolutional Neural Network (CNN)];
+    C --> L[Training Data];
+    L --> H;
+    L --> I;
+    L --> J;
+    L --> K;
+    D --> M[Testing Data];
+    M --> H;
+    M --> I;
+    M --> J;
+     M --> K;
+    F --> N[Prediction];
+    H --> O[Prediction];
+     I --> O;
+     J --> O;
+     K --> O;
+   O --> P[Evaluation (MAPE)];
+    N --> P;
+     P --> Q[Results & Analysis];
+    Q --> R{CNN Outperforms other Models};
+    Q --> S{Deep Learning Models > ARIMA};
+    R-->T{Underlying common dynamics between market}
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style R fill:#ccf,stroke:#333,stroke-width:2px
+    style S fill:#ccf,stroke:#333,stroke-width:2px
+    style T fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+NSE Stock Market Prediction Using Deep-Learning Models
+Hiransha Ma , Gopalakrishnan E.Ab , Vijay Krishna Menonab, Soman K.P*
+ Centre for Computational Engineering and Networking, Amrita School of Engineering, Amrita Vishwa Vidyapeetham,Coimbatore-641112, India
+Abstract
+The neural network, one of the intelligent data mining technique that has been used by researchers in various areas for the past 10
+years. Prediction and analysis of stock market data have got an important role in today’s economy. The various algorithms used
+for forecasting can be categorized into linear (AR, MA, ARIMA, ARMA) and non-linear models (ARCH, GARCH, Neural
+Network).In this paper, we are using four types of deep learning architectures i.e Multilayer Perceptron (MLP), Recurrent Neural
+Networks (RNN), Long Short-Term Memory (LSTM) and Convolutional Neural Network (CNN) for predicting the stock price
+of a company based on the historical prices available. Here we are using day-wise closing price of two different stock markets,
+National Stock Exchange (NSE) of India and New York Stock Exchange (NYSE). The network was trained with the stock price
+of a single company from NSE and predicted for five different companies from both NSE and NYSE. It has been observed
+that CNN is outperforming the other models. The network was able to predict for NYSE even though it was trained with NSE
+data. This was possible because both the stock markets share some common inner dynamics. The results obtained were compared with ARIMA model and it has been observed that the neural networks are outperforming the existing linear model (ARIMA).
+© 2018 The Authors. Published by Elsevier B.V.
+Peer-review under responsibility of the scientific committee of the International Conference on Computational Intelligence and
+Data Science (ICCIDS 2018).
+Keywords: Artificial Neural Network ;Deep learning ;Mean Absolute Percentage Error ; National Stock Exchange ;New York Stock Exchange.
+∗ Hiransha M . Tel.: +91-9961933201 ∗∗ Gopalakrishnan E.A
+E-mail address: hiransham5600@gmail.com , ea gopalakrishnan@cb.amrita.edu
+1877-0509 © 2018 The Authors. Published by Elsevier B.V.
+Peer-review under responsibility of the scientific committee of the International Conference on Computational Intelligence and Data Science
+(ICCIDS 2018).
+Nomenclature
+ANN Artificial Neural Network
+AR Auto Regression
+ARMA Auto Regressive Moving Average
+ARIMA Auto Regressive Integrated MovingAverage
+CNN Convolutional Neural Network
+Available online at www.sciencedirect.com
+ScienceDirect
+Procedia Computer Science 00 (2018) 000–000
+www.elsevier.com/locate/procedia
+International Conference on Computational Intelligence and Data Science (ICCIDS 2018)
+NSE Stock Market Prediction Using Deep-Learning Models
+Hiransha Ma , Gopalakrishnan E.Ab , Vijay Krishna Menonab, Soman K.P*
+ Centre for Computational Engineering and Networking, Amrita School of Engineering, Amrita Vishwa Vidyapeetham,Coimbatore-641112, India
+Abstract
+The neural network, one of the intelligent data mining technique that has been used by researchers in various areas for the past 10
+years. Prediction and analysis of stock market data have got an important role in today’s economy. The various algorithms used
+for forecasting can be categorized into linear (AR, MA, ARIMA, ARMA) and non-linear models (ARCH, GARCH, Neural
+Network).In this paper, we are using four types of deep learning architectures i.e Multilayer Perceptron (MLP), Recurrent Neural
+Networks (RNN), Long Short-Term Memory (LSTM) and Convolutional Neural Network (CNN) for predicting the stock price
+of a company based on the historical prices available. Here we are using day-wise closing price of two different stock markets,
+National Stock Exchange (NSE) of India and New York Stock Exchange (NYSE). The network was trained with the stock price
+of a single company from NSE and predicted for five different companies from both NSE and NYSE. It has been observed
+that CNN is outperforming the other models. The network was able to predict for NYSE even though it was trained with NSE
+data. This was possible because both the stock markets share some common inner dynamics. The results obtained were compared with ARIMA model and it has been observed that the neural networks are outperforming the existing linear model (ARIMA).
+© 2018 The Authors. Published by Elsevier B.V.
+Peer-review under responsibility of the scientific committee of the International Conference on Computational Intelligence and
+Data Science (ICCIDS 2018).
+Keywords: Artificial Neural Network ;Deep learning ;Mean Absolute Percentage Error ; National Stock Exchange ;New York Stock Exchange.
+∗ Hiransha M . Tel.: +91-9961933201 ∗∗ Gopalakrishnan E.A
+E-mail address: hiransham5600@gmail.com , ea gopalakrishnan@cb.amrita.edu
+1877-0509 © 2018 The Authors. Published by Elsevier B.V.
+Peer-review under responsibility of the scientific committee of the International Conference on Computational Intelligence and Data Science
+(ICCIDS 2018).
+Nomenclature
+ANN Artificial Neural Network
+AR Auto Regression
+ARMA Auto Regressive Moving Average
+ARIMA Auto Regressive Integrated MovingAverage
+CNN Convolutional Neural Network
+1352 Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362
+2 Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000
+1. Introduction
+Stock market is a place where shares or stocks of a firm are traded. It can be split into two components:
+• primary market
+• secondary market
+Primarymarket is where new issues are introduced to the market through Initial Public Offerings. Secondarymarket is
+where investors trade securities that they already own. Stock market is having a highly fluctuating and non-linear time
+series data. A time series is a set of data measured over time to acquire the status of some activity [6]. Linear models
+like AR, ARMA, ARIMA [9][10] have been used for stock market forecasting. The only problem with these models
+are, that they work only for a particular time series data, i.e the model identified for a particular company won’t
+perform well for another. Due to the equivocal and unforeseeable nature of stock market, stock market forecasting
+takes higher risk compared to other sectors. It is one of the most important reason for the difficulty in stock market
+prediction. Here is where the application of deep-learning models in financial [4] forecasting comes in. Deep neural
+network got its name due to the use of neural network architecture in DL models. It is also called as ANN. ANNs are
+good approximators and they are capable to learn and generalize from experience. Practical application of ANN in
+forecasting problems is very successful due to the following characteristics:
+• ANN’s are good function approximators, so the input and output relationship can be examined by them even if
+the data set is very complex.
+• ANN’s can identify new test samples even if they have not been used during the training of network.
+For the past few decades, ANN has been used for stock market prediction. Comparison study of different DL
+models of stock market prediction has already been done as we can see in [1]. Coskun Hamzacebi has experimented
+forecast- ing using iterative and directive methods [6]. Ajith Kumar Rout et.al made use of a low complexity
+recurrent neural network for stock market prediction [7].Yunus Yetis et.al applied ANN to predict NASDAQ’s
+(National Association of Securities Dealers Automated Quotations) stock value with given input parameter of stock
+market [12]. Roman et.al performed an analysis on multiple stock market return using Back propagation and RNN
+[13]. Neini et.al con- ducted a comparison study between Feed Forward MLP an Elman Recurrent Network for
+predicting stock value of company [18]. Mizuno et.al applied neural networks to technical analysis as a prediction
+model [15]. Guresen in 2011 had conducted a study to know about the effectiveness of ANN in stock market
+forecasting [19]. In [20], they explored the interdependency between stock volume and stock price on a certain
+number of nifty 50 listed companies. In [21], Batres-Estrada explains about different applications of DL models on
+time series analysis. X Ding et.al in [22] con- ducted a study on combination of Natural language processing (NLP)
+and financial time series analysis. In [23], they used ML algorithms like Least Square Support Vector Machine
+(LSSVM) and Particle Swarm Optimization (PSO) for stock market prediction. In [24], Kim et.al proposed a
+different approach for stock market prediction. i.e They intro- duced a Genetic Algorithm(GA) for discretization of
+features in ANN for stock price forecasting.In [25], deals with multi-stage fuzzy inference and wavelet transform
+for forecasting stock trends. Here the short-term features present in the stock trend is described using wavelet
+transform.
+Deep learning
+Long Short Term Memory
+Machine Learning
+Mean Absolute Percentage Error
+Multi Layer Perceptron
+Recurrent Neural Network
+National Stock Exchange
+New York Stock Exchange
+DL
+LSTM
+ML
+MAPE
+MLP
+RNN
+NSE
+NYSE
+Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362 1353
+Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000 3
+2. ARTIFICIAL NEURAL NETWORK
+ANN [16] is a computational structure which performs in a similar manner to that of biological neurons [8]. It is
+designed to identify an underlying trend from a data and to generalize from it. ANN’s are considered as non-linear
+statistical data tool [2]. The intricate relationship between outputs and inputs can be modeled using ANN. The main
+advantage of ANN is its capability to learn the underlying patterns from the data, where most of the conventional
+methods fail [3]. Usually, ANN consist of three layers namely input layer, hidden layer and output layer. Non-linear
+activation functions are used in all the nodes in hidden as-well-as output layers excluding input layer. Each node in
+the input layer is connected to each neuron in the succeeding hidden layer followed by output layer.
+2.1. NEURONS
+Fig. 1. Artificial Neuron
+The above figure shows an artificial neuron which is a simple processing unit inspired from the biological neuron
+[8][10]. The neuron has ’m’ inputs (xi) and each input is connected to the neuron by weighted link (wi) . Here the
+neuron sums up the inputs multiplied by the weights using the below equation
+A = ∑ xiwi+ b (1)
+Where A is the net sum and b is the threshold value.For getting the output this net sum is applied into a function
+called activation function F(A).
+out put = F(A) (2)
+Here the input values and weights are real numbers. In some situations the threshold value b is considered as an
+imaginary input x0 = +1 and a connection weight w0 for the simplicity of computation.
+2.2. FEED FORWARD NETWORK
+Feed forward network [11] also known as MLP is an example of a simple neural network. Each input neurons are
+linked to the succeeding hidden layer neurons through a weighted matrix wki. A Network has three section of layers
+input, hidden and output layers [8]. Artificial neurons are those which are present in the hidden and output layer [8]
+which is also known as [17]. Each of these neurons receive inputs from a previous layer. Neurons in the network are
+not connected to the neurons in the same layer but they are connected with neurons in the next layer. Equation for
+1354 Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362
+4 Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000
+activation function [14] of an i
+th hidden neuron is given by
+ (3)
+hi : i
+th hidden neuron , f(ui) : link function which provides non-linearity between input and hidden layer ,
+wki : weight in the (k, i)
+th entry in a (K X N) weight matrix , xK : Kth input value
+
+ (4)
+ y j : j
+th output value
+2.3. RECURRENT NEURAL NETWORK
+Fig. 2. Recurrent Neural Network
+Unlike MLP, RNN [18] takes input from two sources, one is from the present and the other from the past.
+Information from these two sources are used to decide how they react to the new set of data. This is done with the help
+of a feedback loop where output at each instant is an input to the next moment. Here we can say that the recurrent
+neural network has memory. Each input sequence has plenty of information and this information are stored in the
+hidden state of recurrent networks. This hidden information is recursively used in the network as it sweeps forward
+to deal with a new example. Fig 2 shows a pictorial representation of recurrent neuralnetworks.
+Input to hidden layer equation is given as:
+ (5)
+where as ht : hidden layer at t
+th instant , gn : function , Wxh : input to hidden layer weight matrix, Xt : input at t
+th
+instant, ht−1 :hidden layer at t − 1th instant , bh :bias or threshold value
+Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362 1355
+Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000 5
+hidden to output layer equation is given as :
+ (6)
+whereas Zt :output vector, Whz :hidden to output layer weight matrix, bz :bias or threshold
+2.4. LONG SHORT TERM MEMORY
+LSTM [19] is a special type of RNN. These networks are proficient in learning about long-term dependencies.
+It was introduced by Hochreiter and Schmidhuber in 1997. These networks are clearly designed to evade the longterm dependency problem, but remembering information for a long time period back is their normal behavior. Fig 3
+shows a pictorial representation of LSTM cell. LSTM have a different structure compared to other neural networks.
+Conventional RNN has a very simple neural network with a feedback loop but LSTM consists of a memory block or
+cells instead of a single neural network layer. Each cell or block has 3 gates and a cell state tend to regulate the flow
+of data information through the cells.Fig 3 shows a pictorial representation of LSTM. Here Ct−1 :old cells state, Ct
+Fig. 3. LSTM CELL
+:present cell state, ht−1 :Output of previous cell, ht :Output of present cell, it : Input gate layer, ft :forget gate layer, Ot
+:Output sigmoid gate layer
+In the above figure horizontal line passing through the top of the diagram is known as cell state (Ct−1, Ct). It acts like
+a conveyor belt that runs over the entire network. It carries the information from the previous cell to the present and so
+on. The decision for storing information in cell state is taken by forget gate layer (ft) which is also known as sigmoid
+layer. The output from forget gate is added to cell state using a point-wise multiplication operation. Next is input gate
+which comprises of a sigmoid layer (it) and tanh layer. Input gate combines these two into the cell state. Here C‘ are
+the new values created by tanh layer. Output (ht) is formed by a point-wise multiplication ofsigmoid gate Ot and tanh.
+3. Methodology
+3.1. DATASET 1
+Dataset is taken from highly traded stocks of three different sectors which are Automobile, Banking and IT sectors
+from NSE. The corresponding stocks from these sectors are Maruti, Axis bank, and Hcltech. Each contains information like stock symbol , stock series, stock date and previous closing, opening ,high ,low ,last , closing and average
+prices, total traded quantity, turnover and no : of trades. From these datasets, we extract only the day-wise closing
+price of each stock because day wise stock price is preferred since investors make decision on buying which stock or
+forfeiting which stock based on the closing price of the market.
+1356 Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362
+6 Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000
+TRAINING. Training dataset used is TATAMOTORS which is from Automobile sector. The training dataset is from
+the period of 1 JAN 1996 TO 2015 June 30 and it contains the closing price of 4861 days. The training data ranges
+between 58.79 and 1365.15. The extracted data was then subjected to normalization to unify the data range within 0
+and 1. Normalization of data is done to bring all stock data into a common range. Since we are using stock datafrom
+different market, we need the data to be under a common range. This process was done using the equation:
+x norm = (x − x min) / (x max − x min) (7)
+where x norm is the normalized value, x min and x max is the minimum and maximum value in the training dataset.
+This normalized data was given as the input to the network in a window size of 200 to predict 10 days in future. And
+the output from the network was subjected to a De-normalization process for acquiring original predicted values. The
+training of network was done for 1000 epochs. The window size was fixed by performing error calculation on each
+window size which varies from 50 to 250. Among this, the window size of 200 resulted minimum error than other
+window sizes.
+WINDOW SIZE FIXING. The table 1 shows the MAPE (Mean Absolute Percentage Error) obtained for different
+window size and prediction days. The topmost row with values 50,100,150,200 and 250 represents window size and
+10,20, 30, 40 in the first column represents the prediction days.From the table, it is clear that minimum MAPE is
+obtained with window size 200 for 10 days prediction. So here we fix our window size as 200 with 10 days prediction.
+Table 1. Table elaborating window size and interval of prediction days
+Pred:days 50 100 150 200 250
+10 4.5 4.34 4.62 4.17 4.18
+20 6.53 6.05 5.88 5.61 5.16
+30 6.49 7.84 6.97 5.11 5.86
+40 9.65 9.34 6.84 5.86 7.06
+TESTING. For testing, we chose data from three main sectors such as Automobile, Banking, IT and the corresponding stocks from this sectors were Maruti, Axis bank, and Hcl technologies respectively. Here also we extract the
+day-wise closing price of each stock and they were subjected to data normalization and the predicted output was
+subjected to De-normalization as done in the training dataset. Test datasets were from the time period of 5th October
+2007 to 30th June 2017.The window size of input stock data to the network was 200 and was found by performing
+error calculation for various window sizes.
+Predicted output was subjected to mean absolute percentage error for calculating the error in the predicted output.
+Equation for calculating MAPE is given below.
+MAPE = (8)
+ Here ‘Actual’ values are the labels and ‘Forecast’ values represents the predicted values.
+Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362 1357
+Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000 7
+3.2. DATASET 2
+In order to verify whether the models identify the common dynamics between different stock exchange, we tried
+to predict the model using NYSE stock data. Data is taken from yahoo finance. We selected top two active stock in
+new york stock exchange and they are Bank of America (BAC) and Chesapeak Energy (CHK). Time period for the
+dataset was from 3rd January 2011 to 30th December 2016 and the data is expressed in US in dollar. From dataset,
+we extracted only the day-wise closing price.
+TESTING. We selected day-wise closing price for each company for the period of 3rd January 2011 to 30th
+December 2016. Then we normalized the extracted data by using the equation (1) to unify the data before giving it as
+input to the network.
+4. RESULTS AND DISCUSSION
+Here we have performed the analysis on two stock markets data and they are NSE and NYSE. For
+this, we had used four types of deep neural networks named MLP, RNN, LSTM, and CNN. All these
+networks were trained with NSE data of Tata Motors which belong to the automobile sector. And these
+networks subjected to test using the data from NSE and NYSE. For NSE we choose data from automobile, financial, IT sectors and for NYSE we choose financial and petroleum sectors.For the comparison between linear and non-linear models, we have used ARIMA model which is a linear model.
+In this work we have considered 400 days prediction for ARIMA and neural network. The motive behind this was
+to compare the performance of ARIMA and neural network for a specific period of time. The results obtained are
+tabulated in table 2 and table 3.
+Table 2. MAPE incurred during the prediction of MARUTI, HCL and AXIS BANK NSE values using ARIMA model for the duration of 400 days
+COMPANY MAPE
+MARUTI 20.66
+HCL 24.69
+AXIS BANK 19.64
+Table 2 shows the MAPE obtained for predicting closing price for 400 days using ARIMA model.
+Table 3. MAPE incurred during the prediction of MARUTI, HCL and AXIS BANK NSE values using DL network for the duration of 400 days
+COMPANY RNN LSTM CNN MLP
+MARUTI 5.82 6.03 4.05 4.81
+HCL 5.40 5.52 4.40 3.85
+AXIS BANK 11.64 4.88 5.22 5.5
+Table 3 shows the MAPE obtained by the neural network for 400 days prediction. Comparing table 2 and table 3 result shows that the performance of neural network architecture is better than that of
+ARIMA.This may be due to the reason that ARIMA fails to identify the non-linearities existing with in
+the data, where as neural network architectures can identify the non-linear trends existing with in the data.
+Table 4. MAPE incurred during the prediction of MARUTI, HCL and AXIS BANK NSE values using DL network
+COMPANY RNN LSTM CNN MLP
+MARUTI 7.86 6.37 5.36 6.29
+HCL 8.53 6.97 6.42 7.38
+AXIS BANK 9.27 8.13 7.94 8.10
+1358 Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362
+8 Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000
+In table 4 we have the MAPE values obtained for testing MARUTI, HCL and AXIS BANK for the time period of
+5th October 2007 to 30th June 2017.
+In case of Maruti, fig (4a) shows the MLP network which was successful in capturing the pattern because it uses
+Fig. 4. (a) Real and Predicted values of MARUTI stock using MLP;(b) Real and Predicted values of MARUTI stock using RNN
+the current window information for the prediction. But in case of fig(4b) and fig(5a) between the period of 1500
+and 2300 days RNN and LSTM failed to identify the seasonal pattern which can be considered as change in
+behavior of system.In fig(5b) CNN almost captured the pattern since it accounts only the data in a particular
+window.
+Fig. 5. (a) Real and Predicted values of MARUTI stock using LSTM ; (b) Real and Predicted values of MARUTI stock using CNN.
+Fig. 6. (a) Real and Predicted values of HCLTECH stock using MLP;(b) Real and Predicted values of HCLTECH stock using RNN.
+Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362 1359
+Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000 9
+Fig. 7. (a) Real and Predicted values of HCLTECH stock using LSTM; (b) Real and Predicted values of HCLTECH stock using CNN.
+In case of HCLTECH, fig (6a), MLP network is successful in capturing the seasonal pattern but between the time
+period 1600 and 1900 days it failed to capture the pattern. In fig(6b) RNN was almost successful in identifying the
+pattern where as fig(7a) and fig(7b) shows that LSTM and CNN fail to capture change in system between the period
+1400 and 1800 days.
+Fig. 8. (a) Real and Predicted values of AXISBANK stock using MLP; (b) Real and Predicted values of AXISBANK stock using RNN
+Fig. 9. (a) Real and Predicted values of AXISBANK stock using LSTM; (b) Real and Predicted values of AXISBANK stock using CNN
+In case of AXIS BANK, from fig(8a), MLP network identified the pattern at the beginning but on reaching the
+time period between 1400 and 1700 days it failed to capture the pattern. Similar effects can be found in fig(8b) where
+RNN captured the pattern at the initial stage but on reaching the time period between 1300 and 1600 it fails to identify
+the pattern. From fig(9a) and fig(9b), LSTM and CNN, LSTM network is not identifying the pattern for timeperiods
+between 200 and 500 days where as CNN almost captured the pattern except at the period between 1600 and 1800
+days.
+1360 Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362
+10 Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000
+Table 5. MAPE incurred during the prediction of BANK OF AMERICA and CHESAPEAK ENERGY NYSE values using DL network
+COMPANY RNN LSTM CNN MLP
+BANK OF AMERICA 5.38 6.01 5.31 4.82
+CHESAPEAK ENERGY 8.94 8.98 9.18 7.85
+Table 5 shows the mean absolute percentage error obtained for testing BANK OF AMERICA (BAC), CHESAPEAK(CHK) energy from NYSE with four DNNs pre-trained with TATA MOTORS from NSE.
+Fig. 10. (a) Real and Predicted values of BAC stock using MLP; (b) Real and Predicted values of BAC stock using RNN
+In case of Bank of America, fig(10a), MLP network failed to identify the pattern in beginning but later on it almost
+captured the pattern. From fig(10b), RNN also exhibits similar behavior in beginning time period from 50 to 600 and
+later on it captured the pattern but on reaching the end prediction is little lagging compared to the actual values. From
+fig(11a) we can see LSTM failed to capture the pattern at the beginning and also between the period 1100 and 1250
+days. In fig(11b), CNN almost captured the pattern compared to other three networks.
+ Fig. 11. (a) Real and Predicted values of BAC stock using LSTM; (b) Real and Predicted values of BAC stock using CNN
+Fig. 12. (a) Real and Predicted values of CHK stock using MLP; (b) Real and Predicted values of CHK stock using RNN
+Hiransha M et al. / Procedia Computer Science 132 (2018) 1351–1362 1361
+Hiransha M et al. / Procedia Computer Science 00 (2018) 000–000 11
+Fig. 13. (a) Real and Predicted values of CHK stock using LSTM; (b) Real and Predicted values of CHK stock using CNN
+In case of Chesapeak Energy, fig(12a) and fig(12b), MLP and RNN failed to identify the pattern between a period
+of 500 and 900 days. In fig(13a), LSTM, failed to capture the seasonal pattern at the beginning and also for the period
+between 600 and 800 days. But towards the end, it almost identified the pattern. In fig(13b) we can observe that CNN
+performed better compared to other three networks even though there are some region which shows less accuracy for
+the predicted values.
+5. CONCLUSION
+In this work we used four DL architecturesfor the stock price prediction of NSE and NYSE ,which are two different
+leading stock markets in the world. Here we trained four networks MLP, RNN, LSTM and CNN with the stock price
+of TATA MOTORS from NSE. The models obtained were used for predicting the stock price of MARUTI, HCL
+and AXIS BANK from NSE stock market and also for predicting the stock price of BANK OF AMERICA (BAC)
+and CHESAPEAK ENERGY (CHK) from NYSE. From the result obtained, it is clear that the models are capable
+of identifying the patterns existing in both the stock markets. This shows that there exist an underlying dynamics,
+common to both the stock markets. Linear models like ARIMA is a univariate time series prediction and hence they
+are not capable of identifying underlying dynamics within various time series. From the result, we can conclude that
+DL models are outperforming ARIMA model. In the proposed work , CNN has performed better than other three
+networks as it is capable of capturing the abrupt changes in the system since a particular window is used for predicting
+the next instant. This work hasn’t explored the advantage of using a hybrid network which combines two networks to
+make a model for prediction.
+
