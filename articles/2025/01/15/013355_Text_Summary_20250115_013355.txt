@@ -1,0 +1,60 @@
+Timestamp: 2025-01-15T01:33:55.055042
+Title: Text_Summary_20250115_013355
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1.  **Research Goal:**
+    *   Develop a novel neural network approach for improved stock market predictions.
+2. **Methodology:**
+    *   Data is sourced from the live stock market for both real-time and offline analysis.
+    *   "Stock vector" concept is introduced based on word vector development, using multi-stock high-dimensional historical data as input.
+    *   Two models are proposed:
+        *   Deep LSTM with embedded layer.
+        *   LSTM with autoencoder.
+    *   The embedded layer and autoencoder are used to vectorize data before LSTM-based forecasting.
+3.  **Results:**
+    *   Deep LSTM with embedded layer shows better performance.
+    *   Accuracy for Shanghai A-shares composite index: 57.2% (deep LSTM) and 56.9% (LSTM with autoencoder).
+    *   Accuracy for individual stocks: 52.4% (deep LSTM) and 52.5% (LSTM with autoencoder).
+4.  **Contribution:**
+    *   Demonstrate the application of the Internet of Multimedia of Things (IMMT) for neural network-based financial analysis.
+
+**Core Point:** The research shows that using a deep LSTM with an embedded layer to vectorize high-dimensional stock data yields better stock market prediction accuracy than using an autoencoder with LSTM.
+
+**Fundamental Point:** Applying advanced deep learning techniques, particularly the use of embedded layers for stock data vectorization, improves the accuracy of stock market predictions within an Internet of Multimedia of Things (IMMT) context.
+
+**Overarching Framework:** The framework of the paper is focused on employing deep learning techniques, especially an innovative stock vector approach, and comparing two different vectorization methods to enhance stock market prediction accuracy and integrate this within an IMMT system.
+
+<Mermaid_Diagram>
+graph LR
+    A[Research Goal] --> B(Data Acquisition);
+    B --> C{Data Preprocessing};
+    C --> D[Concept of "Stock Vector"];
+    D --> E[Multi-Stock High-Dimensional Data Input];
+    E --> F{Model 1: Deep LSTM with Embedded Layer};
+     E --> G{Model 2: LSTM with Autoencoder};
+   F --> H[LSTM-based Forecasting];
+    G --> H
+     H --> I(Evaluation and Results);
+    I -->J[Conclusion: Deep LSTM Better];
+    J -->K(Contribution: IMMT Application);
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+     style E fill:#ccf,stroke:#333,stroke-width:2px
+     style F fill:#9f9,stroke:#333,stroke-width:2px
+    style G fill:#9f9,stroke:#333,stroke-width:2px
+    style H fill:#9f9,stroke:#333,stroke-width:2px
+    style I fill:#fcc,stroke:#333,stroke-width:2px
+    style J fill:#fcc,stroke:#333,stroke-width:2px
+        style K fill:#fcc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+This paper aims to develop an innovative neural network approach to achieve better stock market predictions. Data were obtained from the live stock market for real-time and off-line analysis and results of visualizations and analytics to demonstrate Internet of Multimedia of Things for stock analysis. To study the influence of market characteristics on stock prices, traditional neural network algorithms may incorrectly predict the stock market, since the initial weight of the random selection problem can be easily prone to incorrect predictions. Based on the development of word vector in deep learning, we demonstrate the concept of "stock vector." The input is no longer a single index or single stock index, but multi-stock high-dimensional historical data. We propose the deep long short-term memory neural network (LSTM) with embedded layer and the long short-term memory neural network with automatic encoder to predict the stock market. In these two models, we use the embedded layer and the automatic encoder, respectively, to vectorize the data, in a bid to forecast the stock via long short-term memory neural network. The experimental results show that the deep LSTM with embedded layer is better. Specifically, the accuracy of two models is 57.2 and 56.9%, respectively, for the Shanghai A-shares composite index. Furthermore, they are 52.4 and 52.5%, respectively, for individual stocks. We demonstrate research contributions in IMMT for neural network-based financial analysis.
