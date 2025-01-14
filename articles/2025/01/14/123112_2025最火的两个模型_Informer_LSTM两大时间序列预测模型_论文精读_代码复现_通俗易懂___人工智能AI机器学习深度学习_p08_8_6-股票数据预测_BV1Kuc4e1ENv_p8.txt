@@ -1,0 +1,70 @@
+Timestamp: 2025-01-14T12:31:12.288140
+Title: 2025最火的两个模型：Informer+LSTM两大时间序列预测模型，论文精读+代码复现，通俗易懂！——人工智能AI机器学习深度学习 p08 8.6-股票数据预测 BV1Kuc4e1ENv_p8
+URL: https://b23.tv/9WxNSBv
+Status: success
+Duration: 7:13
+
+Description:
+好的，这是对您提供的内容的总结：
+
+**Outline and Structured Summary:**
+
+1.  **Introduction:**
+    *   The discussion focuses on applying time series analysis to real-world data, specifically stock market data.
+    *   The data includes open, high, low, close prices, and trading volume.
+    *   The goal is to move beyond simple, patterned data (like the "money-making function") to more complex, real-world scenarios.
+2.  **Data Exploration and Challenges:**
+    *   Stock market data lacks clear, predictable patterns, unlike the "money-making function."
+    *   Long-sequence prediction (e.g., predicting 50 points into the future) is challenging.
+    *   The core focus is not on perfect stock prediction, but on how to prepare real-world data for time series modeling.
+3.  **Data Preprocessing Necessity:**
+    *   The initial data, with its widely fluctuating values, results in a large loss and poor learning by the model.
+    *   This indicates the necessity of data preprocessing because values do not have a set range.
+    *   The concept of "relative change" is introduced: understanding change between values (e.g., day-to-day) rather than just absolute values.
+4.  **Experiment 1: No Preprocessing (Force = True):**
+    *   Using the "configure1" setting, with only the "close" price data.
+    *   The network architecture is described as multi-layered (RNN1, RNN2, RNN3)
+    *   Normalization/regularization is set to "force" (i.e., disabled).
+    *   The resulting Loss is very large.
+    *   The prediction is a flat line, showing the model did not learn anything.
+    *   It highlights that raw data in this context is not suitable for learning. The large values amplify the loss without providing a good signal.
+5.  **The Need for Relative Change:**
+    *   The analogy of learning progress (e.g., "10% improvement from yesterday") is used to illustrate the concept of relative change.
+    *   For time series, it is important to model the trends of relative changes to capture a pattern.
+6.  **Train and Predict:**
+    *   Using 50 days as an initial data window to predict the next 50.
+    *   Shows how the model remembers the trend of relative changes instead of only absolute values.
+
+**Core Point:**
+Real-world time series data, like stock market data, requires preprocessing, particularly focusing on relative changes rather than absolute values, for effective model training.
+
+**Fundamental Point:**
+The key to successful time series modeling with real-world data lies in understanding and transforming the raw data into a format that highlights the underlying patterns and trends (relative changes), thus enabling the model to learn effectively.
+
+**Overarching Framework:**
+The framework is a cycle of data exploration, model training and results analysis. The primary aim is to show the importance of data preprocessing by experimenting with raw data and highlighting the need to use relative instead of absolute changes in the data.
+The overall objective is to demonstrate how to deal with and prepare real-world time-series data for modeling.
+
+<Mermaid_Diagram>
+graph LR
+    A[Start] --> B(Data Acquisition);
+    B --> C{Data Characteristics};
+    C -- Complex, No Patterns --> D[Data Preprocessing Needed];
+    C -- Simple Patterns --> E[No Preprocessing Needed];
+    D --> F{Absolute Values};
+    F --> G[Large Loss, Poor Learning]
+    F --> H(Relative Changes);
+    H --> I[Model Learns Trends];
+     E --> I
+    I --> J(Model Training);
+    J --> K(Results Analysis);
+    K --> L[Improve Model/Data];
+     L --> D
+      K --> M[End]
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+接下来我们还可以把这个rtm 螺螺型以及我们该说的咱们时间区别怎么做用到一个真实的水当中比如说咱们现在给它打开的这个股票数据而且大家看一下把这个国水当中有几个指标各位大家应该大概都玩了这东西吧第一个是我的一个开盘价然后最高价最低价以及收盘价还有一个交易的数量这一个就是我们现在拿到价值标来之前咱们说在做时间区电的时候我们之前传建的数据它是不是对于那个挣钱寒数它是不是只是一个指那对于这底外来说是不是说现在我们能应用的一个条件更多了尽量能更丰富一些以后大家也是一家怎么样去用一个单特征还可以用多特征一起来去做时间区电然后这个数据大家觉得股票市场我真的预测出来接下来它的一个实践走失猛谢谢大家看一下它的大致的一个结果图吧在这里嗯 点来看一下这个而这个大家先不用管这个预测的因为这个预测相当于是做了简单的一件事我们就看一下股票大致的一个走失其实你偷偷的走失可以看出来基本上没有什么太大的一个规律吧不像咱们之前所说那个挣钱寒数那个挣钱寒数基本上就是按照这个规律按照这个模式去做的所以说你要学习起来实话比较容易但是对于这些没有一些实际规律的时候你让它再去做预测尤其是再让它去做一个长序列的预测比如说在这里下面咱们要做一个就是跟咱们之前放一样也要做一个从当前这五十点开始让它接下来预测后五十点它的一个走失预测结果可能来说效果不是那么特别的好这个给大家演示了一下基本它的一个效果而咱们这个问题不光是要给大家解决什么股市预测的问题只要给大家说一说就是到拿到了一份实际实际之后我们该怎么样变一模型怎么样把输入和输出给它做出来这个是我们重点到时候等大家拿到自己出一之后我们再在做一些其他的处理操作这也都是需要去做的我们先说第一点我们来观察一下以前我们说那个挣钱寒数它是不是说它的取质范围都在一定范围区间上然后来进行一个浮动的但是对于我们这个任务来说它还好像有点特别了你看这个任务来说它里边取质范围不是那么特别固定浮动有些时候比较大有些时候比较小那你说我们修不修对数据做一些预处理的操作呢反正我现在也不知道咱们来试一试吧在这里咱们先把这个带玩打开然后有一个点就是在这里我重新写了一个configure1configure2我等一下等一下看一下这里边你看就是改了几个东西首先就是我的这个用的一个文件改了我们不是用那个挣钱海出的那个数据文件了而是用实际的某一个股票在一定时间内它的一个走势的情况这个点是在cv文件然后我选择当前的一个列然后咱们这样就是这个configure1我只喜欢只用这么一列数据然后那个configure2我们再用两列数据咱们先说一列数据的情况这是一列数据选的是close那个列它的一个指标这这里咱们现在用的时候我只用这一列东西其他暂时不去用这个意思然后呢再往下来看下面做了些东西最多一当中这一块这些都跟之前一样了网络文行也跟这些差不多整体网络文行比之前的一个区别就是原来你不是iR1iR2吗现在有多里层多了一个R3多了一个RTN网络相当于多里层这是RTN1RTN2然后RTN3这个意思然后呢注意点的这一块我多加的东西咱们之前在说那个镜下海处的时候是不是没说有规议画这个事在这里我把规议画这个东西指定成一个处置这样咱先布置它指定成处置我先给指定成一个force值咱来看一下这个东西它的一个结果会长什么样子我给指定成一个force保存一下然后呢咱们来运行一下这是肯非个衣是吧然后在这里我把它改成个衣就在这一块大家都是大家自己做的时候你用哪个配置文件你把它改成哪个名字我也改成衣了然后我们来运行一下咱们可以来看一看如果说要不做一些预处理直接拿原理数据去做咱可以观察这个Loss的变化大家可以看这个Loss怎么样特别大的一个损失吧这个就是咱们不光损失表大而且你看收脸收脸的也是不是比较慢啊这个损失大因为什么因为我们是为MS1去做的越大的数值肯定相对来说Loss越大咱们这个就是对于回温任务来说不像你的分裂任务有准确的略你可以直接来进行对比但你回温任务当中由于它是一些数值在做计算然后得到它的一个Loss这一回就是你说一当中数值越大那肯定得Loss值也偏大嘛这个只是一个相对的大家不要觉得一看这么大数我觉得它特别烂其实都这个相对的也过程啊然后再来看结果下吧它这个运营完之后回过后回过保存两个图啊一个是Retal 2一个是这里这个就是这个东西我先给大家点个来看一下吧这个以后给大家说我们有两种预测方法这里吧你来看一下它的一个结果实际的数据出队塔是这个蓝色的吧我预测值呢竟然预测成了一条纸线说明什么说明这件事我做的数不好啊网络什么都没有去学到为什么因为我现在拿到远数一当中你看到这些数值普通的范围都是比较较大的吧而且啊没有这样的一个具体的走势感觉跟我的感觉像是一堆随机数是的是不是那你想我怎么样呢看出来一点走势啊是不是说有走势有东西应该是一个相对的概念比如说我们说我们学习我学习我说第二天比第一天进步一点进步了10%第二天比第一天又进步了20%第三天比第二天又进步了30%是不是有站一个走势啊那这里啊到我们拿到一个时间训电任务的时候也需要对我们的数据进行一些与处理的操作就像我该说的我们可以干什么我们可以让数值进行什么进行一个就是按照一种相对的情况如果说你按照这些绝对的数据来看好像上下来也最激确但是按照一些相对的时候是不是说我第二天的相对第一天的第三天的相对第一天的有这样整体的边缘的趋势吧比如说在这里我说娶了一个训电的长度为50在这里呢用第一天一直直到第二天一直点点点到第50天现在我要做的就是我要看第二天相对第一天的第三天相对第一天的这样啊让我的模型能记住一下相对变化的一个趋势而不是只仅仅看它是具体绝对的一个值看值要给大家演示了它效果不好是不是
