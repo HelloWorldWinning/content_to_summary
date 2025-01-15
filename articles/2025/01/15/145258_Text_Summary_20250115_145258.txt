@@ -1,0 +1,56 @@
+Timestamp: 2025-01-15T14:52:58.032587
+Title: Text_Summary_20250115_145258
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Problem:**
+   * Financial time series are difficult to predict due to nonlinearity and high volatility.
+
+**II. Solutions:**
+    *   **Deep Learning Advancements:** LSTM and CNN models have shown promise in analyzing financial time series.
+    *   **Decomposition Algorithms:** EMD and CEEMD can decompose time series into different frequency spectra.
+
+**III. Proposed Hybrid Algorithms:**
+    *   **CEEMD-CNN-LSTM:** Combines CEEMD, CNN, and LSTM.
+    *   **EMD-CNN-LSTM:** Combines EMD, CNN, and LSTM.
+    *   **Concept:** The combination of these models creates a collaboration that enhances analytical power.
+    
+**IV. Results:**
+    *   Hybrid algorithms (CNN + LSTM with CEEMD or EMD) enhance prediction accuracy.
+    *   CEEMD-based algorithm outperforms EMD-based algorithm.
+
+**Core Point:** Combining decomposition algorithms (CEEMD or EMD) with deep learning models (CNN and LSTM) enhances the predictive accuracy of financial time series.
+
+**Fundamental Point:**  Hybrid models that integrate signal decomposition techniques with deep learning architectures offer a robust approach to address the inherent complexity of financial time series prediction.
+
+**Overarching Framework:** The content presents a framework for enhancing financial time series prediction by integrating signal decomposition methods with deep learning architectures.
+
+<Mermaid_Diagram>
+graph LR
+    A[Financial Time Series] --> B(Nonlinearity & Volatility);
+    B --> C{Prediction Difficulty};
+    C --> D[Deep Learning (LSTM, CNN)];
+    C --> E[Decomposition (EMD, CEEMD)];
+    D --> F(Feature Extraction);
+    E --> G(Frequency Spectra);
+    F & G --> H[Hybrid Algorithms (CEEMD/EMD-CNN-LSTM)];
+    H --> I{Enhanced Prediction};
+    I --> J[CEEMD-Based > EMD-Based];
+    subgraph Signal Processing
+        E
+    end
+    subgraph Deep Learning
+        D
+    end
+    subgraph Hybrid Model
+       H
+    end
+</Mermaid_Diagram>
+
+
+Content:
+Nonlinearity and high volatility of financial time series have made it difficult to predict stock price. However, thanks to recent developments in deep learning and methods such as long short-term memory (LSTM) and convolutional neural network (CNN) models, significant improvements have been obtained in the analysis of this type of data. Further, empirical mode decomposition (EMD) and complete ensemble empirical mode decomposition (CEEMD) algorithms decomposing time series to different frequency spectra are among the methods that could be effective in analyzing financial time series. Based on these theoretical frameworks, we propose novel hybrid algorithms, i.e., CEEMD-CNN-LSTM and EMD-CNN-LSTM, which could extract deep features and time sequences, which are finally applied to one-step-ahead prediction. The concept of the suggested algorithm is that when combining these models, some collaboration is established between them that could enhance the analytical power of the model. The practical findings confirm this claim and indicate that CNN alongside LSTM and CEEMD or EMD could enhance the prediction accuracy and outperform other counterparts. Further, the suggested algorithm with CEEMD provides better performance compared to EMD.
