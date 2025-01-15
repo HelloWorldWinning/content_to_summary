@@ -1,0 +1,66 @@
+Timestamp: 2025-01-15T14:53:17.239654
+Title: Text_Summary_20250115_145317
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1. **Introduction to Investment Wealth Management:**
+    *   Investment wealth management is a key element of modern finance.
+    *   It involves the strategic allocation of funds across diverse assets (e.g., savings, stocks, real estate).
+    *   The goal is to increase and preserve the value of assets for individuals, families, and institutions.
+
+2.  **Focus on Stock Investment:**
+    *   Stocks are a popular investment choice due to the high potential returns.
+    *   Stock market prediction is a major research area.
+
+3.  **Proposed Prediction Framework (SACLSTM):**
+    *   The paper introduces a novel stock price prediction framework called SACLSTM.
+    *   SACLSTM integrates Convolutional Neural Network (CNN) and Long Short-Term Memory Neural Network (LSTM).
+    *   It uses a sequence array of historical data and leading indicators (options and futures) as input.
+    *   CNN extracts features from input array.
+    *  Extracted CNN features then feed into an LSTM network.
+
+4.  **Experimental Validation:**
+    *   The proposed method was tested using data from ten stocks in the U.S.A. and Taiwan.
+    *   SACLSTM showed superior prediction performance compared to previous methods.
+
+5. **Core Point:** The core point is the paper proposes a novel deep learning framework (SACLSTM) for more accurate stock price prediction, combining CNN and LSTM networks, leveraging historical data and leading indicators.
+
+6. **Fundamental Point:**  The fundamental point is that by employing a novel deep learning approach to integrate time series data with leading indicators, a more accurate stock price prediction model can be developed for improved investment decision-making.
+
+7. **Overarching Framework:** The overarching framework is leveraging machine learning, specifically deep learning architectures, to enhance stock market price prediction. This involves gathering historical stock data and leading market indicator data to predict future stock prices with higher accuracy.
+
+<Mermaid_Diagram>
+graph LR
+    A[Investment Wealth Management] --> B(Asset Allocation);
+    B --> C[Stocks];
+    C --> D(Stock Market Prediction);
+    D --> E[SACLSTM Framework];
+    E --> F(Data Input:Historical & Indicators);
+    F --> G[CNN Layer];
+    G --> H(Feature Extraction);
+    H --> I[LSTM Layer];
+    I --> J(Stock Price Prediction);
+    J --> K(Experimental Results);
+    K --> L{Improved Prediction};
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ffc,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+     style J fill:#ccf,stroke:#333,stroke-width:2px
+     style K fill:#ccf,stroke:#333,stroke-width:2px
+      style L fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+In today's society, investment wealth management has become a mainstream of the contemporary era. Investment wealth management refers to the use of funds by investors to arrange funds reasonably, for example, savings, bank financial products, bonds, stocks, commodity spots, real estate, gold, art, and many others. Wealth management tools manage and assign families, individuals, enterprises, and institutions to achieve the purpose of increasing and maintaining value to accelerate asset growth. Among them, in investment and financial management, people's favorite product of investment often stocks, because the stock market has great advantages and charm, especially compared with other investment methods. More and more scholars have developed methods of prediction from multiple angles for the stock market. According to the feature of financial time series and the task of price prediction, this article proposes a new framework structure to achieve a more accurate prediction of the stock price, which combines Convolution Neural Network (CNN) and Long-Short-Term Memory Neural Network (LSTM). This new method is aptly named stock sequence array convolutional LSTM (SACLSTM). It constructs a sequence array of historical data and its leading indicators (options and futures), and uses the array as the input image of the CNN framework, and extracts certain feature vectors through the convolutional layer and the layer of pooling, and as the input vector of LSTM, and takes ten stocks in U.S.A and Taiwan as the experimental data. Compared with previous methods, the prediction performance of the proposed algorithm in this article leads to better results when compared directly.
