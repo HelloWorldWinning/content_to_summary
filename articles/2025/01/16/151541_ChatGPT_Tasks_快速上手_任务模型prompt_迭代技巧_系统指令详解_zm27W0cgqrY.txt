@@ -1,0 +1,101 @@
+Timestamp: 2025-01-16T15:15:41.027622
+Title: ChatGPT Tasks 快速上手：任务模型prompt 迭代技巧、系统指令详解 zm27W0cgqrY
+URL: https://youtu.be/zm27W0cgqrY
+Status: success
+Duration: 34:16
+
+Description:
+**Summary:**
+
+**I. Introduction to the New OpenAI Task Model (GPT-4o Based):**
+    *   **Release:** OpenAI released a new task-focused model based on GPT-4o, designed for scheduling and executing tasks.
+    *   **Purpose:**  To provide a more in-depth and comprehensive understanding of this new feature.
+    *   **Goal:** Enable users to grasp the functionality quickly, saving time for more in-depth exploration.
+
+**II. Key Aspects of the Task Model:**
+    *   **Prompting:** Demonstrates effective prompting for better results.
+    *   **System Instructions:** Analysis of system-level commands that govern the model's functionality.
+    *   **Impact Analysis:** Discussion about the implications of this model update, particularly in the context of AGI in 2025.
+    *   **Evolution of Models:** From chatbot models to reasoning models (OE, O3) to the current task/AGI-focused model. This release is considered an initial step in AGI-level functionality.
+    *   **Functionality:** Transforms from real-time dialogue to scheduled, long-term task execution by transforming natural language into scheduled tasks, effectively acting as a virtual assistant.
+
+**III. How the Task Model Works:**
+    *   **Task Structure:**  Each task has a name, a prompt (interpreted by the model), and a schedule (daily, weekly, etc.).
+    *   **Task Management:** Users can view, pause, and edit scheduled tasks, with editing capabilities being more comprehensive on the web than in the app.
+    *   **Iteration and Testing:** Importance of iterative prompt design, starting with simple prompts and gradually adding complexity and using 15-minute intervals to test quickly.
+
+**IV. Effective Prompt Design:**
+    *   **Iterative Approach:** Start with simple prompts and refine them through multiple iterations.
+    *   **Clear and Detailed:**  Use clear, detailed, and human-like language, not overly concise, to articulate needs.
+    *   **Example of Iterations:** Demonstrates prompt iterations in the news briefing task - from a basic request to complex requirements, including different source types, language and analytical comments..
+    *   **Importance of Understanding Model's Interpretation:** Check how the model interprets the prompt by reviewing the editable structure.
+
+**V. Task Model System Instructions (Analysis by Simon Williamson):**
+    *   **Three Parts:** Summary, inner workings, and overall emphasis.
+    *   **Underlying Model:**  GPT-4o using a tool called "Orchestration" with natural language for its capabilities.
+    *   **Task Structure Internally:** Three parts - Titles (short imperative verb), Prompt (summarized version from the user), and Schedule.
+    *   **Internal Psychology:** Internal processes of how the model handles tasks are explained, using natural language instead of code.
+    *   **Emphasis:** 
+        *   The task model will only offer advice when helpful and should avoid creating new tasks as a result of being given one, but only to confirm tasks with the user..
+        *   Emphasis on short confirmations after task creation.
+        *   The task should not be seen as separate from the underlying model itself.
+        *   Emphasis on handling error cases and not hiding them.
+        *   Emphasis on limitations on the number of tasks (ten), and that users must suspend or delete tasks.
+
+**VI. Implications of this AGI-Level Development:**
+    *   **Practical Application:** The model focuses on task execution rather than just chatting or reasoning, representing the first functional release in AGI.
+    *   **Potential Enhancements:**  Anticipating future models with increased interaction with the environment (operating system, files), more automation, and better performance with more powerful models like OE or O3.
+    *   **Agent Paradigm:** Emphasis on transitioning to agent-based models that require clear task definitions but not ongoing inputs, learning from its environment.
+    *   **Economic Impact:**  The focus in 2025 might shift to demonstrate the real-world positive economic benefits of task-oriented models
+
+**VII.  Concluding Thoughts:**
+   * **Task as Agent:** The new Task model is a step towards the future of AI as an agent – able to understand tasks, access information, use tools, and learn from the environment.
+    * **2025 Focus** Agent AI development that performs practical tasks and shows its economic impact is the expected focus of 2025.
+   * **The Future**: While current models might not see massive leaps in reasoning power, they will likely improve in multi-modal capabilities, availability, and cost.
+
+**Core Point:** The new OpenAI Task Model marks a significant shift from chat and reasoning models to AGI-level task execution, paving the way for AI agents that can interact with the world.
+
+**Fundamental Point:** This update is a foundational step toward a future where AI can autonomously execute complex tasks with minimal human intervention, fundamentally changing the way we interact with technology.
+
+**Overarching Framework:**
+
+The content operates under the framework of analyzing a new AI tool, examining its functionality, design, and implications within a larger context of AI development, specifically its movement toward AGI and its potential economic effects. This framework begins with an explanation of the release, moves to operational details, then to technical analysis, before finally considering real-world impacts and future implications.
+
+<Mermaid_Diagram>
+graph LR
+    A[OpenAI Task Model (GPT-4o)] --> B(Introduction);
+    B --> C(Task Functionality);
+    C --> D(Prompt Engineering);
+    C --> E(System Instructions);
+     E --> F[Model Behavior and Limitations]
+    F --> G[AGI and Economic Implications];
+    G --> H(Task Model as Agent);
+      H --> I[2025 Agent AI Focus];
+    I --> J(Future AI Development);
+   B -- Objective & Goal --> C
+    C -- Iterative & Detailed --> D
+    D -- User Understanding --> C
+    C -- 3 Key Parts --> E
+    E -- Analysis of each Part --> F
+    F -- Analysis of Tasks --> G
+    G -- Transition to Agent Models --> H
+    H -- Task Completion & Learning --> I
+    I -- Multi-Modal, Availability, Cost --> J
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+      style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    
+   
+</Mermaid_Diagram>
+
+
+Content:
+今天早上 OpenAI发布了civpt task新的模型现在我用15分钟的时间代大家快速上手我们要用进口能断的时间对新的功能形成进口能深入和全面的认识这个视频的目标是希望大家看这个视频15分钟但是能够解约很多个15分钟的时间然后我们这天的模型就三件事了就是首先我会给你通过实力来展示怎么样来去给这个task模型写 prompt这样的话让我模型有更好的效果另外我们要带大家知情染知情所依然我要跟你一起分析一下task模型的系统级别的指令然后第三个其实就是我们一起要去思考一下这一次模型更新未后的影响实际上我们都知道2025年是agint之年agint的AI它对我们的模型的心理模型思维方式会有什么样的需求呢这个也是我们要讨论的好那我们先来看一看今天早上先发布了热腾腾的新功能这个模型正式名称叫gpt4o为skegeur的task中文叫附带以安排任务的gpt4o我们要去看到名称背后的东西我们都知道这个名字应该是对它实质的一个把握它实际上它是一个对gpt4o进行微调的一个新的版本然后这个微调主要是针对它执行任务的这个能力来去进行微调然后我们看一下这个点解的应用场景这是我今天早上这个本能反应第一个给它试的这个例子让它给我发一份全球的AI新闻简报然后让对应的连接所以就是对点解的任务然后我们再来看一下官方展示了这个档目这个其实就是在app端使用的这个场景因为app端目前还没有更新它在网页端和这个电脑端都更新了然后在app端你给它设置一个任务自然预言甚至你打出制度没有关系然后然后它就会创造这个任务OK 跟你反馈说它接受到的任务然后到了时间之后直接手机给你推送它就跟一个自动化的看能的日历一样我们说它这个本质它其实就是已经是一个AI助理它就类似于我们以前很熟悉的很多年前就是10年前就发布了appware的series或者是google的assistant但是它的底层模型是GPD4O所以我们在使用的时候我们会看到你的整个模型的选项卡也是要从这里面来去pick这个模型我们一般聊天的时候用了GPD4O推理的时候使用了OE然后它现在多了一个新的任务模型它也是GPD4O的一个特殊的一个版本然后我们会觉得这个东西它背后其实是有一个变化的就是说我们以前在跟GPD它就使用它的时候我们是实实的对话它实实的帮你去做一个事情但是它现在变成了定死了就变成了这个你给它一个自然预言的任务然后它可能过了几个小时几天甚至是几个月甚至一年来为单位来去帮你去执行这个任务所以它就变成了虚拟住手了我觉得这个还是影响还挺大的我们那天它关于这个AGI有一个level1-level5的框架然后我们看到最早的这个大原模型是chatbox是聊天的模型然后从OE到O3它其实都是推理模型了而到了2025年的时候它现在的这个第一次的更新它已经属于AGINZ这个翻头了虽然它底层还是一个GPD10叫做chatbox但是它已经是在AGINZ任务执行这个层面上来去做功能发布了所以我个人会把这次的分类给它分成它是在任务模型或者你说AGIN的模型或者你说大原模型AGINZ这个层面的更新然后它是OpenAI在AGINZ一节层面的第一次的功能分布所以它可能看起来是一个很小的功能只是帮理设一个提醒但是它我认为它的意识非常重大了我们来看一下当你来去设定了一个模型之后它在后台是这样怎么样的一个任务就是说你给它指定的1355-78个任务它其实每一个任务它都是有一个固定的一个结构的你用自然圆跟它就说你说每天早上9点给我去发一份这个AI的全球的英文检报然后怎么样在它的内部它会体现为这样的一个结构就是说它会有一个任务的名称然后你的prompt会被它理解并且转移成一个它的一个指定还会有一个部分就是说它怎么样去排斥了它是每天、每周、每月、每年还是说然后具体的时间点是几点所以基本上就是这样子你还可以给它三处这个任务你也可以暂停执行你也可以恢复运行吗我们来 demo一下这个后台还是怎么样子的这个Cyp-DITESC怎么去管理呢我们找到一下我们最新的一个任务然后你会发现这个时候给它发的任务这个是它这个执行任务给我交付的这个结构然后怎么去管理它呢你会发现这个在APP端它有一个暂停的这个按钮它个人就是暂时执行嘛但是它没有办法去编辑在网上当然是可以的然后我们再看一下系统设置里面系统设置里面其实你依然看过去这个我们这是我们更新的2025年07这个第一个这个版本对于这次Task的模型就这时候这次设置里面有哪个是新出现的呢这个通知新出现了就是你执行任务的时候然后每次执行的时候你会发现这个网页这个网页端的这个APP的功能还是比APP端功能更强一些然后你可以直你可以暂停它你也可以去编辑它编辑它的时候你会看到就说你可以去编辑它然后你可以去编辑它然后你会发现长辈的你会发现这个网页端这个网页端的这个APP的功能还是比APP端功能更强一些然后你可以直你可以暂停它你也可以去编辑它然后你会看到就说你跟他说的这个ProMet在内务是怎么样去执行呢它又重复每天每周每月每一年你还可以自定义自定义挺有意思的大家可以去试一次这个功能都很简单然后这个我们还是看每天然后这个时间点然后吃以15分钟为单位我们叫做让每天早上8点来去做这件事情就可以保存然后它从明天开始就跟你弄了然后我们再来看这里面的这个任务这个任务里面它有暂停的任务也有这个已经安排的任务基本上就这样子它的整个任务的管理是标简单的像那样的就是你在这个模型学校卡里面学然后你给它写POMP指定它执行什么任务指定完之后你可以查看所有任务并且来去查看和编辑具体的这个任务所以这个任务管理功能很简单很直观有一个小 tip就是说我们在写完这个POMP之后希望你在在下次执行之前你可以点开编辑这个选项来去查看它内部是怎样就理解你的任务了并且你还可以去手动的调整这个Schedule然后你在测试的时候其实可能就是以15分钟为单位让它15分钟快速乱一把万一把之后效果不理想的话你就调整你的POMP然后通过不断的跌代的方式然后目前它是Belab版本的功能这个任务是最多有十个任务所以如果你超过的话你需要去暂停其他的任务这样才能去运行然后我们来结合一个具体的例子来跟大家讲一下这个怎么样来去使用这个新功能吗因为我们都知道这个它跟聊天模型不一样就不是你自然而然随便的聊一下不深入思考就能把这个功能用好了在这个例子当中我做了好几次的这个跌代第一个版本是那种聊天的直觉的版本就很简单每天早上9点给我发一份新文简报非常对应的连接是吧?这简单的一个说话第二个版本我可能就是希望给这个任务更细话一下提出更多的要求例如我希望它用英文的信息源但是用中文来去写简报然后附上对应的英文报导的连接到第三个我又希望增加更多的功能其实你到这个微似版本微伍你可能会有更加细话的这个要求我们都知道其实GBT的模型的冷历是很强的我们需要通过我们的这个ProM的不断的跌代和优化来对我们自己的任务有更深的理解这样的话也能更好的利用这个模型的这个潜力然后我们来看不同的这个版本跌代的过程希望对它有一些启发第一个版本的这个模型然后这个已经被我暂停掉了它所提供的这个内容其实是挺好的你会看到它在里面有原始的这个新文的来源然后每个来源它都会给你一个标题和一段话这样一个总结你点开这个标题你就可以直接去看对应的这个原文你又获取了你想要获取了信息然后这个信息的子端又是比较高的你又顺便念语了然后可能有人就会喜欢用这个英文的版本然后到了这个VR的版本就是我们希望给这个任务架一个新的功能我们看一下这个失败的这个ProM的跌代我是希望让它出所因与新闻然后中文简报我觉得我走了很清楚了但是你就会发现它提供了这个AI简报之后首先这里面的这个格式变对这个单个新闻的这个解释变更加的简陋了其实你看它的这个信息源大部分都是中文的并且这里面的这个中文的东西你看这里面它都是一些就是内容隆场或者是一些巨合的低质量35-60的这些信息甚至会包括这个很早以前的这些信息很明显就这个ProM is不好的然后我们再来看这个优化这个优化是什么呢就针对这个第二个版本我就不想把这个ProM的写得过于紧凑了发现过于紧凑的话它之前的效果也不好所以呢我这一版的ProM等于有变成了充分的产势用大白化的方式用废慢的方式来跟它讲就是信息源一定要英文的用英文关键词去搜索简报的内容用中文写附上对应的英文报道的连接你会发现用这种废慢的方式它立刻就达到了非常理想的状态1234567你看今天早上最新的这个新闻就是Cycpt推出了新的功能Cycpt看到很多人们的实在的Tutus这是关于Cycpt这个它是个新功能的最新的几个小时之前的这个新闻所有的信息源都是来自Wire的是吧 年限然后这个路透社的Virge都是比较高质量的这些信息源完全的贴合我的需求按理说到这个版本其实已经完全满足我们的需求了但是我会想有一个新的这个想法我让它加一个新的功能我希望它能够加上Cycpt对于这个新闻的一个分析评论从今天的AI新闻中选择最重要的新闻事件不少于五个 不超过七个真的重要的人不会很多所以我们可以自然数量另外就是说在每一条新闻简报之后先用标题然后再加上简报然后再额外加上评论这个评论要尤其的关注它的影响意义以及是跟普通人的观点最后再不让另外一条新闻交通所以你会发现就是说我们的这个Prompt仅仅经过了三次的这个点弹它已经变得比较清晰了吧需求也更变多了所有好的这个已经实现的功能都保留下来了然后我们额外有实现的一个新的这个评论甚至其实我们还可以跌代这个第四和第五个版本例如我们可能让它就准备一个双语新闻又有这个英文的intertaxin也有这个中文的这一段的这个简报这样的话每天不但或许星期了你还来使用了一下英语所以这个其实就是我的一个Cycpt task功能使用了这个实力然后我们做一个简单的一个总结其实就是我们在跟Cycpt task来进行对话的时候它其实已经不能用了这种简单的聊天的这个模式了我这里面没有什么特别的技巧但整体来讲其实就是越来越清晰的用人化来去描述你自己的需求不只不要夸待大一步一步地去跌代增加新的这个细分的需求这样的话你会发现就是说我们还是要去更新一下我们的心理模型了我们都知道从Cycpt模型到OE模型的这个演变你已经是需要跟进行你模型了关于这个螺丝用这个OE模型我在我的这个推特上面去做了持续的这个更新大家可以去看一下跟Cycpt4的那种聊天的模式是完全不一样的然后我们会觉得这个在2025年关于这个AZN模型任务模型的第一次的更新针对这个我们越需要去形成一种跟OE和Cypt4都不一样的使用的方式我认为我们可能最终要去形成一种类似于任务元气冷的东西相当于你是对执行任务和分配任务有一种远认知就是说我怎么样能够更清晰的描述我想做了这样一个Task我只有清晰的定义和描述并且提供相关的这个背景星期的话Cypt4作为这个地产模型它才能够更好的地去帮我执行吗所以我觉得它是一种元气冷它需要我们跳出这个执行者的这个四角用一种更高的四角用这种远认知的四角来就看待执行任务和分配任务这件事情所以这个东西我们后面可以继续去探索我们前面是通过这个例子来去看CyptTask任务模型的使用方式我们现在一起来做一件事情什么就是我们要知其然知其所谓的这样的话我们才能更好的利用好这个模型我们一起来去分析一下Task模型背后的系统指令这个系统指令是来自以著名的AI研究员Cyman Williamson这个Cyman Williamson他企业是好像在Oraaliya的一个独立的AI研究员他不属于任何的组织他就喜欢这个研究大原模型他Hack出了任务模型的系统指令他只用了Hack的方式是什么就是让这个大原模型来去repeat他这个对话的最开始的这个部分而且让他直接提供原始的我们不要Samory所以他就成功得到了任务模型的完整的系统指令就是说系统指令分成三个部分第一个部分是对任务模型的整个的一个Samory第二个部分是他指定了让我们模型的整个的一个解构就是说他内部如何运作的他整个的一个解构最后他做了一个整体的一个强调然后我们现在看这个第一部分我们通过这个第一部分我们明确的知道就是说他这个底层的模型是GPD4O但是他在使用一个叫做OraMation式的这样的一个工具让模型来就用模模工具他全部是用自然圆实现所以你会发现在GPD的一系列功能不论是搜索功能还是Kamers功能还是达立这个功能他其实都是用自然圆让GPD4将一个底层的模型来去使用一个工具是吧全部是用自然圆实现的而不是用那种过去的代码实现所以你可以理解我一些使用工具的能力是这个模型的内置的内化的基础的能力这就是他人士的能力的一部分就非常神奇任务可能会包括这个提醒事项每天新闻总结以及订期执行的搜索以及包括肯定信录Task就是说怎么怎么样认怎么怎么样是吧这样的一些任务所以这次官方给GPD说这个描述我的一些用户典型那使用场景让我们来看一下就是我们跟GPD任务模型发出了一个任务的时候它内部怎么样去运作首先呢GPD它的每个任务就任务它的内部的结构分成Titles任务名称和Prompt以及Schedule3的部分所以你发现它的这个Prompt就对应了它的UI3的部分它在模型的内部也是3个部分的信息在这个Title部分呢就是它会用一个简短的命令式的动词开头的句子那就描述它都是动词开头的简短的命令式了这个Prompt的部分呢像那就是GPD是这个任务模型它会把你的任务Request把你给出来的这个任务它做一个Samory的一个总结并且呢这个总结所使用的一个角度Riton SEFREET or Message from the user to you像那于是GPD接受人类指派任务的这样一个课文和角度就是说这个任务模型是这么样去理解我们所对它说的这个话了像那于这个GPD10O它内部的这个心理活动是什么就是说这个用户这个用户叫Horley的这个用户它让我每天提醒它早上切天洗床它让我每天提醒它这个每隔一天提醒它洗一次早就跟这个青年盖子比一样然后呢这个用户让我去搜索什么样的信息几千搜一次然后我搜索很的信息去做哪些的操作给它变异成简报给它这个浅加什么评论分析提供原始认接就好像我们都知道一个故事就是李嘉诚过了一个团队给它来去读经济学院Columnist因为它自己读的话比较费尽是吧然后还是全英文的然后这个团队就可以给它去收集这些信息然后给它去编译想像有一些内部我们普通看不到的一些内餐这样的一个东西所以你会发现其实Gbt之前任务的时候它的内部的心理活动然后对于简单的提醒思想它使用了内部的心理活动叫什么叫Telmet Routes上线对于这个搜索的这个任务它的内部的心理活动叫什么叫搜索什么什么然后对于条件任务它的内部的心理活动是如果怎么样然后怎么样它总之就说帮你执行的时候它是这些心理活动嘛然后它的这个排机部分它就比较记录性了它其实就是用一个类似于开源的一种日历的格式在Gbt模型内部来去传递信息吧像那一机一个任务模型的系统指令包括任务盖囊任务结构最后的部分是什么是一个in general 一个总体的一个强调这部分特别有意思我们先来读一下就是这个系统指令让任务模型不要去向人类提供任务不要向人类提供任务什么意思呢其实就是不要去学人类的坏毛病人类有什么坏毛病呢其实就是你给一个人去指派一个任务的时候他反手给你分派两个任务对 大家对这个现任世界的这种情况应该都有关卡都会有理解就会有这样的情况然后呢他制作以这样的是因为这个系统指令在指令这个Gbt4O only offer to remind the user about something也不如要读一读的比u's for这句话的意思其实就是说只有模型在确认他给你提供的建议是有帮助的时候是有意义的时候他才会来去提醒用户一个什么事他才会反手给用户让用户做一个什么样的一个操作所以这里面其实就设计了我们都种所周知的AI的价值观对企就是一定要B Helpful一定要对人类有帮助不能说这个你跟AI去干活AI做一个任务模型你给他指配一个任务他反手给你三个任务给你讲条件你要让我给你干一个什么事你得先把这也要三线射给干好了对 这样其实不行了所以你会发现最著名的AI价值观对企的prompt就是我们从两年前采集BD发布的时候我们会发现这个他的系统值得你面第一句话是什么是You are HelpfulQs for Harmless Assistant你是一个对人类有帮助的在乎真实性的并且无害的这样一个AI主手很有意思然后这一条也特别有意思其实就是说Task模型他在创建任务之后一定会给一个Short Conformation你看这个在OpenAI系统值里面他的这个关键词都是大写的我们都知道在英文里面用大写其实就是表示强调所以如果我们用英文那些prompt的话我们就可以把关键的词大写然后我们也可以用妈当于法来写的时候我们加初当然我们用中文写的时候也可以加感到好然后也可以重复三遍总之这都是在写prompt的时候的一种强调的这么一个技巧这个有意思的一点就在于就是说任务模型他在接受你的任务之后他一定要有回应他一定要有回应他说我收到了我这个一小时之后会给你提醒然后我明天早上会给你发简报其实也是很多人没有让成的这个习惯所以我们来去看这个系统模型的时候我们为什么要去读这个系统指令呢我们读这个系统指令的时候其实我们会对任务的描述、任务的接受和任务的执行我们会有一个原认字会对我们人类有些起发其实就是说我们在接受别人的任务的时候我们要回应然后我们要逼和付不要说别人给我分配了一个任务我反手给别人三个人我我还觉得自己很厉害然后另外我们会看到这个他里面提到这样一句do not refer to tasksas a feature separate from yourself什么意思呢这个yourself其实就GblicSnow这个基础模型这个 feature呢其实就是指他执行任务这样的一个新的功能所以这个系统指令呢我的理解是这样就是他要扮演一个有用的一个助手只提供直接相关的信息相当于就是说他会直接用户反馈我会25分钟之后同志里而没有必要跟用户说那些对于用户没有什么特别帮助的事情这是一个什么新功能呀避免那种机器人一样机器人一样机器人没有用的那种回答然后另外这两个指令呢其实也还挺有意思的就是说如果这个任务创建的时候出错了你要去给用户提供这个反馈并且你要给他解释清楚这个错误不要说任务失败的时候假装里曾经成功的执行了这样一个任务这个其实也是对人类的一个你说是打脸也好或者是说对人类一些抽象行为的一个提醒一个仅行另外一个抽反馈是什么呢就是如果有太多的火月任务是吧因为目前限制是10条吗超过10条的话它就会提醒你超过这个火月任务的限制了你需要暂停一条或者三处一条我们才能够创建新的任务我们讲完了它这个什么是什么我们讲完了对任务的管理以及了这个任务prompt的跌带的这个方式然后我们也讲完了这个系统指令我们最后来看一下这个一些思考吧应该思考的分析吧就是说我们现在已经水著OpenAI的这一次的更新已经正式进入了这个A型的这个时代是吧我们都知道2025年是这个Agentica AI这个任务AI 任务模型之年所以今年这个Agentica AI一定会有很大的发展然后目前来讲就是我觉得我们还要更多的去实践第一手的实践 亲自的去实践然后给它设计一系列的这项新的这个任务来看它到底能给我们创造了一些价值目前来讲我们会发现它的这个底层模型它仍然只是GPD4O而我们都知道4O跟OE是完全不同的东西4O在执行任务的时候它其实是没有4O念的就搞不好搞不好我刚才给它执行讲的一个任务它还是比较简单的它没有必要说去思考一分钟或者十分钟它是连年疫苗之内之间理解了这个任务直接去网上给你去收索收索完之后对反过来的100条信息进行综合中夕完之后还让你说要的要求是能给你它本身让还是一个比较基础的一个功能但是我们会想一想如果这个底层模型在下一个版本的时候换成OE了甚至OE Pro 甚至O3了那这样的Agent它其实能做的事情就可能会非常非常的厉害了因为这个底层模型的限制那么会发现目前的这个自动化程度也不是特别的高例如它还是完全在在GPT这个APP里面去运行但是如果它的自动化程度更高它能够操作你电脑然后软件工具如果它能操作你电脑的稳当如果它能流暖你的电脑然后以我的文件了如果它能跟你的这个代码库或者是跟你的Loxy个这样的笔记库结合在一起了所以我们会发现这个水热AI功能的这个不断进步这个任务模型或者你说它这个Agent它会越来越与环境去互动然后从这些反汇当中去学习Agent的模型的特点其实就是说我们只要把我们的这个任务写得更好了后续我们不需要去提供更多的输入包括指令和这个信息输入我给它分明了这个任务不需要明天继续给它提供更多的信息了它就会点这个电子的就执行所以我觉得在后续的关于Task模扰上面的更新我觉得还是挺期待的而且我们都知道之前有传言传言的Lopneyi会在25年1月份去发布叫一个叫operator这样一个东西是吧对我来讲这是一个新的信息我们都知道我们现在有了AI搜索之后获取新的信息的速度是以前的10倍都不止所以我很面对不会用传统的谷歌手手的方式去搜索然后再去看我肯定直接用CycbD设计了CycbD设计你会发现我只要给它一句话对吧让它给我介绍一下行业内流传关于OpenAI operator的模型并且加上这样一个万人的提升信息螺旨让它设计英语类Responding Chinese这个其实就是传言当中了一个自主的AI代理就是它的这个自主的人力更强然后它的目标是同我最小的人类干预来去自动的去执行一些复杂的任务就不像我们今天的Task它是一些比较简单的任务它只能在流暖心里运行然后它要执行编成旅行预定这类的这个复杂的任务这个举措标制的OpenAI从传统的这个语言模型到代理型解决方案的这个转向处理复杂的多步的任务所以其实我觉得这个其实只是第一次的更新了然后毫无疑问这个2025年的这个我们觉得还是挺期待的然后每次现在模型的更新它都需要我们主动的去学习进行主题的研究并且能够构建一出一个类似于个人资体系的东西所以这个是我这个频道关于简体个AI关于任务模型的第一次的视频所以我们后续其实还是会持续的跟大家交流探讨我也分享一下我自己的一些发现那我们最后来总结一下我们当我们再说这个大圆模型的Agent的时候其实我们到底在说什么样的一个东西所以今天OpenAI发布的这个模型给它写了个名而叫TaskTask它实际上其实就是一个任务的完成者它能够按照这个日期来去承认务然后我觉得它的本质是什么呢本质其实就是刚才我们提到的就是这个大圆模型做一个Agent的做一个自能体这个自能体把它投放到一个环境当中去投放到你的电脑环境当中去投放到后面往这个环境当中去然后它能够使用各种各样的信息和各种各样的工具使用你的这个电脑的各种软件是吧使用网路上的各种开源的工具然后使用它自己内部的各种各样的工具然后它能够与环境进行来回的这个互动并且从环境的反馈当中去学习角度爆错了是吧它怎么样去调整它自己的任务最终的效果其实就是人类给出任务之后这个Agent就不需要人类提供更多的输入然后Agent就能够去判断决策执行直接给你交付成果我觉得这个其实这是2025年是吧我们后续不断期待的这个东西我们也会不断的看脑这个方面的东西所以在这个Agent的这个时代其实最起码在2025年可能它不一定是关于模型的底层冷裂的记住韦度的进步这个模型的推理模型的冷裂可能还是停留在O1和O3上面O3可能会在1月份来发布这个预览的版本所以我们就能够体验上了但是可能2025年就是推理模型不会有更强另外基本上已经到头了然后这个GPD模型就是语言模型聊天模型这一块呢我们可能会发现它在多模太冷裂上面变得更强假如说这个实实的视频的对话它的性能变得更强然后这个限额低一点让大家每天能够用了多一些价格跟便宜一些然后很有可能就不会有这个像GPD5这样的东西了我们都知道其实原模型这种预讯的这种范世如这个Elia所说的预讯的这个范世可能已经到头了GPD4它用1.8万亿的参数把人类的支持已经能选了都选了而且选了特别的到位特别的好体现出了很强的远离点冷裂和这个世界支持的积累以及一些远生的基本的逻辑对于冷裂所以可能GPD4已经到头了可能我们不一定会见到GPD5这样的东西了但是但是2025的这个Agent的这个时代它可能是关于经济影响它的经济影响可能会出步的呈现说到的其实就是说是关于这个Agent的这个事情的一个本质本质其实就是说它以前不论是光给你聊天它也不能光是说给你思考了而是说它要向一个人类的operator像一个人类的execution像一个人类的doer一样来去给你实实在在的做事了相当于就是说我们在经历了这个大远模型过去发展了这两年这个过去这两年技术空飞突进但是大家对于模型实际的经济价值并没有特别高的要求这就是为什么市面还有很多人对大远模型根本不在乎因为还没有投放到现实环境当中去做事所以大家就感受不到不当回事了但是今年就相当于2025年相当于就是对于大远模型是努力的事嘛要拉出来6.6了就是今年大远模型能够给人类社会带来多大的经济上的正向的改变也好负面的冲击也好2025年就必须点把它拉出来6.6了所以我觉得这还是那样又期待又觉得可怕的一件事情所以这个视频是我们的Touch模型的第一个视频我们在2025年会跟大家持续地去跟进好 下一个视频再见谢谢大家我来再给大家补充一个预告吧就是我的目标是每周更新一次视频因为每个视频我希望对内容要做的足够的深入这样的话才能起到说你开10分钟视频能够结约很多个10分钟这样的一个目标嘛然后我最近已经在研究了那个Norboke.wm然后我会认为Norboke.wm是这样它是一个特别重大的一个东西然后我看了YouTube上面了很多的视频我会认为我会有更好的这个对大家更有帮助的这种呈现的方式所以这个视频就会下一个来更新非常感谢大家的这个视频是吧 我们下一个视频再见希望大家能够点赞关注转发给我一些鼓励好 谢谢大家 拜拜
