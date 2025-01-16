@@ -1,0 +1,145 @@
+Timestamp: 2025-01-16T15:00:31.466230
+Title: 多模态交互的未来：Agent AI 的发展与挑战，Ten-agent作者普列斯,2025年第四届AIGC开发者大会 F4kRXpkaSqg
+URL: https://youtube.com/watch?v=F4kRXpkaSqg
+Status: success
+Duration: 25:38
+
+Description:
+**Outline & Summary:**
+
+**I. Introduction to Tan Framework & YSI (多模态AI):**
+    *   **Speaker Introduction:** The speaker introduces themselves as "Police" and their project, "Tan Framework," focusing on 多模态AI (YSI - multimodal AI).
+    *   **Industry Context:**  Highlights the increasing interest and applications in voice-based AI dialogue systems.
+    *   **Focus of Presentation:**  Discusses 2024's advancements in YSI and provides a look towards 2025.
+
+**II. 2024 Key Events in YSI:**
+    *   **Significant Release:**  OpenAI's (OBICHEFYT4O) release in May, showcasing realistic AI interactions through speech and vision, setting off the rise of AI models.
+    *   **Rapid Adoption:** Many companies adopted the 3-step approach (STT + Large Language Model + TTS) for creating voice AI interfaces.
+    *   **Real-Time API's:**  OpenAI's real-time speech-to-speech API, the first end-to-end large model for V2V, and similar releases by Google/GermanLady0 signal the significant progress of YSI.
+    *   **YSI Development Rodemap:** Industry adoption of a roadmap divided into five stages: assistant, conversationalist, collaborator, empathetic being, and organizer.
+
+**III. YSI Development Stages:**
+    *   **Stage 1: Assistant:** Basic voice assistants like smart speakers (小米音箱/Alexa).
+    *  **Stage 2: Conversationalist:** Current stage - AI dialogue built with large models, aiming for full-duplex communication (AI can simultaneously listen, think and talk)
+    *  **Stage 3: Collaborator:** AI interacting with multiple people.
+    *   **Stage 4: Empathetic Being:**  AI understands emotions, tone, and context, adapting its responses.
+    *   **Stage 5: Organizer:**  AI goes beyond dialogue, handling complex reasoning and strategy (human-like abilities).
+
+**IV. Technical Architectures for YSI:**
+    *   **Cascading (3-step) Approach:** STT (speech-to-text) to text, text to LLM, LLM response to TTS (text-to-speech); highly flexible.
+    *   **V2V (Voice-to-Voice) Model:** Direct audio input to audio output, better on emotion and lower latency but less flexible.
+    *   **Post-OBICHEFYT4O Release Trend:**  Many vendors focus on cascading structure initially.
+
+**V. Focus on Latency & User Experience:**
+    *   **Latency Importance:**  Low latency is crucial for natural AI conversations, using local models and RTC helps minimize delay.
+    *   **Latency Analysis:**  Discusses the delay in each stage of cascading models and potential improvements, RTC is a core element to reduce transfer delays.
+    *   **User Experience is key:** Data integrity is vital to deliver correct AI responses, as the AI can ingest and process data faster than human.
+    *   **Experience Issues:** Human to human conversation is similar to human to AI in terms of data transfer, but the AI processing speed is fast, therefore it focuses on data integrity. Common issues with human to human communication (double speech, noise reduction) are also relevant for AI.
+
+**VI. Real-Time Communication (RTC) Significance:**
+    *   **RTC Advantages:** RTC enhances network adaptability and audio processing for YSI
+    *   **RTC Integration Complexities:** RTC implementation is more difficult than Web Socket due to more standard protocol in WS
+    *   **OpenAI WebRTC API:**  OpenAI's release of WebRTC API indicates the necessity of RTC for YSI.
+    *   **RTC benefits:** better Quality of Service in network and has built-in audio processing.
+    *   **Secure API Key solution:** Use of temporary keys to prevent leaking API keys on the client side.
+
+**VII.  VAD &  Disruption:**
+   *  **Current State of VAD:** Currently based on detecting speech and interrupting AI by VAD
+   *  **Future State of Disruption:**  2025 will see more sophisticated disruption based on context and semantic understanding (Full Duplex).
+
+**VIII. 2025 YSI Outlook:**
+    *   **OpenAI’s RT Model:**  Continued use and increased affordability of OpenAI's models.
+    *   **Technology Coexistence:** V2V and 3-step methods will continue to exist with distinct applications.
+    *   **Experience Focus:** Shift from focusing on latency to focusing on Quality of Experience (QoE).
+    *   **Full-Duplex Achievement:** Expectation that 2025 will see the widespread adoption of full-duplex AI.
+
+**IX. Tan Framework Overview:**
+    *   **Purpose:** To help build YSI Agents, simplifying complexities of RTC, STT, TTS, LLM integration.
+    *   **Modular Architecture:** Allows use of modules with different programing languages and easily integrate or swap modules and models.
+    *   **Key Features:** Easy integration, model flexibility, rapid prototyping, module connections to build data streams.
+    *   **Examples:** Connect to Dipgram, Openai, Face modules to make a data stream. Also supports D5 integration.
+    *  **Demo:** User can test the system on the link provided to explore various AI features.
+
+**Core Point:** 2025 will likely see the rise of full-duplex multimodal AI systems that can converse naturally with humans, driven by technological advancements and focus on quality of experience, not just latency.
+
+**Fundamental Point:**  The Tan Framework aims to democratize the development of YSI agents by providing a flexible and modular platform to navigate the complex integration of technologies and quickly enable more natural and intuitive human-AI interactions.
+
+**Overarching Framework:** The content presents a trajectory of YSI development, highlighting key milestones, technical architectures, and anticipated future trends, culminating in the introduction of the Tan framework as a tool to accelerate this evolution.
+<Mermaid_Diagram>
+graph LR
+    subgraph "YSI Core Ideas"
+        A[YSI (多模态 AI)] --> B(2024 Key Events);
+        A --> C(YSI Roadmap);
+        A --> D(Technical Architectures);
+        A --> E(Latency & User Experience);
+        A --> F(Real-Time Communication);
+        A --> G(Disruption of AI);
+        A --> H(2025 Outlook);
+        A --> I(Tan Framework);
+    end
+    
+    subgraph "2024 Key Events (B)"
+        B --> B1("OpenAI Release (May)");
+        B --> B2("3-Step Approach Adoption");
+        B --> B3("Real-Time APIs (OpenAI,Google)");
+    end
+
+    subgraph "YSI Roadmap (C)"
+        C --> C1("Assistant");
+        C --> C2("Conversationalist");
+        C --> C3("Collaborator");
+        C --> C4("Empathetic Being");
+        C --> C5("Organizer");
+    end
+
+    subgraph "Technical Architectures (D)"
+        D --> D1("Cascading (STT+LLM+TTS)");
+        D --> D2("V2V Model");
+    end
+
+   subgraph "Latency & User Experience (E)"
+        E --> E1("Latency Importance");
+        E --> E2("Latency Analysis");
+        E --> E3("User Experience Issues");
+    end
+    
+    subgraph "Real-Time Communication (F)"
+        F --> F1("RTC Advantages");
+        F --> F2("RTC Integration Complexity");
+        F --> F3("OpenAI WebRTC API");
+    end
+
+    subgraph "Disruption of AI (G)"
+        G --> G1("Current State (VAD)");
+        G --> G2("Future State (Contextual)");
+    end
+
+    subgraph "2025 Outlook (H)"
+        H --> H1("OpenAI Models Cheaper");
+        H --> H2("Technology Coexistence (V2V & 3-Step)");
+        H --> H3("Focus on QoE");
+        H --> H4("Full-Duplex Expected");
+    end
+   
+    subgraph "Tan Framework (I)"
+       I --> I1("Purpose: Simplify AI Agent creation");
+       I --> I2("Modular Architecture");
+       I --> I3("Rapid Prototyping");
+       I --> I4("D5 Integration");
+   end
+   
+   style A fill:#f9f,stroke:#333,stroke-width:2px
+   style B fill:#ccf,stroke:#333,stroke-width:1px
+   style C fill:#ccf,stroke:#333,stroke-width:1px
+    style D fill:#ccf,stroke:#333,stroke-width:1px
+    style E fill:#ccf,stroke:#333,stroke-width:1px
+    style F fill:#ccf,stroke:#333,stroke-width:1px
+    style G fill:#ccf,stroke:#333,stroke-width:1px
+    style H fill:#ccf,stroke:#333,stroke-width:1px
+    style I fill:#ccf,stroke:#333,stroke-width:1px
+    
+</Mermaid_Diagram>
+
+
+Content:
+大家好,我是那个Police我叫Police是因为我的Github用户名叫Protolace就Police好念一点那今天我们这个项目的话整理叫Tan Framework那大家看到了我们主要集中的就是东某太这块那大家在今年应该也看到很多类似设计到语音AI对话的这种场景和use case那今天的话我会给大家讲一下2024年那有关东某太或者YSI这一块我们的一些技术上的进展以及我们对2025年的一个展望OK首先是那个2024年从我的视角YSI的几个大事件那一方面显而易见的大家都知道去年5月份OBICHEFYT4O的一个发布那当时大家的话其实对于那个发布会的视频影响都是非常深刻的就是人真的语AI通过语言和视觉去进行一个类的人的一个交互的一个过程所以在那个5月份发布之后其实当时也以后春省版出现了非常多的厂商去做这种极廉方式的就语音AI的对话BAR STTLAM TTS就是三段式的极廉方式把这些语音的AI的模型给做出来那以极在10月1号OBI它发布了它的real time API是第一个wise twice也就是语音到语音的一个端到端大模型的一个发布以及五格在也在12月份发布了GermanLady0的real time的一个AI那这些的话整体我们会说多摩太在去年我刚才那个邓总其实说了很多很多的原谚那我会说多摩太的原谚的话我会认为基本就是2014年那整体的话整个业界在2014年是有了非常长逐和巨大的一个进展的然后我们也尝试在今年定义了这个定义不是我定义的就是那个是我参考了一些网上的一些信息但整体的话业界也是对我SAI的一个发展定义了它的一个Rodemap那整体的话是分为五个阶段那第一个阶段的话我们叫assistant也就是说像以前像小米银箱还有Alex这些传统的语音对话式的AI大家可能家里会用那些硬件那么第二个阶段的话我们会叫它conversation list也就是我们现在我认为我们正在的处在的阶段并且这个阶段还没有完全克服那这个阶段的话我们整体的WSAI也就是云对话的AI的话它整体是至于还是至于大模型去构建的并且我们对这个有一个非常重要的一个预期是达到我们有一个叫全双工的概念就fordiplex那全双工是什么概念全双工的概念就是我们跟AI的沟通正式摆脱我问一句它达一句这样回合制的一个沟通而是这而不是碰过这种回合制的方式沟通而是AI可以同时进行思考听和说并且以一个像真的人类一样的方式来跟你进行一个语音上的沟通那这是我们定义的那个业界目前会看到一些全双工的定义那在这个事情达成之后那我们会认为AI会进入下一个阶段也就是corraborate那这里的话corraborate定义就是AI会跟多个人去进行沟通那大家如果现在体验过一些那个类似YSA的一些解决方案的话会看到整体的话沟通还是1对1就是AI跟你一个人说话AI不会是跟多个人说话那第三步完成之后的话level 4我们会说它更好是一个共情者那AI的话能够理解情绪能够理解音调能够理解附近的环境并且它能够用更加自然更加根据你的一个实际情况去进行一个语音和情绪的调整来跟你对话那我们说这是那个YSA的level 4那最后就是level 5我们叫organizer就是AI不仅仅能跟你对话它还能实现说一些高级的一些设计到策略的思考那这时候就可能真的像一个人一样在你的面前就像前面站总说到如别假如说我们能有一个AI它具有OE的一个OBAOE的这种能力的思考能力同时它还能在总结性系后跟你进行一个更加自然的一个沟通甚至带著情绪那我们会认为这个level 5的一个YSA已经非常接近一个真的人类的一个情况好OK那整体的话这是我目前的话实现YSA的两个主要的技术架构那我们会看到基本上业界目前实现YSA主要有两种方式一种我们叫挤连方式挤连方式的话就是Cascading就STT加MGTTS原理的话很简单就是我说话然后我的音频被采集之后通过STTSpeech to text把我的音频数据变成一个文本然后我再把这个文本送给大模型那大模型回复之后我再把大模型回复的文本通过TTS把它转换回音频然后通过这种方式跟端上的用户进行一个互动那这个事情在那个10月1号Open and Faberial它每一批之后其实有些变化就是说我们现在有一个叫V2V的模型这个V2V的模型它是直接可以输入音频并且输出音频的那整体的话就不再有前面的这种三段式的一个结构那我们会看到V2V模型的方式的话整体它没有经过三个模块一个模块的完成所以它天然的在那个颜石以及情感的相关的一些点上它会更有优势但是一定成算它这结果是它会损伤一些灵活性我们会看到如果是三段式的话其实我们能够在这里面的结构里面包括工具包括记忆包括音频输入给大模型的时候这里面有非常多的操作空间但是如果是留它没偏的话整体它的空间都在里面它可能会有一些类似吐司方军扩制这种方式可以把一些判断通过回料的方式给你给出来但是整体的话它的控制能力会相对那个三段式会弱一些然后在obn发布TrygbD4之后也就5月之后其实很多厂商开始做三段式集成方式来实现那当时大家其实最关注的一个指标包括现在依然还在关注一个指标就是延时这个其实很好理解当我跟一个AI说话的时候我不太能接受我说我问他一个问题然后他在那边思考半天然后才用语音给我回答我希望整个对话过程是非常的自然的我希望我说完话之后AI能够尽快地给我回顾所以的话其实在目前的话今年的主机调去做我SDI这一块的大家会主要会集中在做延时上目前的话延时在这个业界我目前能看到的做的整体比较好的一个是首先RTC技术是必须的我们当然如果有接过那个obn的Rotar媒体可能是GywabSock的接的但大家也看到了最近那个obn是发了他的 WebRTC的API的可以直接在流暖器上通过 WebRTC接入他的Rotar媒体这个本质上是说明了一些问题就是其实如果你真的要把一个YSI应用落地的话基本上RTC是少不了的我们目前能看到的整体RTC加 OpenRotar媒体的整体的效果体的话它的延时我们说这个延时就是说我问一个问题然后当我的声音最后结束的时候到AI开始回复我的1个音评侈我们就要这个延时的话基本上Rotar可以达到1.4秒左右那如果是几年的话几年通过一些非常极致的处理可以达到600毫秒左右那我们这边也整体对这个时间进行的一些分差进行一些分差那使用RTC的话基本上我们因为我们现在的那个设计到YSI的Agent的一般都是部署在云端的所以我们其实需要把我们的音评数据和视频数据从端上传到云端那这块的话通过RTC的优化的话整体的传输加彩级加音视频编辑整体的延时一个回还的话可以降低到100一百毫秒出头那剩下的就全部是那个三段是三个某块几年的一个效果当然这里的时间基本上全部是本地模型的一个时间包括那个云转文字250毫秒然后大模型100毫秒TTS100毫秒那如果我们用的是类似云端的一些API的方案的话那整体的延时应该就会再往上走一点最终会达到1.5到2秒的一个水平然后当然我们说那个延时很重要但是在很多场上其实大概在七八月份的时候就已经有躺上达到前面那种水平了本质上就是把一切能降低延时的方式全部用哪去用最小的模型用本地部署的模型然后通过这些方式然后用RTC那所以的话延时是可以解决的但是在解决延时后大家就发现其实是谁知道而来的问题就是跟AI沟通的体验问题因为其实我们会发现我今天跟另一个人通过腾讯视频开视频会议那我会通过语音和视频跟他对话这个形式跟AI现在和人类沟通这时候的网路传输路径其实基本上是一样的就是我的音频传到你的耳然后你听你看到了我你听到了我的音频然后你说话你的音频在传到我这就是现在我们用腾讯会议或者这种会议软件进行的时候的一个传输路径那AI基本上是一样的但是AI的区别是什么AI的区别是AI深层和消费数据的能力比人快很多就是当我们人在说话的时候可能我们人说话脑子里就是想到了一些东西可能就说到哪就发到哪但是AI的情况它的音频回应它可以在一瞬间深层5秒10秒甚至几十秒也就是说它只是没有发过来但是它这些数据已经全部升成好了但是在消费数据的能力也是比人快很多的人可能要一秒一秒不但去听音频的数据但是对于AI来说你可以以私信贯给它很多的音频数据它一下子就能理解了所以这个是区别然后包括说我们说那个实实交互的时候人和人之间的实实交互我们关数的其实是什么比如说我们看陈序会议的时候我们可能不关注说这个它的视频一定要够清晰我要能看清它是谁我可能更关注的是它不要卡就我不能接受的是它卡我可以接受它的视频变糊比如它的网络别人差但是AI不一样AI因为前面的这种情况至它有更多的空间去走数据的传输和缓程所以这种情况下AI会更专注因为更专注于数据的完整性因为数据的完整性决定了这个数据跟它训练的时候的数据的一个匹配程度能够让它获得一个更准确的一个回应所以这些是我们能看到的其实在解决了严时问题之后我们在跟AI对话的时候其实有非常多体验的问题去解决包含说我们也会看到之前人与人沟通的时候经常会有的一些问题我们现在放到人与AI沟通的时候也会有比如说我们这边可能会看到一个叫双奖的问题双奖的问题是什么双奖的问题就是大家可能之前不知道你们体验过就是在开会的时候如果你用的是一个设备是一个带那个回升消除的设备然后如果你跟远端的一个人同时说话有可能会发生说远端的人听不到你这件事的本质是说回升消除的原理是通过你的音频信息的彩央分析然后把你的声音消除那这里导致的问题是可能回升消除的设备它把你的声音当成回升消除掉了在另一个人说话的时候所以导致说远端的人听不到这件事其实在我们跟AI对话的时候尤其是我们在打断AI的时候AI进来回答的时候我常常是打断它其实会有一样的问题包括说还有那个降噪降噪其实也是一个很明显的问题而且对于AI来说降噪会更加反直觉一点就是有时候对于人来说当然是照音乐少越好但是对于AI来说不一定因为AI训练的时候它可能原始的数据就是在照应的所以你降噪降的太过分可能反而会是反效果会降低精确度然后就是那个传输这一块那我们会聊到说那个像我们AI最早它发了的时候我还不烧给的但后来也发了RTC那很多开发者会讨论说当我做Wi-Ci的时候我的音视频数据传输到底应该用什么目前的话其实从我们视角来看RTC肯定是更合适的我们前面有说了因为RTC它会有更好的一个弱网的一个对抗能力包括它的3A的一个音频处理能力包括那个音频争议音频回升消除还有音频降噪然后所以整体的话从落地的角度来说RTC是更好的但是RTC的集成会比较佛达而且RTC目前来说没有比较标准的协议不像Wi-CiOK的基本上就是HTTP一个升级的一个协议所以大家集成Wi-CiOK的其实会觉得非常的直白非常简单但是如果要去对抗真实的网络环境就真实的中端用户在端上的各种网络情况的话RTC是必须要用的然后我们也针对那个今年的话整体的3段是极廉和那个端到端模型的一些情况做了一些对比那目前的话我们能看到的是3段是极廉的廉迟的话普遍会在600毫秒到3秒左右那如果是不考虑过多的用本地模型的话基本在1.5到2秒左右那V2V的话基本可以稳定在1.4秒左右然后再打断这一块我们一会也会说到目前的话V2V只支持服务端打断我们叫VADVAD的VAD就是那个Wi-CiOK的Detection就是原生识别就是目前我们在跟AI通过语音说话的时候我们如果想打断AI说话基本上都是当AI一听到我这边在说话的时候他马上就停他会识别周围的人生或者他能听到的人生他一旦听到人生识别他就停但是目前在那个几年的方案里面大家也在尝试一些更高级的打断方式就是这个打断方式的话可能他不仅仅是根据人生听到人生那时候就打断他更多会根据上下文去理解我当前是否应该打断最终来决定要不要打断所以几年的话再打断这一块他的自由度会更高那灵活度的话我们前面也提到了因为V2V整体他是把一些模型的能力都放在模型里面的所以他在执行上会更加的灵活度会低一些然后在但是在情感上目前能看到的是V2V他的情感支持是更好的尤其如果你用过那个OPI或者Germany的RotarMapi的话你是可以跟他进行比如说你可以让他更快的广送模型东西或者更有情感的去读一些东西这些V2V都是可以做到的但是Caskeling就是三段是几年这一块目前能做到的就比较困难除非你自己去拿情绪数据自己去拿到ASR翻译的文本之后去做一些处理然后视觉的处理的话目前整体是V2V支持比较好就是当我们说我们讲个AI说话其实比较一个常见场地就是你能不能看到我手上这个是什么东西目前这一块的话是V2V尤其是Germany2.0发布之后他支持的是比较好的因为他支持原生的往里面贯视频数据但是如果是几年的话目前就只能通过FunctionCore的方式去额外做所以这是目前的我们能看到的几年方式和V2V方式的一些对比然后我们也提看到了那个OPN在12月份的12天的整体的马拉松直播中他发布了他的 WebRTC接口那基本上其实这个发布也证明了说如果你想从端上去做一些那个应试频或者多么太数据的交货RTC还是必须的因为他之前就有一个DAMOCE G web Socket的据发送应试频数据的从端上这个接口的发布的话我从我们的视觉整体我们也认为说他是一个非常容易从流览器上去体验和测试的一个功能并且相对 Web Socket他有一个更好的QOS也就Coreautil Service网络传输的一个保障那他并且能够因为他用了 WebRTC所以他自带会有 WebRTC的一个音频处理的一个优化然后他为了解决那个Key暴露的问题因为有BIIDI的有那个使用的 APIKey但这个东西又不能在端上跑所以他专门设计了一个叫思有Key就是你可以通过那个你的原生Key请求他的接口获得一个零食的Key来解决这个问题但整体的话我们目前看下来他这个东西依然是不太适合说去做一些比较严肃的生产的一些使用打断前面说了就是目前整体业界在第二个阶段也就是说目前还是主要通过VAD去打断但是整体的话全商工这一块我们会认为会是2025年一个非常主要的一个我SEI这个行业的一个事情就是能够让AI做到同时听和说并且AI会来主动打断你因为现在逻辑上来说只可能你打断AI因为AI基本上你说一句它回忆句然后如果它在说的各种你说话那么它就会被你打断但是我们希望能看到的是AI能够理解你在说什么并且它像一个真的人一样当你说的不对的时候由它来打断你这件事是必须通过全商工才能实现的然后整体2025年我们能看到一些趋势的话首先那个OBIのROTAN MAPI应该一定会接我们也知道它11号发的时候还是奥法版本而且它一个非常让人头疼的问题就太很贵那我们目前能看到首先12月份的他们那个直播的时候已经发布了一个更便宜的版本那这个价钱的话预计会在2025年变得继续变得更加便宜然后ROTAN MAPI的话和三段式的那种Wi-C-I目前从我们的视角看他们不是一个淘汰关系因为之前会有人问我说如果有了ROTAN MAPI我是不是就不需要这种三段式纪念了目前说我们的视角看的话这两个东西他们还是会同时存在的而且他们会会被使用在更适合他们的一些场景那目前看起来的话几年式的话它会更适合那些对情感要求没有那么高的比如说客服就是电话客服这种就比较基础的这种它基本上就是需要通过一些固定的知识库然后去完成问题的那这种情况下几年会更合适ROTAN MAPI它会更适合在一些对严时对情感要求比较高的一些场景比如说类似情感陪伴这些场景那整体的话到了明年今年因为大家都在卷那个严时那到了明年的话整体整个行业应该会聚焦更多精力在那个QE也就是整体的体验的效果上这也是那个最终于YSI这种云交会也能否落地的一个很重要的一个点然后我也认为说YSI应该会在明年能够达成全双工通过一种更自然的方式能够像人一样跟让一爱像人一样跟你直接交流而不是像现在一样还是回合制这种其实还是觉得没有那么的理想当然整体的话我们在那个今年那个我们发布了TAN之后只有很多人来通过我们TAN框架搭建那个YSI嘛其实我们会发现大家都非常喜欢跟AI说话之前可能不喜欢跟AI聊天的原因就是因为AI太想机器人了但是当真正的那个看到AI能像人一样跟你回话的时候其实还是都觉得非常震惊的所以我觉得2015年如果能把全双工实现其实大家到时候看到的感觉OK最后介绍一下我们看这个框架我们看这个框架的本身的话它是用来帮大家快速搭建多摩泰的AIAgent的因为这里面我们刚才提到了像很多概念像RTC像STTTTS还有LM这些对大家来说可能不一定是非常熟悉的概念并且集成这些东西其实都是相对比较复杂的但是里面又涉及到一些多摩泰数据的传说比如说音频数据和视频数据如果处理不好的话非常容易导致延迟和性能的问题那我们这个框架的本质的话是希望能够通过这种方式给大家提问一个框架可以快速把这些Agent的搭出来包括我们刚刚提到的极莲的YSAAgent和ROTAM的AIAgent同时能够把这些模型能力都能够模块化并且说能够将这些模型支持用不同的语言去编写因为我们目前看到的是不同领域的人他们擅长的语言不一样比如说大模型的那个同学可能就更擅长写拍摄但是RTC或者说涉及到这种音视频传说的人他就更喜欢写C家家或者C家家能给他带来更好的性能保障所以这种情况下这个框架就会非常适合就是你不用每一个东西就自己去写实现尤其当前的话那个模块是非常多的就我们就要摆摩大战那每一个都是你需要去自己实现去拼你还理解觉得音视频踩极的问题传说的问题就对于我之前参加过很多黑松然后对那些开发者来说的话确实负担太重了所以这我们这个框架也是希望让大家能够更快的不需要去理解这些负担的东西能快速把东西搭载然后这是我们用天搭的一个比较一个例子就是我们这边整体的话比如说我们有一个用DipGram就是一个ASR厂商写的那个模块然后有一个Operant模块有一个Face的模块Face是一个TTS那我们就可以通过这些模块的连接的方式把它编排在一起形成一个数据流的流转然后这个AI进行的就会按照这个数据流转去工作那你也可以把这些模块做一些替换比如说你不想用Operant你想用国内的一些大模型厂商这些都是可以非常简单的做到的就可以让你快速的去替换里面的模型体验不同的效果你也可以去配置这些模型里面的一些属性参数比如说像Prime的Temperature这些这是Rotant V2V的情况那能体的话我们也支持V2V的模型你可以把这些模型快速的放进来之后和RTC进行互联然后就可以快速的得到一个没有网络问题性能最优支持多么太传输的这样的一个YSI的AYSI的A然后这里不是所有就是我们目前之前可能放了一个列表我们目前支持了最近又支持了很多所以基本上一些主流的SR,TTS和大模型的那个模型我们基本上都支持如果大家想用的话都可以在上面来用然后这是我们实际的基本这个项目可能突结的不太好就是基本上你可以你在跑起来之后可以快速的有一个YSI的A而且里面那些模块包括那个大模型的模块TTS模块都可以直接用我们已经支持的模块去替换就不用做任何开发然后我们也支持说一些类似D5这样的一些厂商有刚那个站总说我们是那个多摩泰界的D5那我们跟D5整体是合作关系我们就目前没有说跟D5去做精品的一个想法但整体的话如果你有一个D5搭的一个CADBOX一个CAD的机器人我们可以碰过这种方式快速的把它变成一个多摩泰的机器人也就是说比如说你搭了一个法律资讯的一个在D5里面搭了法律资讯的一个AGinTar我们可以快速把它变成一个你可以定制它的声音定制它的一个一些情感的一些情况的AGinTar能让你通过语音直接跟它交流这是通过这个能快速做到的然后这里面也是个例子是我们用这个我们也在我们官方Demo里面是用我们框架简单搭建的一个StoryTeller就是它可以你可以跟它通过一些互动的方式去讲故事然后它在讲故事过程中会自动调一些通过圈库然后帮你生成一些故事的图片这样的话比较适合小朋友去跟它进行一个交互去玩对然后我们的Demo是可以通过AgentDose10.0 AI直接访问大家想玩的话可以直接上去玩我们上面OpenIROTAMAPI还有那个JAMINI包括D5还有那个三段式OK在上面体验到大家可以玩一下然后有兴趣的话可以那个去我们的给它不上看一下那我们也有DiskCloud WeChat然后如果大家对我们的那个项目感兴趣的话可以关注一下我们
