@@ -1,0 +1,88 @@
+Timestamp: 2025-01-18T04:02:06.482474
+Title: 教你如何缝合CNN+LSTM+KAN网络来做时间序列预测任务！！！-深度学习神经网络NLP BV1tFszeCEZe
+URL: https://b23.tv/8Wd4ieb
+Status: success
+Duration: 10:57
+
+Description:
+好的，这是一个关于股票时间序列预测的深度学习模型的项目，我将按照您的要求进行总结。
+
+**Summary:**
+
+**1. Project Overview:**
+    *   This project implements and compares different deep learning models for stock price prediction using time series data.
+    *   The models include LSTM, LSTM with KAN (Kolmogorov-Arnold Network), CNN+LSTM, and CNN+LSTM with KAN.
+    *   The project evaluates the performance of each model based on metrics like Root Mean Squared Error (RMSE) and R-squared (R²).
+
+**2. Data Processing:**
+    *   The project uses stock data, specifically focusing on the closing price.
+    *   Data preprocessing includes:
+        *   Reading data from a CSV file.
+        *   Sorting data by date.
+        *   Visualizing the closing price using a line plot.
+        *   Scaling and normalizing the closing prices to a range between -1 and 1.
+        *   Splitting the dataset into training and testing sets (80% training, 20% testing).
+
+**3. Model Building and Training:**
+    *   **LSTM Model:**
+        *   A basic LSTM network is constructed with a specified input dimension, hidden layer size, and number of LSTM layers.
+        *   The output is passed through a fully connected layer for classification/regression.
+        *   Training uses the Mean Squared Error (MSE) loss function and the Adam optimizer.
+    *   **LSTM + KAN Model:**
+        *   The structure is similar to the LSTM model, but the final fully connected layer is replaced with a KAN layer.
+    *   **CNN + LSTM Model:**
+        *   A convolutional layer is added before the LSTM layers to extract features from the input data.
+        *   The rest of the architecture is similar to the LSTM model.
+    *   **CNN + LSTM + KAN Model:**
+        *  Similar to CNN + LSTM, but uses a KAN layer instead of fully connected layer after LSTM.
+     * All models are trained with 100 epochs and the model performance is evaluated.
+
+**4. Model Evaluation:**
+    *   Model performance is assessed using visual plots comparing predicted and actual prices.
+    *   Quantitative metrics including RMSE and R² are calculated for both the training and testing sets.
+    *   Comparative analysis is performed to determine the best performing model.
+
+**5. Results:**
+    *   LSTM + KAN and CNN+LSTM+KAN generally show improved performance compared to their base LSTM and CNN+LSTM counterparts.
+    *   The R-squared values for both training and testing sets are high for the better performing models.
+
+**Core Point:**  The project investigates how adding KAN layers to LSTM and CNN+LSTM models can potentially improve time series stock price prediction performance.
+
+**Fundamental Point:** Using both traditional (LSTM, CNN + LSTM) and emerging (KAN) architectures within time series forecasting has significant implications on accuracy and efficiency, as shown by the different testing results.
+
+**Overarching Framework:**
+The content presents a comparative analysis of different deep learning models (LSTM, LSTM+KAN, CNN+LSTM, CNN+LSTM+KAN) in the context of financial time series forecasting, with a particular emphasis on the practical implementation of such architectures and how adding KAN impacts the results.
+
+<Mermaid_Diagram>
+graph LR
+    A[Data Acquisition] --> B(Data Preprocessing);
+    B --> C{Data Splitting};
+    C --> D[LSTM Model];
+    C --> E[LSTM + KAN Model];
+    C --> F[CNN + LSTM Model];
+    C --> G[CNN + LSTM + KAN Model];
+    D --> H(Model Training & Evaluation);
+    E --> H;
+    F --> H;
+    G --> H;
+    H --> I[Results Analysis];
+    I --> J(Model Comparison);
+    J --> K{Conclusion};
+    K --> L(Project End);
+ style A fill:#f9f,stroke:#333,stroke-width:2px
+ style B fill:#ccf,stroke:#333,stroke-width:2px
+ style C fill:#ccf,stroke:#333,stroke-width:2px
+ style D fill:#fcc,stroke:#333,stroke-width:2px
+ style E fill:#fcc,stroke:#333,stroke-width:2px
+ style F fill:#fcc,stroke:#333,stroke-width:2px
+ style G fill:#fcc,stroke:#333,stroke-width:2px
+ style H fill:#cfc,stroke:#333,stroke-width:2px
+ style I fill:#cfc,stroke:#333,stroke-width:2px
+ style J fill:#cfc,stroke:#333,stroke-width:2px
+ style K fill:#afa,stroke:#333,stroke-width:2px
+ style L fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Hello大家好 我是青春老师本次给大家带来一个CNN加LSTEM加KANWONLO的一个时间 训练 预测代码 项目 实际上首先我们看一下我们的数据我们数据的话就是一个股票数据然后我这里使用了CNN加LSTEM和CNN加LSTEM和KANWONLO以及LSTEM和LSTEM和KANWONLO的一个代码的一个编写 查看一下他们各自的一个指标对比首先我们使用PANAS 读取我们那个股票数据的一个CSB文件然后可以打印他的一个前五行 查看他的一个特征情况全低的特征的话就是我们的日期然后就是我们的开盘价 最高价和最低价以及我们的收盘价这个的话就是我们上市时的一个收盘价与当前收盘价的一个比较然后就是我们的一个交易量然后这边还使用了MADLIP进行一个会徒就是对我们的一个收盘价的价格进行那个会徒查看他的一个数据的分物情况这边会智的使用的是一个折线图好 看我们的数据之后首先看到我们的STEMPO前面的话就是一些倒包然后这里是读取我们那个SB文件然后打印一下我们的一个数据的情况然后并且是根据这个日期进行一个所谓的排序这边就是打印一下前五行的一个数据情况然后以及会智了一个图的话就是跟我们之前的一个收盘价的一个折线图一样然后加上好我们的数据之后那么我们就可以进行一个特征处理特征处理的话首先我们先拿到股票数据的一个收盘价然后打印他的一个信息并且我们需要对他做一个数据收盘就是做一个规划和标准化把它设置范围到负移到一之间因为他们之间的差异可能比较大你可以看到这边差异还是有点大的所以说我们需要进行一个标准化和规划降低这种的差异性然后之后我们就将他逊念并且应用对我们的一个收盘价进行一个处理处理好的数据之后我们可以打印看一下他就变成了0.9就是负移到一之间然后之后我们就需要构建一个数据级的一个加宅类这边是定义了一个韩数相当于就是一个分割的一个韩数将数据分成设置级为20%训练级的话是80%这里的话是去所谓的我们那个数据得到我们的Street,Ytreet和Ytax其实这里的话我们可以形更点的方法就是形我们的SkinNinSkinNin点这个这里有一个直接去画分数据级的直接一个韩数就可以去解决这个事情然后这边的话就是画分好之后就得到了我们那个训练级和测试级就是他的一个尾度,他的一个数量高级好数据级的一个画分之后那么我们就可以构建我们的一个模型这个模型的话就是比较经典的一个LSTM这里的话需要把我们之前画分数以几个LandTie数据转成我们的一个Touch类型的一个数据这里是我们的一些套差首先我们输入尾度的话是1然后因为我们只需要预测他的一个收盘价我们的预测也是他的一个这里是预测后一天的一个收盘价然后就是我们的隐藏层和我们的一个循环的层数这里的话是训练100L的高级好长数之后我们就构建我们的模型这里的话就是一个经典的LSTM这个模型的话也不用相信去假了就是直接使用的N.LSTM和一层全年阶层做一个分类这里的话也比较简单第一方模型之后我们需要进行一个模型的一个实力画就是LSTM然后我们的一个尾度你藏层和输出尾度那个夜节点订阅我们的一个审查顺这边使用的是MSC然后U870它使用的是ADAM然后学习率的话是0.0出时值损失和U870已经模型够了好之后我们就可以进行一个训练了这里的话是使用了一个佛行划对吧 训练100L然后这里是我们的一个预测值这些model和我们的S-Train就算LSTM然后再使用U870去提度70然后往下传播再更新我们的一个模型插数这就是形成了一次训练然后这里的话就是训练100L和这是它的一个MSC的一个LST值标对训练时间为0.70.47秒速度特别快然后我们看一下我们模型预测的一个节度就是形成了S-Math Lib的一个包以及我们的这个SCEABORN的一个包进行了一个会图这里这是哪个设的是我们的一个真实数据然后红色的话是我们的一个预测值可以看到效果还是挺不错的然后它那个LOST的话也就是持续在下降到一般人的时候差不多就已经收捏了那么我们验证一下我们的一个模型看看它的一个指标是多少首先我们训练级的一个指标是它的RMSC是4.5E它测试级的话是3.17好二方的话这是训练级是0.95然后测试级的话是0.89这个指标是相当高了张哥我们就看一下它训练级和测试级以及真实数据的一个数据情况可以看到这个结果还是比较比较好的对吧比较离合一点物长也比较小好这就是我们的一个RSTM那么我们先拿RSTM加入看网路之后的一个指标对比前面的话都是一样的就是一些特征处理和之前RSTM是一样的那么不一样的地方就在这个模型构建这里我们需要找到RSTM这个定义的一个网路结构对吧我们需要把它的一个全列间层完成我们的一个看网路然后这里围堵的话都是一样的就把隐藏成后的输出围堵都是一样的可以看到对比一下就是不一样的就是在这个地方对吧这里使用的是全列间层但是我使用的是看网路并且我把最后一层的一个分类情况完成了我的一个看网路对吧这本来是一个全列间层然后呢过去好模型之后其他的训练方法和验证方法都是一样的首先我们看在他RSTM加看网路的一个情况这个看起来可能跟我们的RSTM看不出来哪个好对不对那么我们就打一下指标看一下对比可以看到这个RSTM的话它的指标是95和89对吧然后这边指标的话是96和91并且在RMSC上面也是比经典的RSTM要高的对吧加入看网路之后还是有一定的效果一定的提升OK本身重要的话还是我们的一个CNN加RSTM的一个项目前面的话都是一样的都是一样的特征处理和数据级的一个构建立法还是在我们的一个模型构建这里前就是这边的话首先我们加入了CNN就是在这里加入了一个卷级部分然后之后还是使用的我们的一个RSTM然后呢以及我们的一个全列间层进行一个分类这里的话是做了一个预测对吧做一个回归任务的一个预测对然后这里的话就是跟RSTM不一样的时候就是在这里有一个卷级层进行去提去特征然后并且转换一下然后使用RSTM对这个数据进行一个处理之后然后再进行一个分类得到我们一个结果那么好那么我们直接看一下CNN的一个真实质与预测质的一个情况通过这个图也是看不出来我们的一个具体的一个效果对吧那我们也是一样的去看我们的一个指标首先CNN和RSTM的话它的R方是0.96但是在测试级上面它的分数就比较低了是0.7然后并且它的损失也是比较高的对比我们的RSTM和我们的RSTM加入看完的话可能CN加RSTM就效果比较差一点那么我们使用CNRSTM和KR网络之后对比像我们的CNRSTM的一个模型的一个指标有没有提升什么前面都是一样的然后只不过也是在这个模型构建这里不一样就是把我们的全年这层换成我们的KR网络并且也是使用那个卷级对吧好然后之后呢就是它的一个指标对比就在这里可以对比一下就是在训练级上都是一样的指标但是在测试级上面明显就是加入看网络之后我的测试级是0.76的一个提升对吧在RSTM和CNN、RSTM上面加入看网络之后都是可以提升我们的一个模型性能的对到这里的话我们的一个CN加RSTM和看网络的一个项目就结束了然后需要后取本项目的一个资料的话可以到评论群是后取然后这里的话也是包含每一行代码的一个注射这是前面都是一样的对吧这几个文件就是我们的一个模型构建不一样好那这里的话就结束了拜拜发死了发死了Nice
