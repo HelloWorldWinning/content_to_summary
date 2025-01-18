@@ -1,0 +1,64 @@
+Timestamp: 2025-01-18T17:08:11.035794
+Title: 干货满满～新手保姆级教程！手把手教你让Home Assistant听懂人话！AI大模型终极教程
+URL: https://youtu.be/rN1w49xEs6k
+Status: success
+Duration: 6:39
+
+Description:
+好的，这是对您提供的内容的总结，包含核心要点、总结性观点、框架结构以及一个使用 mermaid 语法绘制的简体中文概念图。
+
+**总结：**
+
+1.  **核心要点：** 为了提升 ATOM Echo 的智能程度，可以通过本地部署开源模型或使用云端 AI 服务两种方式，将其接入大型语言模型。
+
+2.  **根本性观点：** 用户应根据自身硬件条件、隐私需求和预算，选择本地或云端 AI 集成方案，以实现智能家居语音助手的功能。
+
+3.  **总体框架：**
+    *   **引言：**  回顾上次内容，提出本次目标：提升 ATOM Echo 的智能。
+    *   **两种方案概述：**
+        *   **本地方案：** 使用 Ollama + Llama 3 模型，实现完全离线运行。
+        *   **云端方案：** 使用 Google Gemini API，利用云端计算。
+    *   **方案比较：**
+        *   **本地方案：** 优点是隐私性高，缺点是硬件要求高。
+        *   **云端方案：** 优点是不依赖本地计算，缺点是可能存在成本和隐私风险。
+    *   **具体实施：**
+        *   **本地方案：** 安装 Ollama，下载 Llama 3 模型，配置 Home Assistant 集成。
+        *   **云端方案：** 获取 Google Gemini API 密钥，配置 Home Assistant 集成。
+    *   **总结与建议：**  根据个人情况选择适合的方案，并建议参考之前的 ATOM Echo 配置教程。
+
+<Mermaid_Diagram>
+graph LR
+    A[引言] --> B(提升ATOM Echo智能);
+    B --> C{两种方案};
+    C --> D[本地方案(Ollama + Llama 3)];
+    C --> E[云端方案(Google Gemini API)];
+    D --> F[优点:隐私高];
+    D --> G[缺点:硬件要求高];
+    E --> H[优点:不依赖本地计算];
+    E --> I[缺点:可能存在成本和隐私风险];
+    F --> J(数据本地处理);
+    G --> K(需要高性能电脑);
+    H --> L(随时可用);
+    I --> M(免费额度有限/隐私风险);
+    J --> N[Ollama安装配置];
+	N --> O(Home Assistant集成);
+    L --> P[获取API密钥];
+    P --> Q(Home Assistant集成);
+    O --> R[ATOM Echo接入本地AI];
+	Q --> S[ATOM Echo接入云端AI];
+	R --> T[本地AI对话];
+	S --> U[云端AI对话];
+    T --> V(根据硬件性能调整模型大小);
+	V --> W[本地方案总结];
+	U --> X[云端方案总结];
+	W --> Y[隐私优先/高性能服务器选择本地];
+	X --> Z[便捷使用/无高性能服务器选择云端];
+	Y --> AA[最终方案选择依据];
+	Z --> AA;
+	AA --> AB[根据自身情况选择];
+
+</Mermaid_Diagram>
+
+
+Content:
+Hello, everyone. This is ITCommander. In the last program, I introduced you how to use ATOM Echo. As your HOME ASSISTENT voice assistant Today we are going to improve the IQ of this ATOM Echo. Let it connect with the popular AI big model. In this way, it can understand more meanings. Answer more complicated questions If you haven't watched the last video About the basic setting video of ATOM Echo You can make up for the class first. Then come back to watch this video. IF YOU WANT TO MAKE THE DIALOGUE AGENT OF HOME ASSISTENT Access to various AI capabilities There are two main ideas. First, the local operation of the open source dialogue model completely detached from the Internet We chose Ollama. Add the implementation method of Llama 3. 3 Second, access the API provided by major AI manufacturers through the Internet For example, Google's Gemini Let's take a look at the advantages and disadvantages of the two methods. The first method is completely offline. Data doesn't leave home. Very friendly to friends who pay attention to privacy and security. The disadvantage is that there are certain requirements for hardware performance. You need a computer that can run Llama 3 smoothly enough. The second plan Rely on cloud services You don't need to provide your own computing power. But there are risks of cost and privacy. Personally, I have some free accounts from AI manufacturers. I have tried OpenAI, Cloud and Gemini. Finally, it was found that the APIs of OpenAI and Cloud need to be paid to use. And Google and Gemini currently have free quotas available. So in this video, we will demonstrate how to use it. Local scheme Ollama and cloud scheme Gemini These two ways to access Home Assistant In the first part, let's first introduce the local plan. Install Olma+Llama 3. 3 Why choose Ollama? It is because it can run the open source Llama 3. 3 model. And it can provide a simple and easy-to-use command line interface. The data is completely processed locally. Don't worry about the chat content being saved or trained by the cloud server. The required hardware is a computer with good performance. You can run Ollama and run the local dialogue model. Ollama supports four installation environments Windows, MacOS, Linux, and Docker Let's go to the official website of Ollama. Install according to the prompts of the website After the installation is completed, use the method of ollama pull llama 3. 3 Come to download the model and wait for the download of the model to be completed. You can carry out the regression calculation locally. Draw the key points here. We need to set the environmental volume for Ollama. Let Olma provide external services Otherwise, Olma can only work on this machine. You can't call remotely from Home Assistant. Then configure the conversation agent of Home Assistant Turn on the setting integration of Home Assistant We found the integration of Ollama. Select Add, and then fill in The IP address of the device running Ollama Click Done to complete the configuration. Finally, associate ATOM with the new dialogue agent. Enter the settings voice assistant and select the default voice assistant. Find the drop-down option of the dialogue agent Select the Ollama you just set In this way, when you talk to ATOM Echo It will set off. Ollama's Llama 3. 3 model for local reasoning Then return the result to Atom Echo. This method, if you think the answer speed is too slow Then it may be that the performance of your hardware is not strong enough. Or the downloaded model is too big. The performance and model need to be fully balanced. Decide the size of the model you want to download. If everything goes well, then you have completed the local The construction of AI dialogue function The cloud plan of the second part We choose Google's Gemini's API. If you don't have a powerful local computer Or think it's too troublesome to download and maintain large models. Then you can consider using the cloud Ai service. In this issue, we choose Google Gemini. Because at present, it has free quotas. What about the specific implementation steps? First of all, we enter this website. Create a key of Gemini's API Let's save this key. Also enter the setting integration of Home Assistant Find Google Generative AI inside and click to add In the process of adding, you will be prompted to enter the API key. You just got the API key from asdudio. google. com Copy it and click to confirm to complete. The following is the related atomu echo. And the front Ollamalace The voice request of atomu echo Point to a new dialogue agent The background will help you complete voice recognition. And send it to Gemini After receiving the reply It will be converted into voice. Play it through our speaker. You only need to proxy the voice assistant's dialogue. Set to Google Generative AI You can use Gemini as your voice assistant. The dialogue is represented. The advantage of this method is Don't worry about the lack of local computing power. It can be used at any time. The disadvantage is that the free quota may be limited. You may need to pay after using it up. And friends who are sensitive to privacy You need to choose carefully. OK, we will demonstrate it today. Two common AI dialogue integration methods Local Olma plus Google Gemini In actual use You can configure it according to your own equipment. Sensitivity to privacy and budget To decide which scheme you will use. If zero privacy leakage is pursued And there is a server with sufficient performance at home. You can choose the local scheme. If you want to be as simple as possible It only needs to be used lightly. Or you don't have a machine that can run a large model. You can choose cloud service. FINALLY, IF YOU ARE THE VOICE ASSISTANT OF HOME ASSISTENT I'm not familiar with the dialogue agent. Remember to read the previous issue about Configuration tutorial of ATOM AICO Then let's play with AI integration. Thank you for watching. If you think this video is helpful Welcome to like, follow and share See you in the next program.
