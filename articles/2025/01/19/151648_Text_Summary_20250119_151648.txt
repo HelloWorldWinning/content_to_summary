@@ -1,0 +1,65 @@
+Timestamp: 2025-01-19T15:16:48.504773
+Title: Text_Summary_20250119_151648
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1.  **Introduction:**
+    *   Cryptocurrency, driven by FinTech advancements, presents a significant research area.
+    *   Cryptocurrency price prediction is challenging due to volatility and dynamism.
+    *   Various cryptocurrencies are in circulation globally.
+
+2.  **Methodology:**
+    *   This paper employs three RNN algorithms: GRU, LSTM, and bi-LSTM to predict Bitcoin (BTC), Litecoin (LTC), and Ethereum (ETH) prices.
+    *   Model performance is evaluated using Mean Absolute Percentage Error (MAPE).
+
+3.  **Results:**
+    *   GRU model exhibits superior prediction accuracy across all three cryptocurrencies compared to LSTM and bi-LSTM.
+    *   Specifically, GRU achieved the lowest MAPE values with 0.2454% for BTC, 0.8267% for ETH, and 0.2116% for LTC, respectively.
+    *   Bi-LSTM showed the least accurate predictions among the three, with higher MAPE percentages.
+
+4.  **Significance and Implications:**
+    *   The proposed prediction models demonstrated results that closely approximate real cryptocurrency prices.
+    *   Accurate prediction models can provide economic value by guiding investor trading decisions.
+    *   Further research should explore influences like social media, tweets, and trading volume.
+
+**Core Point:** The Gated Recurrent Unit (GRU) model is the most accurate algorithm among RNN models (GRU, LSTM, bi-LSTM) for predicting the prices of Bitcoin, Litecoin and Ethereum, showing economic value for trading decisions.
+
+**Fundamental Point:** Leveraging advanced neural network algorithms, specifically GRU, enables improved accuracy in cryptocurrency price forecasting, which has potential to significantly impact financial decision-making.
+
+**Overarching Framework:**
+This paper uses a data-driven approach (RNN models), to address the problem of cryptocurrency price volatility through comparative analysis of three RNN architectures in order to create a useful model for future financial applications and further research.
+
+<Mermaid_Diagram>
+graph LR
+    A[Introduction] --> B(Cryptocurrency as Research Area);
+    A --> C(Price Volatility & Dynamism);
+    A --> D(Multiple Cryptocurrencies);
+    B --> E[RNN Algorithms];
+    C --> E;
+    E --> F[Price Prediction (BTC, LTC, ETH)];
+    F --> G{Evaluation (MAPE)};
+    G --> H[GRU Model: Superior Performance];
+     G --> I[bi-LSTM: Least Accurate];
+    H --> J[Accurate Prediction];
+     I --> J;
+    J --> K[Economic Implications for Investors];
+    K --> L[Future Research: External Factors];
+    L --> M[Social Media, Tweets, Volume]
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+     style E fill:#ccf,stroke:#333,stroke-width:2px
+     style F fill:#aaf,stroke:#333,stroke-width:2px
+      style G fill:#afa,stroke:#333,stroke-width:2px
+       style H fill:#afa,stroke:#333,stroke-width:2px
+       style I fill:#fcc,stroke:#333,stroke-width:2px
+        style J fill:#aaf,stroke:#333,stroke-width:2px
+        style K fill:#f9f,stroke:#333,stroke-width:2px
+        style L fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Cryptocurrency is a new sort of asset that has emerged as a result of the advancement of financial technology and it has created a big opportunity for researches. Cryptocurrency price forecasting is difficult due to price volatility and dynamism. Around the world, there are hundreds of cryptocurrencies that are used. This paper proposes three types of recurrent neural network (RNN) algorithms used to predict the prices of three types of cryptocurrencies, namely Bitcoin (BTC), Litecoin (LTC), and Ethereum (ETH). The models show excellent predictions depending on the mean absolute percentage error (MAPE). Results obtained from these models show that the gated recurrent unit (GRU) performed better in prediction for all types of cryptocurrency than the long short-term memory (LSTM) and bidirectional LSTM (bi-LSTM) models. Therefore, it can be considered the best algorithm. GRU presents the most accurate prediction for LTC with MAPE percentages of 0.2454%, 0.8267%, and 0.2116% for BTC, ETH, and LTC, respectively. The bi-LSTM algorithm presents the lowest prediction result compared with the other two algorithms as the MAPE percentages are: 5.990%, 6.85%, and 2.332% for BTC, ETH, and LTC, respectively. Overall, the prediction models in this paper represent accurate results close to the actual prices of cryptocurrencies. The importance of having these models is that they can have significant economic ramifications by helping investors and traders to pinpoint cryptocurrency sales and purchasing. As a plan for future work, a recommendation is made to investigate other factors that might affect the prices of cryptocurrency market such as social media, tweets, and trading volume.
