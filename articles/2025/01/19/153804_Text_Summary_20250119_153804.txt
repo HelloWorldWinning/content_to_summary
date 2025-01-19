@@ -1,0 +1,66 @@
+Timestamp: 2025-01-19T15:38:04.817770
+Title: Text_Summary_20250119_153804
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+I. **Introduction:**
+    *   Forecasting stock prices is difficult due to volatility and numerous influencing factors.
+    *   Accurate closing price prediction is valuable for investment decisions.
+    *   Deep learning, particularly RNNs, is increasingly used for stock market forecasting.
+    *   LSTM and GRU are popular RNN architectures for sequential data.
+
+II. **Proposed Approach:**
+    *   Develop a trading strategy for the Moroccan stock market using LSTM and GRU to predict closing prices (short and medium term, respectively).
+    *   Implement buy/sell decision rules based on model predictions.
+    *   Simulate transactions over four 3-year periods with various settings for each stock.
+    *   Calculate expected returns based on simulation results.
+    *   Retain stocks that outperform a benchmark index (expected return > threshold).
+
+III. **Optimization and Validation:**
+    *   Use random search to optimize parameters within the decision rules.
+    *   Test the performance of the portfolio based on selected stocks over a further period.
+    *   Repeat the process with varied portfolio sizes to identify the optimal stock combination and parameters.
+
+IV. **Results:**
+    *   The proposed strategy significantly outperforms benchmark indices in the local market.
+    *   Annualized return of the proposed strategy was 27.13% during the test period.
+    *   Benchmark index annualized returns were considerably lower (MASI: 0.43%, Distributor Sector: 15.24%, Pharmaceutical Industry: 19.94%).
+    *   Brokerage fees were factored into the calculations for realistic results.
+
+**Core Point:** The study introduces a deep learning-based trading strategy using LSTM and GRU models that demonstrably outperforms local market benchmarks in the Moroccan stock market.
+
+**Fundamental Point:** By leveraging recurrent neural networks to forecast stock prices and employing optimized trading rules, a profitable investment strategy can be developed, surpassing traditional benchmark performance.
+
+**Overarching Framework:** The overarching framework is a data-driven, deep learning approach to stock trading, combining price prediction, algorithmic decision-making, and portfolio optimization to achieve superior returns compared to market indices.
+
+<Mermaid_Diagram>
+graph LR
+    A[Introduction: Stock Forecasting Challenge] --> B(Deep Learning for Forecasting)
+    B --> C[RNNs: LSTM & GRU]
+    C --> D{Proposed Trading Strategy (Moroccan Market)}
+    D --> E[LSTM (Short-term Price Prediction)]
+    D --> F[GRU (Medium-term Price Prediction)]
+    E --> G(Buy/Sell Decision Rules)
+    F --> G
+    G --> H{Simulation & Expected Return}
+    H --> I[Benchmark Comparison (Threshold)]
+    I --> J{Random Search Optimization}
+    J --> K[Portfolio Testing & Validation]
+    K --> L{Repeat with Varied Portfolio Size}
+    L --> M[Optimal Stock Combination Selection]
+    M --> N[Results: Outperformance of Benchmarks]
+    N --> O(Annualized Return: 27.13%)
+    O --> P(MASI: 0.43%, Distributor Sector: 15.24%, Pharmaceutical Industry: 19.94%)
+     P--> Q[Realistic Results: Brokerage Fees Included]
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+     style N fill:#ccf,stroke:#333,stroke-width:2px
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13 stroke:#000,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+Forecasting stock prices is an extremely challenging job considering the high volatility and the number of variables that influence it (political, economical, social, etc.). Predicting the closing price provides useful information and helps the investor make the right decision. The use of deep learning and more precisely of recurrent neural networks (RNNs) in stock market forecasting is an increasingly common practice in the literature. Long Short Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures are among the most widely used types of RNNs, given their suitability for sequential data. In this paper, we propose a trading strategy designed for the Moroccan stock market, based on two deep learning models: LSTM and GRU to predict the closing price in the short and medium term respectively. Decision rules for buying and selling stocks are implemented based on the forecasting given by the two models, then over four 3-year periods, we simulate transactions using these decision rules with different settings for each stock. The returns obtained will be used to estimate an expected return. We only hold stocks that outperform a benchmark index (expected return > threshold). The random search is then used to choose one of the available parameters and the performance of the portfolio built from the selected stocks will be tested over a further period. The repetition of this process with a variation of portfolio size makes it possible to select the best possible combination of stock each with the optimized parameter for the decision rules. The proposed strategy produces very promising results and outperforms the performance of indices used as benchmarks in the local market. Indeed, the annualized return of our strategy proposed during the test period is 27.13%, while it is 0.43% for Moroccan all share Indice (MASI), 15.24% for the distributor sector indices, and 19.94% for the pharmaceutical industry indices. Noted that brokerage fees are estimated and subtracted for each transaction. which makes the performance found even more realistic.
