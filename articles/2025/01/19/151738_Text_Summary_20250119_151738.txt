@@ -1,0 +1,65 @@
+Timestamp: 2025-01-19T15:17:38.466853
+Title: Text_Summary_20250119_151738
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**核心总结：**
+
+1.  **核心要点:** 该研究使用循环神经网络算法预测三种加密货币价格，发现门控循环单元（GRU）模型在预测所有加密货币价格时表现最佳。
+2. **根本要点:** 准确的加密货币价格预测模型能够为投资者和交易者提供有价值的参考，并可能对经济产生重要影响。
+3.  **总体框架:**
+    *   加密货币的兴起及其价格波动性。
+    *   利用循环神经网络（RNN）进行加密货币价格预测。
+    *   比较三种RNN模型 (GRU, LSTM, bi-LSTM) 在预测比特币(BTC)、以太坊(ETH)和莱特币(LTC)价格时的表现。
+    *   GRU模型在预测精度上优于LSTM和bi-LSTM。
+    *   强调预测模型在投资决策和经济影响上的潜在价值。
+    *   未来研究方向，考虑其他影响因素。
+
+<Mermaid_Diagram>
+graph LR
+    A[加密货币兴起] --> B(价格波动性);
+    B --> C[研究机会];
+    C --> D[循环神经网络(RNN)];
+    D --> E(模型选择);
+    E --> F[GRU模型];
+    E --> G[LSTM模型];
+    E --> H[bi-LSTM模型];
+    F --> I{预测精度最高};
+    G --> J{预测精度中等};
+    H --> K{预测精度较低};
+    I --> L[比特币(BTC)预测];
+    I --> M[以太坊(ETH)预测];
+    I --> N[莱特币(LTC)预测];
+    L --> O(0.2454% MAPE);
+    M --> P(0.8267% MAPE);
+     N --> Q(0.2116% MAPE);
+    K --> R[比特币(BTC)预测];
+    K --> S[以太坊(ETH)预测];
+     K --> T[莱特币(LTC)预测];
+        R --> U(5.990% MAPE);
+    S --> V(6.85% MAPE);
+    T --> W(2.332% MAPE);
+    D --> X[经济影响];
+     X --> Y{投资决策支持};
+     X --> Z{交易策略优化};
+    Y --> AA[未来研究];
+    Z --> AA
+     AA --> AB[社交媒体];
+    AA --> AC[交易量];
+    AA --> AD[推文];
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+     style C fill:#9cf,stroke:#333,stroke-width:2px
+     style D fill:#cff,stroke:#333,stroke-width:2px
+    style I fill:#afa,stroke:#333,stroke-width:2px
+   style K fill:#fcc,stroke:#333,stroke-width:2px
+    style X fill:#ffc,stroke:#333,stroke-width:2px
+    style AA fill:#cfc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Cryptocurrency is a new sort of asset that has emerged as a result of the advancement of financial technology and it has created a big opportunity for researches. Cryptocurrency price forecasting is difficult due to price volatility and dynamism. Around the world, there are hundreds of cryptocurrencies that are used. This paper proposes three types of recurrent neural network (RNN) algorithms used to predict the prices of three types of cryptocurrencies, namely Bitcoin (BTC), Litecoin (LTC), and Ethereum (ETH). The models show excellent predictions depending on the mean absolute percentage error (MAPE). Results obtained from these models show that the gated recurrent unit (GRU) performed better in prediction for all types of cryptocurrency than the long short-term memory (LSTM) and bidirectional LSTM (bi-LSTM) models. Therefore, it can be considered the best algorithm. GRU presents the most accurate prediction for LTC with MAPE percentages of 0.2454%, 0.8267%, and 0.2116% for BTC, ETH, and LTC, respectively. The bi-LSTM algorithm presents the lowest prediction result compared with the other two algorithms as the MAPE percentages are: 5.990%, 6.85%, and 2.332% for BTC, ETH, and LTC, respectively. Overall, the prediction models in this paper represent accurate results close to the actual prices of cryptocurrencies. The importance of having these models is that they can have significant economic ramifications by helping investors and traders to pinpoint cryptocurrency sales and purchasing. As a plan for future work, a recommendation is made to investigate other factors that might affect the prices of cryptocurrency market such as social media, tweets, and trading volume.
