@@ -1,0 +1,62 @@
+Timestamp: 2025-01-19T10:33:54.326555
+Title: Reinforcement learning for the design of chemical processes using graph neural networks
+URL: https://youtube.com/watch?v=adUtiD7olJ4&si=i72FSny6XQgL_VJ5
+Status: success
+Duration: 14:50
+
+Description:
+**简体中文总结:**
+
+**1. 核心结论:** 深度强化学习结合图神经网络可以为化工过程设计提供一种新的自动化方法，能够快速生成和优化流程图。
+
+**2. 根本结论:** 通过将过程设计视为强化学习中的交互过程，可以利用人工智能来解决传统方法中效率和结构限制的问题。
+
+**3.  总体框架:**
+    *   **动机:** 现有过程设计的局限性，例如试错、耗时以及超结构方法的结构限制。
+    *   **方法:** 利用强化学习和图神经网络进行过程设计。
+        *   **信息表示:** 使用图结构表示流程图，将单元操作作为节点，物流作为边。
+        *   **智能体架构:** 使用图神经网络处理流程图信息，并使用 Actor-Critic 网络进行决策。
+        *   **动作空间:** 使用分层混合动作空间，包括离散和连续的动作。
+        *   **环境与奖励:** 使用多精度模拟器作为环境，并利用中间奖励和最终奖励来指导学习。
+    *   **案例研究:** 使用简单的反应案例展示了该方法的有效性，并通过迁移学习加速了训练过程。
+    *   **结论:** 强化学习为过程设计提供了新的可能性。
+
+<Mermaid_Diagram>
+graph LR
+    A[动机] --> B(传统过程设计局限)
+    B --> C[试错法]
+    B --> D[超结构方法]
+    A --> E(强化学习与图神经网络)
+    E --> F[信息表示]
+    F --> G{流程图}
+    G --> H[节点(单元操作)]
+    G --> I[边(物流)]
+    E --> J[智能体架构]
+    J --> K[图神经网络(GNN)]
+    K --> L(消息传递机制)
+    J --> M[Actor-Critic 网络]
+    E --> N[动作空间]
+    N --> O[分层混合动作空间]
+     O --> P[离散动作]
+     O --> Q[连续动作]
+    E --> R[环境与奖励]
+    R --> S[多精度模拟器]
+    R --> T[中间奖励]
+    R --> U[最终奖励]
+    E --> V[案例研究]
+    V --> W(简单反应案例)
+     W -->X[迁移学习]
+     X --> Y[加速训练]
+
+    V --> Z(优化流程图)
+    E --> AA[结论]
+    AA --> AB(强化学习潜力)
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+     style V fill:#cfc,stroke:#333,stroke-width:2px
+     style AA fill:#ffc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+hello everyone I'm chin I'm PhD student at process intelligent research group at Tu today I'm really happy to introduce our research process design through deep reinforcement learning and graph new networks first I want to talk about motivation the challenges for process design currently the transition towards sustainable and secular future demon new processes this not only about coming up with completely new one but also how can we improv and optimize existing processes so what are the current process design method in industrial Standard Process design is try and error based on experience so the engineer utilize the process simulator try to add unit operation one by one and do local oranization of operating Point more advanced methods it involve super structure based optimization basically all the possible process Alternatives I modeled and then soled by mised integer nonlinear programming however this method have certain limitations first it usually take quite long time to develop and since you you need to predefine the super structure the final process is limited to the pr predefined structure or super structure so can we do better can we create a new tool to do quick decern making for engineers machine learning may offer new possibilities it has shown to up to perform humans on many tasks such as image classification of speech recognition so can we leverage machine learning in process design specifically I want to focus on reinforcement learning which is a subcategory of motion learning reinforcement learning has been utilized in many domain such as board game go deep mind invented a reinforcement agents that shed the superum performance in hent Chinese Bard game go some game companies such as Ubisoft also utilize reinforcement learning in some computer games in chemical engineering domain reinforcement learning also has been utilized into many tasks for example molecular design and process control if you take a close look molecular design and process design has certain similarity especially in terms of structure molecules consist of item connected by bonds uh similarly flow shet consist a unit operation linked by streams so can we use reinforcement learning in process design to answer this question we first need to know what is reinforcement learning reinforcement learning generally contains two major components agent and environments all the learning process and inference process are based on the interaction between these two the agent first get the observation of the current state from the environment and based on the certain policy the agent take action after the action has been taken environment updated into a new state and the environment will give certain feedback based on the reward function to the agent to evaluate whether the action is good or bad in the context of reinforcement learning in process design again we also have two components agent and environment the agent here you could considered as an artificial chemical engineer and the environment is a process simulator first agent get the current flow sheet from the environment and based on certain polic policy agent takes several actions for example the agent could select an open stream at one unit operation and then select corresponding design or operation variables then the new flow sheet is resimulated in the process simulator and the environment will give the agent feedback based on the reward function this is only one step we need to repeat the whole process again until the flow sheet is completed as we c one Absol end uh as you can see since the framework is quite complicated next I will introduce four major components the first is information representation which is essentially how can we represent our flow sheet in a machine readable way the second is Agent architecture how can we design design an agent the third is action space which is what kind of action the agent can take finally other reward and environment first let's have a look information representation information reputation is quite important for reinforcement learning in process design because a flow shed image here is quite understandable for engineers but for machine we need to represent it in a machine readable way so that our reinforcement learning agent can learn from it here we utilize flow she graph specifically we represent the unit operation as noes and the stream as edges to differentiate different node and Edge we give each node and Edge a corresponding feature Vector within the for feature Vector for note we could include the unit type the temperature and for edges we could include corresponding temperature and pressure now we have a motion readable flow sheet graph we can move on to the agent architecture part here we first utilize graphing Network to process our flow sheet graph the KE mechanism inside the graph network is called message passing we take one note as example as colored in red first all the note and Edge feature from the neighbors are aggregate into a single message Vector then we can combine this message Vector with our original Central node feature Vector to get a updated hidden State for the note importantly this process is Opera WR on each note within one layer and graph new network contains multiple layers in the end each note could potentially get information from from the five neighbors once the message passing pH is finished we use ping function to aggregate all the updated node feature into a single Vector socalled flow sheet fingerprint uh once we have the flowet fingerprint we can build our actor creting Network first we could have additional actor Network to Output the actions then to evaluate the action agent taken we have additional um cretive Network to produce value importantly process design is a quite complicated task so there are many decision we need to make which means there are many action we need to design for this architecture so how can we design our action space here we utilize hierarchical hybrid action space hierarchical action means we could in have some internal structure within the action space and hybrid means we could include discrete and continuous action for example the H can select an open stream which is a discrete action and then the agent can select unit operation which is again discret finally the agent can select continuous action which is Sting a corresponding design and operation variable then here is our overall AR actor critic agent architecture uh which includes three main feure Parts graph encoder creating networks and actor networks then I will talk about the environment and reward for the environment we could use multif Fidelity Simulator for example for shortcut we could directly utilize passon based simulator additionally we could also build an interface to inct with rigorous Simulator for example theim as plus and Coco for reward we also have two types intermediate reward and final reward intermediate reward is response for giving quick feedback to the agent when the flow sheet is not completed for example um the flow sheet is converged when adding a new column we will give a positive Scala value to encourage the agent otherwise we will give a negative Scala value for the final reward we could utilize Purity neh flow utility cost and we could also incorporate multiobjective function next we utilize a case study to showcase our model here we use a simple reaction assuming ideal mixing behavior and C is our desired product for the fit initialization we use 100 m per second 300 Calin and equal model of a and b additionally we utilize Open Source process simulator D same as environment and that will include four different unit operations and a corresponding design variable finally we utilize net cash flow as reward function here the result and there are in total three parallel runs each run contain 10, 000 epode and each episode generate a complete flow shet and 10, 000 training Abode needs kind of three days on the left hand left side hand um this is our learning curve from the agent in the beginning we can see the score are netive negative um because the flow sheet are not economically viable we can see one example flow sheet the agent only add one unit operation hit exchanger and then close the flow sheet with increasing Absol on the agent start to learn from the previous experience so we can say at 250 Absol the score is already positive now and if you look at the flow shet is already has some kind of structure reaction separation but it still con many redundant H exchanger for example finally uh when the score converts at 6, 000 abso the flow sheet is not only economically viable but structurally reasonable now the reaction take place in two reactors and then the mixture is separate in two columns however there's still one limitation which is um the whole process requires long simulation time the 10, 000 training app so need come 3 days the question is could we find a way to accelerate the training process here we utilize transfer learning to facilitate the training process specifically we first pre-rain the agent with our shortcut environment then we transfer the uh pre-train agent to find to with the same environment here you can see the result the green curve is the learning curve from the agent with transfer learning and the blue curve is without we can see the agent with transfer learning has faster feasibility the agent with transfer learning can generate phys flow shed even in the first episode also we observe improved performance the agent with transfer learning reaches even higher conver convergence score also efficienc boost using score of 60 as reference the agents with transfer learning decrease by 40 percentage training Abode so the conclusion is we propose a reinforcement explaining algorithm that represents flow sheets as graph use graph new network to learn and can synthesiz new processes so reinforcement learning provides new possibility for process design thank you very much for your attention
