@@ -1,0 +1,82 @@
+Timestamp: 2025-01-20T17:31:32.064668
+Title: Gated Recurrent Unit (GRU) Equations Explained
+URL: https://www.youtube.com/watch?v=hkJNjxlEO-s
+Status: success
+Duration: 9:17
+
+Description:
+**Summary:**
+
+**I. Introduction to GRU (Gated Recurrent Unit)**
+    *   GRU is a type of recurrent neural network deviation, similar to LSTM (Long Short-Term Memory) but with key differences.
+    *   Assumes prior understanding of RNNs and LSTMs.
+    *   Focus is on GRU's internal mechanisms and operations.
+
+**II. GRU Internal Design and Operations**
+    *   **Core Components:**
+        *   Sigmoid activation (σ): Neural network activation output between 0 and 1
+        *   Tanh activation (ϕ or tanh): Neural network activation output between -1 and 1.
+        *   Element-wise multiplication: Hadamard product.
+        *   Vector addition: standard vector addition.
+        *   One-minus operation: (1- input)
+    *   **Equations:**
+        *   **Reset Gate (rt):** Determines how much of the past hidden state to forget.
+            *   Input: Current input (xt) and previous hidden state (ht-1).
+            *   Calculated using sigmoid activation function.
+        *   **Candidate Hidden State (h̃t):** Proposed new hidden state.
+             *   Input: Current input (xt) and previous hidden state (ht-1) modified by reset gate (rt).
+             *   Calculated using tanh activation function.
+        *   **Update Gate (zt):** Controls how much of the new candidate hidden state to incorporate into the new hidden state and how much to keep from the previous hidden state.
+             *    Input: Current input (xt) and previous hidden state (ht-1).
+             *   Calculated using sigmoid activation function.
+        *   **Hidden State (ht):** The final updated hidden state that combines the previous hidden state with the current candidate hidden state, determined by the update gate (zt).
+
+**III. GRU vs. LSTM Comparison**
+    *   **States:**
+        *   LSTM: Has two states: cell state and hidden state.
+        *   GRU: Has only one hidden state.
+    *   **Gates:**
+        *   LSTM: Three gates (forget, input, output) and four neural networks.
+        *   GRU: Two gates (reset, update) and three neural networks.
+    *   **Computation and Performance:**
+        *   GRU offers faster computation due to fewer gates.
+        *   LSTM might capture longer correlations in sequences, although practical performance differences are not always significant.
+
+**IV. Conclusion**
+    *  The GRU is a useful mechanism to capture the sequential information with a relatively simple and faster computation compared to LSTM and other RNN networks.
+
+**Core Point:** The GRU utilizes reset and update gates to selectively combine past and present information into the next hidden state, efficiently processing sequential data.
+
+**Fundamental Point:** The GRU’s simplified gate structure balances computation speed and ability to capture sequential dependencies.
+
+**Overarching Framework:**
+
+The content outlines a detailed explanation of the GRU architecture, its operations, and a comparison with LSTMs. The framework is to breakdown a relatively complicated recurrent neural network deviation into key components, equations and its differences with its counterpart LSTM.
+
+<Mermaid_Diagram>
+graph LR
+    A[Introduction] --> B(GRU Design);
+    B --> C{Reset Gate (rt)};
+    B --> D{Candidate Hidden State (h̃t)};
+    B --> E{Update Gate (zt)};
+    B --> F{Hidden State (ht)};
+    C --> D;
+     D --> F;
+    E --> F;
+    G[Comparison GRU vs LSTM] --> H(States);
+    G --> I(Gates);
+    G --> J(Computation);
+    H-->I;
+    I-->J;
+    F --> K(Conclusion);
+    J --> K;
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style B fill:#add8e6,stroke:#333,stroke-width:1px
+    style G fill:#add8e6,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+hi everyone this is ymel and today we are going to talk about another required neural network deviation namely the gate recurrent unit or jru for short this is a brief overview of the gated recurrent unit it is quite similar to the long shorter memory cell but it has some differences we'll see further in the video what are exactly those differences and if you didn't check the lstm video the link is in the description and make sure to see that one first because it also explains how the required neural networks work and will not go into these details in this video again okay so let's begin so here on the left we have the general design of the gate recurrent unit and how it looks like inside it and what are its operation the symbols here are mostly like the same as in the lstm unit here we have the sigma which basically stands out for like a neural network with a sigmoid activation function here we have here which is like a neural network with a tanning activation function here we have the addition of two vectors and here we have like the element-wise multiplication what is different however is this operation here one minus but this one is pretty simple it does what it looks like so basically it takes its input a vector and what it does it outputs one minus that vector which it takes as input and here on the right we have the equations that characterize the gated recurrent unit and we'll go through each of them and see how they process the input and help to transfer the hidden state from one step to another so the gate recurrent unit also has gates it has two gates in comparison with the three gates found in the long short-term memory cell and the first gate is the reset gate which is pretty similar to the forget gate in lstms and what does the reset gains do it takes as input the representation of the current step the previous hidden state multiply each of them with a corresponding weight matrix add a bias and apply the simulator activation function and save this in the value of rt which is like the reset value for the current step and what you do with this value you multiply it element wise with the previous hidden state here this one is the element wise multiplication and you can see that this is quite similar as we said earlier to the forget gate in the long short term memory cell the nesting the the jerry computes is the candidate hidden state and how you can see this one is basically like saying that what is like the new hidden state uh the current step that i have like to give further away given the new information that i've got at this step and this one is like pretty similar to the cell state ct of the current step computed in long shorter memory cells and how the candidate hidden state is computed is computed using a xt multiplied by weight matrix and also using the previous hidden state element twice multiplied by the reset gate we discussed previously about this operation and multiplied again by uh another weight matrix adding a bias applying the 10h function which here we represent again as in the lstm with fee and finally we obtained the new candidate hidden state h tilde t and this operation is illustrated here with the symbol fee and finally we have the update which i have to say that it stays at the core of the gated recurrent unit and i know that i left this one at the last step to be explained but we had to understand the previous operations in order to understand this one and what this gate do it basically selects what to transfer from the previous hidden state and what to transfer from the current candidate hidden state to the next step and we can see this mechanism also in the equations so we first compute the zt here which basically is the value of the object gate using the xt multiplied by weight matrix and also using the previous industry multiplied by another way matrix adding a bias and to everything we applied the sigmoid function and what we get again are values between 0 and 1. and we can use these values basically to compute the next hidden state as follows so we multiply the zt element wise with the candidate function candidate hidden state and also we multiply the opposite of like i know the mirroring of the values in the updated computing using one minus zt and we multiply these values with the value of the previous hidden state and in this way we as we said earlier we select what's important from the previous hidden state and what's important from the current candidate hidden state and transfer everything to the next step as the hidden state and this mechanism can also be observed in this diagram here so basically here where we have the sigma we compute the zt we take this value and we multiply it with what output with output from the fee symbol which is the candidate h tilde t we multiply them element wise so here we have zt multiplied element twice with h tilde t and on the other side when we select what we want from the previous hidden state uh here we compute the one minus zt okay we multiply it with the previous hidden state as we discussed ht minus one element wise so element wise multiplication and [Music] in the end we added these two values that we obtained to obtain the new hidden state now let's discuss a little bit about a comparison between the lstm and the griu so the first one is that in the lstm you have like two states this the cell state and the hidden state that you transfer from one step to another while in the gate recurrent unit you have only the hidden state this one the kt recurrence you need is more similar in this way to the recurrent uh neural networks but also you have to observe that in the lstm case we have like three gates the for get gate input gate and the output gate which basically means like four neural networks while in the gated recurrent unit we have only two gates the reset gate and the update which corresponds to three neural networks so basically in the gated recurrent unit case we have like faster computation due to the reduced number of gates here but also i've seen like people arguing that because you have like three gates in the long shorter memory you can capture like long core like uh correlations in the sequence uh but in practice i've seen them both work quite well i didn't see like many differences between like the performance of one and the other with all this being said i would like to thank you for watching this video uh and i hope that you got a better understanding of how the gate recurrent unit works and if you like this video please leave a like to it and maybe subscribe to this channel it would help me a lot and until next time i wish you to have a great time and see you bye
