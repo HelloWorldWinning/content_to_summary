@@ -1,0 +1,70 @@
+Timestamp: 2025-01-21T01:24:26.638821
+Title: Text_Summary_20250121_012426
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Core Ideas:**
+
+*   **Challenge:** Predicting nonferrous metal prices is difficult due to volatility and irregular cycles.
+*   **Proposed Solution:** A hybrid model combining ICEEMDAN decomposition, fuzzy entropy, Bayesian hyperparameter optimization GRU, and ARIMA.
+*   **Methodology:**
+    *   Decompose price series using ICEEMDAN.
+    *   Use fuzzy entropy to assess the complexity of subsequences.
+    *   Predict the least complex subsequence with ARIMA.
+    *   Predict other subsequences with Bayesian optimized GRU.
+    *   Integrate predictions for the final result.
+*   **Validation:** Tested the model using zinc, aluminum, copper, and gold futures data from the London Metal Exchange, comparing against ten other models.
+*   **Key Findings:**
+    *   Bayesian optimization enhances GRU performance.
+    *   Fuzzy entropy improves accuracy by identifying subsequences suitable for different prediction methods.
+    *   The proposed model surpasses compared models in multi-step metal price forecasting.
+
+**II. Core Point:**
+
+The proposed hybrid model, using ICEEMDAN decomposition, fuzzy entropy, Bayesian optimization, and GRU/ARIMA combination, significantly improves the accuracy of nonferrous metal price forecasting.
+
+**III. Fundamental Point:**
+
+Effective nonferrous metal price prediction requires the integration of signal decomposition techniques with optimized machine learning methods, tailoring model application based on signal complexity.
+
+**IV. Overarching Framework:**
+
+The content presents an advanced forecasting framework built on signal processing and machine learning techniques to overcome the limitations of traditional forecasting models for highly volatile and irregular nonferrous metal prices.
+
+<Mermaid_Diagram>
+    graph LR
+    A[Nonferrous Metal Price Forecasting Challenge] --> B(Price Volatility and Irregular Cycles);
+    B --> C{ICEEMDAN Decomposition};
+    C --> D[Decomposed Subsequences];
+    D --> E{Fuzzy Entropy Analysis};
+     E --> F[Minimum Fuzzy Entropy Subsequence]
+     E --> G[Other Subsequences];
+      F --> H[ARIMA Prediction]
+      G --> I{Bayesian Hyperparameter Optimization GRU Prediction}
+        H --> J(Integrated Prediction Results);
+        I --> J
+    J --> K[Metal Price Forecast];
+        K --> L{Validation using multiple metals and models};
+        L --> M[Superiority of proposed model];
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:1px
+        style C fill:#ccf,stroke:#333,stroke-width:1px
+        style D fill:#ddd,stroke:#333,stroke-width:1px
+        style E fill:#ccf,stroke:#333,stroke-width:1px
+         style F fill:#ddd,stroke:#333,stroke-width:1px
+         style G fill:#ddd,stroke:#333,stroke-width:1px
+         style H fill:#ccf,stroke:#333,stroke-width:1px
+        style I fill:#ccf,stroke:#333,stroke-width:1px
+         style J fill:#ddd,stroke:#333,stroke-width:1px
+         style K fill:#f9f,stroke:#333,stroke-width:2px
+         style L fill:#ccf,stroke:#333,stroke-width:1px
+         style M fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Nonferrous metals are the basic materials for national economic development. Accurate and robust price forecasting can effectively reduce investment costs and bring greater economic benefits to enterprises. But the violent fluctuation of nonferrous metal prices and the evolution of irregular cycles make metal price prediction difficult. A nonferrous metal price prediction model based on improved complementary ensemble empirical mode (ICEEMDAN) decomposition, a Bayesian hyperparameter optimization gated recurrent neural network (GRU) and an integrated autoregressive moving average model (ARIMA) is proposed. First, ICEEMDAN is used to decompose the original metal price series, and then fuzzy entropy is applied to judge the complexity of confusion of the decomposed subsequence. An ARIMA model is used to predict the sequence with the minimum fuzzy entropy, and the other subsequences are predicted by the Bayesian hyperparametric optimization GRU in this article. Finally, the prediction results are integrated to obtain the final prediction results of the original price series. To verify the reliability and practicability of the model in this article, different lengths of daily futures price series of zinc, aluminum, copper and gold prices on the London Metal Exchange and the Investing are used as the research data, three experiments utilizing 5 groups of metal price data and 10 comparison models are designed to verify the superiority of the proposed model. The results show that: (i) Bayesian hyperparameter optimization can improve the prediction performance of a single model effectively. The hybrid method with fuzzy entropy can effectively improve the prediction accuracy. (ii) The proposed model outperforms the compared state-of-the art models in three-step metal prices forecasting.
