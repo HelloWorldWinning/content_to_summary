@@ -1,0 +1,54 @@
+Timestamp: 2025-01-21T01:24:37.977249
+Title: Text_Summary_20250121_012437
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Core Ideas:**
+
+   *   **Problem:**  Traditional statistical models struggle to accurately predict volatile copper prices.
+   *   **Solution:** A hybrid neural network approach combining Wavelet Transform, Bayesian Optimization, and LSTM/GRU networks is proposed.
+   *   **Methods:**
+      *   **Wavelet Transform:**  Used for data denoising and removing irrelevant information.
+      *   **Bayesian Optimization:**  Employed for efficient hyperparameter tuning of neural networks.
+      *   **LSTM & GRU:**  Used as the neural network architectures for short- and long-term copper price forecasting.
+   *   **Results:** The hybrid method demonstrates high accuracy with MSE below 3% for both short-term and long-term forecasting.
+   *   **Applicability:** The model can be easily adapted to predict prices of other commodities, like stock prices.
+
+**II. Core Point:**
+   A hybrid neural network incorporating Bayesian optimization and wavelet transform effectively improves the accuracy and robustness of copper price prediction for both short- and long-term horizons, surpassing traditional methods.
+
+**III. Fundamental Point:**
+   The combination of advanced signal processing techniques (Wavelet Transform) with efficient optimization (Bayesian Optimization) and powerful sequence modeling (LSTM/GRU) provides a robust and adaptable approach for time series forecasting of volatile commodity prices.
+
+**IV. Overarching Framework:**
+    This research proposes a hybrid methodology for time-series forecasting, particularly for volatile copper prices, by integrating signal preprocessing with optimized machine learning models.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Data Processing [Data Processing]
+        A[Raw Copper Price Data] --&gt; B(Wavelet Transform)
+        B --&gt; C[Denoised Data]
+    end
+    subgraph Model Training [Model Training]
+        C --&gt; D{LSTM or GRU}
+        E[Hyperparameter Space] --&gt; F(Bayesian Optimization)
+        F --&gt; D
+    end
+    D --&gt; G[Price Forecasts]
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#cfc,stroke:#333,stroke-width:2px
+        style D fill:#aaf,stroke:#333,stroke-width:2px
+        style E fill:#fcf,stroke:#333,stroke-width:2px
+        style F fill:#ffc,stroke:#333,stroke-width:2px
+        style G fill:#afa,stroke:#333,stroke-width:2px
+       linkStyle 0,1,2,3,4,5,6 stroke:#000,stroke-width:2px;
+</Mermaid_Diagram>
+
+
+Content:
+The metal prices play an important role in many aspects of economics. Copper, a widely used metal in the industry, has received an extensive attention recently. Due to the high fluctuations in copper price that makes it difficult to predict especially when using the traditional statistical models, in this work, a hybrid Neural Network with Bayesian Optimization and Wavelet Transform is applied to forecast the copper price in both short- and long-terms, in which Bayesian Optimization Algorithm is used on the hyperparameter searching task, the Wavelet Transform is applied to denoise the data and eliminate the irrelevant information, and Long Short Time Memory (LSTM) and Gated Recurrent Units (GRU) are employed to train the data and predict future copper price, respectively. The results indicate that our methods, either LSTM or GRU, can appropriately predict the copper price for both short- and long-terms with mean squared error both below 3% and this hybrid Neural Network is robust to remove the irrelevant information and search the optimized set of hyperparameters. Meanwhile, it is easily and readily applicable to predict the prices of other commodities (i.e., stock market).
