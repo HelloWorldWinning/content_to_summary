@@ -1,0 +1,58 @@
+Timestamp: 2025-01-22T19:59:27.116645
+Title: DeepSeek-R1 + Cline: BEST AI Coding Agent! Develop a Full-stack App Without Writing ANY Code!
+URL: https://youtube.com/watch?v=OBc9xheI2dc&si=mHicXfF1ySktYQgL
+Status: success
+Duration: 9:54
+
+Description:
+好的，这是对您提供的文本的总结，包括核心要点、根本要点、总体框架，以及使用 Mermaid 语法生成的概念图。
+
+**核心要点 (Core Point):**
+DeepSeek R1 模型是一款强大的开源语言模型，在推理、编码等任务上超越了许多商业模型，同时成本更低。
+
+**根本要点 (Fundamental Point):**
+DeepSeek R1 与 Klein 结合使用，为开发者提供了一个高效、经济且强大的本地 AI 编码助手解决方案。
+
+**总体框架 (Overarching Framework):**
+
+1.  **介绍 DeepSeek R1 模型：** 强调其开源性、低成本、高性能，以及在推理和编码方面的强大能力。
+2.  **聚焦 DeepSeek R1 Coder：** 说明该模型作为编码助手的优势，包括成本效益和超越其他模型的性能。
+3.  **介绍 Klein 编码助手：** 说明 Klein 的自主编码能力和其在 IDE 中的使用方式。
+4.  **展示 DeepSeek R1 与 Klein 的结合：** 演示如何配置和使用该组合进行实际编码任务，包括创建应用程序和音乐播放器。
+5.  **强调成本效益和开源优势：** 强调 DeepSeek R1 作为本地替代方案的优势，并鼓励用户尝试。
+
+<Mermaid_Diagram>
+  graph LR
+    subgraph DeepSeek R1 模型
+    A[DeepSeek R1| 开源,高性能,低成本] -- 胜过 --> B(商业模型|例如: GPT-4, Claude 3.5)
+      B -- 高成本 --> C(商业模型)
+      A --  本地部署 --> D(本地使用|更经济)
+    end
+
+  subgraph DeepSeek R1 Coder
+  E[DeepSeek R1 Coder|编码助手] --  超越 --> F(Claude 3.5, DeepSeek v3)
+    F -- 成本高 --> G(其他编码助手)
+     E -- 成本效益高 --> H(编码任务)
+  end
+
+   subgraph Klein 编码助手
+    I[Klein|自主编码助手] --  集成 --> J(IDE|代码编辑,执行命令)
+    J -- 功能 --> K(自动操作)
+  end
+
+  L[DeepSeek R1] -- 协同 --> M(Klein)
+  M --  结合 --> N(强大AI编码助手|DeepSeek R1 + Klein)
+
+   N --  应用案例--> O(实际编码演示|例如:网页应用, 音乐播放器)
+    O --  效果 --> P(高性能应用)
+    P--  证明 --> Q(DeepSeek R1 + Klein 的价值)
+     style A fill:#ccf,stroke:#333,stroke-width:2px
+     style E fill:#aaf,stroke:#333,stroke-width:2px
+       style I fill:#bbf,stroke:#333,stroke-width:2px
+    style N fill:#9f9,stroke:#333,stroke-width:2px
+    style Q fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+just a few hours ago I had made a video on potentially the best large language model to have ever been released that is open- source and it is by the Deep seek team call Deep seek R1 a reasoning model with insane capabilities where it out competes open ai's 01 model and various benchmarks while being 30 times cheaper and fully beats claw 3. 5 Sonic as well as gp4 omine deep seek R1 is 100% open source under the MIT license with six distilled models so that anyone can basically access it with 128k Contex length as well as being 96% cheaper than open ai's 01 model while delivering similar performance if you take a look at this image you'll see that the open AI 01 model is priced at $60 per a million output tokens whereas the Deep seek R1 is priced at $219 per 1 million output tokens and you can see that this is a drastic change and it's why many people would use the Deep seek model locally over something like open ai's 01 model I've already made a full video detailing why deep seek R1 stands out as the best model you can use but today we're shifting Focus to the Deep seek R1 coder this model is a game changer as a coding assistant thanks to its sheer power and versatility in AER benchmark test it performs slightly behind opening I's 01 model but it is significantly more costeffective for coding tasks plus it outperforms Cloud 3. 5 Sonic and deep seek version 3 in almost every Benchmark seeing an open- Source model not just compete but surpass state-of-the-art systems is just truly incredible and which is why today we're showcasing the combination of deep seek R1 with Klein which is a Duo that forms the ultimate AI coding assistant that anyone could practically get a of so with that thought let's get started and showcase how you can get this whole system set up before we get started I got a huge new update this is where I've launched a new newsletter this is something that's going to be sent out on a weekly basis and it's essentially going to be updating you on the latest AI advancements comparison of different large language models AI news as well as ranking different AI agents so definitely go ahead and subscribe to this cuz you don't want to miss out on free AI news and just FYI for the people who do not know client is an autonomous coding agent that's directly within your IDE that's capable of creating editing files executing commands using the browser and so much more autonomously and essentially we're going to have this deep seek version R1 model combined with it so that it can practically do anything coding related now something insane is that the deeps R1 is significantly faster and cheaper than enthropy cloud model now if you take a look at this image you'll see that there is an 18. 6 TPS which is tokens per second and this basically makes it a more efficient and cost effective choice in comparison to anthropics clot 3. 5 Sonet to get started go ahead and install your ID of your choice in my case I'm going to be using visual studio code go ahead and get a deep seek API key that's linked to a billing account and make sure you go ahead and install the client extension if you do not know how to install this go over to the marketplace link which I'll leave in the description below click on install and it will open this up within the store or the marketplace within vs code and then you can go ahead and install this now once you have it installed you'll see the icon on left hand panel you can go ahead and open this up click on this gear icon go over to the API provider and then click on open AI compatible go ahead and paste in the base URL your API key from the deep seek API platform and then the model ID which is the Deep seek Reasoner model go ahead and click done and then you can go ahead and basically work with this AI coding agent you can say and you can start interacting with it and you're going to be able to get generations and requests sent back to you from it so essentially what I'm going to do now is have it generate this fully functional not taking web app to Showcase its capabilities I want it to basically create something similar to this now obviously it doesn't have image capabilities but we're going to go and try ahead and see if we can create something similar to this so in this case I went along and I sent in this prompt to create a fully functional not taking web app and thanks to Klein's autonomous functionality of Auto approving read edit commands browser and mCP it's going to go ahead and autonomously do all the functionalities of creating this application for me so let's go ahead and see what it's capable of doing and looks like the app has been fully created I'm going to go ahead and open this up and just look at that we have a sticky note app that looks pretty cool and we're going to go ahead and add in a random sticky note title go for run let's say and the note content will be Run 2 km today we can go ahead and add the sticky note and you can see the task will be added now to make it more like the image that we saw previously I'm going to add a bit more to this I'm going to say that make it a bit more cleaner add a calendar archive trash and whatnot and basically make it exactly the same as that image based off of textual prompts so let's see what it ends up doing and you can see that this is such a cheap model guys based off of the tokens that sent in so over time obviously it would add up but you can see that this is definitely a great option over claw 3. 5 Sonet that you can even use locally so it looks like it is finished we're going to we're going to now open this up and oh my I did not expect it to look something like this based off of a textual prompt that was sent in I didn't provide any sort of image to replicate it it was all done based off of the textual uh response that i' given it and you can see that it looks actually really really nice you have your notes that you can manage over here the previous one to go on a run uh you have the ability to add notes you have a calendar archive trash can but essentially it was able to build out this web app even faster than something like claw 3. 5 Sonic without running into any sort of rate limits and this is the capability that you get with this new R1 model now this is just a side note but this is something that will showcase the importance of why you would want to know prompt engineering cuz based off of this prompt I was able to get a good replica of that image i' had shown before and it goes to show that prompt engineering is quite crucial to get the best Generations out of an AI model so it's definitely a great skill that you should start learning especially in this day and age as we will definitely revolve more around AI it's definitely a great prompt to know and keep learning as time goes next up I'm going to have it create the Spotify clone that works and plays music for me now this is where a client will autonomously go ahead and create all the necessary files to set this all up so once this is finished I'll be right back so it looks like the Spotify clone is complete but it had requested me to do a couple couple of things to create a music folder within the Spotify clone directory so we're going to go ahead and create this let's name it music and then we're going to add a couple of different MP3 files and we're going to name it sample 1 Mp3 and Sample 2 MP3 and then we're going to open this up within the HTML file and there we go we have a Spotify clone and let's see if it actually works [Music] so it does seem to work and it has a lot of features to it but obviously if you keep iterating on it it would be a lot better but essentially we did create a basic Spotify app that was able to play music obviously it's super easy for AI to do this nowadays but it did do this and we haven't seen any open source model create any local apps like this in a long time so this is definitely quite impressive if you like this video and would love to support the channel you can consider donating to my Channel Through the super thanks option below or you can consider joining our private Discord where you can access multiple subscriptions to different AI tools for free on a monthly basis plus daily AI news and exclusive content plus a lot more but that's basically it for today's video on the combination of Klein with deep seeks new R1 model this is truly insane and I definitely recommend that you take a look at this as this is the best open-source model that's available in terms of coding and many other areas like reasoning mathematics and so much more I definitely recommend that you try this out cuz this is a great local alternative that's free if you are to locally install this versus something like Cloud 3. 5 Sonic so definitely recommend that you try this out make sure to follow on patreon as well as the Twitter and make sure you guys subscribe turn on notification Bell check out the previous video where I test the model as well as my other videos that showcase other sorts of models AI agents and so much more but with that thought guys thank you guys so much for watching I definitely appreciate you guys supporting the channel and I'm definitely going to continous to keep on uploading that you can stay up to date with whatever is happening in the world of AI but with that thought guys have an amazing day spread positivity and I'll see you guys fairly shortly peace out fellas
