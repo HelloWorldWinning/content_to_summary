@@ -1,0 +1,86 @@
+Timestamp: 2025-01-22T10:32:10.365588
+Title: DeepSeek R1 - o1 Performance, Completely Open-Source
+URL: https://youtube.com/watch?v=_KRKqLaVYQU&si=TTtaxWBKAJiGj9As
+Status: success
+Duration: 12:15
+
+Description:
+好的，这是对您提供的文本内容的总结，并按照您的要求进行了结构化和概述：
+
+**1. 核心结论：**
+DeepSeek R1 是一款完全开源的推理模型，其性能与 OpenAI 的 01 模型相当，价格却低得多，标志着开源人工智能领域取得了重大突破。
+
+**2. 基本结论：**
+DeepSeek R1 的发布证明了开源模型在推理能力上可以迅速追赶甚至超越闭源模型，并且开源模式可以显著降低成本，促进人工智能技术的普及。
+
+**3. 总体框架：**
+
+*   **引言:** 介绍 DeepSeek R1 模型及其开源特性。
+*   **性能对比:** 将 DeepSeek R1 与 OpenAI 的 01 模型、cla 的模型以及 GPT-4o 等进行基准测试对比，证明 DeepSeek R1 的优异性能。
+*   **开源特性:** 强调 DeepSeek R1 的完全开源、MIT 许可证和可商业化使用，以及其显著的成本优势。
+*   **实际测试:** 通过具体的测试案例，展示 DeepSeek R1 的推理能力和类人思考过程。
+*   **技术细节:** 简要介绍 DeepSeek R1 的训练方法，以及它在推理方面的创新之处。
+*   **未来展望:** 强调开源模式在推动人工智能发展中的重要作用。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Open Source AI [开源人工智能]
+    A[DeepSeek R1]
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+    B[OpenAI 01]
+       style B fill:#ccf,stroke:#333,stroke-width:2px
+     C[GPT-4o]
+      style C fill:#ccf,stroke:#333,stroke-width:2px
+     D[cla 模型]
+      style D fill:#ccf,stroke:#333,stroke-width:2px
+     end
+    
+    A -->|性能对标| B
+    A -->|性能超越| C
+    A -->|性能领先| D
+    A --> E[完全开源]
+         style E fill:#afa,stroke:#333,stroke-width:2px
+    E -->F[MIT许可]
+     style F fill:#afa,stroke:#333,stroke-width:2px
+   F --> G[商业可用]
+     style G fill:#afa,stroke:#333,stroke-width:2px
+      A--> H[成本优势]
+        style H fill:#afa,stroke:#333,stroke-width:2px
+    H--> I[价格远低于闭源模型]
+    I-->J[推动技术普及]
+    subgraph Reasoning [推理能力]
+        K[类人思考过程]
+          style K fill:#ffd,stroke:#333,stroke-width:2px
+         L[链式思考]
+            style L fill:#ffd,stroke:#333,stroke-width:2px
+       K-->L
+    end
+   A-->K
+     
+    subgraph Training [训练方法]
+        M[强化学习]
+        style M fill:#bbe,stroke:#333,stroke-width:2px
+      N[无监督微调]
+         style N fill:#bbe,stroke:#333,stroke-width:2px
+       M-->N
+       O[多阶段训练]
+         style O fill:#bbe,stroke:#333,stroke-width:2px
+         N-->O
+     P[Group Relative Policy Optimization]
+          style P fill:#bbe,stroke:#333,stroke-width:2px
+          O-->P
+        end
+      A-->M
+    style Open Source AI fill:#eef,stroke:#333,stroke-width:2px
+    style Reasoning fill:#efe,stroke:#333,stroke-width:2px
+    style Training fill:#f0f0f0,stroke:#333,stroke-width:2px
+    
+```
+</Mermaid_Diagram>
+
+希望这个总结对您有所帮助！
+
+
+Content:
+an open source 01 model is finally here deep seek R1 is on par with open ai's 01 thinking model it is completely open source including open weights MIT licensed and it is a fraction of the price of 01 if you want to use the hosted version the future is here I've been saying for a while that open source is 3 to 6 months behind closed source and now about 3 months after 01 was released we have a completely open source version of it so I'm going to tell you all about it right now all right so first things first let's just look at the benchmarks before I go into the details so the dark blue bars are deep seek R1 the dark gray is open AI 01 lighter blue deep seek R 132b lighter gray open AI 01 mini and then in the lightest blue we have deeps V3 which is a non-thinking model now look at these results so on the aim 2024 Benchmark we have deep seek R1 beating open AI 01 on code forces it's pretty much equivalent off by3 GP QA Diamond it's not quite as good as open AI 01 but it's close on the math 500 at beats1 MML U it's behind but barely and then for the swe bench at beats1 barely so these are incredible results for a completely open source model the company deep seek went through the effort of putting this together and then open sourced it completely free open source open weights I cannot stress that enough this is such an exciting time and here's the thing about open source this is kind of like like the 4 minute mile now that other open- source companies have seen that it's possible and not only that they've published the road map for exactly how to accomplish it we're going to see a flood of these open- Source thinking models it is a very cool thing to do by the team at open seek but that's not it look how it performs against cla's Cutting Edge model and GPT 40 so against cla's models pretty much across the board except for swe verified which is interesting which is the coding Benchmark it is winning and then of course against GPT 40 across the board it beats it pretty handily actually so let's see what the Deep seek blog post says and break it down so first performance on par with open ai1 so that means if we continue the prediction that open source is going to be about 3 to 6 months behind the closed Source models we should see an 03 level model within the next 3 months it is fully open source and they provide the white paper for it and it is MIT licensed distill and commercialize freely do anything you want with it it is commercially viable and you could use it for free at chat. Deep seek. com now I already ran a test on it I'll get to that in a moment so stay tuned for that and they've already released distilled versions of it so distilled from deeps rar1 six small models fully open sourced if we click into this we can see distilled from Deep seek R1 distill quen 1. 5 7 14 and 32b and R1 distill llama AP and 70b these perform incredibly well look at the performance GPT 40 versus the distilled version with llama 70b 70 versus 9. 3 on the aim Benchmark look at the live codebench score pretty much dominating the other non-thinking models I guess obviously but even the 01 Mini model really really good but still the 01 mini dominates with the code forces competition although with a 1600 score still pretty darn good so as I mentioned license update it is MIT licensed for Clear Open Access open for the community to leverage model weights and outputs you can download the model weights right now I'll drop all the links in the description below it has API outputs that can be used for fine-tuning and distillation and as I mentioned it is a fraction of the price I'll talk about the pricing in a moment and here it is they dropped the technical paper I'll probably do a separate video doing a deep dive into the paper and here's the pricing and they compared the pricing to the 01 models because of course it shows how much cheaper it is so here's input API price here it is way down here you can't even see the color. 14 per million tokens then here's 01 Min 1. 5 and 01 at 7. 5 and the 01 preview as well at 7. 5 here is the input API price with the cash Miss still it's about three times as expensive but a fraction of the 01 models now here's where it gets crazy here's the output price 2. 19 per million versus 60 60 for 01 preview and 01 now 01 mini is much cheaper but still much more expensive than the Deep seek R1 version this is what open source does it drives down the price and increases competition so of course I gave it the how many RS in the word strawberry test and let's see how it did so it does think and you do get to see the Chain of Thought which is really cool so okay let's see and it's funny as you're reading through this you're going to notice that it has very human-like internal thoughts it does a lot of okay hm let think so it's very human-like in its thinking so okay let's see the user is asking how many times the letter R appears in the word strawberry all right first step is to make sure I spelled the word correctly so there it is let me check again sometimes people might miss letters let's break it down so they're just trying to spell the word strawberry first wait there's only 10 letters but strawberry has more letters right isn't that a weird thing for a model to say right it's just so human like it's interesting let me check again maybe I missed some let's write it out properly so it goes back and forth finally writes it out then we're counting the letter RS so here we go break it down no no yes no no no no no yes yes okay so there's three so that's three Rs wait but I think the correct spelling of strawberry actually has two RS so it's interesting it actually corrected itself incorrectly wait maybe I'm confusing it with strawberry versus a different spelling let me verify okay so it does it again goes back and forth does it again and then finally the word strawberry is spelled breaking it down the letter R appears three times positions 3 8 and N there are three Rs in the word strawberry so although a lot of the internal thinking was maybe not accurate it arrived at the correct answer let's try another one all right so everybody's favorite the marble question a marble is put in a glass cup the glass is then turned upside down and put on the table then the glass is picked up and put in the microwave where's the marble explain your reasoning step by step we probably don't need the explain your reasoning step by step I'm actually going to go ahead and remove that cuz that's typically for not thinking models they think step by step by default so let's see what it does okay thinking let's try to figure out where the marble is after all those steps so first the problem says a marble is put in a glass cup the glass is then turned upside down the question is where's the marble look at that it is so interesting they literally include let me think about it I don't think the 01 and 03 models do that I actually find it kind of endearing it's kind of interesting to see and first of all look how much output there is look how much thinking there is so when you put the marble in a glass C normally the marble is just sitting at the bottom right then when you turn the glass upside down the marble would fall out unless something is holding it in maybe the marble is inside the glass when it's turned okay so I'm not going to read the whole thing but it goes back and forth it considers a bunch of different options wait let me visualize this and it really goes over every possible outcome so but standard marbles are usually smaller than the mouth of a typical glass this is so good it is really really good but I'm a bit confused let me check again and then all the way at the the end let's see what the output is placing the marble in the glass inverting the glass gravity pulls the marble downward unless the glass has a narrow mouth smaller than the marble The Marble Falls out and lands on the table since marbles are typically smaller than the mouth of a standard glass the marble drops onto the table placing the inverted glass on the table the glass is now upside down over the marble but the marble is no longer inside it's on the table beneath the glass so that's interesting it might be true there's actually no real way to know whether the Marble's in the glass or outside of the glass because as soon as you turn it over it falls out and then moving the glass to the microwave the marble remains on the table where it fell that's a perfect answer now one thing to note is that you cannot use search and deep think at the same time so very similar to the thinking models from open AI you cannot yet incorporate web search into them all right one more test this is one that most models still struggle with including the 01 model so let's give it a try give me 10 sentences that end in the word Apple okay let's tackle this request the user wants 10 sentences that all end with the word Apple first I need to make sure each sentence ends with the word Apple I should start by brainstorming different context okay so I'm just going to go straight to the end 1 2 3 4 5 6 7 8 9 10 perfect there it is and it actually highlighted each one this is a phenomenal model now I know I haven't done a full benchmarking in a while if you want to see me do that with deep seek let me know in the comments below all right so here's the paper it details everything you need to know about how they achieved one level reasoning with an open- Source model we introduced our first generation reasoning models deep seek r10 and deep seek R1 deep seek r10 a model trained via large- scale reinforcement learning without supervised fine-tuning as a preliminary step it demonstrates remarkable reasoning capabilities now what does that actually mean so deep seek actually solves the cold start problem they use the alphao technique of pure reinforcement learning basically just trying a bunch of things without the need for actual human feedback human feed back as I've said is always going to be a bandwidth limiter so deep seek r10 naturally emerges with numerous powerful and intriguing reasoning behaviors however it encounters challenges such as poor readability and language mixing to address these issues and further enhance reasoning performance we introduce deep seek R1 it incorporates multi-stage training and cold start Data before reinforcement learning and then it goes on to say it achieves really great performance they also have six dense models that they distill from deeps G one based on quen and llama so one thing that's interesting about how they did it was they used a group relative policy optimization strategy rather than having a Critic model so typically you'll have this other model and you'll come up with a bunch of potential candidate answers the critic model will say okay this one's good this one's bad but basically instead they take the candidate results and they find a Baseline and figure out which one might be right so removing the critic model altogether now here's the prompt for it so here's template for deep seek r10 it conversation between user and assistant the user asks a question the assistant solves it the assistant first thinks about the reasoning process in the mind and then provides the user with the answer the reasoning process and answer are enclosed with think and answer tags respectively so think think reasoning process here answer answer answer here user The Prompt this is where the prompt will go and then the assistant answers it so that's the template for prompting now here is the aha moment according to deep seek so deeps r10 learns to allocate more thinking time to a problem by re-evaluating its initial approach this behavior is not only a testament to the model's growing reasoning abilities but also a captivating example of how reinforcement learning can lead to unexpected and sophisticated outcomes it underscores the power and beauty of reinforcement learning rather than explicitly teaching the model on how to solve a problem we simply provide it with the right incentives and it autonomously develops Advanced problem solving strategies this is exactly what the alphago team found rather than giving a bunch of examples of winning games of go it instead just set up a reward model to say hey this is what happens when you win this is what happens when you lose and it just played itself over and over again and as we all know far exceeds any human player in terms of winning ability and it even discovered techniques and strategies that humans had never thought of the famous move 37 all right so I'm not going to go through the whole paper but if you want to see me do a deep dive in this paper let me know know in the comments below so that's it a huge day for open source a huge day for AI you know I'm going to be downloading this model and playing with it I encourage you to check it out I'll drop all these links in the description below if you enjoyed this video please consider giving a like And subscribe and I'll see you in the next one
