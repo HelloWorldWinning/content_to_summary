@@ -1,0 +1,74 @@
+Timestamp: 2025-01-22T19:48:18.151641
+Title: This free Chinese AI just crushed OpenAI's $200 o1 model...
+URL: https://youtube.com/watch?v=-2k1rcRzsLA&si=rWO30tHIF6s57lQZ
+Status: success
+Duration: 4:40
+
+Description:
+### Summary:
+
+**I. Introduction of DeepSeek R1:**
+
+*   China released DeepSeek R1, a free and open-source Chain of Thought (CoT) reasoning model.
+*   It rivals OpenAI's O1 in performance, especially in math and software engineering, but should not be completely trusted based on benchmarks.
+*   Available through a web-based UI, Hugging Face, or locally via tools like Ollama.
+*   Different sized models are available, with the largest requiring significant computing power.
+
+**II. AI Optimism vs. Pessimism:**
+
+*   Two camps exist: pessimists who believe AI is plateauing and optimists who believe in near-future AGI.
+*   The author mentions that optimists usually make more money, despite how "smart" pessimists sound.
+*   Recent concerns raised by Sam Altman about AI hype and GPT's bugs.
+
+**III. DeepSeek R1's Unique Approach:**
+
+*   Unlike many models, it utilizes direct reinforcement learning instead of supervised fine-tuning.
+*   It learns by trying multiple solutions and reinforcing successful ones based on a reward system.
+*   Chain of Thought prompting allows the model to show its reasoning steps.
+
+**IV. Application of Chain of Thought Models:**
+
+*   CoT models like R1 are best for complex problem-solving, advanced math, puzzles, and planning problems.
+*   Contrast this to traditional large language models.
+
+**V. Call to Action & Sponsor:**
+
+*   Encourages learning about AI from the ground up using Brilliant.org.
+*   Brilliant provides hands-on lessons to understand the math and CS behind deep learning.
+
+**Core Point:** DeepSeek R1 is a powerful, open-source Chain of Thought model from China, providing a compelling alternative to proprietary AI models like OpenAI's.
+
+**Fundamental Point:** The field of AI is experiencing rapid advancement with open-source models like DeepSeek R1 competing with closed-source counterparts, offering more accessible avenues for the development of complex problem solving.
+
+**Overarching Framework:**  The content presents a comparison between closed and open source AI models, discussing contrasting viewpoints on AI progress and illustrating the novel approach of deepseek R1.
+
+<Mermaid_Diagram>
+    graph LR
+    subgraph AI_Landscape [AI Landscape]
+        A[Pessimists] ---|Believe AI is plateauing| B[Optimists]
+        B ---|Believe in near-future AGI| C[DeepSeek R1]
+        C --Open Source--> D[Closed Source AI]
+        D --Example--> E[OpenAI]
+    end
+    subgraph DeepSeek_R1 [DeepSeek R1]
+        F[Direct Reinforcement Learning] --> G[Multiple Solution Attempts]
+        G --> H[Reward System]
+        H --> F
+        F --> I[Chain of Thought Reasoning]
+        I --> J[Complex Problem Solving]
+    end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#9ff,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#fcc,stroke:#333,stroke-width:2px
+    style F fill:#cff,stroke:#333,stroke-width:2px
+    style G fill:#cff,stroke:#333,stroke-width:2px
+    style H fill:#cff,stroke:#333,stroke-width:2px
+    style I fill:#cfc,stroke:#333,stroke-width:2px
+    style J fill:#cfc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+yesterday China released a state-of-the-art free and open source Chain of Thought reasoning model with performance that Rivals open AI o1 which I'm stupidly paying $200 a month for right now you see there's two types of people in the tech world right now in one camp we have the pessimists who think that AI is overhyped in plateaued with GPT 3. 5 and the other camp we have the optimists who think we're about to see the emergence of an artificial super intelligence that will Propel Humanity into Ray K's technological singularity nobody truly knows where things are going but one thing to remember is that pessimists sound smart while optimists make money but sometimes it's hard to be an AI Optimist because you need to trust hype Jedi like Sam ultman and closed AI companies like open aai well luckily on the same day that Tik tok's band was removed China gave the world a gift in return in the form of deep seek R1 and in today's video you'll learn exactly how to use it like a senior prompt engineer it is January 21st 2025 and you're watching the code report yesterday the course of history changed forever and no I'm not talking about the Return of the King but rather the release of deep sea which is an MIT like liced Chain of Thought model that you can use freely and commercially to make money in your own applications this model came out while Sam Alman was busy at Trump's inauguration which is a perfect time to use this new meme template where Zuckerberg appears to detect a rack overflow in this artificial binary code owned by Jeff Bezos he's going to have some explaining to do with his wife but Sam ultman also reigned on the AI Optimus parade recently when he said that the AI hype was out of control and no they have not achieved AGI internally and that's pretty obvious with how buggy chat GPT is like recently a security researcher figured out how how to get chat gbt to Dos websites for you all you have to do is provide it with a list of similar URLs that point to the same website and it will crawl them all in parallel which is something that no truly intelligent being would do that being said the release of 01 a few months ago was another step forward in the AI race but it didn't take long for open source to catch up and that's what we have with deep seek R1 as you can see from its benchmarks deep seek R1 is on par with open ai1 and even exceeds it in some benchmarks like math and software engineering but let me remind you once again that you should never trust benchmarks just recently this company epic AI which provides a popular math benchmark only recently disclosed that they've been funded by open aai which feels a bit like a conflict of interest I don't care about benchmarks anyway and just go off of Vibes so let's go ahead and try out deep seek R1 right now and they have a web-based UI but you can also use it in places like hugging face or download it locally with tools like olama and that's what I did for it 7 billion parameter model which weighs about 4. 7 GB however if you want to use it in its full Glory it'll take over 400 GB and some pretty heavy duty Hardware to run it with 671 billion parameters but if you want something that's on par with 01 mini you want to go with 32 billion parameters now one thing that makes deep seek different is that it doesn't use any supervised fine tuning instead it uses direct reinforcement learning but what does that even mean well normally with supervised fine tuning you show the model a bunch of examples and explain how to solve them step by step then evaluate the answers with another model or a human but R1 doesn't do that and pulls itself up by its own bootstraps using direct or pure reinforcement learning where you give the model a bunch of examples without without showing it the solution first then it tries a bunch of things on its own and learns or reinforces Itself by eventually finding the right solution just like a real human with reasoning capabilities deeps also released a brief paper that describes the reinforcement learning algorithm it looks complicated but basically for each problem the AI tries multiple times to generate answers which are called outputs the answers are then grouped together and given a reward score is so the AI learns to adjust its approach for answers with a higher score that's pretty cool and we can see the model's actual Chain of Thought if we go ahead and prompt it here with Lama when prompting a Chain of Thought model like R1 or o1 you want to keep the prompt as concise and direct as possible because unlike other models like gbt the idea is that it does the thinking on its own like if I ask it to solve a math problem you'll notice that it first shows me all the thinking steps and then after that thinking process is done it'll show the actual Solution that's pretty cool but you might be wondering when to use a Chain of Thought model instead of a regular large language model well basically the Chain of Thought models are much better when it comes to complex problem solving and things like advanced math problems puzzles or cing problems that require detailed planning but if you want to build a future with AI you need to learn it from the ground up and you can do that today for free thanks to this video sponsor brilliant their platform provides interactive Hands-On lessons that demystify the complexity of deep learning with just a few minutes of effort each day you can understand the math and computer science behind this seemingly magic technology I'd recommend starting with python then check out their full how large language models work course if you really want to look under the hood of chat gbt try everything brilliant has to offer for free for 30 days by going to brilliant. org fireship or use the QR code on screen this has been the code report thanks for watching and I will see you in the next one
