@@ -1,0 +1,79 @@
+Timestamp: 2025-01-22T10:31:33.540137
+Title: Tmux has forever changed the way I write code.
+URL: https://youtube.com/watch?v=DzNmUNvnB04&si=nJhnq2KRQ64efPYN
+Status: success
+Duration: 13:30
+
+Description:
+好的，这是对您提供的文本内容的总结和概念图：
+
+**总结:**
+
+1. **核心要点:** tmux 通过提供强大的会话管理、窗口分割和可定制的配置，极大地提高了代码编写效率。
+2. **根本要点:**  通过配置和插件，tmux 可以转化为一个现代化、高效且愉悦的终端工作环境，与 Neovim 等工具无缝集成。
+3. **总体框架:**  
+    *   **tmux 的基础:** 介绍 tmux 的基本概念（会话、窗口、窗格）和默认操作。
+    *   **配置 tmux:** 安装包管理器 TPM，并添加配置，包括修改键绑定、调整颜色和使用插件。
+    *   **增强 tmux:**  集成 Vim 风格的导航、使用鼠标支持、复制文本和在当前目录打开新窗格。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Tmux配置 ["Tmux配置"]
+      A[Tmux基础]  --> B(安装Tmux);
+      B --> C(安装TPM);
+      C --> D(创建配置文件);
+      D --> E(配置项);
+        E --> F[键绑定修改];
+        E --> G[颜色调整];
+        E --> H[插件使用];
+           H --> I[Vim tmux Navigator];
+           H --> J[Capuchin主题];
+           H --> K[tmux-yank];
+    end
+    subgraph Tmux使用 ["Tmux使用"]
+        L[会话] --> M(创建/切换会话);
+        M --> N(管理窗口);
+          N --> O(创建/切换窗口);
+          O --> P(窗口内管理);
+               P --> Q(创建/切换窗格);
+               P --> R(缩放/移动窗格);
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#afa,stroke:#333,stroke-width:2px
+    style H fill:#aaf,stroke:#333,stroke-width:2px
+    style P fill:#afa,stroke:#333,stroke-width:2px
+     
+    
+    
+     A --> L;
+    
+     F --> I;
+     F --> J;
+     F --> K;
+    
+    I --> M;
+    J --> M;
+    K --> P;
+    
+    M --> O;
+    O --> Q;
+    
+   
+   
+    
+    
+    
+    
+   
+    
+    
+     
+```
+</Mermaid_Diagram>
+
+
+Content:
+t-mux is perhaps the one piece of software that's had the biggest impact on the way I write code out of the box however tmux can be difficult to look at it requires a little bit of configuration to really get productive with in this video I'm going to explain why tmux is so powerful and show you how to update it from its default offering into a version that is modern zenful and a joy to work with I really meant it when I said that tmux has had one of the biggest impacts to the way I write code before discovering it I worked more with Ides and graphical editors and only entered the terminal when I needed to once I discovered tmux however that all changed my default editor became them and I was able to have all of the goodness of a tiling window manager in the terminal tmux also provides other features for working in a command line that I just can't live without using tmux I can create and manage new windows for multiple terminal sessions split a window into panes so that I can have multiple sessions in one View prevent my workspace from being lost if my terminal crashes or more likely if I accidentally close it and if I just want to do my favorite nighttime activity bed coding I can pick up my laptop SSH into my desktop and attach into my previous tmug session tmux really has improved the way I work and over the years I've built up a configuration that works really well for me which I want to share with you today as usual we'll need to do a little work before we can start writing our zenful configuration the first step is to make sure you have tmux installed as of the time of recording the latest version is 3. 3 a huh weird anyway get that installed as per your operating system next you're going to need the tmux package manager also known as TPM this is installed using git so make sure you have that as well to install the tmux package manager you can run the following command to do so now let's go ahead and create our tmug stop file you can do this at either the home. tmux. com or the xdg config home Teamworks gmux. conf which typically translates to home. config tmux tmox conf whichever place you prefer ly I'm going to go with the xdg config as it's the more modern way to manage dot files next open up your fresh config file in your favorite editor and add in the following lines to Source the TPM package and to run it whilst we're here we're also going to add in the sensible package which basically sets a number of options that fix some of the quirks with tmux based configuration if you want to know more about what options this package changes I recommend heading over to the GitHub page and reading their documentation with our initial config set we can go ahead and run tmux to load it if you're already in tmux you can reload the configuration by calling the tmux source command to Source our new configuration file and that's it now we have a package manager for tmux and some sensible options to get started with before we jump into configuring tmux it's probably worth going over some of the basic commands and key bindings for using it tmux consists of three main objects sessions windows and panes sessions are the topmost layer in tmux and are a collection of one or more windows managed as a single unit you can have any number of sessions open at one time but typically only attached to one each session has a single active window s are a container to one or more panes you can think of Windows as tabs in browsers or other software each window has a currently active Pane and allows you to switch between any of the panes that it manages the windows in the session are shown at the bottom of the screen as well as which window is currently active as marked with an asterisk panes are splits in the window and represent an individual terminal session there will only be one active pane at a time that you'll interact with in this window I have three panes which have been created by splitting the window horizontally and vertically my current active pane is the one on the left which I can enter commands into enter commands to tmux you need to use What's called the prefix key this is a key combination that you use before the actual command itself the default prefix is control and B to create a new window you press the prefix followed by the c key as well as creating the new window this command will also set it as your current active window for the session to change between Windows we pass the prefix and the window number which is shown at the bottom or we can cycle through windows by pressing the prefix followed by either the N or P keys which stand for next and previous respectively we can also move Windows around by using the swap window command which is done so by pressing the prefix and then entering the command which starts with a colon to close a window you can either kill all the panes inside or use the prefix followed by the Ampersand symbol there are also a number of commands to manage panes in tmux we can split a window into panes either horizontally or vertically to split a window horizontally we use the prefix followed by the percentage symbol which will split our current pane into two to split vertically is the prefix key followed by the quotation mark symbol panes can be navigated by using the prefix followed by one of the arrow keys to whichever direction you wish we can also swap panes around by using the prefix followed by the left or right brace symbol panes also have numbers which you can toggle by using the prefix followed by Q we can then select a pane by pressing the subsequent number when this is shown one of the features I use often is zooming into a pane to make it take up the full window this can be done with the prefix followed by the Z key Additionally you can turn a pane into a window by using the prefix and exclamation point to close a pane you can either close the shell that is running or use the prefix followed by the X key as well as panes and windows we should also quickly cover sessions a new session can be created by using the tmux command whilst not attached to a current tmux session this will create the new session and attach you to it you can also pass in the S argument to the tmox new command to create a new session with a name whilst in tmux a new session can be created using the new command we can list any active sessions we have using the tmux ls command when outside of tmox or by pressing the prefix followed by the S key when inside of a session you can also use the prefix followed by W key to preview windows for each session as well and attach to these sessions by pressing enter finally to attach when outside of a session you can use the tmux attach command which will attach to your most recent session or you can pass in the T argument to specify which session you want to attach to this covers a lot of the basic commands for tmox but there are plenty of others I recommend looking at tmux cheat sheet. com for some of the other commands that I haven't covered after that brief overview we can now look at our configuration after installing the package manager the first thing I like to do is set up some better key bindings for navigating around tmux I like to use a package called Vim tmux Navigator which actually provides us two features the first is the ability to move around split panes and tmux using control and either the h j k or L Keys similar to what I have in my near them configuration which by the way I'd recommend checking out if you haven't already the second feature this package provides is that we can use it to have seamless integration with both tmux and neovim by also installing it as a neovim plugin let's go ahead and do both adding it to neovim is the same as how you would install any plugin as I'm using nvchat I just need to add the plugin to my Customs plugin file I'll also set lazy to be false as this is likely going to always be needed I also had to add in some custom mappings in order to override the ones that nvchad sets which override the Vim tmux navigation settings a little annoying but nothing we can't fix now if we go ahead to our tmux config we can add the Vim tmux navigator to our tmux plugins and then install it by using the prefix key control B and capital i if we then go and Source our tmux configuration we are able to Now navigate using the control plus h j k or L keys what's really powerful is this also works whilst we're in near them so we can easily move out any of them into tmux with one of the same keys this helps to make tmux and near them work as if they were one application as well as these vimkey bindings I like to add in some custom mappings for navigating Windows as well back in our tmux config adding in the following lines allows us to cycle across windows by using the shift plus alt and either the H or L key one thing we also need to do is fix our colors when we're inside of a tmux session if you look at our cat poochie neovim theme the colors are different when we're inside of tmux versus when we're not we can fix this by opening up our tmux config and setting the following line this sets tmux to be 24-bit color provided that your terminal supports it now when we restart tmux and open up them again we can see that our colors are correct so far we've kept the default prefix key binding of control and B for use with tmux however this binding tends to be used for other functionality in the terminal because of this I like to change the tmux prefix to be control space instead to change the prefix all you need to do is add the following three lines into your tmus configuration and set where your desired prefix key combination is which in my case is controlling space now when you resource the config your prefix key should be changed finally it's time to get rid of that horrible green line if you've watched my other videos then you'll know that Capuchin is my favorite color scheme what's really nice is that Capuchin provides a plug-in for tmux as well which we can install using TPM to install it just add the plugin to your tmos configuration and then type in the prefix followed by capital i as well as the default color scheme which is called mocker you can change this to any of the other three variants by setting the Capuchin flavor variable here is the light variant known as latte I actually have my own Fork of Capuchin as I prefer to have a little more information on my window tabs than just the directory name which is what the official cap routine package is configured for to use my version you just need to change the following line in your TMax config the next feature I like to add to tmux is the ability to use the mouse by adding the following line to our config we can enable mouse support which means we're able to click to jump to Windows or panes and use our Mouse wheel to scroll through our buffer history by default tmux starts indexing of windows at zero whilst this makes sense from a coding point of view in practice it's a bit of an issue this is because the zero key is all the way to the right on a keyboard which makes it counter-intuitive for navigation and tmux by setting the following lines in our tmox config and restarting tmux we can start the indexing for Windows and panes at one which is a better user experience another package that I find makes the tmox experience more productive is the tmux yank package which provides the ability to copy text from tmux using the y key we can add this package to tmux by adding the following line to our configuration and installing it via TPM now we can copy lines from our buffer history by selecting the line and pressing the y key to select a line you can either do so with the mouse or by entering copy mode which is through pressing the prefix key followed by the left square bracket we can then navigate by using the Vim navigation keys and entering the select mode by typing Control Plus V followed by space then you use the navigation keys to define the area to copy personally I find this command set a little encumbersome so let's rebind this flow to be more intuitive and Vim like first add the following lines to your config and then resource the tmux config file now going back to copy mode instead we can press V to start the copy selection as we expect and press the y key to yankar selection we can also toggle between rectangle select or line select mode by pressing Ctrl MV the final configuration change I like to make is to set my panes to open in the same directory as the pane I'm splitting from I typically find this workflow to be more productive as I usually navigate to this directory in most cases anyway and it's typically easier to navigate back to the home directory than it is to the directory I'm currently working in we can do this by adding the following lines to the tmux config which rebinds both the horizontal and vertical split pane keys to add the current path to the split command now after sourcing our changes whenever we press the prefix and percent sign or the prefix and quotation mark commands we should open up new panes in our current working directory and with that you now have a tmux configuration that is both productive and a joy to work with I hope this video inspired you to try Teamworks yourself or to upgrade your existing configuration as usual a git repo to my configuration can be found in the description and if you know any other plugins that you think should be in there let me know in the comments down below otherwise thank you for watching and I'll see you on the next one
