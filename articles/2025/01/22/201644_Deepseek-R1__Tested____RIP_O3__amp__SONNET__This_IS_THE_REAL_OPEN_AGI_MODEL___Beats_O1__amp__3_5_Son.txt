@@ -1,0 +1,67 @@
+Timestamp: 2025-01-22T20:16:44.470905
+Title: Deepseek-R1 (Tested) : RIP O3 &amp; SONNET! This IS THE REAL OPEN AGI MODEL! (Beats O1 &amp; 3.5 Sonnet)
+URL: https://youtube.com/watch?v=kDwdiWKRUtc&si=WiyYt5daRrvvIuEO
+Status: success
+Duration: 11:33
+
+Description:
+好的，这是对您提供的内容的总结，结构清晰，并包含您要求的元素。
+
+**1. 核心结论（Core Point）:**
+
+DeepSeek R1 模型在性能上超越了 OpenAI 的 o1 模型，且以开源、低成本的方式提供，标志着开源模型在大型语言模型领域取得了重大突破。
+
+**2. 根本结论（Fundamental Point）:**
+
+开源、高性能的大型语言模型（如 DeepSeek R1）的出现，正在挑战商业闭源模型的主导地位，推动人工智能技术的普及和发展。
+
+**3.  总体框架（Overarching Framework）：**
+
+该内容围绕 DeepSeek R1 模型的发布及其性能展开，主要框架包括：
+
+   * **DeepSeek R1 模型介绍：** 包括模型参数、训练方式（CoT）、开源特性、商业可用性。
+   * **Distilled 模型：** 介绍由 R1 模型生成的合成数据微调出的多个小型模型，如 quen 和 llama 系列。
+   * **性能对比：** 将 DeepSeek R1 模型与 OpenAI o1 模型进行性能对比，并在某些方面超越后者。
+   * **成本优势：** DeepSeek R1 模型及其 API 定价远低于竞争对手，且在 DeepSeek 聊天平台免费使用。
+   * **实际测试：** 通过 13 个不同类型的问题测试 R1 模型的性能，并展示其卓越的能力。
+   * **结论：** DeepSeek R1 模型的成功证明了开源模型在性能和成本上的优势，并对闭源模型构成挑战。
+
+**4.  概念图（Simplified Chinese Conceptual Map using Mermaid Syntax）:**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph "DeepSeek R1 生态"
+      A[DeepSeek R1 模型] -- 训练 --> B(DeepSeek V3 基模型)
+      A -- 开源权重, MIT许可 --> C[商业可用性]
+       A-- 与o1对标, 某些方面超越 --> D[高性能]
+      A -- 合成数据 --> E(R1 Distilled 模型)
+      E-- 多种小模型, 如quen和llama --> F[性能优异]
+      C--  提供API接口 --> G(API)
+      C -- DeepSeek聊天平台 --> H(免费使用)
+       G -- 低成本API定价 --> I[成本优势]
+         H -- 免费使用 --> I
+
+    end
+
+     J[闭源模型]-- 成本高昂 --> K[o1 模型]
+      K-- 性能略逊于R1 --> D
+     K -- 费用高昂 --> I
+
+     L[测试] -- 13个问题 --> A
+      L -- 结果 --> M(性能验证)
+    M-- 优异表现 -->D
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+      style C fill:#ccf,stroke:#333,stroke-width:2px
+     style D fill:#9f9,stroke:#333,stroke-width:2px
+     style E fill:#fc9,stroke:#333,stroke-width:2px
+        style I fill:#9cc,stroke:#333,stroke-width:2px
+    style J fill:#eee,stroke:#333,stroke-width:2px
+    style M fill:#ada,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+[Music] hi welcome to another video so deep seek R1 has been launched previously we had seen the Deep seek R1 light model but now we finally have the proper deep seek R1 model the model is on par with the o1 model and is fully open weights along with MIT which makes it commercially usable as well the model is available on the Deep seek chat platform and is also available via an API not just that there are also distilled models that are basically multiple smaller models like quen and llama that are fine-tuned with synthetic data generated from R1 and they also perform significantly well let me tell you everything about these models but before we do that let me tell you about today's sponsor ninj chat ninja chat is an all-in-one AI platform that gives you access to more than 10 models like claw 3. 5 Sonet GPT 40 Gemini and even image generation models like flux and video generation models like cing and much more all in one place for a price that's even cheaper than one chat GPT membership starting at only $11 not just that they they have a bunch of AI tools that can help you use these models in intricate ways they have also recently added an artifacts feature to their platform that now allows you to generate code preview it and share it with others using preview links which is great it can even run python code and create charts you can check them out through the link in the description and make sure to use my coupon code king2 to get an additional 25% off these already great deals so majorly there are two main models one is the Deep seek R1 model and the other one is the Deep seek r10 model the Deep seek R1 is the main model while the zero model is a version of the R1 that is not supervised fine-tuned for alignment with chat preferences it's only made available for people who may want to fine-tune the model or for research so that's great of them to provide non sft models as well anyway the R1 model is a 671 billion parameter model and it is trained on the same deep seek V 3base model it is trained for Chain of Thought and reasoning as well the activated parameters in this model are only about 37 B parameters similar to deep seek V3 there are also six distilled small models that are fine-tuned with the synthetic data of deep seek R1 on models like quen 1. 5b quen 7B llama 8B quen 14b quen 32b and llama 337b as well this is insane for a company to do I mean it shows that they really do care about people deep seek R1 scores the same as open AI 01 and even better in some cases which is just insane the distilled models are also pretty crazy the Llama 3. 3 distilled model beats 01 mini yeah I'm not kidding it's really insane also deep seeks benchmarks have been very reliable so I'm pretty sure that this stuff is true so this is great the 32b model is also good and better than qwq so you can use that locally as well or there's also the 8B model as well the models are not available on AMA yet but should be available soon you can use VM to use it locally in the meanwhile apart from this the main R1 model is available on the Deep seek chat platform and is also available as an API and just like in deep seek fashion the AP Pi is also amazingly cheap the model only costs 55 for input and $219 for output which is pretty insane I mean 01 costs $15 for input and $60 for output plus the R1 model is free on their chat platform instead of costing $200 it's even cheaper than Sonet so that's pretty insane now let's test the R1 model out and let's see how well it performs these are the 13 questions that I'm going to test it against the first question is tell me the name of a country whose name ends with liia give me the capital city of that country as well the answer should be something like Australia and canara let's send it and see okay here's the answer and this is the first model to give me all the three correct answers so this is fully correct let's mark this as a pass now the next question is what is the number that rhymes with the word we use to describe a tall plant the answer should be three let's send it and see okay here's the answer and this is also correct so this is also a pass the next question is write a Haiku where the second letter of each word when put together spell simple let's send it and see okay so here's the answer and this is 100% correct the second letter does indeed spell simple so this is the first model that passes this question the next one is name an English adjective of Latin origin that begins and ends with the same letter has 11 letters in total and for which all vowels in the word are ordered alphabetically the answer could be something like transparent let's send it and see okay here's the answer and this is also correct it answered the question 100% correctly and this is the first model to answer this 01 doesn't answer this correctly either most of the time so let's mark it the next question is Courtney said that there were 48 people but Kelly said that Courtney had over stated the number by 20% if Kelly was right how many people were there the answer should be 40 let's send it and check this is the answer and it's correct let's mark it as a pass the next one is I have two apples then I buy two more I bake a pie with two of the apples after eating half of the pie how many apples do I have left the answer should be to let's send it and see here's the answer and this is also correct so let's give this a pass now the next question is Sally is a girl she has three brothers each of her brothers has the same two sisters how many sisters does Sally have the answer should be one let's send it and see now here's the answer and this is also correct so let's mark it as well the next one is if a regular hexagon has a short diagonal of 64 what is its long diagonal the answer should be 73. 9 let's send it and see okay it first gave me the equation which I asked it to solve and give me a rounded number here's the answer which is correct let's mark it as well now the next question is create an HTML page with a button that explodes confetti when you click it you can use CSS and JS as well let's send it and check here's the code and if we run it you can see that this works pretty well so this is also a pass the next question is create a playable synth keyboard using HTML CSS JS let's send it and check okay here's the answer and if we run this it also works well and produces the correct sound so this is a pass the next one is generate the SVG code for a butterfly let's send it and see okay here's the answer and if we preview this it is the best generation that I have seen yet let's mark it a pass as well the next one is create me a 3D Circle that moves and Loops endlessly in 3D space using HTML CSS Js let's send it and check okay here's the answer and if we run this then this works correctly so let's keep this a pass now the final question is write a game of life in Python that works on the terminal let's send it and see okay here's the code let's copy and run it okay this also works well so this is also a pass now this is the final chart I don't know what to say this model is better than 01 and not only that it is so cheap and open weights I can't believe that this is true not only is it cheap it is even cheaper than sonnet while offering insane value 01 and Sonet are pretty much obsolete now deep seek has finally done it they have shown the likes of open Ai and anthropic that open- Source models can do just what they aim to do and only in a couple of months this is an insane model also just saying this model is free on their chat interface and doesn't cost $200 it's just insane how can someone keep paying $200 for chat GPT when this better thing is free this is just too good let me know if you guys want a distilled model comparison I think that they will also be insane just like this model comment below if you guys want to see the testing of those distilled models I can't stress it enough but now I can say open AIS 01 and Sonet are now obsolete by an open- Source model called Deep seek R1 and the R1 model is overall pretty cool anyway share your thoughts below and subscribe to the channel you can also donate via super thanks option or join the channel as well and get some perks I'll see you in the next video bye [Music]
