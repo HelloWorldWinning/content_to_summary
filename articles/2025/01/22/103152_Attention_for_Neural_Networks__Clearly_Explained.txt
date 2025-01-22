@@ -1,0 +1,71 @@
+Timestamp: 2025-01-22T10:31:52.247976
+Title: Attention for Neural Networks, Clearly Explained!!!
+URL: https://youtube.com/watch?v=PSs6nxngL6k&si=OT2Y2Y92eaeFuRbP
+Status: success
+Duration: 15:50
+
+Description:
+好的，这是对您提供的文本的总结，包括核心要点、基本要点、框架结构，以及使用 Mermaid 语法生成的中文概念图。
+
+**1. 核心要点 (Core Point):**
+   - 注意力机制通过为解码器的每一步提供直接访问编码器输入值的路径，解决了传统编码器-解码器模型在处理长序列时可能丢失早期输入信息的不足。
+
+**2. 基本要点 (Fundamental Point):**
+   -  在编码器-解码器模型中引入注意力机制的核心思想是，解码器的每一步都能够根据与当前解码状态的相关性，选择性地关注编码器输入序列中的不同部分。
+
+**3. 总体框架 (Overarching Framework):**
+   -  本内容主要介绍如何在基本的编码器-解码器模型中加入注意力机制，以解决长序列翻译问题。具体框架可以概括为：
+       1. **问题提出：** 基本编码器-解码器模型在处理长序列时存在信息丢失问题，尤其是早期的输入信息。
+       2. **注意力机制的引入：** 为解码器的每一步添加直接访问编码器输入值的路径，以解决信息丢失问题。
+       3. **注意力机制的实现：**
+           -   计算编码器输出与解码器输出之间的相似度（点积）。
+           -  使用 Softmax 函数将相似度分数转换为权重。
+           -   根据权重将编码器的输出加权求和，得到注意力值。
+           -   将注意力值和解码器当前状态输入到全连接层，进行下一步解码。
+       4. **总结：** 强调注意力机制的核心思想，以及它在解决长序列翻译问题上的重要性。
+
+**4. 中文概念图 (Simplified Chinese Conceptual Map):**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Encoder [编码器]
+    A(输入句子) --> B[嵌入层];
+    B --> C(LSTM 单元);
+    C --> D(编码输出);
+    end
+
+    subgraph Decoder [解码器]
+    E(初始状态) --> F[嵌入层];
+    F --> G(LSTM 单元);
+    G --> H(解码输出);
+    end
+
+    subgraph Attention [注意力机制]
+    D --> I{计算相似度 (点积)}
+    H --> I
+    I --> J[Softmax函数]
+     J --> K{加权求和}
+     D--> K
+    K --> L(注意力值)
+    L --> M[全连接层]
+    H --> M
+    M --> N(输出词)
+
+    end
+    N --> O{检查EOS}
+    O -- 如果不是 --> F
+    
+   style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+     style H fill:#ccf,stroke:#333,stroke-width:2px
+     style L fill:#ccf,stroke:#333,stroke-width:2px
+    style N fill:#f9f,stroke:#333,stroke-width:2px
+    
+    
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 stroke:#333,stroke-width:1px;
+    
+</Mermaid_Diagram>
+
+
+Content:
+it'll help if you pay attention when we add it to an encoded decoder model hooray stat Quest hello I'm Josh starmer and welcome to statquest today we're going to talk about attention and it's going to be clearly explained light down it makes it easy to start with nothing and then scale it up in the cloud this stat Quest is also brought to you by the letters a b and c a always b b c curious always be curious note this stat Quest assumes that you are already familiar with basic seek to seek and encoder decoder neural networks if not check out the quest I also want to give a special triple bam shout out to Lena voita and her GitHub tutorials NLP course for you because it helped me a lot with this stat Quest Hey look it's stat Squatch in the normal saurus hey Josh last time we used a basic encoder decoder model to translate let's go into Spanish and it worked great bam but now I want to translate my favorite book The statquest Illustrated guide to machine learning into Spanish and our basic encoder decoder model isn't doing a good job I'm sorry you're having trouble with translating Squatch the problem is that in the encoder in a basic encoder decoder unrolling the lstms compresses the entire input sentence into a single context vector this works fine for short phrases like let's go but if we had a bigger input vocabulary with thousands of words then we could input longer and more complicated sentences like this don't eat the delicious looking and smelling Pizza but for longer phrases even with lstms words that are input early on can be forgotten and in this case if we forget the first word don't then don't eat the delicious looking and smelling Pizza turns into eat the delicious looking and smelling pizza and these two sentences have completely opposite meanings so sometimes it's super important to remember the first word so what are we going to do well you might remember that basic recurrent neural networks had problems with long-term memories because they ran both the long and short-term memories through a single path and that the main idea of long short-term memory units is that they solve this problem by providing separate paths for long and short-term memories well even with separate paths if we have a lot of data both paths have to carry a lot of information and that means that a word at the start of a long phrase like don't can still get lost so the main idea of attention is to add a bunch of New Paths from the encoder to the decoder one per input value so that each step of the decoder can directly access input values bam note the basic encoder decoder plus attention models that we're going to talk about today are totally awesome but they are also a stepping stone to learning about Transformers which we'll talk about in future stack quests in other words today we're taking another step in our quest to understand Transformers which form the basis of big fancy large language models like Chad GPT now if you remember from the stack Quest on encoder decoder models an encoder decoder model can be as simple as an embedding layer attached to a single long short-term memory unit but if we want a slightly more fancy encoder we can add additional lstm cells now we'll initialize the long and short-term memories the cell and hidden states in the lstms in the encoder with zeros and if our input sentence which we want to translate into Spanish is let's go then we can plug in a 1 for let's into the embedding layer unroll and plug a 1 for go into the embedding layer and that can create a context vector that we use to initialize a separate set of lstm cells in the decoder note all of the input is jammed into the context vector however the idea of attention is for each step in the decoder to have direct access to the inputs so let's talk about how attention connects the inputs to each step of the decoder unfortunately just like adding the extra path for long-term memories to lstms isn't super simple adding the extra paths for attention to an encoder decoder model isn't super simple either ugh don't worry Squatch we'll go through it one step at a time bam first before we start talking about how this big mess of stuff works let's start by plugging in a 1 for the EOS end of sentence token into the embedding layer remember we do this because we just finished encoding the sentence let's go and because some of the original encoder decoder plus attention manuscripts do it that way however some people also start out with SOS or start of sentence now let's talk about how to add attention to our model note although there are conventions there are no rules for how attention should be added to an encoder decoder model and each manuscript has a slightly different way of doing it so what follows is just one example of how attention can be added to an encoder decoder model that said the main idea of attention adding an additional path for each input value so that each step of the decoder can directly access those values is consistent for all encoder decoder models with attention bam so in this example the first thing that attention does is determine how similar the outputs from the encoder lstms are at each step to the outputs from the decoder lstms in other words we want a similarity score between the lstm outputs the short-term memories or hidden States from the first step in the encoder and the lstm outputs from the first step in the decoder and we also want to calculate a similarity score between the lstm outputs from the second step in the encoder and the lstm outputs from the first step in the decoder there are a lot of ways to calculate the similarity of words or more precisely sequences of numbers that represent words and different attention algorithms use different ways to compare these sequences however one simple way to determine the similarity of two sequences of numbers that represent words is with the cosine similarity there's a lot to be said about the cosine similarity so if you don't already know about it check out the quest however for the purposes of this stat Quest all we need to know is that the cosine similarity is calculated with this equation and that the numerator is what calculates the similarity between two sequences of numbers and that the denominator scales that value to be between negative one and one Josh this equation looks complicated don't worry Squatch we'll plug some numbers into it one step at a time to illustrate how the cosine similarity would work in this context let's calculate the cosine similarity between the output values from the first pair of lstm cells in the encoder for the word let's and the output values from the first pair of lstm cells in the decoder for the EOS token the output values from the two lstm cells in the encoder for the word let's are negative 0. 76 and 0. 75 and the output values from the two lstm cells in the decoder for the EOS token are 0. 91 and 0. 38 and now we just plug the numbers into the equation for the cosine similarity and we get Negative 0. 39 thus the cosine similarity between the output values from the two lstm cells in the encoder for the word let's and the output values from the two lstm cells in the decoder for the EOS token is negative 0. 39 that being said a more common way to calculate similarity for attention is to just calculate the numerator for the cosine similarity this is because the denominator simply scales the magnitude of the similarity score to be between negative 1 and 1. this scaling could be useful if we wanted to compare a similarity score for two lstm cells like we did before to a similarity score calculated with three or more lstm cells because the scaling would ensure that no matter how many lstm cells we use to calculate the similarities the similarities would be between negative 1 and 1 and easily comparable in other words the denominator removes the magnitude of the similarity however in this case we'll always use the same number of lstm cells and in practice using just the numerator works well so we can save ourselves the trouble of doing extra math by just calculating the numerator which is also called The Dot product Josh this equation looks way easier bam so in this case when we do the math for the dot product we get Negative 0. 41 anyway calculating the dot product is more common than the cosine similarity for attention because it's super easy to calculate and roughly speaking large positive numbers mean things are more similar than small positive numbers and large negative numbers mean things are more completely backwards than small negative numbers the other nice thing about the dot product is that it's easy to add to our diagram we simply multiply each pair of output values together and then add them all together and we get Negative 0. 41 likewise we can compute a similarity score with the dot product between the second input word go and the EOS token and we get 0. 01 and now we've got similarity scores for both input words let's and go relative to the EOS token in the decoder bam hey Josh it's great that we have scores but how do we use them well we can see that the similarity score between go and the EOS token 0. 01 is higher than the score between let's and the EOS token negative 0. 41 and since the score for go is higher we want the encoding for go to have more influence on the first word that comes out of the decoder and we do that by first running the scores through a soft Max function remember the softmax function gives us numbers between 0 and 1 that add up to one so we can think of the output of the softmax function as a way to determine what percentage of each encoded input word we should use when decoding in this case we'll use 40 of the first encoded word let's and sixty percent of the second encoded word go when the decoder determines what should be the first translated word so we scale the values for the first encoded word let's by 0. 4 and we scale the values for the second encoded word go by 0. 6 and lastly we add the scaled values together these sums which combine the separate encodings for both input words let's and go relative to their similarity to EOS are the attention values for Eos bam now all we need to do to determine the first output word is plug the attention values into a fully connected layer and plug the encodings for Eos into the same fully connected layer and do the math and run the output values through a softmax function to select the first output word vamos bam now because the output was not the EOS token we need to unroll the embedding layer and the lstms in the decoder and plug the translated word vamos into the decoder's unrolled embedding layer and then we just do the math except this time we use the encoded values for vamos and the second output from the decoder is eos so we're done decoding triple bam in summary when we add attention to a basic encoder decoder model the encoder pretty much stays the same but now each step of decoding has access to the individual encodings for each input word and we use similarity scores and the soft Max function to determine what percentage of each encoded input word should be used to help predict the next output word note now that we have a tension added to the model you might wonder if we still need the lstms well it turns out we don't need them and we'll talk more about that when we learn about Transformers bam now it's time for some Shameless self-promotion if you want to review statistics and machine learning offline check out the statquest PDF study guides in my book The statquest Illustrated guide to machine learning at stackquest. org there's something for everyone hooray we've made it to the end of another exciting stat Quest if you like this stat Quest and want to see more please subscribe and if you want to support stack Quest consider contributing to my patreon campaign becoming a channel member buying one or two of my original songs or a t-shirt or a hoodie or just donate the links are in the description below alright until next time Quest on
