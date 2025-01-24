@@ -1,0 +1,125 @@
+Timestamp: 2025-01-24T15:06:51.958624
+Title: Text_Summary_20250124_150651
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1.  **Introduction of ChatGPT Pro:**
+    *   A new $200 monthly subscription plan.
+    *   Provides scaled access to OpenAI's advanced models and tools.
+2.  **Key Features of ChatGPT Pro:**
+    *   Unlimited access to OpenAI o1, o1-mini, GPT-4o, and Advanced Voice.
+    *   Includes "o1 pro mode," a more compute-intensive version of o1 for enhanced problem-solving.
+    *   Intended for researchers, engineers, and other professionals needing research-grade AI.
+3.  **Enhanced Capabilities of o1 Pro Mode:**
+    *   "Thinks longer" to deliver more reliable responses.
+    *   Demonstrates superior performance in data science, programming, and case law analysis, according to external testers.
+    *   Outperforms o1 and o1-preview on challenging benchmarks in math, science, and coding.
+    *   Evaluated with "4/4 reliability" requirement for accuracy.
+4.  **Accessing o1 Pro Mode:**
+    *   Users select o1 pro mode in the model picker.
+    *   Longer processing time with progress bar and notifications.
+
+**Core Point:** ChatGPT Pro provides professional users with enhanced AI capabilities and more reliable responses through a compute-intensive "o1 pro mode," designed for complex problem-solving.
+
+**Fundamental Point:**  As AI complexity increases, so does the compute power required, necessitating subscription models like ChatGPT Pro to deliver optimal performance.
+
+**Overarching Framework:** The progression of AI technology demands increased computational power which leads to the introduction of higher-tier subscription plans, like ChatGPT Pro to meet the needs of research-intensive users.
+
+<Mermaid_Diagram>
+    graph LR
+    subgraph OpenAI Technology [OpenAI Technology]
+        direction TB
+        A[AI Advancements] -- Requires --> B(Increased Compute)
+    end
+
+    subgraph ChatGPT [ChatGPT Services]
+        direction TB
+        C[ChatGPT Base]
+         D[ChatGPT Pro]
+        C -- Basic access --> D
+    end
+
+     subgraph ChatGPT Pro Details [ChatGPT Pro Details]
+        direction TB
+        E[Access to Advanced Models]
+        F[o1 Pro Mode]
+        G[Enhanced Reliability]
+        H[Strong Performance]
+
+        D --> E
+        E --> F
+        F --> G
+        F-->H
+     end
+
+    subgraph o1 Pro Mode Benefits [o1 Pro Mode Benefits]
+        direction TB
+        I[Data Science]
+        J[Programming]
+        K[Case Law]
+        L[Math]
+        M[Science]
+        N[Coding]
+        G --> I
+        G --> J
+        G --> K
+        H-->L
+        H-->M
+        H-->N
+    end
+
+    subgraph Evaluation and Access[Evaluation and Access]
+     direction TB
+     O[4/4 Reliability]
+     P[Model Picker Selection]
+     Q[Progress Bar]
+     R[Notifications]
+
+     G --> O
+      F-->P
+     P --> Q
+     P -->R
+    end
+
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#fff,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+      style E fill:#fff,stroke:#333,stroke-width:2px
+     style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#fff,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+      style I fill:#fff,stroke:#333,stroke-width:2px
+    style J fill:#fff,stroke:#333,stroke-width:2px
+    style K fill:#fff,stroke:#333,stroke-width:2px
+      style L fill:#fff,stroke:#333,stroke-width:2px
+    style M fill:#fff,stroke:#333,stroke-width:2px
+    style N fill:#fff,stroke:#333,stroke-width:2px
+     style O fill:#fff,stroke:#333,stroke-width:2px
+    style P fill:#fff,stroke:#333,stroke-width:2px
+     style Q fill:#fff,stroke:#333,stroke-width:2px
+    style R fill:#fff,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+As AI becomes more advanced, it will solve increasingly complex and critical problems. It also takes significantly more compute to power these capabilities. 
+
+Today, we’re adding ChatGPT Pro, a $200 monthly plan that enables scaled access to the best of OpenAI’s models and tools. This plan includes unlimited access to our smartest model, OpenAI o1, as well as to o1-mini, GPT-4o, and Advanced Voice. It also includes o1 pro mode, a version of o1 that uses more compute to think harder and provide even better answers to the hardest problems. In the future, we expect to add more powerful, compute-intensive productivity features to this plan. 
+
+ChatGPT Pro provides a way for researchers, engineers, and other individuals who use research-grade intelligence daily to accelerate their productivity and be at the cutting edge of advancements in AI.
+More thinking power for more difficult problems
+ChatGPT Pro provides access to a version of our most intelligent model that thinks longer for the most reliable responses. In evaluations from external expert testers, o1 pro mode produces more reliably accurate and comprehensive responses, especially in areas like data science, programming, and case law analysis.
+
+Compared to both o1 and o1-preview, o1 pro mode performs better on challenging ML benchmarks across math, science, and coding.
+Competition Math (AIME 2024)
+
+To highlight the main strength of o1 pro mode (improved reliability), we use a stricter evaluation setting: a model is only considered to solve a question if it gets the answer right in four out of four attempts ("4/4 reliability"), not just one.
+Competition Math (AIME 2024)
+
+Pro users can access this functionality by selecting o1 pro mode in the model picker and asking a question directly. Since answers will take longer to generate, ChatGPT will display a progress bar and send an in-app notification if you switch away to another conversation.
