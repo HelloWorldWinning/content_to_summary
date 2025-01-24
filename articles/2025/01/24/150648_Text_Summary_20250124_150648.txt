@@ -1,0 +1,72 @@
+Timestamp: 2025-01-24T15:06:48.543929
+Title: Text_Summary_20250124_150648
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您提供的文本生成的总结：
+
+**总结:**
+
+1.  **核心结论:** 随着人工智能的发展，需要更多的计算能力，OpenAI推出了ChatGPT Pro订阅服务，提供更强大的人工智能模型和功能。
+2.  **根本结论:** ChatGPT Pro旨在为需要高精度人工智能的专业人士提供更强大的计算能力，以解决复杂的难题并提高生产力。
+3. **总体框架:**  人工智能发展 -> 计算需求增加 -> ChatGPT Pro 服务推出 ->  提供更强的模型和功能 ->  解决更复杂的难题 ->  面向专业人士的生产力提升.
+
+**Mermaid 图:**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph "人工智能发展与需求"
+    A[人工智能发展]  -- 增加 --> B(计算需求增加)
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+     style B fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph "ChatGPT Pro 服务"
+    C[OpenAI推出ChatGPT Pro] -- 提供 --> D{更强大的模型}
+     style C fill:#afa,stroke:#333,stroke-width:2px
+     style D fill:#aaf,stroke:#333,stroke-width:2px
+    D -- 包括 --> E[o1 模型]
+    D -- 包括 --> F[o1-mini 模型]
+    D -- 包括 --> G[GPT-4o 模型]
+    D -- 包括 --> H[高级语音]
+      style E fill:#cef,stroke:#333,stroke-width:1px
+     style F fill:#cef,stroke:#333,stroke-width:1px
+       style G fill:#cef,stroke:#333,stroke-width:1px
+       style H fill:#cef,stroke:#333,stroke-width:1px
+     D -- 提供 --> I[o1 pro mode]
+       style I fill:#eea,stroke:#333,stroke-width:2px
+       I -- 使用更多计算 --> J[更高准确率和可靠性]
+       style J fill:#ffe,stroke:#333,stroke-width:1px
+    end
+    B --> C
+    J --> K{解决复杂难题}
+     style K fill:#ada,stroke:#333,stroke-width:2px
+
+    K --> L[专业人士生产力提升]
+    style L fill:#aef,stroke:#333,stroke-width:2px
+
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11 stroke-width:2px,stroke:#333
+
+```
+</Mermaid_Diagram>
+
+
+Content:
+As AI becomes more advanced, it will solve increasingly complex and critical problems. It also takes significantly more compute to power these capabilities. 
+
+Today, we’re adding ChatGPT Pro, a $200 monthly plan that enables scaled access to the best of OpenAI’s models and tools. This plan includes unlimited access to our smartest model, OpenAI o1, as well as to o1-mini, GPT-4o, and Advanced Voice. It also includes o1 pro mode, a version of o1 that uses more compute to think harder and provide even better answers to the hardest problems. In the future, we expect to add more powerful, compute-intensive productivity features to this plan. 
+
+ChatGPT Pro provides a way for researchers, engineers, and other individuals who use research-grade intelligence daily to accelerate their productivity and be at the cutting edge of advancements in AI.
+More thinking power for more difficult problems
+ChatGPT Pro provides access to a version of our most intelligent model that thinks longer for the most reliable responses. In evaluations from external expert testers, o1 pro mode produces more reliably accurate and comprehensive responses, especially in areas like data science, programming, and case law analysis.
+
+Compared to both o1 and o1-preview, o1 pro mode performs better on challenging ML benchmarks across math, science, and coding.
+Competition Math (AIME 2024)
+
+To highlight the main strength of o1 pro mode (improved reliability), we use a stricter evaluation setting: a model is only considered to solve a question if it gets the answer right in four out of four attempts ("4/4 reliability"), not just one.
+Competition Math (AIME 2024)
+
+Pro users can access this functionality by selecting o1 pro mode in the model picker and asking a question directly. Since answers will take longer to generate, ChatGPT will display a progress bar and send an in-app notification if you switch away to another conversation.
