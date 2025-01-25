@@ -1,0 +1,101 @@
+Timestamp: 2025-01-25T19:52:34.508703
+Title: Understanding and Effectively Using AI Reasoning Models
+URL: https://youtu.be/f0RbwrBcFmc?si=JI3yHZ4viRR12uLb
+Status: success
+Duration: 15:16
+
+Description:
+好的，这是对您提供的文本的总结和概念图：
+
+**1. 核心要点（Core Point）:**
+
+  - 新的推理模型（例如01和03）通过在思维链（Chain-of-Thought）上进行强化学习（RL）来扩展，从而实现更高质量、更耗时的推理能力。
+
+**2. 基本要点（Fundamental Point）:**
+
+   - 推理模型与聊天模型在扩展范式、推理类型和使用方式上存在根本差异，推理模型更适合需要深入分析和计划的应用。
+
+**3. 总体框架（Overarching Framework）:**
+
+  - **当前扩展范式 (Current Scaling Paradigm):** 基于下一个词预测的传统语言模型（LM），虽然强大，但在复杂推理方面存在局限，计算资源分配均匀导致难题效率不高。
+  - **思维链提示 (Chain-of-Thought Prompting):**  通过强制模型生成中间步骤，模拟人类的“系统二”思维，提高了解决复杂问题的能力。
+  - **新的扩展范式 (New Scaling Paradigm):**  通过在思维链上进行强化学习，模型能够产生经过验证的正确答案，并获得奖励，从而优化推理过程。
+  - **推理模型特性 (Reasoning Model Characteristics):**  更慢、更耗时，但能提供更高质量的输出，适用于无需即时交互、需要深度分析的后台任务。
+  - **使用指南 (Usage Guidance):**  提示推理模型时，应侧重于 *“要什么”* (what)，而非 *“如何做”* (how)，并提供丰富的上下文，适用于结构化输出和工具调用。
+  - **应用场景 (Use Cases):**  代码生成、规划与代理、信息反思、数据分析、研究和报告生成、以及作为评估器和新闻信息认知层。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "当前扩展范式"
+        A[下一词预测(Next Word Prediction)] -- "多任务学习" --> B(语法、知识、情感、翻译...)
+        B -- "扩展" --> C(模型规模、数据规模、训练计算)
+        C -- "涌现" --> D(解锁新能力，例如数学)
+        D -- "局限" --> E[系统一思维(System 1 Thinking):快速直观]
+        E -- "挑战" --> F(复杂推理难题)
+    end
+
+    subgraph "思维链提示"
+        G[思维链提示(Chain-of-Thought Prompting)] -- "强制中间步骤" --> H[系统二思维(System 2 Thinking): 缓慢耗时]
+        H -- "中间变量" --> I(存储中间信息)
+        I --> F
+    end
+    
+    subgraph "新的扩展范式"
+        J[强化学习(Reinforcement Learning)在思维链上] -- "奖励正确答案" --> K(策略调整)
+        K --> L[验证器(Verifier)]
+		L -- "明确正确答案"-->M[训练数据]
+    end
+    
+    subgraph "推理模型特性"
+	   N[推理模型(Reasoning Models)] --"特点"-->O[更慢，更耗时，更高质量]
+	   O --"用途"-->P(后台任务，深度分析)
+	   P -- "使用方式" --> Q[侧重于“要什么”而非“如何做”]
+	end
+	
+    subgraph "使用案例"
+	    R[使用案例(Use Cases)] --"包括" --> S[代码生成]
+	    R --"包括" --> T[规划与代理]
+        R --"包括" --> U[信息反思]
+        R --"包括" --> V[数据分析]
+        R --"包括" --> W[研究和报告生成]
+        R --"包括" --> X[评估器]
+        R --"包括" --> Y[新闻信息认知层]
+	end
+    
+	A-->G
+    A-->J
+    J-->N
+    N-->R
+    
+	style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#afa,stroke:#333,stroke-width:2px
+    style N fill:#fcc,stroke:#333,stroke-width:2px
+    style R fill:#aaf,stroke:#333,stroke-width:2px
+    
+    style B fill:#eee,stroke:#333,stroke-width:1px
+    style C fill:#eee,stroke:#333,stroke-width:1px
+    style D fill:#eee,stroke:#333,stroke-width:1px
+    style E fill:#eee,stroke:#333,stroke-width:1px
+    style F fill:#eee,stroke:#333,stroke-width:1px
+
+    style H fill:#eee,stroke:#333,stroke-width:1px
+    style I fill:#eee,stroke:#333,stroke-width:1px
+    style K fill:#eee,stroke:#333,stroke-width:1px
+	style L fill:#eee,stroke:#333,stroke-width:1px
+	style M fill:#eee,stroke:#333,stroke-width:1px
+    style O fill:#eee,stroke:#333,stroke-width:1px
+    style P fill:#eee,stroke:#333,stroke-width:1px
+	style Q fill:#eee,stroke:#333,stroke-width:1px
+	style S fill:#eee,stroke:#333,stroke-width:1px
+	style T fill:#eee,stroke:#333,stroke-width:1px
+	style U fill:#eee,stroke:#333,stroke-width:1px
+	style V fill:#eee,stroke:#333,stroke-width:1px
+	style W fill:#eee,stroke:#333,stroke-width:1px
+	style X fill:#eee,stroke:#333,stroke-width:1px
+    style Y fill:#eee,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+hey this is Lance from Lang Shain you've probably heard a lot about the new reasoning models from open AI such as 01 and 03 I want to talk about these by reviewing some of my favorite uh new videos and uh kind of blogs I've seen on this topic but first let's just start with the current scaling Paradigm that we've been in for a number of years which is next word prediction so Jason way has a great talk on this and he kind of frames nicely why has next word I works so well and he basically explains it as nexor prediction is a multitask learning problem when you ask an LM to predict the next word or the next token in a sentence it learns a lot of things at once it learns grammar it learns World Knowledge sentiment translation spatial reasoning math so this simple learning objective is extremely powerful and there's lots of nice papers and talks on this but that just sets the stage now we've scaled this over roughly seven orders of magnitude Jason also touches on this and this is well covered in the Capal at all paper from 2020 but with respect to model size data set size and train compute the overall capability of models trained just with this kind of simple objective has gotten better now there's some interesting points here are related to the concept of emergence certain capabilities appear to be unlocked at certain scales like for example GPD 2 and three were poor at math four kind of unlock greater math capability but overall you can kind of think about the capability increasing in a Rel relatively predictable fashion with respect to size of model data set and train compute so that's kind of the Paradigm we've been in now here's kind of the catch and Jason kind of lay this out nicely next word prediction is kind of like system one thinking it's fast and intuitive but some next words are really hard to predict so for example a challenging math problem a challenging reasoning problem the problem is these models use the same amount of compute to solve easy and hard problems that's kind of the overall bottleneck with this Paradigm now a workaround that we're all probably familiar with by this point is this notion of Chain of Thought prompting this came out around 2022 and Jason way has a nice paper on it of course you prompt an LM to think step by step but what's really happening here so Nathan Lambert has a nice video on this and I thought it was really interesting you're kind of trying to enforce system to thinking which is ious and networ full so for example if you do a math problem yourself you perform a bunch of intermediate steps and those are kind of storing intermediate variables for yourself which then you utilize to generate the final solution and chaina thought it's kind of like forcing the model to produce those intermediates as tokens along its trajectory towards a solution so it's like by telling to think step by step you're actually having it produce work in the form of tokens and those tokens are kind of storing intermediate information that the model is using to form a a final answer so it's kind of like a hack to force the model from system one thinking to system two thinking so I kind of like the way that Jason lays that out and Nathan explains what's happening when you actually do CFT now this new scaling Paradigm what you see with these reasoning models is basically scaling reinforcement learning on Chain of Thought So what's actually happening here there's a nice blog post from open AI a nice video from Nathan but really the summary is that you have some training data which contains explicitly correct answers and this is important okay coding problems math problems that are verifiably correct okay you have a model that can sometimes generate correct Solutions and you have a grer that can verify whether or not a model output is correct or not okay and if it's correct you give the model a reward now this is where the reinforcement learning thing comes in you have some policy that will nudge weights so it's more likely to produce High reward outputs now you do is when you train this on this data set that has many explicitly correct answers for every problem you basically have the model produce a bunch of different trajectories and you grade them all and you reward the correct ones and over time in training you do lots of forward passes okay but you kind of tune or nudge the model to favor Chain of Thought or trajectories that result in correct answers that's the overall intuition and um I think more will come out on this but this is kind of my distillation from reading of course the blog post and some nice work by Nathan Lambert to explain a little bit more detail and here's here's a nice kind of schematic of what's going on you have your training data you have a policy to nudge your weights you have some verif verifiable reward and you're basically running your model over the training data you're doing lots of forward passes you're rewarding the correct chain of chains of thoughts that get you to correct answers that are verifiable with your greater that's the big idea now why is this exciting will represents a new scaling law so some really nice videos from gome Brown Jason way on this if you look at the recent results from 01 and now3 just dropped right before the new year uh they're obviously extremely strong okay so this is exciting now another way to think about this is I really like this slide from David rain from NPS benchmarks are getting saturated more and more quickly this is a cool visualization showing how long it takes for a benchmark to get saturated it used to be in 2012 it would take like 8 years right now it takes like a year for GP QA which is a new Benchmark made by David rain which was Google proof QA so it's question answers that are you know not easily Googled and basically we're seeing new stay there reasoning models are basically saturating on benchmarks very quickly so it's exciting we're early in the scaling curve that's the big idea here now here's where things are really interesting there's actually been a lot of confusion about 01 models with some people saying oh these actually are really bad okay now Ben hilac and um swix put out a really nice post on Laten space and it really helps to clarify when you work with these reasoning models you should not think about them as chat models and you shouldn't prompt them as such there's this nice visualization of the anatomy of no one prompt where really what you're doing is you're giving it an explicit goal you don't tell it how to think you tell it what you want you give it return format warnings and just dump all your work now a lot of people have shown that this style prompting works really well with 01 right so unlike chat models chat models you try tell it how to think you're a researcher your think step by step with these models you don't do that you give it what you want and you give it as much context as possible okay so that's really the context on how to prompt these um again focus on the what not the how don't tell to do you know particular style of reasoning just give it what you want that's the big Point here now let me show you usage very quickly first there's a few models available through the API 0101 mini one one thing I'll note mini does not support system messages that's just a small thing to note um now parameters so with o one not with o on Mini you can provide these values of reasoning effort for low medium high this just Tunes the amount of reasoning the model will do basically faster or slower responses fewer and more tokens accordingly so I'm in a notebook now I've just pip installed langine chain open AI import now I'm just using chat up and AI model o1 I'll set reasoning level to medium now note how I prompt this I tell it what I want I want an educational report on cause of mitigation for high cholesterol so this is just an example prompt tell it how I wanted to produce the output give it just a dump of stuff I'm interested in run this cool so that ran we'll look at the trace in a minute but I'll show you here in markdown here's kind of the output so you get a really nice kind of well laid out report uh on the topic of Interest right so this is really cool and it's quite exhaustive pretty nice open up the trace and I just want to show you indeed a one ran now here's what's interesting right the latency is going to be higher than you see with the chat model it took 27 seconds okay fair enough and again here was my prompt as you can see we laid that out and here is the report output so it's quite exhaustive higher latency high quality lots of reasoning goes into producing the report so the o1 models work with structured outputs which is a very popular use case so let me just show you how to do that you basically Define our LM previously call with structured outputs this very nice helper method pass in a schema in this case I just have a pedantic schema so that's pretty cool and I go ahead and run that and we get a structured object out pretty cool now people are going to be very interested in this as well of course tool calling works with these models so again I just can call lm. bind tools let's say in this case I pass in a multiply tool and I make a request that's related to the tool the reasoning model decides to call the tool and I get a tool call out there we go so those are really the core things you're going to want very high quality reasoning and Report generation for example structured outputs tool calling with those Primitives you can do a huge amount of course now let me talk a little bit about use cases so here's some examples that I've seen and they're actually covered pretty nicely in swick's blog posts I think are really interesting to think about for these models so coding is obvious they're extremely strong at coding but what types of coding problems so I think McKay's done some really neat work on this so what we've heard and and seen quite a bit is these models are very strong at one-shotting entire files or sets of files so again m some nice workflows and tutorials on this how you basically give 01 a overall problem give it the opportunity to produce or IND oror edit a large set of files and it can do that often in one shot so coding is obviously a smash use case for these models and they're trained obviously on very hard coding problems they perform very well on sbench which is a popular coding Benchmark so coding is obvious and a very interesting application area for these models now another one is this notion of planning and AG and so in a lot of cases we've seen agents or agentic workflows that use some kind of pre-planning Step Up Front which kind of lays out a set of follow-on steps that may be executed by smaller llms or you know by an overall workflow okay so there's a blog post from UniFi that actually showcases this using Lang Lang graph but I think this General point about using these for upfront planning and workflows or agents is obviously a natural fit another interesting area so n Freeman kind of laid out kind of a prompt what kind of ow and outputs are scen are interesting and I think kind of reflection over sources of information could be meeting notes it could be documents is interesting you know this this uh user followed up with you know what's the most important thing no one's paying attention to pipe all your meeting transcripts in in and and kind of be surprised or amazed and so I think that's kind of a a generally interesting area for these models is kind of like deep reflection over some large sets of context it could be meeting notes it could documents it could be papers now data analysis similarly I've seen a lot of people report on utilizing these models for analyzing even things like blood tests um very good for kind of medical diagnosis or medical reasoning now of course people may not want to actually share private medical data with these with within within API totally understandable some people do but anyway I think kind of medical analysis or Diagnostics is an interesting area or other areas of data analysis are obviously very strong um for these reasoning models so another one is kind of research and Report generation so we've seen deep research from Google come out it's really interesting I think doing deep research kind of with 01 as your own kind of workflow is obviously a very nice use case for 01 Ben mentioned in his blog post at LM as judge and so basically there's a lot of interest in you using LMS as evaluators these reasoning models could be very strong for that particular use case and so I think in in any kind of workflow where you have like an evaluation step either it's online or for example offline these models could be very strong and finally I'll just make a note of kind of cognitive layer of our news feeds I think this is similar to the reasoning point above but I've actually seen a few specific examples of this um so Eric Sara uh mentioned 01 Trend finder this is pretty neat uh it's using fire crawl uh for actually content scraping and passing that to 01 to monitor no you Trends on social media I have a number of apps that do similar things and I think it's a really nice use case and I think using 01 is really cool for this swix mentioned uh in one of the podcasts that he's actually using 01 for AI news as well and so that's another good example of kind of a cognitive layer over news feeds isolating relevant information and servicing it to you so maybe just to recap briefly chap models and reasoning models are pretty different different scaling paradigms so chat models scale using next token prediction reasoning models are scaling using RL over Chain of Thought the reasoning types are different so chat models you can think of as system one fast intuitive reasoning models more like system to slow effortful now how do you work with a model what do you actually tell it with chat models we often told it how to think think step by step think as an engineer reasoning models don't tell it how to think tell it what you want here's the output I want okay interaction mode chat models chat interactive it's pulling context from the user over the course of a chat reason models they are going off and wormholing on something you don't want really necessarily to interact with them in a chat format you want to give it a deeper task and have it just go churn better for research and planning really good for things like ambient or in the background style agent so that's those are the workflows I think about more here so if you look back at our use cases things like Trend finder again this can run in the background uh LMS judge when it is running offline it's kind of in the background deep research again the background run that research process for 30 seconds 1 minute um you know a lot of these you'll see are kind of use cases that don't demand load latency they're things that can run in the background over longer periods of time to produce kind of deeper effortful outputs and so again I think overall really exciting Paradigm we're early in this trend it's absolutely worth if you have applications already using for example open AI uh you can slot in 01 uh or of course other LM slot in01 and give it a try if they fit kind of any of the use cases mentioned here and so if you have kind of good experiences or further thoughts would love to hear comments below and uh thank you very much for listening
