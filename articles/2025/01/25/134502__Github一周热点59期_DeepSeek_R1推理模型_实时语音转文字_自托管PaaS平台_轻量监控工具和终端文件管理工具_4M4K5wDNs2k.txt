@@ -1,0 +1,87 @@
+Timestamp: 2025-01-25T13:45:02.522480
+Title: 「Github一周热点59期」DeepSeek R1推理模型、实时语音转文字、自托管PaaS平台、轻量监控工具和终端文件管理工具 4M4K5wDNs2k
+URL: https://www.youtube.com/watch?v=4M4K5wDNs2k&ab_channel=IT%E5%92%96%E5%95%A1%E9%A6%86
+Status: success
+Duration: 6:25
+
+Description:
+好的，这是对您提供的文本的总结，包括核心要点、基本要点、总体框架以及一个使用 Mermaid 语法生成的概念地图。
+
+**1. 核心要点 (Core Point):**
+
+本周Github热点涵盖了多个实用工具和模型，其中Depthic R1模型以其低成本和本地部署能力成为焦点。
+
+**2. 基本要点 (Fundamental Point):**
+
+本期内容展示了开源社区在模型、语音识别、云平台、监控和文件管理等多个领域的技术进步，强调了实用性、高效性和用户友好性。
+
+**3. 总体框架 (Overarching Framework):**
+
+本期内容围绕以下几个方面展开：
+   * **人工智能模型:**  Depthic R1模型的发布及其低成本特性。
+   * **实时语音转文本:** Ryoutai HDT 工具及其在语音助手中的应用。
+   * **自托管PaaS平台:** Docflow 平台的便捷部署能力。
+   * **轻量级服务器监控:** 白走工具的资源监控功能。
+   * **中端文件管理:** Super 5 工具的现代化文件管理体验。
+
+**4.  概念地图 (Conceptual Map):**
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph "Github 一周热点 (第59期)"
+    style "Github 一周热点 (第59期)" fill:#f9f,stroke:#333,stroke-width:2px
+
+    A[Depthic R1 模型] -- "低成本,本地部署" --> B(深度思考推理模型)
+    style A fill:#ccf,stroke:#333,stroke-width:2px
+     style B fill:#eef,stroke:#333,stroke-width:2px
+
+     C[Ryoutai HDT] -- "实时语音转文本" --> D(语音助手应用)
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#eef,stroke:#333,stroke-width:2px
+
+    E[Docflow] -- "自托管PaaS" --> F(便捷系统部署)
+   style E fill:#ccf,stroke:#333,stroke-width:2px
+     style F fill:#eef,stroke:#333,stroke-width:2px
+
+    G[白走] -- "轻量级监控" --> H(服务器资源监控)
+       style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#eef,stroke:#333,stroke-width:2px
+    
+    I[Super 5] -- "中端文件管理" --> J(高效文件管理)
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+       style J fill:#eef,stroke:#333,stroke-width:2px
+
+    B --> K[Hugging Face 小模型]
+    K --> A
+    style K fill:#fdd,stroke:#333,stroke-width:2px
+
+
+   D --> L[语音活动检测]
+     D --> M[实时转录]
+    style L fill:#fdd,stroke:#333,stroke-width:2px
+    style M fill:#fdd,stroke:#333,stroke-width:2px
+
+
+   F --> N[多语言支持]
+    F --> O[数据库管理]
+    style N fill:#fdd,stroke:#333,stroke-width:2px
+    style O fill:#fdd,stroke:#333,stroke-width:2px
+
+
+   H --> P[CPU/内存监控]
+    H --> Q[Docker容器监控]
+    style P fill:#fdd,stroke:#333,stroke-width:2px
+    style Q fill:#fdd,stroke:#333,stroke-width:2px
+
+
+    J --> R[快捷键操作]
+    J --> S[多区域切换]
+    style R fill:#fdd,stroke:#333,stroke-width:2px
+    style S fill:#fdd,stroke:#333,stroke-width:2px
+    end
+```
+</Mermaid_Diagram>
+
+
+Content:
+Github一周热点会总第59期本期的内容会包括Depthic R1推理模型实时语音转文字自拖管PASS平台轻量监控工具和中端文件管理工具这期就是年前的最后一期了提前祝大家新年快乐一起来看具体内容吧还是别忘了点赞哦没错 这一周的首位又属于Depthic就在北京时间2025年1月20日Depthic正式发布了Depthic R1模型也是自家的深度思考推理模型直接对标的就是OpenAI的OE模型并且同步开软量模型选中本次的发布内容包括了Depthic R1Z柔和Depthic R1R1Z柔是纯粹的通过强化学习在无间督微调的情况下或许的模型而R1这是基于R1Z柔利用少量人工标注的高质量数据进行冷起动微调然后再进行强化学习得到的最终模型Depthic R1依然是遵循了开软的MIT协议并且允许用户通过征流技术借助R1来去训练其他的小模型在Hugging Face上Depthic也放出了多个通过R1征流的小模型这点就非常方便因为之前的V3由于规模过大很难在本地运行这下有了征流的小模型我们就可以在自己的电脑上去尝试一下Depthic模型的运行效果了Depthic R1发布的同时也上线了API服务就是Depthic Resident模型它的价格是每百万Toke输入一块钱基本上这个价格是OPENI OE的50分之一可以说这一次Depthic又把模型的价格打下去了你有病我也在考虑要做一期Depthic R1的深度试用和解析视频但是由于快过年了不知道大家是不是有时间来看所以请大家在大幕和留言里告诉我你是不是想看这个视频如果大家想看的话我会抽时间来做一期专门的视频Depthic R1是一个简单一用DN池的实时语音转文字项目它能实时的监听麦克风将语音转为文本试用于语音助手等需要快速精准转换的应用Depthic R1支持语音活动检测能够自动的检测你何时开始和停止说话同时可以实时转路实时的将语音转为文本你可以设置一个坏型词当系统检测到你说了这个坏型词的时候就会启动服务本项目的实际上也是在Visper的基础上做的把Visper做成了流氏的输出速度很快而且其他的像语音换性活动检测这些它也是用了一些比较成熟的库Ryoutai HDT还新增了AutoTax Recorder Client可以自动的启动并连接服务器CRI的接口也经过重写具体的内容在项目当中也有给出想要使用Ryoutai HDT只需要通过PIP来安装如果你是麦克用户的话那在安装之前首先要先安装好Pode Audio这个通过Brow来安装就可以了安装完装之后你可以通过势力代码来去使用Ryoutai HDT在项目的Tax的文件夹下带了很多的测试样例你可以继续项目给出的测试势力来去实现自己程序使用Ryoutai HDT的实际方法Docflow是一款免费的自兔管PASS平台算为检话应用和数据库的部署而设计无论是开发认员还是企业用户Docflow也可以提供高效便捷的解决方案帮助用户专注在核心业务而非记住设施的管理上如果你还是不理解它到底是做什么呢你可以把它理解成OpenSafe的或者是Hero口简单来说就是帮你更方便的部署系统Docflow也支持多种变成原的部署包括node的JSPHP Pyson Go Ruby的用户可以根据项目的需要来去选择合适的技术站灵活部署应用也支持创建和管理多种数据库比如像买Seko,Postgreisers口,MangoDB的另外它还支持自动辈奋Docercan pose多节点扩展模板部署实施监控并且提供了CRI工具和API在使用场景上Docflow也比较适合中小企业快速部署上限产品或者是个人开发者来去管理自己的项目以及在教育和培训场景中作为部署的付出工具项目提供了一件安装脚本只需要在区域机上执行就可以快速的安装和部署了白走水管开源的轻量级服务器资源监控工具支持对服务器的关键资源进行实实的监控并记录历史数据它通过直观的介面展示CPU内存磁盘IO等关键的指标还支持监控Docer容器的预行状态帮助用户更好的了解容器的性能表现俗尺之外白走还具备高景功能能在系统出现一场时及时的提醒管理员确保系统运行的稳定白走的架构是一个机遇客户端和服务器模型的监控平台由HARB和AZN的组成HARB作为白走的中心服务器用于聚合和展示监控数据AZN的安装在被监控系统上的轻量级程序它负责收集服务器的资源使用情况并将数据发送给HARB白走非常适合中小型服务器的日常监控需要只需要执行项目给促的Docke and Pose文件就可以快速的部署HARB然后再根据HARB当中给出的这个Docke and Pose内容在要监控的服务器上运行就可以启动AZN然后你就可以通过白走去监控这台服务器了Super 5是一款现代化的中端文件管理工具它由沟语员和Bubble T 框架打造不仅速度快而且见面简洁操作直观如果你一直觉得你的中端里的文件管理太过平庸的话那可以试试Super 5它不仅能够让你更高效的管理文件还能让你的中端看起来非常的酷你可以在麦克丽Nex和Windows让安装和使用Superfell麦克丽Nex可以直接运行脚本安装就可以了Windows的话还没有完全支持需要使用PowerSythe的命令安装完成以后直行SPF就可以启动Superfell打开Superfell之后我们可以看到见面飞文件区侧边蓝区处理区元数据区等区域通过不同的安件可以再区域之间切换然后通过快捷件就可以直行文件管理的相关操作了只需要安问号就可以查看相关的快捷件更多的剧己操作我觉得还是自己安装之后去亲自尝试一下吧好了本周的内容就到这里了我们下次再见
