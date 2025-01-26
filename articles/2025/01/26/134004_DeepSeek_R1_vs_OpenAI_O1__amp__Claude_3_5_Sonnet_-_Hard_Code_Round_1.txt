@@ -1,0 +1,75 @@
+Timestamp: 2025-01-26T13:40:04.393167
+Title: DeepSeek R1 vs OpenAI O1 &amp; Claude 3.5 Sonnet - Hard Code Round 1
+URL: https://youtube.com/watch?v=EkFt9Bk_wmg&si=FrEu106mHd22TlHe
+Status: success
+Duration: 7:18
+
+Description:
+**Summary Outline:**
+
+1.  **Introduction:**
+    *   The video compares the coding abilities of DeepSeek R1, OpenAI's o1, and Claude 3.5 Sonnet.
+    *   DeepSeek R1 ranks second on the Aider coding benchmark, just below o1, and above Claude 3.5 Sonnet and DeepSeek 3 on the polyglot benchmark.
+    *   A discrepancy was noted in the Aider benchmark results for Sonnet.
+2.  **Coding Challenge:**
+    *   The challenge is a hard Python exercise called "rest API" from the Exercism platform.
+    *   The exercise requires implementing several endpoints for an IOU API.
+    *   It involves planning, coding, reasoning, and understanding.
+    *   The challenge includes instructions, a class to be implemented, and an Aider prompt.
+    *   The Exercism platform provides unit tests for validation.
+3.  **DeepSeek R1 Performance:**
+    *   R1 was tested using the web UI, since it was not yet supported by Aider.
+    *   R1 demonstrates detailed chain-of-thought reasoning, taking 139 seconds to generate code.
+    *   R1 successfully passed all 9 unit tests in the first attempt.
+4.  **Claude 3.5 Sonnet Performance:**
+    *   Sonnet initially failed all 9 unit tests.
+    *   It failed because it interpreted the payload as an object instead of a string, despite examples in the instructions.
+    *   With feedback, it corrected the error and passed all tests on the second try.
+5.  **OpenAI's o1 Performance:**
+    *   o1 generated code in 50 seconds.
+    *   It initially passed 6 tests and failed 3.
+    *   After receiving the error, it fixed the code, and the updated version passed all 9 tests.
+6.  **Conclusion and Future Testing:**
+    *   DeepSeek R1 was the only model to pass all tests on the first attempt.
+    *   The video presenter plans to test the models side by side on larger codebases.
+    *   Future videos will include tests with Roo-Cline and OpenHands models, and explore coding with CrewAI agents.
+
+**Core Point:** DeepSeek R1 demonstrated superior one-shot coding ability in this specific test, successfully completing a difficult challenge without needing feedback, outperforming both Claude 3.5 Sonnet and OpenAI's o1 which required feedback to succeed.
+
+**Fundamental Point:** While DeepSeek R1 excelled in this particular coding task, all models could ultimately achieve success with feedback, highlighting the ongoing advancement and nuances in AI coding capabilities.
+
+**Overarching Framework:** The content follows a comparative analysis framework:
+* Introduction: Setting up the models for comparison
+* Task Introduction: Specifying the testing parameters
+* Model Testing: Conducting the test and examining the result.
+* Analysis:  Comparing the results and discussing the difference in performances.
+* Future Scope: Announcing more testing and analysis.
+
+<Mermaid_Diagram>
+    graph LR
+    subgraph Models
+      A[DeepSeek R1] -- "First attempt success" --> I[Passed All Tests]
+      B[Claude 3.5 Sonnet] -- "Initial failure" --> C{Feedback Required};
+      C -- "Second attempt success" --> I
+      D[OpenAI o1] -- "Initial partial failure" --> E{Feedback Required};
+      E -- "Second attempt success" --> I
+    end
+    
+    subgraph Challenge
+        F[Exercism "Rest API"]
+        F -->  G[Python Coding Task]
+        G --> H[9 Unit Tests]
+    end
+    
+    I -- "Successful Completion" --> J[Coding Challenge Resolved]
+    
+     style A fill:#aaffaa,stroke:#333,stroke-width:2px
+     style B fill:#f08080,stroke:#333,stroke-width:2px
+     style D fill:#f0e68c,stroke:#333,stroke-width:2px
+     style F fill:#ADD8E6,stroke:#333,stroke-width:2px
+    
+</Mermaid_Diagram>
+
+
+Content:
+Today we'll compare the coding abilities of the Open Source DeepSeek R1 against OpenAI's o1 and Claude 3. 5 Sonnet. R1 gets second place on Aider's coding benchmark just below o1. It ranks above both Claude 3. 5 Sonnet and DeepSeek three on the polyglot benchmark. I saw a discrepancy on the Aider benchmark for the Sonnet results from last year. It was 45 percent and today it's 52 percent, putting it above DeepSeek 3 all of a sudden. Let's get coding. We are going to use a hard coding exercise from a platform used by Aider benchmarks called Exercism, which is a platform which teaches people to code. The exercises are all open source. You'll find the repo URL in the description. We are going to use a hard Python exercise called rest API. The exercise requires some endpoints to be implemented in order to implement an IOU API. This exercise requires planning, coding ability, understanding and reasoning. OpenAI's o1 and Sonnet haven't been able to one shot it. If you go to their repo, under exercises you'll find practice, then a list of all the exercises for the selected programming language. Every folder contains a unit test file which tests the implementation. The idea is not to see the unit tests but implement the logic by following instructions, just like with Leetcode. Every exercise folder has a dot docs subfolder which contains the instructions markdown file. Let's copy the instructions into the Deepseek R1 chat window. Let's copy over the Rest API class which needs to be implemented and the Aider prompt which is used in Aider benchmarks. This video was created before Aider supported Deepseek R1, hence the use of the web UI. We'll just modify the prompt a bit and send it to R1. As we can see, it starts by thinking, just like o1 does. A big difference is that R1 gives much more detail in its chain of thought than o1. R1 thought for 139 seconds, which is impressive for test time compute. Let's save the code to a Python file. Let's rename it so the unit test can find the class. Let's run the unit tests with pytest. This is very very impressive. It got all 9 unit tests to pass. No model ever got this right in one shot. To compare apples with apples, let's give the same coding challenge to Claude 3. 5 Sonnet. I challenge you to try out this exercise and time yourself. Leave a comment with how long it took you to complete the challenge. Sonnet seems to be done, let's copy the code and test it. All 9 tests fail. This is because Sonnet couldn't use the examples to reason that the payload should be a string and not an object. Let's copy the error and let it try to fix it. It seems to understand where it went wrong. If we run the tests with the updated code then all tests pass. It needed some feedback first before getting it right, which might lose it a coding interview. Now let's see how o1 handles the same coding challenge. The more you look at o1's chain of thought, the more you appreciate r1's detailed chain of thought. It took 50 seconds let's copy the code and test it. It has 6 passes and 3 failures. Let's also give o-1 the error, and see if it can fix it. It seemed to have made a balance calculation error. Let's test the updated code. Okay, now all 9 tests pass. I'll of course be testing these models with a larger codebase side by side. I also heard you in the comments section and will test Roo-Cline and OpenHands. I'm also working on multiple videos on coding with CrewAI agents. Subscribe so you don't miss any comparison.
