@@ -1,0 +1,90 @@
+Timestamp: 2025-01-27T16:33:22.178161
+Title: 让美国又慌又酸的DeepSeek R1是怎么炼成的？ T8x0T9UtihA
+URL: https://youtu.be/T8x0T9UtihA?si=yV8alxQ9XtJL91sZ
+Status: success
+Duration: 7:10
+
+Description:
+Okay, here's a summary of the provided text, formatted as requested:
+
+**I. Core Ideas:**
+
+*   **The Rise of Dipstick:** A Chinese company, Dipstick, has developed a powerful AI model, challenging the dominance of OpenAI (OE).
+*   **Dipstick's Models:** Dipstick has released advanced reasoning models, particularly focusing on mathematical and programming problem-solving. They have produced models like A1-Zero, and a more refined A1 model. They also have been able to transfer the knowledge from the A1 model into smaller models while maintaining strong performance.
+*   **Performance Benchmarks:** Dipstick's models have shown exceptional performance in benchmarks like the American Invitational Mathematics Examination (AIME) and Math500, often surpassing the performance of OpenAI's models.
+*   **Cost-Effectiveness:** Dipstick offers its models at significantly lower costs compared to OpenAI, making them more accessible (e.g., 5 USD for equivalent 100 million tokens vs. 60 USD from OE).
+*   **Training Methods:** Dipstick utilizes a combination of pre-training and post-training methods, including reinforcement learning (similar to AlphaGo Zero), and supervised fine-tuning. They have shown a unique ability to let the model develop its own reasoning methods rather than using human strategies.
+*   **Open-Source Approach:**  Dipstick has adopted an open-source strategy, releasing its models and training data, encouraging collaborative innovation. This is a contrast to the typical closed-source approach of many competitors.
+*   **Real-World Example:** The text provides a real-world example where Dipstick's A1 model successfully solved a complex elementary math problem that other models (including OpenAI) failed to solve.
+
+**II. Core Point:**
+Dipstick is a Chinese AI company that has quickly emerged as a serious competitor to OpenAI by offering high-performance reasoning AI models at dramatically reduced costs while promoting open source development and challenging the industry norm of closed technology.
+
+**III. Fundamental Point:**
+The rise of Dipstick and its open-source philosophy signals a potential shift in the AI landscape, where innovative, cost-effective solutions are challenging established industry leaders and promoting collaborative development.
+
+**IV. Overarching Framework:**
+
+The content is framed within a narrative of competition and disruption in the AI landscape. It highlights Dipstick as a significant challenger to OpenAI, focusing on its technological advancements, training methodologies, performance, cost advantages, and open-source approach. The framework shows that this is a battle of technology and ideals, while also showcasing how advancements in the field benefit consumers through lower costs.
+
+**V. Conceptual Map:**
+<Mermaid_Diagram>
+    graph LR
+    subgraph Dipstick [Dipstick Company]
+    style Dipstick fill:#f9f,stroke:#333,stroke-width:2px
+        A[Dipstick] --> B(A1 Zero);
+        A --> C(A1);
+        A --> D(Small Models);
+
+        B --> E[Reinforcement Learning]
+         style E fill:#ccf,stroke:#333,stroke-width:1px
+        C --> F[Supervised Fine-tuning];
+         style F fill:#ccf,stroke:#333,stroke-width:1px
+         C --> G[Reinforcement Learning]
+          style G fill:#ccf,stroke:#333,stroke-width:1px
+        D --> H[Knowledge Transfer];
+         style H fill:#ccf,stroke:#333,stroke-width:1px
+    end
+
+    subgraph Training Methods
+      style Training Methods fill:#afa,stroke:#333,stroke-width:2px
+       E --> I[Self-Play & Optimization]
+       style I fill:#eee,stroke:#333,stroke-width:1px
+        F --> J[Human-Guided Data]
+         style J fill:#eee,stroke:#333,stroke-width:1px
+        G --> K[Iterative Refinement]
+         style K fill:#eee,stroke:#333,stroke-width:1px
+        H --> L[Distillation]
+         style L fill:#eee,stroke:#333,stroke-width:1px
+    end
+    
+    subgraph Performance
+        style Performance fill:#aaf,stroke:#333,stroke-width:2px
+    C --> M[Superior Math & Code];
+       style M fill:#eee,stroke:#333,stroke-width:1px
+        D --> N[Strong Performance on Small Models];
+            style N fill:#eee,stroke:#333,stroke-width:1px
+    end
+    
+    subgraph OpenAI [OpenAI]
+    style OpenAI fill:#ff8,stroke:#333,stroke-width:2px
+    O[OpenAI Models] --> P[High Costs];
+        style P fill:#eee,stroke:#333,stroke-width:1px
+        O -->Q[Less Accessible];
+            style Q fill:#eee,stroke:#333,stroke-width:1px
+    end
+    
+    A --> R[Open Source Strategy];
+      style R fill:#bbf,stroke:#333,stroke-width:1px
+     R --> S[Faster Innovation]
+     style S fill:#eee,stroke:#333,stroke-width:1px
+    
+    O -- Competition --> A
+    P -- Low Cost Advantage --> A
+   Q-- Accessibility -->A
+   
+</Mermaid_Diagram>
+
+
+Content:
+新玩意我们来比一比谁是世界第一的模型人都知道OE是老大还有比赏没实力就别在这儿装大哥小弟懂不懂规矩想用我的模型一个月效监老大两百刀两百块这么贵老子两块钱就要兄弟们玩得开心还有啊模型我全开员放外面了看谁玩得过谁我找你妈师妹来导弹的你你怎么这么说出家本来就是个兵本事啊好你这样子我们很难办啊难办啊我找着别的办法你最近Dipstick又出来先周子了这岁也说就是因为不到20天前才刚发布了刷屏AI界的Dipstick Way 3这才刚过去没几天他们又开员了最新的推理大模型阿姨这回啊这直接出了跟O盆AI的满许版OE白手弯了阿姨在多个推理基准测试中追评了OE在AIME2024也就是美国高中生数学竞赛体的测评中阿姨答对题目的比率达到了近8成在Maf500这样的数学大难体上更是拿下了接近满分的成绩也就是说在数学和编程是两大难体上阿姨已经活托托就是个专家急选手了不仅如此Dipstick还把推理大模型的价格直接从天花板达到了地板同样是出出100万头肯OE需要花费60美金而阿姨却只要辽美金连OE的20分之1都不到没错现在想到一个成立不到两年的中国公司如今进行恐怖如此这次就连因为达到大佬金饭都忍不住感慨在当前这个时代一家非美国公司正建训着OpenAI最初的里面让人工智能研究真正开访推动前沿发展造幅全人类他还不忘炒缝一下Otman要产生影响力有人就喜欢神经系绩工这么草梅计划有人就大的方方的把算法和数据都摆在阳光下那什么是推理模型呢要回答这个问题首先得知道什么是预讯练模型和后讯练模型简单来说一个称之的模型从一开始的同导空空到后面服务人类需要经过预讯练和后讯练两个阶段一开始模型什么都不懂就是一个文盲那就让他阅读大量文字类这些文字可能是明珠小说百克全书也可能是若之八的铁增或者是逼我们的锐质评论总之呢互联网能抓的数据都可能拿来讯练但也不是纯阅读而是会随随机扣掉里面那些字模型来做舔空体时间久了刷得提多了模型就掌握了文字的规律比如说原神后面大概率跟得会是当然不只文字规律专家说了模型可能还顺便掌握了世界的规律这次是一个选择的世界总之呢这个过程就是预讯练但只能做舔空体的模型还不能看火样要想服务人类这个时候就需要给模型选专业了不同的专业就要专公不同的知识比如想让模型当个专业的马农就得让模型刷边成体它的多了模型就变得特别上场变成后面的这个过程就称之为后讯练所以推理模型就是在预讯练模型的基础上通过一些特殊的后讯练方法把预讯练模型改造成上场推理和解数学提的模型那Dipsick的推理模型是怎么训练出来的呢首先他们预讯练了一个模型叫做DipsickV3BASE最近推出的V3和A1ZEROA1都是在这个预讯练模型的基础上调教出来的首先看一下第一个版本的推理模型A1ZERO这个版本的讯练过程看成是暴力美学他们直接拿预讯练模型V3BASE不加任何人公雕助的数据就开始强化学习讯练这种纯强化学习的玩法让人想起当年在危奇界让科学落类的ArphagoZEROArphagoZERO是自己跟自己下棋下的多了就误出了危奇的真地A1ZERO也是类似的路子采用了一种叫做Grop 强化学习算法又给他一对数学体和变成体让他自己做吗怎么解答对了就基于正向激励答错了就让他继续优化策略就这么反风练习下去A1ZERO在卖基准测试中的表现从最初的20%初步提升到了79.8%这个成绩已经超过大多数的人类考生了这个训练方法有意思的地方在于模型解体的思路完全是靠自己穿摩出来的而不是从人类那里学到的在这个训练过程中还出现了有趣的顿物时刻研究人员发现模型在解体的时候有时会突然意识到自己的思路可能有问题然后主动停下来说等等我好像误了就像人类解体吃的思维过程一样这种行为完全是模型自发产生的没有人教他要这么做不过A1ZERO还是有一些小毛病的比如会混用很多种语言回答问题于是DipSix又改进了这个方案他们先是准备了少量带有四维练的训练数据这些训练数据大概是长这样的包括了问题描述推理过程最终答案用这些精心收集的数据对预训的模型DipSix为三倍进行微调之后才像A1ZERO那样用强化学习进行后训练这样的训练方法像当于在旗跑的时候让A1有了一点人类的鲜眼之使而不是完全空白的最终结果就是A1的性能非常接近OE了DipSix还通过真流的方式把A1的能力复制到了更小的模型上他们又A1产生了80万条数据然后去练了一系列的小模型结果发现这些小模型也变得超级聪明比如最小的1.5B模型在AIME上的正确率多能达到28.9%这个成绩已经超过GPD4了前面提到了很多次A1的分数和排名但即使不看这些我也亲眼见见了A1的相当事情是这样的几天前有个朋友发了一个小学的数学题他说这个题已经把全球的大模型都打破了包括OE这个题是这样的看上去不简单是则非常困难我不服气欣赏OE已经后程打败人类装夹了怎么也不能在小学数学题上翻车吧于是我就把题目认给OE他不给答案就算了在我再三追问一下他疯狂分析之后还给了一个扣舞答案后面我又出问了CLOB 3.5和其他模型结果OE例外全都摆下正来直到在A1发布那天我抱着睡一睡的心态又问了一遍A1可以看到A1在思考了很久以后给出了完美的解题过程并且最终给出了正确答案看到这里我彻底被Dipstick圈粉了最后啊我还有一个小感想想说一下和自己分锁这个词最近总是不断出现和最近Dipstick和相像CPU却选择把技术和数据玩完整整的摆在阳光上最看似是把底牌亮出来实则是让全世界的创新者都能参与进来让技术迭代和进步变得更快拍放于开源或许才是破解封锁的那一把钥匙
