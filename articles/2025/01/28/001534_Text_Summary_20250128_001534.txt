@@ -1,0 +1,63 @@
+Timestamp: 2025-01-28T00:15:34.612554
+Title: Text_Summary_20250128_001534
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**1. 核心结论 (Core Point):**  在入侵检测系统中，Mish激活函数相较于ReLU激活函数能提供更高的性能。
+
+**2. 根本结论 (Fundamental Point):** 激活函数在神经网络中至关重要，其选择直接影响模型捕获复杂模式和执行预测的能力。
+
+**3. 总体框架 (Overarching Framework):**
+
+*   **背景:** 深度学习广泛应用于研究领域，并不断发展。
+*   **核心概念:** 激活函数是神经网络的关键组成部分，引入非线性。
+*   **研究重点:** 在入侵检测中，对比Mish和ReLU激活函数在CNN-BiGRU模型上的性能。
+*   **实验结果:** Mish激活函数在三个数据集上均优于ReLU激活函数。
+*   **结论:** 激活函数的选择显著影响入侵检测系统的性能。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph 背景 [背景]
+        A(深度学习广泛应用)-->B(技术持续发展)
+    end
+    
+    subgraph 核心概念 [核心概念]
+        C(激活函数是关键)-->D(引入非线性)
+    end
+
+    subgraph 研究重点 [研究重点]
+        E[入侵检测] -- 在 --> F(CNN-BiGRU模型)
+         F --> G(Mish & ReLU 对比)
+    end
+
+    subgraph 实验结果 [实验结果]
+      G --> H[数据集: ASNM-TUN, ASNM-CDX, HOGZILLA]
+       H --> I{Mish > ReLU}
+    end
+    
+    subgraph 结论 [结论]
+      I --> J(激活函数选择影响性能)
+    end
+    
+  style A fill:#f9f,stroke:#333,stroke-width:2px
+   style B fill:#f9f,stroke:#333,stroke-width:2px
+   style C fill:#ccf,stroke:#333,stroke-width:2px
+   style D fill:#ccf,stroke:#333,stroke-width:2px
+   style E fill:#cfc,stroke:#333,stroke-width:2px
+    style F fill:#cfc,stroke:#333,stroke-width:2px
+   style G fill:#cfc,stroke:#333,stroke-width:2px
+   style H fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#ffc,stroke:#333,stroke-width:2px
+   style J fill:#fcc,stroke:#333,stroke-width:2px
+   
+```
+</Mermaid_Diagram>
+
+
+Content:
+Deep learning is currently extensively employed across a range of research domains. The continuous advancements in deep learning techniques contribute to solving intricate challenges. Activation functions (AF) are fundamental components within neural networks, enabling them to capture complex patterns and relationships in the data. By introducing non-linearities, AF empowers neural networks to model and adapt to the diverse and nuanced nature of real-world data, enhancing their ability to make accurate predictions across various tasks. In the context of intrusion detection, the Mish, a recent AF, was implemented in the CNN-BiGRU model, using three datasets: ASNM-TUN, ASNM-CDX, and HOGZILLA. The comparison with Rectified Linear Unit (ReLU), a widely used AF, revealed that Mish outperforms ReLU, showcasing superior performance across the evaluated datasets. This study illuminates the effectiveness of AF in elevating the performance of intrusion detection systems.
