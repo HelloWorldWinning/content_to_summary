@@ -1,0 +1,81 @@
+Timestamp: 2025-01-29T14:56:48.883587
+Title: Why AdamW matters. Adaptive optimizers like Adam have… | by Fabio M. Graetz | Towards Data Science
+URL: https://towardsdatascience.com/why-adamw-matters-736223f31b5d
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**I. Introduction**
+   *  Adam optimizers are popular for training neural networks, but often don't generalize as well as SGD with momentum.
+   *  A new version called AdamW addresses this by fixing the way L2 regularization (weight decay) is applied.
+   *  The goal is to understand Adam, L2 regularization, and why AdamW improves generalization.
+
+**II. Adam Optimizer**
+    *  Adam adapts step sizes for each weight individually based on gradient changes.
+    *  It keeps track of:
+        *   Moving average of gradients (first moment, 'm').
+        *   Moving average of squared gradients (uncentered second moment, 'v').
+    *  Step size is adjusted using `m / sqrt(v)`:
+        *   Small steps when gradients change rapidly.
+        *   Large steps when gradients are consistent.
+
+**III. L2 Regularization (Weight Decay)**
+    *  The purpose is to discourage large weights, promoting better generalization.
+    *  Standard implementation adds a regularization term to the loss function: `f_reg[x] = f[x] + w'/2 * x²`.
+    *   This is equivalent to weight decay for SGD but not for Adam.
+    *   In SGD, the weight update is `x(t) = (1-w) * x(t-1) - α * gradient`.
+
+**IV. Issue with L2 Regularization in Adam**
+    *  With standard Adam, the regularization term influences both the gradient calculation and the moving averages (m and v).
+    *   This causes the weight decay to be scaled by `sqrt(v)`.
+    *   This means weights with larger gradients are regularized *less*, which is counterintuitive.
+    *  This leads to poorer generalization compared to SGD.
+
+**V. AdamW Solution**
+    *  AdamW applies weight decay **after** the parameter-wise step size adaptation.
+    *   This makes weight decay proportional to the weight itself.
+    *   This avoids having regularization be affected by the moving average of squared gradients.
+    *   AdamW's weight update is:
+        *  Adjust step size with `m/sqrt(v)` first, *then* apply weight decay.
+    *   AdamW achieves better training loss and generalization, competing effectively with SGD.
+
+**Core Point:** AdamW corrects a flaw in standard Adam's L2 regularization, leading to better generalization and competitive performance with SGD.
+
+**Fundamental Point:** Adaptive optimization methods require careful handling of regularization to ensure effective weight decay and prevent unintended scaling effects.
+
+**Overarching Framework:** The content focuses on a problem-solution approach. It identifies a problem with Adam's L2 regularization implementation, explains why it occurs due to the adaptive nature of the algorithm, and offers AdamW as a practical solution with empirical backing for better generalization of the trained model.
+
+<Mermaid_Diagram>
+  graph LR
+      subgraph Optimization Methods [Optimization Methods]
+        A[SGD with Momentum] -->|Generalizes well, slower|C
+        B[Adam] -->|Faster, poor generalization with L2|C
+      end
+    
+      C[Issue: L2 Regularization in Adam] --> D(Regularization impacts gradients and moving averages)
+      D -->E(Weight decay scaled by sqrt(v));
+      E --> F(Undesirable effect);
+       
+      subgraph Solution [Solution]
+        G[AdamW] -->|Weight decay applied after step size adaptation| H(Weight decay only proportional to weight)
+         H -->I[Improved Generalization]
+           I -->  J(Competes with SGD)
+      end
+
+      style A fill:#f9f,stroke:#333,stroke-width:2px
+      style B fill:#ccf,stroke:#333,stroke-width:2px
+      style G fill:#9f9,stroke:#333,stroke-width:2px
+      style C fill:#ffd,stroke:#333,stroke-width:2px
+      style D fill:#ffa,stroke:#333,stroke-width:2px
+      style E fill:#ff7,stroke:#333,stroke-width:2px
+      style F fill:#f77,stroke:#333,stroke-width:2px
+        style H fill:#ccf,stroke:#333,stroke-width:2px
+        style I fill:#9ff,stroke:#333,stroke-width:2px
+      style J fill:#9cf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+When you find yourself in a rocky terrain, take small steps ;) [Mount Sinai, Egypt] Why AdamW matters Adaptive optimizers like Adam have become a default choice for training neural networks. However, when aiming for state-of-the-art results, researchers often prefer stochastic gradient descent (SGD) with momentum because models trained with Adam have been observed to not generalize as well. Fabio M. Graetz · Follow Published in Towards Data Science · 7 min read · Jun 3, 2018 -- 7 Listen Share Ilya Loshchilov and Frank Hutter from the University of Freiburg in Germany recently published their article “Fixing Weight Decay Regularization in Adam“ in which they demonstrate that L2 regularization is significantly less effective for adaptive algorithms than for SGD. They propose an improved version of Adam called AdamW that yields models that generalize much better and is thus able to compete with SGD while training much faster. After reading this summary of the article, you will understand how 1) Adam works, 2) what L2 regularization is and why it is used and 3) why the improved version AdamW results in better generalizing models than standard Adam. 1) Adam Try to imagine minimizing a cost function f of a neural network like walking down a hillside in the mountains: You initialize the weights of your network randomly which translates to starting at a random point on the mountain. Your goal is to reach a good minimum of the cost function (the valley) as quickly as possible. Before each step you calculate the gradient ∇ f (determine in which direction the hillside inclines the most) and take a step in the opposite direction: The new weight x(t) (following the notation of the article) is equal to the old weight x(t-1) minus the gradient times the learning rate α: x(t)= x(t-1) — α ∇ f Following this procedure you will eventually reach the valley (or at least a local minimum), however, you might want to take bigger, more daring steps when walking down a meadow where the gradient does not change much — or smaller steps when climbing down rocks where the gradient constantly changes. Adams does exactly that for you: Big steps when the gradients do not change much and small steps when they vary rapidly (adapting the step size for each weight individually). Let us understand how Adam works (ignore the colored parts for now): Taken from “Fixing Weight Decay Regularization in Adam” by Ilya Loshchilov, Frank Hutter. Adam keeps track of (exponential moving) averages of the gradient (called the first moment, from now on denoted as m ) and the square of the gradients (called raw second moment, from now on denoted as v ) . In every time step the gradient g=∇ f [x(t-1)] is calculated, followed by calculating the moving averages: m(t) = β1 · m(t-1) + (1-β1) · g(t) v(t) = β2 · v(t-1) + (1-β2) · g(t)² The parameters β1 (i.e. 0.9) and β2 (i.e. 0.999) control how quickly the averages decay meaning how “how far into the past you average over the gradients (squared)”. Read the equations the following way: “The new average is equal to 0.9 (or 0.999 for the squares of the gradients) times the old average plus 0.1 times the current gradient”. With each time step, the old gradients are multiplied with 0.9 one additional time meaning that they contribute less and less to the moving average. Please note that in line 9 and 10 the averages are rescaled by (1-β^t) where t is the timestep. To understand why this is necessary, consider the first time step and remember that m(0) and v(0) are initialized as 0. This means that the average after the first time step is m(1) = 0.9 · 0 + 0.1 · g(1) = 0.1 · g(1) . However, the average after the first time step should be exactly g(1), which you get if you divide m(1) by (1–0.9¹)=0.1. We set η=1 for simplicity (learning rate schedule multiplier) and put everything together in line 12: When descending a step “down the hill” the step size is adapted by multiplying the learning rate α with m(t) and dividing with the root of v(t) (let us ignore the hat ^ at this point). x(t)= x(t-1) — α · m(t) / [ sqrt( v(t) ) + ϵ] Remember that the variance of a random variable x is defined as Var(x) = <x²>-<x>² where < > is the expected value. The exponential moving average of the square of the gradients v(t) is called the uncentered variance because we did not subtract the square of the mean of the gradients. The variance quantifies how much the gradients vary around their means. If the gradients stay approximately constant because we are “walking down a meadow”, the variance of the gradients is approximately 0 and the uncentered variance v(t) approximately equal to m(t)² . This means that m(t) / sqrt(v(t)) is around 1 and the step “down the hill” is in the order of α . If on the other hand, the gradients are changing rapidly, sqrt(v(t)) is much larger than m(t) and the step “down the hill” is therefore much smaller than α . Summing up, this means that Adam is able to adapt step sizes for each individual weight from estimating the first and second moments of the gradients. When the gradients do not change much and “we do not have to be careful walking down the hill”, the step size is of the order of α, if they do and “we need to be careful not to walk in the wrong direction”, the step size is much smaller. In the next section, I will explain what L2 regularization is and in the last section, I will summarize the authors’ findings on why Adam with L2 regularization yields models that generalize worse than models trained with SGD and how they propose to fix this problem. 2) L2 regularization and weight decay The idea behind L2 regularization or weight decay is that networks with smaller weights (all other things being equal) are observed to overfit less and generalize better. I suggest that you read Michael Nielsen’s great ebook if you are not familiar with the concept. Of course, large weights are still possible but only if they significantly reduce the loss. The rate of the weight decay per step w defines the relative importance of minimizing the original loss function (more important if small w is chosen) and finding small weights (more important if large w is chosen). If you compare the update of the weights as explained before (new weight is equal to old weight minus learning rate times gradient) x(t) = x(t-1) — α ∇ f[x(t-1)] to the version with weight decay x(t) = (1-w) x(t-1) — α ∇ f[x(t-1)] you will notice the additional term -w x(t-1) that exponentially decays the weights x and thus forces the network to learn smaller weights. Often, instead of performing weight decay, a regularized loss function is defined ( L2 regularization ): f_reg[x(t-1)] = f[x(t-1)] + w’/2 · x(t-1)² If you calculate the gradient of this regularized loss function ∇ f_reg[x(t-1)] = ∇ f[x(t-1)] + w’ · x(t-1) and update the weights x(t) = x(t-1) — α ∇ f_reg[x(t-1)] x(t) = x(t-1) — α ∇ f[x(t-1)] — α· w’ · x(t-1) you will see that this is equivalent to weight decay if you define w’ = w/α. Common deep learning libraries usually implement the latter L2 regularization. However, the article shows, that this equivalence only holds for SGD and not for adaptive optimizers like Adam! In the last section of this post, I will explain why L2 regularization is not equivalent to weight decay for Adam, what the differences between Adam and the proposed AdamW are and why using AdamW gives better generalizing models. 3) AdamW Let us take another look at the Adam algorithm. Taken from “Fixing Weight Decay Regularization in Adam” by Ilya Loshchilov, Frank Hutter. The violet term in line 6 shows L2 regularization in Adam (not AdamW) as it is usually implemented in deep learning libraries. The regularization term is added to the cost function which is then derived to calculate the gradients g . However, if one adds the weight decay term at this point, the moving averages of the gradient and its square ( m and v ) keep track not only of the gradients of the loss function but also of the regularization term ! If we insert line 6, 7 and 8 into line 12 (ignore the hat ^ for now because t is assumed to be large and thus β^t=0 ), the update of the weights looks like this: As you can see the weight decay is normalized by sqrt(v) as well. If the gradient of a certain weight is large (or is changing a lot), the corresponding v is large too and the weight is regularized less than weights with small and slowly changing gradients! This means that L2 regularization does not work as intended and is not as effective as with SGD which is why SGD yields models that generalize better and has been used for most state-of-the-art results. The authors, therefore, suggest an improved version of Adam called AdamW where the weight decay is performed only after controlling the parameter-wise step size (see the green term in line 12). The weight decay or regularization term does not end up in the moving averages and is thus only proportional to the weight itself. The authors show experimentally that AdamW yields better training loss and that the models generalize much better than models trained with Adam allowing the new version to compete with stochastic gradient descent with momentum. This means that in the future researchers and engineers might not have to switch between SGD and Adam as often. Keep this in mind, the next time you train a model :)
