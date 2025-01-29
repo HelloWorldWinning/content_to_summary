@@ -1,0 +1,93 @@
+Timestamp: 2025-01-29T13:03:36.585745
+Title: 我该选DeepSeek还是ChatGPT？10分钟揭秘多语言交易机器人开发
+URL: https://youtube.com/watch?v=maRSfenjzus&si=ON9STBixtKNaUSes
+Status: success
+Duration: 11:47
+
+Description:
+好的，这是对您提供的视频内容的总结：
+
+**I. 核心思想**
+
+*   **对比视角：** 该视频从用户母语的角度出发，对比了 DeepSeek 和 ChatGPT 在解释复杂概念时的表现，而不是常见的模型、费用或速度对比。
+*   **案例分析：** 通过 "创建一个 BTC/USDT 交易机器人" 这个案例，测试了两个 AI 模型在中文和英文环境下的表现。
+*   **用户体验：** 重点关注哪个模型能让用户（特别是编程新手）更容易理解并上手操作。
+
+**II. 总结要点**
+
+1.  **中文环境下的表现：**
+    *   DeepSeek：提供了更详细的思考过程，更清晰的步骤解释，以及更贴近用户需求的建议，包括测试网链接、风险提示和代码示例。
+    *   ChatGPT：思考过程较简单，解释较为笼统，缺乏具体细节和操作指导。
+2.  **英文环境下的表现：**
+    *   DeepSeek：英文解释更详尽，步骤更清晰，提供代码示例，且内容比其中文版更丰富。
+    *   ChatGPT：英文解释相对简单，未提供具体代码或操作指导。
+3.  **母语偏好：**
+    *   母语为中文的用户：更适合使用 DeepSeek，因为它提供了更深入、更易理解的中文解释。
+    *   母语为英文的用户：DeepSeek 和 ChatGPT 均可使用，但 DeepSeek 的英文解释更详细。
+    *   双语用户：可以结合使用两者，通过不同提示来获取更全面的信息。
+
+**III. 结论**
+
+*   **核心结论：** 在解释复杂概念时，DeepSeek 在中文环境中提供的用户体验显著优于 ChatGPT，能更好地帮助中文用户理解和操作。
+*   **根本结论：**  AI模型的选择应考虑到用户的语言环境，DeepSeek在中文支持方面表现出更强的理解和表达能力，因此在母语为中文的场景下更具优势。
+
+**IV. Overarching Framework**
+
+The overall framework is based on **a user-centric evaluation** of AI language models, specifically **DeepSeek and ChatGPT,** focusing on their effectiveness in **explaining complex technical concepts**, using a real-world example of **developing a trading bot**. The evaluation is further broken down by considering the **language background of users**, to determine which tool performs better given a specific linguistic context (Chinese vs English). This user-centric analysis framework can be useful in comparing different AI language models' performances.
+
+**V. Mermaid Conceptual Map**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph User_Context [User Context]
+        style User_Context fill:#f9f,stroke:#333,stroke-width:2px
+        UserLang(User Language) -->|Determines| Model_Choice
+        UserType(Programming Skill)-->|Influences|Understanding
+    end
+
+    subgraph AI_Models [AI Models]
+        style AI_Models fill:#ccf,stroke:#333,stroke-width:2px
+         DeepSeek(DeepSeek) -- "Explanation Quality" --> DetailedExplanation
+         ChatGPT(ChatGPT) -- "Explanation Quality" --> SimpleExplanation
+    end
+    
+    subgraph Task_Context [Task Context]
+        style Task_Context fill:#cfc,stroke:#333,stroke-width:2px
+        ComplexTask[Create BTC/USDT Bot]
+        ComplexTask --> Explanation
+    end
+
+    
+    Explanation --"Provided by"--> DetailedExplanation
+    Explanation --"Provided by"--> SimpleExplanation
+
+     DetailedExplanation --"Includes"-->  {Steps}
+    DetailedExplanation --"Includes"-->  {CodeExamples}
+     DetailedExplanation --"Includes"-->  {RiskAlerts}
+    SimpleExplanation --"Includes"-->{BasicSteps}
+
+    Model_Choice -->  DeepSeek
+    Model_Choice -->  ChatGPT
+    DetailedExplanation --"Preferred by"-->ChineseUsers(Chinese Users)
+     SimpleExplanation --"Preferred by"-->EnglishUsers(English Users)
+    Understanding --"Based on"--> DetailedExplanation
+    Understanding --"Based on"--> SimpleExplanation
+    
+    ChineseUsers -- "Highly Prefer"--> DeepSeek
+   EnglishUsers -- "Can Use" -->DeepSeek
+   EnglishUsers -- "Can Use"--> ChatGPT
+    
+  style DeepSeek fill:#aaf,stroke:#333,stroke-width:2px
+     style ChatGPT fill:#faa,stroke:#333,stroke-width:2px
+     style DetailedExplanation fill:#afa,stroke:#333,stroke-width:2px
+     style SimpleExplanation fill:#caa,stroke:#333,stroke-width:2px
+      style  Explanation fill:#fff,stroke:#333,stroke-width:2px
+        style Model_Choice fill:#fff,stroke:#333,stroke-width:2px
+          style UserLang fill:#fff,stroke:#333,stroke-width:2px
+             style  UserType fill:#fff,stroke:#333,stroke-width:2px
+     style  ComplexTask fill:#fff,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+在这个视频中 我将要分享使用不同母语的人 如何选择 DeepSeek 和 ChatGPT 我相信 你看过许多 DeepSeek 与 ChatGPT 的对比 有的是 AI 模型的对比 有的是费用的对比 有的是速度的对比 但是今天 我想从一个新的角度来对比一下 那就是用户的语言 也就是你的语言 也就是你的母语 结论呢我会放到最后 千万不要错过 首先我们让 DeepSeek 和 ChatGPT 帮助我解释一下复杂的事情 这个复杂的事情就是 创建一个 BTC USDT 的交易机器人 在必然交易所上 对我个人而言 我是一个交易的小白 更是一个程序员小白 我看哪一个能够更让我理解 我就选择哪一个 首先我会先用中文 再用英文来对比一下 我们输入这个提示 创建一个 BTC USDT 交易机器人 在备案交易所进行交易 你点击它就会很快的给你 在这里 它就很快的给我们一个思考的过程 在这里呢 我们要读一下这个长长的内容 为什么我要理解教育机器人 懂得教育机器人 才有可能真正的创建 这里他给我做了一个解释 首先他说 我需要清楚用户的需求到底是什么 他可能有一定的编程基础 但可能对交易所的 API 和交易策略 不太熟悉 所以我需要考虑几个关键步骤 注册 BM 账号获取 ABI 密钥 选择编程语言和库 设计交易策略 实现交易逻辑测试以及部署运行 这是他第一步做的 接下来他 做的事情 他讲到了交易策略 用户呢可能对交易策略不太清楚 比如说均线交叉 均线交叉是一个比较基础的策略 适合入门 但也要提醒用户 任何策略都需要在数据上进行回测 并且实盘交易前要小心风险 这里他提到了交易逻辑 你需要获得编的 API 获取实时数据计算指标 比如 SMA 根据条件来进行下单 需要注意 API 响应和错误 这里 它也告诉了它可能出现的一些问题 比如说网络问题 参数错误导致的程序崩溃 订单类型呢 也需要了解现价单还是试价单 这里还提到了它的一个止损尺盈 在这里是测试部分 你需要进行模拟环境 或者是小额资金的测试 避免重大损失 你可以使用闭眼上的一个测试网 可以在不投入真实资金的情况下 测试机器人 这一个关键点就是测试网 这里也提到了一些高级的问题 比如说网络中断后的重连 如何防治重复下单 如何管理资金和风险 这是用户需要意识到的问题 这里他给了我们一个 更深层次的一个需求 我们提的问题只是简单的一个需求 深层次的需求是这样的 机器人呢 能够自动化运行 无需手动干预 你需要实时的监控和通知功能 你还有止损止盈机制 所有在这些内容中 你需要添加日志通知功能 或者更复杂的风险管理策略 最后呢他告诉我们 加密市场是一个市场 波动的市场 有很大的风险 建议我们逐步完善机器人慢 慢优化机器人啊 不要一开始就追求复杂的一个模型 这是他整个的思维思考过程 我觉得对于我这样的小白来说 非常的有用 这里呢 他首先给我创建了一个简单的 均线交叉 机器人他引用的东西 这是代码 我们可以后面如果需要直接使用 这是初始化交易所连接 配置参数 执行交易 查找账户余额 主循环等等这些 使用前呢 也告诉了我们需要的一个内容 你需要做的事情就是创建 BM 账号 并创建 APM 密钥 需要安装的一个依赖库啊 pandas 你可以修改代码的以下部分 这里他告诉了我们注意事项 有风险管理 建议先用小额资金测试 设置止损止盈 不要使用全部的资金 改进策略有添加日志记录时间 更复杂的策略 添加异常处理 使用实时数据 添加风险控制模块 还有注意事项有 API 的一个调用 网络延迟等等这些 在这里呢 他也给了我们一个测试的一个网络 你可以使用测试网 API 密钥 这里他告诉我们 加密交易存在高风险 你需要注意 这里他直接给了我们一个测试网络 这就是 BM 的一个测试网络啊 这里是数据重置 这是时间的一个笔记 这是一个 API 的一个请求 这是网络的一个 API 用户数据流一般的一个变化 这是时间戳 请求参阅的一些内容服务 你都可以看到 这里就比较详细了 如果你真正测试的时候 你首先做事这一个 还有用户的数据流 固定的一 个 API 你进行测试 这里还有一些端到点的一个内容 这里也告诉了我们如何将资金进入 退出现货测试网络 还有现场测试网络的限制是什么 还有我所有的数据都消失了 发生了什么 这两者的一个区别 还有 RSI API 的一个关键 支持哪种类型的一个 PSA 键 你对我们的 API 如何 这是公要私要 在这里 你可以选择你喜欢的一个语言 进行脚本 也给了我们这是它的一个 API 数字 这些都是非常基础的 一个编程的一个内容 你看一下就非常的有意义 非常的容易理解 我们可以打开切载 GPT 选择这里选择 OE 模型 然后把这个提示发给他 创建一个 BTC USTT 交易机器人 在 BM 交易所 这里呢它首先告诉我们的是 你为什么需要创建交易机器人 这里他也有思考的过程 我们点击 点击之后 你就会发现 他的思考过程非常的简单 没有 DeepSeek 解释的那么清楚 我们可以快速的看一下 你准备的东西啊 账号 API 密钥拍进环境库 还有创建你的第一个交际机器人 这是代码如何改进 有风控策略 日志报告 错误处理 然后给的 5 个可操作的小建议 先在测试环境中演练 有一个专门的测试网络 在 Deepseak 上 它直接给你了一个链接 你可以直接进入这里 它没有直接给是指环境变量 使用虚拟环境 先跑通再优化 做好风险管理 那就给了我们这样的一个内容 你对比之后你就会发现 如果你是中文的一个使用用户 你更喜欢 DBSIG 给我们的内容 我自己是一个中文使用用户 所以我输入下面这个提示 你用大白话再给我记住一遍 解释一遍 这里他就解释了更清楚 这有思考过程 你可以看一下 这个是告诉我们 这个机器人是干什么的 机器人怎么工作 你需要准备什么 风险的提醒点 比喻的理解建议 使用流程 我含上的专门的介绍了一下 风险管理 告诉我们 资金管理最重要的一个原则 就是永远假设这笔钱会全部的赔光 止损止盈 安全绳策略失效的一个风险 技术风险 黑天鹅 人性的一个弱点 实际应用 最后的一个忠告 这次我们先看切的 GPT 上的第一个呢 我们看一下他思考的一个细节 这里你可以看到他的思考细节 特别的简单 你根本没有给你提供多少 思维的一个过程 这里解释是了解挑战 这里解释了为什么需要 BM 以及他的一个步骤 你需要一个 API 创建一个 BM 的一个账户 然后设置你的拍摄环境 连接到边的一个 API 这里是获取 BDC 和 USDT 的数据 基本的一个交易 在你的机器人添加智能 然后选择策略 添加逻辑调度 风险管理可以操作的一个步骤 这里有 5 个步骤 你可以看一下 这是最后的一个想法 提醒我们加密货币交易是有风险的 你看完这个之后的一个感受是什么 其实感觉看跟不看差不多 他只是告诉你 整个步骤怎么做 具体的细节根本上是没有的 我们再来看 DeepSeek 的一个英文的提示 给我们的内容 这里他思考了 39 秒 首先应该做的是 与 BM API 的一个进行交互 设置 API 键 接下来你需要一个 Python 库 最常见的是 Python BM 以及它的安装方法 这里它概述了每个的步骤 获取市场数据 交易策略 订单执行 风险管理 网上机器人的一个测试 错误处理和日志记录 运行这样的 还提到了一个费率 还需要注意是市场订单 所有的一个内容的汇总 这里他没有多少的一个废话 直接就给了我们一种简单的 移动平均线 跨界的一个策略 你去安装的库 安装的一个 BM API 键 这里有网址 你直接可以进入机器人 一个代码 你可以看到主要的一个特点 移动平均线的一个跨界策略 市场订单记录 考虑的增强 风险管理 高级策略 这些和他是差不多的 回测实施之前进行测试 网进行测试 运行机器人 这里他告诉了我们 一个详细的一个内容 我们打开随便一个看一下 这是 API 的一个文档 这里是一个 Python BM 的一个文件 这里是它的一个内容 你可以看一下第一个链接的 这是 Python BM 的一个 Python 文件 你也可以来看一下怎么使用的 接下来 我分享一下我自己的一个结论 如果你的母语是英语 那么你既可以使用 DeepSeek 也可以使用切的 GPT 并且英语的介绍比中文更 详细一些 内容更丰富一些 如果你的母语是中文 那你肯定选择 DeepSeek 如果英语你也懂 中文你也懂 你可以结合两者 使用不同的提示来确认 解释一个复杂的事情 会让你更加有收获 关于使用英语和中文的人 理解交易机器人的视频 我分享完了 如果你有什么样的问题 可以点击下方进行评论 我们下一个视频再见
