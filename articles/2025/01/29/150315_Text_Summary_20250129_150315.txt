@@ -1,0 +1,90 @@
+Timestamp: 2025-01-29T15:03:15.453167
+Title: Text_Summary_20250129_150315
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对所提供内容的总结：
+
+**1. 核心要点 (Core Point)：**
+
+AdamW 优于 Adam-`2 的优势可能源于其“尺度无关性”更新，使其在梯度尺度差异较大的情况下表现更好。
+
+**2. 根本要点 (Fundamental Point)：**
+
+AdamW 可以被解释为一种近端梯度方法的近似，该方法利用正则化项的闭式近端映射，而非仅仅使用梯度信息，同时还具备“尺度无关性”的优势。
+
+**3. 总体框架 (Overarching Framework)：**
+
+本文从优化和实证两个角度分析了 AdamW 的优势：
+    *   理论上，将 AdamW 解释为近端梯度法的近似。
+    *   实证上，研究了 AdamW 的“尺度无关性”及其在深度网络训练中的优势。
+    *   提出了 AdamW 在梯度尺度差异较大的问题中性能更优的假设。
+    *   讨论了该研究的局限性，并指出了未来研究方向。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Adam优化器
+        A[Adam] --> B(Adam-`2);
+        B --> C(AdamW);
+    end
+
+    subgraph AdamW的优势
+        D[理论分析] --> E(近端梯度近似);
+        F[实证分析] --> G(尺度无关性);
+    end
+
+    H[梯度尺度差异] -- 影响 --> I[AdamW vs Adam-`2];
+    I -- 在深度网络训练中 --> J(AdamW更优);
+
+    E -- 解释 --> C;
+    G -- 支持 --> C;
+
+   style A fill:#f9f,stroke:#333,stroke-width:2px
+   style B fill:#ccf,stroke:#333,stroke-width:2px
+   style C fill:#9f9,stroke:#333,stroke-width:2px
+   style D fill:#fcc,stroke:#333,stroke-width:2px
+   style F fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#cff,stroke:#333,stroke-width:2px
+     style J fill:#cfc,stroke:#333,stroke-width:2px
+    style E fill:#cfc,stroke:#333,stroke-width:2px
+    style G fill:#cff,stroke:#333,stroke-width:2px
+
+    linkStyle 0,1,2,3,4,5,6,7,8,9 stroke-width:2px,stroke:#333;
+```
+</Mermaid_Diagram>
+
+
+Content:
+Adam has been widely adopted for training deep neural networks due to less hyperparameter tuning and
+remarkable performance. To improve generalization, Adam is typically used in tandem with a squared `2
+regularizer (referred to as Adam-`2). However, even better performance can be obtained with AdamW, which
+decouples the gradient of the regularizer from the update rule of Adam-`2. Yet, we are still lacking a complete
+explanation of the advantages of AdamW. In this paper, we tackle this question from both an optimization
+and an empirical point of view. First, we show how to re-interpret AdamW as an approximation of a proximal
+gradient method, which takes advantage of the closed-form proximal mapping of the regularizer instead of
+only utilizing its gradient information as in Adam-`2. Next, we consider the property of “scale-freeness”
+enjoyed by AdamW and by its proximal counterpart: their updates are invariant to component-wise rescaling
+of the gradients. We provide empirical evidence across a wide range of deep learning experiments showing
+a correlation between the problems in which AdamW exhibits an advantage over Adam-`2 and the degree to
+which we expect the gradients of the network to exhibit multiple scales, thus motivating the hypothesis that
+the advantage of AdamW could be due to the scale-free updates.
+
+5 Conclusion and Future Works
+In this paper, we provide insights for understanding the merits of AdamW from two points of view. We
+first show that AdamW is an approximation of the proximal updates both theoretically and empirically. We
+then identify the setting of training very deep neural networks without batch normalization in which AdamW
+substantially outperforms Adam-`2 in both training and testing and show its correlation with the scale-freeness
+property of AdamW. Nevertheless, we are aware of some limitations of this work as well as many directions
+worth exploring.
+Limitations First, we only focus on investigating the effects of scale-freeness on Adam-`2 and AdamW, but it
+would be interesting to study scale-freeness more generally. Also, what we showed is just a correlation instead
+of causality thus we did not rule out other possible causes beyond scale-freeness for the success of AdamW.
+Indeed, rigorously proving causality for any such claim is extremely difficult - even in the hard sciences. Note
+that there are papers claiming that adaptive updates have worse generalization (Wilson et al., 2017); however,
+such claims have been recently partly confuted (see, e.g., Agarwal et al., 2020). On this note, despite its
+empirical success, we stress that Adam will not even converge on some convex functions (Reddi et al., 2018),
+thus making it hard to prove formal theoretical convergence and/or generalization guarantees.
