@@ -1,0 +1,101 @@
+Timestamp: 2025-01-30T14:42:18.796271
+Title: Get Started with DeepSeek in 10 Minutes n9Ir-nDZxy4
+URL: https://youtube.com/watch?v=n9Ir-nDZxy4&si=8xlI0Sx5Or3eXDmf
+Status: success
+Duration: 10:08
+
+Description:
+**Summary:**
+
+1.  **DeepSeek Model Access Points:**
+    *   **Hosted Interface (chat.deepseek.com):**
+        *   Requires enabling DeepThink R1 for the R1 model.
+        *   Has search functionality for recent events.
+        *   Experiencing inference and serving issues due to high demand.
+    *   **GitHub Marketplace:**
+        *   Offers DeepSeek R1 and O1 models.
+        *   Slower performance compared to the hosted version due to Azure infrastructure usage.
+    *   **Local Models (Ollama & LM Studio):**
+        *   **Ollama (olama.com):** Allows downloading and running various model sizes. Smaller models (1.5B, 7/8B) are suitable for most users, while larger models (14B+) require more powerful hardware. 67B parameter model requires specialized hardware. Token rate is machine-dependent.
+        *   **LM Studio:** Similar to Ollama but includes a user interface for easier model management.
+        *   Both Ollama and LM Studio can be used offline.
+    *   **Jan:**
+        *   Combines Ollama and LM Studio features.
+        *   Offers a chat interface and local server capabilities for integration with coding IDEs.
+2.  **Application Layer Implementations:**
+    *   **Perplexity:**
+        *   Integrated DeepSeek R1 with reasoning capabilities.
+        *   Excellent at research by combining search and reasoning.
+    *   **Grok:**
+        *   Serves a 70B parameter distilled model with impressive inference speeds (around 275 tokens/second).
+        *   Offers an artifacts feature similar to Anthropic's.
+3.  **Artificial Analysis:**
+    *   Ranks models based on quality, speed, and cost.
+    *   Highlights DeepSeek's fast hosted version but notes potential cost sustainability issues.
+    *   Provides metrics for comparing hosting providers.
+4.  **IDE Integrations:**
+    *   **Continue (VS Code):**
+        *   Offers a cursor-like experience with natural language code editing.
+        *   Can integrate with Ollama, LM Studio, Jan, and other providers.
+    *   **Kite (VS Code):**
+        *   Popular option, not explicitly detailed in the video.
+    *   **Adert (Terminal):**
+        *   Allows building applications with natural language in the terminal.
+        *   Provides coding benchmarks for models.
+
+**Core Point:** DeepSeek's powerful models can be accessed through various avenues, each with unique benefits and trade-offs, including hosted interfaces, cloud platforms, local deployments, research tools, and IDE integrations.
+
+**Fundamental Point:** The choice of how to use DeepSeek is determined by factors such as desired performance, accessibility, privacy, and specific use cases, with local deployment offering control and privacy, while hosted and integrated solutions provide convenience and specialized capabilities.
+
+**Overarching Framework:**  The content outlines the different access and usage methods for DeepSeek models, ranging from hosted interfaces to local installations and integration within coding environments, evaluating these options based on performance, usability, and specific features.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Access_Points [Access Points]
+        A[Hosted Interface] -- "Web Interaction, Search" --> A1(chat.deepseek.com)
+         A -- "Performance Issues" --> A2(High Demand)
+        B[GitHub Marketplace] -- "Model Access" --> B1(DeepSeek R1/O1)
+        B -- "Slower on Azure" --> B2(Azure Infra)
+        C[Local Models] -- "Offline Use" --> C1(Ollama)
+        C -- "Model Size Options" --> C2(Various Sizes)
+       C -- "User Interface" --> C3(LM Studio)
+       C -- "Server Capabilities" --> C4(Jan)
+    end
+
+    subgraph Application_Layer [Application Layer]
+        D[Perplexity] -- "Search & Reasoning" --> D1(Research Focus)
+        D -- "DeepSeek R1 Integration" --> D2(Reasoning Model)
+        E[Grok] -- "Fast Inference" --> E1(70B Model)
+        E -- "Artifacts Feature" --> E2(Quick Rendering)
+
+    end
+     F[Artificial Analysis] -- "Model Comparison" --> F1(Quality, Speed, Price)
+     F -- "Hosting Providers Metrics" --> F2(Latency, Cost)
+     F -- "DeepSeek Speed Analysis" --> F3(Inference Speed)
+
+
+     subgraph IDE_Integration[IDE Integration]
+        G[Continue] -- "Natural Language Editing" --> G1(VS Code)
+        G -- "Local Model Integration" --> G2(Ollama,LM Studio,Jan)
+        G -- "Provider Selection" --> G3(Grok, others)
+        H[Kite] -- "VS Code Option" --> H1(Not Detailed)
+        I[Adert] -- "Terminal Usage" --> I1(Application Building)
+        I -- "Coding Benchmarks" --> I2(Model Performance)
+    end
+
+
+     style A fill:#f9f,stroke:#333,stroke-width:2px
+     style B fill:#ccf,stroke:#333,stroke-width:2px
+     style C fill:#cfc,stroke:#333,stroke-width:2px
+     style D fill:#fcc,stroke:#333,stroke-width:2px
+     style E fill:#ffc,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#fcf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#cfc,stroke:#333,stroke-width:2px
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 stroke:#000,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+ In this video, I'm going to do a quick overview on the different places on where you can get started with deep-seek, whether you want to do research, if you want to use it within a coding context, if you want to just use it locally, I'll show you all of the different options that are available right now. The first one, and this is probably the one that you might have already visited, and this is Chad.deepseek.com. This is the hosted interface where you can interact with the model, so you do have to enable DeepThink R1 to access the R1 model. What's interesting with this model is you can ask it about recent events. You can say, tell me about today's AI news. What it will do is it will actually perform that search functionality for you before feeding it to the model. Now, mind you, one thing that's interesting right now is they seem to be having troubles with actually the inference and serving up the amount of demand right now. I think that is in part why we've started to see a bit of a decrease, especially over the past day, not being able to handle the amount of requests that there are. So GitHub has a marketplace. If you go to git.com slash marketplace, you'll be able to see the different models here. So there's DeepSeek R1, there's O1, you can go in and you can try this. And for instance, just if I show you this, now this is running on Azure's infrastructure. And when you compare this to the DeepSeek hosted model, if you have been able to try it, you will notice this model is very slow in comparison. That's one thing to note, if you are going to be using this through GitHub or on Azure, it does seem at least at time of recording, it is going to be a little bit of a slower option. Now, the next one is going to be for local models. So, Olama is a really great option. You can go to Olama.com, you can pull this down. And to get started for the models, you can go to the models page here. And on the specific DeepSeek R1 page, now there's a number of different sizes of models. If you're less familiar with language models, they're going to come in various sizes oftentimes. Now, what's different with this release is the main R1 model with all of the performance that people are touting and comparing to the O1 model from OpenAI. This is that 671 billion parameter model. This model is not going to run on standard hardware. You're going to have to have NVIDIA GPUs, or you're definitely going to have to have some specialized hardware to be able to run that. So now, in terms of the most common sizes of what you'll be able to likely run on your machine are generally speaking, I'd probably recommend you start somewhere with the SAP variance of the model. You could go as small as 1.5B. Generally speaking, I think most people should be okay with 7 or 8B. Now, if you do have a decent computer, you should be able to run 14B. Now, the one thing that will vary machine to machine is the tokens per second rate will definitely fluctuate a fair bit depending on your machine. Now, if you have a really good machine with a lot of RAM, you should be able to go up a little bit on the spectrum here as well if you want to try some of these more powerful models. Next up, another great option is LM Studio. This is a great one where you can download it on Mac, Windows, or Linux similar to Olamma. But what's different with this is you actually have an interface. As soon as you download it, you'll be able to pull all of the different models that you want from hugging face that are supported. And you'll be able to have this nice little interface and be able to run it all locally. That's the big benefit of both Olamma and LM Studio is you could just turn off Wi-Fi on your computer and no information is going to be sent across the network. You can use these completely offline. So next up is Jan. And I really feel like this one sort of sits in between the capabilities of Olamma and LM Studio. The great thing with this is you have a really nice chat interface, but they've also added the ability where you can use this and serve it up as a server that you can access. Say if you have local applications and you want to integrate, you can just make request to your local server to be able to use those. Where that can be useful is if you're using a coding IDE and you want to make requests to a language model that you have locally, you can do that with things like Jan, LM Studio as well as Olamma. Next, I want to show you a really great implementation within the application layer that came out very quickly. Perplexity rolled out deep-seek R1 seemingly in record time. And what you're able to do with this is if you ask a queries in this, let's just say the news today was opening eye claims deep-seek used its model. What this will do is you will see it will go through the research step. And what's great with perplexity is it's actually built for research by being able to incorporate a quote unquote reasoning model. It can reason about all of the different information that it's searching for and it can go and think through it. So you'll see, okay, let's tackle this query. The user has asked about opening eyes claim that deep-seek used its models. First I need to go through all the provided search results to gather key points, so on and so forth. Then within here we can see these sources and then it gives us this aggregate response with all the citations in line and everything. Kudos to the team perplexity for integrating this. It is definitely a really slick look and being able to use these reasoning models that can access the internet. In my opinion is like the killer use case right now with this model. There's definitely a genteq use cases that I think we're going to see over the coming weeks. But right now the thing that works really well is that search and reasoning capability combined. The next up is grok. So grok is serving up the 70 billion parameter model, which is the second biggest model. You're going to be able to use the model incredibly fast. If I just say write a short story and I'll submit this. This is hosted and served up and what they use to make it so fast is right now at time of recording the inference speed from grok is about 275 tokens per second. And now this is on the 70 billion parameter model. This is a distilled version of that model, which is still very powerful. Just to demonstrate it here, I put out a really quick demo when they put this out and to show you how this can work is this is effectively a clone or a light clone of anthropics artifacts feature. And as you can see here, it is very quick to render everything. It just ran through the answer. It followed all of the system instructions that I've had in place and it was able to give this coherent response without any syntax breaking or anything. Now the next thing within this next where I want to point you and this is definitely a good one to keep your eye on is artificial analysis within artificial analysis. What's great with this is they rank all of the different models across quality speed as well as price. You can see all of the different hosting providers as well as the rate of things like the latency, their particular context window and all of these different metrics such as cost, which do very considerably platform to platform. And what's interesting with this is actually the cost in comparison with the speed across the board for the deep-seek hosted version. Now mind you, this has really been hammered the past several days, but it's going to be interesting to see if they're able to keep the prices this low because it might be a little too much to actually be able to serve up this model, especially with the amount of attention that it has right now. Now in terms of the output speeds for the deep-seek interface, it is actually very fast. It is an interesting question considering what they might actually be doing not just on the training front, but also on the inference front to be able to serve this up on GPUs at a speed like this. Because when you compare it to some of these other providers like Hyperbolic, Sentinel, fireworks together AI, these are all the infrastructure companies that run with NVIDIA GPUs. And for the second best contender to have performance that's less than half of what deep-seek has achieved, it's an interesting question there. On how deep-seek was able to get the inference speed as fast, there are a ton of other metrics here that you can check out. They do track the output speed over time. When a model comes out, you have to see that the API speeds do degrade a little bit, especially after a major release. And this can just be helpful overall for helping you determine what might be a good provider to use or potentially if you're going to be using multiple providers. Next I just wanted to point you to a couple other options. You can set this up in a number of different IDEs right now. One that I personally quite like is continue. You can use this in VS code. And what you'll be able to do with it is essentially have a cursor-like experience where you have this panel on the right hand side and you'll be able to make edits and suggestions to your code with natural language. What's great with this actually is you can integrate it with Olama for instance. I believe you should be able to integrate it quite easily with LM Studio as well as Jan if you like. And what you can do with this is not only just leverage local models, but you could also use a provider like Grop if you wanted, or if you wanted to use any of those providers like I showed you within artificial analysis. Now in terms of some other IDEs, I've had recommendations to check out Klein. This is one that I've heard more and more about. I haven't checked it out myself, so I can't say too much on it just quite yet. But this is an increasingly popular option that people like for being able to use this across a number of different models within VS Code. Now another option that you can try this out in is Adert. Personally, I haven't tried this quite yet, but I know a lot of people do quite enjoy this experience. You'll be able to use this within your terminal and be able to build out your application with natural language. They also have some really great benchmarks for coding on how well these different models perform when they come out. I've definitely touched on those before, but this is another potential option that you could use if you're looking to use it within a coding context. Otherwise, that's pretty much it for this video. I just wanted to show you a number of different options, especially if you wanted to try deep seek, but maybe you haven't been able to try out the deep seek interface quite yet because it is just being hammered by the looks of it. Otherwise, that's pretty much it for this video. If you found this video useful, please like, comment, share, and subscribe. Otherwise, until the next one.
