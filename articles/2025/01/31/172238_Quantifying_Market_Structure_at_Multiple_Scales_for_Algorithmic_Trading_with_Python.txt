@@ -1,0 +1,79 @@
+Timestamp: 2025-01-31T17:22:38.377392
+Title: Quantifying Market Structure at Multiple Scales for Algorithmic Trading with Python
+URL: https://youtu.be/EuFakzlBLOA?si=wtfB4lStsE1OHv1b
+Status: success
+Duration: 8:54
+
+Description:
+好的，这是对您提供的文本的总结：
+
+**1. 核心要点（Core Point）：**
+
+  通过递归地识别和升级市场转折点，可以建立一个多层次的市场结构，从而在不同的时间尺度上组织和量化市场。
+
+**2. 根本要点（Fundamental Point）：**
+
+   使用方向性变化算法（Directional Change Algorithm）作为基础，可以构建一个层级化的市场转折点系统，高层级的转折点比低层级的转折点更具有显著性。
+
+**3. 总体框架（Overarching Framework）：**
+
+   这个内容的核心是分层市场结构的概念，它从最基本的价格转折点开始（0级），然后通过迭代地寻找和升级显著的转折点，构建更高层次的转折点（1级，2级，3级等）。主要步骤包括：
+    * **方向性变化算法：** 用于识别最基础的0级转折点。
+    * **转折点升级：** 基于前一级别转折点，识别更显著的转折点，并升级到下一层级。
+    * **层级结构构建：** 将所有不同层级的转折点组织起来，形成一个清晰的多层次市场结构。
+
+<Mermaid_Diagram>
+    graph LR
+    subgraph  核心概念 [核心概念]
+        A[方向性变化算法] --> B(0级转折点)
+        B --> C{转折点升级};
+        C --> D[1级转折点]
+        D-->E{转折点升级}
+         E -->F[2级转折点]
+        F-->G{转折点升级}
+         G -->H[3级转折点及更高层级]
+
+      style A fill:#f9f,stroke:#333,stroke-width:2px
+       style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#cff,stroke:#333,stroke-width:2px
+         style D fill:#cfc,stroke:#333,stroke-width:2px
+          style E fill:#fcc,stroke:#333,stroke-width:2px
+           style F fill:#cfc,stroke:#333,stroke-width:2px
+            style G fill:#ccf,stroke:#333,stroke-width:2px
+               style H fill:#f9f,stroke:#333,stroke-width:2px
+
+    end
+     subgraph 流程 [算法流程]
+      I[数据输入] -->J{计算平均真实波动幅度(ATR)}
+      J -->K[识别0级转折点(方向性变化)]
+      K-->L{升级显著转折点}
+      L-->M[构建多层级结构]
+    style I fill:#ffc,stroke:#333,stroke-width:2px
+     style J fill:#cfc,stroke:#333,stroke-width:2px
+     style K fill:#cff,stroke:#333,stroke-width:2px
+     style L fill:#fcc,stroke:#333,stroke-width:2px
+     style M fill:#ffc,stroke:#333,stroke-width:2px
+
+    end
+
+      subgraph 应用 [应用]
+       N[交易信号] --> O[止损/入场]
+       N --> P[市场结构分析]
+       N -->Q[未来分析基础]
+      style N fill:#ccf,stroke:#333,stroke-width:2px
+     style O fill:#fcc,stroke:#333,stroke-width:2px
+     style P fill:#cfc,stroke:#333,stroke-width:2px
+     style Q fill:#ffc,stroke:#333,stroke-width:2px
+      end
+  核心概念 --> 流程
+   核心概念 --> 应用
+
+  linkStyle 0,1,2,3,4,5,6,7 stroke:#333,stroke-width:2px
+     linkStyle 8,9,10,11,12 stroke:#333,stroke-width:2px
+     linkStyle 13,14,15,16 stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+in this video I'll show a method to group Market turning points into different levels of significance allowing us to create a hierarchy of turning points so we can organize and quantify Market structure at multiple scales to start we need to find alternating turning points in the market I will use the directional change algorithm to identify them I covered directional change in my previous video but I'll explain it here as I've reimplemented the algorithm in a different way for this video directional change always finds alternating extremes from top to bottom and bottom to top the white lines connect each confirm extreme at this point in time the last confirmed extreme was a bottom so we are currently in an upward move looking for the next top to do this we keep track of the highest price scen since the bottom drawn with an orange line This highest price is the pending Next Top when the next candle comes in we check if it had a high that was higher than the pending top here it did not so we now check if the low of the candle was below the confirmation threshold drawn in blue the confirmation threshold is the highest price minus the average true range the low wasn't low enough to confirm so we continue again no new high and not low enough to confirm on this next candle we did get a higher high so we update the pending High the market continues making higher highs for the next few bars so we continue to update the pending high as they come in finally we don't make a new high and we find a low that goes below the confirmation threshold we can now confirm the top from here we do the same procedure but symmetrically for the lows we keep track of the lowest price since the top this will be our pending bottom we update it whenever a lower price is found if a new low isn't found we check if the high of the candle is above the confirmation threshold the lowest price plus the average true range here the high is above the threshold so we can confirm the bottom now we set up for the next top and start again the code on the left is the heart of the directional change algorithm but now I'll go over the rest of the directional change code I made this data class to store all the information about a local extreme we store the type the price the index and the time stamp of the extreme because we can only identify local tops and bottoms with hindsight I also store the index and Tim stamp of when the extreme is confirmed I implemented the directional change algorithm using this class we have to pick a lookback for the average true range here I'm using one minute Bitcoin data so I opted for a 24-hour look back I wouldn't optimize the look back or think about it too much just use common sense and pick a reasonably long look back for your data to use the class we Loop through all the data and on each new bar called the classes update function the update function starts by Computing the current average true range value if we have less data than the ATR look back we do nothing the first time we have a full look back window we compute the sum of average true range values then on every update after that we add the newest true range value and subtract the oldest true range value to maintain the sum then we divide the sum by the window to get the average true range then we get to the main part of the algorithm what I showed during the visualization when new extremes are confirmed I call this new extreme function it's just a wrapper for creating an instance of that data class and appending it to the list of extremes with this ATR directional change we can find small small scale tops and bottoms directly from Candlestick data most of these extremes are insignificant and possibly just noise but let's hide the price and just look at the extremes so we can take it a step further what if we found a top surrounded by two lower tops or a bottom surrounded by two higher bottoms these topss and bottoms are more pronounced than others a new level or scale of extremes if we find them all and connect to the dots we get this there can be situations where we have two tops in a row without a bottom between them so if we encounter a situation like this I'll upgrade the lowest bottom between the two tops now we can zoom out and hide the previous level of extremes we are left with something very similar and we can just do it again upgrade the tops surrounded by lower tops and upgrade the bottom surrounded by higher bottoms and we could go again and again but I think you get the point we're recursively creating different scales of Market structure I'll refer to the tops and bottoms produced by directional change as level zero and levels 1 two three and so on will be the tops and bottoms found from the prior level I've implemented the hierarchical approach with this class we pass it the number of levels or scales to track and the ATR look back just like the directional change class we just Loop through the data and call the update function on each new bar under the hood the hierarchical extremes class is using the directional change class all the extremes found are stored in a list of lists each list stores the local extreme of its corresponding level the class's update function first calls the directional change update we compare the length of extremes before and after the update to see if we have a new extreme confirmed these functions are called whenever a new extreme at a given level is confirmed we pass the level of the newly confirmed extreme then the index price and time stamp of the current bar let's say we just confirmed a new local top and go over the new top function this function is responsible for upgrading local tops to the next level if it is called on a new level zero top it could potentially add a level one top it is called every time a new local top is confirmed this function is recursive this conditional return will break the recursive Loop once the specif number of levels is reached first we get the newly confirmed top we upgrade tops surrounded by two lower tops so we need at least three to continue since the tops and bottoms always alternate the previous tops will be at the current index minus 2 4 6 and so on so if the current index is less than four we don't yet have three tops to work with we then get the previous top the previous top is the one that could be upgraded the newly confirmed top needs to be lower than the previous next we find the previous extreme at the next level if the last extreme at the next level was a bottom we ensure that the top we are considering upgrading has a higher price now we need to find a top before the one we're considering upgrading the loop is to deal with the case of equal prices most of the time this Loop will only have one iteration this prior top cannot be greater than the one we're considering upgrading we only check tops after the previous extreme at the next level if the prior top has an equal price to the one we're considering upgrading we will move it back so if if there was a true double top with equal prices the first time that high price is reached would be the one to upgrade if we've made it here in the code we can now upgrade this top we copy the local extreme from the previous level and we update the confirmation attributes as confirming an extreme at a higher level takes more hindsight there can be times where we have two upgraded tops in a row without a bottom upgraded in between we must maintain the alternating Behavior so if we do find two upgraded tops in a row we check bottom between them and select the one with the lowest price to upgrade then append that upgraded bottom first and call the new bottom function then after checking for that situation we append the upgraded top and recursively call this function again to check at the next level the new bottom function is nearly identical to what we just went over but all the comparisons are reversed in fact the code was so similar that if you go to gith HUB and look at the code you'll see I made just one function called new extreme with an additional parameter for the type one for Tops negative one for bottoms and they made a helper function that flips the comparison depending on the type we're dealing with here's the algorithm running tracking three levels the white is level zero the directional change extremes blue is level one and purple is level two there is no redrawing once a top or bottom is drawn it is confirmed and remains unchanged notice there is much more delay in identifying extremes at higher levels the purple level two lines are drawn quite a while after the actual top or bottom happens I got this idea from the chapter on Market structure from Larry Williams book long-term secrets to short-term trading my implementation deviates quite a bit from what the book describes but the core idea is the same the book also has a lot of other content and I think it's worth reading all link to it below there are a number of things one could use higher level extremes for such as stops or entry rules and at the very least it looks cool I have a few ideas for future videos that may use this so you should subscribe like the video and comment several times to boost my engagement that's it for this one thanks for watching
