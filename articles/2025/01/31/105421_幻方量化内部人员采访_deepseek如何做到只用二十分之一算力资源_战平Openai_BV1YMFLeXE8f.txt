@@ -1,0 +1,78 @@
+Timestamp: 2025-01-31T10:54:21.263071
+Title: 幻方量化内部人员采访：deepseek如何做到只用二十分之一算力资源，战平Openai BV1YMFLeXE8f
+URL: https://b23.tv/Lf7DAIP
+Status: success
+Duration: 2:17
+
+Description:
+**Summary:**
+
+**I. Core Ideas:**
+
+*   **The Challenge of Managing Large-Scale AI Infrastructure:**  The primary focus is not just acquiring vast computational power (thousands of GPUs), but effectively managing and utilizing it to its full potential.
+*   **Building High-Efficiency AI Infrastructure:**  The goal is to construct AI infrastructure that achieves significantly higher utilization rates than traditional clusters, allowing for easy access to AI training services.
+*   **Iterative Development and Problem Solving:**  The process involves constant experimentation, troubleshooting, and optimization based on user feedback and hardware characteristics.
+*   **Contributing to the AI Community:** Solutions developed are shared with the broader community, showcasing expertise at the forefront of technology.
+*   **Meaningful Impact of AI Work:** The work directly enables the rapid training of AI models across diverse fields, creating a sense of purpose and mission.
+
+**II. Key Points:**
+
+*   **Core Point:** Successfully managing thousands of GPUs involves overcoming significant technical challenges in infrastructure design, optimization, and problem-solving.
+*   **Fundamental Point:**  The goal is to maximize the efficiency and usability of AI infrastructure to accelerate AI development and deployment across various sectors.
+
+**III. Overarching Framework:**
+
+The content describes a cycle of development and improvement within a large-scale AI infrastructure environment:
+
+1.  **Challenge:** The initial challenge is the need to manage a massive amount of computing power (10,000 A100 GPUs).
+2.  **Development:** This entails building an efficient and user-friendly AI infrastructure from the ground up, through iterative design, troubleshooting and optimization.
+3.  **Discovery:** This includes solving complex issues and finding innovative solutions that push the boundaries of AI technology.
+4.  **Impact:**  The result is the acceleration of AI model training and a positive effect across multiple industries, along with contributing knowledge to the wider community.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Infrastructure Design
+        A[Node Topology] --> B(Hardware Optimization)
+        B --> C(Network Configuration)
+         C --> D(Storage Solutions)
+         D-->E(Framework Modification)
+    end
+    subgraph Problem Solving
+        F[Error Identification] --> G(Software Debugging)
+         G--> H(Hardware Troubleshooting)
+        H-->I(Root Cause Analysis)
+         I -->J(Solution Implementation)
+         J-->K[Community Sharing]
+    end
+
+    subgraph Impact
+        L[Rapid Model Training] --> M(Diverse Applications)
+        M --> N(Technological Advancement)
+        N--> O[Sense of Purpose]
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#afa,stroke:#333,stroke-width:2px
+     style G fill:#afa,stroke:#333,stroke-width:2px
+      style H fill:#afa,stroke:#333,stroke-width:2px
+       style I fill:#afa,stroke:#333,stroke-width:2px
+      style J fill:#afa,stroke:#333,stroke-width:2px
+      style K fill:#afa,stroke:#333,stroke-width:2px
+     style L fill:#faa,stroke:#333,stroke-width:2px
+     style M fill:#faa,stroke:#333,stroke-width:2px
+     style N fill:#faa,stroke:#333,stroke-width:2px
+     style O fill:#faa,stroke:#333,stroke-width:2px
+
+   A-->F
+   K-->L
+
+
+</Mermaid_Diagram>
+
+
+Content:
+假如你有1万张A100显卡你将如何去管理使用他们呢?我是换方的AI用工程师刚刚的问题就是我的工作日常这并不是什么算力反而赛虽然社交网站上把上千卡跑一次的大模型调侃为毫门但从我的角度来看要让这个算力巨兽发挥出他真正的战力除了兴奋更多的是挑战他不仅仅是把千卡甚至万卡堆积起来使用这只能说只是个开始而我们团队所需要构建的是双倍甚至于三倍于传统集群使用率的AI基础设施让一行代码就可以轻松调用的AI训练服务想造成这样的事情非常不容易我们也没有前任的经验可以参考从集群节点拓铺结构的设计到拍Touch深度学习框架的改良存储网络通讯、算子优化等等都需要我们自己扎根进去基于硬件的特性不断去试错在内外用户的使用反馈当中去进行碟带和升级比如我入入后不久就碰到的集群升级之后模型训练突然就降速的问题这些任务读取数据非常缓慢Checkpoint也没有保存成功在第8个的过程当中网上也没有任何资料能给我们作为参考我们从软件层的一个个的断点去排查到硬件设备的插把轮换前后几轮复盘之后最终才定位到原来这个问题的原雄是大小两个网络交换机协议冲突的一个问题而最终我们的解决方案也被因为打官方所收录作为案例提供给了其他的开发者也就在那个时候开始让我突然觉得原来我们已经是一个站在了全球技术前演的团队了现在每天有上千个AI大模型在换方银火平台上进行训练服务著金融量化NLP生物分子结构预测自动驾驶等诸多前演场景每当看到模型的训练快速的完成并且跑出经验的效果都会让我觉得大家所做的事情非常有价值有一种AI时代的使命感
