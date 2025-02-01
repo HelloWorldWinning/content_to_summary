@@ -1,0 +1,96 @@
+Timestamp: 2025-02-01T18:22:00.568678
+Title: The buzz over DeepSeek this week crystallized, for
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+1.  **China's Rise in Generative AI:**
+    *   China is rapidly closing the gap with the U.S. in generative AI, evidenced by models like Qwen, Kimi, InternVL, and DeepSeek.
+    *   DeepSeek-R1's performance rivals OpenAI's models, signifying China's advancements.
+    *   This shift is challenging the previous perception that the U.S. held a dominant lead.
+2.  **Open Weight Models and Commoditization:**
+    *   Open weight models like DeepSeek-R1 are commoditizing the foundation model layer, leading to significant price reductions.
+    *   DeepSeek R1's cost is significantly lower than OpenAI's models, highlighting this trend.
+    *   This commoditization empowers application developers and provides greater choice.
+3.  **Beyond Scaling Up:**
+    *   Algorithmic innovations and optimizations are rapidly reducing AI training costs, challenging the sole focus on scaling up.
+    *   DeepSeek's training on less powerful GPUs and optimization shows this approach’s viability.
+    *   There is a shift from simply scaling compute to a more nuanced approach to AI advancement.
+
+**Core Point:**
+The emergence of DeepSeek and other models shows China's rapid progress in generative AI, the commoditization of foundational models through open weights, and the feasibility of AI progress beyond mere scaling.
+
+**Fundamental Point:**
+The landscape of AI is rapidly evolving with China's advancements, open-source model commoditization, and innovative approaches to AI training, which collectively redefine the trajectory of the field.
+
+**Overarching Framework:**
+The overarching framework of this content is the shift in the AI landscape marked by:
+1. Geopolitical competition between China and the U.S. in AI.
+2.  The rise of open weight models which commoditize the foundation model layer
+3.  The innovative approaches to training models at lower costs than solely focusing on increased compute power.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph China's AI Advancement [China's AI Advancement]
+        A[DeepSeek-R1] -- Comparable Performance --> B(OpenAI Models)
+        A -- Represents --> C[Rapid Progress]
+        C -- Impacts --> D(Geopolitical Shift)
+        E[Other Chinese Models] -- Like --> C
+    end
+
+    subgraph Open Model Commoditization [Open Model Commoditization]
+      F[Open Weight Models] -- Contribute to --> G[Foundation Model Commoditization]
+      G -- Lead to --> H(Price Reduction)
+      H -- Enables --> I[Application Builders]
+      F -- Example --> A
+       H -- Example -->J(DeepSeek's cost vs OpenAi)
+    end
+
+    subgraph Beyond Scaling Up[Beyond Scaling Up]
+        K[Algorithm Innovations] -- Drive down --> L(Training Costs)
+        L -- Enabled by --> M(Optimizations)
+        M -- Shown by --> A
+       K -- Impacts -->N(Shift from scaling)
+    end
+
+    D --> O[AI Supply Chain Impact]
+    O --> P[Geopolitical Implications]
+
+    I --> Q[Great Business Opportunities]
+
+    N-->R[Nuanced Approach to AI Progress]
+
+
+    style A fill:#aaddff,stroke:#333,stroke-width:2px
+    style F fill:#ccffcc,stroke:#333,stroke-width:2px
+    style K fill:#ffeeaa,stroke:#333,stroke-width:2px
+    style C fill:#99ddff,stroke:#333,stroke-width:2px
+    style I fill:#aaffaa,stroke:#333,stroke-width:2px
+    style N fill:#ffccaa,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+The buzz over DeepSeek this week crystallized, for many people, a few important trends that have been happening in plain sight: (i) China is catching up to the U.S. in generative AI, with implications for the AI supply chain. (ii) Open weight models are commoditizing the foundation-model layer, which creates opportunities for application builders. (iii) Scaling up isn’t the only path to AI progress. Despite the massive focus on and hype around processing power, algorithmic innovations are rapidly pushing down training costs.
+
+About a week ago, DeepSeek, a company based in China, released DeepSeek-R1, a remarkable model whose performance on benchmarks is comparable to OpenAI’s o1. Further, it was released as an open weight model with a permissive MIT license. At Davos last week, I got a lot of questions about it from non-technical business leaders. And on Monday, the stock market saw a “DeepSeek selloff”: The share prices of Nvidia and a number of other U.S. tech companies plunged. (As of the time of writing, some have recovered somewhat.)
+
+Here’s what I think DeepSeek has caused many people to realize:
+
+China is catching up to the U.S. in generative AI. When ChatGPT was launched in November 2022, the U.S. was significantly ahead of China in generative AI. Impressions change slowly, and so even recently I heard friends in both the U.S. and China say they thought China was behind. But in reality, this gap has rapidly eroded over the past two years. With models from China such as Qwen (which my teams have used for months), Kimi, InternVL, and DeepSeek, China had clearly been closing the gap, and in areas such as video generation there were already moments where China seemed to be in the lead.
+
+I’m thrilled that DeepSeek-R1 was released as an open weight model, with a technical report that shares many details. In contrast, a number of U.S. companies have pushed for regulation to stifle open source by hyping up hypothetical AI dangers such as human extinction. It is now clear that open source/open weight models are a key part of the AI supply chain: Many companies will use them. If the U.S. continues to stymie open source, China will come to dominate this part of the supply chain and many businesses will end up using models that reflect China’s values much more than America’s.
+
+Open weight models are commoditizing the foundation-model layer. As I wrote previously, LLM token prices have been falling rapidly, and open weights have contributed to this trend and given developers more choice. OpenAI’s o1 costs $60 per million output tokens; DeepSeek R1 costs $2.19. This nearly 30x difference brought the trend of falling prices to the attention of many people.
+
+The business of training foundation models and selling API access is tough. Many companies in this area are still looking for a path to recouping the massive cost of model training. Sequoia’s article “AI’s $600B Question” lays out the challenge well (but, to be clear, I think the foundation model companies are doing great work, and I hope they succeed). In contrast, building applications on top of foundation models presents many great business opportunities. Now that others have spent billions training such models, you can access these models for mere dollars to build customer service chatbots, email summarizers, AI doctors, legal document assistants, and much more.
+
+Scaling up isn’t the only path to AI progress. There’s been a lot of hype around scaling up models as a way to drive progress. To be fair, I was an early proponent of scaling up models. A number of companies raised billions of dollars by generating buzz around the narrative that, with more capital, they could (i) scale up and (ii) predictably drive improvements. Consequently, there has been a huge focus on scaling up, as opposed to a more nuanced view that gives due attention to the many different ways we can make progress. Driven in part by the U.S. AI chip embargo, the DeepSeek team had to innovate on many optimizations to run on less-capable H800 GPUs rather than H100s, leading ultimately to a model trained (omitting research costs) for under $6M of compute.
+
+It remains to be seen if this will actually reduce demand for compute. Sometimes making each unit of a good cheaper can result in more dollars in total going to buy that good. I think the demand for intelligence and compute has practically no ceiling over the long term, so I remain bullish that humanity will use more intelligence even as it gets cheaper.
+
+I saw many different interpretations of DeepSeek’s progress here in X, as if it was a Rorschach test that allowed many people to project their own meaning onto it. I think DeepSeek-R1 has geopolitical implications that are yet to be worked out. And it’s also great for AI application builders. My team has already been brainstorming ideas that are newly possible only because we have easy access to an open advanced reasoning model. This continues to be a great time to build!
