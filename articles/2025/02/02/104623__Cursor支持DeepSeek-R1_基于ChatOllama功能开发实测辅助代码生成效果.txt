@@ -1,0 +1,79 @@
+Timestamp: 2025-02-02T10:46:23.514923
+Title: 【Cursor支持DeepSeek-R1】基于ChatOllama功能开发实测辅助代码生成效果
+URL: https://youtube.com/watch?v=O6brLELmOl8&si=rLg4gsGpEb0ez1nz
+Status: success
+Duration: 15:45
+
+Description:
+**Outline and Structured Summary:**
+
+1.  **Introduction:**
+    *   The video introduces DeepSeek, a popular Chinese large language model (LLM).
+    *   DeepSeek is accessible through the official API and platforms like Azure AI Foundry and NVIDIA NIM.
+    *   The presenter focuses on using DeepSeek for coding assistance within the Cursor IDE.
+
+2.  **DeepSeek in Cursor IDE:**
+    *   Cursor, a popular AI code editor, now supports DeepSeek (R1 and V3 models).
+    *   Users can enable DeepSeek models in settings for code development assistance.
+
+3.  **First Scenario: Simple Code Modification:**
+    *   The presenter uses ChatOllama as a test case to demonstrate DeepSeek's coding ability.
+    *   The task: Adjust chunking parameters in ChatOllama when Redis is disabled.
+    *   DeepSeek R1 in normal mode (not agent mode) successfully modified the code by using parameters passed from external.
+    *   This was a simple scenario focusing on a single file, with the majority of code already implemented.
+
+4.  **Second Scenario: Code Refactoring (Complex):**
+    *   Task: Refactor the code to use a TypeScript type for chunking parameters in the `ingestDocument` function.
+    *   This involved: Defining a new type, adjusting the function definition, and modifying usages.
+    *   DeepSeek R1 successfully refactored the code, defined the `chunkSettings` type, updated the function signature, and modified all usages.
+    *   The implementation was successful with the new parameters applied and tested.
+
+5.  **Third Scenario: UI Modification (Failure):**
+    *   Task: Improve the UI for setting up API keys for different providers in the settings page, as screen sharing is not possible with DeepSeek R1.
+    *   DeepSeek R1's attempt at redesigning the UI introduced a non-existent UI component (`UList`).
+    *   DeepSeek struggled to correctly generate front-end code, resulting in a failed UI modification.
+
+6. **Key Takeaways**
+  * DeepSeek R1 can be a reliable coding assistant for simple to moderate code changes.
+  * DeepSeek R1 shows weakness in front-end coding tasks, generating incorrect code and non-existent components.
+  * User should be aware of the limitation of screen sharing when using DeepSeek R1.
+
+**Core Point:**
+
+DeepSeek R1 demonstrates strong capabilities for assisting with code modifications and refactoring, but struggles with front-end UI development tasks due to an incomplete understanding of front-end framework and component libraries.
+
+**Fundamental Point:**
+
+While LLMs like DeepSeek R1 can significantly aid software developers, their performance can vary greatly across different types of development tasks, requiring developers to maintain critical thinking when accepting their code generation suggestions.
+
+**Overarching Framework:**
+
+The content uses a **demonstration-based approach** to evaluate the capabilities of the DeepSeek R1 model in a practical coding context, particularly in the Cursor IDE, by presenting several sequential scenarios that showcase both the strengths and limitations of the model across varying development tasks.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "DeepSeek Evaluation"
+      A[Introduction] --> B(DeepSeek in Cursor);
+      B --> C{Scenario 1: Simple Code Modification};
+      C -- Successful --> D{Scenario 2: Code Refactoring};
+      D -- Successful --> E{Scenario 3: UI Modification};
+      E -- Failed --> F[Key Takeaways]
+      F --> G(Core Point);
+      F --> H(Fundamental Point);
+    end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#fcc,stroke:#333,stroke-width:2px
+    style F fill:#fff,stroke:#333,stroke-width:2px
+    style G fill:#fff,stroke:#333,stroke-width:2px
+    style H fill:#fff,stroke:#333,stroke-width:2px
+     style G  stroke-dasharray: 5 5
+    style H  stroke-dasharray: 5 5
+    linkStyle 0,1,2,3,4,5,6,7 stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+大家好我是小木头 欢迎大家来到我的视频频道 国产大模型 DeepSeek 近期可以说是非常非常的火爆 越来越多的用户开始使用它 众多的 API 服务商 也开始上架这款模型 目前除了通过 DeepSeek 官方 API 咱们还可以通过其他不同的平台 来使用到这款非常好用的模型 其中像 Azure AI Foundry 已经提供了 DeepSeek R1 的访问 另一方面 在 NVDIA NIM 平台上 DeepSeek R1 同样也已经可以使用 在日常的应用中 我用的比较多的 其实还是利用大模型 来辅助我日常的编码工作 那么在 Cursor 中 现在也已经能够使用 DeepSeek 模型 现在我所分享的就是 Cursor IDE 非常流行的 AI 代码编辑器 如果我们点击 Settings 在 Models 这里 应该能够看到 DeepSeek 两款模型 一个是 R1 一个是 V3 我们只要将其启用 这样呢在聊天中 就可以使用这两款模型 来辅助我们的开发工作了 那么在日常的代码开发中 究竟 DeepSeek 模型的辅助开发效果如何呢 今天我就利用 ChatOllama 这款开源项目的日常开发 来做演示 在一些典型的开发场景中 看看 DeepSeek 的表现 相较于日常开发中 咱们最常用的 Claude 3.5 Sonnet 模型 我们来看看 究竟 DeepSeek 模型 是否能够成为 日常的 AI 代码开发中的主力模型 首先呢 我在本地已经运行了当前版本 ChatOllama 简单介绍一下我们的开发场景 在 ChatOllama 的知识库创建这里 近期我新增了分块参数的设置 在 ChatOllama 中 当我们启用了 Redis 那么会使用到父子分块的策略 在这次改动之前 所有的分块参数 都是在代码当中硬编码的 那近期呢 我对这个表单做了改进 允许用户在创建知识库时 手动地来配置父子分块的大小 overlap 等等参数 但是当 Redis 并没有启用时 在 ChatOllama 知识库创建时 咱们就只会对它做简单的一层切分 那么在这层分块中 该用什么样的参数呢 我们首先回到 Cursor 在 Cursor 这里可以看到 启用 Redis 则会使用到父子分块的策略 在父子分块中 也用到了表单中的参数配置 当没有启用 Redis 则会是简单的 一级分块 那这个一级分块呢 分块大小是 3,000 overlap 是 200 这是默认参数 我期望在这一块上能够做一些改进 当用户在表单上 配置了父子分块的参数时 如果没有启用 Redis 我期望的是将子分块的参数 应用到 当前这个 Redis 没有启用的场景中 也就是一级的分块的场景中 那现在呢 咱们就通过 DeepSeek 来看看 是否能够帮助我完成这部分功能 现在呢我们打开 Cursor 的 Composer 在日常开发中 我比较习惯于使用 Composer agent 模式 这样呢能够更加智能地发现上下文 理解代码 帮助我快速地生成代码 那在这里呢 我先将其切换到 DeepSeek R1 在 agent 模式之下 我在这里也是关联到的 index.ts 这正是目前我所打开的这个代码 好了我在这里呢 将模型切换到 DeepSeek R1 并且使用 agent 模式 我们来试试看 很可惜的是 composer 当中 agent 模式目前看起来呢 并不支持利用 Cursor 来驱动 也就是说 目前呢 它还只能使用 Anthropic 或者 GPT-4o 的模型 因此呢我们不得不尝试 看来切换到 normal 模式 或者使用 ChatOllama 我们来切换到 normal 模式看一下 在 normal 模式之下 它就可以进行交互 这是非常典型的 DeepSeek 模型的响应 它有一个非常长的思考的过程 以 think 这个标签开始 有兴趣的同学呢 也可以阅读一下这个过程 这帮助大家理解模型是如何思考的 如何实施的代码修改呢 还蛮有帮助的 来看看它的代码改动 它用到了 child chunk overlap child chunk size 这两个参数呢 来看看是在哪里 这两个参数是在外部 通过参数传递进来的 这正是我期望它使用的参数 那至少在这个功能点上 它的代码修改和 理解呢是没有问题的 当然这个场景呢 是一个非常简单的场景 引用到的代码上下文呢 就是单一的代码文件 同时呢绝大多数功能代码已经实现 我们只需要做有限的代码改动就好 那模型呢 也很好地识别到这一块 现在我点击 accept all 就可以应用到代码仓库中 接下来我们尝试一个 略微复杂一些的开发场景 首先呢 对这个代码的现状做个简单的介绍 当知识库创建时 会将分块参数与其他参数一起 提交给 API 那在目前分享的 这个知识库创建 API 的实现中 关于文档注入这里呢 调用的函数 ingestDocument 目前是将所有参数 罗列为了函数的参数 好处呢是非常直观 开发起来也很快 问题是参数列表会显得非常的长 其实 我是期望能够以一个新的 TypeScript 类型 来定义分块部分的参数 将其作为一个单一的变量 定义在 ingestDocument 这个函数里 那这就是一个改动呢 代码重构级别的任务 涉及到了定义新的 TypeScript 类型 同时需要将 ingestDocument 函数的定义 做一番调整 将参数呢做一番替换 接受一个新的分块参数类型的变量 最后呢将用到 ingestDocument 函数的代码 做一番调整 这就是需要做的改动 那现在咱们打开聊天 目前我还是使用的 Composer 模型 修改为 R1 因为目前无法使用 Agent 模式 因此呢在这里咱们还是只能使用 Normal 大家注意 在使用 DeepSeek R1 模型的时候呢 是没法上传图片的 只有在像 Claude 3.5 Sonnet 是允许上传图片 这是目前使用 DeepSeek R1 的局限性 咱们还是切换到 R1 将这个问题提交 要注意我在这里 只关联到了 知识库创建 API 的代码文件 并没有关联到其他像 ingestDocument 函数 以及类型定义的代码部分 可能有同学也注意到了 在这里模型会时不时地跳回到 Claude 3.5 Sonnet 我将其还是再度切换回 R1 及时提问 非常典型的 DeepSeek 模型的响应模式 它有一个长长的思考过程 这在 类型这里定义了 chunk settings 并将刚才我期望的几个参数呢 移到了这个类型中 这应该是一个正确的改动 接下来呢 它是来更新 ingestDocument 函数 函数签名和使用都会调整 首先呢是引入 chunk settings 这个类型 然后将参数列表中的方块参数 替换成 chunk settings 接下来看看它后面还做了什么改动 在 createRetriever 这个函数这里 将平铺的参数 替换成 chunk settings 类型变量的字段 接下来是对 post 请求这里做调整 不再传递 直接将 chunk settings 传递给 知识库的创建 这样呢应该就完成了必要的改动 我们可以点击 accept all 将这些改动呢应用到代码仓库中 接下来咱们最直观的做法 就是在知识库的创建这里 实际的测试一番 刷新页面 我们可以创建一个新的知识库 比如说 LangChain 我们就用到 OpenAI 的 embedding 3 large 在这里我们来做一些调整吧 比如咱们将副文档块设置为 2,400 子文档块呢 1,200 parent K6 child K12 选择一个文件 我选择的是 PDF R1 这个论文的 PDF 点击保存 看起来呢 这个副块的参数呢是每 1,000 递增 看来 并不能够使用到 2,400 这么一个数据 那我将其指定为 2,000 吧 子文档分块呢 800 Child K 参数呢 不能大于 10 那我在这里还是改成 10 吧 这些约束呢 是目前在我的表单当中指定的这部分 当然咱们可以后续去做一些调整 也可以放开这些限制 允许用户任意地去做设置 目前知识库创建就完成了 我们可以点击这个更新编辑按钮 回看一下 这正是刚才咱们配置的一系列的参数 看起来呢 一切工作正常 控制台这里来看看 也没有出现任何的错误 看起来这个改动呢 也是能够符合咱们需求的 还是蛮不错的 最后 我希望做的改动是涉及到 UI 方面 因为在 R1 模型的使用中 咱们无法上传截图 这使得与模型的交流中 呃少了一种非常有效手段 常见的方式呢 我会通过屏幕截图的形式 并将图片交给模型 告诉它目前的 UI 是什么情况 我期望它改造成什么样 但是既然现在偶尔不支持截图 那我们只能通过描述的形式来 在设置这里咱们可以配置 OpenAI Anthropic Gemini Groq 等等不同的服务供应商的 API key 也可以配置 Ollama 的服务器 当前展示呢 看起来其实并不是特别的友好 也不是大家最习惯的一种方式 每一个模型或 API 供应商呢 通过一个按钮的形式罗列出来 我希望能够改进这一块 能够有一个更好的用户体验 那我通过描述的形式 看看 DeepSeek 是否能够帮助我 很好地在 UI 方面 也做一些代码的优化工作 依然创建一个新的会话 当然了为了方便它 能够更好地帮助我完成任务呢 我在这个聊天 这里还是会 关联到当前这个 UI 组件 也就是设置服务 在这里面 列出了一系列的模型的按钮 这也是刚才咱们在页面上看到的 我来告诉他该做什么 我还是切换到 Composer 打开个新的会话 将我刚才的描述呢交给他 目前所有的服务器 是以一行按钮的形式列出来的 从用户体验上来讲呢 这并不是一个最好的设计 因此呢 我希望他给我一个更好的设计 来列出这些服务器 模型依然切换到 R1 因为没法儿使用截图 这刚才咱们介绍了 我们只好通过文字的形式来描述 那现在我将这个问题交给他 还是非常传统的问答模式 DeepSeek 模型呢 会有一个思考的过程 我们直接等待它最后给到我们的代码 我们在左边直接看代码的改动吧 因为这个 UI 代码改动看起来呢好像 蛮大的 大家可能注意到了 在左下角模型列表这里 又跳回到了 Claude 3.5 Sonnet 不过根据刚才问答的效果来看呢 应该这个回答是 DeepSeek R1 给到的 回答这个模型切换呢 其实并不是那么的显眼 因此呢 大家在使用的时候还是需要注意的 我们来看看改动吧 这个改动其实蛮大的 这个改动呢 咱们就没法直接的评估修改效果如何 我们只能通过测试 在页面上来看 直观的效果 那我们现在呢 就接受这个改动 然后回到页面上直接看效果吧 当然他刚才也提到了 我们需要在设置当中添加这两个字段 这两个字段呢 是在咱们的国际化的配置文件中 我们暂时就先不 添加这两个字段 我们直接看页面上 服务器的效果 在这里有个加号 可以创建一个新的服务 在上面呢是预定义的服务 在界面上 我们没有看到任何预定义好的服务 比如 OpenAI 和 Anthropic 的配置 原来是有的 现在在这里呢并没有列出来 那么打开控制台 来看控制台中的信息 首先呢 UList 这个组件并没有能够解析识别 这个呢 是在代码改动中新引入的单一参数 究竟有没有这个组件呢 我们需要到 Nuxt UI 这里来查阅一下 我用的呢 就是 Nuxt UI 的组件库 那么通过 Nuxt UI 的组件文档可以看到 并没有 UList 这么一个组件 因此呢在生成的 UI 代码当中 这么一个实现呢 似乎是不正确的 那今天的咱们的代码实战呢 就先做到这里 通过几个应用场景 前两个应用场景 主要是以功能代码的修改为主 从实际的测试来看呢 代码理解还是不错的 虽然没法使用到 Cursor Composer 的 Agent 模式 但是在普通模式下聊天呢 还是能够对代码进行理解 帮助我完成代码的改动 但是在前端 UI 代码的改动上呢 就会存在一些问题 DeepSeek R1 似乎对于一些主流的前端开发 比如像 Nuxt.js 或 Next.js 以及它们相关的 UI 组件呢 理解还不足 在实现代码时可能会产生幻觉 会利用到一些并不存在的组件 来构建前端的 UI 有兴趣的同学赶紧来尝试一下吧 目前 Cursor 已经支持 DeepSeek 模型了 那咱们就下次视频分享 再见同学们拜拜
