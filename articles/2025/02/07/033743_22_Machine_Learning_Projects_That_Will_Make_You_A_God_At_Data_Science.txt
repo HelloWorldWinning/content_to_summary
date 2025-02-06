@@ -1,0 +1,158 @@
+Timestamp: 2025-02-07T03:37:43.507648
+Title: 22 Machine Learning Projects That Will Make You A God At Data Science
+URL: https://youtube.com/watch?v=QlbyGPVaRSE&si=BLPI_P2NJpem8Eky
+Status: success
+Duration: 14:03
+
+Description:
+**Summary:**
+
+**I. Project Categories & Progression:**
+
+*   **Beginner:**
+    *   Exploratory Data Analysis (EDA)
+    *   Iris Flower Classification
+    *   Linear Regression (from scratch)
+    *   Titanic Survival Prediction
+    *   Housing Price Predictor
+    *   Image Classification (Cats vs. Dogs)
+    *   Sentiment Analysis
+    *   Customer Churn Prediction
+    *   Stock Price Predictor
+*   **Intermediate:**
+    *   Neural Network (from scratch)
+    *   Real-time Face Recognition
+    *   Recommendation System
+    *   Automated ML Pipeline
+    *   Language Model (from scratch)
+    *   A/B Testing Framework
+    *   Image Generation System
+    *   Multilingual NLP Pipeline
+    *   Reinforcement Learning (Games)
+    *   Real-time Fraud Detection
+*   **Advanced (10x Data Scientist):**
+    *   Build Your Own AutoML
+    *   MLOps Pipeline
+    *   Distributed ML System
+
+**II. Evaluation Metrics (for each project):**
+
+*   Difficulty (1-10)
+*   Resume Value (1-10)
+*   Learning Value (1-10)
+*   Real-World Impact (1-10)
+
+**III. Core Ideas Learned:**
+
+*   Data preprocessing & cleaning
+*   Feature engineering & selection
+*   Model selection & tuning
+*   Understanding different algorithms (linear regression, decision trees, neural networks, etc.)
+*   Handling specific data types (time series, images, text)
+*   Deploying models to production (MLOps)
+*   Working with imbalanced datasets
+*   Statistical testing and experiment design
+
+**IV. Concluding Sentence(Core Point):**
+The content provides a structured roadmap of machine learning projects, categorized by difficulty, to help learners progress from beginner to advanced levels while building a strong portfolio.
+
+**V. Concluding Sentence(Fundamental Point):**
+Mastering a diverse range of machine learning projects is essential for developing practical skills and building a portfolio that demonstrates expertise to potential employers.
+
+**VI. Overarching Framework:**
+The content introduces a tiered learning approach in machine learning through project-based learning, starting from basic concepts and gradually advancing to more complex and real-world applications.
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Beginer Projects
+    A[Exploratory Data Analysis] --> B(Iris Flower Classification)
+    B --> C{Linear Regression}
+    C --> D[Titanic Survival Prediction]
+    D --> E(Housing Price Predictor)
+    E --> F{Image Classification}
+    F --> G[Sentiment Analysis]
+    G --> H(Customer Churn Prediction)
+    H --> I{Stock Price Predictor}
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#f9f,stroke:#333,stroke-width:2px
+     style E fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Intermediate Projects
+    J[Neural Network] --> K(Real-time Face Recognition)
+    K --> L{Recommendation System}
+    L --> M[Automated ML Pipeline]
+    M --> N(Language Model)
+    N --> O{AB Testing Framework}
+    O --> P[Image Generation System]
+    P --> Q(Multilingual NLP Pipeline)
+    Q --> R{Reinforcement Learning}
+    R --> S[Real-time Fraud Detection]
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+    style N fill:#ccf,stroke:#333,stroke-width:2px
+    style O fill:#ccf,stroke:#333,stroke-width:2px
+    style P fill:#ccf,stroke:#333,stroke-width:2px
+    style Q fill:#ccf,stroke:#333,stroke-width:2px
+    style R fill:#ccf,stroke:#333,stroke-width:2px
+    style S fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Advanced Projects
+    T[Build Your Own AutoML] --> U(MLOps Pipeline)
+    U --> V{Distributed ML System}
+    style T fill:#bec,stroke:#333,stroke-width:2px
+    style U fill:#bec,stroke:#333,stroke-width:2px
+    style V fill:#bec,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Evaluation Metrics
+    W[Difficulty]
+    X(Resume Value)
+    Y{Learning Value}
+    Z[Real-World Impact]
+    end
+
+    A --> W
+    B --> W
+    C --> W
+    D --> W
+    E --> W
+    F --> W
+    G --> W
+    H --> W
+    I --> W
+    J --> W
+    K --> W
+    L --> W
+    M --> W
+    N --> W
+    O --> W
+    P --> W
+    Q --> W
+    R --> W
+    S --> W
+    T --> W
+    U --> W
+    V --> W
+
+    W --> X
+    X --> Y
+    Y --> Z
+
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 stroke-width: 1px;
+    linkStyle 22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 stroke-width: 1px;
+    linkStyle 44,45,46,47 stroke-width: 1px;
+</Mermaid_Diagram>
+
+
+Content:
+you know what's both awesome and terrifying about machine learning you can basically teach computers to do anything but here's the problem most people get stuck building the same boring projects over and over you know that Titanic data set that everyone and their grandma has used you get that late night motivation where you're ready to build the next chat GPT killer but then you end up staring at your screen wondering where to start don't worry though I've got you covered with 22 machine learning projects that go from Total beginner to AI wizard and no they're not all just sentiment analysis projects they will be more or less in order but not fully to keep you on your toes and not at all for my Channel's watch time before we start I'll rate each project on four things how difficult it is how impressive it looks on your resume how much you'll actually learn in real world impact I will also leave some GitHub links in the description none of this is super original I just wanted to make my own list exploratory data analysis portfolio yeah we're starting with the basics but stay with me think of as your machine Learning Foundation it's like going to the gym everyone wants to lift the heavy weights right away but you got to start with the fundamentals I'll rate this a two out of 10 for difficulty because it's basically just making pretty charts but make them really pretty please a three out of 10 for resume worthy because while everyone has one a good Eda portfolio still stands out especially if you apply to more business leaning positions like data analytics learning value a solid five out of 10 because you'll understand what data scientists actually do 80% of the time cleaning messy data and making charts that business people can understand impact four out of 10 because these skills apply to every project you'll ever do and you can show it to your mom Iris flower classification the hello world of machine learning now I know what you're thinking why are we getting excited about flowers but trust me this project is a ride of passage in the ml world it's like learning to ride a bike but instead of falling off you're just going to mix up some virginas and versy colors you'll learn how to use different algorithms like decision trees random forests and support Vector machines plus you'll figure out which one works best spoiler they all work pretty well on this data set and that's why we start with it the best part this data set is clean and simple no missing values no weird outliers I wish all data sets were this nice I'll rate this a 2 out of 10 for difficulty because it's about as easy as it gets an ml two out of 10 for resume value because everyone's done it but hey you got to start somewhere 6 out of 10 for learning value because you'll understand the fun of classification and three out of 10 for impact unless you're really into botony Quick tip don't skip the visualization part plot those features make some Scatter Plots it's one of the few data sets where you can actually see why your model makes certain decisions trust me that won't happen often in your ml Journey also you can show it to your mom who probably loves flowers build your own linear regression wait what why are we jumping to this already because if you can understand the basics of how machine learning works good luck explaining to your boss why you're deep learning model is making weird predictions you'll build linear regression from scratch no psychic learn allowed trust me when you're debugging a neural network at 2 a. m. someday you'll thank me for making you learn this difficulty 5 out of 10 resume value 6 out of 10 because it shows you actually understand what's happening under the hood and learning value 9 out of 10 I'll give it a six out of 10 for impact because understanding how models actually work under the hood will save you countless hours of debugging in your career Titanic survival prediction time for a classic we're going to predict who survived the Titanic now I know what you're thinking another Titanic project but there's a reason why this is data science's favorite disaster sorry Hindenberg this will feel much more like a real data set than the flower project you'll learn how to handle missing data turns out recordkeeping wasn't great in 1912 create features that actually make sense like combining family siiz data and why being rich really improved your chances of survival surprise difficulty 3 out of 10 resume value three out of 10 because everyone's done it learning value 7 out of 10 and impact four out of 10 because these skills apply to any real world classification problem housing price predictor my favorite prediction example project let's build something that every tech company seems to need a system that can predict housing prices but don't worry we're not going to be responsible for the next housing bubble probably you'll learn about regression analysis why the number of bathrooms matters more than you think and why your model keeps thinking every house in San Francisco is worth millions spoiler because they are you'll also learn about feature selection turns out your House's color probably doesn't affect its price as much as its location difficulty 3 out of 10 resume value 4 out of 10 learning value 7 out of 10 and impact 5 out of 10 because everyone needs to live somewhere do my ratings seem arbitrary yet image classification system before we jump into a fancy face recognition let's start with something more fundamental teaching a computer to tell the difference between cats and dogs trust me it's harder than it sounds you'll build your first convolutional neuronet learn why image pre-processing is crucial your model doesn't care how cute the cat is and probably spend hours wondering why your model thinks everything is a cat spoiler check your training data balance if you don't know what that means check my video on beginner mistakes difficulty 6 out of 10 resume value 7 out of 10 learning value 8 out of 10 and impact 8 out of 10 because computer vision is everywhere these days and you can definitely show this to your mom she loves either cats or dogs right sentiment analysis system so yes I just made fun of it but of course we still want to do some mainstream stuff but we're not just going to use pre-trained models you're going to build something that actually works on real world text like analyzing product reviews or Twitter posts the trick here isn't just throwing Bert at everything though we'll use that too you'll learn about text pre-processing handling different languages and dealing with Emojis yes they matter difficulty 5 out of 10 resume value 7 out of 10 because companies love NLP projects learning value eight out of 10 and impact 8 out of 10 because this is something you can actually use in the real world and you want to build the next chat GPT right got to start somewhere customer churn predictor this one's a business favorite and for good reason instead of just playing with random data sets you'll build something that could actually save a company Millions you'll predict which customers are about to leave before they actually do the cool part you'll learn to handle imbalanced data sets because surprisingly not everyone quits a service at the same time work with real business metrics and maybe even use some fancy techniques like SME difficulty four out of 10 resumé value 6 out of 10 because businesses love this stuff learning value 7 out of 10 and impact 7 out of 10 because who doesn't want to be the person who saved their company Millions stock price predictor now before you run off to become a millionaire remember if this worked perfectly we'd all be rich but it's still an amazing project to learn from you'll work with time series data which is a whole different Beast than regular data sets believe me you learn about Trends seasonality and why you model can't predict Market crashes plus you'll finally understand what people mean by feature engineering when they're working with time series difficulty 6 out of 10 rume value 7 out of 10 learning value 8 out of 10 and impact 8 out of 10 just don't bet your life savings on it build your own neural network this is where things get spicy no tensor flow no pie torch we're building this bad boy from scratch you'll finally understand what's actually happening in all those fancy AI papers you've been pretending to read you'll Implement back propagation yes with all all the math create different layer types and probably debug matrix dimensions for hours but trust me it's worth it difficulty 8 out of 10 the math is um fun resume value eight out of 10 learning value 10 out of 10 because you'll actually understand deep learning and impact eight out of 10 two points off because your mom won't care real time face recognition system now we're getting into the cool stuff you'll build a system that can recognize faces in real time it's like building your own Instagram filter but actually useful this might seem daunting but you can reuse a lot of the skills and even some code from earlier projects here you'll learn about computer vision deep learning and why your webcam feed keeps crashing plus you'll understand why your phone's face ID sometimes doesn't recognize you at 700 in the morning difficulty 8 out of 10 resume value 9 out of 10 companies love this learning value 9 out of 10 and impact 9 out of 10 if you can make it recognize your mom's face okay I think I'm done with this joke now now recommendation system ever wonder how Netflix knows you'll like that weird documentary about competitive cheese rolling time to build your own recommendation system you'll learn about collaborative filtering content-based recommendations and why users who bought this also bought that isn't as simple as it sounds difficulty 6 out of 10 resume value 8 out of 10 learning value 8 out of 10 and impact 9 out of 10 because this stuff is actually used everywhere automated ml pipeline this is where we enter the realm of ml engineering you'll build a system that can automatically select features choose models and tune hyperparameters it's like teaching a computer to do data science a real taste of ml engineering warning you might feel like you're automating yourself out of a job but don't worry someone needs to build these systems difficulty 7 out of 10 resume value 9 out of 10 learning value 9 out of 10 and impact 9 out of 10 language model from scratch no we're not building the next GPT yet but we are going to create something that understands text starting from simple and s all the way to a basic Transformer architecture the best part after this you'll actually understand those Transformer architecture diagrams instead of just nodding along pretending you do difficulty n out of 10 those attention mechanisms aren't going to implement themselves resumé value 9 out of 10 learning value 10 out of 10 and impact 9 out of 10 AB testing framework not as flashy as deep learning but probably more useful in your first job you'll build a system that can actually tell if you're ml models are making things better or if you're just fooling yourself with fancy metrics you'll learn about statistical testing experiment design and why it looks better isn't a valid metric difficulty 7 out of 10 resume value 8 out of 10 learning value n out of 10 because you'll see the power no pun intended of Statistics in the real world an impact eight out of 10 because this is what real data scientists do all day image generation system no we're not building mid Journey quite yet but we are going to create something that can generate images we'll start with basic ganss and work our way up to something that can actually create recognizable pictures fair warning you'll spend a lot of time looking at weird distorted images before getting anything good but that's part of the fun difficulty 9 out of 10 resume value 8 out of 10 unless you're applying to an AI art company learning value 9 out of 10 and impact eight out of 10 multilanguage NLP pipeline here's a real world challenge build a system that can understand and process text in multiple languages because news flash not everyone speaks English you'll learn about multilingual embeddings translation systems and why Google translate sometimes gives you hilarious results difficulty 8 out of 10 resume value 9 out of 10 especially for global companies learning value 9 out of 10 impact 9 out of 10 reinforcement learning game time to build an AI that can learn to play games start with something simple like pong then work your way up to more complex games you'll learn about reward systems policy gradients and why your AI keeps finding weird exploits in your game rules difficulty 8 out of 10 resume value 7 out of 10 learning value 9 out of 10 and impact 8 out of 10 plus it's just really cool to watch your AI learn real-time fraud detection system here's where we combine fast data processing with machine learning you'll build a system that can spot suspicious transactions before they happen it's like being a cyber detective you'll learn about handling imbalanced data because thankfully most transactions aren't fraud feature engineering for financial data and why accuracy is a terrible metric for fraud detection difficulty 8 out of 10 resume value 9 out of 10 learning value 9 out of 10 impact 10 out of 10 and now for the 10x data scientist projects build your own automl ever use tools like Google's automl or h2o time to build your own this project combines everything you've learned so far into one super system for any ml project you can think of you'll create something that can automatically clean data engineer features select models and optimize everything it's like building a robot data scientist difficulty n out of 10 resume value 10 out of 10 learning value 10 out of 10 impact 9 out of 10 mlops pipeline Welcome to the Real World of machine learning this isn't just about building models anymore it's about getting them into production and keeping them running you'll build a complete Pipeline with model versioning monitoring automated retraining and all those things that separate playground projects from production systems difficulty 9 out of 10 resume value 10 out of 10 because you can finally honestly put mlops on your resume learning value 10 out of 10 impact 10 out of 10 because this is what companies actually need distributed ml system the final boss of ml projects you'll build a system that can train models across multiple machines handle massive data sets and process data in real time warning you might need more than one laptop for this difficulty 10 out of 10 resume value 10 out of 10 learning value 10 out of 10 impact 10 out of 10 remember you don't need to build all these projects pick the ones that interest you and match your skill level and don't worry if your first attempts look nothing like cat GPT or di we all start somewhere pick a project that corresponds to your current skill level and work your way up drop a comment below telling me which project you're going to build first until next time keep coding and may your models never overfit if you found this video helpful share it with someone who you think might also like it and get started on one of the tutorials in the description or on this very Channel also consider liking the video and subscribing to be notified about similar content in the future thanks for watching
