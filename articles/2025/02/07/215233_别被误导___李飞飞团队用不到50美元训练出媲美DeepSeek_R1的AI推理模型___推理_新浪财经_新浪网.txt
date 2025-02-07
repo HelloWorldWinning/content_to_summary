@@ -1,0 +1,95 @@
+Timestamp: 2025-02-07T21:52:33.311763
+Title: 别被误导 | 李飞飞团队用不到50美元训练出媲美DeepSeek R1的AI推理模型？？|推理_新浪财经_新浪网
+URL: https://cj.sina.cn/article/norm_detail?url=https%3A%2F%2Ffinance.sina.com.cn%2Froll%2F2025-02-07%2Fdoc-ineirwnf0106421.shtml&from=redirect
+Status: success
+Duration: 0:00
+
+Description:
+**1. Outlined Summary:**
+
+*   **I. Introduction:**
+    *   A recent news headline about Li Fei-Fei's team training an AI model comparable to DeepSeek R1 for under $50 has garnered attention.
+    *   The author, an AI practitioner, expresses skepticism about the news's accuracy and potential for misleading readers.
+
+*   **II. Debunking Misconceptions:**
+    *   **A. "Comparable to DeepSeek R1?":**
+        *   The s1 model was compared with OpenAI's o1-preview and a distilled version of DeepSeek-R1 (32B parameters), not the full 670B DeepSeek R1.
+        *   s1 outperformed o1-preview on specific tasks but falls short of the distilled DeepSeek-R1 model.
+    *   **B. "Under $50?":**
+        *   The $50 cost only accounts for the fine-tuning stage on 16 H100 GPUs for 26 minutes.
+        *   It excludes data collection, cleaning, labeling, pre-training, and human labor costs.
+    *   **C. "AI Reasoning Model Trained?":**
+        *   Data screening played a crucial role in the s1 model's success, where 1K high-quality samples were selected from 59K datasets.
+        *   The performance of the model trained on 1K data is better than the full volume of 59K data trained model.
+        *   Data quality is more important than data quantity.
+
+*   **III. Innovations of the s1 Paper:**
+    *   **A. Feasibility of Small-Sample Efficient Fine-tuning:**
+        *   The paper highlights the potential of high-quality small-sample data for model fine-tuning.
+        *   It provides a successful case study of using data screening strategies for efficient fine-tuning with small samples.
+        *   The open-sourced s1K dataset will promote research in small-sample learning and reasoning.
+    *   **B. "Reasoning Budget Forcing" Method:**
+        *   The method offers a new approach to intervening in and regulating model reasoning processes.
+        *   By forcing the model to end or extend its thinking time, the s1 model can self-adjust and optimize, improving reasoning performance.
+
+*   **IV. Conclusion:**
+    *   The news headline is exaggerated and misleading, potentially creating unrealistic expectations about AI technology.
+    *   The success of the s1 model is due to the combined effect of data quality, clever techniques, and existing pre-trained models.
+    *   The author encourages a rational and objective view of technological advancements, cautioning against sensationalized news and promoting a healthy AI development environment.
+
+**2. Core Point:** The news headline regarding the "50-dollar AI model" is an exaggeration that misrepresents the true cost and complexities involved in training high-performance AI models.
+
+**3. Fundamental Point:** Data quality and strategic fine-tuning are more critical to AI model performance than simply minimizing computational costs.
+
+**4. Overarching Framework:** The content analyzes a news report about a low-cost AI model, dissecting its claims, highlighting the actual innovations of the research, and cautioning against the dangers of sensationalized reporting in the AI field.
+
+**5. Conceptual Map:**
+
+```mermaid
+<Mermaid_Diagram>
+graph LR
+    subgraph Main
+        A[News Headline: "$50 AI Model"]:::headline
+        B[Author's Skepticism]:::critical --> A
+        C[Debunking Misconceptions]:::analysis --> A
+
+        D[Model Comparison]:::detail --> C
+        E[Cost Breakdown]:::detail --> C
+        F[Data Screening]:::detail --> C
+
+        G[Innovations of s1 Paper]:::innovation --> B
+        H[Small-Sample Fine-tuning]:::technique --> G
+        I[Budget Forcing]:::technique --> G
+
+        J[Conclusion: Cautious Optimism]:::conclusion --> B
+        K[Data Quality Importance]:::key --> J
+        L[Rational Perspective]:::key --> J
+
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:1px
+        style C fill:#ddf,stroke:#333,stroke-width:1px
+        style D fill:#eee,stroke:#333,stroke-width:1px
+        style E fill:#eee,stroke:#333,stroke-width:1px
+        style F fill:#eee,stroke:#333,stroke-width:1px
+        style G fill:#cfc,stroke:#333,stroke-width:1px
+        style H fill:#eee,stroke:#333,stroke-width:1px
+        style I fill:#eee,stroke:#333,stroke-width:1px
+        style J fill:#afa,stroke:#333,stroke-width:1px
+        style K fill:#eee,stroke:#333,stroke-width:1px
+        style L fill:#eee,stroke:#333,stroke-width:1px
+
+        classDef headline fill:#fbb,stroke:#333,stroke-width:2px
+        classDef critical fill:#ccf,stroke:#333,stroke-width:1px
+        classDef analysis fill:#ddf,stroke:#333,stroke-width:1px
+        classDef detail fill:#eee,stroke:#333,stroke-width:1px
+        classDef innovation fill:#cfc,stroke:#333,stroke-width:1px
+        classDef technique fill:#eee,stroke:#333,stroke-width:1px
+        classDef conclusion fill:#afa,stroke:#333,stroke-width:1px
+        classDef key fill:#eee,stroke:#333,stroke-width:1px
+    end
+</Mermaid_Diagram>
+```
+
+
+Content:
+作者：张发恩 创新奇智CTO 转载自公众号：后向传播 最近一篇新闻标题《李飞飞团队用不到50美元训练出媲美DeepSeek R1的AI推理模型》吸引了不少眼球，似乎预示着AI技术即将迎来一场“廉价革命”。 不少人可能会惊呼： “什么？不到50美元就能训练出媲美DeepSeek Rl的AI模型？这AI也太便宜了吧！” 但，事实真的如此吗？ 作为一名AI从业者，看到这个标题，我感觉事情并不简单。仔细研读新闻和相关论文后，我发现这篇新闻的解读存在不少 夸大和误导 之处。 我详细读了原论文，尽可能还原事实，避免大家被不实信息所误导。 “标题党”嫌疑：事实可能并非如此“美好” 1. “媲美DeepSeek R1”？实际效果可能与你的期待有差距 DeepSeek R1是DeepSeek公司推出的 闭源 大模型，而新闻中提到的 s1模型 ， 实际上是与 OpenAI的o1-preview模型 以及 DeepSeek-R1 800K数据蒸馏出的32B模型 做对比。注：DeepSeek R1是670B的大模型，与DeepSeek-R1 800K数据蒸馏出的32B模型是完全不同的两个模型。 论文中的实验结果表明，s1模型在 部分 推理任务上（例如AIME24竞赛数学题） 超过了o1-preview ， 但这并不代表s1模型就 全面媲美 甚至 超越 了DeepSeek R1。更重要的是， s1的效果离DeepSeek-R1 800K数据蒸馏出的32B模型 还有不小的差距 。新闻标题用 “媲美DeepSeek Rl” 这样的字眼， 容易给读者造成 s1模型已经可以和DeepSeek的顶尖模型相提并论 的 错误印象 。下图是s1论文披露的实验数据（https://arxiv.org/pdf/2501.19393） 2. “不到50美元”？请注意限定语和实际成本 新闻中 “用不到50美元的云计算费用” 的说法， 容易让人误以为训练一个高性能AI推理模型只需要区区几十美元 。但实际上，这50美元仅仅是 指论文中s1模型在16张H100 GPU上训练26分钟的云计算费用 。 这 “不到50美元” 的成本， 仅仅是模型微调阶段的计算成本 ， 并不包括 ： 3. “训练出媲美...的AI推理模型”？数据筛选的功劳不可忽视 新闻标题容易让人觉得， 是李飞飞团队提出了一种 革命性的模型训练方法 ，才能用 “不到50美元” 训练出高性能模型。 但深入分析论文后， 我们发现 数据筛选 在 s1模型的成功中扮演了至关重要的角色。 s1模型的核心创新之一， 在于其构建的 高质量小样本数据集 s1K 。 研究团队并非随机使用1K数据进行训练， 而是从59K 数据集中 精心筛选 出1K 高质量样本。 筛选过程主要包括： 实验结果表明， 使用精心筛选的1K 数据训练的模型，性能甚至可以媲美使用全量59K 数据训练的模型 ， 远超 随机选择数据或仅考虑数据长度、多样性的方法。这说明， 在数据驱动的AI领域，数据质量往往比数据数量更重要 。 s1模型的成功， 很大程度上归功于其高质量的数据筛选策略，而非仅仅是 “低成本” 训练 。 论文的创新之处：小样本高效微调 + 推理预算强制 当然， 这篇论文并非一无是处。 s1论文在以下方面还是有其创新性和贡献的 ： 1. 验证了小样本高效微调的可行性 s1论文再次印证了 高质量小样本数据在模型微调中的巨大潜力 。 在算力成本高昂、 数据获取困难的背景下， 如何利用少量数据训练出高性能模型 一直是 AI 领域的研究热点。 s1论文提供了一个 利用数据筛选策略实现小样本高效微调 的成功案例， 为后续研究提供了有益的参考。 尤其值得肯定的是， 论文开源了高质量的 s1K 数据集 ， 这将有助于推动小样本学习和推理相关领域的研究进展。 2. 提出 “推理预算强制” 方法， 探索推理过程干预 s1论文提出的 “推理预算强制 (Budget Forcing)” 方法，也为 模型推理过程的干预和调控 提供了一种新的思路。 通过 强制结束或延长模型的思考时间 ， s1模型能够在推理过程中进行自我调整和优化 ，从而在一定程度上提升推理性能。 这种 在推理阶段对模型行为进行干预 的思想， 具有一定的启发意义 ，未来或可应用于更多推理优化方法的研究中。 理性看待技术进步，“标题党”新闻对行业有害 总的来说， “李飞飞团队50美元AI模型” 这篇新闻标题存在夸大和误导之处 ， 容易让读者对 AI 技术的现状产生不切实际的幻想。 s1模型 的成功， 是数据质量、 巧妙技术和现有预训练模型共同作用的结果， 并非 “廉价” 和 “速成” 的代名词 。 我们 肯定 s1论文在小样本学习和推理干预方面 的探索和贡献 ， 赞赏研究团队开源高质量数据集的举动 。但同时， 我们必须保持清醒的认识 ： 作为AI从业者和爱好者，我们应该保持理性思考，客观看待技术进步，警惕 “标题党” 式新闻的危害，共同营造一个健康、理性的 AI 发展环境 。 脚踏实地，一步一个脚印，才是 AI 技术走向成熟的正确道路 。 24小时滚动播报最新的财经资讯和视频，更多粉丝福利扫描二维码关注（sinafinance） 新浪财经意见反馈留言板 新浪简介 | 广告服务 | About Sina 联系我们 | 招聘信息 | 通行证注册 产品答疑 | 网站律师 | SINA English Copyright © 1996-2025 SINA Corporation All Rights Reserved 新浪公司 版权所有
