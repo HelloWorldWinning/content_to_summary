@@ -1,0 +1,82 @@
+Timestamp: 2025-02-07T11:32:01.604392
+Title: Reinforcement Learning in DeepSeek R1 Explained
+URL: https://youtube.com/watch?v=H20Hd6Xb7Qo&si=bxz408u3c860yAz_
+Status: success
+Duration: 11:30
+
+Description:
+好的，我将根据您的要求总结内容，生成要点、结论、框架，并创建美观且逻辑清晰的简体中文概念图。
+
+**1. 核心结论 (Core Point):**
+
+DeepSeek 的 R1 模型通过结合基于规则的奖励和群体相对策略优化 (Group Relative Policy Optimization, GRPO) 算法，实现了在没有大量监督数据的情况下进行推理学习，克服了传统奖励模型的局限性。
+
+**2. 基本结论 (Fundamental Point):**
+
+强化学习结合人类反馈 (RLHF) 的关键在于训练一个奖励模型，该模型能准确评估不同策略的优劣，并以此引导策略网络的优化，最终生成人类偏好的结果。
+
+**3. 总体框架 (Overarching Framework):**
+
+本内容围绕 DeepSeek 的 R1 模型展开，逐步介绍了：
+   *   **强化学习结合人类反馈 (RLHF) 的基础:** 解释了如何使用人类偏好训练奖励模型。
+   *   **近端策略优化 (Proximal Policy Optimization, PPO) 算法:** 阐述了 PPO 算法的原理，以及如何利用优势函数和 KL 散度惩罚来更新策略。
+   *   **群体相对策略优化 (Group Relative Policy Optimization, GRPO) 算法:** 详细介绍了 DeepSeek R1 模型使用的 GRPO 算法，解释了其如何通过鼓励优于平均水平的响应并抑制劣于平均水平的响应来优化策略。
+
+**4. 概念图 (Conceptual Map):**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph RLHF
+        A[人类反馈数据] --> B(训练奖励模型);
+        B --> C{奖励模型输出奖励值};
+        C --> D[PPO算法/GRPO算法];
+        D --> E(更新策略网络);
+        E --> F[语言模型生成响应];
+        F --> A;
+    end
+
+    subgraph PPO
+        G[旧策略] --> H{计算优势函数};
+        H --> I{策略比率计算};
+        I --> J{裁剪(Clip)函数};
+        J --> K(KL散度惩罚);
+        K --> L{新策略};
+        L --> G;
+    end
+
+    subgraph GRPO
+        M[查询] --> N{语言模型生成多个响应};
+        N --> O{计算各响应奖励};
+        O --> P{奖励归一化，计算优势};
+        P --> Q{群体相对策略优化};
+        Q --> R(更新策略);
+        R --> M;
+    end
+
+    S[DeepSeek R1 模型] --> GRPO;
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#f9f,stroke:#333,stroke-width:2px
+    style N fill:#f9f,stroke:#333,stroke-width:2px
+    style O fill:#f9f,stroke:#333,stroke-width:2px
+    style P fill:#f9f,stroke:#333,stroke-width:2px
+    style Q fill:#f9f,stroke:#333,stroke-width:2px
+    style R fill:#f9f,stroke:#333,stroke-width:2px
+    style S fill:#bfc,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+recently deep seek published its paper we are going to explore how the algorithm behind their latest R1 model Works however to understand this we first need to grasp how reinforcement learning through human feedback functions finally we will examine the group policy optimization algorithm which is the algorithm deep seek used to train their recent thinking model r one that said there are some prerequisites for this video you should have a basic understanding of reinforcement learning you should also have some knowledge of the proximal policy optimization algorithm and also Transformer architecture in large language models for a simple overview I explained the PO algorithm in my previous video however there are many other videos available online on the same topic you can watch those as well now let's get started let's first understand how a reward model is trained using human feedback consider a simple reinforcement learning agent interacting with its environment the agent observes the environment we also use the word state to refer to its observation based on that observation the agent takes an action in the environment normally the agent receives a reward value from the environment after taking an action but here we want to train the agent using human feedback so how do we design the reward system with human feedback we simply collect a list of trajectories from the data which is essentially a collection of states and the actions taken on those states in the case of llms you can consider the output response of the llm where every token generated using the context is in action and the context itself is the state the reward model takes an observation action pair and provides a scalar value as output which represents the reward for the action taken in that state but how do we train this reward model let's say we have collected two trajectories now we receive feedback on both trajectories from a human in this case let's say the human preferred the first trajectory as the better one we feed each pair in the trajectory to the reward model and it predicts a scaler reward value for all the pairs in both trajectories our goal goal is to guide the reward model to assign a greater reward to the trajectory preferred by the human in terms of language models the answer preferred by the human should receive a greater total reward in short we want the total reward given to the trajectory preferred by human feedback to be greater than the trajectory not preferred by human feedback initially we assumed that the first trajectory is preferred by the human so it should receive a higher reward for that purpose we calculate the probability of the total reward for both trajectories using the soft Max equation this involves taking the exponent of the total reward for each trajectory and dividing it by the sum of the exponents of the total reward for both trajectories now if the human preferred the first response we maximize the probability of the first trajectory using gradient descent since both probabilities are dependent increasing the probability of the first trajectory will decrease the probability of the second one and if the human preferred the second response we maximize the probability of the second trajectory using gradient descent for this we usually take the negative log of the probability we want to maximize the goal is to maximize the probability of the total reward we actually guide the reward model to assign a higher total reward to the trajectory preferred by the human and we assign less reward to the trajectory that is not preferred by the human now you can see that we have all three ingredients for a reinforcement learning algorithm we can train any RL algorithm using this reward model this was the basic reward model concept to understand how reward models are trained it generates a reward for each step in the trajectory you can also generate one reward for the entire trajectory you can see the details in this paper from 2017 deep reinforcement learning from Human preferences let's study another way of estimating reward function with a single reward value for the entire response consider we have two responses as input for our language model we feed both responses to the reward model to get the reward for each response the reward model predicts two reward values one for each response with this simple loss function we are forcing the reward model to generate a higher reward for the response preferred by the human the goal of this negative log is to maximize the inner value which ranges from 0 to 1 we use the sigmoid activation function we take the negative log of the output after the activation function by doing this the model will predict a higher reward for the response preferred by the human and it will assign a lower reward to the response not preferred by the human the reward model will learn to give higher rewards to human preferred responses and these rewards will guide the policy Network to prioritize human generated responses this was a basic overview of the reward model let's begin our main proximal policy optimization algorithm this is the equation we will study consider this simple state of two words at time step T where our goal is to predict the next words probability distribution using a language model for Simplicity let's say we have three words for the next token prediction the next word policy for the current state is is simply a softmax distribution over the next tokens we represent it as our old policy which we aim to update during training to maximize the reward let's say we sampled the first action from this policy which has a probability of 0. 32 now we need to determine whether this action is beneficial for us or not for this purpose we use the advantage value which we calculate using the reward model and the value model the reward model provides the reward for this policy while the value model determines whether the reward is higher or lower than expected I have explained in this video how we calculate the advantage value using the reward and value networks but for Simplicity if the advantage value is positive it means that the action we took provides more reward than we expected so it's a good action therefore we should encourage this action if the advantage value is negative it means that the action we took provides less reward than we expected so it's a bad action therefore we should discourage this action let's say this is the new policy we want to learn initially it is the the same as the old policy but we will update it using the advantage the ratio of the new policy to the old policy along with the advantage function can be given by this equation here let's say we have a negative Advantage which indicates that this action was not a good one to discourage this action in the future we adjust the policy for this action remember our goal is to maximize the output of this equation we change the current policy to maximize this output if the advantage value is negative we adjust the policy to decrease the likelihood of that action in the future we discourage this action by decreasing its action probability for the given state if the advantage is positive it means this is a good action then we should increase the probability of taking this action by doing this we encourage this action in the future you can see that the new policy is updated for the given State this policy encourages the action taken because its Advantage is positive indicating it's a good action for the given State this clip function is used to ensure that the new policy does not change too much this means the ratio of the new policy to the old policy should be clipped within a certain range this minimum function ensures whether we need the clipped version of the policy Ratio or not but remember after we change the policy many times our language model can forget what it has already learned right so for this purpose we add a reference policy to guide policy updates at every step this reference policy is taken from a base model with frozen weights so that our new policy does not diverge too much from its original policy let's rewrite the original equation with the KL penalty to prevent excessive Divergence from the original policy this KL Divergence penalty will ensure that the reference policy and the new policy remain close to each other we also have a hyperparameter beta associated with the KL Divergence term which controls the strength of the penalty and the degree to which the new policy is allowed to diverge from the reference policy so in summary we had responses using human feedback we categorized those responses then we trained a reward model on those responses after this we trained our language model policy to prioritize the responses which are preferred by human but there are some issues with this reward model which were solved with direct preference optimization algorithm this paper shows that we do not need to implicitly train a reward model instead we can directly optimize the the policy according to human preference so let's first understand deep seek r10 which uses reinforcement learning to reason without any supervised data for reasoning Purp purposes previously we used to train the reward model and then train the language model policy with reinforcement learning but we faced issues like reward hacking in the reward model so the authors used a rule-based reward for training their thinking model in the case of math problems with deterministic results the model provides answers in a specific format and the results are checked by comparison with actual answer similarly for leak code problems they assign rewards based on test cases they also assigned rewards for the correct formatting of thinking and answers by the language model so if we represent our current policy as the old policy we sample a list of responses for a query using the language model with this old policy for each response we also receive a reward indicating how accurate the language model's response is for the given query now we calculate the advantage by normalizing all the rewards you can see that we are subtracting the mean value from each reward this means that all the advantages less than the mean value will be negative and vice versa for understanding consider this normal distribution you can see that the normalized rewards above the mean value are positive and all the normalized rewards below the mean value are negative remember when we multiply the advantage by the ratio of the new policy and the old policy if the advantage is positive it encourages the new policy to take this action in the future and if the advantage is negative it discourages the new policy from taking this action in the future so in short we have a group of responses for a query we also have their rewards we normalize those rewards now if the reward for a given response is greater than the mean reward value it means this reward is a good reward relative to the group of rewards we have then we encourage our language model to generate that response if the reward for a given response is less than the mean reward it means this reward is not good relative to the group of rewards we have then we discourage our language model from generating response for this reward value in the future in short we are encouraging better than average responses for each group of responses and vice versa so this algorithm encourages the good responses and discourages the bad responses relative to the group of responses for a given query that's why it is known as group relative policy optimization you can see here that this is averaging the objective term over our entire group then we have the ratio of the new policy over the old policy for every response and their corresponding Advantage values you can see that the same clipping is applied to it for small policy updates at the end we just have the KL Divergence penalty to keep the new policy close to our reference model as we discussed earlier so with this group relative policy optimization equation we try to improve the policy from our current policy every time now for the r10 model we have base model you can consider it deep seek V3 we train it with group relative policy optimization but for the R1 model we first start with some supervised data for chain of thoughts before going for reinforc learning training
