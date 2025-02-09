@@ -1,0 +1,250 @@
+Timestamp: 2025-02-09T22:10:59.913879
+Title: DeepSeek_R1推理本地跑，7GB_GPU体验啊哈时刻？GRPO内存暴降，GitHub超2万星
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+好的，下面是根据您提供的文章内容生成的摘要，包括核心观点、根本观点、框架结构以及 Mermaid 语法绘制的知识图谱。
+
+**核心观点：** Unsloth 通过优化 GRPO 训练，显著降低了 AI 模型本地推理所需的 GPU 内存，使得在 7GB VRAM 的设备上体验 DeepSeek-R1 的“啊哈时刻”成为可能。
+
+**根本观点：** 通过技术创新优化算法，降低 AI 模型的使用门槛，推动 AI 技术的普及和发展。
+
+**Overarching Framework:**
+
+1.  **引言：** Unsloth 优化 GRPO，降低内存需求，实现本地 AI 推理。
+2.  **背景：** DeepSeek-R1 及其“啊哈时刻”的概念和重要性。GRPO (Group Relative Policy Optimization) 算法简介。
+3.  **Unsloth 的解决方案：**
+    *   GRPO 内存占用减少 80%。
+    *   7GB VRAM 即可体验 "啊哈时刻"。
+    *   支持 QLoRA 和 LoRA。
+    *   增加对 Online DPO、PPO 和 RLOO 的支持。
+4.  **技术细节：**
+    *   GRPO 工作原理。
+    *   Unsloth 与 vLLM 的结合，提升吞吐量，减少 VRAM 消耗。
+5.  **应用场景：** 定制化推理模型，需要展示推理过程的场景。
+6.  **Unsloth 团队介绍：** 核心团队只有两人。
+7.  **总结：** Unsloth 的创新降低了 AI 模型的使用门槛，推动了 AI 技术的发展。
+
+<Mermaid_Diagram>
+
+```mermaid
+graph LR
+    subgraph AI推理新时代
+        A[DeepSeek-R1\n(推理新时代)]:::deepseek --> B(GRPO\n(群体相对策略优化)):::grpo
+        B --> C{AI "啊哈时刻"};
+    end
+
+    subgraph Unsloth的贡献
+        D[Unsloth AI\n(开源微调神器)]:::unsloth --> E(GRPO优化\n(内存占用减少80%)):::optimization
+        E --> F[本地推理\n(7GB VRAM)];
+        E --> G[支持LoRA/QLoRA];
+        E --> H[支持DPO/PPO/RLOO];
+        F --> C;
+    end
+
+    subgraph 技术细节
+        I[vLLM\n(推理加速)]:::vllm --> J(Unsloth集成\n(吞吐量提升，VRAM减少)):::integration
+        J --> F;
+        K[奖励函数设计] --> B
+    end
+    style deepseek fill:#f9f,stroke:#333,stroke-width:2px
+    style grpo fill:#ccf,stroke:#333,stroke-width:2px
+    style unsloth fill:#ffc,stroke:#333,stroke-width:2px
+    style optimization fill:#cff,stroke:#333,stroke-width:2px
+    style vllm fill:#cfc,stroke:#333,stroke-width:2px
+    style integration fill:#fcc,stroke:#333,stroke-width:2px
+    classDef deepseek fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef grpo fill:#ccf,stroke:#333,stroke-width:2px;
+    classDef unsloth fill:#ffc,stroke:#333,stroke-width:2px;
+    classDef optimization fill:#cff,stroke:#333,stroke-width:2px;
+    classDef vllm fill:#cfc,stroke:#333,stroke-width:2px;
+    classDef integration fill:#fcc,stroke:#333,stroke-width:2px;
+    C --> L[应用场景\n(定制化推理等)]:::application;
+    L:::application -- "例如" --> M[法律领域推理]
+    L:::application -- "例如" --> N[医学领域推理]
+    style application fill:#efe,stroke:#333,stroke-width:2px
+
+    click A "https://arxiv.org/pdf/2412.08905" "DeepSeek-R1论文"
+    click D "https://github.com/unslothai/unsloth" "Unsloth GitHub"
+    style L fill:#efe,stroke:#333,stroke-width:2px
+    subgraph 应用实例
+        direction LR
+        M[法律领域推理]
+        N[医学领域推理]
+    end
+```
+
+</Mermaid_Diagram>
+
+
+Content:
+DeepSeek-R1推理本地跑，7GB GPU体验啊哈时刻？GRPO内存暴降，GitHub超2万星
+新智元 新智元 2025年02月09日 19:59
+Image
+
+
+  新智元报道  
+
+编辑：KingHZ Aeneas
+【新智元导读】黑科技来了！开源LLM微调神器Unsloth近期更新，将GRPO训练的内存使用减少了80%！只需7GB VRAM，本地就能体验AI「啊哈时刻」。
+李飞飞团队仅用16张H100训了26分钟，训出的模型就超越了o1-preview，震动业内。
+
+可以说，DeepSeek-R1已经让全球AI模型走向了推理新时代。
+甚至利用其训练方法GRPO，AI开源界开始了竞赛：看谁能用最少的成本，复现AI的「啊哈时刻」。
+而就在刚刚，DeepSeek-R1的推理成本彻底被打下来了！
+开源项目Unsloth AI带来了好消息，不用云服务，本地也能体验「Aha」 时刻：
+现在可以在本地设备上复现DeepSeek-R1的推理！
+只需7GB VRAM，你就能体验到「Aha」时刻。
+Unsloth把GRPO训练需要的内存减少了80%。
+15GB VRAM就可以把Llama-3.1（8B）和Phi-4（14B）转变为推理模型。
+Image
+没有看错：只需7GB VRAM的GPU，AI模型在本地就能体验「啊哈时刻」。
+什么是AI的「啊哈时刻」？有什么作用？
+熟悉AI的都知道，对人类很简单的问题，对AI可能很难。比如：
+9.11和9.9相比，哪个大？
+但体验过「Aha」时刻后，AI模型Phi-4就能完成这类问题：从无推理能力的模型，化身为DeepSeek-R1同款推理模式，带有原始思维链、展示推理过程的那种！
+Image
+
+原文链接：https://unsloth.ai/blog/r1-reasoning
+总之，如果现在你已经有输入和输出数据（比如问题和答案），但没有CoT或推理过程，那就可以见证GRPO创造的奇迹了——
+它能为你创建推理过程，甚至做出更多！
+现在，这个方法已经在AI社区爆火，讨论的声浪越来越高了。
+Image
+Unsloth推出推理功能
+
+DeepSeek的R1研究揭示了「Aha」时刻，通过群体相对策略优化（Group Relative Policy Optimization，GRPO），在没有人类反馈的情况下，R1-Zero自动学会了如何分配更多的思考时间。
+
+Unsloth对整个GRPO过程进行了增强，相比Hugging Face+FA2，VRAM使用减少了80%。
+这意味着只需7GB VRAM，使用Qwen2.5(1.5B)就能重现R1-Zero的「Aha」时刻。
+Image
+项目链接：https://github.com/unslothai/unsloth
+对于包含其他模型的GRPO，参阅下列文档。
+Image
+
+文档链接：https://docs.unsloth.ai/get-started/unsloth-notebooks
+此次，unsloth更新主要增强了对DeepSeek-R1-Zero强化学习训练方法的GRPO支持，减少了对内存的占用。
+主要亮点如下：
+15GB VRAM：使用unsloth，你可以将任何最多15B参数的模型（如Llama 3.1（8B）、Phi-4（14B）、Mistral（7B）或Qwen2.5（7B））转换为推理模型。
+
+最低仅需7GB VRAM，足以在本地训练你自己的推理模型。
+
+Tiny-Zero团队曾展示过，使用Qwen2.5（1.5B）可以实现「aha」时刻，但需要2个A100 GPU（160GB VRAM）。而现在，借助Unsloth，只需一个7GB VRAM的GPU就能实现相同的效果。
+
+之前，GRPO仅支持完整微调，但现在已经能够与QLoRA和LoRA配合使用。
+
+请注意，这并不是微调DeepSeek-R1蒸馏模型或用R1蒸馏数据进行调优（Unsloth已经支持）。实际上，此项目用GRPO将标准模型转化为「满血」的推理模型。
+
+GRPO的应用场景：带有奖励机制的定制化推理模型，例如法律、医学等领域；其他需要显示推理链或思维过程的场景。
+
+GRPO带来的「Aha」时刻
+
+在使用纯粹的强化学习（RL）训练R1-Zero时，DeepSeek观察到了神奇的「啊哈时刻」——
+
+在没有任何人类的指导或预定义的指令的情况下，模型竟开始重新评估其初始方法，学会了延长思考时间。
+
+即便只使用GRPO对Phi-4做100步的训练，结果也一目了然：未使用GRPO的模型没有思考token，使用GRPO训练后的模型则具有思考token，而且得出了正确答案！
+Image
+
+论文链接：https://arxiv.org/pdf/2412.08905
+这种「啊哈时刻」表明，GRPO不仅帮助模型提升推理能力，还能让模型在没有外部提示的情况下，学会自我反思和调整，从而提高问题解决的质量。
+回到「9.11和9.9哪个大？」的问题，没有GRPO训练前，Phi-4介绍了如何从左到右按位比较小数，坚持认为虽然十分位上1<9，但百分位上1＞0，而9.9可以写作9.90， 所以：「9.11比9.90大」。
+经过GRPO训练，Phi-4已经能正确分析回答此问题了，而且推理过程清晰，严丝合缝——
+在推理过程中的第2步，基于十分位的比较，已经得出了正确答案；在第3步，依然比较了9.11和9.90的百分位，但这次AI模型发现比较百分位并不影响在第2步得出的结果。
+Image
+
+Phi-4在GRPO训练前后比较，提示为：「Which is bigger? 9.11 or 9.9?」
+这就是GRPO的「魔力」。
+
+GRPO是一种强化学习（RL）算法，与近端策略优化（Proximal Policy Optimization，PPO）不同，它不依赖值函数，能够更高效地优化模型的回答质量。
+
+在项目的Notebook中，使用GRPO训练模型，能够自主发展出自我验证（self-verification）和搜索能力，从而创造出一个迷你「Aha 时刻」。
+GRPO的大致流程如下：
+1 模型生成多组回答
+
+
+
+2 根据正确性或其他设定的奖励函数，对回答进行评分（不同于使用LLM作为奖励模型）
+
+
+
+3 计算该组回答的平均得分
+
+
+
+4 将每个回答的得分与组内平均得分进行比较
+
+
+
+5 增强模型对高分回答的偏好
+
+举例来说，假设要模型解决下列问题：
+
+What is 1+1?  >>  Chain of thought/working out  >>  The answer is 2. 
+What is 2+2?  >>  Chain of thought/working out  >>  The answer is 4.
+最初，必须收集大量数据来填充工作/思维链。
+但是，GRPO（DeepSeek使用的算法）以及其他RL算法可以引导模型自动表现出推理能力，并创建推理轨迹。
+RL不需要数据，相反需要精心设计的奖励函数或验证器。例如，如果它得到了正确答案，就给它打1分；如果有些单词拼写错误，就减0.1分。以此类推。
+强强联合：在Unsloth中使用GRPO
+
+如果在本地使用GRPO进行训练，请先安装必要的依赖项：pip install diffusers。
+
+Image
+训练提示：耐心等待至少300步才能看到奖励分数的明显提升；为了确保最佳兼容性，请使用最新版本的vLLM。
+Colab示例仅训练了1小时，结果较一般，要获得高质量结果，建议训练至少12小时（但可以随时停止）。
+较小的模型可能无法生成思考token，建议至少使用1.5B参数的模型，正确生成「思考token」（thinking tokens）。
+如果使用基础模型，请确保加载正确的Chat模板（避免格式问题）。
+Unsloth现已内置GRPO训练损失跟踪功能，无需再使用外部工具（如wandb）。
+Image
+
+内置GRPO训练损失跟踪示例
+更多强化学习训练方法
+除了新增GRPO支持，还增加了对Online DPO（在线直接偏好优化）、PPO（近端策略优化）和RLOO（强化学习偏好优化）的支持！
+计算机工程专业的硕士生Keith Truongcao，在Unsolth中实现了Online DPO算法。
+在TLDR数据集 ，他使用GPT 4o-mini作为判断模型，与原始模型(下图用绿色表示)相比，微调后的AI模型胜率都有所提升：Online DPO模型(下图用紫色表示)的胜率显著高于原始模型，并且比SFT模型(下图用红色表示)高出12%，充分证明了强化学习训练方法的有效性。
+Image
+借助Unsloth的优化，在线DPO（Direct Preference Optimization微调的显存需求大幅降低。当batch size为1且使用梯度累积时，所需显存仅为20GB。
+相比之下，标准的Llama 3.2（10亿参数模型） 需要50GB显存，但在尝试额外分配2GB显存时，会发生OOM（内存溢出）错误。更令人惊讶的是，即使在配备48GB显存的A40 GPU上，标准Llama也会直接崩溃。
+Image
+
+Unsloth的在线DPO VRAM消耗与Hugging Face+FA2的对比
+更多详情，请参阅Keith的下列文章，其中包括如何让在线DPO正常工作更多细节。
+Image
+
+原文链接：https://substack.com/home/post/p-154490380
+另一位活跃的开源贡献者Joey，在X上也详细介绍了自己如何在Google Colab上实现GRPO变更的方法。
+Image
+Image
+Unsloth x vLLM：更高吞吐量和更少VRAM消耗
+
+20倍吞吐量，一半VRAM
+现在，在微调流程中，可以直接使用vLLM，这使得模型的吞吐量大幅提升，并且可以同时进行微调和推理。
+Image
+在1x A100 40GB GPU上，使用Unsloth动态4bit量化的Llama 3.2 3B Instruct，吞吐量大约为4000 tokens/s。
+在16GB Tesla T4（免费Colab GPU）上，吞吐量大约为300 tokens/s。
+而且，因为Unsloth还神奇地去除了vLLM和Unsloth一起加载时的双重内存使用，因此让Llama 3.1 8B节省了约5GB VRAM，让Llama 3.2 3B节约了3GB VRAM。
+加载模型时不再需要额外的内存开销。
+Unsloth可以在单张48GB GPU上微调Llama 3.3 70B Instruct，其中Llama 3.3 70B的权重占用40GB VRAM。
+这是Unsloth的原创功能。
+而如果不优化内存管理，同时加载Unsloth和vLLM，会导致VRAM双倍占用，从而需要至少80GB VRAM才能运行。
+而且上手非常快，只要两步：
+安装vLLM和Unsloth：pip install unsloth vllm。
+初始化Unsloth并启用快速推理：
+Image
+Unsloth中关于vLLM的发现
+1. 现在，vLLM可以加载Unsloth Dynamic 4-比特量化。就像Unsloth的1.58比特动态R1 GGUF一样，发现将某些层动态量化为4比特，将某些层动态量化为16比特，在减小模型规模的同时，显著提高精确度。
+2. 对于RAM、VRAM效率和最大吞吐量（如分块预填充标记数、最大序列数等）等设置，还可以自动选择多个参数。在vLLM中默认启用-O3并启用前缀缓存。发现老GPU上的Flashinfer实际上要慢10%。FP8 KV缓存会让速度慢10%，但吞吐量会翻倍。
+3. 在vLLM中通过解析状态字典，允许加载LoRA，而不是从磁盘加载——可以让GRPO训练运行速度提高1.5倍。在vLLM中直接编辑LoRA适配器，相关研究是否活跃。这可以大大提高速度，因为目前版本的算法还做了不必要的GPU数据移动。
+4. vLLM会诡异地出现随机VRAM峰值，尤其是在批量生成时。为此在unsloth中，添加了批量生成功能，以减少内存峰值。
+Unsloth团队介绍
+
+另外值得一提的是，Unsloth目前在Github上有2万多星，但核心团队Unsloth AI，只有两兄弟。
+Image
+Daniel Han，Unsloth AI的CTO，2021年毕业于悉尼科技大学。2022-2023年，在悉尼的MoonShot AI担任开源开发者。
+Image
+Michael Han，Unsloth AI的CEO，2019年毕业于新南威尔士大学（The University of New South Wales，UNSW）。在实习期间，他曾提高了多个算法实现的速度。
+参考资料：
+https://unsloth.ai/blog/r1-reasoning
+https://x.com/UnslothAI/status/1887562753126408210
+
