@@ -1,0 +1,83 @@
+Timestamp: 2025-02-11T11:00:04.027746
+Title: DeepSeek vs ChatGPT: Effortless Network Map Creation
+URL: https://www.youtube.com/watch?v=Mxva_rjS4oI
+Status: success
+Duration: 10:42
+
+Description:
+好的，这是您要求的内容总结和概念图：
+
+### 1. 总结的核心要点 | Core Point to Conclude
+
+DeepSeek 在根据简单提示生成网络地图方面略胜一筹，因为它一次性生成了无错误的可用代码。
+DeepSeek has a slight edge in generating network maps based on simple prompts, as it generated usable code without errors in one go.
+
+### 2. 总结的基本要点 | Fundamental Point to Conclude
+
+两个模型（DeepSeek R1 和 ChatGPT 的 OR3 Mini）都能理解自然语言提示并生成用于创建网络路线图的代码，但 DeepSeek 的输出无需修改即可直接使用。
+Both models (DeepSeek R1 and ChatGPT's OR3 Mini) can understand natural language prompts and generate code for creating network route maps, but DeepSeek's output was directly usable without modification.
+
+### 3. 内容的总体框架 | Overarching Framework
+
+该内容通过一个实验来比较两个 AI 模型（DeepSeek R1 和 ChatGPT 的 OR3 Mini）在根据自然语言提示生成网络路线图方面的能力。实验包括：
+The content compares the abilities of two AI models (DeepSeek R1 and ChatGPT's OR3 Mini) in generating network route maps based on natural language prompts through an experiment. The experiment includes:
+
+*   **问题定义**: 根据起始地址和多个目的地地址，生成最短步行路线并在地图上绘制。
+    **Problem Definition**: Generate the shortest walking routes and plot them on a map based on a starting address and multiple destination addresses.
+*   **方法**: 使用自然语言提示两个模型生成 Python 代码，利用 OpenStreetMap 和 NetworkX 库。
+    **Method**: Use natural language to prompt both models to generate Python code, utilizing the OpenStreetMap and NetworkX libraries.
+*   **评估**: 比较生成代码的准确性、是否需要修改以及最终地图输出的质量。
+    **Evaluation**: Compare the accuracy of the generated code, whether modifications are needed, and the quality of the final map output.
+*   **结果**: DeepSeek R1 生成的代码无需修改即可运行，而 ChatGPT 的 OR3 Mini 生成的代码需要进行小幅修改。
+    **Result**: DeepSeek R1 generated code that ran without modification, while ChatGPT's OR3 Mini generated code required minor modifications.
+*   **结论**: DeepSeek R1 在此任务中表现略好，但两个模型都展现出强大的推理和代码生成能力。
+*   **Conclusion**: DeepSeek R1 performed slightly better in this task, but both models demonstrated strong reasoning and code generation capabilities.
+*   **延伸**： 通过改变一个简单的提示来改变底图。
+*    **Extension**: Change the basemap with a simple prompt.
+
+### 4. 概念图 (Mermaid 语法) | Conceptual Map (Mermaid Syntax)
+
+```mermaid
+Mermaid_Diagram
+graph LR
+    subgraph 实验过程[实验过程 Experiment Process]
+        A[开始: 自然语言提示\n(起始点和目的地)] --> B(AI 模型\nDeepSeek R1 & ChatGPT OR3 Mini);
+        B --> C{生成Python代码};
+        C --> D1[DeepSeek 代码];
+        C --> D2[ChatGPT 代码];
+        D1 --> E1(无需修改\n直接运行);
+        D2 --> E2{需要修改\n(get_nearest_node)};
+        E2 --> E3(修改后运行);
+        E1 & E3 --> F[生成网络地图\n(OpenStreetMap & NetworkX)];
+    end
+
+        subgraph 结果与结论
+        F --> G1{DeepSeek R1略胜};
+    G1 --> H[DeepSeek: 代码一次性可用];
+     G1 --> I[ChatGPT: 需修改代码];
+        end
+        subgraph 延伸[Extension]
+    F --> J[修改提示以改变底图];
+    J --> K[多底图选项];
+            end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#aaf,stroke:#333,stroke-width:2px
+      style D1 fill:#dd9,stroke:#333,stroke-width:2px
+      style D2 fill:#c7e,stroke:#333,stroke-width:2px
+    style E1 fill:#9d9,stroke:#333,stroke-width:2px
+         style E2 fill:#ff9,stroke:#333,stroke-width:2px
+             style E3 fill:#9d9,stroke:#333,stroke-width:2px
+    style F fill:#bbf,stroke:#333,stroke-width:2px
+    style G1 fill:#ccf,stroke:#333,stroke-width:3px
+ style H fill:#7f7,stroke:#333,stroke-width:2px
+  style I fill:#f77,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#bbf,stroke:#333,stroke-width:2px
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10 stroke:#333,stroke-width:2px,fill:none;
+Mermaid_Diagram
+```
+
+
+Content:
+in this video I'm going to put to the test the abilities of deep seek R1 model and chat gpt's recently published or3 mini reasoning model in creating a network route map with virtually no effort apart from just a few clicks here and there and compare their performance spoiler alert there is a clear winner curious to know which one it is stick around to find out now in this exercise I'm trying to get these AI models to generate the shortest walking parts from a specific starting address to bunch of different addresses and not only that I'm asking them to plot these routs on a map and if you think about it this is quite similar to what we've probably done at some point with the Google Maps whenever you want to get from one place to another you would just fire up Google Maps and enter the destination tell it whether we intend to walk cycle take public transportation or just drive and it would generate the road map for us like this now for this test I'm not giving the models any coordinate information whatsoever I'm just simply going to provide my starting address or basically landmark and a few destinations as well again in terms of how they're commonly known and I'm trying to compare the ability of chat gpt's all three Mini model and deep 6r1 model to figure things out to see how much of a challenge it is for these models to generate what I'm looking for all right let's fire up chat GPT and deep seek side by side we'll go ahead and activate the reasoning model models like this so that we can make sure that Chad G is utilizing its recently released all three Mini model and deeps of course is using its R1 reasoning model and my prompt is going to be I want to find and plot the shortest walking routes between my starting point well in this case happens to be eart stadium in Manchester and the destinations I have picked just three random destinations like the Manchester Cathedral colest Village and delir park which are located in Manchester as well and I'm asking to plot them on an interactive map using open street map and network X libraries all right I've gotten the prompt into the chat box and we'll just go ahead and run this simultaneously to see how it performs and you can see how the reasoning model actually kicks in in both chat GPT and in deep seek so first thing first both models actually managed to figure out that uh because I provided the locations just as an address and not a complete one either just the commonly known names it's going to have to use a geocoding mechanism to obtain the latitude and longitude coordinates based on the given address and then based on these locations it's going to have an idea about what sort of a spatial exent we are going to deal with and with that it's going to download the network graph I can see both models have recognized the need of getting that step done and after that it's going to find out the nearest node of the downloaded graph to my from and to destinations which is is basically what they're supposed to do and then it's going to use volume to plot the roots in different colors H I like both models actually being very specific and exclusively careful about even Minor Details like that because that's what we would essentially like to see on our final map different roots in different colors and they're also actually deciding to add markers to each point as well and again I'm actually quite impressed that it managed to realize that even though I didn't exclusively mention that I want markers at my starting and uh ending points it did realize that it would be nice to actually have markers at those points to better understand the map so overall pretty cool following this thought process you can see it generated the code like this so what I'm going to do is I'm actually going to first of all run this entire script generated by chat gb03 model and see whether any interventions are required to get this up and running or not so to run this kind of a script you actually need some form of a python environment and if you don't really want to with any complicated uh development environments especially if you're not really a programmer you can use something like Google collab which is nothing but a simple uh development environment provided by Google especially for things like data science tasks which you can simply fire up uh without much of an effort by opening up your Google account and you can head over to your Google Drive just create an empty folder like this and after that I'm just going to right click over here and select Google collab and it's immediately going to open up what's known as a Jupiter notebook environment like this where I could simply copy and paste your code and try to run it I'm just going to name this chat jpt because I'm just going to use the code from chat jpt right over here and it's trying to import these three libraries but I'm not really sure whether these three libraries come in Google collab by default or not so what I'm going to do is I'm just going to install these three libraries first we can actually borrow that line of code uh from the Deep seek output and I'm not going to install this geopandas library because I don't really see the necessity of doing that we only require these three libraries so go ahead and paste that in this s right over here and after that we can just simply hit shift and enter to run this so it's just going to take a couple of seconds to install these three libraries and then we can head back I'm going to copy this get over to this cell and just paste that entire thing and after that I'm just going to run this again by hitting shift and enter and I'm just going to give it a couple of seconds and it seems like we did hit a road block it says that module osmnx has no attribute called get nearest node so if I try to see where exactly that particular call happens to be on this script so it's right over here so if I go through the script we have the starting address and the destinations and it's using the geoc Corder to convert these addresses to latitude and longitude points and then it's downloading the graph and we get stuck here because it cannot find get nearest node attribute so we'll see what Chad GB has to say about this error all right I just entered the error message right over here and it said that I'm likely encountering this error because this has been replaced by ox. distance do nearest nodes and it says that I'm going to have to take these two lines and use it to probably replace these two over here let's just give it a go and see whether that rectifies the problem or or it's going to run into any other issues and we can see that we finally do have an output and what I can immediately notice is just by looking at the markers you can see that we have one particular marker in one color which is in Orange and we have three different markers in the same color so these three are definitely the destinations and this seems to be my origin which actually is the EAD stadium and if I click on this marker you can see that it actually tells me what this location is and the same goes for the destinations as well and it actually did manage to plot for me the shortest walking rout like this which is pretty decent you can see that if you were to follow along this red color line we're going to have to travel along this Main Road and then we jump over to this side walk through a Park walk through this neighborhood right over here and carry on until we reach well the delmia park right at this spot so the output actually seems spot on and now it would be interesting to see how this compares to what deep seek managed to generate so what I'm going to do is I'm actually going to create a new collab environment like this and let's name that as deep seek and then we can go back copy this line of code again and install the three libraries well if you actually look at it it's not really installing all three it just downloads this osm and X Library because the other two are already configured by default and then I'm just going to blindly take the entire script and just paste it over here and I'm just going to give it a run and see whether we're going to run into any issues or not and look at that I actually managed to generate the network map just in one go it didn't run into any issues and it did color all the markers in Black if I click on these points you you can see that just like the other output it also manages to display a popup like this to tell me what exactly I'm looking at and even if you look at the roots well they're supposed to essentially be the same so are we actually going to pick a winner here well I'm going to have to give the slight edge here to deep seek and I guess you guys would agree with me however the code generated by all3 mini was not bad at all it's just that I had to take an additional step to rectify a particular line of code because it was initially trying to use a functionality that was not not really available but it did manage to get it rectified as soon as I raised the issue right over here instead of using get nearest node it was supposed to be using distance. nearest nodes and if I try to look at what the code generated by Deep seek did well it actually managed to get that right in its first go so I'm going to have to give the slight edge here to deep seek in terms of its ability to generate a network map flawlessly just based on my simple prompt and if you were to actually take this upper Notch if you're not really happy with using open street map as the base map and would like to have more control over things like opacity or maybe even access to a number of different base map options all it's going to take is just a simple prompt like this and it's actually going to list out a bunch of different options and it would be nice to have the capability to actually add multiple base maps with something called a layer control so if I just take this part of the script I'm not really going to take open straight map because we already have that by default add that somewhere over here and if I try to regenerate the map now you can see that we actually get the option to switch between different base Maps if you click on this button right over here we can switch back to the original open street map like this and uh if you want to maybe have sort of a dark base map like this you can use this C DB Dark Matter type base map and you can of course control things like the opacity by by playing around with this value right over here all right with that it's going to be a wrap let me know what you think about the entire process and whether it was fair enough to name deep seek as the winner of this mapping challenge
