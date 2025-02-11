@@ -1,0 +1,124 @@
+Timestamp: 2025-02-11T13:41:32.760209
+Title: Scientists flock to DeepSeek: how they’re using th
+URL: Text file upload
+Status: success
+Duration: 0:00
+
+Description:
+由于内容包含中文，以下为简体中文总结：
+
+**1. 概要结构:**
+
+*   **引言:** DeepSeek-R1 模型的发布及其在科学界引起的关注。
+*   **优势:** DeepSeek-R1 的低成本、开放性和在科学任务上的表现。
+*   **科学家应用:** 科学家们如何利用 DeepSeek-R1 进行研究，包括数学、计算化学、认知神经科学等领域。
+*   **模型改进:** 科学家如何通过微调和强化学习来改进 DeepSeek-R1。
+*   **局限性:** DeepSeek-R1 存在的不足之处，例如在某些简单任务上的失败以及政治敏感问题的回避。
+*  **DeepSeek的蒸馏模型** 如何通过教授其他大型语言模型（LLM）（如Meta的Llama）其“推理”能力。
+
+**2. 核心观点:**
+
+DeepSeek-R1 作为一个开源、低成本且具有强大推理能力的 AI 模型，正在推动全球科学研究，并为科学家提供了一个定制和改进 AI 模型以解决特定领域问题的新途径。
+
+**3. 总体框架:**
+
+该内容围绕 DeepSeek-R1 的发布及其对科学研究的影响展开。它探讨了模型的优势、应用、改进方法以及局限性，展示了 DeepSeek-R1 在 AI 领域和科学研究中的潜力和影响。
+
+**4. 概念图 (Mermaid Syntax):**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph DeepSeek-R1[DeepSeek-R1 模型]
+        A[开源] --> B(低成本)
+        A --> C(强大推理能力)
+        B --> D{科学家广泛使用}
+        C --> D
+         style D fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 科学应用
+        D --> E[数学研究]
+        D --> F[计算化学]
+        D --> G[认知神经科学]
+        D --> H[生物信息学]
+        style E fill:#ccf,stroke:#333,stroke-width:2px
+        style F fill:#ccf,stroke:#333,stroke-width:2px
+        style G fill:#ccf,stroke:#333,stroke-width:2px
+        style H fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 模型改进
+        D --> I[微调]
+        D --> J[强化学习]
+          style I fill:#aaf,stroke:#333,stroke-width:2px
+        style J fill:#aaf,stroke:#333,stroke-width:2px
+    end
+    subgraph 局限
+       D --> K[简单任务失败]
+       D --> L[政治敏感问题回避]
+         style K fill:#faa,stroke:#333,stroke-width:2px
+        style L fill:#faa,stroke:#333,stroke-width:2px
+    end
+
+    subgraph LLM[其他LLMs]
+        M[Meta's Llama]
+    end
+      DeepSeek-R1 -- "教授" --> LLM
+    style DeepSeek-R1 fill:#bbf,stroke:#333,stroke-width:4px
+</Mermaid_Diagram>
+
+
+Content:
+Scientists flock to DeepSeek: how they’re using the blockbuster AI model
+Researchers are testing how well the open model can perform scientific tasks — in topics from mathematics to cognitive neuroscience.
+By Elizabeth Gibney
+Email
+Close up view of the DeepSeek app icon displayed on a smartphone screen.
+The DeepSeek model is accessible through a chatbot app.Credit: Mladen Antonov/AFP via Getty
+
+Scientists are flocking to DeepSeek-R1, a cheap and powerful artificial intelligence (AI) ‘reasoning’ model that sent the US stock market spiralling after it was released by a Chinese firm last week.
+
+Repeated tests suggest that DeepSeek-R1’s ability to solve mathematics and science problems matches that of the o1 model, released in September by OpenAI in San Francisco, California, whose reasoning models are considered industry leaders.
+
+
+How China created AI model DeepSeek and shocked the world
+
+Although R1 still fails on many tasks that researchers might want it to perform, it is giving scientists worldwide the opportunity to train custom reasoning models designed to solve problems in their disciplines.
+
+“Based on its great performance and low cost, we believe Deepseek-R1 will encourage more scientists to try LLMs in their daily research, without worrying about the cost,” says Huan Sun, an AI researcher at Ohio State University in Columbus. “Almost every colleague and collaborator working in AI is talking about it.”
+
+Open season
+For researchers, R1’s cheapness and openness could be game-changers: using its application programming interface (API), they can query the model at a fraction of the cost of proprietary rivals, or for free by using its online chatbot, DeepThink. They can also download the model to their own servers and run and build on it for free — which isn’t possible with competing closed models such as o1.
+
+Since R1’s launch on 20 January, “tons of researchers” have been investigating training their own reasoning models, based on and inspired by R1, says Cong Lu, an AI researcher at the University of British Columbia in Vancouver, Canada. That’s backed up by data from Hugging Face, an open-science repository for AI that hosts the DeepSeek-R1 code. In the week since its launch, the site had logged more than three million downloads of different versions of R1, including those already built on by independent users.
+
+
+How does ChatGPT ‘think’? Psychology and neuroscience crack open AI large language models
+
+Scientific tasks
+In preliminary tests of R1’s abilities on data-driven scientific tasks — taken from real papers in topics including bioinformatics, computational chemistry and cognitive neuroscience — the model matched o1’s performance, says Sun. Her team challenged both AI models to complete 20 tasks from a suite of problems they have created, called the ScienceAgentBench. These include tasks such as analysing and visualizing data. Both models solved only around one-third of the challenges correctly. Running R1 using the API cost 13 times less than did o1, but it had a slower “thinking” time than o1, notes Sun.
+
+R1 is also showing promise in mathematics. Frieder Simon, a mathematician and computer scientist at the University of Oxford, UK, challenged both models to create a proof in the abstract field of functional analysis and found R1’s argument more promising than o1’s. But given that such models make mistakes, to benefit from them researchers need to be already armed with skills such as telling a good and bad proof apart, he says.
+
+Much of the excitement over R1 is because it has been released as ‘open-weight’, meaning that the learnt connections between different parts of its algorithm are available to build on. Scientists who download R1, or one of the much smaller ‘distilled’ versions also released by DeepSeek, can improve its performance in their field through extra training, known as fine tuning. Given a suitable data set, researchers could train the model to improve at coding tasks specific to the scientific process, says Sun.
+
+
+China’s cheap, open AI model DeepSeek thrills scientists
+
+The ability to download R1 and deploy it on a local system is also a plus for privacy, says Sun, because it allows scientists to keep control of their data and findings. “This is especially important for disciplines involving sensitive and private data, such as medical research.”
+
+Reasoning leap
+DeepSeek is also creating ripples in AI research, because it has shown a way to improve countless other models, says Jack Clark, co-founder of the AI firm Anthropic in San Francisco, whose model is called Claude.
+
+DeepSeek created its distilled models by teaching its ‘reasoning’ abilities to other large language models (LLMs), such as Meta’s Llama. DeepSeek’s preprint, published1 on arXiv on 22 January, reveals that it did this by training these LLMs on 800,000 curated examples of step-by-step ‘chain of thought’ responses, created by DeepSeek-R1.
+
+“There’s now an open-weight model floating around the Internet which you can use to bootstrap any other sufficiently powerful base model into being an AI reasoner,” Clark wrote in his newsletter, Import AI. “AI capabilities worldwide just took a one-way ratchet forward.”
+
+Researchers are also applying reinforcement learning — the trial, error and reward technique used to create DeepSeek-R1 — but honing it for their specific task, says Lu, who last year co-created the ‘AI Scientist’, a model that can perform a complete suite of research tasks in machine learning, from scanning the literature and creating a hypothesis to writing a paper. By defining an appropriate ‘reward signal’, scientists can train the model towards any goal, he says.
+
+
+‘In awe’: scientists impressed by latest ChatGPT model o1
+
+But DeepSeek-R1 is far from perfect. The chatbot DeepThink fails on relatively simple tasks known to trip up LLMs including o1, such as counting the number of US state names that contain the letter W. “Perhaps people think it can turn water into wine and that is just hype, but for what it is, it is the best,” says Lu.
+
+And in common with other Chinese models, researchers have noted that DeepSeek-R1refuses to answer politically sensitive questions, for example about historical events at Beijing’s Tiananmen Square, although it remains unclear whether this is built into the model or is applied to its interface. “From all that I have seen, the censorship seems to be a clumsy add-on rather than something baked in,” says Subbarao Kambhampati, a computer scientist at Arizona State University in Tempe.
