@@ -1,0 +1,99 @@
+Timestamp: 2025-02-21T09:52:33.511527
+Title: Knowledge Distillation in Deep Learning - DistilBERT Explained
+URL: https://youtube.com/watch?v=rNOuDKWtrAE&si=r9Yj1JEHRFXGkr_s
+Status: success
+Duration: 7:20
+
+Description:
+## Summary of DistilBERT
+
+Here's a structured summary of the DistilBERT video:
+
+**1. Overview:**
+
+*   DistilBERT is a smaller, faster version of BERT achieved through knowledge distillation.
+*   It has significantly fewer parameters (66M vs 110M for BERT), trains faster, and maintains comparable performance (only a 3% drop in accuracy).
+*   Proves that large language models for production don't need to be extremely large and can operate efficiently on CPUs.
+
+**2. Training Setup (Knowledge Distillation):**
+
+*   Uses a teacher-student model setup.
+*   **Teacher:** BERT (pre-trained), with frozen weights.
+*   **Student:** DistilBERT (to be trained), learns from the teacher.
+
+**3. DistilBERT Architecture:**
+
+*   Same architecture as BERT but with fewer layers (half the number of transformer layers).
+*   Reduces the number of layers instead of hidden layer dimensions (due to optimized linear algebra operations).
+*   Removes the *pooler* layer (used for classification based on the CLS token embedding).
+*   Removes *token type embeddings* (segment IDs indicating sentence separation).
+
+**4. Weight Initialization:**
+
+*   Initializes DistilBERT's weights using BERT's pre-trained weights.
+*   Selects weights from every other layer of the original BERT model.
+
+**5. Loss Function (Weighted Average of Three Components):**
+
+*   **Distillation Loss:** Cross-entropy loss between the softmax outputs (with temperature) of the teacher and student models.
+*   **Masked Language Modeling (MLM) Loss:** Standard MLM loss where the model predicts masked tokens.
+*   **Cosine Similarity Loss:** Cosine similarity between the hidden layer embeddings of the teacher and student models.
+
+**Core Point:** DistilBERT demonstrates that it's possible to create smaller, faster language models with minimal performance loss through knowledge distillation.
+
+**Overarching Framework:** Knowledge Distillation with architectural modifications and a composite loss function enables the creation of a smaller, more efficient BERT model (DistilBERT).
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Teacher Model (BERT)
+    A[BERT Architecture]
+    B[Frozen Weights]
+    end
+    
+    subgraph Student Model (DistilBERT)
+    C[DistilBERT Architecture]
+    D[Fewer Layers]
+    E[No Pooler Layer]
+    F[No Token Type Embeddings]
+    G[Initialized Weights from BERT]
+    end
+
+    subgraph Loss Function
+    H[Distillation Loss]
+    I[MLM Loss]
+    J[Cosine Similarity Loss]
+    K[Weighted Average Loss]
+    end
+
+    A --> B
+    A -- Weight Selection --> G
+    C --> D
+    C --> E
+    C --> F
+    B -- Knowledge Transfer --> H
+    A -- Embedding --> J
+    C -- Embedding --> J
+    C -- MLM Prediction --> I
+    H --> K
+    I --> K
+    J --> K
+    K --> C
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#f9f,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+what's up guys this is teemu sagar and welcome to another tutorial on knowledge distillation in this video we'll be looking at a new model distal board and see how it was trained and how did it help in reducing the size of the original bird model let's go back to the graph where we could see the number of parameters of different models look at distal bird which is sitting right here 67 66 million parameters it's basically telling us that good language models need not be ridiculously huge let's look at digital belt and both side by side wow the size really dropped from 110 million parameters to 66 million parameters training time was almost four times faster than birth but most importantly there was only a three percent drop in performance from the original bird model so overall forty percent smaller sixty percent faster at just the cost of three percent drop in accuracy pretty good huh this proves that decent language models in production need not be in gbs and inference can still be done in milliseconds even with a cpu okay so let's see how digital bird was born this is the teacher student knowledge distillation setup which i explained in my previous video we'll put the link in the description in case you want to jump to that first so basically the teacher model is our birth model whose weights are frozen and the student model is our new digital bird model and we define the law such that the student learns from the teacher and converges faster let's jump into more details so the student model has the same architecture of birth but with a smaller size just that the number of layers is reduced by half so if the base portion of birth had 12 transformer layers so this one will have six one thing to note here is in order to reduce the size of the model we could either reduce the dimension size of the hidden layers or reduce the number of hidden layers or do both of them but here they have focused on reducing only the number of layers since they found that reducing the size of the hidden layers did not give that much of performance boost this was again because most of the linear algebra operations were so optimized by standard libraries also another thing they did to get this student model was to remove the polar layer from the original bird model what does the pulao layer do okay so in addition to the input tokens in the transformer layer we also prepend a cls token this is a special token cls stands for classification so the idea is at the end of the final transform layer the embedding coming from the cls token can be taken to do the classification on this entire input sentence so this polar layer is also removed from the model then they also remove the token type embeddings water token type and buildings invert as input we can represent two sentences in the same input sequence this is mainly used for training tasks like sentence similarity the two sentences are separated by a special token called scp and in addition to this we also provide segment ids segment ids are a sequence of zeros followed by ones corresponding to each token zeros tell that these tokens belong to one sentence and one is tell that these uh tokens belong to another sentence that's all so what we're saying is in the student model architecture this embedding was also remote now how do we initialize the weights on the student model well because the architecture is same as bert we can easily take the weights of the birth model and use that here since we were reducing the number of layers by two for making the student model we can pick one of the two layers from the original bird and use those weights to initialize in the new student model so if this is the original bird model with 12 layers then in our student model we will have six layers and the first layer in that will have weights taken from either of these two layers and the second will have the weights taken from either the third or the fourth layer and so on i guess that's all about how the model structure is created now let's look at the loss function the final loss is a weighted average of three separate components distillation loss is something which i have already explained in my previous video in detail so the basic idea is we have the largest or predictions coming from both the teacher model and the student model the largest coming from the teacher model is passed on to a soft max function with temperature and we get y the largest come from the student model is also passed on to the software soft max function with temperature to get y hat and then we take a cross entropy loss between y and y hat i have put a video link for cross entropy laws in the description in case you want to have a deeper understanding of this now let's look at the second component in the last mast language modeling or mlm loss mass language modeling is a task where we give a input sentence to the model mask or hide few tokens and the model is expected to output the complete original sentence that we gave so thereby learning to guess the tokens that we have masked because in the process to try to guess the missing tokens these models learn the relationships and characters between different tokens and finally end up understanding the semantics of all these tokens and how they occur in the sentences so the laws computed on this task is called mlm loss the final component is a cosine similarity loss where we take the cosine similarity of the hidden layer of buildings between the teacher and the student model so you can say the first one and the third one are ways in which the teacher model is transferring knowledge to the student model the weighted average of all these losses are taken to get the final loss which is used to back propagate the student model this allows faster learning for the student since the knowledge distillation is happening from the teacher model to the student model i guess that's all i wanted to cover on distal bird if you gained any value out of this video please like share and subscribe this questions suggestions definitely put it below in comments see you next time with another video until then adios [Music] you
