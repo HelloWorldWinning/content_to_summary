@@ -1,0 +1,139 @@
+Timestamp: 2025-02-24T09:59:26.181288
+Title: 马斯克放大招！Grok3屠榜全球，20万张显卡训练的地表最强AI来了！ KOXXKpK7nZo
+URL: https://youtube.com/watch?v=KOXXKpK7nZo&si=PCc-VaekbXgD6A37
+Status: success
+Duration: 9:53
+
+Description:
+**核心思想：** XAI发布了由马斯克主导的强大AI模型Grook3，在多个领域超越了其他竞争对手，并通过数据共享计划向用户提供API额度，旨在推动AI技术的进步和应用。
+
+**Overarching Framework:** 本内容围绕XAI发布的AI模型Grook3展开，从团队背景、技术特点、性能测试、产品介绍、使用方法以及数据共享激励计划等多个维度进行了详细介绍和分析。
+
+**Outline Summary:**
+
+1.  **背景介绍:**
+
+    *   马斯克发布了新的AI模型Grook3，由XAI团队开发。
+    *   XAI团队中有两位华人创始人，团队中有多位华人工程师。
+    *   Grook3被认为是目前地表最强的AI模型。
+
+2.  **技术细节:**
+
+    *   训练成本高昂，使用了20万张显卡（H100/H200），是Grook2的10倍。
+    *   训练成本是DVC的263倍。
+
+3.  **性能表现:**
+
+    *   在CatBowder经济榜上排名第一，超越GPT-4和DVC。
+    *   在数学、科学和代码方面表现突出。
+    *   推理能力与OpenAI的GPT-4 Pro相当，甚至优于DeepMind的Gemini 1.0。
+
+4.  **产品介绍:**
+
+    *   包含Grook3和Grook3-Mixtral两个模型版本。
+    *   推出了基于Mixtral和蛮血版的推理模型。
+    *   具有代码生成能力，可以设计游戏并生成3D动画。
+    *   DivSerts工具具备深度搜索和交叉验证功能。
+    *   配备语音功能（延期发布），可进行语音转文字和记忆对话。
+
+5.  **使用方法:**
+
+    *   可通过XAI官网、Twitter和Grook App使用。
+    *   Grook3模型目前只对Twitter高级会员开放。
+    *   提供两种模式：设计模式（强调外部信息整合）和思考模式（注重本地推理）。
+    *   内置多个模板，如研究、思维分析、数据分析、创建图像、写代码等。
+
+6.  **API额度获取:**
+
+    *   通过分享数据给XAI进行训练，每月可获得150美元的API额度。
+    *   需要绑定信用卡并充值5美元。
+
+7. **影响和展望**
+   * Grook3发布或将引领AI行业新一轮技术竞争
+   * 有望为用户提供更强大的AI工具
+
+<Mermaid_Diagram>
+    graph LR
+    subgraph XAI团队 [XAI Team]
+    A[华人创始人]:::founder --> B(Grook3开发):::development
+    C[华人工程师]:::engineer --> B
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    end
+    
+    subgraph 技术细节 [Technical Details]
+    D[训练成本]:::cost --> B
+    E[20万张显卡]:::hardware --> D
+    F[H100/H200]:::hardware --> E
+    G[训练成本是DVC的263倍]:::cost --> D
+     style D fill:#ffc,stroke:#333,stroke-width:2px
+     style E fill:#add8e6,stroke:#333,stroke-width:2px
+    style F fill:#add8e6,stroke:#333,stroke-width:2px
+    style G fill:#ffc,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 性能表现 [Performance]
+    H[CatBowder榜第一]:::performance --> B
+    I[数学/科学/代码突出]:::performance --> B
+    J[推理能力强]:::performance --> B
+     style H fill:#90ee90,stroke:#333,stroke-width:2px
+    style I fill:#90ee90,stroke:#333,stroke-width:2px
+    style J fill:#90ee90,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 产品介绍 [Products]
+    K[Grook3模型]:::product --> B
+    L[推理模型]:::product --> B
+    M[DivSerts工具]:::product --> B
+    N[语音功能]:::product --> B
+      style K fill:#b0c4de,stroke:#333,stroke-width:2px
+    style L fill:#b0c4de,stroke:#333,stroke-width:2px
+    style M fill:#b0c4de,stroke:#333,stroke-width:2px
+    style N fill:#b0c4de,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 使用方法 [Usage]
+    O[官网/Twitter/App]:::platform --> K
+    O --> L
+    P[高级会员]:::access --> K
+    Q[设计/思考模式]:::mode --> K
+    Q --> L
+      style O fill:#dda0dd,stroke:#333,stroke-width:2px
+        style P fill:#dda0dd,stroke:#333,stroke-width:2px
+    style Q fill:#dda0dd,stroke:#333,stroke-width:2px
+    end
+
+    subgraph API额度 [API Credit]
+    R[数据共享]:::incentive --> S(150美元额度):::incentive
+    T[绑定信用卡]:::requirement --> R
+       style R fill:#faebd7,stroke:#333,stroke-width:2px
+    style S fill:#faebd7,stroke:#333,stroke-width:2px
+    style T fill:#faebd7,stroke:#333,stroke-width:2px
+    end
+
+    B --> H
+    B --> I
+    B --> J
+    B --> K
+    B --> L
+    B --> M
+    B --> N
+    B --> R
+    S-->N
+    classDef product fill:#f0f8ff,stroke:#333,stroke-width:2px
+    classDef performance fill:#98fb98,stroke:#333,stroke-width:2px
+    classDef cost fill:#ffb347,stroke:#333,stroke-width:2px
+    classDef hardware fill:#87ceeb,stroke:#333,stroke-width:2px
+    classDef access fill:#ee82ee,stroke:#333,stroke-width:2px
+    classDef incentive fill:#f5f5dc,stroke:#333,stroke-width:2px
+     classDef mode fill:#da70d6,stroke:#333,stroke-width:2px
+    classDef platform fill:#ba55d3,stroke:#333,stroke-width:2px
+    classDef engineer fill:#adff2f,stroke:#333,stroke-width:2px
+    classDef founder fill:#9400d3,stroke:#333,stroke-width:2px
+    classDef development fill:#6495ed,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+马斯克又放大招了他用了20万张显卡训练出的号称地表最强AI大模型Gov3在2月18日正式发布我追完了整场直播发布会发现最占点其实并不是高分图榜而是他们在发布会上坐在C-Wayne居然是两名华人他们都是XAA的创始成员连马斯克都得全程靠边做我又去翻览一下XAA的团队照片中间这两位工程师的女力特别漂亮左边这位23年斯荣奖得主从本科到博士都在多人多大学右边这位是吴雨怀是弹剧博士后博士毕业于多人多大学从研发团队的合照来看也出现了几名华人面孔果然继DVC之后华人的AI技术正在慢慢展现出统治地位这道视频我们来深入了解Gov3并实测一下这个号称最聪明的AI模型效果到底怎么样以技术结密除了优秀的团队Gov3在训练方面也同聚大和DVC的低成本高成绩不一样去年马斯克就号称Gov3会在10万张H100的显卡上进行训练当时有网友说这是神经网路的超级工厂但训练了122天以后又增加了5万块H100于5万块H200整个训练规模达到了20万张GPU训练量是Gov2的10倍这才有了现在的Gov3我们拿DVC做比较最终Gov3的整个训练成本大概是DVC的263倍2.跑分效果Gov3的分数也是相当亮眼在CatBowder而员的经济厂上Gov3直接拿下第一名分数要远高于O3和DVC的AI模型经济厂的官方给了这样的评价Gov3是首个突破1400分的模型并且在所有类别中排病第一这个撤评绑单和那些泄体背包黑料的色评不一样它的评分全部来源于真实用户的使用体验并且在XAI的内部测试中Gov3在数学、科学和代码这三个领域的分数都是最高的具有这种压倒性优势的AI难怪老妈敢说这个是目前地表最强的AI模型据小道销去传遣OPENI的全体成员都会实实观看这场直播要知道OPENI当时为了抗争DVC在春节期间就紧急发布了O3迷迷模型现在DVC的热度还没消结果又来了一个Gov3平凡回在推特上的Outmart在直播前还在推特上好严重也但等马斯哥直播结束以后他已经十几个小时没有发内容了外网的观众挑看好怎么看完直播以后无散战机接著疯狂超比技果然还是老外更了解奥特马3相关产品介绍Gov3包含了3和3迷迷两个模型版本并且在这两个模型的基础之上老妈还推出了两款推理模型一个是基于迷迷的推理模型这个目前已经可以使用了另一个是基于蛮血版的推理模型这个目前还处于测试阶段在直播过程中让Gov3推理模型写了一段代码代码能够会置一个从地球发射在火星角落并且能够返回地球的3D动画图在回答中我们可以看到Gov3的思考过程它利用了CAPL的定律算出了出仓时间和距离最后结果是完全正确的马斯克总结这个就是他回老家正确的怒在推理模型中打开BG不论模式会让模型能够调用到更多的资源得到效果更好的答案在直播过程中研发人员打开了BG不论模式要求它设计一款游戏把Helios方块和保持迷震风格来一起这简单讲一下保持迷震它是类似于一个消息乐的游戏当出现三个相连的同一颜色方块时这三个方块就会被消除直播演示效果非常流畅成功的结合了两款游戏并且画面特别漂亮此外XAI还推出了一个A技藏工具DivSerts这就是深度搜索能够连网搜索网页并且根据用户的需求交叉验证不同的内容来源当网上需讲信息越来越多的时候交叉验证将是AI币不可少的功能DivSerts可以同时回答好几个问题在它收集资料产出回答的时候你可以先去问其他问题或是干其他事儿等它生成结果以后再回来大大提高了我们的使用效率AI大神Kerpursuit提前测试了Grooks 3它的结论是Grooks 3的推理能力和 OpenMind目前最强的模型OePro相当要由于DivSerts的Ae和谷歌相当天刚刚推出的Jemm.2.0同样的Grooks 3也配备了语音功能但是就在发布会的前一个半小时马斯克突然宣布语音功能还不太稳定要延期一周发布据传语音功能不仅能语音转文字还能记忆之前的对话内容整个交互过程特别像真人之间的沟通此现在如何使用Grooks 3目前在XAI的官网推特还有Grooks APP中都可以直接使用Grooks 3我之前出为其Grooks手机版的教学想在手机上使用的同学可以看我主意的这条视频好密 官网伪利 登入帐号以后可以看见Grooks的介面做得还是很漂亮的输入框左边这个别人按钮点一下是可以上传文件给它然后右边这个按钮点一下是可以切换模型但注意目前Grooks 3模型只针对推特的高级会员开放每个月30美元发布会员上说Grooks平台还要独立于推特单独推出一个付费会员但目前我在官网还有APP上都没有找到付费入口这个功能应该还没有上限想买会员可以等一等非会员用户目前只能免费用跟著二模型不过马斯克说过段时间会把使用门卡给降下来大家试用一袋然后下面还有一个启动搜索的按钮点进一下就可以进行联网搜索了好 我们切换了输入三模型可以看了切换模型以后这儿多了两个按钮第一步设计这个功能它比较强调外部信息的整合更是用于需要广泛信息支持的问题你可以把它理解为是一个好用的ASO索然后这个思考功能它更注重于是本地的内部推理它不依赖于实实的网络搜索下面还可以内置到五个模板分别是研究及思广义分析数据、创建图像、写代码等你点进一个就可以用它内置的模板去进行提问5Grooks 3 时次好 我们首先来测一道代码题那竟然前面直播里面演示的作游戏那么有意思我们也来尝试一下让它根本生成一个HCML的小游戏那我希望它把摊吃舌跟躺和大战这两个今天有你解隔一下并且要有好看的UI设计然后游戏有可玩性我这话还没说完它已经开始做了我这个全程没有背素你看到它这个做的速度是非常快的我已经好久没有用过这么快的演了OK 大概去几秒钟的时间吧它这个结果就出来了好 我们点进一下复制把刚刚的代码站进去保存然后我们打开HCML的文件这个游戏就出来了方向键你动控革拍摄值在我们试试OK 这个我感觉有点简单了敌人太少了没有可玩性我来它改一改好 全部代码都改完了我们再复制一点然后打开刚刚的文件把代码给改一下好再点开这个IUTML的文件看一下新的它就给我改成了是一个坦克的形状这个敌人还会移动好 第一个实验我们就到这里好 接下来我们来测试到数学题我们先上传一张图片刚好也可以考验一下它的图片实别能力这道题怎么解OK 大概花了几秒钟时间给我得出来了正确答案并且还写上了思考的过程这个答案是对的好 这一题它过关最后我们再来测一个文字题我说网上看到了一个这样的测试我就听有意思的当AI统治世界的时候你给我写的一封信你会写什么内容这才几秒钟答案出来了亲爱的你希望这封信人在我们这个星期不断变化的世界中找到你我是Google 3 AI创造OK 它这道题给出来的答案言论还是比较正确的我把完结的文样放在这里大家感兴趣的可以自己暂停阅读一下接下来就来到了很多同学最感谢你去的话题如何白调Google的AI马斯克他为了获得更多的讯念数据他直接给幼虎发钱教你同意把数据故事给他做训练你在手冲五美金以后每个月都能领到他送的150美金的API俄罗那虽然目前API暂时不支持Google 3跟大家给先号一下等到支持Google 3的时候就能使用这些白漂亮的API俄罗度了好 先我们点击右上角设置管理然后在这里进入API的管理见面好 我们要绑定一个信用卡我给这部你需要添加你的帐单信息和绑定你的信用卡这里我亲策我们填国内的信息以及用国内的信用卡是可以绑定成功的再来我们点击这个按钮然后进来付费点这充值一个五美元确定好 到我们五美元充值成功以后这个分享数据的储标就亮了他这个意思就是我们同意把数据故事给马斯克他们那边去训练然后我们每个月就可以获得150美元的API俄罗度我们点击继续看到没有150美刀的俄罗度就来了老马在这方面确实比OpenAI还有壳到的他们几家要大放的多然后我们要如何使用API俄罗度呢我们点一组设这个要式的按钮然后点击这个创建一个API密药API密药创建好以后就可以去使用它了OK 上面教学的时候过程大家都不需要接触去计下我会整理成一个详细的图文首次放在评论区大家直接拿去用这次Gerog3的发布成功将XAI带到了AI的第一题对期待未来能让AI行业再卷起来造福我们用户好了 我是山克接下来还有分享以系列的AI使用教程想学AI 记得关注我
