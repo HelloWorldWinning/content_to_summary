@@ -1,0 +1,94 @@
+Timestamp: 2025-02-26T06:14:32.788804
+Title: 【Deepseek零代码查数据库】如何在n8n中搭建工作流，自然语言零SQL代码用AI agent查询数据库
+URL: https://youtu.be/yxJgEulUQi4?si=ki8O655ArtH0kA2n
+Status: success
+Duration: 13:26
+
+Description:
+好的，下面是对您提供的内容的总结：
+
+**总体概述：**
+
+本文主要介绍了如何利用 N8N 平台结合 DeepSeek AI 服务和本地 PostgreSQL 数据库，构建一个无代码自动生成 SQL 查询的系统，旨在解决数据分析工作中手写 SQL 效率低下的问题。
+
+**1. 核心思想 (Core Ideas)：**
+
+*   **问题提出：** 手写 SQL 在数据分析工作中效率低下，尤其是在数据库结构频繁变化时容易出错。
+*   **解决方案：** 利用 N8N 平台，结合 DeepSeek AI 服务和本地 PostgreSQL 数据库，构建一个无代码自动生成 SQL 查询的系统。
+*   **核心流程：** 分为两个主要部分：
+    *   **一次性执行的初始化流程：** 提取数据库结构并保存到本地文件。
+    *   **持续监听的自然语言查询流程：** 接收用户自然语言提问，通过 AI 生成 SQL 语句，在数据库中执行查询并返回结果。
+*   **具体实现步骤：**
+    *   **初始化流程：** 列举数据库中的表，提取每张表的字段信息，将表名信息添加到字段数据中，将所有条目整合为一个 JSON 文件，并将 JSON 文件保存到本地。
+    *   **自然语言查询流程：** 接收用户自然语言消息，从本地文件加载数据库结构，将用户输入和数据库结构整合，将整合后的数据发送给 AI Agent，从 AI 返回的文本中提取 SQL 查询语句，检查是否存在查询语句，执行 SQL 查询，格式化查询结果，将查询结果和 AI 的文字解释合并，准备最终输出。
+
+**2. 总结 (Conclusion):**
+
+通过 N8N 平台结合 AI 技术，可以实现根据自然语言自动生成 SQL 查询，从而显著提高数据分析效率。
+
+**3. 总体框架 (Overarching Framework):**
+
+*   **问题：** 手写 SQL 效率低、易出错
+*   **方案：** N8N + DeepSeek AI + PostgreSQL
+*   **流程：** 初始化 (提取数据库结构) + 查询 (自然语言 -> SQL -> 查询结果)
+*   **优势：** 无代码、自动化、高效
+
+**4. Mermaid Conceptual Map:**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Database
+        A[PostgreSQL Database] -- Contains --> B(Tables: Customers, Products, Sales)
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Initialization[One-Time Initialization Flow]
+        C[Trigger Workflow] --> D{List Tables in Database}
+        D --> E{Schema Extractor}
+        E --> F{Add Table Name to Output}
+        F --> G{Convert Data to JSON}
+        G --> H[Save File Locally (JSON)]
+        style C fill:#ffaaaa,stroke:#333,stroke-width:2px
+        style D fill:#ffaaaa,stroke:#333,stroke-width:2px
+        style E fill:#ffaaaa,stroke:#333,stroke-width:2px
+        style F fill:#ffaaaa,stroke:#333,stroke-width:2px
+        style G fill:#ffaaaa,stroke:#333,stroke-width:2px
+        style H fill:#ffaaaa,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Query[Natural Language Query Flow]
+        I[Chat Trigger (User Input)] --> J{Load Schema from Local File}
+        J --> K{Extract Data from File}
+        K --> L{Combine Schema Data and Chat Input}
+        L --> M{AI Agent (DeepSeek)}
+        M --> N{Extract SQL Query}
+        N --> O{Check if Query Exists}
+        O -- Yes --> P[Execute SQL (PostgreSQL)]
+        O -- No --> Q[Prepare Final Output]
+        P --> R{Format Query Results}
+        R --> S{Combine Query Result and Chat Answer}
+        S --> Q
+        Q --> T[Final Output]
+        style I fill:#aaaaff,stroke:#333,stroke-width:2px
+        style J fill:#aaaaff,stroke:#333,stroke-width:2px
+        style K fill:#aaaaff,stroke:#333,stroke-width:2px
+        style L fill:#aaaaff,stroke:#333,stroke-width:2px
+        style M fill:#aaaaff,stroke:#333,stroke-width:2px
+        style N fill:#aaaaff,stroke:#333,stroke-width:2px
+        style O fill:#aaaaff,stroke:#333,stroke-width:2px
+        style P fill:#aaaaff,stroke:#333,stroke-width:2px
+        style R fill:#aaaaff,stroke:#333,stroke-width:2px
+        style S fill:#aaaaff,stroke:#333,stroke-width:2px
+        style Q fill:#aaaaff,stroke:#333,stroke-width:2px
+        style T fill:#aaaaff,stroke:#333,stroke-width:2px
+    end
+
+    H --> J
+    style Query fill:#ddddff,stroke:#333,stroke-width:2px
+    style Initialization fill:#ffdddd,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+hello 大家好 我是古月嗯 木子的朋友 我从事数据科学呢 大概已经有 8 年的时间了 今天 是我第一次在这个频道里面做视频 非常高兴能和大家分享我的实战经验 和一些实用技巧 那么在长期数据分析的工作中呢 我深刻体会到了手写 SQL 的一些痛点 每次要查询数据 生成报表的时候 总要花大量时间去编写调试 还有优化 SQL 语言 特别是 在数据库结构频繁变化的场景下 传统手写 SQL 的方式就非常低效 容易出错 严重影响我的工作进度 所以 我今天想分享的是如何利用 n8n 平台 结合 deep seek AI 服务 以及本地 Postgresql 数据库 打造一个无代码 自动生成 SQL 查询的系统 好了话不多说 我们现在开始吧 嗯那在给大家展示工作流之前呢 我们先看一下 我在本地部署的 一个 Postgresql 的一个数据库 然后它是关于某一家呃 商店的销售数据库 当然也是 deepseek 就是帮我写的啊 然后里面包含有三个表格 一个是客户 一个是产品 一个是销售 我们一个个来看一下 首先是客户数据表 然后它里面包含了有客户的 ID 姓名邮箱嗯 电话号码 地址然后还有 loyalty points 然后第二个呢 是我们的产品信息 它包含有产品 ID 姓名然后它的分类 大小颜色 价格以及库存 最后一个是 可能就是变得最多的那个数据表格 就是我们的销售表格 它里面包含有销售的 ID 产品的 ID customer ID 然后嗯 交易产生的时间 然后交易数量 以及总价格 好了数据库就介绍到这里了 相信大家对我们的数据 以及它的内容有了一定的了解 现在我给大家做个 demo 看一下我们的 chatbot 效果具体怎么样 我们现在来到了他的界面上 在这里呢 我准备了两个问题 第一个问题是嗯 给我们带来收入最多的 10 个产品 是什么好了 问题发过去 我们可以看到 他现在界面出现了 3 个小点 表示他正在思考 我们耐心等待一下 返回的还是蛮快的 他给的解释是 要找出带来收入最多的 10 个产品 可以使用以下的 SQL 查询 给了 SQL 代码 对吧然后之后他又说 这个查询会计算每个产品总收入 并按收入从高到低排序 返回收入最高的 10 个产品 思路是蛮清晰的 然后他的结果是以表的形式给出来的 给出来的嗯 product ID 然后产品名称 以及带来的收入 嗯 像这样一个问题呢 嗯总的来说比较简单 对吧然后 我们可能会问一些模棱两可的问题 看看他的反应怎么样 所以我准备了第二个问题是 我们应该选哪些客户 给他们发邮件做广告 这个问题就比较刁钻一点了 没有明确的告诉他嗯 选取客户的一些条件是什么 我们看一下他的反应如何 好了嗯 结果已经出来了 为了选择适合发送广告邮件的客户 我们可以考虑一下策略 第一个是高中程度客户 第二个是近期购买客户 还有高消费客户 思路还是蛮对的 他说以下是一个 SQL 查询示例 然后用于选择忠诚度积分较高 并且近期有购买记录的客户 这个查询会返回忠诚度积分高 100 并且在过去 6 个月内 有购买记录的客户 按忠诚度积分和最近购买日期排序 嗯思路也是蛮好的对吧 但是 我们实际在使用这样一个产品的时候 我们尽可能的提出清晰的要求 这样它的结果也会好一些 那么我们的 demo 就到这里了 下面 我们看一下它的 workflow 是怎么样的 然后我们一个模块 一个模块的去给大家做解释 好了现在展现在大家面前的 就是我们的具体流程图了 这个流程图呢 大体可以分为两个部分 一个是红色部分 一个是蓝色部分 那么红色部分呢 我管它叫一次性执行的初始化流程 部分它是用来提取数据库的结构嗯 并且保存在本地文件的一个流程 然后第二个部分 是持续监听的自然语言查询流程 就是当用户提出自然语言问题的时候 然后他经过处理 通过 AI 生成 SQL 语言 并且在 Postgre SQL 查执行查询 然后返还结果 听起来是不是很简单呢 然后下一步 我们一个模块一个模块去看一下 好了那么接下来 我将为大家详细介绍一下 一次性执行部分的工作流 也就是我们如何从数据库中 提取表格结构信息 并且保存成一个本地的 JSON 文件 以供后续的自然语言查询时使用 整个流程只需就是执行一次 因为只有当数据结构发生改变的时候 嗯这个结果才会把改变 对吧再到时候再运行一下就可以了 那我们看一下 每一个节点是怎么工作的 首先第一个节点是 test workflow 它是一个 trigger 就是它会给你生成一个 button 点击一下 然后这个链就会被运行起来 然后第二个节点叫 list tables in the database 我们点开看一下 它是一个 Postgresql 节点 它是用来列举那个数据库中所有的表 嗯节点配置里面呢 我写入了这样的一个 SQL 查询 嗯这样系统就会返还 就是当前 public schema 下所有表格的名称 比如说这里有呃 products sales and customers 嗯 这里的输入呢 是一个初始触发 没有特别的数据输入 而输出则是一个包含多个条目的列表 每个条目代表一个表名 这样为后续提取每张表的字段信息 做好了准备 然后看一下下一个节点 下一个节点叫 schema extractor 这个节点将对上一步输出的每个表名 进行循环操作 呃也就是 product sales customer 对吧然后这注意一下 这个 query 里面有一个 JSON point table name 这个呢它的作用就是动态替换呃 为当前处理的表名 如也就是说 相当于做一个循环操作吧 先跑 products 然后再跑 sales 最后跑 customer 嗯这样系统就能返回 就是当前表中每个字段的详细信息 比如表的字段名称 数据类型 然后是否允许空值 以及默认值 对吧这样输出的结果会是一组 JSON 数据每个条目记录了某个字段的信息 这一步是为了了解每张表的结构细节 以方便后面的整合 然后我们再看一下下一个节点 叫 add table name to output 然后为了确保后续能知道每个字段 就是说属于哪个表 我们需要加一个 manual Mapping 的一个节点 然后将表名信息加到每一个字段中 数据中也就是说 原本 schema extractor 的返回数据中 我们额外加一个字段 嗯也就是这里 我们 output 里面的 table name 对吧 这样就能嗯知道每条数据来自于嗯 哪一个表格 然后我们看一下下一个节点 这个叫 convert data to JSON 它的作用是把前面所有的条目 整合成一个完整的 json 文件 这里我们选择的是 all item to one file 系统会把所有单独的数据项 组成一个数组 最终输出的内容 就是一个完整的数据库结构 的那个描述文件 包含所有的表明以及字段信息 嗯 然后我们看一下最后一个 叫 save file locally 我们通过 write file to disk 将这个 json 文件保存到本地 节点配置中 我设计了文本的路径 叫 sales postgres SQL point JSON 嗯 这样的话呢 我就能把 json 文件保存到本地 然后供后续自然语言查询时读取使用 啊那么这是第一个部分的介绍 好那接下来 我将带大家了解一下 自然语言查询的流程 也就是蓝色部分的流程 也就是当用户输入一句话之后 系统如何通过 AI 自动生 成 SQL 并执行查询的全过程 这个流程呢 包含了 11 个主要节点 下面我会依次讲解每个节点的作用 和它们的配置方法 嗯首先介绍一下我们的 chat trigger 节点 它的作用其实很简单 就是当用户在聊天界面 发送一条那个自然语言消息的时候 trigger 就会触发后续的节点的工作 然后接着 是我们的 load the schema from the local file 节点 这个节点的功能 就是读取我们之前生成 并保存的那个数据库的结构文件 也就是 sales underscore postgres SQL points json 文件 对吧有了它 后面的节点 才能呃知道数据库里面有哪些表 哪些字段 从而生成那个正确的 SQL 然后下一个模块是 extract data from file 当我们读取了本地的 JSON 文件之后 一般会拿到一个二进制 或者特定结构的输出 所以我们就需要用 extract data from file 来把它解析成那种 JSON 的结构 这样做的目的 是为了让后面的节点 能直接处理这份数据库 schema 信息 而不用手动的去处理二进制 或者是字符串 然后 下一个节点叫 combine schema data and chat input 嗯它是一个 manual Mapping 的一个节点 它是把用户输入的自然语言问题 和解析后的数据库结构 整合到一个数据对象里面去 我们可以看到它的 output 就是一个表格 里面包含了 chat input 还有那个 Schema 信息 对吧做一个整合 呃那么接下来 我们来到了最关键的 AI agent 节点它这个地方是一个 conversational agent 对接了那个 deepseek 的 chat 模型 然后在这个节点里面呢 我们会把用户输入 和数据库的那个 schema 作为上下文信息发送给 AI 然后我们这个地方有一个 system message 会告诉 AI 这是数据结构 请根据用户的问题生成 SQL 如果不需要查询数据库 就直接回答 那么这些描述都在这个里面呢 我这个地方就不赘述 大家可以自行去在 Template 里面去看一下 然后它的输出呢 它会返回一段文本 通常包含了一个 SQL 语句 还有文字说明 如果需要生成 SQL 的话 比如说用户要查询订单 它就会返回这样的一个 SQL 语言对吧 那么一旦拿到了 AI 的输出之后呢 我们就会进入下一个节点 叫 extract SQL query 节点 嗯因为 AI 的问题中 可能混杂着一些解释文字 所以用这个 extract SQL query 节点 就用正则式表达 或者是字符串解析的方法 把真正的 SQL 从里面提取出来 嗯输出的话 如果配对成功 就会得到一段完整的 这样的一个 SQL 语句 没有匹配到 就返回成那个空的字符串 表示不需要执行数据查询 呃 那在经过 SQL query 的提取之后呢 我们会进入到下一个模块 叫 check if query exist 那么顾名思义 这个地方就是看一下 前面节点的输出里面 有没有 query 语句 如果有的话 就返回 true 如果没有的话 就返返回 false 对吧然后 这个我们案例里面是查询订单的 query 它是存在的 所以我们就会向上走 好了那我们来到了下一个节点 叫 final SQL RESULTS 这个就很简单的 就是把前面提取出的 SQL 语言 然后进行执行返还结果对吧 拿到一个表 然后返还结果之后 就会进入到下一个节点 叫 for my query results 我们可以看一下这个作用 其实就是把那个数据进行一个整形 把表格的结构 整形成那种可以直接放到 chat 里面的 then 然后返回给用户对吧 好 在经过这个节点之后呢 来到了第二个节点 然后这个节点名字叫 combine query result and chat answer 顾名思义 就是说 如果 AI 在回答中提供了一些文字解释 我们可以在这个节点 把 AI 的文字回答 和 SQL 的查询结果并合到一起 做成一个最终的响应 这样用户既能看到 AI 对问题的解释 也能看到实际的数据表格或者列表 对吧然后最后一步 用 prepare final output 节点 把整合好的内容打包成一个输出字段 比如像这样子 对吧 或者直接以纯文本 json h t m l 格式返回 这个具体看你想在聊天界面 或者系统里面如何去呈现 那么这就是本期视频的全部内容 现在让我简单的总结一下 今天的重点和难点 重点在于 我们通过一次性提取数据库的 schema 为 AI 生成准确 SQL 提供了坚实的基础 我们还利用了 N8N 的可视化节点实 现了 从自然语言到 SQL 查询的全自动闭环 AI 节点能够自动理解客户的需求 生成可执行的 SQL 或者直接回答 大大简化了手写 SQL 的复杂过程 然后难点在于如何正确的提取 并且合并数据库结构与用户输入 确保 AI 拥有充分的上下文信息 然后从 AI 返回的混合文本中 精确地提取出 SQL 语言 并且做好错误处理 最后 就是对查询结果进行有效的格式化 嗯和整合 最终使输出既美观又准确对吧 如果你对这个工作流有任何的疑问 或者想了解更多的实用技巧 欢迎大家加入我们的社区 我和我的朋友木子 会在那里为大家答疑解惑 我们的频道是木子古月说 AI 希望大家能够加入讨论留言点赞分享 一键三连哦 另外我会在下方的链接中 提供本次演示的模板 方便大家下载复用或者是二次开发 非常感谢大家的观看 我们下期再见
