@@ -1,0 +1,172 @@
+Timestamp: 2025-02-25T08:14:52.299749
+Title: 7 Amazing CLI Tools You Need To Try
+URL: https://youtu.be/mmqDYw9C30I?si=Oji9bx7rOzGbVEF7
+Status: success
+Duration: 18:10
+
+Description:
+```text
+**Simplified Summary of Command Line Tools**
+
+**I. Introduction**
+    *   Overview: The video showcases seven command-line tools for enhancing terminal productivity on macOS and Linux.
+    *   Installation: Tools are installed using Homebrew (for macOS).
+
+**II. Tools and Their Usage**
+
+    *   **A. FCF (Fuzzy Finder)**
+        *   Installation: `brew install fzf`
+        *   Configuration:
+            *   Add keybindings to `.zshrc` (or equivalent shell config).
+            *   Usage:
+                *   `fzf`: Opens fuzzy finder.
+                *   `Ctrl+T`: Finds files/directories for use with commands (e.g., `nvim Ctrl+T`).
+                *   `**<Tab>` after a command: Opens fzf to select files/directories.
+                *   `Ctrl+R`: Searches command history.
+                *   `Tab` and `Shift+Tab`: Multiple selection.
+        *   Customization:
+            *   Install `fd` (`brew install fd`) to replace the `find` command for faster and more intelligent searching.
+            *   Configure `fd` in `.zshrc` to ignore `.gitignore` files.
+            *   Install `fzf-cache` from GitHub for Git integration (Ctrl+GH for git hashes, Ctrl+GB for branch checkout, etc).
+
+    *   **B. Bat**
+        *   Installation: `brew install bat`
+        *   Functionality: Provides syntax highlighting for `cat` command output.
+        *   Theming:
+            *   List themes: `bat --list-themes` (requires a file path, e.g., `bat --list-themes client.ts`).
+            *   Install custom themes: Create `~/.config/bat/themes` and add `.tmTheme` files.
+            *   Set default theme: `export BAT_THEME="theme_name"` in `.zshrc`.
+
+    *   **C. Delta**
+        *   Installation: `brew install git-delta`
+        *   Functionality: Improves `git diff` output with syntax highlighting (using `bat` themes) and side-by-side diffs.
+        *   Configuration: Add to `.gitconfig`:
+            ```
+            [diff]
+                tool = delta
+            [difftool "delta"]
+                cmd = delta --side-by-side
+            [delta]
+                side-by-side = true (optional)
+            ```
+
+    *   **D. Eza**
+        *   Installation: `brew install eza`
+        *   Functionality: Enhanced `ls` command with better formatting, colors, Git integration, and tree view.
+        *   Usage:
+            *   `eza -l --git`: Long listing with Git info.
+            *   `eza --tree --level 2`: Tree view with depth of 2.
+        *   Configuration: Alias `ls` to `eza` with preferred options in `.zshrc` (e.g., `alias ls="eza -l --git"`).
+
+    *   **E. TLDR**
+        *   Installation: `brew install tealdeer`
+        *   Functionality: Provides concise, community-maintained help pages for command-line tools.
+        *   Usage: `tldr command` (e.g., `tldr eza`).
+
+    *   **F. The Fuck**
+        *   Installation: `brew install thefuck`
+        *   Functionality: Corrects mistyped commands.
+        *   Configuration: Add `eval $(thefuck --alias)` to `.zshrc`. Then use `fuck` (or a custom alias) to correct the previous command.
+
+    *   **G. Zoxide**
+        *   Installation: `brew install zoxide`
+        *   Functionality: Smarter `cd` that remembers frequently visited directories.
+        *   Usage:
+            *   `z directory_substring`: Jumps to the most relevant directory containing the substring.
+            *   `z`: Returns to home directory.
+        *   Configuration: Add `eval "$(zoxide init zsh)"` to `.zshrc` and alias `cd` to `z` (optional).
+
+**III. FZF Previews Configuration**
+
+    *   Integration with Bat and Eza: Configure FCF to use Bat for file previews and Eza for directory previews.
+    *   Configuration in `.zshrc`:
+        ```
+        export FZF_DEFAULT_OPTS="--bind 'ctrl-t:execute(bat --color=always --style=header,grid,rule --theme=\"TokyoNight\" --paging=never {} | head -n 500)+abort' --preview 'bat --color=always --style=header,grid,rule --theme=\"TokyoNight\" --paging=never {} | head -n 500'"
+
+        fzf_cd_preview() {
+          case "$1" in
+            cd)
+              eza --tree "$PWD"
+              ;;
+            export | unset)
+              echo "$1 $2"
+              ;;
+            *)
+              bat --color=always --style=header,grid,rule --theme="TokyoNight" --paging=never "$1" | head -n 500
+              ;;
+          esac
+        }
+
+        FZF_COMPLETION_OPTS='--preview "fzf_cd_preview {1}"'
+        ```
+    *   Customization: Theme and color settings for FCF can be configured via `FZF_DEFAULT_OPTS`.
+
+**IV. Conclusion**
+
+    *   The presented command-line tools significantly enhance terminal efficiency and user experience through features like fuzzy finding, syntax highlighting, intelligent directory navigation, and command correction.
+
+**Core Point:** Mastering these command-line tools can greatly improve a developer's efficiency and productivity when working in the terminal.
+
+**Overarching Framework:** The content is structured as a tutorial, demonstrating the installation, configuration, and usage of various command-line tools to improve terminal workflow.
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Core Tools
+        A[FCF (Fuzzy Finder)]:::fzf --> B(File/Directory Search)
+        A --> C(Command History Search)
+        A --> D(Multiple Selection)
+
+        E[Bat (Syntax Highlighting)]:::bat --> F(Enhanced Cat Output)
+        G[Delta (Git Diff Improvement)]:::delta --> H(Better Git Diffs)
+        G --> I(Side-by-Side Diffs)
+
+        J[Eza (Enhanced LS)]:::eza --> K(Formatted Listings)
+        J --> L(Git Integration)
+        J --> M(Tree View)
+
+        N[TLDR (Simplified Help)]:::tldr --> O(Concise Command Help)
+        P[The Fuck (Command Correction)]:::thefuck --> Q(Auto-Correct Commands)
+        R[Zoxide (Smarter CD)]:::zoxide --> S(Fuzzy Directory Jump)
+        R --> T(Directory History)
+    end
+
+    subgraph Configuration & Customization
+        U[Shell Configuration (~/.zshrc)]:::config --> A
+        U --> E
+        U --> J
+        U --> P
+        U --> R
+
+        V[.gitconfig]:::gitconfig --> G
+
+        W[FZF Theme Customization]:::theme --> A
+        X[Bat Theme Customization]:::theme --> E
+    end
+
+    subgraph Integration
+        Y[FZF Previews]:::fzfpreview --> A
+        Y -- Uses --> E
+        Y -- Uses --> J
+    end
+
+    A --> Y
+    E --> Y
+
+    classDef fzf fill:#ADD8E6,stroke:#333,stroke-width:2px
+    classDef bat fill:#90EE90,stroke:#333,stroke-width:2px
+    classDef delta fill:#FFA07A,stroke:#333,stroke-width:2px
+    classDef eza fill:#FFFFE0,stroke:#333,stroke-width:2px
+    classDef tldr fill:#E6E6FA,stroke:#333,stroke-width:2px
+    classDef thefuck fill:#F08080,stroke:#333,stroke-width:2px
+    classDef zoxide fill:#D3D3D3,stroke:#333,stroke-width:2px
+    classDef config fill:#FAEBD7,stroke:#333,stroke-width:2px
+     classDef gitconfig fill:#F5F5DC,stroke:#333,stroke-width:2px
+          classDef theme fill:#7FFFD4,stroke:#333,stroke-width:2px
+               classDef fzfpreview fill:#7FF5D4,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+in this video I'm going to be showing you guys seven really amazing command line tools that can be incredibly helpful when working on the terminal now I'm going to be showing all of these on Mac OS but everything I'm going to be showing you will also apply if you're working on a Linux machine I'm also going to be using home brew to install all of the tools so if you're on a Mac make sure that you have this installed I'll have instructions on how to do this along with everything else I'm going to be showing you in the blog post Linked In the description now the first tool I'm going to be showing you is called FCF this is a really fast and very use useful fuzzy finder for the command line I'm going to go ahead and install it by doing Brew install FCF and I'm using zsh so I'm going to open up the config file with my editor of choice I like to use neovim you can use whichever text editor you prefer to do this I'm going to do envin Tilda sl. CSH HRC I'm going to go to the bottom of this file and the first thing we need to do is add the following this will set up the FCF key bindings and fuzzy completion I'm going to save this and exit neovim and then I'm going to reload the configuration like so now I can start using FCF there's a lot of different things you can do but one of the primary use cases is to look for files I've moved over to a different directory here now the first thing I can do is to run fzf that will open up the fuzzy finder and then you can just start typing to look for a specific file like this I'm going to exit with contrl C instead of doing this you'll probably use one of the shortcuts for example let's say I want to open a file with NE I can do envm and then I can follow that with contrl t and that will look for files and directories under the directory I'm currently in let's say I want to open client. TS I can press enter and then press enter to open it with newm contrl t will allow you to look for directories as well as files and you can use this with a bunch of different commands let's say I want to do it with a VSS code I could do code contrl T and look for client. ts and press enter and enter and there you go now it's open in VSS code now another really convenient way of doing this is by doing something like CD and you can follow this with two stars and press tab that'll automatically open up fzf and it'll only show directories in the results now I haven't mentioned how to go through the results you can use crl j and k crl n and contrl p or the down and up arrows now let's say I want to go to super base I can just type out something like s and press enter and enter and I'm in you can also use the double star pattern with other commands let's say you want to open up a file with your editor I can do nbim star star Tab and then look for what I want to open or with vs code for example configo and then you open it up now you can also do this with SSH this will allow you to look for recently used IP addresses and host names and you can also use this with the kill command to kill a specific process you use -9 to kill the process and you can use star star tab let's say for example I want to close notion which I currently have open and then I can press enter and it'll replace it with the process ID so you can go ahead and kill it now when you're using fzf I'm going to look for notion again you can use the Tab Key to select more than one result as well as shift tab to deselect and if you press enter it will include both of the results you can also use fzf to work with environment variables you can do unset star star Tab and you can look through environment variables here as well as with export and aliases so you can do unalias to remove in Alias do star star Tab and then look for the Alias finally you can use controlr to look through the history so I could look for one of these commands and select it and then I can run it if I start typing out a command then the filtering will start from there which is also really useful now how it works by default is really really helpful I'm going to add some extra configurations to make it even nicer what I'm going to do is install FD this will replace the find command which is what FCF uses by default to look for files let's go ahead and install that now I can open up the zshrc file like so and then go to the bottom and add the following first we're changing the default command that is used to look for files and directories we're using FD we want to show hidden files strip the current working directory and we do want to exclude dogit directories FD by default will ignore any files and directories that are ignored with a dog ignore file which is really nice because we typically want to ignore these files when we're searching for things now the controlt key bind will use the default command now this function here is for the star start completion when looking for files and directories this is very similar to the default command and this one here is for the star start tab functionality but when looking for directories like when you're doing CD I'm going to save this and I'm going to exit neovim and the last thing I'm going to do is to add a script that makes it really easy to work with Git along with FCF I'm going to CD into my home folder and I'm going to do git clone and the following directory it's called fzf-cache [Music] control and then do GH and that will show different git hashes let's say you want to do a diff you could do git diff and then hold down control and then press GH select one of these and press enter and enter and there you go let's say you want to check out a branch you can do git check out press down control and then do GB you can take a look at the FCF git repository to see a list of all of the available key maps now the next command line tool is called Bat we're going to install it with home brew by doing Brew install bat bat is a better version of cat which is used to display the content of a file in the terminal but with bat you have syntax highlighting now that we've installed it I can do something like bat and let's use fzf to look for a file I'm going to do star star Tab and look for client and press enter and enter again and you'll see that the output is really nice with syntax highlighting if I do up arrow and change this with cat it's it's just much less readable now bat has a bunch of different themes you can use the following command to see an example of all of the different themes you just have to replace this with a path to an actual file I'm going to use DB client. TS this command requires you to have FCF installed now you can use control J and K or the up and down arrows to look through these different themes if you find a theme on GitHub that isn't one of the built-in themes the first first time you're going to install a new theme you want to run the following command to create the directory where all of the themes should go and then you can move into this directory with this following command you'll see that it's config SLB SL themes then you'll want to add the theme you found online to this directory I'm going to be installing a theme called Tokyo night like so I'm using curl to do this you'll see here this is the night variation of the Tokyo night theme and the file extension should be done TM theme from what I understand this theme in particular is normally compatible with the Sublime Text Editor now you'll see that the theme is now in this directory the final thing you'll have to do in order to use it is to do bat c-- build and I'm going to move back to where I was at with CD and dash and I'm going to rerun the command we used earlier to see the different themes and I can look for Tokyo night with fzf and see an example of how it looks like you'll see that the name is Tokyo knore Knight I'm going to close this with contrl C to use it as a default for bat we can open up the zshrc file like so go to the bottom and then add the following to set the bat theme variable to Tokyo knore night let's save this close neovim and I'm going to Source the CSH HRC file and then let's use bat and Then star start Tab and look for DB SL client and press enter and now the output will use the Tokyo night my theme another really useful tool that goes hand inhand with bat is Delta which we can use to create better looking diffs I'm going to install it by doing Brew install g- Delta and then to use Delta with Git for when you're doing a git diff can do envm till the. git config to open up your git configuration file and then you can add the following this will set up Delta I'm going to save and quit and now I can do git diff and I can use my shortcut contrl GH and let's just pick one of these hashes and press enter and enter again and you'll see that the diff looks a lot better and what's really cool as well is that Delta will use the bat theme that you're using to show the code if you want to do side by side this you can open up your git config and then add here under Delta side by side is equal to true and then you can do get diff and contrl G and let's go ahead and choose two of them let's do Tab and tab and press enter and enter again and the diff now will be side by side now I also want to show you guys how to integrate bat with fzf previews but before we do that I'm going to show you the next really nice CLI tool I'm going to install it like so it's called eza which is basically a better LS and now you can use eza to list the files within a directory eza has a lot of different options to make things look a lot better than a less just to give you an example you can do something like eza D- color equals always to show with colors and then we can use long to show a lot more information and enable get information as well let's say you want to remove some of these you can use as a color always long I want to show git I don't want the file size I do want the icon F so this is always I don't want the time the user or the permissions you can also use eza to list files in threee format you can do ea-- tree and you can limit the depth by doing level and specify how many levels down you want to go let's do two and press enter all right I want to use this command as my default I'm going to open the CSH RC file like so go to the bottom and I'm going to create an alias for LS which is going to be that command that way I can keep using LS which I'm really used to but with the better functionality of eza I'm going to save in quit Source Z HRC and now if I do LS it'll use the Alias now that we have bat and eza installed we can set up some previews for when you're looking for things with fzf I'm going to open the zshrc file again like so go to the bottom and at the end of before I'm configuring fzf I'm going to add the following to set up previews with fzf when I'm using contrl T I'm going to be using bat to preview the file and I'm limiting the file content to 500 lines now I also want previews when I'm using the star star tab functionality like with CD so you need to Define this function called FCF comp run and use this switch statement to set up the previews when I'm using CD I'm going to use ASA in tree format to c a preview of that directory if I'm looking for environment variables with export or unset I'm going to show its value in the preview and for the default I'm going to be using the bat preview now I'm going to save and quit do Source zsh HRC and now if I do control T if I look for a file here like DB client you'll see that it uses bat for the preview with the color scheme that we configured and you can scroll through the preview with your mouse remember that it's limited to 500 lines you can also set up keymaps to do that if I do CD star star tab instead it'll use eza in tree format to show a preview of the directory all right the next useful tool is called tldr we're going to install it by doing Brew install tlrc which is the rust client for tldr tldr is a huge collection of community maintained help Pages for a bunch of different command line tools which basically have userfriendly summaries to give you a quick general idea on how to use a given tool as an alternative to traditional Man pages for example let's say you want to learn more about how to use eza you can use tldr ASA and it'll give you a bunch of useful ways of using this tool of course if you need to learn a lot more about the tool and all of the different options that are available then you would just use regular Man pages with man and eza now the next tool is also really useful it has an interesting name it's called the you can install it by using Brew install the and you can use this to autoc correct a command that you accidentally wrote the wrong way so to enable it we'll open up the zshrc file go to the bottom and then we'll add the following this will set up the default Alias which is just but you can also set up your own custom Alias like FK or whatever else you want to use for this let's save and quit then we can reload our config like so now I'm going to use Homebrew to install the next command line tool we're going to use let's say I type this wrong so that's missing an e and I can do install the tool is called zide and I press enter that didn't work so now I can type and press enter and it'll autoc correct it if you have more than one result you can use the up and down arrow keys to choose the one you want I'm going to press enter to correct it and it'll automatically run it for me pretty cool all right so we just installed zide which is the next tool that I want to show you guys this is a better alternative to CD and it's really really handy with zide you can use Z instead of CD to move into a directory to finish setting it up let's open our zshrc file go to the bottom and then you'll want to add the following to set up zide let's save and quit and let's Source our config file and now we can start using Z to navigate to different directories when you do this it'll remember the directories you've visited and make it a lot easier to go back to them in the future I'm just going to press enter to go back to our home directory and I'm going to do Z and go back to where we were I'm going to do Tilda /dev yoube SL spell kit blog so now I've visited this directory with Z again go back to home and now I can do Z and just type out a string that matches with the last directory in the path that I want to go to so I can type just spelt for example and press enter and it'll automatically go back to the directory spel kit blog and you can do this from anywh I have another directory called blog in the YouTube directory let's go up a level all of the typical CD commands will work with z and let's go to the blog directory then I'm going to go back to Home by doing Z and press enter now I can do Z and type blog and because there are two possible results I can do space and tab and it'll show me the different possible directories I can go to with FCF let's say I want to go to spelit blog and then I press enter and it'll will take me to it before I finish I want to do some final configurations I'm going to open the e as HRC file go to the bottom I'm going to add an alias here for CD and that's going to be equal to Z this is so that I can still keep using CD as I'm just really used to that now the last thing I want to do is to modify the theme for fzf I'm going to go to where I start setting up all the stuff for fzf and I'm going to add the following here I'm defining some different colors for my theme and then for the fzf default Ops I'm adding the following to set up the colors this particular theme goes well with my current alacrity setup I'm going to save and quit and then do Source Z as HRC and now I can use CD instead of Z so I can do CD and spelt and press enter and that'll take me back to my spell kit blog now if I do envm star star tab you'll see that it now uses the new theme you can look for other themes online and there's an FCF theme generator where you can easily Define your own theme I'll have a link to the generator in the description all right you guys that's it for this video I hope you enjoyed it I'm planning on doing a video on how I set up alacrity which is the terminal that I used in this video and I've been using recently if you want to stay up to date with any new videos I post on the channel make sure to subscribe down below and if you're interested in setting up neovim exactly like I have I have a complete stepbystep guide where we take neoven from scratch and turn it into a pretty amazing editor for the terminal then you can click on this video right here see see you guys in the next one peace
