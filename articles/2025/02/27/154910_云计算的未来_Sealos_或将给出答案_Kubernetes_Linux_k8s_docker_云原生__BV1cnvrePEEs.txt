@@ -1,0 +1,82 @@
+Timestamp: 2025-02-27T15:49:10.296015
+Title: 云计算的未来？Sealos 或将给出答案｜Kubernetes｜Linux｜k8s｜docker｜云原生｜ BV1cnvrePEEs
+URL: https://www.bilibili.com/video/BV1cnvrePEEs/?trackid=web_pegasus_3.router-web-pegasus-1938362-85fd9c96d9-ws9pl.1740642521599.743&track_id=pbaes.VaDAofK_X-89FWj-V-ULrwitzoxqsI35-Q6K3wh5_SyIf3A2WC9d9nQCtvhajXHDD65FxpjHzvB4AXmNNZrMKeeg-9S5QUcbV_kd-ZCSXisvj3s53dh9J6n5D42ouypulrJDncJ4YOozvn_-HVFm4Ft0njzBJB_Hxh7XsvNMvX6TbhEuW7Nm-EIkTAIKMI6A&caid=__CAID__&resource_id=__RESOURCEID__&source_id=5614&from_spmid=__FROMSPMID__&request_id=1740642521575q172a27a105a94q3246&creative_id=205470897&linked_creative_id=205470897&native_mode=1&spm_id_from=333.1007.tianma.3-3-7.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 5:33
+
+Description:
+好的，这是对您提供的内容的总结：
+
+**Summary:**
+
+1.  **Problem:**
+    *   Traditional application deployment is complex, involving server procurement, environment configuration, and manual scaling, requiring specialized DevOps skills.
+    *   Kubernetes (K8s) offers powerful solutions but has a steep learning curve and high operational overhead.
+    *   Inefficient resource utilization and the need for dedicated DevOps teams lead to high costs.
+
+2.  **Solution: Cellus – An Open-Source Cloud Operating System**
+    *   **Simplicity:** Cellus simplifies deployment through a user-friendly interface, allowing even non-technical users to deploy applications with a few clicks.
+    *   **Efficiency:**  Eliminates the need for manual server management, provides automatic domain names, and offers a built-in cloud development platform with support for various programming languages.
+    *   **Cost Reduction:**
+        *   Reduces cloud usage costs by up to 90% through container-based pricing, eliminating additional software costs.
+        *   Offers precise resource management with account systems, quotas, and timely alerts for unused resources.
+        *   Features automatic scaling to optimize resource utilization and reduce waste.
+
+3.  **Operational Benefits:**
+    *   Minimizes the need for large DevOps teams through automation and simplified management.
+    *   Maintains consistent operational complexity regardless of scale.
+
+4.  **Usage Options:**
+    *   **Shared Instance (Public Cloud):** Suitable for users who previously used cloud services; accessible via a link with free trial credits.
+    *   **Private Deployment:** Suitable for users with existing data centers; can be installed on local servers with a single command.
+
+5.  **Community Support:** Users can join the open-source community or use the ticketing system for support and feedback.
+
+**Core Point:** Cellus simplifies cloud application deployment and management, significantly reducing costs and operational overhead by providing an easy-to-use, Kubernetes-based open-source operating system.
+
+**Overarching Framework:** Addressing the complexity and cost of traditional cloud deployment by offering a user-friendly, efficient, and cost-effective open-source cloud operating system built on Kubernetes.
+
+**Mermaid Conceptual Map:**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Challenges [Traditional Deployment Challenges]
+        A[Complex Deployment Process] --> B(Server Procurement & Configuration);
+        A --> C(Manual Scaling);
+        A --> D(Specialized DevOps Skills Required);
+        E[Kubernetes Complexity] --> F(Steep Learning Curve);
+        E --> G(High Operational Overhead);
+        H[High Costs] --> I(Inefficient Resource Utilization);
+        H --> J(Dedicated DevOps Teams Needed);
+    end
+
+    subgraph Cellus [Cellus: Cloud Operating System]
+        K[Simplicity] --> L(User-Friendly Interface);
+        K --> M(One-Click Deployment);
+        N[Efficiency] --> O(Automatic Domain Names);
+        N --> P(Built-in Cloud Development Platform);
+        Q[Cost Reduction] --> R(Container-Based Pricing);
+        Q --> S(Precise Resource Management);
+        Q --> T(Automatic Scaling);
+        U[Operational Benefits] --> V(Minimal DevOps Team);
+        U --> W(Consistent Complexity);
+        X[Usage Options] --> Y{Shared Instance (Public Cloud)};
+        X --> Z{Private Deployment};
+    end
+
+    subgraph Community [Community Support]
+        AA[Community Support] --> AB(Open-Source Community);
+        AA --> AC(Ticketing System);
+    end
+    Challenges -- Addresses --> Cellus
+    Cellus --> Community
+    style Challenges fill:#f9f,stroke:#333,stroke-width:2px
+    style Cellus fill:#ccf,stroke:#333,stroke-width:2px
+    style Community fill:#ffc,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+你是一名年轻的程序员,好不容易写完了你的业务代码接下来的工作是把项目部署到一个公网可以访问的环境一般来说会去购买一台合适的服务器把项目以及项目所学的环境部署在这台服务器上如果你知道什么是容器技术的话你会把项目打包成一个刀克进行项因为刀克的方式部署在服务器上那随着业务量的增大和项目的增多你会发现单服务器的性能已经买足不了你的需求了你会购买多个服务器并考虑自动扩展高可用、负载坠进行等这个时候你可能会了解到K8SK8S的功能十分强大但上手难度也同样大光核心主见就实际像想要用好K8S需要很高的学习成本和经验太复杂了没没想到这些就会让我本就吸收的头发又少了几根那有没有什么简单上手意为护又能享受到K8S所有能力的解决方案呢有Cellus就是为此而生的你只需要打开一个榴栏器输入你需要部署的进项铭选择实力数CPU内存等等配置然后点击一件部署一个高可用动态深错的应用就起来了Cellus是一个以K8S为内核运行在多台服务器上的开源运创作系统把整个集权看作一个整体像Windows 麦克兰S一样用户想安装什么应用就安装什么应用不同的是Cellus上面安装的是开发者或者说企业所需要的分布式应用首先就是简单正如我们前面所讨论从购买服务器到配置环境再把项目部署起来是一个很复杂的调做需要一个甚至多个技术里面来调做而在Cellus上呢只需要打开榴栏器点点鼠标非技术的同学通过半天的摩索也可以数据点调做让部署细不懂甚至完全不知道K8S的同学也能享受到K8S全家的能力其次就是高效想要部署一台应用呢不用先去购买一台服务器了也不用在公司的服务器表格中查询哪台服务器是空间可用的甚至也不需要你配置正书遇名自动就可以获得一个共网客房的地址除此之外Cellus还内置了自演的云开发平台同样也是一款看原产品目前支持的变成语言深斗的GS可以在网页上直接数据GS代码这数据库对象存储以及在Cellus上部署的任何服务进行内网操作目前已经支撑了两家百万用户的小游戏团队他们没有后端没有运为警告各位数的前端即可称即百万用户的小游戏应用第三点也就是最重要的一点盛钱降本30%我们觉得不够有挑战性我们希望把用云的编辑成本至少降低到90%如何使先这一点呢就要提到Cellus的设计理念一切接应用首先用户只需要为容器付费也就是抛开所谓的ArtsPass Sats加狗从时抛开中间所有软件成本我们的应用用到了2C4G的资源那我就应该每个小时付两倍的CPU单架加上四倍的任程单架这样可以大大提升资源的利用率当企业规模大一点的时候会有很多个服务器有的企业会用一个UCL表格来维护哪些服务器再使用哪些是空钱的每个一段时间就需要把所有负责人都问一遍这样来清退不用的服务器而Cellus提供了账号系统每个部门每个开发者都可以有自己的工作空间可以申请额度当额度用完后会及时提醒对于不续费的应用会及时清楚这样就可以实现对资源的精准马空还能顺便分析一下各个部门的R.O.I除此之外Cellus还内置了弹性深缩这一特性可以一件位任何应用配置比如夜间不回乐的应用就应该释放资源压力比较大的应用就应该自动扩容很多公司的资源利用率都没有超过20%如果使用以上的解决方案至少可以结成一半的成本基于刚刚的功能你会发现好像不再需要运为人员了或者说不再需要这么多的运为人员了Cellus的开发者花了不到一半的经历维护整个云在8000个应用的时候投入一半的经历8000个应用的时候也是一半甚至80万800万的时候还是只需要投入一半的经历维护这就是云操作系统的魅力不会因为体量变大而增加运为负杂度可以大大的解决人力成本我们的身杖是云或者说云操作系统足够成熟足够稳定的情况下就不应该有运为这个角色比如微软和苹果卖一台个人电脑给你的时候就不会配置一个运为人员你需要使用什么应用安装一个就行了其他的不用关心全部交给操作系统前面我们介绍过Cellus是一个开源的项目那就有两种使用方式共用原因和私有化部署如果你以前使用的都是云服无器那么共用原因比较适合你可以在流浪器中输入Cellus的地址我会放一个专属的地址在评论区域或者视频简介通过这个链接给大家证凑免费的体验额度登陆进来之后就可以使用Cellus的所有能力了比如说在应用管理中一件不属你的应用一件起动数据库等等如果你带产品的使用过程中存在疑问和建议欢迎加入我们的开源社区或者通过工单系统反馈我们的团队与社区会接近所能的为您提供帮助如果已经有了自建机房那么私有化部署更适合你可以通过一条命令来把Cellus安装到本地服务器上接下来就和公有名一样的使用了那总结一下Cellus是以KVIS为内和的原操作系统简单高效省钱那以上就是关于Cellus原操作系统的介绍如果你觉得我们的项目对您有帮助或者起发欢迎赛大点赞关注以及分享给您的好朋友我们会持续分享Cellus的使用技巧以及云缘生理与的相关支持感谢您的观看我们下期再见
