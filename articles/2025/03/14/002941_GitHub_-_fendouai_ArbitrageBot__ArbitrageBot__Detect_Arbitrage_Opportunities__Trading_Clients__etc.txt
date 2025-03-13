@@ -1,0 +1,98 @@
+Timestamp: 2025-03-14T00:29:41.611712
+Title: GitHub - fendouai/ArbitrageBot: ArbitrageBot, Detect Arbitrage Opportunities, Trading Clients, etc.
+URL: https://github.com/fendouai/ArbitrageBot
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将根据您提供的文本生成符合要求的摘要。
+
+**摘要：**
+
+1.  **核心观点：** 该文本提供了一个关于加密货币套利机器人的资源集合，旨在帮助用户利用不同交易所之间的价格差异获利。
+
+2.  **总体框架：**
+    *   **套利机器人及工具：** 介绍了各种开源和商业的套利机器人，以及相关的开发库（例如CCXT）和REST API。
+    *   **交易所：** 列出了支持套利交易的加密货币交易所，包括Binance、OKEx、Huobi、Gate等。
+    *   **交易所客户端（API）：** 提供了各种交易所的Python客户端库，方便用户连接交易所进行交易。
+    *   **教程和资源：** 提供了一些关于加密货币交易机器人开发的教程和视频，以及交易所手续费的信息。
+
+3.  **详细内容：**
+
+    *   **套利机器人及工具：**
+        *   ArbitrageBot (entropyengine.cn/)
+        *   CCXT (JavaScript/Python/PHP交易API)
+        *   ccxt-rest (统一REST API)
+        *   OKX/Pionex 网格交易和套利机器人
+        *   Hummingbot (开源交易机器人框架)
+        *   Blackbird, R2 Bitcoin Arbitrager, Peregrine, bitcoin-arbitrage, cryptocurrency-arbitrage, binance-triangle-arbitrage
+        *   OctoBot, Freqtrade (开源交易机器人)
+    *   **交易所：**
+        *   Binance, OKEx, Huobi, Gate, MXC, Pionex
+    *   **交易所客户端（API）：**
+        *   Binance (python-binance, binance-futures-connector-python)
+        *   Huobi (huobi\_Python, Futures-Python-demo, hbdm\_Python)
+        *   OKEx (okcoin\_client, Open-API-SDK-V5)
+        *   Gate (gateapi-python)
+        *   Bitmart, Bitfinex, BitMEX, HitBTC
+    *   **教程和资源：**
+        *   Cryptocurrency-Trading-Bots-Python-Beginner-Advance (YouTube教程)
+        *   交易所手续费信息 (Binance, Gate, Huobi, OKEx)
+
+4.  <Mermaid_Diagram>
+```mermaid
+graph TD
+    subgraph 套利机器人及工具 [Arbitrage Bots & Tools]
+        A[ArbitrageBot] --> B(CCXT);
+        A --> C(ccxt-rest);
+        A --> D{OKX/Pionex 机器人};
+        A --> E(Hummingbot);
+        A --> F[其他套利机器人];
+    end
+
+    subgraph 交易所 [Exchanges]
+        G[Binance] --> H(API Client);
+        I[OKEx] --> H;
+        J[Huobi] --> H;
+        K[Gate] --> H;
+        L[MXC] --> H;
+        M[Pionex] --> H;
+        N[Bitmart] --> H;
+        O[Bitfinex] --> H;
+        P[BitMEX] --> H;
+        Q[HitBTC] --> H;
+    end
+
+    subgraph 交易所客户端 [API Clients]
+        H --> R[Binance API];
+        H --> S[Huobi API];
+        H --> T[OKEx API];
+        H --> U[Gate API];
+        H --> V[Bitmart API];
+        H --> W[Bitfinex API];
+        H --> X[BitMEX API];
+        H --> Y[HitBTC API];
+    end
+
+    subgraph 教程和资源 [Tutorials & Resources]
+        Z[Python 交易机器人教程] --> AA(交易所手续费信息);
+    end
+
+    A -- 利用 --> G;
+    G -- 通过 --> H;
+    H -- 连接 --> G;
+    Z -- 提供 --> G;
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style Z fill:#fcf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+套利机器人 ArbitrageBot Trading API CCXT https://github.com/ccxt/ccxt A JavaScript / Python / PHP cryptocurrency trading API with support for more than 120 bitcoin/altcoin exchanges CCXT has arbitrage python script. ccxt-rest https://github.com/ccxt-rest/ccxt-rest Open Source Unified REST API of 100+ Crypto Exchange Sites (18k+ docker pulls) - https://ccxt-rest.io/ Arbitrage Bot OKX Free Grid Trading Bot & Arbitrage Bot https://www.okx.com/join/1915102941 Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Hummingbot Hummingbot is open source software that helps you build trading bots that run on any exchange or blockchain https://github.com/hummingbot/hummingbot Blackbird https://github.com/butor/blackbird Blackbird Bitcoin Arbitrage: a long/short market-neutral strategy R2 Bitcoin Arbitrager https://github.com/bitrinjani/r2 R2 Bitcoin Arbitrager is an automatic arbitrage trading application targeting Bitcoin exchanges. Detector Bot Peregrine https://github.com/wardbradt/peregrine Detects arbitrage opportunities across 131 cryptocurrency exchanges in 50 countries bitcoin-arbitrage opportunity detector and automated trading https://github.com/maxme/bitcoin-arbitrage cryptocurrency-arbitrage A cryptocurrency arbitrage opportunity calculator. Over 800 currencies and 50 markets. https://github.com/manu354/cryptocurrency-arbitrage binance-triangle-arbitrage Detect in-market cryptocurrency arbitrage https://github.com/bmino/binance-triangle-arbitrage Trading Bot OctoBot Octobot is a powerful fully modular open-source cryptocurrency trading robot. https://github.com/Drakkar-Software/OctoBot Freqtrade Free, open source crypto trading bot https://github.com/freqtrade/freqtrade Chinese Bot triangular-arbitrage https://github.com/zlq4863947/triangular-arbitrage 数字货币-三角套利机器人 Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Pionex zh-CN Tutorial Cryptocurrency-Trading-Bots-Python-Beginner-Advance https://github.com/Roibal/Cryptocurrency-Trading-Bots-Python-Beginner-Advance Guides and Instructional YouTube Videos by @BlockchainEng Joaquin Roibal focusing on crypto trading strategies such as Triangular Arbitrage, Market Making, etc. Exchange Websites Binance Binance OKEx OKEx Huobi Huobi gate Gate MXC MEXC Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Pionex zh-CN Exchange Clients Binance https://github.com/sammchardy/python-binance Future SDK https://github.com/binance/binance-futures-connector-python Huobi https://github.com/HuobiRDCenter/huobi_Python https://github.com/huobiapi/Futures-Python-demo https://github.com/hbdmapi/hbdm_Python OKCoin https://github.com/gchen/okcoin_client OKX V5 Open-API-SDK-V5 https://github.com/jane-cloud/Open-API-SDK-V5 binance-futures-connector-python https://github.com/binance/binance-futures-connector-python gate https://github.com/gateio/gateapi-python https://github.com/gateio/rest/tree/master/python https://github.com/gateio/WebSocket-API/tree/master/python zb https://www.zb.com/api OKEx https://github.com/okex/V3-Open-API-SDK bitmart https://www.bitmart.com/ https://github.com/volkovartem77/bitmart-api-python https://developer.bitmart.com/v2/en/#introduction Bitfinex https://www.bitfinex.com/ https://github.com/bitfinexcom/bitfinex-api-py BitMEX https://github.com/BitMEX/api-connectors https://www.fmz.com/ https://github.com/chrisacheson/liquidbot HitBTC https://github.com/pulkit1991/hitbtcapi Exchange Fees https://www.binance.com/cn/fee/trading https://www.gate.io/help/question/16563 https://www.hbg.com/zh-cn/fee/ https://www.okex.com/fees.html Website http://entropyengine.cn/ fendouai / ArbitrageBot Public Notifications You must be signed in to change notification settings Fork 51 Star 227 ArbitrageBot, Detect Arbitrage Opportunities, Trading Clients, etc. entropyengine.cn/ License GPL-3.0 license 227 stars 51 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 2 Pull requests 0 Actions Projects 0 Security Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights fendouai/ArbitrageBot main Branches Tags Go to file Code Folders and files Name Name Last commit message Last commit date Latest commit History 8 Commits .idea .idea .gitattributes .gitattributes LICENSE LICENSE README.md README.md View all files Repository files navigation README GPL-3.0 license 套利机器人 ArbitrageBot Trading API CCXT https://github.com/ccxt/ccxt A JavaScript / Python / PHP cryptocurrency trading API with support for more than 120 bitcoin/altcoin exchanges CCXT has arbitrage python script. ccxt-rest https://github.com/ccxt-rest/ccxt-rest Open Source Unified REST API of 100+ Crypto Exchange Sites (18k+ docker pulls) - https://ccxt-rest.io/ Arbitrage Bot OKX Free Grid Trading Bot & Arbitrage Bot https://www.okx.com/join/1915102941 Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Hummingbot Hummingbot is open source software that helps you build trading bots that run on any exchange or blockchain https://github.com/hummingbot/hummingbot Blackbird https://github.com/butor/blackbird Blackbird Bitcoin Arbitrage: a long/short market-neutral strategy R2 Bitcoin Arbitrager https://github.com/bitrinjani/r2 R2 Bitcoin Arbitrager is an automatic arbitrage trading application targeting Bitcoin exchanges. Detector Bot Peregrine https://github.com/wardbradt/peregrine Detects arbitrage opportunities across 131 cryptocurrency exchanges in 50 countries bitcoin-arbitrage opportunity detector and automated trading https://github.com/maxme/bitcoin-arbitrage cryptocurrency-arbitrage A cryptocurrency arbitrage opportunity calculator. Over 800 currencies and 50 markets. https://github.com/manu354/cryptocurrency-arbitrage binance-triangle-arbitrage Detect in-market cryptocurrency arbitrage https://github.com/bmino/binance-triangle-arbitrage Trading Bot OctoBot Octobot is a powerful fully modular open-source cryptocurrency trading robot. https://github.com/Drakkar-Software/OctoBot Freqtrade Free, open source crypto trading bot https://github.com/freqtrade/freqtrade Chinese Bot triangular-arbitrage https://github.com/zlq4863947/triangular-arbitrage 数字货币-三角套利机器人 Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Pionex zh-CN Tutorial Cryptocurrency-Trading-Bots-Python-Beginner-Advance https://github.com/Roibal/Cryptocurrency-Trading-Bots-Python-Beginner-Advance Guides and Instructional YouTube Videos by @BlockchainEng Joaquin Roibal focusing on crypto trading strategies such as Triangular Arbitrage, Market Making, etc. Exchange Websites Binance Binance OKEx OKEx Huobi Huobi gate Gate MXC MEXC Pionex Free Grid Trading Bot & Arbitrage Bot Pionex en-US Pionex zh-CN Exchange Clients Binance https://github.com/sammchardy/python-binance Future SDK https://github.com/binance/binance-futures-connector-python Huobi https://github.com/HuobiRDCenter/huobi_Python https://github.com/huobiapi/Futures-Python-demo https://github.com/hbdmapi/hbdm_Python OKCoin https://github.com/gchen/okcoin_client OKX V5 Open-API-SDK-V5 https://github.com/jane-cloud/Open-API-SDK-V5 binance-futures-connector-python https://github.com/binance/binance-futures-connector-python gate https://github.com/gateio/gateapi-python https://github.com/gateio/rest/tree/master/python https://github.com/gateio/WebSocket-API/tree/master/python zb https://www.zb.com/api OKEx https://github.com/okex/V3-Open-API-SDK bitmart https://www.bitmart.com/ https://github.com/volkovartem77/bitmart-api-python https://developer.bitmart.com/v2/en/#introduction Bitfinex https://www.bitfinex.com/ https://github.com/bitfinexcom/bitfinex-api-py BitMEX https://github.com/BitMEX/api-connectors https://www.fmz.com/ https://github.com/chrisacheson/liquidbot HitBTC https://github.com/pulkit1991/hitbtcapi Exchange Fees https://www.binance.com/cn/fee/trading https://www.gate.io/help/question/16563 https://www.hbg.com/zh-cn/fee/ https://www.okex.com/fees.html Website http://entropyengine.cn/ About ArbitrageBot, Detect Arbitrage Opportunities, Trading Clients, etc. entropyengine.cn/ Topics bitcoin arbitrage binance okex arbitrage-bot Resources Readme License GPL-3.0 license Activity Stars 227 stars Watchers 7 watching Forks 51 forks Report repository Releases No releases published Packages 0 No packages published
