@@ -1,0 +1,144 @@
+Timestamp: 2025-03-17T19:36:30.869217
+Title: Books for Algorithmic Trading I Wish I Had Read Sooner
+URL: https://youtube.com/watch?v=ftFptCxm5ZU&si=UkW1jGhoMyGYEloE
+Status: success
+Duration: 11:33
+
+Description:
+好的，这是对视频内容的提炼总结：
+
+**核心总结：**
+
+经验是精通算法交易的关键，阅读书籍能提供理论基础和灵感，但最终需要在实践中不断尝试和改进。
+
+**内容概要框架：**
+
+1.  **引言：** 介绍视频主题，分享个人经验，强调书籍的重要性。
+2.  **书籍分类：** 将推荐书籍分为七个类别：
+    *   入门书籍
+    *   风险管理
+    *   交易指标
+    *   交易策略
+    *   交易系统开发
+    *   非交易相关但有用的书籍
+    *   小众主题
+3.  **书籍推荐：** 详细介绍每个类别中的推荐书籍，包括作者、内容概要、个人评价和适用人群。
+4.  **经验的重要性：** 强调实践的重要性，指出只有通过大量的实践才能真正掌握算法交易。
+5.  **频道公告：** 宣布开通 Patreon 频道，寻求赞助。
+
+**详细内容：**
+
+**1. 入门书籍：**
+
+*   《系统交易》（Systematic Trading） - Robert Carver：
+    *   强调简单交易规则和现实预期。
+    *   提出交易系统的模块化框架。
+*   《交易系统与方法》（Trading Systems and Methods） - Perry Kaufman：
+    *   百科全书式的参考书，包含各种交易系统和指标。
+*   《金融机器学习前沿》（Advances in Financial Machine Learning）：
+    *   强调过拟合的重要性，涵盖抽样、标记、特征重要性、交叉验证等。
+    *   提供 Python 代码示例。
+
+**2. 风险管理：**
+
+*   《杠杆空间交易模型》（The Leverage Space Trading Model） - Ralph Vince：
+    *   以故事书的形式讲解风险管理，通俗易懂。
+    *   重点介绍杠杆空间的概念。
+*   《资金管理的数学》（The Mathematics of Money Management） - Ralph Vince：
+    *   教科书式的参考书，内容更深入。
+
+**3. 交易指标：**
+
+*   John Ehlers 的三本书：
+    *   包含基于数字信号处理的各种指标和技术。
+    *   按逆时间顺序阅读更佳。
+*   《用于金融市场预测的统计可靠指标》（Statistically Sound Indicators for Financial Market Prediction） - Timothy Masters：
+    *   涵盖大量指标，重点介绍指标的平稳性、标准化和信息含量。
+    *   提供 C++ 代码示例。
+
+**4. 交易策略：**
+
+*   《成功趋势交易的通用战术》（Universal Tactics of Successful Trend Trading） - Brent Penfold：
+    *   介绍经典的趋势跟踪策略。
+*   《动量股票》（Stocks on the Move） - Andreas Clenow：
+    *   展示一个相对动量策略，可用于加密货币交易。
+*   《控制论交易策略》（Cybernetic Trading Strategies） - Murray Ruggiero：
+    *   涵盖季节性、跨市场分析、遗传算法和退出设计。
+
+**5. 交易系统开发：**
+
+*   《测试和调整市场交易系统》（Testing and Tuning Market Trading Systems） - Timothy Masters：
+    *   全面介绍向前步进方法，包括嵌套向前步进和交叉验证。
+    *   展示差分进化优化算法。
+*   《交易系统开发的排列和随机化测试》（Permutation and Randomization Tests for Trading System Development） - Timothy Masters：
+    *   介绍使用蒙特卡洛排列测试的不同方法。
+
+**6. 非交易相关但有用的书籍：**
+
+*   《数值计算方法》（Numerical Recipes）：
+    *   各种算法的参考书，包括优化、建模和频谱分析。
+*   《评估和改进预测和分类》（Assessing and Improving Prediction and Classification） - Timothy Masters：
+    *   介绍评估和改进模型的方法，以及组合多个弱模型的方法。
+*   《数据驱动的科学与工程》（Data-Driven Science and Engineering） - Steve Brunton and Nathan Kutz：
+    *   涵盖小波和动力系统，介绍动态模式分解技术。
+
+**7. 小众主题：**
+
+*   《算法模式识别技术分析》（Technical Analysis for Algorithmic Pattern Recognition）：
+    *   介绍自动化识别图表模式的技术。
+*   《检测政权更迭与计算金融》（Detecting Regime Change in Computational Finance）：
+    *   使用定向变化算法和隐马尔可夫模型划分市场状态。
+*   《情绪交易》（Trading on Sentiment） - Richard Peterson：
+    *   介绍构建情绪指标的经验。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph A [书籍分类]
+        A1[入门书籍]:::beginner
+        A2[风险管理]:::risk
+        A3[交易指标]:::indicator
+        A4[交易策略]:::strategy
+        A5[系统开发]:::development
+        A6[非交易书籍]:::nonTrading
+        A7[小众主题]:::niche
+    end
+
+    subgraph B [经验]
+        B1[实践经验]:::experience
+        B2[失败与改进]:::failure
+    end
+
+    C[核心: 不断尝试与改进]:::conclusion
+
+    A -- 理论基础 & 灵感 --> B1
+    B1 -- 通过 --> B2
+    B2 --> C
+
+    style A1 fill:#4CAF50,stroke:#333,stroke-width:2px
+    style A2 fill:#F44336,stroke:#333,stroke-width:2px
+    style A3 fill:#FFEB3B,stroke:#333,stroke-width:2px
+    style A4 fill:#9C27B0,stroke:#333,stroke-width:2px
+    style A5 fill:#2196F3,stroke:#333,stroke-width:2px
+    style A6 fill:#FF9800,stroke:#333,stroke-width:2px
+    style A7 fill:#795548,stroke:#333,stroke-width:2px
+    style B1 fill:#607D8B,stroke:#333,stroke-width:2px
+    style B2 fill:#E91E63,stroke:#333,stroke-width:2px
+    style C fill:#00BCD4,stroke:#333,stroke-width:2px
+
+    classDef beginner fill:#4CAF50,stroke:#333,stroke-width:2px
+    classDef risk fill:#F44336,stroke:#333,stroke-width:2px
+    classDef indicator fill:#FFEB3B,stroke:#333,stroke-width:2px
+    classDef strategy fill:#9C27B0,stroke:#333,stroke-width:2px
+    classDef development fill:#2196F3,stroke:#333,stroke-width:2px
+    classDef nonTrading fill:#FF9800,stroke:#333,stroke-width:2px
+    classDef niche fill:#795548,stroke:#333,stroke-width:2px
+    classDef experience fill:#607D8B,stroke:#333,stroke-width:2px
+    classDef failure fill:#E91E63,stroke:#333,stroke-width:2px
+    classDef conclusion fill:#00BCD4,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+希望以上总结对您有所帮助！
+
+
+Content:
+in this video I'm going to go through my favorite books for algorithmic trading that were particularly influential to me I've read a few books on the topic and over the years I've put together a decent collection there were several books that I've read that have made me think to myself wow I wish I had known about this book sooner I included quite a few books in this video so I won't spend very long talking about each I organized the books into seven categories Beginner Books what I would recommend to someone just starting books focused on risk management books about trading indicators books about trading strategies books focused on trading system development books that aren't about trading but I've still found useful and books about Niche topics the first book I would recommend to beginners is systematic trading by Robert Carver this book is a great starting point I wish it was the first book I read it would have saved me a lot of confusion the book emphasizes simple trading rules and realistic expectations it has a lot of good information that every algorithmic Trader should know the main feature of this book is it presents a modular framework for trading systems when I started I was very confused about how to combine multiple strategies on multiple instruments the book gives a concrete solution to this problem while also explaining and emphasizing the modularity of different components in a trading system I've evolved how I do my trading over the years but my current deploy trading system still roughly fits into the modular framework described in this book the second book is trading systems and methods by Perry Kaufman I imagine many of you already have this one it's basically an encyclopedia of trading this book is not something you read cover to cover but have as a reference there are hundreds of different trading systems and indicators in this book I can't really summarize it because it pretty much has everything if I'm ever out of ideas I open this book to a random page and start reading while this book does touch on many topics it doesn't go very deep into any of them the third book is advances in financial machine learning it's quite popular as the title suggests it focuses on the application of machine learning and finance it is a must read the whole book has a strong focus on overfitting which is the most important concern in trading system development it covers sampling labeling feature importance cross-validation and much more some may disagree with me placing this book in the beginner category as it is quite advanced in Parts but I've noticed the books I've found most difficult to read often end up being the most important this book has a lot of math in it when I first started learning about algorithmic trading my brain would shut off when I saw stuff like this thankfully the book also provides python implementations for the math shown cross-referencing the math and code provided helped me to learn to decipher the seemingly cryptic symbols of mathematics the next category is risk management typically viewed as the most boring Topic in trading the first book Is The Leverage Space Trading model by Ralph fence the author describes this book as a storybook it is meant to be read cover to cover it takes you from managing risk in a coin flip game to managing risk for many trading strategies to maximizing the likelihood of profit risk management is typically interpreted as boring but the author is an excellent writer the book really lives up to the promise of being a storybook it's surprisingly engaging the book primarily focuses on what the author calls The Leverage space a mathematical space that describes the risk and terminal return of every trading system if you are engaged in trading you are somewhere in the leverage space whether you like it or not being at different locations has certain consequences this book is a must read the author is also a programmer he explains and shows the math in a way that makes it straightforward to convert to code the next book is the mathematics of money management also by Rel fence this one is a textbook mainly for reference the book was published in 1992 and the leveraged space book book is from 2005. I recommend reading the leveraged space book first before going through this one the author seems to have evolved in his thinking since this book but there's a lot of content in this one that's not covered in the leveraged Facebook such as trade dependence arc sign loss and risk under parametric distributions moving on to books about indicators indicators are useful for constructing trading rules or as inputs to a predictive model these three books by John ehlers are full of indicators and techniques based on digital signal processing they contain several methods for detecting Cycles sophisticated smoothing filters and other novel indicators I originally read them in chronological order but if I could go back I would read them in Reverse chronological order this is because throughout the books the author evolves and what he believes is the best practice the books all provide code for the indicators in Easy language which is the native language of a trading platform called tradestation which I've never used but I had little issue converting the code to other languages my first trading system that actually made good money was based on the content in the third book the next book is statistically sound indicators for financial Market prediction by Timothy Masters this is my favorite author and there will be more books by him in this video all his books provide code in C plus plus but even if you don't understand C plus plus the text in his books is still enough to make them worth reading this book covers tons of indicators some common macd RSI stochastic you've heard of them but many you've probably never heard of the follow through index reactivity and many more in my opinion the real value of this book is the sections on indicator stationarity normalization and information content the technique shown are extremely useful for utilizing indicators as inputs for machine learning models the next set of books are about trading strategies the first book in this category is the universal tactics of successful Trend trading by Brent penfold I almost put this book in the beginner category as it is easy to read and will written it contains several classic Trend following strategies and covers the long history of trend following as a strategy the next book is stocks on the Move by Andreas Clen now this book shows a single relative momentum strategy it ranks stocks in the S P 500 and selects the highest performing ones to buy the best performing stocks tend to continue doing well into the future I don't use the exact strategy shown in the book but it's a good example to learn relative momentum from I do use a few different relative momentum strategies in crypto selecting the higher performers and writing them out the final book in this category is cybernetic trading strategies by Murray regurio this book was published in 1997 it's almost older than me but it was really ahead of its time and it has a very cool cover the book has a ton of content it covers seasonality intermarket analysis genetic algorithms and exit design it even suggests the idea we now know as meta labeling before any other source I'm aware of though the book doesn't call meta labeling some of the content in the book is a little dated but these sections on genetic algorithms and designing exits are very cool and I haven't seen it anywhere else I'd be surprised if you don't come out of reading this book with several ideas to try these next two books are about trading system development technically advances in financial machine learning belongs in this category but I stuck it in the beginner section the first book I recommend is testing and tuning market trading systems by Timothy Masters this book has the most comprehensive survey of walk forward methods I'm aware of nested walk forwards cross-validation nested inside a walk forward and avoiding overlap between in-sample and out of sample data sets it discusses why analyzing completed trade returns is not a good idea a mistake I made for quite a while this book also presents an impressive version of the differential Evolution optimization algorithm that I found useful on countless occasions the next book is permutation and randomization tests for trading system development also by Timothy Mass this book shows different ways to utilize Monte Carlo permutation tests for trading systems it also has some tests to find the best parameter value for indicators the best market for a given indicator and much more this book is a must read if you want to do data mining based trading systems my copy is very used and abused I've spilled coffee on it a number of times I like it very much these next three books are not about trading so not all their content is applicable but they have a lot of general information that can be applied to trading the first book in this category is numerical recipes the art of scientific Computing this book is a huge reference for all kinds of different algorithms I have found these sections on optimization modeling and spectral analysis useful for my work but I'm confident as I learn more and have more ideas other content in this book may become valuable as well this book is massive the next book is assessing and improving prediction and classification by Timothy Masters this book really lives up to its title and has several methods for assessing and improving models it has a lot of content about combining multiple weaker models to build a powerful combined model reading this book really blurs the line between classification and regression they're not as different as I once thought if you are already using predictive models in your trading I recommend picking this book up you'll find something to try and hear the final book in this category is data-driven science and engineering by Steve Brunton and Nathan Cuts I got this book fairly recently and I'm still working through it but I included it because I very much like these sections on wavelets and dynamical systems it has good coverage of a technique called Dynamic mode decomposition which with the help of this book any paper written by the author Nathan Coates I used to create a pretty promising trading strategy I've yet to deploy it though the final category is Niche books these books didn't really fit into the other categories and don't have much to do with each other the first book Is technical analysis for algorithmic pattern recognition by these two authors this book shows automation techniques for Sharp patterns and it has a wealth of references to literature doing similar tasks in addition it shows quite a few ways to test the predictive performance of creating techniques in my opinion this book has the most unbiased and scientific coverage of technical analysis you can find the next book is detecting regime change and computational finance this book uses the directional change algorithm and a hidden Markov model to divide the market into regimes targeting essentially high and low volatility areas of the market it shows trading strategies built from this idea and it also has a valuable bibliography with references to a lot of useful papers the final book is trading on sentiment by Richard Peterson the author explains his experience building sentiment indicators for trading the author works on a product called Market psych which I am too poor to use but he explains different factors and emotions they Target in social media and news headline data and shares theories about how they affect the markets if you're looking to do trading on sentiment this is worth reading it gave me several ideas when I was building sentiment indicators I have not updated my sentiment stuff since the chat gbt craze which I'm sure has changed the sentiment game quite a bit but I still think the info in this book is good stuff while I think reading is a very important part of learning algorithmic trading nothing will replace experience if you want to be good at algorithmic trading you will need to sit for thousands of hours behind a computer screen trying and failing repeatedly and finally I have a channel announcement I like money and I have no shame so I started a patreon I don't expect anything but if you like my videos and want to throw me a few bucks I'd appreciate it anyways that's it for this one thank you for watching
