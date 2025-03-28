@@ -1,0 +1,98 @@
+Timestamp: 2025-03-28T09:56:42.829298
+Title: Google Gemini Deep Research 2.0实测：碾压Grok DeepSearch，免费用户也能用！ 0W5I7OADDPA
+URL: https://youtube.com/watch?v=0W5I7OADDPA&si=6tr3ddVBrdKluuhx
+Status: success
+Duration: 12:30
+
+Description:
+好的，根据您提供的文本，我将进行核心思想提炼和总结，并按照您的要求进行组织：
+
+**核心总结：**
+
+谷歌的Gemini Deeper Research 2.0版本在性能、推理能力和个性化搜索方面有了显著提升，超越了Growk，但仍不如OpenAI的Deeper Search。
+
+**框架总结：**
+
+本文主要围绕谷歌Gemini Deeper Research 2.0版本的性能提升进行评测，通过与Growk和OpenAI的Deeper Search进行对比，分析其优缺点，并探讨其在实际应用中的表现。同时也涉及到了Kerze和Windsauve这两款代码补全工具的比较分析。
+
+**主要内容概要：**
+
+I. **谷歌Gemini Deeper Research 2.0 评测**
+
+  *   A. **性能提升:**
+      *   2.  0 Flash Sinking模型：更高性能、更强推理、更快速度。
+      *   免费用户每月可以使用5次，付费用户每天可以使用20次。
+  *   B. **个性化搜索增强:**
+      *   可授权账号信息，提供个性化回答。
+      *   支持40种以上语言。
+  *   C. **记忆功能升级:**
+      *   可设置规则，例如：搜索英文内容默认中文回复。
+  *   D. **与竞品对比:**
+      *   OpenAI Deeper Search > Gemini 2.0 > Growk。
+      *   Gemini 2.0 优于 Gemini 1.5 Pro。
+  *   E. **实际应用案例:**
+      *   研究过去一周最佳ER产品和服务。
+      *   对比 QWQ32B 和 Jenna 3 27B 模型。
+  *   F. **发现的问题:**
+      *   有时会忽略用户的补充信息，直接执行方案。
+      *   在成本评估方面出现错误信息。
+
+II. **Kerze vs. Windsauve 代码补全工具对比**
+
+  *   A. **Gemini 的分析:**
+      *   Kerze 代码补全速度快，但智能方面可能不够稳定。
+      *   Windsauve 的 Kescage 似乎更深入集成。
+      *   定价方面，Kerze 更贵。
+      *   社区支持方面，Kerze 论坛更好。
+  *   B. **Growk 的分析:**
+      *   强调了功能、搜索支持语言等 Gemini 忽略的点。
+      *   认为 Windsauve 更适合新手。
+  *   C. **MCP 集成:**
+      *   Gemini 推荐与 Kerze IDE 结合的 MCP，并指出 Kerze Agentinal 只能接收前 40 个工具的限制。
+      *   Growk 推荐的 MCP 与 Gemini 类似，但缺乏新意。
+
+III. **Blender MCP 研究**
+
+  *   A. **Gemini 的分析:**
+      *   介绍了 MCP 相关内容，找到了 U15MCP 等新平台。
+      *   比较了传统 APA 集成和 MCP。
+  *   B. **Growk 的分析:**
+      *   应用场景不错，案例也有链接，但搜索广度不如 Gemini。
+      *   缺少推特信息，容易忽略热点话题。
+
+**概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph AS工具评测 [AS工具评测]
+        A[谷歌 Gemini Deeper Research 2.0] -- 性能提升 & 对比 --> B(OpenAI Deeper Search)
+        A -- 性能提升 & 对比 --> C(Growk Deeper Research)
+        D[Kerze] -- 对比 --> E(Windsauve)
+        A --> F{MCP集成}
+        F --> G[Blender MCP]
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#cff,stroke:#333,stroke-width:2px
+    style E fill:#cff,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+    style G fill:#fcc,stroke:#333,stroke-width:2px
+
+    subgraph Gemini 2.0 细节
+        H[性能] --> I[推理]
+        H --> J[个性化]
+        H --> K[记忆功能]
+    end
+    style H fill:#efe,stroke:#333,stroke-width:1px
+    style I fill:#efe,stroke:#333,stroke-width:1px
+    style J fill:#efe,stroke:#333,stroke-width:1px
+    style K fill:#efe,stroke:#333,stroke-width:1px
+
+    A --> H
+</Mermaid_Diagram>
+
+
+Content:
+大家好 我是Katcher今天呢 我将想细介绍一下谷歌Departure Search 2.0版本2.0版本它用的是2.0 Flash Sinking之前用的是1.5 Pro的模型现在2.0的Departure Search要比之前的好用太多了我也会将它和GrowkDeparture Search进行对比这样的平台这一次更新 更新很多内容首先2.0 Flash Sinking模型推出它是更高性能 更强推理 更快速度有博主反馈说现在的2.0 Flash要比1月份推出来的推理能力更强有一个非常好的消息是现在免费用户也可以用它的Departure Search功能每个月最多可以使用5次付费用户每天最多可以使用20次它还形成了一个个性化苏索增强你可以将你的账号苏索和信息授权给它它就会根据你的苏索历史提供相关的个性化回答而且是支持40种以上语言的节目买的记忆功能现在也得到了升级我在设置里面添加了一个规则让它苏索英文之要默认中文回复我还有两个功能大家可以了解一下一个是都应用协作能力一个是定制AR专家我们先来看一下因为免疫学教授他对这三个产品的一个评价他论为OpenEye的Departure Search现在是目前最好的然后是谷歌的新的Departure Search再接着就是我们现在很火的Maniacuse他本身就是OpenEyeDeparture Search的早期停着之前他在撤评Maniacuse的话他对Maniacuse的评价也非常高现在他认为谷歌的新的Departure Search能排到第二就我个人体验OpenEye的Departure SearchJemana 1.5 Pro的Departure Search和Jemana 2.0 Flash Sinking的Departure SearchOpenEye的Departure Search他是最好的Jemana 1.5 Pro的Departure Search他是非常一般的现在Jemana 2.0 Flash Sinking的Departure Search的话现在这个能力还是非常强的他是要优于Goroc的Departure SearchJemana 1的Departure Search也是对话的形式我问他过去一周最佳ER产品和服务要从多个全威取到分析后给到结果他先你定一个研究方案说如果你要进行任何更新就告诉他这里是默认让他直接根据这个方案开始研究大概几分钟之后他就会给到我右侧详细的报告他在研究的时候最上方会出现他的思考过程在研究结束之后思考过程是放在了最下方他说先初步信息收集然后后续行动计划下方看到搜索了很多网页接着他去搜索一些重要的产品发布和更新他提到了谷歌在上一周发布的Jemana 3他还提到因为打这周会却办GTC的一大会一边思考一边在搜索他在搜索过程中左边会展示搜索了多少页面我之前给他一个问题他最多搜索了900多个网页这个搜索量是非常恐怖我们看一下他梳理的报告提到了谷歌的Jemana 3和OpenEye的Response API也很不错下方他提到谷歌的机器人在下方他提到因为打的GTC大会将在这周举行我们来看一下Groek的色彻他有一点不是很好我给他一个问题他不像OpenEye反问我具体要补充一些信息或者像Jemana那样先帮我制定好方案让我确认Groek他是直接制定了一个方案然后立即执行在此之中的话我就发现他理解错了我的意思我是希望他帮我的研究出过去一周新发布的产品和服务阿德这个搜索的情况就没有Jemana给我的好我们来看那个问题这也是很多观众问我QWQ32B和Jenna 327B模型的对比模型的发布的博文我都看过QWQ32B他是在数学方面和肩承方面比较长那Jenna 327B的话他的能力更终和一点下方我们可以看到两个模型的对比这里也Jemana整理得非常不错有很多专业数语我们可以点击这里的下标看到他引用的一些信息比如说他这里引用到了阿里的博克哈根飞斯上面的内容下方接受Jenna 3他也用到了哈根飞斯的两个模型的对比他们的上下文床口应该来说都是128K128K陈亿11024然后就变成前面131072了这两个稍微有点区别其他的是基本上是正确的在下方在数学和逻辑推理方面他提到了QWQ32B表现出策在Jenna 327B上面他也将这些得分都给列出来了我们再看一下关键基准对比表下方有可访问性和不属这里就出现了一个臭他说千万团队没有提供官方的QWQ API那肯定是不对的成本评估方面他也做了一下对比他整体对比内容还是比较想戏的下方我们可以看到他引用的内容也是比较全威的他还提到有些来源他独了但是没有用到成分报告里这些是非常不错的我们只要关注上方的这些报告就可以了最下方同样我们可以看一下他的思考过程整个思考过程也是分好几个不准对比的角度还是非常多搜索的内容也是非常丰富的我们来看一下Growk的Depart SearchGrowk就出现了一个错误他说QWQ32B上下文窗口是8K那肯定是不对的他说来说他是想戏分析报告我们可以往下拉会发现他的报告内容真的很少一直有观众问Kerze和Windsauve哪个工具更好今天让Gemana来分析一下Kerze非常好的一点是他的代码补权速度非常快关于智能代以方面这里Gemana有点问题Kerze目前是已经将Compose升级成Agent了所以他这里的信息有点过时Gemana认为Windsauve的Kescage似乎更深入的级成并且主动的管理上下文和直星任务Kerze的话他现在的规则已经改了是变成点Kerze GengRoseGemana这里用的还是他之前的一个规则我们可以看一下他引用的内容Gemana认为在某些复杂的场景中Kerze的AI可能会生成更高智能的代码但其建议的质量可能不够稳定这个其实和Kerze的版本还有3.7SonyoTemple型有关现在Kerze 0.47还是比较稳定的定价方面Kerze是要比Windsauve贵一些社区支持方面色的话他的论坛还是比较好的里面有很多用户的讨论Windsauve的话他是有一个Discord的Windsauve的一个很大的历史就是他的Fro基本上可能很快的后进定价模式不太清楚我们再看一下Groke Deep Search在这个问题上的回答他首先同样理解用户问题比较功能搜索支持语言这点上是刚刚Gemana忽略掉的然后评估性能和速度分析社区支持他还找到了一些铁子不能反馈说Kerze在大型带马库中更稳定而Windsauve偶尔会出现不合理的回应其实这两个ID都会遇到这样的问题不过他这里有一点说得很不错他说Windsauve更适合新手他的中端包括他新出的外部Privy的话是真的更适合新手Groke最后也给出了一个表格大家可以了解一下我个人觉得他们各有优缺点两个平台我都有在付费使用有的时候一个平台问题解决不了换一个平台他可能就解决了我还让Gemana研究了一下有哪些MCP可以很好的和Kerze ID结合他给到我一下包括常见的GitabataPostgrease SQL搜索的Obsidian他让我一在Kerze使用上面的多个MCP可以发挥潜力比如问题报告和协作研究和文档他还给到了一个实际用力他提到了Kerze MCP有个限制这个限制他找到非常到位我也是最近才发现Kerze的官方文档里面更新了他提到Kerze的Agentinal目前只能接收前40个工具有的时候一个RMCPServer他可能会有10个或者更多的Turl需要留意一下Kerze Agentinal目前只能接收前40个工具第一个引用的就是Kerze的官方文档虽然他这里也没有给我更多的MCP推荐但我觉得他注意到这个问题还是很不错的我们来看一下Geralk的回复这里推荐的还是和Gemana很类似的具体的资源链接他也给出来了这一点很不错但是他这里没有一些心意内容也比较少我在上一个视频有讲到Blander MCP我对这个话题比较感兴趣所以我又让Gemana帮我研究了一下我想找到一些优秀案例要了解他的工作流他的应用场景他这里将MCP相关内容介绍的还是非常到位的我们来看他与不同平台和工具的集成他这里提到了U15MCP这个MCP还是比较新的Gemana等一下找到他我觉得他还是很不错的接着他又找到了一些其他和MCP集合的平台和工具这些我们刚刚有看到过的他也找了铁资上一些关于MCP的讨论可以看到他梳理的来源还是挺多的最后他给了一个传统APA集成和MCP的比较挺不错的一些介绍我们再来看一下Groder一个回复他应用到了33个网页但是没有应用推上的信息而Blander MCP最出圈话题最多的其实就是在推上你如果想要让Groder帮了研究问题的话最好再加一个在什么取道上面找内容Blander可能会忽略掉我们看到他这里给了一些应用场景这些应用场景都是挺好的优秀案例也都有念接也非常不错要是有所缺汗的话就是他没有Gemana搜索的那么多伟渡感觉更像是一个普通的AS搜索升级后的谷歌Gemana Deeper Research真的太好用了大家一定要尝试一下以上就是我今天的分享如果喜欢我的视频欢迎加入我的支持星球我会分享最新的AS圈分享原待马回答你的提问我们下次再见
