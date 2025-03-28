@@ -1,0 +1,94 @@
+Timestamp: 2025-03-28T09:16:35.159782
+Title: Google Gemini 2.5 Pro 性能飞跃 ！编码能力实测 &amp; 对比 OiPqm_x_9mY
+URL: https://youtube.com/watch?v=OiPqm_x_9mY&si=R6LW1dwz2xNqh-ub
+Status: success
+Duration: 10:13
+
+Description:
+好的，这是对您提供的文本的总结，包括核心观点、总体框架、结构化概要和概念图：
+
+**核心观点：**
+
+Gemini 2.5 Pro模型在编程能力、推理能力以及科学数学能力方面均有显著提升，尤其在编程方面表现突出。
+
+**总体框架：**
+
+本文主要介绍了谷歌新推出的Gemini 2.5 Pro模型，重点关注其编程能力和性能测试结果，并与其他模型（如GPT-4.5、Claude 3）进行对比，最后通过一些案例展示了Gemini 2.5 Pro在实际应用中的潜力。
+
+**结构化概要：**
+
+1.  **引言：**
+    *   介绍Gemini 2.5 Pro模型是谷歌推出的旗舰模型，并在ML Arena排行榜上名列第一。
+    *   强调谷歌未来将强化学习和思维链技术融入所有模型中。
+2.  **性能对比：**
+    *   通过表格对比Gemini 2.5 Pro与GPT-4.5、Claude 3、Groq等模型在不同测试（如冷泪测试、科学问题测试、数学、SWBanch）中的表现。
+    *   指出Gemini 2.5 Pro在某些方面（如SWBanch）略逊于Claude 3，但在其他方面（如简单问答、可视化推理）表现出色。
+3.  **功能介绍：**
+    *   Gemini 2.5 Pro支持100万token上下文窗口，即将推出200万token版本。
+    *   开发者和企业可以通过API使用，付费用户可在桌面和移动设备上使用。
+    *   支持音频、图片、视频和文字输入，输出文字，最大输出token为64K。
+    *   支持结构化输出、代码执行、搜索等功能，但图片生成功能尚未支持。
+4.  **编程能力测试：**
+    *   通过多个案例展示Gemini 2.5 Pro的编程能力，包括生成HTML页面、P5.js动画、游戏Demo、Plotly Express气泡图、SVG图像等。
+    *   对比Gemini 2.5 Pro和Claude 3在生成HTML页面和四格漫画方面的效果。
+    *   介绍了一个研究员使用Gemini 2.0 Flash和2.5 Pro将炒图转化为3D可打印对象的案例。
+5.  **结论：**
+    *   强调Gemini 2.5 Pro在编程能力方面有了显著提升，推理能力和科学数学能力也得到了提升。
+    *   鼓励大家体验该模型，并分享了加入支持星球以获取最新AI资讯和源代码的方式。
+
+**<Mermaid_Diagram>**
+
+```mermaid
+graph LR
+    subgraph Gemini 2.5 Pro
+        A[介绍模型] --> B(性能对比)
+        B --> C{编程能力测试};
+        C --> D(功能介绍);
+        D --> E[结论];
+    end
+
+    subgraph 性能对比
+        B --> B1[排行榜];
+        B --> B2[冷泪测试];
+        B --> B3[科学问题测试];
+        B --> B4[数学];
+        B --> B5[SWBanch];
+        B1 -- 与 --> GPT4.5 & Claude 3;
+        B2 -- 领先 --> 其他模型;
+        B3 -- 优秀 --> 其他模型;
+        B4 -- 第二 --> 其他模型;
+        B5 -- 改进大 --> 之前的模型;
+    end
+
+    subgraph 编程能力测试
+        C --> C1[HTML页面];
+        C --> C2[P5.js动画];
+        C --> C3[游戏Demo];
+        C --> C4[Plotly Express];
+        C --> C5[SVG图像];
+        C --> C6[3D模型];
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+    style B1 fill:#fff,stroke:#333,stroke-width:1px
+    style B2 fill:#fff,stroke:#333,stroke-width:1px
+    style B3 fill:#fff,stroke:#333,stroke-width:1px
+    style B4 fill:#fff,stroke:#333,stroke-width:1px
+    style B5 fill:#fff,stroke:#333,stroke-width:1px
+    style C1 fill:#fff,stroke:#333,stroke-width:1px
+    style C2 fill:#fff,stroke:#333,stroke-width:1px
+    style C3 fill:#fff,stroke:#333,stroke-width:1px
+    style C4 fill:#fff,stroke:#333,stroke-width:1px
+    style C5 fill:#fff,stroke:#333,stroke-width:1px
+    style C6 fill:#fff,stroke:#333,stroke-width:1px
+```
+
+**</Mermaid_Diagram>**
+
+
+Content:
+大家好 我是Katcher今天呢 我将想细介绍一下谷歌新推出来的GEMNA 2.5 Pro模型并且对它的冰程能力做一些测试我们一起来看一下GEMNA 2.5它是一个思考模型这一次首先是推出了2.5 Pro相当于是它的旗舰模型先推出来了在ML Arena的排行榜上是排第一的谷歌说呢过去他们一直探索强化学习和思维念技术让AI更智能未来它也会将这些思考能力直接购建到谷歌所有的模型中我们来看一下这个性能排行的表格这里有列出GEMNA 2.5 Pro模型GPT 4.5Coreal的3.7 Sony者而且它这里用到的是64 拖展思考拖坑的模型还有DepsyC AI模型可以看到在冷泪最后的测试方面GEMNA 2.5 Pro是摇摇领先在科学问题测试方面GEMNA 2.5 Pro也是非常优秀数学我们对比可以看到Gorocke的3它的深度思考的得分贵更高一点但是目前也可以看到GEMNA 2.5 Pro在数学方面得分是非常好了可以排到第二位在Limko的Banch方面目前Gorocke 3它的深度思考模式得分是最高的而在我一直介绍的A的排行榜上我们可以看到GEMNA 2.5 Pro得分非常高是第一的要比其他的模型得分要高SWBanch这个评测非常有意义之前我们觉得Core的在编程带里面表现最好主要就是看得它的SWBanch这次GEMNA 2.5 Pro它的得分比Core的3.7SWBanch 64K星期要低一些但是这个得分要比它之前的模型要高出很多可以看到它这次改进是非常大的49.2这是DPC可A1的SWBanch我们可以对比看到GEMNA 2.5 Pro在简单问答方面GBT4O表现最好在可视化推理方面GEMNA 2.5 Pro表现最好今天GEMNA发布的是100万套可能上下文床口即将推出200万套肯开发者和企业可以在SWBanch的SWBanch是用GEMNA 2.5 ProGEMNA的WONST的服费用户可以在桌面和移动设备上去使用GEMNA 2.5 ProASD9现在也有了新的运营A.Dav非常好借来到它的模型选择区域可以看到最新的2.5 Pro的模型它的支持库截止日期是2025年1月份这个日期是非常新鲜的免费的用户一分钟最多可以调用两次每天最多可以调用50次2.5 Pro它是支持音频图片视频和文字书录目前书出的是文字而且它目前最大的书出套肯是64K这个是非常大的一个书出的目前它是支持结构化书出方声carning还有代码执行搜索它的图片生成功了目前还不支持谷歌这次推出监比达2.5它特别强调2.5比2.0编程能力是有了极大的提升他们制作了6个视频来展示2.5的编程能力我呢是直接用谷歌的提示词在监比达的APP里面去复课了他们的效果这是让它生成一个包含反射心缘彩色例子模拟的HTML的页面因为是推理模型它同样会展示推理过程而且它的书出速度非常快很快呢它就给到代码了一次提示生成的效果是这样子的效果还不错接着呢我让Gemner使用P5DS探索曼德博罗吉曼德博罗吉他是一个著名的分型同样先思考然后给出P5DS代码将代码放在左边边编辑口气里点击上方的运行很快右边就出现了虾方也有个提示告诉我们可以点击来放大点击不同的部分它就会出现不同的形状可以看到这样的非常有细节再看一个用P5DS不需要HTML一群30支多彩的访生量在一个旋转的右边形类游泳这样生成了一个效果官方生成这样子的一个效果可以看到它这个效果是要比我刚刚测试展示出来的效果好一些再看一个游戏提示磁让它是制作一个引轮路盛的无尽跑酷游戏需要用到P5DS不需要HTML提示磁里面提示说喜欢像书画的恐龙还有有趣的背景这是一次提示它生成了这样的代码将它放在边境系里面我们可以运行一下通过App来跳跃可以看到这个背景和小恐龙生成的效果还不错一次提示生成的我们看这个同样让它创建一个P5DS的Demo展示于R在想什么很快JAMMY 2.5就帮我生成这300多行代码右侧我们可以看到于R包括它的尾巴还是非常形象的官方Demo里面同样的提示磁生成的效果会更好一点可以看到鱼然后还有气泡显示于R在想什么JAMMY 2.5它生成PESEN代码能力也不错这个提示是让它使用ProtatelyExpress创建一个动画气泡图展示各大路的经济和健康指标多年来是如何演变的它很快生成以下代码我将它放入Curlabel里面点击了一下运行下方就出现这样的气泡图了我们选择不同的气泡可以看到它对应了一些指标比如说现在对应的是1982年的欢城这个紫色的可以看到它是US下方也有播放按钮可以看到它的变动情况一次提示它生成的支援还是很不错的JAMMY它生成的SVG也不错比如说这右边节目来生成的然后这是Curl的3.7Sony成的JAMMY的四折漫画也不错这是一个比较年贯的漫画第一个说我想飞然后飞起来了等等好像飞不起来然后掉下来了上面的文字内容也非常棒对比我们看一下Curl的生成的这是两种不同的风格我们再对比一下JAMMY和Curl的3.7Sony成生成的能公制能发展HTML的页面左边JAMMY生成的内容也不少排版方面缺少一些变化右侧Curl的它的样式更多样化而且它的内容也不少所以这种页面方面Sony成会表现得更好一点最后我们再看一个有意思的案例这是有谷歌的研究员他分享的他说可以用图像转化成3D可打印对象并且让他续续如生一开始他是用Demona 2.0 Flash将一个炒图生成了3D选栏图接着他浪2.5Pro模型编写OpenSCADM代码来重现3D模型我们可以看一下他这里的对话生成了这样的3D最终点印打印按钮就得到了一颗爱的玩具非常有意思的案例以往我在用Demona模型多是用他的写作能力但今天测试2.5Pro明显发现他的编程能力好了很多而且这次无论是推理能力还有科学数学能力他也得到了其他的提升大家可以进行去体验一下以上就是我今天的分享如果喜欢我的视频欢迎加入我的支持星球我会分享最新的AI自讯分享原待码回答你的提问我们下次再见
