@@ -1,0 +1,86 @@
+Timestamp: 2025-03-28T17:56:15.504567
+Title: Text_Summary_20250328_175615
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据提供的文本生成的总结，包括大纲、核心观点、框架和 Mermaid 图：
+
+**总结：**
+
+**I. 核心问题：**
+
+*   现有的量化交易组合管理方法通常只关注单一数据来源（股票价格），忽略了行业动态和新闻的影响。将新闻数据整合到模型中面临文本量化和嵌入的挑战，且常需要大量手动标注。
+
+**II. 提出的解决方案：**
+
+*   提出一种基于深度强化学习（DRL）的行业轮动组合管理方法，利用多源信息（行业和股票的时间序列数据，以及新闻数据）。
+*   采用双层强化学习结构：
+    *   **多代理行业层：**学习行业趋势。
+    *   **图卷积层：**学习行业内股票之间的联系。
+*   通过大型语言模型整合新闻对行业的影响，无需手动标注。
+
+**III. 实验结果：**
+
+*   在中文和美国股票市场上的仿真实验表明，该方法优于多种先进方法。
+
+**IV. 核心观点：**
+
+通过深度强化学习和多源信息整合，特别是利用大型语言模型处理新闻数据，可以显著提高量化交易组合管理的性能。
+
+**V. 总体框架：**
+
+1.  **问题定义:** 传统量化交易组合管理方法的局限性。
+2.  **解决方案:** 基于深度强化学习的行业轮动方法。
+3.  **技术细节:** 双层强化学习结构，多代理行业层，图卷积层，大型语言模型整合新闻。
+4.  **实验验证:** 在中文和美国市场上的有效性。
+5.  **结论:** 多源信息整合和深度强化学习能有效提升组合管理效果。
+
+**VI. Mermaid 图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 数据源
+        A[股票价格时间序列]:::stock --> B(行业时间序列):::sector;
+        C[新闻数据]:::news;
+    end
+
+    subgraph 模型架构
+        B --> D{多代理行业层}:::agent;
+        A --> E{图卷积层}:::graph;
+        C --> F[大型语言模型]:::llm;
+        F --> B;
+    end
+
+    subgraph 强化学习
+        D --> G{深度强化学习(DRL)}:::drl;
+        E --> G;
+        G --> H[组合管理方案]:::portfolio;
+    end
+
+    subgraph 实验结果
+        H --> I[中国股市]:::china;
+        H --> J[美国股市]:::usa;
+        I & J --> K{显著改进}:::improvement;
+    end
+
+    style stock fill:#f9f,stroke:#333,stroke-width:2px
+    style sector fill:#ccf,stroke:#333,stroke-width:2px
+    style news fill:#ffc,stroke:#333,stroke-width:2px
+
+    style agent fill:#ada,stroke:#333,stroke-width:2px
+    style graph fill:#dbb,stroke:#333,stroke-width:2px
+    style llm fill:#eaa,stroke:#333,stroke-width:2px
+
+    style drl fill:#bbb,stroke:#333,stroke-width:2px
+    style portfolio fill:#aab,stroke:#333,stroke-width:2px
+
+    style china fill:#baa,stroke:#333,stroke-width:2px
+    style usa fill:#abb,stroke:#333,stroke-width:2px
+    style improvement fill:#aaa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+As a research objective in quantitative trading, the aim of portfolio management is to find the optimal allocation of funds by following the dynamic changes in stock prices. The principal issue with current portfolio management methods is their narrow focus on a single data source, neglecting the changes or news arising from sectors. Methods for integrating news data frequently face challenges with regard to quantifying text data and embedding them into portfolio models; this process often necessitates considerable manual labeling. To address these issues, we proposed a sector rotation portfolio management approach based on deep reinforcement learning (DRL) via multi-source information. The multi-source information includes the temporal data of sector and stock features, as well as news data. In terms of structure, in this method, a dual-layer reinforcement learning structure is deployed, comprising a multi-agent sector layer and a graph convolution layer. The former learns the trend of sectors, while the latter learns the connections between stocks in sectors, and the impact of news on sectors is integrated through large language models without manual labeling or fusing output information of other modules to provide the final portfolio management scheme. The results of simulation experiments on the Chinese and US (United States) stock markets show that our method demonstrates significant improvements over multiple state-of-the-art approaches.
