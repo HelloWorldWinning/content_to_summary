@@ -1,0 +1,126 @@
+Timestamp: 2025-03-30T13:32:57.603292
+Title: Text_Summary_20250330_133257
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您的要求，对提供的文本进行核心内容提炼、总结和可视化的结果：
+
+**核心内容概述与总结**
+
+**I. 背景：投资组合管理 (Portfolio Management)**
+    *   定义：持续将资金重新分配于不同金融资产的过程。
+    *   目标：最大化预期投资回报，同时最小化风险。
+
+**II. 提出的解决方案：DeepBreath 框架**
+    *   A. **核心基础**：基于深度强化学习 (Deep Reinforcement Learning, DRL) 构建。
+    *   B. **关键技术组成**：
+        *   1.  **受限堆叠自编码器 (Restricted Stacked Autoencoder, RSAE)**：
+            *   功能：执行数据降维和特征选择。
+            *   目的：确保只保留信息量最丰富的抽象特征。
+        *   2.  **卷积神经网络 (Convolutional Neural Network, CNN)**：
+            *   功能：学习并执行投资策略。
+            *   目的：通过重新分配资产来提高预期回报。
+    *   C. **学习策略**：结合离线与在线学习。
+        *   1.  **离线学习 (Offline)**：用于训练 CNN 模型。
+        *   2.  **在线学习 (Online)**：处理“概念漂移”（因意外情况导致的数据分布变化），基于被动概念漂移检测和在线随机批处理 (Online Stochastic Batching)。
+    *   D. **特定风险应对**：
+        *   针对问题：结算风险（资产购买与支付之间延迟导致的合约风险）。
+        *   解决方案：采用区块链 (Blockchain) 技术进行管理。
+
+**III. 验证与效果**
+    *   测试：使用 4 个测试集，跨越 3 个不同的投资时期进行验证。
+    *   结果：DeepBreath 框架实现的投资回报优于当前的专家投资策略，并且有效降低了市场风险。
+
+---
+
+**核心结论 (Core Point):**
+
+基于 DeepBreath 框架的投资组合管理方法，在提高投资回报的同时能有效降低市场风险，表现优于现有的专家策略。
+
+---
+
+**总体框架 (Overarching Framework):**
+
+该研究提出的核心框架是 **深度强化学习 (Deep Reinforcement Learning, DRL)**。
+
+---
+
+**Mermaid 概念图:**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "目标与挑战 (Goals & Challenges)"
+        PMM[投资组合管理<br/>(Portfolio Management)]:::goal
+        Goal(最大化回报, 最小化风险):::subgoal
+        SR[结算风险<br/>(Settlement Risk)]:::challenge
+        CD[概念漂移<br/>(Concept Drift)]:::challenge
+    end
+
+    subgraph "DeepBreath 框架 (Framework)"
+        style DB fill:#87CEEB,stroke:#333,stroke-width:2px
+        DB(DeepBreath 框架):::main_framework --> BasedOn[基于 深度强化学习 DRL]:::tech_base
+
+        subgraph "核心组件 (Core Components)"
+            style RSAE fill:#98FB98,stroke:#333,stroke-width:1px
+            style CNN fill:#98FB98,stroke:#333,stroke-width:1px
+            RSAE(受限堆叠自编码器 RSAE) --> F1(降维 & 特征选择):::function
+            CNN(卷积神经网络 CNN) --> F2(学习投资策略):::function
+        end
+
+        subgraph "学习机制 (Learning Mechanism)"
+            style LS fill:#B0E0E6,stroke:#333,stroke-width:1px
+            style Offline fill:#D8BFD8,stroke:#333,stroke-width:1px
+            style Online fill:#D8BFD8,stroke:#333,stroke-width:1px
+            LS[混合学习策略] --> Offline(离线训练):::process
+            LS --> Online(在线适应):::process
+            Online --> CDH(处理概念漂移):::process_detail
+        end
+
+        subgraph "风险管理 (Risk Management)"
+           style BC fill:#FFFACD,stroke:#333,stroke-width:1px
+           BC(区块链 Blockchain) --> F3(缓解结算风险):::function
+        end
+    end
+
+    subgraph "验证与结果 (Validation & Results)"
+        style Results fill:#E6E6FA,stroke:#663399,stroke-width:2px
+        Test(4个测试集 / 3个投资期):::test_setup
+        Results(成果) --> R1(回报优于专家):::outcome
+        Results --> R2(最小化市场风险):::outcome
+    end
+
+    %% 关系链接 (Relationships)
+    PMM --> Goal
+    DB -- 解决 --> PMM
+    DB --> RSAE & CNN & LS & BC
+
+    RSAE -- 输入特征 --> CNN
+    Offline -- 训练 --> CNN
+    Online -- 更新 --> CNN
+    CD -- 由...处理 --> Online
+    CDH -- 依赖 --> Online
+
+    SR -- 由...管理 --> BC
+
+    Test -- 验证 --> DB
+    DB -- 产生 --> Results
+
+
+    %% 样式定义 (Style Definitions)
+    classDef goal fill:#FFDAB9,stroke:#A0522D,stroke-width:2px;
+    classDef subgoal fill:#FFE4B5,stroke:#A0522D,stroke-width:1px;
+    classDef challenge fill:#FFA07A,stroke:#CD5C5C,stroke-width:2px;
+    classDef main_framework fill:#87CEEB,stroke:#4682B4,stroke-width:2px;
+    classDef tech_base fill:#ADD8E6,stroke:#4682B4,stroke-width:1px;
+    classDef function fill:#DDA0DD,stroke:#8A2BE2,stroke-width:1px;
+    classDef process fill:#B0C4DE,stroke:#708090,stroke-width:1px;
+    classDef process_detail fill:#E0FFFF,stroke:#708090,stroke-width:1px;
+    classDef test_setup fill:#F5F5DC,stroke:#8B4513,stroke-width:1px;
+    classDef outcome fill:#90EE90,stroke:#2E8B57,stroke-width:2px;
+
+</Mermaid_Diagram>
+
+Content:
+The process of continuously reallocating funds into financial assets, aiming to increase the expected return of investment and minimizing the risk, is known as portfolio management. In this paper, a portfolio management framework is developed based on a deep reinforcement learning framework called DeepBreath. The DeepBreath methodology combines a restricted stacked autoencoder and a convolutional neural network (CNN) into an integrated framework. The restricted stacked autoencoder is employed in order to conduct dimensionality reduction and features selection, thus ensuring that only the most informative abstract features are retained. The CNN is used to learn and enforce the investment policy which consists of reallocating the various assets in order to increase the expected return on investment. The framework consists of both offline and online learning strategies: the former is required to train the CNN while the latter handles concept drifts i.e. a change in the data distribution resulting from unforeseen circumstances. These are based on passive concept drift detection and online stochastic batching. Settlement risk may occur as a result of a delay in between the acquisition of an asset and its payment failing to deliver the terms of a contract. In order to tackle this challenging issue, a blockchain is employed. Finally, the performance of the DeepBreath framework is tested with four test sets over three distinct investment periods. The results show that the return of investment achieved by our approach outperforms current expert investment strategies while minimizing the market risk. Crown Copyright (C) 2020 Published by Elsevier Ltd.
