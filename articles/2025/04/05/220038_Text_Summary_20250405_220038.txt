@@ -1,0 +1,102 @@
+Timestamp: 2025-04-05T22:00:38.442101
+Title: Text_Summary_20250405_220038
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，没问题。以下是根据您提供的文本生成的摘要，包括中文概要、核心观点、总体框架和 mermaid 概念图。
+
+**概要:**
+
+I.  **背景与问题：**
+    *   物联网 (IoT) 数据爆炸式增长，隐私泄露问题日益严重。
+    *   传统差分隐私 (DP) 方法通过添加噪声来保护数据，但噪声大小难以控制，影响数据可用性。
+
+II. **提出的解决方案：**
+    *   提出一种随机扰动方法，用于清洗数据集。
+    *   扰动来自数据集中的其他样本，而非外部噪声。
+
+III. **理论分析：**
+    *   推导出基于该框架的效用级别表达式。
+    *   证明该算法能够实现 ε-差分隐私 (ε-DP)。
+
+IV. **实验验证：**
+    *   在真实数据集上进行实验，包括查询和机器学习任务。
+    *   与现有方法相比，该算法在相同隐私级别下表现更好。
+
+**核心观点：**
+
+该研究提出了一种基于样本内扰动的差分隐私方法，旨在提高物联网数据隐私保护的效用性。
+
+**总体框架：**
+
+1.  **问题定义：** IoT 数据隐私保护的挑战与传统方法的局限。
+2.  **算法设计：** 基于样本内扰动的随机扰动算法。
+3.  **理论分析：** 效用性分析与差分隐私证明。
+4.  **实验评估：** 在真实数据集上验证算法性能。
+5.  **结论：** 算法的有效性与优势。
+
+**Mermaid 概念图:**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Privacy_Challenges [隐私挑战]
+        A[IoT 数据爆炸增长] --> B(隐私泄露风险);
+        B --> C{传统差分隐私(DP)};
+        C --> D[噪声添加];
+        D --> E(噪声大小难控);
+        D --> F(数据可用性下降);
+    end
+
+    subgraph Proposed_Solution [提出的解决方案]
+        G[随机扰动方法] --基于--> H(样本内扰动);
+        H --> I{清洗数据集};
+    end
+
+    subgraph Theoretical_Analysis [理论分析]
+        J[效用级别表达式];
+        K[ε-差分隐私(ε-DP)证明];
+    end
+
+    subgraph Experimental_Evaluation [实验评估]
+        L[真实数据集] --> M{查询任务};
+        L --> N{机器学习任务};
+        M & N --> O[性能评估];
+        O --> P(与现有方法比较);
+    end
+
+    subgraph Conclusion [结论]
+        P --> Q{更好性能};
+        Q --> R(算法有效性);
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#fcc,stroke:#333,stroke-width:2px
+    style F fill:#fcc,stroke:#333,stroke-width:2px
+
+    style G fill:#afa,stroke:#333,stroke-width:2px
+    style H fill:#afa,stroke:#333,stroke-width:2px
+    style I fill:#afa,stroke:#333,stroke-width:2px
+
+    style J fill:#bb9,stroke:#333,stroke-width:2px
+    style K fill:#bb9,stroke:#333,stroke-width:2px
+
+    style L fill:#aac,stroke:#333,stroke-width:2px
+    style M fill:#aac,stroke:#333,stroke-width:2px
+    style N fill:#aac,stroke:#333,stroke-width:2px
+    style O fill:#aac,stroke:#333,stroke-width:2px
+    style P fill:#aac,stroke:#333,stroke-width:2px
+
+    style Q fill:#5f5,stroke:#333,stroke-width:2px
+    style R fill:#5f5,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+With the great amount of available data, especially collecting from the ubiquitous Internet of Things (IoT), the issue of privacy leakage arises increasingly concerns recently. To preserve the privacy of IoT datasets, traditional methods usually calibrate random noises on the data values to achieve differential privacy (DP). However, the amount of the calibrating noises should be carefully designed and a heedless value will definitely degrade the availability of datasets. Thus, in this work, we propose a stochastic perturbation method to sanitize the dataset, where the perturbation is obtained from the rest samples in the same dataset. In addition, we derive the expression of the utility level based on its unique framework and prove that the proposed algorithm can achieve the $\epsilon$e-DP. To show the effectiveness of the proposed algorithm, we conduct extensive experiments on real-life datasets by various functions, such as query answers and machine learning tasks. By comparing with the state-of-the-art methods, our proposed algorithm can achieve a better performance under the same privacy level.
