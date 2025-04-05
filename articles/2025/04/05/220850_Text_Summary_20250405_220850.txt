@@ -1,0 +1,81 @@
+Timestamp: 2025-04-05T22:08:50.056948
+Title: Text_Summary_20250405_220850
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对给定文本的提炼与总结：
+
+**核心要点：**
+
+本文提出了一种考虑交易成本的在线投资组合选择策略 CAEG(C)，并证明了其在理论上具有一定的优越性，且在实际表现上优于其他相关策略。
+
+**总体框架：**
+
+I. **背景介绍:**
+    *   在线投资组合选择 (OLPS) 旨在优化不确定环境下的财富配置。
+    *   交易成本是投资决策中不可忽略的重要因素。
+
+II. **研究内容:**
+    *   **问题:** 现有 OLPS 策略缺乏对交易成本的有效处理。
+    *   **方法:** 扩展现有的 CAEG 策略，引入交易成本模型，形成 CAEG(C) 策略。 采用比例交易成本模型。
+    *   **理论保证:** 从理论上证明 CAEG(C) 的对数累积财富均值具有渐近上界，与其基准策略相比具有竞争力。
+
+III. **实验验证:**
+    *   通过数值例子验证交易成本对 CAEG(C) 策略的影响。
+    *   实验结果表明 CAEG(C) 策略优于其他相关 OLPS 策略，并与基准策略相当。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 背景 [背景]
+        A[在线投资组合选择 (OLPS)]:::olps --> B(优化财富配置):::optimization
+        B --> C{不确定环境}:::uncertainty
+        D[交易成本]:::transaction --> B
+        D --> E[重要因素]:::important
+    end
+
+    subgraph 研究 [研究内容]
+        F[现有 OLPS 策略]:::existing --> G{缺乏交易成本处理}:::lack
+        G --> H[CAEG(C) 策略]:::caegc
+        H --> I[扩展 CAEG]:::extension
+        H --> J[比例交易成本模型]:::proportional
+        K[理论保证]:::theory --> L[对数累积财富均值渐近上界]:::upperbound
+        L --> M[与基准策略相当]:::benchmark
+
+    end
+
+    subgraph 实验 [实验验证]
+        N[数值例子]:::numerical --> O{交易成本影响}:::impact
+        N --> P[CAEG(C) 表现]:::performance
+        P --> Q[优于其他 OLPS 策略]:::outperform
+        P --> M
+    end
+
+    A:::olps -.-> F:::existing
+    E:::important -.-> G:::lack
+
+    classDef olps fill:#f9f,stroke:#333,stroke-width:2px
+    classDef optimization fill:#ccf,stroke:#333,stroke-width:2px
+    classDef uncertainty fill:#ccf,stroke:#333,stroke-width:2px
+    classDef transaction fill:#f9f,stroke:#333,stroke-width:2px
+    classDef important fill:#ccf,stroke:#333,stroke-width:2px
+    classDef existing fill:#f9f,stroke:#333,stroke-width:2px
+    classDef lack fill:#fcc,stroke:#333,stroke-width:2px
+    classDef caegc fill:#cfc,stroke:#333,stroke-width:2px
+    classDef extension fill:#ccf,stroke:#333,stroke-width:2px
+    classDef proportional fill:#ccf,stroke:#333,stroke-width:2px
+    classDef theory fill:#ccf,stroke:#333,stroke-width:2px
+    classDef upperbound fill:#ccf,stroke:#333,stroke-width:2px
+    classDef benchmark fill:#ccf,stroke:#333,stroke-width:2px
+    classDef numerical fill:#ccf,stroke:#333,stroke-width:2px
+    classDef impact fill:#ccf,stroke:#333,stroke-width:2px
+    classDef performance fill:#cfc,stroke:#333,stroke-width:2px
+    classDef outperform fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+As an application of machine learning techniques in the field of portfolio management, online portfolio selection (OLPS) aims at optimising the allocation of wealth in an uncertain environment. When making investment decisions, the transaction cost is such an important factor that investor should not ignore. Thus, this paper extends an existing online portfolio selection strategy Continuous Aggregating Exponential Gradient (CAEG) (Yang et al., 2022) in the presence of transaction costs. The proportional transaction costs model is constructed when the transaction costs are incorporated into the decision-making process, and we call this new strategy CAEG(C) . Theoretical guarantee proves that the mean of the logarithmic cumulative wealth of CAEG(C) has an asymptotic upper bound with that of its benchmark. The numerical examples demonstrate the impact of transaction costs on the proposed CAEG(C) strategy on the one hand, and on the other hand, verify that CAEG(C) outperforms other related OLPS strategies and is comparable to its benchmark strategy.
