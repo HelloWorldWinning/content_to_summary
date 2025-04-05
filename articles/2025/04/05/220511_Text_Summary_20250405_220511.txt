@@ -1,0 +1,134 @@
+Timestamp: 2025-04-05T22:05:11.857454
+Title: Text_Summary_20250405_220511
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本的总结，包括要点、框架、结论和 Mermaid 概念图：
+
+**1. 核心要点 (Outline)：**
+
+*   **背景：** 网络贷款中，担保企业对违约借款企业负有偿还义务。经济衰退期间，违约风险可能迅速蔓延，贷款网络结构会放大风险的影响范围，导致大规模企业违约甚至系统性金融危机。
+*   **问题：** 中央银行需要先进的监管技术来识别和应对传染风险，以避免“灰犀牛”事件。
+*   **解决方案：** 提出了一种新的方法，使用图神经网络架构（iConReg）来检测和隔离中国全国网络贷款中的传染风险。
+*   **成果：** iConReg 模型的 AUC 超过 91%，显著优于其他方法。通过隔离预测的最高风险节点（前 1%），可以将贷款违约率平均降低 25.8%。案例研究和用户研究也证实了该方法的有效性。
+*   **意义：** 该方法为使用深度图学习技术监管网络贷款的传染风险开辟了新方向，使监管机构能够制定更及时的预防措施，应对系统性金融危机。
+
+**2. 核心结论 (Core Point)：**
+
+iConReg图神经网络架构能够有效识别和隔离网络贷款中的传染风险，为监管机构提供了预防系统性金融危机的有力工具。
+
+**3. 总体框架 (Overarching Framework)：**
+
+*   **问题识别：** 系统性金融风险源于网络贷款中的传染效应。
+*   **方法提出：** 使用图神经网络 iConReg 进行风险识别和隔离。
+*   **效果验证：** 通过模型性能、违约率降低、案例研究和用户研究证明 iConReg 的有效性。
+*   **应用前景：** 将深度图学习应用于金融监管，提高风险防范能力。
+
+**4. Mermaid 概念图 (Conceptual Map)：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 经济环境
+        A[经济衰退]:::recession
+        B[违约风险蔓延]:::risk
+    end
+
+    subgraph 网络贷款
+        C[网络贷款]:::loan
+        D[担保企业]:::guarantee
+        E[借款企业]:::borrower
+    end
+
+    subgraph 监管需求
+        F[系统性金融危机]:::crisis
+        G[传染风险]:::contagion
+        H[监管技术]:::regulation
+    end
+
+    subgraph iConReg模型
+        I[iConReg模型]:::model
+        J[图神经网络]:::gnn
+        K[风险识别]:::identification
+        L[风险隔离]:::isolation
+    end
+
+    subgraph 成果与应用
+        M[AUC > 91%]:::auc
+        N[违约率降低25.8%]:::reduction
+        O[风险防范措施]:::prevention
+
+    end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#aaf,stroke:#333,stroke-width:2px
+    style I fill:#aaf,stroke:#333,stroke-width:2px
+     style J fill:#aaf,stroke:#333,stroke-width:2px
+    style K fill:#aaf,stroke:#333,stroke-width:2px
+    style L fill:#aaf,stroke:#333,stroke-width:2px
+    style M fill:#afa,stroke:#333,stroke-width:2px
+    style N fill:#afa,stroke:#333,stroke-width:2px
+    style O fill:#afa,stroke:#333,stroke-width:2px
+
+    A --> B
+    B --> C
+    D -- 偿还义务 --> E
+    C -- 风险传播 --> G
+    G --> F
+    F --> H
+
+    H --> I
+    I --> J
+    J --> K & L
+
+    K & L --> O
+    I --> M & N
+    classDef recession fill:#f9f,stroke:#333,stroke-width:2px
+    classDef risk fill:#f9f,stroke:#333,stroke-width:2px
+    classDef crisis fill:#f9f,stroke:#333,stroke-width:2px
+    classDef contagion fill:#f9f,stroke:#333,stroke-width:2px
+    classDef loan fill:#ccf,stroke:#333,stroke-width:2px
+    classDef guarantee fill:#ccf,stroke:#333,stroke-width:2px
+    classDef borrower fill:#ccf,stroke:#333,stroke-width:2px
+    classDef regulation fill:#aaf,stroke:#333,stroke-width:2px
+    classDef model fill:#aaf,stroke:#333,stroke-width:2px
+    classDef gnn fill:#aaf,stroke:#333,stroke-width:2px
+    classDef identification fill:#aaf,stroke:#333,stroke-width:2px
+    classDef isolation fill:#aaf,stroke:#333,stroke-width:2px
+    classDef auc fill:#afa,stroke:#333,stroke-width:2px
+    classDef reduction fill:#afa,stroke:#333,stroke-width:2px
+    classDef prevention fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+**中文翻译：**
+
+**1. 核心要点 (Outline)：**
+
+*   **背景：** 在网络贷款中，担保企业对违约的借款企业负有偿还债务的法律责任。经济衰退时期，违约风险会像野火一样蔓延——贷款网络结构可能会扩大范围和影响；从而导致大规模的企业违约，甚至引发系统性金融危机。
+*   **问题：** 中央银行呼吁采用先进的监管技术，以识别和应对传染风险，从而避免“灰犀牛”事件。
+*   **解决方案：** 我们提出了一种新方法，以帮助监管机构量化系统性风险并提供遏制线索。具体而言，我们介绍了一种最先进的图神经网络架构（iConReg），用于检测和隔离中国全国网络贷款中的传染风险。
+*   **成果：** 我们的模型的总体准确率达到了超过 91% 的 AUC（ROC 曲线下面积），显著优于对比的基准方法。通过隔离传染链中预测的前 1% 的高风险节点，iConReg 报告贷款违约率显著收缩（平均 25.8%）。此外，我们进行了广泛的案例和用户研究来评估我们提出的方法的有效性，结果也证明了其卓越的性能。
+*   **意义：** 我们提出的方法开辟了一个利用深度图学习技术来监管网络贷款传染风险的新方向，使当局能够设计更及时的预防措施来应对系统性金融危机。
+
+**2. 核心结论 (Core Point)：**
+
+iConReg 图神经网络架构可以有效地识别和隔离网络贷款中的传染风险，为监管机构提供了预防系统性金融危机的有力工具。
+
+**3. 总体框架 (Overarching Framework)：**
+
+*   **问题识别：** 系统性金融风险源于网络贷款中的传染效应。
+*   **方法提出：** 使用图神经网络 iConReg 进行风险识别和隔离。
+*   **效果验证：** 通过模型性能、违约率降低、案例研究和用户研究证明 iConReg 的有效性。
+*   **应用前景：** 将深度图学习应用于金融监管，提高风险防范能力。
+
+**4. Mermaid 概念图 (Conceptual Map)：** (同上)
+
+
+Content:
+In networked-loans, guarantor enterprises have a legal duty to repay debt to the commercial bank when the guaranteed borrower enterprise defaults (fail to repay). During an economic recession, the risk of defaults may spread like wildfire - the loan network structure could amplify both reach and impact; thus leading to a large-scale corporation defaults even systemic financial crises. The Central Bank urges advanced regulation technology to recognize and act on the contagion risk in order to avoid the "gray rhino". Therefore, we present a novel approach to help the regulators quantify the systemic risk and provide stemming clues. In particular, we report a state-of-the-art graph neural network architecture (iConReg) for detecting and isolating of contagion risk in China's national-wide networked-loans. The overall accuracy of our model reaches over 91% of AUC (Area under the ROC Curve), which considerably outperforms the compared benchmark methods. By isolating the top 1% of predicted high-risky nodes in the contagion chains, iConReg reports a significant shrink (averaged 25.8%) of loan default rates. Moreover, we conduct extensive case and user studies to evaluate the effectiveness of our proposed method and the result also demonstrates its superior performance. Our presented approach opens up a new direction of using deep graph learning techniques to regulate the contagion risk of networked-loans, which enables the authorities to design more prompt prevention measures against systemic financial crises.
