@@ -1,0 +1,77 @@
+Timestamp: 2025-04-05T22:00:51.624259
+Title: Text_Summary_20250405_220051
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本的总结，包括结构化概要、核心结论、总体框架和概念图。
+
+**1. 概要总结:**
+
+*   **问题:** 传统的k-truss模型只考虑边的直接共同邻居，限制了其揭示图的细粒度结构信息的能力。
+*   **提出的解决方案:** 提出了一个名为(k, t)-truss的新模型，该模型考虑了边的更高阶邻域（t跳）信息。
+*   **研究的问题:** 研究了高阶truss分解问题，该问题计算给定t的所有可能的k值的(k, t)-truss。
+*   **应用:** 高阶truss分解可用于社区检测和搜索、分层结构分析和图可视化等应用。
+*   **方法:** 提出了一种自底向上的分解范例，以增加k值的顺序计算相应的(k, t)-truss。在此基础上，进一步设计了三种优化策略来减少不必要的计算。
+*   **实验结果:** 在真实数据集和合成数据集上的实验结果表明，所提出的算法的效率、有效性和可扩展性。
+
+**2. 核心结论:**
+
+(k, t)-truss模型及其高阶分解算法能更有效地揭示图的细粒度结构，优于传统k-truss模型。
+
+**3. 总体框架:**
+
+该研究的总体框架可以概括为：
+
+1.  **动机与问题定义:** 指出现有k-truss模型的局限性，提出高阶结构信息的重要性，并定义高阶truss分解问题。
+2.  **模型构建:** 提出(k, t)-truss模型，引入t跳邻域信息。
+3.  **算法设计:** 开发自底向上的分解算法，并提出优化策略以提高效率。
+4.  **实验验证:** 在数据集上评估算法的性能，验证其有效性和效率。
+5.  **应用展望:** 讨论高阶truss分解在实际应用中的潜力。
+
+**4. 概念图:**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "传统 K-Truss 模型 (局限性)"
+        A[仅考虑直接邻居] --> B(限制细粒度结构发现)
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph "提出的 (K, T)-Truss 模型"
+        C[引入 T 跳邻域信息] --> D(增强细粒度结构发现能力)
+        style C fill:#ccf,stroke:#333,stroke-width:2px
+        style D fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    E[高阶 Truss 分解问题] -- 定义 --> C
+    E -- 需要 --> F[算法设计]
+    style E fill:#ffc,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+
+    F --> G[自底向上分解]
+    F --> H[优化策略]
+    style G fill:#cfc,stroke:#333,stroke-width:2px
+    style H fill:#cfc,stroke:#333,stroke-width:2px
+
+    G & H --> I[实验验证]
+    style I fill:#fcc,stroke:#333,stroke-width:2px
+
+    I --> J{效率、有效性、可扩展性}
+    style J fill:#fcc,stroke:#333,stroke-width:2px
+
+    J --> K[社区检测/搜索]
+    J --> L[分层结构分析]
+    J --> M[图可视化]
+    style K fill:#efe,stroke:#333,stroke-width:2px
+    style L fill:#efe,stroke:#333,stroke-width:2px
+    style M fill:#efe,stroke:#333,stroke-width:2px
+
+    B --> E
+</Mermaid_Diagram>
+
+
+Content:
+k-truss model is a typical cohesive subgraph model and has been received considerable attention recently. However, the k-truss model only considers the direct common neighbors of an edge, which restricts its ability to reveal fine-grained structure information of the graph. Motivated by this, in this paper, we propose a new model named (k, t)-truss that considers the higher-order neighborhood (t hop) information of an edge. Based on the (k, t)-truss model, we study the higher-order truss decomposition problem which computes the (k, t)-trusses for all possible k values regarding a given r. Higher-order truss decomposition can be used in the applications such as community detection and search, hierarchical structure analysis, and graph visualization. To address this problem, we first propose a bottom-up decomposition paradigm in the increasing order of k values to compute the corresponding (k, t)-truss. Based on the bottom-up decomposition paradigm, we further devise three optimization strategies to reduce the unnecessary computation. We evaluate our proposed algorithms on real datasets and synthetic datasets, the experimental results demonstrate the efficiency, effectiveness and scalability of our proposed algorithms.
