@@ -1,0 +1,79 @@
+Timestamp: 2025-04-05T22:03:37.871908
+Title: Text_Summary_20250405_220337
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对给定文本的总结，包括要点、框架和概念图：
+
+**总结：**
+
+**1. 核心问题：** 在不确定图中识别高风险的脆弱节点，这是一个NP难问题，对风险管理至关重要。
+
+**2. 现有方法的局限性：**
+
+*   **蒙特卡洛模拟 (MC)：** 需要大量样本才能保证准确性，计算成本高。
+*   **图神经网络 (GNNs)：** 容易出现过度平滑问题，导致长距离风险传播效果不佳。
+
+**3. 提出的解决方案 (AdaRisk)：**
+
+*   **核心思想：** 基于风险自适应的深度强化学习框架，用于识别脆弱节点。
+*   **Markov决策过程 (MDP)：** 模拟脆弱性评估过程，智能体根据先前的传播概率自适应地接近风险。
+*   **长距离自适应策略网络：** 用于编码包含多跳传播信息的状态嵌入，并输出节点脆弱概率。
+
+**4. 实验结果：** AdaRisk 在检测性能方面优于现有方法，并且运行时间显著减少。
+
+**核心结论：** AdaRisk 提供了一种更高效、更准确的方法，用于在不确定图中识别脆弱节点，克服了现有方法的局限性。
+
+**总体框架：**
+
+1.  **问题定义：** 不确定图中的脆弱节点检测 (NP-hard)。
+2.  **现有方法分析：** MC模拟 (计算量大), GNN (过度平滑)。
+3.  **提出的方法 (AdaRisk)：** 深度强化学习框架。
+    *   MDP建模。
+    *   长距离自适应策略网络。
+4.  **实验验证：** 性能优于现有方法，时间效率高。
+
+**概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 问题定义
+        A[脆弱节点检测<br>NP-hard]:::problem -- 需要 --> B(风险管理)
+    end
+
+    subgraph 现有方法
+        C[蒙特卡洛模拟(MC)]:::existing -- 计算量大 --> D{准确性}
+        E[图神经网络(GNNs)]:::existing -- 容易 --> F[过度平滑]
+    end
+
+    subgraph 提出的方法(AdaRisk)
+        G[AdaRisk<br>深度强化学习]:::solution -- 利用 --> H{MDP建模}
+        H -- 模拟 --> I[脆弱性评估过程]
+        I -- 自适应 --> J[风险]
+        G -- 使用 --> K[长距离自适应策略网络]
+        K -- 编码 --> L[状态嵌入]
+        L -- 包含 --> M[多跳传播信息]
+        K -- 输出 --> N[节点脆弱概率]
+    end
+
+    subgraph 实验结果
+        O[AdaRisk]:::result -- 优于 --> C
+        O -- 优于 --> E
+        O -- 提供 --> P[时间效率]
+    end
+
+    A -- 需要 --> C
+    A -- 需要 --> E
+
+    classDef problem fill:#f9f,stroke:#333,stroke-width:2px
+    classDef existing fill:#ccf,stroke:#333,stroke-width:2px
+    classDef solution fill:#cfc,stroke:#333,stroke-width:2px
+    classDef result fill:#ffc,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+Vulnerable node detection in uncertain graphs is a typical graph mining problem that seeks to identify nodes at a high risk of breakdown under the joint effect from both the self and contagion risk probability. This is an NP-hard problem that is crucial for risk management in many real-world applications such as networked loans and smart grids. Monte Carlo (MC) simulation and its optimized algorithms are commonly used to approximate the breakdown probability, but these methods require a large number of samples to ensure accuracy, which is computationally expensive for large-scale networks. Although recent studies employ Graph Neural Networks (GNNs) to model the contagion process and accelerate the inference, many of these methods suffer from the over-smoothing problem, leading to suboptimal performance under the long-distance risk contagion process. To this end, we propose a novel risk-adaptive deep reinforcement learning-based framework (AdaRisk) for vulnerable nodes detection in uncertain graphs. In particular, we design the Markov Decision Process (MDP) of the vulnerability estimation process in which our agent would approach the risk adaptively based on contagion probability accumulated in prior iterations. To encode state embeddings that incorporate multi-hop contagion information, the agent utilizes a long-distance adaptable policy network to process the input graph and output actions as the vulnerable probability of nodes. We conducted extensive experiments on four benchmark networks and three real-world financial networks to evaluate our proposed framework's performance. Our results demonstrate that AdaRisk outperforms state-of-the-art baselines in terms of detection performance, and also offers significant running time reductions compared to MC simulation.
