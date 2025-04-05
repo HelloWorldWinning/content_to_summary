@@ -1,0 +1,80 @@
+Timestamp: 2025-04-05T21:59:36.965331
+Title: Text_Summary_20250405_215936
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，没问题。以下是根据您提供的文本生成的摘要，包括结构化概要、核心结论、总体框架以及 Mermaid 概念图：
+
+**摘要：**
+
+**I. 结构化概要：**
+
+*   **研究背景：** 探讨 DRF（未明确具体化合物）在小鼠不稳定斑块模型中的作用。
+*   **体外实验：**
+    *   DRF 处理骨髓来源巨噬细胞 (BMDMs) 后，Nrf2（抗氧化转录因子）表达增加（2 倍，P < 0.001）。
+    *   NF-κB（炎症转录因子）表达减少（-58%，P < 0.05）。
+*   **体内实验：**
+    *   DRF (100 mg/kg) 灌胃可减少斑块面积 (-51%, P < 0.001)、油红 O 阳性脂质含量 (-52%, P < 0.001) 和坏死核心面积 (-48%, P < 0.01)。
+    *   DRF 处理的小鼠斑块中 CD68+ 巨噬细胞减少 (-68%, P < 0.0005)，Ter119+ 红细胞（斑块内出血标志物）减少 (-75%, P < 0.05)。
+    *   流式细胞术分析显示，DRF 处理的小鼠血液中促动脉粥样硬化细胞（包括 Gr1+Ly6G+ 嗜中性粒细胞、Ly6C+CCR2+ 活化单核细胞和 CD8+ 自然杀伤 T 细胞）减少。
+    *   qPCR 结果表明，DRF 处理增加了主动脉弓 Gsta3 (+46%, P <0.01) 和肝脏 Nqo1 (+31%, P < 0.05)、Sod1 (+32%, P < 0.01) 和 Ho1 (+21%, P < 0.05) mRNA 水平。
+*   **结论：** DRF 具有抗动脉粥样硬化特性，可能被重新用作预防动脉粥样硬化的新疗法。
+
+**II. 核心结论（一句话）：**
+
+DRF 通过调节抗氧化和炎症通路，减少不稳定斑块的形成和进展，具有潜在的抗动脉粥样硬化治疗价值。
+
+**III. 总体框架：**
+
+该研究的总体框架是评估 DRF 在体外和体内对动脉粥样硬化的影响。它从细胞水平的机制研究（转录因子调控）到动物模型的效果验证（斑块大小、细胞成分、基因表达），提供了一个较为完整的证据链，支持 DRF 作为潜在的抗动脉粥样硬化药物的设想。
+
+**IV. Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 体外实验 [In Vitro Experiments]
+        A[DRF 处理 BMDMs] --激活--> B{Nrf2 表达增加}:::green
+        A --抑制--> C{NF-κB 表达降低}:::red
+        classDef green fill:#90EE90,stroke:#333,stroke-width:2px;
+        classDef red fill:#F08080,stroke:#333,stroke-width:2px;
+    end
+
+    subgraph 体内实验 [In Vivo Experiments (Tandem Stenosis Model)]
+        D[DRF 灌胃 (100 mg/kg)] --减少--> E{斑块面积}:::red
+        D --减少--> F{油红 O+ 脂质含量}:::red
+        D --减少--> G{坏死核心面积}:::red
+        D --减少--> H{CD68+ 巨噬细胞}:::red
+        D --减少--> I{Ter119+ 红细胞}:::red
+        D --减少--> J{Gr1+Ly6G+ 嗜中性粒细胞}:::red
+        D --减少--> K{Ly6C+CCR2+ 活化单核细胞}:::red
+        D --减少--> L{CD8+ 自然杀伤 T 细胞}:::red
+        D --激活--> M{主动脉弓 Gsta3 mRNA}:::green
+        D --激活--> N{肝脏 Nqo1 mRNA}:::green
+        D --激活--> O{肝脏 Sod1 mRNA}:::green
+        D --激活--> P{肝脏 Ho1 mRNA}:::green
+
+    end
+
+    Q[DRF] --> 体外实验
+    Q --> 体内实验
+
+    subgraph 结论 [Conclusion]
+        R[DRF 具有抗动脉粥样硬化特性]:::blue
+        classDef blue fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    end
+
+    体外实验 --> R
+    体内实验 --> R
+
+    style Q fill:#FFFFE0,stroke:#333,stroke-width:2px
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11 stroke-width:2px,color:red;
+    linkStyle 12,13,14,15 stroke-width:2px,color:green;
+</Mermaid_Diagram>
+
+希望这个摘要符合您的要求!
+
+
+Content:
+of instability in a murine model of unstable plaque. Methods and Results: In vitro, Western blotting of nuclear fractions of bone marrow-derived macrophages (BMDMs) found DRF treatment increased antioxidant transcription factor Nrf2 (2-fold, P < 0.001) and decreased inflammatory transcription factor NF-kappa B(-58%, P < 0.05). In vivo, using the tandem stenosis model of unstable plaque, daily gavage of DRF (100 mg/kg) reduced plaque area (-51%, P < 0.001), Oil Red O+ lipid content (-52%, P < 0.001) and necrotic core area (-48%, P < 0.01), when compared to vehicle controls. Plaques of DRF-treated mice had fewer CD68+ macrophages (-68%, P < 0.0005) and a reduction in Ter119+ erythrocytes, an intraplaque haemorrhage marker (-75%, P < 0.05). Flow cytometry analyses of blood revealed there were fewer circulating proatherogenic cells including Gr1+Ly6G+ neutrophils (-60%, P < 0.001), Ly6C+CCR2+ activated monocytes (-28%, P < 0.05) and CD8+ natural killer T-cells (-37%, P < 0.01) in DRF treated mice. Measurement of Nrf2-activated antioxidant genes by qPCR found DRF treatment increased aortic arch Gsta3 (+46%, P <0.01) and liver Nqo1 (+31%, P < 0.05), Sod1 (+32%, P < 0.01) and Ho1 (+21%, P < 0.05) mRNA levels. Conclusion: DRF has atheroprotective properties with implications for repurposing DRF as a new therapy to prevent atherosclerosis
