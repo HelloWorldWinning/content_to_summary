@@ -1,0 +1,82 @@
+Timestamp: 2025-04-05T22:09:55.598651
+Title: Text_Summary_20250405_220955
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您提供的文本生成的摘要，包括要点、核心结论、总体框架以及 Mermaid 概念图：
+
+**摘要：**
+
+1.  **背景：**
+    *   在线投资组合选择是根据历史价格动态调整资产配置的决策过程。
+    *   现有的在线投资组合策略在所有市场环境下持续投资于风险资产，可能在市场不佳时导致损失。
+
+2.  **提出的方法：**
+    *   提出一种基于平仓信号的新型在线投资组合策略。
+    *   使用指数移动平均方法，通过相对价格的平均值获得平仓信号。
+    *   基于平仓信号构造投资决策。
+    *   应用在线梯度更新算法聚合专家策略。
+
+3.  **理论分析：**
+    *   证明该策略的后悔值具有理论上限。
+
+4.  **实验验证：**
+    *   使用来自不同市场的真实金融数据进行数值实验。
+    *   结果表明，该策略在累积财富和风险调整回报方面具有良好的竞争表现。
+
+**核心结论：** 提出一种基于平仓信号的在线投资组合策略，能够在不同市场环境中实现良好的累积财富和风险调整回报。
+
+**总体框架：**
+
+1.  **问题定义：** 现有在线投资组合策略在市场不佳时表现不佳。
+2.  **解决方案：** 提出基于平仓信号的在线投资组合策略。
+3.  **理论支持：** 证明该策略具有理论上的性能保证。
+4.  **实验验证：** 通过实验证明该策略的有效性。
+
+<Mermaid_Diagram>
+graph TD
+    subgraph Problem [问题]
+        A[现有策略] --> B(持续投资风险资产)
+        B --> C{市场环境}
+        C -- 良好 --> D[收益]
+        C -- 不佳 --> E[损失]
+    end
+
+    subgraph Solution [解决方案]
+        F[提出策略] --> G(平仓信号)
+        G -- 基于 --> H{相对价格平均值}
+        H -- 使用 --> I[指数移动平均]
+        G --> J(投资决策)
+        J --> K[在线梯度更新]
+        K -- 聚合 --> L[专家策略]
+    end
+
+    subgraph Theory [理论]
+        M[后悔值上限]
+    end
+
+    subgraph Experiment [实验]
+        N[真实金融数据] --> O{不同市场}
+        O --> P[累积财富]
+        O --> Q[风险调整回报]
+        P & Q --> R(良好竞争表现)
+    end
+
+    A -- 导致 --> E
+    L -- 降低 --> E
+    K -- 保证 --> M
+    L -- 验证 --> R
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#cfc,stroke:#333,stroke-width:2px
+    style N fill:#ffc,stroke:#333,stroke-width:2px
+    style R fill:#cfc,stroke:#333,stroke-width:2px
+
+</Mermaid_Diagram>
+
+
+Content:
+Online portfolio selection is a decision-making process that involves dynamically adjusting asset positions based on historical price sequence. Existing online portfolio strategies consecutively invest in risky assets regardless of market environment. When market situations are poor, the returns may suffer losses. In this paper, we propose a novel online portfolio strategy based on closing position signal. First, we obtain the signal of closing position based on the average value of relative prices using the exponential moving average method, and construct an investment decision. Second, we apply the online gradient update algorithm to aggregate expert strategies and propose our strategy. Then, we prove that the regret of the strategy has a theoretical upper bound. Finally, we conduct numerical experiments using real financial data from different markets. The results show that our strategy has good competitive performance in terms of cumulative wealth and risk-adjusted returns.
