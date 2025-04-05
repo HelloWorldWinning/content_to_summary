@@ -1,0 +1,83 @@
+Timestamp: 2025-04-05T22:09:31.415792
+Title: Text_Summary_20250405_220931
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，明白了。这是一份针对给定文本的总结，符合您提出的要求：
+
+**总结：**
+
+1.  **核心思想：** 本文提出了一种新的在线投资组合选择策略 AIEG，该策略通过改进经典 EG 算法并结合 WAA 算法，有效利用多期价格信息，从而提高了投资组合的收益率和鲁棒性。
+
+2.  **大纲：**
+
+    *   **背景：** 在线投资组合选择（OLPS）日益受到关注。
+    *   **问题：** 如何利用多期价格信息改进经典 OLPS 策略 EG。
+    *   **方法：**
+        *   改进 EG 算法：使用 L-1 中位数估计器充分利用多期价格信息，得到改进的 EG (IEG) 算法。
+        *   聚合 IEG 算法：使用弱聚合算法（WAA）聚合无限多个 IEG 专家建议，得到 AIEG 算法。
+    *   **理论：** 证明了 AIEG 策略的普遍性。
+    *   **实验：** 通过大量实验评估 AIEG 策略，验证了其有效性和抗交易成本能力。
+3.  **总体框架：**
+
+    本文构建了一个从理论到实践的 OLPS 策略研究框架。首先，分析了现有策略的不足；其次，提出了新的 AIEG 策略，并从理论上证明了其有效性；最后，通过实验验证了 AIEG 策略在实际应用中的性能。这个框架涵盖了问题定义、算法设计、理论分析和实证评估等关键环节。
+4.  **Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 背景[背景]
+        A[在线投资组合选择 (OLPS)]:::background
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 问题[问题]
+        B[经典 EG 策略的局限性]:::problem
+        style B fill:#fbb,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 方法[方法]
+        C[改进 EG (IEG)]:::solution
+        style C fill:#ccf,stroke:#333,stroke-width:2px
+        D[L-1 中位数估计器]:::technique
+        style D fill:#ddf,stroke:#333,stroke-width:2px
+        E[弱聚合算法 (WAA)]:::technique
+        style E fill:#ddf,stroke:#333,stroke-width:2px
+        F[AIEG 策略]:::solution
+        style F fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 结果[结果]
+        G[普遍性证明]:::theory
+        style G fill:#cff,stroke:#333,stroke-width:2px
+        H[实验验证]:::experiment
+        style H fill:#cff,stroke:#333,stroke-width:2px
+        I[良好的性能和抗交易成本能力]:::outcome
+        style I fill:#afa,stroke:#333,stroke-width:2px
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    E --> F
+    D -- 利用多期价格信息 --> C
+    F -- 聚合 --> C
+    F --> G
+    F --> H
+    H --> I
+
+    classDef background fill:#ffcccc,stroke:#333,stroke-width:2px;
+    classDef problem fill:#ffddaa,stroke:#333,stroke-width:2px;
+    classDef solution fill:#ccffcc,stroke:#333,stroke-width:2px;
+    classDef technique fill:#ddeedd,stroke:#333,stroke-width:2px;
+    classDef theory fill:#ddddff,stroke:#333,stroke-width:2px;
+    classDef experiment fill:#ddeeff,stroke:#333,stroke-width:2px;
+    classDef outcome fill:#aaffaa,stroke:#333,stroke-width:2px;
+
+</Mermaid_Diagram>
+
+
+Content:
+In recent years, online portfolio selection (OLPS) has received more and more attention from quantitative investment and artificial intelligence communities. This paper first improves a classic OLPS strategy Exponential Gradient (EG) (Helm-bold in MF 8:325-347, 1998) by fully exploiting multi-period price information via the L-1-median estimator, and further designs a novel strategy named Aggregat -ing Improved Exponential Gradient (AIEG) by using Weak Aggregating Algorithm (WAA) to aggregate an infinite number of Improved EG (IEG) expert advice. The universality of the proposed strategy is proved. This paper empirically evaluates the proposed strategy through a wide range of experiments. Promising empirical results verify that the proposed AIEG strategy performs well in terms of different aspects and can resist reasonable transaction costs.
