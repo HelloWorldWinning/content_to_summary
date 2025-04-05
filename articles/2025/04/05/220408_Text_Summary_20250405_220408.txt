@@ -1,0 +1,74 @@
+Timestamp: 2025-04-05T22:04:08.676032
+Title: Text_Summary_20250405_220408
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将根据您的要求，对提供的文本进行提炼和总结，并以中文呈现。
+
+**总结：**
+
+1.  **背景：**
+    *   反洗钱（AML）是金融领域中的一个典型数据挖掘问题。
+    *   洗钱（ML）严重威胁国家经济、政府和社会福祉。
+    *   金融机构在反洗钱中扮演重要角色。
+
+2.  **挑战：**
+    *   传统的反洗钱方法通常将每个账户的行为视为独立事件。
+    *   忽略了有组织犯罪团伙洗钱活动中存在的群体层面的共谋互动。
+
+3.  **提出的方法：**
+    *   一种基于群组感知的深度图学习方法，用于检测有组织的洗钱活动。
+    *   设计了一个以社区为中心的编码器，用于表示用户交易图中的节点和属性，并推导出相邻的团伙行为。
+    *   采用局部增强方案，以适应具有相似交易特征的节点，这些节点被聚合成团伙，用于下游检测。
+
+4.  **实验结果：**
+    *   在来自全球最大的银行卡联盟之一的真实数据集上进行了大量实验。
+    *   提出的方法在离线和在线模式下均优于最先进的方法。
+    *   证明了使用群组感知的深度图学习进行洗钱检测的有效性。
+
+**核心观点：**
+
+通过结合群组感知和深度图学习，该方法能够更有效地检测有组织的洗钱活动，显著提升反洗钱能力。
+
+**总体框架：**
+
+问题定义 -> 现有方法的局限性 -> 提出的方法（群组感知深度图学习） -> 实验验证 -> 结论
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "金融反洗钱"
+        A[反洗钱(AML) 数据挖掘问题] --> B(洗钱(ML)威胁经济,政府,社会)
+        B --> C{金融机构角色: 检测预防}
+    end
+
+    D[传统方法: 独立账户行为] -- 忽略 --> E{有组织犯罪团伙: 群体共谋}
+
+    F[提出的方法: 群组感知深度图学习]
+    F --> G{社区中心编码器: 节点和属性表示}
+    G --> H(相邻团伙行为推导)
+    H --> I{局部增强: 相似交易特征节点}
+    I --> J[聚合成团伙: 下游检测]
+
+    K[真实数据集实验验证] --> L{离线/在线模式: 优于现有方法}
+    L --> M[结论: 群组感知深度图学习有效]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#fcc,stroke:#333,stroke-width:2px
+    style F fill:#9f9,stroke:#333,stroke-width:2px
+    style G fill:#9f9,stroke:#333,stroke-width:2px
+    style H fill:#9f9,stroke:#333,stroke-width:2px
+    style I fill:#9f9,stroke:#333,stroke-width:2px
+    style J fill:#9f9,stroke:#333,stroke-width:2px
+    style K fill:#cfc,stroke:#333,stroke-width:2px
+    style L fill:#cfc,stroke:#333,stroke-width:2px
+    style M fill:#cfc,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Anti-money laundering (AML) is a classical data mining problem in finance applications. As well known, money laundering (ML) is critical to the effective operation of transnational and organized crime, which affects a country's economy, government, and social wellbeings. Financial services organizations facilitate the movement of money and have been enlisted by governments to assist with the detection and prevention of money laundering, which is a key tool in the fight to reduce crime and create sustainable economic development. In the application of AML, user identity and financial behavior data are widely used to detect laundering transactions. In recent years, an increasing number of money laundering activities have been conducted by organized criminal gangs while most existing works still treat the actions of each account as independent identity behavior without considering the group-level conspired interactions. Therefore, in this paper, we propose a group-aware deep graph learning-based approach for organized money-laundering detection. In particular, we design a community-centric encoder to represent the nodes and attributes in user transaction graphs and derive the adjacent gang behaviors. Then, we devise a scheme of local enhancement to accommodate nodes with similar transaction features, which are aggregated into gangs for downstream detection. Extensive experiments on the real-world dataset from one of the largest bank card alliances worldwide show that our proposed method outperforms state-of-the-art methods in both offline and online modes, showing the effectiveness of money laundering detection with group-aware deep graph learning.
