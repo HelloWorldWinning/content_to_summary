@@ -1,0 +1,91 @@
+Timestamp: 2025-04-05T22:03:15.958223
+Title: Text_Summary_20250405_220315
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将根据您的要求，对提供的文本进行分析、提炼核心思想，并用中文进行总结，包含结构化概要、核心结论、总体框架以及美人鱼图。
+
+**概要：**
+
+I.  **背景与问题：**
+    *   银行信用评级对金融环境和经济发展至关重要。
+    *   信用评级模型容易受到攻击，攻击者通过操纵信息以获取更高的评级。
+
+II. **提出的解决方案：**
+    *   提出了一种名为“优先选择感知图神经网络”（PSAGNN）的新模型，用于防御针对银行间信用评级的特征和结构非目标投毒攻击。
+    *   该模型采用分阶段优化方法，结合有偏扰动，并探索银行间偏好和网络的无标度特性，自适应地确定投毒训练数据的优先级，并模拟干净的图。
+
+III. **模型优化：**
+    *   对反对函数应用加权惩罚来优化模型，使其能够区分攻击者。
+
+IV. **实验结果：**
+    *   在新收集的银行间季度数据集上进行了大量实验和案例研究，结果表明该方法在防止信用评级攻击方面优于最先进的基线模型。
+
+**核心结论：**
+
+PSAGNN模型通过优先选择感知机制和分阶段优化策略，有效防御了银行间信用评级中的投毒攻击，提高了评级模型的鲁棒性。
+
+**总体框架：**
+
+该研究的总体框架可以概括为：**问题定义 -> 模型构建 -> 模型优化 -> 实验验证。**
+
+**美人鱼图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 问题 (Problem)
+        A[银行信用评级重要性]:::important
+        B[信用评级模型易受攻击]:::warning
+        C[攻击者操纵信息]:::warning
+    end
+
+    subgraph 解决方案 (Solution)
+        D[提出 PSAGNN 模型]:::success
+        E[防御特征和结构投毒攻击]:::success
+    end
+
+    subgraph 模型细节 (Model Details)
+        F[分阶段优化]:::info
+        G[有偏扰动]:::info
+        H[银行间偏好和无标度特性]:::info
+        I[自适应优先级]:::info
+        J[模拟干净的图]:::info
+        K[加权惩罚反对函数]:::info
+        L[区分攻击者]:::info
+    end
+
+    subgraph 实验验证 (Experiment)
+        M[银行间季度数据集]:::data
+        N[案例研究]:::data
+        O[优于基线模型]:::success
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+    E --> H
+    F --> I
+    G --> I
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
+    N --> O
+
+    classDef important fill:#f9f,stroke:#333,stroke-width:2px
+    classDef warning fill:#fbb,stroke:#333,stroke-width:2px
+    classDef success fill:#afa,stroke:#333,stroke-width:2px
+    classDef info fill:#ccf,stroke:#333,stroke-width:2px
+    classDef data fill:#ff9,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Accurately assessing and forecasting bank credit ratings at an early stage is vitally important for a healthy financial environment and sustainable economic development. However, the evaluation process faces challenges due to individual attacks on the rating model. Some participants may provide manipulated information in an attempt to undermine the rating model and secure higher scores, further complicating the evaluation process. Therefore, we propose a novel approach called the preferential selective-aware graph neural network (PSAGNN) model to simultaneously defend against feature and structural nontarget poisoning attacks on Interbank credit ratings. In particular, the model establishes a phased optimization approach combined with biased perturbation and explores the Interbank preferences and scale-free nature of networks, to adaptively prioritize the poisoning training data and simulate a clean graph. Finally, we apply a weighted penalty on the opposition function to optimize the model so that the model can distinguish between attackers. Extensive experiments on our newly collected Interbank quarter dataset and case studies demonstrate the superior performance of our proposed approach in preventing credit rating attacks compared to state-of-the-art baselines.
