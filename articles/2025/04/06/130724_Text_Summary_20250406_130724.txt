@@ -1,0 +1,95 @@
+Timestamp: 2025-04-06T13:07:24.219112
+Title: Text_Summary_20250406_130724
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，下面是根据您提供的文本生成的中文总结：
+
+**核心要点：** DeepPocket 通过结合图卷积神经网络和强化学习，能够有效利用金融工具之间随时间变化的相互关系，从而优化投资组合回报并降低风险，并在实际数据集中表现优于市场指数。
+
+**框架概述：** DeepPocket 是一种基于图卷积强化学习的投资组合管理框架，它使用图来表示金融工具之间的相关性，通过深度学习网络提取特征并学习投资策略，并通过在线学习适应市场变化。
+
+**总结：**
+
+I. **问题：**
+    *   A. 投资组合管理旨在最大化回报并最小化风险。
+    *   B. 金融资产之间存在随时间变化的相关性。
+
+II. **解决方案：** DeepPocket 框架
+    *   A. **图表示：** 使用图来表示金融工具之间的相关性（节点代表金融工具，边代表相关性）。
+    *   B. **特征提取：** 限制性堆叠自编码器用于提取特征。
+    *   C. **卷积网络：** 用于收集金融工具之间共享的局部信息。
+    *   D. **强化学习：** 使用 Actor-Critic 强化学习代理来学习投资策略。
+        *   1.  **Actor:** 学习并执行投资策略。
+        *   2.  **Critic:** 评估投资策略，确定最佳行动方案。
+    *   E. **在线学习：** 使用被动概念漂移方法来处理数据分布的意外变化。
+
+III. **评估：**
+    *   A. 在五个真实数据集上进行评估。
+    *   B. 在三个不同的投资期间（包括 Covid-19 危机期间）进行评估。
+    *   C. 表现优于市场指数。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Data Representation
+        A[金融工具] -- 节点 --> B(图结构)
+        C[成对相关性函数] -- 边 --> B
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Feature Extraction
+        D[受限堆叠自编码器] --> E(特征向量)
+        style D fill:#ffc,stroke:#333,stroke-width:2px
+        style E fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Convolutional Networks
+        F[卷积网络] --> G(局部信息)
+        style F fill:#ffc,stroke:#333,stroke-width:2px
+        style G fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Reinforcement Learning Agent
+        H[Actor] --> I(投资策略)
+        J[Critic] --> K(策略评估)
+        I --> K
+        K --> L{行动方案}
+        style H fill:#afa,stroke:#333,stroke-width:2px
+        style I fill:#ccf,stroke:#333,stroke-width:2px
+        style J fill:#afa,stroke:#333,stroke-width:2px
+        style K fill:#ccf,stroke:#333,stroke-width:2px
+        style L fill:#afa,stroke:#333,stroke-width:2px
+    end
+
+    subgraph Online Learning
+        M[历史数据] --> N{在线随机批量}
+        N --> O(概念漂移处理)
+        style M fill:#ffc,stroke:#333,stroke-width:2px
+        style N fill:#ccf,stroke:#333,stroke-width:2px
+        style O fill:#afa,stroke:#333,stroke-width:2px
+
+    end
+    subgraph Evaluation
+        P[真实数据集] --> Q(性能评估)
+        Q --> R{优于市场指数}
+         style P fill:#ffc,stroke:#333,stroke-width:2px
+        style Q fill:#ccf,stroke:#333,stroke-width:2px
+        style R fill:#afa,stroke:#333,stroke-width:2px
+
+    end
+
+    B --> E
+    G --> I
+    E --> F
+    L --> N
+    O --> I
+    L --> P
+</Mermaid_Diagram>
+
+
+Content:
+Portfolio management aims at maximizing the return on investment while minimizing risk by continuously reallocating the assets forming the portfolio. These assets are not independent but correlated during a short time period. A graph convolutional reinforcement learning framework called DeepPocket is proposed whose objective is to exploit the time-varying interrelations between financial instruments. These interrelations are represented by a graph whose nodes correspond to the financial instruments while the edges correspond to a pair-wise correlation function in between assets. DeepPocket consists of a restricted, stacked autoencoder for feature extraction, a convolutional network to collect underlying local information shared among financial instruments and an actor-critic reinforcement learning agent. The actor-critic structure contains two convolutional networks in which the actor learns and enforces an investment policy which is, in turn, evaluated by the critic in order to determine the best course of action by constantly reallocating the various portfolio assets to optimize the expected return on investment. The agent is initially trained offline with online stochastic batching on historical data. As new data become available, it is trained online with a passive concept drift approach to handle unexpected changes in their distributions. DeepPocket is evaluated against five real-life datasets over three distinct investment periods, including during the Covid-19 crisis, and clearly outperformed market indexes.
