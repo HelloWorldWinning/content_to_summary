@@ -1,0 +1,82 @@
+Timestamp: 2025-04-06T13:01:35.152434
+Title: Text_Summary_20250406_130135
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您提供的文本生成的摘要，包括大纲结构、核心结论、总体框架以及 Mermaid 图：
+
+**摘要**
+
+**I. 核心结论：**
+
+*   基于强化学习，采用夏普比率作为奖励函数的投资组合管理系统（PMS）能够有效提升投资回报并降低投资风险，为实证股票交易提供更优的资源分配方案。
+
+**II. 总体框架：**
+
+*   **问题：** 传统投资组合策略依赖于难以预测的未来股价，存在局限性。
+*   **方案：** 提出一种基于强化学习（使用 CNN 和 RNN 两种神经网络）的投资组合管理系统（PMS）。
+*   **创新：** 设计了包含夏普比率的奖励函数，用于评估系统性能。
+*   **结果：**
+    *   与使用交易回报作为奖励函数的 PMS 相比，使用夏普比率的 PMS 平均提升回报 39.0%，降低回撤 13.7%。
+    *   PMS_CNN 模型更适合构建强化学习投资组合，但回撤风险是 PMS_RNN 的 1.98 倍。
+    *   在 TW50 和传统股票数据集上，PMS 优于基准策略；但在金融数据集上，表现不如基准策略。
+*   **结论：** PMS 在大多数数据集上表现出盈利性、有效性和较低的投资风险，并且包含夏普比率的奖励函数能够有效提升性能。
+
+**III. Mermaid 图：**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph 问题["问题"]
+        A[传统投资组合策略] --> B(依赖股价预测);
+        B --> C{股价预测困难};
+    end
+
+    subgraph 解决方案["解决方案"]
+        D[强化学习PMS] --> E{CNN / RNN};
+        F[创新奖励函数] --> G(夏普比率);
+    end
+
+    subgraph 结果["结果"]
+        H[提升回报] --> I(平均 +39.0%);
+        J[降低回撤] --> K(平均 -13.7%);
+        L[PMS_CNN] --> M{更适合但风险高};
+        N[TW50/传统股票] --> O(优于基准);
+        P[金融数据] --> Q(不如基准);
+        style H fill:#90EE90,stroke:#333,stroke-width:2px
+        style J fill:#90EE90,stroke:#333,stroke-width:2px
+        style O fill:#90EE90,stroke:#333,stroke-width:2px
+        style Q fill:#FF7F50,stroke:#333,stroke-width:2px
+        style M fill:#FF7F50,stroke:#333,stroke-width:2px
+
+    end
+
+    A --> D
+    C --> D
+    G --> D
+    E --> F
+
+    D --> H
+    D --> J
+    D --> L
+    D --> N
+    D --> P
+
+    subgraph 结论["结论"]
+    S[有效性] --> T(盈利性/低风险);
+    U[夏普比率奖励] --> V(提升性能);
+    style T fill:#90EE90,stroke:#333,stroke-width:2px
+    style V fill:#90EE90,stroke:#333,stroke-width:2px
+    end
+
+    H --> S
+    J --> S
+    V --> S
+```
+</Mermaid_Diagram>
+
+
+Content:
+Portfolio management involves position sizing and resource allocation. Traditional and generic portfolio strategies require forecasting of future stock prices as model inputs, which is not a trivial task since those values are difficult to obtain in the real-world applications. To overcome the above limitations and provide a better solution for portfolio management, we developed a Portfolio Management System (PMS) using reinforcement learning with two neural networks (CNN and RNN). A novel reward function involving Sharpe ratios is also proposed to evaluate the performance of the developed systems. Experimental results indicate that the PMS with the Sharpe ratio reward function exhibits outstanding performance, increasing return by 39.0% and decreasing drawdown by 13.7% on average compared to the reward function of trading return. In addition, the proposed PMS_CNN model is more suitable for the construction of a reinforcement learning portfolio, but has 1.98 times more drawdown risk than the PMS_RNN. Among the conducted datasets, the PMS outperforms the benchmark strategies in TW50 and traditional stocks, but is inferior to a benchmark strategy in the financial dataset. The PMS is profitable, effective, and offers lower investment risk among almost all datasets. The novel reward function involving the Sharpe ratio enhances performance, and well supports resource-allocation for empirical stock trading.
