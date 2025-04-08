@@ -1,0 +1,108 @@
+Timestamp: 2025-04-08T09:49:32.882285
+Title: Text_Summary_20250408_094932
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对文本的总结，包括大纲、核心观点、总体框架、概念图和中文表达。
+
+**总结：**
+
+**I. 核心思想：**
+
+*   **问题：** 传统的帧内预测仅使用最近的参考线，容易受到噪声和参考线质量的影响，导致预测不准确。
+*   **方案：** 提出一种基于多参考线的帧内预测方案，利用更高质量的远距离参考线，并通过残差补偿校正边界区域，从而提高编码效率。
+*   **加速：** 设计了快速算法来加速编码过程。
+*   **结果：** 实验表明，与HM-16.9相比，该方法在编码时间增加112%的情况下，平均节省2.0%的比特率，最高可达3.7%。
+
+**II. 核心结论：**
+
+多参考线帧内预测方案能够有效提高视频编码效率，通过利用高质量的远距离参考线和残差补偿，克服了传统单线方法的局限性。
+
+**III. 总体框架：**
+
+该文本描述了一个改进帧内预测编码的流程：
+
+1.  **问题识别：** 分析了传统单线帧内预测的不足。
+2.  **方案提出：** 提出了多参考线帧内预测的方案，并结合残差补偿。
+3.  **算法优化：** 设计快速算法以提高编码速度。
+4.  **实验验证：** 通过实验验证了该方案的有效性。
+
+**IV. 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 问题分析 [传统帧内预测的局限性]
+    A[单线参考线] --> B(易受噪声影响)
+    A --> C(参考线质量差)
+    end
+
+    subgraph 解决方案 [多参考线帧内预测方案]
+    D[多参考线] --> E{远距离参考线}
+    E --> F(更高质量参考线)
+    F --> G[提高预测准确性]
+    H[残差补偿] --> G
+    end
+
+    subgraph 算法优化 [加速编码过程]
+    I[快速算法设计] --> J(降低计算复杂度)
+    end
+
+    subgraph 实验结果 [实验验证]
+    K[实验对比 HM-16.9] --> L{比特率节省}
+    K --> M{编码时间增加}
+    L --> N(平均节省 2.0%)
+    L --> O(最高节省 3.7%)
+    M --> P(增加 112%)
+    end
+
+    A -- 导致 --> G
+    B -- 导致 --> G
+    C -- 导致 --> G
+    J --> L
+    J --> M
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ffc,stroke:#333,stroke-width:2px
+    style E fill:#aef,stroke:#333,stroke-width:2px
+    style F fill:#aef,stroke:#333,stroke-width:2px
+    style G fill:#afa,stroke:#333,stroke-width:2px
+    style H fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#ffc,stroke:#333,stroke-width:2px
+    style J fill:#aef,stroke:#333,stroke-width:2px
+    style K fill:#eee,stroke:#333,stroke-width:2px
+    style L fill:#afa,stroke:#333,stroke-width:2px
+    style M fill:#afa,stroke:#333,stroke-width:2px
+    style N fill:#eee,stroke:#333,stroke-width:2px
+    style O fill:#eee,stroke:#333,stroke-width:2px
+    style P fill:#eee,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+**中文表达：**
+
+**I. 核心思想：**
+
+*   **问题：** 传统的帧内预测只用最近的参考线，容易受噪声和参考线质量影响，预测不准。
+*   **方案：** 提出一种基于多个参考线的帧内预测方法，用质量更高的远距离参考线，再用残差补偿来调整边缘区域，提高编码效率。
+*   **加速：** 设计了快速算法来加速编码过程。
+*   **结果：** 实验显示，和HM-16.9相比，这种方法在编码时间增加112%的情况下，平均节省2.0%的比特率，最多能省3.7%。
+
+**II. 核心结论：**
+
+多参考线帧内预测能有效提高视频编码效率，通过用高质量的远距离参考线和残差补偿，解决了传统单线方法的不足。
+
+**III. 总体框架：**
+
+这篇文章讲的是改进帧内预测编码的流程：
+
+1.  **发现问题：** 分析了传统单线帧内预测的缺点。
+2.  **提出方案：** 提出了多参考线帧内预测的方案，并结合残差补偿。
+3.  **算法优化：** 设计快速算法来提高编码速度。
+4.  **实验验证：** 通过实验验证了这种方案的有效性。
+
+
+Content:
+Traditional intra prediction usually utilizes the nearest reference line to generate the predicted block when considering strong spatial correlation. However, this kind of single-line-based method does not always work well due to at least two issues. One is the incoherence caused by the signal noise or the texture of other objects, where this texture deviates from the inherent texture of the current block. The other reason is that the nearest reference line usually has worse reconstruction quality in block-based video coding. Due to these two issues, this paper proposes an efficient multiple-line-based intra-prediction scheme to improve coding efficiency. Besides the nearest reference line, further reference lines are also utilized. The further reference lines with a relatively higher quality can provide potentially better prediction. At the same time, the residue compensation is introduced to calibrate the prediction of boundary regions in a block when we utilize further reference lines. To speed up the encoding process, this paper designs several fast algorithms. The experimental results show that compared with HM-16.9, the proposed fast search method achieves a 2.0% bit saving on average and up to 3.7% by increasing the encoding time by 112%.
