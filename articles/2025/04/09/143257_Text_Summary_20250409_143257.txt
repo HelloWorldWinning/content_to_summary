@@ -1,0 +1,98 @@
+Timestamp: 2025-04-09T14:32:57.885690
+Title: Text_Summary_20250409_143257
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将按照您的要求，用简体中文总结并构建概念图。
+
+**摘要：**
+
+I. **核心问题：**
+
+*   现有基于机器学习的股票预测模型依赖于独立同分布（i.i.d.）假设，忽略了股票市场中存在的多样化交易模式，从而限制了预测性能。
+
+II. **提出的解决方案：**
+
+*   引入时间路由适配器（Temporal Routing Adaptor, TRA）：一种轻量级模块，旨在使现有股票预测模型能够学习多种股票交易模式。
+*   TRA包含：
+    *   一组独立的预测器，用于学习不同的交易模式。
+    *   一个路由器，用于将样本分配给不同的预测器。
+*   训练挑战：缺乏明确的模式标识符。
+*   解决方案：基于最优传输（Optimal Transport, OT）的学习算法，以获得最佳的样本到预测器分配，并通过辅助损失项有效地优化路由器。
+
+III. **实验结果：**
+
+*   在真实世界的股票排序任务中，与最先进的基线模型（如Attention LSTM和Transformer）相比，提出的方法将信息系数（IC）从0.053提高到0.059，从0.051提高到0.056。
+
+IV. **结论：**
+
+*   所提出的 TRA 架构及其基于 OT 的训练算法，有效地提升了股票预测模型捕捉多种交易模式的能力。
+
+V. **一句话核心总结：**
+
+TRA 架构通过学习多种交易模式并基于最优传输进行样本分配，显著提升了股票预测模型的性能。
+
+VI. **总体框架：**
+
+问题定义 -> 提出模型（TRA） -> 解决训练挑战（OT） -> 实验验证 -> 结论
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph "问题"
+        A[i.i.d. 假设] -- 忽略 --> B{多样化交易模式}
+        B -- 导致 --> C[预测性能受限]
+    end
+
+    subgraph "提出的解决方案 (TRA)"
+        D[TRA 架构]
+        D -- 包含 --> E[独立预测器]
+        D -- 包含 --> F[路由器]
+        E -- 学习 --> B
+        F -- 分配样本 to --> E
+    end
+
+    subgraph "训练挑战及解决方案"
+        G[缺乏模式标识符] -- 导致 --> H{训练困难}
+        H -- 解决 --> I[基于 OT 的学习算法]
+        I -- 生成 --> J[最佳样本分配]
+        I -- 通过辅助损失项 --> K[优化路由器]
+    end
+
+    subgraph "实验结果"
+        L[股票排序任务]
+        L -- 使用 --> D
+        L -- 对比 --> M[基线模型 (e.g., LSTM, Transformer)]
+        D -- 优于 --> M
+        M -- 显示 --> N[信息系数 IC 提升 (0.053 -> 0.059, 0.051 -> 0.056)]
+    end
+
+    subgraph "结论"
+        O[TRA 架构] -- 提升 --> C
+        O -- 基于 --> I
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#afa,stroke:#333,stroke-width:2px
+    style E fill:#ffc,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#afa,stroke:#333,stroke-width:2px
+    style J fill:#ffc,stroke:#333,stroke-width:2px
+    style K fill:#ffc,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+    style N fill:#afa,stroke:#333,stroke-width:2px
+    style O fill:#afa,stroke:#333,stroke-width:2px
+
+```
+</Mermaid_Diagram>
+
+
+Content:
+Successful quantitative investment usually relies on precise predictions of the future movement of the stock price. Recently, machine learning based solutions have shown their capacity to give more accurate stock prediction and become indispensable components in modern quantitative investment systems. However, the i.i.d. assumption behind existing methods is inconsistent with the existence of diverse trading patterns in the stock market, which inevitably limits their ability to achieve better stock prediction performance. In this paper, we propose a novel architecture, Temporal Routing Adaptor (TRA), to empower existing stock prediction models with the ability to model multiple stock trading patterns. Essentially, TRA is a lightweight module that consists of a set of independent predictors for learning multiple patterns as well as a router to dispatch samples to different predictors. Nevertheless, the lack of explicit pattern identifiers makes it quite challenging to train an effective TRA-based model. To tackle this challenge, we further design a learning algorithm based on Optimal Transport (OT) to obtain the optimal sample to predictor assignment and effectively optimize the router with such assignment through an auxiliary loss term. Experiments on the real-world stock ranking task show that compared to the state-of-the-art baselines, e.g., Attention LSTM and Transformer, the proposed method can improve information coefficient (IC) from 0.053 to 0.059 and 0.051 to 0.056 respectively. Our dataset and code used in this work are publicly available2:
