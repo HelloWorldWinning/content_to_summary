@@ -1,0 +1,94 @@
+Timestamp: 2025-04-11T08:04:15.000239
+Title: 李飞飞分享人工智能的发展史 mjJdKxYESkk
+URL: https://youtube.com/watch?v=mjJdKxYESkk&si=1XuNFRf0N13ySVBH
+Status: success
+Duration: 27:44
+
+Description:
+好的，这是对您提供的文本的总结，包括要点、框架、结论以及mermaid图表。
+
+**核心要点:**
+
+人工智能的发展历程从图灵的早期设想到深度学习的崛起，最终目标是实现机器对世界的全面理解和推理能力，包括语法、语义和推断的结合，以及语言和视觉的融合。
+
+**总结框架:**
+
+1.  **引言：** 人工智能的重要性及其发展现状。
+2.  **早期探索：**
+    *   图灵的设想：感知（视觉）和语言理解是智能的关键。
+    *   Terry Winograd 的贡献：将人工智能操作化，提出语法、语义和推断三个要素。
+    *   SHRDLU系统：早期人工智能的尝试，但受限于手工设计的规则。
+3.  **机器学习的崛起：**
+    *   机器学习与传统编程的区别：从人工编程到数据驱动的学习。
+    *   深度学习的突破：算法优化、海量数据和硬件发展共同推动。
+    *   AlexNet 的重要性：深度学习的里程碑。
+4.  **现状与挑战：**
+    *   计算机视觉的进展：在语法（3D结构）和语义（物体识别）方面取得进展。
+    *   Emmy Chinatata竞赛：机器物体识别能力接近人类水平。
+    *   语言和视觉的结合：看图说话等任务的进展。
+    *   Clever Benchmark：揭示机器在语法和推理方面的不足。
+5.  **未来展望：**
+    *   超越现有能力：机器需要理解图像中的故事、关系和情感。
+    *   Synthetics, Symptics and Inference的Interplay需要进一步探索和完善
+    *   整合更多信息：将语法、语义、推断以及语言和视觉融合，实现更高级的人工智能。
+
+**一句话结论:**
+
+人工智能的未来在于不断提升机器对世界结构、含义和关联的理解，最终达到类似人类的综合认知能力。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph AI_Development [AI发展历程]
+        direction TB
+        A[图灵的设想] --> B(感知与语言);
+        B --> C[Terry Winograd的贡献];
+        C --> D(语法, 语义, 推断);
+        D --> E[SHRDLU系统];
+        E --> F{手工设计规则的局限性};
+        F -- 扩展性差 --> G[机器学习的崛起];
+        F -- 适应性差 --> G;
+        F -- 封闭世界假设 --> G;
+        G --> H(深度学习);
+        H --> I[算法优化 & 海量数据 & 硬件发展];
+        I --> J(AlexNet);
+        J --> K{物体识别能力接近人类水平};
+        K --> L[语言和视觉结合];
+        L --> M(看图说话);
+        M --> N[Clever Benchmark];
+        N --> O{机器在推理方面仍有不足};
+    end
+
+    subgraph Future_AI [未来AI]
+        direction TB
+        P[全面理解与推理] --> Q(故事, 关系, 情感);
+        Q --> R[Synthetics, Symptics and Inference的Interplay];
+		R --> S[更高级认知能力];
+    end
+
+    AI_Development --> Future_AI
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#fc0,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#f9f,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#f9f,stroke:#333,stroke-width:2px
+	style M fill:#ccf,stroke:#333,stroke-width:2px
+	style N fill:#ccf,stroke:#333,stroke-width:2px
+	style O fill:#fc0,stroke:#333,stroke-width:2px
+
+    style P fill:#0f0,stroke:#333,stroke-width:2px
+    style Q fill:#ccf,stroke:#333,stroke-width:2px
+	style R fill:#ccf,stroke:#333,stroke-width:2px
+	style S fill:#0f0,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+我今天带来的是一个比较学术的演讲我想跟大家分享一下人工智能正在我自己的实验室工作的角度过去的发展的一些路径和我们最近在做的一些工作我刚才跟张彭说我是出生在北京生长在程度但是我在大学之前就去了美国所以我的中文不是特别好我尽量的长时间由中文来讲讲做人工智能到今天已经是带来了一场可能是革命的开始不管是天上地下云上手机上我们都会看到他给我们带来的一些兴奋的可能性其实智能Intelligence这个问题是人类从人类文明的最初期有了人就有了这个问题就是Who are we?What is intelligence?不知道大家认不认是这位法国的哲学家Decart他在这个17世纪就提出了就是我思顾我在其实从那个时候还包括之前哲学家们就开始思考什么叫Thinking什么叫什么叫就是说Existence什么叫病人工智能没有那么长的时间人类的历史有上千年的历史但人工智能只有大概60年的历史人工智能的早期一个电机性的人物都是阿兰图灵大家都知道图灵是一个数学家大概在这个五六十年前图灵开始思考怎么去创造一个Thinking Machine他说了这么一句话他说To build intelligence machinesIt may be best to provide the machine with the best sense organs that money can buyand to teach it to understand and speak English他这句话里讲的是什么呢他就觉得一个有智能那么性他好像需要两个特别重要的元素这两个元素一个是申请就是感知我们可以看最人最大的感知系统是视觉人还有其他的感知系统机器也可以有其他的感知系统但是视觉是一个最大的感知系统那第二部分就是对含义的理解和推断那语言Language基本上是人类最特别的一个能力的大多数人都会同意动物是没有这样的能力的所以图灵它远远没有Build仍工智能这个领域但是它带来了最起初的一些重要的思想元素就是说我们一个要做一个会思考的机器它里面需要包括视觉需要包括Language图灵之后有这么一位科学家在做的同学们可能都没有听说过它但是它实际上是计算机界的一位太抖它是跟Maraminsky他们在MIT读的第一批读人工智能的博士生后来他到斯坦福来做教授他的名字叫Tary WinnigrandTary是人工智能界第一代把图灵的思想Operationalize的一个人而且它也是现在在世的计算机界一个最伟大的计算机科学家之一它不光在人工智能做了最重要的工作而且它后来是转行去做了人机交互Human Computer Interaction也把这个领域重新带动起来而且最有意思的是第一它长得很像Ainstam很多人都说它长得像Ainstam第二它是我的凌居这就是我们俩在房子面前我的背后是我的家它的背后是它的家所以能住在这么一个太多级别的老教授的旁边我一直觉得很幸福Tary带来了什么呢Tary把这个人工智能就是说怎么去表的一个Intelgem Machine把它Operationalize成这么一个状态它说一个人或者是一个机器它要去理解这个世界它需要去perceive the world需要去感知感知以后它需要做的第一件事是对这个世界的结构做一个理解所以是叫Sintax UnderstandingSintax在中文里面在自然语言处理这个领域叫语法在计算机视觉这个领域可能叫三位结构Tary就说Sintax以后我们需要理解SomanticsSomantics做的事情就是 Understanding Meaning它就是含义语言有语言的含义视觉有物体有动作都有视觉的含义最后当我们把Sintax和Somantics解决了以后智能主要 智能的机器或者是人主要解决的问题就是InferenceInference就是统计推导统计推理这个过程所以在Tary看来要实现人工智能需要有这三个要素SintaxSomanticsInference有了这样一个思想的框架做引导Tary写了一篇在人工智能历史上非常重要的博士的毕业论文这个论文给了我们一个一个System我不知道在做有没有同学或者是同行们听说过这个叫SharlowSharlow是一个什么样的System它用一个Block就是像机木羊的世界它用机木搭建了一个世界然后在这个世界里让我们来完成SintaxSomantics和Inference这样的一个Loop所以比如说在Sharlow这个系统里面一个一个Human可以指令Sharlow这个系统你能不能拿起一个Red Block那这个计算机系统就会把一个绿色的就是在红色的这个Block上面的绿色的Block先移走然后把这个红色的Block拿起来然后再有一个指令是Find the Block which is taller than the oneYou're holding and putting the Grey Box你把这个就是你能找到的最高比这个红色Block更高的一个Block机木拿起来放进那个灰色的盒子里面那么Sharlow这个系统就会看这个蓝色的机木是最高的我就把它放在灰色的盒子里面所以这个系统就不断的这样接受人的指令然后来完成这件事情这个过程它必须把这个指令先把它的语法给理解了然后再把它的语意给理解了然后来做这个Inference这一篇论文是70年代出写的从70年代出到这个一直到80年代末90年代其实人工智能贸死没有太多的发展因为至少站在夜界外大家听到的这个人工智能的声音不是特别多那为什么呢这个就是说如果70年代就有一个计算机系统可以理解人的指令为什么我们到2016年才关注到人工智能2016年亚马逊的Echo Alexa也好像做的跟这个事情区别不大那最大问题在哪里呢为什么70年代80年代的人工智能没有这个就是我们预期的做得那么好问题出在这个它的Learning的过程这个在机器学习这个领域崛起之前人工智能的系统都是Hand Designed Rules我这张换成片不知道你看到这个里面的入是什么而是让你看到这个入有多复杂而且都是完全是手工用这个科学家的聪明脑袋想出来的入这些入会有什么问题呢其实Terry这样的决定聪明的人他能够做的系统这个入可能已经是包罗万项了但是这些入还是有三个比较大的致命的问题第一个问题是Scalability你不可能把天下所有的入都写进一个Program比如说大家用苹果机的话你会有Siri你跟Siri说Hey Siri call me FredSiri就说OKFrom now I'm gonna call you Fred这个听起来不错那你再问一句 Hey Siri call me when you get a chance在这英文里边就是说你有空给我打电话但是现在Siri就看不懂了Siri就说你让我叫你的名字叫有空打个电话这就是hand designed入处的插座第二个问题是adaptability当你给系统设计这个入的时候你可能把它全是分到另外一个入比如说英文的语法语异我可以抵折很多入可是我要把它放进中文它的语法就完全不一样了我就得重新设计处一套入那你可以想像这个这个不光是在自然圆处理你说我设计一个怎么去看一个椅子我可以设计一堆入但是换成一只猫的时候所有的椅子的入都不能再重复了这是hand designed入的第二个问题第三个问题就是它是一个close world它Sum我们把这个world都了解了所以我可以把这个入给 complete但是这是一个非常大的松弦实际上我们的大切世界是很难做这样的松弦的所以说hand designed入在AI这个领域发展的早期给我们就是说带来了一些主光但是它并没有把我们带进真正的光明到了80年代开始一个重要的子领域在人工智能里面开始发展的就是激气学习激气学习是什么呢激气学习和 traditional programming最大的区别我在这里给大家画出来了你可以想像传统的 programming是用人一个human programmer去 design这个 program然后你再把 input 给它让这个激气做一个 inference这个像 Terry 他们做的这个 shallow 一样的但是 machine learning 不一样 machine learning 把人 human programming这一层给 removed 掉了放进了一个 learning algorithm它可以直接把数据放进 learning algorithm让 learning algorithm 去 learn一个 program这个 program 可以 take input然后 infer output所以这是激气学习和 traditional programming最大的本质上的思路上的差别那在激气学习这个领域发展的这个过程中就出现了很多很多不同的算法和算法种类我今天就没法跟大家想尽的意义说了但最近一个特别重要的算法就是所谓的 deep learning从80年代开始它叫神经网络神经网络其实有很长的历史50年代 Rosenblatt就提出了 perception 这个概念这个概念就是说把这些 cell 怎么 connected然后 take layers of input and make output到了60年代出一个重要的神经生物学的发现又推动了这个思路这就hubo and viso在通过对猫的脑子做实验的时候发现普鲁动物的视觉的 pathway实际上就是有这种神经网络的概念它是一层一层的细胞不断的推进从简单的 simple cell to complex cell再到hyper complex cell到了1980年70年代末一个重要的日本的计算机科学家叫 Kunikino Fukuki Fukuki 做出了第一个 new cognitive 剩经网络可以识别数字和字母然后到了90年代末通过 Jeff Hinton 央乐控他们进一步的把 Backpaparigation 就是一个 learning 的一个入跟优化了以后就出现了我们今天大家比较熟悉的 convolutional neural network 转机神经网络最近给我们带来的最大的一次神经网络或者是说叫深度学习冲击的 work 是2012年Alex Kushchevsky和他的导师 Jeff Hinton一块写的AlexNet其实AlexNet和1998年的 convolutional neural network区别不大但是为什么在2012年大致的历史时期深度学习和神经网络做发生了一次喷景式的成长和革命是因为三个重要的药素Come Together 一个就是这些算法的不断的优化和成长另外一个药素就是互联网给我们带来的海量数据这也是我和我的学生们在这个9年前做的一个以上工作因为Net所以第三个就是硬件的发展所以说很多人就说神经 deep learning的三个 ingredientsalgorithm data and computation and hardware他给我们带来了一次革命性的废业那有了这个神经深度学习和机器学习的崛起我们其实可以重新回到这个Alenturing和Terry Winiglard给我们搭建的AI的这个这个大的思路和框架里来重新解决一些在没有机器学习前完全解决不了的问题比如说computer vision里面Syntax这个问题computer vision里面Syntax这个问题实际上就是三位的长颈的结构整个世界的结构这个问题在过去的二三十年有了长族的发展有了很多跟Machine Learning的Tools今天为什么无人车可以开始产业化从一个很大的就在算法方面很大的原因是要感谢3D Vision这么几十年来的成就这是其中一部分第二个部分我们就说Syntax这个问题Syntax就是含义在computer vision里面它是比如说物体分类、长颈分类、物体切割这些这个Area也是在最近几年有彭博的发展我们Emmy Chinatata的团队一直在主持一个国际校的竞赛从2010年开始一直到2015年16年这个机器的进步已经基本上达到了甚至在有时候超越了人的水平你现在看到的这幅图是机器的错误率2010年第一届Emmy Chinatata的时候我们这个classification错误率还在28%左右到了去年2015年这个错误率已经到了3.6%就是人也差不多就是这个水平所以这是一个非常长族的进步Object Detection 除了classification去找到这个Object也是有了很多的有了很多很多的最近很好的工作刚才我给大家分享的是两个单独的元素Syntax and Symandex其实就像Terry Winigoy提出的一样要真正Solve AI你要把这些元素给全部的就是说结合起来我们一步一步来看下一步要结合的是Syntax and Symandex在机身机视觉里面它就是场景结构和这个语意或者物体含义一块的融合这项工作也有不少的人做前段时间斯坦福的另外一位计算机视觉的教授Sovie or Severacy他们做了一项比较重要的工作Somantic Structure from Motion就把这个三地的这个建模和物体场景的识别结合起来了那我们再往下推进一步你可以看出我们现在是尽量的在Complete这个Picture我们现在把Language加进来就是怎么把Language和Vision开始结合这是Alenturin给我们提出来的人的这个就是说智能的一个和终极的一个目标之一所以这个Language和Vision是最近人工智能界非常关注的一个关注点下面这个工作它主要结合的是Syntax和InferenceSkyplos Symandex这是我的实验室最近和Facebook的一次合作我们Portgather了一个VisionQuestionsBunchback这个Bunchback的意义是什么呢我们跟Imaginata比较一下Imaginata它主要在测试机器对Synmantics的认知能力就是物体分类这个工作这项工作我们把它取名叫Clever它是测试的是机器对LanguageVision在Syntax很Inference方面能达到多好它跟Imaginata基本上是反的具体是怎么做呢具体的我们用了一个Graphics Engine去Simulate很多很多的场景又回到了更像机木一样的世界在这个场景里边我们又自动生成了很多问题比如说有一个比较大的情况或是Metalsphere或者是What Size是Cylinder是在 left of the Brown Metal是 left of the Big Fear你可以看到这些问题是在挑战这个机器就是这个系统现在机系统对这个场景结构的理解结构里边包括Attribute比如说物体的大小或者物体的材料包括Number就是Counting它也包括 Comparison比角然后也包括Special Relationship空间的关系最后包括Logical operation所以这在测试机算机的好几层的能力我尽量快一点我的Time Up这个 Data Set就是说把提出了Generate了很多很多的不同的场景提出了很多不同的问题然后我们就可以通过用最好的这个深度学习的模型来测试机算机做的怎么样其中最好的就是用CNN和LSTM如果你没有听说过也没有关系这是一种深度学习的模型然后我们就会发现机算机现在远远达不到人类的比如说手术的能力或者是现在还不够好就是对这个材料的分析还不够好而且我们也远远达不到这个比角的能力人士很容易比角出一个东西比另外一个东西大机算机现在还远远没有达到所以说这项工作还告诉我们在这个Synthex这个Inference方面机算机这个人工只能其实还认中到远这个Clever这个Bunchmark就给我们指出了一些比较明确的方向最后一点我马上要结束的就是我们怎么把Language VisionSynthex和Somantics一块融合进来这是最近我们做的一系列的关于看图说话的工作看图说话就是一个图片进来然后我希望这个机算机讲出一个故事比如说一句话Tourment Playing Fritzby Outside这个模型我们是用了一个图片的模型再加上一个语言的模型图片的模型用的是卷机身边网路语言的模型用的是一个Recurrent Newer Network LSTM然后刚开始这个机算机还没有足够的学习能力的时候给出的这个语句是非常傻的看了这张照片那会说Cult Overplane Draft by Next RemoteIt doesn't make any sense慢慢地它就开始学习这个图片的内容了到了最后这是一张错的它可以说出A Girl in the Pink dress is jumping in the air然后这是另外一个例子这是机算机自动产生的一句话Construction Working in Orange West is working on a road或者是A man in black shirt is playing guitar然后最近我们把这个工作推动了看图说话不光是说一句话可以说很多句话因为每一幅图里面有很多很多的内容所以说这一幅图我们可以让机算机说出好几句不同的关于这幅图片的话这是另外一个例子那看图说话还不光说几句这不光可以说几句话它可以说一多的话最近这是一个还没有被发表的一个最近的最新的工作就是我们实验室的两个学生它可以给机算机看一幅图然后说出整个一段跟这个场景有关的话这是最近我们最新的一个工作那下面是什么我在我接触之前我想跟大家分享一下我们认为下一步这个机算机视觉和人工智能包括责任员处理还要往下怎么走WowTerry Winigua的和Alentwin给我们指出了这个interplay betweenSynthetics and Symptics inference我们远远还没有 complete这个 picture比如说这幅图这幅图现在机算机视觉可以告诉我们这个图例有一些人或者是甚至这幅图的三位结构是什么或者是给我们一句话A group of people is in a room或者是给我们几句话N句话就像刚才我看的A group of men standing或者是一个 White wall or Black jacket但是我们人看到的远远不知这些我们人看到的是一个非常有意思的故事我们知道这里面的人是谁我们知道他们关系是什么我们知道他们的情绪是什么我们知道这幅图的幽默点在哪里它可以给我们带来很多很多的信息这是机算机现在远远没有达到的所以我想这个刚才很快的给大家分享的工作主要是由我的一个博士生Josent Jiangseng做的谢谢大家的这个一块分享最近的一些工作谢谢
