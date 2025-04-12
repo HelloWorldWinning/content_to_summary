@@ -1,0 +1,102 @@
+Timestamp: 2025-04-12T16:03:14.833579
+Title: Text_Summary_20250412_160314
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对所给文本的分析和总结，使用中文并满足您的所有要求。
+
+**核心观点：**
+
+本文提出了一种基于深度强化学习的成本敏感型投资组合选择方法，能够有效提取价格序列模式和资产相关性，同时控制交易成本和风险成本，从而提高投资组合的盈利能力。
+
+**概要框架：**
+
+*   **问题:** 传统投资组合选择方法难以应对非平稳价格序列、复杂的资产相关性，以及无法有效控制交易和风险成本。
+*   **方法:** 提出一种基于深度强化学习的成本敏感型投资组合选择方法。
+    *   **双流投资组合策略网络:** 用于提取价格序列模式和资产相关性。
+    *   **成本敏感型奖励函数:** 用于最大化累积收益，并通过强化学习约束成本。
+*   **理论分析:** 证明了所提出的奖励函数的近似最优性。
+*   **实验评估:** 在真实世界数据集上验证了该方法的有效性和优越性，证明了其在盈利能力、成本敏感性和表征能力方面的优势。
+
+**详细提纲：**
+
+I.  **引言**
+    *   投资组合选择的重要性
+    *   现有方法的不足：
+        *   特征工程困难
+        *   忽略成本约束
+II. **提出的方法**
+    *   基于深度强化学习的成本敏感型投资组合选择
+    *   双流投资组合策略网络
+        *   价格序列模式提取
+        *   资产相关性提取
+    *   成本敏感型奖励函数
+        *   最大化累积收益
+        *   约束交易和风险成本
+III. **理论分析**
+    *   奖励函数的近似最优性证明
+IV. **实验评估**
+    *   真实世界数据集
+    *   性能指标：盈利能力、成本敏感性、表征能力
+    *   实验结果：证明方法的有效性和优越性
+V.  **结论**
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Problem [问题]
+        direction TB
+        A[非平稳价格序列]:::red
+        B[复杂的资产相关性]:::red
+        C[成本约束忽略]:::red
+        A --> D(学习特征难):::red
+        B --> D
+        C --> E(无法控制成本):::red
+    end
+
+    subgraph Proposed_Method [提出的方法]
+        direction TB
+        F[深度强化学习]:::green
+        G[双流策略网络]:::blue
+        H[成本敏感型奖励函数]:::blue
+        F --> G
+        F --> H
+        G --> I(提取价格序列模式)
+        G --> J(提取资产相关性)
+        H --> K(最大化累积收益)
+        H --> L(约束交易成本)
+        H --> M(约束风险成本)
+
+    end
+
+    subgraph Result [结果]
+        direction TB
+        N[盈利能力提升]:::green
+        O[成本敏感性]:::green
+        P[表征能力]:::green
+
+    end
+    D --> Q{影响投资组合选择}:::red
+    E --> Q
+    Q --> F
+
+    I --> R{提升投资组合选择}:::green
+    J --> R
+    K --> R
+    L --> R
+    M --> R
+    R --> N
+    R --> O
+    R --> P
+
+    classDef red fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef green fill:#9f9,stroke:#333,stroke-width:2px;
+    classDef blue fill:#ccf,stroke:#333,stroke-width:2px;
+```
+</Mermaid_Diagram>
+
+
+Content:
+Portfolio Selection is an important real-world financial task and has attracted extensive attention in artificial intelligence communities. This task, however, has two main difficulties: (i) the non-stationary price series and complex asset correlations make the learning of feature representation very hard; (ii) the practicality principle in financial markets requires controlling both transaction and risk costs. Most existing methods adopt handcraft features and/or consider no constraints for the costs, which may make them perform unsatisfactorily and fail to control both costs in practice. In this paper, we propose a cost-sensitive portfolio selection method with deep reinforcement learning. Specifically, a novel two-stream portfolio policy network is devised to extract both price series patterns and asset correlations, while a new cost-sensitive reward function is developed to maximize the accumulated return and constrain both costs via reinforcement learning. We theoretically analyze the near-optimality of the proposed reward, which shows that the growth rate of the policy regarding this reward function can approach the theoretical optimum. We also empirically evaluate the proposed method on real-world datasets. Promising results demonstrate the effectiveness and superiority of the proposed method in terms of profitability, cost-sensitivity and representation abilities.
