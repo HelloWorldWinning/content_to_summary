@@ -1,0 +1,96 @@
+Timestamp: 2025-04-13T00:40:14.935698
+Title: Text_Summary_20250413_004014
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将按照要求为您生成简体中文的总结：
+
+**核心思想总结：**
+
+MOEBS算法优化Transformer模型在股票市场预测中显著提高了预测精度和稳定性。
+
+**大纲式总结：**
+
+1.  **背景：** 股票市场预测具有巨大的经济价值，但超参数优化面临局部最优问题。
+2.  **问题：** 现有超参数优化方法在单目标优化中存在局限性。
+3.  **方案：** 提出了一种新的多目标优化算法——多目标逃逸鸟算法（MOEBS），并应用于Transformer模型的超参数优化，构建了MOEBS-Transformer架构。
+4.  **方法：**
+    *   首先，通过标准多目标benchmark测试（ZDT、DTLZ、WFG）验证MOEBS的性能，并与MOMVO、MSSA、MOEAD等算法对比。
+    *   然后，在股票价格预测中，选取亚马逊、谷歌和优衣库的收盘价数据，使用MOEBS优化Transformer的核心超参数，同时考虑训练集RMSE、测试集RMSE和测试集误差方差等多个目标。
+    *   将MOEBS-Transformer与传统Transformer、CNN、LSTM、BiLSTM、GRU模型以及其他超参数优化方法（MOMVO、MSSA、MOEAD、随机搜索、网格搜索、贝叶斯优化）优化的Transformer模型进行比较。
+5.  **结果：** MOEBS-Transformer在R2、RMSE和RPD指标上均优于其他方法，表现出更高的预测精度和预测稳定性。
+6.  **结论：** 该研究为复杂优化场景提供了一种新的解决方案，并为股票市场预测技术的发展奠定了基础。
+
+**总体框架：**
+
+本研究的核心框架是：提出新的多目标优化算法（MOEBS） ->  验证MOEBS算法性能 -> 将MOEBS应用于Transformer模型的超参数优化 ->  股票市场预测实验 ->  对比实验，证明MOEBS-Transformer的优越性。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "股票市场预测背景"
+        A[股票市场预测] -- 经济价值 --> B(巨大经济价值);
+        B -- 超参数优化 --> C{超参数优化};
+        C -- 挑战 --> D[局部最优问题];
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#ccf,stroke:#333,stroke-width:2px
+        style D fill:#f9f,stroke:#333,stroke-width:2px
+    end
+
+    subgraph "问题与解决方案"
+        E[现有优化方法] -- 局限性 --> F(单目标优化局限);
+        F -- 导致 --> G[局部最优];
+        H[MOEBS算法] -- 多目标优化 --> I(解决局部最优);
+        I -- 应用于 --> J[Transformer模型];
+        J -- 构建 --> K(MOEBS-Transformer);
+        style E fill:#f9f,stroke:#333,stroke-width:2px
+        style F fill:#ccf,stroke:#333,stroke-width:2px
+        style G fill:#f9f,stroke:#333,stroke-width:2px
+        style H fill:#afa,stroke:#333,stroke-width:2px
+        style I fill:#ccf,stroke:#333,stroke-width:2px
+        style J fill:#ccf,stroke:#333,stroke-width:2px
+        style K fill:#afa,stroke:#333,stroke-width:2px
+    end
+
+    subgraph "实验与结果"
+        L[MOEBS验证] -- 标准测试集 --> M(ZDT, DTLZ, WFG);
+        M -- 性能评估 --> N[GD, Spacing, IGD, HV];
+        O[股票预测实验] -- 数据集 --> P(Amazon, Google, Uniqlo);
+        P -- 模型 --> Q{Transformer};
+        Q -- 优化目标 --> R(训练集RMSE, 测试集RMSE, 误差方差);
+        S[对比实验] -- 比较 --> T(MOEBS-Transformer vs 其他方法);
+        T -- 评估指标 --> U[R2, RMSE, RPD];
+        V[实验结果] -- 显示 --> W(MOEBS-Transformer更优);
+        style L fill:#f9f,stroke:#333,stroke-width:2px
+        style M fill:#ccf,stroke:#333,stroke-width:2px
+        style N fill:#ccf,stroke:#333,stroke-width:2px
+        style O fill:#f9f,stroke:#333,stroke-width:2px
+        style P fill:#ccf,stroke:#333,stroke-width:2px
+        style Q fill:#ccf,stroke:#333,stroke-width:2px
+        style R fill:#ccf,stroke:#333,stroke-width:2px
+        style S fill:#f9f,stroke:#333,stroke-width:2px
+        style T fill:#ccf,stroke:#333,stroke-width:2px
+        style U fill:#ccf,stroke:#333,stroke-width:2px
+        style V fill:#f9f,stroke:#333,stroke-width:2px
+        style W fill:#afa,stroke:#333,stroke-width:2px
+    end
+
+    A --> C
+    E --> G
+    H --> K
+    L --> N
+    O --> R
+    S --> U
+
+    C -- 优化 --> Q
+    Q -- 优化 --> W
+    K -- 预测 --> O
+</Mermaid_Diagram>
+
+
+Content:
+Stock market prediction has long attracted the attention of academia and industry due to its potential for substantial financial returns. Despite the availability of various forecasting methods, such as CNN, LSTM, BiLSTM, GRU, and Transformer, the hyperparameter optimization of these models often faces limitations, particularly in single-objective optimization, where they can easily fall into local optima. To address this issue, this paper proposes an innovative multi-objective optimization algorithm-the Multi-Objective Escape Bird Algorithm (MOEBS)-and introduces the MOEBS-Transformer architecture to enhance the efficiency and effectiveness of hyper-parameter optimization for Transformer models. This study first validates the performance of MOEBS through a series of multi-objective benchmark tests on standard problem sets such as ZDT, DTLZ, and WFG, comparing it with other multi-objective optimization algorithms (e.g., MOMVO, MSSA, and MOEAD) using evaluation metrics such as GD, Spacing, IGD, and HV for comprehensive analysis. In the context of stock price prediction, we select the closing price datasets of Amazon, Google, and Uniqlo, using MOEBS to optimize the core hyper parameters of the Transformer while considering multiple objectives, including training set RMSE, testing set RMSE, and testing set error variance. In the experiments, this paper first compares CNN, LSTM, BiLSTM, GRU, and traditional Transformer models to establish the Transformer as the optimal model for stock market prediction. Subsequently, the study compares the MOEBS-Transformer with Transformer models optimized using various hyperparameter optimization methods, including MOMVO-Transformer, MSSA-Transformer, and MOEAD-Transformer. Additionally, it evaluates Transformer models optimized through conventional methods: Random Search (RS-Transformer), Grid Search (GS-Transformer), and Bayesian Optimization (BO-Transformer). By assessing the performance of these models using R2, RMSE, and RPD metrics on both training and testing sets, the results demonstrate that the Transformer model optimized by MOEBS significantly outperforms the other methods in terms of prediction accuracy and prediction stability. This research offers a new solution for complex optimization scenarios and lays a foundation for advancements in stock market prediction technologies.
