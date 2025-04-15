@@ -1,0 +1,73 @@
+Timestamp: 2025-04-15T23:32:10.069856
+Title: Text_Summary_20250415_233210
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本的提炼和总结，包含中文概要、核心观点、框架、以及 Mermaid 概念图：
+
+**概要：**
+
+I. **项目概述：**
+
+*   IEEE 工程医学与生物学会 (EMBS) 学生指导项目 (SMP) 是一年一度的系列活动。
+*   旨在为学生提供支持网络，与全球志同道合的专业人士建立联系。
+
+II. **组织结构：**
+
+*   由 EMBS 学生活动委员会 (SAC) 下属的专业发展组合负责。
+
+III. **项目内容：**
+
+*   提供不同生物医学工程 (BME) 领域的指导，为期六个月。
+*   促进学生与全球专业人士之间的指导伙伴关系。
+
+IV. **项目目标：**
+
+*   分享经验，实现个人或学术目标。
+
+**核心观点：**
+
+IEEE EMBS 学生指导项目旨在通过建立学生与专业人士的联系，提供指导和支持，帮助学生在生物医学工程领域取得成功。
+
+**总体框架:**
+
+该文本的框架是描述一个特定的学生指导项目：
+
+1.  **介绍:** 项目名称、目的和组织者。
+2.  **结构:**  项目隶属关系 (EMBS, SAC, 专业发展组合)。
+3.  **内容:** 指导领域、持续时间、伙伴关系建立。
+4.  **目标:**  经验分享、个人/学术目标实现。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph IEEE_EMBS [IEEE 工程医学与生物学会]
+    A[学生指导项目(SMP)]:::program --- B(专业发展组合):::portfolio
+    end
+
+    subgraph SAC [学生活动委员会]
+        B --- C(学生):::student
+    end
+
+    D[专业人士]:::professional -- 指导 --> C
+    C -- 获得 --> E{经验分享};
+    C -- 助力 --> F{个人/学术目标};
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#cfc,stroke:#333,stroke-width:2px
+    style D fill:#fcc,stroke:#333,stroke-width:2px
+    style E fill:#ffc,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+    classDef program fill:#aaffaa,stroke:#333,stroke-width:2px;
+    classDef student fill:#bbffbb,stroke:#333,stroke-width:2px;
+    classDef portfolio fill:#aaaaff,stroke:#333,stroke-width:2px;
+    classDef professional fill:#ffaacc,stroke:#333,stroke-width:2px;
+```
+</Mermaid_Diagram>
+
+
+Content:
+The IEEE Engineering in Medicine & Biology Society (EMBS) Student Mentoring Program (SMP) is an annual series of events that aim to provide a support network for students to connect with experienced professionals who align with their interests around the world. The program is an initiative run by the Professional Development Portfolio as a subcommittee of the IEEE EMBS Student Activities Committee (SAC). The program involves mentoring from different fields of BME that will last six months. The program aims to create mentoring partnerships between students and professionals from around the world to share experiences and achieve personal or academic goals. A comprehensive review of the program can be found here
