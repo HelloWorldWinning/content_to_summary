@@ -1,0 +1,123 @@
+Timestamp: 2025-04-18T23:12:48.785818
+Title: Text_Summary_20250418_231248
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本的提炼和总结：
+
+**概要：**
+
+*   **核心问题：** 传统神经网络引力波探测模型计算成本高昂，硬件要求苛刻。
+*   **提出的方案：** 提出一种基于随机卷积核变换(ROCKET)的引力波探测模型，专门针对双黑洞并合事件。
+*   **主要发现：**
+
+    *   对于信噪比较低的地面探测器信号，该模型在保持可接受性能的同时，显著缩短了训练时间。
+    *   对于信噪比较高的空间探测器信号，该模型不仅检测效率高，而且由于其结构简化，推理速度也得到了提升。
+    *   在合成数据上的实验表明，该模型在地面探测器数据（不平衡数据集）上达到了96.1%的AUC得分和100%的召回率；在高信噪比信号上实现了完美的精确率和召回率。
+    *   推理时间降低了1.88倍。
+*   **结论：** 基于ROCKET的模型为引力波探测提供了一种高效、低成本的替代方案，尤其适用于高信噪比空间探测器信号。
+
+**核心结论：** 基于ROCKET的模型为引力波探测提供了一种高效且资源友好的替代方案，尤其是在信噪比较高的环境中。
+
+**总体框架：**
+
+1.  **背景：** 传统神经网络在引力波探测中的应用及其局限性（计算成本高）。
+2.  **问题：** 如何降低引力波探测模型的计算成本和硬件要求？
+3.  **方案：** 提出基于ROCKET的引力波探测模型。
+4.  **方法：** 在不同信噪比的数据集上评估模型性能。
+5.  **结果：** 该模型在地面探测器和空间探测器数据上均表现良好，且推理速度更快。
+6.  **结论：** 基于ROCKET的模型是一种高效的引力波探测替代方案。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Traditional_NN [传统神经网络]
+        A[计算成本高]:::red
+        B[硬件要求高]:::red
+    end
+
+    subgraph ROCKET_Model [ROCKET模型]
+        C[基于ROCKET]:::green
+        D[针对双黑洞并合]:::green
+        E[简化结构]:::green
+    end
+
+    subgraph Ground_Detector [地面探测器]
+        F[低信噪比]:::orange
+        G[训练时间缩短]:::green
+        H[性能可接受]:::yellow
+    end
+
+    subgraph Space_Detector [空间探测器]
+        I[高信噪比]:::blue
+        J[检测效率高]:::green
+        K[推理速度提升]:::green
+        L[完美精确率/召回率]:::green
+    end
+
+    subgraph Experiment_Results [实验结果]
+        M[AUC: 96.1%]:::green
+        N[召回率: 100%]:::green
+        O[推理时间降低1.88倍]:::green
+    end
+
+    A --> 2. 挑战
+    B --> 2. 挑战
+
+    2. 挑战["传统神经网络引力波探测的挑战"]:::red --> 3. 方案
+
+    3. 方案["提出的基于ROCKET的模型"]:::green --> C
+    3. 方案 --> D
+    3. 方案 --> E
+
+    C --> 4. 方法
+    D --> 4. 方法
+    E --> 4. 方法
+
+    4. 方法["在不同信噪比数据集上评估"] --> F
+    4. 方法 --> I
+
+    F --> G
+    F --> H
+    I --> J
+    I --> K
+    I --> L
+
+    G --> 5. 结果
+    H --> 5. 结果
+    J --> 5. 结果
+    K --> 5. 结果
+    L --> 5. 结果
+
+    5. 结果["模型性能评估"] --> Experiment_Results
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+    style N fill:#ccf,stroke:#333,stroke-width:2px
+    style O fill:#ccf,stroke:#333,stroke-width:2px
+
+    classDef red fill:#fbb,stroke:#333,stroke-width:2px
+    classDef green fill:#ccf,stroke:#333,stroke-width:2px
+    classDef orange fill:#ffc,stroke:#333,stroke-width:2px
+    classDef blue fill:#ccf,stroke:#333,stroke-width:2px
+    classDef yellow fill:#ffc,stroke:#333,stroke-width:2px
+
+    5. 结果 --> 6. 结论["ROCKET模型是高效替代方案"]:::green
+
+</Mermaid_Diagram>
+
+
+Content:
+Neural network models have entered the realm of gravitational wave detection, proving their effectiveness in identifying synthetic gravitational waves. However, these models rely on learned parameters, which necessitates time-consuming computations and expensive hardware resources. To address this challenge, we propose a gravitational wave detection model tailored specifically for binary black hole mergers, inspired by the Random Convolutional Kernel Transform (ROCKET) family of models. We conduct a rigorous analysis by factoring in realistic signal-to-noise ratios in our datasets, demonstrating that conventional techniques lose predictive accuracy when applied to ground-based detector signals. In contrast, for space-based detectors with high signal-to-noise ratios, our method not only detects signals effectively but also enhances inference speed due to its streamlined complexity-a notable achievement. Compared to previous gravitational wave models, we observe a significant acceleration in training time while maintaining acceptable performance metrics for ground-based detector signals and achieving equal or even superior metrics for space-based detector signals. Our experiments on synthetic data yield impressive results, with the model achieving an AUC score of 96.1% and a perfect recall rate of 100% on a dataset with a 1:3 class imbalance for ground-based detectors. For high signal-to-noise ratio signals, we achieve flawless precision and recall of 100% without losing precision on datasets with low-class ratios. Additionally, our approach reduces inference time by a factor of 1.88.
