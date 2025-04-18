@@ -1,0 +1,68 @@
+Timestamp: 2025-04-18T23:05:12.049324
+Title: Text_Summary_20250418_230512
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，以下是根据提供的文本生成的总结，包括结构化概要、核心结论、总体框架和概念图：
+
+**总结：**
+
+**I. 结构化概要：**
+
+*   **背景：** ROCKET 算法在时间序列分类中取得了最先进的准确率，但计算成本较高。
+*   **创新：** 提出了 MINIROCKET 算法，它是 ROCKET 的改进版本。
+*   **MINIROCKET 的优势：**
+    *   速度更快：在大数据集上比 ROCKET 快 75 倍。
+    *   确定性更强：几乎是确定性的（可选完全确定性）。
+    *   准确率：保持与 ROCKET 基本相同的准确率。
+    *   效率：能在10分钟内对UCR数据集中的109个数据集进行训练和测试，并达到最先进的准确率。
+*   **对比：**
+    *   MINIROCKET 比其他具有可比准确率的方法（包括 ROCKET）快得多。
+    *   MINIROCKET 比其他计算成本相近的方法准确率高得多。
+
+**II. 核心结论：**
+
+MINIROCKET 通过显著提高计算效率，同时保持高准确率，革新了时间序列分类领域。
+
+**III. 总体框架：**
+
+改进现有时间序列分类算法（ROCKET） -> 降低计算复杂度 -> 保持或提高准确率 -> 实现更高效的时间序列分类。
+
+**IV. 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph ROCKET[ROCKET 算法]
+        A[高准确率]:::success --> B(高计算成本):::error
+    end
+
+    subgraph MINIROCKET[MINIROCKET 算法]
+        C[速度提升(75x)]:::info --> D{几乎确定性}:::info
+        D --> E[准确率保持]:::success
+    end
+
+    F[数据集(UCR 109)]:::data --> G[快速训练 & 测试(10分钟)]:::info
+
+    B -- 改进 --> C
+    E -- 应用 --> G
+    F --> G
+
+    style A fill:#90EE90,stroke:#333,stroke-width:2px
+    style B fill:#FFCCCB,stroke:#333,stroke-width:2px
+    style C fill:#ADD8E6,stroke:#333,stroke-width:2px
+    style D fill:#ADD8E6,stroke:#333,stroke-width:2px
+    style E fill:#90EE90,stroke:#333,stroke-width:2px
+    style F fill:#FFFFE0,stroke:#333,stroke-width:2px
+    style G fill:#ADD8E6,stroke:#333,stroke-width:2px
+
+    classDef success fill:#90EE90,stroke:#333,stroke-width:2px
+    classDef error fill:#FFCCCB,stroke:#333,stroke-width:2px
+    classDef info fill:#ADD8E6,stroke:#333,stroke-width:2px
+    classDef data fill:#FFFFE0,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+ROCKET achieves state-of-the-art accuracy for time series classification with a fraction of the computational expense of most existing methods by transforming input time series using random convolutional kernels, and using the transformed features to train a linear classifier. We reformulate ROCKET into a new method, MINIROCKET. MINIROCKET is up to 75 times faster than ROCKET on larger datasets, and almost deterministic (and optionally, fully deterministic), while maintaining essentially the same accuracy. Using this method, it is possible to train and test a classifier on all of 109 datasets from the UCR archive to state-of-the-art accuracy in under 10 minutes. MINIROCKET is significantly faster than any other method of comparable accuracy (including ROCKET), and significantly more accurate than any other method of remotely similar computational expense.
