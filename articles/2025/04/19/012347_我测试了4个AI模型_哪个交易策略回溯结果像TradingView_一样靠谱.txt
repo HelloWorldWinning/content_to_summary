@@ -1,0 +1,106 @@
+Timestamp: 2025-04-19T01:23:47.417831
+Title: 我测试了4个AI模型，哪个交易策略回溯结果像TradingView 一样靠谱？
+URL: https://youtube.com/watch?v=oEleFeXires&si=XYvg5IxhaiOnteZg
+Status: success
+Duration: 6:19
+
+Description:
+好的，这是根据您提供的文本生成的摘要：
+
+**核心观点：** 人工智能模型在回测交易策略方面表现参差不齐，部分模型结果与TradingView存在较大差异，但具备一定的潜力。
+
+**总体框架：** 本视频对比了不同人工智能模型（DeepSeek、Claude、Gemini、Korse）在回测交易策略方面的表现，使用了相同的提示词和交易代码，目标是模拟TradingView的回测功能，并评估各模型的准确性和可用性。
+
+**总结：**
+
+I. **引言**
+    *   提出问题：人工智能能否像TradingView一样进行交易策略回测？
+    *   背景：TradingView回测结果（BTC/USDT交易策略）：收益54%，最大回撤71.42%，交易61笔，盈利交易37.7%，盈利因子1.466。
+
+II. **实验设置**
+    *   目的：对比不同人工智能模型的回测结果与TradingView的差异。
+    *   方法：
+        *   复制交易代码。
+        *   使用相同提示词（包括交易策略、交易标的、时间范围、佣金比例、资金比例、交易方向、杠杆等）。
+        *   分别在DeepSeek、Claude、Gemini、Korse等模型上进行测试。
+    *   提示词关键要素：
+        *   对提供的交易策略进行回测。
+        *   像TradingView一样运行。
+        *   使用代码提供默认参数和回测。
+        *   交易标的：BTC/USDT，日线图。
+        *   开始日期：2018年1月1日。
+        *   截止日期：当前日期。
+        *   佣金比例：0.1%。
+        *   划点：1。
+        *   每笔交易：100%资本。
+        *   只能做多不做空。
+        *   无杠杆。
+        *   主要指标：净利润、最大回撤、总交易量、盈利因子。
+
+III. **测试结果与分析**
+    *   DeepSeek：无法直接提供CS文件，尝试搜索数据失败。
+    *   Claude：运行效果不佳，重新调整提示词后仍无法有效运行。
+    *   Gemini：
+        *   收益率：150%到500%（与TradingView差异较大）。
+        *   最大回撤：60%到85%。
+        *   总交易量：200到400笔（与TradingView的61笔不符）。
+        *   盈利交易：45%到60%。
+        *   盈利因子：1.8到3.5。
+    *   Korse (使用4.1模型)：
+        *   收益率：1250%。
+        *   最大回撤：45%。
+        *   80笔交易。
+        *   60%的盈利。
+        *   2.1的盈利因子。
+    *   结果对比：Korse和Gemini给出了结果，但与TradingView的回测结果存在差异。Gemini提供了更详细的过程，可以进行调整。
+
+IV. **结论**
+    *   人工智能模型在回测交易策略方面表现参差不齐。
+    *   Gemini在详细过程方面表现较好，但准确性仍有待提高。
+    *   OpenAI的O3/O4模型（未测试）以及Claude的3.7模型表现不佳。
+    *   未来可以通过升级模型和优化提示词来进一步提升回测的准确性和可用性。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "Trading Strategy Backtesting with AI"
+        A[TradingView Backtesting] -- Results --> B(Baseline for Comparison)
+        C[AI Model Testing]
+        subgraph "AI Models"
+            D[DeepSeek]
+            E[Claude]
+            F[Gemini]
+            G[Korse]
+        end
+        C -- Input: Same Prompts & Code --> D
+        C -- Input: Same Prompts & Code --> E
+        C -- Input: Same Prompts & Code --> F
+        C -- Input: Same Prompts & Code --> G
+        D -- Results --> H{Inaccurate or Failed}
+        E -- Results --> H
+        F -- Results --> I{Detailed Process, but Inaccurate}
+        G -- Results --> J{Results Provided, but with Variance}
+
+        H -- Comparison --> B
+        I -- Comparison --> B
+        J -- Comparison --> B
+
+        B -- Difference Assessment --> K[Discrepancy Analysis]
+        K -- Potential Improvements --> L[Model Upgrades & Prompt Optimization]
+    end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#ffcc00,stroke:#333,stroke-width:2px
+    style E fill:#ffcc00,stroke:#333,stroke-width:2px
+    style F fill:#ffcc00,stroke:#333,stroke-width:2px
+    style G fill:#ffcc00,stroke:#333,stroke-width:2px
+    style H fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#f9f,stroke:#333,stroke-width:2px
+    style J fill:#f9f,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT Kind: captions Language: zh-Hans 在这个视频中 我将要对比使用相同的提示 不同的 AI 模型 来对交易策略进行回溯测试 在我做 AI 教程的时候 我产生了这样的一个疑问 AI 能不能像 Tradingview 一样 对交易策略进行回溯测试 如果它能够做到 将会变得非常有趣 这是我在 Tradingview 上对 who sweet stride 交易策略进行的一个回测 交易的对象呢是 BTC 和 USDT 它的收益呢达到了 54% 8.87 最大回撤呢是 71.42% 交易呢 61 笔 盈利交易呢 37.7% 盈利因子是 1.466 为了能够让人工智能和吹定 VIO 进行一样的交易回测 我们把这个代码进行复制 随后使用下面这个提示 交易的代码我粘贴到这里了 我们使用下面这个提示 简单的来介绍一下这个提示 我们做什么 对下面的提示我们做什么 对下面的提供的交易策略 进行交易回测 该如何操作 像确定 view 一样运行它 使用其中的代码来提供 no 默认参数和回测 进行以下的交易 这里 图表是 BTC 和 USDT 的一天的一个图标 这里 开始日期是二零一八年一月一日 截止日期是基本上是到今天 佣金的比例是 0.1% 划点是一 每笔交易是 100%的一个资本 只能做多不做空 无杠杆仅使用可用的资源 主要的一个点有净利润 最大组合 回车总交易量和利润因素 我们把所有的内容复制下来 随后在 deep sick 来进行测试 在 cloud 也进行测试 Gimini 也进行测试 呃我们使用 它的一个深入研究功能 Opena 刚刚推出了它的欧三欧四模型 我也使用它进行测试一下 但是我没有他的一个升级版本 我决定用科色来代替 我们点击这里关闭这个自动的 在这里你可以看到它有一个 4.1 模型 我们使用它的 4.1 模型 在这里进行测试 我们先把提示发给 deep SIG 再发给 cloud 这个模型我使用的是 cloud 3.7 sonard 最强大的一个模型 发给他再发给杰米娜整形 发给他 cross 我也直接在这里使用 我也直接发给他 在这里他就开始给我工作 cloud 也开始进行工作 界面呢也开始进行工作 我们需要开始研究 press 需要提供这个 CS 文件 我让他继续 因为我没有提供 这里他告诉我没有这个数据的 无法进行使用 我让他搜索试一下 我让他搜索数据 他还是不行 他必须给我提供这样的一个文件 表格换一个模型 它可能是无法进行联网使用 我发现 cloud 的运行效果不好 我决定改一下 我把这个重新开始 一个聊天科 4GBT 414.1 我也重新调整一下 我把这个提示这句话去掉 这样他就不会再访问这个数据 我再来把它进行粘贴 我看一下 他自己能不能搜索这个数据 如果不能搜索 那也就这样 我们再打开壳色 看他能不能生成 这里他就开始运行了 这里他询问我 你是找数据执行这个策略还是怎么 需要我确认的 我们让他找一下数据 看他可不可以 他在这里就 安装我们运行 因为他是可以自动完成的 所以它一些问题就不用管 你看看一下 它会自动的搜索历史数据 我们选择接受 这里它在修复 我让它运行 我们看一下这个 这里它开始进行分析 我们看到 DBC 可是给我们了 这个收益率是百分之 1,250 最大回撤 45% 80 笔交易 60%的盈利 2.1 的一个因子 这和确定 VO 交易的灰色 是有一些区别的 它都是太大了 我们再看一下 杰本奈给我们的一个答案 这里他的是 150%到 500% 这两个是差不多的 最大回撤 60%到 85% 这个是正确的 总交易量是 200 到 400 这是 61 这个也不对 盈利因数 盈利交易 45%到 60% 这也不对 盈利点是盈利因子是 1.8 到 3.5 也不对这个效果也不是太好 我们看他还没有给我 这里他提醒我 你的长度以灯达到上限 他就不能再使用了 因为是免费的 也只能先这样 我们看一下 这还在安装中 这个我们就不去管它了 对比的一个结果是什么 DBC 给我们了 但是有些不准确 洁面呢也给我们了 他的我个人感觉还是缺更正确一些 并且他有详细的过程 你可以来进行调整 cloud 3.7 受我自己账号的影响 他无法继续 open in 的 O4 O3 这个也不是太好 而我可以升级 以后我再进行测试 关于使用人工智能 来进行交易策略的回测 视频我分享完了 如果你有什么样的问题 可以点击下方进行评论 我们下一个视频再见
