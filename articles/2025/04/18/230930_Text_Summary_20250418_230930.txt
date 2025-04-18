@@ -1,0 +1,77 @@
+Timestamp: 2025-04-18T23:09:30.660511
+Title: Text_Summary_20250418_230930
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将按照您的要求，对给定的文本进行提炼、总结，并生成相应的概要和 Mermaid 流程图。
+
+**概要：**
+
+1.  **问题背景：**
+    *   癫痫自动检测在诊断和治疗中具有重要价值。
+    *   深度学习模型在脑电图（EEG）特征学习方面取得进展，但泛化性能和计算负担是实际应用的瓶颈。
+
+2.  **研究方法：**
+    *   提出一种基于随机卷积核变换（ROCKET）的轻量级模型，用于 EEG 特征学习。
+    *   将随机卷积核嵌入到小波散射网络中，替代原始小波变换卷积。
+    *   通过方差分析（ANOVA）和最小冗余-最大相关性（MRMR）方法，从散射系数和卷积输出中选择重要的 EEG 特征。
+
+3.  **模型优势：**
+    *   保留 ROCKET 快速训练的优点。
+    *   通过保留有用的通道，提供对癫痫检测的深入了解。
+
+4.  **实验结果：**
+    *   将极限梯度提升（XGboost）分类器与该 EEG 特征学习模型相结合，构建了综合的癫痫检测系统。
+    *   在头皮和颅内脑电图数据库上取得了良好的结果，灵敏度和特异性均超过 90%。
+    *   实验比较表明，该方法在跨患者和患者特定的癫痫检测中优于其他先进方法。
+
+**核心结论：**
+
+基于 ROCKET 的轻量级 EEG 特征学习模型，结合 XGboost 分类器，能够实现高效且准确的癫痫自动检测，并在泛化性能和计算效率方面优于现有方法。
+
+**总体框架：**
+
+癫痫自动检测 -> 轻量级 ROCKET 模型 -> EEG 特征学习 -> ANOVA & MRMR 特征选择 -> XGboost 分类器 -> 高精度癫痫检测
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Data Acquisition & Preprocessing
+        A[脑电图 (EEG) 数据]:::input --> B(预处理);
+    end
+
+    subgraph Feature Extraction
+        B --> C{随机卷积核变换 (ROCKET)};
+        C --> D[小波散射网络];
+        D --> E(散射系数 & 卷积输出);
+    end
+
+    subgraph Feature Selection
+        E --> F{方差分析 (ANOVA)};
+        E --> G{最小冗余-最大相关性 (MRMR)};
+        F & G --> H[重要 EEG 特征];
+    end
+
+    subgraph Classification & Evaluation
+        H --> I[极限梯度提升 (XGboost) 分类器];
+        I --> J(癫痫检测结果);
+        J --> K[灵敏度 & 特异性评估];
+    end
+
+    K --> L{结果分析 & 比较};
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style L fill:#ccf,stroke:#333,stroke-width:2px
+
+    classDef input fill:#ccf,stroke:#333,stroke-width:2px
+
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10 stroke:#333,stroke-width:2px;
+```
+</Mermaid_Diagram>
+
+
+Content:
+Automatic seizure detection has significant value in epilepsy diagnosis and treatment. Although a variety of deep learning models have been proposed to automatically learn electroencephalography (EEG) features for seizure detection, the generalization performance and computational burden of such deep models remain the bottleneck of practical application. In this study, a novel lightweight model based on random convolutional kernel transform (ROCKET) is developed for EEG feature learning for seizure detection. Specifically, random convolutional kernels are embedded into the structure of a wavelet scattering network instead of original wavelet transform convolutions. Then the significant EEG features are selected from the scattering coefficients and convolutional outputs by analysis of variance (ANOVA) and minimum redundancy-maximum relevance (MRMR) methods. This model not only preserves the merits of the fast-training process from ROCKET, but also provides insight into seizure detection by retaining only the helpful channels. The extreme gradient boosting (XGboost) classifier was combined with this EEG feature learning model to build a comprehensive seizure detection system that achieved promising epoch-based results, with over 90% of both sensitivity and specificity on the scalp and intracranial EEG databases. The experimental comparisons showed that the proposed method outperformed other state-of-the-art methods for cross-patient and patient-specific seizure detection.
