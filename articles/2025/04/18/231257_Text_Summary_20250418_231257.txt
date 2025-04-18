@@ -1,0 +1,79 @@
+Timestamp: 2025-04-18T23:12:57.023210
+Title: Text_Summary_20250418_231257
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我来为您总结并用中文回答。
+
+**核心思想总结：**
+
+本文提出了一种新的时间序列异常子序列检测方法，该方法通过计算子序列与随机生成的卷积核之间的相似性，并结合单类支持向量机（One-Class SVM）算法，实现了更准确的异常检测。同时，该方法还能够解释检测到的异常，填补了时间序列异常检测领域的一个重要空白。
+
+**主要内容概要（大纲形式）：**
+
+1.  **问题背景：**
+    *   传统的异常检测方法依赖于人工设计的特征或自动学习的特征。
+    *   人工设计特征需要领域知识，自动学习特征在无监督场景下可能效果不佳。
+2.  **提出的方法：**
+    *   计算子序列与随机卷积核的相似性。
+    *   使用单类支持向量机进行异常检测。
+3.  **实验验证：**
+    *   在热水箱制造的环缝焊接电压信号上进行测试。
+    *   结果表明，该方法比常用方法更准确。
+4.  **方法优势：**
+    *   提高检测精度
+    *   提供异常解释。
+5.  **总结：**
+    * 提出计算子序列与随机生成的卷积核之间的相似性的方法，并解释检测到的异常，填补了时间序列异常检测领域的一个重要空白。
+
+**总结句：**
+
+该研究提出了一种基于随机卷积核相似性和单类支持向量机的时间序列异常检测方法，提高了检测精度并提供了可解释性。
+
+**总体框架：**
+
+该研究遵循以下框架：
+
+1.  **提出问题：** 现有时间序列异常检测方法的局限性。
+2.  **提出方案：** 基于随机卷积核相似性的特征提取方法。
+3.  **实验验证：** 在实际数据集上验证方法的有效性。
+4.  **结果分析：** 分析方法的优势和贡献。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 异常检测挑战
+        A[需要领域知识] -- 人工设计特征 --> B(特征工程)
+        C[无监督学习困难] -- 自动学习特征 --> B
+    end
+
+    D[时间序列] --> E{子序列提取}
+    E --> F[随机卷积核]
+    E --> G[计算相似性]
+    F --> G
+
+    H[相似性结果] --> I(One-Class SVM)
+    I --> J{异常检测结果}
+
+    J --> K[异常解释]
+
+    L[热水箱焊接电压信号] --> E
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#ffc,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ffc,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+
+    click K "https://example.com" "异常解释的更多信息"
+</Mermaid_Diagram>
+
+
+Content:
+To identify anomalous subsequences in time series, it is a common practice to convert them into a set of features prior to the use of an anomaly detector. Feature extraction can be accomplished by manually designing the features or by automatically learning them using a neural network. However, for the former, significant domain expertise is required to design features that are effective in accurately detecting anomalies, while in the latter, it might be complex to learn useful features when dealing with unsupervised or one-class classification problems such as anomaly detection, where there are no labels available to guide the feature extraction process. In this paper, we propose an alternative approach for feature extraction that overcomes the limitations of the two previously mentioned approaches. The proposed method involves calculating the similarities between subsequences and a set of randomly generated convolutional kernels and the use of the One-Class SVM algorithm. We tested our approach on voltage signals acquired during circular welding processes in hot water tank manufacturing, the results indicate that the approach achieves higher accuracy in detecting welding defects in comparison to commonly used methods. Furthermore, we introduce in this work an approach for explaining the anomalies detected by making use of the random convolutional kernels, which addresses an important gap in time series anomaly detection.
