@@ -1,0 +1,87 @@
+Timestamp: 2025-04-18T22:47:28.038040
+Title: Text_Summary_20250418_224728
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对您提供的文本进行总结和整理的中文版本：
+
+**核心要点:**
+
+基于随机卷积核变换（ROCKET）和交叉验证岭分类器的机器学习方法能有效提升表面肌电（sEMG）信号分类的准确性，从而改善假肢控制并提高用户满意度。
+
+**大纲式总结:**
+
+1.  **背景:**
+    *   电动上肢假肢对截肢者至关重要，但由于功能、控制、可靠性和成本等问题，其排斥率高达30%。
+    *   开发可靠、稳健且经济高效的人机交互界面对于用户接受至关重要。
+    *   基于sEMG信号分类的机器学习算法为自然假肢控制带来了希望。
+
+2.  **研究目标:**
+    *   利用sEMG信号（作为时间序列数据）来提高手和腕部运动的分类精度。
+    *   提出一种新的方法，将随机卷积核变换（ROCKET）的变体用于特征提取，并结合交叉验证岭分类器。
+
+3.  **方法:**
+    *   使用ROCKET进行特征提取，该方法计算复杂度低，且能达到state-of-the-art的精度。
+    *   使用交叉验证岭分类器进行分类。
+    *   该算法在UCI sEMG手部运动数据集以及Ninapro DB5和DB7数据集上进行了测试。
+
+4.  **结果:**
+    *   该方法实现了高识别准确率，且参数调整需求极小。
+
+5.  **结论:**
+    *   该方法为改善假肢控制和用户满意度提供了一个有前景的解决方案。
+
+**总体框架:**
+
+该研究致力于解决电动上肢假肢的高排斥率问题，通过开发一种基于sEMG信号的、更准确可靠的控制系统，以提高用户的生活质量。
+
+**Mermaid Conceptual Map:**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 背景 [背景]
+        A[电动假肢排斥率高] -- 原因 --> B(功能/控制/成本问题)
+        A -- 需求 --> C(可靠的人机交互界面)
+        C -- 方法 --> D(基于sEMG的机器学习)
+    end
+
+    subgraph 方法 [研究方法]
+        E[sEMG信号作为时间序列] -- 特征提取 --> F{ROCKET变体}
+        F -- 分类 --> G{交叉验证岭分类器}
+        H[UCI sEMG数据集/Ninapro DB5/DB7] -- 测试 --> G
+    end
+
+    subgraph 结果 [研究结果]
+        G -- 结果 --> I(高识别准确率)
+        I -- 优点 --> J(参数调整需求少)
+    end
+
+    subgraph 结论 [研究结论]
+        J -- 解决方案 --> K[改善假肢控制]
+        K -- 最终目标 --> L(提高用户满意度)
+    end
+
+    style 背景 fill:#f9f,stroke:#333,stroke-width:2px
+    style 方法 fill:#ccf,stroke:#333,stroke-width:2px
+    style 结果 fill:#ffc,stroke:#333,stroke-width:2px
+    style 结论 fill:#cfc,stroke:#333,stroke-width:2px
+
+    style A fill:#fcc,stroke:#333,stroke-width:1px
+    style B fill:#fcc,stroke:#333,stroke-width:1px
+    style C fill:#ccf,stroke:#333,stroke-width:1px
+    style D fill:#ccf,stroke:#333,stroke-width:1px
+    style E fill:#ccf,stroke:#333,stroke-width:1px
+    style F fill:#ccf,stroke:#333,stroke-width:1px
+    style G fill:#ccf,stroke:#333,stroke-width:1px
+    style H fill:#ccf,stroke:#333,stroke-width:1px
+    style I fill:#ffc,stroke:#333,stroke-width:1px
+    style J fill:#ffc,stroke:#333,stroke-width:1px
+    style K fill:#cfc,stroke:#333,stroke-width:1px
+    style L fill:#cfc,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+
+Content:
+Prosthetic devices are vital for enhancing personal autonomy and the quality of life for amputees. However, the rejection rate for electric upper-limb prostheses remains high at around 30%, often due to issues like functionality, control, reliability, and cost. Thus, developing reliable, robust, and cost-effective human-machine interfaces is crucial for user acceptance. Machine learning algorithms using Surface Electromyography (sEMG) signal classification hold promise for natural prosthetic control. This study aims to enhance hand and wrist movement classification using sEMG signals, treated as time series data. A novel approach is employed, combining a variation of the Random Convolutional Kernel Transform (ROCKET) for feature extraction with a cross-validation ridge classifier. Traditionally, achieving high accuracy in time series classification required complex, computationally intensive methods. However, recent advances show that simple linear classifiers combined with ROCKET can achieve state-of-the-art accuracy with reduced computational complexity. The algorithm was tested on the UCI sEMG hand movement dataset, as well as on the Ninapro DB5 and DB7 datasets. We demonstrate how the proposed approach delivers high discrimination accuracy with minimal parameter tuning requirements, offering a promising solution to improve prosthetic control and user satisfaction.
