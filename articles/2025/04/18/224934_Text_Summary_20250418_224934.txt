@@ -1,0 +1,88 @@
+Timestamp: 2025-04-18T22:49:34.919104
+Title: Text_Summary_20250418_224934
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据提供的文本生成的总结，包括结构化概要、核心观点、框架和 Mermaid 概念图。
+
+**总结：**
+
+**1. 核心观点：**
+
+该研究提出了一种新型的基于随机卷积核神经网络（RCK）和广义自回归条件异方差（GARCH）模型的混合模型，用于预测黄金、白银和铂金等贵金属的价格波动率，并在性能上优于现有方法。
+
+**2. 结构化概要：**
+
+*   **背景：** 预测贵金属价格波动率对于投资至关重要。
+*   **问题：** 现有的波动率预测模型存在局限性。
+*   **方法：** 提出一种新的 RCK-GARCH 混合模型。
+    *   使用对数收益率计算实现的波动率作为价格波动率的估计。
+    *   在将价格波动率数据输入 RCK 模型之前，进行数据标准化。
+    *   RCK 模型使用随机卷积核提取特征。
+    *   提取正值比例 (PPV) 作为特征。
+    *   使用回归器预测波动率。
+    *   采用余弦退火学习率策略和 Mixup 数据增强技术。
+*   **优势：**
+    *   RCK 模型的随机卷积核权重无需训练。
+    *   首次将随机卷积核应用于贵金属预测。
+    *   结合学习和数据增强策略。
+*   **评估指标：** MSE、RMSE、MAE、MAPE。
+*   **结果：** 提出的模型相比 GARCH-LSTM 模型，MSE 降低了 53%。
+
+**3. 总体框架：**
+
+1.  **数据准备：** 获取贵金属（黄金、白银、铂金）价格数据，计算对数收益率，并使用实现的波动率作为价格波动率的估计。进行数据标准化。
+2.  **特征提取：** 使用 RCK 模型，通过随机卷积核提取时间序列的特征，计算 PPV。
+3.  **模型构建：** 构建 RCK-GARCH 混合模型，其中 RCK 模型负责提取特征，GARCH 模型用于建模波动率的条件异方差性。
+4.  **模型训练：** 使用余弦退火学习率策略和 Mixup 数据增强技术训练模型。
+5.  **模型评估：** 使用 MSE、RMSE、MAE 和 MAPE 等指标评估模型性能，并与现有模型（如 GARCH-LSTM）进行比较。
+
+**4. Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 数据准备 [数据准备]
+        A[贵金属价格数据]:::data --> B(对数收益率计算):::process
+        B --> C(实现波动率估计):::process
+        C --> D(数据标准化):::process
+        classDef data fill:#f9f,stroke:#333,stroke-width:2px
+        classDef process fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 特征提取 [特征提取]
+        D --> E[RCK模型]:::model
+        E --> F(随机卷积核):::process
+        F --> G(提取时间序列特征):::process
+        G --> H(计算 PPV):::process
+        classDef model fill:#cfc,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 模型构建 [模型构建]
+        H --> I[RCK-GARCH混合模型]:::model
+        I --> J(GARCH模型):::process
+        classDef model fill:#cfc,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 模型训练 [模型训练]
+        J --> K(余弦退火学习率):::process
+        K --> L(Mixup数据增强):::process
+        L --> M[模型训练]:::process
+        classDef process fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 模型评估 [模型评估]
+        M --> N(MSE, RMSE, MAE, MAPE):::process
+        N --> O(与现有模型比较):::process
+        classDef process fill:#ccf,stroke:#333,stroke-width:2px
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style M fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Precious metals are rare metals with high economic value. Forecasting the price volatility of precious metals is essential for investment purposes. In this work, we propose a novel hybrid model of random convolutional kernels-based neural network model (RCK) and generalized autoregressive conditional heteroscedasticity (GARCH) model for forecasting the metal price volatilities of gold, silver, and platinum. Realized volatility calculated on logarithmic returns is used as an estimate for the volatility of prices, and data standardization is performed before feeding the price volatility data to the RCK model. RCK model applies multiple carefully designed random convolution kernels on the time series input to extract robust features for forecasting. The proportion of positive values (PPV) is extracted as features from the output of convolving convolutional kernels with time-series inputs, which are then passed through a regressor to forecast volatility. Compared to the existing methods, the proposed method has the advantage that the weights of the random convolutional kernels need not be trained, unlike other neural network models. Further, no other work has made use of random convolutional kernels for precious metal forecasting, to the best of our knowledge. We incorporated novel learning and data augmentation strategies to achieve better performance. In particular, we used the cosine annealing learning rate strategy and Mixup data augmentation technique to improve the proposed model's performance. We have used MSE (Mean Squared Error), RMSE (Root Mean Squared Error), MAE (Mean Absolute Error), and MAPE (Mean Absolute Percentage Error) as metrics to compare the proposed models' performance. The proposed model decreases the MSE by 53% compared to the GARCH-LSTM model, which is the current state-of-the-art hybrid model for volatility forecasting.
