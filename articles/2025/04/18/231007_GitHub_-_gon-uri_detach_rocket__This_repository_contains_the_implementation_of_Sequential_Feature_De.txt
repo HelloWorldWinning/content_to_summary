@@ -1,0 +1,120 @@
+Timestamp: 2025-04-18T23:10:07.694906
+Title: GitHub - gon-uri/detach_rocket: This repository contains the implementation of Sequential Feature Detachment (SFD) for feature selection and its application to Detach-ROCKET for time series classification.
+URL: https://github.com/gon-uri/detach_rocket
+Status: success
+Duration: 0:00
+
+Description:
+好的，以下是根据提供的文本生成的总结，以满足您的所有要求：
+
+**核心思想：**
+
+Detach-ROCKET是一个用于时间序列分类的Python库，它通过序列特征分离（SFD）进行特征选择，并提供了一个集成分类器，尤其适用于高维多元时间序列数据。
+
+**概要：**
+
+1.  **项目目标：** 提供用于时间序列分类的序列特征分离（SFD）和Detach-ROCKET算法的Python实现。
+2.  **核心功能：**
+    *   `DetachRocket`: 使用SFD修剪初始ROCKET模型并选择最佳大小的类。
+    *   `DetachMatrix`: 将SFD应用于任何数据矩阵的类。
+    *   `DetachEnsemble`: Detach-ROCKET 集成模型类，尤其适用于高维多元时间序列，并提供通道相关性估计和标签概率。
+3.  **技术栈：** 主要使用NumPy, PyTorch, Scikit-Learn和Sktime库。
+4.  **安装方法：** 通过`pip`安装依赖项，并通过`git`安装Detach-ROCKET。
+5.  **使用方法：**
+    *   `DetachRocket`和`DetachEnsemble`的使用方式与Scikit-Learn库类似，包括实例化模型、训练模型和预测测试集。
+    *   提供了针对单变量和多变量时间序列的不同数据形状要求。
+6.  **即将推出的功能：** 包括Detach-MultiRocket的Pytorch实现, 全Pytorch ROCKET实现等。
+7.  **许可证：** BSD-3-Clause License。
+8.  **引用：** 提供了APA和BibTeX格式的引用信息，以便在研究中引用该项目。
+
+**总结：**
+
+Detach-ROCKET库提供了一个高效的时间序列分类解决方案，利用序列特征分离技术优化特征选择，并提供集成分类器以处理复杂的多变量时间序列数据。
+
+**总体框架：**
+
+该项目围绕时间序列分类问题，提供了一种基于特征选择和集成学习的解决方案。它基于现有的ROCKET算法，并通过SFD进行改进，以提高分类性能。
+
+**概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 数据准备
+        A[时间序列数据]
+        B[数据预处理]
+    end
+
+    subgraph 特征提取
+        C[ROCKET/MiniRocket/MultiRocket]
+        D[随机卷积核]
+    end
+
+    subgraph 特征选择
+        E[序列特征分离 (SFD)]:::sfd
+        F[特征选择]
+    end
+
+    subgraph 模型构建
+        G[DetachRocket模型]:::detachrocket
+        H[DetachEnsemble模型]:::detachensemble
+    end
+
+    subgraph 评估与应用
+        I[模型训练]
+        J[模型预测]
+        K[通道相关性估计/标签概率]
+        L[性能评估]
+    end
+
+    A --> B --> C
+    C --> D --> E
+    E --> F --> G
+    E --> F --> H
+    G --> I
+    H --> I
+    I --> J
+    H --> K
+    J --> L
+
+    style sfd fill:#f9f,stroke:#333,stroke-width:2px
+    style detachrocket fill:#ccf,stroke:#333,stroke-width:2px
+    style detachensemble fill:#ccf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Detach-ROCKET Official repository for Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels and Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis . Overview This repository contains Python implementations of Sequential Feature Detachment (SFD) for feature selection and Detach-ROCKET for time-series classification. Developed entirely in Python using primarly NumPy, PyTorch, Scikit-Learn and Sktime libraries, the core functionalities are encapsulated within the following classes: DetachRocket : Detach-ROCKET model class. It is constructed by pruning an initial ROCKET, MiniRocket or MultiROCKET model using SFD and selecting the optimal size. DetachMatrix : Class for applying Sequential Feature Detachment to any dataset matrix structured as (n_instances, n_features). DetachEnsemble : Detach-ROCKET Ensemble model class. It creates an ensemble of Detach models. We recommend using this class for multivariate time series, especially if they are high-dimensional. After training, these models are also able to provide channel relevance estimation and label probability. For a detailed explanation of the models and methods please refer to the Detach-ROCKET article and the Detach-ROCKET Ensemble article . Installation To install the required dependencies, execute: pip install numpy scikit-learn pyts torch matplotlib sktime==0.30.0
+pip install git+https://github.com/gon-uri/detach_rocket --quiet Usage - DetachRocket The model usage is the same as in the scikit-learn library. # Import Model from detach_rocket . detach_classes import DetachRocket # Instantiate Model DetachRocketModel = DetachRocket ( 'rocket' , num_kernels = 10000 ) # Trian Model DetachRocketModel . fit ( X_train , y_train ) # Predict Test Set y_pred = DetachRocketModel . predict ( X_test ) For univariate time series, the shape of X_train should be (n_instances, n_timepoints). For multivariate time series, the shape of X_train should be (n_instances, n_variables, n_timepoints). Usage - DetachRocket Ensemble This model is more suitable for Multivariate Time Series with a large number of channels/dimensions. # Import Model from detach_rocket . detach_classes import DetachEnsemble # Instantiate Model DetachRocketEnsemble = DetachEnsemble ( 'pytorch_minirocket' , num_kernels = 10000 ) # Trian Model DetachRocketEnsemble . fit ( X_train , y_train ) # Predict Test Set y_pred = DetachRocketEnsemble . predict ( X_test ) Notebook Examples Detailed usage examples can be found in the included Jupyter notebooks in the examples folder . Upcoming Features Built-in support for multilabel classification. (DONE!) Pytorch implementation of Detach-MiniRocket. (DONE!) Add channel releavance for Detach-MiniRocket. (DONE!) Implementation of Detach-ROCKET Ensemble. (DONE!) Add channel releavance and label probability for Detach-ROCKET Ensemble. (DONE!) Pytorch implementations of Detach-MultiRocket. (Coming soon...) Fully pytorch implementation of ROCKET with on-the-fly convolutions during training. Pytorch implementation of SFD for Multilayer Perceptrons. License This project is licensed under the BSD-3-Clause License. Citation If you find these methods useful in your research, please cite the following articles: APA Uribarri, G., Barone, F., Ansuini, A., & Fransén, E. (2024). Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels. Data Mining and Knowledge Discovery, 1-26.
+
+Solana, A., Fransén, E., & Uribarri, G. (2024). Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis. arXiv preprint arXiv:2408.02760. BIBTEX @article{uribarri2024detach,
+  title={Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels},
+  author={Uribarri, Gonzalo and Barone, Federico and Ansuini, Alessio and Frans{\'e}n, Erik},
+  journal={Data Mining and Knowledge Discovery},
+  pages={1--26},
+  year={2024},
+  publisher={Springer}
+}
+
+@article{solana2024classification,
+  title={Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis},
+  author={Solana, Adri{\`a} and Frans{\'e}n, Erik and Uribarri, Gonzalo},
+  journal={arXiv preprint arXiv:2408.02760},
+  year={2024}
+} gon-uri / detach_rocket Public Notifications You must be signed in to change notification settings Fork 5 Star 36 This repository contains the implementation of Sequential Feature Detachment (SFD) for feature selection and its application to Detach-ROCKET for time series classification. 36 stars 5 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights gon-uri/detach_rocket main Branches Tags Go to file Code Folders and files Name Name Last commit message Last commit date Latest commit History 128 Commits detach_rocket detach_rocket examples examples logo logo README.md README.md setup.py setup.py View all files Repository files navigation README Detach-ROCKET Official repository for Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels and Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis . Overview This repository contains Python implementations of Sequential Feature Detachment (SFD) for feature selection and Detach-ROCKET for time-series classification. Developed entirely in Python using primarly NumPy, PyTorch, Scikit-Learn and Sktime libraries, the core functionalities are encapsulated within the following classes: DetachRocket : Detach-ROCKET model class. It is constructed by pruning an initial ROCKET, MiniRocket or MultiROCKET model using SFD and selecting the optimal size. DetachMatrix : Class for applying Sequential Feature Detachment to any dataset matrix structured as (n_instances, n_features). DetachEnsemble : Detach-ROCKET Ensemble model class. It creates an ensemble of Detach models. We recommend using this class for multivariate time series, especially if they are high-dimensional. After training, these models are also able to provide channel relevance estimation and label probability. For a detailed explanation of the models and methods please refer to the Detach-ROCKET article and the Detach-ROCKET Ensemble article . Installation To install the required dependencies, execute: pip install numpy scikit-learn pyts torch matplotlib sktime==0.30.0
+pip install git+https://github.com/gon-uri/detach_rocket --quiet Usage - DetachRocket The model usage is the same as in the scikit-learn library. # Import Model from detach_rocket . detach_classes import DetachRocket # Instantiate Model DetachRocketModel = DetachRocket ( 'rocket' , num_kernels = 10000 ) # Trian Model DetachRocketModel . fit ( X_train , y_train ) # Predict Test Set y_pred = DetachRocketModel . predict ( X_test ) For univariate time series, the shape of X_train should be (n_instances, n_timepoints). For multivariate time series, the shape of X_train should be (n_instances, n_variables, n_timepoints). Usage - DetachRocket Ensemble This model is more suitable for Multivariate Time Series with a large number of channels/dimensions. # Import Model from detach_rocket . detach_classes import DetachEnsemble # Instantiate Model DetachRocketEnsemble = DetachEnsemble ( 'pytorch_minirocket' , num_kernels = 10000 ) # Trian Model DetachRocketEnsemble . fit ( X_train , y_train ) # Predict Test Set y_pred = DetachRocketEnsemble . predict ( X_test ) Notebook Examples Detailed usage examples can be found in the included Jupyter notebooks in the examples folder . Upcoming Features Built-in support for multilabel classification. (DONE!) Pytorch implementation of Detach-MiniRocket. (DONE!) Add channel releavance for Detach-MiniRocket. (DONE!) Implementation of Detach-ROCKET Ensemble. (DONE!) Add channel releavance and label probability for Detach-ROCKET Ensemble. (DONE!) Pytorch implementations of Detach-MultiRocket. (Coming soon...) Fully pytorch implementation of ROCKET with on-the-fly convolutions during training. Pytorch implementation of SFD for Multilayer Perceptrons. License This project is licensed under the BSD-3-Clause License. Citation If you find these methods useful in your research, please cite the following articles: APA Uribarri, G., Barone, F., Ansuini, A., & Fransén, E. (2024). Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels. Data Mining and Knowledge Discovery, 1-26.
+
+Solana, A., Fransén, E., & Uribarri, G. (2024). Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis. arXiv preprint arXiv:2408.02760. BIBTEX @article{uribarri2024detach,
+  title={Detach-ROCKET: Sequential feature selection for time series classification with random convolutional kernels},
+  author={Uribarri, Gonzalo and Barone, Federico and Ansuini, Alessio and Frans{\'e}n, Erik},
+  journal={Data Mining and Knowledge Discovery},
+  pages={1--26},
+  year={2024},
+  publisher={Springer}
+}
+
+@article{solana2024classification,
+  title={Classification of raw MEG/EEG data with detach-rocket ensemble: an improved rocket algorithm for multivariate time series analysis},
+  author={Solana, Adri{\`a} and Frans{\'e}n, Erik and Uribarri, Gonzalo},
+  journal={arXiv preprint arXiv:2408.02760},
+  year={2024}
+} About This repository contains the implementation of Sequential Feature Detachment (SFD) for feature selection and its application to Detach-ROCKET for time series classification. Resources Readme Activity Stars 36 stars Watchers 2 watching Forks 5 forks Report repository Releases No releases published Packages 0 No packages published Contributors 3 Languages Python 100.0%
