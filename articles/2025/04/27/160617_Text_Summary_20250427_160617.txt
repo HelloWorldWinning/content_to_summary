@@ -1,0 +1,109 @@
+Timestamp: 2025-04-27T16:06:17.146301
+Title: Text_Summary_20250427_160617
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您提供的文本生成的摘要，包含提纲、核心观点、框架和 Mermaid 图：
+
+**摘要：**
+
+**I. 核心观点：**
+
+*   本文提出了一种改进的基于深度强化学习（DRL）的自动股票交易系统，通过构建更广泛的 DRL 模型集成和扩展交易股票市场，提高了累积收益的稳健性。
+
+**II. 提纲：**
+
+1.  **引言：** 现有自动股票交易程序使用强化学习，其中一种是集成策略。
+2.  **原始集成策略：**
+    *   采用 DRL 代理集成。
+    *   使用三种不同的 Actor-Critic 算法：A2C、DDPG 和 PPO。
+3.  **改进的集成策略（Remake Ensemble）：**
+    *   构建另一个 DRL 集成作为新的交易代理。
+    *   结合 A2C、DDPG、PPO、ACKTR、SAC、TD3 和 TRPO。
+4.  **应用领域扩展：**
+    *   从仅处理 30 支道琼斯股票扩展到处理 KOSPI 股票、JPX 股票和道琼斯股票。
+5.  **实验验证：**
+    *   通过实验验证改进系统的累积收益稳健性。
+6.  **结论与建议：**
+    *   提出了一些在实验后获得相对稳定利润的方法。
+
+**III. 核心结论：**
+
+通过构建更广泛的 DRL 模型集成并扩展交易股票市场，可以有效提高自动股票交易系统的累积收益稳健性。
+
+**IV. 总体框架：**
+
+本文描述了一个基于深度强化学习的自动股票交易系统的改进过程，包括算法优化（Remake Ensemble）和应用范围扩展（更多股票市场），并通过实验验证了改进后的系统在累积收益方面的稳健性，并提出了获得相对稳定利润的建议。
+
+**V. Mermaid 图：**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph Initial System [初始系统]
+        A[DRL Agents]
+        B[A2C]
+        C[DDPG]
+        D[PPO]
+
+        A --> B
+        A --> C
+        A --> D
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:1px
+        style C fill:#ccf,stroke:#333,stroke-width:1px
+        style D fill:#ccf,stroke:#333,stroke-width:1px
+    end
+
+    subgraph Improved System [改进系统]
+        E[Remake Ensemble]
+        F[A2C]
+        G[DDPG]
+        H[PPO]
+        I[ACKTR]
+        J[SAC]
+        K[TD3]
+        L[TRPO]
+
+        E --> F
+        E --> G
+        E --> H
+        E --> I
+        E --> J
+        E --> K
+        E --> L
+        style E fill:#ffc,stroke:#333,stroke-width:2px
+        style F fill:#ccf,stroke:#333,stroke-width:1px
+        style G fill:#ccf,stroke:#333,stroke-width:1px
+        style H fill:#ccf,stroke:#333,stroke-width:1px
+        style I fill:#ccf,stroke:#333,stroke-width:1px
+        style J fill:#ccf,stroke:#333,stroke-width:1px
+        style K fill:#ccf,stroke:#333,stroke-width:1px
+        style L fill:#ccf,stroke:#333,stroke-width:1px
+
+    end
+
+    M[Dow Jones (30)] --> N[KOSPI]
+    M --> O[JPX]
+    M --> P[Dow Jones]
+    style M fill:#cfc,stroke:#333,stroke-width:2px
+    style N fill:#ccf,stroke:#333,stroke-width:1px
+    style O fill:#ccf,stroke:#333,stroke-width:1px
+    style P fill:#ccf,stroke:#333,stroke-width:1px
+
+    Q[Experiments & Validation] --> R[Robust Cumulative Return]
+    style Q fill:#cff,stroke:#333,stroke-width:2px
+    style R fill:#ccf,stroke:#333,stroke-width:1px
+
+    Initial System -- "Algorithm Enhancement" --> Improved System
+    M -- "Market Expansion" --> Improved System
+    Improved System --> Q
+    Q --> S[Stable Profits (Suggestions)]
+    style S fill:#ccf,stroke:#333,stroke-width:1px
+
+</Mermaid_Diagram>
+
+
+Content:
+There are several automated stock trading programs using reinforcement learning, one of which is an ensemble strategy. The main idea of the ensemble strategy is to train DRL agents and make an ensemble with three different actor-critic algorithms: Advantage Actor-Critic (A2C), Deep Deterministic Policy Gradient (DDPG), and Proximal Policy Optimization (PPO). This novel idea was the concept mainly used in this paper. However, we did not stop there, but we refined the automated stock trading in two areas. First, we made another DRL-based ensemble and employed it as a new trading agent. We named it Remake Ensemble, and it combines not only A2C, DDPG, and PPO but also Actor-Critic using Kronecker-Factored Trust Region (ACKTR), Soft Actor-Critic (SAC), Twin Delayed DDPG (TD3), and Trust Region Policy Optimization (TRPO). Furthermore, we expanded the application domain of automated stock trading. Although the existing stock trading method treats only 30 Dow Jones stocks, ours handles KOSPI stocks, JPX stocks, and Dow Jones stocks. We conducted experiments with our modified automated stock trading system to validate its robustness in terms of cumulative return. Finally, we suggested some methods to gain relatively stable profits following the experiments.
