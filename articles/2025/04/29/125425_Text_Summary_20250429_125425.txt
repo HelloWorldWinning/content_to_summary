@@ -1,0 +1,76 @@
+Timestamp: 2025-04-29T12:54:25.607705
+Title: Text_Summary_20250429_125425
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，我将按照要求对提供的文本进行提炼和总结，并生成结构化的概要、核心结论、总体框架和 Mermaid 概念图。
+
+**概要：**
+
+I.  **背景与问题：**
+    *   量化投资领域越来越多地使用机器学习，但传统方法难以兼顾高回报和强稳定性。
+    *   基于强化学习（RL）的方法在股票投资组合管理中具有潜力。
+    *   直接使用原始股票市场数据训练 RL 智能体效率低。
+
+II. **提出的解决方案：**
+    *   构建基于强化学习的多模态模型。
+    *   选择基于策略梯度的 DDPG 算法，优于其他算法(TD3, SAC, PPO)。
+    *   使用状态表示学习（SRL）处理原始股票数据，提取有效信息。
+    *   融合股票数据、评论文本数据和图像数据，提高模型性能。
+
+III. **实验与结果：**
+    *   在三个数据集上进行实验，与 11 种其他方法进行比较。
+    *   使用三个评估指标。
+    *   提出的模型表现最佳。
+
+**核心结论：**
+
+通过结合强化学习、状态表示学习和多模态数据，可以构建更有效、更稳定的股票投资组合管理模型。
+
+**总体框架：**
+
+该研究采用一个多模态强化学习框架，该框架通过状态表示学习预处理，融合股票数据、评论文本和图像数据，使用 DDPG 算法训练智能体，以实现更优的股票投资组合管理。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph 数据准备 [数据准备]
+    A[原始股票数据]:::data --- B(状态表示学习(SRL)):::process
+    C[评论文本数据]:::data --- B
+    D[图像数据]:::data --- B
+    end
+
+    subgraph 强化学习模型 [强化学习模型]
+    B --- E(DDPG 算法)
+    end
+
+    E --- F{股票投资组合管理}:::task
+
+    subgraph 评估 [评估]
+    F --- G[评估指标1]:::evaluation
+    F --- H[评估指标2]:::evaluation
+    F --- I[评估指标3]:::evaluation
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ffc,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+
+    classDef data fill:#afa,stroke:#333,stroke-width:2px
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px
+    classDef task fill:#ccf,stroke:#333,stroke-width:2px
+    classDef evaluation fill:#ddf,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Machine learning has been applied by more and more scholars in the field of quantitative investment, but traditional machine learning methods cannot provide high returns and strong stability at the same time. In this paper, a multimodal model based on reinforcement learning (RL) is constructed for the stock investment portfolio management task. Most of the previous methods based on RL have chosen the value-based RL methods. Policy gradient-based RL methods have been proven to be superior to value-based RL methods by a growing number of research. Commonly used policy gradient-based reinforcement learning methods are DDPG, TD3, SAC, and PPO. We conducted comparative experiments to select the most suitable method for the dataset in this paper. The final choice was DDPG. Furthermore, there will rarely be a way to refine the raw data before training the agent. The stock market has a large amount of data, and the data are complex. If the raw stock market data are fed directly to the agent, the agent cannot learn the information in the data efficiently and quickly. We use state representation learning (SRL) to process the raw stock data and then feed the processed data to the agent. It is not enough to train the agent using only stock data; we also added comment text data and image data. The comment text data comes from investors' comments on stock bars. Image data are derived from pictures that can represent the overall direction of the market. We conducted experiments on three datasets and compared our proposed model with 11 other methods. We set up three evaluation indicators in the paper. Taken together, our proposed model works best.
