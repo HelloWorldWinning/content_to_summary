@@ -1,0 +1,72 @@
+Timestamp: 2025-05-01T23:12:55.703816
+Title: Text_Summary_20250501_231255
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，根据您提供的文本，我将为您生成一份满足要求的总结。
+
+**摘要：**
+
+I. **核心思想：** DeepSeek-Prover-V2 是一个开源的大型语言模型，它在形式化定理证明方面取得了显著进展，并缩小了形式化和非形式化数学推理之间的差距。
+
+II. **概要框架：**
+   *   **模型介绍：** DeepSeek-Prover-V2 (671B参数)
+   *   **训练方法：**
+        *   冷启动：利用 DeepSeek-V3 将复杂问题分解为子目标，并生成思维链。
+        *   强化学习：整合非形式化和形式化数学推理。
+   *   **性能评估：**
+        *   MiniF2F-test: 88.9% 通过率
+        *   PutnamBench: 解决 49/658 个问题
+        *   ProverBench (新基准，含 15 个 AIME 问题): 解决 6/15 个 AIME 问题
+   *   **对比分析：** DeepSeek-V3 在 AIME 问题上解决 8/15 个，表明形式化与非形式化推理差距缩小。
+
+III. **总体概括：** DeepSeek-Prover-V2 通过创新的训练方法和强大的性能，展示了大型语言模型在形式化定理证明领域的潜力，并促进了形式化和非形式化数学推理的融合。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph 训练流程
+        A[DeepSeek-V3] --> B(问题分解为子目标)
+        B --> C{生成思维链}
+        C --> D[DeepSeek-Prover-V2 冷启动]
+        D --> E(强化学习)
+        E --> F[整合非形式化&形式化推理]
+        style A fill:#f9f,stroke:#333,stroke-width:2px
+        style B fill:#ccf,stroke:#333,stroke-width:2px
+        style C fill:#ccf,stroke:#333,stroke-width:2px
+        style D fill:#ffc,stroke:#333,stroke-width:2px
+        style E fill:#ffc,stroke:#333,stroke-width:2px
+        style F fill:#ffc,stroke:#333,stroke-width:2px
+    end
+
+    subgraph 模型评估
+        G[DeepSeek-Prover-V2] --> H{MiniF2F-test (88.9%)}
+        G --> I{PutnamBench (49/658)}
+        G --> J{ProverBench (6/15 AIME)}
+        K[DeepSeek-V3 (8/15 AIME)]
+        H --> L[性能指标]
+        I --> L
+        J --> L
+        K --> L
+        style G fill:#9ff,stroke:#333,stroke-width:2px
+        style H fill:#ccf,stroke:#333,stroke-width:2px
+        style I fill:#ccf,stroke:#333,stroke-width:2px
+        style J fill:#ccf,stroke:#333,stroke-width:2px
+        style K fill:#ccf,stroke:#333,stroke-width:2px
+        style L fill:#eee,stroke:#333,stroke-width:2px
+    end
+
+    M[DeepSeek-Prover-V2 (671B)] -- 是 --> G
+    M -- 通过递归证明训练 --> A
+    L -- 表明 --> N[形式化&非形式化推理差距缩小]
+
+    style M fill:#9f9,stroke:#333,stroke-width:2px
+    style N fill:#f9f,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+We introduce DeepSeek-Prover-V2, an open-source large language model designed for formal theorem proving in Lean 4, with initialization data collected through a recursive theorem proving pipeline powered by DeepSeek-V3. The cold-start training procedure begins by prompting DeepSeek-V3 to decompose complex problems into a series of subgoals. The proofs of resolved subgoals are synthesized into a chain-of-thought process, combined with DeepSeek-V3's step-by-step reasoning, to create an initial cold start for reinforcement learning. This process enables us to integrate both informal and formal mathematical reasoning into a unified model. The resulting model, DeepSeek-Prover-V2-671B, achieves state-of-the-art performance in neural theorem proving, reaching 88.9% pass ratio on the MiniF2F-test and solving 49 out of 658 problems from PutnamBench. In addition to standard benchmarks, we introduce ProverBench, a collection of 325 formalized problems, to enrich our evaluation, including 15 selected problems from the recent AIME competitions (years 24-25). Further evaluation on these 15 AIME problems shows that the model successfully solves 6 of them. In comparison, DeepSeek-V3 solves 8 of these problems using majority voting, highlighting that the gap between formal and informal mathematical reasoning in large language models is substantially narrowing.
