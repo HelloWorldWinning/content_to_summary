@@ -1,0 +1,125 @@
+Timestamp: 2025-05-11T21:56:09.680876
+Title: 10000个量化策略回测真相：你以为能赚钱的指标，正在让你亏钱！
+URL: https://youtu.be/H_d7HPK6e4M?si=u8dwRA2M5Pq_afhh
+Status: success
+Duration: 17:14
+
+Description:
+好的，以下是根据您提供的文本生成的中文总结，包括要点、结论、框架和 mermaid 图：
+
+**核心总结：**
+
+过度追求历史回测中的高收益策略，很可能导致过拟合，从而在未来真实市场中表现不佳。
+
+**大纲总结：**
+
+I. **引言：**
+    *   量化交易员 Algole 分享对10,000个交易策略的分析结果。
+    *   目的：分析哪些策略评估指标最可靠。
+    *   参考：借鉴某量化公司对数百万策略的类似分析。
+
+II. **实验方法：**
+    *   使用过去几年的回测数据作为“历史表现”，用近几年的真实市场数据作为“未来表现”。
+    *   分析21个维度的性能指标（交易次数、盈利因子、回撤、稳定性、胜率、风险收益比、年化复合增长率等）与未来利润的相关性。
+    *   使用 Python 进行统计分析。
+
+III. **数据处理：**
+    *   合并历史和未来数据，清理异常策略（交易次数过少、盈亏偏差过大、高频交易等）。
+    *   最终得到 7,174 个有效策略记录。
+
+IV. **相关性分析（热力图）：**
+    *   关注未来净利润和盈利因子与过去表现指标的相关性。
+    *   重点关注绝对值大于 0.3 的相关性。
+    *   关键发现：
+        *   年化复合增长率（CAGR）与未来净利润呈负相关：过去收益越高的策略，未来亏损的概率越大。
+        *   平均回撤与未来净利润呈负相关：过去回撤大的策略，未来表现通常不佳。
+        *   标准差与未来净利润呈负相关。
+
+V. **分箱分析：**
+    *   将策略按某个评估指标排序，分成十个箱子。
+    *   观察每个箱子中策略未来净利润的中位数。
+    *   关键发现：
+        *   交易次数：交易次数最少的组未来净利润中位数较高，交易次数最多的组未来净利润中位数最低。
+        *   盈利因子：盈利因子过低的组未来亏损最严重；盈利因子较高时，未来表现下限较高，但过高时效果不明显。
+        *   胜率：胜率过低的组未来亏损最严重；胜率在正常范围内提高时，对未来利润的改善不明显。
+        *   年化复合增长率（CAGR）：呈现明显的抛物线趋势，CAGR 越高，未来净利润中位数越低。
+
+VI. **结论与建议：**
+    *   过度追求历史回测中的高收益策略，容易导致过拟合。
+    *   应更注重收益的质量（仓位暴露、退出质量）、策略的稳健性和可持续性。
+    *   通过蒙特卡洛模型测试策略对不同价差的敏感性，观察在不同市场环境下的表现。
+
+**Overarching Framework: (总览框架)**
+
+The framework explores indicators' predictive power in trading strategies, aiming to debunk conventional beliefs and highlight the risk of overfitting to historical data.
+
+**Mermaid 图：**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph Data_Preparation [数据准备]
+        A[10,000 交易策略]:::initial --> B(合并历史和未来数据):::process
+        B --> C{清理异常策略?}:::condition
+        C -- 是 --> D[7,174 有效策略];:::final
+        C -- 否 --> B;
+    end
+
+    subgraph Analysis [分析方法]
+        E(相关性分析):::process --> F{热力图分析?}:::condition
+        F -- 是 --> G[识别负相关性 (CAGR & 未来利润)]:::insight;
+        F -- 否 --> E;
+        H(分箱分析):::process --> I[按指标分箱];:::process
+        I --> J[观察未来利润中位数];:::insight
+
+    end
+
+    subgraph Findings [主要发现]
+        K[高 CAGR 与未来亏损]:::critical
+        L[交易频率与未来利润负相关]:::critical
+        M[盈利因子：适中较好]:::critical
+        N[胜率：非决定性因素]:::critical
+    end
+
+    subgraph Conclusion [结论]
+        O[避免过度优化]:::critical
+        P[关注收益质量和稳健性]:::critical
+        Q[策略需适应不同市场环境]:::critical
+    end
+
+    A --> E
+    D --> E
+    D --> H
+    G --> K
+    J --> L
+    J --> M
+    J --> N
+    K --> O
+    L --> O
+    M --> P
+    N --> P
+    O --> Q
+    P --> Q
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#afa,stroke:#333,stroke-width:2px
+    style J fill:#afa,stroke:#333,stroke-width:2px
+    style K fill:#faa,stroke:#333,stroke-width:2px
+    style L fill:#faa,stroke:#333,stroke-width:2px
+    style M fill:#afa,stroke:#333,stroke-width:2px
+    style N fill:#afa,stroke:#333,stroke-width:2px
+    style O fill:#afa,stroke:#333,stroke-width:2px
+    style P fill:#afa,stroke:#333,stroke-width:2px
+    style Q fill:#afa,stroke:#333,stroke-width:2px
+
+    classDef initial fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#fff,stroke:#333,stroke-width:2px;
+    classDef condition fill:#ccf,stroke:#333,stroke-width:2px;
+    classDef insight fill:#afa,stroke:#333,stroke-width:2px;
+    classDef final fill:#ccf,stroke:#333,stroke-width:2px;
+    classDef critical fill:#faa,stroke:#333,stroke-width:2px;
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT Kind: captions Language: en Is it true that quantitative strategies with higher winning rates and explosive historical returns can definitely help you make money? After analyzing a total of 10, 000 trading strategies, I found that many of the money-making indicators we firmly believe may be the culprits of making us lose money in the future. Hello, everyone. I am Algole, a quantitative trader who is keen on using data to speak for himself. I did an experiment a long time ago. To analyze which strategy evaluation indicators are the most reliable, but frankly speaking, the sample size at that time was not large enough and the number of strategies was relatively small. However, after a long period of data accumulation and iteration of analysis methods, this time I deeply analyzed 10, 000 trading strategies and conducted the experiment again. I still trust the results of this experiment because a quantitative company has done similar analysis. Analysis: They came to conclusions after analyzing millions of strategies. So you may be curious. Is there such a big difference in sample size between 10, 000 and others? Well, I think it is, because our findings are actually highly consistent on some key conclusions. Some results may be consistent with our previous experience, but there are still others that will definitely surprise us. It can even be said that many of the opinions that are suitable for the mainstream of the current market are contrary to the current market mainstream. I believe that I understand that these laws are of great value to our future development and screening of truly changeable strategies. I have prepared 10, 000 trading strategies here. They have all been verified by preliminary samples inside and outside, that is, ISOOS. We will do this first step and will not do more complicated robustness testing. Well, the main purpose is to capture some more universal conclusions and also try to be consistent with the research process of that quantitative company to ensure that the comparison between us will be more meaningful. That is to say, how they prepare the data and how they analyze it. I also maintain the same approach as his, but the sample size here is reduced from their millions. The 10, 000 I have here is the difference. Well, how is the experiment done? In fact, it is very simple. I just take the backtest data of these 10, 000 strategies as of a few years ago. I use this part of the data as the past performance, and then use the real market data in recent years as the future performance of these strategies. Let’s use an analogy. Suppose I have 10 We pretended to travel back three years and used the data of the previous seven years to develop and backtest strategies to get a transcript of the past. Then we looked at the performance of these strategies in the real market in the next three years. This is the transcript of the future. This is the past and this is the future. Then by counting the correlation between the indicators on the two transcripts, we can find out what exactly it has. Strategies with these characteristics have a probabilistic advantage. So this time I have fully studied 21 dimensions of performance indicators, including the common number of transactions, profit factor, downward float ratio, expected value, stability, win rate, storm ratio, CGR, risk exposure, complexity of the strategy, profit and loss ratio, average retracement position ratio, and the degree of freedom of the strategy, capital curve angle, field quality, including z Score, etc. There are also these symmetry r squared SQN values ​​and so on. There are many dimensions. The purpose is to find out which indicator has the strongest predictive ability. This time we still use Python for statistical analysis. So the first step is to run it. Then the first step is that we have done a combined And that is data merging. We merge the past and future data of the strategies and clean out some abnormal strategies. For example, the number of strategies is too small, the value of profit and loss deviates too much, or it is high- frequency and unrealistic. These strategies with noise may interfere with our statistical results, so we finally After the final deletion, we got 7, 174 valid records of this strategy. Next, I will continue as before. I will first use this scatter chart to present the correlation between past performance indicators and future profits. If you are interested, you can take a look at this report. I will still upload this overall report to the network disk. If what I have said here is not detailed enough, you can take a look at the scatter plot yourself. We will not go into it because it is actually not easy to observe, so I still made a heat map here and ran it again. I also made a claim map. He also analyzed this phase. Correlation is just different from the way scatter plots are presented. Let me first give a brief introduction to some students who don’t know what correlation is. To put it simply, it is to look at whether two things are changing at the same time. For example, if a strategy has made more money in the past, will it definitely make more money in the future? In fact, it is It is a measurement. For example, this is a numerical curve. It is a measure of the degree of similarity between the changes between two values. This is correlation. Like many quantitative arbitrage strategies, they all use the correlation between strategies. After I finish talking about this correlation analysis, I will also talk about the possibility of binning analysis used by quantitative companies. That kind of statistical method will be more objective and better. Let's enlarge this picture and take a closer look. What we focus on is the two rows below. They represent the future net profit and profitability factors of the strategy. The top ones are the past performance of the strategy in different dimensions. And the values ​​in the grid here are more and more. If it is close to 1 or -1, it means that they have a strong positive correlation or a strong negative correlation. What we are focusing on here is that we only focus on the absolute value greater than 0. 3. If it does not exceed 0. 3, it means that there is not much relationship between the changes between them. For example, let's look at this here. Look at the storm ratio of 0. 4, then it shows that the future profits of these strategies that were very good in the past storm ratio have almost no linear relationship with their storm ratio, because the correlation between them is only 0. 4. So what we actually focus on in this picture is that CAGR is the compound annual growth rate, and its relationship with future net profit is actually a negative correlation, a relatively strong negative correlation. This means that the strategy that made the most money in the past has a high probability of losing money in the future. This is completely contrary to our conventional understanding, because when we develop strategies, most people must be very focused on how much they make, the more the better. For example, for example, a capital curve, most people observe that the straighter the better, including this angle, the steeper the better. But in fact, we actually have the result here. If you tell us, the more you earn in backtesting your strategy, the more you will lose in the future. This conclusion is actually completely consistent with the conclusion of the quantitative company I referred to. The explanation they gave is that if you excessively pursue profit maximization during the development process, the strategy will easily fall into overfitting, which is a perfect match. In the past, you will lose in the future, but those whose past profit performance is not so good. The cutting-edge strategies are those that rise, fall, lose and make profits. Strategies that look mediocre may have more stamina. So let’s take a look at this next. What is the average drawdown? The relationship between this and future net profit is also significantly negative. This is expected, because the future performance of your strategy with large drawdowns in the past will usually not be very good. Then let’s take a look at this standard. Deviation is the standard deviation. What it represents is the degree of dispersion of our equity curve from the average. The relationship between it and our future net profit is also a negative correlation. However, this is also expected. This is the conclusion drawn by our correlation analysis. However, the correlation analysis looks at the overall current trend. Many times, well, things do not happen. It 's so simple. It can't be explained clearly with a straight line. For example, if a strategy has a winning rate, the higher the better, the lower the better. It may be in the middle, and the one that doesn't slip out may be the best. Such a relationship with a curve is difficult to see by just relying on the straight-line correlation analysis. So we still need to use another more objective analysis method here, that is The principle of binning analysis is actually relatively simple. You will understand it as soon as I say it. So binning analysis is like we sort our 10, 000 strategies from low to high according to a certain evaluation indicator, such as the number of transactions here, and then divide it into ten segments. Then each segment is a box, and the first segment is the highest number of transactions. The lowest 10%, then the second smallest 10%, and so on. After dividing the boxes, we look at the median performance of the future net profits of the strategies in each box. Note that we look at the median, because this can better reflect the general trend and filter out the personality explosion of a very few strategies or the extremely unlucky ones. Well, let's take a look at its results in detail. Let's first look at the number of transactions. Well, in this dimension, it is actually what many novice students pay more attention to. To a certain extent, what they pay more attention to is the experience of doing transactions, that is, if they make more frequent moves, they will feel more comfortable and happy psychologically. If they are always doing it and holding positions, they will be very comfortable. But the data here shows that the number of transactions is the least. The median future net profit of that group, that is, Group 0, should be around 65. And the middle groups, well, there are good and bad, and the fluctuations are generally 68-91. But if we look at the last two groups, the eighth group and the ninth group, which are the strategies with the most transactions and the most frequent transactions, their median future net profit is the lowest among all groups, which is 116 and 124 respectively. This means that at least Well, judging from the data here, if there are too many transactions and too many transactions, the future results will not be very good. So at this point, I would like to mention an experiment that I have shared with you before. The content of his experiment is that the more transactions there are, the greater the statistical significance of the robustness analysis of the strategy. Will his conclusion conflict with the conclusion we have drawn today? I personally think it is not contradictory, because one is discussed The problem of degree fitting is that we are discussing the predictive ability of performance indicators. I think there is no conflict. Let's continue and then let's take a look at the profit factor. Well, the group with the lowest profit factor is also the group with the worst losses in the future. You see, the values ​​​​here simply cannot help Adou. As the profit factor increases, losses are indeed gradually reduced. The median future net profit of the eighth group with a quite high profit factor is 31. 31 is the one with the least loss among all groups, but the ninth group with the highest profit factor has fallen back, but the difference between them is not big. What does this mean? It is that if the profit factor is too low, it will definitely not work. So the lower limit of future performance seems to be higher for a higher profit factor. Overall, the profit factor does have a certain predictive ability, and it can still reflect certain regularities. But I would like to remind you that if you use m t 5. For the profit factor that comes with it, you must pay attention to whether the position calculation has been normalized. Otherwise, the number you get will be easily distorted. Well, because there are too many indicators, we will pick a few that everyone cares about and are relatively representative, such as the expected value of the downward float ratio. First of all, their relationship here is not that obvious, so we will skip it here and look directly at the winning rate. This is definitely the most important indicator for most traders, including me when I first started, because its underlying logic is easy to understand. Well, I also thought that those who did well in trading were because they saw it very accurately. But Now it seems that it is actually very unobjective. When we look at the picture, the winning rate is from left to right, that is, from low to high. His future losses do have a decreasing trend. The lowest winning rate is the one that loses the most, and the highest winning rate is the one that loses the least. But once this winning rate enters a relatively normal range, if you increase it upwards, the improvement in future profits will not seem so obvious, because in the middle, there is even a repetition of the conclusion I have drawn here. Yeah, it's not really obvious. Maybe it's because my sample size is relatively small. But the quantitative company I consulted analyzed millions of pieces of data and came to an even more astonishing conclusion. The higher your winning rate, the greater the probability of future losses. But I didn't reflect it here, so from the perspective of winning rate, I still hold a conservative view for the time being. In fact, I have always been like this. When choosing strategies, um, I have never paid much attention to the winning rate. Well, we ended up with it. Let's take a look at the CAGR, which is the annualized compound growth rate. The trend or regularity here is quite obvious, a very perfect parabola, and the CAGR indicator. Looking at the CAGR indicator, it is actually valued by many quantitative traders with some experience because it can very intuitively reflect the profitability of a strategy. But as far as the results here are concerned, it is incompatible with our conventional understanding. On the contrary, from left to right, the CAGR group is getting higher and higher, but the corresponding median of the net profit is diving all the way down, because this value is the most obvious among all these indicators, and this trend is the most obvious diving all the way down. The group with the lowest CGR, which is the zeroth group, has a median of 28, but when it reaches the highest group, which is the ninth group, the CAGR group is getting higher and higher. The median of the group has reached 971. The gap is really too big. This is simply a true portrayal of the harder you work, the more unlucky you become. This strong negative trend once again warns us that those strategies that have achieved ultra-high annualized returns based on historical data are most likely to be the worst-hit areas of overfitting. They are just perfectly adapted to a specific market in the past. If you change the time, just play the game. Over, about this point, I actually mentioned it before, and the quantitative company also focused on the profit aspect. The more you pursue profits, the greater the probability of future losses. Of course, he is not saying that we should lie flat and not look at profits, but more emphasis on the quality of profits. For example, the exposure of this position is one, one angle, and what else. Well, and the quality of the exit is the same, including the robustness and sustainability of your strategy. For example, you can test the sensitivity of the strategy to different spreads through the Monte Carlo model. To see the performance in different market environments, if we wait and see, these practices are actually giving us these glorious profit data. We are squeezing out the water to see how much pure natural strength is left in this strategy after removing these beauties and removing these filters. This is what we are pursuing profit. At the same time, there are also points that need to be paid attention to. Due to time constraints today, we will mainly focus on a few common and representative indicators. I have uploaded the more detailed analysis data to the network disk. If you are interested, you can take a detailed look at it yourself. Okay, then bye and dismiss the meeting.
