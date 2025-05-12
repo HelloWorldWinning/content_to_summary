@@ -1,0 +1,116 @@
+Timestamp: 2025-05-12T13:34:01.533499
+Title: Text_Summary_20250512_133401
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，下面是根据您提供的文本生成的摘要，包括结构化概要、核心结论、总体框架和美人鱼图：
+
+**摘要**
+
+**1. 核心结论:**
+
+*   通过适当的学习方法，提升奖励模型（RM）的推理时可扩展性，能够更有效地利用计算资源来提升大型语言模型（LLM）的性能。
+
+**2. 结构化概要:**
+
+*   **背景:**
+    *   强化学习 (RL) 已被广泛应用于大规模语言模型 (LLM) 的后训练。
+    *   利用RL激励LLM的推理能力，表明适当的学习方法可以实现有效的推理时可扩展性。
+    *   RL的一个关键挑战是为LLM在各种领域中获得准确的奖励信号，超越可验证的问题或人工规则。
+*   **研究问题:**
+    *   如何改进通用查询的奖励建模 (RM)，利用更多的推理计算，即通用RM的推理时可扩展性。
+    *   如何通过适当的学习方法提高性能与计算扩展的有效性。
+*   **方法:**
+    *   采用点式生成奖励建模 (GRM)，以实现不同输入类型的灵活性和推理时扩展的潜力。
+    *   提出自洽批判调优 (SPCT)，通过在线RL培养GRM中可扩展的奖励生成行为，自适应地生成原则和准确的批判，产生DeepSeek-GRM模型。
+    *   为了有效的推理时扩展，使用并行采样来扩展计算使用，并引入元RM来指导投票过程，以获得更好的扩展性能。
+*   **实验结果:**
+    *   SPCT显著提高了GRM的质量和可扩展性，在各种RM基准测试中优于现有方法和模型，且没有严重的偏差。
+    *   与训练时扩展相比，SPCT可以实现更好的性能。
+*   **局限性与未来方向:**
+    *   DeepSeek-GRM在某些任务中仍然面临挑战，这可以通过未来在通用奖励系统中的努力来解决。
+*   **开源:**
+    *   模型将发布并开源。
+
+**3. 总体框架:**
+
+该研究的核心是**提升奖励模型 (RM) 的推理时可扩展性**，以更有效地利用计算资源提升大型语言模型的性能。它通过以下几个关键步骤实现：
+
+1.  **选择合适的奖励建模方法:** 采用点式生成奖励建模 (GRM)，因为它具有灵活性和推理时扩展潜力。
+2.  **设计有效的学习方法:** 提出自洽批判调优 (SPCT)，通过在线RL训练GRM，使其能够生成可扩展的奖励。
+3.  **优化推理过程:** 使用并行采样扩展计算资源，并引入元RM来指导投票过程，从而提高推理性能。
+4.  **实验验证:** 通过实验证明SPCT的有效性，并分析其局限性，为未来的研究方向提供指导。
+
+**4. 美人鱼图 (Mermaid Diagram):**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph A [总体框架]
+        direction TB
+        A1[目标: 提升RM推理时可扩展性]:::objective --> A2[选择GRM]:::method
+        A2 --> A3[提出SPCT]:::method
+        A3 --> A4[优化推理过程]:::method
+        A4 --> A5[实验验证]:::method
+        A5 --> A1
+    end
+
+    subgraph B [点式生成奖励模型 (GRM)]
+        direction TB
+        B1[输入灵活性]:::advantage --> B2[推理时扩展潜力]:::advantage
+        B2 --> A2
+    end
+
+    subgraph C [自洽批判调优 (SPCT)]
+        direction TB
+        C1[在线RL]:::process --> C2[可扩展奖励生成]:::result
+        C2 --> C3[自适应原则生成]:::result
+        C3 --> C4[准确批判]:::result
+        C4 --> A3
+    end
+
+    subgraph D [推理时扩展优化]
+        direction TB
+        D1[并行采样]:::process --> D2[扩展计算使用]:::result
+        D2 --> D3[元RM引导投票]:::process
+        D3 --> D4[提高推理性能]:::result
+        D4 --> A4
+    end
+
+    subgraph E [实验结果]
+        direction TB
+        E1[SPCT显著提高GRM质量]:::result --> E2[优于现有方法]:::result
+        E2 --> E3[无严重偏差]:::result
+        E3 --> E4[与训练时扩展相比性能更优]:::result
+        E4 --> A5
+    end
+
+    style A1 fill:#f9f,stroke:#333,stroke-width:2px
+    style A2 fill:#ccf,stroke:#333,stroke-width:2px
+    style A3 fill:#ccf,stroke:#333,stroke-width:2px
+    style A4 fill:#ccf,stroke:#333,stroke-width:2px
+    style A5 fill:#ccf,stroke:#333,stroke-width:2px
+
+    style B1 fill:#afa,stroke:#333,stroke-width:2px
+    style B2 fill:#afa,stroke:#333,stroke-width:2px
+
+    style C1 fill:#bbf,stroke:#333,stroke-width:2px
+    style C2 fill:#afa,stroke:#333,stroke-width:2px
+    style C3 fill:#afa,stroke:#333,stroke-width:2px
+    style C4 fill:#afa,stroke:#333,stroke-width:2px
+
+    style D1 fill:#bbf,stroke:#333,stroke-width:2px
+    style D2 fill:#afa,stroke:#333,stroke-width:2px
+    style D3 fill:#bbf,stroke:#333,stroke-width:2px
+    style D4 fill:#afa,stroke:#333,stroke-width:2px
+
+    style E1 fill:#afa,stroke:#333,stroke-width:2px
+    style E2 fill:#afa,stroke:#333,stroke-width:2px
+    style E3 fill:#afa,stroke:#333,stroke-width:2px
+    style E4 fill:#afa,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+
+Content:
+Reinforcement learning (RL) has been widely adopted in post-training for large language models (LLMs) at scale. Recently, the incentivization of reasoning capabilities in LLMs from RL indicates that $\textit{proper learning methods could enable effective inference-time scalability}$. A key challenge of RL is to obtain accurate reward signals for LLMs in various domains beyond verifiable questions or artificial rules. In this work, we investigate how to improve reward modeling (RM) with more inference compute for general queries, i.e. the $\textbf{inference-time scalability of generalist RM}$, and further, how to improve the effectiveness of performance-compute scaling with proper learning methods. For the RM approach, we adopt pointwise generative reward modeling (GRM) to enable flexibility for different input types and potential for inference-time scaling. For the learning method, we propose Self-Principled Critique Tuning (SPCT) to foster scalable reward generation behaviors in GRMs through online RL, to generate principles adaptively and critiques accurately, resulting in $\textbf{DeepSeek-GRM}$ models. Furthermore, for effective inference-time scaling, we use parallel sampling to expand compute usage, and introduce a meta RM to guide voting process for better scaling performance. Empirically, we show that SPCT significantly improves the quality and scalability of GRMs, outperforming existing methods and models in various RM benchmarks without severe biases, and could achieve better performance compared to training-time scaling. DeepSeek-GRM still meets challenges in some tasks, which we believe can be addressed by future efforts in generalist reward systems. The models will be released and open-sourced.
