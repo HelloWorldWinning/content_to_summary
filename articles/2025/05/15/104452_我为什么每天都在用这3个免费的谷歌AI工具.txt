@@ -1,0 +1,92 @@
+Timestamp: 2025-05-15T10:44:52.629392
+Title: 我为什么每天都在用这3个免费的谷歌AI工具？
+URL: https://www.youtube.com/watch?v=3kp-ZNvvSPs
+Status: success
+Duration: 8:22
+
+Description:
+好的，这是根据提供的文本生成的摘要，包括核心观点、总体框架、结构化概要和概念图：
+
+**核心观点:** 谷歌提供三个免费且强大的AI工具，涵盖文本生成、图像处理、视频制作和学习辅助等功能，旨在帮助用户提升生产力、激发创造力和优化学习体验。
+
+**总体框架:** 介绍谷歌提供的三个免费AI工具（Google AI Studio, Gemini, NotebookLM），分别讲解其核心功能和应用场景，并着重展示NotebookLM在学习和研究方面的强大潜力。
+
+**结构化概要:**
+
+1.  **Google AI Studio**
+    *   提供免费的AI模型（Gemini 2.5, 2.0, 1.5等）。
+    *   类似ChatGPT的聊天功能，支持文本、图像和视频对话。
+    *   免费API接口。
+    *   Stream功能：分享屏幕进行AI互动。
+    *   APP创建功能：通过代码和预览创建学习类APP。
+    *   视频生成工具：文字或图片生成视频。
+
+2.  **Gemini**
+    *   灵感源泉、职业顾问、编码助手和学习编辑。
+    *   提供免费的模型（2.0 Flash, Pro预览版本）。
+    *   支持文件上传（但文本未进行升级体验）。
+    *   具有深入研究和分布（Converse）功能：创建文档、编写代码。
+
+3.  **NotebookLM**
+    *   核心功能：上传各种格式的内容（PDF, TXT, Markdown, 音频, YouTube视频, 网站链接, 谷歌文档等），生成思维导图，进行AI对话。
+    *   AI主持人功能：生成音频，方便理解内容。
+    *   笔记添加功能：根据上传内容进行提问，AI提取相关信息并生成笔记。
+    *   探索功能：搜索网上资源，导入并整合到学习资料中。
+    *   应用场景：教辅资料整理、笔记、提问、知识探索等。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Google AI 平台
+        A[Google AI Studio] -- 聊天, API, 视频生成 --> B(Gemini);
+        A --> C(NotebookLM);
+        B --> C;
+    end
+
+    subgraph Google AI Studio 功能
+        A -- 模型选择 --> A1[Gemini 模型];
+        A -- Stream --> A2[屏幕分享];
+        A -- APP创建 --> A3[学习APP];
+        A1 --> A11[免费模型];
+        A2 --> A21[AI互动];
+        A3 --> A31[代码&预览];
+    end
+
+    subgraph Gemini 功能
+        B -- 核心功能 --> B1[灵感, 顾问, 编码, 编辑];
+        B -- 模型版本 --> B2[免费模型];
+        B -- 其他功能 --> B3[文档创建, 代码编写];
+    end
+
+    subgraph NotebookLM 功能
+        C -- 内容上传 --> C1[PDF, TXT, 音频, 视频...];
+        C -- 核心功能 --> C2[思维导图生成];
+        C -- AI互动 --> C3[AI主持人];
+        C -- 笔记整理 --> C4[笔记添加, 知识探索];
+        C1 --> C2;
+        C1 --> C3;
+        C1 --> C4;
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ffc,stroke:#333,stroke-width:2px
+    style A1 fill:#fdd,stroke:#333,stroke-width:2px
+    style A2 fill:#fdd,stroke:#333,stroke-width:2px
+    style A3 fill:#fdd,stroke:#333,stroke-width:2px
+    style B1 fill:#ddf,stroke:#333,stroke-width:2px
+    style B2 fill:#ddf,stroke:#333,stroke-width:2px
+    style B3 fill:#ddf,stroke:#333,stroke-width:2px
+    style C1 fill:#ffe,stroke:#333,stroke-width:2px
+    style C2 fill:#ffe,stroke:#333,stroke-width:2px
+    style C3 fill:#ffe,stroke:#333,stroke-width:2px
+    style C4 fill:#ffe,stroke:#333,stroke-width:2px
+    style A11 fill:#eee,stroke:#333,stroke-width:2px
+    style A21 fill:#eee,stroke:#333,stroke-width:2px
+    style A31 fill:#eee,stroke:#333,stroke-width:2px
+```
+</Mermaid_Diagram>
+
+
+Content:
+WEBVTT Kind: captions Language: zh-Hans 谷歌已经在 AI 领域赶上来了 我为介绍谷歌的三个免费的 强大的你可能不知道的三个网站 都是它的一个功能 第一个是 Google Studio 第二个是 Gemini 第三个是 NotebookLM 我会介绍每个网页的 我自己非常喜欢的功能 每天使用的功能 也会介绍它的一些常用功能 这里是 Google Studio 的网页版 链接我会放在说明区 其他相关的链接我也会放到说明区 我们在左侧可以看一下 它有一个聊天 这个聊天 和 chat GBT 的聊天功能是差不多的 你在这里可以进行对话 这里有模型 我们可以看一下 在这里他所有的模型都是免费的 这有洁面丹 2.5 洁面丹 2.01.5 这些所有的模型 你都可以在这里进行体验 我们点击某一个模型之后 比如说我们选择洁面丹 2.0 比如说我们选择 Gemini 2.5 Pro Privio 5 月 6 号的 它会显示它的一个输出价格 在这里它是免费的 它的一些主要功能 还给了我们一些用力 你都可以在这里进行查看 在这里你也可以看到 你可以使用他的聊天来做一些事情 你可以创作图片 探索 APP 你也可以使用他的 API 在这里 API 他也是免费的 我们可以点击这里 你可以看到 免费让你获得他的 API 让你使用 在这里有一个 stream 在这里你可以聊天 你可以与他对话聊天 你可以分享屏幕聊天 视频聊天都是可以的 比如我们点击 talk 我们点击允许 tell me a joke i think you mean yes all right here's a joke for you why don't scientists trust Adams i don't know give me an example because they make up everything would you like another joke 在这里我们就可以选择关闭 你可以与他对话来讨论一些事情 说话都是可以的 我们点击这里没允许 在这里 他会通过你的背景来进行聊天 i see he mentions that here he will be able to chat through your background is there anything specific you would like me to do with this information very good tell me about more detailed okay you then said very good tell me about more detail could you please clarify what you would like more details about 在这里 你可以直接通过你背后的视频 和他进行聊天 他会描述你自己的一个场景 在这里你可以分享屏幕 我们原允许我们点击这里 我分享的就是一个 谷歌 Proom 的一个屏幕 你可以看到我在这里说话 他可以直接就分享了 enter AI studio your precious stream stream say i am a very good tell me how to use it Nishang Gusanshan Scion Brian 在这里 你可以通过屏幕的一个分享 来直接使用这样的功能 我们看一下 这边在这里它有一个 APP 的创建 你可以点击这里创建 APP 在这里 他也可以给你一些创建的一个内容 是他自己创建的 你都可以来看到 我们随便打开一个 比如说他创建了一个学习的一个 APP 这里是代码 在这里他一个预览 你可以上传来进行使用 这里是一个视频生成的一个工具 它可以通过文字来生成视频 通过图片来生成视频 在这里都是可以的 随后我们看一下第二个 它免费的一个网站 就是谷歌界面 在这里你可以看到 他可以做的一些事情 可以灵感源泉职业顾问 编码助手学习编辑 在这里你可以新建来在这里使用 我们点击一下 在这里我是一个免费的用户 我们不用去管他别的内容 我们在这里你可以看到 你也可以使用它的一些常见的模型 比如说 2.0 Flash 这是 Pro 的预览版本 它都会让你免费使用的 因为我自己无法进行升级 我就不在这里升级了 在这里你可以看到你可以添加文件 都是可以来使用的 我们可以选择一个模型来看一下 在这里你可以看到 你也可以使用深入研究和分布功能 也就是 Converse 它能够在这里创建文档 写代码在这里都是可以的 接下来我们看一下 最后一个强大的功能 就是 Notebook LM 也是我个人非常喜欢的一个功能 它主要能够做什么 一是你可以上传内容 比如说我们点击新建 我们可以选择 PDF TXT Markdown 甚至音频来上传到这里 你也可以上传 you to be 的一个视频 也可以是网站 也可以把复制的文字上传到这里 也可以上传谷歌文档幻灯片 上传完成之后 你可以在这里生成所谓导图 生成音频来进行与他 对话这些可以提高你的理解能力 这是我上传的一个文字的内容 他上传之后你可以看到 点击这里可以直接生成思维导图 你可以很快的生成一个思维导图 你在这里进行查看 可以方便我们进行理解 这里你可以点击这里进行加载 他有一个 AI 主持人 你在这里可以进行与他进行聊天 一男一女的一个 AI 主持人 我们可以听一下 欢迎收听 这次我们拿到手上的材料 信息量不小 主要是分析 最近这个世界格局的一些动向 特别是大家老说的东大和西大之间 好像有点缓和的苗 在这里你就可以可以聊天 他聊的都是这些内容 可以方便我们理解 当然最重要的 他就是笔记的一个添加 你可以在这里询问 他们可以直接询问 根据这个内容来进行询问 告诉我关税的一些问题 我直接发给他 他会把相关的问题直接提取出来 变成文字 我们在这里进行查看 你可以看到近期关税的谈判结果 关税升级的背景和原因 这里他就告诉我们 你可以保存为笔记 保存之后你可以在这里进行使用 下次打开你就可以直接打开 它可以变成我们自己的一个笔记本 当然如果你能够放开想象 如果你是一个学生 你可以把你上传的教辅资料 直接上传 在这里做笔记 在这里进行询问 他基本上知无不言 言无不尽的 也可以在这里聊天 而如果你想探索一些问题 你可以点击这里搜索 你直接询问他 一些主题 深入的一些主题 我让他告诉我关税的问题 他会进行提交 提交之后他会搜索网上的一些来源 直接给我们 比如说这里他选择了一些来源 关税的有自由的百科全书 关税的配额 关税的博弈等等 这些你都可以来直接导入 我们直接导入之后 你可以看到 它会成为你来源的一部分 那么你就可以根据这些来源 重新的再来学习 重新的再来做思维导图 做一些 AI 主持人的一个对话 可以全面我们的一个内容 关于谷歌在 AI 方面的 三个免费的网站的功能的介绍 我分享完了 如果你有什么样的问题 可以点击下方进行评论 我们下一个视频再见
