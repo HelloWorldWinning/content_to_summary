@@ -1,0 +1,108 @@
+Timestamp: 2025-05-17T11:36:54.808900
+Title: 【PyCon】Faster CPython团队，没了！ 98_nyR6uAio
+URL: https://youtube.com/watch?v=98_nyR6uAio&si=b6O8ZaybhSkNpMNQ
+Status: success
+Duration: 16:45
+
+Description:
+好的，以下是文本的概要总结：
+
+**核心要点：**
+
+由于微软裁掉了 Faster CPython 团队， Meta 现在成为了对 CPython 贡献最大的公司。
+
+**总体框架：**
+
+会议见闻与行业动态分析。
+
+**详细概要：**
+
+I. **Language Summit 会议情况**
+   *   参与者：CoreDev、CPython 开发者、重要库维护者、PyPI 人员
+   *   会议内容：
+        *   减少 Breaking Change
+        *   与 Racing 相关的问题
+        *   讨论了Staring Control（解决问题）
+
+II. **微软裁员事件**
+   *   微软裁掉了 Faster CPython 团队，仅剩一人和一个经理。
+   *   裁员影响：
+        *   CPython 贡献主力转移：Meta 成为最大贡献者。
+        *   裁员部门：Developer Division (DevDiv)，包括 TypeScript 团队。
+        *   原因猜测：不盈利，资金转向 AI 领域。
+
+III. **CPython 发展趋势**
+   *   大量 Requests 涌入，导致单一控制台不足以解决问题。
+   *   趋势：建立更多子组织，分担工作，提升效率。
+
+IV. **其他讨论**
+   *   We've readying (性能优化)
+   *   处理 raising 提出了一个全新的一个Proport一个iselated方案
+   *   Packaging Consoer（打包相关）
+   *   移动平台支持：Android 和 iOS 平台，但支持级别有限 (T2/T3)。
+   *   Python 与 JavaScript 互通，以及使用 Rust 加速 Python。
+
+<Mermaid_Diagram>
+```mermaid
+graph LR
+    subgraph Core
+        A[CPython Development]
+    end
+
+    subgraph Industry Trends
+        B[Microsoft Layoffs]
+        C[Meta's Increased Role]
+        D[Growing Requests]
+        E[Decentralized Control]
+        F[AI Investment]
+    end
+
+    subgraph Technical Discussions
+        G[Breaking Changes]
+        H[Racing Issues]
+        I[Staring Control]
+        J[We've Readying]
+        K[Raising Proposals]
+        L[Packaging Concerns]
+        M[Mobile Support]
+        N[JS Interop]
+        O[Rust Acceleration]
+    end
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    B --> F
+    D --> E
+    A --> G
+    A --> H
+    A --> I
+    A --> J
+    A --> K
+    A --> L
+    A --> M
+    A --> N
+    A --> O
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:1px
+    style C fill:#ccf,stroke:#333,stroke-width:1px
+    style D fill:#ccf,stroke:#333,stroke-width:1px
+    style E fill:#ccf,stroke:#333,stroke-width:1px
+    style F fill:#ccf,stroke:#333,stroke-width:1px
+    style G fill:#cfc,stroke:#333,stroke-width:1px
+    style H fill:#cfc,stroke:#333,stroke-width:1px
+    style I fill:#cfc,stroke:#333,stroke-width:1px
+    style J fill:#cfc,stroke:#333,stroke-width:1px
+    style K fill:#cfc,stroke:#333,stroke-width:1px
+    style L fill:#cfc,stroke:#333,stroke-width:1px
+    style M fill:#cfc,stroke:#333,stroke-width:1px
+    style N fill:#cfc,stroke:#333,stroke-width:1px
+    style O fill:#cfc,stroke:#333,stroke-width:1px
+```
+</Mermaid_Diagram>
+
+
+Content:
+非常遗憾的高材料Faster C排团体没了好不怕浪漱了大浪是今天的法律版我们要去参加Language Summit这个Language Summit是一个歌internal的这么一个会这是整歌拍抗里面包吻箱的来说最高的这么一个会因为只有CoreDev或者是比较深度的参与C排团开发的或者是一些重要的库的Maintainer或者是拍派的这个人才能参加而且是报名的我记得这块有一个走狼可以直接走过去大家这样这个我们这三层吧就是走过这么一个场浪我记得去年的时候在太阳比较大的时候这个玻璃狂的可热可热可热阿格尔赛我们要先去拿我们的名盘这还有轮椅XSB的几座还不错我就用着哎今天那时候有这么多人我以为今天只有网过去Summit是也有别的内容吗我们看这是那个狼桥这个Conversing Center好像是两个部分然后中央者可以窗过去然后大家可以看左边这块是一个下面是一个巨大的会场对吧然后右边这下面也是一个会场这两个会场在拍抗头都有用左边那个会场到时候是Kino的之类的需要很多很多人套客的时候那是个大会场然后右边这个会场大家可以看现在正在中西屋对吧这个时候BalkrayFinger包括每个工资的展台会在这边这个会场我们在这里前给五号这么多人排队啊我现在只有20分钟不到了嗯这边就是拆贴我们等会儿就要去拆贴了还了一小会了我们时间没有换场感觉第一天来景吧我给你过去拿我们的败吃Thanks这边的败吃质OK我们拿到败吃了来看一下啊这个是我们的败吃我的名字啊上面的东西其实自己随便甜的想甜什么 点什么给大家看一下我们这个窗外的景色啊就挺好看的就是坐在那个住侧的边这个康威士三特正好是在Piezzbao这条河的边上然后这边有个大桥然后这边是河然后另外一条桥这条桥就是我昨天去加游的时候经过那一条桥桥的这一边康威士三特这边是当趟我在当趟找到这个家然后走过了那一段桥去那边再找到家里的寄游行好我们赶紧赶紧去开会赶紧开会我刚才看了一下Skeger今天是由Tutorial的所以才有这么多不是Cord Lab的人过来我一直以为今天只有Lungway上面反正理解错了Tutorial就是拍抗了一个可以付费参加的一个类似小课程吧一个课程应该是三个小时是我不知道还是七五多还是一百到吧大概是这个价格然后它给你讲一个Topic然后也是有很多很多可以选择的课程今年可能有一些生存率的然后有一些什么讲Comprehension的呀都一个小的Topic让你学三百多时也蛮有意思就是这个Lungway Summit 404就是归调文学归调我们来给大家找个嗨谁呢坐这儿大概是一个圣景很多人来讨论都是各路的Cord Lab跟各路的有些人说有点眼神啊不知道是干嘛然后也马上就要开始了开始的时候我们是不能录像的因为这个是完全interno为了让大家更好讨论所以就没有提供录像的这么一个事情然后未来会有一个Blog去聊讨论什么内容我可能会在中间休息的时候给大家简单介绍一下或者是内容啊OK我们现在Coffee Break刚才在现在是吃点饭我们聊了一个玩耀吃吧有Liang和大家的Topic和一个Line Tope因为我们提前结束了Stalee Line Tope两个大Tope都比较大了一个是讲怎么减少Breaking Change另外一个是聊一些跟Racing有关的事情但是都不是那种很渣食的那个Tope都是很大方向很大面上的东西然后有一个小步骈挺好玩的因为我们那个场地特别的大大感觉他才看到了一个大的优形场子然后前面那个幕部呢比较小所以那个做的那个Slide根本就看不清然后大家其实都看不清然后Gridel做我做我的左边他离得比较远然后那个上Slide这时在太小他就用大气把你冲到了那个Slide起来冲到那个奖台上就像大家中学的时候有没有在奖台边然后Drummer一个作为给那个最乔比老大的学生做然后在那儿摆了把你然后做完那儿还蛮搞笑的我们现在是这个休息一下这个就是我们CoffeeBlood有一些咖啡然后那边有一些睡没什么好玩第一天就是因为今天是头脱的用嘛所以来的人不是很多所以东西准备的就是一般办法我也不懂不懂看他看就是今天给大家看一下那边正常的睡屏不急现在也不太早就下来活动我们6个老做太累了刚才和几个扩载不了了一下然后确认了一下这个消息大家可能听说到了一些微软的这两天裁员为什么每次都在拍坑之前我真是不了解微软这两天裁员那裁掉了很多跟女人与相关的人非常遗憾的高材点Faster C拍当题没了微软把Faster C拍当题基本上给裁掉了现在还剩一个manager和一个人然后据说剩下的这个小 team可能也是要在幕府到别的题目或者怎么着总而研制C拍算不会在Faster我还记得我在之前的好多个视频以及直播里面都聊过说现在微软是SponsorCordab最多的公司Not anymore这个时候还挺神奇的去年是Google对吧在拍坑之前Google把整个拍当题目裁了然后今年是微软当然涉及的不光是拍当听说TypeScript那边也裁了差不多整个下面基本上做语言的全都裁掉了就剩一对做AI不知道可能就是确实不赚钱吧挺遗憾的但是也没值今天看的话我们参加这个Language Summit的人因为最开始的有它都有做的介绍有好多好多Mata的员工我感觉至少有10个Mata的员工参加了这次Language Summit所以说现在整个整个IT界对C排堂帮助最大的公司已经从微软变成了Mata现在Mata才是最掉的Mata是最掉的第二阶段结束了比预计时间吧把将机放下来现在10个时间现在就只有半秒时一个原计划人的预较之讨论了三个topic第一个是有关we've readying的现在的情况就是这个PAP精神感觉还是有气他们说这个团线成Pipoformanceoverhead已经分三点一三百分四十这样到了现在的不到百分之十但是三点一十还不是 support 的版本然后有一个topic是有过这个这个处理raising提出了一个全新的一个Proport一个iselated方案看起来比较愿估计还需要好多个PAP把这个版本看到完最后一个是讨论Story Console 讨论一下sc这个持久特别久因为现在的sc变成了一个bottom app就是大家每一个人raisePAP的话都叫sco proof但是他们中午自然然后他们有非常非常多的responsibility不倒是现在整个都背进了当然就卡住了那个PAP就没有没有没有法因为我们现在这个就被触犯了根据去年的经验这个我们饭是相当不难吃的第一天跟第二天都饭相当不难吃应该就是一个小虎然后里面有一个三明治或者沙拉大家看一下大家看一下这是Vegan Salad这个是Vegetarian Salad然后还有一个Gurlutic这边跟一样一共一只有三种东西一个是Gurlutic and Salad另外两个是Vegan跟Vegetarian这个有好还有一个Gurlutic然后进去找做了你就担心路视频大了所以选了一个自己做的桌子别人没有人全部都没有人了来开箱吧开箱吧还有什么东西啊东西这个超级物地大饼一包肤票一份沙拉一个橘子这是我刚到的IT没了就这些怎么说呢就错我吃吧怎么办呢这沙拉沙拉我吃沙拉的时候吃到一半我才想起来这个鸡肉沙拉吃完天没吃到鸡肉我觉得美国人特别逆就是你看他们中午啊说吃了健康一点是吧吃点蔬菜吃点水果但是他们又给你这么大一块饼干跟我里面吃点什么我把饼干最终是烦吗就跟你感觉它吃一点健康的东西完全就是在骗子里最后的热量全要靠这块饼干裤上吃着一个沙拉一个一个橘子的面吃我们吃完准备回去开会了时间太近了还有1-20分钟就要开会了上午脱的太晚了我们刚在身后的这个位置拍完了合影然后他们咖啡败去了我来这儿录点视频大家会报一下我们的工作我们刚才又走了三咖啡客第一个是聊了一下刀空梯身康搜的事一个新的组织吧专门负责文党和相关工作然后后面又聊了一个Packaging Consoncer聊了打包然后一些Packaging相关的工作现在我感觉整个C拍照体系的趋势包括前面聊到Staring Control这个事都是由于这个语言现在用的太多了用不太多了所以有大量的Rewise进来然后CouchbiuCher什么的也非常的火锅远所以一个康搜已经不足于解决所有的问题了所以我都会看住所以现在的趋势感觉是大家在尝试建立更多的这么多似的原味的东西来负责不同面向的东西然后来尽量的把工作去做平坛然后让大家可以更快地更好的去帮助排量解决问题这是两个talk一个是已经成立的一个是可能未来准备做的事情接下来第三个talk是有关Mobile就是我们的拍档在Android跟IOS的两个平台上的一些Support的进展这两平台目前还是T23T23的意思就是我们有一定的Support有至少一个Maintainer负责但是我们不认识Support我们不认识Binary讲了一下在这两个东西上的情况我其实说实话不太知道这两个产品具体的一定有什么但是既然有这个平台就有人在做也是简单的聊了一下刚才打电话还得到了一个好休息我给Android打了个电话说我那个车是不是一切都开了昨天给你们有什么问题吗他们说没有问题给你Farricete了这事应该就过去应该就过去还可以啊虽然昨天立经剥折但是今天逐渐好起来了不用折腾保险的事就算是个好消息然后我刚才在我们开会那个地儿门口看着两个中国学生很年轻然后在门口有点东章希望的我说你们两个干什么来的呀他说我们两个听说这种拍抗然后就过来了好像是昨天还不今天刚刚买了票然后来了之后他就到处逛嘛因为今天整个拍抗的现场只有Toriel和我们那个会然后他就看可能这块有点人然后到门口来逛一逛我说这个会你们可能进不来啊这个会是只有那个Korev然后要提前的预约了然后才能去的包括Toriel你也是要交了钱才能来的然后我就跟他们交换一下点一方式我说你们呀等周末周末周日三天来那三天比较热闹还有好多套可比较好玩现在也来太早了这两个孩子就回去了说中国再来还是准备心能在这个这个拍抗的会上遇到中国人大家如果这个在拍抗会上遇到我的话可以直接跟我打招呼因为说说话这种学术性的尤其是原类型的会议中国人来得挺少的意见了还蛮亲切的可以聊聊天OK我们准备回忆接着开会了应该就最后一趴了这趴完了之后可能会有几个Lighting Talk然后就要散了散了之后今天晚上应该还是跟Korev吃散场了散场了最后两个套第一个套可是拍到怎么跟JavaSquip的互聪第二个套是怎么用Rust冲起来的我感觉这个东西设计过的把一些比较相近的门位还蛮在一起然后最后有一堆Lighting Talk五分钟五分钟还有一些蛮有意思的比如说给拍上加上那个JavaSquip的问号点如果这个东西是难的话它有直接诡成难或者说的话再去XXX的之前Weedo在那个论坦上其实聊过说这个是个不错的比辰我觉得用JavaSquip这个确实是我相信来说比较喜欢那个比辰然后还有一些零级八糟现在准备回酒店鞋一下因为酒店里非常近现在才五点多不停没到吃饭的时候到时候看看他们吃饭的时候蛮好看其实晚上也不知道去哪吃今天回酒店稍微早点酒店中就回来了晚上吃了一个汉堡加薯条我进这个店的时候才发现我去年了我这点是店味道还可以其实不是汉堡三明治吧三明治点鞋然后薯条还挺好吃的晚饭的时候又跟我同事还有我的家庭同事还有我的前同事们聊聊天微软这次首先是DevDev那个大的题就是所有的跟DevDev就是Developer Division就是Support Developer包括VS Code的各种语言的Support的都是那个组然后大家可能从马上听说了这个TypeScript也有一些Cordive被Layoff了然后拍照这边整个FasterC拍照组现在还剩一个Manager和一个InPoE就这样所以基本上可以说这个组没有了就我了解应该是裁掉了三位Cordive没有Google那么极端但是说话也不太理想之前我一直说微软在Sponsor这个FasterC拍照题你们对吧然后Cpad当变得更好现在也不给钱了所有钱都要留到AI那边去也不知道谁来管拍子行了今天就这样吧明天应该是最无聊的一天因为明天只有Tutorial跟那个Sponsor Talk相当于是比较无聊所以明天不一定能完整的出一期视频大家来看吧
