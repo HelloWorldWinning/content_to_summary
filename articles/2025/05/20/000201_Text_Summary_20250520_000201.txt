@@ -1,0 +1,77 @@
+Timestamp: 2025-05-20T00:02:01.274577
+Title: Text_Summary_20250520_000201
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是对 DeepSeek R2 泄露传闻核心要点的提炼和总结：
+
+**DeepSeek R2 泄露传闻核心要点总结**
+
+1.  **结构化摘要：**
+    *   **传闻主题：** 关于 DeepSeek R2 模型的病毒式传播的内部信息疑似泄露。
+    *   **模型规格：**
+        *   参数规模：1.2万亿总参数，780亿活跃参数。
+        *   架构：采用混合 MoE（专家混合）模式。
+    *   **性能与成本：**
+        *   成本效益：传闻比 GPT-4o 便宜 97.3%。
+        *   具体费率：输入约 $0.07/百万 tokens，输出约 $0.27/百万 tokens。
+        *   视觉能力：视觉表现提升，在 COCO 数据集上得分 92.4%。
+    *   **训练数据与硬件：**
+        *   训练数据量：总计 5.2 PB。
+        *   数据构成：89.7% 的数据基于 C-Eval 2.0（暗示侧重中文及相关内容）。
+        *   硬件支持：在华为昇腾 910B 硬件上的利用率达到 82%。
+    *   **战略影响：** 预示着显著摆脱对美国供应链的依赖。
+
+2.  **核心结论句：**
+    传闻中的 DeepSeek R2 以其强大的性能、极高的成本效益和基于国产硬件的基础设施，标志着中国在大模型领域正显著减少对美国供应链的依赖。
+
+3.  **内容总体框架：**
+    传闻中 AI 模型的技术规格、性能优势、基础设施依赖性及其带来的战略供应链影响。
+
+4.  **Mermaid 概念图：**
+<Mermaid_Diagram>
+%%{init: {'theme':'neutral'}}%%
+graph TD
+    A[DeepSeek R2<br>泄露传闻] --> B(模型规格)
+    A --> C(性能与成本)
+    A --> D(训练与基础设施)
+    A --> E(战略影响)
+
+    B --> B1(参数: 1.2T, 78B活跃<br>架构: 混合MoE)
+    C --> C1(成本: 比GPT-4o便宜97.3%<br>$0.07/M in, $0.27/M out)
+    C --> C2(视觉: COCO 92.4%)
+    D --> D1(训练数据: 5.2PB<br>89.7% C-Eval 2.0)
+    D --> D2(硬件: 华为昇腾 910B<br>82% 利用率)
+
+    D2 -- 促成国产化 --> E1[[显著摆脱<br>美国供应链]]
+    C1 -- 增强竞争力 --> E1
+    A -- 整体驱动 --> E1
+
+    E --> E1
+
+    style A fill:#4CAF50,stroke:#388E3C,color:#fff,stroke-width:2px
+    style B fill:#2196F3,stroke:#1976D2,color:#fff
+    style C fill:#FF9800,stroke:#F57C00,color:#fff
+    style D fill:#9C27B0,stroke:#7B1FA2,color:#fff
+    style E fill:#D32F2F,stroke:#C62828,color:#fff
+
+    style B1 fill:#BBDEFB,stroke:#2196F3
+    style C1 fill:#FFECB3,stroke:#FF9800
+    style C2 fill:#FFECB3,stroke:#FF9800
+    style D1 fill:#E1BEE7,stroke:#9C27B0
+    style D2 fill:#E1BEE7,stroke:#9C27B0
+    style E1 fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#D32F2F
+</Mermaid_Diagram>
+
+Content:
+Viral rumors of DeepSeek R2 leaked!
+
+—1.2T param, 78B active, hybrid MoE
+—97.3% cheaper than GPT 4o ($0.07/M in, $0.27/M out)
+—5.2PB training data. 89.7% on C-Eval2.0
+—Better vision. 92.4% on COCO
+—82% utilization in Huawei Ascend 910B
+
+Big shift away from US supply chain.
