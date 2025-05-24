@@ -1,0 +1,133 @@
+Timestamp: 2025-05-24T21:53:20.598711
+Title: 省时又省力，搭建Python+Pytorch环境 BV1VrV6z9Ey1
+URL: https://b23.tv/IUsE09e
+Status: success
+Duration: 9:13
+
+Description:
+**大纲结构总结**
+
+本文提供了一个面向初学者的 PyTorch 深度学习环境搭建指南，旨在通过使用推荐的工具和步骤，实现省时省力的环境配置。
+
+1.  **目标:** 帮助初学者快速、高效、无痛地搭建一个好用的 PyTorch 深度学习编程环境。
+2.  **环境选择建议:**
+    *   **操作系统:** 推荐 Windows 或 Linux，不建议 Mac。
+    *   **硬件:** 初学者建议使用 CPU 或入门级显卡进行训练，避免后续配置和使用中的复杂问题。本文以 CPU 配置为例。
+3.  **核心工具:**
+    *   **Anaconda:** 用于创建和管理独立的 Python 编程环境，解决依赖冲突，方便库的安装。
+    *   **PyTorch:** 开源的深度学习框架。
+    *   **PyCharm:** 集成开发环境 (IDE)，用于编写、运行和调试 Python 代码 (推荐社区版，免费)。
+4.  **搭建步骤 (详细流程):**
+    *   **步骤一：安装 Anaconda:**
+        *   通过微软 Bing 搜索访问 Anaconda 官网。
+        *   下载 Windows 版本安装包。
+        *   运行安装包，全程使用默认选项，尤其是安装路径，不要修改。
+    *   **步骤二：创建 PyTorch 编程环境:**
+        *   搜索并打开 Anaconda Navigator。
+        *   在 Navigator 中，切换到 Environments 选项。
+        *   点击 Create，设置环境名称 (例如 PY123)。
+        *   选择 Python 版本 (推荐 3.10 的最新版)。
+        *   点击 Create 等待环境创建完成。
+    *   **步骤三：在该环境中安装 PyTorch:**
+        *   在 Navigator 的新环境中 (PY123)，点击绿色播放键，选择 Open Terminal。
+        *   在黑框控制台中，通过 Bing 搜索 PyTorch 官网获取针对 Windows、Pip、CPU 版本的安装命令。
+        *   在 Terminal 中输入命令 `pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple` 配置清华源以加速下载。
+        *   粘贴 PyTorch 安装命令并执行。
+        *   等待安装完成，直到看到 "Successfully installed" 信息。
+    *   **步骤四：安装 PyCharm:**
+        *   通过 Bing 搜索访问 PyCharm 官网。
+        *   下载 Community Edition (社区版)，这是免费的。
+        *   运行安装包，全程点击 Next 完成安装。
+    *   **步骤五：配置 PyCharm 使用新环境:**
+        *   运行 PyCharm。
+        *   创建新项目 (New Project)。
+        *   设置项目路径和名称。
+        *   Interpreter Type 选择 Custom Environment -> Add Interpreter -> Conda Environment -> Select existing。
+        *   在列表中找到并选择刚刚创建的 PY123 环境。
+        *   点击 Create 创建项目。如果找不到环境，尝试点击 Reload Environment 或检查 Anaconda 安装路径是否是默认值。
+    *   **步骤六：编写并测试 PyTorch 代码:**
+        *   在 PyCharm 项目中，右键点击项目目录 -> New -> Python File，创建 `Test.py` 文件。
+        *   在 `Test.py` 中编写简单的 PyTorch 测试代码 (导入 torch，创建张量并打印)。
+        *   右键点击 `Test.py` 文件，选择 Run 'Test' (或点击绿色三角运行按钮)。
+        *   在下方窗口查看运行结果，确认输出了 PyTorch 张量，表明安装成功。
+5.  **重要注意事项:**
+    *   全程建议使用微软 Bing 搜索引擎。
+    *   提到的所有软件下载均为免费，无需注册或付费。
+    *   安装 Anaconda 时务必使用默认安装路径。
+    *   利用清华源加速 PyTorch 库的下载。
+
+**核心观点 (一句话):**
+
+本文提供了一条初学者利用 Anaconda、PyTorch 和 PyCharm 快速搭建并验证好用深度学习环境的简化路径，旨在避免常见问题，提升学习效率。
+
+**总体框架 (Overarching Framework):**
+
+基于环境管理工具 (Anaconda)，构建隔离的编程环境，安装核心深度学习库 (PyTorch)，并集成到便捷的集成开发环境 (PyCharm) 中进行开发和验证。
+
+**Mermaid 概念图:**
+
+<Mermaid_Diagram>
+graph LR
+    A["初学者"] --> B{"搭建 PyTorch 环境"};
+    B --> C["提高学习效率"];
+
+    subgraph "工具准备与安装"
+        D["安装 Anaconda\n(环境管理)"];
+        E["安装 PyCharm\n(集成开发环境)"];
+    end
+
+    B --> D;
+    B --> E;
+
+    subgraph "环境构建与配置"
+        F["创建编程环境\n(Anaconda Navigator)"];
+        G["安装 PyTorch\n到环境中 (含清华源)"];
+        H["配置 PyCharm\n使用该环境"];
+    end
+
+    D --> F;
+    F --> G;
+    F --> H;
+    E --> H;
+
+    subgraph "验证与使用"
+        I["编写并运行\n测试代码"];
+        J{"验证环境成功"};
+        K["开始学习/开发"];
+    end
+
+    G --> I;
+    H --> I;
+    I --> J;
+    J --> K;
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#FFFFCC,stroke:#333,stroke-width:2px;
+    style C fill:#D3D3D3,stroke:#333,stroke-width:1px;
+    style D fill:#90EE90,stroke:#333,stroke-width:1px;
+    style E fill:#90EE90,stroke:#333,stroke-width:1px;
+    style F fill:#FFB6C1,stroke:#333,stroke-width:1px;
+    style G fill:#FFB6C1,stroke:#333,stroke-width:1px;
+    style H fill:#FFB6C1,stroke:#333,stroke-width:1px;
+    style I fill:#ADD8E6,stroke:#333,stroke-width:1px;
+    style J fill:#FFFFCC,stroke:#333,stroke-width:2px;
+    style K fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    linkStyle 0 stroke:#333,stroke-width:1px;
+    linkStyle 1 stroke:#333,stroke-width:1px;
+    linkStyle 2 stroke:#333,stroke-width:1px;
+    linkStyle 3 stroke:#333,stroke-width:1px;
+    linkStyle 4 stroke:#333,stroke-width:1px;
+    linkStyle 5 stroke:#333,stroke-width:1px;
+    linkStyle 6 stroke:#333,stroke-width:1px;
+    linkStyle 7 stroke:#333,stroke-width:1px;
+    linkStyle 8 stroke:#333,stroke-width:1px;
+    linkStyle 9 stroke:#333,stroke-width:1px;
+    linkStyle 10 stroke:#333,stroke-width:1px;
+    linkStyle 11 stroke:#333,stroke-width:1px;
+    linkStyle 12 stroke:#333,stroke-width:1px;
+    linkStyle 13 stroke:#333,stroke-width:1px;
+
+</Mermaid_Diagram>
+
+Content:
+拍摄的编程环境是否好用直接影响学习效率今天我会带著大家省石又省力的搭建一个好用的拍套深度学习环境如果同学们是初学者那么就请100%按照我下面说的步骤去做一步都不要改因为按照我说的做省石又省力首先初学拍摄和人工智能建议使用温度系统Linux科学Mac不要考虑其次训练深度学习模型建议直接使用CPU训练或因为打显卡训练因为咱们是初学者这样安排后续基本不会采控省石又省力准备好一台温时或温时一操作系统的个人电脑后跟著视频做以下三件事一下载并安装安装扳担二搭建拍摄环境安装拍套三将拍摄环境倒入拍差编解拍摄测试代码简单来说安娜康大最大的作用是帮助我们创建并管理多个拍摄编程环境通过安娜康大可以高效辨结的安装拍摄的第三方库解决环境中的依赖冲扑首先使用微软逼应搜索安娜康大官网得到的第一个结果就是安娜康大官网接著登录安娜康大的官网点击跳过注册到达登录的页面后下载温斗斯版本安娜康大安装包完成下载后双机运行安装包安装时一直点击Next的按钮就可以了所有的选择都要使用默认的选项不要有任何的修改尤其是安装录锦千万不要修改就使用软件给的默认安装录锦否则后续配置拍拆时会遇到麻烦点击开始安装 install安装需要花费一些时间尤其是到最后会让人觉得安装卡住了但只要没有超过半个小时就不用管它最终都会完成安装接下来我们要机于安娜康大创建拍摄环境然后在这个环境中安装拍套深度学习框架在温斗斯的搜索框中搜索安娜康大哪viGator将其打开哪viGator是一个可实化的管理工具通过哪viGator我们可以对拍摄的环境进行创建和管理打开哪viGator后点击左侧菜单蓝中的Invents环境选项然后点击下方的Create创建一个新的拍摄环境创建的环境名可以随意设置例如这里设置为T1,123其中拍摄版本选择3.10的最新版这里是3.10.16点击Create然后等待环境创建就可以了完成拍摄环境的创建后我们要在这个P1123环境中安装拍套取在左侧点击P1123选择这个环境然后点击这个向波放键的绿三角接著选择Open Terminal就可以打开P1123环境的黑色控制台此时我们会看到黑框框的左侧为P1123它代表了我们打开的环境名称接著我们要输入拍套取的安装命令这条安装命令可以在拍套著官网中找到同样使用毕竟搜索引擎搜索拍套著官网得到的第一条搜索结果就是拍套著官网进入官网后在导航安装选择Gad Started然后就可以看到拍套取的安装方法这里我选择Windows平台派盘装ISON语言CPU版本的拍套进行安装示范此时我们可以得到一条安装命令Hype 3 install复制这条命令输入DipSync让它添加清华源地址这时就会将这条命令加上杠艾和HTTPS这也行地址淀加这个选项后可以大幅提升下载速度将淀加了清华源的派盘装命令复制然后沾贴到刚刚的黑框框中回车接著就会看到拍套取的下载和安装过程当看到Successfully installed这一行后就代表我们完成了拍套这框架的安装为了更方便的编写和运行拍摄程序我们使用PyCharm集成开发环境编写并运行PyCharm代码同样使用并搜索PyCharm官网一条结果就在这条命令上会有一个问题在这条命令上要不然会被握进去就在这条命令上就在这条命令上会被握进去就在这条命令上会被握进去就在这条命令上会被握进去一条结果记位拍拆官网接著我们点击拍拆官网上的下载按钮跳到新页面后向下翻找到他的社区板拍拆可命用妳提Edition下载大家一定要注意以上所有的搜索都要使用微软的避用搜索不要使用任何其他的搜索并且视频中提到的所有下载都是免费的且不需要注册任何网站如果同学们在下载时需要注册网站或花钱购买那就说明下载错了下载拍拆后打开安装包然后一直点击下一步就可以了完成安装后运行拍拆拍拆接著在上方的菜单篮选择File菜单下的New Project然后在New Project最终左侧选择Pewer Pyson右侧第一行是项目保存路径和名称这里取名TestInterpreter Type选择Custom Environment接著选择Select existingType-We-Conda在Invents中找到刚刚创建的PY123环境点击Create创建就可以了这里如果找不到PY123可以尝试点击Reload Environment后再查看如果还是没有说明前面在安装Ataconda时很可能修改了Ataconda的安装路径导致这里找不到环境放进项目后在左侧项目试图中点击右键选择New再选择Pyson File放进一个名为Test.py的文件然后编写如下代码测试PyTouch的安装效果首先使用银泡的Touch倒入PyTouch接著创建一个5x3的张量X最后打印这个张量右键点击左侧目录中的Test.py然后选择菜单中的Rontest它是一个绿三角这时就可以在下方窗口中看到程序的运行结果观察结果可以发现程序输出了一个5x3的张量数组这样我们就确保了PyTouch的安装成功那么到这里省石又省力的搭建一个好用的PyTouch深度学习环境就讲完了感谢大家的观看我们下集的客再会
