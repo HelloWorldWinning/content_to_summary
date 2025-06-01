@@ -1,0 +1,102 @@
+Timestamp: 2025-06-02T00:21:59.753759
+Title: 声音很好听的小姐姐给你推荐几个Linux实用工具 BV11SVozpEez
+URL: https://b23.tv/3fM09nL
+Status: success
+Duration: 9:07
+
+Description:
+好的，这是对提供的文本内容的总结：
+
+**总结纲要：**
+
+1.  **引言:** 作者分享了他在被雨淋湿后对拥有的温暖干燥环境心存感激，并以此为契机分享他发现的一些“出奇地有用”的工具列表。
+2.  **工具及资源列表:**
+    *   **webcam-eyes:** 一个轻量级 Shell 脚本，用于将 DSLR 或现代相机配置为网络摄像头或录像设备。作者发现它易于使用，效果完美，无需自行编写类似脚本，并称赞了其网站的艺术风格。
+    *   **disk:** 一个 `df` 命令的替代工具，用于显示磁盘空间使用情况。它提供彩色、格式化更清晰的输出以及图表，使得信息一目了然，比 `df` 更易读。该工具用 Rust 编写，性能与 `df` 相当（略慢）。
+    *   **Pure bash Bible / Pure SH Bible:** 这些不是程序，而是关于如何在纯粹的 Bash 或 POSIX SH 中完成任务的指南，避免使用外部工具（如处理字符串）。它们是学习、优化 Shell 脚本的宝贵资源，也强调了优先使用内置功能的编程理念。作者表示经常查阅这些指南。
+    *   **Zephyr:** 一个嵌套的 X 服务器应用程序。它有多种实用场景，包括：用于开发和测试窗口管理器、隔离行为异常（如频繁窃取焦点）的应用，以及最重要的用途是为 X11 应用提供沙盒环境以增强安全性。
+    *   **Coreutils 补丁 (cp/mv 进度条):** 一个为标准的 `cp` 和 `mv` 命令添加进度条功能的补丁。在某些无法使用 `rsync` 的特定情况下非常有用。虽然这个补丁没有被 Coreutils 团队接受（因为他们认为 `cp`/`mv` 功能已完整），但作者认为了解其存在是一种价值。
+3.  **结论:** 作者希望分享的这些工具能对观众有所帮助，并强调了了解这些特定工具和资源在需要时带来的便利性。
+
+**核心观点：**
+
+了解特定、有时不太常用的工具和资源，能在特定情境下提供显著的便利、优化或解决方案。
+
+**总览框架：**
+
+系统交互与开发中的实用工具与资源发现及应用。
+
+**概念图：**
+
+<Mermaid_Diagram>
+graph TD
+    A["实用工具与资源分享"] --"涵盖领域"--> B("系统交互 & 开发")
+
+    A --"工具 1"--> C["webcam-eyes"]
+    C --"用途"--> C1["相机作网络摄像头/录像"]
+    C --"特点"--> C2("200行 Shell 脚本")
+    C --"优势"--> C3["易用，无需自写脚本"]
+
+    A --"工具 2"--> D["disk"]
+    D --"用途"--> D1["改进的磁盘空间显示 (df 替代)"]
+    D --"优势"--> D2["彩色、图表、易读"]
+    D --"实现"--> D3("Rust 编写")
+
+    subgraph "Shell 脚本资源"
+        E["Pure bash Bible"] --> E1["bash 内置功能指南"]
+        F["Pure SH Bible"] --> F1["POSIX SH 内置功能指南"]
+        E1 --"强调"--> E2["避免外部工具"]
+        F1 --"强调"--> E2
+        E2 --"带来"--> E3["脚本优化与学习"]
+    end
+    A --"资源"--> E
+    A --"资源"--> F
+
+    A --"工具 3"--> G["Zephyr"]
+    G --"用途"--> G1["嵌套X服务器"]
+    G1 --"场景 1"--> G2["窗口管理器开发"]
+    G1 --"场景 2"--> G3["隔离异常应用"]
+    G1 --"场景 3"--> G4["应用沙盒 (安全性)"]
+
+    A --"工具 4"--> H["Coreutils 补丁 (cp/mv)"]
+    H --"功能"--> H1["添加进度条"]
+    H1 --"价值"--> H2["特定场景替代 (rsync 不适用时)"]
+    H --"现状"--> H3("未被 Coreutils 接受 ('功能完整')")
+
+    %% Styling
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style C1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style C2 fill:#D3D3D3,stroke:#333,stroke-width:1px;
+    style C3 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+
+    style D1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style D2 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style D3 fill:#D3D3D3,stroke:#333,stroke-width:1px;
+
+    style G1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style G2 fill:#E0FFFF,stroke:#333,stroke-width:1px;
+    style G3 fill:#E0FFFF,stroke:#333,stroke-width:1px;
+    style G4 fill:#E0FFFF,stroke:#333,stroke-width:1px;
+
+    style H1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style H2 fill:#E0FFFF,stroke:#333,stroke-width:1px;
+    style H3 fill:#FFB6C1,stroke:#333,stroke-width:1px;
+
+    style E fill:#E6E6FA,stroke:#333,stroke-width:1px;
+    style F fill:#E6E6FA,stroke:#333,stroke-width:1px;
+    style E1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style F1 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style E2 fill:#D0F0C0,stroke:#333,stroke-width:1px;
+    style E3 fill:#90EE90,stroke:#333,stroke-width:1px;
+
+    linkStyle 0 stroke:#555,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+ It was raining super hard earlier and I got caught on it and I got soaked and really sucked. I'm not gonna lie, but I'm inside and warm and dry and very thankful for that. And I have a list of tools that I found oddly useful in one way or another that I wanted to go over. So first of all is webcam eyes, which I've actually been using the past five or 10 videos, because what it does is it will automatically mount up your DSLR or according to them pretty much any modern camera to I mean intended to be used as a webcam, but obviously video recording is easily possible as well. I just record with FFmpeg still and this is a great tool because it's actually just a 200 line shell script. You can go read over it here and you know as with everything I go over I would recommend like look at source code before you run some random program from some random person. But anyways in my experience this has actually been flawless. I've tried it with three different cameras now, two Canon and one Sony and it was just perfect every time like literally plug in the camera and you run the command and it is there and ready to go. I found it while looking into G photo too because I was gonna make my own script to do something very similar to this and then I found this project and it just worked. So I'm very glad that I found this finally and hopefully this helps somebody else if you have you know a situation where you want to be using a camera as either a webcam or a recording device in some way and the art on this page is really cute by the way like I wanted to mention that it's I don't know it's like if corporate art wasn't bad that's what this art is it's really cute. Anyways um let me put that on my other monitor. I wanted to look at an alternative to DF. DF as you probably know lists out disk space on all of your disks but it's kind of hard to look at it and get you know an idea in a glance of how much disk space you have. So there's a cool tall disk spelled with a Y there that is colorized and better formatted and has this little graph for each disk and honestly I feel like this is just so much easier to look at it and get the information I need quickly rather than having to like try to look through DF that's all in one color and by default lists all the temp file systems and all that sort of stuff and disk has pretty much the options you would need in terms of filtering and changing the column order and sorting order. You could even output as J-cellin or CSV if you wanted to do that and this is actually it's written in Rust. I've benchmarked it just a little bit to see how it compared to DF and it was like marginally slower but really only marginally so yeah I've been using this for a while now it's a lot easier to use than DF just in terms of like looking at something getting a glance of the information I need to know. Anyways so next up is something that's technically not a program but it's extremely useful so I feel like it fits this list and that is the pure bash Bible by the same person who actually created Pywall and Neo Fetch and Kiss Linux and like a bunch of other stuff you've probably heard of. This is just such an invaluable tool if you're doing shell scripting but honestly beyond that too so it's got essentially bash alternatives to things you would normally be trying to do with external tools if you didn't know how to do it in bash so for example strings a lot of the time you'd be using said or ock or something else in order to take care of this sort of string manipulation but a lot of the time you could be just doing it directly in bash which for optimization reasons you should be when possible right unless there's a specific reason why you can't or don't want to be doing it in bash there's no reason not to do the really simple string processing in bash because it's going to be far more optimized than calling something heavier like ock to do it right so this is really useful if you're either trying to learn bash or you're trying to spruce up your own scripts optimize your own scripts but beyond that you know conceptually just the idea of if I'm using one tool I should see if I can do what I need to do with that one tool instead of going for you know some external tool and you know you don't have to be in shell or bash in order to apply that logic like no matter what you're coding in the concept of okay if I can do this directly with what I'm already using then why use an external tool I think just conceptually that's worth keeping in mind you know as you're as you're working on optimizing your programs and there's also the pure SH Bible which is essentially the same thing but POSIX SH alternatives so equally useful if you're trying to learn any of this sort of stuff I don't know I feel like this is just a guide that I pull up constantly whenever I'm doing any sort of shell scripting so I figured I should at some point like mention this just because I genuinely use this thing constantly it's it's so helpful and I think he even made it into a book which is kind of cool I don't know it's worth it I mean it's really really really a good guide all right so I've learned to go over Zephyr a bit since I mentioned that in my last video and I didn't really elaborate on it and somebody actually asked like what is what does it do how does it work or something like that so let me actually show you what Zephyr does so this is a miniature DWM opened in my DWM here um no it's essentially a nested x server that you're running as an application so if you're doing anything that requires that sort of idea there this is really useful there's a bunch of use cases so first of all if you're just going to be developing a window manager and you need to be refreshing it constantly and seeing changes as you're making them this is very useful it's this is literally just you know a development build of DWM that I was running here control shift is going to lock your mouse in and out just quit it normally to start it up it's very simple you literally just run essentially like one command I mean two technically but um yeah so just Zephyr with some flags on it and then display one DWM let me go ahead open the arch wiki article for it um there's a few other use cases that I think are worth mentioning so first of all what's actually mentioned on the arch wiki is it might be useful to work around a badly written application for example an application that's going to constantly recreate its window and steal focus which I was actually dealing with a couple years ago and I wish I had found this tool then because um this is perfect if you have something that's like every two seconds going to steal focus just because it's so poorly written but like you have to use it um yeah I wish I wish I had had this then because I had to like just leave it running and go do something else while waiting for it because it would just every two seconds steal focus away from you know whatever other application I was in so that's one of the uses the other use that I you know already mentioned is if you're trying to test a window manager and the arch wiki describes you know how to do that how to set that up but a third use in which actually the arch wiki says that it needs expansion on this and the the brief explanation here is that x11 really does not sandbox applications um it's you know poor or no sandboxing meaning zephyr will allow you to essentially sandbox if you need to sandbox for security reasons or whatever else related to that this will allow you to do that so that's kind of if if anything that's the most important reason that zephyr is you know to be used for right um anyways so I wanted to go over let me copy me going for it I wanted to go over a patch for some of the core utils tools uh copy and move um which you might think copy and move why would I need a patch for that so this is sort of an interesting patch because it adds progress bars to copy and move which you might think why not just use rsync which most of the time yes you probably just want to use rsync because rsync is a great utility and it does all sorts of stuff and I should probably make a video dedicated to it because of how good it is but if you were in a situation for whatever reason you couldn't or didn't want to use rsync maybe there's some arbitrary reason that you know you might encounter that you can't use rsync um this would have a progress bar for copy and move so it's about a thousand lines um you can read through it if you want to read through it and there's actually an install script just to go ahead and install it for you or you can install it manually obviously like I said read through code before you run it um but anyways you can install through bash or through fish bash version works for zsh as well um and I actually I installed it and went ahead and set up an alias so I can just go ahead and just demonstrate it here uh I should have yeah file dot zip let me just copy that here and we've got you know a progress bar gonna go ahead and copy it um essentially I don't know it does what's on the tin right um and it's funny they actually said the original author sent the patch to the core utils team but they didn't want to merge the patch because move and copy are considered feature complete which I can understand but I feel like this is just one of those things that like if you're aware it exists and then one day you're in a situation where you actually need this particular thing then you know it's kind of useful so I don't know I just thought it was kind of cool anyways that's about it I hope you enjoyed I'll see you next time peace
