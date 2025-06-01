@@ -1,0 +1,72 @@
+Timestamp: 2025-06-02T00:56:53.229621
+Title: 看linux和git祖师爷如何评价AI取代码农 BV1exJNzzEnH
+URL: https://b23.tv/kKweax8
+Status: success
+Duration: 5:05
+
+Description:
+好的，这是对文本内容的提炼和总结：
+
+**核心思想提炼与总结**
+
+1.  **对LLMs的本质看法**：演讲者认为LLMs是“加强版自动校正”，通过预测下一个词工作，并非真正智能，但其影响巨大。
+2.  **LLMs在代码编写中的应用**：预计将出现LLM生成的代码被提交进行审查，这已经被视为自动化辅助编程的自然演进，并非革命性变革（类似于从低级语言到高级语言的转变）。
+3.  **LLMs在代码审查和维护中的潜力**：演讲者对此抱有希望，认为LLMs能有效帮助发现人类常犯的“明显愚蠢的错误”，尤其通过识别异常模式来发出警告。
+4.  **潜在担忧**：主要的担忧在于LLMs的“幻觉”（编造信息）特性。如果LLMs在无人监督下执行任务，可能引入大量新的、影响代码或生活的错误。
+5.  **演讲者的应对**：演讲者对上述担忧相对淡定，认为当前人类编写的代码已经充斥着大量错误，LLMs可能不会让情况变得更糟，甚至可能通过发现简单错误而有所帮助。
+
+**核心结论 (一句话)**
+
+考虑到当前人工代码中已存在大量错误，演讲者对LLMs引入新错误的担忧相对有限。
+
+**总体框架**
+
+关于大型语言模型（LLMs）在软件开发（编写、审查、维护）中作用与影响的讨论，对比了其潜在益处与风险，并将其置于编程自动化演进的历史背景下进行评估。
+
+<Mermaid_Diagram>
+graph TD
+    A["大型语言模型 (LLMs)"] --> B["本质: '加强版自动校正'"];
+    B --> C["工作方式: 预测下一个词"];
+    A --> D["对生活影响巨大"];
+
+    subgraph "LLMs在代码中的应用与视角"
+        A --> E["可编写代码"];
+        E --> F["提交代码审查"];
+        E --> G["是编程自动化演进一部分"];
+        G --> H["非革命性变革"];
+        A --> I{"潜力: 辅助代码审查与维护"};
+        I --"希望是"--> J["发现'愚蠢的错误'"];
+        I --"通过"--> K["模式警告"];
+    end
+
+    subgraph "担忧与风险"
+        A --> L["固有风险: '幻觉' (编造信息)"];
+        L --> M["可能引入新错误"];
+        N["无人监督自动化"] --> M;
+    end
+
+    subgraph "演讲者回应担忧"
+        O["当前人工代码错误已很多"] --> M;
+        M --"对比现状, 担忧减少"--> P["不太担心LLMs引入的错误"];
+    end
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#E0FFFF,stroke:#333;
+    style C fill:#E0FFFF,stroke:#333;
+    style D fill:#FFD700,stroke:#333;
+    style E fill:#90EE90,stroke:#333;
+    style F fill:#98FB98,stroke:#333;
+    style G fill:#F5F5DC,stroke:#333;
+    style H fill:#F5F5DC,stroke:#333;
+    style I fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style J fill:#98FB98,stroke:#333;
+    style K fill:#98FB98,stroke:#333;
+    style L fill:#FFB6C1,stroke:#333,stroke-width:2px;
+    style M fill:#FF6347,stroke:#333;
+    style N fill:#FFB6C1,stroke:#333;
+    style O fill:#F5F5DC,stroke:#333;
+    style P fill:#90EE90,stroke:#333,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+ And today, as Jim proved to us, without talking about artificial intelligence and large language models, I typically say artificial intelligence is autocorrect on steroids because all a large language model does is it predicts what's the most likely next word that you're going to use and then it extrapolates from there. So not really very intelligent, but obviously the impact that it has on our lives and the reality we live in is significant. Do you think we will see LLM written code that is submitted to you as a full request? I'm convinced it's going to happen, yes. And it may well be happening already, maybe on a smaller scale where people really use it more as a help in writing code, but it's clearly something where automation has always helped people write code. I mean, this is not anything new at all. We don't write machine code anymore. We don't even write assembler and now we're moving on from C to rest. So I don't see this as something as revolutionary as all the news talk is every day about AI. It's not an area I obviously work with. I'm still very low level. I got into kernels because I love the low level hardware details. And that's why I'm still there. But you say you expect this can help people write code. This can help people get started. But then if we look at the previous conversation and the challenges around code reviews and maintaining, so do you think that large language models will get to the point that they can help us review code, that they can help maintain success? I hope because that's certainly one of the areas where which I see them really being able to shine to find the obvious stupid bugs because I mean, how many people here are actually programmers in this room? A lot. A fair number. A lot of the bugs, ivory, right. A lot of the bugs I see other people write. They're not like subtle bugs. A lot of them are just the stupid bugs that you did not think about. And you don't need any kind of higher intelligence to find them. But having tools that warn, I mean, we have compilers that warn about the obvious, really obvious ones. But having LLMs that warn about slightly more subtle cases where it may just say, this pattern does not look like the regular pattern. Are you sure this is what you mean? And the answer may be, no, that was not at all what I meant. You found an obvious bug. Thank you very much. So I do think that LLMs are going to be a big. You call them disparagingly, like autocorrects on steroids. And I actually think that they're way more than that. And how most people work is we all are autocorrects on steroids to some degree. And I see that as a tool that can help us be better at what we do. But I've always been optimistic. The whole hopeful. Hopeful of us that work. Yes, yes. Helpful. Hopeful and humble. Hopeful and humble. That's my middle name. But on the other hand, I mean, I have been so optimistic that 32 years ago, I was stupid enough to think that you can write a better kernel than anybody else. So you have to kind of be a bit too optimistic at times to make a difference. So my approach to all of this really has to be in that, hey, this is wonderful. This is going to. I love seeing the optimism. I don't necessarily share it. Now a lot of people disagree with it. One of the things that I worry about in all this is we see the hallucinations. We see, and that's a technical term for LLMs, they do hallucinate and they do make up stuff. And so the more they are being put into the position where they will automatically do things without an actual human being there to catch them, the more this becomes scary. Not as scary as they will rule the world and not in the sci-fi sense, but in the so many bugs that will happen and that will affect our lives or our code. Well I see the bugs that happen without them every day. So that may be why I'm not so worried. I think we're doing those just fine on our own. I don't think I can end the AI topic on a better highlight. So let's go from there to.
