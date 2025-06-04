@@ -1,0 +1,145 @@
+Timestamp: 2025-06-04T17:49:56.653889
+Title: GPT-5时代终结！谷歌AI与Claude 4重磅来袭丨AI前沿快报 BV1qojzzvEab
+URL: https://www.bilibili.com/video/BV1qojzzvEab/?spm_id_from=333.1007.tianma.7-2-21.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 13:31
+
+Description:
+好的，这是对您提供的文本的总结、核心观点、总体框架以及概念图：
+
+**总结**
+
+1.  **引言：AI竞赛升级，新标杆确立**
+    *   AI发展迅速，Google和Anthropic发布新模型，显著提升了行业标准。
+    *   竞争焦点从简单的聊天助手转向更专业和复杂的应用。
+
+2.  **Google 的 AI 新产品**
+    *   **V03 (文生视频)：**
+        *   实现了从文字描述到短视频的快速生成（秒级）。
+        *   效果逼真，细节丰富（光照、风动等），可用于商业广告、社交媒体内容。
+        *   支持风格、镜头控制，输出 1080p，角色一致性提高。
+        *   强调提示词工程的重要性。
+    *   **ImageN4 (文生图像)：**
+        *   深度集成至 Google Workspace（ImageFX, Slides, Gmail, Docs, Ads, Android）。
+        *   能快速生成高质量、无瑕疵的图像，适用于商业、营销、创意内容。
+        *   建议用户像导演一样思考，迭代尝试，并在公开使用时保持透明。
+    *   **Flow (AI 电影制作)：**
+        *   V03 的进阶，专注于叙事性长内容制作。
+        *   能够连接场景，保持角色一致性，支持添加对话、配音、音乐、音效。
+        *   目标是让电影制作大众化，目前处于内测阶段，即将开放。
+    *   **Meet 实时翻译：**
+        *   Google Meet 中实现实时语音和字幕翻译，极大地消除了跨语言沟通障碍。
+        *   提升了跨国会议和客户沟通的效率与流畅度。
+        *   设置简单，虽有小瑕疵，但实用性极高。
+
+3.  **Anthropic 的 Claude 4 模型**
+    *   **模型构成：**
+        *   Opus 4：顶级、面向专业用户和企业，算力强大。
+        *   Sonnet 4：平衡型、更易获取和经济实惠。
+    *   **核心策略：**
+        *   聚焦“长时序任务”和持续工作流，而非短时聊天。
+        *   设计用于处理复杂、多步骤的问题，保持长时间的上下文记忆。
+    *   **关键能力：**
+        *   混合模式：支持快速问答和“扩展思考”（模型暂停思考，更深入处理）。
+        *   并行工具使用：扩展思考模式下，可同时调用多个工具（网络搜索、Google Drive 等）。
+        *   MCP 框架：已集成到 API，支持构建复杂的 Agent（智能体）应用，连接外部工具和数据。
+        *   长时记忆：通过“记忆文件”学习并记住用户偏好和历史交互，提升持续对话体验。
+    *   **编程能力：**
+        *   在 SWE 基准测试中表现卓越，Opus 4 和 Sonnet 4 远超现有竞品（如 GPT-4.1）。
+        *   被作者认为是编程领域的“黄金标准”。Sonnet 在并行计算下性能尤其突出。
+    *   **战略重点：**
+        *   避开已被巨头占据的通用聊天助手市场。
+        *   专注于深度、可靠性以及在特定领域（如编程、Agent 工作流）的专业能力，是明智的战略转型。
+    *   **安全与可靠性：**
+        *   重视安全性，减少 Agent 的风险行为。
+        *   提供 SDK，并集成至 VS Code、JetBrains 等开发者工具。
+    *   **价格：**
+        *   Opus 价格较高，Sonnet 更经济。Sonnet 被认为是大多数用户的“甜点”。
+
+4.  **结论**
+    *   Google 和 Anthropic 的新产品推动 AI 进入更实用、更专业、更智能体化的新阶段。
+    *   这些技术为媒体创意、跨语言沟通、编程和自动化工作流带来了巨大潜力。
+
+**核心观点**
+
+Google 和 Anthropic 的最新AI模型显著提升了生成式AI在创意媒体制作、跨语言交流、复杂任务处理及编程等专业领域的实际应用能力，标志着AI发展进入了超越基础聊天功能的新阶段。
+
+**总体框架**
+
+对当前AI竞赛中两大核心参与者（Google和Anthropic）最新模型发布（Google的创意/通信工具及Anthropic的任务/编程模型）的评估与比较，揭示AI能力正转向专业化和Agent驱动的实际应用，并分析这对行业标准和未来发展方向的影响。
+
+**概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["AI竞赛/行业"] --> B["Google 新进展"];
+    A --> C["Anthropic Claude 4"];
+
+    subgraph "Google 新进展 New from Google"
+        B --> B1["V03 文生视频"];
+        B --> B2["ImageN4 文生图像"];
+        B --> B3["Flow AI电影制作"];
+        B --> B4["Meet 实时翻译"];
+    end
+
+    subgraph "Anthropic Claude 4"
+        C --> C1["Claude 4 模型群"];
+        C1 --> C1a["Opus 4 顶级/企业"];
+        C1 --> C1b["Sonnet 4 平衡/可及"];
+    end
+
+    B1 --> D["创意/媒体生成"];
+    B2 --> D;
+    B3 --> D;
+    B4 --> E["实时通信"];
+
+    C1 --> F["长时序任务/Agent AI"];
+    C1a --> G["编程能力"];
+    C1b --> G;
+    C1 --> H["长时记忆"];
+    C1 --> I["并行工具使用"];
+
+    F --> J["Anthropic 战略转型"];
+    G --> K["编程基准测试 (SWE)"];
+    G --> L["实际应用 (开发者)"];
+    D --> M["实际应用 (创意/营销)"];
+    E --> N["实际应用 (跨国协作)"];
+
+    F --> O["Agent/MCP 行业标准"];
+
+    K --> P["新标准"];
+    D --> P;
+    E --> P;
+    F --> P;
+
+    P --> Q["提升行业标准"];
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#90EE90,stroke:#333,stroke-width:2px;
+    style C fill:#FFB6C1,stroke:#333,stroke-width:2px;
+    style B1 fill:#D3FFCE,stroke:#333;
+    style B2 fill:#D3FFCE,stroke:#333;
+    style B3 fill:#D3FFCE,stroke:#333;
+    style B4 fill:#D3FFCE,stroke:#333;
+    style C1 fill:#FFDAB9,stroke:#333;
+    style C1a fill:#FFC0CB,stroke:#333;
+    style C1b fill:#FFC0CB,stroke:#333;
+    style D fill:#FFFFCC,stroke:#333;
+    style E fill:#FFFFCC,stroke:#333;
+    style F fill:#B0E0E6,stroke:#333;
+    style G fill:#B0E0E6,stroke:#333;
+    style H fill:#B0E0E6,stroke:#333;
+    style I fill:#B0E0E6,stroke:#333;
+    style J fill:#E6E6FA,stroke:#333;
+    style K fill:#E6E6FA,stroke:#333;
+    style L fill:#D8BFD8,stroke:#333;
+    style M fill:#D8BFD8,stroke:#333;
+    style N fill:#D8BFD8,stroke:#333;
+    style O fill:#E6E6FA,stroke:#333;
+    style P fill:#FFA07A,stroke:#333,stroke-width:2px;
+    style Q fill:#98FB98,stroke:#333,stroke-width:2px;
+
+</Mermaid_Diagram>
+
+Content:
+ Alright guys, looks like we're saying goodbye to GBT5 before it didn't land, and skivin' straight to GBT6. Before GTA6. Hopefully. Because Google and Enthrobic just crank the bar through the roof. All payis gonna have to pull off something wild to top this. I've been glued to the news all week, ran a few hands on tests, and am ready to spell everything. First up, Google's Fresh AI Toys, V03, Emission 4, plus the new Flow model that's basically built for Hollywood. Then we'll dig into Enthrobic's latest cloth, cloth4, and why it's so good. I'm thinking about barking chat GBT for a lot of my daily work and rolling with cloth4 instead. Alright, let's get into it. V03 is like a jump in time. Instead of painstakingly animating or filming, you literally type what you want. And the AI takes care of the rest. I remember thinking, how many hours would that have taken before? Lighting, actors, retakes. With V03, it's done in seconds. You just type your prompt into Google Video FX and you're off to the races. You could test a prompt like, in rural Ireland, circa 1860s, two women, their long, modest dresses of home-spun fabric, whipping gently in the strong coastal wind, walk with determined strides across a windswept clip top, cinematic style, seven seconds. What came out was so clean it looked like a ready-made TV commercial. How weird backgrounds, no unnecessary elements, just a cinematic shot of women that would make even the biggest brands jealous. I sent it to my friends, and a day later, they wrote to me, hey, is this some new movie? Little did they know that this movie was shot in seven seconds from a couch. Want something more playful? Try a keyboard whose keys are made of different types of candy. Typing makes sweet crunchy sounds. Audio, crunchy sugary typing sounds, the light of giggles. The result? A short, tasty clip that actually made me hungry. Everything is very detailed and even the hand looks really cool. Not bad for AI generation, right? But V03 isn't just for fun. If you are an entrepreneur or run-ats, this is your shortcut to punchy, thumb-stopping content. Take social media, for example. Everyone's fighting for attention, and most business accounts just recycle the same stock footage. With Vayo, you're not limited to what's already out there. Or let's take this prompt. The scene opens with a top-down or wide-angle shot, showcasing a vest and perfectly flat, neutral-colored surface. Each of the thousands of squares has transformed into an identical, perfectly-formed, complex origami figure. Eight seconds. The result looks so calming that I even used it as a screensaver on my iMac, but maybe you're a bit skeptical. It can't be that simple. I get it, but that's the magic of Vayo 3. You can even get specific with style and camera instructions, one at slow motion with natural lighting. Just say so. A woman, classical violinist, with intense focus plays a complex, rapid passage from a Vivaldi concerto in an ornate, sunlit Baroque hall during a rehearsal. The AI handles lighting, camera movement, and focus, so you don't have to. All these videos come out in 1080p, and character consistency is better than anything we've seen before, and you're not locked into one style. One minute you can have an ultra-realistic shot, the next declamation, the next-a-bald, anime-inspired sequence. The creative flexibility is honestly addictive. Every time I share these clips with colleagues or clients, their first question is, who made this? I'm the same, just me and a good prompt. For these models to be more reliable, you need precise prompts. Prompt engineering can be confusing, and that's why we've created an educational 1-1 crash wars into generative AI for all our members. We'll teach you everything you need to know to use AI tools to their fullest from simple prompting to advance tricks that completely change the results. New lessons get added every week, so the advance of the convenient pace. We've condensed all the knowledge of our team into a neat series of lessons, all with visual examples and detailed explanations, and right now, we're offering a massive 50% discount and a six-month access to geek-heavy mix below. The new image generator, ImageN4, is deeply integrated into Google's Hall Go System. You can use ImageN4 right inside ImageFX, Slides, Workspace, Gmail, Docs, Ads, and even on Android, through Gemini. Imagine having the design wizard on call, but instead of spending hours in Photoshop, you just describe what you want, and it appears. Let me give you a real example. When I was making the cover for a news post on Geek Academy, I needed a high-quality close-up picture of a chameleon, and I typed this. Produced a stunning close-up of a chameleon blending into a background of vibrant textured leaves. It's eyes swivel to look directly at the camera. In seconds, ImageN4 gave me this beauty. No awkward artifacts, just a crisp, high-res image ready to use. Want to add some fun to your feed? Create a comic about a cat who wanted to get cheese puffs from the autoram. ImageN4 will make a first-class picture that will not only delight you with its quality, but will even make you laugh a little. You can use it as a comic strip, you create it, and believe me, no one will even realize that it's not real. But where ImageN4 really shines its business, for ads, product launches, and infographics, you can quickly generate an ad image with a prompt like a single, statement piece of jewelry adorns hand-hand with flawless pale skin, a large cocktail ring featuring a prominent, unusually cut gemstone like smoky quartz or an uncut sapphire. The AI leaves actual room for your message, and the visuals look polished right out of the gate. The ring in the hall picture looked so beautiful and realistic that I was considering actually buying this non-existent product. Are there quirks? Sure, sometimes the AI gets creative in unexpected ways, but honestly, for most business needs, ads, social, presentations, it's better and faster than sifting through stock sites or waiting on a designer. My tip is to think like a director. Be specific about style, mood, and colors. Don't be afraid to iterate. And always, if you use AI images in your public work, be transparent. It builds trust and shows you're ahead of the curve. So what's flow? Flow is taking this all to the next level. We're not just talking TikTok clips or pretty pictures, we're talking full cinematic stories, beginning, middle, and flow is built to create entire films using AI from your ideas, sketches, or even a single sentence. So what sets flow apart from Vayo3? Vayo is amazing for short, punchy videos. It's your go-to for five, ten second product ads, animated shorts, quick explainer scenes. Flow on the other hand is all about storytelling. It connects scenes together, keeps characters consistent, and brings your whole narrative to life, almost like having a virtual director and film crew in your laptop. Instead of generating one video at a time, you can plan and create entire sequences, add dialogue, suggest mood or style changes, and let the AI carry your idea all the way through. Think of it as Chad GPT meets Pixar, but you are the showrunner. You sketch out your plot, describe key moments, and flow, build out all the connecting scenes, so your movie actually makes sense and feels cohesive. Flow remembers your main characters throughout the film. No more having your hero turn into a different person halfway through, unless you want a plot twist, want a film noir look, dreamy come in the age, animated comedy, you just describe it. Flow can help you write dialogue, generate voice acting, and even add music or sound effects. All AI driven and customizable. You can tweak scenes, move moments around, or edit pacing, just like a pro film editor. What about access and release dates? Right now Flow isn't fully public yet, it's being tested by select creators and production studios, and Google says broader access is coming soon. What does that mean in Google speak? Most likely early access for some users and creators within the next few months, with a wider rollout later this year or early next. So what's the future of Flow? Honestly, I think we're at the edge of something huge. Flow could make filmmaking as accessible as making a slideshow, you have an idea, you want to test a story, pitch a client, visualize your start up origin myth, or make an animated birthday video, Flow could do it all easily. Imagine the possibilities. Indie filmmakers can pitch full storyboards with voice and sound in a day, marketing teams can whip up brand origin videos or animated explainers instantly. Small businesses can test commercials or social campaigns before spending a dime on production. Even friends can make their own animated series just for fun, and if you're already using V03 or Imogen4, Flow is the next step to bring your brand, your projects, or just your imagination to life. As soon as Flow is open for everyone, you'll hear about it here first. Until then, start collecting your ideas, scenes, and wild movie plots, because very, very soon you'll have an AI-powered film studio at your fingertips. Now, real-time translation in Google Meet. Seriously, this is a total game changer. Imagine you're in a Google Meet call with partners from Japan, Brazil, and Germany. Everyone speaks their own language, but on your side, you hear an instant translation into English or any other language you choose. No more awkward silences or pretending you understood a joke in French. I've been there. Painful. Google showed this off live at the keynote, and it actually works. You just pick your language in meat settings and boom, you get smooth real-time translations as people talk. It even gets most business lingo right, which is honestly a miracle compared to what we had even a year ago. Let's say you're pitching a new client in Tokyo and you don't speak Japanese. Now, you just speak normally, and your words are translated in real-time. That's next-level stuff. Is it perfect? Not 100 percent. Sometimes the AI gets creative with slang. I saw unicorn startup become horse with one horn once, but for real business, it's fast, smooth, and way better than stumbling through Google Translate, or hiring an interpreter. You can also use translation subtitles. How do you use it? Easy. In meat, click the three dots. Go to captions, pick translated captions, choose your language, and you're good to go. And what does this give us in the end? No more language barriers for global teams or clients, makes meetings smoother, faster, and way less awkward. Easy to set up. The voice translation is coming soon. Give it a shot in your next call. It's one of those features that makes you wonder how you ever worked without it. If you try it and something funny happens, let me know in the comments. I love those translation stories. Cloud 4 isn't just one model, but two. Opus 4, the big beefy best of the best one, and Sonnet 4, the more balanced, accessible model. Think of Opus as the heavyweight champion, built for power users, enterprises, and anyone who needs a raw brain power and is willing to pay for it. Sonnet is more like the solid all-rounder, still super smart, but more affordable and easier to access. And Thropics claim to fame this round is that Opus 4 is now the best coding model in the world. Is that marketing? Also, yes, and we'll get to the benchmark in a minute. But the real headline isn't just faster, better, stronger. It's about what these models can actually do now. And to understand that, you need to see where Enthropic is placing its bets. If you rewind a year or two, all the big AI companies were fighting to be the best chat assistant, the digital friend, the super search engine, the robot that helps you with homework, and maybe even tells you a joke. But let's be real. Open AI, Google, and Microsoft more or less ate up that market. At this point, trying to out chat with Chadbought, Chadbought, or Gemini is a bit like opening a new piece of place in New York City and hoping nobody noticed his dominoes where Papa John's already exist. And Thropics saw this and made a smart move. Notice in where AI can do real, sustained work. The new cloud models are designed for long horizon tasks. Instead of just spitting out answers to quick questions, they can keep track of complicated workflows for tens of minutes, even hours. That's a big deal for things like co-generation, data analysis, or running agent workflows that don't just end after one chat bubble. Imagine you're working on a big project, say, writing a research paper, building a complex app, or automating a business process. The last thing you want is an AI that loses its train of thought halfway through, or worse, forgets what you asked 10 minutes ago. That's exactly what Cloud 4 is trying to fix. So how does it work? Both Opus and Sonnet 4 are what Enthropic calls hybrid models. That means you can use them in two ways. Quick mode, instant answers just like a regular chatbot. Extended thinking mode, the model literally stops and thinks in the background, allowing it to solve more complex, multi-step problems. While thinking, it can use various tools, web search, Google Drive, Gmail, Calendar search, and so on. This isn't revolutionary, but here's a unique twist. Cloud can use tools in parallel. That means, instead of waiting for one tool after another, you can fire off several at once, check your email, scrape the web, and pull from your calendar altogether. It's kind of like sending three friends out to buy groceries instead of making one four-solve run back and forth to the sewer. And yes, all this means Cloud 4 is starting to look less like a parrot and more like an actual assistant. Enthropic's MCP framework is becoming an industry standard. It's now integrated into the Cloud API, and even OpenAI and Google have adopted parts of it. What's that mean for you? Basically, more plug-and-play with tools, better workflows, and a path for developers to build truly, agent-based apps on top of Cloud. With the MCP connector, you can connect pretty much any tool or server. So your Cloud-powered agent can suddenly read files, fetch data, analyze contracts, or execute code directly from wherever you want. Let's bring this down to Earth. Suppose you're a developer. You give Cloud Opus 4 a prompt, build me a Python script to process customer invoices, send notifications, and upload the results to Google Drive. Not only can it generate the code, but with the right permissions, it can use the tools to actually run the code, check your drive, and email you the results. You could give it a pile of PDF contracts, and it would pull out all the data you need and summarize it for you all in one workflow. Even more important, Cloud 4 is finally getting long-term memory right. Old-school chatbots would forget who you are after a few messages. Opus 4 builds and maintains what they call memory files. So the 100th time you talk to it, it knows your preferences, your style, and your common requests. If you've ever felt like you're training your digital assistant from scratch every single day, this is huge. Alright, let's pause right here and talk about this chart because there's a lot going on. This is basically the Olympics for AI coding models, and the race this year is actually intense. First up, let me walk you through what you're seeing. This is a SWE bench test, a kind of stress test for coding AIs, where they have to tackle real software engineering tasks, not just auto-complete code snippets. So if you've ever been annoyed by an AI that confidently spits out broken code, this is the kind of benchmark that exposes that nonsense. Let's look at the winners. Opus 4 and Sonnet 4 are absolutely crushing it. Opus 4, 72.5% accuracy on its own, and wild 79.4% when it gets to think in parallel. Sonnet 4 is right there too, 72.7% regular and 80.2% with parallel compute. Yes, Sonnet actually edges out Opus when it gets creative, which is kind of funny since Opus is supposed to be the pro version. Now check out Sonnet 3.7, last generation good, not great, about 62%. And for comparison, look at where the competition is right now. OpenAI codecs 1, 72.1%, still solid, but not top dog anymore. OpenAI 0.3, 69.1%, GBT 4.1, only 54.6%. Honestly for all the hype, that's kind of a surprise. It's way behind the pack here. Gemini 2.5 Pro, 63.2%, which is about where last year's Claude was. So what's my honest take here? If you care about AI right in actual working code, you can drop into a repo code that passes the tests. Claude 4 is now the gold standard. Like, there's a real practical jump here, not just a few decimals. And don't overlook Sonnet 4. If you're on a budget or just trying things out, it's almost as good as Opus. And in some workflows, it's literally better. That means you don't have to splurge for the priciest model to get top results. Now, of course, these are average scores. If you're coded in something weird or working with Legacy spaghetti, your mileage may vary, but for regular devs, teams, startups, honestly, not trying Claude 4 right now is like choosing dial-up internet when everyone else has fiber. But benchmarks are a starting point, not the finish line. Just because a model gets a high score in a lab doesn't mean it's going to feel smarter in real life. You need vibe checks. Does it actually solve your real world problems or just pass a bunch of academic tests? I've seen models ice the SIT and then fail at helping someone plan a birthday party. I'd love to see more open, independent, and even silly real world use cases tested by the community. Here's something I respect. Anthropic isn't pretending to win the chatbot war anymore. Open AI, Google, Microsoft, they've basically cornered the personal assistant market for now. Claude isn't going to be your best friend, therapist, or the voice on your smart speaker. But it could be the backbone of your next coding project, the brains behind your automated business workflows, or the engine for egenic apps that actually get things done. Honestly, I think that's a smart pivot. Focus is underrated in tech. And then Thoropics new strategy is all about depth, reliability, and specialized power, not just broad popularity. One thing that does make me optimistic is in Thoropics focus on safety and reliability. They've dramatically reduced risky shortcut behavior in agentic tasks, the kind of thing where an AI tries to game the rules or hack its own instructions. For use cases where you're automating anything business critical, we're handling sensitive data that matters a lot. Plus they're rolling out prom caching for efficiency and their SDKs let you build your own coding agents. The code now plugs directly into popular developer tools like VS Code and JetBrains. In other words, they're taking the boring but crucial steps to make sure this tech isn't just powerful but usable and secure in the real world. Let's talk money. Claude Opus 4. $15 per million input tokens, $75 per million output tokens. There are discounts for batch processing and the context window is a pretty solid 200K tokens. Sonnet 4, cheaper, more accessible, but still gets you the new capabilities. That's not pocket change, especially for big enterprise users. But compared to what you pay a team of human engineers for the same work, it can make sense for businesses or startups that are serious about scaling up. For most regular users, Sonnet 4 is probably the sweet spot. Tons of power and free for a reasonable number of users. If you're building big agentic systems, Opus 4 is where you'll want to invest. I genuinely respect that anthropic isn't just chasing hype for its own sake. They are building for the next generation of practical, genetic, reliable AI and that's where the real value is going to be. If you are deaf and entrepreneur or anyone thinking beyond just chatting with a bot, Claude Opus 4 and Sonnet 4 are absolutely worth exploring. For now, I'll be writing my own tests, my own real world tests and sharing those results soon, so subscribe if you want the truth, not just the marketing. And as always, if you've got questions, drop them in the comments and if you found this helpful, hit the like button and if you think I missed something, let me know. This is where the AI race gets actually interesting. Thanks for watching and I'll see you in the next deep dive.
