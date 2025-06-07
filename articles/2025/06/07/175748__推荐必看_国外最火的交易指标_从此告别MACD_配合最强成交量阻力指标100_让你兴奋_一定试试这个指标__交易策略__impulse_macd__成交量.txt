@@ -1,0 +1,149 @@
+Timestamp: 2025-06-07T17:57:48.222105
+Title: 【推荐必看】国外最火的交易指标，从此告别MACD，配合最强成交量阻力指标100%让你兴奋，一定试试这个指标 #交易策略 #impulse macd #成交量
+URL: https://www.youtube.com/watch?v=pI1D2lpJCOk
+Status: success
+Duration: 6:03
+
+Description:
+好的，这是根据原文提炼的摘要、核心观点、总体框架以及 Mermaid 概念图，全部采用简体中文：
+
+**摘要**
+
+本文介绍了在推测实验室中探讨的一个流行交易指标 Impulse MACD，并分享了两种高胜率的交易策略。
+
+1.  **Impulse MACD 指标特性**:
+    *   声称是 MACD 的终极版本。
+    *   能识别趋势和背离。
+    *   独特功能：在价格盘整时波动很小或形成直线，便于区分趋势和盘整。
+    *   有效过滤假突破信号，提供低风险交易机会。
+
+2.  **指标设置**:
+    *   搜索 Impulse MACD 并添加到 TradingView 图表。
+    *   **策略一设置**:
+        *    импульс (冲量线) 设置为绿色线图。
+        *   импульс histo (冲量柱) 设置为红色直方图。
+        *   Сигнальная линия (信号线) 设置为黄色线图。
+    *   **策略二设置**:
+        *   импульс (冲量线) 样式改为直方图。
+        *   импульс HISTO (冲量柱) 设置为蓝色直方图。
+        *   Сигнальная линия (信号线) 设置为黄色线图。
+    *   **通用设置**: 提及在策略一中手动添加超买超卖线（主观判断）。在策略二中添加 Volume-based Support & Resistance Zones 指标并设置显示时间周期（例如 4 小时和日线）。
+
+3.  **策略一：Impulse MACD 结合超买超卖线**
+    *   **基础用法局限性**: 普通用法（金叉/死叉）存在假信号。
+    *   **改进方法**: 手动在 Impulse MACD 指标窗口添加超买和超卖水平线。
+    *   **做多规则**:
+        *   在超卖区域。
+        *   绿色冲量线向上穿越黄色信号线形成金叉。
+        *   入场：金叉对应 K 线的收盘价。
+        *   止损：关键 K 线下方或前波段低点附近。
+        *   止盈：分批进行，一部分 1:1 盈亏比，剩余持有博取更高利润。
+    *   **做空规则**:
+        *   在超买区域。
+        *   绿色冲量线向下穿越黄色信号线形成死叉。
+        *   入场：死叉对应 K 线的收盘价。
+        *   止损：关键 K 线上方或前波段高点附近。
+        *   止盈：分批进行。
+    *   **适应性**: 可结合其他指标使用，如在关键支撑位超卖金叉时做多，在关键阻力位超买死叉时做空。多指标共振提高稳定性。
+
+4.  **策略二：Impulse MACD (直方图风格) 结合量能支撑阻力区域**
+    *   **指标组合**: Impulse MACD (直方图风格) + Volume-based Support & Resistance Zones。
+    *   **做多规则**:
+        *   Impulse MACD 直方图在零线下方由红色变为绿色。
+        *   第二个绿色直方图对应的 K 线回踩到支撑区域。
+        *   入场：满足条件的关键 K 线收盘价。
+        *   止损：波段低点或支撑区域下方。
+        *   止盈：分批进行，一部分 1:1，剩余到上方阻力位或其他关键位置。
+    *   **做空规则**:
+        *   Impulse MACD 直方图在零线上方由蓝色变为黄色。
+        *   第二个黄色直方图对应的 K 线回拉到阻力区域。
+        *   入场：满足条件的关键 K 线收盘价。
+        *   止损：波段高点或阻力区域上方。
+        *   止盈：分批进行。
+
+5.  **结论与实践建议**:
+    *   任何策略应用前必须进行大量回测（至少 500 次），统计数据以建立信任。
+    *   交易非一蹴而就，稳定盈利需要持续回放、优化和实战。
+    *   鼓励订阅以获取更多盈利系统。
+
+**核心观点**
+
+本文分享了两种利用 Impulse MACD 指标结合特定条件（如超买超卖线或量能区域）的交易策略，强调通过大量回测和持续优化来实现稳定盈利。
+
+**总体框架**
+
+介绍核心交易指标及其特点 -> 详细阐述基于该指标改进后的两种具体交易策略及其规则 -> 强调策略实施成功的关键因素（大量回测与持续优化）-> 指向最终目标（实现稳定盈利）。
+
+**<Mermaid_Diagram>**
+graph LR
+    A["推测实验室 (背景)"] --> B("Impulse MACD 指标");
+
+    B --> C("指标特性");
+    C --> C1("识别趋势/盘整");
+    C --> C2("过滤假信号");
+
+    B --> D("交易策略");
+
+    subgraph "策略一：Impulse MACD + 超买超卖线"
+        D --> E("策略一");
+        E --> E1("基础用法 (有局限)");
+        E --> E2("添加超买超卖线 (手动)");
+        E --> E3("做多规则 (超卖区金叉)");
+        E --> E4("做空规则 (超买区死叉)");
+        E3 --> E5("入场/止损/止盈");
+        E4 --> E5;
+        E --> E6("可结合其他指标 (如支撑阻力)");
+    end
+
+    subgraph "策略二：Impulse MACD (直方图) + 量能支撑阻力区域"
+        D --> F("策略二");
+        F --> F1("Impulse MACD 直方图");
+        F --> F2("量能支撑阻力区域");
+        F --> F3("做多规则 (下方变色+回踩支撑)");
+        F --> F4("做空规则 (上方变色+回踩阻力)");
+        F3 --> F5("入场/止损/止盈");
+        F4 --> F5;
+    end
+
+    E5 --> G("结果");
+    F5 --> G;
+    G --> H("实现稳定盈利");
+
+    G --> I("策略验证/优化");
+    I --> I1("大量回测 (至少 500 次)");
+    I --> I2("持续优化/实战");
+    I1 --> H;
+    I2 --> H;
+
+    style A fill:#D3D3D3,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style C fill:#ADD8E6;
+    style C1 fill:#E0FFFF;
+    style C2 fill:#E0FFFF;
+    style D fill:#FFFFCC,stroke:#333,stroke-width:2px,color:#333;
+
+    style E fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#F0E68C;
+    style E2 fill:#F0E68C;
+    style E3 fill:#98FB98;
+    style E4 fill:#F08080;
+    style E5 fill:#FFDAB9;
+    style E6 fill:#E0FFFF;
+
+    style F fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#F0E68C;
+    style F2 fill:#F0E68C;
+    style F3 fill:#98FB98;
+    style F4 fill:#F08080;
+    style F5 fill:#FFDAB9;
+
+    style G fill:#D3D3D3;
+    style H fill:#32CD32,stroke:#333,stroke-width:2px,color:#333;
+
+    style I fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style I1 fill:#FF6347;
+    style I2 fill:#FF6347;
+**</Mermaid_Diagram>**
+
+Content:
+WEBVTT Kind: captions Language: en Yo, here I am! Welcome to the speculative laboratory. Recently, a very popular trading indicator abroad has caught my attention. It is said that this is the ultimate version of MACD. In addition to identifying trends and divergences, it also has a unique function, that is, the price is in a consolidation range. When the indicator fluctuates very little, and even forms a completely flat straight line, it becomes clear at a glance whether the market is trending or consolidating. It filters out some false breakthrough signals very well and obtains more trading opportunities with low risk. Next, I will share two This is a trading strategy with a high winning rate. Be sure to click the subscribe button and stick to it until the end. This is definitely an issue you can’t miss. As usual, the details of the Trading view indicators involved will be listed in the description column below the video and in the top comments. The trading indicator used in the strategy is Impulse MACD. We open the indicator search bar of Trading view, enter impulse MACD, click Favorite and add it to the chart, set the color of the impulse line to green, change the style to a line chart, and set impulse histo to red. The style is a histogram signal The line is set to yellow, and the style is set to a line graph. The common usage of impulse MACD is to identify the trend by observing whether the intersection between the green impulse line and the yellow signal line is a golden cross or a dead cross. If these two lines tend to be flat near the zero line, then It indicates that the market is in a consolidation range. At this time, you should reduce the trading frequency and wait for other trading opportunities. However, there are many cases of false signals in this usage. In order to reduce the loss of the account, we need to manually add the overbought and oversold lines in the impulse MACD indicator. The steps are very simple. First, we select the horizontal line function in the sidebar, and then zoom in on the chart to visually detect a dead fork in the early stage, which is not easy to reach. Draw a horizontal line. This position is more subjective, but it is easy to choose. Reversal Finally, we draw an oversold line at the same value in the opposite direction, so that the overbought and oversold areas are marked. Then we explain the trading rules with examples. This is the 1-hour chart of Bitcoin and USD. The proper position of MACD marks the oversold and overbought areas. The second green pulse line in the oversold area should cross the yellow signal line to form a golden cross. The k line corresponding to the golden cross is the key k line, the closing price of the key k line It is our entry position. The stop loss can be set below the key k-line or near the low point of the previous band. The take profit can be taken in batches, that is, part of the profit and loss ratio is 1: 1, and the remaining part is held to gain higher profits. The rules for entering short positions are just the opposite. First, mark the oversold zone and oversold zone at the appropriate position of Impos MACD. Second, the green pulse line in the overbought zone must cross the yellow signal line to form a dead cross. The k line corresponding to the dead cross It is the key K line. We can enter the market at the closing price of the key K line and set the stop loss above the key K line or Near the high point of the previous wave band, choose the method of taking profit in batches. Since this strategy only involves the impulse MACD indicator, it is highly adaptable. You can also combine the characteristics of the indicator into your existing trading system. For example, the price is at If there is an oversold golden cross near the key support position, you can go long. On the contrary, if there is an overbought dead cross at the key resistance position, you can go short, etc. The resonance of mutually confirmed indicators will greatly improve the stability of the transaction. A single indicator can reflect one- sided market information. Like investigating a case, confirming a suspect from multiple aspects such as monitoring human evidence, material evidence, forensic medicine, etc. , the accuracy will be higher. The second strategy about impulse MACD involves two Trading view indicators. First, we find the impulse MACD indicator in the indicator collection column. Click Add to the chart Change the style of the impulse line to a histogram. Set impulse HISTO to a blue style, which is a histogram. Set the signal line to a yellow style and change it to a line chart. Then open the indicator search bar, enter Volume-based Support &amp; Resistance Zones, click Favorite and add to Chart This is a volume-based support and resistance indicator. There are a total of 4 time frames that can be displayed on the chart at the same time. For the simplicity of the chart, we can set it as needed. For example, if we usually trade a 1-hour level chart, the indicator can be set to only display 4 hours and daily. You can choose to disable the support and resistance line of time frame 3 and time frame 4. These are the two crime tools to be used. Next, let’s understand the trading strategy with an example. This is the 15-minute level chart of Bitcoin and US dollars. According to the bull rule first The histogram of the impos MACD indicator is below the zero line, changing from a red column to a green column. The k-line corresponding to the second green histogram needs to step back into the support area. Both conditions are met. This k-line is the key k we are looking for Line The closing price of the key k-line is our entry position. The stop loss is set at the low point of the band or below the support area. The take profit can be selected in batches. Part of it is 1: 1, and the rest can be taken to the upper resistance position or Other key positions Let’s talk about the short position rule. The histogram of the first impulse MACD indicator changes from a blue column to a yellow column above the zero line. The k-line corresponding to the second yellow histogram must be pulled back to the resistance area. Both conditions are met. This root The k-line is the key k-line we are looking for. The closing price of the key k-line is our entry position. The stop loss is set at the high point of the band or above the resistance range. The take profit can also be selected in batches. Well, the content of this issue is me Leaked out the two profitable impulse MACD strategies. If you are already considering using it, you must retest the trading target you are going to do at least 500 times, and count the transaction data to achieve trust and confidence in the trading strategy. Understand that transactions do not happen overnight and growth needs It takes continuous replay optimization and actual combat to achieve stable profits step by step. Remember to click the subscribe button so as not to miss a more profitable trading system. Good morning, good afternoon, good night, bye
