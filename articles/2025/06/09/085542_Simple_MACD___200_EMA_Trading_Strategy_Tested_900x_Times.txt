@@ -1,0 +1,147 @@
+Timestamp: 2025-06-09T08:55:42.410556
+Title: Simple MACD + 200 EMA Trading Strategy Tested 900x Times
+URL: https://youtube.com/watch?v=JbqoJqnrM-Y&si=NWi2kRjeoXYiqzKt
+Status: success
+Duration: 15:55
+
+Description:
+好的，以下是根据您提供的文本提炼的核心思想和总结：
+
+**摘要要求：**
+
+1.  摘要必须清晰地列出**大纲和结构**。
+2.  **核心结论**是什么？用一个句子概括。
+3.  内容的**总体框架**是什么？
+4.  生成清晰的美人鱼概念图（mermaid conceptual map）。此地图应逻辑地连接所有关键要素，重点关注节点之间的有意义关系和美观的布局。将美人鱼代码包装在精确的 <Mermaid_Diagram>...</Mermaid_Diagram> 标签内，不需要三重反引号。确保此地图结构美观，精心选择节点颜色以强调其含义，逻辑上定向的箭头，并尽可能使用子图。**删除所有注释**。美人鱼代码中所有项目的文本必须在**双引号**内。
+
+---
+
+好的，这是对文本内容的总结，按照您的要求进行组织：
+
+**结构化大纲:**
+
+1.  **通道介绍与目标**
+    *   宗旨：测试、改进日内交易策略，并使其可编程为交易机器人。
+    *   灵感来源：Trade Pro 通道。
+2.  **策略描述：200 DMA MACD 回调策略**
+    *   所需指标：200 EMA (又称 200 DMA)，MACD，ATR (平均真实波幅)。
+    *   入场规则 (多头)：
+        *   价格必须高于 200 EMA。
+        *   MACD 线从零线下方回调。
+        *   等待 MACD 线再次向上穿越 (零线或信号线，文本描述是“next cross up”，结合例子看是 MACD 线穿越其信号线向上)。
+    *   入场规则 (空头)：
+        *   价格必须低于 200 EMA。
+        *   MACD 线从零线上方回调。
+        *   等待 MACD 线再次向下穿越 (信号线，文本描述是“cross back down”)。
+    *   出场规则：
+        *   风险：止损设在当前 ATR 值的 2 倍处。
+        *   回报：目标设在风险的 2 倍处 (即 2:1 风险回报比)，对应 ATR 值的 4 倍处。
+3.  **初步回测结果 (100 笔交易)**
+    *   时间周期：30 分钟。
+    *   风险回报比：2:1。
+    *   结果：账户盈利约 8%。
+    *   胜率：35% (35 胜 / 65 负)。
+    *   最大连续亏损：9 笔。
+    *   最大连续盈利：4 笔。
+    *   完成时间：225 天 12 小时。
+    *   初步评估：不算太差，也不算太好。
+4.  **基于初步观察的策略改进建议**
+    *   避免在高波动时期交易。
+    *   避免 200 EMA 频繁穿越 (市场犹豫不决，如 20 根 K 线内频繁穿越)。
+    *   避免价格距离 200 DMA 过远时入场 (风险过高)。
+    *   避免交易信号过于频繁 (市场震荡，如 20 根 K 线内出现两次信号)。
+5.  **进一步回测计划 (总计 900 笔交易)**
+    *   目标：评估不同风险回报比和时间周期的表现。
+    *   测试组合：
+        *   不同时间周期：5 分钟，15 分钟，30 分钟。
+        *   不同风险回报比：1:1，2:1，3:1。
+    *   总计测试：3 * 3 = 9 个组合，其中 30 分钟/2:1 已完成初步测试，故再进行 800 笔交易的回测。
+6.  **汇总回测结果 (900 笔交易)**
+    *   最佳表现：15 分钟时间周期，1:1 风险回报比。
+    *   最差表现：3:1 风险回报比在所有时间周期中普遍表现最差。
+    *   风险回报比分析：
+        *   2:1 在多种时间周期中表现相对均衡 (三个最佳风险回报比中有两个是 2:1)。
+        *   建议坚持使用 2:1 风险回报比 (尽管 15 分钟/1:1 是最佳)。
+        *   建议避免使用 3:1 风险回报比。
+7.  **总体结论与建议**
+    *   是否推荐用于实盘交易：不推荐，需要改进。
+    *   原因：5-10% 的盈利可能被交易费用大量侵蚀。
+8.  **未来可能的改进方向**
+    *   尝试加入 Stochastic RSI 指标。
+    *   尝试加入 50 EMA 或 20 EMA 指标。
+9.  **结尾**
+    *   感谢观看，呼吁点赞、订阅、打开通知、评论建议测试的策略。
+
+**核心结论 (一句话):**
+
+基于对总计900笔交易的回测结果，尽管某些组合（如15分钟图1:1风报比）显示出温和收益，但该策略在未进行进一步重大改进前，考虑到交易费用等因素，不推荐直接用于实盘交易。
+
+**总体框架:**
+
+该内容的总体框架是一个持续迭代的交易策略开发流程：确定策略 -> 初步回测 -> 分析结果与经验性改进建议 -> 多变量进一步回测 -> 汇总分析与得出结论 -> 基于结论提出进一步技术性改进方向 -> 最终目标为自动化实施。
+
+**Mermaid 概念图:**
+
+<Mermaid_Diagram>
+graph TD
+    A["通道目标：测试与改进策略"] --> B["最终目标：自动化交易机器人"];
+
+    subgraph "策略定义"
+        C["策略名称：200 DMA MACD 回调"] --> D["所需指标：EMA 200, MACD, ATR"];
+        D --> E["入场逻辑：价格/EMA, MACD 回调/交叉"];
+        D --> F["出场逻辑：风险回报比 (R:R) & ATR"];
+        E --> G{"交易信号产生"};
+        F --> G;
+    end
+
+    subgraph "回测流程与结果"
+        G --> H["首次回测 (30分, 2:1 R:R)"];
+        H --> I["首次结果 (~8% 盈利)"];
+        I --> J["首次观察与经验改进建议"];
+        J --> K["进一步回测计划 (总计 900笔)"];
+        K --> L["回测变量：时间周期 & R:R"];
+        L --> M["执行回测 (各组合)"];
+        M --> N["汇总回测结果"];
+        N --> O["最佳表现 (15分, 1:1 R:R)"];
+        N --> P["最差表现 (3:1 R:R 居多)"];
+    end
+
+    subgraph "结论与未来方向"
+        N --> Q["总体结论：不推荐直接实盘"];
+        O --> Q;
+        P --> Q;
+        Q --> R["结论原因：收益受限, 费用侵蚀"];
+        Q --> S["未来改进方向：Stoch RSI, 20/50 EMA"];
+    end
+
+    A --> C;
+    S --> C;
+    Q --> B;
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#90EE90,stroke:#333,stroke-width:2px,color:#333;
+    style C fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#F08080,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#FF6347,stroke:#333,stroke-width:2px,color:#333;
+    style R fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 1 stroke:#0000FF;
+    linkStyle 17 stroke:#008000;
+    linkStyle 18 stroke:#FF0000;
+</Mermaid_Diagram>
+
+Content:
+WEBVTT Kind: captions Language: en hello everyone welcome to tradesmart hello everyone welcome to tradesmart hello everyone welcome to tradesmart on this channel we are going to be on this channel we are going to be on this channel we are going to be testing different day trading strategies testing different day trading strategies testing different day trading strategies and improve them for better results the and improve them for better results the and improve them for better results the aim is to create aim is to create aim is to create objective non-emotional strategies which objective non-emotional strategies which objective non-emotional strategies which later can be programmed into the trading later can be programmed into the trading later can be programmed into the trading bot bot bot the main idea to this channel is from the main idea to this channel is from the main idea to this channel is from another channel called trade pro another channel called trade pro another channel called trade pro if you want to check that out links in if you want to check that out links in if you want to check that out links in the description i suggest you do the description i suggest you do the description i suggest you do if you like this type of content hit the if you like this type of content hit the if you like this type of content hit the like button subscribe like button subscribe like button subscribe and comment down below what strategies and comment down below what strategies and comment down below what strategies should i test next should i test next should i test next and now let's not waste any time let's and now let's not waste any time let's and now let's not waste any time let's get into the strategy get into the strategy get into the strategy okay so this strategy is the 200dma macd okay so this strategy is the 200dma macd okay so this strategy is the 200dma macd pullback strategy pullback strategy pullback strategy you will need three indicators the first you will need three indicators the first you will need three indicators the first one is the 200 ema one is the 200 ema one is the 200 ema the second one is the macd and the third the second one is the macd and the third the second one is the macd and the third one is the atr one is the atr one is the atr or average true range or average true range or average true range you can find all of that on trading view you can find all of that on trading view you can find all of that on trading view you just type in every shoe range it will be this one macd this one macd this one macd this one and you're going to search for and you're going to search for and you're going to search for exponential moving average and it will be this one they are all and it will be this one they are all and it will be this one they are all built-ins built-ins built-ins so the rules of this strategy are very so the rules of this strategy are very so the rules of this strategy are very simple simple simple let's go and look at for a long position let's go and look at for a long position let's go and look at for a long position you need the price to be above the 200 you need the price to be above the 200 you need the price to be above the 200 dma dma dma you need a pullback from the macd below you need a pullback from the macd below you need a pullback from the macd below the zero line the zero line the zero line it happened right here and we wait for it happened right here and we wait for it happened right here and we wait for the next cross the next cross the next cross up so this is on this scandal that will be a long position let's just that will be a long position let's just that will be a long position let's just put it in a long put it in a long put it in a long you are targeting a two to one risk to you are targeting a two to one risk to you are targeting a two to one risk to reward ratio reward ratio reward ratio the risk is going to be two times atr so the risk is going to be two times atr so the risk is going to be two times atr so the atr value here the atr value here the atr value here is 85. you just multiply that is 85. you just multiply that is 85. you just multiply that by two it's going to be 170. click ok and target two times click ok and target two times click ok and target two times the risk that's all the risk that's all the risk that's all this is a winning trade this is a winning trade this is a winning trade let's look at another example we have let's look at another example we have let's look at another example we have macd above the price macd above the price macd above the price above the zero line sorry it crosses above the zero line sorry it crosses above the zero line sorry it crosses back down under the zero line back down under the zero line back down under the zero line we have a cross up the price is still we have a cross up the price is still we have a cross up the price is still above the 200 above the 200 above the 200 ema so it will be a long position again target 2 times atr for the risk target 2 times atr for the risk target 2 times atr for the risk which is 2 times 75 is going to be 150 click ok and target 2 times the risk as you can see it's another reading as you can see it's another reading as you can see it's another reading trade trade trade now let's look at the short example you now let's look at the short example you now let's look at the short example you have the price have the price have the price going below the 200 dma going below the 200 dma going below the 200 dma you can see macd is crossing above the you can see macd is crossing above the you can see macd is crossing above the zero line zero line zero line and made a cross back down on this and made a cross back down on this and made a cross back down on this candle candle candle so that's a short position two times atr will be two times seventy two times atr will be two times seventy two times atr will be two times seventy four four four which is going to be 162. oh no sorry which is 148 yeah click okay target two times click okay target two times click okay target two times the risk as you can see it's a losing trade as you can see it's a losing trade as you can see it's a losing trade now very simple strategy let's get into now very simple strategy let's get into now very simple strategy let's get into the 100 trades [Music] [Music] [Music] [Music] [Music] [Music] okay so the results are in after a okay so the results are in after a okay so the results are in after a hundred trades hundred trades hundred trades on the 30 minute time frame with the on the 30 minute time frame with the on the 30 minute time frame with the risk to reward two to one risk to reward two to one risk to reward two to one we gained around eight percent on the we gained around eight percent on the we gained around eight percent on the account which is not account which is not account which is not too bad not too good we've won too bad not too good we've won too bad not too good we've won 35 times and lost 65 times 35 times and lost 65 times 35 times and lost 65 times the max losses in a row was nine and the the max losses in a row was nine and the the max losses in a row was nine and the max wins in a row max wins in a row max wins in a row was four the time took to complete all was four the time took to complete all was four the time took to complete all the hundred trades the hundred trades the hundred trades was 225 days and 12 hours so possible strategy improvements so possible strategy improvements so possible strategy improvements so i noticed when there's too much so i noticed when there's too much so i noticed when there's too much volatility it tends to hit the stop loss volatility it tends to hit the stop loss volatility it tends to hit the stop loss more more more frequently so when you see price going frequently so when you see price going frequently so when you see price going up and down a lot up and down a lot up and down a lot just don't take trade the second just don't take trade the second just don't take trade the second improvement could be improvement could be improvement could be when there's a lot of 200 ema crosses when there's a lot of 200 ema crosses when there's a lot of 200 ema crosses so the price just crosses the 200 ema so the price just crosses the 200 ema so the price just crosses the 200 ema within like within like within like 20 candles you just don't take the trade 20 candles you just don't take the trade 20 candles you just don't take the trade because it means that the market is because it means that the market is because it means that the market is indecisive and you don't know where the indecisive and you don't know where the indecisive and you don't know where the price will go price will go price will go the third one if you see price moves too the third one if you see price moves too the third one if you see price moves too far from the 200 dma far from the 200 dma far from the 200 dma you just don't want to enter because it you just don't want to enter because it you just don't want to enter because it doesn't matter if there's the good doesn't matter if there's the good doesn't matter if there's the good entries entries entries it's just too risky the fourth one it's just too risky the fourth one it's just too risky the fourth one if you get two frequent trade signals i if you get two frequent trade signals i if you get two frequent trade signals i would say two within would say two within would say two within 20 bars you don't want to enter because 20 bars you don't want to enter because 20 bars you don't want to enter because it means the market is choppy it means the market is choppy it means the market is choppy and they don't decide where it wants to and they don't decide where it wants to and they don't decide where it wants to go go go okay so to decide if there would be okay so to decide if there would be okay so to decide if there would be better results with different risk better results with different risk better results with different risk reward ratios or on different time reward ratios or on different time reward ratios or on different time frames i am going to be doing 8 more frames i am going to be doing 8 more frames i am going to be doing 8 more 100 tests we are going to be testing the 100 tests we are going to be testing the 100 tests we are going to be testing the one to one risk reward the three to one one to one risk reward the three to one one to one risk reward the three to one risk to reward risk to reward risk to reward when we are going to be testing it on when we are going to be testing it on when we are going to be testing it on the 15 minute time frame and the 5 the 15 minute time frame and the 5 the 15 minute time frame and the 5 minute time minute time minute time frame let's start with the one to our frame let's start with the one to our frame let's start with the one to our risk to reward ratio risk to reward ratio risk to reward ratio on the 30 minute time frame let's go [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] so [Music] hello hello hello [Music] [Music] [Music] [Music] so [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] hey [Music] [Music] [Music] [Music] [Music] [Music] finally the results are in after 900 finally the results are in after 900 finally the results are in after 900 trades you can see trades you can see trades you can see that the best performing time frame and that the best performing time frame and that the best performing time frame and risk to reward was the 15-minute risk to reward was the 15-minute risk to reward was the 15-minute one-to-one let's go over them one-to-one let's go over them one-to-one let's go over them one by one so on the five-minute time one by one so on the five-minute time one by one so on the five-minute time frame frame frame you get the best results with the two to you get the best results with the two to you get the best results with the two to one risk to reward ratio and the worst one risk to reward ratio and the worst one risk to reward ratio and the worst results with the three to one risk to results with the three to one risk to results with the three to one risk to reward ratio reward ratio reward ratio as you can see on the 15 minute time as you can see on the 15 minute time as you can see on the 15 minute time frame we get the worst results and the frame we get the worst results and the frame we get the worst results and the best results also best results also best results also we get the worst results with the to one we get the worst results with the to one we get the worst results with the to one risk to reward ratio and the best with risk to reward ratio and the best with risk to reward ratio and the best with the one to one the one to one the one to one on the 30 minute time frame which was on the 30 minute time frame which was on the 30 minute time frame which was our original test our original test our original test we get the best results with the two we get the best results with the two we get the best results with the two dimensional ratio which we tested first dimensional ratio which we tested first dimensional ratio which we tested first so what can we learn from this excel so what can we learn from this excel so what can we learn from this excel sheet if you check sheet if you check sheet if you check out i put out four different columns out i put out four different columns out i put out four different columns with the best risk reward diversity with the best risk reward diversity with the best risk reward diversity storyboard the best results and the storyboard the best results and the storyboard the best results and the worst results worst results worst results so if you check out the best race to so if you check out the best race to so if you check out the best race to reward ratios reward ratios reward ratios you can see that two out of the three is you can see that two out of the three is you can see that two out of the three is the two to one risk reward so i would the two to one risk reward so i would the two to one risk reward so i would suggest sticking to the two to one suggest sticking to the two to one suggest sticking to the two to one restore reward ratio restore reward ratio restore reward ratio as the origin started with the worst as the origin started with the worst as the origin started with the worst risk three world ratios were three to risk three world ratios were three to risk three world ratios were three to one in one in one in all of the three cases so i would all of the three cases so i would all of the three cases so i would suggest not taking the risk and suggest not taking the risk and suggest not taking the risk and going with the three dwaris to reward going with the three dwaris to reward going with the three dwaris to reward ratio ratio ratio would i recommend using this strategy would i recommend using this strategy would i recommend using this strategy for live trading for live trading for live trading not really it needs improvements if you not really it needs improvements if you not really it needs improvements if you take your time take your time take your time i am sure you can make this profitable i am sure you can make this profitable i am sure you can make this profitable but with five to ten percent gain on the but with five to ten percent gain on the but with five to ten percent gain on the account account account the fees would eat a significant portion the fees would eat a significant portion the fees would eat a significant portion of your profits of your profits of your profits some strategy improvement tips try some strategy improvement tips try some strategy improvement tips try implementing the stochastic rsi and the implementing the stochastic rsi and the implementing the stochastic rsi and the 50 or 20 ema 50 or 20 ema 50 or 20 ema that pretty much sums up this video that pretty much sums up this video that pretty much sums up this video thank you for watching don't forget to thank you for watching don't forget to thank you for watching don't forget to like like like subscribe hit the notification bell and subscribe hit the notification bell and subscribe hit the notification bell and drop a comment about what strategy drop a comment about what strategy drop a comment about what strategy should i test next should i test next should i test next until the next video have a great time
