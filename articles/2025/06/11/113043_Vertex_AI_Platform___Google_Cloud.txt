@@ -1,0 +1,101 @@
+Timestamp: 2025-06-11T11:30:43.029861
+Title: Vertex AI Platform | Google Cloud
+URL: https://cloud.google.com/vertex-ai
+Status: success
+Duration: 0:00
+
+Description:
+Vertex AI 是 Google Cloud 提供的一个全面的平台，旨在帮助开发者和数据科学家快速有效地构建、部署和管理包括 Gemini 在内的生成式 AI 和传统机器学习模型，并提供按需付费模式和企业级工具支持。
+
+**大纲:**
+
+1.  **Vertex AI 平台概述**
+    *   1.1 统一、全托管的 AI 开发平台，用于构建和使用生成式 AI。
+    *   1.2 核心亮点：集成 Google 最智能的模型 Gemini 2.5。
+    *   1.3 提供 Vertex AI Studio、Agent Builder 和 200+ 基础模型。
+    *   1.4 新客户可获得 $300 免费试用额度。
+2.  **生成式 AI 能力与工具**
+    *   2.1 **Gemini 模型访问与特点:**
+        *   2.1.1 能够理解多种输入（文本、图像、视频、代码）并生成多样化输出。
+        *   2.1.2 可在 Vertex AI Studio 中进行提示和测试。
+        *   2.1.3 利用高级推理和最先进的生成能力构建下一代 AI 应用。
+    *   2.2 **模型库 (Model Garden):**
+        *   2.2.1 提供最广泛的模型选择，包括 Google 自有（Gemini, Imagen 等）、第三方（Anthropic Claude）和开源模型（Gemma, Llama）。
+    *   2.3 **模型定制与扩展:**
+        *   2.3.1 支持针对用例进行多种微调。
+        *   2.3.2 可使用扩展功能获取实时信息和触发操作。
+    *   2.4 **Vertex AI Agent Builder:**
+        *   2.4.1 使开发者能够轻松构建基于企业自身数据的生成式 AI 代理应用。
+        *   2.4.2 提供无代码控制台、强大的接地、编排和定制功能。
+3.  **机器学习平台与 MLOps**
+    *   3.1 **模型训练与调优:**
+        *   3.1.1 统一平台支持模型的训练、测试和调优。
+        *   3.1.2 提供自定义训练工作流，支持开源框架和优化 AI 基础设施。
+    *   3.2 **模型部署与预测:**
+        *   3.2.1 可轻松将模型部署到生产环境，支持批量和在线预测。
+        *   3.2.2 提供模型注册管理服务。
+    *   3.3 **MLOps 工具集:**
+        *   3.3.1 提供专门的 MLOps 工具，用于自动化、标准化和管理 ML 项目。
+        *   3.3.2 主要工具包括：模型评估 (Evaluation)、管道编排 (Pipelines)、模型注册 (Model Registry)、特征存储 (Feature Store) 和模型监控 (Monitoring)。
+    *   3.4 **集成与加速:**
+        *   3.4.1 Vertex AI notebooks (Colab Enterprise/Workbench) 与 BigQuery 原生集成。
+4.  **入门与资源**
+    *   提供多种资源，例如：设置 Gemini API、学习多模态设计最佳实践、代码示例库、Vertex AI Studio 使用指南（原型设计、测试、提示设计、模型调优）、自定义模型训练指南、部署预测指南、生成式 AI 常见任务（总结、分类、提取）等。
+5.  **定价模式**
+    *   基于使用量按需付费。
+    *   涵盖生成式 AI 模型（文本、图像）、AutoML 模型、自定义训练、笔记本、管道、向量搜索等各项服务。
+    *   新客户可获得 $300 免费积分。
+6.  **业务价值与认可**
+    *   帮助企业释放生成式 AI 的全部潜力，快速构建和部署 AI 应用。
+    *   通过客户成功案例展示实际效果。
+    *   被 Forrester 等行业分析机构评为领导者。
+
+**核心观点:**
+
+Vertex AI 是 Google Cloud 提供的一个全面的平台，通过集成先进的生成式 AI (特别是 Gemini) 和强大的机器学习能力，提供端到端工具链，帮助企业和开发者加速 AI 应用的构建、部署和管理。
+
+**Overarching Framework:**
+
+Vertex AI 提供了覆盖从模型选择/创建到部署/管理的端到端 AI/ML 生命周期的一体化平台框架，尤其侧重于生成式 AI（特别是 Gemini）与传统机器学习的结合，并由集成工具和灵活的定价模式提供支持。
+
+<Mermaid_Diagram>
+graph TD
+    A["Vertex AI 平台"] --> B["生成式 AI 能力"]
+    A --> C["机器学习平台"]
+    A --> D["模型库 (Model Garden)"]
+    A --> E["定价"]
+    A --> F["入门与资源"]
+    B --> G["Gemini 模型"]
+    B --> H["Vertex AI Studio"]
+    B --> I["Agent Builder"]
+    B --> J["模型定制与扩展"]
+    C --> K["模型训练"]
+    C --> L["模型预测"]
+    C --> M["MLOps 工具集"]
+    K --> M
+    L --> M
+    M --> N["评估, 管道, 注册, 监控, 特征存储"]
+    D --> B
+    D --> C
+    A --> O["业务价值"]
+    E --> O
+    F --> A
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px
+    style B fill:#90EE90,stroke:#333,stroke-width:1px
+    style C fill:#FFFFCC,stroke:#333,stroke-width:1px
+    style D fill:#FFB6C1,stroke:#333,stroke-width:1px
+    style E fill:#FFA07A,stroke:#333,stroke-width:1px
+    style F fill:#D3D3D3,stroke:#333,stroke-width:1px
+    style G fill:#00BFFF,stroke:#333,stroke-width:1px
+    style H fill:#32CD32,stroke:#333,stroke-width:1px
+    style I fill:#FFD700,stroke:#333,stroke-width:1px
+    style J fill:#BA55D3,stroke:#333,stroke-width:1px
+    style K fill:#4682B4,stroke:#333,stroke-width:1px
+    style L fill:#DB7093,stroke:#333,stroke-width:1px
+    style M fill:#C0C0C0,stroke:#333,stroke-width:1px
+    style N fill:#A9A9A9,stroke:#333,stroke-width:1px
+    style O fill:#3CB371,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+Try Gemini 2.5, our most intelligent model now available in Vertex AI Vertex AI is a fully-managed, unified AI development platform for building and using generative AI. Access and utilize Vertex AI Studio , Agent Builder, and 200+ foundation models. New customers get up to $300 in free credits to try Vertex AI and other Google Cloud products. Build generative AI apps quickly with Gemini Train, test, and tune ML models on a single platform Accelerate development with unified data and AI Getting started with Gemini on Vertex AI 5 min video Features Vertex AI offers access to the latest Gemini models from Google. Gemini is capable of understanding virtually any input, combining different types of information, and generating almost any output. Prompt and test Gemini in Vertex AI Studio , using text, images, video, or code. Using Gemini’s advanced reasoning and state-of-the-art generation capabilities, developers can try sample prompts for extracting text from images, converting image text to JSON, and even generate answers about uploaded images to build next-gen AI applications. 3:44 Choose from the widest variety of models with first-party (Gemini, Imagen 3, Chirp, Veo), third-party (Anthropic's Claude Model Family), and open models ( Gemma , Llama 3.2) in Model Garden . Use extensions to enable models to retrieve real-time information and trigger actions. Customize models to your use case with a variety of tuning options for Google's text, image, or code models. Generative AI models and fully managed tools make it easy to prototype, customize, and integrate and deploy them into applications. Data scientists can move faster with Vertex AI Platform's tools for training, tuning, and deploying ML models. Vertex AI notebooks , including your choice of Colab Enterprise or Workbench, are natively integrated with BigQuery providing a single surface across all data and AI workloads. Vertex AI Training and Prediction help you reduce training time and deploy models to production easily with your choice of open source frameworks and optimized AI infrastructure . Vertex AI Platform provides purpose-built MLOps tools for data scientists and ML engineers to automate, standardize, and manage ML projects. Modular tools help you collaborate across teams and improve models throughout the entire development lifecycle—identify the best model for a use case with Vertex AI Evaluation , orchestrate workflows with Vertex AI Pipelines , manage any model with Model Registry, serve, share, and reuse ML features with Feature Store , and monitor models for input skew and drift. Vertex AI Agent Builder enables developers to easily build and deploy enterprise ready generative AI experiences. It provides the convenience of a no code agent builder console alongside powerful grounding, orchestration, and customization capabilities. With Vertex AI Agent Builder developers can quickly create a range of generative AI agents and applications grounded in their organization’s data. How It Works Vertex AI provides several options for model training and deployment:  Common Uses Set up the Vertex AI Gemini API Learn multimodal design best practices Repository for sample code and notebooks Set up the Vertex AI Gemini API Learn multimodal design best practices Repository for sample code and notebooks Get an introduction to generative AI on Vertex AI Vertex AI Studio offers a Google Cloud console tool for rapidly prototyping and testing generative AI models. Learn how you can use Generative AI Studio to test models using prompt samples, design and save prompts, tune a foundation model, and convert between speech and text. View available models in Vertex AI Studio Introduction to prompt design Generative AI prompt samples See how to tune LLMs in Vertex AI Studio Get an introduction to generative AI on Vertex AI Vertex AI Studio offers a Google Cloud console tool for rapidly prototyping and testing generative AI models. Learn how you can use Generative AI Studio to test models using prompt samples, design and save prompts, tune a foundation model, and convert between speech and text. View available models in Vertex AI Studio Introduction to prompt design Generative AI prompt samples See how to tune LLMs in Vertex AI Studio Use gen AI for summarization, classification, and extraction Learn how to create text prompts for handling any number of tasks with Vertex AI’s generative AI support. Some of the most common tasks are classification, summarization, and extraction. Gemini on Vertex AI lets you design prompts with flexibility in terms of their structure and format. Overview of prompting strategies Learn about AI-powered prompt writing tools in Vertex AI Studio View all generative AI prompt samples Use gen AI for summarization, classification, and extraction Learn how to create text prompts for handling any number of tasks with Vertex AI’s generative AI support. Some of the most common tasks are classification, summarization, and extraction. Gemini on Vertex AI lets you design prompts with flexibility in terms of their structure and format. Overview of prompting strategies Learn about AI-powered prompt writing tools in Vertex AI Studio View all generative AI prompt samples Custom ML training overview and documentation Get an overview of the custom training workflow in Vertex AI, the benefits of custom training, and the various training options that are available. This page also details every step involved in the ML training workflow from preparing data to predictions. Custom training beginner's guide Train a model using Vertex AI and the Python SDK Learn to build and deploy machine learning solutions on Vertex AI Get a video walkthrough of the steps required to train custom models on Vertex AI. Custom ML training overview and documentation Get an overview of the custom training workflow in Vertex AI, the benefits of custom training, and the various training options that are available. This page also details every step involved in the ML training workflow from preparing data to predictions. Custom training beginner's guide Train a model using Vertex AI and the Python SDK Learn to build and deploy machine learning solutions on Vertex AI Get a video walkthrough of the steps required to train custom models on Vertex AI. Deploy for batch or online predictions When you're ready to use your model to solve a real-world problem, register your model to Vertex AI Model Registry and use the Vertex AI prediction service for batch and online predictions. Get hands on with a Vertex AI Predictions codelab Simplify model serving with custom prediction routines Use prebuilt containers for prediction and explanation Watch Prototype to Production , a video series that takes you from notebook code to a deployed model. Deploy for batch or online predictions When you're ready to use your model to solve a real-world problem, register your model to Vertex AI Model Registry and use the Vertex AI prediction service for batch and online predictions. Get hands on with a Vertex AI Predictions codelab Simplify model serving with custom prediction routines Use prebuilt containers for prediction and explanation Watch Prototype to Production , a video series that takes you from notebook code to a deployed model. Pricing Generative AI Imagen model for image generation Based on image input, character input, or custom training pricing . Starting at $0.0001 Text, chat, and code generation Based on every 1,000 characters of input (prompt) and every 1,000 characters of output (response). Starting at $0.0001 per 1,000 characters ​​AutoML models Image data training, deployment, and prediction Based on time to train per node hour, which reflects resource usage, and if for classification or object detection. Starting at $1.375 per node hour Video data training and prediction Based on price per node hour and if classification, object tracking, or action recognition. Starting at $0.462 per node hour Tabular data training and prediction Based on price per node hour and if classification/regression or forecasting. Contact sales for potential discounts and pricing details. Contact sales Text data upload, training, deployment, prediction Based on hourly rates for training and prediction, pages for legacy data upload (PDF only), and text records and pages for prediction. Starting at $0.05 per hour Custom-trained models Custom model training Based on machine type used per hour, region, and any accelerators used. Get an estimate via sales or our pricing calculator . Contact sales Vertex AI notebooks Compute and storage resources Based on the same rates as Compute Engine and Cloud Storage . Refer to products Management fees In addition to the above resource usage, management fees apply based on region, instances, notebooks, and managed notebooks used. View details . Refer to details Vertex AI Pipelines Execution and additional fees Based on execution charge, resources used, and any additional service fees. Starting at $0.03 per pipeline run Vertex AI Vector Search Serving and building costs Based on the size of your data, the amount of queries per second (QPS) you want to run, and the number of nodes you use. View example . Refer to example View pricing details for all Vertex AI features and services. How Vertex AI pricing works Pay for Vertex AI tools, storage, compute & Cloud resources used. New customers get $300 free credits to try Vertex AI & Google Cloud products. Generative AI Imagen model for image generation Based on image input, character input, or custom training pricing . Starting at $0.0001 Text, chat, and code generation Based on every 1,000 characters of input (prompt) and every 1,000 characters of output (response). Starting at $0.0001 per 1,000 characters ​​AutoML models Image data training, deployment, and prediction Based on time to train per node hour, which reflects resource usage, and if for classification or object detection. Starting at $1.375 per node hour Video data training and prediction Based on price per node hour and if classification, object tracking, or action recognition. Starting at $0.462 per node hour Tabular data training and prediction Based on price per node hour and if classification/regression or forecasting. Contact sales for potential discounts and pricing details. Contact sales Text data upload, training, deployment, prediction Based on hourly rates for training and prediction, pages for legacy data upload (PDF only), and text records and pages for prediction. Starting at $0.05 per hour Custom-trained models Custom model training Based on machine type used per hour, region, and any accelerators used. Get an estimate via sales or our pricing calculator . Contact sales Vertex AI notebooks Compute and storage resources Based on the same rates as Compute Engine and Cloud Storage . Refer to products Management fees In addition to the above resource usage, management fees apply based on region, instances, notebooks, and managed notebooks used. View details . Refer to details Vertex AI Pipelines Execution and additional fees Based on execution charge, resources used, and any additional service fees. Starting at $0.03 per pipeline run Vertex AI Vector Search Serving and building costs Based on the size of your data, the amount of queries per second (QPS) you want to run, and the number of nodes you use. View example . Refer to example View pricing details for all Vertex AI features and services. Business Case Unlock the full potential of gen AI Unlock the full potential of gen AI "The accuracy of Google Cloud's generative AI solution and practicality of the Vertex AI Platform gives us the confidence we needed to implement this cutting-edge technology into the heart of our business and achieve our long-term goal of a zero-minute response time." Abdol Moabery, CEO of GA Telesis How grounding your models helps you gain a competitive edge. How generative AI takes enterprise search to a whole new level. See how our customers are implementing generative AI to transform their businesses. Analyst reports TKTKT Google named a Leader in The Forrester Wave™: AI Infrastructure Solutions, Q1 2024 , receiving the highest scores of any vendor evaluated in both Current Offering and Strategy. Google is a Leader in The Forrester Wave™: AI Foundation Models For Language, Q2 2024. Read the report . Google named a leader in the Forrester Wave: AI/ML Platforms, Q3 2024. Learn more .
