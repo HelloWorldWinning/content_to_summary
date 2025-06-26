@@ -1,0 +1,109 @@
+Timestamp: 2025-06-26T11:54:11.952291
+Title: 智能体接入万物！MCP+百度地图+千帆AppBuilder保姆级教程 BV1dbdxY5EUP
+URL: https://b23.tv/hRuPSFT
+Status: success
+Duration: 7:31
+
+Description:
+以下是根据提供的文本整理的摘要，包含大纲、核心观点、总体框架和Mermaid图：
+
+**摘要**
+
+**1. 大纲**
+
+*   **引言：智能体时代的到来与MCP协议的提出**
+    *   2025年被视为智能体元年 (AZN原点)。
+    *   Mannos等引爆通用智能体概念。
+    *   MCP协议应运而生，旨在统一智能体与外部工具的连接。
+    *   头部公司和开发者纷纷押注智能体赛道。
+*   **MCP协议的核心原理与技术细节**
+    *   提出者：Anthropic (发布Claw大模型的公司)。
+    *   类比：软件领域的Type-C扩展坞，Agent时代的HTTP协议。
+    *   目标：极大降低大模型调用外部软件/工具接口的难度。
+    *   组成部分：
+        *   MCP客户端 (如 Chirac Studio, Cursor, 百度智能云千帆 FBuilder)：供用户/Agent调用大模型的软件，类似于互联网浏览器。
+        *   MCP服务器 (由软件提供)：暴露软件功能接口给大模型调用，类似于互联网网站/App。
+        *   MCP市场 (如 MCP.SO)：发现和分发支持MCP应用的平台，类似于门户网站。
+    *   工作机制：MCP服务器通过规范（如包含特定格式注释的函数）描述可调用的功能、参数和作用，供大模型理解和使用。
+*   **MCP协议带来的机遇与价值**
+    *   **商业机会：**
+        *   催生新的智能体生态和应用分发渠道。
+        *   现有软件/服务通过发布MCP服务实现AI自动化接入，扩大应用场景。
+        *   开发者可基于MCP快速构建能干的AI应用（如类比Mannos）。
+    *   **学术机会：**
+        *   研究基于MCP的大模型工具调用、Agent架构、人机交互等。
+*   **MCP协议的应用实践 (以百度地图为例)**
+    *   百度地图：国内首家接入MCP的地图服务商，开放10个核心功能API (搜地点、查天气、路线规划等)。
+    *   **方法一：使用MCP客户端软件调用 (如 Chirac Studio)**
+        *   配置API Key和MCP服务器信息。
+        *   通过自然语言指令驱动Agent调用百度地图的地理编码和路线规划工具。
+    *   **方法二：使用开发平台通过代码调用 (如 百度智能云千帆 FBuilder)**
+        *   在FBuilder中创建Agent。
+        *   配置模型和调用逻辑。
+        *   通过Python脚本 (`test.py`) 调用FBuilder Agent，该Agent内部通过MCP调用百度地图服务。
+*   **开发自己的MCP服务**
+    *   遵循MCP规范 (如 `map.py` 中的`OutMCP.2`开头的函数和注释) 编写MCP服务器。
+    *   让自己的软件功能被大模型“看懂”并调用。
+*   **总结：MCP作为连接大模型与万物的基础底座**
+    *   类比Type-C和HTTP，为未来的智能体生态奠定基础。
+    *   预示着超级能干的应用和繁荣的智能体生态即将到来。
+
+**2. 核心观点**
+
+MCP协议作为大模型连接外部软件和服务的关键底座，将极大推动通用智能体的发展和应用的繁荣。
+
+**3. 总体框架**
+
+大模型与外部工具/服务互联互通的协议及生态框架。
+
+**4. Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "核心交互 Core Interaction"
+        A["大模型 (LLM)"] --> B["MCP客户端 (Client)"];
+        B --> C["MCP协议"];
+        C --> D["MCP服务器 (Server)"];
+        D --"暴露功能 Functions"--> C;
+    end
+
+    subgraph "生态与成果 Ecosystem & Results"
+         C --> E["MCP市场 Marketplace"];
+         E --"发现连接 Discover & Connect"--> D;
+         C --> F["智能体应用 Agent Applications"];
+         D --> F;
+
+    end
+
+    A --"需要工具能力 Need Tool Capability"--> B;
+    F --"服务用户 Serve Users"--> G["用户 User"];
+
+    %% Examples
+    B --"例如：Chirac Studio\nCursor\n千帆FBuilder"--> B;
+    D --"例如：百度地图\nBlender\nUntitle"--> D;
+    E --"例如：MCP.SO"--> E;
+
+    %% Styling
+    style A fill:#90EE90,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style D fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#CCCCCC,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#98FB98,stroke:#333,stroke-width:2px,color:#333;
+    style G fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 1 stroke:#333,stroke-width:2px;
+    linkStyle 2 stroke:#333,stroke-width:2px;
+    linkStyle 3 stroke:#333,stroke-width:1px;
+    linkStyle 4 stroke:#333,stroke-width:1px;
+    linkStyle 5 stroke:#333,stroke-width:1px;
+    linkStyle 6 stroke:#333,stroke-width:1px;
+    linkStyle 7 stroke:#333,stroke-width:1px;
+    linkStyle 8 stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+    linkStyle 9 stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+    linkStyle 10 stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+
+</Mermaid_Diagram>
+
+Content:
+2025年被称为智能体AZN的原点前有Mannos火爆全网拉开通用智能体的讯幕后有MCP协议恒空出势 意统 江湖各路大佬也纷纷压住智能体赛道想做出超级能干的AI应用我花了一周时间整理出详细的MCP支持库包含MCP的基本原理 技术细节MCP带来的商业和学术新机会保母级配置和使用较成还有大量MCP的应用案例强烈推荐你花半小时 从头到尾看一遍正好 百度地图开放了10个核心功能的MCP服务是国内首家揭入MCP协议的地图服务商百度智能于千方F Builder也支持钓用和发布MCP服务这个视频我就带大家了解一下MCP协议手把手带大家分别在 Chirac Studio和百度智能于千方F Builder中钓用百度地图的MCP服务解锁大模型一键接入万物的私华体验MCP的全程是Model Context Protocol模型上下文协议由安斯罗屁股公司也就是发布Claw的大模型的内下公司在2024年提出MCP协议就向Type-C扩展污让海量的软件和工具能够差在大圆模型上供大模型钓用在这张图中 电脑里安装来MCP客户端软件比如Cursor Cloud Desktop和我们一会要用到的Chirac Studio用来钓用大模型这类MCP客户端软件就好比互联网时代的流冷气通过MCP协议大模型就可以轻松钓用百度地图Untitle游戏开发Blender三为建模Slic聊天等等支持MCP协议软件的接口实现AI自动化操作这些工具这类智能体就好比互联网时代的网站和App你可以在MCP市场上比如MCP.SO这个网站找到各种支持MCP的应用这类网站就好比互联网时代的好一二三和二三四五门户网站MCP协议极大降低了大模型钓用外部工具软件接口的难度不需要用户在苦哈哈的去写方向靠的提示词只需点点数标就可以让同一个大模型钓用不同的软件和工具只要扩展屋上差的工具足够多每个人都能几分钟搭记木手搓出类似Mannos的智能体钓用Untitle的MCP服务让AI自己开发游戏钓用Blender的MCP服务让AI自己三位建模钓用百度地图弹MCP服务让AI自己联网查路矿导航钓用PlayRite的MCP服务让AI自己操作网页MCP将催生出新的智能体生态和应用分发取道类似互联网的HTP协议所有智能体都值得用MCP重新做一遍未来的各种办公剪辑游戏建模编程软件全都会发布自己的MCP服务方便大模型钓用从学术角度研究MCP也可以发不少论文我在这式库里列举了不少创新点百度地图是国内首家建筑MCP协议的地图服务商开放了10个符合MCP协议标准的API接口比如搜地点、查天气、查路矿、查精美度、路线规划我也写了一个超详细的保密集教程下面来上手实战一把首先在百度地图开放平台申请一个API key 记录下来第一种钓用方法使用查理 Studio 或者Cursor 这样的MCP客户端软件按照我这是库中的教程一步一步安装环境配置大模型API配置查理 Studio打开查理 Studio 点左下角设置在模型服务里面配置好AI Hub Mix的API key点击MCP服务器编辑MCP配置传入这段JSON把这个百度地图的 key 换成你自己的 key打开开关等绿灯亮起下面显示出所有的十个韩数以及对应的参数就说明配置成功了回到对话界面选择模型为 Cloud 3.5开启百度地图的MCP服务器我的指令是开车从上海环球港开到同级大学四频路销区Agent先钓用了百度地图的地理编码MCP工具解析出两个地点的精美度然后再钓用百度地图的路线规划MCP工具得到全程的导航和路况信息再是一个同样得到了不错的效果如果我想通过代码来钓用MCP服务接入到自己的应用中应该怎么操作呢下面就是用第二种方法基于百度只能于千方FBuilder用代码首错MCP客户端进入千方FBuilder主业这是一个企业级大模型应用开发平台点免费适用创建自主规划Agent点AI自动配置输入一句简短的提示词让AI自动扩写AI自动扩写出了角色任务工具能力和要求与限制删除掉AI自动配置的组件因为我们是要钓用MCP服务所以不需要使用平台内置的组件点上方配置模型将规划模型和问答模型的最大思考次数都拉满我选择的是千方内置的模型你也可以换成Dipsick V3试试点右上角发布应用回到个人空间技巧应用的ID在API key中创建一个新的器并添加刚刚创建好的应用支持库可以不用配置技巧这个器然后下载我提供的压缩包里面有两个文件在麦普点P外文件中填入百度地图的API key在TESD点P外中填入FVL点的API key应用ID以及用户要输入的指令在命令行中运行Python TESD点P外就可以看到智能体Agent调用MCP工具的全过程和刚刚在Charis Studio里是一样的你可能会问大模型是怎么知道百度地图提供了哪些工具以及每个工具是做什么用的呢答案就藏在麦普点P外的脚本中每一个支持MCP的软件都会有这么一个MCP server人件里面列出了所有支持MCP钓用的韩数韩数驻式里的内容是给AI看的描述了这个韩数的作用以及传入的参数每一个以OutMCP.2开头的韩数都是一个百度地图支持MCP钓用的工具你也可以按照这个规范自己开发出MCP server让你自己的软件也支持MCP协议让大模型能看懂并钓用你软件中的功能千方MPU的是国内手家建范MCP协议的大模型应用开发平台既可以像刚刚一样通过代码SDK钓用其他MCP的服务也可以把MCP自带的海量组件转化为类似麦普点P外这样的MCP server供其他大模型钓用实现工具生态的高效共享轻松开发出代码态和非代码态的企业机智能体总结一下我们学习了MCP的原理优势前进分别在Chairer Studio和百度智能与千方FPU点中钓用了百度地图的MCP服务作为智能体时代的Type-C和HTEPMCP确实为大模型接入万物提供了基础的底座超级能干的应用和繁荣的智能体生态即将诞生
