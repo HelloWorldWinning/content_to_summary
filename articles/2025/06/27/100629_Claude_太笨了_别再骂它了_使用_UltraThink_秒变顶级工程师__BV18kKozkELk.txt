@@ -1,0 +1,143 @@
+Timestamp: 2025-06-27T10:06:29.397268
+Title: Claude 太笨了？别再骂它了，使用 UltraThink 秒变顶级工程师！ BV18kKozkELk
+URL: https://b23.tv/KNPAsk0
+Status: success
+Duration: 6:08
+
+Description:
+好的，以下是根据提供的文本提取的核心思想总结：
+
+**总结要求：**
+
+1.  摘要必须清晰地**列出并结构化**。
+2.  总结的**核心要点**是什么？用一句话概括。
+3.  内容中体现的**总体框架**是什么？
+4.  生成一个清晰的 Mermaid 概念图。
+
+---
+
+**结构化摘要：**
+
+1.  **Oltra sync 机制在 code-code 中的作用**
+    *   `Oltra sync` 是 code-code 中的一个关键指令（“魔法词”）。
+    *   其功能是**自动触发最大的思考预算**（token 预算）。
+    *   专用于处理**复杂问题**，提供**深度分析**和**最高级别的计算思考时间**。
+    *   通过内置的预处理机制，`Oltra sync` 被映射到最大的 token 预算，允许 code-code 进行**拓展推理**。
+
+2.  **Oltra sync 的使用场景与限制**
+    *   使用场景：研究复杂技术问题（如迁移系统最佳方法），分析大型代码库并推荐优化，面临复杂的价值决策或性能优化。
+    *   必要性：code-code **不会自动**对简单需求触发高级思考（甚至普通 sync）。需要显式使用关键词。
+    *   适用平台：**仅限 code-code 的终端界面**，不适用于网页聊天或 API。
+    *   使用建议：保留给需要深刻解决方案的**极其复杂挑战**，而非简单需求。
+
+3.  **Oltra sync 的优点与成本**
+    *   优点：提供最大的思考时间，最高计算预算，深度分析，彻底检查多种方法，识别风险，高质量解决方案，减少修订。
+    *   成本：**消耗大量 token 预算**。
+
+4.  **结合 Plan Mode 使用**
+    *   推荐结合 `Plan Mode` 使用：先用 `Plan Mode` 构建方法，再用 `Oltra sync` 进行深入研究和迭代，以获得最高质量的解决方案。
+
+5.  **如何判断 code-code 是否在思考**
+    *   如果 AI 正在进行思考，code-code 终端界面会**呈现思考过程**（如显示 "sync process"）。
+    *   简单需求不会显示思考过程，使用 `Oltra sync` 会显示。
+
+6.  **关于大语言模型 (LLM) 和提示词工程 (Prompt Engineering)**
+    *   LLM 的本质：在大量数据中学习模式和认知，其执行精度和方向**高度依赖于用户的输入**（上下文、约束）。
+    *   效果越好往往是因为**越细致的提示词**。
+    *   “细致”并非简单罗列，而是为 AI 构造一个**清晰、无歧义的执行沙箱**（明确角色、目标、边界、预期格式）。
+    *   提示词是与 AI 沟通的**“代码”**：优秀的提示词应具备规范、优雅、简洁、逻辑性强的特点，如同优秀的代码。应遵循模式（系统角色、用户指令、输出格式）。
+    *   提示词工程的目标：**引导 AI 如何完成任务**，而非简单命令。通过模拟人类思考过程（内部独白、链式思考、自我评估）**引导 AI 进行原认知**。
+    *   原认知提升能力：极大提升任务分解、复杂推理、错误修正能力。
+    *   提示词工程是**将人类工作中被证明高效或卓越的质量标准转化为 AI 的系统规则**。
+
+7.  **项目经验分享**
+    *   提到了分享 T2.0 项目经验和 CowDowM 项目构造经验。
+    *   鼓励参考 Problemlex 等项目的提示词（其提示词很长且开放）。
+
+8.  **后续内容预告**
+    *   将讲解自动接收权限、计划模式以及如何实现 code-code 24小时自动完成任务。
+
+**核心要点：**
+
+利用如 Oltra sync 这样的高级工具和结构化的提示词工程，能够有效引导 AI 进行深度思考和复杂任务处理，从而显著提升 AI 的性能和产出质量。
+
+**总体框架：**
+
+本文先聚焦于 code-code 中一个特定的高级功能（Oltra sync），解释其作用、机制和使用场景，然后以此引申到更普遍的议题——如何通过提示词工程的理念（将人类的思考和工作标准转化为清晰的指令）来有效引导和最大化大语言模型的潜力，特别是在处理复杂问题时。
+
+---
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "AI 工具: code-code"
+        A["code-code 终端界面"] --> B("用户输入/指令");
+    end
+
+    subgraph "AI 思考机制"
+        B --> C{"思考触发\n(关键词映射预算)"};
+        C -- "简单需求" --> D["无/低思考预算"];
+        C -- "sync/mega sync" --> E["中/高思考预算"];
+        C -- "Oltra sync" --> F["最大思考预算\n(Oltra sync)"];
+    end
+
+    subgraph "Oltra sync 特性与影响"
+        F --> G["内置预处理"];
+        F --> H["拓展推理"];
+        H --> I["深度分析"];
+        H --> J["处理复杂问题"];
+        J --> K["高质量解决方案"];
+        K --> L["减少修订"];
+        F --> M["高 Token 消耗"];
+    end
+
+    subgraph "AI 交互方法论: 提示词工程"
+        N["用户/工程师智慧"] --> O["提示词工程\n(Prompt Engineering)"];
+        O --> P["构建执行沙箱\n(角色, 目标, 约束)"];
+        O --> Q["引导 AI 思考过程\n(模拟人类思维)"];
+        Q --> R["实现原认知\n(任务分解, 推理, 纠错)"];
+        P --> S["清晰无歧义指令"];
+        S --> T["有效 AI 交互"];
+        T --> U["高质量产出"];
+    end
+
+    subgraph "高级交互模式"
+        O --> V["结合 Plan Mode"];
+        V --> F; %% Plan Mode 构建方法, Oltra sync 深入研究
+        F --> U; %% Oltra sync 直接贡献高质量产出
+    end
+
+    T --> U;
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#FFFFCC,stroke:#333;
+    style C fill:#D3D3D3,stroke:#333;
+    style D fill:#FFB6C1,stroke:#333;
+    style E fill:#FFECB3,stroke:#333;
+    style F fill:#98FB98,stroke:#333,stroke-width:2px;
+    style G fill:#EEE8AA,stroke:#333;
+    style H fill:#AFEEEE,stroke:#333;
+    style I fill:#AFEEEE,stroke:#333;
+    style J fill:#AFEEEE,stroke:#333;
+    style K fill:#90EE90,stroke:#333,stroke-width:2px;
+    style L fill:#90EE90,stroke:#333;
+    style M fill:#FF6347,stroke:#333;
+    style N fill:#D8BFD8,stroke:#333,stroke-width:2px;
+    style O fill:#BA55D3,stroke:#333,stroke-width:2px;
+    style P fill:#E6E6FA,stroke:#333;
+    style Q fill:#E6E6FA,stroke:#333;
+    style R fill:#BA55D3,stroke:#333;
+    style S fill:#E0FFFF,stroke:#333;
+    style T fill:#ADD8E6,stroke:#333;
+    style U fill:#90EE90,stroke:#333,stroke-width:2px;
+    style V fill:#FFDAB9,stroke:#333;
+
+    linkStyle 6 stroke:#006400,stroke-width:2px; %% F -> J (Handles Complex Problems)
+    linkStyle 9 stroke:#006400,stroke-width:2px; %% J -> K (Leads to High-Quality Solutions)
+    linkStyle 23 stroke:#4B0082,stroke-width:2px; %% O -> T (Prompt Engineering -> Effective Interaction)
+    linkStyle 24 stroke:#006400,stroke-width:2px; %% T -> U (Effective Interaction -> Quality Output)
+    linkStyle 26 stroke:#4B0082,stroke-width:2px; %% V -> F (Plan Mode enhances Oltra sync context)
+    linkStyle 27 stroke:#006400,stroke-width:2px; %% F -> U (Oltra sync directly enhances Output)
+</Mermaid_Diagram>
+
+Content:
+大家好,我是来自Likes and Lands 开发团队的林西主要负责矿内设计与江湖当开发在上期视频我们讲解了靠MD的机制那么会在视频的结尾回答下各位关注的问题同时这一期为讲解靠的code中的Oltra syncOltra sync是在靠的code中了一个魔法词它能够自动出发最大的思考预算用于进行拓展思考这是一个内置的功能它会为复杂的问题提供一些深度的分析以及分配最高级别的计算思考时间在任何code的体式中天降Oltra sync即可出发最大的思考预算比如说研究签疑此一流系统的最佳方法Oltra sync又比如说分析大拉库并推荐优化机会Oltra sync那么code的作者会在面临复杂的价值决策或者是性能优化的时候来去使用Oltra sync因为这些情况下需要特别透彻的分析至于Oltra sync的原理是因为code的内置的预处理会将关键词硬设到思考的预算比如说当我们只是简单的说一个 sync那么它可能会给我们4000token当我们说mega sync它可能会给我们1万token那么当我们去说Oltra sync这是最大的预算托展推理便是最大的token预算允许code在想一之前深入考虑贴大方案并且去全衡以及跌带解决方案需要注意的是Oltra sync是code的独占的仅在code code的中端界面中有小不适用于网业聊天或者API至于优点便是最大的思考时间为复杂的问题提供了最高的计算预算以及可以深度的分析彻底检查多种方法以及辩人情况并且还有高质量的解决方案价格规划以及减少修定之类的贵应该也注意到了当我们简单的给了code code的一个需求它并不会去自动触发Oltra sync甚至连普通的sync都不会触发所以我们非常需要使用这个关键此来优化我们的工作我们推荐将Oltra sync保留给那些需要处于阅解决方案并且极其复杂的挑战当我们去结合plamode以及Oltra sync的时候可以从code code中或者最佳的形容使用plamode来构建方法然后使用Oltra sync真行深入的研究循环此过程可以获得最高质量的解决方案但还是要知道的是Oltra sync会消耗大量的头份预算所以请不要只是简单的一个需求就使用Oltra sync应该将其保留给消复杂的技术决策或者是性能优化以及不熟悉的代码库分析那么我们应该如何去判断code code的到底有没有进行思考呢这是一场非常简单如果有思考了code后后的会将思考的过程呈现在屏幕上就像这样我们只是提了一个简单的需求它并没有经过思考但是到我们在需求后面加上Oltra sync的时候可以看到它其实有一个sync的过程在上期的视频中有一位观众提到了希望我们能够分享T2.0的此工程的经验并且看到了之前视频里的CowDowM地鞋的表好是否能够分享一下构造经验如果告诉AI该做什么它能很好的执行往往只是越细织效果越好这正是对于大语言模型NOMM的本质体现他们在很多的数据中学习了语言的模式和世界的认知但其执行的精度和方向高度依赖于我们的位其设定的上下文以及约束细织只是并非是简单的容谱而是为AI构造了一个亲戚的并且无奇异的执行杀核明确了其角色目标以及编辑和预期的可视这就像是我们有一位高能力的工程师提供了一份详细的需求书越明显我们变能越符合规则的去招呼这个东西除了对于AI的使用感觉还是要自己理解若写出规范优雅简洁突然性强的代码才能更好指导 AI 写出来的提示词因为提示词本身就是我们跟AI沟通的一个代码一个亲戚的提示词其逻辑结构以及语义的严谨性与优秀的代码要如出一折比如说专讯一定的模式如系统角色用户指令舒服格式约定之类的这只核心减少AI推理的负担这种工程们学的追求是人类工人师的智慧成电也是我们负能AI打到更高水平的关键提示词工程的重心就是如何更好的让AI告诉自己该怎么完成任务这便是靠当地的精髓所在我们可以通过一些内部毒版或者是练书思考以及自我评估于修正之类的机制来模拟人类的思考过程通过这种方式我们就不再是简单的命令AI而是引导它进行原认之从而极大提升了其任务分解否则推理或者是错误修正的能力正体是辞是真正的系统及规则的主义让AI向一个自身工程适合一样去思考问题实际上我们并没有去创造一套全新的规则来知道AI而是将我们工作中的基础以及被证明是高小或是着月的质量标准以提示词的方式来协入到了AI的系统规则之中居然提示词我们的了解被没有向其他专业的参与以及专业的企业那样深入比如说ProblemlexProblemlex的提示词我也感觉非常的长的如果各位有兴趣的话也可以去看一看Problemlex的参与里面的提示词都是开人的我们的提示词也是开人在参与里面的如果各位去写价项目的话可能可以看一看我们的提示词下期我们将讲解一下关于自动接收全线以及计划模式之类的还有要如何去让Culto的绕过所有的执行让它能够真正的24小时来自动完成任务那么本期视频到这就结束了非常感谢大家的观看
