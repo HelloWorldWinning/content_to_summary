@@ -1,0 +1,137 @@
+Timestamp: 2025-06-30T09:44:01.242558
+Title: 华为、牛津推出深度调研Agent综述论文（Part 2） BV1723Fz3E4D
+URL: https://b23.tv/84ZfeFN
+Status: success
+Duration: 3:00
+
+Description:
+好的，这是对提供文本的总结、核心观点、整体框架和概念图。
+
+**总结 (纲要结构)**
+
+1.  **背景与优化方向:**
+    *   DB3（或深度强化学习智能体）的优化需要超越传统体制，转向满足复杂任务（可能指Agent任务）的需求。
+    *   **监督微调 (SFT):** 作为一种细微优化方法，专门用于增强智能体的搜索和执行能力，标志着发展从基于模板转向能力驱动。
+    *   **强化学习 (RL):** 作为重要的突破点，用于更深度的智能体能力提升。
+
+2.  **强化学习框架与流派:**
+    *   **代表性框架:**
+        *   四傻一: 系统结合搜索、交互和推理，实现流程衔接。
+        *   AZN (端到端强化学习): 实现端到端的学习优化。
+        *   其他: DB3Gvo, WebZinc 等。
+    *   **主要流派:**
+        *   工业系统
+        *   学习研究的系统
+        *   混合系统
+
+3.  **非参数学习与自我精化:**
+    *   智能体除了训练外，具备通过外部交互进行自我精化的能力。
+    *   示例: 基于策略提升动态规划和复用实现自我精化。
+
+4.  **代表性深度电源/智能体系统:**
+    *   **OpenAID 的 Depresage (单智能体):**
+        *   架构简单，通过特定算法实现规模化。
+        *   在OpenAI基础设施上实现异步并行执行，提升效率。
+        *   结合 JAMPELA 2.0 Flash (快速、动态、百万级上下文窗口)，擅长复杂任务。
+    *   **Grop 的 Depresage:** 优势在于快速持续获取最新行为/信息。
+    *   **Proplastic Depresage:** 混合架构，常被模仿。
+
+5.  **智能体评估方法:**
+    *   主要基于 QA 问答基准测试。
+    *   简单问答不足以评估，需要复杂、需要多次跳转的问答任务，如 HolperQA, Wiki Multi-Holper QA。
+
+6.  **未来工作的挑战:**
+    *   核心逻辑/表示的编写突破。
+    *   异步并行执行。
+    *   支持更丰富的交互能力 (如 Touch, Act, Observe)。
+    *   多步交互过程的验证 (如 HolperNation, 多元交互验证)。
+
+7.  **智能体的自我进化 (重点):**
+    *   一个重大课题和挑战。
+    *   长期来看，多智能体框架更有效且成本更低。
+    *   **多智能体强化学习 (协作优化):** 非常复杂，涉及智能体间的协作、端到端规划-执行-反馈、多元组合，目前缺乏成熟框架。
+    *   **不依赖模型的自我增强:**
+        *   通过工具配置。
+        *   Agent Akive (Agent Archive): 模拟平台用于分享和复用成果、任务，累积集体智能。这可能比单纯参数优化更有潜力。
+
+**核心观点 (一句话结论)**
+
+深度强化学习智能体正通过多种方法不断优化，尤其强调强化学习和自我精化，但其未来发展，特别是多智能体协作和鲁棒的自我进化，仍面临显著的技术和框架挑战。
+
+**整体框架 (Overarching Framework)**
+
+深度强化学习智能体的发展路线图：从单体优化到复杂任务处理，再到多智能体协作与自主进化，涵盖优化方法、系统架构、评估标准与未来挑战。
+
+**概念图 (Mermaid Diagram)**
+
+<Mermaid_Diagram>
+graph TD
+    A["深度强化学习智能体"] --> B("优化方法")
+    B --> B1("监督微调 (SFT)")
+    B --> B2("强化学习 (RL)")
+    B2 --> B2a("RL框架")
+    B2a --> B2a1("四傻一")
+    B2a --> B2a2("AZN (端到端)")
+    B2a --> B2a3("DB3Gvo, WebZinc等")
+    B2 --> B2b("RL流派")
+    B2b --> B2b1("工业系统")
+    B2b --> B2b2("学习研究的")
+    B2b --> B2b3("混合系统")
+
+    A --> C("自我精化/非参数学习")
+    C --> C1("外部交互")
+    C --> C2("基于策略提升")
+    C --> C3("工具使用")
+
+    A --> D("代表性系统")
+    D --> D1("OpenAID Depresage")
+    D1 --> D1a("异步并行")
+    D1 --> D1b("结合 JAMPELA 2.0 Flash")
+    D --> D2("Grop Depresage")
+    D2 --> D2a("快速持续获取")
+    D --> D3("Proplastic Depresage")
+    D3 --> D3a("混合架构")
+
+    A --> E("评估")
+    E --> E1("QA基准测试")
+    E1 --> E1a("复杂问答 (如 HolperQA)")
+
+    A --> F("未来挑战")
+    F --> F1("核心逻辑/表示")
+    F --> F2("并行执行")
+    F --> F3("交互与观察")
+    F --> F4("验证")
+
+    A --> G("自我进化方向")
+    G --> G1("多智能体框架")
+    G1 --> G1a("协作优化 (复杂)")
+    G1a --> G1a1("缺乏成熟框架")
+    G --> G2("不依赖模型的自增强")
+    G2 --> G2a("Agent Akive (成果分享)")
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#DA70D6,stroke:#333,stroke-width:2px,color:#333;
+    style B1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style C1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style C3 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style D1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style F3 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style F4 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+下面分享一下有关DB3的深度表演的论文帕特的部分第一是关于优化方法最细微方法就是监督微调大家发现单靠体制资已经没法满足深度表演的AZN需求对引入者还是使用SFT来专门优化模型的减锁能力和功率使用能力这也标志的DB3的AZN从模板的轻动向能力电话的重要专辨第二个大的方式就是墙化学习其实是最近一段时间深度代领能力重打突破点的文章也指出了几个比较有代表性的墙化学习的框架一个是四傻一主要是系统性的将复杂的搜索的交互和深度推理过程结合实现了庞询深程和信息并以的无缝电器第二个比较绝对的方样就叫AZN看成是系统线的极大成绩实现了端端端的庞化学习优化除此以外包括DB3Gvo和WebZinc 都是令人印象深刻墙化学习的实现散识其实有三个主要的既留派第一点成为工业系统第二点就是学习研究的第三点就是叫混合系统下一部分讨论的是有关非参数的趋务学习其实除了训练模型以外AZN的下一个共呢也是有自我精化的能力的这里面的自我精化主要来自于外部插线的能力的气身类似比如AZNK 基于地医策略还提升动态坚소跟复用实现的AZN做精化下面介绍一下几个不同的深度电源的系统各自代表性优势首先的是OpenAID的Depresage它其实可以说是单AZN的架构的机制只是通过自己的一套Ring Fossumant 钻法就简单缩化的这次的主要是在OpenAID的机构上实现了异补的病情虽然也是单身体但是可以同步的处理多个自认物大大气身的研究效率再加上JAMPELA 2.0 Flash 本身速度很快具有动不太能力已经百万的头肯的伤下我的窗口所以处理复杂的研究任务又是很明显的第三个代表是Grop的Depresage它的优势主要在于能快速的持续性的或许最新的行为员第四个就是ProplasticDepresage可以说是一个反合架构的态速基本上大部分对我们这串营材说我们特意去模仿的更多是Proplastic下一划题是如何分谅一个Depresage的Agent好怪主要的基于的是一个QA的问达的机准测试现在大部分简单的问达是没法难助制度掉营的Agent这边有条件的问达的是包括HolperQAWiki Multi-Holper QA这些比较复杂的必要多次跳转的一个推荐任务那Agent对于未来工作的原来也挑战的主要有以下请方面敌个人心心原的编写的突破第二个大的需要的方向是异补避行的执行其他的一些能量的包括在Touch Act支持显察很多的Depresage一直因为需要多次跳转所以常常会有一个HolperNation对如何在每一步实现多元的交发验证其实是一个很复杂的用物最后一话现在是关于Agent的自我进化这个其实是一个很大的队企就像我刚刚说的绝大部分的科研者和我一样认为长期来说多值人且的框架是更有效的而且从新加坡品上来说成本更恐怖的但是多Agent的强化学习也就是所谓的猜出优化其实非常复杂因为这里面是一道Agent之间的如同是一道等等端的弄plan到执行到反馈它的于多元组合所以如何实现多Agent的强化学习其实目前这个实际上放的缺口连一个缺点框架目前都没有第二罗金是关于不依赖于模型的自我身体你其面提到的比如说白塔系统是可以自视营工具的配置也包括Agent Akive相其实是模拟的一个类似 Akive 络文非常平台让不同的Agent能够分享和公用也就成果任务机器智慧的累积的方式可能比单纯的参串优化给有钱力以上是有关Deprile Search Agent进行多文的第二个分
