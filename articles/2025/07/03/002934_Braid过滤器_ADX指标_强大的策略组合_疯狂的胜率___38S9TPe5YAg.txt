@@ -1,0 +1,192 @@
+Timestamp: 2025-07-03T00:29:34.018049
+Title: Braid过滤器+ADX指标、强大的策略组合（疯狂的胜率！） 38S9TPe5YAg
+URL: https://www.youtube.com/watch?v=38S9TPe5YAg
+Status: success
+Duration: 5:31
+
+Description:
+好的，以下是根据原文生成的总结、核心观点、总体框架和 Mermaid 概念图。
+
+**一、结构化总结**
+
+本视频介绍了一套基于 TradingView 三个免费指标的短线交易策略。
+
+1.  **策略类型与适用范围**
+    *   短线策略测试。
+    *   适用于加密货币市场（例如比特币、以太坊），视频以15分钟图表为例进行演示和回测。
+
+2.  **所需技术指标**
+    *   **Great Filter (简称 BF)**：参数默认。
+    *   **CME METRENTBOX (简称 CME)**：Ema Uptrend 修改为 100。
+    *   **XND (简称 X)**：样式设置去除 D+ 和 D-，加粗 X 线。
+
+3.  **交易规则**
+    *   **共同确定关键 K 线与入场位置**：符合所有入场条件的 K 线为关键 K 线，其收盘价为进场位置。
+    *   **多头入场条件 (需同时满足)**：
+        *   1. K 线位于均线（由 CME 指标生成）上方，呈绿色。
+        *   2. BF 指标发出新的多头信号（由灰色变为绿色，或由红色变为绿色）。
+        *   3. X 指标的 X 线突破 20 上方（形成放量状态）。
+    *   **空头入场条件 (需同时满足)**：
+        *   1. K 线位于均线下方，呈红色。
+        *   2. BF 指标发出新的空头信号（由灰色变为红色，或由绿色变为红色）。
+        *   3. X 指标的 X 线突破 20 上方（形成放量状态）。
+    *   **出场规则 (止盈止损)**：
+        *   设置盈亏比为 1:1.5。
+        *   多头止损：放到最近的 K 线低点下方或者均线下方。
+        *   空头止损：放到最近的 K 线低点上方或者均线上方。（*注：原文如此表述，空头止损放低点上方可能为口误或特殊设置*）
+        *   止盈位置：根据止损距离计算，达到 1.5 倍止损距离。
+
+4.  **策略验证 (回测)**
+    *   在 ETH/USD 15分钟图表上进行 100 次回测，起始日期为 1月1日。
+    *   使用 1:1.5 的盈亏比进行回测。
+
+5.  **回测结果**
+    *   胜率：65%。
+    *   资金增长：约 2.36 倍。
+    *   利润因子：2.7。
+
+6.  **策略结论**
+    *   该策略确实能够实现盈利。
+    *   能够很好地过滤震荡行情。
+
+**二、核心观点**
+
+这套结合BF、CME和X指标的短线交易策略在以太坊15分钟图表的百次回测中显示出65%的胜率和显著的资金增长，证明其具有盈利潜力并能有效过滤震荡。
+
+**三、总体框架**
+
+技术指标驱动的短线加密货币交易策略演示与回测分析。
+
+**四、Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["短线交易策略"] --> B("使用指标")
+    B --> C["核心指标"]
+    C --> C1["Great Filter (BF)<br>参数默认"]
+    C --> C2["CME METRENTBOX (CME)<br>Ema Uptrend=100"]
+    C --> C3["XND (X)<br>样式调整"]
+
+    A --> D("定义规则")
+    D --> E["交易规则"]
+    E --> F["入场条件"]
+    E --> G["出场规则"]
+
+    F --> F1("多头入场")
+    F --> F2("空头入场")
+    F --> F3("关键K线收盘价<br>为进场位置")
+
+    F1 --> F1a["K线绿/均线上"]
+    F1 --> F1b["BF新多头信号"]
+    F1 --> F1c["X线 > 20"]
+
+    F2 --> F2a["K线红/均线下方"]
+    F2 --> F2b["BF新空头信号"]
+    F2 --> F2c["X线 > 20"]
+
+    G --> G1["盈亏比 1:1.5"]
+    G --> G2["止损设置"]
+    G --> G3["止盈设置"]
+
+    G2 --> G2a["多头: 低点/均线下方"]
+    G2 --> G2b["空头: 低点/均线上方"]
+    G3 --> G3a["止盈 = 1.5 * 止损距离"]
+
+
+    A --> H("进行验证")
+    H --> I["策略验证与结果"]
+
+    I --> I1["回测<br>ETH/USD 15m, 100次"]
+    I1 --> I2["回测结果"]
+
+    I2 --> I2a["胜率 65%"]
+    I2 --> I2b["资金增长 ~2.36x"]
+    I2 --> I2c["利润因子 2.7"]
+
+    I2 --> J["策略结论"]
+    J --> J1["具有盈利能力"]
+    J --> J2["过滤震荡行情"]
+
+    %% Styling
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+    style D fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+    style E fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+    style H fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+
+    style C1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style C2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style C3 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+
+    style F fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style G fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style F3 fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+
+    style F1 fill:#D8F8D8,stroke:#333,stroke-width:1px,color:#333
+    style F2 fill:#FFD8D8,stroke:#333,stroke-width:1px,color:#333
+    style F1a fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style F1b fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style F1c fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style F2a fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style F2b fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style F2c fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+
+    style G1 fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    style G2 fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    style G3 fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    style G2a fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    style G2b fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    style G3a fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+
+    style I fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333
+    style I1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style I2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style I2a fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style I2b fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style I2c fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+
+    style J fill:#90EE90,stroke:#333,stroke-width:2px,color:#333
+    style J1 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+    style J2 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333
+
+subgraph "核心指标"
+    C1
+    C2
+    C3
+end
+
+subgraph "交易规则"
+    F --> F1
+    F --> F2
+    F --> F3
+    G --> G1
+    G --> G2
+    G --> G3
+    G2 --> G2a
+    G2 --> G2b
+    G3 --> G3a
+
+    F1 --> F1a
+    F1 --> F1b
+    F1 --> F1c
+    F2 --> F2a
+    F2 --> F2b
+    F2 --> F2c
+end
+
+subgraph "策略验证与结果"
+    I1
+    I1 --> I2
+    I2 --> I2a
+    I2 --> I2b
+    I2 --> I2c
+    I2 --> J
+    J --> J1
+    J --> J2
+end
+
+</Mermaid_Diagram>
+
+Content:
+土楼,大家好,欢迎来到短线策略测试这期内容将带来一套非常强大的技术指标策略或许,它将为你带来不错的收益接下来,我就向你演示一下这套策略是否有立可图各位一定点赞,并坚持到最后这套交易策略,涉及到三个免费的trading入指标指标的链接会在下方的说明中列出第一个指标是Great Filter简称BS指标参数默认然后第二个指标是CME METRENTBOX简称为CME指标Ema Uptrend修改为100最后添加我们的XND指标简称BS指标我们简单设置一下样式我们把D加和D去掉把XN加粗这就是我们所要用到的所有的交易指标接下来,我就结合实力来解释一下交易规则这是比特币美元15分钟图表进入多头的规则有三个条件1.首先可以线位于均线的上方乘绿色可以线2.BF指标的发出一个新的多头信号由灰色变成绿色或者红色变成绿色且突破均线上方3.X指标的X线突破20上方形成一个方量的状态这是我们要找的关键K线关键K线的收盘架就是我们的进场位置我们设置1.1.5的指引指损把指损放到最近的K线低点下方或者均线下方这一单很快就进入指引了空单入场的方式正好相反1.首先可以线位于均线的下方乘红色K线2.BF指标的重新发出一个新的空头信号由灰色变成红色或者绿色变成红色且突破均线上方3.X指标的X线突破20上方形成一个方量的状态这是我们要找的关键K线关键K线的收盘架就是我们的进场位置我们设置1.1.5的指引指损把指损放到最近的K线低点上方或者均线上方这一单空单很快就进入指引了规则非常简单我们再来看一组简短的例子这是以太方美元15分钟图表进入多头的规则有三个条件1.首先可以线位于均线的上方乘绿色K线2.BF指标的发出一个新的多头信号由灰色变成绿色或者红色变成绿色且突破均线上方3.X指标的X线突破20上方形成一个放亮的状态这是我们要找的关键K线关键K线的收盘架就是我们的进场位置我们设置1.1.5的指引指损把指损放到最近的K线低点下方或者均线下方这一单很快就进入指引了再看一个做空的例子1.首先K线位于均线的下方乘红色K线2.BF指标的重新发出一个新的空头信号由灰色变成红色或者绿色变成红色且突破均线上方3.X指标的X线突破20上方形成一个放亮的状态这是我们要找的关键K线关键K线的收盘架就是我们的进场位置我们设置1.5的指引指损把指损放到最近的K线低点上方或者均线上方这一单空单很快进入指引了接下来我将在1TH的15分钟图表进行回测100次从1月1日在1TH的15分钟图表的100次回测我设置1.5的银辉比胜率为65%丈夫资金增长了2.36倍左右利润因子为2.7该策略确实是能实现盈利且能很好的过滤震荡行情可以自行回测其他品种希望此视频对你有所帮助视频的最后别忘了点击订阅按钮我们下次再见
