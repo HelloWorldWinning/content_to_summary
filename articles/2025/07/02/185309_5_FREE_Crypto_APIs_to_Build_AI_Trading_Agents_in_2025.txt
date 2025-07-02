@@ -1,0 +1,126 @@
+Timestamp: 2025-07-02T18:53:09.313668
+Title: 5 FREE Crypto APIs to Build AI Trading Agents in 2025
+URL: https://youtube.com/watch?v=zsFj2j6dS_E&si=xlcw6t2pSN8NyTNd
+Status: success
+Duration: 6:33
+
+Description:
+好的，这是对所提供文本的总结：
+
+**总结大纲：**
+
+1.  **引言**
+    *   讲者测试了 20 多种加密货币交易 API，以找出 5 个最佳免费选项。
+    *   评测重点：速率限制、隐藏成本及对构建交易 AI 代理的适用性。
+
+2.  **评测的免费加密货币交易 API 列表**
+    *   **Token Metrics API & SDK**
+        *   **优势：** 提供市场数据之外的独特数据（交易员评分、信号、AI 报告、支持/阻力位等），数据终端丰富。
+        *   **免费层：** 5000 次免费 API 调用（基本计划），可访问特定终端（代币、OLCV、交易员评分、信号）。
+        *   **适用性：** 适合构建 MVP 和测试，为交易 AI 代理提供多种数据源。
+        *   **局限性：** 免费层有调用和终端限制。
+    *   **Coinbase 交易 API**
+        *   **优势：** 实时市场数据，高吞吐量，深度流动性，易用，竞争性动态费用（高交易量费用较低）。
+        *   **免费层/成本：** 部分操作（如 On-ramp）免费，但交易操作（Commerce 1%、Staking 2-10%、Wallet 0.005%、Swap 0.15%）收费。
+        *   **适用性：** 适合高交易量用户和集成其交易执行功能。
+        *   **局限性：** 不提供独特的额外工具（如交易信号），规模化使用成本可能很高。
+    *   **币安 API**
+        *   **优势：** 提供市场数据和 WebSocket。
+        *   **上手注意：** 对新手开发者来说上手过程可能较复杂。
+        *   **适用性：** 对于构建更广泛的交易产品有用，但对于纯粹的交易 AI 代理，选项相对有限（主要限于市场数据和 WebSocket）。
+        *   **免费层/成本：** 市场数据和 WebSocket 基本免费获取。
+    *   **Kraken API**
+        *   **优势：** 可以免费开始使用。
+        *   **免费层/成本：** 免费访问市场数据（现货、期货）、WebSocket、期货 Fixes、交易、账户数据、资金、收益和子账户（期货图表）。
+        *   **适用性：** 作为交易 AI 代理中集成期货和现货交易的 API 之一很有价值。
+        *   **局限性：** 对交易 AI 代理所需的市场数据选项相对有限。
+    *   **Coin Gecko API**
+        *   **优势：** 提供大量市场数据（17000+ 加密货币和 NFT 项目），多种数据终端（币种、合约、类别、NFT、链上指标、衍生品、搜索、全球、公司数据）。
+        *   **适用性：** 非常适合构建 DApp，在免费选项中数据量大。
+        *   **局限性：** 对于交易 AI 代理（需要看涨/看跌信号、特定市场数据）的适用性相对有限，构建分析工具的功能也受限。
+
+3.  **结论**
+    *   总结各 API 的特点和适用场景。
+
+**核心观点：**
+讲者评测了五个免费的加密货币交易 API，强调了它们在构建交易 AI 代理方面的独特优势和局限性，旨在帮助开发者选择适合入门或特定用途的免费选项。
+
+**总体框架：**
+基于特定用途（构建交易 AI 代理）对免费加密货币交易 API 进行比较分析，评估其免费特性、可用数据、潜在成本和易用性。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph TD
+    A["免费加密货币交易 API 评测"] --> B["目的: 寻找构建交易 AI 代理的最佳免费选项"]
+    A --> C["评估标准: '费用', '速率限制', '数据类型', '适用性'"]
+    B --> D("评测的 API")
+    C --> D
+
+    subgraph "评测的 API"
+        D --> E("Token Metrics API & SDK")
+        D --> F("Coinbase 交易 API")
+        D --> G("币安 API")
+        D --> H("Kraken API")
+        D --> I("Coin Gecko API")
+    end
+
+    E --> E1["'独特数据源 (信号/评分)'"]
+    E --> E2["'免费层 (5000 调用)'"]
+    E --> E3["'适合 MVP'"]
+
+    F --> F1["'深度流动性/动态费用'"]
+    F --> F2["'交易操作收费'"]
+    F --> F3["'规模化成本高'"]
+    F --> F4["'额外工具少'"]
+    F --> F5["'适合高交易量'"]
+
+    G --> G1["'市场数据/WebSocket'"]
+    G --> G2["'新手上手复杂'"]
+    G --> G3["'对 AI 代理选项有限'"]
+
+    H --> H1["'免费开始'"]
+    H --> H2["'市场数据有限 (对 AI 代理)'"]
+    H --> H3["'适合期货/现货集成'"]
+
+    I --> I1["'数据量大 (17k+)'"]
+    I --> I2["'数据类型丰富'"]
+    I --> I3["'对 AI 代理有限 (信号)'"]
+    I --> I4["'适合 DApp'"]
+
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#D4EEF9,stroke:#333,stroke-width:1px,color:#333
+    style C fill:#D4EEF9,stroke:#333,stroke-width:1px,color:#333
+    style D fill:#BFBFF9,stroke:#333,stroke-width:2px,color:#333
+    style E fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style F fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style G fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style H fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+    style I fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333
+
+    style E1 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style E2 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style E3 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+
+    style F1 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style F2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style F3 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style F4 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style F5 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+
+    style G1 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style G2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style G3 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+
+    style H1 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style H2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style H3 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+
+    style I1 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style I2 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+    style I3 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+    style I4 fill:#C8F7C5,stroke:#333,stroke-width:1px,color:#333
+</Mermaid_Diagram>
+
+Content:
+So, I've tested over 20 different crypto trading APIs so you don't have to. I found five of the best free options. I'll be breaking down the rate limits, hidden costs, and ultimately telling you the top five best crypto trading APIs as of 2025. Number one in the list, we have the Token Metrics API and SDK. Now, one thing that really stands out with the tokometrics API and SDK, unlike other trading APIs, is the fact you actually get a lot more than just market data. You have over 20 different data endpoints from market data to what really stands out to me is the trader grades, the trading signals, right? The investor grades, AI reports, and resistance and support. You got a lot more things here like the quantrics, correlation, indices, and so on. But really for when it comes to building these trading AI agents, you have a lot of different data ends here for your arsenal, right? The trading signals being one of the key ones here and trader grades as well. Now, in terms of pricing, they are completely free to get started. You get 5, 000 free API calls in the basic plan and ultimately you have limitations as you can imagine with most APIs that's going to be the case. However, the cool thing about it is you're able to start building your MVP, start testing and start sort of bu you you know using the actual API to test before you have to pay anything. You get access to a few different endpoints here like the token and OLCV and trader grades and signals which is one of the most popular um data endpoints from the looks of it. And ultimately you can start building for totally free. The documentation all the links will be down in the description. Next up on the list is one that some of you may recognize, but not many of you might know about the developer platform. So, Coinbase, decentralized exchange, do actually have their own API, right? Ultimately, to build whatever you can with it. It's the exchange API and you get access to real-time market data with the high throughp. So, again, if you're building trading AI agents, if you're building some sort of trading bot here, the Coinbase um API here is a great option. Of course, the main things here are it's got deep liquidity. It's super easy to use. You got your insurance protection and competitive fees, right? The dynamic free structure, I feel like it's one of the USPS here. They got much lower fees for high volume trading. So, for anyone here that's, you know, you know, running a large fund or ultimately has a large capital to trade with, the Coinbase API is definitely one of the ones that you might want to look at. when it comes to extra tools is not something that I would recommend a lot of the things that the Coinbase um platform the API would actually provide is the fact they have lower fees right they don't really have additional sort of endpoints that are very niche like trading signals and market in terms of the pricing here you can see they have a free pricing structure so the on-ramp is completely free for developers the commerce has got 1% transaction fee staking is 2 to 10%. The wallet API is 0. 005 for wallet operation and 0. 15% fee for the swap API. So depending on how you scale, this can really ramp up if you see what I did there. But no, the price can really ramp up here as you keep scaling. So I'll be very careful if you know you're going to be scaling, you know, and you already have a large project, this might end up being very expensive, right? And there's definitely a lot better alternatives in that regard. Next up on the list, we have the Binance API. And ultimately, the Binance API, one thing I do want to warn you about it is that if you are a new developer, if you're not very experienced, I wouldn't recommend them just because it can be a pretty complex onboarding process in terms of actually building with the API itself. Getting access to API key is super simple. and um you get access to lots of different things for when it comes to the market data and websocket if you're building a trading AI agent. However, if you are want to also build a product, a centralized exchange, a DEX or something that provides these sort of services where it's like trading, staking, you know, fiat on ramps, offramps, able to build quite a lot of cool products, but for the sake of this video, when it comes to trading AI agents, your options are limited. You get access to market data and their websocket. So, ultimately, you're getting this for completely free, so it's not that big of a loss, but your options are pretty limited with the Binance API. Next up on the list, we got the Kraken API. Okay, so you can actually go through and find all of their different data endpoints, their websocket, and what you can actually build with it. But one thing that's really cool about it, similar to the Binance one, you can get started for absolutely free. However, again, your options are going to be limited. You get access to market data for the spot, spot websocket, the futures, the futures websocket, and the futures fixes as well. You get all the transactions, account data, funding, earn and sub accounts and charts just for futures. So when it comes to options for when it comes to market data, which is something you're going to need for trading AI agents, you're very limited. But getting started and for it to be one of the APIs within what you're building in your AI agent, this can definitely be a very good options for future and spot trading. Next up on the list, we've got the Coin Gecko API. Right. If you're building trading AI agents, the Coin Gecko API does come with a lot of different market data and different data endpoints of 17, 000 plus different cryptocurrencies and NFT projects. But ultimately, when you're building um trading AI agents here, you're going to get access to lots of different endpoints. You can see here you get endpoints for coins, the contracts, the categories, NFTts, onchain metrics, derivatives, search, the global, and also the company data endpoint as well. However, for when it comes to building a trading AI agent, Coin Gecko isn't going to be exactly the best option just because for when it comes to things like bullish and bearish signals, market data, it's pretty limited. If you're building your own DAP, in the other hand, it can definitely be a very good option, probably one of your best options, right? But when it comes to building things like analytics and tools, even with a coin gecko, your product is going to be somewhat limited. But when it comes to free options, Coin Gecko is definitely going to be one of those leading names. That brings us to the end of this video. Make sure to subscribe and like the video. I'll see you guys next time. Take care. Peace.
