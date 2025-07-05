@@ -1,0 +1,230 @@
+Timestamp: 2025-07-05T13:02:31.906515
+Title: 【限免，手慢无！！】究极版半神MACD策略指标全公开，胜率超高的MACD用法+指标功能最全讲解，一口气讲清楚！！#半神macd #半木夏 #交易策略
+URL: https://www.youtube.com/watch?v=BnwF-ggV-aY
+Status: success
+Duration: 11:18
+
+Description:
+好的，这是对文本内容的摘要、核心观点、框架和概念图：
+
+**摘要要求:**
+1. 摘要必须清晰地**分点列出并结构化**。
+2. 用一句话概括**核心主旨**是什么？
+3. 内容的**总体框架**是什么？
+4. 生成清晰的mermaid概念图。此图应逻辑地连接所有关键元素。重点是节点之间有意义的关系和美观的布局。将mermaid代码包裹在`<Mermaid_Diagram>...</Mermaid_Diagram>`标签内，不需要三个反引号。确保此图结构美观，节点颜色精心挑选以强调其含义，箭头指向符合逻辑，并使用子图。🔴 删除所有注释，例如 `%% Link from E to H`，`%% 行动支持发布准备`。Mermaid代码中的所有文本项必须在**双引号**内。
+
+---
+
+**摘要:**
+
+根据提供的文本，内容可以分点结构化如下：
+
+一、 **引言与指标发布**
+    *   "半神 MACD 策略指标" 发布半年，授权人数超1万。
+    *   指标已完全公开，可在 Tradingview 搜索 "半神 MACD Ultimate" 使用。
+    *   未来目标是发展为涵盖多种指标和策略的"超级交易工具"。
+
+二、 **核心策略：MACD 背离交易法**
+    *   **MACD 基本作用:** 确认价格走势是否延续，通过观察柱状图连续增加/减少寻找信号。
+    *   **背离关键细节:**
+        *   只找波峰/波谷相差较大且**连续**的背离。
+        *   波峰/波谷越**标准**越好。
+        *   **三背离:** 胜率高，力度大，频率低，适合中长线。
+        *   **双背离:** 频率高，力度较小，适合短线 (15分钟/1小时周期)。
+    *   **交易规则 (三背离为例):**
+        *   识别条件：MACD 柱状图连续升高/降低 (零线下波谷升高看涨，零线上波峰降低看跌)，同时K线波谷连续降低/波峰连续抬高。
+        *   信号出现：MACD 实心柱转虚心柱的第一根收盘后出现买入/卖出信号。
+        *   入场：关键K线 (虚柱对应K线) 下一根K线开盘价附近。
+        *   止损：波段低点/高点附近 或 参考 ATR 指标。
+        *   止盈：设置风险回报比 (三背离1:1.2-1.5，到达比例后平仓一半，止损上移；双背离1:1.2，到达比例后全部平仓)。
+    *   **使用建议:** 在常用交易品种和周期上回测100次。
+
+三、 **指标其他功能汇总**
+    *   **信号共振表:** 动态显示集成指标的入场信号，亮绿灯（多头）/红灯（空头），用于寻找"共振"机会。
+    *   **ATR (平均真实波动幅度):** 用于判断止损幅度，可设置长度和多元参数。
+    *   **半神 MACD 设置:** 可自定义快慢线长度、背离噪声阈值 (Noise Threshold)、波峰大小差异等，可选择只显示双背离或三背离。
+    *   **Vegas 指标:** 提供5条EMA，入场规则基于EMA通道位置和K线触碰情况，显示为绿色/红色三角形。
+    *   **吞没形态:** 识别看涨/看跌吞没形态，可灵活设置识别条件 (收盘/最低/最高)，显示为绿色/红色叉号。
+    *   **RSI 和 OBV:** 也支持背离信号，用法类似 MACD (注意：副图指标 MACD/RSI/OBV 同时添加会有显示问题，只能三选一)。
+    *   **FVG (公允价值区):** 寻找潜在价格停止区域 (支撑/阻力)。
+        *   **重要 FVG 类型:** 结构突破后出现、多个 FVG 中最大的那个。
+        *   **需避开 FVG:** 靠近重要关键区形成的 FVG (可能导致矛盾信号)。
+
+四、 **交易原则与建议**
+    *   核心原则：做交易要找**共振**，不要找**矛盾**。
+    *   指标是**参考工具**，不构成任何投资建议。
+
+---
+
+**核心主旨:**
+
+"半神 MACD Ultimate" 是一个综合性交易工具，整合了优化后的 MACD 背离策略及多种辅助指标（如 Vegas, 吞没, FVG 等）与信号共振表，旨在帮助交易者寻找高胜率的交易机会，但需结合自身回测并理解其作为参考工具的本质。
+
+---
+
+**总体框架:**
+
+构建基于多指标共振的系统化交易辅助工具并提供使用说明。
+
+---
+
+**Mermaid概念图:**
+
+<Mermaid_Diagram>
+graph TD
+    A["'半神 MACD Ultimate 指标'"] --> B{"'获取与未来'"};
+    B --> B1("'Tradingview搜索/链接'");
+    B --> B2("'未来: 超级交易工具'");
+
+    A --> C{"'核心策略'"};
+    C --> C1("'MACD 背离交易'");
+    C1 --> C1a("'规则细节'");
+    C1a --> C1a_1("'连续/标准波峰'");
+    C1a --> C1a_2("'双背离(短线)'");
+    C1a --> C1a_3("'三背离(中长线)'");
+    C1 --> C1b("'交易规则'");
+    C1b --> C1b_1("'信号/入场'");
+    C1b --> C1b_2("'止损(ATR)'");
+    C1b --> C1b_3("'止盈(R:R)'");
+    C --> C2("'策略回测建议'");
+    C2 --> C2a("'回测100次'");
+
+    A --> D{"'其他集成功能'"};
+    D --> D1("'信号共振表'");
+    D1 --> D1a("'动态信号显示'");
+    D1 --> D1b("'寻找共振'");
+    D --> D2("'ATR'");
+    D --> D3("'Vegas 指标'");
+    D3 --> D3a("'EMA 通道'");
+    D --> D4("'吞没形态'");
+    D4 --> D4a("'看涨/看跌'");
+    D --> D5("'RSI & OBV'");
+    D5 --> D5a("'背离信号'");
+    D --> D6("'FVG (公允价值区)'");
+    D6 --> D6a("'寻找潜在停止区'");
+    D6 --> D6b("'重要/避开的类型'");
+
+    E{"'交易原则'"};
+    E --> E1("'找共振 避矛盾'");
+
+    F{"'使用结果'"};
+    F --> F1("'辅助寻找 高胜率交易机会'");
+    F --> F2("'指标仅是参考工具'");
+
+    C1 --> D1;
+    D --> D1;
+    D1 --> F1;
+    E1 --> F1;
+
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style B1 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C1 fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style C1a fill:#FAFAD2,stroke:#333,stroke-width:1px,color:#333;
+    style C1a_1 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C1a_2 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C1a_3 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C1b fill:#FAFAD2,stroke:#333,stroke-width:1px,color:#333;
+    style C1b_1 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C1b_2 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C1b_3 fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#FAFAD2,stroke:#333,stroke-width:1px,color:#333;
+    style C2a fill:#EEE8AA,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style D1 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D1a fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D1b fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D3a fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D4a fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D5 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D5a fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D6 fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style D6a fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style D6b fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#32CD32,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#FA8072,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#FA8072,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 1 stroke:#555,stroke-width:1px;
+    linkStyle 2 stroke:#555,stroke-width:1px;
+    linkStyle 3 stroke:#555,stroke-width:1px;
+    linkStyle 4 stroke:#555,stroke-width:1px;
+    linkStyle 5 stroke:#555,stroke-width:1px;
+    linkStyle 6 stroke:#555,stroke-width:1px;
+    linkStyle 7 stroke:#555,stroke-width:1px;
+    linkStyle 8 stroke:#555,stroke-width:1px;
+    linkStyle 9 stroke:#555,stroke-width:1px;
+    linkStyle 10 stroke:#555,stroke-width:1px;
+    linkStyle 11 stroke:#555,stroke-width:1px;
+    linkStyle 12 stroke:#555,stroke-width:1px;
+    linkStyle 13 stroke:#555,stroke-width:1px;
+    linkStyle 14 stroke:#555,stroke-width:1px;
+    linkStyle 15 stroke:#555,stroke-width:1px;
+    linkStyle 16 stroke:#555,stroke-width:1px;
+    linkStyle 17 stroke:#555,stroke-width:1px;
+    linkStyle 18 stroke:#555,stroke-width:1px;
+    linkStyle 19 stroke:#555,stroke-width:1px;
+    linkStyle 20 stroke:#555,stroke-width:1px;
+    linkStyle 21 stroke:#555,stroke-width:1px;
+    linkStyle 22 stroke:#555,stroke-width:1px;
+    linkStyle 23 stroke:#555,stroke-width:1px;
+    linkStyle 24 stroke:#555,stroke-width:1px;
+    linkStyle 25 stroke:#555,stroke-width:1px;
+    linkStyle 26 stroke:#555,stroke-width:1px;
+    linkStyle 27 stroke:#555,stroke-width:1px;
+    linkStyle 28 stroke:#555,stroke-width:1px;
+    linkStyle 29 stroke:#555,stroke-width:1px;
+    linkStyle 30 stroke:#555,stroke-width:1px;
+    linkStyle 31 stroke:#555,stroke-width:1px;
+
+    subgraph "获取/未来"
+        B1
+        B2
+    end
+    subgraph "核心策略: MACD 背离"
+        C1
+        C2
+        C1a
+        C1b
+        C1a_1
+        C1a_2
+        C1a_3
+        C1b_1
+        C1b_2
+        C1b_3
+        C2a
+    end
+    subgraph "其他辅助指标与功能"
+        D1
+        D2
+        D3
+        D4
+        D5
+        D6
+        D1a
+        D1b
+        D3a
+        D4a
+        D5a
+        D6a
+        D6b
+    end
+    subgraph "交易原则"
+        E1
+    end
+     subgraph "结果/提示"
+        F1
+        F2
+    end
+
+</Mermaid_Diagram>
+
+Content:
+半神 MACD 策略指标从发布到现在 刚好半年的时间 期间授权人数超过 1 万人 各位也在指标群里给了很多的反馈 和优化意见 有人用它适配了自己的交易系统 也有人用它获得收益 甚至有几个人讲 现在离了它都不太敢操作 看到指标这么受欢迎 我开心的像个 3 岁半的孩子 为了方便大家使用 我现在就把指标全部公开 之后各位就可以直接在 Tradingview 的指标搜索栏找到它 呦我来了欢迎来到投机实验室 这期内容 我会把半神 MACD 的高胜率策略和全部功能 做一个汇总 告诉给各位 就相当于一份使用说明书 之后也会对它进行持续的优化 它的究极形态 是一个涵盖超多实用指标 和策略的超级交易工具 我们打开 tradingview 的指标搜索栏 搜索半神 MACD Ultimate 就会出现作者是 SpeculationLab 的指标 点击收藏并添加到图表 如果搜索不到 可以在视频下方找到我的 Tradingview 主页链接 点这里也可以添加到图表 记得点击订阅按钮 之后还会有很多好用的指标推出 首先说半神 MACD 的使用方法 MACD 的绿色能量柱表示看涨 低于零线时能量柱就是红色 表示看跌 如果上升趋势 或是下降趋势获得比较大的动力 柱状图的波峰会变得很高或是很深 动量减弱的时候 柱状图的波峰就会缩小 本策略中 MACD 起到了确认价格走势 是否还在延续的作用 我们可以通过观察 MACD 柱状图的连续增加 或者连续减少来寻找交易信号 这里有三个决定成败的细节 99.9%的人都不知道 第一个 一定只找波锋相差较大的连续背离 不连续的不要第二个 波锋越标准越好 奇形怪状的不要 第三个三背离可以做中长线 双背离只做短线 MACD 三背离的胜率高 力度大但是出现的频率较低 出现后非常值得参与 接下来我就结合实例 解释一下三背离的交易规则 2 月 28 日市场暴跌 跌到了 8 万下方 这时候比特币 4 小时级别 出现了连续的三背离 我们看到零线下方有三个柱状 波谷相差较大且连续升高 同时 MACD 对应的 k 线波谷再连续降低 两个条件满足 MACD 实心柱 转虚心柱的第一根柱子收盘后 就会出现买入信号 这根虚柱所对应的 k 线 就是关键 k 线 我们可以在关键 k 线的下一根 k 线的开盘价附近 入场多单 止损幅度可以设置在波段低点附近 也可以直接参考 ATR 指标 参数可以修改 如果是默认参数 止损幅度和止盈幅度的比值 尽量保持在 1:1.2 到 1.5 之间 到止盈比例后平掉一半的仓位 同时止损也要上移到入场价位置 剩余部分可以拿到 1:2 甚至更高 做空的规则相反 零线上方有三个柱状 波峰相差较大且连续降低 同时与 MACD 对应的 k 线波峰连续抬高 两个条件满足后 MACD 实心柱 转虚心柱的第一根柱子收盘后 就会出现卖出信号 这根虚柱所对应的 K 线就是关键 k 线 我们可以在关键 k 线的下一根 K 线的开盘价附近 入场空单 止损可以设置在 ATR 指标的上线附近 或者波段高点位置止损 止盈的规则同上 双背离相对于三背离的出现 频率就高得多 但力度较小 适合做短线 时间周期尽量选择 15 分钟或一小时 两小时进入多头的规则是 首先我们要在零线下方 找到两个波谷相差较大 且连续升高的 MACD 柱状图 接着看 MACD 对应的 k 线波谷的是否连续 降低条件满足后 MACD 实心柱 转虚心柱的第一根柱子收盘后 就会标记出买入信号 这根虚柱对应的 k 线就是关键 k 线 我们可以在关键 k 线的下一根 k 线的开盘价附近入场 双背离的止损幅度 和止盈幅度的比值 尽量就保持在 1:1.2 这个比例 到比例后就全部平仓 双背离空单的规则相反 同样是止损幅度和止盈幅度的比例 1:1.2 左右的时候就全部平仓 这就是改进后的半神的 MACD 交易策略 规则清晰 简单好用 各位拿到指标后 可以在你经常做的品种 和时间周期上 回测 100 次交易机会 看看效果 用数据找到近期最适合它的品种 说完 MACD 的策略 接着详细介绍一下指标现有的功能 现版指标 可以自由组合成不同的策略 右下角是一个信号共振表 可以动态的显示 各个指标的入场信号 出现多头信号 的时候 共振表就会亮绿灯 空头就会亮红灯 非常实用 比如 Vegas 出现了多头信号 MACD 也出现了多头信号 两个灯就会同时亮起 两种不同策略 同时指向一个方向的胜率 普遍会高很多 如果再加上吞没形态就更好 只是这种情况出现的频率会很少 如果取消了某个指标显示 共振表中相应的指标也会消失 不需要这个功能 可以勾掉 指标设置中 第一个是平均真实波动幅度指标 ATR 这里经常用来判断止损的幅度 我们可以通过设置长度和多元 来控制幅度的大小 默认长度是 13 多元是 1.5 如果止损想设置的保守一些 可以用一或者更低 数字越小幅度越小 ATR 的幅度和 ATR 上下线的数值 会显示在屏幕下方 H 是上线 L 是下线 ATR 就是波动幅度 第二个是半神 MACD 指标 相关代码是投机实验室原创 没有重绘 指标参数快线长度默认是十三 慢线是 34 这里起到了确认价格走势 是否还在延续的作用 我们可以通过观察 MACD 柱状图的连续增加 或者连续减少来寻找交易信号 指找波峰相差较大的连续背离 不连续的不要 不过 指标也可以作为普通背离指标使用 只需要调节 Noise Threshold 的数值即可 如果你只想要三背离 可以把前两个勾掉 如果你只需要两背离 就可以勾掉后两个 连续背离的功能自定义性非常强 指标确认是两根 k 线 也就是信号会在第一根虚线的 收盘价出现 但是在第二根虚 k 线的收盘价 才能确定信号有效 我们盯盘的时候 其实在第一根虚线 就可以判断出 背离是否符合策略要求 出现多空信号后 也会在共振表中标记出来 为了避免出现过小的无效背离 可以通过更改波锋的大小差异 最小高度这些参数去调试 方便各位适用自己经常做的标的 和时间周期 也能更好的匹配 各位原有的交易体系 第三个是 Vegas 指标 指标提供了 5 条可自定义的 EMA 指数移动平均线 默认长度是 12/144/169/576/676 其中 EMA12 默认隐藏 需要再打勾 Vegas 策略主要是两个入场条件 进入多头的规则是首先 EMA144/169 要在 EMA576/676 的上方 其次 k 线触碰到了 EMA144/169 通道 当满足多头入场规则时 k 线上方就会显示绿色的三角形 同时 信号共振表的 vegas 一栏会出现绿灯 空头规则相反 首先 EMA144/169 要在 EMA576/676 的下方 其次 k 线触碰到了 EMA144/169 通道 空头规则满足的时候 k 线上方会显示红色三角形 同时信号共振表的 Vagas 策略一栏 出现表示做空的红灯 第四个是吞没形态看涨 吞没的形态是前一根 k 线为阴线 当前 k 线的收盘价 大于等于前一根 k 线的最高价时 形态成立 当出现看涨吞没形态的时候 k 线下方会出现绿色叉号 同时共振表的吞没形态 会出现表示过多的绿灯 为了使形态识别更灵活 我们可以在设置中 将看涨条件的最高改为收盘 这样可以得到更为宽泛的看涨 吞没识别 看跌吞没 是当前 k 线的收盘价 低于等于前一根 k 线的最低价 也可以在设置中 将看跌条件的最低改为开盘 得到更宽泛的看跌吞没形态 当出现看跌吞没形态时 k 线下方出现红色叉号 同时共振表吞没形态栏 会出现表示做空的红灯 第五个和第六个分别是 RSI 和 OBV 指标 这两个指标主要也是用背离方法 跟半神 MACD 类似 出现信号后也会出现多空背离 标签就不再赘述 只有一点需要注意 RSI 和 OBV 与 MACD 都属于副图指标 同时添加会因为坐标参数问题 不能正常显示 所以 各位只能同时打开三个之中的一个 去使用第七个是 FVG 公允价值区 之前 找可能让价格产生停止行为的位置 只能靠 Vagas 通道 现在又多了一种选择 FVG 公允价值区 这是一种价格形态 当价格突然往一个方向猛冲 就会在 k 线上留下缺口 之后价格通常会回到这个缺口 试图重新测试或者进行填补 利用这个特点 我们就可以在这个缺口附近 找机会入场 但不是所有的效果都一样 有三种 FVG 区域能赚钱少 亏钱的概率明显就更高 第一个是 结构突破后出现的 FVG 区域 一定要重视 这种的胜率要比其它的形态高的多 比如上升趋势中突破前高 就算结构突破 突破创出新高后附近 出现了 FVG 那价格就很可能会回撤到这个缺口 然后再反弹 第二个是 如果一个价格区域 有几个 FVG 离的很近 就优先选择最大的那个 越大的多空失衡越明显 会更容易成为强支撑阻力 这种大 FVG 区域 就可以把它的中线作为入场参考 第三种一定要避开 就是价格靠近重要关键区形成的 FVG 比如小周期有一个看涨缺口 但切换到大周期一看 上方还有一个重要阻力位 那这种 FVG 尽量不碰 因为价格很有可能会冲高回落 做交易要找共振 不要找矛盾 可以结合指标内的其它交易工具 都非常好用 各位可以根据自己的交易习惯 去深度优化 好了指标虽好 但也只是参考工具 没有任何投资建议 检查一下是否点击了订阅按钮 以免错过更更有利可图的交易系统 我们暂时再见 祝你早安午安晚安拜拜
