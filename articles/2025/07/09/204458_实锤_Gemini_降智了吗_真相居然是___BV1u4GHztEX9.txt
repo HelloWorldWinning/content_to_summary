@@ -1,0 +1,153 @@
+Timestamp: 2025-07-09T20:44:58.438601
+Title: 实锤！Gemini 降智了吗？真相居然是…… BV1u4GHztEX9
+URL: https://www.bilibili.com/video/BV1u4GHztEX9?spm_id_from=333.1007.tianma.7-1-20.click
+Status: success
+Duration: 3:51
+
+Description:
+好的，这是根据您提供的文本进行的分析和总结。
+
+**大纲式总结:**
+
+I. 引言：Gemini网页版体验问题及用户观察
+    A. 用户普遍认为Gemini网页版表现不如API。
+    B. 多数用户不清楚具体原因。
+II. 关键发现：逃逸的“神奇提示词”
+    A. L站网友KXG发现疑似来自Gemini网页版的系统提示词。
+    B. 提示词核心作用：限制模型深度思考（如“如果你有已经有所有的讯息就能够解决和解决并且没什么特别的”）。
+    C. 此提示词如同“刹车指令”，指示模型尽快输出结果。
+III. 实验验证：提示词对模型表现的影响
+    A. API调用：不带提示词时，回答更详尽、有创造力。
+    B. API调用：带提示词后，表现类似网页版，简洁、直接，有时敷衍。
+IV. 谷歌的动机：成本优化
+    A. 模型深度思考消耗更多计算资源（GPU、电费、硬件）。
+    B. 海量用户累计的微小成本成为天文数字。
+    C. AI Studio定位：面向开发者，展示纯粹能力，鼓励付费API使用。
+    D. 网页版定位：面向大众用户，多数日常查询无需复杂推理。
+V. 行业背景与类似现象
+    A. 此类限制思考的提示词并非首次出现。
+    B. 国内模型Qwen（通义千问）示例：
+        1. Qwen曾因过度推理和自我怀疑而受到诟病。
+        2. 用户和研究者曾探索用提示词限制Qwen的思考链。
+    C. 行业趋势：平衡成本、质量、速度，在API中设置控制推理深度的参数。
+        1. OpenAI: Reasoning Effort
+        2. Anthropic: Budget tokens
+        3. Google: Thinking Budget
+VI. Gemini网页版的实现推测
+    A. 可能使用Flash模型并默认关闭思考。
+    B. Pro模型可能通过Thinking Budget或提示词限制思维链长度。
+VII. 其他成本控制手段提及
+    A. 路由到小模型。
+    B. 使用量化版模型。
+    C. 降低上下文长度。
+VIII. 结论
+    A. 理解模型背后逻辑有助于用户更好地使用AI工具。
+    B. 帮助理解快速发展的AI世界。
+
+**核心观点 (One Sentence):**
+
+Gemini网页版表现受限主要是出于成本考虑，谷歌通过限制模型推理深度等手段优化资源消耗，这是AI行业在平衡性能和成本时普遍采取的策略。
+
+**顶层框架 (Overarching Framework):**
+
+文本通过揭示一个具体的证据（逃逸提示词），解释了Gemini网页版体验受限的技术原因（限制推理），深入分析了厂商背后的经济动机（成本优化），并将此现象置于整个AI行业在性能、成本、速度之间寻求平衡的广阔背景下进行讨论。
+
+**概念地图 (Mermaid Conceptual Map):**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "Gemini 网页版问题与发现"
+        A["Gemini网页版体验"] --> B{"问题/敷衍"};
+        B --> C["逃逸提示词"];
+        C --> D["限制推理/刹车指令"];
+        D --> B;
+        D --> E["实验验证"];
+        E --> F["API无提示词: 详尽/创造力"];
+        E --> B; %% API有提示词表现类似网页版
+    end
+
+    subgraph "谷歌策略与成本动机"
+        G["谷歌动机"] --> H["成本优化"];
+        D --> H; %% 限制推理是成本优化的手段
+        H --> I["降低计算资源消耗"];
+        I --> J["应对海量用户成本"];
+        G --> K["AI Studio (纯粹体验/付费API)"];
+        G --> L["网页版定位 (大众用户)"];
+        L --> M{"需求: 简洁/直接"};
+        M --> B; %% 满足大众需求有时牺牲深度
+    end
+
+    subgraph "行业背景与通用策略"
+        N["行业趋势"] --> O["平衡成本/质量/速度"];
+        O --> P["API参数 (控制推理深度)"];
+        P --> D; %% API参数与提示词限制目的相同
+        N --> Q["Qwen (过度推理示例)"];
+        Q --> R["用户困扰/梗图"];
+        R --> S["限制Qwen提示词"];
+        S --> D; %% 限制Qwen提示词与Gemini提示词类似
+        N --> T["其他降本手段"];
+    end
+
+    D --> G; %% 限制推理服务于谷歌动机
+    G --> N; %% 谷歌策略是行业趋势一部分
+    N --> U["用户理解"];
+    G --> U;
+    subgraph "总结"
+        U;
+    end
+
+    %% Styling
+    style A fill:#FFFFCC,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FFCCCC,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style G fill:#FFFFCC,stroke:#333,stroke-width:2px,color:#333;
+    style H fill:#F08080,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style N fill:#FFFFCC,stroke:#333,stroke-width:2px,color:#333;
+    style O fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#FFCCCC,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#FFCCCC,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style T fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style U fill:#FFFFCC,stroke:#333,stroke-width:2px,color:#333;
+
+    linkStyle 0 stroke:#FF0000,stroke-width:2px;
+    linkStyle 1 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 2 stroke:#90EE90,stroke-width:1px;
+    linkStyle 3 stroke:#90EE90,stroke-width:1px;
+    linkStyle 4 stroke:#D3D3D3,stroke-width:1px;
+    linkStyle 5 stroke:#D3D3D3,stroke-width:1px;
+
+    linkStyle 7 stroke:#F08080,stroke-width:1px;
+    linkStyle 8 stroke:#90EE90,stroke-width:1px;
+    linkStyle 9 stroke:#D3D3D3,stroke-width:1px;
+    linkStyle 10 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 11 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 12 stroke:#FFFFCC,stroke-width:1px;
+    linkStyle 13 stroke:#FF0000,stroke-width:2px;
+
+    linkStyle 14 stroke:#90EE90,stroke-width:1px;
+    linkStyle 15 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 16 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 17 stroke:#FFCCCC,stroke-width:1px;
+    linkStyle 18 stroke:#FFCCCC,stroke-width:1px;
+    linkStyle 19 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 20 stroke:#D3D3D3,stroke-width:1px;
+
+    linkStyle 21 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 22 stroke:#90EE90,stroke-width:1px;
+    linkStyle 23 stroke:#ADD8E6,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+重所周知 Jemnei正同在AIS StudioUP本人就几乎不用Jemnei网页端屏幕前的你 是否也和我一样尽管都认为Jemnei网页端有问题但是大家也说不清真相就在今天 L站网友KXG逃出Jemnei网页端的System prompt称之为神奇提示词这个提示词就为我们展示了Jemnei降致问题的一种可能性让我们来看看这个从Jemnei网页端逃出来的提示词看起来频频无奇但关键在于那句如果你有已经有所有的讯息就能够解决和解决并且没什么特别的但对于推理模型来说这几乎等同于一个杀车指令它告诉模型不要进行过多的思考和联想差不多得了赶紧输出结果铁子中的实验也很有说服力不带这个提示词的API调用Jemnei会给出更详尽根据创造力的回答而一旦加上这个提示词它的表现就后我们日常使用的网页版高度相似简洁直接但有时也显得有些敷衍这背后谷歌的动机其实不难猜测将本增小推理模型每多思考一步就要消耗更多的计算资源这背后是时大时的电费和硬件成本对于谷歌这样拥有海量用户的公司来说哪怕每个用户每次查询接受一顶点的推理成本会及起来也是一笔天文数字虽然谷歌在AI Studio提供了纯正的Jemnei但这种真实的体验是为了打动开发者使用付费API别看AI Studio门槛不高但已经足够过滤掉很多人了而且谷歌这么做也不是完全没有道理对于大多数日常查询用户其实并不需要模型进行复杂的推理尽管揭成为神奇提示词但在我的印象中这种以限制模型思考为目的的提示词并不是我第一次见过甚至这样的提示词是即刻们刻意找出来的给自己用的他们为什么这么做呢这个问题还跟我们国内的模型有关就是统一千问虽然对于大多人来说DipSick的知名度比千问大得多但全世界第一个项目向样引起反响的开源推理模型其实是千问推出的QWQ preview其正式版QWQ32B在开源模型社区更是得到非常广泛的认可尽管保守欢迎但QWQ系列也有被人们构并的地方即无修止充满自我怀疑的推理过程特别是QWQ32B出来之后它甚至能够在几准测试中接近出版R1但是随之而来的代价就是时不时长达四五千的推理偷肯推理过程充满住如获许等等再试试这类词汇你至于那个时候社区出现了很多梗图例如QWQ在推理过程中给出最具震撼力的能秒杀R1的正确答案后又输出了一个令牌等等后面有人根据国内一份研究思维链长度的论文中发觉出了其中限制模型思考的提示词随著推理模型的发展模型厂商也意识到的这一点为了让开发者更好在成本质量和速度进行全横每个厂商都在其API设置了相关的参数OpenAI在它的API中设计了Rezoning Effort参数Anthropic推出了Budget tokens而谷歌则是Thinking Budget不管叫啥大致上都是同一个作用Jemmoni网页端的Flash模型应该是默认关闭思考而无法关闭思考的Pro模型估计在Thinking Budget和提示词都做了减少思维链长度的设定当然这只是降制的一种手段实际上还有路由到小模型使用量化版降低上下文等各种手段每家厂商降制手段各有不同自为普通用户了解这些背后的逻辑或许能帮助我们更好的使用这些AI工具也更好的理解这个正在快速眼镜的AI世界今天的分享就到这里我们下期再见
