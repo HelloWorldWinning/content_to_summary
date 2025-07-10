@@ -1,0 +1,131 @@
+Timestamp: 2025-07-10T09:49:53.108797
+Title: Ghost vs WordPress - 1 Year Later Update From Using Both! Which One is Best?
+URL: https://youtube.com/watch?v=78KF1sUarkY&si=42XW-1ozNamFCHQ0
+Status: success
+Duration: 11:43
+
+Description:
+好的，这是对原文的总结、核心要点、框架和 Mermaid 图表。
+
+**总结大纲：WordPress 对比 Ghost**
+
+1.  **引言与平台概览**
+    *   作者使用经验：WordPress 用于主业务网站，Ghost 用于订阅网站。
+    *   Ghost：专注于付费订阅、电子邮件营销和博客，适合电子报或订阅网站。
+    *   WordPress：更通用的内容管理系统，通过第三方支持可构建任何类型网站。
+
+2.  **关键功能对比**
+    *   **安装**
+        *   两者都有托管版和自托管版。
+        *   Ghost 自托管：技术性较高（不建议初学者），ghost.org 托管版推荐（易用、成本效益高）。
+        *   WordPress 自托管：一键安装，技术性不强，成本效益高（推荐）。
+        *   WordPress.com 托管版：昂贵，许多功能需付费解锁（不推荐）。
+        *   总结：WordPress 自托管比 WordPress.com 更易用/便宜；Ghost.org 比 Ghost 自托管更易用/便宜。
+    *   **主题与设计**
+        *   主题数量：WordPress 远多于 Ghost，支持页面构建器和自定义开发。
+        *   Ghost 主题：数量较少，但优化用于其核心用途（电子报/订阅/博客）。
+        *   总结：WordPress 在主题和设计选项上有更多灵活性，但 Ghost 主题对其目标用途很适合。
+    *   **博客功能**
+        *   基础功能：两者都支持标准博客特性（标题、SEO 优化、媒体）。
+        *   块编辑器：WordPress 块更多，支持第三方块，灵活性更高。
+        *   Ghost 块：固定数量，但有一些独特且实用的块（产品推荐、仅限电子邮件内容块）。
+        *   独特优势：Ghost 内置电子邮件集成（用于发送博客内容）。
+        *   总结：两者博客功能都很好，WordPress 更灵活，Ghost 有独特的电子邮件相关块。
+    *   **电子商务**
+        *   Ghost：非为电子商务设计，只能通过产品框链接到外部网站，不支持原生电商。
+        *   WordPress：通过 WooCommerce 插件可构建完整的在线商店（实物/数字产品、库存管理）。
+        *   总结：WordPress 是电子商务的更好选择。
+    *   **SEO 与排名**
+        *   基本排名：两者都能在 Google 中良好索引和排名，无明显差异。
+        *   高级控制：WordPress 可通过高质量 SEO 插件（如 Rank Math）获得更多控制（站内 SEO、301 重定向、固定链接结构）。
+        *   Ghost：基本 SEO 控制（元描述、标题标签），固定链接结构固定。
+        *   总结：两者都能排名，但 WordPress 插件提供更多 SEO 控制和数据。
+    *   **电子邮件营销**
+        *   Ghost.org：内置电子邮件营销（基础套餐支持 500 订阅者，无限发送），可将博客文章作为广播邮件发送。
+        *   WordPress：不内置，需使用第三方服务（ConvertKit, ActiveCampaign），更适合自动回复和复杂邮件漏斗。
+        *   总结：Ghost 内置广播邮件功能，WordPress 依赖第三方服务，适合复杂漏斗。
+    *   **订阅收入**
+        *   两者都可实现订阅。
+        *   Ghost.org：内置订阅功能，成本效益高（一个价格包含博客、邮件、订阅）。
+        *   WordPress：需第三方解决方案。
+        *   总结：Ghost.org 在实现订阅收入方面更具成本效益，因为它功能集成。
+    *   **联盟营销**
+        *   两者都允许放置联盟链接（都是开源 CMS）。
+        *   WordPress：可通过插件（如 Pretty Links）实现链接伪装（使 URL 更短、更可信、更易点击）并获取点击数据。
+        *   Ghost：只能使用原始 URL，无内置伪装和数据跟踪。
+        *   总结：两者都支持联盟营销，但 WordPress 通过插件提供更好的管理和数据分析。
+
+3.  **结论与推荐**
+    *   选择取决于需求：
+        *   专注于订阅/电子报/博客（内置功能，成本效益高）：选择 Ghost。
+        *   需要通用网站、电子商务、复杂邮件漏斗或更多控制/灵活性（安装易用性、主题、SEO、联盟跟踪）：选择 WordPress。
+
+**核心要点：**
+
+核心要点在于 Ghost 内置订阅和电子邮件功能的专注性，而 WordPress 则凭借其通用性以及对第三方插件的依赖来实现多样化功能，因此选择取决于您的具体需求。
+
+**核心框架：**
+
+按关键功能和使用场景对比两个内容管理系统平台。
+
+**Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph TD
+    A["用户需求 / 网站目标"] --> B{"选择平台"};
+
+    B -- "适合订阅、电子报、专注博客" --> C["Ghost"];
+    B -- "适合通用网站、电商、灵活扩展" --> D["WordPress"];
+
+    subgraph "Ghost 特性 (专注)"
+        C --> C1("安装易用 (ghost.org)");
+        C --> C2("主题少但优化");
+        C --> C3("博客块固定 (有特色块)");
+        C --> C4("无原生电商");
+        C --> C5("SEO 基本控制");
+        C --> C6("内置邮件营销 (广播)");
+        C --> C7("内置订阅收入");
+        C --> C8("联盟营销 (原始链接)");
+    end
+
+    subgraph "WordPress 特性 (通用)"
+        D --> D1("安装易用 (自托管)");
+        D --> D2("主题多且灵活");
+        D --> D3("博客块丰富 (含第三方)");
+        D --> D4("原生电商 (WooCommerce)");
+        D --> D5("SEO 高级控制 (插件)");
+        D --> D6("邮件营销 (第三方集成)");
+        D --> D7("订阅收入 (第三方)");
+        D --> D8("联盟营销 (插件伪装/跟踪)");
+    end
+
+    style A fill:#D8F7F9,stroke:#333,stroke-width:2px;
+    style B fill:#E0E0E0,stroke:#333,stroke-width:1px;
+    style C fill:#A8E6CF,stroke:#333,stroke-width:2px;
+    style D fill:#FFD3B5,stroke:#333,stroke-width:2px;
+
+    style C1 fill:#D0F0E0,stroke:#333,stroke-width:1px;
+    style C2 fill:#D0F0E0,stroke:#333,stroke-width:1px;
+    style C3 fill:#D0F0E0,stroke:#333,stroke-width:1px;
+    style C4 fill:#F0D0D0,stroke:#333,stroke-width:1px;
+    style C5 fill:#D0F0E0,stroke:#333,stroke-width:1px;
+    style C6 fill:#A8E6CF,stroke:#333,stroke-width:1px;
+    style C7 fill:#A8E6CF,stroke:#333,stroke-width:1px;
+    style C8 fill:#D0F0E0,stroke:#333,stroke-width:1px;
+
+    style D1 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D2 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D3 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D4 fill:#FFD3B5,stroke:#333,stroke-width:1px;
+    style D5 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D6 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D7 fill:#FFECDB,stroke:#333,stroke-width:1px;
+    style D8 fill:#FFECDB,stroke:#333,stroke-width:1px;
+
+    linkStyle 2 stroke:#4CAF50,stroke-width:2px;
+    linkStyle 3 stroke:#FF9800,stroke-width:2px;
+
+</Mermaid_Diagram>
+
+Content:
+WordPress versus a ghost what's the difference between these two content Management Systems let's get to it what's up everybody my name is David I hope you're having a great day so I use WordPress and I use ghost I use WordPress on my main business websites and I use goes for my subscription website so I have a really good understanding as to the difference between these two platforms broadly speaking I would describe goes as a Content management system with a strong focus on paid subscriptions email marketing and blogging and it's really ideal if you want to build an email newsletter type website or any type of subscription website whereas WordPress is more of a generalist content management system that has a lot of third-party support that really allows you to build any type of website you want on top of Wordpress so anyways let's get started covering the differences between these two platforms installation oh boy where to begin so ghost and WordPress are very similar in this Regard in that they have a hosted version and a self-hosted version so you can install ghosts on any web Hosting account that you want and I do have a tutorial video on how to do that on this channel that you can check out but I don't recommend it for a beginner because it is a little bit technical which is why I always recommend ghost. org it's actually what I use myself I send up the ghost. org and that's how I power my subscription Revenue websites and that's what I recommend for you unless you want to get a little bit more tech savvy and sign up to digitalocean and install ghosts on your own server and go that's route but again it is a little bit Technical and you're in charge of all the little aspects of ghosts behind the scenes where it's with a ghost. org accounts everything is just set up for you and it works out of the box WordPress by contrast is the opposite where there's wordpress. com and wordpress. org wordpress. com is the hosted version of Wordpress and I really don't recommend it because it just it's just quite expensive it has a lot of features that are locked behind a paywall that you get access to for a much cheaper price if you're willing to set up a shared Hosting account and then install WordPress on your own and WordPress has a one-click in install so it's not too technical to set up yourself so in short with regards to installation you can install ghosts on any shared Hosting account that you want you can install WordPress on any shared Hosting account that you want but WordPress is much easier to install on a shared web Hosting account and it's much more cost effective whereas going with ghost. org is much more cost effective than installing ghost on its own shared Hosting account if that makes any sense whereas WordPress is the opposite going with wordpress. com is much more expensive than using a shared Hosting account themes and Designs so both platforms come with their own custom themes that you can use now which platform has more themes definitely WordPress again you can build really any type of website you want on top of Wordpress and WordPress also has a wide range of page builders that you can leverage to really Custom Design the website to your liking or you can just hire a WordPress developer to build your own custom theme ghost by contrast has way fewer options with regards to themes and design now of course you can hire a developer to build your own custom ghost website if you want but for just looking at the portfolio of themes available with ghost it's not that many but the themes are optimal for what the intended purpose of ghost is which is to run some type of email newsletter or paid subscription or blog so overall if you're looking for the platform that has more themes and design options you're going to really like WordPress but ghost themes are quite good for their intended purpose blogging features so both platforms are pretty similar in the sense that you can have H1 H2 H3 title tags you can optimize the blog post for SEO you have control over the meta data you can add in a feature image you can add in multimedia like videos and images and so forth but with WordPress what's really helpful is that you have a wide range of content blocks that you can use within your blog post to help design everything to your liking you can also add in third-party blocks from other developers that add in additional features that you can add into your blog post whereas with ghost you can't do that what blocks you have are the blocks that you have and you can't really expand it to anything else but that's not really to say like ghost is bad because a lot of the blocks that ghost has are pretty good and I'm quite happy with it so two of my favorite blocks are one the product recommendation box which is something that WordPress doesn't come with natively but you can get a workaround either designing a custom product box yourself or using a third-party plug-in you can also use an email only content block within ghost that I find incredibly helpful so it goes when you're writing a blog post you can create content Within These special boxes that are only viewable within an email client that way when you're ready and you publish your blog post you'll have a publicly available blog post with all the content that you wrote but then you'll have secret hidden content that's only accessible to Anyone who reads the blog post in an email client to me that's a big deal because that's a unique selling point of ghost and it's a unique selling point to get people to subscribe to your email list because remember email marketing is built into ghosts in a way it's not built into WordPress with WordPress you have to use a third-party solution so in short blogging with both these platforms is very similar WordPress again just has more functionality and flexibility because of third-party support but goes for what it is is quite good e-commerce well there's really no comparison here because ghost is not designed for e-commerce it's designed for creating a pay subscription website an email newsletter or a Blog now of course you can create product boxes and then link out to other websites so say you have an ebook on gumroad or course on gumroad or teachable or whatever of course you can create a product box within ghost and maybe create a basic sales page within a ghost and Link out externally but ghost. org doesn't support any type of e-commerce natively by contrast WordPress has access to woocommerce which allows you to build out a full-fledged online store where you can sell both physical and digital products as well as take care of all the inventory management on the back end I have another tutorial video on how to create an online store with woocommerce and WordPress links in the description but overall between ghost and WordPress if you're looking to to build an online store WordPress is the better option SEO and rankings so both platforms have good SEO and both platforms rank just fine within Google so if you have a good web host and a well-designed WordPress website your content is going to get indexed and rank just find same thing with a ghost. org website I haven't really noticed any major differences between my ghost. org powered website as well as my main Business website with regards to being indexed and ranked within Google Now I would just say the primary difference between the two platforms is that WordPress has access to really high quality SEO plugins like rank math that give you a plethora of things that you can adjust on the back end of your website with regards to SEO whereas with ghost. org you really don't have access to anything like that it's really just cookie cutter like edit the meta description and the title tags your website and that's pretty much it words with rank math you have just a little bit more control over the on-page SEO of your website as well as you get a bunch of helpful features on the back end like 301 redirects and so forth so in short you don't need to worry about going with ghost. org compared to Wordpress because I know a lot of people wonder like is my website going to rank as well if I use ghost. org compared to Wordpress my answer would be yes your site will rank just fine using ghost. org when compared to WordPress but WordPress has access to better SEO plugins that gives you more control over the on-page SEO of your websites so one key difference that comes to mind is like the permaline structure of your website with ghost everything is post title so it's website. com pose title whereas with WordPress you have more flexibility so you can have website. com blog slash post title or change that to website. com category post title it is totally up to you but with regards to on-page SEO rankings and getting organic search traffic both platforms are fine email marketing so this one is a massive difference between the two platforms so with ghost. org it has email marketing already built in so with their basic plan you can have 500 email subscribers and you can send as many emails as you want to your subscriber base the way you send an email is that you write a blog post and then when you're ready to publish that blog post you can either choose to publish the blog post on your website publish the blog post and email it to your list or just email it to your list so functionally with ghost. org you can send broadcast Enos whenever you want so that's ideal if you're looking to create some type of like newsletter oriented website maybe like the weekend warrior newsletter that goes out every Sunday you could do something like that and you just want to send out broadcast emails you're going to really like ghost. org but with WordPress you don't have email marketing built into the platform you have to use a third-party solution like convertkit or active campaign so it really just depends on what you're trying to do if you want to create an email autoresponder sequence in a complicated email funnel to sell products and services you're going to be a lot happier going with WordPress and an email marketing software whereas with ghosts you don't have access to autoresponders or any type of email funnel everything is just a broadcast email but ghost does come with some specific email only blocks you can take advantage of like they have a specific email promotion box that you can take advantage of to help sell a product or service or maybe upgrade people to a paid subscription and like I mentioned previously you have that email only block that hides content that's only available in an email client subscription Revenue so you can do subscription Revenue with both platforms actually but with WordPress you have to use a third-party solution whereas with ghost. org everything is built in for one low price so with one low price you get a blogging platform email marketing and the opportunity to offer a paid subscription but if you're using Wordpress and you have to use something like convertkit and then offer a paid subscription with convertkit so you can achieve the same outcome with both platforms but coast. org is a little bit more cost effective simply because everything is built in for one low price and last is affiliate marketing so both platforms you can do affiliate marketing on because that's what's great about ghost. org and WordPress that they are both open source content Management Systems it's your websites where WordPress has the advantage though is that allows you to cloak affiliate links using various plugins like Pretty Wings now I know cloaking affiliate links sounds like really sketchy or weird it's not it's a standard industry practice all it is is that it allows you to transform a long ugly URL into something that's a little bit more clickable and trustworthy so a great example is that I'm an affiliate for siteground so what I can do is I can take that long affiliate link from cyclone and transform it into davidooky. com psychron not only is that link shorter and more clean and easy to understand it's also more clickable and the end user understands where they're going to end up not only that pretty links and software like pretty links actually gives you actionable data on the back end like how many times people have clicked on your url so you can kind of understand the quick through rates as well as your conversion for your affiliate marketing efforts you can just get more data that's quite useful to help make a business decision whereas with ghost. org there's no way to cloak affiliate links you just got to use the raw URL so that's really the primary difference between the two platforms you can do affiliate marketing on both platforms you can put affiliate links on your ghost. org power a website as well as your WordPress website but because of various plugins that WordPress offers you get more actionable data on the back end so if I had to pick and I'm trying to build out an affiliate website I would go with WordPress over ghost alright everyone that's it for this video on WordPress versus Ghost what are the differences the pros and cons why would you go with WordPress over ghost or ghost over WordPress anyways I hope you enjoyed the video and I hope you got value out of it if you did consider subscribing and hit that like button my name is David thank you very much for watching and have a great day bye [Music] thank you
