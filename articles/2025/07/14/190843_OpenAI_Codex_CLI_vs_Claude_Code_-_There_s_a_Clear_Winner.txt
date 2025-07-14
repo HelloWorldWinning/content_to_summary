@@ -1,0 +1,106 @@
+Timestamp: 2025-07-14T19:08:43.814025
+Title: OpenAI Codex CLI vs Claude Code - There’s a Clear Winner
+URL: https://youtube.com/watch?v=3XarBRoMPfM&si=uU6Pn6XyEhVzicqW
+Status: success
+Duration: 12:00
+
+Description:
+好的，以下是对文本的总结和分析，使用简体中文呈现：
+
+**核心思想提炼与总结**
+
+1.  **背景：** 作者Greg是一位Cloud Code的重度用户，对其开发者体验高度赞赏。在OpenAI Code Interpreter发布后，他进行了对比测试，结果对Code Interpreter感到失望。
+2.  **核心观点：** 尽管OpenAI以往在开发者体验方面表现出色，但Code Interpreter在多个关键方面（模型访问、API管理、成本控制、项目理解、用户界面、稳定性等）存在严重缺陷，使其难以使用，远未达到Cloud Code的标准。这些缺陷主要源于产品缺乏足够的打磨和内部使用。
+3.  **Cloud Code 的优势（对照点）：**
+    *   良好的开发者体验（UX）和精致的UI。
+    *   便捷的API Key管理，可设置独立Key。
+    *   提供成本管理工具（`/cost`）和上下文压缩功能（`/compact`）。
+    *   主动扫描并理解项目代码库（`/init`）。
+    *   高度稳定，很少崩溃。
+    *   支持MCP服务器扩展功能。
+    *   产品经过内部大量使用和打磨。
+4.  **OpenAI Code Interpreter 的主要不足：**
+    *   **模型访问与选择混乱：** 无法使用声明已开放的GPT-4；默认模型GPT-4 Mini不可用且不自动回退；模型列表包含大量无效或不相关的模型（如DALL-E），选择过程令人困惑和沮丧。
+    *   **API Key 管理不便且不安全：** 依赖环境变量或`.env`文件，与项目API Key混淆；无法轻松创建和管理仅用于Code Interpreter的独立Key；存在全局API Key泄露风险。
+    *   **缺乏成本管理工具：** 无法在会话中查看已花费的成本；没有上下文压缩功能，可能导致费用快速增加。
+    *   **缺乏项目上下文理解：** 启动时不对代码库进行扫描或理解；没有保存上下文到文件的机制，每次启动都从零开始。
+    *   **用户界面简陋：** “最低可行设计”；输入输出区域区分不清；状态信息输出冗余且分散；缺乏UI打磨，如语法高亮、颜色对比、颜色盲支持。
+    *   **稳定性差：** 容易崩溃（尤其是在切换模型后），崩溃后丢失所有上下文和设置。
+    *   **缺乏扩展性：** 目前不支持MCP服务器。
+    *   **产品成熟度不足：** 感觉像是仓促推出，缺乏足够的内部测试和打磨。
+5.  **结论性问题：** Code Interpreter的开发者体验如此糟糕，以至于作者甚至无法有效地测试其核心功能——即解决编程问题的能力，因为光是让它正常运行就已经非常困难。
+
+---
+
+**1. 总结大纲结构：**
+
+*   **引言：** 作者对Cloud Code的偏爱与对Code Interpreter初体验的失望。
+*   **核心论点：** Code Interpreter的开发者体验远低于OpenAI以往的标准。
+*   **具体批评点（Code Interpreter 的不足）：**
+    *   模型选择与访问问题
+    *   API Key 管理的痛点
+    *   缺乏成本控制功能
+    *   不主动理解项目上下文
+    *   简陋的用户界面
+    *   差劲的产品稳定性
+    *   缺乏MCP支持
+*   **对比分析（隐含与Cloud Code 的优势对比）：** 通过指出Code Interpreter的不足，反衬出Cloud Code在这些方面的良好实践。
+*   **产品成熟度反思：** Cloud Code的成功源于内部打磨，Code Interpreter则缺乏。
+*   **最终结论：** 糟糕的开发者体验是使用Code Interpreter的主要障碍。
+
+**2. 核心结论（一句）：**
+
+尽管OpenAI Code Interpreter可能具备强大的模型能力，但其在开发者体验上的诸多缺陷（如模型访问、API管理、用户界面、稳定性等）使其远不如Cloud Code那样易用和高效。
+
+**3. 总体框架：**
+
+基于开发者体验的产品比较与评估（以Cloud Code 为参照系）。
+
+---
+
+**4. Mermaid 概念图：**
+
+<Mermaid_Diagram>
+graph LR
+    A["产品比较"] --> D["开发者体验 (核心评估维度)"];
+
+    D --> B["Cloud Code"];
+    D --> C["OpenAI Code Interpreter"];
+
+    B --> E["良好的开发者体验"];
+    C --> F{"开发者体验不足"};
+
+    E --> H["高效使用 / 满意度高"];
+    F --> G["使用受阻 / 沮丧"];
+
+    subgraph "Code Interpreter 关键痛点"
+        F --> I["模型访问/选择混乱"];
+        F --> J["API Key 管理不便/不安全"];
+        F --> K["缺乏成本管理功能"];
+        F --> L["项目上下文理解不足"];
+        F --> M["用户界面简陋"];
+        F --> N["稳定性差"];
+        F --> O["缺乏 MCP 支持"];
+    end
+
+    style A fill:#B0C4DE,stroke:#333,stroke-width:2px;
+    style D fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#90EE90,stroke:#333,stroke-width:2px;
+    style C fill:#FFB6C1,stroke:#333,stroke-width:2px;
+    style E fill:#98FB98,stroke:#333;
+    style F fill:#F08080,stroke:#333;
+    style H fill:#32CD32,stroke:#333;
+    style G fill:#DC143C,stroke:#333;
+    style I fill:#FFD700;
+    style J fill:#FFD700;
+    style K fill:#FFD700;
+    style L fill:#FFD700;
+    style M fill:#FFD700;
+    style N fill:#FFD700;
+    style O fill:#FFD700;
+    linkStyle 5 stroke:#008000,stroke-width:2px;
+    linkStyle 6 stroke:#FF0000,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+Hey, my name is Greg and I've spent hundreds of dollars hacking with cloud code over the last couple months. Uh, it's become sort of my default coding agent whenever I'm starting new projects or especially if I'm working on an older project and that has a larger code base. Last week, OpenAI launched their codec and I was really excited to try it out. So, I tried both Cloud Code and OpenAI's codeex out headtohead on a couple different projects. Uh, I'll kind of go against YouTube best practices here and just spoil it. Uh, codeex fell pretty short and it was disappointing. Uh, and so in the rest of the video, I'm going to share my opinion on what OpenAI needs to do to bring Codeex up to the same standard that Cloud Code's at now. Uh, and I I honestly I think there's some simple fixes having to do with the developer experience. Before we get into this, I want to preface this by saying I'm wearing my OpenAI Devday hoodie. I've been hacking on OpenAI's APIs starting with the GPT3 text completion endpoint. OpenAI has shipped some of the best developer experiences that I've ever encountered in my career. I have a number of former colleagues and friends from Twilio who work there now. Uh I generally don't want this channel or really anything I do to be about criticizing other people. Uh because shipping stuff is really hard. Uh, I I only feel comfortable critiquing this because I know that OpenAI's bar for developer experiences has historically been really high, and this one just sort of fell surprisingly short. So, let's talk a little bit about uh a few points of the developer experience. When I personally start up uh Codeex, I'm given a message that 04 is not available to me. Uh, my account is tier 5. The announcement said that 04 should be rolled out to all tier 5 accounts. So, they've set my expectations at here. Uh, they're delivering at here with no explanation of the gap. But Codeex though does ship with 04 MIDI being the default. And it does enough checking to let me know that I don't have access to that model. But why doesn't it just fall back to a model that works then? Instead, if I try to chat with 04 Mini, it just fails. Okay, fine. I guess I need to change my model. It's not obvious on the screen how I do that, but it does say I can type /help here. So, I'll type /help. All right, cool. There's a slashmodel command. Let's choose /model. Oh my gosh. Which model am I supposed to choose from here? Do I want Babbage? Do I want GPT 3. 5? I follow these things pretty closely and I'm pretty sure that of this list, 03 Mini is the best option for me. Uh, and I'm pretty sure that 03 Mini is better than this dated version of 03 Mini. I'm pretty sure the 03 Mini is going to point to the latest one, but I'm only like 90% sure. But hey, let's just for shits and giggles, let's let's choose one of the older ones. Let's try Babage. I I This is before my day. Let's just try Babage and play. Oh, man. And it fails. All right. Well, let's try one of these newer models. Oh, look. That fails, too. Well, let's try one of these other models that uh you know, it's weird that Dollyy's in here, right? I mean, that doesn't seem like we're going to do image generation here. Let's try that one. that fails as well. Why are all of these models listed here if they don't work with this product? Like this just baffles me. This is this is like this is an if statement. You know, this is 30 minutes of work. This is like if you had a couple dozen people trying this, this feedback would have been surfaced. And so I think this sort of thing is the thing that frustrated me most coming from OpenAI because this just sort of feels like wasting people's time in order to get some headlines. And and I don't that maybe that's not it, but that's what it feels like from my perspective is I haven't even gotten started yet and I'm having to make these decisions and it's like trying to pick which door has the death trap and which one leads to the happy place. Uh, and I feel like a developer should never have to make that decision just simply to get to hello world with your product. API key management. When you boot up cloud code, it's going to ask you to oth into your account and then it's going to set up your API key and store it away into a configuration file for you. Codeex on the other hand uh expects you to set the API key as an environment variable um specifically either as a global environment variable or as a env. Um this is very similar to how you would set the API key if you were just going to use the OpenAI API in one of your projects. Uh but that doesn't actually make sense for this tool. I really like how Anthropic expects you to spin up a second API key or I think even a separate project uh for cloud code because the usage is different, right? Right. And so if I've set uh an OpenAI API key in my project, that means, you know, I have some code in that project that's using the OpenAI API and it's using that API key. And I don't want the usage of the coding tool to uh spend against that same API key. Also, I really don't like the idea that you need to set a global OpenAI API key for if you want to use this across all of your projects. So, now there's this uh OpenAI API key just like hanging out in your environment all the time that could be snagged by any script that's running locally or any app I suspect that's running. Uh, and so it just seems like unnecessarily insecure. There's really not a good option with codeex to create an API key that's solely dedicated to the usage of codecs and then to store it in a persistent way that you can use it across all of the different projects you might be working on. And cloud code makes this super easy. Cost management. Uh so as I mentioned uh cloud code if there's any major complaint of it is that it can get expensive compared to what developers are used to paying uh in order to write code. uh but still, you know, probably pretty good value compared to hiring a human to do it. Um and they know this and so they give you a couple of options to manage the cost over the course of your session. The first is /cost. At any point in time, you can run the /cost command and you can see how much you've spent during this coding session. This is really really useful. Uh two, they give you the slash compact command, right? So, it's just basically taking everything you've done, bulletointing it, and then significantly reducing or compacting the context uh with a summary so that cloud code still knows what's happened, but it's able to know that with much much smaller requests. So, each request is going to be a lot less expensive. Codeex does none of this. There's no way on any given session to figure out how much you've spent. Uh and there is no concept of compacting your history. Project context. When you start up Claude, uh, it does a scan of your directory that you're in, of your codebase, and it tries to gain an understanding of your codebase, and then you can run this /init command and write what it's learned about the codebase to a claw. md file. So, it doesn't need to do that analysis every single time. You can also give it instructions on you know your formatting preferences on uh the you know just coding conventions that you're going to use in the project so that you're not starting from scratch every time you start this up. Codeex when you start it up it does nothing. Uh it just basically gives you a text box to chat with whatever model you have chosen. It doesn't take any initiative to understand your codebase to understand what is going on. Uh now once you initiate the chat it will but I really love the idea that since this is a coding agent since you ran it in a specific directory it can assume that you want it to understand your codebase before you start working with it. So why not go ahead and start doing that and then once you have started doing that why not in order to save costs and save time write what you've learned to a standardized file so you don't have to repeat that process every time. Uh fifth is just the UI. I mean, Cloud Code is a really, really nicely designed CLI, and there's a lot of subtleties in Cloud Codes, like the way that they separate the output versus your section down below where you're going to do the input, um, the way they do the syntax highlighting, the just the colors they've used, like it just it feels like a very intentional product. Uh by contrast, codeex feels sort of like the minimum viable design. You know, instead of a single line that shows how long you've been waiting, uh it just has like sort of a console log uh that outputs every few seconds uh saying, "Okay, now you waited for 24 seconds. Now you waited for 26 seconds. " And it just scrolls there. There's no clear visual delineation between the where the user does their input and the output of the agent. um you know this there's not a lot of good color contrast. Cloud Code even has some nice considerations to change the color scheme if you're color blind. Codeex does not have this. So again it it just feels like this was the minimum possible that could be done and then it was pushed out. This thing crashes like uh I've never had cloud code crash on me. Uh once I switch over to 03 Mini, it has crashed multiple times on me. Uh just hard crash and then to start it back up again, I got to go through and set all the same preferences again. and then I lose all the context and everything. Um, and it's just again just sort of feels like table stakes. Uh, and it's super super frustrating and it just feels like it's not ready. MCP support. Uh, you now can add MCP servers to cloud code. So, one great use case that I learned about on a cloud code webinar last week was uh using the Puppeteer uh MCP server to control a browser. So you can ask cloud code to make changes and then you can have it control a browser to view those changes and it sort of closes the loop on the feedback cycle. Uh once you add MCP servers to these tools, it just really opens up the world of possibilities of what you can do with them. Speaking of that webinar, uh you know, I don't remember the last time I sat in on a webinar for a software product. uh but I've used cloud code so much and uh that I I wanted to participate and learn how to get more uh use out of it and so the seminar from anthropic was called the origin story of cloud code and best practices so I'm like I'm in um and there was something they said that was interesting there they said cloud code started off as an internal tool and then when they released it internally uh they saw adoption internally just sort of go up and to the right and so they said okay there must be something here and they polished it up and once they got it to the right place then they released it out into the open. Um but and even today like it's how many many developers inside of anthropic uh you know do their daily coding tasks. Uh you can tell from the polish that people internally had used cloud code before it made it to market. And you can tell from the polish that very few people used OpenAI's codeex CLI before it came to market. really just like a week or two of internal use and a little bit of intentionality, this could be so much better. And notice here, I have said nothing about this tool's ability to solve coding problems. It is very possible that 04 Mini plus codecs would solve my developer problems with far more reliability uh at a fraction of the cost of cloud code. But I never got there because it was so frustrating to use it and because it kept crashing on me and because I don't have access to the latest and greatest models.
