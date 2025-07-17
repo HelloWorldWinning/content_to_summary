@@ -1,0 +1,139 @@
+Timestamp: 2025-07-17T10:28:37.273998
+Title: Claude Connectors太酷了！ EIWaZZlhyFE
+URL: https://youtube.com/watch?v=EIWaZZlhyFE&si=qeYqSGPMjNEAP6OA
+Status: success
+Duration: 5:06
+
+Description:
+**核心思想与总结**
+
+本文详细介绍了Anthropic "Cloud"模型引入的“Connectors”和“Desktop Extensions”两大革新功能，强调了其通过视觉识别技术，实现AI对操作系统及应用软件的直接、智能控制和自动化操作，从而将AI的应用能力从理论探索推向了实际操作层面。
+
+---
+
+**一、核心功能概览**
+
+*   **Cloud Connectors (云端连接器):**
+    *   实现Cloud AI与各类SaaS平台（如Gmail、Notion、Zapier、Asana等）的无缝集成。
+    *   允许AI直接调用、操作和管理这些云端服务中的数据和功能。
+*   **Desktop Extensions (桌面扩展):**
+    *   **核心技术:** 基于视觉识别（Vision），使AI能够“看懂”电脑屏幕内容，并进行鼠标点击、键盘输入等操作。
+    *   **主要组成:**
+        *   **Windows MCP (Microsoft Control Protocol):** 专为Windows系统设计，实现对Windows应用和系统操作的深度控制。
+        *   **Mac控制:** 支持通过AppleScript和JavaScript自动化Mac任务。
+        *   **其他扩展:** 包括Brave浏览器、PDFfiller（PDF编辑）、Classy（文件系统访问）等。
+*   **自动化能力:** 能够执行复杂的多步骤任务，如打开应用、导航界面、输入信息、分析数据等。
+
+**二、关键应用演示**
+
+*   **微信自动化操作:**
+    *   演示AI如何通过视觉识别，打开微信应用。
+    *   精准定位联系人（"link dot"），并自动发送预设消息。
+    *   展现AI对图形界面的理解和交互能力。
+*   **任务管理器分析:**
+    *   展示AI打开Windows任务管理器。
+    *   自动识别并排序进程列表，找出占用内存或CPU最多的程序。
+    *   体现AI对系统工具的理解和数据分析能力。
+
+**三、深远意义与展望**
+
+*   **从理论到实践的飞跃:** 将AI能力从单纯的对话和内容生成，提升至实际操作和任务执行层面。
+*   **超越现有模型的局限:** 与其他AI模型仍停留在基准测试和性能“刷分”阶段不同，Cloud已开始在实际应用场景中展现其强大潜力。
+*   **开创人机交互新范式:** 通过视觉和自动化，预示着AI将更深度地融入日常工作流，实现更加智能、便捷的人机协作。
+*   **未来潜力巨大:** 预计将涌现大量基于Connectors和Desktop Extensions的创新应用。
+
+---
+
+**核心要点总结 (Core Point):**
+
+Cloud的"Connectors"和"Desktop Extensions"功能，通过视觉识别和自动化操作，将AI的能力从理论层面推向了实际应用，展现了未来人机交互的巨大潜力。
+
+---
+
+**Overarching Framework (总体框架):**
+
+AI驱动的跨平台（云端与桌面）视觉自动化与智能集成。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    A["Cloud AI"] -- "核心能力" --> B("Connectors & Desktop Extensions");
+
+    subgraph "核心技术"
+        B -- "依赖" --> C("视觉识别与自动化");
+        C -- "赋能" --> D("跨应用交互");
+    end
+
+    subgraph "功能模块"
+        B_C["Connectors\n(云端服务集成)"] --> B_C1("Gmail");
+        B_C["Connectors\n(云端服务集成)"] --> B_C2("Notion");
+        B_C["Connectors\n(云端服务集成)"] --> B_C3("Zapier 等");
+
+        B_D["Desktop Extensions\n(桌面自动化)"] -- "代表" --> B_D1("Windows MCP");
+        B_D["Desktop Extensions\n(桌面自动化)"] -- "支持" --> B_D2("Mac 控制");
+        B_D["Desktop Extensions\n(桌面自动化)"] -- "示例" --> B_D3("浏览器 (Brave)");
+        B_D["Desktop Extensions\n(桌面自动化)"] -- "示例" --> B_D4("PDF 编辑 (PDFfiller)");
+        B_D["Desktop Extensions\n(桌面自动化)"] -- "示例" --> B_D5("文件系统 (Classy)");
+    end
+
+    B -- "包含" --> B_C;
+    B -- "包含" --> B_D;
+
+    subgraph "应用示例"
+        E["微信消息发送"] --> F("识别应用界面");
+        E --> G("定位联系人");
+        E --> H("发送预设消息");
+
+        I["任务管理器分析"] --> J("打开任务管理器");
+        I --> K("识别进程列表");
+        I --> L("找出最大内存/CPU占用");
+    end
+
+    C -- "支撑" --> E;
+    C -- "支撑" --> I;
+
+    subgraph "深远影响"
+        M("AI从理论到实践");
+        N("突破传统模型局限");
+        O("开创智能人机交互新范式");
+    end
+
+    {F, G, H, J, K, L} -- "体现" --> M;
+    M -- "导致" --> N;
+    N -- "进而" --> O;
+
+    style A fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff;
+    style B fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff;
+    style C fill:#FFEB3B,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FF9800,stroke:#333,stroke-width:1px,color:#fff;
+
+    style B_C fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style B_C1 fill:#E1F5FE,stroke:#333,stroke-width:1px,color:#333;
+    style B_C2 fill:#E1F5FE,stroke:#333,stroke-width:1px,color:#333;
+    style B_C3 fill:#E1F5FE,stroke:#333,stroke-width:1px,color:#333;
+
+    style B_D fill:#BBDEFB,stroke:#333,stroke-width:1px,color:#333;
+    style B_D1 fill:#E3F2FD,stroke:#333,stroke-width:1px,color:#333;
+    style B_D2 fill:#E3F2FD,stroke:#333,stroke-width:1px,color:#333;
+    style B_D3 fill:#E3F2FD,stroke:#333,stroke-width:1px,color:#333;
+    style B_D4 fill:#E3F2FD,stroke:#333,stroke-width:1px,color:#333;
+    style B_D5 fill:#E3F2FD,stroke:#333,stroke-width:1px,color:#333;
+
+    style E fill:#FFF9C4,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+
+    style I fill:#FFF9C4,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+
+    style M fill:#8BC34A,stroke:#333,stroke-width:1px,color:#fff;
+    style N fill:#689F38,stroke:#333,stroke-width:1px,color:#fff;
+    style O fill:#33691E,stroke:#333,stroke-width:1px,color:#fff;
+</Mermaid_Diagram>
+
+Content:
+今天给大家分享一本让人特别震撼的一个update安撮皮革在今天发了一个叫discover tools that work with cloud怎么演示呢 我应该先给大家看一下这个经人的效果它就是connectorsconnectors的话 你这里brows connectors然后 desktop extensions你需要下载一个最新的cloud去安装一下然后然后安装这个叫windowsmcp然后点configure这里你可以看到我这边多选上了叫 allow and supervised就是完全先让它来帮我做一系列的操作open my wechatwhich you can find the icon in system 3 bar open itand find link dotfrom my contact list send a message to herthe message is hello this is from cloud and we are into the future大家来 try这时候它会用vgin也就说视觉然后去寻找我们的整个作面已经打开了你们可以看到太酷了我考然后它已经定位到领导哇魔法时刻Hello this is from cloud and we are into the future它打holy shitsend oh my god yes this is the one太酷了 perfect now I need to send message by clicking然后它会check一下I can see the message has been successfully sent to the linklooking at the chat interface I can see过吧据酷无比我感觉其他的模型还在什么刷分包括刷吧但 cloud已经在使用的层面已经越走越远我们再来试另外一个比如说让它看一下把我们的叫肉管里期打开Open my task managerWindows的copy letter都做不到然后我们看一下 cloud都可以哦已经打开了我应该让它截图看一下哪个用的内存或者 cpu最多对我先把它关掉 okThanks open it again check which processesprocess uses the max map in my computer然后把cloud要放到右边了我们这个task manager放左边 use vision equals true到再次去 capture一下已经帮我们点了memory descending就是crown没有用的是最多的用了一点六级已经出来了像不像活在未来过我觉得叫connectors应该还会有很多大量其他的应用我感觉现在才刚刚开始超级酷我今天看到的时候都被惊讨了我们可以在这边看到 settings把他屏幕恢复成正常connectors在这里我还添加了一个叫 cloudflare developer platform然后都有哪些connectors我们可以看到外包有一堆什么asana canvasadless and cloudflare developer platform gmail notion platesentry stripe zappier一坨然后dustop extensions像这个叫mac也支持的比如说 control your mac他会用这个叫OSA的script然后iPad script和加入script去帮你自动化任务我们这边Windows的话用的是叫Windows mcp然后以及什么其他我都还没有用brave这个应该是一个流暖器吧然后pdffeler就是帮你去写pdf 帮你去tmpdf form这个简直太贴心了一个嘛classy怎么不用说了就是可以访问你到整个这个文件系统以及 notes ms 这些是苹果的cromb当然cromb目前也是苹果的那没关系我们有了Windows mcp其实关门就不所谓了因为他可以他可以调用各种各样的什么命令帮我们的Windows的应用等等打开刚才tustmanager打开里面看到了太神奇了非常酷好感觉接下来应该会有一系列的相关的这种应用也好会怎么样的非常酷好的那今天的分享就到这里
