@@ -1,0 +1,171 @@
+Timestamp: 2025-07-23T14:30:52.858651
+Title: 上海 合溢网络科技
+URL: https://atwar.eu.org/web3_data_job/
+Status: success
+Duration: 0:00
+
+Description:
+**概述总结**
+
+**1. 提纲与结构：**
+
+*   **职位概览：** 详细介绍Web3数据分析师职位的基本信息，包括公司、地点、经验、学历及薪资范围。
+*   **核心职责：** 分解该职位在Web3数据领域的关键任务，涵盖数据获取、分析、监控、可视化及跨团队协作。
+*   **任职要求：** 列出候选人必须具备的技术技能、Web3专业知识和软能力。
+*   **加分项：** 阐明能提升候选人竞争力的额外经验和技能。
+
+**2. 核心观点：**
+该职位旨在招聘一名Web3数据分析师，负责从多链数据抓取、清洗到高级分析、监控预警及可视化，为Web3资产筛选、产品决策和风险控制提供全面数据支持。
+
+**3. 总体框架：**
+Web3链上数据全生命周期管理与赋能
+
+**4. Mermaid概念图：**
+<Mermaid_Diagram>
+graph LR
+    subgraph "职位信息 Job Information"
+        A["合溢网络科技"] -- "招聘" --> B["数据分析师(Web3)"];
+        B -- "地点" --> C["上海"];
+        B -- "经验" --> D["3-5年"];
+        B -- "学历" --> E["本科"];
+        B -- "薪资" --> F["25-45K·14薪"];
+    end
+
+    subgraph "核心职责 Core Responsibilities"
+        G["多链数据抓取与清洗"] -- "支持" --> H["资产标的指标筛选与优选"];
+        G -- "支持" --> I["指标体系设计与验证"];
+        G -- "支持" --> J["链上监控与预警"];
+        J -- "支持" --> L["数据洞察与可视化"];
+        H -- "促进" --> L;
+        I -- "指导" --> L;
+        K["跨团队沟通与支持"] -- "协调" --> G;
+        K -- "协调" --> H;
+        K -- "协调" --> I;
+        K -- "协调" --> J;
+        K -- "协调" --> L;
+    end
+
+    subgraph "任职要求 Qualifications"
+        M["编程语言"] -- "包括" --> M1["Java/Go/Python"];
+        N["数据查询"] -- "包括" --> N1["SQL与数据平台"];
+        O["链上数据工具"] -- "包括" --> O1["The Graph/Substreams/Flipside/自建节点"];
+        P["智能合约理解"] -- "包括" --> P1["Solidity/SPL合约阅读与风险识别"];
+        Q["Web3机制理解"] -- "包括" --> Q1["AMM/永续合约/链上交易指标"];
+        R["沟通能力"] -- "重要" --> R1["高效传达Web3数据"];
+        M,N,O,P,Q,R -- "构成" --> B;
+    end
+
+    subgraph "加分项 Bonus Points"
+        S["链上分析/风控/量化经验"] -- "例如" --> S1["memecoin项目"];
+        T["实时流处理背景"] -- "例如" --> T1["Kafka/Flink"];
+        U["链上市场动态熟悉度"] -- "例如" --> U1["现货及衍生品项目经验"];
+        S,T,U -- "提升" --> B;
+    end
+
+    B -- "核心工作是" --> G;
+    B -- "核心工作是" --> H;
+    B -- "核心工作是" --> I;
+    B -- "核心工作是" --> J;
+    B -- "核心工作是" --> L;
+    B -- "核心工作是" --> K;
+
+    H -- "输出" --> H1["优质资产池"];
+    I -- "支持" --> I1["数据决策"];
+    J -- "实现" --> J1["风险识别与预警"];
+    L -- "产出" --> L1["市场分析报告"];
+    K -- "支持" --> K1["产品与运营策略"];
+
+    style A fill:#D8F9F7,stroke:#333,stroke-width:2px;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style C fill:#E6F3F7,stroke:#333;
+    style D fill:#E6F3F7,stroke:#333;
+    style E fill:#E6F3F7,stroke:#333;
+    style F fill:#E6F3F7,stroke:#333;
+
+    style G fill:#FFFFCC,stroke:#333;
+    style H fill:#FFFFCC,stroke:#333;
+    style I fill:#FFFFCC,stroke:#333;
+    style J fill:#FFFFCC,stroke:#333;
+    style K fill:#FFFFCC,stroke:#333;
+    style L fill:#FFFFCC,stroke:#333;
+
+    style M fill:#CCFFCC,stroke:#333;
+    style N fill:#CCFFCC,stroke:#333;
+    style O fill:#CCFFCC,stroke:#333;
+    style P fill:#CCFFCC,stroke:#333;
+    style Q fill:#CCFFCC,stroke:#333;
+    style R fill:#CCFFCC,stroke:#333;
+    style M1 fill:#F0FFF0,stroke:#333;
+    style N1 fill:#F0FFF0,stroke:#333;
+    style O1 fill:#F0FFF0,stroke:#333;
+    style P1 fill:#F0FFF0,stroke:#333;
+    style Q1 fill:#F0FFF0,stroke:#333;
+    style R1 fill:#F0FFF0,stroke:#333;
+
+    style S fill:#FFDDC1,stroke:#333;
+    style T fill:#FFDDC1,stroke:#333;
+    style U fill:#FFDDC1,stroke:#333;
+    style S1 fill:#FFF0D1,stroke:#333;
+    style T1 fill:#FFF0D1,stroke:#333;
+    style U1 fill:#FFF0D1,stroke:#333;
+
+    style H1 fill:#FFCC99,stroke:#333,stroke-width:1px;
+    style I1 fill:#FFCC99,stroke:#333,stroke-width:1px;
+    style J1 fill:#FFCC99,stroke:#333,stroke-width:1px;
+    style L1 fill:#FFCC99,stroke:#333,stroke-width:1px;
+    style K1 fill:#FFCC99,stroke:#333,stroke-width:1px;
+
+    linkStyle 0 stroke:#006699,stroke-width:1px;
+    linkStyle 1 stroke:#006699,stroke-width:1px;
+    linkStyle 2 stroke:#006699,stroke-width:1px;
+    linkStyle 3 stroke:#006699,stroke-width:1px;
+    linkStyle 4 stroke:#006699,stroke-width:1px;
+
+    linkStyle 5 stroke:#32CD32,stroke-width:1px;
+    linkStyle 6 stroke:#32CD32,stroke-width:1px;
+    linkStyle 7 stroke:#32CD32,stroke-width:1px;
+    linkStyle 8 stroke:#32CD32,stroke-width:1px;
+    linkStyle 9 stroke:#32CD32,stroke-width:1px;
+    linkStyle 10 stroke:#32CD32,stroke-width:1px;
+    linkStyle 11 stroke:#8A2BE2,stroke-width:1px;
+    linkStyle 12 stroke:#8A2BE2,stroke-width:1px;
+    linkStyle 13 stroke:#8A2BE2,stroke-width:1px;
+    linkStyle 14 stroke:#8A2BE2,stroke-width:1px;
+    linkStyle 15 stroke:#8A2BE2,stroke-width:1px;
+
+    linkStyle 16 stroke:#FF4500,stroke-width:1px;
+    linkStyle 17 stroke:#FF4500,stroke-width:1px;
+    linkStyle 18 stroke:#FF4500,stroke-width:1px;
+    linkStyle 19 stroke:#FF4500,stroke-width:1px;
+    linkStyle 20 stroke:#FF4500,stroke-width:1px;
+    linkStyle 21 stroke:#FF4500,stroke-width:1px;
+    linkStyle 22 stroke:#4682B4,stroke-width:1px;
+    linkStyle 23 stroke:#4682B4,stroke-width:1px;
+    linkStyle 24 stroke:#4682B4,stroke-width:1px;
+    linkStyle 25 stroke:#4682B4,stroke-width:1px;
+    linkStyle 26 stroke:#4682B4,stroke-width:1px;
+    linkStyle 27 stroke:#4682B4,stroke-width:1px;
+
+    linkStyle 28 stroke:#DAA520,stroke-width:1px;
+    linkStyle 29 stroke:#DAA520,stroke-width:1px;
+    linkStyle 30 stroke:#DAA520,stroke-width:1px;
+    linkStyle 31 stroke:#DAA520,stroke-width:1px;
+    linkStyle 32 stroke:#DAA520,stroke-width:1px;
+    linkStyle 33 stroke:#DAA520,stroke-width:1px;
+
+    linkStyle 34 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 35 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 36 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 37 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 38 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 39 stroke:#6A5ACD,stroke-width:1px;
+
+    linkStyle 40 stroke:#FFA07A,stroke-width:1px;
+    linkStyle 41 stroke:#FFA07A,stroke-width:1px;
+    linkStyle 42 stroke:#FFA07A,stroke-width:1px;
+    linkStyle 43 stroke:#FFA07A,stroke-width:1px;
+    linkStyle 44 stroke:#FFA07A,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+By WeTrade — 12 Jul 2025 上海 合溢网络科技 数据分析师（web3） https://www.zhipin.com/job_detail/1aeb164558e80e3503By39u6FlRX.html 合溢网络科技 上海·3-5年·本科 25-45K·14薪 职位详情 核心职责 多链数据抓取与清洗 平台已自建完善的数据抓取体系，但要求候选人具备自主获取链上数据的能力，深入理解链上数据结构与日志解析，能够独立设计和实现数据抓取方案。 采集主流公链（如 EVM、Solana 等）链上数据，确保数据准确、完整、实时。 搭建和维护高效的数据 ETL 流程，支持大规模资产的实时监控与分析。 资产标的指标筛选与优选 基于多维链上数据指标（如流动性、交易量、持币分布、价格波动等），系统性筛选并优选资产标的，形成可量化的优质资产池。 持续优化筛选模型，结合实时数据动态调整标准，提升资产交易潜力和风险可控性。 为做市、产品上新、市场推广等业务场景提供数据支持和优质资产推荐。 指标体系设计与验证 结合业务需求，设计和验证链上数据指标体系，支持产品和运营团队的数据决策。 预研衍生品相关链上指标，提升平台核心竞争力。 链上监控与预警 构建交易对监控、反诈骗过滤、实时异动预警等体系，及时识别风险。 监控交易量、资金流、链上交易特征，支持量化策略和风控模型验证。 数据洞察与可视化 搭建并维护实时数据仪表盘，覆盖交易趋势、用户分层等核心维度。 定期输出市场分析、机会预警及可执行的数据报告，助力产品设计与运营策略。 跨团队沟通与支持 将复杂链上数据和分析结果用简明语言传达给产品、运营等非技术团队。 参与产品策略讨论，提供基于数据的决策建议。 任职要求 精通 Java、Go 或 Python 任一，具备生产级 ETL 经验。 熟练 SQL，能在主流数据平台（如 Dune、ClickHouse、BigQuery）编写复杂链上数据查询。 熟悉 The Graph、Substreams、Flipside 或自建节点抓取链上日志。 能阅读 Solidity / SPL 智能合约代码，识别 Honeypot、高税、LP 锁定、可升级合约等风险。 理解 AMM、永续合约机制及常用链上交易指标。 具备良好沟通能力，能将复杂 Web3 数据用简单语言传达给产品和运营团队。 加分项 有 memecoin 项目链上分析、风控或量化经验。 有 Kafka、Flink 等实时流处理背景。 熟悉链上现货及衍生品市场动态，有实际项目经验。 Previous issue dex-t-2 Next issue DEX RReal-World Case Studies and Performance Analysis-e By WeTrade — 12 Jul 2025 上海 合溢网络科技 数据分析师（web3） https://www.zhipin.com/job_detail/1aeb164558e80e3503By39u6FlRX.html 合溢网络科技 上海·3-5年·本科 25-45K·14薪 职位详情 核心职责 多链数据抓取与清洗 平台已自建完善的数据抓取体系，但要求候选人具备自主获取链上数据的能力，深入理解链上数据结构与日志解析，能够独立设计和实现数据抓取方案。 采集主流公链（如 EVM、Solana 等）链上数据，确保数据准确、完整、实时。 搭建和维护高效的数据 ETL 流程，支持大规模资产的实时监控与分析。 资产标的指标筛选与优选 基于多维链上数据指标（如流动性、交易量、持币分布、价格波动等），系统性筛选并优选资产标的，形成可量化的优质资产池。 持续优化筛选模型，结合实时数据动态调整标准，提升资产交易潜力和风险可控性。 为做市、产品上新、市场推广等业务场景提供数据支持和优质资产推荐。 指标体系设计与验证 结合业务需求，设计和验证链上数据指标体系，支持产品和运营团队的数据决策。 预研衍生品相关链上指标，提升平台核心竞争力。 链上监控与预警 构建交易对监控、反诈骗过滤、实时异动预警等体系，及时识别风险。 监控交易量、资金流、链上交易特征，支持量化策略和风控模型验证。 数据洞察与可视化 搭建并维护实时数据仪表盘，覆盖交易趋势、用户分层等核心维度。 定期输出市场分析、机会预警及可执行的数据报告，助力产品设计与运营策略。 跨团队沟通与支持 将复杂链上数据和分析结果用简明语言传达给产品、运营等非技术团队。 参与产品策略讨论，提供基于数据的决策建议。 任职要求 精通 Java、Go 或 Python 任一，具备生产级 ETL 经验。 熟练 SQL，能在主流数据平台（如 Dune、ClickHouse、BigQuery）编写复杂链上数据查询。 熟悉 The Graph、Substreams、Flipside 或自建节点抓取链上日志。 能阅读 Solidity / SPL 智能合约代码，识别 Honeypot、高税、LP 锁定、可升级合约等风险。 理解 AMM、永续合约机制及常用链上交易指标。 具备良好沟通能力，能将复杂 Web3 数据用简单语言传达给产品和运营团队。 加分项 有 memecoin 项目链上分析、风控或量化经验。 有 Kafka、Flink 等实时流处理背景。 熟悉链上现货及衍生品市场动态，有实际项目经验。 Previous issue dex-t-2 Next issue DEX RReal-World Case Studies and Performance Analysis-e
