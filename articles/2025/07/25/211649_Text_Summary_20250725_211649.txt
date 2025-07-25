@@ -1,0 +1,97 @@
+Timestamp: 2025-07-25T21:16:49.995001
+Title: Text_Summary_20250725_211649
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**核心思想提炼与总结**
+
+本综述旨在解决当前对大型语言模型（LLMs）在医学领域“发展”与“部署”缺乏全面评估的现状。它将深入探讨现有医用LLMs的“发展”原理、结构、参数、数据等方面，并比较其在各类医学任务中的“部署”表现，同时识别该领域面临的“挑战”与“机遇”。
+
+---
+
+**1. 概述与结构化总结**
+
+*   **引言 (Introduction)**
+    *   大型语言模型 (LLMs) 因其强大的语言理解和生成能力，在医学领域引起广泛关注。
+    *   现有研究已探索LLMs在临床诊断、医学教育等方面的应用。
+    *   当前主要缺失：对LLMs在医学领域的发展、实际应用和成果缺乏全面系统的评估。
+
+*   **本综述目的 (Purpose of this Review)**
+    *   提供LLMs在医学领域“发展”与“部署”的全面概述。
+    *   探讨其面临的“挑战”与“机遇”。
+
+*   **发展方面 (Development Aspects)**
+    *   **讨论内容：** 现有医用LLMs的基本原理。
+    *   **具体要素：**
+        *   模型基本结构。
+        *   模型参数数量。
+        *   模型开发所使用的数据来源。
+        *   模型开发所使用的数据规模。
+
+*   **部署方面 (Deployment Aspects)**
+    *   **讨论内容：** LLMs在医疗实践中的应用。
+    *   **具体要素：**
+        *   不同LLMs在各种医学任务中的表现比较。
+        *   LLMs与当前先进轻量级模型的性能对比。
+
+---
+
+**2. 核心观点 (Core Point)**
+
+本综述旨在全面评估大型语言模型在医学领域的“发展”与“部署”现状、挑战与机遇，以填补当前研究中系统性评估的空白。
+
+---
+
+**3. 总体框架 (Overarching Framework)**
+
+医学领域大型语言模型的“发展”与“部署”综合评估。
+
+---
+
+**4. Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["大型语言模型 (LLMs) 在医学领域"] --> B("“当前评估缺失”");
+    B --> C("“本综述目的”");
+
+    C --> D("“发展方面”");
+    C --> E("“部署方面”");
+    C --> F("“挑战与机遇”");
+
+    subgraph "“发展细节 Development Details”"
+        direction LR
+        D --> D1("“模型原理”");
+        D --> D2("“模型结构”");
+        D --> D3("“参数量”");
+        D --> D4("“数据来源”");
+        D --> D5("“数据规模”");
+    end
+
+    subgraph "“部署细节 Deployment Details”"
+        direction LR
+        E --> E1("“医学任务比较”");
+        E --> E2("“与轻量级模型对比”");
+    end
+
+    style A fill:#D4E6F1,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FADBD8,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#D1F2EB,stroke:#333,stroke-width:2px,color:#333;
+    style D fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#F9E79F,stroke:#333,stroke-width:1px,color:#333;
+
+    style D1 fill:#F7DC6F,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#F7DC6F,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#F7DC6F,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#F7DC6F,stroke:#333,stroke-width:1px,color:#333;
+    style D5 fill:#F7DC6F,stroke:#333,stroke-width:1px,color:#333;
+
+    style E1 fill:#BEEB9F,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#BEEB9F,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+Large language models (LLMs), such as ChatGPT, have received great attention owing to their capabilities for understanding and generating human language. Despite a trend in researching the application of LLMs in supporting different medical tasks (such as enhancing clinical diagnostics and providing medical education), a comprehensive assessment of their development, practical applications and outcomes in the medical space is still missing. Therefore, this Review aims to provide an overview of the development and deployment of LLMs in medicine, including the challenges and opportunities they face. In terms of development, we discuss the principles of existing medical LLMs, including their basic model structures, number of parameters, and sources and scales of data used for model development. In terms of deployment, we compare different LLMs across various medical tasks and with state-of-the-art lightweight models.
