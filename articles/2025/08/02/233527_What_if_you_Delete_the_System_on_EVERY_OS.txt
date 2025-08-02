@@ -1,0 +1,185 @@
+Timestamp: 2025-08-02T23:35:27.430685
+Title: What if you Delete the System on EVERY OS?
+URL: https://youtube.com/watch?v=YoRAva9luzw&si=OsgQ90R2mQeosP6Q
+Status: success
+Duration: 3:59
+
+Description:
+**核心要点：**
+删除操作系统中的关键系统文件会导致系统严重损坏，使其不稳定且无法正常使用，最终需要重新安装。
+
+**总体框架：**
+对主流操作系统（Mac OS、Windows、Linux）删除核心系统文件夹或文件所造成的破坏性后果进行的实验性分析。
+
+**总结纲要：**
+
+**一、实验背景与目的**
+*   探讨删除不同操作系统（Mac OS、Windows、Linux）中核心系统文件夹的后果。
+*   揭示各系统在防护机制和受损表现上的差异。
+
+**二、Mac OS上的系统删除实验**
+1.  **目标文件夹：** "system" 文件夹，位于"Macintosh system"驱动器。
+2.  **删除前置条件：** 需禁用部分保护措施。
+3.  **删除方法：** 使用终端命令 `sudo rm -rf`。
+4.  **删除过程：**
+    *   开始删除大量文件。
+    *   遇到“只读文件系统”错误，部分文件无法删除（需要更高权限）。
+5.  **系统表现与后果：**
+    *   系统完全冻结。
+    *   重启后Mac OS彻底无法启动。
+    *   出现提示，要求重新安装Mac OS。
+
+**三、Windows上的系统删除实验**
+1.  **目标文件夹：** "system32" 文件夹。
+2.  **删除前置条件：** 需先获取所有文件的所有权。
+3.  **删除方法：** 输入特定的删除命令。
+4.  **删除过程：**
+    *   开始删除“system32”内部文件。
+    *   完成后，文件夹大小从数GB显著减小到数MB。
+5.  **系统表现与后果：**
+    *   初期无明显损坏，但系统文件已大量丢失。
+    *   无法打开“开始菜单”中的设置及大部分程序。
+    *   系统间歇性冻结。
+    *   文件资源管理器侧边栏消失。
+    *   多数可执行文件无法打开（Winamp是个例外，仍可安装并运行）。
+    *   打开文件时出现“意外错误”。
+    *   可以创建新文件夹，但打开极慢。
+    *   任务栏突然消失。
+    *   系统彻底崩溃，出现“Windows无响应”错误。
+
+**四、Linux上的系统删除实验 (以Ubuntu为例)**
+1.  **整体系统（根目录）删除**
+    *   **目标文件夹：** 根目录 (root folder)。
+    *   **删除难度：** 相较Mac OS和Windows，内置保护较少，删除更简单。
+    *   **删除方法：** `rm -rf /` (首次尝试失败)，然后 `rm -rf / --no-preserve-root` (成功)。
+    *   **删除过程：** 出现“只读文件系统”错误，但仍删除足够文件以破坏系统。
+    *   **系统表现与后果：**
+        *   大量UI元素立即消失。
+        *   系统变得无响应。
+2.  **特定关键文件（/usr）删除**
+    *   **目标文件夹：** `/usr` 文件夹 (根目录下的关键子目录)。
+    *   **删除方法：** 与删除根目录类似。
+    *   **系统表现与后果：**
+        *   背景突然消失。
+        *   桌面图标消失。
+        *   鼠标光标变为白色方块。
+        *   无法打开任何程序，屏幕空白。
+        *   无法通过正常方式关机或重启。
+        *   意外锁定系统后，无法输入密码重新登录。
+
+**五、结论**
+*   删除任何操作系统中的核心系统文件夹或文件，都会导致严重的、不可逆转的系统损坏，使其几乎无法使用。
+*   各系统在防护机制和失效表现上有所不同，但最终结果都是系统崩溃或需要重新安装。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "实验目标"
+        A["删除操作系统关键文件夹"]
+    end
+
+    subgraph "Mac OS"
+        B1["Mac OS"]
+        B1 -- "目标文件夹" --> B2["'system' 文件夹"]
+        B1 -- "删除前需操作" --> B3["禁用保护措施"]
+        B1 -- "删除命令" --> B4["sudo rm -rf"]
+        B4 -- "删除过程错误" --> B5["只读文件系统错误"]
+        B4 -- "初步影响" --> B6["大量文件被删除"]
+        B6 --> B7["系统完全冻结"]
+        B7 --> B8["无法启动"]
+        B8 -- "最终结果" --> B9["提示重新安装Mac OS"]
+    end
+
+    subgraph "Windows"
+        C1["Windows"]
+        C1 -- "目标文件夹" --> C2["'system32' 文件夹"]
+        C1 -- "删除前需操作" --> C3["获取文件所有权"]
+        C1 -- "删除命令" --> C4["删除命令 (特定)"]
+        C4 -- "初步影响" --> C5["system32大小显著减小"]
+        C5 --> C6["无法打开设置/程序"]
+        C6 --> C7["系统冻结"]
+        C7 --> C8["文件资源管理器异常"]
+        C8 --> C9["多数可执行文件无法打开"]
+        C9 -- "意外正常" --> C10["Winamp仍可安装/运行"]
+        C9 --> C11["打开文件错误"]
+        C11 --> C12["任务栏消失"]
+        C12 --> C13["系统崩溃"]
+        C13 -- "最终结果" --> C14["Windows无响应/无法使用"]
+    end
+
+    subgraph "Linux (Ubuntu)"
+        D1["Linux (Ubuntu)"]
+        D1 -- "目标文件夹 1" --> D2["'根目录' (root folder)"]
+        D1 -- "删除命令 1" --> D3["rm -rf / (首次失败)"]
+        D1 -- "删除命令 2" --> D4["rm -rf / --no-preserve-root (成功)"]
+        D4 -- "删除过程错误" --> D5["只读文件系统错误"]
+        D4 -- "初步影响" --> D6["UI元素消失"]
+        D6 --> D7["系统无响应"]
+
+        D1 -- "目标文件夹 2 (特定)" --> D8["'/usr' 文件夹"]
+        D8 -- "删除命令" --> D4
+        D4 -- "删除 '/usr' 效果" --> D9["背景消失"]
+        D9 --> D10["图标消失"]
+        D10 --> D11["鼠标变为白色方块"]
+        D11 --> D12["无法打开任何东西"]
+        D12 --> D13["无法关机/重启"]
+        D13 --> D14["无法再次登录"]
+    end
+
+    A --> B1
+    A --> C1
+    A --> D1
+
+    B9 --> Z["操作系统彻底损坏"]
+    C14 --> Z
+    D7 --> Z
+    D14 --> Z
+
+    Z -- "总体结论" --> Y["删除关键系统文件导致系统严重损坏且不可用"]
+
+    style A fill:"#D6EAF8",stroke:"#2E86C1",stroke-width:2px,color:"#2E86C1";
+    style B1 fill:"#D4EDDA",stroke:"#28A745",stroke-width:2px;
+    style B2 fill:"#FADBD8",stroke:"#CB4335",stroke-width:1px;
+    style B3 fill:"#FCF3CF",stroke:"#F4D03F",stroke-width:1px;
+    style B4 fill:"#EBDEF0",stroke:"#8E44AD",stroke-width:1px;
+    style B5 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style B6 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style B7 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style B8 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style B9 fill:"#ECF0F1",stroke:"#6C7B8B",stroke-width:2px,color:"#2C3E50";
+
+    style C1 fill:"#D4EDDA",stroke:"#28A745",stroke-width:2px;
+    style C2 fill:"#FADBD8",stroke:"#CB4335",stroke-width:1px;
+    style C3 fill:"#FCF3CF",stroke:"#F4D03F",stroke-width:1px;
+    style C4 fill:"#EBDEF0",stroke:"#8E44AD",stroke-width:1px;
+    style C5 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style C6 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C7 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C8 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C9 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C10 fill:"#E8F8F5",stroke:"#48C9B0",stroke-width:1px;
+    style C11 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C12 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C13 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style C14 fill:"#ECF0F1",stroke:"#6C7B8B",stroke-width:2px,color:"#2C3E50";
+
+    style D1 fill:"#D4EDDA",stroke:"#28A745",stroke-width:2px;
+    style D2 fill:"#FADBD8",stroke:"#CB4335",stroke-width:1px;
+    style D3 fill:"#EBDEF0",stroke:"#8E44AD",stroke-width:1px;
+    style D4 fill:"#EBDEF0",stroke:"#8E44AD",stroke-width:1px;
+    style D5 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style D6 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style D7 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style D8 fill:"#FADBD8",stroke:"#CB4335",stroke-width:1px;
+    style D9 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style D10 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style D11 fill:"#F5EEF8",stroke:"#D7BDE2",stroke-width:1px;
+    style D12 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style D13 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+    style D14 fill:"#F2D7D5",stroke:"#E74C3C",stroke-width:1px;
+
+    style Z fill:"#FDEBD0",stroke:"#D35400",stroke-width:3px,color:"#D35400";
+    style Y fill:"#FFF3E0",stroke:"#E67E22",stroke-width:3px,color:"#E67E22";
+</Mermaid_Diagram>
+
+Content:
+on your computer the system folder contains the entire system I know unbelievable but let's see what happens when you delete it on every single operating system starting with Mac OS this folder is located in the Macintosh system drive right here and in order to delete it you have to disable a few protective measures which I have already done and then you open up the terminal similarly to how it is on Linux we can delete any kind of folder with sud sudo rmrf and once I perform it on the system folder this starts happening it is now deleting a lot of files and some of the files can't be deleted since they require even more advanced access which is why we are getting a lot of these read only file system errors but still this is enough to delete most of the files in the system folder and the system completely freezes at some point once it reboots from the black screen we can see that this Mac OS is completely gone we are going to get a prompt that tells us that we need to reinstall Mac OS moving on to Windows things actually get even crazier on Windows this special folder is called system 32 in order to delete it we have to take ownership of all the files first which is now done after that we type this completely Harless command it will now start deleting all of the files inside system 32 once this deletion process is finished we don't see any significant damage right away however if we check the system 32 folders properties we can see that it is significantly Less in size it went from multiple gigabytes to now being just a few megabytes and a lot of files are still present in system 32 but why did did nothing happen so if I open the start menu I can no longer open settings or most of the other programs I closed the start menu and attempted to minimize the command prompt but the entire system just froze for a few seconds opening up the file explorer the entire sidebar is gone I tried to open a few executables but none of them opened surprisingly we can still install Winamp on the machine and it works too that as side if I try to open any files we get an unexpected error on the positive side we can still create a new folder on the desktop but if I try to open it it takes forever after that I wanted to test a few more things but suddenly this happened the taskar just disappeared out of existence but after that the system itself completely gave up on us as well I got this random error that Windows is not responding and whether I want to end it suffering which I didn't so this is pretty much it for Windows but now let's delete the system on Linux I have picked Ubuntu for this but the results would be pretty similar across a lot of the Linux dros here it is called a root folder and you can find it pretty easily as well on Linux it is so much easier to delete the entire system since there are not as many built-in protections for this we just type this command and we see that it doesn't work then we type the same command but a bit different and now it does work it also shows the same error messages of being unable to remove some files because of a read only file system just like on Mac OS but it still deletes just enough to break the system immediately a lot of the UI elements disappear and the system becomes unresponsive however what if we don't delete the root directory aka the system on Linux but rather one of the crucial files inside of it don't ask me why I know this but there are different cool effects based on which important folder you delete my favorite folder to delete is the sluser folder inside the root directory because if we go and delete it using that same command what happens first is the background suddenly disappears then the icons disappear then your cursor becomes a white Cube and you can't really open anything anymore on the system everything's just blank we don't have the option anymore to power off or restart the system I also accidentally managed to log the system and I can't even type the password to get back in it's just wrong to do so much damage to these operating systems what else is wrong is that you are possibly one of those people who haven't yet subscribed to my channel so make sure to do that right now or else I will perform a pseudo rmrf on the device that you are watching this on
