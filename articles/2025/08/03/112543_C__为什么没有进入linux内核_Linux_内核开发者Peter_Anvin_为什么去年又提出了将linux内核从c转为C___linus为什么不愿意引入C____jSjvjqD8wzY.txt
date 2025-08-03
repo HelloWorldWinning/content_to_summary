@@ -1,0 +1,153 @@
+Timestamp: 2025-08-03T11:25:43.838816
+Title: C++为什么没有进入linux内核？Linux 内核开发者Peter Anvin 为什么去年又提出了将linux内核从c转为C++，linus为什么不愿意引入C++？ jSjvjqD8wzY
+URL: https://youtube.com/watch?v=jSjvjqD8wzY&si=a8CYx9k-8da1gJLJ
+Status: success
+Duration: 2:34
+
+Description:
+### 核心观点
+
+C++的显著进步，尤其是其元编程能力的成熟，使得它在现代内核开发中，通过特定功能子集的运用，能够有效解决传统C语言的维护性痛点，并克服其在99年被拒绝时的主要顾虑。
+
+### 核心框架
+
+本内容围绕**编程语言在关键系统（如操作系统内核）开发中的选择与演进**展开，详细探讨了C++从被拒绝到被提议用于内核开发的历程，以及在此过程中不同语言特性（内存管理、元编程、异常处理等）对决策的影响，同时对比了Rust作为替代方案的优劣，最终揭示了技术发展对软件工程实践的深刻影响。
+
+### 总结大纲
+
+#### 一、引言：NX内盒从C到C++的转型讨论背景
+
+*   NX内盒在99年曾将C++转回C。
+*   近期，开发者P-Tur-Event再次提出将NX内盒从C转为C++。
+*   深入探讨其背后的技术原因及语言发展。
+
+#### 二、1999年NX拒绝C++的主要理由（基于C++98）
+
+1.  **内存管理不适合内盒：**
+    *   C++的内存管理（RAII/垃圾回收）不适用于需要手动精确控制内存的内盒环境。
+    *   强调内盒必须手动管理内存。
+2.  **C++库依赖不稳定：**
+    *   认为STL和Boost等库不稳定且不可移植。
+    *   对“任何说STL和Boost稳定可移植的人都发疯了”的观点。
+3.  **异常处理的隐藏开销与不可预测性：**
+    *   C++异常可能在任何位置抛出，导致代码流不可预测。
+    *   构造函数中抛出异常可能导致析构函数不被调用，产生资源泄露问题。
+4.  **C语言可直接实现面向对象：**
+    *   当时流行面向对象开发，NX认为无需引入C++，C语言也可直接实现面向对象特性。
+5.  **阉割C++特性后与C无异：**
+    *   如果为了内盒环境而禁用C++的某些特性（如异常、STL），NX认为其与直接使用C语言没有区别。
+
+#### 三、C++发展至C++20后的改变与支持转用C++的观点
+
+1.  **C++20元编程特性完善：**
+    *   认为从C++20开始，C++的元编程特性才真正完善。
+    *   元编程是C++在许多测试中速度超越C的主要原因。
+2.  **元编程提升代码可维护性：**
+    *   举例内盒中的`UXSDH`代码大量使用宏，难以调试。
+    *   C++版本通过元编程替代宏，大幅提高代码可维护性。
+3.  **性能优势：**
+    *   C++在某些测试中速度高于C，主要得益于元编程优化。
+4.  **定义“内盒C++”子集：**
+    *   不期望使用C++的全部功能，而是严格定义一个C++20的子集作为“内盒C++”。
+
+#### 四、为何不选择Rust作为替代方案
+
+1.  **语法差异与学习曲线：**
+    *   Rust语法与C/C++不同，所有内盒开发者需要达到与C语言相同的直觉水平，学习成本高。
+2.  **非渐进式迁移：**
+    *   C++到Rust的迁移无法渐进完成。
+3.  **现有C代码兼容性：**
+    *   经过适当清理，现有C代码可以直接用C++编译，实现渐进式过渡。
+
+#### 五、结论：技术发展与选择
+
+*   通过历史与现状的对比，理解编程语言的优缺点及其发展方向。
+*   强调技术发展是动态的，需要持续关注和学习。
+
+### <Mermaid_Diagram>
+graph TD
+    A["NX内盒"] --> B{"编程语言选择之争"};
+    B -- "历史回顾 (1999)" --> C["C++ (1999)"];
+    B -- "当前提案 (C++20)" --> D["C++ (2020)"];
+    B -- "替代方案考量" --> E["Rust语言"];
+    B --> Z["技术发展趋势与选择"];
+
+    subgraph "1999年NX的反对理由"
+        C -- "导致" --> F["内存管理不适用内盒"];
+        C --> G["库依赖不稳定"];
+        C --> H["异常开销与不可预测性"];
+        C --> I["C可直接实现OOP"];
+        C --> J["阉割后与C无异"];
+    end
+
+    subgraph "支持C++20转型的理由"
+        D -- "优势: " --> K["元编程特性完善"];
+        D --> L["提高代码可维护性 (替代宏)"];
+        D --> M["性能潜力超越C"];
+        D --> N["可定义 '内盒C++' 子集"];
+    end
+
+    subgraph "放弃Rust的理由"
+        E -- "顾虑: " --> O["语法差异/学习曲线陡峭"];
+        E --> P["无法渐进式迁移"];
+        E --> Q["现有C代码与C++兼容性好"];
+    end
+
+    A -- "基于" --> R["C语言 (现有基础)"];
+    R --> F; %% C语言的惯性让其更接受直接实现OOP
+
+    K -- "解决" --> L;
+    L -- "影响" --> Z;
+    N -- "策略" --> D;
+    Q -- "促使" --> D;
+    Z -- "体现" --> "编程语言演进";
+    Z -- "指引" --> "内核开发方向";
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style Z fill:#F0E68C,stroke:#333,stroke-width:2px,color:#333;
+
+    linkStyle 0 stroke:#333,stroke-width:1.5px;
+    linkStyle 1 stroke:#333,stroke-width:1.5px;
+    linkStyle 2 stroke:#333,stroke-width:1.5px;
+    linkStyle 3 stroke:#333,stroke-width:1.5px;
+    linkStyle 4 stroke:#333,stroke-width:1.5px;
+    linkStyle 5 stroke:#333,stroke-width:1.5px;
+    linkStyle 6 stroke:#333,stroke-width:1.5px;
+    linkStyle 7 stroke:#333,stroke-width:1.5px;
+    linkStyle 8 stroke:#333,stroke-width:1.5px;
+    linkStyle 9 stroke:#333,stroke-width:1.5px;
+    linkStyle 10 stroke:#333,stroke-width:1.5px;
+    linkStyle 11 stroke:#333,stroke-width:1.5px;
+    linkStyle 12 stroke:#333,stroke-width:1.5px;
+    linkStyle 13 stroke:#333,stroke-width:1.5px;
+    linkStyle 14 stroke:#333,stroke-width:1.5px;
+    linkStyle 15 stroke:#333,stroke-width:1.5px;
+    linkStyle 16 stroke:#333,stroke-width:1.5px;
+    linkStyle 17 stroke:#333,stroke-width:1.5px;
+    linkStyle 18 stroke:#333,stroke-width:1.5px;
+    linkStyle 19 stroke:#333,stroke-width:1.5px;
+    linkStyle 20 stroke:#333,stroke-width:1.5px;
+    linkStyle 21 stroke:#333,stroke-width:1.5px;
+    linkStyle 22 stroke:#333,stroke-width:1.5px;
+    linkStyle 23 stroke:#333,stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+CGA为什么没有进入NX内盒?去年NX内盒的开发者P-Tur-Event提出了将NX内盒从C转到C家家在99年的时候,NX就转过一场后来又恢复到C并且把C家家骂的一无视错但当时还是C家98这里有NX对C家偏见的问题但我看最近它的开源项目也是用C家做的不知道是不是有所改变我觉得这个真正背后的技术原因值得我们学习我们来看一下当时它为什么不用C家家现在为什么又提出来?通过这个分析,你能理解C家的优缺顶和发展方向先看,NX当时的理由C家家内存管理不适合内盒这个理由RUS的同样不适合内盒一定要锁动管理内存C家的库衣赖不稳定原话是,任何说STL和BUS的稳定且可遗迹的人都忽然发动还有就是C家异常带来了隐藏的开销并且它可以在任何位置抛出结果就变得不可预测我说一个势力在构造含住当中抛出异常那稀构就不会被调用当时刚开始流行偏向对象开发在内盒的文件系统当中用到了这也是当时为什么想要引入C家家后来NX的原话是我们可以直接用C写偏向对象不需要拉起的C家家当时有人提出可以不用C家的这些特性NX觉得呢那和直接用C有什么区别这是99年的观点C家已经发展到26了这些问题解决了吗?我们来看一下支持内盒转为C家的观点任何理智者都不期望使用C家家的全部功能正如我们有内盒C那就会有内盒C家家内盒C家呢它建议呢严格定义为C家家20的指击那为什么是要C家20呢?主要是从C家20开始C家的原编程特性才完善我之前讲过一个比较语言速度的视频你可以看到C家在很多测试中速度都是高于C的主要原因就是用了原编程针对原编程啊P的举了一个例子它边显的内盒中的UXSDH我们可以看一下这个代码大量使用了红来处理它认为这些红几乎无法调适所以它做了一个C家版本的内盒完全用原编程替代了红代码的可无维护性的大大提高另外它也分析了为什么不选RES的首先RES的使用不同的语法不仅需要所有的内盒开发者经通到与C语源同的直觉的水平而且C家转RES的无法渐渐式的完成而经过适当的清理呢现有的C代码是可以直接用C家编译的关注这些前问题有利于我们了解技术的发展动效有了新的进展我再来分享想要学习更多现役在C家知识记得点赞关注下老师
