@@ -1,0 +1,145 @@
+Timestamp: 2025-08-06T21:15:15.769755
+Title: Subagent很强大，但Hooks才是革命性的更新 BV1S581zvEyN
+URL: https://www.bilibili.com/video/BV1S581zvEyN/?spm_id_from=333.1007.tianma.1-1-1.click
+Status: success
+Duration: 13:09
+
+Description:
+**Clocker Hooks 核心思想与总结**
+
+**1. 核心观点**
+Clocker Hooks 开启了Clocker AI代理无限的自动化和监控可能，让用户能深度介入和掌控其任务执行流程。
+
+**2. 宏观框架**
+Clocker Hooks：AI代理自动化与掌控的强大扩展机制。
+
+**3. 详细概要**
+
+*   **Clocker Hooks 简介**
+    *   Clocker Hooks 是Clocker AI代理的一项最新且极其实用的更新。
+    *   它允许用户在Clocker执行任务的各个内部环节（节点）中插入自定义的命令或脚本。
+    *   这一功能极大地增强了Clocker的灵活性、可扩展性和自动化能力。
+
+*   **Clocker Hooks 工作原理**
+    *   当Clocker执行任务时，它会分解为多个内部环节，例如分析任务、分析是否需要工具等。
+    *   用户可以在这些预定义的环节中嵌入自定义代码（脚本）。
+
+*   **主要 Hook 点/事件**
+    *   **Pre-tool Use (工具使用前):** 在Clocker使用某个工具之前触发。
+    *   **After-tool Use (工具使用后):** 在Clocker使用某个工具之后触发。
+    *   **Notification (确认通知):** 当Clocker需要用户确认某事时触发（如“Hey Boss, I need your confirmation”）。
+    *   **User Prompt Submit (用户指令提交):** 当用户输入指令后触发（如“Hey Friday, are you there?”的回应）。
+    *   **Stop (主任务结束):** 当Clocker的主任务完成时触发。
+    *   **Sub-Agent Stop (子代理任务结束):** 当Clocker的一个子代理完成一项工作后触发。
+    *   **Pre-Compact (上下文压缩前):** 在Clocker尝试压缩上下文信息之前触发。
+
+*   **Hook 的数据传递机制**
+    *   Hooks 脚本通过“标准输入流”接收Clocker传递的上下文数据（而非命令行参数）。
+    *   传递的数据是JSON格式，包含会话ID、对话记录、当前目录、事件名称等信息。
+
+*   **Hook 的定义位置**
+    *   **用户级别:** 在用户根目录下的`.clocker/settings.json`文件，对所有项目生效。
+    *   **项目级别（共享）:** 在项目根目录下的`.clocker/.settings.json`文件，团队成员共享，可提交到代码仓库。
+    *   **项目级别（个人）:** 在项目根目录下的`.clocker/settings.json`文件，仅个人使用且专属于该项目。
+
+*   **Hook 的实用示例**
+    *   **任务完成提示:** 在主任务结束（Stop Hook）时打印“任务已完成”信息，或发送通知消息。
+    *   **用户指令响应:** 通过用户指令提交（User Prompt Submit Hook）播放音频文件（如“at your service sir”）。
+    *   **确认通知响应:** 通过通知（Notification Hook）播放音频文件（如“Hey boss, I need your confirmation”）。
+
+*   **Clocker Hooks 的无限可能**
+    *   **代码自动化:** 自动格式化Clocker生成的代码，确保符合团队规范。
+    *   **任务通知:** 完成任务后通过短信、微信等方式发送消息通知。
+    *   **外部系统集成:** 调用外部 Webhook，触发 CI/CD 系统打包、自动化测试。
+    *   **多进程/服务器管理:** 在多个服务器上启动Clocker进程，通过Hooks实现对每个进程的观测、状态跟踪和控制。
+    *   **监控大盘构建:** 创建一个集中式监控大盘，掌握所有Clocker任务的进度和状态。
+    *   **自动化存档:** 实现Clocker任务的自动存档功能（具体实现留待后续视频）。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "核心概念"
+        A["Clocker Hooks"]
+    end
+
+    subgraph "运作机制"
+        B("Clocker 任务执行流程") --> C("内部环节/节点");
+        C -- "允许在" --> A;
+        A -- "通过" --> D("插入自定义脚本/命令");
+        D -- "在" --> E("主要 Hook 点");
+        E -- "接收" --> F("数据传递: 标准输入流");
+    end
+
+    subgraph "Hook 配置"
+        G("Hook 定义位置")
+        G -- "包含" --> G1("用户级别 (.clocker/settings.json)")
+        G -- "包含" --> G2("项目级别 - 共享 (.clocker/.settings.json)")
+        G -- "包含" --> G3("项目级别 - 个人 (.clocker/settings.json)")
+        A -- "配置于" --> G;
+    end
+
+    subgraph "主要 Hook 点 (示例)"
+        E --> E1("工具使用前 (Pre-tool Use)");
+        E --> E2("工具使用后 (After-tool Use)");
+        E --> E3("确认通知 (Notification)");
+        E --> E4("用户指令提交 (User Prompt Submit)");
+        E --> E5("主任务结束 (Stop)");
+        E --> E6("子代理任务结束 (Sub-Agent Stop)");
+        E --> E7("上下文压缩前 (Pre-Compact)");
+    end
+
+    subgraph "价值与应用"
+        H("Clocker Hooks 核心价值") --> I("开启无限可能: 自动化与掌控");
+        I --> J("实际应用");
+        J -- "包括" --> J1("代码格式化");
+        J -- "包括" --> J2("任务通知 (短信/微信)");
+        J -- "包括" --> J3("外部系统集成 (CI/CD, Webhook)");
+        J -- "包括" --> J4("多进程/服务器监控与控制");
+        J -- "包括" --> J5("构建监控大盘");
+        J -- "包括" --> J6("自动化存档");
+        A -- "赋能" --> I;
+    end
+
+    style A fill:#4CAF50,stroke:#333,stroke-width:2px,color:#FFFFFF;
+    style B fill:#E0F2F7,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#E0F2F7,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFFDE7,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#E8EAF6,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#F3E5F5,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#F3E5F5,stroke:#333,stroke-width:1px,color:#333;
+    style G3 fill:#F3E5F5,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FFD700,stroke:#333,stroke-width:2px,color:#333;
+    style I fill:#FFECB3,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#DCEDC8,stroke:#333,stroke-width:1px,color:#333;
+    style J1 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+    style J2 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+    style J3 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+    style J4 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+    style J5 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+    style J6 fill:#F1F8E9,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 0 stroke:#00796B,stroke-width:2px;
+    linkStyle 1 stroke:#00796B,stroke-width:2px;
+    linkStyle 2 stroke:#00796B,stroke-width:2px;
+    linkStyle 3 stroke:#00796B,stroke-width:2px;
+    linkStyle 4 stroke:#00796B,stroke-width:2px;
+    linkStyle 5 stroke:#00796B,stroke-width:2px;
+    linkStyle 6 stroke:#00796B,stroke-width:2px;
+    linkStyle 7 stroke:#00796B,stroke-width:2px;
+    linkStyle 8 stroke:#00796B,stroke-width:2px;
+    linkStyle 9 stroke:#00796B,stroke-width:2px;
+    linkStyle 10 stroke:#00796B,stroke-width:2px;
+    linkStyle 11 stroke:#00796B,stroke-width:2px;
+    linkStyle 12 stroke:#00796B,stroke-width:2px;
+    linkStyle 13 stroke:#00796B,stroke-width:2px;
+    linkStyle 14 stroke:#00796B,stroke-width:2px;
+    linkStyle 15 stroke:#00796B,stroke-width:2px;
+    linkStyle 16 stroke:#00796B,stroke-width:2px;
+    linkStyle 17 stroke:#00796B,stroke-width:2px;
+    linkStyle 18 stroke:#00796B,stroke-width:2px;
+    linkStyle 19 stroke:#00796B,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+FlaDay, are you there?Oh, he's at your service, sir.Oh!我现在有点无聊了,你帮我写一个打拼方球的小游戏Hey boss, I need your confirmationAaah!Yes!Okay boss, job is finishedYou know, why can't I do such things?Because I am...好,今天我们来介绍一个Clocker的最新更新的更新我个人看来是最大裂最实用的更新你看我这么兴奋又知道了因为我觉得它真的是开启了无限的可能它就是Hooks这个东西它具体是什么到底能做哪些事情以及具体怎么用我们今天一起来看一下我还会用它实现一个在我看来是Clocker的目前最缺势的一款,那就是自动存档的功能好,那我们立刻开始吧好,这个Hooks到底是什么东西呢其实很简单,那就是当我们交代一个任务让Clocker来实现的时候它自己内部会插翻成一个一个的环节或者一个一个的节点可能刚开始会分析一下这个任务的吧一个Tutorialist然后它会来分析是不是需要用到哪些工具来实现这个任务比如说这边的这些工具的吧那对于这里面每一个环节你都可以插入一些你想要执行的一些命令或者一些脚本这个就是它的类似于Ghost的这样的一个功能那具体有哪些节点可以让你来插入这些Ghost这边它也列出来像这个它是在使用某一个工具之前你可以插入你的Ghost然后在使用某一个工具之后还有其他的这个NOTIFICATION就是当Clocker的需要你来确认一些东西的时候就比如说刚刚大家听到的那个Hey Boss, I need your confirmation其实就是当它想要我来确认一些东西的时候它会有这么一个地方让你来插入Ghost那像这个You're the Prompt Submit就是说当你输入了一个指令的时候你可以插入一个Ghost然后下面这个Stop是它的组程序或者说组任务结束以后你可以插入一个Ghost这个就比较直光了比如说你想要让Clocker在完成间任务的时候给你发个消息的吧然后下面这个Stop Agent Stop就是当它的一个指带里完成了一件事情以后可以来插入一个Ghost然后下面这个Precompact就是说当Clocker的试图来压缩上下文信息的时候在那个之前你可以插入你的Ghost这个Clocker它具体什么意思大家如果不懂的话可以看一下我之前的那个关于Clocker的上手视频里面也有讲得很清楚然后下面这些就是它介绍了在电用某一个Ghost的时候它会传什么样的一些信息格式大概是怎么样的这个我们就不细看了这个待会我们结合例子可以看得更加仔细一点好接下来我就介绍一下Hox这个中心我们到底怎么用那第一个问题是我们在哪里定义这些Hox有三个地方首先是这个用户跟部落下面的这个点Clocker然后Satins点接审这个是你用户级别的就是你电脑下面的所有的项目都可以生效然后下面是你的项目跟部落上面的点Clock的点Satins点接审那这个是项目级别并且是团队成员共享的你可以把它提交到Ghost仓库里面然后在下面这个项目跟部落下面的点Clocker这个项目是你自己用的并且是这个项目所专有的这个跟其他的什么mcp的然后自订密量这些都挺像的好那这个东西到底怎么用呢我们要学过这个东西怎么用我们自己写一个不就知道了对吧这是最快的学习的方式好我们写哪个呢我们就写就是当一件任务结束以后我们让它来打印一句话对吧打一个Antangue的mission or complicit那是Clocker那竟然是结束的我们就得就得是这个stop这个hug对吧那定义的格式其实基本上就是这个东西嘛就不用去改了你如果不知道的话你直接从从这里面考卑一份也行对吧然后把这个事件名字改成stop然后这个match就不需要了因为stop的话它就没有什么match这个match一般就是定义在这个pre-tour或者after-tour use里面它是用来匹配某一些tour的命名的那对我们stop实现来说就没有这个东西好这边我就不负置了因为这边已经有了然后我们现在让它来运行一个pison对吧然后我还是放在这个cloth然后match and complicit然后我们cloth然后我们在这边判见一个match and complicit另外我们这样在这里面我们printmatch and complicit好我们试一下看看它这个角板是不是对的好你看我们自己手都运行它是ok的然后我们来试一下这个cloth能不能用到这个hookclothok然后Hello理论上我们苏完这个hallow它运行网以后就应该输出我们刚刚说的match and complicit这个这不算了吧怎么没有呢这怎么没有啊这个就是使用hook的第一个那就是你直接在这个地方你是看不到的但是你可以按这个conchot.r你看出现在对吧这个conchot.r那就像那也是切换更加详细的输入的一种方式你记得按conchot.r它在这边它才能看到就是你在这个hook的角板里面所输出的这些内容好那接下来我们再来看一下就是当cloth在调用这个hook的时候它会传什么样的一些数据那这个数据我们想我们正常情况下调用一个角板它这个数据就是从match好像来获取或者说传到match好你们好好那我们现在从match你们来获取一下那拍照里面怎么样获取match角板这个懂拍照的朋友应该都懂了那就是infoad然后呢print然后差不多就这样然后我们来看一下啊我们前面也是一个printstophook然后这个cloth给我们传到相数应该是在这两个字服算中间好那我们再来试一下我们 should first退出这个稍微有点烦啊我希望某一天cloth他是能够自动生效而不是要每次退输属于进来然后 hello然后conchot.r看这里StopHug然后倡数诶这个倡数怎么只有这个文件啊这个文件是你所有Python 脚本都有它自弹的就是第一个倡数就是它这个文件名对吧后面的倡数才是你额外倡给这个脚本的但是你看这边它没有啊为什么呢那这个就是用Clarker的Hug的第2个那就是它的倡数呢其实不是从Minihan倡数里面倡的而是从标准输入流里面传过来的那在我们脚本里面怎么样来读取呢那其实就是啊也跟这个Sys有关啊所以这个Input没有白Input那就是Data等于SysData STDi in.read然后我们再把这个print出来DataData好来看一下Test我试一下它有没有自动声响好它可以自动声响我知道了因为我们这个Hug它是印象的是脚本所以我们脚本改了它自动就生下了你看它这边正确的输出了这个倡数就是这个样子为了让大家看得更清楚一点我们可以放到一个接触的格数化工具里面去好可以看到它这边有一个Sation ID然后有一个Change Graph Path这个就是这个Clarker的一个一个对话的记录这个有信用大家可以去看一下就是一个一个的聊天记录然后这个是当前幕楼这个是Eventer的名字就是Stone然后这边有一个StopHug Active这其实表示的是这一次的输入是不是你的一个Hug让它来继续来干活的一个事情比如说你在这个Hug里面让它来做另外一个事情的然后那一件事情结束了以后它也会调用这个Hug然后加这个Hug里面它这边的这个倡数就是Q大概就这个意思OK 那到目前为止我们就基本掌握了Hug的这个基本的用法那具体你想要实现什么的功能就看你在这些脚本里面来做什么样的事情的这个是完全不限制的所以说它是非常强大的那我能想到的一些常见的一些用法比如说当这个Clarker的它完成一件任务以后你可以让它来格式换一下这个Clarker的它修改的那些蛋码对吧因为很多时候它生成的这些蛋码可能不一定符合你们的蛋码回放包括最常见的比如说当它完成一件任务以后你能让它给你发一个消息的吧你看这边这些消息就是我让它来完成一件任务以后让它来发这样一个消息给Facebook给我包括我们刚刚演示的Hey FridayAre you there?Oh is that your service sir?你看这个怎么实现的呢其实就是你看我的这个Hug你看这边它有一个User prompt submit就是当我给它发一条指令的时候的一个Hug那这个Hug就是运行这个角本我们看一下这个角本里面做了什么事情prompt就是这个目楼里面然后可以看到它从这个这个是Ruby角本但是我相信应该是很容易读的Ruby是最容易读懂的那我在这边也跟它解释一下它是很容易读懂的它解释一下它就是从标准输入榴里面读取了倡数然后呢转换我一个接寸对象然后呢这边是把这个倡数给print出来这个Poots就是类似于那个Python里面的print然后这边指定了一个文件路径然后呢这边碰到一下这个文件是否存在的吧然后呢同时如果说这个你看它床的倡数里面的这个prompt这个字段如果包含了Are you there?它就会播放这个音频文件这个mp3文件那其实就是大家刚刚听到的always at your service然后刚刚大家听到的这个就这个Hey boss, I need your confirmation这个是怎么实现的呢其实也是类似的我们看这边的hook列表它有一个notification对吧这个notification也有一个hook就是这个hook就是运行这个角本lognotification我们也可以看一下log就是这个文件你看它这边也是播放了就是仅仅是播放了一下这个amp3文件但后面还做了其他的一些调试的事情这个其实我调试的事情其实可以删掉了这边就是播放了一下这个amp3文件很简单这样的话就是比如说我在划舍的时候对吧然后呢claw code它停下来了其实等待我的切认我就知道我需要回去切认一下我就不需要说always at your service让那个claw code真的没白等然后大家还记得在那个完成的世界hook里面它会发一个非出消息同时还会播一个任务完成的提示音那这个是怎么实现的呢其实都是类似的一些写法好以上就是关于claw code的以及它的基本使用的一个基本的介绍那有了这个东西你能干吗那我觉得真的就是完全取决你的想象力了最基本的比如说我们刚刚演示的对吧完成进任务以后给你发个通知你还可以调个外proker然后你们的ci系统给你打个包因为行一个自动化的测试角板你甚至还可以在这些hook里面去启动另外的一些claw code的进程你想想想你可以在很多的服务器上面启动很多的claw的进程然后因为有了这一套机制你可以观测到每一个服务器上面的每一个claw的进程他们在分别在做什么进度怎么样状态怎么样有没有什么需要你确认的东西你可以创建这样的一个监控大盘对吧一切进在你的掌握这个我想想有非常大强大我觉得后面肯定有人会创建这样的一个监控大盘的那有些关系我们视频说的利用hook系统来给我们创建一个自动化成党的系统的这样的一个功能我们放到上个视频来讲解所以感谢的话可以关注一下我们上个视频明天会发出来好那我们今天就视频就到这里记得点赞关注我是双哥我们下期见拜拜
