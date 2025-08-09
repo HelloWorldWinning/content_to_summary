@@ -1,0 +1,132 @@
+Timestamp: 2025-08-10T00:38:46.272567
+Title: GPT-5来了！我用了一天后，真实感受是... BV1hLtUzyERd
+URL: https://www.bilibili.com/video/BV1hLtUzyERd?spm_id_from=333.788.recommend_more_video.0&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 3:19
+
+Description:
+**核心观点（一句话）：**
+尽管GT5在理论测试数据上表现卓越，但在实际编程工作场景中，其对中文支持、工具调用及问题解决的实用性方面表现不如Cloud，缺乏“人性化”的协助。
+
+**内容总览框架：**
+个人对新型AI编程模型GT5的实际使用体验与评价
+
+**大纲式总结：**
+
+1.  **GT5发布背景与初始期望**
+    *   **发布与定位：** GT5正式发布，号称是最强编程模型，在SWA和A测试中得分领先，引发科技圈沸腾。
+    *   **社区支持：** 科色等第一时间支持，并提供免费积分。
+    *   **个人期望：** 期待GT5能解决编程痛点，实现历史性突破。
+
+2.  **实际体验过程与转折**
+    *   **初步体验：** 刚开始表现不错，修复Bug和添加功能精准。
+    *   **失望转折：** 遇到稍微复杂的插件问题时，GT5耗时一小时仍未能解决，引发质疑。
+
+3.  **GT5与Cloud的对比测试**
+    *   **测试方法：** 针对相同问题，分别使用GT5和Cloud进行解决。
+    *   **GT5表现：** 输出大量理论分析，但实用性差，无法有效解决问题；甚至修改了Cloud正确且可用的代码。
+    *   **Cloud表现：** 直接调用MCP工具，精准找到症结并有效解决问题，展现出高效率和实用性。
+
+4.  **GT5在实际应用中暴露的明显问题**
+    *   **中文支持不足：** 即使明确设定中文提问和回复，GT5仍常以英文思维和输出，影响体验。
+    *   **工具调用能力弱：** 对MCP等工具基本无支持，不会主动调用现有工具解决问题。
+    *   **过于理论化：** 倾向于输出长篇大论的分析，但实际解决问题的效率低下，如同“只会指点江山”的顾问。
+
+5.  **对AI“人性化”的思考**
+    *   **GT5的感受：** “太AI了”，缺乏Cloud所具备的“人性化”。
+    *   **“人性化”的定义：** 能够真正理解用户意图，直接动手解决问题，并能适应用户的交流方式。
+    *   **编程领域的需求：** 实际编程工作更需要一个能干活的助手，而非仅仅进行理论分析的顾问。
+
+6.  **最终结论**
+    *   GT5的强大可能并未体现在作者所需要的实际编程工作场景中。
+    *   在实际编程工作中，至少在作者的体验中，Cloud比GT5更具优势和实用性。
+    *   GT5的强项或许更多体现在学术测试层面。
+
+<Mermaid_Diagram>
+graph LR
+    A["GT5发布与初始期望"]:::startNode
+    B("官方数据显示强劲"):::positiveAspect
+    C("科技圈沸腾，支持者众"):::positiveAspect
+    D("个人高期望：解决编程痛点"):::positiveAspect
+
+    A -- "引发" --> B
+    A -- "引发" --> C
+    A -- "驱动" --> D
+
+    subgraph "实际体验过程"
+        E("第一时间体验一整天"):::process
+        F("初步表现：修复精准，添加功能准确"):::positiveAspect
+        G("转折：复杂插件问题，一小时未果"):::negativeAspect
+    end
+    D -- "导致" --> E
+    E -- "发现" --> F
+    F -- "遭遇" --> G
+
+    subgraph "AI模型对比测试"
+        H("对比测试：GT5 vs Cloud"):::process
+        I("GT5：长篇理论分析，实用性差"):::negativeAspect
+        J("Cloud：直接调用MCP，精准解决"):::positiveAspect
+        K("GT5：修改Cloud的有效代码"):::negativeAspect
+    end
+    G -- "促使" --> H
+    H -- "结果" --> I
+    H -- "结果" --> J
+    J -- "被GT5反向操作" --> K
+
+    subgraph "GT5主要问题总结"
+        L("问题1：中文支持不足"):::negativeAspect
+        M("问题2：工具调用能力弱"):::negativeAspect
+        N("问题3：过于理论化，效率低"):::negativeAspect
+    end
+    K -- "导致" --> L
+    L -- "体现为" --> M
+    M -- "体现为" --> N
+
+    subgraph "对AI“人性化”的思考"
+        O("核心思考：AI的“人性化”"):::conceptual
+        P("GT5感受：太AI，缺乏人性化"):::negativeAspect
+        Q("Cloud感受：具备人性化"):::positiveAspect
+        R("“人性化”定义：理解、解决、适应"):::conceptual
+        S("编程领域：需能干活的助手"):::conceptual
+    end
+    N -- "引发" --> O
+    O -- "引出" --> P
+    O -- "引出" --> Q
+    O -- "包含" --> R
+    R -- "支持" --> S
+
+    T("最终结论：GT5强项非编程实际需求"):::finalConclusion
+    P -- "支持" --> T
+    Q -- "支持" --> T
+    S -- "支持" --> T
+
+    classDef startNode fill:#FFD700,stroke:#333,stroke-width:2px;
+    classDef positiveAspect fill:#90EE90,stroke:#333,stroke-width:1px;
+    classDef process fill:#ADD8E6,stroke:#333,stroke-width:1px;
+    classDef negativeAspect fill:#FFB6C1,stroke:#333,stroke-width:1px;
+    classDef conceptual fill:#D3D3D3,stroke:#333,stroke-width:1px;
+    classDef finalConclusion fill:#800080,stroke:#333,stroke-width:2px,color:#FFFFFF;
+
+    linkStyle 0 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 1 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 2 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 3 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 4 stroke:#008000,stroke-width:1.5px;
+    linkStyle 5 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 6 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 7 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 8 stroke:#008000,stroke-width:1.5px;
+    linkStyle 9 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 10 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 11 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 12 stroke:#FF0000,stroke-width:1.5px;
+    linkStyle 13 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 14 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 15 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 16 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 17 stroke:#0000FF,stroke-width:1.5px;
+    linkStyle 18 stroke:#0000FF,stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+大家好 我是孟建昨天晚上AI全炸了GT5正式发布号称是最强的编程模型我第一时间体验了一整天结果 其实让我有点失望今天就来跟大家分享一下我的真实感受先说一下GT5它有多强官方数据显示在SWA 1半时 测试得分中得到了74.9分在A的测试中得到了88分 都是行业领先的水平理论上 这是目前最强的编程模型整个科技圈都在沸腾科色也第一时间去支持了GT5而且还送免费积分我心想这下终于可以坚持历史了与失望感进去体验了一番一开始确实不错修复8格修复得很精准包括添加功能也能准确地进行实现我当时还比较兴奋心想GT5果然名不虚反但是当我给它一个稍微复杂一点的插件问题的时候它遮探们整整一个小时都没有去搞定这个时候我还开始怀疑了是不是我的提示词有问题于是我做了一个对比测试同样的问题分别用GT5和Cloud来解决结果特别明显GT5常篇大论的进行分析基本上输出了很多的理论但是都什么呢就是比较差而Cloud的话它会直接调用MCP工具真到真相的去解决问题最后Cloud的话我搞定了然后我切回到GT5结果GT5它还把Cloud的代码给我又改换了通过一整天的折腾我发现GT5用明显的三个问题第一它对中文的支持不够好明明我用的是中文提问并且抢设定了用中文法会但是它总是用英文去回答和思考体验不是特别有好第二工具调用能力是不足的对MCP基本上没有支持它不会去处动调用你现在安装的MCP解决问题第三个就是过于理论的话总是输出一大段长篇大论的分析但是其实它做事的效率就比较差就像一个只会只差坦明的顾问只要我想到有一个问题AI的人性化到底有多重要GT5给我的感觉还是太AI了缺少了一个Cloud的人性化那么什么是人性化呢就是真正能够理解你想要什么能够直接动手解决问题能够习惯你的方式去交流在编成这个实用性很强的一个领域更需要这样一个能干活的助手而不是一个只会理论分析的顾问所以我的结论是GT5它也许不是不强而是它的强没有体现在我需要的一个地方也许它在学术测试上会更强但是实际编成工作中至少在我的天理它不如Cloud的Claw当然这只是我个人一整天的体验如果你也用过GT5欢迎在评论区分享你的感受你觉得GT5比Cloud的强吗在什么场景下表现得更好让我们一起讨论互相学习记得点赞关注我们下期再见
