@@ -1,0 +1,166 @@
+Timestamp: 2025-08-13T10:09:06.805246
+Title: OpenAI发布GPT-5！全网首发解读&amp;对比实测
+URL: https://youtube.com/watch?v=DZiWf2z6De4&si=UMhPsUGKmt7Tv5AL
+Status: success
+Duration: 10:27
+
+Description:
+以下是对文本内容的摘要：
+
+**一、GPT-5 发布概览与初期印象**
+    1.  **发布背景：** 距离GPT-4发布两年，OpenAI期间已推出十余个模型。
+    2.  **发布乌龙：** 发布会PPT出现明显数据错误（如52.8比69.1大），引发对OpenAI团队专业性的调侃。
+    3.  **模型版本：** 分为大杯（GPT-5）、中杯（GPT-5 Mini）和小杯（GPT-5 Nano）。
+    4.  **可用性：** 官方宣称即日可用，但ChatGPT官网尚未更新，目前可在Cursor中体验。
+    5.  **核心新特性——自适应思考能力：**
+        *   模型能根据指令要求，自主控制是否思考及思考时长。
+        *   此理念源于Anthropic，其CEO提倡模型应具备类似人类的直觉（系统一）和深思熟虑（系统二）两种模式。OpenAI此举被视为步入Anthropic后尘。
+
+**二、OpenAI 战略重心：编程能力（Coding）**
+    1.  **发布会焦点：** 在一个多小时的发布会中，OpenAI将超过一半时间用于展示其模型的编程（Coding）和Agentic能力，甚至邀请Cursor CEO进行演示。
+    2.  **战略背后的商业考量：**
+        *   **收入对比：** Anthropic的年度经常性收入（ARR）已达50亿美元，接近OpenAI的40%。
+        *   **收入构成差异：**
+            *   消费者订阅（C端）：OpenAI (55亿) 远超 Anthropic (7亿)，表明OpenAI在C端用户中品牌护城河稳固。
+            *   API收入：Anthropic 已超越 OpenAI，且该部分收入在其总收入中占比超过60%（其中14亿美元来自Cursor和Github Copilot等编程相关应用）。
+        *   **结论：** 尽管OpenAI在C端具有先发优势和规模效应，但在快速增长的API市场（尤其以编程为大头）上已落后于Anthropic。因此，GPT-5将重心放在编程能力上，旨在追赶并巩固其在开发者生态中的地位。
+
+**三、GPT-5 性能评估与对比**
+    1.  **编程能力（SWE-bench 指标）：**
+        *   GPT-5 (启动思考模式)：74.9%。
+        *   Claude 4.1 (无前提条件)：74.5%。
+        *   **评估：** 数据高度接近，演讲者直觉认为GPT-5至少尚未超越Claude 4.1，可能只是更接近。
+    2.  **创意表达与写作：**
+        *   演讲者个人偏爱GPT-4o和GPT-4.5的写作风格。
+        *   根据演示，GPT-5在此方面也有明显提升，值得期待。
+    3.  **数学能力（AIME、Frontier Math）：**
+        *   GPT-5 Pro在AIME上达到100%，其他版本96.7%。
+        *   **评估：** 演讲者认为这类高强度数理逻辑推理对普通用户实际用处不大，在已达98.4%的高水平上再提升零点几个百分点意义有限。
+        *   **工具调用与Agentic能力：** 在能调用工具的情况下，模型表现有显著提升，强调了AI结合工具、运行代码以解决任务的重要性（Anthropic提出的MCP理念）。
+    4.  **总体性能评价：** 演讲者认为GPT-5并未带来“绝对的飞跃性成果”，更像是一个增量升级，称之为“GPT 4.6”更为恰当。
+
+**四、实际测试对比 (Claude 4.1 vs. GPT-5 演示案例)**
+    1.  **测试方法：** 复制GPT-5发布会演示所用提示词，在Cursor中通过Claude 4.1运行以进行对比。
+    2.  **案例一：法语学习游戏网站生成。**
+        *   GPT-5演示：可用性强。
+        *   Claude 4.1测试：表现非常相似，但个别功能点击在测试中出现问题；网页设计表现不相上下。
+    3.  **案例二：财务仪表盘生成。**
+        *   GPT-5演示：生成精美、交互式的仪表盘，效果远超OpenAI自身PPT图表。
+        *   Claude 4.1测试：同样生成了精美且交互式图表，演讲者甚至在细节上更偏爱Claude 4.1。
+    4.  **实测结论：** 相比OpenAI此前模型，GPT-5在代码能力上确有进步，但尚未超越Claude 4.1的水平。演讲者表示未来编程仍将更习惯使用Claude 4.1；GPT-5的写作及其他能力仍处于不错的可用状态，会继续尝试。
+
+**核心观点：**
+GPT-5在编程能力和自适应思考方面有所提升，缩小了与Claude 4.1等竞争对手的差距，尤其是在API驱动的用例中，但它缺乏突破性的飞跃，更像是一个渐进式的升级，而非代际性的跨越。
+
+**Overarching Framework (整体框架):**
+GPT-5 发布分析与比较评估
+
+<Mermaid_Diagram>
+graph TD
+    A["GPT-5 终于发布了！"] --> B{"模型基础信息"};
+
+    subgraph "GPT-5 模型概览"
+        B --> C["版本：GPT-5、Mini、Nano"];
+        C --> D["可用性：Cursor支持，官网待更新"];
+        D --> E["核心特性：自适应思考能力"];
+        E -- "理念源于" --> F["Anthropic: 系统1/系统2思考"];
+    end
+
+    subgraph "OpenAI 战略重心与市场背景"
+        G["OpenAI 战略重心：编程能力 (CODING)"]
+        G -- "发布会重点强调" --> H["Agentic 能力演示"];
+        G -- "核心驱动" --> I{"市场竞争与收入结构"};
+        I --> J["Anthropic ARR: 50亿美元"];
+        I --> K["OpenAI C端订阅: 5.5亿 (品牌护城河)"];
+        I --> L["Anthropic API收入: 超越OpenAI (占比>60%)"];
+        L -- "主要贡献" --> M["Cursor / Github Copilot (14亿美元)"];
+        M -- "指向" --> G;
+        K -- "对比" --> L;
+    end
+
+    B --> G;
+
+    subgraph "GPT-5 性能评估 (与 Claude 4.1 对比)"
+        N["性能评估"]
+        N --> O{"编程能力 (SWE-bench)"};
+        O --> P["GPT-5 (思考)：74.9%"];
+        O --> Q["Claude 4.1 (无前提)：74.5%"];
+        Q -- "结论：非常接近，尚未超越" --> R["演讲者直觉：OpenAI 略逊"];
+
+        N --> S{"创意表达与写作"};
+        S --> T["GPT-5 演示有提升，值得期待"];
+
+        N --> U{"数学能力 (AIME)"};
+        U --> V["GPT-5 Pro: 100%"];
+        V -- "演讲者观点：意义不大" --> W["高精度边际提升对普通用户用处小"];
+
+        N --> X{"Agentic / 工具调用"};
+        X -- "表现提升" --> Y["结合工具、运行代码"];
+        Y -- "理念支持" --> F;
+    end
+
+    G --> N;
+
+    subgraph "GPT-5 实际测试 (与 Claude 4.1 对比)"
+        Z["实际测试"]
+        Z --> AA{"测试方法：复制GPT-5演示Prompt"};
+        AA -- "使用工具" --> BB["Claude 4.1 (in Cursor)"];
+        Z --> CC{"案例1：法语学习网站生成"};
+        CC --> DD["GPT-5 演示：可用性强"];
+        CC --> EE["Claude 4.1 效果：非常相似，点击有小问题，设计持平"];
+
+        Z --> FF{"案例2：财务仪表盘生成"};
+        FF --> GG["GPT-5 演示：精美，交互式"];
+        FF --> HH["Claude 4.1 效果：精美度高，演讲者更偏爱细节"];
+    end
+
+    N --> Z;
+
+    II["总体结论：GPT-5 更像 GPT 4.6"]
+    Z --> II;
+    II --> JJ["编程能力有进步，但未超越 Claude 4.1"];
+    JJ --> KK["演讲者未来编程仍偏好 Claude 4.1"];
+    KK --> LL["GPT-5 写作及其他能力可用，会继续尝试"];
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style H fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style O fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style T fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style U fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style V fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style W fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style X fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style Y fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style Z fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style AA fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style BB fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style CC fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style DD fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style EE fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style FF fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style GG fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style HH fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style II fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style JJ fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style KK fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style LL fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+GPT-5 终于发布了！ 这时 距离 GPT4 发布已经过去了两年时间 在这中间 OpenAI 也已经发布了十多个不同的模型 所以 GPT-5 到底怎么样呢🤔？ 在做任何关于这个模型的介绍之前 我们先看个搞笑的乌龙事件 这是 OpenAI 为发布会所做的图表 你看一下上面的数字 52.8 比 69.1 还大吗🤔？ 嗯模型搞不懂 9.9 大于 9.11 我能理解 但是 OpenAI 里拿上百万美元工资的工程师 咋都能做出这么离谱的 PPT 来 而且这个错误它还同时出现了两次 果然世界就是这么个草台班子 我觉得 他们还不如让 GPT-5 来做这个图表呢 所以 GPT-5 到底怎么样呢 接下来 我会给你做些模型基础信息的介绍 视频最后我会拿 Claude 4.1 去实测对比 GPT-5 是骡子是马 拉出来遛遛就知道了 这个模型又是分为了大杯中杯和小杯 分别是 GPT-5 GPT-5 Mini 和 GPT-5 Nano 按 OpenAI 官方的说法是 所有用户今天都能立刻用上 GPT-5 但截止我做视频的时刻 ChatGPT 的官网又还没有更新 我为什么要说又呢 不过 你现在是可以在 Cursor 里面用 GPT-5 的 这是不是一个很有趣的情况 另外就是不像之前有 GPT-4o 是指令模型 O1 O3 O4 是推理模型这种差异 GPT- 5 这个模型的话 它是具有自适应的思考能力的 会根据指令要求的差异 去控制模型是否思考 以及思考多长时间 说实话这我可记得就是这个理念 是 Anthropic 首创的 他们的 CEO 认为模型应该和人一样 同时具备直觉式的系统一思考模式 和深思熟虑的系统 2 思考模式 而不是简单的二分法 在模型上就进行选择推理或者不推理 所以 OpenAI 现在有点步入了 那个 ANTHROPIC 的那个后尘 然后在这次的发布文档中和发布会中 可以看出 就是 OpenAI 最最重视的 其实就是他们的 CODING 编程的 模型编程的能力 在一个多小时的发布会里 OpenAI 花了一半以上的时间 从各种角度 让不同人来讲模型 Coding 和 Agentic 的能力 甚至还请来了 Cursor 的 CEO 模型编程能力的演示 也是直接在 Cursor 中进行的 说到这正好有一个前几天的数据 值得拿出来看一看 这个是关于 Anthropic 和 OpenAI 收入数据的对比 现在 Anthropic 的年度经常性收入 已经达到了 50 亿美元 接近 OpenAI 的 40% 然后从具体的收入构成来说的话 你可以看出 在普通的消费者订阅这一层 它是 0.7billion（十亿） 比 OpenAI 的 5.5billion（十亿）差距非常大 然后像商业和合作伙伴的这个订阅上 也有不小的这个差距 但是很有意思啊 就是在 API 的那个收入上 Anthropic 其实已经超越了 OpenAI 并且这块收入的占比 现在是在 Anthropic 60%以上 在 OpenAI 的收入里 这也不是一个小比例 而且 API 的收入其实大家都知道 大头几乎完全都用在了写代码上 像 Cursor 和 Github 的 co-pilot 给 Anthropic 贡献的这个 api 收入 就达到了十四亿美元 所以 你可以简单理解为 在现在的美国大模型的竞争中 OpenAI 由于它有先发的优势 它的产品具有一定的这种规模效应 因为很多用户都知道它呃 都知道 OpenAI 这个品牌 并且因为它提前使用了 OpenAI 它的很多数据 个性化的数据使用习惯都在 OpenAI 所以就是 如果模型能力差异不是特别大的话 用户其实没有切换模型使用的动机（口误） 所以 OpenAI 的品牌护城河在 c 端用户 这其实还非常的稳固 但是 现在 API 收入的那个增长是很快的 这一块 OpenAI 显然是落在了 Anthropic 的后头 所以在这个阶段 OpenAI 推新模型的时候 你就能理解 它为什么要把最重要的重心 放在 CODING 编程领域了 然后他们自己在这次的演示里 和发布文档里 都提供了不少的 这个历史的测试的一些案例 然后从这些案例来说的话 我觉得呃 相比 OpenAI 之前的表现来说 它可能确实有一些提升 但是相比 Claude 嗯我觉得至少他还没赢 可能呃 变得更接近了 我们可以从这个最核心的数据 来看一下 就是在 coding 这一块 我们最看的一个指标是 SWE bench 在这个指标上 GPT-5 它在启动了思考的时候 它的比例能做到 74.9 而 Claude 4.1 对应的数据是 它没有任何前提条件的情况下是 74.5 所以在这种数据非常接近的情况下 以我们直觉的经验 和历史使用经验来说 OpenAI 可能还会稍微差点意思 然后在另外一个方面就是他们提到的 就是他们在创意表达和写作上面 有了明显的提升 以我自己的感受来说的话 其实我很喜欢 GPT-4o 日常的写作风格 以及 GPT-4.5 在写作上的表现也很好 然后看他们的演示的话 我觉得 GPT-5 应该也是有相应的提升的 这一块我其实还挺期待用一用的 我们再来看一些具体的评估啊 就是在 AIME 数学这一块 呃 GPT-5 Pro 那它为什么还有一个 Pro 版本 又达到了百分百的水平 其他是 96.7% 然后它历史的一些表现的话 其实也有 98.4、 88.9 呃 我现在已经越来越不爱这种数据了 因为确实没有意义 就是 这种高强度的数理逻辑的推理能力 对普通用户来说其实用处真不大 而且你在已经在达到 98.4%的情况下 你再提升一个百分点 零点几个百分点 意义是什么呢 然后在这块 Frontier math 又是一个数学能力方面的这个评估 然后可以看出 就是他们在能调用工具的情况下 那个表现也提升了不少 所以现在其实很多时候对 AI 来说 它单单用一个大语言模型的能力 还不够它还需要有 agentic 有通过多个不同的步骤 通过调用工具去实现 去解决任务的能力 在这一块的话 就是首先是 Anthropic 提出了 MCP（模型上下文协议） 让大模型 可以和真实世界的很多工具 形成标准化的连接 然后在这个前提下 模型如果能写代码 运行代码以及调用不同工具的话 他们的表现确实都是会好非常多的 我也很期待 就是 在这些模型能力越来越提升的情况下 就是 agent 应该接下来会变得越来越好用 对然后所以后面的 Benchmark 的话 其实我觉得都没有什么太值得看的 有没有那种绝对的飞跃性的成果 所以其实相比 GPT-5 这个称呼 我觉得就模型表现来说 它其实更像是 GPT 4.6 而已 所以 最后我们再来看一下这次的实测吧 我现在还没法用 GPT-5 所以我们测试的方式就是用它 发布会上演示的案例 我复制了它的 prompt 提示词 然后自己用 Cursor 拿 Claude 4.1 把对应的结果跑出来了 我们看一下 就是首先是这么一个学习法语的 一个游戏化的这种网站 呃你可以看到 就是在这个演示里 他其实测了好 就是开了好几个窗口去进行抽卡 然后不同那个卡 抽出来的那个效果都不太一样 整体来说就是可用性还挺强的 而我自己用 Claude 4.1 跑出来的效果 是这样的 我会发现它和 GPT-5 的表现非常的像 但是可能也因为这个抽卡的原因 就是我现在就是这几个功能的点击 其实是出问题的 然后从网页设计表现来说的话 呃我觉得和 GPT-5 大概处于不相上下的水平吧 GPT-5 相比之前确实是有了进步 然后另外接下来我们再看一下 就是他们演示的这个生成的数据 看板的这个案例 在这个案例里 他是要求 AI 去生成 一个精美的财务仪表盘 专为他的就是地轮 呃创业公司做设计 然后嗯 他们表现出来的效果是现在的 对 其实效果我觉得还整体还挺不错的 这个数据 至少 比 OpenAI 自己在发布会上做的那个图表 强多了吧 然后这是 Claude 4.1 跑出来的效果 就是你会发现 其实精美程度也非常高 也是这种交互式的图表类 型从细节来说的话 我其实相对而言 还更喜欢 Claude 4.1 更多一些 所以后续的话 以我现在看到的情况来说 是 GPT- 5 相比他们之前的模型 在代码的能力上有了不少进步 但是肯定还没有到超越 Claude 4.1 的水平 后续 我也会更习惯使用 Claude 4.1 去进行编程 但是 GPT-5 的写作能力 以及其他的一些能力 我觉得 肯定是处于一个还不错的可用状态 我会再试一试 所以你现在用上 GPT-5 了吗 你觉得用下来怎么样 这次 OpenAI 的发布 有没有符合你的预期呢 都欢迎在评论区留下你的看法拜拜
