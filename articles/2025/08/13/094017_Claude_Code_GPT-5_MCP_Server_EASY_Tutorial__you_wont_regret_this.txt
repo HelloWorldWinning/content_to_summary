@@ -1,0 +1,131 @@
+Timestamp: 2025-08-13T09:40:17.705435
+Title: Claude Code GPT-5 MCP Server EASY Tutorial (you wont regret this)
+URL: https://youtube.com/watch?v=SEcvuS4u0dk&si=cUm1xgHBj-TUKlNe
+Status: success
+Duration: 13:11
+
+Description:
+**摘要**
+
+本文档概述了在不放弃Cloud Code开发环境的前提下，通过设置本地MCP（Message Passing Communication）服务器来集成并使用GPT-5模型的方法与实践。此方案旨在克服直接在Cloud Code中使用高级AI模型（如Opus）时遇到的令牌限制和成本问题，同时实现高效的AI辅助开发工作流。
+
+**1. 核心思想与背景**
+*   **痛点：** 用户希望在Cloud Code中利用GPT-5的强大能力，但不愿为GPD5放弃Cloud Code的便利性，或受限于其他模型（如Opus）的令牌成本和限制。
+*   **解决方案：** 搭建一个本地MCP服务器作为Cloud Code与GPT-5 API之间的桥梁，实现无缝集成。
+
+**2. MCP服务器设置流程**
+*   **准备工作：**
+    *   获取GPT-5的官方API文档（例如JavaScript Quick Start）。
+    *   引入Cloud Code和Anthropic的MCP文档，为AI提供上下文。
+    *   导入现有MCP服务器的结构作为参考，以加速构建。
+    *   配置OpenAI API密钥。
+*   **AI辅助构建：**
+    *   在Cloud Code中，通过一系列指令（如`fetch cloud code MCP docs`、`read the path to Grock server`、`read claude MD`、`read documentation from GT5`）向AI提供所有必要的上下文。
+    *   发出构建MCP服务器的指令，让Cloud Code AI生成服务器代码。
+*   **部署与测试：**
+    *   执行NPM安装和构建命令 (`npm install`, `npm run build`)。
+    *   将API密钥添加到服务器配置中。
+    *   验证MCP服务器是否成功添加并可响应GPT-5请求。
+
+**3. 应用场景与案例演示**
+*   **场景一：项目规划与详细计划生成**
+    *   **方法：** 在Cloud Code的“计划模式”下，通过MCP服务器将复杂项目需求（如Go语言Tetris应用，要求GUI，60FPS，高效代码）发送给GPT-5。
+    *   **优势：** 利用GPT-5的强大规划能力，生成高质量、结构化的项目实施计划，同时规避了Opus等模型可能带来的令牌限制和高成本。
+*   **场景二：应用调试与协作修复**
+    *   **方法：** 在应用（Tetris）出现图形、控制等问题时，通过上传截图并详细描述问题，咨询GPT-5。
+    *   **过程：** GPT-5与Cloud Code的Sonnet模型共同分析问题，制定修复计划，并通过生成测试和调试过程来迭代改进应用。
+    *   **成果：** 成功修复了游戏的图形和控制问题，使其成为一个可玩、流畅的Tetris体验。
+
+**4. 核心总结**
+通过设置本地MCP服务器，用户可以在Cloud Code环境中无缝集成和利用GPT-5的强大功能，从而实现高效的项目规划和复杂的调试协作。
+
+**5. 整体框架**
+跨平台AI集成与增强型开发工作流
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "核心问题与解决方案"
+        A["用户痛点: 不想放弃Cloud Code但想用GPT-5"] --> B["核心问题: Cloud Code与GPT-5集成障碍"]
+        B --> C{"解决方案: 本地MCP服务器"}
+        C --> D["GPT-5 API"]
+        C --> E["Cloud Code开发环境"]
+    end
+
+    subgraph "MCP服务器设置流程"
+        F["步骤1: 获取GPT-5与Cloud Code文档"] -- "提供上下文" --> G["步骤2: 利用Cloud Code AI构建服务器"]
+        G -- "生成代码" --> H["步骤3: 配置API密钥与启动服务器"]
+        H --> C
+    end
+
+    subgraph "增强型开发工作流"
+        I["用例1: 项目规划与详细计划生成"]
+        J["用例2: 应用调试与协作修复"]
+        K["Go语言Tetris应用"]
+    end
+
+    C -- "启用" --> I
+    C -- "启用" --> J
+    D -- "提供AI能力" --> I
+    D -- "提供AI能力" --> J
+    E -- "提供开发环境" --> I
+    E -- "提供开发环境" --> J
+
+    I --> K
+    J --> K
+
+    subgraph "集成优势"
+        L["优势1: 克服大型模型Token限制"]
+        M["优势2: GPT-5卓越的成本效益"]
+        N["优势3: 实现无缝AI辅助开发"]
+    end
+
+    I --> L
+    I --> M
+    J --> N
+
+    K --> P["最终目标: 在Cloud Code中高效利用GPT-5"]
+    L --> P
+    M --> P
+    N --> P
+
+    style A fill:#FFCCCC,stroke:#8B0000,stroke-width:2px,color:#333;
+    style B fill:#FFDDCC,stroke:#CC6600,stroke-width:2px,color:#333;
+    style C fill:#DDEEFF,stroke:#00008B,stroke-width:2px,color:#333;
+    style D fill:#C0C0C0,stroke:#333333,stroke-width:2px,color:#333;
+    style E fill:#C0C0C0,stroke:#333333,stroke-width:2px,color:#333;
+    style F fill:#F0F8FF,stroke:#ADD8E6,stroke-width:1px,color:#333;
+    style G fill:#F0F8FF,stroke:#ADD8E6,stroke-width:1px,color:#333;
+    style H fill:#F0F8FF,stroke:#ADD8E6,stroke-width:1px,color:#333;
+    style I fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#333;
+    style J fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#333;
+    style K fill:#E0FFFF,stroke:#4682B4,stroke-width:2px,color:#333;
+    style L fill:#90EE90,stroke:#228B22,stroke-width:1px,color:#333;
+    style M fill:#90EE90,stroke:#228B22,stroke-width:1px,color:#333;
+    style N fill:#90EE90,stroke:#228B22,stroke-width:1px,color:#333;
+    style P fill:#ADFF2F,stroke:#6B8E23,stroke-width:3px,color:#333;
+    linkStyle 0 stroke:#8B0000,stroke-width:1.5px;
+    linkStyle 1 stroke:#CC6600,stroke-width:1.5px;
+    linkStyle 2 stroke:#00008B,stroke-width:1.5px;
+    linkStyle 3 stroke:#00008B,stroke-width:1.5px;
+    linkStyle 4 stroke:#00008B,stroke-width:1.5px;
+    linkStyle 5 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 6 stroke:#ADD8E6,stroke-width:1px;
+    linkStyle 7 stroke:#00008B,stroke-width:1.5px;
+    linkStyle 8 stroke:#DAA520,stroke-width:1.5px;
+    linkStyle 9 stroke:#DAA520,stroke-width:1.5px;
+    linkStyle 10 stroke:#333333,stroke-width:1px;
+    linkStyle 11 stroke:#333333,stroke-width:1px;
+    linkStyle 12 stroke:#333333,stroke-width:1px;
+    linkStyle 13 stroke:#333333,stroke-width:1px;
+    linkStyle 14 stroke:#4682B4,stroke-width:1.5px;
+    linkStyle 15 stroke:#4682B4,stroke-width:1.5px;
+    linkStyle 16 stroke:#228B22,stroke-width:1.5px;
+    linkStyle 17 stroke:#228B22,stroke-width:1.5px;
+    linkStyle 18 stroke:#228B22,stroke-width:1.5px;
+    linkStyle 19 stroke:#6B8E23,stroke-width:2px;
+    linkStyle 20 stroke:#6B8E23,stroke-width:2px;
+    linkStyle 21 stroke:#6B8E23,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+Okay, so GPD5 is a great model, but uh there's no way I'm going to give up cloud code just to go back to cursor to use GPD5. So I thought what can I do if I want some input for GPD5 right on cloud code and a simple way to do it is just to create a simple MCP server. You can run this locally as we're going to do today. Simple setup and you can query MCP uh GPT5 for some things if you wanted to, right? Uh so I'm just going to go through how I set this up. simple way you can follow too and let's do an example of how I have been using GPD5 in cloud code via my local MCP server. So basically the way I like to do this you can basically do this in any way you want but I like to run my MCP servers locally. So, if you zoom in a bit here, uh the setup I have is basically uh we're going to gather some documentation here on GT5, just a simple one. I'll show you that. And just to speed things up a bit, uh I usually have like um a previous MCP server I built. So, kind of cloud code can kind of look at the structure and kind of get and mimic that. Uh I'm going to share this on GitHub if you want to copy this. Exactly. Anyway, uh I have my open AI key in here, right? Uh I have hidden it now, but I usually do that in av and I have just a claude uh MD that kind of explains how the other server works. So you can find that in my repo if you want to. So what we're going to do first grab some documentation on gpt5. So I'm just going to go to platform. openai. com openai. com uh developer quick start and I want to select JavaScript for this here right so we have JavaScript great just going to copy page paste it in here and save it that is all the documentation we need to create a simple MCP server for for GD5 you can just double check that GPD5 is the selected model here right okay so uh I created this simple step-by-step plan here we're going follow. So we can copy these commands here. Hopefully you can see this. Right. So uh I logged into cloud code. Uh I am kind of in my um in my directory here. Right in this directory. So what I'm going to do now is I'm just going to follow this plan here. So the first thing I'm going to do is fetch cloud code MCP docs from anthropic. Right. Uh just to update the context here. So, uh, Cloud Code kind of knows the latest documentation on how we create MCP servers from Entropic. Just going to fetch that quickly. Should be pretty quick. Uh, I'm going to read uh the path to the Grock server so Cloud Code can kind of get familiar with the the setup I like to do for my local uh servers. So, I'm just going to copy here on the Gro server I have here. We're going to basically use the same format. Uh I'm going to do list and read and paste in this. Okay. Next step is going to be to read our claw MD also. I just want to bring everything into context here now on cloud code. So I want to read my claude MD. This just makes it so that we run into less issues while doing this. At least that's what I like to do. But there are other ways to do this. Uh next step, we're going to read uh the documentation from GT5. So I'm just going to copy this path here. And I'm going to do read the documentation. And now we basically have everything in context, right? Uh we have yeah basically all we need I think to build the MCP server. So this is going to be the initiate server creation. So I have a command there. Now, let's create an MCP server that calls GT5 API and returns the response. Uh, I have some follow-up here on some issues I ran into because yeah, I just left it in here for you. So, uh, you can try it out if you want to. I'm going to share this HTML file here. Uh, okay. Then, we're just going to do this prompt here. And now Cloud Code hopefully is going to create a little plan uh a to-do list and it's going to uh start writing yeah the MCP server for us. Good, good, good. And yeah, you can see that is basically it. So now we can just wait for um cloud code to actually build the server and let's let it complete this to-do list here and I'll be right back. Okay, so that was done, right? You can see here is what we have built. I built our structure, our key features, our setup command. Perfect. Uh, I lost from recording, but basically what I did next, add the server API key from the env file and add and build a server. Again, we got this to-do list. Uh, we uh did actually do an MPM install. Perfect. We continue up with an MPM run build to build the server. Good. We added our API key here. Perfect. Uh I'm going to revoke this. So it doesn't really matter how if you see this. And GP5 MCP server successfully added. So what I'm going to do now is uh to uh get this going. I'm just going to do exit and I'm going to go back in again to cloud code. Okay. So to test this now, we can do like an MCP just to check. Yeah, we have the server here. Perfect. Then I can do um say hello to GPT5. Let's see what happens. We should trigger that now if we have a good description on our MCP server. Yeah, we're going to send this. We're going to get a response from GPT5. Perfect. Hi, I'm doing well. Thanks for asking. How can I help you today? So, perfect. So, now we have our uh MCP server set up here that is sending our request to the GT5 API. uh we get a response. Uh we can also do something like uh say hello to GPD5. We can also set uh reasoning to high. So this is a parameter we can do. So this should be included now in kind of the input here. Reasoning effort high. Perfect. And that kind of triggers more thinking. Uh it was a waste here of course, but you can use that in other stuff, right? So uh I'm just going to show you like an example of how I have been using this uh MCP server for uh cloud code. So one thing I like to do is uh when I'm going to start a new project, I'm going to I go to model, I select opus, right? Uh but usually uh I run out of tokens on opus right away. Uh I'm on the 100 Mox 5 plan. Uh, so instead lately this weekend I've been trying to just set my model to set, right? And I've been doing shift tab tab to go to plan mode. And let's say we want to build something, right? Um, I'm going to think of a prompt here. Okay, so I'm just going to say ask GT5 to make a detailed plan for a Tetris app in Go. It should have a GUI minimum 60 FPS. Keep the code as efficient as possible. I'm on Mac OS and since we are in plan mode now I can just send this and hopefully now kind of our primary agent here is going to send this request over to GPT5 uh to ask it to generate a plan for us right okay so create a detail implementation plan for building a Tetris game we have our specs and we set the reasoning effort to high the temperature to 0. 1 okay that was a bit maybe I should have instructed that but that's fine let's see what GPT comes back with here And then we're going to uh of course take that information, that context and use it in our plan to actually create our app. So that is one use case I've been using GPD5, my GPD5 MCP server for uh because Opus um I usually run out of tokens anyway and GPD5 is pretty cheap. It's a very good price for kind of the power you can get for it and I think this is a good solution where you kind of get the best of both worlds in claw code here. So let's just wait for the plan and take a quick look at it. Okay, so now we have our plan here. So let's take a look here. Looks pretty good. So you can see uh Tetris apping go and implementation plan. We have our overview, our stack. Okay, that's pretty good. We have uh project structure laid out that is very good for set. We have some core features uh implementation phases uh performance targets. Let's try it. So I'm just going to do uh yes and auto accept edit. So now, of course, we're going to switch back to set on cloud code that is going to use this plan here now to kind of set up a to-do list and start working on the plan uh from GPT5 here. So, we have kind of a big uh to-do list here. So, I'm just going to let Cloud Code work through this and I'll take you back and we're going to check if our app runs. And after that, I have one more thing I wanted to show you uh what I've been using the GPT5 um MCP server for. Okay, so now we have written some tests. Let's try to run this now. Okay. Uh we have some issues. So let's see if cloud code is going to try to fix this. It's going to check out some of the tests here. And let's try to run it again. This was okay. Perfect. Okay. So we are close to launching now. So we're going to make a clean. We're going to make a build. And we can just launch it. So we can do uh make a run, make a bundle, and open. So, I'm just going to ask um Sonet to launch the game for us. Okay, so let's try now. Okay, here we go. So, it's far from perfect. Okay, so we can see the game is not perfect. It's kind of working, but we have some graphical issues and the steering is kind of off, right? And yeah, it's not perfect. So, what I'm going to do, so I'm going to close this. All right, I took a screenshot, so I'm going to upload this. So, I'm going to try to be a bit ambitious here. So, I'm going to upload the image of the game. We have some issues. The game control is a bit strange. The UI looks buggy. Make a clean make it a clean working smooth Tetris experience. Consult GPT5 with the issues and make a plan together to fix this. So, of course, this is a big ask, but this is something you can think about when it kind of comes to trying to use this MCP server. So, of course, this is going to take some time. Uh but I'm going to see uh you can see oops you can see we are prompting um GPT5 now with kind of the issues I described the UI could be cleaner controls feel are unresponsive uh and everything the scan piece looks flattening right so uh I'm just going to wait for this now uh because we are on reasoning effort high this is going to take some time and now kind of GPT5 and set is going kind of try to work together to see if we can solve the issues. So, I'm just going to let this run and I'm going to come back when we have some results here and we're going to try to run the game again. So, what is nice to see here now is that uh cloud code here now is writing a bunch of tests. It found some issues running this test, right? And based on the debug tests, it found here ah there's a bug, right? Uh we are detecting some for row stuff. Uh, but this is wrong. Let me fix this. And it's nice to see that we can run different tests here without having to go into the game here to actually try to fix this. Okay. So now we have kind of completed our testing. So we can go test it out now. So I can just do Yeah, we can do clear uh and we can do make bundle. All right. And we can run the game. So let's see now. Uh I wanted to restart this. So let's try this. Okay, perfect. So, we have the ghost at the bottom here. And we can hard drop. Perfect. We can put this here. Uh there. Let's try this. Put it down here. Put a long up here. And there. And let's see. Boom. We got a score. We have a level. We have some lines. We can see the next one. H. There's a bit of a UI bug here, but all in all, this is a great game and super easy to make. We kind of did it in collaboration with um Sonnet and GPT5. So, yeah, definitely go check out the G uh GP5 MCP server. I'm going to leave in the link in the description so you can kind of find the setup I have here. And yeah, uh hope you enjoy this. Thank you for tuning in and have a great
