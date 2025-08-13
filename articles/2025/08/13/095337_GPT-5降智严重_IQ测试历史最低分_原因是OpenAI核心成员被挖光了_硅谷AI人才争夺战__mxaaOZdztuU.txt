@@ -1,0 +1,130 @@
+Timestamp: 2025-08-13T09:53:37.669907
+Title: GPT-5降智严重，IQ测试历史最低分，原因是OpenAI核心成员被挖光了？硅谷AI人才争夺战！ mxaaOZdztuU
+URL: https://youtube.com/watch?v=mxaaOZdztuU&si=38OR4Z-_yYwl1D0w
+Status: success
+Duration: 6:23
+
+Description:
+**核心要点：**
+GPT-5的发布未能达到预期，暴露出OpenAI在AI竞赛中面临的严峻挑战，这场竞争已从单一模型能力的比拼，转向了人才、理念、文化和生态系统建设的综合较量。
+
+**总体框架：**
+本文以GPT-5的发布为切入点，深入探讨了当前AI行业的竞争格局，特别是OpenAI、Anthropic（Claude）和Meta三大巨头之间的较量，揭示了竞争焦点正从单纯的模型算力与性能，转向了人才争夺、公司理念、企业文化和生态系统构建等更深层次的维度。
+
+**总结大纲：**
+
+I.  **GPT-5发布与用户反响**
+    *   **发布印象与能力倒退**：作者对GPT-5发布会“失望”，认为其写作能力倒退，且不如Claude。
+    *   **用户普遍抱怨**：OpenAI下架GPT-4o，强制切换GPT-5mm，导致用户不满，反映GPT-5缺乏个性、拒绝创意请求、回复简短，严重影响工作效率和体验。
+    *   **官方回应**：OpenAI承认发布过程存在问题，承诺尽快恢复GPT-4o模型的可用性。
+
+II. **GPT-5关键特性与实际表现**
+    *   **宣称特性**：
+        *   提供标准、Mini、Nano三种版本。
+        *   具备自适应思考能力，模拟人类“系统一”和“系统二”思维模式。
+        *   在SW基准测试中获得70%高分，能处理40万Token的长上下文。
+        *   多模态能力突破，能看懂长视频、生成短视频、语音和音效，支持多种语言，可自定义语速。
+        *   增强个性化与集成，支持聊天UI定制、长期记忆，可连接谷歌日历和Gmail。
+    *   **实际表现与质疑**：作者指出基准分数可能误导，实测GPT-5编程能力（如写贪吃蛇代码）仍不如Claude，尤其远不及最新发布的Claude Opus 4.1。
+
+III. **AI行业竞争加剧与核心驱动因素转变**
+    *   **竞争对手的崛起**：Anthropic率先推出Claude Opus 4.1，Google Gemini发布第三代世界模型，均展现强大实力。
+    *   **API收入格局变化**：Anthropic在API收入（开发者生态关键指标）上首次超越OpenAI（31亿美元对比29亿美元），特别在开发者工具领域表现突出。
+    *   **人才争夺战愈演愈烈**：
+        *   **理念分歧导致人才流失**：Anthropic由前OpenAI高管因理念不合创立，强调AI安全性、可控性、宪法AI。OpenAI顶尖人才（如RLHF创始人、对齐研究员）大量流向Anthropic。
+        *   **Anthropic的文化优势**：不靠高薪，更注重AI安全使命和公司氛围，员工流失率远低于行业平均水平。
+        *   **Meta的激进挖角**：斥巨资收购Skyllion，并以高薪（最高2.5亿美元）挖角顶尖AI人才，引发行业震动。
+    *   **OpenAI的应对策略**：
+        *   大幅提升核心岗位薪资待遇（涨幅30%-40%）。
+        *   成立AI安全与对齐中心，积极吸纳外部学者。
+        *   通过内部Hackathon修复创造力缺陷，推动GPT-6等创新模块。
+        *   与微软联合推出Copilot，强化产品生态。
+
+IV. **总结与展望**
+    *   AI圈的竞争已超越单纯的模型算力，更是一场关于企业文化、人才、战略和生态圈建设的综合较量。OpenAI能否再次实现革命性突破并保持领先地位，面临前所未有的挑战。
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "AI行业竞争格局"
+        A["GPT-5发布与用户反响"] --> B("OpenAI")
+        B -- "核心产品" --> C("GPT-5 模型")
+        C -- "能力倒退/用户抱怨" --> D("用户体验问题")
+        D -- "官方回应" --> B
+        B -- "主要竞争者" --> E("Anthropic (Claude)")
+        B -- "主要竞争者" --> F("Meta")
+        B -- "主要竞争者" --> G("Google")
+    end
+
+    subgraph "模型能力与市场表现"
+        C -- "宣称优势" --> C1("自适应思考/多模态/长上下文")
+        C -- "实际评测" --> C2("代码能力不如Claude")
+        E -- "最新发布" --> E1("Claude Opus 4.1")
+        G -- "最新发布" --> G1("第三代世界模型")
+        E1 -- "能力超越" --> C2
+    end
+
+    subgraph "竞争核心：人才与理念之战"
+        B -- "API收入" --> B1("收入 $29亿")
+        E -- "API收入" --> E2("收入 $31亿 (超越OpenAI)")
+        H("AI顶尖人才")
+        I("AI安全与公司理念")
+        J("企业文化与使命")
+
+        I -- "理念分歧导致" --> E
+        H -- "大量流向 Anthropic" --> E
+        H -- "高薪挖角流向 Meta" --> F
+        I -- "Anthropic核心价值" --> E
+        J -- "Anthropic员工忠诚度高" --> E
+    end
+
+    subgraph "OpenAI 的应对与转型"
+        B -- "薪资激励" --> K("核心岗薪资大幅提升")
+        B -- "组织战略" --> L("成立AI安全与对齐中心")
+        B -- "内部创新" --> M("Hackathon推动GPT-6/MoE")
+        B -- "外部合作" --> N("与微软联合强化Copilot")
+    end
+
+    O("AI竞争焦点转移")
+    P("不再仅是算力")
+    Q("更注重文化")
+    R("更注重人才")
+    S("更注重策略")
+    T("更注重生态圈")
+
+    A --> O
+    O -- "转型方向" --> P
+    O -- "转型方向" --> Q
+    O -- "转型方向" --> R
+    O -- "转型方向" --> S
+    O -- "转型方向" --> T
+
+    style A fill:#FFEBCC,stroke:#E69500,stroke-width:2px,color:#333;
+    style B fill:#87CEEB,stroke:#4682B4,stroke-width:2px,color:#333;
+    style C fill:#DDA0DD,stroke:#9370DB,stroke-width:2px,color:#333;
+    style D fill:#FFCCCC,stroke:#FF0000,stroke-width:2px,color:#333;
+    style E fill:#90EE90,stroke:#32CD32,stroke-width:2px,color:#333;
+    style F fill:#F0E68C,stroke:#B8860B,stroke-width:2px,color:#333;
+    style G fill:#ADD8E6,stroke:#6A5ACD,stroke-width:2px,color:#333;
+    style C1 fill:#FFD700,stroke:#BDB76B,stroke-width:1px,color:#333;
+    style C2 fill:#FFB6C1,stroke:#FF6347,stroke-width:1px,color:#333;
+    style E1 fill:#7FFFD4,stroke:#40E0D0,stroke-width:1px,color:#333;
+    style G1 fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#333;
+    style B1 fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#333;
+    style E2 fill:#90EE90,stroke:#32CD32,stroke-width:1px,color:#333;
+    style H fill:#FFDAB9,stroke:#D2691E,stroke-width:2px,color:#333;
+    style I fill:#ADD8E6,stroke:#6A5ACD,stroke-width:1px,color:#333;
+    style J fill:#FFE4B5,stroke:#DAA520,stroke-width:1px,color:#333;
+    style K fill:#B0E0E6,stroke:#6A5ACD,stroke-width:1px,color:#333;
+    style L fill:#B0E0E6,stroke:#6A5ACD,stroke-width:1px,color:#333;
+    style M fill:#B0E0E6,stroke:#6A5ACD,stroke-width:1px,color:#333;
+    style N fill:#B0E0E6,stroke:#6A5ACD,stroke-width:1px,color:#333;
+    style O fill:#FFDEAD,stroke:#CD853F,stroke-width:2px,color:#333;
+    style P fill:#D3D3D3,stroke:#A9A9A9,stroke-width:1px,color:#333;
+    style Q fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#333;
+    style R fill:#FFDAB9,stroke:#D2691E,stroke-width:1px,color:#333;
+    style S fill:#B0C4DE,stroke:#708090,stroke-width:1px,color:#333;
+    style T fill:#F0FFF0,stroke:#8FBC8F,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+看完GPT5发布会,先说结论内人失望,写作能力倒退,变成能力提升但依然打不过Claw据 OpenAI 官方公告GPT5以成为采GPT的全新默认模型全面取代了GPT4O3的模型免费用户每五小时,最多可发送4条消息操作后,将自动切换至性能较低的GPT5mmOpenAI下架射走,就模型的烧操作直接把用户欺炸,RATTEAM平台上用户普遍报应GPT5缺乏个性无法剩人员有任务新模型经常拒绝创意请求或者回复过于简短严重影响工作效率和残命体验C-U-Autham也公开成任发布过程存在问题承诺将尽快恢复4O的模型的可用性我们简单过一下发布会,内容要点以0活3月号测量GPT5分为标准Mini和Nano 3种版的也就是大杯、中杯、小杯、价格0活满足不同用户需求GPT5具有自视应的思考能力会根据指定要求的差异去控制模型是否思考以及思考多长时间这个理念是和Sorepix手上的他们的CEO认为模型应该和人一样同时具备直觉式的系统一式考模式和深思俗率的系统二式考模式比如回复天气怎么样用系统一回复对某个话题的看法这就是系统二就像人一样自动切换而,性能大约近GPT5在SW变速外法设置中拿下70%的高分远超或三合GPT4O能处理长达40万Toke的上下推理更靠打体更稳定说实话这些分数测试我都不想看连PPT本身标柱都错了Crawler的分数不是最高的但是实际变成是最好的最稳定的3多摩太新突破GPT5不仅能看懂长视频还能生成短视频语音和音和音几乎和真人没区别支持多种语言还能自定以语数体验更自然各形化与集成更强聊天双口可以随心定制支持长期记忆能直接脸上谷歌有限和日理总共来说GPT5的发布案和插品Google等对手压力被增推动AI行业正式卖入可用性AI性式的波波恩园还邀请了Carser的CIO展示了GPT5的变成能力但是现场也是似乎并不顺畅有点尴尬就是说我自己在Carser实际体验了GPT5可Craw的变成能力用GPT5写一个贪池舌发现其代码能力依然不如Craw更不用说Craw Co.以及OP4.1没错就在两天前Anchowik率先推出CrawDop4.14.1能力比试更上一成了这不前几天Google Demon发布第三代世界模型经历三标志者AI在动态世界建模领域的重大突破真的是太绝那为何OpenAI最新的GPT5家Cars都打不过CrawDop我们先来看一个数据这是7月的数据OpenAI总Eye约120亿美元依然是行业巨头但在 API收入这开发者生态关键指标上Anchowik以31亿美元首次超越OPn.A.S 29亿美元尤其在Carser给他Copa等开发者工具店中CrawD API调用量的机身但这两项就供应了约14亿美元说得很支持Anchowik的CEO就是前OPn.A.S的总裁因为理念不合而持值创立的Anchowik而Graw实际是MASIK和automont理念不合MASIK的自立门户XAI的产品Anchowik强调AI的安全性可控性和科技的事情提出了宪法AI理念用一套明确的行为准则来约束AI系统可以说Anchowik和ACAI的诞生都源于UOPn.A在AI安全开放性和发展理念上的生存分歧因为大家CEO黄仁勋也多次强调AI行业的核心竞争其实是人才争夺战黄仁勋还警告试图通过技术封锁来限制TagO发展其实是短视行为反而会加速全球AI人才的流动和创新实际上习近平有助品积发顶尖AI人才随便能在AI竞赛中占据主导地位在OPn.A和Anchowik的公司工程是年轻动折数百万美元但它们更看重的是公司领念AI安全和未来愿景与于被称为人类反馈强化学习支付的帐收们在2024年8月离开OPn.A加入了Anchowik专注于AI对起研究简单说Wi-Li-CAT就是让AI通过人类反馈学会更符合人类意图的行为而对起则是确保AI目标和人类价值观以置所以Anchowik也被称为OPn.A的吸血鬼跟Signal file的数据从OPn.A跳烧到Anchowik的工程师数点是反向了8倍从地码到Anchowik的流动甚至高达11倍Anchowik的员工流程率内有80%这比OPn.A的67%和Metal的64%都高不少Anchowik的CEO导游安门顶也很弹率的时候他们公司不是靠开高性来强硬很多员工面对Metanal的天降挖掖都没啥兴趣大家更看中的是Anchowik的AI安全使命和公司氛围6月Metal CEO Zahobog以143亿美元收过了Skylion近半部分Skyl创始人把他先懂忘加上Metal负责新成立的超级智能CNC持续引发行业震动古各等Skyl客户担心数据安全纷纷中止合作Metal随后更是开启了激进的高兴挖掖策略部分AI研究员的新筹高达2.4亿美元创下行业新高前苹果AI负责前OPn.A的科学家DMA也研究员等顶建人材分分加入Metal其中年仅24岁的AI研究员Metal以2.5亿美元的高兴加盟成为业界交警Metal基进的资本竞赛不同安遭始终坚持以AI安全伦理和使命为核心取动力强调包容多元视为赋予员工高度自主权和灵活的办公环境这种企业文化极大增强了员工的归属感和重层度使其员工流程率高达80%远超行业平均水平面对人材流氏和竞争压力OPn.A也迅速做出反应不仅大幅提升核心感为的现金和气权待遇涨幅高达30%至40%还成立了AI安全与对其中心积极新那外部学者参与白皮素核柱同时OPn.A通过内部Hack场机体GPT6创新模块力图修复创造力口倍GPT6G交清凉模型加多专家路由加多并与微软联合推出COPPA的指导力推动到模型能力向Edge-Circene强化产品生态做手法现在AI圈的竞争早就不只是比谁的模型的算一强更多的是拼起了文化人才策略还有生态圈的搭境OPn.A还能再次革命性突破也要领先吗或许比Edge的提前到的还要难你们觉得呢我是小帐关注我用数据看头经济背后的真相
