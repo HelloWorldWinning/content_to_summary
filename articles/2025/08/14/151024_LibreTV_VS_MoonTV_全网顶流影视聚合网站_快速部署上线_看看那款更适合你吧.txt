@@ -1,0 +1,169 @@
+Timestamp: 2025-08-14T15:10:24.820540
+Title: LibreTV VS MoonTV 全网顶流影视聚合网站 快速部署上线 看看那款更适合你吧！
+URL: https://www.youtube.com/watch?v=hwkf5yAMwdY
+Status: success
+Duration: 7:20
+
+Description:
+<TEXT>Hello everyone, today I will talk about libTV and MOTV, which are very popular recently. In fact, they have the same origin and the same ideas. So one is before and the other is after. First of all, there was lipTV at the beginning. When the author of Mu TV saw libTV, the idea was very consistent with its concept, so it also borrowed a lot of content. Mu TV may be more beautiful. So, today you can take a look at both and choose the one you like. This is a film and television aggregation website where you can watch some movies and TV series. It is very convenient. It brings together the more common film and television interfaces on the entire network to provide film and television resources. It can be deployed directly on NAS using docker or on VPS. Today I will also use Leica Cloud to demonstrate to you. I am using Feiniu NAS, and this is the virtual machine here. An SSH to make sure it is in an open state. Finally, use the taimuseSSH connection tool to enter the IP, enter the username and password, click the link by default, it is a normal account studio, space bar, the username and password of Fei Niu become a pound sign, and next to it is root, then it has the highest authority. Next, let the script that flies in be run and directly enter such a domain name to copy this code. Right-click and press Enter. You can see that 73 and 74 are today's two protagonists lipTV and MOTV. Install livetv73 first. Click on it. The default is 8073 and press Enter. Enter a password here and press Enter to pull the libTV image. Okay, the installation is complete. Run it directly and enter the password just now. Okay, there are many precautions here that must be strictly followed. The author's statement is more critical. Click Finish. In this way, the film and television aggregation website has been built on the local Feiniu NAS. You can switch tags here to watch some old movies. This place will mark where its source is. Click it to play. Most of this type of resources will have strange advertisements. The second film and television aggregation website is deployed on the VPS of Leica Cloud. Leica Cloud has a Korean ISP of Hong Kong CN2 and a large bandwidth server of the United States Xiner. There will be corresponding discounts every month. You can choose according to your needs. Today, I will use this Leica Cloud to demonstrate to you that I connected to the VPS of Leica Cloud through SSH but still ran special effects, name pulling and script selection. It belongs to the application market and chooses 74. The default enter port when installing MOTV is also the password you need to enter before logging into this film and television aggregation website. Hello everyone, use Lekalin's public network IP plus port to directly access this page. You can see that its layout is different from lipTV. The left side is a relatively modern control, which is mainly divided into movies, dramas, and variety shows. It can also go to watch the recently popular Nezha: The Devil Child's Brain, which is Nezha II. Another very important point is that it can integrate the collection stations of the entire network and measure the speed to get the best. Cooperate with your local area to make your viewing experience very smooth and high-definition. Of course, there will also be messy advertisements. You can see the corresponding speed test results here and you can see the corresponding resolution. I think its integration idea is better than live. TV is more advanced. MTV actually has a REDIS version that supports multiple users. However, in order to let everyone get started faster, the deployment solutions shared in my application market are relatively simple. The prerequisite is that you must have a public IP. If you have a public IP, you can choose five resolutions for a domain name. You need to buy a domain name here. I also recommend gname to complete the registration and login here. There will be corresponding discounts here. I will use the domain name hosted by ageone to share with you. Of course, the mainstream is still cloudflair. Select the domain name hosted on ageone before and go to the domain name service. Select domain name management. Select add domain name and turn on IPV6IP to give it the IP protocol of the cloud. The default is 80443. The CDN is set with hone's redemption code by default. If any friends want it, I can give it to everyone for free. Hello, this newly added site is being deployed. After it takes effect, you need to configure an SSL certificate here for Tencent Click Save to apply for a free certificate. The SSL certificate has been configured OK, but it takes a little longer to wait. It is better than the CF side. Copy the newly created acceleration domain name, right-click and paste the domain name. Use this domain name to create the version domain name of MOTV. In this way, the domain name of Mu TV has been created and no longer uses IP plus port to access. Disable the IP plus port. This is for fear that someone will scan your port. You can see that your own domain name is used to access MOTV. Click Login. If you have a public IP, you can do a domain name reverse proxy in this way. If you are on Feiniu NAS, you need to penetrate your service to the public network through the intranet. You can check out my previous video on the intranet penetration of Feiniu NAS. It is very detailed and can be applied to all services, including Mu TV and liveTV talked about today. As long as it is an IP plus port service, you can watch movies without worrying, but you have to endure the advertising bombardment from different channels and beware of being deceived. See you in the next episode.</TEXT>
+
+### 总结
+
+本内容详细介绍了两款影视聚合网站libTV和MOTV的部署、配置与访问方法，旨在帮助用户搭建私人的影视观影平台。
+
+**1. 核心观点：**
+这两个影视聚合站虽能便捷获取全网影视资源，但用户需自行部署并忍受广告，具备公网IP方可实现最佳的域名访问体验。
+
+**2. 核心框架：**
+这是一篇关于**影视聚合网站的部署、配置与访问指南**，以libTV和MOTV为例，详细介绍了从本地NAS到云端VPS的多种部署方式，以及公网域名配置和内网穿透等进阶访问方案。
+
+**3. 结构化总结：**
+
+*   **引言**
+    *   **libTV与MOTV简介：** 二者同源同理念，MOTV借鉴libTV，均是聚合全网影视接口的观影网站，支持Docker部署于NAS或VPS。
+    *   **核心功能：** 提供便捷的电影、电视剧等影视资源观看。
+
+*   **libTV 在 NAS 上的部署演示**
+    *   **环境：** 使用飞牛NAS的虚拟机，通过SSH连接。
+    *   **部署步骤：** 运行预设脚本（选择73），配置默认端口（8073）和密码，拉取libTV镜像，完成安装并运行。
+    *   **使用体验：** 可在本地NAS上观看，支持切换标签，显示资源来源，但有广告干扰。
+
+*   **MOTV 在 VPS 上的部署演示**
+    *   **环境：** 采用徕卡云VPS（提供多种线路选择，如韩日、香港CN2、美国大带宽）。
+    *   **部署步骤：** 通过SSH连接VPS，运行脚本（选择74），配置默认端口和登录密码。
+    *   **使用体验：** 界面布局现代，分类清晰（电影、剧集、综艺）；核心优势在于能聚合全网采集站并测速，优化观影流畅度和清晰度，但同样有广告。
+    *   **进阶版本：** MOTV存在支持多用户的REDIS版本，但教程以简化部署为主。
+
+*   **域名配置与高级访问**
+    *   **前提条件：** 必须具备公网IP。
+    *   **域名购买与解析：** 推荐gname进行注册，可选择ageone或Cloudflare进行托管。
+    *   **配置流程：** 在域名服务中添加域名，开启IPV6IP协议，配置默认端口（80/443），设置CDN。
+    *   **SSL证书：** 申请免费的SSL证书（如腾讯云），实现HTTPS安全访问。
+    *   **访问优化：** 通过自有域名访问替代IP加端口，并禁用IP加端口访问，提升安全性和用户体验。
+
+*   **内网穿透（适用于无公网IP的NAS用户）**
+    *   **目的：** 将NAS上的服务（如libTV、MOTV）穿透至公网，实现外部访问。
+    *   **方案：** 参考作者之前关于飞牛NAS内网穿透的详细视频教程。
+    *   **适用性：** 对所有基于IP加端口的服务均有效。
+
+*   **总结与提示**
+    *   **便捷观影：** 部署后可随时随地观看影视资源。
+    *   **注意事项：** 需忍受不同渠道的广告轰炸，并警惕潜在的欺诈风险。
+
+**4. Mermaid 概念图：**
+<Mermaid_Diagram>
+graph TD
+    subgraph "核心概念"
+        A["影视聚合网站"]
+    end
+
+    subgraph "主要平台"
+        B["libTV"]
+        C["MOTV"]
+    end
+
+    subgraph "部署环境与方法"
+        D["部署环境"]
+        E["NAS"]
+        F["VPS"]
+        G["部署流程"]
+        H["脚本安装"]
+        I["端口配置"]
+        J["密码设置"]
+    end
+
+    subgraph "访问与优化"
+        K["访问方式"]
+        L["IP+端口"]
+        M["域名访问"]
+        N["公网IP"]
+        O["内网穿透"]
+        P["域名服务"]
+        Q["SSL证书"]
+    end
+
+    subgraph "功能与体验"
+        R["核心功能"]
+        S["资源聚合"]
+        T["源站测速"]
+        U["用户体验"]
+        V["便捷观看"]
+        W["广告干扰"]
+        X["安全提示"]
+    end
+
+    A --> B
+    A --> C
+
+    B --> D
+    C --> D
+
+    D --> E
+    D --> F
+
+    E --> G
+    F --> G
+
+    G --> H
+    G --> I
+    G --> J
+
+    H -- "安装" --> B
+    H -- "安装" --> C
+
+    B --> K
+    C --> K
+
+    K --> L
+    K --> M
+
+    M --> N
+    M --> P
+    M --> Q
+
+    E -- "无公网IP时" --> O
+
+    B --> R
+    C --> R
+
+    R --> S
+    R --> T
+
+    B --> U
+    C --> U
+
+    U --> V
+    U --> W
+    U --> X
+
+    style A fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#28A745;
+    style B fill:#E0F7FA,stroke:#00BCD4,color:#00BCD4;
+    style C fill:#E0F7FA,stroke:#00BCD4,color:#00BCD4;
+
+    style D fill:#FFF3CD,stroke:#FFC107,color:#FFC107;
+    style E fill:#F8D7DA,stroke:#DC3545,color:#DC3545;
+    style F fill:#D1ECF1,stroke:#17A2B8,color:#17A2B8;
+    style G fill:#D1ECF1,stroke:#17A2B8,color:#17A2B8;
+    style H fill:#E2E3E5,stroke:#6C757D,color:#6C757D;
+    style I fill:#E2E3E5,stroke:#6C757D,color:#6C757D;
+    style J fill:#E2E3E5,stroke:#6C757D,color:#6C757D;
+
+    style K fill:#CCE5FF,stroke:#007BFF,color:#007BFF;
+    style L fill:#F0F8FF,stroke:#007BFF,color:#007BFF;
+    style M fill:#F0F8FF,stroke:#007BFF,color:#007BFF;
+    style N fill:#DCEDC8,stroke:#689F38,color:#689F38;
+    style O fill:#DCEDC8,stroke:#689F38,color:#689F38;
+    style P fill:#FFE0B2,stroke:#FB8C00,color:#FB8C00;
+    style Q fill:#FFE0B2,stroke:#FB8C00,color:#FB8C00;
+
+    style R fill:#F5F5F5,stroke:#343A40,color:#343A40;
+    style S fill:#F5F5F5,stroke:#343A40,color:#343A40;
+    style T fill:#F5F5F5,stroke:#343A40,color:#343A40;
+    style U fill:#F5F5F5,stroke:#343A40,color:#343A40;
+    style V fill:#CCEEFF,stroke:#008CBA,color:#008CBA;
+    style W fill:#FFCCCC,stroke:#FF0000,color:#FF0000;
+    style X fill:#FFCCCC,stroke:#FF0000,color:#FF0000;
+</Mermaid_Diagram>
+
+Content:
+Hello everyone, today I will talk about libTV and MOTV, which are very popular recently. In fact, they have the same origin and the same ideas. So one is before and the other is after. First of all, there was lipTV at the beginning. When the author of Mu TV saw libTV, the idea was very consistent with its concept, so it also borrowed a lot of content. Mu TV may be more beautiful. So, today you can take a look at both and choose the one you like. This is a film and television aggregation website where you can watch some movies and TV series. It is very convenient. It brings together the more common film and television interfaces on the entire network to provide film and television resources. It can be deployed directly on NAS using docker or on VPS. Today I will also use Leica Cloud to demonstrate to you. I am using Feiniu NAS, and this is the virtual machine here. An SSH to make sure it is in an open state. Finally, use the taimuseSSH connection tool to enter the IP, enter the username and password, click the link by default, it is a normal account studio, space bar, the username and password of Fei Niu become a pound sign, and next to it is root, then it has the highest authority. Next, let the script that flies in be run and directly enter such a domain name to copy this code. Right-click and press Enter. You can see that 73 and 74 are today's two protagonists lipTV and MOTV. Install livetv73 first. Click on it. The default is 8073 and press Enter. Enter a password here and press Enter to pull the libTV image. Okay, the installation is complete. Run it directly and enter the password just now. Okay, there are many precautions here that must be strictly followed. The author's statement is more critical. Click Finish. In this way, the film and television aggregation website has been built on the local Feiniu NAS. You can switch tags here to watch some old movies. This place will mark where its source is. Click it to play. Most of this type of resources will have strange advertisements. The second film and television aggregation website is deployed on the VPS of Leica Cloud. Leica Cloud has a Korean ISP of Hong Kong CN2 and a large bandwidth server of the United States Xiner. There will be corresponding discounts every month. You can choose according to your needs. Today, I will use this Leica Cloud to demonstrate to you that I connected to the VPS of Leica Cloud through SSH but still ran special effects, name pulling and script selection. It belongs to the application market and chooses 74. The default enter port when installing MOTV is also the password you need to enter before logging into this film and television aggregation website. Hello everyone, use Lekalin's public network IP plus port to directly access this page. You can see that its layout is different from lipTV. The left side is a relatively modern control, which is mainly divided into movies, dramas, and variety shows. It can also go to watch the recently popular Nezha: The Devil Child's Brain, which is Nezha II. Another very important point is that it can integrate the collection stations of the entire network and measure the speed to get the best. Cooperate with your local area to make your viewing experience very smooth and high-definition. Of course, there will also be messy advertisements. You can see the corresponding speed test results here and you can see the corresponding resolution. I think its integration idea is better than live. TV is more advanced. MTV actually has a REDIS version that supports multiple users. However, in order to let everyone get started faster, the deployment solutions shared in my application market are relatively simple. The prerequisite is that you must have a public IP. If you have a public IP, you can choose five resolutions for a domain name. You need to buy a domain name here. I also recommend gname to complete the registration and login here. There will be corresponding discounts here. I will use the domain name hosted by ageone to share with you. Of course, the mainstream is still cloudflair. Select the domain name hosted on ageone before and go to the domain name service. Select domain name management. Select add domain name and turn on IPV6IP to give it the IP protocol of the cloud. The default is 80443. The CDN is set with hone's redemption code by default. If any friends want it, I can give it to everyone for free. Hello, this newly added site is being deployed. After it takes effect, you need to configure an SSL certificate here for Tencent Click Save to apply for a free certificate. The SSL certificate has been configured OK, but it takes a little longer to wait. It is better than the CF side. Copy the newly created acceleration domain name, right-click and paste the domain name. Use this domain name to create the version domain name of MOTV. In this way, the domain name of Mu TV has been created and no longer uses IP plus port to access. Disable the IP plus port. This is for fear that someone will scan your port. You can see that your own domain name is used to access MOTV. Click Login. If you have a public IP, you can do a domain name reverse proxy in this way. If you are on Feiniu NAS, you need to penetrate your service to the public network through the intranet. You can check out my previous video on the intranet penetration of Feiniu NAS. It is very detailed and can be applied to all services, including Mu TV and liveTV talked about today. As long as it is an IP plus port service, you can watch movies without worrying, but you have to endure the advertising bombardment from different channels and beware of being deceived. See you in the next episode.
