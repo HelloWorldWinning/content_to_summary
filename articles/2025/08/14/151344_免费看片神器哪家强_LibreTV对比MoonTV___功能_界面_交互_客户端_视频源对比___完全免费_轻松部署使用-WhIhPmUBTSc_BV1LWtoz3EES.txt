@@ -1,0 +1,163 @@
+Timestamp: 2025-08-14T15:13:44.095766
+Title: 免费看片神器哪家强？LibreTV对比MoonTV ｜ 功能、界面、交互、客户端、视频源对比 ｜ 完全免费、轻松部署使用-WhIhPmUBTSc BV1LWtoz3EES
+URL: https://www.bilibili.com/video/BV1LWtoz3EES/
+Status: success
+Duration: 10:34
+
+Description:
+**总结要求**
+
+1.  **大纲和结构**
+
+*   **引言**
+    *   介绍Muntv和LiberTV，两款免费在线影视观看应用。
+    *   本文旨在从多方面对比两者，以帮助用户选择。
+*   **LiberTV 部署优势**
+    *   部署方式多样（Netlify, Render, Vercel H1, Cloudflare Workers/Pages, Docker）。
+    *   部署流程相对Muntv更简单，特别是Cloudflare Pages一键部署。
+    *   支持GitHub Actions实现与原作者仓库的同步更新。
+*   **Muntv vs LiberTV 核心区别对比**
+    *   **1. 数据持久化与用户管理 (Muntv 完胜)**
+        *   **Muntv:** 支持数据库，实现用户名+密码登录、观看记录、收藏跨设备同步；支持多用户数据隔离。
+        *   **LiberTV:** 无数据库支持，观看记录仅本地保存，不支持跨设备同步。
+    *   **2. 界面与UI**
+        *   **共同点:** 都简洁美观。
+        *   **Muntv:** 支持浅色/深色主题；首页模块化（继续观看、热门）；有综艺页面和收藏夹功能；无限滚动加载。
+        *   **LiberTV:** 仅深色主题；首页搜索显眼，单一维度标签（地区、类型）；标签可高度自定义管理。
+    *   **3. 播放交互体验 (Muntv 体验更佳)**
+        *   **Muntv:** 点击海报自动优选最佳播放源，直接播放；提供换源选项，显示片源清晰度、延迟和测速，并检测无效源。
+        *   **LiberTV:** 流程较粗放，需手动选择搜索结果、资源及集数；无测速和清晰度提示，需碰运气。
+    *   **4. 内置视频源丰富度**
+        *   **数量:** LiberTV 23个API，Muntv 21个API；两者大部分API共享（20个）。
+        *   **独有:** Muntv独有1个，LiberTV独有3个。实际感受资源数量相近，各有侧重。
+        *   **LiberTV独有特性:** 可复制视频链接，在第三方播放器（如PopPlayer）中播放。
+        *   **共同点:** 两者均不消耗用户部署服务器的流量。
+    *   **5. 手机与电视端支持**
+        *   **电视端:** Muntv可通过Orient TV实现安卓电视端播放；LiberTV不支持。
+        *   **手机端:** 两者均支持PWA功能，可封装成手机应用使用。
+*   **总结与建议**
+    *   **Muntv优势:** 功能更全面，提供收藏、跨设备同步、资源测速/自动选择、电视端支持，整体使用体验更好。
+    *   **LiberTV优势:** 更轻量化，对配置要求低；自定义标签灵活；可复制链接；拥有Muntv没有的独特视频源。
+    *   **最终建议:** 鉴于LiberTV部署简单且拥有独特优势，建议用户“小孩子才做选择，大人全都要”，将两者结合使用，互为补充或备选。
+
+2.  **核心观点**
+
+综合来看，Muntv在功能和用户体验上更胜一筹，而LiberTV则以其轻量化和特定优势成为Muntv的绝佳补充，建议用户根据需求“全都要”。
+
+3.  **顶层框架**
+
+本内容的核心是“免费在线影视观看应用对比与选择指南”，通过对Muntv和LiberTV进行多维度（部署、功能、交互、资源、平台支持）的详细比较，最终给出综合使用建议。
+
+4.  **概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["免费在线影视观看应用对比与选择"] --> B("应用介绍: Muntv vs LiberTV");
+
+    subgraph "部署与同步"
+        B -- "部署" --> C("LiberTV: 更简单，推荐Cloudflare Pages");
+        C --> D("LiberTV: 支持GitHub Actions同步更新");
+        B -- "部署" --> E("Muntv: 略复杂，但功能强劲");
+    end
+
+    subgraph "核心功能对比"
+        F_DB["数据持久化与用户管理"]
+        F_UI["界面与UI"]
+        F_Play["播放交互体验"]
+        F_Res["内置视频源丰富度"]
+        F_Client["多端支持"]
+
+        subgraph "Muntv 优势"
+            M1("支持数据库\n(用户/历史/收藏跨设备同步)");
+            M2("支持多用户数据隔离");
+            M3("浅色/深色主题");
+            M4("首页模块化\n(继续观看/热门/综艺)");
+            M5("独有收藏夹功能");
+            M6("智能优选播放源\n(显示清晰度/测速)");
+            M7("支持安卓电视端(Orient TV)");
+        end
+
+        subgraph "LiberTV 独特或局限"
+            L1("无数据库，记录本地保存");
+            L2("仅深色主题");
+            L3("首页搜索优先\n(单一维度标签)");
+            L4("标签可高度自定义");
+            L5("需手动选择播放源");
+            L6("可复制视频链接");
+            L7("轻量化，配置要求低");
+            L8("不支持安卓电视端");
+        end
+
+        F_DB --> M1; F_DB --> M2;
+        F_DB --> L1;
+
+        F_UI --> M3; F_UI --> M4; F_UI --> M5;
+        F_UI --> L2; F_UI --> L3; F_UI --> L4;
+
+        F_Play --> M6;
+        F_Play --> L5;
+
+        F_Res -- "API数量相近，20个共有" --> SharedRes("Muntv: 21个API总数\nLiberTV: 23个API总数");
+        SharedRes --> M_Res_Unique("Muntv独有1个API");
+        SharedRes --> L_Res_Unique("LiberTV独有3个API");
+        F_Res --> L6;
+
+        F_Client --> M7;
+        F_Client --> L8;
+        F_Client -- "均支持PWA" --> PWA("手机端作为Web应用");
+    end
+
+    B --> F_DB;
+    B --> F_UI;
+    B --> F_Play;
+    B --> F_Res;
+    B --> F_Client;
+
+    G["结论与建议"]
+    G -- "Muntv: 功能全面，体验更佳" --> H("作为主要选择");
+    G -- "LiberTV: 轻量灵活，独特补充" --> I("作为备选或辅助");
+    G --> J("最终建议: 两者兼得\n(大人全都要)");
+
+    style A fill:"#F0F8FF",stroke:"#333",stroke-width:2px;
+    style B fill:"#E0FFFF",stroke:"#333";
+
+    style C fill:"#DAF7A6",stroke:"#333";
+    style D fill:"#DAF7A6",stroke:"#333";
+    style E fill:"#FFDAB9",stroke:"#333";
+
+    style F_DB fill:"#FFCCCC",stroke:"#333",stroke-width:1px;
+    style F_UI fill:"#FFCC99",stroke:"#333",stroke-width:1px;
+    style F_Play fill:"#FFFFCC",stroke:"#333",stroke-width:1px;
+    style F_Res fill:"#CCFFCC",stroke:"#333",stroke-width:1px;
+    style F_Client fill:"#CCCCFF",stroke:"#333",stroke-width:1px;
+
+    style M1 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M2 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M3 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M4 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M5 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M6 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style M7 fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+
+    style L1 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L2 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L3 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L4 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L5 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L6 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L7 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style L8 fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+
+    style SharedRes fill:"#FDF3E7",stroke:"#333",stroke-width:1px;
+    style M_Res_Unique fill:"#D4EDDA",stroke:"#333",stroke-width:1px;
+    style L_Res_Unique fill:"#F8D7DA",stroke:"#333",stroke-width:1px;
+    style PWA fill:"#ADD8E6",stroke:"#333",stroke-width:1px;
+
+    style G fill:"#98FB98",stroke:"#333",stroke-width:2px;
+    style H fill:"#7FFFD4",stroke:"#333",stroke-width:1px;
+    style I fill:"#FFEFD5",stroke:"#333",stroke-width:1px;
+    style J fill:"#B0E0E6",stroke:"#333",stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+大家好 欢迎来到Severing 科技生活 我是Severing前两天给大家介绍了一个项目叫做Muntv 它是用来免费观看网上的影视资源的有很多小伙伴呢 它提到了另外一款叫做Lipertv那今天呢 我就跟大家一起来看看这一款并跟大家一起来探索一下这两个奥迪有什么区别我会从功能介面交互视频员手机和电视端等等方面来做一下对比我们来看看应该如何选择我们首先来打开Lipertv的项目主义就是这个网址它是一个免费在线视频搜索和观看平台它提供的部署方式有很多Netify Render 还有彭讯的H1都可以一件部署另外同样提供了CloselyVirginal 刀可的部署方式应该说它的部署方法相比Muntv来说要简单一些我们先花一点点的时间把它部署起来等一下我们再来看它跟Muntv之间到底有什么区别我们还是以Closely的部署方法为例在上一期视频里面有观众说到最后提醒大家最好在Closely的小后来部署应该在一开始的时候说其实大家也不用太过担心这个问题目前还没有证据表明部署之后会有什么样的后果我只是从谨慎的角度出发而且即便Closely的帐号出了问题重新注册一个也是非常简单的只不过你里面拖管的预明什么的就需要进行一下千疑我个人的建议就傻你还是专门注册一个Closely的小后然后拖管一两个免费的预明还一些比较敏感的项目比如这些或者是科学上网之类的项目就在小后上面来部署这样就比较好好 我们研规正转首先第一步还是4这个项目点击上方的4按钮然后点击绿色的这个3H4这个倡库就复制了一份到你自己的名下了里面的内容跟原作者的是一模一样的下面的部署指南也是一样的不过Libergv的部署是在太过简单了我们完全可以不用看的指南都可以我们登录Closely然后点击左边的计算Waters点击创建选择Pages然后倒入线有Git存储点击开始使用由于我之前已经绑定过Gitalf的帐号了所以就直接出来了如果你没绑定过那就要点击连接Gitalf这里要选择我们刚才克龙的Libergv参与然后开始设置Libergv的设置非常的简单这里面都不需要改动唯一需要变的就是设置一个密码我也强烈建议大家都要设置一个密码点击环境变量添加变量变量名称是全大鞋的PASSWORD直就是你随便写一个作为密码然后保存并部署这样就完工了它不需要很复杂非常的简单接下来我们就可以通过Pages的誉名来访问打开Libergv同样你自己有誉名的话也可以在这里自定义誉名在这里输入你的誉名点击激活育然后等它的状态变成活动就可以了我们打开它就可以了然后输入我们刚才设置的密码来登录进来之后我们可以点击右上角的设置按钮它默认是给你勾选的四个资源我建议大家把他们都全选一共有23个资源这里的设置部分你也可以在部署的时候单独加上一个管理原密码在变量里面增加MinPASSWORD这样的变量这样就需要有管理原的密码才能够进入管理界面不过我感觉没有太大的必要只要有外面的密码就可以了同样我们可以通过电汤的Actions功能来保持和原作者的同步更新看你Ford的这个仓库里面点击Actions就可以看到作者已经给你见了一个AppStreamSync同步上游的工作流了你只需要点击Enable Workflow来开启就可以了我们接下来说说LipRate TV和孟GV的区别首先第一点区别就在于LipRate TV它是没有办法应用数据库的只能够设置一个简单的密码而不能使用用护名加密码这个密码它只是防止别人可以随便访问你的站点而已并不能起到保存数据的作用因此你的观碳记录它只保存在你的本地电脑你换一台电脑就没有了而Muntv除了可以设置类似的只有密码的普通部署之外你还可以引入数据库来保存数据设置用户名和密码然后你所有的记录都可以保存到数据库里面只要你用同一个用户来登陆无论在什么设备上都可以看到之前的数藏和观碳记录甚至是播放进度同时你也可以设置多个用户每个用户的历史数据是相互隔离的就这一点来说可以说Muntv是完胜的可能有小伙伴会说我就只是简单的找片看看而已不需要沉醋历史记录也不需要跨设备同步好那我们接下来看看他们其他方面的区别从介面来看LipRotv和Muntv都是非常简洁美观的LipRotv它只有深色的主题而Muntv则可以选择检测或者是深色他们的首页都是调用的欧半热门的API来展示的LipRotv的话它把搜索放到了最显眼的位置其次是单一围度的一些标签的形式来展示这门的电影和电视剧比如哪个地区的中国的还是欧美的以及片的类型爱情天还是动作片这类的它的每个标签都会展示16个如果没有找到合适的还可以点击换一批来更换另外16个这些标签你是可以自己来管理的点击管理标签在这里面就可以根据自己的喜好来修改比如删除或者是自己添加比如我们可以添加一个动漫而MOOM TV呢它的首页则是模块化的设置最重要的位置是继续观看然后是热门电影和热门聚集点击查看更多其实呢就是打开左边囊的电影这些页面它有两个围度比如热门电影它可以是全部的滑鱼的和欧美的等等但是呢它不像LipRotv它没有影片的类型可以选择它采用的是不不留的方式你一直往下拉它就会一直出现新的影片的海报MOOM TV它比LipRotv多了一个综艺的页面但是如果你喜欢综艺的话LipRotv其实也是可以展示的你只要在标签里面添加一个综艺就可以了这个标签是很灵活的你甚至可以添加哈里波特这样的标签回到MOOM TV而比较有特色的就是它可以对影片点收藏然后有一个专门的收藏夹在里面就可以找到这一点是挺人性化的接下来我们来说说播放的交互LipRotv是比较简单出放的有了你点击一个海报封面它就会当作你是在搜索的这部片然后就显示它所有资源里面的搜索结果给你然后你就点进去其中的一个再选择要播放地级级即便是只有一级的电影那也需要你点一下这个议才可以播放总的来说体验起来是比较直来直去的比较像程序人的思维看过来MOOM TV这里它就比较有产品经理的考虑了把我们点击其中的一个海报它就直接给你优选了最佳的播放原了直接一步到位抵达正式播放的这一步体验感会好很多同时它也会提供换原的选项在右侧会列出其他原的匹配结果给你选择而且还会显示偏原的高星程度是1080p还是720p另外有一个很好的一点就是它还显示了每个原的延迟和测速的情况或者检测是否是无效的而Liber TV的话它是不会帮你测用选它也不会告诉你速度和高星程度是怎么样你只能一个一个去点击碰运气从交互体验哪里我觉得MOOM TV是比Liber TV好很多的接下来我们来对比一下这两款应用它内置的资源谁更丰富Liber TV目前总共有23个ADI的数量而MOOM TV一共是21个月我们让将近来帮我们分析一下其实这两边大部分都是共有的20个都是一样的MOOM TV独有的是有一个而Liber TV独有的有3个整体来说光同内置的原的数量来说其实两者是差不多的我个人实际的感觉也是一样但有的两边都会有没有的两边都没有Liber TV有一个独特的地方就是它可以让你复制练阶你可以把这部片的练阶复制写来然后再popslayer之类的播放机上面来播放MOOM TV则而没有这里我身边提一下就是我们使用这两款应用它并不会走你不属的服务器的流量因此无论你是在你自己的VPS上面不属也好在爪源上面不属也好都不需要担心流量的问题还有一点区别就是MOOM TV它是可以利用Orient TV这款软件来实现安卓电视端的播放了而Liber TV则不行我尝试过把Liber TV的网纸输到Orient TV的这个APID席里面结果是无法使用的手机端使用的话两者都支持PWA功能都可以用流染器把它封装成手机的应用来使用通过上面的对比我们来总结一下MOOM TV它拥有比Liber TV更多的功能比如收藏、跨设备桶部资源的测速和自动选择以及电视端的支持整体而言使用体验上会更好一些如果你能且只能选择一款的话那我就建议你选择MOOM TV当然了Liber TV也有它独特的地方它更加的轻量化对配置的要求更低另外还有比如手艺的自定义标签功能而且可以复制链接以及它拥有一些MOOM TV所没有的视频员而且做者也是会不断的更新打所以最后我的建议就是啊小孩子才做选择作为大人呢我们完全可以全都要况且不属Liber TV也实在是他爱过简单了MOOM TV有一些自源受不到的时候可以尝试在Liber TV上面抽锁一下或者哪一个出了问题我们还有另一个可以作为被选好这就是我们今天分享的内容麻烦给我点个赞鼓励一下或者订阅我的频道我们下期再见我们下期再见
