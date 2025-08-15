@@ -1,0 +1,170 @@
+Timestamp: 2025-08-15T16:32:45.951106
+Title: Text_Summary_20250815_163245
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**总结纲要**
+
+*   **一、 女人鱼口概述**
+    *   **定义：** 一种中医病证，指两胯合缝之间因结肿成疮所致的病症。
+    *   **形态与发展：** 未溃前称“便毒”，溃后呈鱼口状。
+    *   **发生部位：** 可生于小腹之下或阴毛之旁。
+
+*   **二、 病因分析**
+    *   主要与房事不当有关，导致精血走动凝滞结而为肿。
+    *   具体包括：入房忍精、强固不泄，或欲念已萌、停而不遂。
+
+*   **三、 临床表现**
+    *   **局部症状：** 结肿疼痛、两胯牵强。
+    *   **全身症状：** 发热疼痛、内热口干、便秘。
+
+*   **四、 中医治疗**
+    *   **治疗原则：** 散滞行瘀，通利大、小二便。
+    *   **常用方剂：** 山甲内消散、九龙丹等，以发散表邪、散瘀通利。
+    *   **严重情况处理：**
+        *   内脓已成：需前往医院由专业人员行火针法急开排脓。
+        *   腐溃口不合：遵医嘱应用玉红膏进行治疗。
+
+*   **五、 就医建议与日常护理**
+    *   **就医建议：** 建议及时前往医院中医科，寻求中医医生辨证论治，避免耽误病情。
+    *   **日常护理：**
+        *   保持机体清洁卫生。
+        *   避免过早沾水。
+        *   避免长期搔抓，以防继发感染。
+
+---
+
+**核心要点 (Core Point)**
+
+“女人鱼口”是一种与特定房事行为相关的中医妇科病症，需及时就医进行专业辨证治疗，并配合日常护理，以防病情加重及继发感染。
+
+---
+
+** overarching Framework**
+
+中医病症的定义、病因、症状、治疗与护理。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    A["女人鱼口<br>中医病证"] --> B{"定义与位置"};
+    A --> C{"主要病因"};
+    A --> D{"临床表现"};
+    A --> E{"治疗策略"};
+    A --> F{"就医与日常护理"};
+
+    subgraph "定义与位置"
+        B1["结肿成疮"] --> B2("两胯合缝之间");
+        B1 --> B3("小腹之下或阴毛之旁");
+        B1 --> B4("未溃称便毒<br>溃后为鱼口状");
+        B{"定义与位置"} --> B1;
+    end
+
+    subgraph "主要病因"
+        C1["房事不当<br>精血凝滞"] -- "包括" --> C2("入房忍精");
+        C1 --> C3("强固不泄");
+        C1 --> C4("欲念已萌<br>停而不遂");
+        C{"主要病因"} --> C1;
+    end
+
+    subgraph "临床表现"
+        D1["局部症状"] --> D2("结肿疼痛");
+        D1 --> D3("两胯牵强");
+        D4["全身症状"] --> D5("发热疼痛");
+        D4 --> D6("内热口干");
+        D4 --> D7("便秘");
+        D{"临床表现"} --> D1;
+        D{"临床表现"} --> D4;
+    end
+
+    subgraph "治疗策略"
+        E1["治疗原则"] --> E2("散滞行瘀");
+        E1 --> E3("通利大、小二便");
+        E4["常用方剂"] --> E5("山甲内消散");
+        E4 --> E6("九龙丹");
+        E7["严重情况处理"] --> E8("火针法<br>排脓");
+        E7 --> E9("玉红膏<br>腐溃口不合");
+        E{"治疗策略"} --> E1;
+        E{"治疗策略"} --> E4;
+        E{"治疗策略"} --> E7;
+    end
+
+    subgraph "就医与日常护理"
+        F1["及时就医"] --> F2("前往医院中医科");
+        F1 --> F3("寻求中医医生帮助");
+        F1 --> F4("辨证论治<br>避免耽误");
+        F5["日常护理"] --> F6("保持机体清洁卫生");
+        F5 --> F7("避免过早沾水");
+        F5 --> F8("避免长期搔抓");
+        F5 -- "目的" --> F9("避免继发感染");
+        F{"就医与日常护理"} --> F1;
+        F{"就医与日常护理"} --> F5;
+    end
+
+    linkStyle 0 stroke:#00008B,stroke-width:2px;
+    linkStyle 1 stroke:#00008B,stroke-width:2px;
+    linkStyle 2 stroke:#00008B,stroke-width:2px;
+    linkStyle 3 stroke:#00008B,stroke-width:2px;
+    linkStyle 4 stroke:#00008B,stroke-width:2px;
+
+    style A fill:#4682B4,stroke:#333,stroke-width:2px,color:#FFF;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+
+    style B1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style B3 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style B4 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+
+    style C1 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style C3 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style C4 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+
+    style D1 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D5 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D6 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D7 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+
+    style E1 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E3 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E4 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E5 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E6 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E7 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E8 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style E9 fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+
+    style F1 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F3 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F4 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F5 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F6 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F7 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F8 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+    style F9 fill:#E6CCFF,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+女人鱼口是一种中医的病证，主要是由于两胯合缝之间的结肿成疮而引起。鱼口可生于小腹之下或者阴毛之旁，在未溃之前称为便毒，既溃之后为鱼口状，所以称之为鱼口。
+
+鱼口主要是由于入房忍精、强固不泄，或欲念已萌、停而不遂，以致精血走动凝滞结而为肿。鱼口的治疗应当散滞行瘀，通利大、小二便。
+
+患有鱼口的女人常有结肿疼痛、两胯牵强、发热疼痛、内热口干，以及便秘等表现。可在中医医生的指导下用山甲内消散、九龙丹等方剂进行治疗，通常可以起到一定的发散表邪、散瘀通利的作用。
+
+女人如果长时间存在发热疼痛、急胀苦甚的现象，当内脓已成时，应前往医院由专业人员行火针法急开之排脓，腐溃口不合者，还应严格遵医嘱应用玉红膏进行治疗。
+
+因此，患有鱼口的女人建议及时前往医院的中医科，寻求中医医生的帮助，经过中医医生的辨证论治后进行相应的治疗，避免耽误病情，导致病情逐渐加重。
+
+此外，女人还需保持机体清洁卫生，避免过早沾水，避免长期进行搔抓，以免出现继发感染的现象。
