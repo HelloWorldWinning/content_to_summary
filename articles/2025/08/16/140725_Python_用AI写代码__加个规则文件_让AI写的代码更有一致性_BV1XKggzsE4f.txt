@@ -1,0 +1,141 @@
+Timestamp: 2025-08-16T14:07:25.520752
+Title: Python 用AI写代码  加个规则文件 让AI写的代码更有一致性 BV1XKggzsE4f
+URL: https://www.bilibili.com/video/BV1XKggzsE4f?spm_id_from=333.1007.tianma.51-1-152.click
+Status: success
+Duration: 13:05
+
+Description:
+以下是对您提供文本内容的总结：
+
+**AI辅助开发中的代码风格与质量控制框架**
+
+**引言：AI生成代码的挑战与解决方案**
+
+在利用大型语言模型（LLM）生成代码时，开发者常面临代码不符合个人习惯、项目规范，或导致后期维护与重构困难的痛点。为解决此问题，核心方案是向LLM提供一份定制的“代码风格指南文件”（Style Guide）。此举旨在引导LLM生成更符合预期的、高质量的代码，从而确保代码一致性、减少常见错误（如`Precommit`校验失败），并显著提升AI辅助开发的效率与产出质量。
+
+**核心内容：代码风格指南的关键规则**
+
+该指南文件涵盖了从代码风格、架构到测试策略等多个维度的具体要求，以确保生成的代码具备高可读性、可维护性及可测试性。
+
+**I. 代码风格与规范 (Code Style & Conventions)**
+1.  **`Precommit` 工具集成提示：** 告知LLM项目使用`Precommit`工具，并遵循其预设规则。
+2.  **异常情况添加注释：** 对于代码中不常规或需要特殊处理的部分，添加清晰的注释（如`# noqa`）。
+3.  **优先使用绝对路径导入：** 鼓励使用如`Apps`路径的绝对导入，而非相对路径，以避免`Precommit`错误及模块引用混乱。
+4.  **避免可选参数默认值：** 规避在函数定义中使用`def func(arg=None)`类的可选参数默认值，以防止Python动态类型导致的“重载”模糊性，并提升重构安全性。建议使用不同方法名或显式传递`None`。
+5.  **强制使用静态方法 (`@staticmethod`)：** 提倡将不依赖类实例或类属性的函数定义为静态方法，这极大方便了单元测试，并有助于性能优化（若结合不可变类型）。
+6.  **纯计算逻辑抽取至工具类 (`Utility`)：** 将不涉及第三方依赖的纯粹计算或逻辑代码提取到独立的`Utility`类中，以便进行独立的单元测试，保持服务层（Service）的纯粹性。
+7.  **多行列表/字典使用尾随逗号：** 在多行定义列表、字典等结构时，末尾添加逗号，以避免版本控制合并冲突及`Precommit`格式化问题。
+8.  **明确的类型提示：** 鼓励使用Python的类型提示，以增强代码可读性，并获得IDE的智能辅助。
+9.  **显式异常捕获：** 使用具体的异常类型捕获（如`except Exception as e:`），而非宽泛的`except:`，避免隐藏问题并符合`Precommit`规范。
+
+**II. 测试策略 (Testing Strategy)**
+1.  **单元测试：** 重点针对静态方法和工具类中的纯计算逻辑进行单元测试。
+2.  **集成测试：** 强调端到端（End-to-End）或功能性测试，验证整个系统从API到数据流的完整性，避免在集成测试中使用Mock对象。
+
+**III. 代码可读性与可调试性 (Readability & Debuggability)**
+1.  **编写调试友好代码：** 避免编写过于复杂的单行表达式，适当引入中间变量，便于在调试时设置断点和检查中间值。
+2.  **遵循Python命名规范：** 引导LLM遵循Python社区推荐的命名约定，如蛇形命名法（snake_case）和驼峰命名法（PascalCase）。
+
+**IV. 项目架构与文件结构 (Project Architecture & File Structure)**
+1.  **推荐三层架构：** 提倡使用如`Controller`、`Service`、`Repository`等分层的三层架构，明确各层职责。
+2.  **按类型划分文件夹：** 建议根据代码类型（如Controller、Service）划分文件夹，而非按业务功能划分（对于大型项目），以减少模块间的循环引用和依赖混乱。
+3.  **明确源代码根目录定义：** 提示LLM项目明确定义源代码根目录（如`src`）。
+4.  **测试文件结构镜像源代码：** 建议测试文件夹的内部结构应与源代码文件夹结构保持一致，便于查找与管理。
+
+**V. API客户端设计 (API Client Design)**
+1.  **客户端方法直接传递完整URL：** 鼓励在API客户端方法中直接传入或构造完整的API URL（包含Base URL和Endpoint），避免在客户端初始化时只设置Base URL并后续拼接，简化调试。
+2.  **避免客户端初始化固定Base URL：** 避免将Base URL固化在客户端初始化中，以便在不同环境或需求下灵活切换。
+
+**Overarching Framework (总体框架):**
+AI辅助开发中的代码风格与质量控制框架。
+
+**核心要点：**
+通过提供一份结构清晰、内容详尽的代码风格指南文件，可以有效引导大型语言模型生成符合项目规范、易于维护和测试的高质量代码，从而提升AI辅助开发的效率和产出质量。
+
+<Mermaid_Diagram>
+graph TD
+    A["AI辅助开发"] --> B("痛点: LLM生成代码不符习惯")
+    B --> C("解决方案: 提供<br>代码风格指南文件")
+
+    subgraph "代码风格指南 (Style Guide)"
+        C --> D("I. 代码风格与规范")
+        C --> E("II. 测试策略")
+        C --> F("III. 代码可读性与调试性")
+        C --> G("IV. 项目架构与文件结构")
+        C --> H("V. API客户端设计")
+    end
+
+    subgraph "具体规范内容 (Detailed Rules)"
+        D -- "Code Style" --> D1("Precommit集成")
+        D -- "Code Style" --> D2("异常处理注释")
+        D -- "Code Style" --> D3("绝对路径导入")
+        D -- "Code Style" --> D4("避免可选参数默认值")
+        D -- "Code Style" --> D5("强制静态方法")
+        D -- "Code Style" --> D6("纯计算逻辑至工具类")
+        D -- "Code Style" --> D7("尾随逗号")
+        D -- "Code Style" --> D8("显式类型提示")
+        D -- "Code Style" --> D9("显式异常捕获")
+
+        E -- "Testing" --> E1("单元测试: 静态方法/工具类")
+        E -- "Testing" --> E2("集成测试: 端到端, 避免Mock")
+
+        F -- "Readability" --> F1("调试友好代码")
+        F -- "Readability" --> F2("Python命名规范")
+
+        G -- "Architecture" --> G1("三层架构")
+        G -- "Architecture" --> G2("按类型划分文件夹")
+        G -- "Architecture" --> G3("明确源代码根目录")
+        G -- "Architecture" --> G4("测试文件结构镜像")
+
+        H -- "API Design" --> H1("客户端传递完整URL")
+        H -- "API Design" --> H2("避免客户端初始化固定Base URL")
+    end
+
+    C --> I("效益: 生成高质量代码")
+    I --> J("提升开发效率")
+    I --> K("降低维护成本")
+    I --> L("减少Precommit错误")
+    I --> M("易于代码重构")
+
+    style A fill:#D2E2FB,stroke:#369,stroke-width:2px,color:#369
+    style B fill:#FFF3E0,stroke:#F57C00,stroke-width:1px,color:#333
+    style C fill:#C8E6C9,stroke:#4CAF50,stroke-width:2px,color:#333
+    style D fill:#E1F5FE,stroke:#2196F3,stroke-width:1px,color:#333
+    style E fill:#E1F5FE,stroke:#2196F3,stroke-width:1px,color:#333
+    style F fill:#E1F5FE,stroke:#2196F3,stroke-width:1px,color:#333
+    style G fill:#E1F5FE,stroke:#2196F3,stroke-width:1px,color:#333
+    style H fill:#E1F5FE,stroke:#2196F3,stroke-width:1px,color:#333
+
+    style D1 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D2 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D3 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D4 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D5 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D6 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D7 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D8 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+    style D9 fill:#F0F4C3,stroke:#AFB42B,stroke-width:0.5px,color:#333
+
+    style E1 fill:#FFE0B2,stroke:#FB8C00,stroke-width:0.5px,color:#333
+    style E2 fill:#FFE0B2,stroke:#FB8C00,stroke-width:0.5px,color:#333
+
+    style F1 fill:#D1C4E9,stroke:#5E35B1,stroke-width:0.5px,color:#333
+    style F2 fill:#D1C4E9,stroke:#5E35B1,stroke-width:0.5px,color:#333
+
+    style G1 fill:#CFD8DC,stroke:#607D8B,stroke-width:0.5px,color:#333
+    style G2 fill:#CFD8DC,stroke:#607D8B,stroke-width:0.5px,color:#333
+    style G3 fill:#CFD8DC,stroke:#607D8B,stroke-width:0.5px,color:#333
+    style G4 fill:#CFD8DC,stroke:#607D8B,stroke-width:0.5px,color:#333
+
+    style H1 fill:#B2DFDB,stroke:#00897B,stroke-width:0.5px,color:#333
+    style H2 fill:#B2DFDB,stroke:#00897B,stroke-width:0.5px,color:#333
+
+    style I fill:#DCEDC8,stroke:#8BC34A,stroke-width:2px,color:#333
+    style J fill:#F8BBD0,stroke:#E91E63,stroke-width:1px,color:#333
+    style K fill:#F8BBD0,stroke:#E91E63,stroke-width:1px,color:#333
+    style L fill:#F8BBD0,stroke:#E91E63,stroke-width:1px,color:#333
+    style M fill:#F8BBD0,stroke:#E91E63,stroke-width:1px,color:#333
+</Mermaid_Diagram>
+
+Content:
+朋友们 这个视频我要跟大家聊一个简单不烧脑的内容就是说你在使用大魔形来给你写代码的时候会不会出现这个情况就你的代码呢 你让他帮你写结果他出来的东西呢 老师不是按照你习惯的那种样子来那这种情况可以怎么样解决呢我们添加一个这样子的一个Style Guide这样子的一个文件给他先读一下 那他过在生成代码的时候他就基本上就不会出现那么大的问题他那个大字就不会有 比如说像这里给你举一个例子你在impot的时候 你说那个我要Apps 怕这样子的东西 你如果有提供这个他就不会给你搞一个Rality 搞那个一点然后呢 就当前文件夹那个 他就不会了 好不好所以呢 我这一个视频 大家跟大家分享我这就搞一个东西 大家可以借件一下 好不好我也把这些文件 几个文件分享出来然后呢 大家看有必要有用的 就拿来用没必要 或者是有其他的 可以再添加 好不好那我给大家走一下这个文件里面有什么东西吗不要说我这里呢 有一个简单的有一个就是复杂的 还有一个就是Minnie的我拿这个简单的这个 我给大家看这个东西呢 有200多行 我让Dipsick给我把这个东西给简化我说你就看 看著半吧Dipsick呢 他就给我搞出一个 我看多少行150 对吧 给我剪掉50行 就是这样子的一个情况我这里有一个更长的这一个的话呢 有接近700行这个东西的话 怎么说呢我就看了 我就觉得反脑 我就不想用这么长的这里面呢 因为他内容太多所以我得搞一个就是这个Index在这个前面方便他搜索 剪锁内容的时候 更加快捷那你看 我给他加这个东西的话又多了几十行 在这个地方了 好不好但是呢 这个东西我是撤过的这一个东西他剪锁起来快不过还是有一个问题就是你那一个大模型他的容量是有限的所以你能够给他少一点就给他少一点拿这个文件呢 现在也有点旧了我都没有更新了我现在我在使用的是这个mini板 就是这个好吧 我先给大家说一下这个里面有什么样的一些内容就这里 地方面的话呢欸 你就跟他说 我是用一个Precommit这样子的一个东西的你跟他说 然后呢 他就懂了有这样子的一个文件这个文件另一这样子的一些东西的话其实他就已经锁死了一些规则了所以你跟他说 我是用这样子的一个东西的你有什么情况的话你就看这个文件怎么定义吗他就会根据这个文件里面的定义来解决了一些规则方面的问题另外一方面的话呢这里有一个就这个东西的话怎么说呢 Dipsy给我这部搞法我就用吧第三方面他这里说如果你有什么Exception的话就你那个就有一些不常规的情况那你给加个注射 加个注射就这样子 好不好这是另一方面另一方面的话呢就我们刚才说过了尽量搞这个X路的就这样子的一个情况欸 这个你没有这么搞的话那你在运行那个Precommit这样子的一些东西的话他老师会冒错 好不好那有时候的话我发现有时候的话呢他这个东西没有被纳摩行给他解释所以我有给他搞这个东西更明显然后呢 另外一方面有这个规则你不要在这里搞一个什么D-Fallout有这种 好不好这个东西呢你如果使用Python大部分情况下他老师会搞一个这样子的一个东西这个东西与永辣的非常不好的地方呢就你如果要Refact的时候这种东西如果你用过去阿把的话这个东西叫做Overloading那这种东西的话出现的情况你在Java还好他那个 他的威他那个鱼法锁的特别死那他没有任何那个就是没有任何松弓的地方那这一个东西你Refact的话一点毛病都没有那你如果是Python的话他这个呢他里面那个什么Type什么的都是Type-in对吧这不是锁死的他没有什么Compire Error的没有这样子的一个东西的都是那个人家那里LungTime如果有什么毛病的话那个出错然后呢或者就是你IB真的协助你那这种情况下你搞一个这样子的东西会让你如果用人你人手人力来做Refact的话比方说我那个就你搞个什么快捷键就是说我这个东西要Refact那他来火会搞错的东西就跟你在搞就要让他就不一样好吧就要让他就不一样有一些方面的东西可以让他更加严谨不要说你搞什么Type-in可以得到一些协助但是最好的方式就是不要搞这种就是Optional Primate这种东西好吧这种东西的话你也叫做那个就是你这个地方搞个D-Full Barley对吧而且另外一方面的话你如果有两个方法一个是两个参数一个是三个参数那你就干脆其两个不同名字这样子的话因为你有两个你那个参数数量都不一样了代表你要使用的长型也不同那这样有这样子的一种暗示那你干嘛不把他那个方法名字给搞得更好一点对吧方便人在使用的时候Refact的时候他那个出错的机率低所以这个东西非常重要其实好吧就不要说这里举一个例子这样子的话就是好的一个定义这样子的话你搞个Optional这个东西那也还行这样子你就你只能加在使用的时候你不管如何你还得传个None在哪里就不用说这不可能说你就搞一个Connet没有参数那就可以用了这一个规则给大家说一下另外一方面的话你可以搞一个比方说像果的话就在这里跟他说你尽量就搞这种什么Statting Method就不要搞什么 function什么的没有一个这种没有一个class的这是这一个因为静太方法静太方法的话他非常好单元测试所以这种东西的话你一方面你如果是静太方法还有如果有一个能够加上那种E-Mutable的那种Optional那种东西的话那他那个性能也会增强像我们现在Python的话我现在还没有怎么样发现就我支持的汇乏这方面的话我还没有怎么样去研究没有怎么样发现到有什么那个特别好的E-Mutable的Optional的那种锁匙的方式最多就用个什么Pydantics目前就是这样子的东西而且你在用太多的Library的话也不得好反正就有这么一回事你搞个Syptic的方法的话Fangbend unit test什么的好不好就是正方面所以给他定义一定要规则接下来的话你那个Service里面你就会让大模型跟你写代码他经常会出现一个情况你那个Service里面的代码复杂死了对吧那你可以跟他说如果是Pure Computation就如果是纯粹的逻辑又没有用到第三方的那个Library的话那你就干脆搞一个什么Youtility然后在这里面搞一些这样子的一些计算什么的想这样子的东西的话你就可以单元测试对不对你这个Service的话这个东西是一个平阶的一个东西这个Service这个东西不大建议你去搞单元测试所以你就可以把那些能单元测试的东西抽出来单元测试剩下的那个你的Service就拿了平阶不要Service里面搞一大堆那一个什么Fort Loop You不要搞一大堆那些什么循环判断那些方面对吧好了这是这方面那接下来的话呢有另外一方面你这个呢不要说我在这里写好多个东西不管了这个不要说一二三你说这个地方没有写这个东西的话你用Pure Commit的那些你一般来说如果让他去帮你他会自动帮你Fortmark你的代码然后他会帮你所有的这几行代码搞成一行然后你在这个地方最后一个加个这个度号他就不会有这个问题所以你也给他提示一下审得他老师那个给你生成的最后一个没有加个度号就有这样子的一个情况然后呢另外一方面的话你也跟他说那个哎呀Type什么的都尽量不要说这个地方呢就没写给他说那个尽量搞得明白一点好了Airplane Handling的Any Power Exception什么的你得搞一个这种东西你不要说你这么写的话呢有时候或者是很多时候也是没毛病的但是呢这个东西他那个PCommit那个东西会爆错所以呢你给他那个搞得更点明显一点接下来的话单元测试方便的话哎静态方法就尽量的单元测试Integration Test的话那你就得把系统整个跑起来让他那个从API测得到速度对吧你就不要搞什么Mox的那些东西了你一定要写那个Integration Test了就搞一个N2N的你有时候这个东西呢你也可以说我来搞一个Functional Testand大概就是那个意思对吧你那个就是这个这方面的东西另外一方面的话呢哎这里又取一个例子你能够这样子写的代吗就不要这样子写对吧因为这一个的话你一看你就打我就晕过去你要D-box的话你那样都没办法放一个D-box吗对不对我这一个的话能够放一个在这个地方哎我这里就可以拿出一个呃值的我可以检验对不对所以呢这个你放一个D-box在这个地方的话嘿嘿知道我的知道我的意思哎好了然后呢就给他就是加一些Naming Convention方便的东西这个的话呢Python的话欸你让他给你搞他不一定搞这个东西你就跟他说一下啊就这样子另外一方面呃那个文件夹结构方便的话你尽量就让他搞这种三层架构这样子的一种格式聊说呢欸你搞个什么好很粗了对不对然后呢那个Service然后呢那个Repository啊就这样子的东西对不对你搞这种三层架构的不要说那个哎呀我一个功能一个个这个这个东西是一个Project这个东西这两个是不同的Project那你如果看网上很多的代码呢他是搞一个这个文件夹里面的文件呢是晚他一整个功能不是一个Project他是一个功能所以呢就想到说他这个文件夹里面Controller还有那个什么RepositoryService什么的全部都是放在一个文件夹里面的好不好那种方式呢如果我们写项目那不好原因就是你那个项目一大大起来的时候哎这个东西和这个东西呢但是多对多的关系这个东西可是这个东西又是多对多的关系所以呢叫这种情况下像这种情况下的话你按照这种类型的方式来划分就比较合理你如果按照那种功能的方便的你到那个会这个文件夹去引用另外一个我就会乱死了就这样子的情况好了有一种情况你会去使用到那个就是比方说你一个文件夹里面全部的东西都搞在一起的你比方说你搞个什么Tutorial什么的那种小的那个Tutorial那种什么东西即使里面的东西重复没有关系因为你一个Tutorial只要管一个内容所以呢像这一个两个不同的Library两个不同的Application我只是放在同一个Project里面那这一个的话这样子写也没有什么毛病因为它两个是完全分开的这一个里面不可能用这里面的东西用这里面的东西的话那有毛病所以呢就是这样子的一个情况好不好就是这一个另外一方面的话就还有这个就是文件夹方面你可以跟它提示就是说我们的一个就Source root搞这样子的东西然后这个东西我们是另一另一在那个PyProject那个文件里面的你也另一但你在这个地方你可以给它提示一下就有这样子一回事你的测试什么的都放在什么样的文件夹我这个测试里面的代码它结构它的文件夹结构SMiro这个东西了好不好这个东西你也可以跟它说一下然后呢最后还有这个就是你在搞一个什么什么Clayon什么的经常呢我会出现在一个情况但老师搞一个什么你生成一个什么东西搞一个BaseEY等到你在用的时候BaseEY又再加一个什么N point什么这样子的东西这个东西啊今天老师出问题好不好所以你还不如干脆就是你一个方法就搞一个完全完整的EY那你在Bug的时候你放一个Bug碰一张这个地方的话你会直接看到这整个但是什么样的结果你不用去搞一个什么东西去看看拼接出来是什么样的一个情况好不好所以呢这一个这一种两个夹在一起的另外一方面的话比方说我这个我如果这个什么什么Clayon这个东西我那个BaseEY我要用不同的BaseEY那行不行那搞这一种的话你锁死了它那个最外面是什么样的东西的话那你就没有办法替换了那你可能就有一些更加复杂的方式比方说没有什么东西可以reset它的那个BaseEY而reset它的换下一个方法是不是又有问题所以你就干脆不要所以这个东西的话方法里面传整个EY整个EY不要搞这一种什么拼接的反而老是出这个错的就有这样子的一回事好了那这一个是我自己本人使用的就是这个mini版的这个东西的话跟这个其实是差不多的就是我闲这个还还那个长一点我第四把我拿的给搞得更多更短了拿这一个东西的话就可以给大家放出来给大家那个也同时可以拿来使用好不好希望这个东西对大家有帮助
