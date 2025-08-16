@@ -1,0 +1,162 @@
+Timestamp: 2025-08-16T14:04:05.626232
+Title: vibe coding，未来 or 弯路？ BV1bmtSzrEWp
+URL: https://www.bilibili.com/video/BV1bmtSzrEWp/?spm_id_from=333.1007.tianma.21-2-63.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 6:07
+
+Description:
+**I. 引言：WifeCoding 定义**
+WifeCoding是一种创新的软件开发模式，其核心在于开发者完全不触碰、不阅读、不修改任何代码，而是通过自然语言与AI进行持续对话，从而驱动代码的生成与项目进展。这与传统的AI辅助编程（如代码补全）有着本质区别，更侧重于由AI完成实际的编码工作。
+
+**II. 对WifeCoding的认知与演变**
+*   **初期质疑与误解：**
+    *   对话者普遍担心AI的局限性，例如容易导致“食山”（难以维护的代码），或在处理复杂问题时给出荒谬且危险的解决方案（如“拔牙论”的比喻）。
+    *   对于简单的任务，AI可能效率低下，浪费资源，甚至使问题复杂化。
+    *   对于网络上流传的“零基础口AI月入十万”的说法，文本认为那只是针对极其简单的前端样式或“PPT”项目，后端逻辑几乎为零，不具备普遍性。
+*   **类比与展望：**
+    *   WifeCoding被类比为早期汇编语言与高级语言的关系：尽管高级语言在初期效率不如手写汇编，但随着发展成熟，其便捷性使其成为主流。这暗示WifeCoding作为一种新的编程范式，虽然目前尚不成熟且存在局限，但未来有巨大的发展潜力。
+
+**III. 核心理念：将AI视为项目经理（PM）或高级实习生**
+*   转变对AI的定位：不再是简单的代码工具，而是可以承担项目管理职责的“虚拟PM”或需要细致指导的“实习生”。
+*   PM不关心代码实现细节，但管理好项目同样重要。通过这种方式管理AI，可以减轻程序员的负担。
+
+**IV. WifeCoding的管理框架：“三管”**
+为有效利用AI并规避风险，WifeCoding提出了一套PM式的管理框架，即“三管”：
+*   **1. 风险管理 (管理AI的能力边界)：**
+    *   **禁止范围：** 绝不能让AI触碰核心敏感区域，如用户密码、支付逻辑、重要数据处理和核心业务计算，以防出现灾难性错误。这如同不让新来的实习生碰核心代码。
+    *   **允许范围：** AI更适合处理非核心、影响较小的任务，如数据处理、简单的UI组件开发或不涉及敏感信息的计算。
+*   **2. 输入管理 (明确指令与上下文：W.A.T.A.L.)：**
+    *   借鉴PM的文档规范，为AI提供清晰、结构化的输入。
+    *   **W (Why - 为什么)：** 解释用户故事，包括功能需求、目标用户和使用场景。
+    *   **A (What - 是什么)：** 明确具体的功能点。
+    *   **T (Architecture - 架构)：** 提供必要的架构指导，如系统设计、微服务划分等，以避免潜在的架构缺陷和安全隐患（如密码明文存储、SQL注入）。
+    *   **A (Technical Guidance - 技术指导)：** 指明所需的设计模式、特定技术栈（如Go语言）或其他技术要求。
+    *   **L (Limitations - 限制)：** 明确功能或实现上的约束条件。
+    *   **要点：** 这种详尽的输入要求开发者具备扎实的工程经验和技术理解，而非零基础操作。
+*   **3. 输出管理 (结果验证：TDD)**
+    *   **核心：** 采纳测试驱动开发（TDD）模式，即首先编写测试用例，再让AI根据测试进行代码实现。
+    *   **作用：** 测试用例作为一种精确的自然语言描述，能有效验证AI的实现是否满足需求，并弥补自然语言描述的歧义性。
+    *   **例外：** 编写或至少核对测试代码，是WifeCoding中唯一可能需要人工接触代码的环节。
+
+**V. 对程序员角色与未来的影响**
+*   **趋势：** AI不会替代程序员，这是“伪命题”。AI只是改变了工作方式，淘汰的是不学习、不适应新工具的程序员。
+*   **新要求：** 程序员的角色将从单纯的编码者，转变为具备更高综合能力的复合型人才，需要同时掌握：
+    *   业务分析能力
+    *   系统架构设计能力
+    *   AI管理和调优能力
+    *   测试编写与核对能力
+    *   业务与技术之间的沟通协调能力
+*   **现实：** 程序员不仅不会失业，反而会在相同薪资下承担更多元、更具挑战性的工作和责任。
+
+**核心结论 (Core Point):**
+WifeCoding 是一种将AI视为项目经理，通过“三管”策略（风险、输入、输出管理）进行自然语言驱动开发的模式，它不会取代程序员，反而对程序员提出了更高、更全面的综合能力要求。
+
+**Overarching Framework (整体框架):**
+AI驱动的软件项目PM式管理框架
+
+<Mermaid_Diagram>
+graph TD
+    A["WifeCoding: 自然语言编程新范式"] --> B["不碰代码，纯与AI聊天"];
+    B --> C{"初期认知与挑战"};
+
+    subgraph "初期认知与挑战"
+        C --> D["不了解AI能力边界"];
+        D --> E["易造 '食山'"];
+        E --> F["AI'拔牙论'：误解与滥用"];
+        F --> G["简单问题亦低效"];
+    end
+
+    C --> H["核心理念：AI即PM/高级实习生"];
+
+    subgraph "WifeCoding管理框架：'三管'"
+        direction LR
+        H --> I["风险管理"];
+        I --> J["核心敏感区域：禁止"];
+        I --> K["非核心区域：允许"];
+
+        H --> L["输入管理：W.A.T.A.L."];
+        L --> L1["WHY: 用户故事"];
+        L --> L2["WHAT: 具体功能"];
+        L --> L3["ARCHITECTURE: 架构设计"];
+        L --> L4["TECHNICAL: 技术指导"];
+        L --> L5["LIMITATIONS: 限制条件"];
+
+        H --> M["输出管理：TDD"];
+        M --> M1["先写测试"];
+        M --> M2["AI实现"];
+        M --> M3["人工核对/编写测试"];
+    end
+
+    M --> N["对程序员角色的影响"];
+
+    subgraph "对程序员角色的影响"
+        N --> O["不会被替代 (伪命题)"];
+        N --> P["能力要求更高"];
+        P --> P1["业务分析"];
+        P --> P2["架构设计"];
+        P --> P3["AI管理"];
+        P --> P4["测试与核对"];
+        P --> P5["沟通协作"];
+        N --> Q["工作量与责任增加"];
+    end
+
+    style A fill:#D4E6F1,stroke:#3498DB,stroke-width:2px,color:#333;
+    style B fill:#AED6F1,stroke:#2ECC71,stroke-width:1px,color:#333;
+    style C fill:#FADBD8,stroke:#E74C3C,stroke-width:1px,color:#333;
+    style D fill:#F2D7D5,stroke:#E74C3C,stroke-width:1px,color:#333;
+    style E fill:#F2D7D5,stroke:#E74C3C,stroke-width:1px,color:#333;
+    style F fill:#F2D7D5,stroke:#E74C3C,stroke-width:1px,color:#333;
+    style G fill:#F2D7D5,stroke:#E74C3C,stroke-width:1px,color:#333;
+
+    style H fill:#D1F2EB,stroke:#27AE60,stroke-width:2px,color:#333;
+
+    style I fill:#E8DAEF,stroke:#8E44AD,stroke-width:1px,color:#333;
+    style J fill:#D2B4DE,stroke:#8E44AD,stroke-width:1px,color:#333;
+    style K fill:#D2B4DE,stroke:#8E44AD,stroke-width:1px,color:#333;
+
+    style L fill:#F9E79F,stroke:#F1C40F,stroke-width:1px,color:#333;
+    style L1 fill:#FCF3CF,stroke:#F1C40F,stroke-width:1px,color:#333;
+    style L2 fill:#FCF3CF,stroke:#F1C40F,stroke-width:1px,color:#333;
+    style L3 fill:#FCF3CF,stroke:#F1C40F,stroke-width:1px,color:#333;
+    style L4 fill:#FCF3CF,stroke:#F1C40F,stroke-width:1px,color:#333;
+    style L5 fill:#FCF3CF,stroke:#F1C40F,stroke-width:1px,color:#333;
+
+    style M fill:#D0ECE7,stroke:#1ABC9C,stroke-width:1px,color:#333;
+    style M1 fill:#A3D9C9,stroke:#1ABC9C,stroke-width:1px,color:#333;
+    style M2 fill:#A3D9C9,stroke:#1ABC9C,stroke-width:1px,color:#333;
+    style M3 fill:#A3D9C9,stroke:#1ABC9C,stroke-width:1px,color:#333;
+
+    style N fill:#F8C471,stroke:#E67E22,stroke-width:2px,color:#333;
+    style O fill:#F5EEF8,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P fill:#F5EEF8,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P1 fill:#EBDEF0,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P2 fill:#EBDEF0,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P3 fill:#EBDEF0,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P4 fill:#EBDEF0,stroke:#E67E22,stroke-width:1px,color:#333;
+    style P5 fill:#EBDEF0,stroke:#E67E22,stroke-width:1px,color:#333;
+    style Q fill:#F5EEF8,stroke:#E67E22,stroke-width:1px,color:#333;
+
+    linkStyle 0 stroke:#3498DB,stroke-width:1px;
+    linkStyle 1 stroke:#3498DB,stroke-width:1px;
+    linkStyle 2 stroke:#E74C3C,stroke-width:1px;
+    linkStyle 3 stroke:#E74C3C,stroke-width:1px;
+    linkStyle 4 stroke:#E74C3C,stroke-width:1px;
+    linkStyle 5 stroke:#E74C3C,stroke-width:1px;
+    linkStyle 6 stroke:#E74C3C,stroke-width:1px;
+    linkStyle 7 stroke:#27AE60,stroke-width:1px;
+    linkStyle 8 stroke:#8E44AD,stroke-width:1px;
+    linkStyle 9 stroke:#8E44AD,stroke-width:1px;
+    linkStyle 10 stroke:#8E44AD,stroke-width:1px;
+    linkStyle 11 stroke:#F1C40F,stroke-width:1px;
+    linkStyle 12 stroke:#F1C40F,stroke-width:1px;
+    linkStyle 13 stroke:#F1C40F,stroke-width:1px;
+    linkStyle 14 stroke:#F1C40F,stroke-width:1px;
+    linkStyle 15 stroke:#F1C40F,stroke-width:1px;
+    linkStyle 16 stroke:#1ABC9C,stroke-width:1px;
+    linkStyle 17 stroke:#1ABC9C,stroke-width:1px;
+    linkStyle 18 stroke:#1ABC9C,stroke-width:1px;
+    linkStyle 19 stroke:#E67E22,stroke-width:1px;
+    linkStyle 20 stroke:#E67E22,stroke-
+
+Content:
+最近我在试一个新玩意儿WifeCoding 分位变成啊 写代码都也想就分位了是不是和歌笔小红树直播一样放个音乐点个香讯喇嘟什么的不是 是靠感觉变成完全不碰代码 唇靠和AI聊天来开发啊 那不就AI变成吗现在谁不用AI变成啊像我 扣拍了补圈 欧克曼的声称Color的改报不是不是不一样 不一样那些都是AI辅助变成AI是帮你写了但你不排队独代码改代码Review代码吗WifeCoding不一样从头到尾一行代码不独不看唇层进在分位中就是辅助价值和自动价值的区别吗对 就这感觉现在是不是很爽听起来很容易造食山我上次让AI帮我解决一个超简单的问题有点像是吃瓜子的时候瓜子皮个牙哦 确实很简单的问题然后呢 你猜怎么著AI的第一件件是拔牙他说既然瓜子皮个牙那就把牙拔了就不会割了 合理吧不是这 这也太离谱了吧还没有玩哦我说拔牙怎么吃东西他说那简单直接往肚子里到浓流酸出消化浓流酸没错 个牙了就拔牙消化不了就用浓流酸一步步多合理那最后呢最后我把他所有的优化建议全山了自己动手拔了个瓜子皮三秒钟完没解决就是可惜了我浪费那些偷肯和时间所以啊 别vib了基本就是花三秒时间解决一半问题可能练一半都解决不了还让问题变更早但你看网上老有那种不懂任何代码口AI变成约入十万那些啊 麦克格韭菜的呗你看他们做快乐的东西就是花少点的PBT几行字 配个按钮 改改样式后段逻辑几乎一零看著了AI商你不钱了你不觉得现在陈医院对AI的态度很像上个时期陈医院对Bin1期的态度了Bin1期刚出现的时候也是说这破完一回话的什么鬼我手写的会变明明性能更好等等 你想拿Bin1期来类别AIBin1期的逻辑好像是确定的输入什么就输出什么AI可不一样今天写个Hello World明天就那写个Google Buy World但你不能否认Bin1期和AI都建立了一种更简单的变成方式Bin1期让我们可以用高级语言变成AI可以让我们用自然语言变成简单你是不是对简单有什么误解你认为花三倍时间级就会一般的比较简单Bin1期刚出现的时候是真的机器码效率也不如手写会变现在谁还手写会变要这么说的话确实是这样但Bin1期发展了几十年才成熟AI现在太几岁很重我信任不了不信任不代表不能用你能信任我们组新来的实习生吗不行但如果管理好实习生还是能减轻我们的工作吧所以你是说把AI当实习生差不多看准确的说是当AI的PN你看我们的PN也不关心代码但是管理好项目确实从这个角度看的话项目管理和WebCoding挺像的都不用关系代码实现就是这样所以我们完全可以用PM管理项目的方式来WebCoding可是PM不用关心代码是因为我们马上能在副重前行不过你先说是怎么管理吧我总结了一三个管理管理风险管理输入管理输出管理风险很简单就是重要我们要快别让它碰什么用户密码 支付逻辑和就算吧这种事要出点差子我们年中讲就没了我懂就别让实习生碰核心代码还真是像CLD啊数据处理啊原来主建傻的就算出错了影像也不大就可以交给AI来做你真的没有在影视我们做了那个新来的实习生吗没有AI能听听说得懂意吗那输入管理和输出管理呢就PM那套是从文档一说标准差不多吧输入就是YWATAL输入管理就是用户故事说明为什么需要这个功能目标用户是谁就长进是怎样的这些东西和代码也没关系还得告诉AI这些是很重要的上下文你也不想跟实习生说开会了 白点水结果才在客户参观时带来一堆密码学影程吧嗯画面感很强那WATAL呢WAT是具体功能号是技术指导比如说加个够啊设计模式什么的WATWATAL不是不用管代码实现吗怎么还要想设计模式如果只是做完就确实不用管但像说一副杂点不说清楚架狗哎就容易埋这一比如说密码民文存储被CCO注入攻击别说了别说了已经开始害怕了很恐怖吧所以那些灵技储的才只能做一些PBT啊因为没有这些工程经验像不代分副杂一点就到处都是累了看来还是得要工程经验才能外部好产品还有输出管理我们先写好测试再让AI实现这样就能验著需求没未完足这是TDD嘛先写测试再做实现对而且写写测试还有个好处自然与描述的需求可能会有其意可是代发写的测试就很精确了啊还自己写测试这又要想设计模式有些测试的外有不了一点你也可以不写让AI来写嘛就是得人工写合一下放心放心测试应该是唯一需要看著代码了感觉说是存聊天开发其实对技术要求更高了是啊所以我觉得老说什么AI替代程序人根本是伟命题可不嘛业务分析架构实现测试用力都得我们来想业务技术沟通三手抓欸你说更高的要求是不是应该带来更高的工资呢放心幻想任期现实欸好消息程序人不会失业换消息不仅不会失业还在相同中自下承担更多工作话说你从哪看到这些东西一套一套的可能是因为我关注了BGM的UP主呼吸血代码了有挺多AI工程这方面的知识而且我还加入了呼吸的知识星球等等你这么一说了想起来了啥我们俩好像就是在演它视频里的两个角色哦对那我们现在是不是应该
