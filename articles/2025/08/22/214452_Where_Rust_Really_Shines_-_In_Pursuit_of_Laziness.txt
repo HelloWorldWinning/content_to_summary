@@ -1,0 +1,210 @@
+Timestamp: 2025-08-22T21:44:52.052472
+Title: Where Rust Really Shines - In Pursuit of Laziness
+URL: https://manishearth.github.io/blog/2015/05/03/where-rust-really-shines/
+Status: success
+Duration: 0:00
+
+Description:
+### 核心思想与总结
+
+本篇文章通过作者在Rust编译器开发中的一个实际案例，深入阐述了Rust语言在内存安全与性能优化方面的独特优势，特别是其切片（slices）和生命周期（lifetimes）机制。
+
+**1. 概述与问题背景**
+作者在为Rust编译器添加新功能时，需要让一个暴露给API的结构体访问一个堆分配的属性列表（vector）。在不引入额外性能开销的前提下，安全地引用这部分数据是一个挑战。
+
+**2. C++ 方法的局限性**
+*   **克隆（Cloning）是唯一安全选项：** 在C++中，为了避免悬空指针或迭代器失效（当vector重新分配内存时），最安全的做法是克隆整个vector。
+*   **性能开销：** 克隆会导致额外的堆分配，在频繁调用的代码路径中会产生显著的运行时性能损耗。
+*   **引用/指针的风险：** 直接使用引用或指针存在巨大的内存安全风险，包括数据被提前释放或vector重新分配导致指针失效。在一个大型、复杂的代码库中，手动验证这些安全条件几乎不可能，且代码将对未来变更非常脆弱。
+*   **智能指针的不足：** 即使是`std::shared_ptr`，虽然能管理所有权，但仍无法防止vector重新分配导致的迭代器失效，且引入了运行时开销。
+
+**3. Rust 方法的优势与实现过程**
+*   **核心机制：切片（Slice）与生命周期（Lifetime）：** Rust允许使用“切片”（`&'a [T]`）——对vector内容的安全引用，通过其编译时借用检查器和生命周期系统，确保引用始终有效，无需克隆。
+*   **性能优化：** 使用切片避免了额外内存分配，实现了“零成本抽象”的性能优势。
+*   **编译器引导的开发：** 作者最初仅添加了切片字段，并让编译器进行引导。编译器会准确指出哪里需要添加生命周期参数、如何关联生命周期，并提供具体修改建议。开发者只需遵循编译器的提示即可。
+*   **低认知负担：** 这种编译器驱动的开发流程极大降低了开发者的心智负担，无需手动深入分析整个代码库的内存所有权和生命周期。
+
+**4. 结论性优势**
+*   **编译时内存安全保障：** Rust编译器在编译阶段就杜绝了C++中常见的内存安全问题（如悬空指针、迭代器失效），即使是API消费者也无需担忧。
+*   **实现C++中难以企及的优化：** Rust使开发者能够轻松实现高性能的内存引用，这种优化在C++中通常因复杂性和风险而被放弃。
+*   **提高开发效率与代码可靠性：** 借助于编译器的智能提示，开发者能高效地编写出既高性能又内存安全的代码，并对代码的正确性充满信心。
+
+**2. 核心观点总结 (Core Point)**
+
+Rust的生命周期和切片机制，通过编译时强制执行内存安全保证，使得开发者能以极低的认知负担实现C++中难以企及的性能优化，从而大大提升代码的可靠性和开发效率。
+
+**3. 总体框架 (Overarching Framework)**
+
+编译时内存安全保障下的性能优化范式 (Performance Optimization Paradigm under Compile-time Memory Safety Guarantees)
+
+**4. Mermaid 概念图**
+<Mermaid_Diagram>
+graph LR
+    subgraph "问题背景与挑战"
+        A["性能优化需求"] -- "涉及" --> B["堆分配Vector"];
+        B -- "访问方式选择" --> C["引用/指针"];
+        B -- "访问方式选择" --> D["克隆内容"];
+    end
+
+    subgraph "C++ 解决方案与局限"
+        E["C++编程语言"] -- "常见选择" --> D;
+        E -- "尝试使用" --> C;
+        C -- "在C++中导致" --> F["内存安全风险"];
+        F -- "包括" --> F1["指针悬空"];
+        F -- "包括" --> F2["迭代器失效 (Vector重新分配)"];
+        D -- "导致" --> G["运行时开销 (额外分配)"];
+        E -- "替代方案" --> H["C++智能指针 (shared_ptr)"];
+        H -- "减少" --> F1;
+        H -- "仍存在" --> F2;
+        F1 -- "对API消费者" --> I["API消费者担忧"];
+        F2 -- "对API消费者" --> I;
+        G -- "影响" --> J["性能"];
+    end
+
+    subgraph "Rust 解决方案与优势"
+        K["Rust编程语言"] -- "提供" --> L["Rust切片 (&[T])"];
+        K -- "提供" --> M["Rust生命周期 ('a)"];
+        K -- "内置" --> N["Rust编译器"];
+        N -- "核心组件" --> O["借用检查器"];
+        L -- "配合" --> M;
+        M -- "由" --> N;
+        O -- "确保" --> P["编译时内存安全"];
+        L -- "实现" --> Q["零成本引用"];
+        P -- "防止" --> F1;
+        P -- "防止" --> F2;
+        Q -- "避免" --> G;
+        K -- "通过编译器指导" --> R["开发效率高"];
+        K -- "通过编译器指导" --> S["认知负担低"];
+        P -- "增强" --> T["代码可靠性"];
+        L -- "使" --> I_Rust["API消费者无担忧"];
+    end
+
+    subgraph "结果与结论"
+        J_Rust["高性能"]
+        T_Result["高度可靠的代码"]
+        R_Result["高开发效率"]
+        S_Result["低认知负担"]
+    end
+
+    Q --> J_Rust;
+    P --> T_Result;
+    R --> R_Result;
+    S --> S_Result;
+    I_Rust --> T_Result;
+
+    style A fill:#DDEBF7,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#DDEBF7,stroke:#333,stroke-width:2px,color:#333;
+    style C fill:#DDEBF7,stroke:#333,stroke-width:2px,color:#333;
+    style D fill:#DDEBF7,stroke:#333,stroke-width:2px,color:#333;
+
+    style E fill:#FFDDC1,stroke:#E91E63,stroke-width:2px,color:#333;
+    style F fill:#FFC1C1,stroke:#FF0000,stroke-width:2px,color:#333;
+    style F1 fill:#FFC1C1,stroke:#FF0000,stroke-width:1px,color:#333;
+    style F2 fill:#FFC1C1,stroke:#FF0000,stroke-width:1px,color:#333;
+    style G fill:#FFDDDD,stroke:#E91E63,stroke-width:2px,color:#333;
+    style H fill:#FFF8DC,stroke:#FF9800,stroke-width:1px,color:#333;
+    style I fill:#FFC1C1,stroke:#FF0000,stroke-width:1px,color:#333;
+    style J fill:#FFDDDD,stroke:#E91E63,stroke-width:1px,color:#333;
+
+    style K fill:#B2EBF2,stroke:#009688,stroke-width:2px,color:#333;
+    style L fill:#C8E6C9,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style M fill:#C8E6C9,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style N fill:#80DEEA,stroke:#00BCD4,stroke-width:2px,color:#333;
+    style O fill:#A7FFEB,stroke:#00BCD4,stroke-width:1px,color:#333;
+    style P fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#FFF;
+    style Q fill:#A5D6A7,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style R fill:#AED581,stroke:#689F38,stroke-width:1px,color:#333;
+    style S fill:#AED581,stroke:#689F38,stroke-width:1px,color:#333;
+    style I_Rust fill:#C8E6C9,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style T fill:#4CAF50,stroke:#2E7D32,stroke-width:1px,color:#FFF;
+
+    style J_Rust fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333;
+    style T_Result fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333;
+    style R_Result fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333;
+    style S_Result fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+Where Rust Really Shines Posted by Manish Goregaokar on May 03, 2015 in programming , rust Yesterday I was working on a small feature for the Rust compiler, and came across a situation which really showcased Rust’s
+awesomeness as a language. There was a struct which was exposed to an API,
+and I wished to give it access to a list of things known as “attributes”, where the list was a heap-allocated vector . Now, I have two ways of actually giving the struct access to a vector. I can either clone it (i.e. make a copy of its contents), 
+or use a reference (pointer) to it or its contents. In a language like C++ there’s only once choice in this situation; that is
+to clone the vector 1 . In a large C++ codebase if I wished to use a pointer I would need to be sure that the vector
+isn’t deallocated by the time I’m done with it, and more importantly, to be sure that no other code pushes to the vector (when a vector overflows its
+capacity it will be reallocated, invalidating any other pointers to its contents). For a smaller codebase this might be possible, but in this specific case it could have taken me a while to become sure of this.
+The code was related to the “expansion” portion of compilation, where the AST is expanded to a bigger AST. A lot of things change and get
+moved around, so it is reasonable to assume that it might not be possible to safely use it.
+I would have had to find out where the vector is originally stored; all the entry points for the code I was
+modifying, and make sure it isn’t being mutated (not as hard in Rust, but I would
+still need to muck around a large codebase). And then I would have to somehow make sure that nobody tries to mutate it
+in the future. This is a task which I would not even consider trying in C++. However, I had another option here, because this was Rust. In Rust I can store a reference to the contents of the vector
+without fear of invalidation, since the compiler will prevent me from using the vector in a way that could cause unsafety. 
+Such a reference is known as a slice . Whilst in C++ I would have to manually go through a lot of code to be sure of safety
+(and even after all that be left with code that would be brittle to changes elsewhere
+the codebase), in Rust the compiler can do this for me! Being able to do this was important
+— this code is called quite often for a regular compile, and all those
+extra allocations could be heavy, especially given that this was a feature that would be used
+by very few. So first I started off by adding a field to the FieldInfo struct which was a slice of attributes . Notice that I added a lifetime specifier, the 'a to the struct definition. /// Summary of the relevant parts of a struct/enum field. pub struct FieldInfo < 'a > { /// ... /// The attributes on the field pub attrs : & 'a [ ast :: Attribute ], } For those of you new to Rust, a lifetime is part of the type of a reference. It’s related to the scope of the reference, and generally can be treated as
+a generic parameter. So, for example, here, I have a FieldInfo with a lifetime parameter of 'a where 'a is the lifetime of the inner slice of attributes.
+If I construct this struct with slices from different scopes, its type will be different each time. Lifetimes can get automatically cast depending on their context however,
+and quite often they get elided away, so one doesn’t need to specify them that much (aside from struct/enum definitions). You can find more information in the Rust book I then updated code everywhere to pass the attributes from their source to their destination through the chained methods. An important thing to note here is that none of the lifetime specifiers you see now in the commit were added when I did this. For example, the return value
+of create_struct_pattern was (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &[ast::Attribute])>) at this point, not (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &'a [ast::Attribute])>) .
+You can ignore the complicated types being passed around, for now just pretend that a slice of attributes was returned. Now comes the magic. After these small changes necessary for the feature, I basically let the compiler do the rest of the work. See, at this point the code was wrong.
+I had forgotten lifetime specifiers in places where they were important, and still wasn’t sure if storing a reference would in fact be possible in the first place.
+However, the compiler was smart enough to figure things out for me. It would tell me to add lifetime specifiers, and I would add them. First, the compiler asked me to add a lifetime to the FieldInfo parts of SubstructureFields . So, the following: pub enum SubstructureFields < 'a > { Struct ( Vec < FieldInfo > ), EnumMatching ( usize , & 'a ast :: Variant , Vec < FieldInfo > ), // ... } became pub enum SubstructureFields < 'a > { Struct ( Vec < FieldInfo < 'a >> ), EnumMatching ( usize , & 'a ast :: Variant , Vec < FieldInfo < 'a >> ), // ... } This needed to happen because elision doesn’t work for structs and enums,
+and besides, the compiler would need to know if the &ast::Variant was supposed to be the same lifetime as the parameter of the FieldInfo s. I decided
+to just use the existing 'a parameter, which meant that yes, the &ast::Variant was supposed to live just as long. I could also have opted to give the FieldInfo s
+a different lifetime by adding a 'b parameter, but I guessed that it would work this way too (knowing the origin of the fieldinfo and variant, and that implicit lifetime casting would
+fix most issues that cropped up). I didn’t need to think this out much, though — the compiler gave me a suggestion and I could simply copy it. The next error was in create_enum_variant_pattern() and create_struct_pattern() as well as some other places. Here, the method had a signature of fn create_enum_variant_pattern ( & self , cx : & mut ExtCtxt , enum_ident : ast :: Ident , variant : & ast :: Variant , prefix : & str , mutbl : ast :: Mutability ) -> ( P < ast :: Pat > , Vec < ( Span , Option < Ident > , P < Expr > , & [ ast :: Attribute ]) > ) and I changed it to fn create_enum_variant_pattern < 'a > ( & self , cx : & mut ExtCtxt , enum_ident : ast :: Ident , variant : & 'a ast :: Variant , prefix : & str , mutbl : ast :: Mutability ) -> ( P < ast :: Pat > , Vec < ( Span , Option < Ident > , P < Expr > , & 'a [ ast :: Attribute ]) > ) In this case, the code was uncomfortable with taking a slice of attributes out of an arbitrary StructDef reference and returning it. What if the StructDef doesn’t live long enough?
+Generally the compiler internally figures out the lifetimes necessary and uses them here, but if you have too many references there’s no single way to make the fix.
+In this case, the compiler suggested I add a 'a to &StructDef and the returned &[Attribute] , and I did so. The 'a lifetime was declared at the top of the impl , so it was the lifetime parameter of self 2 . This meant that the returned attribute of the function will
+have a lifetime tied to self and the input StructDef , and due to this it cannot outlive the inputs, which is what we wanted in the first place. In essence, I took a bit of code that was doing: fn minicreate ( & self , variant : & ast :: Variant ) -> & [ ast :: Attribute ] { // do stuff // return variant.attributes } and changed it to // we are sure that the returned slice cannot outlive the variant argument fn minicreate < 'a > ( & self , variant : & 'a ast :: Variant ) -> & 'a [ ast :: Attribute ] { // do stuff // return variant.attributes } Again, I didn’t need to think this out much (I’m only thinking it through now for this blog post). I followed the suggestion given to me by the compiler: error: cannot infer an appropriate lifetime for automatic coercion due to conflicting requirements
+help: consider using an explicit lifetime parameter as shown: fn create_enum_variant_pattern<'a>(&self, cx: &mut ExtCtxt, enum_ident: ast::Ident, variant: &'a ast::Variant, prefix: &str, mutbl: ast::Mutability) -> (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &'a [ast::Attribute])>) There were a couple of similar errors elsewhere that were caused by tying these two lifetimes together. Since these methods were chained, updating the lifetimes of a child method
+would mean that I would have to now update the parent method which passes its arguments down to the children and returns a modification of its return value (and thus must now impose the
+same restrictions on its own signature). All of this was done by just listening to the suggestions of the compiler (which all contain a function signature to try out). In some cases I introduced a 'b lifetime, because tying it to 'a (the self lifetime parameter) was possibly too restrictive. All of this at the suggestion of the compiler. While this all seems long and complicated, in reality it wasn’t. I simply added the field to the initial struct, tried compiling a couple of times to figure out which code needed updating
+to pass around the attributes, and then went through 3-4 more compilation attempts to fix the lifetimes. It didn’t take long, and I didn’t need to put much mental effort into it. I just
+listened to the compiler, and it worked. And now I trust completely that that code will not cause any segfaults due to attempted access of a destroyed or moved vector. And this is despite the fact that I still don’t know
+where that particular vector is modified or destroyed — I didn’t explore that far because I didn’t need to! (or want to :P) And this is one place Rust really shines. It lets you do optimizations which you wouldn’t dream of doing in C++. In fact, while the C++ way of looking at this problem
+would probably be to just clone and move on, most Rust programmers would think of using slices as the default, and not even consider it an “optimization”. And again, this wasn’t
+with much cognitive overhead; I could just follow the compiler and it fixed everything for me. Some people have pointed out that a shared pointer to the vector itself would work here too. This is correct, but a shared pointer also has a runtime overhead, and more importantly doesn’t prevent iterator invalidation. I had no idea how the vector was being used elsewhere, so this was a risk I didn’t want to take. Additionally, whilst a shared pointer to the vector itself is immune to the issue of the vector being moved, since this was an API, someone consuming the API might take a reference of an attribute and hold on to it long enough for it to become invalidated. This is something we can’t have either – an API consumer should not have to worry about where the pointers will invalidate. ↩ Note: This is not the lifetime of the reference &self , which is the lifetime of the pointer ( &'b self ), but the lifetime parameter of self , a TraitDef<'a> , which has a lifetime parameter for its child fields. ↩ Posted by Manish Goregaokar programming , rust Tweet « New blog! The problem with single-threaded shared mutability » Where Rust Really Shines Posted by Manish Goregaokar on May 03, 2015 in programming , rust Yesterday I was working on a small feature for the Rust compiler, and came across a situation which really showcased Rust’s
+awesomeness as a language. There was a struct which was exposed to an API,
+and I wished to give it access to a list of things known as “attributes”, where the list was a heap-allocated vector . Now, I have two ways of actually giving the struct access to a vector. I can either clone it (i.e. make a copy of its contents), 
+or use a reference (pointer) to it or its contents. In a language like C++ there’s only once choice in this situation; that is
+to clone the vector 1 . In a large C++ codebase if I wished to use a pointer I would need to be sure that the vector
+isn’t deallocated by the time I’m done with it, and more importantly, to be sure that no other code pushes to the vector (when a vector overflows its
+capacity it will be reallocated, invalidating any other pointers to its contents). For a smaller codebase this might be possible, but in this specific case it could have taken me a while to become sure of this.
+The code was related to the “expansion” portion of compilation, where the AST is expanded to a bigger AST. A lot of things change and get
+moved around, so it is reasonable to assume that it might not be possible to safely use it.
+I would have had to find out where the vector is originally stored; all the entry points for the code I was
+modifying, and make sure it isn’t being mutated (not as hard in Rust, but I would
+still need to muck around a large codebase). And then I would have to somehow make sure that nobody tries to mutate it
+in the future. This is a task which I would not even consider trying in C++. However, I had another option here, because this was Rust. In Rust I can store a reference to the contents of the vector
+without fear of invalidation, since the compiler will prevent me from using the vector in a way that could cause unsafety. 
+Such a reference is known as a slice . Whilst in C++ I would have to manually go through a lot of code to be sure of safety
+(and even after all that be left with code that would be brittle to changes elsewhere
+the codebase), in Rust the compiler can do this for me! Being able to do this was important
+— this code is called quite often for a regular compile, and all those
+extra allocations could be heavy, especially given that this was a feature that would be used
+by very few. So first I started off by adding a field to the FieldInfo struct which was a slice of attributes . Notice that I added a lifetime specifier, the 'a to the struct definition. /// Summary of the relevant parts of a struct/enum field. pub struct FieldInfo < 'a > { /// ... /// The attributes on the field pub attrs : & 'a [ ast :: Attribute ], } For those of you new to Rust, a lifetime is part of the type of a reference. It’s related to the scope of the reference, and generally can be treated as
+a generic parameter. So, for example, here, I have a FieldInfo with a lifetime parameter of 'a where 'a is the lifetime of the inner slice of attributes.
+If I construct this struct with slices from different scopes, its type will be different each time. Lifetimes can get automatically cast depending on their context however,
+and quite often they get elided away, so one doesn’t need to specify them that much (aside from struct/enum definitions). You can find more information in the Rust book I then updated code everywhere to pass the attributes from their source to their destination through the chained methods. An important thing to note here is that none of the lifetime specifiers you see now in the commit were added when I did this. For example, the return value
+of create_struct_pattern was (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &[ast::Attribute])>) at this point, not (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &'a [ast::Attribute])>) .
+You can ignore the complicated types being passed around, for now just pretend that a slice of attributes was returned. Now comes the magic. After these small changes necessary for the feature, I basically let the compiler do the rest of the work. See, at this point the code was wrong.
+I had forgotten lifetime specifiers in places where they were important, and still wasn’t sure if storing a reference would in fact be possible in the first place.
+However, the compiler was smart enough to figure things out for me. It would tell me to add lifetime specifiers, and I would add them. First, the compiler asked me to add a lifetime to the FieldInfo parts of SubstructureFields . So, the following: pub enum SubstructureFields < 'a > { Struct ( Vec < FieldInfo > ), EnumMatching ( usize , & 'a ast :: Variant , Vec < FieldInfo > ), // ... } became pub enum SubstructureFields < 'a > { Struct ( Vec < FieldInfo < 'a >> ), EnumMatching ( usize , & 'a ast :: Variant , Vec < FieldInfo < 'a >> ), // ... } This needed to happen because elision doesn’t work for structs and enums,
+and besides, the compiler would need to know if the &ast::Variant was supposed to be the same lifetime as the parameter of the FieldInfo s. I decided
+to just use the existing 'a parameter, which meant that yes, the &ast::Variant was supposed to live just as long. I could also have opted to give the FieldInfo s
+a different lifetime by adding a 'b parameter, but I guessed that it would work this way too (knowing the origin of the fieldinfo and variant, and that implicit lifetime casting would
+fix most issues that cropped up). I didn’t need to think this out much, though — the compiler gave me a suggestion and I could simply copy it. The next error was in create_enum_variant_pattern() and create_struct_pattern() as well as some other places. Here, the method had a signature of fn create_enum_variant_pattern ( & self , cx : & mut ExtCtxt , enum_ident : ast :: Ident , variant : & ast :: Variant , prefix : & str , mutbl : ast :: Mutability ) -> ( P < ast :: Pat > , Vec < ( Span , Option < Ident > , P < Expr > , & [ ast :: Attribute ]) > ) and I changed it to fn create_enum_variant_pattern < 'a > ( & self , cx : & mut ExtCtxt , enum_ident : ast :: Ident , variant : & 'a ast :: Variant , prefix : & str , mutbl : ast :: Mutability ) -> ( P < ast :: Pat > , Vec < ( Span , Option < Ident > , P < Expr > , & 'a [ ast :: Attribute ]) > ) In this case, the code was uncomfortable with taking a slice of attributes out of an arbitrary StructDef reference and returning it. What if the StructDef doesn’t live long enough?
+Generally the compiler internally figures out the lifetimes necessary and uses them here, but if you have too many references there’s no single way to make the fix.
+In this case, the compiler suggested I add a 'a to &StructDef and the returned &[Attribute] , and I did so. The 'a lifetime was declared at the top of the impl , so it was the lifetime parameter of self 2 . This meant that the returned attribute of the function will
+have a lifetime tied to self and the input StructDef , and due to this it cannot outlive the inputs, which is what we wanted in the first place. In essence, I took a bit of code that was doing: fn minicreate ( & self , variant : & ast :: Variant ) -> & [ ast :: Attribute ] { // do stuff // return variant.attributes } and changed it to // we are sure that the returned slice cannot outlive the variant argument fn minicreate < 'a > ( & self , variant : & 'a ast :: Variant ) -> & 'a [ ast :: Attribute ] { // do stuff // return variant.attributes } Again, I didn’t need to think this out much (I’m only thinking it through now for this blog post). I followed the suggestion given to me by the compiler: error: cannot infer an appropriate lifetime for automatic coercion due to conflicting requirements
+help: consider using an explicit lifetime parameter as shown: fn create_enum_variant_pattern<'a>(&self, cx: &mut ExtCtxt, enum_ident: ast::Ident, variant: &'a ast::Variant, prefix: &str, mutbl: ast::Mutability) -> (P<ast::Pat>, Vec<(Span, Option<Ident>, P<Expr>, &'a [ast::Attribute])>) There were a couple of similar errors elsewhere that were caused by tying these two lifetimes together. Since these methods were chained, updating the lifetimes of a child method
+would mean that I would have to now update the parent method which passes its arguments down to the children and returns a modification of its return value (and thus must now impose the
+same restrictions on its own signature). All of this was done by just listening to the suggestions of the compiler (which all contain a function signature to try out). In some cases I introduced a 'b lifetime, because tying it to 'a (the self lifetime parameter) was possibly too restrictive. All of this at the suggestion of the compiler. While this all seems long and complicated, in reality it wasn’t. I simply added the field to the initial struct, tried compiling a couple of times to figure out which code needed updating
+to pass around the attributes, and then went through 3-4 more compilation attempts to fix the lifetimes. It didn’t take long, and I didn’t need to put much mental effort into it. I just
+listened to the compiler, and it worked. And now I trust completely that that code will not cause any segfaults due to attempted access of a destroyed or moved vector. And this is despite the fact that I still don’t know
+where that particular vector is modified or destroyed — I didn’t explore that far because I didn’t need to! (or want to :P) And this is one place Rust really shines. It lets you do optimizations which you wouldn’t dream of doing in C++. In fact, while the C++ way of looking at this problem
+would probably be to just clone and move on, most Rust programmers would think of using slices as the default, and not even consider it an “optimization”. And again, this wasn’t
+with much cognitive overhead; I could just follow the compiler and it fixed everything for me. Some people have pointed out that a shared pointer to the vector itself would work here too. This is correct, but a shared pointer also has a runtime overhead, and more importantly doesn’t prevent iterator invalidation. I had no idea how the vector was being used elsewhere, so this was a risk I didn’t want to take. Additionally, whilst a shared pointer to the vector itself is immune to the issue of the vector being moved, since this was an API, someone consuming the API might take a reference of an attribute and hold on to it long enough for it to become invalidated. This is something we can’t have either – an API consumer should not have to worry about where the pointers will invalidate. ↩ Note: This is not the lifetime of the reference &self , which is the lifetime of the pointer ( &'b self ), but the lifetime parameter of self , a TraitDef<'a> , which has a lifetime parameter for its child fields. ↩ Posted by Manish Goregaokar programming , rust Tweet « New blog! The problem with single-threaded shared mutability » About Me I'm a self-taught programmer with interests in programming languages, human languages, Rust, physics, and online communities to name a few. I'm heavily involved in the Rust programming language , leading the Devtools and Clippy teams. I also work at Google on ICU4X . Recent Posts So Zero It's ... Negative? (Zero-Copy #3) Zero-Copy All the Things! (Zero-Copy #2) Not a Yoking Matter (Zero-Copy #1) Colophon: Waiter, There Are Pions in My Blog Post! A Tour of Safe Tracing GC Designs in Rust Categories c++ (2) cryptography (5) css (1) elections (1) html (1) js (1) meta (2) physics (2) poetry (2) politics (1) programming (46) rust (30) systems (1) tidbits (5) unicode (3) web (2) writing (2)
