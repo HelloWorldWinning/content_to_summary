@@ -1,0 +1,116 @@
+Timestamp: 2025-08-22T16:34:34.163167
+Title: Text_Summary_20250822_163434
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+**摘要**
+
+I. **定义与核心概念**
+    *   **比特币盈亏供应 (Bitcoin Supply in Profit and Loss)** 是一种关键的比特币链上指标，旨在衡量市场情绪和投资者行为。
+    *   该指标通过比较每枚比特币的“上次转移价格”（即其被最后交易的价格）与当前的“市场价格”，来判断该比特币目前处于盈利或亏损状态。
+
+II. **主要组成部分**
+    *   **利润中的比特币供应 (Bid in Profit):**
+        *   当比特币的“上次转移价格”低于“当前市场价格”时，该比特币被视为处于盈利状态。
+        *   这代表着大量比特币持有者当前处于盈利区间。
+    *   **亏损中的比特币供应 (Bid in Loss):**
+        *   当比特币的“上次转移价格”高于“当前市场价格”时，该比特币被视为处于亏损状态。
+        *   这表示大量比特币持有者目前处于亏损状态。
+
+III. **市场情绪与潜在影响**
+    *   **高利润供应:** 可能预示着未来潜在的抛售压力，因为盈利的投资者可能倾向于获利了结。
+    *   **高亏损供应:** 可能暗示市场正处于底部或进入盘整阶段，因为许多持有者已面临亏损，卖压可能已趋于枯竭，甚至进入“投降”阶段。
+
+IV. **投资者应用**
+    *   投资者和交易者利用此指标来洞察市场情绪，并评估潜在的市场走势和价格方向。
+
+**总结核心观点:**
+该指标作为一种重要的链上工具，能有效揭示比特币持有者的盈亏状况，从而为市场情绪判断和未来价格走势预测提供关键参考。
+
+**Overarching Framework (总体框架):**
+链上分析 / 市场情绪与行为指标
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "比特币盈亏供应 (核心指标)"
+        A["比特币盈亏供应"]
+    end
+
+    subgraph "输入与计算基础"
+        C["上次转移价格"]
+        D["当前市场价格"]
+        C -- "与" --> D
+        D -- "比较决定状态" --> A
+    end
+
+    subgraph "细分组件与定义"
+        A --> E["利润中的比特币供应"]
+        A --> F["亏损中的比特币供应"]
+        E -- "条件" --> G["市场价格 > 上次转移价格"]
+        F -- "条件" --> H["市场价格 < 上次转移价格"]
+    end
+
+    subgraph "市场情绪与预测"
+        E -- "形成" --> I["高利润供应"]
+        F -- "形成" --> J["高亏损供应"]
+        I -- "指示" --> K["潜在抛售压力 (投资者获利了结)"]
+        J -- "指示" --> L["潜在底部或盘整 (卖压枯竭)"]
+    end
+
+    subgraph "应用与目的"
+        A -- "是" --> B["衡量市场情绪与投资者行为"]
+        B -- "为...提供依据" --> M["投资者与交易者"]
+        M -- "使用以" --> N["评估潜在市场走势"]
+        K -- "影响" --> N
+        L -- "影响" --> N
+    end
+
+    style A fill:"#FFDDC1",stroke:"#E67E22",stroke-width:2px,color:"#333";
+    style B fill:"#ADD8E6",stroke:"#2980B9",stroke-width:1px,color:"#333";
+    style C fill:"#D6EAF8",stroke:"#1F618D",stroke-width:1px,color:"#333";
+    style D fill:"#D6EAF8",stroke:"#1F618D",stroke-width:1px,color:"#333";
+    style E fill:"#D0F0C0",stroke:"#27AE60",stroke-width:1px,color:"#333";
+    style F fill:"#FFC0CB",stroke:"#C0392B",stroke-width:1px,color:"#333";
+    style G fill:"#E8F8F5",stroke:"#1ABC9C",stroke-width:1px,color:"#333";
+    style H fill:"#E8F8F5",stroke:"#1ABC9C",stroke-width:1px,color:"#333";
+    style I fill:"#E74C3C",stroke:"#C0392B",stroke-width:2px,color:"#FFF";
+    style J fill:"#2ECC71",stroke:"#27AE60",stroke-width:2px,color:"#FFF";
+    style K fill:"#ECF0F1",stroke:"#95A5A6",stroke-width:1px,color:"#333";
+    style L fill:"#ECF0F1",stroke:"#95A5A6",stroke-width:1px,color:"#333";
+    style M fill:"#FFF3E0",stroke:"#FF8F00",stroke-width:1px,color:"#333";
+    style N fill:"#F0F8FF",stroke:"#4682B4",stroke-width:1px,color:"#333";
+
+    linkStyle 0 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 1 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 2 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 3 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 4 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 5 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 6 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 7 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 8 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 9 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 10 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 11 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 12 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 13 stroke:"#6C3483",stroke-width:1.5px;
+    linkStyle 14 stroke:"#6C3483",stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+Bitcoin Supply in Profit and Loss
+It is a bitcoin metric that helps measure market sentiment and investor behavior.
+
+This metric measures the amount of BTC that is currently in profit or loss based on the price at which each bitcoin last moved.
+
+Bid in Profit represents the amount of bitcoin whose last moved price (also known as the "realized price") is lower than the current market price. If the current market price is higher than the price at which the bitcoin was last transacted, it is considered to be in profit.
+
+Bid in Loss is the amount of bitcoin whose last moved price is higher than the current market price. If the current market price is lower than the price at which the bitcoin was last transacted, it is considered to be in loss.
+
+The metric is an indicator of market sentiment. A high bid in profit can indicate that many holders are in profit, which could lead to selling pressure as investors look to take their profits. Conversely, a high supply at a loss could suggest a capitulation phase where many holders are underwater and might sell to cut losses.
+
+Investors and traders use this metric to assess potential market moves:
+- High supply at a profit: This could mean that there is potential selling pressure in the future, as investors may decide to take profits.
+- High supply at a loss: This could suggest a potential bottom or consolidation phase, where selling pressure has run dry.
