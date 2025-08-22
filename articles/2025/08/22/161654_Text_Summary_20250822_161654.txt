@@ -1,0 +1,114 @@
+Timestamp: 2025-08-22T16:16:54.300401
+Title: Text_Summary_20250822_161654
+URL: Direct text input
+Status: success
+Duration: 0:00
+
+Description:
+以下是根据您提供的文本提炼的核心思想摘要、核心观点、总体框架及概念图：
+
+**I. 比特币盈亏供应量概述**
+
+A. **定义与目的**
+    1. 比特币盈亏供应量是一种衡量市场情绪和投资者行为的比特币链上指标。
+    2. 其核心机制是比较每个比特币上次移动时的价格（即“已实现价格”）与当前的实时市场价格。
+
+B. **构成要素**
+    1. **盈币 (Bid in Profit)**：当比特币的已实现价格低于当前市场价格时，这部分比特币被视为处于盈利状态。
+    2. **亏币 (Bid in Loss)**：当比特币的已实现价格高于当前市场价格时，这部分比特币被视为处于亏损状态。
+
+C. **市场情绪指标**
+    1. **高盈币量**：表明大量持有者处于盈利状态，这可能预示着未来潜在的抛售压力，因为投资者可能会选择获利了结。
+    2. **高亏币量**：表明大量持有者处于亏损状态，这可能暗示市场已进入投降阶段，或正处于潜在的市场底部或盘整期，此时卖压可能已枯竭。
+
+D. **投资者应用**
+    1. 投资者和交易者利用此指标来预测未来的市场走势。
+    2. 它可以帮助识别未来潜在的卖压（高盈币量情景）或判断市场可能已触底并进入盘整阶段（高亏币量情景）。
+
+**核心观点：**
+该指标通过揭示大多数比特币持有者是处于盈利还是亏损状态，从而成为衡量市场情绪和潜在价格走势的关键指标。
+
+**Overarching Framework (总体框架):**
+通过链上供应指标进行的比特币市场情绪与行为分析。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "比特币盈亏供应量核心概念"
+        A["比特币盈亏供应量"]
+        B["衡量市场情绪与投资者行为"]
+        A -- "定义与目的" --> B
+    end
+
+    subgraph "计算原理"
+        C["计算基础：已实现价格 vs. 当前市场价"]
+        D["盈币 (Bitcoin in Profit)"]
+        E["亏币 (Bitcoin in Loss)"]
+        F["条件：已实现价格 < 当前市场价"]
+        G["条件：已实现价格 > 当前市场价"]
+
+        A -- "构成要素" --> D
+        A -- "构成要素" --> E
+        C -- "决定" --> D
+        C -- "决定" --> E
+        D -- "条件为" --> F
+        E -- "条件为" --> G
+    end
+
+    subgraph "市场解读与应用"
+        H["高盈币量"]
+        I["高亏币量"]
+        J["市场含义：潜在抛售压力 (获利了结)"]
+        K["市场含义：潜在底部或盘整 (抛售枯竭)"]
+        L["投资者应用：评估潜在市场走势"]
+
+        B -- "指示" --> H
+        B -- "指示" --> I
+        H -- "预示" --> J
+        I -- "预示" --> K
+        J -- "支持" --> L
+        K -- "支持" --> L
+    end
+
+    style A fill:#FFDDC1,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#D4E6F1,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#F0F0F0,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#AEEEEE,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#CCFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#FFCCCC,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FFD8B1,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#FFA07A,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#D4E6F1,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 0 stroke:#006400,stroke-width:1px;
+    linkStyle 1 stroke:#00008B,stroke-width:1px;
+    linkStyle 2 stroke:#00008B,stroke-width:1px;
+    linkStyle 3 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 4 stroke:#6A5ACD,stroke-width:1px;
+    linkStyle 5 stroke:#3CB371,stroke-width:1px;
+    linkStyle 6 stroke:#DC143C,stroke-width:1px;
+    linkStyle 7 stroke:#8B0000,stroke-width:1px;
+    linkStyle 8 stroke:#00008B,stroke-width:1px;
+    linkStyle 9 stroke:#FF4500,stroke-width:1px;
+    linkStyle 10 stroke:#228B22,stroke-width:1px;
+    linkStyle 11 stroke:#4682B4,stroke-width:1px;
+    linkStyle 12 stroke:#4682B4,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+Bitcoin Supply in Profit and Loss
+It is a bitcoin metric that helps measure market sentiment and investor behavior.
+
+This metric measures the amount of BTC that is currently in profit or loss based on the price at which each bitcoin last moved.
+
+Bid in Profit represents the amount of bitcoin whose last moved price (also known as the "realized price") is lower than the current market price. If the current market price is higher than the price at which the bitcoin was last transacted, it is considered to be in profit.
+
+Bid in Loss is the amount of bitcoin whose last moved price is higher than the current market price. If the current market price is lower than the price at which the bitcoin was last transacted, it is considered to be in loss.
+
+The metric is an indicator of market sentiment. A high bid in profit can indicate that many holders are in profit, which could lead to selling pressure as investors look to take their profits. Conversely, a high supply at a loss could suggest a capitulation phase where many holders are underwater and might sell to cut losses.
+
+Investors and traders use this metric to assess potential market moves:
+- High supply at a profit: This could mean that there is potential selling pressure in the future, as investors may decide to take profits.
+- High supply at a loss: This could suggest a potential bottom or consolidation phase, where selling pressure has run dry.
