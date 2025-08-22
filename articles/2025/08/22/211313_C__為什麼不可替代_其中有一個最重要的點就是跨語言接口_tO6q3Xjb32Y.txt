@@ -1,0 +1,160 @@
+Timestamp: 2025-08-22T21:13:13.983750
+Title: C++為什麼不可替代 其中有一個最重要的點就是跨語言接口 tO6q3Xjb32Y
+URL: https://www.youtube.com/watch?v=tO6q3Xjb32Y
+Status: success
+Duration: 5:52
+
+Description:
+**核心要点：**
+C++的不可替代性主要源于其在跨源接口（多语言集成）方面无与伦比的能力和T0级别的性能，使其在金融、游戏、计算、低空等关键领域占据主导地位，并在未来十年内保持重要地位。
+
+**总体框架：**
+C++在跨语言集成中的核心价值与性能优势及其发展趋势。
+
+**总结大纲：**
+
+I. C++ 不可替代性的核心原因
+    A. 卓越的跨源接口能力
+        1. 能够与Java、Python、Aktis (鸿蒙)、C#、Loda、JS等多种语言及平台无缝集成。
+        2. 在此方面，Rust等语言目前难以替代C++。
+    B. T0 级别极致性能
+        1. 专注于高性能需求场景：金融、游戏、计算、低空号（嵌入式/实时系统）。
+        2. 相比Python和Java，C++在性能上处于不同赛道，具有更高的效率和更低的抽象开销。
+
+II. C++ 的发展现状与趋势
+    A. C++ 与 Rust 的关系
+        1. Rust 虽在部分场景替代了C++，但C++也替代了不少C语言场景，整体呈上升态势。
+        2. C++ 到 C++26 的升级路径比转向 Rust 更为顺滑。
+    B. 安全性
+        1. 预计 C++26 版本将彻底解决其安全问题。
+
+III. 跨语言集成的典型场景与实现
+    A. 鸿蒙 (HarmonyOS) 开发中的C++应用
+        1. 集成方式：通过 CMake 引入 C++ 动态库，并将其添加到鸿蒙项目中。
+        2. 接口机制：提供 Aktis 接口，C++ 返回 `Stream` 对象供 Aktis 直接使用。
+        3. 优势：鸿蒙操作系统底层基于C++，工具链完整，移植便捷，易于实现性能优化。
+        4. 调试支持：C++ 代码与 Aktis 代码可进行跨语言调试。
+    B. 安卓 (Android) 开发中的C++应用
+        1. 集成方式：通过 JNI (Java Native Interface) 调用 C++ 动态库，加载动态库使用 `LoadLibrary`。
+        2. 接口机制：Java 定义 C++ 接口，C++ 返回字符串等数据至安卓界面显示。
+        3. 优势：与PC端调用C++的方案类似。
+        4. 调试支持：Java 代码与 C++ 代码可进行跨语言调试。
+    C. Python 扩展开发中的C++应用
+        1. 集成方式：C++ 代码注册为类和方法，通过 `setup.py` 编译为 Python 扩展库。
+        2. 接口机制：Python 将 C++ 类作为普通对象直接使用。
+        3. 优势：便于在 Python 中引入高性能的C++计算模块（如大模型本地化推理）。
+        4. 调试支持：可通过附加到 Python 进程进行 C++ 代码调试。
+
+IV. 跨语言集成的目的与未来展望
+    A. 主要目的：引入其他语言（Python、Java、Aktis等）的现有生态库，并在性能密集型或特定计算场景中利用C++的高性能。
+    B. 未来展望：
+        1. 预计在未来十年内，C++在跨语言集成和高性能领域仍将不可替代。
+        2. C++ 的使用率整体呈上升趋势。
+        3. 如果未来需要转向其他语言，C++ 开发者转向 Rust 将是最容易的路径。
+
+<Mermaid_Diagram>
+graph TD
+    A["C++核心价值"] --> B["卓越的跨源接口能力"];
+    A --> C["T0级极致性能"];
+
+    B --> B1["多语言平台互操作性"];
+    B1 --> B1a["Java / Android"];
+    B1 --> B1b["Python"];
+    B1 --> B1c["Aktis / 鸿蒙"];
+    B1 --> B1d["C#"];
+    B1 --> B1e["Loda"];
+    B1 --> B1f["JS"];
+    B1 --> B1g["其他平台"];
+
+    C --> C1["高性能计算"];
+    C --> C2["金融"];
+    C --> C3["游戏"];
+    C --> C4["低空 / 嵌入式"];
+    C --> C5["低开销抽象"];
+
+    subgraph "跨语言集成典型场景"
+        D["鸿蒙开发 (Aktis)"] --> D1["CMake 引入 C++ 动态库"];
+        D1 --> D2["C++ 提供 Aktis 接口"];
+        D2 --> D3["OS原生支持，易移植，优化性能"];
+        D --> D4["支持跨语言调试"];
+
+        E["安卓开发 (Java)"] --> E1["JNI 调用 C++ 动态库"];
+        E1 --> E2["C++ 提供 Java 接口"];
+        E2 --> E3["LoadLibrary 加载"];
+        E --> E4["支持跨语言调试"];
+
+        F["Python 扩展"] --> F1["C++ 注册类/方法"];
+        F1 --> F2["编译为 Python 扩展库"];
+        F2 --> F3["Python 直接使用"];
+        F --> F4["支持 C++ 调试 (附加进程)"];
+    end
+
+    B --> D;
+    B --> E;
+    B --> F;
+
+    G["跨语言集成目的"] --> G1["引入现有生态库"];
+    G1 --> G2["利用高性能模块 (如大模型推理)"];
+
+    H["C++发展趋势与对比"] --> H1["C++ 整体呈上升态势"];
+    H --> H2["C++ vs Rust: 互有替代，C++转C++26更顺滑"];
+    H --> H3["C++26 有望解决安全问题"];
+
+    I["未来展望"] --> I1["10年内不可替代"];
+    I --> I2["C++ 使用率上升"];
+    I --> I3["若未来替代，C++ 转 Rust 最易"];
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+
+    style B1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style B1a fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1b fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1c fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1d fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1e fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1f fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style B1g fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+
+    style C1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C3 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C4 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style C5 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style D fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style D1 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+
+    style E fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style E3 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style E4 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+
+    style F fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style F3 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+    style F4 fill:#FFE4E1,stroke:#333,stroke-width:1px,color:#333;
+
+    style G fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style H fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style H1 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style H2 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style H3 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+
+    style I fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style I1 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style I2 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style I3 fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+CJ Why 怎么不可低待其中有一个最重要点就是跨源接口CJ 与Java,Passen,Aktis,Cjava,Loda,Js各种与源念接在这个层面Rust 就很难提待比如你要去做安卓开发、红门开发或者去做Passen 的扩展我们来演示一下这几个场景的Cj代码另外Cj要属于T0级别的性能所以和Passen Java 够呢它不在一个赛道它的场景主要在金融游戏、计算、低空号而且它的凝开销抽象对于开发、复杂也有比C 源效率更高Rust 呢,替代了部分Cj的场景但Cj 也替代了不少C场景所以Cj整体上在上升Cj 的安全问题到Cj 26 应该彻底解决从Cj转到Rust 肯定不如Cj 转到26更顺滑下半我们开始演示安卓开发中的Cj与Java的结合红门中的Aktis 接口和Cj 开发一个Passen 扩展其实我有一个Cj 代码这是我我们需要把它移植到红门上像其他语言比较说我们之前涉及到一些库它的构或者加尾你现在一直到红门是很麻烦的为什么你要同步移植它的蓄力机但是你Cj 呃就不需要考虑为什么因为本身操作系统层面它就是中间层它就是用Cj 写的它的整个工具链都是完整的你相对移植过去就非常容易比如说我们有在安卓内我们就演示一个最简单的这里面返回了一个自不串在红门项目当中我们创建一个Cj的想法因为红门的主要接口都提供了Cj 的版本我们有时候要用Cj 优化这个性能在红门当中怎么添加呢其实我们只要在这个Cmack 当中我们把这个文件找到我这个项目的路径我在Cmack 当中把它添加进来然后把我们的投温线路级加进去最后把我们的圆码加到红门的项目当中去项目当中去之后那投温线我们就可以引入这个类的这里我们添加了一个接口Guyter Cpp STR这个接口就是转给RxTS的在这里面我们调用了这个类然后在这个类里面我们是返回了一个Stream的对象然后这个Stream对象我们在这里面创建了一个RxTS的自不串变料然后返回给RxTS那到了RxTS在码当中呢第一个我们引入这个C加拿大写好的动态库我们直接在这里面就可以调用里面的韩素返回的Stream内型呢我们到这边就是由RxTS可以直接使用当然在这里面这个接口开放的时候我们需要在下面注册进行一下配置并且在RxTS这里面要加个内型的配置你想要引入高性能计算在红门开发当中你唯一能使用的语言还是C加当然你说用Rx的或者是C也可以但是在工程系上面我们就很麻烦了然后我们这个可以执行一下看看在这里面我们点击这个按钮之后我们就会调用一个C加拿大的韩素然后把这个界面的自体改掉这就是从C加货德的数据同理其实我们之前做一件事情就是把大圆模型本地化推理也是要用C加开发完之后转给RxTS做这样的一个接口我们再看安卓安卓这边我们用的加盘所以这个方案是监安和在PC端其实方案是一样的就是它去调用C加也是通过监安所以监安有一套接口在这里面表中我们就定义了一个监安的C加接口我们还是用刚才的CbClub我们用了同一套带码然后在这里的话我们也是一样的调用的这个接口然后转给我们安卓的这个界面去进行显示这个字不像就是从我们C加上还是我们刚刚同一套带码反回的这个字不像转给了我们的安卓端的界面到安卓这里面的方案也是类似的就是通过C-MAC把我们的CPP路径加进来然后同时编译然后安卓不止不过它这里面是加我的调用加我的调用跟RTS有点区别它是通过Lodel Nubbery倒入这个动态过倒入动态过之后因为你可以看这个是在类的内部所以说它这时候在类部你定义一个叫做Lety-5的接口要跟我们的C加带码一致因为它里面有个类型的硬色关系我们最后再看一下PysonPyson这里面我们就不掩饰我们给大家看一下Pyson是怎么做的首先你用C加压我们这里面注册了一个类这个类你没加了一个Pyson的投稳当然你可以不加我们可以去做一个扩展就是把你的类型入进来然后我们再做了一个对象创建的溜寒速这时候我们就可以注册给PysonPyson的话在类部它就能够去使用这个类然后Pyson当中怎么去使用呢我们先看一下使用方法就很简单它就把它当做一个普通的对象去使用然后你再给它注册方法然后我们C加这个方法就可以在Pyson当中去使用然后安装的过程它也是非常简单的你要做一个Setup然后我们就可以以扩展的方式把C加加的代码装到Pyson当中这个安装扩展在NX当中有编练环境的时候它是自动编练这个C加代码转成Pyson的扩展库然后再进行调用我们就演示这个几个势力其他的同理的C下盆的然后LoadJS的还有一点非常重要的一点就是说比方说像我们刚才讲的这个这个就是要加的RTS和加尔的它这里面都是可以涉断你的调试也就是你在运行加尔代码的时候可以切到C加代码当中去运行RTS也是一样可以切入到C加代码当中去跳的Pyson这边更纯粹了它以动态库的形式传给Pyson你也想要在这里面做调试你以加尔的方式加到Pyson的进程当中去一样可以进行调试所以这里面就是一套非常完善的工程性的方案就是在跨语言的结合上面但为什么要跨语言那还是Pyson加尔RTS在一些密集剧上或者是一些生态库的上面我们要把遗有的生态给它引入进来我们可以讲10年内不可替代的又是10年之后谁知道呢就像以后被Rust的替代了我想我们C加尔成统转到Rust也是最容易的大家再来讨论一下还有什么其他的原因就使得C加尔在这个行业当中其实它的整个使用力在上升的最后记得点赞关注小老师学习更多的现在C加知识
