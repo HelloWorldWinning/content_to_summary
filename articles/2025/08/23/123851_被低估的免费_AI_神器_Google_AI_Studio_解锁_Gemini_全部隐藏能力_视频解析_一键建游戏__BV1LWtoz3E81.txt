@@ -1,0 +1,202 @@
+Timestamp: 2025-08-23T12:38:51.381437
+Title: 被低估的免费 AI 神器！Google AI Studio 解锁 Gemini 全部隐藏能力：视频解析、一键建游戏… BV1LWtoz3E81
+URL: https://www.bilibili.com/video/BV1LWtoz3E81/?spm_id_from=333.1007.tianma.6-2-18.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 27:43
+
+Description:
+### Google AI Studio 综合功能导览与应用潜力深度解析
+
+**1. 引言：Google AI Studio 概述**
+*   Google AI Studio 被认为是目前最被低估的 AI 工具之一，提供独特且强大的功能，且完全免费。
+*   它本质上是 Gemini 的增强版，具备更高的灵活性和更强大的能力。
+*   作为一个实验性平台（playground style environment），它提供了丰富的自定义选项和工具，尽管界面初看可能有些复杂，但易于导航。
+*   平台主要包含四大核心功能区：聊天 (Chat)、流式交互 (Stream)、媒体生成 (Generate Media) 和应用构建 (Build)。
+
+**2. 核心功能区详解**
+
+**2.1. 聊天 (Chat) 功能**
+*   **视频输入 (突出特点)：**
+    *   支持完整的视频理解作为输入，而非仅仅文本、图片或音频。
+    *   **应用场景**：
+        *   **视频提示词逆向工程**：通过上传视频或粘贴 YouTube 链接，生成用于创建该视频的详细提示词，并支持迭代优化。
+        *   **内容分析**：能“观看”视频内容（即使无音频），进行详细分析和总结，例如 YouTube 视频内容提炼、事实核查。
+        *   **高效信息提取**：可处理长达约 55 分钟的视频内容；对于更长的视频，可导入转录文本以节省 Token 并快速获取关键见解和带时间戳的引用。
+        *   **生产力工具**：用于自动生成视频章节时间戳、演示反馈、任务文档（SOP）等。
+*   **高级设置与工具 (右侧边栏)：**
+    *   **模型选择**：推荐使用最新的 2.5 Pro 和 Flash 模型。
+    *   **Token 计数**：巨大的上下文窗口（超过 100 万 Token），适用于处理长视频或大文件。
+    *   **温度 (Temperature)**：调节创造力，低值适用于精确任务，高值适用于创意发散。
+    *   **媒体分辨率**：默认最高，处理极长视频时可调低以节省 Token。
+    *   **思维模式 (Thinking Mode)**：提升推理和多步规划能力（Flash 模型可切换）。
+    *   **工具集成**：
+        *   **Google 搜索**：减少幻觉并提供真实引用。
+        *   **代码执行**：直接在聊天中运行 Python 代码。
+        *   **函数调用**：连接外部工具或 API。
+        *   **URL 上下文**：直接读取指定 URL 内容。
+    *   **安全设置**：默认为较低安全防护级别，可根据需求调整。
+*   **其他实用功能 (顶部)：**
+    *   **系统提示词**：为聊天设置全局语调、角色或背景指令。
+    *   **比较模式**：并排对比不同模型、设置或系统提示词对输出的影响，便于优化。
+    *   **提示词画廊**：提供预设提示词示例。
+
+**2.2. 流式交互 (Stream) 功能**
+*   **交互模式**：支持通过语音、摄像头或屏幕共享与 Gemini 进行实时互动。
+*   **设置选项**：
+    *   **语音选择**：约 30 种不同声音。
+    *   **回合覆盖 (Turn Coverage)**：非对话时也发送输入。
+    *   **情感对话 (Affective Dialogue)**：根据语调调整响应。
+    *   **主动音频 (Proactive Audio)**：忽略背景语音。
+*   **语音交互 (Talk)**：进行流畅的语音对话。
+*   **摄像头输入 (Webcam)**：通过摄像头图像提供帮助（如植物盆栽指导）。
+*   **屏幕共享 (Screen Sharing)**：
+    *   **核心能力**：Gemini 能实时“观看”用户屏幕操作并提供指导。
+    *   **应用场景**：辅助软件学习（建议有基础后使用）、解释复杂图表、实时代码协助、UX 测试、故障排除等。
+
+**2.3. 媒体生成 (Generate Media) 功能**
+*   **图像生成 (Imagine 4)**：
+    *   使用 Imagine 4 模型，具有良好的提示词遵循度和图像质量，支持文本渲染，免费生成次数有限。
+*   **视频生成 (Vio 2)**：
+    *   使用 Vio 2 模型，可将图像或文本转换为视频（目前不支持音频生成），每日免费生成次数有限 (4 次)。
+*   **图像编辑 (Gemini Image Generation)**：
+    *   强大的图像编辑功能，支持去除人物/物体、修改图像细节（如改变颜色）等，尤其对 AI 生成图像效果显著。
+*   **语音合成 (Speech Generation)**：
+    *   高质量文本转语音系统，支持多扬声器、自定义风格和语速指导。
+*   **实时音乐创作 (Lyria Real Time)**：
+    *   交互式音乐创作工具，用户可通过调节参数实时控制和演奏音乐（本身是使用 "Build" 功能构建的应用）。
+
+**2.4. 应用构建 (Build) 功能**
+*   **核心机制**：用户只需使用自然语言描述需求，Gemini 即可在后台生成代码，创建小型应用和工具。
+*   **特色示例**：平台展示了共绘应用、闪卡制作工具、音乐生成器等。
+*   **游戏开发演示**：
+    *   通过简单提示词（如“创建类似 Pac-Man 的游戏，主角是像素化 Ozzy Osbourne，敌人是蝙蝠”），Gemini 即可在几分钟内生成一个可玩的游戏。
+    *   支持**迭代优化**：用户可根据测试反馈，通过自然语言指令持续修改游戏逻辑、角色行为、视觉效果和背景音乐等。
+    *   构建完成的应用或游戏可分享。
+
+**3. 结论：平台价值与使用提示**
+*   **核心价值**：Google AI Studio 是一款强大、免费且功能独特的平台，能显著提升用户在 AI 驱动下的工作效率和创造力，是值得整合到个人 AI 工具箱中的利器。
+*   **使用提示**：所有免费 AI 工具普遍存在的**数据隐私考量**，Google AI Studio 会使用用户在此平台上的操作来训练其模型。
+
+---
+
+**核心观点总结:**
+Google AI Studio是一款免费且功能强大的多模态AI工具，提供独特的视频输入、丰富的定制选项和应用构建能力，使其成为提升AI工作效率的关键平台，但需注意数据用于模型训练。
+
+**Overarching Framework (核心框架):**
+该内容的核心框架是 **“Google AI Studio 的综合功能导览与应用潜力深度解析”**。它系统地介绍了该平台的四大核心功能区域（Chat、Stream、Generate Media、Build），并深入探讨了每个区域的独特能力、高级设置、实际用例以及如何通过迭代优化实现复杂任务，强调其免费性、强大功能和多模态交互优势。
+
+<Mermaid_Diagram>
+graph LR
+    A["Google AI Studio"] -- "核心价值" --> B["免费且功能强大"];
+    A -- "主要特点" --> C["多模态 AI 工具"];
+    A -- "核心能力" --> D["丰富的定制选项"];
+
+    subgraph "四大核心功能区"
+        F1["Chat (聊天)"]
+        F2["Stream (流式交互)"]
+        F3["Generate Media (媒体生成)"]
+        F4["Build (应用构建)"]
+    end
+
+    A --> F1;
+    A --> F2;
+    A --> F3;
+    A --> F4;
+
+    subgraph "Chat 功能"
+        F1 -- "独特优势" --> C1["视频输入"];
+        F1 -- "控制与优化" --> C2["高级设置"];
+        F1 -- "辅助开发" --> C3["辅助功能"];
+
+        C1 -- "应用场景" --> C1_1["逆向工程视频提示词"];
+        C1 -- "应用场景" --> C1_2["YouTube 链接分析"];
+        C1 -- "应用场景" --> C1_3["长时间视频处理"];
+        C1_3 -- "优化" --> C1_3_1["文本转录 (节省Token)"];
+
+        C2 -- "包含" --> C2_1["模型选择 (2.5 Pro & Flash)"];
+        C2 -- "包含" --> C2_2["Token 计数与上下文窗口 (1M+)"];
+        C2 -- "包含" --> C2_3["温度 (创造力调节)"];
+        C2 -- "包含" --> C2_4["媒体分辨率"];
+        C2 -- "包含" --> C2_5["思维模式与预算"];
+        C2 -- "包含" --> C2_6["工具 (Google搜索/Code/URL Context等)"];
+        C2 -- "包含" --> C2_7["安全设置"];
+
+        C3 -- "包含" --> C3_1["系统提示词"];
+        C3 -- "包含" --> C3_2["比较模式 (A/B 测试输出)"];
+    end
+
+    subgraph "Stream 功能"
+        F2 -- "交互方式" --> S1["语音交互"];
+        F2 -- "交互方式" --> S2["摄像头输入"];
+        F2 -- "交互方式" --> S3["屏幕共享"];
+
+        S3 -- "核心能力" --> S3_1["实时理解屏幕内容"];
+        S3 -- "应用场景" --> S3_2["软件学习辅助 (需基础)"];
+        S3 -- "应用场景" --> S3_3["故障排除与UX测试"];
+    end
+
+    subgraph "Generate Media 功能"
+        F3 -- "创作类型" --> G1["图像生成 (Imagine 4)"];
+        F3 -- "创作类型" --> G2["视频生成 (Vio 2)"];
+        F3 -- "创作类型" --> G3["图像编辑 (Gemini Image Gen)"];
+        F3 -- "创作类型" --> G4["语音合成 (高质量TTS)"];
+        F3 -- "创作类型" --> G5["实时音乐创作 (Lyria)"];
+
+        G3 -- "编辑示例" --> G3_1["去除物体/人物"];
+        G3 -- "编辑示例" --> G3_2["修改图像细节"];
+    end
+
+    subgraph "Build 功能"
+        F4 -- "核心机制" --> B1["自然语言编程"];
+        F4 -- "输出" --> B2["创建迷你应用与工具"];
+        F4 -- "输出" --> B3["构建游戏 (如Pac-Man克隆)"];
+        B1 -- "过程" --> B1_1["Gemini 自动生成代码"];
+        B1 -- "过程" --> B1_2["迭代优化与调试"];
+    end
+
+    A -- "潜在风险" --> Z1["数据用于模型训练"];
+
+    style A fill:#4CAF50,stroke:#333,stroke-width:2px,color:#FFF;
+    style B fill:#8BC34A,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#8BC34A,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#8BC34A,stroke:#333,stroke-width:1px,color:#333;
+
+    style F1 fill:#2196F3,stroke:#333,stroke-width:1px,color:#FFF;
+    style F2 fill:#2196F3,stroke:#333,stroke-width:1px,color:#FFF;
+    style F3 fill:#2196F3,stroke:#333,stroke-width:1px,color:#FFF;
+    style F4 fill:#2196F3,stroke:#333,stroke-width:1px,color:#FFF;
+
+    style C1 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style C3 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style C1_1 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C1_2 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C1_3 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C1_3_1 fill:#E0F2F7,stroke:#333,stroke-width:1px,color:#333;
+    style C2_1 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_2 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_3 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_4 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_5 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_6 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C2_7 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C3_1 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style C3_2 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+
+    style S1 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style S2 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style S3 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style S3_1 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style S3_2 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style S3_3 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+
+    style G1 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style G3 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style G4 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style G5 fill:#FFC107,stroke:#333,stroke-width:1px,color:#333;
+    style G3_1 fill:#B3E5FC,stroke:#333,stroke-width:1px,color:#333;
+    style G3_2 fill:#B3E5
+
+Content:
+ I think Google AI Studio is one of the most slept on AI tools out right now. It lets you do a ton of interesting things you won't find in other tools, and it's completely free. It's basically Gemini but with way more power and flexibility built in. So I'm just going to jump right in. This is at aistudio.google.com. This is a playground style environment, so there's a lot more customization and tools, but that also means it can feel a little overwhelming at first. Don't worry though, it's easy to navigate, just not the prettiest interface. I'll walk through what all of this is throughout the video, but just know you can ignore half of it. There are four main areas, chat, which is a standard chat interface, but with some really unique features, stream where you can interact in real time using your voice, your camera, or even by sharing your screen. Super useful. Generate media, which lets you create images, videos, and audio with prompts, and build where you can create full apps using just natural language. Gemini writes the code in the background. You can make actual tools, or in my case, I built a full game and just a few prompts. No matter how many times I do that, it still blows my mind it's possible. I'm going to start with chat, and before I dive into all the settings and customization options, I want to show you one of my favorite features that you won't find anywhere else. Video input. Camera models are multimodal now, they can handle text, images, and audio, but very few can actually understand full videos as input. This one can. I actually was going to make a whole separate video just about this ability, but the first use case for this that I really like is reverse engineering video prompts. Here's one of those AI SMR videos that went viral. It was a while back now, but I'll go with it. Drop that in, then I'll type, give me a video prompt to create this exact video. It should include the appearance, camera style, actions, and audio cues. The prompt is for video three, which generates the video and audio simultaneously. So I'll send that. And now here's the crazy part. Gemini actually watches the video. It sees everything that happens frame by frame while also listening to the audio. And here's what it gave back. That would work, but I think it's a little long, so I'll say condense that into a video prompt format. All right, that looks good. I will copy that, open up flow, I'll paste it in, and then let it generate. And that looks really close on the first try, but if it's not, here's what you can do. Download the new generated video, drop it back into the same chat and say, compare this to the original. What's missing? Rewrite the prompt to fix it. It'll watch both videos, analyze what changed, and rewrite the prompt with any needed tweaks. You can iterate like that until it's spot on. And this works with any video generator, not just FIO 3, which is one of the most expensive options out there. This video feature has a lot of use cases. It works with much longer videos than that last example, and you don't have to upload a file. You can also drop in a YouTube link. To show that, I'll use OpenAI's YouTube page. Here's their recent announcement about study mode. If I open the video, you'll notice there's no audio. There's no narration, no voiceover. It's entirely visual. So this is the perfect example to show that Gemini isn't just grabbing a transcript or pulling context from a few still frames, it's actually watching. And this is a fast-moving video with a lot going on. I paste the YouTube link here. It starts analyzing the video, then I'll use a prompt like, what is this video about? Explain it, then tell me who this would be interesting to and why. Something that would help me if I was making a video about this. And in just a few seconds, it's watched the whole thing and returned a full analysis. It breaks down everything that happens on screen. And to prove it was actually watching, let's fact check one of its lines. It says, a user asks a broad conceptual question about why catalysis is a recurring topic in their chemistry class. I'll jump back to the video and yep, there it is, right there on the screen. This is super useful and it does work with much longer videos, but when you're dealing with hour-long content, you might not want it to watch the whole thing. So back on their YouTube page, there's a podcast. I don't really want to watch this, so I'll grab the link and drop it in. You can see up here, we're just over the token limit. This video is about an hour long, so that means it could handle around 55 minutes before hitting the limit. But in this case, I don't need it to watch it. I just want the transcript. So instead of wasting all those tokens, I'll just go back to YouTube, copy the transcript, and I'll leave all the timestamps turned on. And I'll paste that into the chat and ask for a summary with key insights and interesting quotes. Now, up here since it's just text, the token usage drops way down from over a million to around 19,000. And looking through the quotes, yeah, I probably would not have made it through this whole episode, but this one's good. Adaptation is the new job security and it has a timestamp, so I can jump right to that moment in the video. I think everyone's worried about jobs as well, but adaptation is the new job security. And this is helpful for me since I need quotes from videos sometimes. This way I can get them faster. That was just using the transcript, but there are a ton of other ways to use the video feature. For example, I use it to grab timestamps for my own videos, so I can quickly add YouTube chapters or say you have like a presentation coming up. You could record yourself, drop the video in here and ask for feedback on your delivery, or maybe you're trying to document a task for someone else. So just screen record yourself doing it, then ask it for a step-by-step breakdown of what you did. Now you've got an SOP or a training doc without writing it all out yourself. Those are just a few examples. Everyone's going to have their own use cases depending on what they do. But once you get the hang of this, it's easy to see how powerful this can be. A fast way to level up with Gemini is with this free resource provided by HubSpot. It's called Google Gemini at Work, and it's a complete breakdown of how to use Gemini to speed up your research, improve your content, and build entire marketing strategies in a fraction of the time. My favorite part is the Gemini marketing stack. It shows how five tools like Deep Research, Notebook LM, and Gemini 2.5 Pro work together to handle everything from campaign planning to content creation to building interactive dashboards. All without needing a big team or agency. There's also a four-week rollout plan if you want to actually start using Gemini in your workflow right now. Plus some copy paste prompt templates you can drop into the chat right away. If you're in marketing or just curious how far you can push AI tools, you'll definitely want to grab this. The link to download it is in the description. Thanks to HubSpot for sponsoring this video and making these free resources available to everyone watching. So I know I spent a lot of time on the video input, but that's a really standout feature that isn't available anywhere else, so I felt that was worth diving into. Beyond that, the chat tab can do everything you'd expect from a modern AI model, just like chat GPT or cloud. You can do normal prompting, upload images, PDFs, all the standard stuff. But what sets it apart are the extra features and customization options that give you more control. So I'm going to quickly walk through all the other settings in here, but I'll spend a little more time on the ones I find the most useful. Let's start with the settings on the right-hand sidebar. First up is the model selector. You can ignore the API pricing unless you're building an app with this, but the best four section and use case description can be helpful when deciding. You'll see older models in this list too, but most of the time you'll want to stick with 2.5 Pro and Flash. Those are the newest and best models right now. Below that is the token count, so this shows how many tokens you've used in a chat, and every new prompt or question you ask in that thread adds to the count. The context window is huge, it's a little over a million tokens. That's around eight times more than the web version of chat GPT. It's especially useful for working with long videos or big files. Then we've got temperature. This is basically your creativity knob. Lower temperature gets you more deterministic, safe, and accurate responses. Great for math, coding, or fact-based queries. Higher temperature gets you more random, creative, or surprising outputs. Good for brainstorming, poetry, or experimenting with writing styles. Next is media resolution. This affects how well the model understands images and videos. Higher settings give it more visual detail to work with, like it's watching more closely. In most cases, just leave it at the default, which is all the way up. The main time to lower it is with really long videos, like that podcast earlier. At the default resolution, this goes over the token limit, but switching to low cuts token usage by about two thirds. That's really the only time I've ever lowered this. Under thinking, we've got a couple options. Thinking mode is on by default for Pro and Flash. It improves reasoning and multi-step planning, but it also increases the token usage and slows things down a bit. With Pro, it's always on, but with Flash, you can toggle it on and off. Then the thinking budget lets you cap how many tokens the model uses to think. I usually leave this off and let the model decide. Then we've got tools. Most of these I don't use much, except for grounding with Google search. This tells the model to pull results from Google. It helps reduce hallucinations and adds real citations. You might use some of the others, especially if you're building apps. Structured output lets you constrain the model to output formats, like JSON. Code execution lets it run Python directly inside the chat, then improve outputs based on the execution results. Function calling lets you connect to external tools or APIs. URL context lets you input a specific URL or multiple URLs for the model to read directly, instead of going and searching Google. That is great for pulling data from specific pages or comparing multiple sources. One more I want to show under advanced settings is safety settings. Click edit and you'll see that it defaults to a more raw version of the model. With fewer guardrails than what you'd expect in something like Gemini or chat GPT's web interfaces. Since AI Studio is built for developers, you can adjust the safety filters based on your needs. Personally, I leave all the safety filters off. Up top, there are a few more features, and a couple of them are actually really useful. The first is the system prompt. This lets you set the tone or role for the chat, like telling it how to respond, what style to use, or what type of assistant it's supposed to be, giving it background instructions before your main prompt. That way you don't have to include it every time. Next to that you'll see options for SDK code, prompt sharing, and save, but the one I actually use is compare mode. This opens up two chats side by side, and it's a great way to test how different models settings or system prompts affect the output. For example, I could use the same prompt on both sides, but turn the temperature way up on one and leave it low on the other. Then give me five hopes for a YouTube short about Google AI Studio. On the left I get solid, safe suggestions, and on the right things get a little more creative. What if you could build AI like magic? Stop scrolling, start creating. Ever wonder how AI gets made? Those are solid, and that's a simple example, but seeing them side by side really helps you get a feel for how temperature and system prompts affect the output, and which settings might be best for what you're doing. The last thing I'll mention on the chat tab is this prompt gallery on the right. It has a bunch of preset prompts for different use cases. You can click each to see the example, but it doesn't look great within the UI right here. They also have all these on the AI.google.dev site as well, which looks much nicer. Now moving on to the stream tab. This is where you can interact using your voice, your webcam, or screen sharing. And each of these is useful in different situations. The screen sharing feature in particular has gotten a lot of attention. It went viral on its own. I actually made a separate video just about that. But first I want to go over the settings really quick. First up is the voice drop down. There are about 30 different voices to choose from. Ready to build something awesome today. Got a project to mind? What do you want to explore? Ready to make something amazing? Then you've got some additional toggles, turn coverage. This allows it to send audio or video input, even when you're not speaking. It's effective dialogue. This enables Gemini to react, not just to what you say, but how you say it. It'll adjust its responses based on your tone of voice. Proactive audio. This tells it to ignore background speech that isn't meant for it. So if you're talking to someone else while it's running, like in a meeting or driving through a drive-through, it won't randomly chime in. And I'll turn that one on while I demo this, so it hopefully won't respond while I'm explaining things during the recording. Starting with talk, this lets you have a full back and forth conversation with Gemini using your voice. For some people, this is the preferred way to interact. And in a lot of situations, it's just easier. What's the difference between you and chat GPT? I'm a large language model developed by Google while chat GPT was developed by OpenAI. We both have similar goals, which is to provide helpful and informative responses, but we're trained on different data sets and have- Which one of you two is smarter? It's hard to say definitively which one of us is smarter. We both have strengths and are constantly being updated and improved. Our capabilities are continually evolving, so it really depends on the specific task or question. You get the idea. Next is the webcam. I usually find this more useful on my phone rather than my computer's webcam. That's just looking at me and I'd have to hold things up to it. For the dedicated video on this, I had it help me with repotting a plant using my phone. Yes, I'd like to repot it. Can you help me with that? Sure, I can help you with that. First, do you have a new pot and some potting mix ready? I do, and this is the type of plant I have. Okay, it's a stethophillum, also known as a piece lorry. That's good to know. Do you have your new pot and the potting mix ready? Yes, is this potting mix good? Yes, the miracle grow organic indoor potting mix should work well for your piece lily. Now, are you ready to start repotting the plant? Yes, should I add some of this stuff to it? Yes, adding perlite to the potting mix can help improve drainage and aeration, which is good for piece lilies. Do you want to mix it with the potting mix now? Yeah, let's do it. The other option here is screen sharing. That's where Gemini can see everything that's happening on your screen while you're talking to it. This can be really helpful, so I'll go ahead and turn it on now. Let's also lecture this Premiere Pro window. I have this project open in Premiere Pro, and I've also got this little logo right here. I want the logo to pop up on the screen and then do, I don't know, a little wiggle effect or something. How do I do that? You can achieve that with keyframes in the Effect Controls panel. First, select the local clip on your timeline. Then, go to the Effect Controls panel, find the Motion Properties, and set keyframes for position and scale to create the pop-up effect. You can also animate the rotation property for a wiggle effect. Things that aren't available... All right, I have the logo kind of popping up. How do I make that a little smoother? To make the animation smoother, try adjusting the keyframes. You can right-click on a keyframe and select Ease In or Ease Out to create a smoother transition. You can also adjust the spacing between keyframes to change the speed of the animation. All right, that's pretty good. How do I add that wobble again? To add a wobble effect, go back to the Effect Controls panel, find the Rotation property, and add keyframes with slightly different rotation values to create the wobbling motion. Adjusting the timing of these keyframes will control the speed of the wobble. Okay, that looks pretty good. Anything else I can do to make it better? You could also add a subtle bounce effect by adjusting the Scale keyframes. For example, have the logo slightly overshoot its final size and then bounce back. This can add a bit more emphasis to the pop-up animation. Anything else? You could also add a sound effect to accompany the logo's pop-up, like a subtle chime or wish sound. This can enhance the overall impact and make the animation more engaging. All right, so that worked pretty well. Just a quick little demo, but we've got the entire history of everything we did right here. Just showing every step of that, and that worked perfect for learning new software. It can be helpful, but I wouldn't recommend using it to learn something entirely from scratch. In my experience, it gets too many things wrong to rely on as your only guide, and that can get frustrating really fast. Like, when I was having it teach me blender, it sent me on this long chain of steps that was never actually going to help me do what I needed. I ended up being a total waste of time. What worked better was learning the basics first, from a YouTube video or a course, and then use Gemini while working in the tool. At that point, you can just ask things like, what's the name of the tool that does X, or does this process make sense for this outcome? And that's a lot more useful. Beyond learning tools, there are a bunch of other great use cases for screen share. You could ask it to explain a confusing diagram or chart you come across online, you could get help while live coding, you could run a quick UX test, get critique on a landing page or website layout, or even just troubleshoot something that's not working. There are a lot of ways to use this, especially if you're already working on something and just need help as you go. The generate media tab lets you create and edit images, generate videos, create great text to speech with multiple speakers, and a pretty interesting music feature. And a particular the useful part here is the image editing section at the end, but I'll walk through each of these features. Starting with image generation, this uses Imagine 4, which is a solid model with great prompt adherence. You get a limited number of free generations for images and videos, especially videos, but for testing, it's enough. They've got a few example prompts down here. I'll click one. That looks great, nice image quality, and even a little text rendering. Let's push that further with a custom prompt. Over on the right is where you can change the aspect ratio, and then I'll add my prompt. This one's a Vogue magazine cover featuring a capybara. It's got specific text I want included. And that came back perfect. It nailed every line of text I asked for. And now let's try a more realistic style. This is a longer prompt too, but it's a runway model wearing an octopus and again, that's a really solid result. One more tiger eating at a restaurant using chopsticks. All right, nailed it again. I won't go too deep here. It works like most image generators, but it is a really solid option, especially for how well it follows prompts. I downloaded those images, so let's move over to Vio. It's the video generator. This currently uses Vio 2, which doesn't support audio generation like Vio 3 does. No sound effects or dialogue, but it still produces solid videos from image or text. I'll start by animating that runway image. Let's do woman in octopus dress walking down the runway. It's not bad. It's a little blurry on the tentacles, but good overall. Now let's do the tiger image. Also, not bad for a first try. You can do text to video as well, so I'll reuse the tiger prompt. I'll just modify it a little for video. I know it's missing the chopsticks, but it looks great. So we'll try that octopus dress prompt again, too, but this time from scratch, no image. That looks good, although I liked the one where the dress looked more like a full octopus. And if I try to send one more prompt, yep, I have hit the limit. You have four video generations per day, so not bad for free. The next to Vio is Gemini's image generation, which also includes image editing. And there's a lot of use cases for this, so I'll cover a few examples. So I'll upload an image of my dog, and I thought this was a funny one that I came across. Make a professional passport photo for this dog. Perfect. Now Zuko can travel. Alright, let's try one of me. Give this man a face tattoo that says future Pedia. Alright, neck placement. Might need to book an appointment. And I was trying removing people from a photo, and this is a particularly difficult one. And it handled that well, even with them covering most of the shot. And this type of editing works especially well on AI generated images. For example, change the octopus dress to blue. It does a great job adjusting visual details while keeping everything else intact. There are lots of ways to use this one. But moving on to the speech generation, this is a really high quality text to speech system. You can use multiple speakers, customized styles, and guide delivery. And I'll just type in some quick, pretty lame dialogue and run it. Hello, we're excited to show you our native speech capabilities. Where you can direct a voice, create realistic dialogue, and so much more. Being able to use multiple speakers makes this a very useful tool compared to many of the others. That's right. And we sound so natural, don't we? And doobitably. Alright, that sounds great. Let's do another one. I'll switch it up this time. Over here, you can choose different voices. So I'll do Atronar and Cheddar as speakers. I'll give it new style instructions and change up the dialogue. AI is getting out of hand. It just won't stop. There's way too many tools to keep track of. I need an AI to keep track of all the new ais. For real zis. Those are really solid results. That is great text to speech quality, especially just built into all this other stuff. Now I'll go back again. The last one here is Lyria real time. This lets you interactively create control and perform music in the moment. And if you look at the tabs over on the left, you'll notice when I click this, it switches over to the build tab. That means it was generated using this feature. I'll mess around really quick, then show you how you can build something like this yourself in here. So you turn up and down any of the knobs and it will guide the type of music that's being generated in close to real time. Gotta have some thrash. Throw in a hint of shoegaze and a little trip hop. Then play. I'm not hearing the thrash. I gotta turn that up. Down on a dubstep. Alright, there it is. Alright, that's interesting. Alright, so that's fun to mess with for a little bit. I'm not gonna sit here and listen to this like an album, but it's really cool that this was built entirely in AI Studio. And it is surprisingly simple to create something like this yourself. So I'll click back to the main build screen. This is where you can create mini apps and tools just by describing what you want in natural language. I'll show you how to build one from scratch in just a minute. But first let's check out some of these examples. Scroll down and you'll see a bunch of featured apps built right here. Everything from games and dictation tools to music generators, a gift maker, map planners and more. You can click into any of these to try them out, see what's possible, and maybe get some ideas. Let's try this co-drawing app. Looks like you'd sketch something and it generates based on your drawing. I'll try to draw something. Okay, there it is. It's hard to draw in here, but now I'll add the prompt. Make this look realistic. Nice, that was pretty good. Not sure about the black background. I kind of want him underwater. Okay, now that completely changed the fish, but it kept the hat. All right, let's try something a little more practical. Make this into an elegant modern logo. All right, that was pretty good considering what I gave it. Anyways, I'll jump back out. Let's try one more. This is a flash card maker. I want to learn about music history. And then it generates a full set of flashcards I can quiz myself on. That could actually be useful. So yeah, there's a ton of stuff you can do in here. I'm going to try building a game. You just type directly into the prompt box using natural language. I will go with create a game just like Pac-Man, except the main Pac-Man character is a picture of Ozzy Osborn, except as a pixelized video game representation of him. Then instead of ghosts, they're bats. That's good. Normally you'd want to think through the game a bit more before prompting, but I'm just going to send it straight like that. And from there, it jumps into planning mode, refining the concept, outlining the logic, defining the maze, game mechanics and components. Once it finishes thinking everything through, it starts writing all the code. Does that for a little while? And then it will check for errors, fix what it sees and keep going. In total, it took about four minutes to generate a fully playable game just from that one prompt. And that's still crazy to me. Let's test it. Okay, it looks like it's working. I can move around. It plays like Pac-Man. Let's eat a power pellet. Nice, the bats turn blue. It looks like eating them doesn't work yet. And I guess I only have one life. All right, no problem. I will just ask for the changes. He should have three lives. Also, the bat logic doesn't work when they are eaten while blue. They should turn into just the eyeballs and go back to the start, just like in Pac-Man. So I was going to think through how to implement that, and then it will update all the code. And edits usually run faster than the initial generation about a minute. All right, I gave that another test. It fixed some things. I need to make some more changes. I'm going to just jump through these a bit faster here. The bat eating logic only worked sometimes. It needs to work every time. Also, don't pause the game after each death ran that after that one. The eyes were just getting stuck in one spot. So we fixed that. Then I asked it to change the way the bats looked, since it looked like they have four wings or something. Then I fixed the part where Aussie would go upside down and added a tracker for the lives that are doing the devil horns rock ensemble. Then for the final touch, we needed some music. I said it should fit the game, so Aussie style metal mixed with 8-bit Pac-Man type music. Then I tested that and needed one more change to have the music switch whenever Aussie eats a power pellet and the bats turn blue. Then switch again when they turn back. And that was it. Now I'm going to do a test of the final completed game. Alright, that turned out pretty awesome. There's still tweaks I could make, but it works and is fun to play. And with these games or apps, you are able to share them, so I'll leave a link to this down in the description. I gave it a couple tries. My high score was 3140. Leave a comment if you beat that. Now I've covered all the features and settings, but that just barely scratches the service of what you can do in Google AI Studio. And again, everything I've done in here was completely free, including those things you can't do anywhere else. So I think this is a great platform to mix into your AI toolkit. And there is the caveat to it being free that I'll mention. Google will use the things you do in here to train their systems. This is the case with essentially all free AI tools, similarly with your data on any free software or website, unless it's open source and you're running it locally. I assume most people know that by now, but if I don't say it, someone always brings it up in the comments. So there you go.
