@@ -1,0 +1,122 @@
+Timestamp: 2025-08-23T14:02:47.233617
+Title: OpenAI头号叛徒，竟然是自学的AI? | 量子位
+URL: https://www.qbitai.com/2025/08/325107.html
+Status: success
+Duration: 0:00
+
+Description:
+**Summary:**
+
+**1. 结构化大纲**
+
+*   **引言：AI界的“叛徒”与颠覆者**
+    *   汤姆·布朗：Anthropic联合创始人，一位自学成才的AI天才。
+    *   背景：曾是大学线性代数只得B-的“废柴”，后裸辞自学AI，搅动大模型格局。
+    *   核心影响：带领Anthropic与前东家OpenAI展开激烈竞争，改变市场格局。
+
+*   **汤姆·布朗的蜕变之旅**
+    *   **早期职业探索：**
+        *   大学毕业后迷茫，YC初创公司、Mopub移动公司、DevOps平台创业尝试。
+        *   Grouper时期：结识OpenAI联合创始人Greg Brockman，但公司最终失败，导致职业倦怠。
+    *   **自学AI的决心与计划：**
+        *   职业倦怠后，曾犹豫是否能胜任AI研究（认为需顶级天才）。
+        *   给自己放假并赚取生活费后，制定六个月自学计划：Coursera机器学习、Kaggle项目、经典线性代数/统计学书籍、GPU远程实践。
+    *   **进入并贡献OpenAI：**
+        *   自学有成后联系Greg Brockman，以拖地心态求职，获得一对一自学指导。
+        *   早期在OpenAI未从事ML工作，后短暂跳槽Google Brain。
+        *   重回OpenAI后主导GPT-3构建，参与架构改良、规模化计算，是《Language Models are Few-Shot Learners》核心作者。
+    *   **使命感驱动创立Anthropic：**
+        *   作为OpenAI安全和规模化核心成员，因对AGI风险的使命感，与团队共同创立Anthropic。
+
+*   **Anthropic的崛起与OpenAI的挑战**
+    *   **核心理念与产品策略：**
+        *   倡导“快乐教育”模式：不追求基准测试高分，重视内部基准和“dogfooding”（工程师内部使用）。
+        *   将模型视作用户：围绕模型设计，鼓励开发者探索模型训练。
+        *   成果：Claude Code（内部工具意外大受好评），Claude 3.5 Sonnet（点燃AI编码热情，意外惊喜）。
+    *   **市场份额的颠覆性变化：**
+        *   Anthropic最初缺乏基建、发布犹豫，错失先机（Slackbot版Claude早于ChatGPT）。
+        *   ChatGPT成功后，Anthropic推出API和Claude AI，初期不温不火。
+        *   Claude 3.5 Sonnet发布后，Anthropic市场份额飙升至32%（编程领域超OpenAI两倍），OpenAI份额暴跌25%。
+    *   **与OpenAI的激烈竞争：**
+        *   积极挖角和反制OpenAI：Cursor反水、切断Windsurf的Claude API、禁用OpenAI员工访问。
+        *   产品军备竞赛：Anthropic发布Claude Opus 4.1后，OpenAI推出GPT-5（强调编码优化），Anthropic迅速扩大上下文窗口至100万tokens。
+
+*   **汤姆·布朗成功的关键与给年轻人的建议**
+    *   **成功关键：** 不按常理出牌的“野路子”自学背景，以及OpenAI的宝贵提携和经验积累。
+    *   **对年轻人的5个建议：**
+        1.  **重视社交：** 长期接触敬佩之人。
+        2.  **寻找引路人：** 找到导师或同伴共同学习。
+        3.  **展现价值：** 主动联系并明确自身计划与优势。
+        4.  **动手尝试：** 实践并从失败中学习。
+        5.  **勇于承担风险：** 挑战困难，突破自我。
+
+**2. 核心观点 (一句话)**
+
+汤姆·布朗，一位自学成才的AI专家，凭借其在OpenAI积累的经验和对AGI安全的使命感，联合创立Anthropic，并以独特的“快乐教育”理念和激进的市场策略，成功颠覆OpenAI在AI领域的霸主地位，成为行业格局重塑的关键人物。
+
+**3. 总体框架**
+
+通过非传统路径和战略竞争实现颠覆性创新。
+
+**4. Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "汤姆·布朗的蜕变之旅"
+        A["大学线性代数B-"] --> B["裸辞自学AI"];
+        B --> C["自学AI之路"];
+        C --> D["OpenAI初入"];
+        D --> E["主导GPT-3"];
+        E --> F["AGI安全使命"];
+    end
+
+    subgraph "Anthropic崛起与核心理念"
+        G["联合创立Anthropic"];
+        G --> H["Claude模型体系"];
+        H --> I["快乐教育模型开发"];
+        H --> J["Claude 3.5 Sonnet"];
+        J --> K["AI编码新霸主"];
+    end
+
+    subgraph "OpenAI与Anthropic的激烈对决"
+        L["OpenAI"];
+        L --> M["基准刷榜模式"];
+        G --> L;
+        K --> N["市场份额剧变"];
+        L --> N;
+        G --> O["对OpenAI激进竞争"];
+        O --> N;
+    end
+
+    F --> G;
+
+    N --> P["行业格局重塑"];
+
+    Q["汤姆·布朗"];
+    Q --> F;
+    Q --> G;
+
+    Q --> R["给年轻人的建议"];
+
+    style A fill:#F8D7DA,stroke:#dc3545,stroke-width:2px,color:#dc3545;
+    style B fill:#E2BBEA,stroke:#6f42c1,stroke-width:2px,color:#6f42c1;
+    style C fill:#CCE5FF,stroke:#007bff,stroke-width:2px,color:#007bff;
+    style D fill:#FFFFCC,stroke:#ffc107,stroke-width:2px,color:#ffc107;
+    style E fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style F fill:#E2BBEA,stroke:#6f42c1,stroke-width:2px,color:#6f42c1;
+    style G fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style H fill:#CCE5FF,stroke:#007bff,stroke-width:2px,color:#007bff;
+    style I fill:#CCE5FF,stroke:#007bff,stroke-width:2px,color:#007bff;
+    style J fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style K fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style L fill:#F8D7DA,stroke:#dc3545,stroke-width:2px,color:#dc3545;
+    style M fill:#CCE5FF,stroke:#007bff,stroke-width:2px,color:#007bff;
+    style N fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style O fill:#F8D7DA,stroke:#dc3545,stroke-width:2px,color:#dc3545;
+    style P fill:#D4EDDA,stroke:#28a745,stroke-width:2px,color:#28a745;
+    style Q fill:#FFFFCC,stroke:#ffc107,stroke-width:2px,color:#ffc107;
+    style R fill:#CCE5FF,stroke:#007bff,stroke-width:2px,color:#007bff;
+</Mermaid_Diagram>
+
+Content:
+OpenAI头号叛徒，竟然是自学的AI? 鹭羽 2025-08-22 16:09:43 来源： 量子位 Anthropic的“快乐教育”让OpenAI份额暴跌25% 鹭羽 发自 凹非寺 量子位 | 公众号 QbitAI 6个月自学速成AI，我成为了LLM天才❛‿˂̵✧ 成就OpenAI、 打倒OpenAI （咳咳） 创立对家Anthropic，从此化身前司的心腹大患…… 嘿！这还真就是Anthropic联合创始人 Tom Brown 自个儿分享的 AI奋斗史 。 要说传奇吧，这哥们大学还只是个 线性代数 只能拿B-的“废柴”，直到一朝顿悟裸辞自学AI，然后凭一己之力搅动整个大模型格局。 OpenAI、Google Brain、Anthropic三家公司反复横跳，现在扛着 Claude 直接对打老东家。 估计 奥特曼 半夜起来也得问问自己：一个AI“邪修”，怎么就让OpenAI大喊不妙了？ 端好小板凳，下面一起来康康他是如何让前老板破防的。 离开老东家，超越老东家 Tom Brown说，他的秘诀就是他们不 “应试” ！ 其他家的模型都是瞄准了基准测试，每天想的都是怎么刷题拿高分…… (嘶，这话说的，怎么这么像那个刚刚拿下IMO、IOI双料金牌的某O家呢) 而Anthropic则更像是 “快乐教育” ，主要看重的还是内部基准以及dogfooding，就是让自家工程师天天用Claude干活，然后奖励Claude小饼干 （doge） 。 就像 Claude Code 最初也只是一名Claude工程师为了偷懒，自己做的一款内部工具，结果阴差阳错推出后大受好评。 Claude在他们团队里不止是工具，而是 将其视作用户一样的存在 ，围绕模型设计，让其兼顾平台和用户的思维方式，鼓励开发者不止充当用户身份，也可以积极探索如何更好地训练模型为己所用，这就是他们成功的关键。 就是这样Free，造就了好模型 Claude 3.5 Sonnet ，这也是Tom Brown最引以为傲的成果。 Tom表示，其实当时他们做出的第一款产品是Slackbot版的Claude，比ChatGPT还早九个月，不过由于缺乏足够的服务器基础设施，以及不确定它可能会造成的影响，于是一犹豫，错失了发布良机。 后面因为目睹了 ChatGPT 的成功，他们才匆匆忙忙重新端上了API，随后又推出了Claude AI，不过一直都不温不火，直到Claude 3.5 Sonnet发布，才彻底点燃AI编码的热情。 Tom Brown透露，他们对Claude 3.5 Sonnet成功的惊讶，不亚于OpenAI对ChatGPT的意外，尤其是在代理式编程和执行复杂任务方面给了他们惊喜。 而恰恰就是Claude 3.5 Sonnet横空出世，让Anthropic有了和OpenAI掰手腕的底气。 忆往昔23年的时候，OpenAI还如日中天，50%的市场都被它一家攥着，结果好嘛，现在直接坠机、下降25%。 反观Anthropic，两年前还只能跟在OpenAI身后捡剩下的，现在市场里 32% 都是它家的天下，尤其是编程这块，Anthropic才真老大，超老东家两倍还多。 谁也没想到，这家由Tom Brown和一群前OpenAI员工“叛逃”创立的公司，做的第一件大事就是想将老东家斩于马下。 这里就不得不提，曾获OpenAI青睐有加的 Cursor ，奥特曼的投资一拿就立马反水Anthropic，旗下编程默认模型直接从GPT改换成Claude。 OpenAI想收购 Windsurf ，Anthropic就立马切断Windsurf的Claude API访问权限， 想站队OpenAI？那就和Claude say goodbye！ 抓包OpenAI员工用自家的Claude Code开发，直接二话不说拔了OpenAI访问Claude的网线。 只能说，Anthropic是真恨啊…… 两家公司的硝烟最近更是不藏了，这不前脚Anthropic刚发布Claude Opus 4.1，后脚OpenAI就推出了GPT-5，还专门强调在编码能力上做了优化，这目标是谁不言而喻。 Anthropic也没示弱，反手就将Claude模型的上下文窗口扩大至100万tokens，就是要压倒你GPT-5。 这下OpenAI自己养大的狼，真成心腹大患了。 那么就有人问了，OpenAI前员工离职创业成功的辣么多，为啥偏偏是Tom Brown成了奥特曼的“眼中钉”？ 嘿嘿，还得是因为这哥们是个不按常理出牌的野路子， AI全靠他自学 ，以及 亿点点OpenAI的提携 。 牛逼哄哄的自学生涯 那年他才21，刚刚从大学毕业，还有点迷茫，于是进入了朋友的YC初创公司上班。 从读书时等待被投喂的狗到社会上必须与狼群竞争，心态上的转变让他意识到，自己想要从事更宏大、更激动人心的事业。 他加入移动公司 Mopub ，想要做很多事，但苦于编程能力很差不知道怎么做，不过好在最后还是学会了如何规模化发展业务。 自己创业，想做一个更灵活的 DevOps （开发运维） 平台，结果说不清自己到底要做什么，被YC面试官一顿痛批。 后来被YC联合创始人 Paul Graham 介绍去做约会应用 Grouper ，模式就是帮三男三女在酒吧牵线约会。 也就是在这里，Tom Brown等到了一个机会，一个比他还喜欢在Grouper上约会的大佬——OpenAI联合创始人 Greg Brockman 。 据说他有整整一年，几乎每天都在公司群里，邀约其他人和他一起去Grouper约会，于是Tom成功搭上了这层人脉✅ 不过后来Grouper业务被 Tinder 打击到一落千丈，收入下滑、梦想破灭……Tom Brown彻底burnout （职业倦怠） 。 他选择离开Grouper，并尝试转型学习AI，但在Tom Brown自己的描述中，他当时其实也很犹豫： 这辈子，人类说不定能造出变革性AI，或许我能为此出点力，但AI研究必须是顶级的超级天才，而我大学线性代数只拿了B-。 而且那时候AI研究还被视作不务正业，普遍都更倾向于做能实在落地的项目，他身边的朋友也都不看好。 犹豫再三，他先给自己放了三个月的假，比如练练瑜伽、CrossFit，或者为艺术节造辆手工车，钱都花光后，终于决心六个月自学AI，目标进入当时的AI三巨头 DeepMind 、 Google Brain 或 MIRI 。 他先是和直播平台Twitch签了份短期合同，哼哧哼哧干了3个月，赚够6个月的生活费后，给自己制定了一份自学计划，包括： 学习Coursera上的机器学习课程 参加Kaggle项目 读线性代数经典教材《Linear Algebra Done Right》以及一本统计学书籍 利用YC校友积分购买一块GPU，通过SSH远程完成课程作业和项目。 6个月闭关学习 后，Tom Brown感觉神功既成，立马联系大佬Greg Brockman： 我特别想加入OpenAI，不管做什么都行，哪怕是帮你们拖地，我也愿意。 大佬也是珍惜人才，就帮他一对一制定了个自学课程，然后每个月都要求他汇报一次学习进展，然后过了几个月，就让他顺势进入OpenAI搭建 《星际争霸》 项目的训练环境。 不过据Tom所说，其实在OpenAI前九个月，他都没做过任何机器学习相关工作，后来没多久就跳槽去了 Google Brain ，专门设计ML系统的攻击与防御机制。 一年后等他回到OpenAI，他终于被委以重任，参与主导 GPT-3 构建，负责模型工程实现和部署。 GPT-3延续了GPT-2的 Transformer架构 ，在Tom Brown的带领下，完成了局部稀疏注意力、预正则化等模型设计改良，展现出优秀的少样本能力。 其中的关键突破恰恰在于规模化计算，由 Dario Amodei （Anthropic的另一位联合创始人） 发现的 Scaling Laws ，开始促使Tom Brown将工作重心转移到计算资源上。 他是OpenAI经典论文 《Language Models are Few-Shot Learners》 的主要作者之一，负责训练基础设施，将模型参数规模从原来的15亿扩展到了1700亿，可以确保LLM在无需微调的情况下，通过少量示例，就能完成多种自然语言处理任务，如翻译、问答、推理等任务。 已经在OpenAI内部如鱼得水的他，却因为使命感选择了离开，作为OpenAI里专注于安全和规模化的核心团队成员，他和整个团队一起共同创立了 Anthropic ，希望可以认真对待AGI风险。 当初刚创立时，Anthropic只有七位联合创始人，一百多个员工，资金也完全不能和OpenAI匹敌，困难重重的情况下终于打赢了这场漂亮的Claude翻身仗。 直到今天，他已经是Anthropic技术运营的中坚力量，不仅负责监督LLM训练所需的GPU资源分配，也涉及AI安全架构、资源扩张策略等多层面。 谁能想到，就是这样一个改变整个行业的风云人物，曾经对AI也一窍不通， 全靠自学，也能成才 。 给年轻人的5个建议 在访谈的最后，Tom Brown表示这是他2015年的自学计划，可能不再适用于当下的年轻人，于是他另外提出了5个职业建议： 重视社交 ：长期接触你所敬佩的人，然后随着时间推移，你会逐渐与之相似。 寻找引路人 ：找到可以一起学习的导师或同伴，会让成长更为顺畅。 展现自己的价值 ：主动联系你想一起工作的人，详细说明你的计划与优势，让别人看到你的价值。 动手尝试 ：通过实际做事并从失败中学习，比理论准备更有效。 勇于承担风险 ：大胆一点，去挑战那些困难的事情，如果成功了，你会为自己感到自豪。 所以屏幕前的你学废了么？ （doge） 参考链接： [1]https://www.businessinsider.com/anthropic-cofounder-tom-brown-career-advice-ai-2025-8 [2]https://www.youtube.com/watch?v=JdT78t1Offo [3]https://menlovc.com/perspective/2025-mid-year-llm-market-update/ [4]https://www.tomsguide.com/ai/anthropic-looks-to-beat-gpt-5-and-grok-4-with-this-one-major-upgrade 版权所有，未经授权不得以任何形式转载及使用，违者必究。 Claude OpenAI 鹭羽 只有5%AI项目在挣钱！MIT最新报告印证奥特曼警告 2025-08-22 宇树180芭蕾机器人，究竟啥水平？ 2025-08-20 00后MIT华人女生辍学创业，已融1.5个亿 2025-08-20 OpenAI总裁透露GPT-5改了推理范式，AGI实现要靠现实反馈 2025-08-19 扫码分享至朋友圈 相关阅读 OpenAI官宣464亿新融资，成为万亿独角兽！还针对马斯克xAI搞二选一 英伟达微软均参与新一轮融资 一水 2024-10-03 OpenAI OpenAI一夜颠覆AI绘画！DALL·E 3+ChatGPT强强联合，画面直接细节爆炸 网友：MidJourney订阅，取消 萧箫 2023-09-21 Midjourney OpenAI OpenAI首个蛋白质模型披露更多细节，改进诺奖研究成果，表达量提升50倍 GPT-4o蛋白质专用版 不圆 2025-08-23 GPT OpenAI 蛋白质设计 OpenAI华人VP翁荔离职：北大校友，掌管安全，最近B站分享被热议 有更多时间写代码和博客了 十三 2024-11-09 ChatGPT OpenAI 翁荔 Dota2冠军OG如何被AI碾压？OpenAI累积三年的完整论文终于放出 问耕 2019-12-14 Dota OpenAI 人工智能 强化学习 4o-mini只有8B，o1也才300B！微软论文意外曝光GPT核心机密 网友：按价格算也对得上 一水 2025-01-02 OpenAI 微软
