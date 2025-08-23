@@ -1,0 +1,126 @@
+Timestamp: 2025-08-23T13:44:14.199704
+Title: DeepSeek v3.1 - 深度研究与编程，如何？ vzTAr-ddSZQ
+URL: https://www.youtube.com/watch?v=vzTAr-ddSZQ
+Status: success
+Duration: 8:15
+
+Description:
+**一、 概述**
+本视频由小莫头发布，旨在介绍近期DeepSeek发布的新版本大模型V3.1。基于其两天内的实际应用体验，视频将对其基本情况、主要应用场景（多智能体深度研究与编程辅助）及性能表现进行分享和评估。
+
+**二、 DeepSeek V3.1模型基本情况**
+*   **发布主体:** DeepSeek
+*   **版本:** V3.1
+*   **核心参数:**
+    *   模型尺寸: 671B
+    *   上下文窗口: 128K
+*   **API模式区分:**
+    *   `chat`: 对应V3.1的非SQL模式，用于通用对话。
+    *   `responder`: 对应V3.1的SQL模式，可能用于更结构化或特定查询。
+*   **官方支持:** 官方API已切换至V3.1版本。
+
+**三、 应用场景与性能评估**
+
+1.  **多智能体深度研究（基于Chatlama平台）**
+    *   **目标:** 利用DeepSeek V3.1驱动多智能体执行深度研究任务，评估其能力。
+    *   **平台集成:** 在Chatlama中集成了LangChain的Deep Agent开发包，赋予其深度研究能力。
+    *   **工具调用:** 配置了Farcrow（网络数据抓取）和Tablet（搜索）两个关键工具。
+    *   **测试任务:** 指令AI扮演专业研究员，研究DeepSeek V3.1模型并生成报告。
+    *   **执行表现:**
+        *   **亮点:** 模型成功制定了工作计划，并能良好地驱动工具调用（Function Call支持良好），证明其多智能体任务执行能力。
+        *   **局限:** 在多轮信息检索和上下文处理后，出现“上下文窗口不足”的错误，导致任务中断。
+        *   **结论:** 尽管具备工具调用能力，但128K的上下文窗口在极其复杂、多轮的深度研究任务中可能成为瓶颈。
+        *   **未来优化:** 计划优化Chatlama在多任务执行中对上下文窗口的处理。
+
+2.  **编程辅助（基于Codelama平台）**
+    *   **目标:** 评估DeepSeek V3.1作为Code Llama替代品在日常编程辅助方面的效果。
+    *   **环境配置:** 通过设置环境变量（如DeepSeek API Key和Base URL）将DeepSeek V3.1集成到编程环境。
+    *   **测试任务:** 修复Chatlama中智能体聊天页面无法正确识别默认模型配置的问题。
+    *   **执行表现:**
+        *   **亮点:** 模型成功理解问题，制定修复计划，诊断出代码问题所在，并提供了有效的代码调整方案。
+        *   **结果:** 经手动测试，问题成功修复。
+        *   **结论:** DeepSeek V3.1能够理解现有代码库，胜任常规的辅助编程工作。
+
+**四、 核心结论**
+
+DeepSeek V3.1在工具调用和常规编程辅助方面表现出色，但在处理需要超大上下文的复杂多智能体深度研究任务时，其128K上下文窗口可能不足。
+
+**五、 整体框架**
+
+DeepSeek V3.1模型能力评估与应用场景分析。
+
+<Mermaid_Diagram>
+graph LR
+    A["DeepSeek V3.1 模型发布"] --> B("模型基础信息");
+    B --> B1("参数: 671B");
+    B --> B2("上下文窗口: 128K");
+    B --> B3("模式");
+
+    B3 --> B3_1("非SQL模式 (chat)");
+    B3 --> B3_2("SQL模式 (responder)");
+
+    A --> C("应用场景评估");
+
+    subgraph "场景一: 多智能体深度研究 (Chatlama)"
+        C --> D("平台: Chatlama");
+        D --> D1("集成: LangChain Deep Agent");
+        D1 --> D2("目标: 深度研究任务");
+        D2 --> D3("工具: Farcrow (网络抓取), Tablet (搜索)");
+        D3 --> D4("任务: 研究DeepSeek V3.1, 生成报告");
+        D4 --> D5("执行结果");
+        D5 --> D5_1("成功: 制定计划, 工具调用良好");
+        D5_1 --> D4;
+        D5 --> D5_2("问题: '上下文窗口不足' 错误");
+        D5_2 --> D5_3("根源: 128K上下文窗口限制");
+        D5_3 --> F2;
+    end
+
+    subgraph "场景二: 编程辅助 (Codelama)"
+        C --> E("平台: Codelama");
+        E --> E1("定位: Code Llama替代方案");
+        E1 --> E2("配置: 环境变量 (API Key, Base URL)");
+        E2 --> E3("任务: 修复Chatlama模型识别问题");
+        E3 --> E4("执行结果");
+        E4 --> E4_1("成功: 诊断问题, 调整代码, 问题修复");
+        E4_1 --> E4_2("结论: 胜任常规开发辅助");
+        E4_2 --> F1;
+    end
+
+    C --> F("整体结论");
+    F --> F1("优点: 工具调用良好, 编程辅助有效");
+    F --> F2("局限: 128K上下文窗口在复杂深度研究中可能不足");
+
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style B1 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style B3 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style B3_1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style B3_2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    style D fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style D1 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style D5 fill:#FFDDC1,stroke:#333,stroke-width:1px,color:#333;
+    style D5_1 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style D5_2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style D5_3 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+
+    style E fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style E3 fill:#FDF5E6,stroke:#333,stroke-width:1px,color:#333;
+    style E4 fill:#FFDDC1,stroke:#333,stroke-width:1px,color:#333;
+    style E4_1 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E4_2 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+
+    style F fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style F1 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+大家好 我是小莫头欢迎大家来到我的视频频道近期deepsec发布了新版本的大模型V3.1这也是久围的一个版本更新在过去两天我也有都用到这款模型本期视频我们就来对其做一番简单的介绍并且分享我在过去两天主要的应用场景看看在这些不同应用场景中它的表现究竟如何不知道大家有没有开始使用呢欢迎在评论区给我留言首先还是介绍一下我主要使用的两个应用场景第一个是在加拿莫的应用开发中最近我集中的deep agent使应用具备了基本的深度研究能力我希望能够利用deepsec这种更为物美价量的模型来看看是否能在多智能体深度研究任务的驱动上蛮足我的需求另一方面是在边层方面cork coat每天的额度用完以后我会尝试切换的deepsec看看它是否能够正常的如果与其般的驱动边层方面的工作那现在就开始找今天的分享我们首先来到hockingface来了解一下deepsecv3.1模型的基本情况其实与绝大多数主流模型都没有太大差异了在目前新模型的发布中我们无非关注的就是模型的尺寸它的上下温tronker以及主要善于执行的任务那么模型的参数情况是671B我想大家可能比较关心的还是上下温tronker 128Kv3.1模型目前有两种模式一种是非sql模式另一种是sql模式来看看官方文档吧目前官方的API已经将模型切换到了v3.1还是传统的模型命名和区分方式一个是chat一个是resignerchat就对应了v3.1的非sql模式resigner是3.1的sql模式那模型的基本情况就是这样接下来分享一下我在过去两天尝试的一些应用场景首先要介绍的就是在aas正能体聊天方面我现在分享的就是chat orama最近我将lanchon开源的dip agent这个开发包呢提升到了chat orama现在我们在chat orama可以通过两天的方式取动大模型或正能体进行具备深度研究能力的任务执行感兴趣的朋友可以回到我上一期的视频分享来了解如何提升dip agent现在我们来看看dipsyc是否能够帮助我们完成任务的执行它的驱动能力究竟怎么样在上一次的视频分享中我用的是cloce orme4那现在我们来看看配置首先我在这里起用了两个mcp服气一个是firecrow一个是tablet这时都咱们的大模型在工具使用上有了两个非常重要的工具一个是网络数据的抓取另一个是搜索能力现在我们回到adjence也就是正能体验面在这里选择模型我取向默认的openei的模型选择聊天模型大家可以选择sco模式的模型来看看它的任务执行上有什么区别我们在这里也是就通过chatfistco模式的来指令还是咱们过去使用的默认的指令希望AI或adjent扳演一个专业的研究员的角色帮助我研究一个主题并且声称一个报告现在我就给它一个简单的分析用分析dipsycv3.1模型看看它究竟能给咱们总结出一些什么样的内容现在它整理出了一个工作任务或计划列表来看看它计划列表吧这里面包含了一系列需要完成的任务比如搜索dipsycv3.1新模型的最新信息和官方发布内容然后对技术规格性能指标做分析等等我们稍时等待看它的任务执行完成情况如何到这里执行已经似乎卡住我们来看看后台的情况在这里大家应该看到这么一个错在dipsycv3.1.1.1开任小工具包的支持下虽然咱们能进行深度的研究但是挺依赖模型的上下文窗口目前dipsycv1.2.8K在目前任务的执行中就显得有些不够错误很明显是上下文窗口不足以支撑在多轮的信息简左后提供的上下文信息这也是近期我会尝试去优化改进的方面真去能够让Channel Lama能够在多任务的执行上更好的对上下文窗口进行处理咱们可以回到页面上看看他最近做了些什么在这个任务列表中其实列出了还是蛮多任务的其实任务每一步的执行大概率会依赖于像FarcrowTablet的搜索基于搜索到的信息在做后续的处理那么至少我们从这一次的对话或任务执行来讲dipsycv3.2确实能够驱动这种多智能体的英文的执行或者任务的执行工具调用是完全没有问题的这也说明了模型对于 function code或者工具调用是支持的而且知识情况是良好的那这是咱们分享的一方面的应用有新学朋友给大家尝试一下另一方面我要介绍的是dipsyc如何形成的Clocode配置几个环境编辆就好那最几个环境编辆呢我们甚至可以直接复制对端面丽讲起沾贴到明年行情之行在这里需要配置一个dipsycvpark首先我来声明这么一个编辆接下来在环境编辆的配置中马上也会用的接下来这样这几个环境编辆呢配置到明年行我们来确认一下奥斯托克就好看起来呢配置正常没有问题我们来试试code配置一些正常Base urv 被指向了dipsyc.com slash and swapick现在呢我们就开始使用它的做些编程工作看看效果吧在calc.alama这里我有一个小小的buck没有给了clocode看看它的处理能力如何在设置这里我将默认模型的选成了dipsycchat但当我回到a准厌面进行只能体谅天使模型依然是openei似乎它并没有识别到我在配置里面设置的默认模型那我看看gucode code让dipsyc在帮我解决这个问题它是否能做到我给它一个任务在这个a准聊天夜面上默认模型的没有识别模型选得且没有帮助自动讲迟选中但是在聊天夜面呢这个默认模型的配置哪是工作的模型选择借能够正确的识别并列出了我希望它帮助我修复这个问题现在任务已经执行完毕我们来看看它的整个工作流程首先制定计划表然后呢主义完成任务整个过程与点形的使用clocode基于clode模型呢非常的相似在这里对问题呢做了整段并且定位到了问题所在对于代码呢做了调整我们呢并没有要求它来进行后续的更加严格的像tap script方面检查等等也没有做代表测试我们直接通过手动测试来看看它的修改是否生效刷新一下a净夜面就好我们在配置里面设置的是dipsycchart作为默认模型只要在下方的模型列表中能够看到是一个模型被选中就表示问题已经修复看起来还不错算这是个简单的任务但是呢在工作流程上在代码的修改上我觉得它从理解目前这种规模代码仓库以及进行一些常规的开发工作呢还是可以深任的那大家在日常的开发中是否有用到dipsycchartv3的进行一些bf辅助编程呢那辅助编程效果究竟如何呢也欢迎大家在评论区给我留言我们今天的分享就到这里感谢大家收看我们下次视频分享再见同学们拜拜
