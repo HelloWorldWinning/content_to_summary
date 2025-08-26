@@ -1,0 +1,176 @@
+Timestamp: 2025-08-26T15:19:44.150244
+Title: Anthropic：对话Claude Code产品经理 BV13yeizZEyQ
+URL: https://www.bilibili.com/video/BV13yeizZEyQ?spm_id_from=333.1007.tianma.20-3-61.click
+Status: success
+Duration: 14:03
+
+Description:
+## Cloud Code 核心理念与实践总结
+
+### 一、 Cloud Code 的开发与迭代流程
+
+Cloud Code 团队由产品导向的工程师组成，其开发过程主要采用“自下而上”的方式：
+
+1.  **快速原型与内部测试：** 工程师们利用 Cloud Code 本身进行快速原型开发，而非仅仅撰写文档。
+2.  **内部发布与反馈：** 完成原型后，立即将其发布给 Anthropic 内部员工（称为“Ants”）进行测试。
+3.  **基于反馈的决策：**
+    *   如果内部反响积极，则被视为外部用户也会喜欢的强烈信号，并进行外部发布。
+    *   如果内部使用率不高，则团队会回到“绘图板”阶段进行调整。
+4.  **“产品狗粮”文化：** 这种高度依赖内部员工（Ants）亲自使用产品的“狗粮”机制是 Cloud Code 成功的关键，它使得产品能够根据实际工作流进行迭代和优化。
+
+### 二、 Cloud Code 的设计理念与核心特性
+
+Cloud Code 的设计旨在最大化开发者的灵活性和易用性：
+
+1.  **定制化与终端的灵活性：** 产品完全支持定制化，开发者可以根据自己的需求进行修改。
+2.  **熟悉的终端环境：** 作为一个终端工具，Cloud Code 利用了开发者对终端的熟悉度，使得新功能的上手和使用变得非常直接。
+3.  **“Meet Developers Where They Are”：** 例如，通过 Hook 功能，开发者只需编写熟悉的脚本即可为 Cloud Code 事件添加确定性行为，无需学习新框架。
+
+### 三、 用户增长与使用模式
+
+Cloud Code 的快速增长伴随着多样化的使用场景：
+
+1.  **无缝上手体验：** 通过简单的 `npm install` 即可立即使用，无需复杂配置。
+2.  **不同用户群体的差异化使用：**
+    *   **小型公司/个人开发者：** 倾向于自主运行，使用“自动接受模式”（Auto Accept mode）让 Cloud Code 自行进行修改。他们还开创了“多重实例”（multi-cladding）的使用模式，同时运行多个 Cloud Code 会话来管理不同任务或 Git 工作区。
+    *   **大型企业：** 更喜欢使用“计划模式”（Plan Mode），让 Cloud Code 先探索代码库、理解架构，然后制定工程计划，这对于复杂任务尤其有效。
+
+### 四、 意外的用户行为与产品路线图调整
+
+用户实际使用中出现了一些意料之外但极具价值的模式：
+
+1.  **“多重实例”（Multi-cladding）的普及：** 最初被认为是小众“高级用户功能”，但实际上已成为常用模式，例如一个实例用于提问不修改代码，另一个用于编辑代码。
+2.  **定制化专项代理：** 用户根据需求构建了 SRE 代理、安全代理、事件响应代理等。这促使团队意识到集成的重要性，并鼓励用户投入更多时间配置 CLI 工具和远程 MCP 服务器。
+
+### 五、 Cloud Code 的定制化方法
+
+Cloud Code 提供了多种强大的定制化途径：
+
+1.  **Cloud MD 文件（记忆）：** 这是告诉 Cloud Code 团队目标、代码架构、注意事项和最佳实践的最佳场所，投资此文件能显著提升输出质量。
+2.  **自定义斜杠命令：** 将常用提示语封装为自定义命令，并可与团队共享。
+3.  **自定义钩子（Hooks）：** 在特定事件前后执行脚本，如提交前运行 lint 检查、完成任务后发送 Slack 通知。
+
+### 六、 Cloud Code SDK：通用代理的构建基石
+
+Cloud Code SDK 是构建通用代理的强大工具：
+
+1.  **核心能力：** 提供了代理的核心构建模块，包括自带系统提示、自定义工具，并处理用户交互、工具调用执行、权限系统和底层 API 交互（如退避机制和高效缓存）。
+2.  **快速原型与应用案例：** 可以在约 30 分钟内构建出强大的代理原型。已有的应用包括开源的 Cloud Code GitHub 集成、安全/SRE/事件响应代理（编码领域），以及法律/合规代理（非编码领域）。
+3.  **未来展望：** SDK 将继续投资成为构建代理的最佳工具，Cloud Code 的所有优秀功能都将开箱即用，并高度可定制，允许用户自由选择和替换，以适应各种领域需求。
+
+### 七、 使用 Cloud Code 的最佳实践
+
+为了最大化 Cloud Code 的效用，建议遵循以下实践：
+
+1.  **清晰沟通目标：** 像与人类工程师合作一样，明确传达任务目的、评估标准和设计约束。
+2.  **通过提问进行调试：** 当 Cloud Code 的行为出乎意料时，可以直接询问它“为什么”会这样做，以理解其决策过程并进行调试。
+
+---
+
+### 核心结论
+
+Cloud Code 通过其产品导向的敏捷开发流程、高度可定制的终端体验以及强大的 SDK，赋能开发者快速构建和应用智能代理，从而革新了开发工作流，并为跨领域的通用代理创建奠定了基础。
+
+---
+
+### 整体框架
+
+**开发者中心化的 AI 代理生态系统：从敏捷开发到广阔应用**
+
+---
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "开发与迭代过程"
+        A["Cloud Code 团队"] --> B["快速原型"]
+        B --> C{"内部发布给 'Ants'"}
+        C -- "积极反馈" --> D["外部发布"]
+        C -- "需要调整" --> E["重新设计"]
+        A --> C
+        F["产品导向的工程师"] -- "自下而上构建" --> A
+        style A fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#333;
+        style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+        style C fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+        style D fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+        style E fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+        style F fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    end
+
+    subgraph "Cloud Code 核心"
+        G["Cloud Code (终端工具)"]
+        H["灵活定制化设计"] --> G
+        I["熟悉的终端环境"] --> G
+        style G fill:#87CEFA,stroke:#333,stroke-width:2px,color:#333;
+        style H fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+        style I fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    end
+
+    subgraph "用户行为与定制化"
+        J["开发者 (用户)"]
+        J --> K["运行 Cloud Code"]
+        K -- "小型公司/个人" --> L["自动接受模式"]
+        K -- "小型公司/个人" --> M["多重实例 (Multi-cladding)"]
+        K -- "大型企业" --> N["计划模式 (Plan Mode)"]
+        J --> O["定制化 Cloud Code"]
+        O --> P["Cloud MD 文件 (记忆)"]
+        O --> Q["自定义斜杠命令"]
+        O --> R["自定义钩子 (Hooks)"]
+        S["SRE/安全/事件响应代理"] -- "通过定制化产生" --> O
+        style J fill:#DDA0DD,stroke:#333,stroke-width:2px,color:#333;
+        style K fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+        style L fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+        style M fill:#FFA07A,stroke:#333,stroke-width:1px,color:#333;
+        style N fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+        style O fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+        style P fill:#F5DEB3,stroke:#333,stroke-width:1px,color:#333;
+        style Q fill:#F5DEB3,stroke:#333,stroke-width:1px,color:#333;
+        style R fill:#F5DEB3,stroke:#333,stroke-width:1px,color:#333;
+        style S fill:#C0C0C0,stroke:#333,stroke-width:1px,color:#333;
+    end
+
+    subgraph "Cloud Code SDK"
+        T["Cloud Code SDK"]
+        T --> U["核心代理构建模块"]
+        T --> V["预置权限系统"]
+        T --> W["API 交互处理"]
+        U --> X["系统提示"]
+        U --> Y["自定义工具"]
+        Z["通用代理"] -- "通过 SDK 构建" --> T
+        AA["Cloud Code on GitHub (示例)"] -- "基于 SDK" --> Z
+        AB["领域特定代理 (法律/合规)"] -- "通过 SDK 扩展" --> Z
+        AC["所有 Cloud Code 功能"] -- "可定制/删除" --> T
+        style T fill:#98FB98,stroke:#333,stroke-width:2px,color:#333;
+        style U fill:#ADFF2F,stroke:#333,stroke-width:1px,color:#333;
+        style V fill:#ADFF2F,stroke:#333,stroke-width:1px,color:#333;
+        style W fill:#ADFF2F,stroke:#333,stroke-width:1px,color:#333;
+        style X fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+        style Y fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+        style Z fill:#00FA9A,stroke:#333,stroke-width:2px,color:#333;
+        style AA fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+        style AB fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+        style AC fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    end
+
+    subgraph "最佳实践"
+        AD["清晰沟通目标"] --> AE["优化 Cloud Code 输出"]
+        AF["询问 '为什么'"] --> AG["调试 Cloud Code"]
+        J --> AD
+        J --> AF
+        style AD fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+        style AE fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+        style AF fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+        style AG fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    end
+
+    G -- "被使用" --> K
+    G -- "通过定制化" --> O
+    T -- "为核心" --> G
+    O -- "提升质量" --> K
+    D -- "产品" --> G
+    Z -- "驱动" --> G
+    AD -- "指导" --> G
+    AF -- "用于" --> G
+</Mermaid_Diagram>
+
+Content:
+ These developers tend to like to run multiple quad sessions at once. They've started calling this multi-cladding. So you might see sessions where people have like six clouds open on their computer at the same time. Hey, I'm Alex. I lead Cloud Relations here at Anthropic. Today, we're going to be talking about Cloud Code and I'm joined by my colleague, Cat. Hey, I'm Cat. I'm the Product Manager for Cloud Code. Cat, I want to kick this off just talking about the insane rate of shipping in Cloud Code. Feels like literally every time I open it up in my terminal, there's a new product or a new feature, something for me to use. Can you walk me through what the process looks like of the team going from an idea to actually shipping something to end users? Yeah, so the Cloud Code team is full of very product-minded engineers. And a lot of these features are just built bottoms up. It's like, you're a developer and you really wish you had this thing and then you build it for yourself. And the way that our process works is instead of writing a doc, it's so fast to use Cloud Code to prototype a feature that most of the time, people just prototype the feature and then they ship it internally to ants. And if the reception is really positive, then that's a very strong signal that the external world will like it too. And that's actually our bar for shipping it externally. And then, of course, there's always features that aren't exactly right, that needs some tweaking. And if we feel like, OK, ants aren't really using it that much, then we just go back to the drawing board and we say, OK, what else could we change about this? And when we say ants, are we man-anthropic employees? Yes, yes. That's really fascinating. I've never seen a product have as strong of a dog-fooding loop as Cloud Code. Do you think that's something we purposely did or that just kind of naturally arise from the product itself? It is quite intentional. And it's also a really important reason why Cloud Code works so well. Because it's so easy to prototype features on Cloud Code, we do push people to prototype as much as possible. But it's hard to reason about exactly how a developer will use a tool because developers are so heterogeneous in their workflows. So oftentimes, even if you theoretically know you want to do something, even if you theoretically know that you want to build an IDE integration, there's still a range of potential ways you could go about it. And all of them prototyping is the only way that you can really feel how the product will actually be in your workflow. So, yeah, it's through the process of dog-fooding that we decide what version of a feature we decide to ship. I see. And there's something about almost the flexibility, but also the constraints of the terminal too that allows for easy addition of new features, which I've noticed where it's like because we have the primitives built out of slash commands and things, it's easy to add another one on top of that. Yeah, it's totally designed to be customizable. And because so many developers are familiar with the terminal, it makes new feature onboarding super straightforward. Because, for example, for a feature like Hooks, which lets you add a bit of determinism around Cloud Code events, because everyone, every developer knows how to write a script. And really, at the end of the day, all Hook is a script. And so you don't need to learn a new technology to customize Cloud Code. You write this script that you already know how to do, and then you add it to one of the Cloud Code events, and now you have some determinism. We're really trying to meet customers or developers where they are, I guess, with this tool. Yeah. Switching gears slightly. Alongside this insane rate of shipping is also the insane growth rate of Cloud Code with developers everywhere. Can you walk me through what that's been like to kind of be on this rocket ship? And how are we seeing various developers, whether it's at startups or individuals, or even large enterprises, use Cloud? So one of the magical things about Cloud Code is that the onboarding is so smooth. After you do the MPM install, Cloud Code kind of just works out of the box without any configuration. And this is true whether you're an indie developer through to, if you're an engineer at a Fortune 500. I think this is the magic behind Cloud Code, because it has access to all of the local tools and files that you have. You have this very clear mental model for what Cloud Code is capable of. Would you see different use case patterns though between smaller companies and larger ones? We find that engineers at smaller companies tend to run Cloud more autonomously, using things like Auto Accept mode, which lets Cloud make edits by itself without approval of each one. We also find that these developers tend to like to run multiple Cloud sessions at once. And they've started calling this multi-cladding. So you might see sessions where people have like six Clods open on their computer at the same time. Maybe each of them are in a different Git workspace or in a different coffee of the Git repo. And they're just like managing each of them. Whenever anyone stops and asks for feedback, they'll jump in there and then send it off and let it continue running. And on the other end of the spectrum for larger companies, we find that engineers really like to use Plan Mode. So Plan Mode is a way for developers to tell Cloud Code to take a second, explore the code base, understand the architecture, and create an engineering plan before actually jumping into the code itself. And so we find that this is really useful for harder tasks and more complex changes. So going back to multi-cladding just because I think that's a fascinating concept. I'm sure we kind of imagined folks wanting to do things like that, but maybe it was somewhat surprising. Is there other things in that domain of like, oh, wow, this is a usage pattern that we really did not expect that have kind of popped up organically and we've shifted our roadmap around a little bit? Yeah, I think multi-cladding is the biggest one because this is something that we thought was just a power user feature that like a few people would want to do. But in fact, this is actually a really common way in which people use Cloud. And so for example, they might have one Cloud instance where they only ask questions, and this one doesn't edit code. That way they can have another Cloud instance in the same repo that does edit code, and these two don't interfere with each other. Other things that we've seen are people really like to customize Cloud Code to handle specialized tasks. So we've seen people build like SRE agents on Cloud Code, security agents, incident response agents. And what that made us realize is that integrations are so important for making sure Cloud Code works well. And so we've been encouraging people to spend more time to tell Cloud Code about, hey, these are the CLI tools we commonly use, or to set up remote MCP servers to get access to logs and ticket management software. When these engineers are customizing Cloud Code, does that mean they're creating sub-agents, or are they creating markdown files like Cloud MD files? How exactly are they creating these different types of agents? Yeah, I think the most common ways that we've seen people customize is by investing a lot into the Cloud MD file. So the Cloud MD file is our concept of memory. And so it's the best place for you to tell Cloud Code about what your team's goals are, how the code is architected, any gotchas in the code base, any best practices. And investing in Cloud MD, we've heard dramatically improves the quality of the output. The other way that people customize Cloud Code is by adding custom slash commands. So if there's a prompt that you're always typing, you can add that into the custom slash command, and you can also check these in so that you share them with the rest of your team. And then you can also add custom hooks. So if, for example, you want Cloud Code to run lints before it makes a commit, this is something that's great for a hook. If you want Cloud Code to send you a Slack notification every time it's done working, this is actually the original inspiration for making hooks. And so these are all customizations that people are building today. Tell me more about what is the Cloud Code SDK? The Cloud Code SDK is a great way to build general agents. Cloud Code SDK gives you access to all of the core building blocks of an agent, including you can bring your own system prompts, you can bring your own custom tools. And what you get from the SDK is a core agentic loop where we handle the user turns and we handle executing the tool calls for you. You get to use our existing permission system so that you don't need to build one from scratch. And we also handle interacting with the underlying API. So we make sure that we have back off if there's any API errors. We very aggressively prompt cache to make sure that your requests are token efficient. If you're prototyping, building an agent from scratch, if you use the Cloud Code SDK, you can get up and running with something pretty powerful within like 30 minutes or so. We've been seeing people build really cool things with it. We open sourced our Cloud Code on GitHub integration, which is completely built on the SDK. And we've seen people build security agents on it, SRE agents, incident response agents. And these are just within the coding domain. Out of the coding, we've seen people prototype legal agents, compliance agents. This is very much intended to be a general SDK for all your agent needs. The SDK is pretty amazing to me. I feel like we've lived in the single request API world for so long. And now we're moving to like a next level abstraction almost where we're going to handle all the nitty-gritty of the things you mentioned. Where is the SDK headed? What's next there? We're really excited about the SDK as the next way to unlock another generation of agents. We're investing very heavily in making sure SDK is best in class for building agents. So all of the nice features that you have in Cloud Code will be available out of the box in the SDK. And you can pick and choose which ones you want to keep. So for example, if you want your agent to be able to have a to-do list, great. You have the to-do list tool out of the box. If you don't want that, it's really easy to just delete that tool. If your agent needs to edit files, for example, to update its memory, you get that out of the box. And if you decide, okay, mine won't edit files or edit files in a different way, you can just bring your own implementation. Okay, so it's extremely customizable. Basically, general purpose in the sense that you could swap out the system problem with the tools for your own implementations. And they just nicely slot in to whatever thing you're building for, whether it's in an entirely different domain than code. Yeah, totally. I'm really excited to see what people hack on top of this. I think like, especially for people who are just trying to prototype an agent, this is like, I think by far the way, fastest way to get started. Like, we really spent almost a year perfecting this harness. And this is the same harness that Cloud Code runs on. And so if you want to just jump right into the specific integrations that your agent needs and you want to jump right into like just working on the system prompt to share context about the promise phase of the agent, and you don't want to deal with the agent loop, this is like the best way to circumvent all the general purpose harness and just add your like, special sauce to it. All right, well, you heard it here, you got to go build on the SDK. Before we wrap up here, I'm really curious to hear your own tips for how you use Cloud Code. And what are some best practices we can share with developers? When you work with Cloud Code or any agentic tool, I think the most important thing is to clearly communicate what your goals are to the tool. I think a lot of people think that prompting is this like magical thing, but it really isn't. It's very much about, okay, did I clearly articulate what my purpose is, like what my purpose with this task is, how I'm evaluating the output of the task, any constraints in the design system. And I think usually when you can clearly communicate these things, Cloud Code will either be able to do them or just tell you that like, okay, this thing like I'm not able to do because A, B, C, and you want to try like D, F instead. So it's all about the communication just as if you're working with another engineer. Yeah, totally. And another thing is if you notice that Cloud Code did something weird, you can actually just ask it why I wanted to do that. And it might tell you something like, okay, there was something in the Cloud MD that said this, or I read something in this file that gave me this like impression. And then that way you can actually use like talking to Cloud as a way to debug. It doesn't always work, but I think it's definitely worth trying and it's like a common technique that we use. Use Cloud Code to debug Cloud Code. Yeah, yeah. Like the same way that you, when working with a human, if they say something that you didn't expect, you might be like, oh, interesting. Like, what gave you that impression? Or why did you think this? And I think you can do the same with the agents too. Yeah, it's fascinating. Well, Kat, this has been great. Really, we appreciate the time. Thanks for having me.
