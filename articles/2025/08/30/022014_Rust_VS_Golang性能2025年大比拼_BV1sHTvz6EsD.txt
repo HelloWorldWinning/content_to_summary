@@ -1,0 +1,155 @@
+Timestamp: 2025-08-30T02:20:14.351229
+Title: Rust VS Golang性能2025年大比拼 BV1sHTvz6EsD
+URL: https://b23.tv/lLz8ksg
+Status: success
+Duration: 3:30
+
+Description:
+### 核心思想提炼与总结
+
+本视频旨在对比Rust和Go在Web应用服务中的性能表现，尤其突出Rust使用Hyper库（基于Tokyo异步运行时）的优势。通过在AWS真实环境中进行严格的基准测试，衡量了吞吐量、延迟、CPU使用率和内存使用率等关键指标。测试结果明确显示，Rust（Hyper/Tokyo）在所有关键性能方面均大幅领先Go，展现出卓越的速度和效率，成为迄今测试过的最快、最节省资源的Web应用框架。
+
+---
+
+### 总结大纲
+
+**一、引言与测试目标**
+*   **目标：** 对比Rust与Go在Web应用中的性能，重点关注Rust的Hyper库（基于Tokyo异步运行时）。
+*   **背景：** Hyper被认为是“最美丽的HTP服务器库”，Tokyo是事实上的异步运行时标准，Axum等框架均基于Hyper和Tokyo构建。
+*   **宣称：** Hyper是作者过去一年测试过的所有语言中最快的框架。
+
+**二、测试环境与方法**
+*   **基础设施：** AWS M7A large EC2实例（运行应用程序），EKS集群（运行客户端和监控代理）。
+*   **应用部署：** 使用system D服务文件运行应用程序。
+*   **测试时长：** 约两小时，结果经过压缩编辑。
+*   **关键衡量指标：**
+    *   P90百分位延迟（Latency）
+    *   吞吐量（Throughput，每秒请求数 RPS）
+    *   CPU使用率
+    *   内存使用率（本次视频中认为非核心指标）
+
+**三、测试结果详情**
+*   **吞吐量 (RPS)：**
+    *   Rust：表现最佳，达到近16万次/秒，仅使用两个CPU核心。
+    *   Go：达到与之前视频相同的水平，但远低于Rust。
+    *   比较：Rust显著领先所有其他已测试应用，Zig是唯一接近者。
+*   **延迟 (P90)：**
+    *   Rust：表现优于Go。
+*   **CPU使用率：**
+    *   Rust：更高效，CPU消耗低于Go应用程序。
+*   **内存使用率：**
+    *   本次测试中未被视为重要指标。
+
+**四、结论与未来展望**
+*   **核心结论：** Rust（基于Hyper/Tokyo）是作者迄今测试过的最快、最高效的Web应用。
+*   **作者呼吁：** 寻找能够与Rust竞争的语言或运行时，并欢迎社区协助开发相关Web服务器。
+*   **其他基准测试：** 提及了Postgres vs MySQL、Redis vs Memcache等其他可能感兴趣的测试。
+
+---
+
+### 核心结论 (One Sentence)
+
+基于Hyper和Tokyo异步运行时的Rust在Web应用服务中展现出无与伦比的性能和效率，显著超越了Go和其他已测试的语言。
+
+---
+
+### Overarching Framework (内容总框架)
+
+**Web服务器技术性能对比基准测试**
+
+---
+
+### Mermaid Conceptual Map
+
+<Mermaid_Diagram>
+graph LR
+    A["Web服务器性能对比基准测试"]
+
+    subgraph "被测技术"
+        B["Rust (Hyper + Tokyo)"]
+        C["Go"]
+        D["(Axum 基于 Hyper/Tokyo)"]
+    end
+
+    subgraph "测试环境与方法"
+        E["AWS M7A Large EC2 实例"]
+        F["System D 服务部署"]
+        G["EKS 集群 (客户端/监控)"]
+        H["测试时长: 约2小时"]
+    end
+
+    subgraph "关键性能指标"
+        I["吞吐量 (Requests/秒)"]
+        J["延迟 (P90 百分位)"]
+        K["CPU 使用率"]
+        L["内存使用率"]
+    end
+
+    subgraph "测试结果概览"
+        M["Rust 吞吐量: 领先 (约16万 RPS / 2核)"]
+        N["Go 吞吐量: 良好 (与前次持平)"]
+        O["Rust 延迟: 优于 Go"]
+        P["Rust CPU: 更高效"]
+        Q["内存使用: 本次非核心关注"]
+    end
+
+    subgraph "最终结论与展望"
+        R["核心结论: Rust 迄今最快/最效率应用"]
+        S["呼吁: 寻找可竞争语言/运行时"]
+    end
+
+    A --> B
+    A --> C
+    A --> E
+    B --> D
+    E --> F
+    E --> G
+    E --> H
+
+    B --> I
+    B --> J
+    B --> K
+    B --> L
+
+    C --> I
+    C --> J
+    C --> K
+    C --> L
+
+    I --> M
+    I --> N
+    J --> O
+    K --> P
+    L --> Q
+
+    M --> R
+    N --> R
+    O --> R
+    P --> R
+    Q --> R
+
+    R --> S
+
+    style A fill:#D8BFD8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#87CEEB,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#C0C0C0,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#FF4500,stroke:#FFF,stroke-width:2px,color:#FFF;
+    style S fill:#FFA500,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+ In this video, we'll compare Rust with Go, but this time using the most beautiful HTP server library, Hyper, which is based on the Tokyo asynchronous runtime if you want to build any web application. Tokyo runtime has become the fact that standard, and many frameworks, such as Axum, actually built on Hyper and Tokyo. Hyper is in fact the fastest framework I've tested across all languages over the last year. I run all my tests on AdVES, and in this video, I use exactly the same infrastructure as in the previous one. I use M7A large, easy to instances, and run applications using system D service files, while my clients and monitoring agents run on EKS cluster. Alright, let's go ahead and run the test. It took around two hours, and I compressed it to just a few minutes while editing, so we measure latency using P90 percentile, throughput which is requests per second, as well as CPU usage and memory. This is the memory usage of the entire VM, so it might not be as accurate as when I measured from the containers running in Kubernetes. As always, let me run this test for one more minute, and we'll go over each graph one by one at the end of the test. Alright, first we have throughput, which is measured as requests per second. Go reach the same level as in the previous video, but Rust once again is the best and fastest application I've tested so far. It reached almost 160,000 requests per second using only two CPUs. None of the other applications ever came close. Well, maybe Zig was the closest one. Next, we have latency, which is one of the most important metrics, and again, Rust performed better than Go in this test. Next, we have CPU usage, and you can see that Rust is more efficient using less CPU than Go application. And finally, memory usage, which is not really important for this video. So let me know which language or runtime can compete with Rust, and if you can help to develop a simple web server in that language, it would be great. I have other benchmarks that you might find interesting, such as Postgres versus MySQL, Redis versus Memcache and others.
