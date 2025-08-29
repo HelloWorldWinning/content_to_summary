@@ -1,0 +1,164 @@
+Timestamp: 2025-08-30T02:05:05.020418
+Title: 当读写PostgreSQL时，Rust 与 Go谁又更快呢？ BV1r23fzLExZ
+URL: https://b23.tv/Eq4VDa3
+Status: success
+Duration: 7:24
+
+Description:
+**总结大纲:**
+
+*   **引言**
+    *   **目的:** 比较Rust (Axum) 和 Go (GNET) 最快框架的性能，包括纯框架测试和集成Postgres数据库的实际场景测试。
+    *   **框架选择:**
+        *   **Rust:** Axum (基于Hyper和Tokyo，均由同一团队开发)。
+        *   **Go:** GNET (过去测试中最快的Go框架)。
+*   **测试环境与方法**
+    *   **硬件配置:**
+        *   **应用实例:** LBS上的M7A large实例 (2核CPU，8GB内存)。
+        *   **数据库实例:** Graviton存储优化EC2实例 (3.4TB磁盘空间)。
+        *   **客户端/监控:** EKS节点。
+    *   **核心衡量指标:**
+        *   吞吐量 (Requests per second)。
+        *   P90延迟 (客户端侧)。
+        *   CPU使用率 (应用本身)。
+        *   内存使用率 (应用本身)。
+    *   **集成Postgres测试附加指标:**
+        *   连接池大小 (两侧，上限500)。
+        *   Postgres CPU使用率 (确保不成为瓶颈)。
+        *   插入数据库的记录数。
+*   **测试一：纯框架性能比较**
+    *   **结果:**
+        *   **吞吐量:** Go (GNET) 表现卓越，达到近17万请求/秒，创下2核CPU新纪录，显著领先Rust (Axum)。
+        *   **延迟:** Go (GNET) 性能更优。
+        *   **CPU使用率:** 两者几乎相同。
+        *   **内存使用率:** Go是明确的赢家。
+    *   **小结:** Go在纯框架测试中展现出令人惊讶的优秀性能。
+*   **测试二：集成Postgres数据库**
+    *   **场景:** 应用接收POST请求，保存数据到关系型数据库并返回。
+    *   **结果:**
+        *   **吞吐量:** Go再次更优，Rust达到约3.9万请求/秒，Go甚至更高。但Go在此环节出现“非常奇怪的行为”。
+        *   **延迟:** Rust表现出更好的稳定性，Go的延迟波动较大，出现高值和尖峰。
+        *   **CPU使用率:** Go出现向下尖峰，行为异常。
+        *   **插入记录数:** Go比Rust多插入约500万条记录。
+    *   **观察与疑问:** Go应用与Postgres的交互存在异常行为，可能存在bug，需要社区帮助调查和改进。
+*   **最终结论与呼吁**
+    *   Go在使用最快框架时，在某些场景下性能可能超越Rust，尤其是在纯吞吐量方面。
+    *   但在与数据库交互的实际场景中，Rust展现出更好的稳定性和可预测性。
+    *   呼吁社区协助改进Go应用与Postgres的交互问题，以进一步提升其性能和稳定性。
+
+**核心观点 (Core Point):**
+尽管Go在使用最快框架时在纯吞吐量方面表现卓越，但在集成Postgres数据库的真实场景下，其延迟和稳定性不如Rust，并伴有异常行为，需要社区协助调查和优化。
+
+**总体框架 (Overarching Framework):**
+Rust与Go高性能Web框架基准测试及数据库集成性能比较
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "高性能Web框架基准测试"
+        A["测试目标：比较Rust与Go最快框架性能"] --> B{"测试类型"};
+        B -- "测试一：纯框架" --> C["Axum (Rust) vs GNET (Go)"];
+        B -- "测试二：带Postgres数据库" --> D["Axum (Rust) vs GNET (Go) + Postgres"];
+    end
+
+    subgraph "技术栈"
+        E["Rust语言"] --> E1["Axum 框架"];
+        E1 --> E2["基于Hyper"];
+        E1 --> E3["集成Tokyo"];
+
+        F["Go语言"] --> F1["GNET 框架"];
+
+        G["数据库"] --> G1["Postgres"];
+    end
+
+    subgraph "测试环境"
+        H["基础设施"] --> H1["LBS 云平台"];
+        H1 --> H2["M7A large 实例 (2 CPU, 8GB RAM)"];
+        H1 --> H3["Graviton 存储优化实例 (3.4TB 磁盘)"];
+        H1 --> H4["EKS 集群 (客户端, 监控)"];
+    end
+
+    subgraph "核心指标"
+        I["性能指标"] --> I1["吞吐量 (请求/秒)"];
+        I --> I2["P90 延迟 (客户端侧)"];
+        I --> I3["应用CPU使用率"];
+        I --> I4["应用内存使用率"];
+        I --> I5["连接池大小 (测试二)"];
+        I --> I6["Postgres CPU使用率 (测试二)"];
+        I --> I7["插入记录数 (测试二)"];
+    end
+
+    C --> I;
+    D --> I;
+    E1 --> H;
+    F1 --> H;
+    G1 --> H;
+
+    subgraph "测试一结果 (纯框架)"
+        J["Go 吞吐量领先 (17万 RPS)"];
+        K["Go 延迟更优"];
+        L["CPU 使用率相似"];
+        M["Go 内存使用率更低"];
+    end
+    C --> J; C --> K; C --> L; C --> M;
+
+    subgraph "测试二结果 (带Postgres)"
+        N["Go 吞吐量更高 (但行为异常)"];
+        O["Rust 延迟更稳定"];
+        P["Go CPU 使用率异常尖峰"];
+        Q["Go 插入记录数更多 (约500万)"];
+        R["Go 与 Postgres 交互可能存在Bug"];
+    end
+    D --> N; D --> O; D --> P; D --> Q; D --> R;
+
+    S["总结：Go 理论性能高，Rust 稳定性佳"];
+    T["呼吁社区：协助优化 Go 应用"];
+
+    J --> S; K --> S; L --> S; M --> S;
+    N --> S; O --> S; P --> S; Q --> S; R --> T;
+
+    style A fill:#D4EDDA,stroke:#28A745,stroke-width:2px,color:#212529;
+    style B fill:#FFF3CD,stroke:#FFC107,stroke-width:1px,color:#212529;
+    style C fill:#E0F7FA,stroke:#00BCD4,stroke-width:1px,color:#212529;
+    style D fill:#E0F7FA,stroke:#00BCD4,stroke-width:1px,color:#212529;
+
+    style E fill:#E6F2FF,stroke:#007BFF,stroke-width:1px,color:#212529;
+    style E1 fill:#B3D9FF,stroke:#007BFF,stroke-width:1px,color:#212529;
+    style E2 fill:#CCE5FF,stroke:#007BFF,stroke-width:1px,color:#212529;
+    style E3 fill:#CCE5FF,stroke:#007BFF,stroke-width:1px,color:#212529;
+    style F fill:#FEEBEA,stroke:#DC3545,stroke-width:1px,color:#212529;
+    style F1 fill:#FFD6D3,stroke:#DC3545,stroke-width:1px,color:#212529;
+    style G fill:#E8EAEF,stroke:#6C757D,stroke-width:1px,color:#212529;
+    style G1 fill:#D8DCE3,stroke:#6C757D,stroke-width:1px,color:#212529;
+
+    style H fill:#F8F9FA,stroke:#6C757D,stroke-width:1px,color:#212529;
+    style H1 fill:#E9ECEF,stroke:#6C757D,stroke-width:1px,color:#212529;
+    style H2 fill:#E9ECEF,stroke:#6C757D,stroke-width:1px,color:#212529;
+    style H3 fill:#E9ECEF,stroke:#6C757D,stroke-width:1px,color:#212529;
+    style H4 fill:#E9ECEF,stroke:#6C757D,stroke-width:1px,color:#212529;
+
+    style I fill:#DEEBF7,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I1 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I2 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I3 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I4 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I5 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I6 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+    style I7 fill:#C6DBEF,stroke:#3672a7,stroke-width:1px,color:#212529;
+
+    style J fill:#D4EDDA,stroke:#28A745,stroke-width:1px,color:#212529;
+    style K fill:#D4EDDA,stroke:#28A745,stroke-width:1px,color:#212529;
+    style L fill:#FFE5B4,stroke:#FF8C00,stroke-width:1px,color:#212529;
+    style M fill:#D4EDDA,stroke:#28A745,stroke-width:1px,color:#212529;
+
+    style N fill:#F8D7DA,stroke:#DC3545,stroke-width:1px,color:#212529;
+    style O fill:#D1ECF1,stroke:#17A2B8,stroke-width:1px,color:#212529;
+    style P fill:#F8D7DA,stroke:#DC3545,stroke-width:1px,color:#212529;
+    style Q fill:#F8D7DA,stroke:#DC3545,stroke-width:1px,color:#212529;
+    style R fill:#F8D7DA,stroke:#DC3545,stroke-width:2px,color:#212529;
+
+    style S fill:#C3E6CB,stroke:#28A745,stroke-width:2px,color:#212529;
+    style T fill:#FFD6D3,stroke:#DC3545,stroke-width:2px,color:#212529;
+</Mermaid_Diagram>
+
+Content:
+ Based on the feedback I received this time I used the fastest frameworks for both Rust and Go. For Rust I'll use Axon which is based on Hyper, a low level HTTP library and Tokyo, both developed by essentially the same team. For Go I'll use the fastest GNET framework that I tested in the past. I also received a pull request from the creator to improve my previous benchmark which included a Postgres pull implementation. This time I'll run two tests. In the first one we'll just compare the frameworks themselves by measuring throat put, latency, CPU and memory usage. In the second which is a way more realistic, I have a Postgres database and each time the app receives a post request it saves the item to a relational database and returns it to the client. I found some weird behavior and I hope I'll get some help to improve the Go app even further. I run all my benchmarks on LBS and I used M7A large instance for each app which has two CPUs and 8GB of memory. I also have Graviton storage optimized easy to instance with 3.4 terabytes of disk space as well as few EKS nodes to run clients, monitoring agents and dashboards. Alright, let's go ahead and run the first test. It took around 2.5 hours and I compressed it to just a few minutes while editing. Once again we'll measure throat put which is requests per second, latency using P90 percentile measured from the client side as well as app situation like CPU and memory usage. As always let me run this test for one more minute and we'll go over each graph one by one for the full duration at the end of the test. I didn't expect such great performance from Go. Alright first we have throat put. Aksum since its abstraction based on Hyper was just a little bit slower in this test compared to previous one but Go reached almost 170 thousand requests per second. This is a new record for 2 CPUs. Genet is the fastest framework I've tested over the last year. It has a very low level API and it's kind of hard to build a web application but anyway next we have latency. And again Genet and Go were more performant than Rust. This actually surprised me. Then we have CPU usage which was almost identical compared to the previous tests between these two languages. And finally we have memory usage. Well it was unexpected but Go is a clear winner in this static test. If you can improve either of these two applications please raise a PR and I'll rerun the test. In this test I added a postgres database and in addition to latency and throughput I also measure connection, both sides maintained by each application. I set both to a 500 limit. I also measure the CPU usage of the postgres itself to ensure it doesn't become a bottleneck. Alright let me run this test for one more minute and I'll go over each graph one by one. First we have throughput. Once again Go was more performant in this test but I noticed very weird behavior and there might be some bugs in how Go app interacts with postgres. If anyone can investigate and fix it that would be great. Rust reached around 39,000 requests per second. Again it's incredibly good result compared to any other framework I've tested so far but Go somehow achieved even more throughput in this test. It's very unusual and full credit goes to Genet Go framework. None of the other Go frameworks like Fiber, Gen or others were even close. Next we have latency and this actually looks unstable. Go started with very high latency then it went down but I saw spikes as well. In terms of latency and stability Rust actually performs better. Next we have CPU usage. You can see downward spikes in Go. There is something wrong with it. I increased the load at the same pace for both applications and this behavior is unusual for web frameworks. Next we have connection pool size. Memory usage. And finally postgres CPU usage. Also there is a number of records each application inserted in that database. Go inserted about 5 million more records than Rust. Also it looks like Go can be even more performant than Rust when using the fastest frameworks from both sides. Take a look at other Rust vs Go benchmarks where I used standard library as well as the hyper framework. Thank you for watching and I'll see you in the next video.
