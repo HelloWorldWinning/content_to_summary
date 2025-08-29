@@ -1,0 +1,148 @@
+Timestamp: 2025-08-30T02:08:21.050728
+Title: Misc - 🚀Rust vs Go性能终极对决！仅用标准库，谁的速度更快？⚡ BV1QioCY4EPV
+URL: https://b23.tv/Ravl5j4
+Status: success
+Duration: 3:56
+
+Description:
+**核心观点:**
+尽管Rust使用标准库进行同步模型下的网络操作时表现不及Go，但其真正的高性能潜力将在未来视频中通过异步运行时（如Tokio）得到充分展现。
+
+**总体框架:**
+编程语言性能基准测试（专注于Web应用的标准库能力以及同步与异步模型的影响）。
+
+**摘要:**
+
+*   **1. 引言与目标**
+    *   视频旨在比较Go和Rust编程语言在使用标准库构建REST应用时的性能。
+    *   强调Go的标准库易于创建能处理每秒数千次请求的生产级REST应用。
+    *   预告下一视频将深入探讨Rust的Tokio异步运行时，它被视为大多数高性能框架的基础。
+
+*   **2. 测试设置**
+    *   **2.1. 基准测试工具:** 采用AdBS进行所有性能测试。
+    *   **2.2. 部署环境:** 每个被测应用程序部署在独立的M7A Large EC2实例的虚拟机上，并通过SystemD服务文件直接运行。
+    *   **2.3. 被测应用版本:**
+        *   一个Go应用程序。
+        *   两个Rust版本：一个单线程版本和一个使用10线程池的多线程版本。
+    *   **2.4. 衡量指标 (从客户端侧测量):**
+        *   延迟 (P90百分位)
+        *   吞吐量 (每秒请求数 - RPS)
+        *   应用程序的CPU使用率
+        *   整个虚拟机的内存使用率
+
+*   **3. 测试结果**
+    *   **3.1. Rust (标准库，同步模型):**
+        *   单线程Rust应用程序仅能处理约1500 RPS。
+        *   多线程Rust版本（10线程）略有提升，达到约4000 RPS。
+    *   **3.2. Go (标准库):**
+        *   视频暗示Go的性能远超Rust的同步版本，并表示将通过进一步测试确认其最大吞吐量。
+
+*   **4. 性能分析与解释**
+    *   **4.1. 根本原因:** 解释Rust同步模型在需要等待网络操作时表现不佳。即使引入多线程，由于线程仍需同步等待网络I/O完成，性能提升也有限。
+    *   **4.2. CPU使用率:** 监测到Rust应用程序的CPU使用率较低，这进一步证实了其大部分时间花在等待网络操作上。
+    *   **4.3. 内存使用率:** 在服务器处理过载请求时，观测到内存使用率出现高峰。
+    *   **4.4. 展望:** 作者强调此次Rust的性能结果并非其极限，并预告在下一视频中，通过集成Tokio异步运行时，Rust的性能将展现出巨大飞跃。
+
+*   **5. 结论与未来展望**
+    *   本视频的基准测试结果表明，Go的标准库在处理网络密集型REST应用方面，相对于Rust的同步标准库实现，展现出更好的性能。
+    *   鼓励观众不要因Rust在此次同步测试中的表现而对其失望，并期待其在异步运行时（如Tokio）下的真正实力。
+    *   此外，视频作者还提及了其他有趣的基准测试，如Postgres对比MySQL，Redis对比Memcache等。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "视频主题与目标"
+        A["视频主题: Go vs Rust 标准库性能"]:::mainTopic
+        B("测试目的: REST应用性能比较"):::purpose
+        A --> B
+    end
+
+    subgraph "测试设置与环境"
+        C("测试工具: AdBS"):::setting
+        D("部署环境: M7A Large EC2 VM / SystemD"):::setting
+        E("被测应用"):::setting
+        E1("Go (标准库)"):::languageGo
+        E2("Rust (标准库)"):::languageRust
+        E2a("Rust 单线程"):::rustVariant
+        E2b("Rust 10线程"):::rustVariant
+        E --> E1
+        E --> E2
+        E2 --> E2a
+        E2 --> E2b
+        B --> C
+        C --> D
+        B --> E
+    end
+
+    subgraph "关键性能指标"
+        F("性能指标"):::metrics
+        F1("每秒请求数 (RPS)"):::metrics
+        F2("P90延迟"):::metrics
+        F3("CPU使用率"):::metrics
+        F4("内存使用率"):::metrics
+        F --> F1
+        F --> F2
+        F --> F3
+        F --> F4
+        E --> F
+    end
+
+    subgraph "测试结果与分析"
+        G("测试结果"):::resultBox
+        G1("Rust 单线程: ~1500 RPS"):::perfLow
+        G2("Rust 10线程: ~4000 RPS"):::perfLow
+        G3("Go: 性能预期更优"):::perfHigh
+        H("性能瓶颈: Rust同步模型"):::bottleneck
+        I("原因: 大量等待网络操作"):::reason
+        J("CPU使用率低: 等待时间长"):::reason
+        E1 --> G3
+        E2a --> G1
+        E2b --> G2
+        G1 --> H
+        G2 --> H
+        H --> I
+        I --> J
+        H --> K("结论: 同步模型不适合网络IO密集型应用"):::conclusion
+    end
+
+    subgraph "未来展望与额外内容"
+        L("未来视频: Rust + Tokio异步运行时"):::future
+        M("预期: 异步模型将显著提升Rust性能"):::futureBenefit
+        N("核心观点: 异步模型对高性能至关重要"):::corePoint
+        O("其他基准测试 (Postgres vs MySQL, Redis vs Memcache等)"):::other
+        K --> L
+        L --> M
+        M --> N
+        A --> N
+        A --> O
+    end
+
+    style A fill:#FFD700,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style E2a fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style E2b fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F3 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F4 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style G3 fill:#A2D9CE,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FF6347,stroke:#333,stroke-width:2px,color:#333;
+    style I fill:#FF8C00,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#FF8C00,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#FFD700,stroke:#333,stroke-width:2px,color:#333;
+    style L fill:#87CEEB,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#87CEEB,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#00BFFF,stroke:#333,stroke-width:2px,color:#333;
+    style O fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+ In this video, we'll compare Go with Rust programming language only using standard library. In the next video, I'll cover Tokyo runtime, which is a synchronous runtime that Rust does not officially support it, and it's actually the foundation for most high-performance frameworks. It's actually very easy to create a production-ready Go REST application using only standard library that would handle thousands of requests per second. I don't know about you, but I learned Rust by reading the Rust book, and in the last chapter, they guide you how to build a single threaded and then multi-threaded web server. So I took it from there for this benchmark. I use AdBS to run all my benchmarks, and for this video, I used M7A Large ECTO Instance for each application and deployed them on VMs directly using SystemD Service files. Alright, let's go ahead and run the test. It took around two hours, and I compressed it while editing to just a few minutes. You would see a single Go application and two versions of Rust, with a single thread and a thread pull of 10 threads. Here we measure latency using P90 percentile from the client side. Then we have throughput, which are requests per second. We also measure CPU usage of each application as well as the overall memory usage of the entire VM. As you can see, a single threaded Rust application could only handle 1500 requests per second. The multi-threaded version was a little bit better and reached 4,000 requests per second. To find the maximum for Go, we need to run this test for one more minute, and after, I'll open each graph for the entire test duration, one by one. First, we have requests per second. And it's not to say that Rust is slow, it's just that synchronous model does not work well in applications if you need to wait for network operations. Even if you have multiple threads, you'll see a huge difference in the next video with the Tokyo runtime. Next, we have latency. CPU usage. And once again, you can see low CPU usage because Rust must wait for network operations to complete and waits a lot of time. And finally, memory usage. We have some kind of spike here in memory usage when the server was overloaded with requests. So don't be upset about Rust for performance and wait for the next video. I have other benchmarks with Postgres versus MySQL, radius versus memcache, and other benchmarks that you might find interesting.
