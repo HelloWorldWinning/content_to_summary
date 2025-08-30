@@ -1,0 +1,143 @@
+Timestamp: 2025-08-30T22:48:57.713270
+Title: Debian 13 初体验，依然稳如磐石！ BV14xhyzAERM
+URL: https://www.bilibili.com/video/BV14xhyzAERM/?spm_id_from=333.1007.tianma.7-2-21.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 18:29
+
+Description:
+**核心观点**：
+Debian 13 "Trixie"是一款强大、可靠且可高度定制的Linux发行版，特别搭配KDE Plasma桌面环境表现出色，但其在闭源软件安装方面相比基于Debian的发行版（如Ubuntu）仍需通过终端命令操作，对部分用户来说便利性稍逊。
+
+**内容总览框架**：
+Debian 13 "Trixie"发行版的全面评测、桌面环境探索与基于Debian发行版的对比分析。
+
+---
+
+**总结大纲**
+
+**I. 引言与Debian 13 "Trixie"发布概览**
+    *   **重要性：** Debian 13 "Trixie"（代号：取自《玩具总动员》中的三角龙）是重要的Linux发行版，也是Ubuntu等众多发行版的基础。
+    *   **发布日期：** 2025年8月9日。
+    *   **支持架构：** 提供X86、ARM、RISC-V等多种处理器架构的镜像，但**不再支持32位CPU**。
+    *   **支持周期：** 全面支持至2028年8月9日，长期支持（LTS）至2030年6月30日。
+
+**II. Debian 13 图形化安装过程**
+    *   **镜像下载：** 从Debian.org下载默认64位X86 PC镜像。
+    *   **启动介质制作：** 使用Rufus等工具将ISO写入可启动USB驱动器。
+    *   **安装步骤：**
+        *   选择“图形化安装”，设定语言（英语）、位置（英国）、键盘布局。
+        *   设置主机名（默认Debian）和域名（例如test.com）。
+        *   **用户设置：** 不设置root密码以锁定root账户，并启用第一个用户账户通过`sudo`执行管理员命令。
+        *   创建第一个用户账户及其密码。
+        *   **磁盘分区：** 采用向导式“使用整个磁盘”，选择连接的SSD硬盘，并将所有文件放置在一个分区。
+        *   配置软件包管理器（选择英国，默认archive mirror）。
+        *   选择参与“流行度竞赛”（发送统计数据）。
+        *   **桌面环境选择：** 默认安装GNOME桌面环境和标准系统实用程序。
+    *   **完成与重启：** 安装完成后，移除USB驱动器并重启系统。
+
+**III. GNOME 48 桌面环境体验**
+    *   **核心系统：** 基于Linux Kernel 6.12。
+    *   **用户界面：** GNOME 48提供极简图形界面，顶部面板有控件，但默认无应用程序菜单或屏幕DOCK。应用程序需通过“Super”键或点击左上角后选择“显示应用程序”访问。
+    *   **定制化：** 可通过“Tweaks”工具更改字体、开启窗口最大化/最小化按钮。
+    *   **预装应用：** 包括Firefox ESR、LibreOffice 25、新的Music应用（取代Ruddenbox）和新的GNOME Image Viewer。**Solitaire不再预装**。
+    *   **软件管理：** 软件管理器收录超过69,830个软件包（新增14,100+），支持图形化安装（如GIMP），无需终端，但分类有改进空间。
+    *   **✨ 新功能亮点：GNOME 48“健康”标签页：**
+        *   监控每日/每周屏幕时间，可设置使用限制。
+        *   支持屏幕变灰度模式（超出限制时）。
+        *   提供休息提醒（视力、运动），可设置休息时间表，并在休息结束时播放提示音。
+
+**IV. KDE Plasma 6.3 桌面环境体验**
+    *   **特点：** 美观且高度可配置，默认底部面板，左侧菜单，应用程序按类别分组。
+    *   **安装方式：**
+        *   在默认ISO安装时选择KDE。
+        *   或下载KDE Live镜像（通过Debian.org“其他下载”），使用更友好的Calamares安装器进行安装。
+    *   **预装应用：** 包含Konqueror（网页浏览器兼文件管理器）、Dolphin文件管理器和Firefox。
+
+**V. Debian 与基于Debian发行版对比**
+    *   **Debian 13 优势：** 稳定、可靠，与KDE Plasma桌面环境结合表现优秀。
+    *   **主要区别（闭源软件安装）：**
+        *   **Debian 13：** 安装官方闭源软件（如Nvidia显卡驱动）通常需要通过终端命令操作。
+        *   **基于Debian的发行版（如Ubuntu、Linux Mint、ZorinOS）：** 通常提供图形化驱动管理器，或在启动菜单中提供自动设置选项，安装过程更为简便。
+    *   **结论：** 对于追求纯粹与稳定性的用户，Debian是极佳选择；但若对闭源软件安装便利性有较高要求，基于Debian的发行版可能更适合。
+
+---
+<Mermaid_Diagram>
+graph TD
+    "A[Debian 13 'Trixie']":::mainNode
+
+    subgraph "发布概览 Release Overview"
+        "B[重要性与基础地位]":::infoNode
+        "C[发布日期与支持周期 (至2030年LTS)]":::infoNode
+        "D[支持架构 (X86, ARM, RISC-V)]":::infoNode
+        "E[🔴 不支持32位CPU]":::warningNode
+    end
+
+    subgraph "安装过程 Installation Steps"
+        "F[下载ISO并写入USB (Rufus)]":::installNode
+        "G[图形化安装向导 (语言, 区域, 键盘)]":::installNode
+        "H[系统与用户设置 (主机名, 域名, 无Root密码, 启用Sudo)]":::installNode
+        "I[磁盘分区 (向导式整盘安装)]":::installNode
+        "J[软件包管理器配置]":::installNode
+        "K[桌面环境选择 (默认GNOME)]":::installNode
+    end
+
+    subgraph "GNOME 桌面环境体验 GNOME 48"
+        "L[核心系统 (Linux Kernel 6.12)]":::gnomeNode
+        "M[极简UI与定制 (Super键应用访问, Tweaks)]":::gnomeNode
+        "N[预装与更新应用 (Firefox ESR, LibreOffice 25, Music App, GNOME Image Viewer)]":::gnomeNode
+        "O[软件管理器 (69,830+包, 分类待改进)]":::gnomeNode
+        "P[✨ 新功能: 健康 Wellbeing (屏幕时间监控, 休息提醒)]":::highlightNode
+    end
+
+    subgraph "KDE Plasma 桌面环境体验 KDE Plasma 6.3"
+        "Q[KDE 特点 (美观, 高度可配置, 底部面板)]":::kdeNode
+        "R[KDE 安装方法 (Live镜像, Calamares安装器)]":::kdeNode
+        "S[KDE 预装应用 (Konqueror, Dolphin, Firefox)]":::kdeNode
+    end
+
+    "T[对比分析: Debian vs. 基于Debian发行版]":::compareNode
+    "U[核心观点 Conclusion]":::conclusionNode
+
+    "A" --> "B"
+    "A" --> "C"
+    "A" --> "D"
+    "A" --> "E"
+
+    "A" --> "F"
+    "F" --> "G"
+    "G" --> "H"
+    "H" --> "I"
+    "I" --> "J"
+    "J" --> "K"
+
+    "K" -- "选择GNOME" --> "L"
+    "L" --> "M"
+    "M" --> "N"
+    "N" --> "O"
+    "O" --> "P"
+
+    "K" -- "选择KDE" --> "Q"
+    "Q" --> "R"
+    "R" --> "S"
+
+    "P" --> "T"
+    "S" --> "T"
+
+    "T" -- "Debian优点: 稳定可靠" --> "U"
+    "T" -- "Debian劣势: 闭源软件安装需终端" --> "U"
+    "T" -- "基于Debian优点: 闭源软件安装简便" --> "U"
+    "E" --> "U"
+
+    classDef mainNode fill:#F7CAC9,stroke:#333,stroke-width:2px,color:#333;
+    classDef infoNode fill:#FFE0B2,stroke:#333,stroke-width:1px,color:#333;
+    classDef warningNode fill:#FF7043,stroke:#333,stroke-width:2px,color:#FFF;
+    classDef installNode fill:#B2EBF2,stroke:#333,stroke-width:1px,color:#333;
+    classDef gnomeNode fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    classDef kdeNode fill:#D1C4E9,stroke:#333,stroke-width:1px,color:#333;
+    classDef highlightNode fill:#FFECB3,stroke:#333,stroke-width:2px,color:#333;
+    classDef compareNode fill:#FFCDD2,stroke:#333,stroke-width:2px,color:#333;
+    classDef conclusionNode fill:#A5D6A7,stroke:#333,stroke-width:2px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+ Welcome to another video from Explainingcomputers.com. This time we're going to take a look at Debian 13 which has just been released. Debian is an important Linux distro because in addition to being a pop-up operating system in its own right, it's also the foundation for many other distros including Ubuntu. The release of a new version of Debian is therefore an important event for a Linux community. So, let's go and take a closer look. Right, for me it's now 13 minutes past 8 on Saturday the 9th of August 2025 and Debian 13 has just been released. Indeed, we go across to the Debian website at Debian.org and we scroll down, we find that, here we are, project news, Debian 13 Trixie has been released, with various features which we'll talk about later in the video. As always, a lot of different images are available for free download and these allow Debian 13 to be tested and installed with a variety of desktop environments and on computers with an X86, ARM and various other kinds of processors including now officially RISC-V. However, do note that Debian 13 does not support 32-bit CPUs. In addition, there are also Debian 13 images available for various cloud platforms including AWS. However, here at least initially we're going to make things nice and simple and take the default download from the main page. There it is, I'll save it in a prepared Debian folder like that. There we go and this will allow us to install Debian on a standard 64-bit X86 PC with an internet connection. So, let's speed on through until our download completes. There we go, we've downloaded RISC-V file which we now need to write to a bootable USB drive. And I've already inserted a USB drive into our computer and we're going to write the image to it using roofers which as you can see I'm already running. So, let's select RISC-V. There it is, like that. So, let's now click on start and we'll take the recommended option of writing ISO image mode like that. And it seems we need some additional files so we'll let those be downloaded and then we'll click on OK. I always like to show you things warped and all in these review videos and that's exactly what you're getting here. And do note as always that writing an ISO image to a USB drive will delete everything from the USB drive. All look, we've relocated to a very badly lit coal mine. But do not fear I pressed this button down here. Our PC will boot, it'll boot from our Debian 13 USB install media. It's got to because the only other drive on this test system is a blank SSD. And as you can see we've got a range of options, graphical install which is what we're going to use but there's also an install with the USB drive. And install with speech synthesis. I do like the sound of that. But anyway, for now we will stick with graphical install. Here we go. So, let's first select our language. I'll stick with English. And my location is going to be United Kingdom and my keyboard British English. And it's now detecting hardware and sorting itself out. And we now need to enter a host name. I'll stick with a default of Debian. And it also wants a domain name. This really doesn't matter on a home system. So I'll just put test. Dot com, I think I'll keep it happy and continue. And it now wants us to set up users and passwords. And the first user here is the root user. And I'm not going to enter a root password because as it tells us here in the third paragraph, what this will do is to lock the root account and enable the first user account on the system to enter root or admin commands. Using the sudo command. So, I'll just click on continue. And I now have to set up that first user account. I'll give it a full name of the EC. For which it suggests quite reasonably a username of lowercase EC. And I now have to enter a password. There we go. And it's now noticed that on this system I sometimes put operating systems not in UEFI mode, even though those drives are not currently connected. So I'm not going to force a UEFI installation. I'll leave this on no. You probably won't see this screen. But if you do, well no is probably the safe option. Next, we have to select how our disk is going to be used. Here I'm going to use the entire SSD connected to the system for installing Debian. So I'll stick with guided using tired disk. And then here we need to make sure we're selecting the right drive to use. It is this Samsung SSD. Below it is the USB drive we're running the installer from. So we will stay with Samsung and click on continue. And then on this screen we'll keep all files in one partition. And there we are. We've now got a summary. Everything looks okay. So once again we will click guess what, continue. All and it wants us to confirm again. We will again click on yes. And for a third time here, continue. And there we are. Things are now happening. So we will use the magic of filmmaking to speed on through as it installs the base system. And now we need to configure our package manager, the software which allows us to install other software on the system. We basically have to say where a package is going to come from. We will pick the United Kingdom. And then here we will use dev.debian.org with default for the archive mirror. Next, I don't need to enter an HTTP proxy. So I'll just click on continue. Next, I love the wording here. Do we want to take part in the popularity contest? Or the other word do we want to send statistics back to the developers? I'm happy to do that for Debian. So I click on yes and continue. And we now get to the point where we can choose our desktop environment. And here I'm going to stay with the default. We are going to have a desktop environment. It is going to be the default for Debian 13 which is GNOME. And we're going to have the standard system utilities installed. So once again, we'll click on the magic continue. And the installer will get on retrieving files and then installing them because that is what installers do. And there we are. Installation is complete. So it's now time to reboot. We'll press continue. And remove the USB drive from the system like that. And with a fair wind, we'll now boot into Debian 13. And we've arrived. Let's select our user. And then to my password. And all look, we're being welcome. And I don't think I'm going to take the tour. We will skip. We will obviously look at things later in the video. And here we are. I was expecting a first run wizard. We don't have a first run wizard, but I'm sure that's fine. And so what I'm now going to do is to make a few scaling changes so things read better on video. And I'll come back to you after that. Right. Here I am back again with things optimized to my liking. So let's run through some key features. For a start, Debian 13 is based on the Lux kernel 612, compared to 6.1 for Debian 12. Under the hood, a lot of other software components have also been upgraded, improving security and other things that won't be immediately apparent to the average desktop user. Debian 13 has full support until August the 9th, 2028, followed by two years of long-term support until June the 30th, 2030. The default GNOME desktop that we're running here is now version 48, and provides a pretty minimalistic graphical interface as we can see. We have a top panel with controls on the right, but we don't have an applications menu or even an on-screen dock or applications icon like we find in Ubuntu. Rather, to access applications, we can press the super or Windows key like this, which brings up a dock to which some applications are pinned. Or, if I just close the dock by clicking the desktop, we can also bring up the dock by clicking top left and then to access all applications going all the way down here to click on Show Apps. And I've always found this a very strange piece of user interface design to have to click all the way up here and come all the way down there to access applications. And I'm sure some people are saying in the comments, well they expect you to use the keyboard, or if they expect you to use the keyboard, why provide an icon in the first place? Anyway, everything here does look rather nice, particularly with the settings I've chosen, and specifically what I've done is to go into System where we find pre-installed tweaks, which has got a Fonts option where you can change certain fonts, which is exactly what I've done. Also here in Tweaks, there is a Windows option where if we want, we can turn on Maximize and Minimize buttons for Windows, which if you're used to using Microsoft's operating system is kind of fundamental. In terms of included applications, we just go back to the applications like that, I'll use the keyboard, and there we are. A standard Debian 13 install includes the extended support release of Firefox along with LibreOffice 25, there it is, and a new music app called Music, which replaces the previous application called Ruddenbox. And we also find in Utilities the new default GNOME Image Viewer. However, Solitaire is no longer pre-installed by default as it was in Debian 12. But fear not to install Solitaire or any other application, we can just go to the Software Manager, where according to Debian, over 14,100 new packages have been made available, which brings the overall total to 69,830. The software manager works just fine, although I wish it had a few more categories. For example, we've got a Create category here, which has got lots of stuff in, but it other distroses will be split down into things like video and audio and graphics and things like that, and some of the work category here just contains loads of productivity applications, which again is great, but it would be useful to have these categories into, well, into categories. And so what we basically have here in the software installer is a tool for searching for applications, so let's use it, let's search for example for GIMP, for GNU Image Repilation Program, there it is, and if we want to do install this, or we've got to do is to click on Install and then enter our password. There we go, we don't have to use the terminal to install applications, as many Linux naysayers continue to claim. And we could now run GIMP directly using the Open button here, but I like to check it's installed, so let's just go back to all applications, over there, and there it is, we can run up GIMP, we've installed it on the system very easily indeed. And yes, it is there, it is working, seems to be okay, this is not a video about GIMP, so we will close this down and move on to something else. And that's something else is taking a look in Settings, up here, let's go to Settings like that, where we'll just take a look at the system, we'll click on About, and if we go down to System Details, we can see what we're running, which is most definitely Debian 13, which is code named Trixie, after the Triceratops in the Toy Story movies, and as we can see, we're definitely running GNOME 48, we've got Wayland as our windowing system, well, we can't have everything, and we're definitely running Linux kernel 6. Linux kernel 6.12.38. However, the really exciting thing right to show you here in Settings is the new Wellbeing tab introduced in GNOME 48, and what this allows us to do is to monitor our stream time on a daily and a weekly basis, and also if we want to set limits. So if we want to, we can turn this on, set a limit of how many hours we think we should be using on the computer, and we can set things up so the screen turns to greyscale if we go beyond our set limit. We can also set Reminds us to take breaks to protect our eyesight, and also to move around, and we can set a break schedule, as you can see, down there, and we can also set the system to play a sound when our break is complete. If you like me, you probably want to know what happens when we use this, and so earlier, in the name of Science, I set out playing Google's browser-based version of Solitaire, and after 20 minutes, a message appeared for an eyesight break, instructing me to look at these 6 minutes, to look at these 6 metres away for a curtailed period of time. And then the screen dimmed for a movement break, which was timed with a countdown clock. And once this descended to zero, a friendly chime went bing, to tell me to get back to business. And so I returned to Solitaire Hyper-refreshed, which allowed me to immediately win the game. Greetings! I thought I'd now show you Debian 13 running with the KDE Plasma Desktop Environment, and here it is. Specifically, Debian 13 ships with KDE Plasma 6.3, which is a beautiful desktop, with by default a bottom panel and a left-hand menu, with applications grouped into categories as we can see. And down here in Settings, everything is beautifully configurable to exact user requirement. To get Debian 13 with the KDE Plasma Desktop, one option is to install from a default image that we used earlier in the video, and to select KDE rather than GNOME, when prompted to choose your desktop environment. However, what I did here is to go to Debian.org and on the homepage to scroll down, so I didn't use the standard download, I used other downloads, and then over here, under Tri-Debian Live before installing, I clicked to download the live KDE image. And when this is written to a USB drive and booted up, it provides the opportunity to test things out before install. And if you do want to install, you can run up the Kalamaris installer included on the desktop, rather than using the standard installer included with the default Debian download. As we can see, this is a much more pleasant experience. Let's just run through it quickly. We will pick United Kingdom's My Language. We have to pick Maya Time Zone. There we are graphically. Then we now select the keyboard. We can select the option to erase disk and install Debian. We then have to set up a user account. And finally, click on Install, which, as I'm sure you would agree, is much more straightforward than using the standard Debian installer. Back in the final install, the included applications are very similar to those we found in Debian 13 with its default GNOME Desktop with one exception. And that exception is this, an application called Conqueror, which is both a web browser and a file manager. Although if you don't want to use this, do not despair. We have the standard Dolphin file manager included, as we can see here. And if we go to the menu and we go to Internet, all look we have got Firefox. Let's pin that to the taskbar, shall we? Do it like that. There we are. Get rid of that. And we can now run up Firefox in the normal manner. And all look we're visiting Explaining Computers.com. Debian 13 is a solid, reliable Linux distro, which, in my view, is excellent when paired with the KDE Plasma Desktop environment. And so, you may ask, why would anybody choose a distro based on Debian like Ubuntu rather than Debian itself? And the answer lies in the ease of installation of some closed source software. For example, if your computer has got an Nvidia graphics card and you want to install the official Nvidia driver, then in Ubuntu or Linux Mint, you can do this in a few clicks in the Graphical Driver Manager. And indeed, in ZorinOS, you can select the Nvidia option in the Boot menu, and everything will be automatically set up. But still, today in Debian 13, if you want to install the official closed source Nvidia driver, you have to open a terminal and execute terminal commands. And this is why, for some people, a distro based on Debian is still a better choice than Debian itself. But now that's it for another video. If you've enjoyed what you've seen here, please press that like button. If you haven't subscribed, please subscribe, and I hope to talk to you again... ...though reason.
