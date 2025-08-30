@@ -1,0 +1,128 @@
+Timestamp: 2025-08-30T09:05:55.951922
+Title: 【中英+文稿】我为什么不再整理笔记  以及我现在是怎么做的 BV1tGtkzpE5c
+URL: https://b23.tv/LVA0H6h
+Status: success
+Duration: 12:20
+
+Description:
+好的，以下是根据您提供的文本整理的摘要、核心观点、总体框架和Mermaid概念图。
+
+### 摘要
+
+**引言：过度整理的陷阱**
+*   人们普遍渴望拥有组织完美、美观大方的笔记，一切井井有条，触手可及。
+*   然而，实现这种“完美”需要耗费大量时间，尤其对于长期使用笔记应用（如16年）的用户而言，笔记内容庞杂。
+*   投入大量时间进行笔记维护和美化，会分散精力，使其无法专注于更重要的事情。
+*   本文旨在引导读者远离追求笔记的“完美组织”，转而关注如何提升笔记的“功能性”，以便在两三秒内快速找到所需信息。
+
+**功能性笔记整理的关键原则**
+
+1.  **建立基本结构：**
+    *   避免将所有笔记随意丢入“收件箱”。
+    *   一个基本的结构（例如，用于随机查找或关键词遗忘时）至关重要。
+    *   作者推荐其“GAPRA”框架：目标（Goals）、关注领域（Areas of Focus）、项目（Projects）、资源（Resources）和存档（Archive）。
+    *   “存档”作为所有非即时、非参考性内容的“万能箱”，依赖于笔记应用强大的搜索功能和存储能力。
+    *   结构可以很简单（如家庭/工作、爱好/目标），关键是“有”结构。
+
+2.  **赋予笔记恰当的标题：**
+    *   避免使用通用或模糊的标题（如“会议 [日期]”），这在未来难以检索。
+    *   标题应具有描述性，包含明确的信息，方便日后搜索（如“与Phil的会议”、“每周团队会议”）。
+    *   清晰的标题能确保搜索结果精准且靠前。
+
+3.  **区分项目与流程（并为项目创建表格链接）：**
+    *   对大多数人而言，日常工作中的多步骤任务（如客户入职、员工招聘）是“流程”，而非“项目”。
+    *   如果将所有两步及以上任务都定义为项目，将导致项目数量庞大，维护困难。
+    *   真正的项目（如作者每年仅有四五个）应在笔记中建立表格，列出并链接所有相关笔记，以便快速访问。
+    *   明确“客户”并非项目，而是工作流程的一部分。
+
+4.  **掌握搜索快捷键：**
+    *   搜索是查找笔记最强大的工具，它比手动浏览更快捷高效。
+    *   学习并熟练使用笔记应用（如Evernote、Apple Notes）的搜索快捷键（如Mac上的Command+J或Shift+Command+K）。
+    *   通过搜索，无需打开侧边栏或浏览文件夹，即可直接输入关键词、日期或标题进行查找。
+
+5.  **巧妙运用关键词：**
+    *   在保存网页或其他内容时，检查并修改标题，确保其中包含你将来可能会搜索的关键词。
+    *   即使不记得确切名称，也可以通过搜索通用物品名称（如“袜子”、“包”、“鞋子”）来找到相关笔记。
+    *   关键词应放置在标题或笔记顶部，以提高搜索效率。
+
+### 核心观点
+
+优先考虑功能性笔记整理和强大的搜索功能，而非追求美观、过度结构化的笔记，以实现高效的信息检索和节省时间。
+
+### 总体框架
+
+功能性笔记整理以实现高效检索 (Functional Note Organization for Efficient Retrieval)。
+
+### Mermaid概念图
+
+<Mermaid_Diagram>
+graph TD
+    A["核心理念：笔记是工具，服务于你"] --> B("目标：快速检索信息 (2-3秒)");
+
+    subgraph "误区与挑战"
+        C["过度美观/结构化整理"] --> D["耗时维护"];
+        C --> E["分散精力"];
+        D --> F("效率低下");
+        E --> F;
+    end
+
+    B --- G["核心方法：功能性笔记整理"];
+
+    subgraph "功能性笔记整理原则"
+        G --> H["1. 建立基本结构"];
+        H -- "例如" --> H1("GAPRA框架：<br>目标、领域、项目、资源、存档");
+        H1 --> H2("存档是万能箱，依赖搜索");
+
+        G --> I["2. 赋予笔记恰当标题"];
+        I -- "避免" --> I1("通用/模糊标题 (如：会议 [日期])");
+        I -- "推荐" --> I2("描述性标题 (如：与Phil的会议、每周团队会议)");
+
+        G --> J["3. 区分项目与流程"];
+        J -- "提示" --> J1("多数工作是流程，非项目");
+        J -- "项目管理" --> J2("使用表格链接项目笔记");
+        J1 --> J3("将重复任务流程化");
+
+        G --> K["4. 掌握搜索快捷键"];
+        K -- "强调" --> K1("搜索是核心功能");
+        K -- "实践" --> K2("学习笔记应用内搜索快捷键");
+
+        G --> L["5. 巧妙运用关键词"];
+        L -- "策略" --> L1("保存网页时检查标题");
+        L -- "放置" --> L2("关键词置于标题或笔记顶部");
+        L -- "例如" --> L3("搜索'袜子'而非公司名");
+    end
+
+    F --> M["结论：避免过度整理"];
+    G --> M;
+    B --> M;
+
+    style A fill:#F0F8FF,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style B fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#90EE90,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style C fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#FF6347,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style M fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+
+    style H fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style H1 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style H2 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style I1 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style I2 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style J1 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style J2 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style J3 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style K1 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style K2 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style L1 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style L2 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style L3 fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+ I know it's very tempting and ticing evening to have a set of notes that are wonderfully organized. Everything is where you want it to be. Beautiful set of notebooks, folders, whatever they're called in your notes app. And yes, it's just a wonderful thing to aspire to. The trouble is to get all those things or your notes organized in such a way is going to take time, a lot of time. Particularly if you like me, you've been using a notes app since 2009, that's about 16 years now, you're going to have collected a lot of stuff. The thing is, if you want to set your notes organized beautifully and set up so that they look great when you show people, that's going to take a lot of maintenance. Notice that really or time, I should say, maintenance time, that really should be spent on doing other things, more important things. So today I want to go through a few little things that hopefully will pull you away from having all your notes beautifully organized and actually getting them more functional so you can find what you need when you need it in less than two or three seconds. Now first up is do have some kind of structure. It's no good just randomly throwing all these notes into an inbox of sorts and hoping that you're going to find what you need. That doesn't actually help you. Now I know this might be a little contrary to what I've just said, but hear me out. Having some kind of basic structure at least gives you a place to go looking randomly if you cannot remember a keyword, a title, a date range or anything else that you might need to be able to find your notes. So do have some kind of structure. Now the structure that I use is something I called gapra. It's based on Tiago Forte's para, just that Tiago looks at treats areas of focus if you like a little bit differently to the way that I do. Plus for me, I am a very goals orientated person. So my goals need to be at the top because if I'm randomly going through my notes, that's where I want to start. So I have gapra. Gapra stands for goals, areas of focus, projects, resources and archive. Now my archive is the catch all for everything. Anything that I don't need immediately or isn't something I'm going to use as reference, it gets thrown into archive. One day I might need it and the way that Evernote, which is the notes app I use, operates, you don't actually have a total limit, you get a monthly limit of I think for me it's 20 gigabytes and I've never come close to that anyway. And it just works perfectly. So I can throw stuff in there for perpetuity, I think is the word I was looking for, but it's going to be there forever. And just in case I ever need it, I can find it. So do have some kind of structure. Doesn't really matter. You could just have some feel structure like home and work or you could have hobbies, goals, whatever you want to do, but do have some kind of structure. So you do have a way to go in and find the notes that you just don't have any idea what it is. You just know it's there somewhere. Next up is give your notes a proper title. Now quite often if you're using templates and I know Evernote does templates and I know a lot of other notes apps allow you to create templates. You might just have a title called meeting and then you might have the date. So you might have meeting and then the date. That's not going to help you in six months time or ten months time to find that note. It doesn't give you enough information. Make sure that the title has the right title. So for example, a few years ago I was when I was publishing my book, I had meetings with Phil. Phil was the name of my publisher and that was the title of the note, meetings with Phil. I wasn't working with anyone else at the time called Phil, but even if I was, it's unlikely I'm going to be working with hundreds of people called Phil. It would be very weird if I was. And so it would be very easy to find that note. It meant that all I needed to search for was the name Phil and that note would be at the top of my search results list. So call it, give it a proper name. You for example, if you are a team manager and you have a weekly team meeting, it could be weekly team meeting because that's a very easy term to search for, which means that you can get into that note in less than a second. So be very strict about how you're titling your notes. Now while the vast majority of us are not working on projects, we're not project managers. If you do work with projects, then I would suggest that you create a table for linking all your notes together. Now pretty much all notes apps allow you to do something called back linking. So obsidian is one that does back linking very well. Notion does back linking, Evernote does back linking and so does Apple Notes. So it doesn't really matter what notes app you're using, but you can create a table to list out all the projects that you're working on. Now the caveat here is most of us are not working on projects. We're doing our job, a customer. If you're working sales for example, an individual client or customer is not a project. It's just part of what you do. It's your job. They are customers. Be very careful about how you define projects. If you use the Getting Things Done, that anything that's two steps or more is a project, you're going to have hundreds of projects to review, to update. It's time consuming and it's not really that important. What you need to do is look at for the processes of your work. I've done a few videos on this. Look for the process of your work and turn as many of these things that you would perhaps call a project into a process. So anything that you're repeatedly doing like onboarding a customer or onboarding an employee for you in HR, they're not projects. They are just what you do. It's your job. So therefore it's a process. If you're a project manager on the other hand, managing multiple different projects, then sure, have a very deep and meaningful project notebook or folder. But for the most of us, we're not working with projects. I think if I look at my projects, I mean, I run my own business. If I think of the projects that I do per year, I have probably about four or five, but no more than that. Everything else is really a process and doesn't need a long project note or list. So make sure that you have a table that you can quickly go to that tells you what projects you have on at the moment so that you've got quick access to them if you need them. And the big one, learn your keyboard shortcuts. Now I use Evernote, which has a number of ways to actually search for notes. You can actually do. Now I use an Apple computer. I don't know the Windows version of the search, but you can look them up. Evernote has a whole list of their keyboard shortcuts. But on the Mac, all you need to do is command J when you're in Evernote and type in what you're looking for. And it will give you a list of stuff that you're looking for. Alternatively, you can go shift command K, which brings up the search box. And then you can actually access the AI features, which I've not actually used. But if you're looking for some notes that perhaps you created 10 years ago, maybe AI is going to help you there and you can use that feature. I just use the normal because I know that my titles are very clear. But this way means that I can clean the sidebar closed because I don't need to go looking into my notebooks and individual notes or anything. All I need to do is type in a name, a date range, a keyword and bang. I found what I'm looking for. So really find those keyboard shortcuts in Apple. In Apple notes, I think if you remember correctly, it's shift command F that will take you to put the cursor in the search box and you can search for whatever you want. Search is powerful. It's how computers are developing. That search is getting better and better and better. You're not going to be able to find anything faster than the computer itself. That's where computers really do help you by searching your stuff and you will find it. Please just learn the keyboard shortcuts for search. It will save you so much time. So that's the next thing is learn how to search your notes. Ultimately, your notes are there to serve you. You don't have to have them beautifully organized. Just to give you an example, I throw a lot of stuff into my inbox and I generally clear that inbox every two or three months. The reason being is nothing urgent is going to be in my notes. Once it's collected, whether it's in my inbox or whether it's in a folder like Resources or my client list or anything else like that, it's always searchable. I can get to it within less than a second in most cases, particularly when I'm very clear about what I'm searching for. So get your search criteria right. That means make sure you're giving your notes a title. If you're throwing in random web pages before you hit Save, just check the title so that it's something that you will actually look for. One of my classic ones is I buy my socks from a company in the UK. I can never remember its name. Now, I have looked it up just before doing this video, so I know it's Pepper Harrow or Harrow Pepper. Anyway, I can't remember the name of the company. But what I do know is when I do need to buy new socks, all I need to do is go into Evernote, type in socks and Pepper Harrow is right there and I can order my socks. So once or twice a year, that's what I do. I order socks from Pepper Harrow or Harrow Pepper. I can never remember. Anyway, it's there and I can actually go in and just search for that. So there are keywords there rather than the name of the company. There are other companies that I buy stuff from. Because it's so rare that I buy things from them, I never actually remember their name, but I can type in bags or I can type in shoes or sweaters, jumpers as I would call them. Whatever I'm looking for, I can find them by just typing in the item that I'm looking for because the keyword is there. So make sure you're pretty smart on the keywords and put them in at least the top so you know what you're looking for or perhaps preferably the title. So there you go. This is something that keeps coming up in my coaching programs where if you say, I really would like to get my notes organized, but often we are thinking about having these beautifully designed notes, which realistically is never going to happen because you're actually doing different projects, meetings, dumping stuff in there. That's what a notes app is supposed to do. If you think about it, a notes app is just an extension or an evolution of what we used to do with notebooks and we would just scribble random stuff in there and perhaps index it if we were good by putting a good title at the top. What we need to follow the same principles digitally, make sure the title is good, learn how to do search on whatever app you're using and don't over over organize your notes because it's just a waste of time. Hopefully that's given you some ideas about what you can do with your notes. Thank you very much for watching. And if you want to learn more about GAPRA, then this video up here is the one to watch next.
