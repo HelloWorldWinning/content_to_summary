@@ -1,0 +1,161 @@
+Timestamp: 2025-08-31T18:37:43.837282
+Title: 「Github一周热点85期」 n8n替代品、通义千问的图像生成模型、AI-Native 的表格、开源白板工具、Linux运行win应用和录屏软件 6tmCSKDBeWs
+URL: https://youtube.com/watch?v=6tmCSKDBeWs&si=bnzbHre6qCsHFYpl
+Status: success
+Duration: 7:03
+
+Description:
+**核心要点：**
+本期内容全面介绍了最新开源AI工具（AI Agent构建器、图像生成与编辑）、创新效率工具（AI-Native办公套件、智能白板、Linux运行Windows应用、屏幕录制工具），并展望了AI Agent和加密技术两大前沿趋势，同时不忘提醒健康之重。
+
+**总览框架：**
+“AI驱动的工具革新与未来技术趋势展望，兼顾实用性与个人福祉。”
+
+**总结大纲：**
+
+**一、AI 技术前沿与工具**
+    1.  **SIM - 开源 AI Agent 工作流构建器**
+        *   **功能**: 轻量直观，可视化拖拽构建AI Agent，连接大模型。
+        *   **优势**: 降低开发门槛，支持自动内容创作、数据分析等。
+        *   **部署**: 在线服务、Docker/手动本地部署，兼容Ollama本地模型。
+    2.  **千问一画 - 阿里开源图像生成模型**
+        *   **亮点**: 通义千问系列首个图像模型，复杂文生图和精确图像编辑能力强。
+        *   **特点**: 高保真文生图、高一致性。
+        *   **千问一画Edit**: 图像编辑版本，对标Fooocus KontrolNet，效果出色，支持本地运行或在线使用。
+
+**二、效率与办公工具革新**
+    1.  **Unear - 开源 AI-Native 办公套件**
+        *   **革新**: 推出Unear MCP，以自然语言驱动构建AI-Native表格，可接入AI工具。
+        *   **定位**: 域名和描述全面倒向AI，未来组件将逐步AI化。
+        *   **特性**: 模块化架构，灵活扩展（表格、文档、PPT），支持二次开发和插件机制。
+    2.  **Jonyx - 开源白板工具**
+        *   **功能**: 无限画布，集思维导图、流程图、自由绘画于一体。
+        *   **智能化**: 支持Mermaid语法代码生图和Markdown文本生图，提升效率。
+        *   **部署**: 提供在线版本、本地源码或Docker部署。
+    3.  **Wind Apps - Linux 运行 Windows 应用**
+        *   **原理**: 在Docker中运行Windows，查询应用，在Linux创建快捷方式，通过RDP连接。
+        *   **用途**: 帮助Linux用户运行Office、Photoshop等Windows应用。
+        *   **安装**: 配置复杂，需要较强动手能力，建议动手能力不足者考虑双系统。
+    4.  **Sekranny - 屏幕录制与注释工具**
+        *   **应用**: 适合教育和教程制作，功能强大且易用。
+        *   **核心**: 录制网页/区域/桌面/程序，支持摄像头/麦克风，实时注释。
+        *   **AI增强**: 支持AI背景、录音增强。
+        *   **后期**: 在线剪辑、添加BGM、多格式导出，最大优势是支持离线操作。
+
+**三、行业趋势与资料分享**
+    1.  **2025 加密趋势报告**: 分析全球网络安全与加密技术的发展趋势、挑战与市场前景。
+    2.  **2025 中国 AI Agent 行业研究报告**: 强调AI核心正从大模型向AI Agent过渡，各大厂商正加速布局。
+
+**四、个人感悟**
+    *   **健康**: 通过个人经历强调健康的重要性，呼吁大家关注身体。
+
+<Mermaid_Diagram>
+graph LR
+    A["核心主题: 第85期技术总结"]
+
+    subgraph "AI前沿工具"
+        B["SIM: AI Agent工作流构建器"]
+        C["千问一画: 图像生成模型"]
+        D["千问一画Edit: 图像编辑模型"]
+    end
+
+    subgraph "效率办公创新"
+        E["Unear: AI-Native办公套件"]
+        F["Jonyx: 开源白板工具"]
+        G["Wind Apps: Linux运行Win应用"]
+        H["Sekranny: 屏幕录制与注释"]
+    end
+
+    subgraph "未来趋势洞察"
+        I["2025 加密趋势报告"]
+        J["2025 AI Agent 行业报告"]
+    end
+
+    K["个人感悟: 健康的重要性"]
+
+    A --> B
+    A --> E
+    A --> I
+    A --> K
+
+    B --> B1["特点: 可视化拖拽"]
+    B --> B2["功能: 模块化组件"]
+    B --> B3["支持: Ollama本地模型"]
+
+    C --> C1["优势: 复杂文生图"]
+    C --> C2["特性: 高保真一致性"]
+
+    D --> D1["功能: 精确图像编辑"]
+    D --> D2["特性: 对标KontrolNet"]
+
+    E --> E1["特点: AI-Native表格"]
+    E --> E2["优势: 模块化扩展"]
+
+    F --> F1["功能: 无限画布"]
+    F --> F2["支持: 代码/文本生图"]
+
+    G --> G1["原理: Docker运行Windows"]
+    G --> G2["应用: Office/Photoshop"]
+
+    H --> H1["特点: 离线操作"]
+    H --> H2["功能: 实时注释"]
+    H --> H3["特性: AI背景/增强"]
+
+    I --> I1["聚焦: 网络安全"]
+    I --> I2["洞察: 加密技术趋势"]
+
+    J --> J1["趋势: 大模型向Agent过渡"]
+    J --> J2["分析: 行业发展方向"]
+
+    linkStyle 0 stroke:#0066CC,stroke-width:2px;
+    linkStyle 1 stroke:#0066CC,stroke-width:2px;
+    linkStyle 2 stroke:#0066CC,stroke-width:2px;
+    linkStyle 3 stroke:#0066CC,stroke-width:2px;
+
+    style A fill:#D0E0FF,stroke:#333,stroke-width:2px,color:#333;
+
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style B1 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style B3 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style C1 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style D1 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+
+    style E fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style H1 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style H2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style H3 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style I fill:#E0BBE4,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#E0BBE4,stroke:#333,stroke-width:1px,color:#333;
+    style I1 fill:#FFE0F0,stroke:#333,stroke-width:1px,color:#333;
+    style I2 fill:#FFE0F0,stroke:#333,stroke-width:1px,color:#333;
+    style J1 fill:#FFE0F0,stroke:#333,stroke-width:1px,color:#333;
+    style J2 fill:#FFE0F0,stroke:#333,stroke-width:1px,color:#333;
+
+    style K fill:#FFDDAA,stroke:#333,stroke-width:2px,color:#333;
+
+    linkStyle 4 stroke:#333,stroke-width:1px;
+    linkStyle 5 stroke:#333,stroke-width:1px;
+    linkStyle 6 stroke:#333,stroke-width:1px;
+    linkStyle 7 stroke:#333,stroke-width:1px;
+    linkStyle 8 stroke:#333,stroke-width:1px;
+    linkStyle 9 stroke:#333,stroke-width:1px;
+    linkStyle 10 stroke:#333,stroke-width:1px;
+    linkStyle 11 stroke:#333,stroke-width
+
+Content:
+Github 亦州社会总第85期本期的AI部分会包括AI AZN的工作流购间器同意签问的图像声声模型AI native的表格工具部分包括开源百板工具Linux 寓形温斗司应用和录频软件最后还是再讲两分资料如果觉得内容不错也别忘了点赞关注我们一块进入正式内容SIM是一个开源的AI AZN的工作流购间器由SIMS丢丢团队开发它提供了一个清亮极直观的介面让你能在几分钟之内创建属于自己的AZN并且连接到你这件使用的大模型支持使用模块画的组件可以创建向自动的内容创作数据分析只能克服等这里的工具SIM的出发点很简单就是鞋带马钩AZN觉得门口有点高通过可实化和托转的方式就非常友好你可以把它看成是N8N或者Code的一个T代品它的能力是非常类似的它有自己的灾线服务如果是想体验的话可以先去那边使用如果想自己在本地部署的话它支持Dalker或者是手动部署的方式建议如果不是太深度使用的话就用Dalker的方式上手会比较简单一些同时它也支持Olamar域型的本地模型这点还是很友好的还有一点比较好的就是项目直接说明了自己使用的技术站对于想学习一下的朋友来说就非常方便千万一枚指使用阿里开源是通一千万系列的首个图像生成技术模型它在复杂文美宣展和精确图像编辑方面取得了显住的进展再发布之初也是快速的登上了Hugging Face的热榜帮手目前整体来看它的表现是很不错的千万一枚指的凸凸能力之一就是能够在不同的场景当中实现高柔真的文美宣展同时在一支性上的表现也非常不错随后它又发布了千万一枚指Edit是千万一枚指它的图像编辑版本它对应的就是Flex的Kontax之前因为出色的图像编辑能力也是火的一套糊涂千万一枚指Edit它的效果看官方给出的图片是非常好的模型20B的大小对于本地运行来说算是比较友好的可以直接使用Kompy来去下载工作流来运行感兴趣的话可以在本地来去跑一下当然如果你不想在本地运行可以到千万Channel里去使用一下点这个图像编辑就可以使用了但是说实话我个人觉得还是谷歌最近发布的Drum Nights 2 在WuFlex效果更好一些有尼尔是一个开源的办公套件隐形它是一个支持多人节奏的在线Official套件拥有类似一个SellWord的编辑体验你是不是觉得它应该属于另外的工具分去原来是这样的但是现在它推出了Unear MCP实际上用自然远驱动的Unear Sight够建了AI内ting的表格也可以把它接入到AI工具当中来去作为数据展现的工具而且Unear现在来看从域名上到描述都已经全面倒向了AI虽然目前只有表格支持AI但后续各组件我觉得都会AI化当然不考虑AI功能的话Unear也是一个非常不错的办公工具它的模块上架够支持灵活扩展你可以按续加在组件比如表格 文档 PPT而且还方便后续的2SK8和功能定制Unear还支持插件机制可以通过插件来去过展功能比如像倒出打印 数据处理等来满足不同业务场景的需要本地启动的话需要通过圆码克龙带码到本地以后然后安装一赖在PMBM带我们来去启动服务访问本地的5173端口就可以使用在线的表格编辑器了Jonyx是一款开源的百板工具它的项目的源自于汇化和疯狂的灵感焦之它提供了O1万的能力支持无线的话部也可以集成各种工具比如像思维导图 流程图 自由化笔的工具项目之间有一个在线的版本可以使用可以到上面自己去画一画看看是否符合你的需要我的感觉是整体不错除了基本的画图和插入元素以外Jonyx还支持摸昧的语法的这种带码声图或者是用马克当的格式去文本声图比如想要画一个加构图如果是一个一个元素去拖拽的话确实挺麻烦的如果通过带码的方式就可以提升很多的效率如果想在本地部署的话可以通过圆码NPM Inns.然后NPM Runstar就可以在7200的端口上访问到堆用的服务了或者也可以使用项目提供的刀口金项来去启动介绍里也说明了自己底层采用的几个关键的组件比较方便大家去深入了解开放的精神还不错想找白板工具的话可以去试一试Wind Apps是一个帮助Linux用户去运行温斗是应用的项目你可以通过它来去运行像OFACE还有RW PhotoShop等这里的工具它实现的原理其实也很容易理解现在刀客当中去运行一个Windows然后查询Windows当中以及安装的应用程序再在Linux刺超对系统上去创建对应用程序的快接方式最后使用RDP的方式去连接到Windows上还记得去年的时候当时刀客当中运行温斗司项目突然火爆很多的评论就问这个什么用现在这不高级的用法就来了顺便也考考大家谁还记得去年是哪期的艺术热点包括了刀客当中运行Windows的项目项目中给出了支持的Apps的列表可以看看有没有你需要的想要使用其实还是比较麻烦的在安装Wind Apps之前你需要完成一系列的配置比如像PageWindows的容器在安装Wind Apps相关的依赖然后创建一个Wind Apps的配置文件最后还要配置FRAIDP当然一般把Linux作为组超的系统的人我觉得动手能力会稍微强一些如果你还是觉得太麻烦了那我觉得还是搞个双系统吧Sekranny提的是一款功能强大且也有好的屏幕录制和注视工具非常适合教育也是和录制教程的场景你可以使用它来去录制网页特定的区域桌面或者任何的进入程序还支持打开这样头和麦克风录制的同时屏幕里会出现一个工具蓝上面有各种的标准工具有点像QQ的截图工具蓝可以去添加像文本箭头图形这种注视还可以模糊屏幕的一些区域省下后期简单的工作还可以添加AI的背景还有录音的增强功能在录制结束的预狼里可以去做一些在线的简级还可以增加BGM完成之后可以导出MP4等多种格式当然啊Sekranny提最大的好处还是不现实常支持理现的操作安装可以从瑞丽丝里去下载压售包进入残线管理开启开发者模式然后把压售包里面的安装文件直接拖进来就可以了顺带一体像我的开发者也非常不简单是一个年轻漂亮的妹子得过两次把大个hound黏度开发者开发了十多属ment开源的工具最后还是分享两分资料第一份是2025加密趋势报告加密技术一直是马乱全的重要一环本报告通过对全球多个区域和行业的调研分析了2025年马乱全和加密技术的主要发展趋势挑战还有市场的前景第二个是2025中国AIZ的行业研究报告夹子光联的报告今年AI很明显的一个趋势就是核心逐渐从大魔形向AIZ的过渡各大厂商也都逐渐在AIZ的方向开始发力如果有需要的可以告诉我最后和大家随便了解局前几天一步小心把脚歪了在医院的时候突然觉得健康还真是太重要了所以也希望所有开视频的朋友都能保持健康不要生病那么好了以上就是本期的全部内容我们下次再见
