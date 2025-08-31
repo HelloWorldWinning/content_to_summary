@@ -1,0 +1,169 @@
+Timestamp: 2025-08-31T23:49:09.297592
+Title: Comparing Top Overlay VPN Networks Tailscale, Netbird, Netmaker, Zerotier eCXl09h7lqo
+URL: https://youtube.com/watch?v=eCXl09h7lqo&si=lqwwNuphLGSoW1Iy
+Status: success
+Duration: 14:35
+
+Description:
+以下是对文本内容的总结：
+
+### 核心观点
+
+NetBird以其出色的开源、完全自托管能力和简易部署，正成为传统Overlay VPN解决方案（如Tailscale）的有力竞争者，为追求自主控制和透明度的用户提供了极具吸引力的选择。
+
+### 总体框架
+
+本文的总体框架是**Overlay VPN解决方案的评估与比较**，重点围绕产品的核心技术、自托管能力、开源透明度、功能特性以及易用性进行深入分析，最终突出NetBird作为一个新兴的、具备强大自托管优势的解决方案。
+
+### 详细摘要
+
+#### 一、 Overlay VPN工作原理
+
+*   **核心概念：** Overlay VPN通过协调服务器（Coordination Server）来协调连接设备，帮助设备确定彼此位置。
+*   **连接方式：** 数据传输主要通过设备间的点对点连接（Peer-to-Peer Connection），不直接经过协调服务器，确保数据隐私。
+*   **中继机制：** 当点对点连接受阻时，协调服务器可充当中继服务器（Relay Server），提供备用连接路径。
+*   **独立性：** Overlay VPN不依赖于传统防火墙进行连接，但部分解决方案可作为防火墙插件。
+*   **安全性考量：** 协调服务器负责网络设备配置和管理，因此其安全性至关重要，这也是自托管（Self-Hosting）备受关注的原因。
+
+#### 二、 Overlay VPN关键评估标准
+
+1.  **自托管能力：** 允许用户在自己的基础设施上部署和管理协调服务器，提供更高的安全性与控制权。
+2.  **开源性：** 客户端和服务端的代码开放程度，影响产品的透明度、可信度和社区支持。
+3.  **底层技术：** 是否基于成熟且经过安全验证的技术，如WireGuard。
+4.  **客户端支持：** 涵盖桌面（Windows, Mac, Linux）、移动（Android, iOS）及特定设备（如Synology, pfSense）的广泛性。
+5.  **核心功能：** 包括访问控制列表（ACL）管理、路由广告（Route Advertisements）、Split DNS以及出口节点（Exit Node）等高级特性。
+6.  **易用性与部署：** 设置的复杂程度和管理界面的直观性。
+7.  **定价模式：** 免费层级的设备数量限制及高级功能收费。
+8.  **作者立场：** 强调无赞助的独立评价，确保客观公正。
+
+#### 三、 主要Overlay VPN产品对比
+
+1.  **Tailscale：**
+    *   **优点：** 基于WireGuard，客户端开源，广泛的客户端支持（包括pfSense），提供出口节点功能，免费层级支持100台设备。
+    *   **缺点：** 官方不提供Web管理界面自托管，但可通过第三方项目Headscale实现。
+    *   **ACL管理：** 基于代码配置，功能强大但对部分用户可能复杂。
+2.  **NetBird (焦点产品)：**
+    *   **优点：** 基于WireGuard，客户端和服务端完全开源，提供完整的管理界面自托管能力（部署简单快速，5分钟内完成），广泛的客户端支持（包括iOS新版），免费层级支持100台设备。
+    *   **缺点：** 暂无出口节点功能，ACL管理相对Tailscale更简化。
+    *   **发展：** 2024年1月将发布带有新UI（包含暗模式）的版本。
+3.  **Netmaker：**
+    *   **优点：** 基于WireGuard，开源，可自托管。
+    *   **缺点：** 缺乏手机客户端支持，设置过程相对复杂。
+4.  **ZeroTier：**
+    *   **优点：** 采用非WireGuard的成熟协议，客户端开源，广泛的客户端支持，自托管选项（但无官方Web UI）。
+    *   **缺点：** 自托管的Web UI需依赖第三方Alpha项目。
+5.  **Twingate：**
+    *   **缺点：** 完全闭源解决方案，缺乏透明度，尽管拥有强大的商业集成功能，但因闭源且存在赞助推广，作者不推荐。
+
+#### 四、 总结与展望
+
+NetBird因其对自托管和开源的承诺，以及简单高效的部署体验，被作者认为是Tailscale的有力替代品，尤其适合希望完全掌控其VPN基础设施的用户。作者将持续关注NetBird的后续发展，并期待其未来能集成pfSense等更多平台支持。
+
+<Mermaid_Diagram>
+graph LR
+    A["Overlay VPN 解决方案评估与比较"]
+    subgraph "核心概念"
+        B["Overlay VPN 工作原理"] -- "依赖" --> C["协调服务器"];
+        C -- "促进" --> D["点对点连接"];
+        C -- "可选提供" --> E["中继服务器"];
+        B -- "不依赖" --> F["防火墙"];
+    end
+
+    subgraph "关键评估标准"
+        G["自托管能力"] -- "影响" --> H["安全性与控制"];
+        I["开源性"] -- "提升" --> J["透明度"];
+        K["底层技术"] -- "如" --> L["WireGuard"];
+        M["客户端支持"] -- "涵盖" --> N["桌面与移动平台"];
+        O["核心功能"]
+        O -- "包含" --> P["ACL 管理"];
+        O -- "包含" --> Q["路由广告"];
+        O -- "包含 (部分)" --> R["出口节点"];
+    end
+
+    A --> B;
+    A --> G;
+    A --> I;
+    A --> K;
+    A --> M;
+    A --> O;
+
+    subgraph "主要产品对比"
+        S["Tailscale"] -- "基于" --> L;
+        S -- "客户端支持" --> N;
+        S -- "官方不提供" --> G;
+        S -- "支持" --> R;
+        S -- "可通过" --> U["Headscale (第三方自托管)"];
+        U -- "兼容客户端" --> S;
+
+        T["NetBird (焦点)"] -- "基于" --> L;
+        T -- "客户端支持" --> N;
+        T -- "提供完整" --> G;
+        T -- "部署简便 (5分钟)" --> T;
+        T -- "使用" --> V["Zitadel (默认身份提供商)"];
+
+        W["ZeroTier"] -- "基于" --> L2["专有协议"];
+        W -- "客户端支持" --> N;
+        W -- "自托管 (无Web UI)" --> G;
+
+        X["Netmaker"] -- "基于" --> L;
+        X -- "无手机客户端" --> N;
+        X -- "提供完整" --> G;
+        X -- "设置复杂" --> X;
+
+        Y["Twingate"] -- "完全闭源" --> J2["缺乏透明度"];
+        Y -- "商业集成强" --> O;
+        Y -- "不推荐 (作者主观偏见)" --> Y;
+    end
+
+    S -- "与" --> T;
+    T -- "优势: 易于自托管" --> G;
+    S -- "优势: 出口节点" --> R;
+
+    subgraph "作者立场"
+        Z["独立且无赞助评价"] -- "确保" --> Z2["客观性"];
+        Z2 -- "特别关注" --> T;
+    end
+
+    A --> S;
+    A --> T;
+    A --> W;
+    A --> X;
+    A --> Y;
+    A --> Z;
+
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    style G fill:#FFA07A,stroke:#333,stroke-width:2px,color:#333;
+    style H fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#FFA07A,stroke:#333,stroke-width:2px,color:#333;
+    style J fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    style S fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style T fill:#90EE90,stroke:#333,stroke-width:2px,color:#333;
+    style U fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style V fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style W fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style X fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+    style Y fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style J2 fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style L2 fill:#FFFFCC,stroke:#333,stroke-width:1px,color:#333;
+
+    style Z fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+    style Z2 fill:#F9F7D8,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+ Time here for large systems and we're going to talk about overlay VPN solutions. This is a topic I've been covering on my channel since about 2019 starting with zero tier, but I've also covered Nebula, tail scale, and lots of other talks around that topic. You'll find a whole list linked down below over in my forums and that's actually we're going to head next in a moment. But I want to just close something right away here up front because this is important to the video. This is not sponsored by any of the companies that I've mentioned. Even though I've interacted with many of them, I have no business relationship in terms of offer codes, affiliate links, or any sponsorships. This is particularly important because I do have twingate on the list because people keep asking about it, not because I recommend it. And they did reach out and ask if I would be interested in sponsorship. And I said, no. And we'll talk about that when we get to the comparison charts because sometimes solutions are popular because they're good and sometimes solutions are popular because maybe they're good, but they've also spent a lot of money having other YouTube channels promote them. I just want to bring it up front that there is no promotion here. Now, I'm going to talk about NetMaker as well briefly because a lot of people have asked about it, but the focus today is mostly going to be comparing NetBird and tail scale. But I'll be talking about how it stands up to the other solutions as well. So let's get started. Are you an individual or forward thinking company looking for expert assistance with network engineering, storage, or virtualization projects? Perhaps you're an internal IT team seeking help to proactively manage, monitor, or secure your systems. We offer comprehensive consulting services tailored to meet your specific project needs. Whether you require fully managed or co-managed IT services, our experienced team is ready to step in and help. We specialize in supporting businesses that need IT administration or IT team seeking an extra layer of support to enhance their operations. To learn more about any of our services, head over to our website and fill out the higher-s form at LawrenceSystems.com. Let us start crafting the perfect IT solution for you. If you want to show us some extra love for our channel, check out our Swag Store and affiliate links down below that will lead you to discounts and deals for products and services we discuss on this channel. With the ad read out of the way, let's get you back to the content that you really came here for. I want to start by talking briefly how Overlay VPNs work. I have a more in-depth video you'll find linked in the forums down below. Overlay VPNs require a coordination server to coordinate all the different devices that are attached to them so they can figure out where they are. It is not dependent on the firewall, although some of them do have options as plugins for the firewall and can involve it. It is not a necessary piece that the firewall is being involved. And the concept is, if you have an untrusted network that you're on, but you like to get back to your home office resources or your home network resources, all these devices are constantly staying in contact with the coordination server. And when the request is made to one of the devices, the coordination server will broker that connection to coordination server does not involve itself in anything more than handing the keys between the devices so the devices can hopefully talk to each other. But if they cannot talk to each other because of some challenge they've run into, it can also act as a relay server, if some reason the firewall was blocking certain features, but still allowing to talk to the coordination server. This is important because the differences in some of the tools I'll be talking about is whether or not you get to host the coordination server because whoever hosts the coordination server has to be responsible for the security of it. Because even though it does not see the data traversing it that is handled by the transport layer security between the devices, it does have the ability, of course, to provision and add more devices to the network. And that is a critical feature in why self-hosting is such a popular option. And let's dive into which ones do and do not have self-hosting now. And that brings us to the forum post and let's just jump right into tail scale. Tail scale is wire guard based, which is awesome. Wire guard works really well. It's fast. It's a well proven technology in terms of security. The transport layer is very well reviewed. And that's why I have that as a category in here. Tail scale offers open source clients. And I think this is great because now you understand what the client does and you can understand how a coordination server is talking to it and what protocols are being used. I love the transparency on it. So when you load these on your devices, you have good visibility into it. But the server portion, the web management interface of tail scale is not hostable. They do not give you any option for that. It ties to their server, but they are actually nice enough to commit some changes to head scale, which is a third party, not at all managed by the people at tail scale option in order to host the server. Matter of fact, they've even made it easy and allow you to in the Android app change the coordination server, which is defaults to of course, tail scale, but they gave you an option to point it towards your own server, which could be head scale. I think that's pretty neat that they have this option. You'll find in this forum post linked a video I did on head scale. Their client support is Windows, Mac, Linux, BSD, Android, iOS, Synology and my favorite PF sense. I like that they have a PF sense plugin built right in. This allows you to use your PF sense and do routing on it. Also you find a video that I have on that topic. The next one that I'm pretty impressed with is net bird also where guard base also open source client also has a server open source to completely hostable. We'll talk about that more in a moment because I did set up a demo that we'll be doing a little bit further in the video on that Windows, Mac, Linux, Android and iOS. The iOS was a very recent release. I actually had a conversation with the people who founded net bird and I think it's a pretty impressive product. I'll be doing a video soon diving deeper into it because they have a new UI they're coming out with and I said, well, hey, as soon as you have that new UI release, which is supposed to be later in January of 2024. I will also do a video on it because it has dark mode in the current one doesn't, but we will show you the UI. Netmaker awesome open source has a video linked down below on that. I think netmaker is pretty neat. It is wire guard base open source client open source server hostable, but no phone support available. And that matters a lot to a lot of people who want to be able to access things on our phone like me. This is one of the reasons the top two are on there. That just being missing is kind of a non starter for me. Also from a standpoint of setup, it is substantially more steps to set that up the net bird or tail scale. And that's why I left a link to a video so you can just kind of take a look at it yourself on how they go about that. This one down the list is zero tier not wire guard base, but a also well vetted protocol. Zero tier has been around a while and we've recommended this clients in the past and we've never had a problem with zero tier just like tails. Can we find those two solutions are the most pictures they've been around the longest and it is fully open source on the client. They have an open source server option, but no web UI for it, but there is third parties I know working on it, but I believe it's all labeled as alpha, but they do support Windows, Mac, Linux, BSD, Android, iOS and Synology. Those are two I think still a good solution out there. The last one on the list is not one I've ever used, but since they are shelling out money to YouTubers to do sponsorships, they have become a popular topic in the comments on many of my videos about overlay VPNs. It is a completely closed source solution. They did reach out to me about doing a video and I looked at it and said there's other good open source solution. So I didn't want to, although I do like sponsorship money. I didn't want to take their sponsorship money for a product. I just don't really feel I would use or recommend. Now, I don't know anything bad about it, but I know it's closed source and I know the other solutions I mentioned before this one are quite good and quite robust. It does have some advantages of having more business integration functionality. I did look at their site on that, but of course it's a black box in terms of how they actually handle transport layer security. They don't give you a ton of details other than TLS security on there, but this is the problem I have when you have a completely closed source client and closed source coordination server. I don't have any visibility to validate any of the claims they make. I would have to do a lot of reverse engineering and I just don't feel like trying to dig into that product because it's not meant to be peered into. It's meant to be closed source host solution. You pay them for maybe I should have taken the money since I've now kind of mentioned them and they now will have more publicity. But then again, I want my reviews to be from me honest and unbiased as much as any time money involved can change biases or at least what you think of the person on there. I wanted to make sure in this video is implicitly clear. There is no bias towards any of the products I've mentioned. Actually, I am a little bit biased, but it has nothing to do with money. It's just how much I like these different services. But I want to focus in here on tail scale and net bird. I've not been using net bird, but more than a few days to do my testing, but I plan to keep continuing the testing because I've been really impressed so far. Things I want to highlight that they're very similar between them is starting at the way you sign up. You can sign up for a free account with no credit card necessary for net bird. I actually like that they do have a business option. So if you are someone who wants support and would like business level support, this also helps fund the project. That's great. It starts at $5 a month, but you get a hundred machines, which is great for home lab people who want to start it out for free. And of course, tail scale has a similar offering. You get a hundred devices for free. They call them devices, not machines, but the same concept. And that also does not require a credit card to sign up and start using tail scale. So both of them start. They are very similar. They both have similar DNS peer to peer connections. They even both do split DNS and route advertisements. So one device can act as a route advertisement to allow non overlay devices to be added and actually push those routes so other devices can get to them. Now they both have ACL management. And let's go into the interfaces to talk about the differences between the ACL management because this is where things start to veer off. Now this is what the ACL system looks like on tail scale. I don't think it's too difficult. They have good documentation, but some users may find this a little bit daunting. They have a much more simplistic approach. Of course, not all the same features, but a simple interface for adding rules. Now the default rule for both tail scale and net bird is the same where it allows all traffic to pass, but then you can add rules and you can add your group. So if we have the all groups, which are just the groups I have in here right now, and I want to call this 443 rule and we want to say we want TCP port 443 and create rule. Now we have a rule that allows TCP 443 to talk between there and we can disable the default rule to stop the allow all the talk and start being implicit about each of our rules and build out groups. A little bit more simplistic, not quite as many features as tail scale has, but nonetheless this might be easier for some users or might be enough for what you need to get done. Now one thing I did not see an equivalent of in net bird is the ability to advertise as an exit node. This is a feature by which the other devices that are attached here mesh network can actually exit through that network, essentially creating a full tunnel network. So I can take my phone in when I'm remote, but want it to exit through the IP address of my PF sense. I can use this as an exit node as an option or even my laptop. I can just say, hey, I would prefer all the tunnel go through this and then out this network as opposed to the default split tunnel way that it normally operates, but that brings us next to the killer feature that net bird has. That's being able to self host from net bird their entire management interface. Matter of fact, the management interface I was logging into was mine from the self hosted setup. It is the same interface whether you get the free tier account, the paid account or this account. Now there's a couple different varied extra features they have with some of their paid tiers in terms of other identity providers being integrated, but you can integrate those yourself if you want other identity provisioning on there. It's just by default only going to come with zitadel integration. And that's how you set it up. I won't get too much into that until I do the later video, but it's all well laid out here. And I would say absolutely they're not lying about this self hosting in under five minutes. Go right down here to the command and it's extremely simple. This is all I had to do was set this up. I loaded Debian. I made sure it had a public IP address. I made sure DNS was working. Then you type in from the bash command line export, whatever the DNS entry is for that. And it kicks off this script. It is that simple. They do have a full detail if you want to manually set it up. But if you want five minutes set up and don't know how to read through a lot of commands, copy paste this and make sure your DNS works and it instantly sets this up and has the interface up and running just like they said in under five minutes, even faster if you've already downloaded and pulled all the Docker images down. Actually, I think is what took the longest of setting this up because once the Docker images are pulled, it creates an admin account and gives you the information right on screen for you to log in. And if you goop up like I did the first time and actually delete the password, it gives you it's actually really easy to delete that and start over. Just let it redo it again. And it does not have to pull the Docker image the second time. So it stands up and even under, I would say less than a minute if you have a fast machine. I was really impressed with all the testing I've done. I've been though it's only been a few days with never, but they're really based on some tried and true technologies. And I think it's a pretty solid option. I do plan to keep testing it until their new version comes out. Then I'll do the video because this supposed to land here later in January of 2024 and my interaction so far has been really good with the founders. I actually had some questions back and forth with them and they're on a good roadmap with this just the fact that they are the ones providing this whole interface so you can manage it yourself makes it a really promising and really exciting project. Leave your thoughts and comments down below about which ones you like. I'm always curious, always interested in hearing from you. Let me know if there's a one of them I missed that I should be covering and adding to my list here. Definitely. That's how I discovered this one itself was several people reaching out to me and seeing Tom have you heard of net bird and I hadn't, but I'm really thankful for all the people that had mentioned it because this could possibly replace tail scale. I think it's definitely a compelling option and maybe one day I hope they have APF sense feature because that would be really cool. Like and subscribe if you want to see more content from this channel. Head on my forums where you'll find this entire list on there and you can add to the conversation a more in depth way than you can in YouTube comments. So forums.learnsystems.com and like and subscribe to see more content from this channel. All right and thanks.
