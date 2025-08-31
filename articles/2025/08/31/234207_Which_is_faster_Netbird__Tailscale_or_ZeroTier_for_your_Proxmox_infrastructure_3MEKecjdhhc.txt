@@ -1,0 +1,145 @@
+Timestamp: 2025-08-31T23:42:07.469110
+Title: Which is faster Netbird, Tailscale or ZeroTier for your Proxmox infrastructure 3MEKecjdhhc
+URL: https://www.youtube.com/watch?v=3MEKecjdhhc
+Status: success
+Duration: 9:58
+
+Description:
+**核心观点:**
+Zero-Tier在跨大陆连接中表现出显著优势，且其独特架构无论距离远近均能提供低延迟，超越了更受欢迎的Netbird和Tailscale，尤其适用于企业级跨区域网络需求。
+
+**内容总框架:**
+零信任网络解决方案性能比较：Zero-Tier、Tailscale与Netbird的跨区域与本地化表现评估。
+
+---
+
+### **零信任网络方案性能比较总结**
+
+**一、 介绍**
+*   **视频主题:** 深入探讨Proxmox零信任网络方案，并对Zero-Tier、Tailscale和Netbird进行性能比较。
+*   **核心发现:** 测试结果令人惊讶，最佳性能并非来自最受欢迎的系统（Netbird）。
+*   **评测嘉宾:** Nikko，一位拥有独特欧洲口音的Proxmox专家。
+
+**二、 测试方法**
+*   **对比对象:** Zero-Tier、Tailscale、Netbird。
+*   **测试指标:** Ping延迟时间。
+*   **测试次数:** 为确保结果可比性，所有测试均进行九次Ping。
+*   **测试情境:**
+    1.  **跨大陆连接:** 从一个大陆Ping另一大陆的服务器。
+    2.  **本地服务器连接:** Ping同一Proxmox本地服务器（直接Ping与通过零信任网络Ping）。
+    3.  **同国家数据中心连接:** Ping同一国家数据中心内的两台服务器。
+
+**三、 测试结果**
+*   **跨大陆连接 (Ping另一大陆服务器):**
+    *   **Zero-Tier:** Ping延迟与直连非常接近，表现出色。
+    *   **Tailscale:** Ping延迟明显长于直连，且长于Zero-Tier。
+*   **本地Proxmox服务器连接 (Ping本地服务器/虚拟机):**
+    *   **Zero-Tier:** Ping延迟与直连非常相似，差异极小。
+    *   **Tailscale:** Ping延迟略长于直连，存在一定差异。
+*   **同国家数据中心连接 (Ping同国服务器):**
+    *   **Zero-Tier:** Ping延迟显著低于Netbird，表现优异。
+    *   **Netbird:** Ping延迟明显高于Zero-Tier。
+
+**四、 结论**
+*   **Zero-Tier的架构优势:**
+    *   Zero-Tier的设计与架构独特，能够建立测试机器之间的“直连隧道”。
+    *   这一特性使得Zero-Tier无论是在跨大陆还是同国家连接中，都能始终保持极低的Ping延迟。
+*   **地理位置对性能的影响:**
+    *   **本地地理范围（同国家）:** Zero-Tier、Netbird和Tailscale之间的性能差异相对较小，均能良好工作（Tailscale结合Headscale甚至能进一步提升竞争力）。
+    *   **跨大陆/跨洋连接:** Zero-Tier能带来显著的性能改善，远超其他系统。
+*   **受欢迎度与性能对比:**
+    *   尽管Netbird是更受欢迎的系统，但我们的测试结果表明，在需要跨区域（例如跨大西洋/太平洋）连接的场景中，Zero-Tier的性能表现更为出色。
+*   **应用场景推荐:**
+    *   **家庭使用:** 三种服务均可选择。
+    *   **企业级应用（涉及跨大西洋或跨太平洋路由）:** 强烈建议根据测试结果，优先考虑Zero-Tier。
+
+**五、 呼吁**
+*   感谢观看，并邀请观众点赞、订阅频道，分享对测试结果的看法和预期。
+
+---
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "零信任网络方案性能比较"
+        A["零信任网络方案性能比较"]
+    end
+
+    subgraph "参评系统"
+        B["Zero-Tier"]
+        C["Tailscale"]
+        D["Netbird"]
+    end
+
+    subgraph "测试情境"
+        E["Ping延迟测试"]
+        F["跨大陆连接测试"]
+        G["本地服务器连接测试"]
+        H["同国家数据中心连接测试"]
+    end
+
+    subgraph "核心发现与结论"
+        I["Zero-Tier架构优势"]
+        J["直连隧道技术"]
+        K["Zero-Tier: 极低Ping延迟 (无论距离)"]
+        L["Zero-Tier: 跨大陆表现优异"]
+        M["Zero-Tier: 本地表现与直连相似"]
+        N["Zero-Tier: 同国表现优于Netbird"]
+        O["Tailscale: 跨大陆Ping延迟更高"]
+        P["Tailscale: 本地Ping延迟更高"]
+        Q["Netbird: 同国Ping延迟劣于Zero-Tier"]
+        R["Netbird: 流行度高"]
+        S["整体结论: 最佳性能非最流行"]
+    end
+
+    subgraph "应用场景与建议"
+        T["家庭使用"]
+        U["企业级跨区域应用"]
+        V["推荐: 三者皆可"]
+        W["推荐: Zero-Tier更优"]
+    end
+
+    A -- "包含" --> B; A -- "包含" --> C; A -- "包含" --> D;
+    A -- "通过" --> E;
+    E --> F; E --> G; E --> H;
+
+    B -- "表现于" --> L; B -- "表现于" --> M; B -- "表现于" --> N;
+    C -- "表现于" --> O; C -- "表现于" --> P;
+    D -- "表现于" --> Q; D -- "特点" --> R;
+
+    L -- "支持" --> K; M -- "支持" --> K; N -- "支持" --> K;
+    K -- "源于" --> I; I -- "利用" --> J;
+
+    K -- "导致" --> S;
+    R -- "与S形成对比" --> S;
+
+    S -- "影响" --> T; S -- "影响" --> U;
+    T -- "结果" --> V; U -- "结果" --> W;
+
+
+    style A fill:#E0FFFF,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style B fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#BA55D3,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#DA70D6,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#32CD32,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style L fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#FFA07A,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#FFA07A,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#FF8C00,stroke:#333,stroke-width:2px,color:#333,font-weight:bold;
+    style T fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style U fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style V fill:#98FB98,stroke:#333,stroke-width:1px,color:#333;
+    style W fill:#008000,stroke:#333,stroke-width:2px,color:#FFF,font-weight:bold;
+</Mermaid_Diagram>
+
+Content:
+ Today we are going to dive into the exciting world of zero-trust networking for Proxmox. You will be surprised that the best performance did not come from the most popular system. Our approach was unbiased, but the results stunned us. Now prepare to be amazed by the results of our tests. Now, without further ado, let me introduce you to our Proxmox expert, Nikko. Please note that Nikko has a charming DOTA-KANESE European accent, but fear not, he speaks the Queen's English fluently. Over to you, Nikko. Thank you, George. By the way, today's video is going to be controversial. We are going to compare zero-tier, tile-scale, and net bird. You will not believe what results we got when we first made these tests. First, we are going to ping a server on another continent, on the other side of the Atlantic. Here, we are going to compare the direct ping to that server with the ping going through zero-tier. This is the direct ping to that server. Now we are going to ping that server connecting through zero-tier. We want to compare what zero-tier does when working across the pond, in other words, from another continent. For all our tests, we are going to do nine pings, so that our results can be comparable. Now that we've done this test, we will come back and look at the results in more detail. But as you can see, the direct ping to this server in another continent and the ping going through tile-scale is coming up very close. I'm now going to ping a local server, a prox-mox server. I'm going to ping it direct, and I'm going to ping it through zero-tier. This is direct. And through zero-tier. And you can see it's amazing that the results are amazing. This is the ping direct to the server, and this is the ping using the zero-tier network. You can see that these results are very similar. We are now going to do something similar, but with tile-scale. In the previous test, we've been using the direct and through zero-tier. Now we are going to use tile-scale, and we are going to ping direct as well as through tile-scale. This is the direct. We are pinging a VM in our prox-mox server, and now through tile-scale. And here we see similar results, which is what we expected. They're not exactly the same. You can see that the ping times going through tile-scale are definitely taking longer than the ping times direct to that VM. So you can see here there is definitely a difference between tile-scale and zero-tier. We will now do a different test. We are now going to ping two servers in the same country. In this test, we want to compare zero-tier with netbird. This is the zero-tier ping. We are now going to do the netbird ping to the server in the same data center in the same country. Now, if you look at the results, you can see there is the big difference between pinging using zero-tier and pinging using netbird. And this was very unexpected from doing these tests. We were able to make the following conclusion. Zero-tier has been designed and built using a different approach from netbird and tile-scale. We found that with zero-tier, regardless whether you were in across the continent or whether you were in the same country, you always got very small pings. And the reason is the way the zero-tier server establishes a direct tunnel between the two machines that we were testing. So that was the difference between zero-tier, netbird and tile-scale. The design and the architecture was different. Secondly, we found that if you were working in the local geography, in other words, in the same country, it would not make a big difference using zero-tier, netbird or tile-scale. However, we did find that if you were working across the Atlantic, in other words, from a different continent, then definitely zero-tier will make a big improvement on the way you connect. And although we have found that netbird is more popular, our results show that if you are working in the same geography, that's fine. Netbird is good. It works well. And so there's tile-scale. In fact, if you use head-scale with tile-scale, you probably could compete with zero-tier for working across different geographies. However, now that you have seen our results, please give us a comment. Tell us what you anticipated and what you saw in our results. We tried to make this video unbiased, but from the results, you can see there is definitely a small difference if you are working from the same country, but there is definitely a big difference if you are working across continent. So it depends on your requirement. Are you using this service for your home use? In which case you could use any of the three. But if you are in a business where you are routing connections across the Atlantic or across the Pacific, then in your case, you will need to have a look at our results and make your own conclusion. We trust you found our figures interesting. We never expected to get these results. Thank you for watching this video. Please give us a like and please subscribe to our channel. We haven't reached our target yet. And with that, back to you, Josh. We thank you for watching this video. Today, Niko tested Netbird, Tailscale and Zero-tier, to see which was better. Our approach was unbiased, but the results have stunned us. We were surprised that the best performance did not come from the most popular system which is Netbird. If you have not given us a like, please do so. Please let us know why are you watching our videos. Please subscribe to our channel so we can reach our target. Your support is crucial for our channel's growth. Stay curious and continue exploring and harnessing Proxmox's remarkable potential in your home lab and DevOps journey. Thank you for being part of our community.
