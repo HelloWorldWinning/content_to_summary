@@ -1,0 +1,159 @@
+Timestamp: 2025-08-31T23:38:30.970950
+Title: I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far
+URL: https://www.xda-developers.com/switched-from-tailscale-to-fully-self-hosted-alternative-netbird/
+Status: success
+Duration: 0:00
+
+Description:
+**核心要点总结:**
+该文章推荐NetBird作为Tailscale的强大自托管替代方案，它基于WireGuard协议，内置身份管理功能，提供出色的用户界面和文档，且自托管版本与云版本功能对等，非常适合寻求完全掌控其远程网络基础设施的用户。
+
+**总结纲要:**
+
+一、引言：远程访问需求与传统VPN的局限
+    *   在家中运行私有云服务或远程访问家庭网络是常见需求。
+    *   传统VPN和动态DNS并非最优解。
+    *   Tailscale等点对点VPN隧道是更现代、便捷的方案。
+
+二、Tailscale的问题与Headscale的不足
+    *   Tailscale的痛点在于其隧道初始化服务器并非用户所有。
+    *   Headscale作为Tailscale的开源控制平面替代方案存在，但被作者认为不够强大或易用。
+
+三、NetBird的崛起与核心优势
+    *   NetBird是作者最近发现的优秀远程访问工具，提供云托管和完整的自托管选项。
+    *   **核心技术:** 基于WireGuard协议，保证速度和安全性。
+    *   **身份管理 (IDP):**
+        *   将身份管理作为核心功能，与大多数先集成后考虑IDP的工具不同。
+        *   自托管时默认使用Zitadel，也支持Keycloak和Authentik等兼容OpenID的IDP。
+        *   重视MFA和审计跟踪，提高家庭网络安全性。
+    *   **用户体验与功能:**
+        *   出色的Web UI，简化设备、服务和网络的配置。
+        *   支持设置密钥以自动化设备部署。
+        *   **关键优势:** 自托管版本与云托管版本功能完全一致，无“诱饵与转换”策略。
+        *   提供全面、详尽的文档。
+    *   **部署与考量:**
+        *   首次设置需要配置SMTP邮件服务器用于发送注册邮件。
+        *   自托管版本目前似乎缺少“批准对等体”的功能，需注意访问控制。
+        *   强大的访问控制策略，支持路由对等体和站点到站点隧道。
+
+四、NetBird的局限与其他替代方案
+    *   **考量:** 自托管IDP对某些用户而言可能过于复杂。
+    *   **云版选项:** 免费云版本支持最多5个用户和100台设备，但缺失姿态检查等高级功能。
+    *   **市场替代品:**
+        *   Tailscale (SaaS/自托管*)
+        *   Pangolin (仅自托管)
+        *   ZeroTier (去中心化/自托管*)
+        *   各具特点，如协议、托管方式、认证和易用性等。
+
+五、结论：选择最适合自身需求的工具
+    *   没有绝对的最佳工具，重要的是根据个人需求和管理偏好进行选择。
+    *   NetBird设置快速，功能强大，可作为网状VPN和反向代理。
+    *   鼓励用户尝试不同工具，找到易于管理且符合安全标准的方案。
+
+**Overarching Framework (总体框架):**
+家庭实验室远程访问解决方案的比较与评估：聚焦自托管方案。
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "问题与背景"
+        A["家庭实验室远程访问痛点"]
+        B["传统VPN/DDNS不足"]
+        C["点对点VPN隧道 (Tailscale模型)"]
+        B --> A;
+        C --> A;
+    end
+
+    subgraph "Tailscale及其挑战"
+        D["Tailscale问题: 控制平面非自控"];
+        E["Headscale (Tailscale自托管)"];
+        F["Headscale挑战: 不够强大/易用"];
+        C -- "导致" --> D;
+        D -- "解决方案但有不足" --> E;
+        E --> F;
+    end
+
+    subgraph "NetBird解决方案"
+        G["NetBird (核心自托管方案)"];
+        H["基于WireGuard协议"];
+        I["内置身份管理 (IDP)"];
+        J["默认IDP: Zitadel"];
+        K["兼容OpenID (Keycloak, Authentik)"];
+        L["优秀Web UI"];
+        M["全面详尽文档"];
+        N["云/自托管功能对等"];
+        O["快速安全"];
+        P["深度访问控制"];
+        Q["网络/DNS集成"];
+        R["挑战: 需自托管IDP"];
+        S["挑战: 注册需SMTP服务"];
+        T["挑战: 对等审批 (云版功能)"];
+        U["用例: 点对点VPN"];
+        V["用例: 路由对等体 (SSH)"];
+        W["用例: 站点到站点隧道"];
+
+        C -- "提供替代" --> G;
+        G -- "核心技术" --> H;
+        G -- "核心功能" --> I;
+        I --> J;
+        I --> K;
+        G -- "用户体验" --> L;
+        G -- "支持" --> M;
+        G -- "关键优势" --> N;
+        G -- "性能" --> O;
+        G -- "安全" --> P;
+        G -- "集成" --> Q;
+        G -- "考量" --> R;
+        G -- "考量" --> S;
+        G -- "考量" --> T;
+        G -- "应用" --> U;
+        G -- "应用" --> V;
+        G -- "应用" --> W;
+    end
+
+    subgraph "其他选择与决策"
+        X["其他点对点VPN替代方案"];
+        Y["Pangolin (仅自托管)"];
+        Z["ZeroTier (去中心化/自托管)"];
+        AA["用户需求与管理偏好"];
+        BB["最终结论: 选择最适合的工具"];
+
+        C -- "还有" --> X;
+        X --> Y;
+        X --> Z;
+        G -- "影响选择" --> AA;
+        X -- "影响选择" --> AA;
+        AA -- "形成" --> BB;
+    end
+
+    style A fill:#FFEBEE,stroke:#D32F2F,stroke-width:2px,color:#333;
+    style B fill:#FFEBEE,stroke:#D32F2F,stroke-width:1px,color:#333;
+    style C fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#333;
+    style D fill:#FFF3E0,stroke:#F57C00,stroke-width:2px,color:#333;
+    style E fill:#FFF8E1,stroke:#FFB300,stroke-width:1px,color:#333;
+    style F fill:#FFE0B2,stroke:#FB8C00,stroke-width:1px,color:#333;
+    style G fill:#E8F5E9,stroke:#4CAF50,stroke-width:3px,color:#333;
+    style H fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style I fill:#C8E6C9,stroke:#66BB6A,stroke-width:1px,color:#333;
+    style J fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style K fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style L fill:#C8E6C9,stroke:#66BB6A,stroke-width:1px,color:#333;
+    style M fill:#C8E6C9,stroke:#66BB6A,stroke-width:1px,color:#333;
+    style N fill:#A5D6A7,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style O fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style P fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style Q fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style R fill:#FFFDE7,stroke:#FFD600,stroke-width:1px,color:#333;
+    style S fill:#FFFDE7,stroke:#FFD600,stroke-width:1px,color:#333;
+    style T fill:#FFFDE7,stroke:#FFD600,stroke-width:1px,color:#333;
+    style U fill:#F1F8E9,stroke:#AED581,stroke-width:1px,color:#333;
+    style V fill:#F1F8E9,stroke:#AED581,stroke-width:1px,color:#333;
+    style W fill:#F1F8E9,stroke:#AED581,stroke-width:1px,color:#333;
+    style X fill:#E0E0E0,stroke:#9E9E9E,stroke-width:2px,color:#333;
+    style Y fill:#F5F5F5,stroke:#BDBDBD,stroke-width:1px,color:#333;
+    style Z fill:#F5F5F5,stroke:#BDBDBD,stroke-width:1px,color:#333;
+    style AA fill:#E1F5FE,stroke:#03A9F4,stroke-width:2px,color:#333;
+    style BB fill:#BBDEFB,stroke:#2196F3,stroke-width:3px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far By Joe Rice-Jones Published Jun 3, 2025 Follow Followed Like Thread 5 Link copied to clipboard Sign in to your XDA account Running your own private cloud at home is a great way to shave off subscription fees every month, but even if you're not running a stack of containerized services, you probably still need to be able to access your home network while away from it. While you could set up a traditional VPN, or even dynamic DNS to connect to your home network from a consistent IP address, these aren't the best way anymore. Instead, services like Tailscale set up point-to-point VPN tunnels, so all your devices act as if they're on the same physical network, regardless of their location. Now, in the true spirit of home lab self-hosting, Tailscale has one problem , the servers that initialize those tunnels aren't yours, and while you could use the open-source Headscale to create your control plane, it's not as powerful or as easy to use as the standard approach. I've been cycling through numerous remote access tools lately, and one has stood out—​​​​​NetBird. While you could use the version hosted on their cloud, like Tailscale, they also offer a full self-hosting option, which I had to check out as it sounds great. It's not just fast and secure; it also offers deep access control, network and DNS integration, and a fantastic web UI that has yet to let me down. Related Should you use Tailscale, Pangolin, ZeroTier, or NetBird to remotely access your home lab? Which remote access tool is best for your home lab? Posts 9 So, what is NetBird, and why do I use it? Not every self-hosted remote access tool has identity management at the core Like most well-known remote access tools, NetBird is built on WireGuard, making it fast and known for its security. However, unlike many other remote access tools, it has identity management built into its core. Therefore, when you self-host it, the first thing you set up is Zitadel, the default identity provider. But you can use any IDP that uses OpenID, including Keycloak and Authentik. The cloud-based version supports Google Workspace, Azure, Okta, and Auth0, but this feature is only available behind the Teams' subscription tier. My experience with self-hosted access tools so far is that IDP integration is usually done after the fact, and you can often get away without using it at all. However, this is my home network, and I appreciate the idea that every user who connects to it has a login with multifactor authentication (MFA) and an audit trail of events, just in case. It's a nice touch in a sea of potentially stormy waters. Once Zitadel is working, you head to the NetBird login page and request access. I couldn't figure out why it wasn't working at first, until I remembered I hadn't set up a SMTP email server to send the registration emails from. A few minutes later, I was in the NetBird UI, adding new users and deciding on which services I was going to expose. Be careful here, though, as it seems the ability to approve peers is limited to the cloud-based version, so you could end up with new users that you don't want. That's possibly okay because new users don't have access to anything unless you've set up access control to allow ALL, which is bad security practice anyway. Using robust access controls to allow only specific user groups to use individual devices and services is always the best way. Customize everything with a great UI One thing I appreciate about NetBird is the well-made UI. On the user's side, all they need to do is download the NetBird app to their computer or mobile device, sign in with their login details, and any services, devices, and networks configured for their username will be available. You can even create setup keys that authenticate a device on its first use, allowing you to automate deployment with tools like Ansible, Terraform, and others. But the other thing? The cloud-hosted version of NetBird has some features behind the subscription model is exactly the same as the self-hosted one. None of this "self-hosted users are several versions behind" or any of the other bait-and-switch tactics of some networking companies. The other huge plus point for me? A comprehensive documentation section that not only tells you how to get started, but also the intricacies of every feature with examples, well-written how-tos, and explanations of which features are available on the free plan or not. Related How are Cloudflare tunnels different from a VPN? Both let you access your services remotely but they do it in very different ways. Posts NetBird is pretty great, but it might not be the best fit for you Remote access tools might use the same protocols, but the deployment is very different NetBird is a powerful, self-hosted access tool with numerous advanced access control policies that do more than enable NAT traversal for encrypted tunnels, making SSH access to remote web servers easy to set up. You could set up one peer on your home network as a routing peer, potentially on your router, and access internal resources on your network securely. It's also simple to set up site-to-site tunnels, without the complicated firewall configurations you'd typically need. You have other options It has a lot going for it, but not everyone wants to self-host an identity management provider. You can still use the free cloud-based version for up to 5 users and 100 devices, although you'd lose access to Posture Checks (handy for segmentation) and a few other things. Plus, it's not like there are no alternatives: Feature Tailscale NetBird Pangolin ZeroTier Protocol WireGuard WireGuard WireGuard Custom (VL1/VL2) Hosting SaaS/self-hosted* Cloud/self-hosted Self-hosted only Decentralized/self-hosted* Authentication SSO, MFA SSO, MFA SSO, 2FA, PIN codes Shared network key Ease of Setup Very easy Moderate Technical Zero-config Use Case Focus Individuals/teams Business teams Homelab/self-host IoT/decentralized Pricing Freemium Freemium Free Freemium *Self-hosting requires enterprise plans or community editions. What I would say is play around with a few, and see which one clicks with you and your needs. It might be the best service in the world on paper, but you're the one who has to manage it and deal with the everyday admin, and that's my least favorite part. Sometimes you just want a simple, quick fix that is no less secure, but hands off identity management and other complex tasks to the service you've signed up for. Related 4 reasons you need to use WireGuard instead of OpenVPN for connecting to your home lab remotely If you have a home lab and want to connect to it remotely, WireGuard is much better than OpenVPN. Posts 15 Don't be afraid to change your remote access tool if your needs change If all you need is a simple, short setup service that allows you to link your devices to your home network from anywhere, NetBird fits the bill. It was measurably quicker to setup than every other self-hosted tool I've used, and wasn't much harder than signing up on their website for the cloud-managed version. It's very powerful, and you can link it to individual services, allowing it to function as both a mesh VPN and a reverse proxy. But if it doesn't meet your needs, or you want more control, there are plenty of other solutions out there. Networking VPN (Virtual Private Network) Follow Followed Like Share Facebook X LinkedIn Reddit Flipboard Copy link Email Close Thread 5 Sign in to your XDA account We want to hear from you! Share your opinions in the thread below and remember to keep it respectful. Reply / Post Images Attachment(s) Please respect our community guidelines . No links, inappropriate language, or spam. Your comment has not been saved Send confirmation email Sort by: Popular Oldest Newest Noland Noland Noland #DZ586831 Member since 2024-06-25 0 Threads 132 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View This isnt true... When you use tailscale the tunnels are hosted by each device, and everything is encrypted.  You can also make one of your devices and exit node, which routes all traffic though one device. Everything is local except the web gui console... 2025-06-04 14:10:47 Upvote 2 Downvote Reply Copy JJWatMYSELF JJWatMYSELF JJWatMYSELF #YC897021 Member since 2025-06-04 0 Threads 1 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View Great article and thank you. I've been thinking about Tailscale for a few months now and this will be helpful for when I get around to putting some time into implementing. Some of the advanced features like FQDN based routing rules are very interesting to me. I hadn't considered there could be a self hosting option which isn't too difficult from how you've described this. I'm particularly interested in site to site connectivity for 95% of my use case and utilize OpenVPN at present. Wireguard naturally is the huge performance value proposition also. I'm curious which solutions can be deployed on dd-wrt with entware or a potential alternative being openwrt. 2025-06-04 06:49:01 Upvote 1 Downvote Reply Copy S S S #PC917170 Member since 2025-06-04 0 Threads 1 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View The article rightly pointed out the shortcoming of using tailscale yet failed to see self hosted solution to this 'Headscale' which I expected to be the center of attention of the article while talking about solutions to tailscale's issues. 2025-06-04 06:24:44 Upvote Downvote Reply 1 Copy Noland Noland Noland #DZ586831 Member since 2024-06-25 0 Threads 132 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View "and while you could use the open-source Headscale to create your control plane, it's not as powerful or as easy to use as the standard approach." He disregarded it right off the bat... Which doesn't even make sense because headscale doesn't have it's own pannel, you need to use a third party panel . 2025-06-04 14:12:59 Upvote 2 Downvote Copy BlackChristianGeek BlackChristianGeek BlackChristianGeek #ZE796256 Member since 2024-08-31 0 Threads 25 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View Thanks for thanking the time to provide us your thoughts and insights. Thus, Tailscale is where I started and doing everything I need for the moment, yet it's nice to know alternatives are out there. God bless. 2025-06-05 21:02:05 Upvote Downvote Reply Copy Terms Privacy Feedback Recommended Here's how your ISP and the entire internet know that you're using a VPN VPN (Virtual Private Network) A VPN might help protect your privacy, but everyone knows you're using one. Posts 21 6 days ago I ran wired backhaul to every room in my house, and it was so worth it Network After years of being Wi-Fi first, now I've seen the light Posts 15 5 days ago It wasn't supposed to work, but someone booted this retro Windows OS on one of 2025's fastest CPUs Windows A retro reboot on a modern hardware Posts 8 3 days ago You don't need an NVR for your home security system, you just need Frigate Software and Services Frigate unlocks the power of AI-driven detections, smart home integration and gives you the flexibility you want from an NVR solution. Posts 13 3 days ago 5 "just-enough" open-source apps I install on every fresh Windows setup Windows 11: Everything you need to know These 5 open-source apps satisfy most of my daily computing needs on Windows Posts 13 5 days ago I ditched my dual monitor setup for an ultrawide monitor, and here's what I regret Monitors From dual screens to curved wonders: What was lost? Posts 11 4 days ago Today's best deals This beastly 49-inch Samsung ultrawide gaming monitor with a 240Hz refresh rate is down to its lowest price of all time 25 minutes ago Grab Logitech's most popular keyboard and mouse bundle for just $20 right now 3 hours ago This beloved strategy game with 94% positive reviews just got a massive 80% discount on Steam for the first time ever 11 hours ago See More Trending Now Designing for graceful failure on the Raspberry Pi is smarter than chasing high-availability Home Assistant isn't just for hardware; make it part of your back-to-school prep I built an offline productivity pack so that I can work and study anywhere  Today's best deals This beastly 49-inch Samsung ultrawide gaming monitor with a 240Hz refresh rate is down to its lowest price of all time 25 minutes ago Grab Logitech's most popular keyboard and mouse bundle for just $20 right now 3 hours ago This beloved strategy game with 94% positive reviews just got a massive 80% discount on Steam for the first time ever 11 hours ago See More Trending Now Designing for graceful failure on the Raspberry Pi is smarter than chasing high-availability Home Assistant isn't just for hardware; make it part of your back-to-school prep I built an offline productivity pack so that I can work and study anywhere I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far By Joe Rice-Jones Published Jun 3, 2025 Follow Followed Like Thread 5 Link copied to clipboard Sign in to your XDA account Running your own private cloud at home is a great way to shave off subscription fees every month, but even if you're not running a stack of containerized services, you probably still need to be able to access your home network while away from it. While you could set up a traditional VPN, or even dynamic DNS to connect to your home network from a consistent IP address, these aren't the best way anymore. Instead, services like Tailscale set up point-to-point VPN tunnels, so all your devices act as if they're on the same physical network, regardless of their location. Now, in the true spirit of home lab self-hosting, Tailscale has one problem , the servers that initialize those tunnels aren't yours, and while you could use the open-source Headscale to create your control plane, it's not as powerful or as easy to use as the standard approach. I've been cycling through numerous remote access tools lately, and one has stood out—​​​​​NetBird. While you could use the version hosted on their cloud, like Tailscale, they also offer a full self-hosting option, which I had to check out as it sounds great. It's not just fast and secure; it also offers deep access control, network and DNS integration, and a fantastic web UI that has yet to let me down. Related Should you use Tailscale, Pangolin, ZeroTier, or NetBird to remotely access your home lab? Which remote access tool is best for your home lab? Posts 9 So, what is NetBird, and why do I use it? Not every self-hosted remote access tool has identity management at the core Like most well-known remote access tools, NetBird is built on WireGuard, making it fast and known for its security. However, unlike many other remote access tools, it has identity management built into its core. Therefore, when you self-host it, the first thing you set up is Zitadel, the default identity provider. But you can use any IDP that uses OpenID, including Keycloak and Authentik. The cloud-based version supports Google Workspace, Azure, Okta, and Auth0, but this feature is only available behind the Teams' subscription tier. My experience with self-hosted access tools so far is that IDP integration is usually done after the fact, and you can often get away without using it at all. However, this is my home network, and I appreciate the idea that every user who connects to it has a login with multifactor authentication (MFA) and an audit trail of events, just in case. It's a nice touch in a sea of potentially stormy waters. Once Zitadel is working, you head to the NetBird login page and request access. I couldn't figure out why it wasn't working at first, until I remembered I hadn't set up a SMTP email server to send the registration emails from. A few minutes later, I was in the NetBird UI, adding new users and deciding on which services I was going to expose. Be careful here, though, as it seems the ability to approve peers is limited to the cloud-based version, so you could end up with new users that you don't want. That's possibly okay because new users don't have access to anything unless you've set up access control to allow ALL, which is bad security practice anyway. Using robust access controls to allow only specific user groups to use individual devices and services is always the best way. Customize everything with a great UI One thing I appreciate about NetBird is the well-made UI. On the user's side, all they need to do is download the NetBird app to their computer or mobile device, sign in with their login details, and any services, devices, and networks configured for their username will be available. You can even create setup keys that authenticate a device on its first use, allowing you to automate deployment with tools like Ansible, Terraform, and others. But the other thing? The cloud-hosted version of NetBird has some features behind the subscription model is exactly the same as the self-hosted one. None of this "self-hosted users are several versions behind" or any of the other bait-and-switch tactics of some networking companies. The other huge plus point for me? A comprehensive documentation section that not only tells you how to get started, but also the intricacies of every feature with examples, well-written how-tos, and explanations of which features are available on the free plan or not. Related How are Cloudflare tunnels different from a VPN? Both let you access your services remotely but they do it in very different ways. Posts NetBird is pretty great, but it might not be the best fit for you Remote access tools might use the same protocols, but the deployment is very different NetBird is a powerful, self-hosted access tool with numerous advanced access control policies that do more than enable NAT traversal for encrypted tunnels, making SSH access to remote web servers easy to set up. You could set up one peer on your home network as a routing peer, potentially on your router, and access internal resources on your network securely. It's also simple to set up site-to-site tunnels, without the complicated firewall configurations you'd typically need. You have other options It has a lot going for it, but not everyone wants to self-host an identity management provider. You can still use the free cloud-based version for up to 5 users and 100 devices, although you'd lose access to Posture Checks (handy for segmentation) and a few other things. Plus, it's not like there are no alternatives: Feature Tailscale NetBird Pangolin ZeroTier Protocol WireGuard WireGuard WireGuard Custom (VL1/VL2) Hosting SaaS/self-hosted* Cloud/self-hosted Self-hosted only Decentralized/self-hosted* Authentication SSO, MFA SSO, MFA SSO, 2FA, PIN codes Shared network key Ease of Setup Very easy Moderate Technical Zero-config Use Case Focus Individuals/teams Business teams Homelab/self-host IoT/decentralized Pricing Freemium Freemium Free Freemium *Self-hosting requires enterprise plans or community editions. What I would say is play around with a few, and see which one clicks with you and your needs. It might be the best service in the world on paper, but you're the one who has to manage it and deal with the everyday admin, and that's my least favorite part. Sometimes you just want a simple, quick fix that is no less secure, but hands off identity management and other complex tasks to the service you've signed up for. Related 4 reasons you need to use WireGuard instead of OpenVPN for connecting to your home lab remotely If you have a home lab and want to connect to it remotely, WireGuard is much better than OpenVPN. Posts 15 Don't be afraid to change your remote access tool if your needs change If all you need is a simple, short setup service that allows you to link your devices to your home network from anywhere, NetBird fits the bill. It was measurably quicker to setup than every other self-hosted tool I've used, and wasn't much harder than signing up on their website for the cloud-managed version. It's very powerful, and you can link it to individual services, allowing it to function as both a mesh VPN and a reverse proxy. But if it doesn't meet your needs, or you want more control, there are plenty of other solutions out there. Networking VPN (Virtual Private Network) Follow Followed Like Share Facebook X LinkedIn Reddit Flipboard Copy link Email Close Thread 5 Sign in to your XDA account We want to hear from you! Share your opinions in the thread below and remember to keep it respectful. Reply / Post Images Attachment(s) Please respect our community guidelines . No links, inappropriate language, or spam. Your comment has not been saved Send confirmation email Sort by: Popular Oldest Newest Noland Noland Noland #DZ586831 Member since 2024-06-25 0 Threads 132 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View This isnt true... When you use tailscale the tunnels are hosted by each device, and everything is encrypted.  You can also make one of your devices and exit node, which routes all traffic though one device. Everything is local except the web gui console... 2025-06-04 14:10:47 Upvote 2 Downvote Reply Copy JJWatMYSELF JJWatMYSELF JJWatMYSELF #YC897021 Member since 2025-06-04 0 Threads 1 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View Great article and thank you. I've been thinking about Tailscale for a few months now and this will be helpful for when I get around to putting some time into implementing. Some of the advanced features like FQDN based routing rules are very interesting to me. I hadn't considered there could be a self hosting option which isn't too difficult from how you've described this. I'm particularly interested in site to site connectivity for 95% of my use case and utilize OpenVPN at present. Wireguard naturally is the huge performance value proposition also. I'm curious which solutions can be deployed on dd-wrt with entware or a potential alternative being openwrt. 2025-06-04 06:49:01 Upvote 1 Downvote Reply Copy S S S #PC917170 Member since 2025-06-04 0 Threads 1 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View The article rightly pointed out the shortcoming of using tailscale yet failed to see self hosted solution to this 'Headscale' which I expected to be the center of attention of the article while talking about solutions to tailscale's issues. 2025-06-04 06:24:44 Upvote Downvote Reply 1 Copy Noland Noland Noland #DZ586831 Member since 2024-06-25 0 Threads 132 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View "and while you could use the open-source Headscale to create your control plane, it's not as powerful or as easy to use as the standard approach." He disregarded it right off the bat... Which doesn't even make sense because headscale doesn't have it's own pannel, you need to use a third party panel . 2025-06-04 14:12:59 Upvote 2 Downvote Copy BlackChristianGeek BlackChristianGeek BlackChristianGeek #ZE796256 Member since 2024-08-31 0 Threads 25 Posts Following 0 Stories 0 Topics 0 Authors 0 Users Follow Followed 0  Followers View Thanks for thanking the time to provide us your thoughts and insights. Thus, Tailscale is where I started and doing everything I need for the moment, yet it's nice to know alternatives are out there. God bless. 2025-06-05 21:02:05 Upvote Downvote Reply Copy Terms Privacy Feedback Recommended Here's how your ISP and the entire internet know that you're using a VPN VPN (Virtual Private Network) A VPN might help protect your privacy, but everyone knows you're using one. Posts 21 6 days ago I ran wired backhaul to every room in my house, and it was so worth it Network After years of being Wi-Fi first, now I've seen the light Posts 15 5 days ago It wasn't supposed to work, but someone booted this retro Windows OS on one of 2025's fastest CPUs Windows A retro reboot on a modern hardware Posts 8 3 days ago You don't need an NVR for your home security system, you just need Frigate Software and Services Frigate unlocks the power of AI-driven detections, smart home integration and gives you the flexibility you want from an NVR solution. Posts 13 3 days ago 5 "just-enough" open-source apps I install on every fresh Windows setup Windows 11: Everything you need to know These 5 open-source apps satisfy most of my daily computing needs on Windows Posts 13 5 days ago I ditched my dual monitor setup for an ultrawide monitor, and here's what I regret Monitors From dual screens to curved wonders: What was lost? Posts 11 4 days ago Today's best deals This beastly 49-inch Samsung ultrawide gaming monitor with a 240Hz refresh rate is down to its lowest price of all time 25 minutes ago Grab Logitech's most popular keyboard and mouse bundle for just $20 right now 3 hours ago This beloved strategy game with 94% positive reviews just got a massive 80% discount on Steam for the first time ever 11 hours ago See More Trending Now Designing for graceful failure on the Raspberry Pi is smarter than chasing high-availability Home Assistant isn't just for hardware; make it part of your back-to-school prep I built an offline productivity pack so that I can work and study anywhere
