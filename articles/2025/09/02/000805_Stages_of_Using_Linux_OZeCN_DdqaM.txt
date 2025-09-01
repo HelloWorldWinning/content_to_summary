@@ -1,0 +1,147 @@
+Timestamp: 2025-09-02T00:08:05.713053
+Title: Stages of Using Linux OZeCN_DdqaM
+URL: https://youtube.com/watch?v=OZeCN_DdqaM&si=f3PBmSEw75DOyQH9
+Status: success
+Duration: 5:04
+
+Description:
+**1. 大纲与结构**
+
+*   **引言：Linux的刻板印象与实际应用**
+    *   Linux作为操作系统，与黑客文化关联，对现代软件生态至关重要。
+    *   用户常纠正其全称为“GNU加Linux”。
+
+*   **阶段一：意识阶段**
+    *   **特点：** 初次接触Linux，了解到其存在及潜在优势。
+    *   **行为：** 尽管了解，但仍倾向于使用主流的“围墙花园”操作系统（如Windows或macOS），不介意数据被收集。
+    *   **潜在结果：**
+        *   最坏情况：订阅这种“无所谓”的心态，导致生活低谷（如妻子离去）。
+        *   最好情况：奇迹般地成为“常态用户”。
+
+*   **阶段二：常态用户（推荐阶段）**
+    *   **特点：** 在某种程度上使用Linux。
+        *   职业驱动：作为工程师，因工作需要（如AWS）开始使用。
+        *   个人兴趣：单纯因为“企鹅看起来很酷”或“终端看起来很酷”。
+        *   常见发行版：通常选择Mint或PopOS等友好型发行版。
+        *   用户画像：通常是优秀的程序员或系统管理员。
+    *   **优点：** 这是最理智、最合理的Linux使用方式。
+        *   无负担：不需担忧大型公司如何操控社会和大脑。
+        *   两全其美：享受Linux的酷炫与实用，同时拥有相对正常的生活。
+    *   **作者建议：** 强烈推荐所有用户停留在这一阶段，忘却更广阔的生态系统，享受相对正常的生活。
+
+*   **阶段三：管道阶段（警告阶段）**
+    *   **定义：** 用户在Linux之路上走得过远，陷入各种“管道”。
+    *   **子阶段：**
+        *   **发行版跳跃者 (Distrohopper)：**
+            *   初期：学习新系统和包管理的实用方式。
+            *   后期：成为慢性成瘾，不断寻找系统中的细微问题以合理化安装新发行版，最终意识到多数发行版只是基于Ubuntu或Debian。
+        *   **美化党 (Ryser)：**
+            *   定义：将桌面环境视为艺术画布，追求极致视觉美观。
+            *   行为：安装大量软件以打造最有趣的界面，发布到r/Unixporn，放弃系统管理、编程和社交。
+        *   **袜子管道：** 特定于Arch用户的未详述管道。
+        *   **Gen 2 用户：**
+            *   定义：Linux使用的终极阶段。
+            *   特点：彻底放弃主流软件和整个社会，选择在农场生活，只饲养自由开源的鸡。
+            *   行为：每次与技术互动都伴随枪支；只接受区块链加密货币，拒绝法定货币。
+            *   最终愿景：回归自然或上帝，成为单一、全能的Linux用户。
+
+*   **结论与忠告**
+    *   **核心建议：** 趁着还是“常态用户”时及时抽身。
+    *   **赞助商信息：** Brilliant.org（学习平台），旨在帮助用户变得更聪明，识别模式，从而可能避免陷入“管道”。
+
+**2. 核心观点**
+
+文本的核心观点是，虽然Linux在技术世界中扮演着重要角色，但用户很容易从实用主义的“常态用户”阶段滑向一系列沉迷和与世隔绝的极端，因此建议人们保持在理性且有益的“常态用户”阶段。
+
+**3. 总体框架**
+
+Linux用户演进的阶段性模型 / Linux用户演进的沉迷-脱离社会轨迹。
+
+**4. Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["Linux生态系统：用户旅程"] --> B{"意识阶段"};
+
+    subgraph "第一阶段：意识与选择"
+        B -- "了解存在与益处" --> C["普通人"];
+        C -- "保持现状" --> D["继续使用主流系统"];
+        C -- "风险" --> E["向下螺旋 / 妻子离开"];
+        C -- "正向演变" --> F["成为常态用户"];
+    end
+
+    subgraph "第二阶段：常态用户 (推荐)"
+        F -- "特点: 工程师/兴趣" --> G["Mint / PopOS"];
+        F -- "优点: 理智且实用" --> H["企鹅酷 / 终端酷 / 无负担"];
+        F -- "核心建议" --> I["在此阶段停留"];
+    end
+
+    subgraph "第三阶段：管道阶段 (警告)"
+        I -- "继续深入" --> J{"管道入口"};
+        J -- "沉迷新系统" --> K["发行版跳跃者"];
+        K -- "厌倦安装" --> L["美化党 (Ryser)"];
+        L -- "追求极致美学" --> M["i3 gaps / r/Unixporn"];
+        L -- "特定用户群" --> N["袜子管道 (Arch用户)"];
+        N -- "彻底脱离" --> O["Gen 2 用户"];
+    end
+
+    subgraph "第四阶段：Gen 2 (极端)"
+        O -- "特点: 放弃软件与社会" --> P["农场生活 / FOSS鸡"];
+        O -- "行为: 枪支伴随技术互动" --> Q["只接受区块链币"];
+        O -- "最终愿景" --> R["回归自然/上帝"];
+    end
+
+    S["核心建议: 趁早抽身"] --> F;
+    S --> J;
+
+    subgraph "赞助商"
+        T["Brilliant.org"] -- "提高智慧 / 模式识别" --> U["免费试用30天"];
+        U -- "支持" --> S;
+    end
+
+    style A fill:#D0E0FF,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#FFC0CB,stroke:#FF0000,stroke-width:2px,color:#333;
+    style F fill:#90EE90,stroke:#008000,stroke-width:2px,color:#333;
+    style G fill:#AFEEEE,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#E0FFD0,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#ADD8E6,stroke:#0000FF,stroke-width:2px,color:#333;
+    style J fill:#FFB6C1,stroke:#FF4500,stroke-width:2px,color:#333;
+    style K fill:#FFD700,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#DAA520,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#F0E68C,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#DC143C,stroke:#8B0000,stroke-width:2px,color:#FFF;
+    style P fill:#BDB76B,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#8B0000,stroke:#333,stroke-width:1px,color:#FFF;
+    style R fill:#696969,stroke:#333,stroke-width:1px,color:#FFF;
+    style S fill:#FF6347,stroke:#8B0000,stroke-width:2px,color:#FFF;
+    style T fill:#87CEFA,stroke:#333,stroke-width:1px,color:#333;
+    style U fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    linkStyle 0 stroke:#333,stroke-width:1px;
+    linkStyle 1 stroke:#333,stroke-width:1px;
+    linkStyle 2 stroke:#FF0000,stroke-width:2px;
+    linkStyle 3 stroke:#008000,stroke-width:2px;
+    linkStyle 4 stroke:#333,stroke-width:1px;
+    linkStyle 5 stroke:#333,stroke-width:1px;
+    linkStyle 6 stroke:#0000FF,stroke-width:2px;
+    linkStyle 7 stroke:#FF4500,stroke-width:2px;
+    linkStyle 8 stroke:#333,stroke-width:1px;
+    linkStyle 9 stroke:#333,stroke-width:1px;
+    linkStyle 10 stroke:#333,stroke-width:1px;
+    linkStyle 11 stroke:#333,stroke-width:1px;
+    linkStyle 12 stroke:#8B0000,stroke-width:2px;
+    linkStyle 13 stroke:#333,stroke-width:1px;
+    linkStyle 14 stroke:#333,stroke-width:1px;
+    linkStyle 15 stroke:#333,stroke-width:1px;
+    linkStyle 16 stroke:#FF6347,stroke-width:2px;
+    linkStyle 17 stroke:#FF6347,stroke-width:2px;
+    linkStyle 18 stroke:#333,stroke-width:1px;
+    linkStyle 19 stroke:#333,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+ Linux is an operating system mostly associated with the hacker man meme of Rami Malek, and loosely known for its utility of keeping the modern software ecosystem alive. The average Linux enjoyer, when not correcting me that it's actually Gannu plus Linux, started their journey in the awareness phase. In this phase you're basically just a normal human being, until you look into those mesmerizing penguin eyes and it changes the trajectory of your life, but that's a later problem. Whether you heard about Linux at your college classes, or when using the urinal of a shady bar, and a man in peculiar headwear comes to the stall right next to you, and whispers so softly in your ear, I use arch by the way, fundamental you're aware that Linux exists and may be aware of the benefits. But you're still gonna go home and boot up your spyware of choice. Whether it's America or China stealing your data to train LLMs, it doesn't really matter to you. You still want to live in the walled gardens of whatever scyop you choose. The worst case scenario in the awareness phase is that you subscribe to this mindset, and eventually your wife leaves you and you go on a downward spiral, or by the stroke of some miracle from God, you become the normie. The normie uses Linux in some capacity. Maybe you're an engineer whose manager told them to go do AWS stuff. It would be a good learning experience. When in reality the last funding round didn't go so well, and now they can't afford an actual DevOps engineer, or you're using it for my personal favorite reason, penguin look cool. Whatever your reason, you're most likely on Mint or PopOS. Two completely fine distros. You're probably a pretty decent programmer or systems administrator. This is the most sensible and rational place to be if you're a Linux user. Here's the thing, normie has such a negative connotation around it that you're probably angry if you fall into this camp. But I mean normies have it pretty good. Imagine not carrying the burden of how billion dollar companies hijack your brain and the wider society around us. Normies have the best of both worlds. Penguin look cool. Terminal look cool. This is the stage I recommend to anyone. Leave and forget the wider ecosystem. You still have a shot of living a relatively normal life until you fall into the pipeline phase. Pipeliners are people that went a bit too far with Linux, and unfortunately Linux has many pipelines you can fall into. You can start with the distrohopper. As hard as it is to believe I was once young. Then I learned about distro hopping. Now I'm no longer young, nor do I like using Linux. Distro hopping is a chronic addiction suffered mostly by Linux users in their early stages of an existential crisis. In the beginning it may manifest itself as a clever and practical way to learn about new systems and package managers. But eventually the adrenaline of installing a new distro wears off, leaving the user to find the most intricate problems within the system to justify another fresh install. Eventually the distrohopper does realize that most distros are just Ubuntu or Debian with a different desktop environment, but only after burning through a hundred different distros and nitpicking every last core utility. It's at this point they enter the Ryser pipeline. The Ryser is an artist, and the desktop environment is their canvas. For most people an operating system is a means to an end. A utility. For the Ryser, the main purpose of any distribution is to install as much software as they can to have the most interesting looking setup to post on R slash Unix corn. They gave up on useless things like system administration, programming, leaving the house, or having hobbies in favor of i3 gaps. I mean can you blame them? The socks pipeline. Many users, actually just arch users, for reasons unknown tend to adopt these socks. Now the final stage of being a Linux user, Gen 2. If you're in this camp you're unlikely to be watching my videos. You're happy living off your farm and feeding your free and open source chickens. Every interaction with technology is accompanied by a firearm. So is every interaction with wider society. You definitely have the skills and capabilities of being a senior DevOps engineer, but you won't deal with most companies because they pay in fiat and not blockchain coin. This is the final stage of Linux usage, where you've not only given up on software, but society as a whole. You realize that we live in a world designed to be suboptimal. We must return as one, either to nature or to God, as a single omnipotent Linux user. My honest piece of advice is to get out while you're still a normie. But if you're dumb enough to fall for the wider pipeline, have you tried, I don't know, becoming smarter by trying out the sponsor of today's video Brilliant.org. Brilliant is a learning platform with thousands of lessons on math and science. Brilliant does an excellent job of introducing you to new scientific concepts, but most importantly, it helps you recognize patterns, which in any profession focused on problem solving can give you a real leg up. I personally use Brilliant on my commute on the way to work, and it's been amazing to set up a new learning habit. To try, everything Brilliant has to offer for free for a full 30 days, visit brilliant.org slash big box suite or scan the QR code on screen, or you can click the link in the description. You'll also get 20% off an annual premium subscription. Thank you so much to Brilliant for sponsoring this video, and thank you for your time. I am Big Box.
