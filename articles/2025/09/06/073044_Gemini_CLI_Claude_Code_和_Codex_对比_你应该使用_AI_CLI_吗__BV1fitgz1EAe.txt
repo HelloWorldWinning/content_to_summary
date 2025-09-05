@@ -1,0 +1,154 @@
+Timestamp: 2025-09-06T07:30:44.882301
+Title: Gemini CLI、Claude Code 和 Codex 对比！你应该使用 AI CLI 吗？ BV1fitgz1EAe
+URL: https://b23.tv/fMwxGxr
+Status: success
+Duration: 8:35
+
+Description:
+以下是根据文本提炼的核心思想和总结：
+
+### 核心思想总结
+
+1.  **AI命令行界面 (CLI) 概览**
+    *   **背景与市场趋势：** Gemini、Claude、OpenAI等公司已推出AI代理的终端CLI，Quincode等新的编码IDE也正在出现，预示着AI集成开发的新趋势。
+    *   **本文探讨目的：** 旨在探究在终端工作的意义、CLI模型是否比常规模型更优，并对比Gemini CLI、Claude Code和OpenAI Codex CLI的使用体验。
+
+2.  **Gemini CLI 评估**
+    *   **安装与可用性：** 开源，可在GitHub下载（Windows/Mac），通过NPX或NPM安装。
+    *   **核心特性与免费优势：** 提供免费层级，可访问Gemini 2.5 Pro大模型（每天1000次请求，每分钟16次），支持设置主题、登录Google账户。
+    *   **实际应用案例：**
+        *   **网站动画编辑：** 成功为Wix Studio网站（使用Vello语言）添加了淡入动画，展示了代码修改能力。
+        *   **并行处理能力：** 可同时运行多个Gemini实例，在后台完成不同任务。
+        *   **MCP服务器连接：** 可连接Wix MCP服务器，代表用户进行修改。
+        *   **财务计算器项目：** 从零开始构建，基于Next.js生成高层级计划，但视觉效果和一次性完成度不如其他专业工具。
+        *   **其他功能：** 支持网页搜索、创建图表，但需注意可能耗尽免费额度。
+
+3.  **Claude Code 评估**
+    *   **安装与稳定性特点：** 作为较早的CLI工具，因其可靠和一致的性能而持续增长；需全局安装并连接Anthropic API或付费账户。
+    *   **结构化项目理解方法：** 推荐通过`forward slash initialize`命令创建README文件，通过消耗Tokens深入理解项目，生成高质量的上下文概述。
+    *   **财务预算应用项目表现：**
+        *   在Cursor集成中测试，通过详尽的规划和执行流程，消耗大量Tokens但任务完成度极高。
+        *   视觉效果优于Gemini CLI版本，功能更丰富（如周/月/年费用追踪、储蓄计算）。
+    *   **版本控制挑战与解决方案：**
+        *   **不足：** 缺乏内置的版本追踪和修订历史功能。
+        *   **解决方案：** 建议更频繁地使用Git进行提交，以追踪AI所做的更改，并可根据需要回溯或放弃更改。
+    *   **并行实例操作：** 可通过打开多个终端或在系统提示中集成子代理（sub-agents）来实现并发运行，但需注意Tokens消耗。
+
+4.  **OpenAI Codex CLI 评估**
+    *   **安装与可用性：** 可通过GitHub在终端安装，也提供Web版本。
+    *   **网络版功能与GitHub集成：**
+        *   直接连接GitHub仓库，可对Wix Studio站点进行配置。
+        *   能创建三项初始任务（解释代码库、检查/修复Bug），并由独立Agent并行执行。
+        *   提供任务日志、终端快照和Bug修复建议（如优化菜单隐藏/显示命令）。
+        *   支持直接创建Pull Request并推送到仓库。
+    *   **终端版安装与财务应用测试：**
+        *   需登录OpenAI账户并连接组织后，通过`codecs`命令启动。
+        *   财务应用构建耗时与Gemini/Claude相似。
+        *   **主要问题：** 未能自动安装Next.js，需要用户手动在新终端标签页中安装和运行项目。
+        *   **功能与体验对比：** 视觉效果不如Gemini或Claude版本，功能较为基础，缺乏Claude Code的周/月/年追踪等高级特性。
+
+5.  **总结与最终推荐**
+    *   **最终建议：** 综合来看，Claude Code在功能、性能、结构化理解和输出质量方面表现最佳。
+
+### 核心观点
+
+在对Gemini CLI、Claude Code和OpenAI Codex CLI进行对比评估后，Claude Code凭借其结构化的项目理解、更优的性能和功能丰富的输出，被推荐为当前最佳的AI编程命令行工具。
+
+### 顶层框架
+
+AI驱动的编程命令行界面 (CLI) 功能、性能与用户体验对比评估
+
+### <Mermaid_Diagram>
+graph LR
+    subgraph "AI编程CLI工具概览"
+        A["AI编程命令行界面 (CLI)"] --> G["Gemini CLI"];
+        A --> C["Claude Code"];
+        A --> O["OpenAI Codex CLI"];
+    end
+
+    subgraph "Gemini CLI 特性与表现"
+        G --> GF["免费层级 (Gemini 2.5 Pro)"];
+        G --> GA["网站动画编辑"];
+        G --> GM["MCP服务器连接"];
+        G --> GW["巨大上下文窗口"];
+        G --> GP["支持并行任务"];
+        G --> GB["预算应用 (一般)"];
+        GB -- "视觉效果" --> GSG["普通"];
+    end
+
+    subgraph "Claude Code 特性与表现"
+        C --> CR["高可靠性与一致性"];
+        C --> CI["结构化项目初始化"];
+        C --> CP["支持子代理并行"];
+        C --> CB["预算应用 (优秀)"];
+        CB -- "视觉效果" --> CSC["出色"];
+        CB -- "功能" --> CSF["丰富 (周/月/年追踪)"];
+        C --> CD["版本控制不足"];
+        CD --> CS["通过Git进行手动管理"];
+    end
+
+    subgraph "OpenAI Codex CLI 特性与表现"
+        O --> OW["Web版可用"];
+        OW --> OH["GitHub仓库集成"];
+        OW --> OP["自动创建Pull Request"];
+        O --> OB["预算应用 (基础)"];
+        OB -- "视觉效果" --> OSG["不佳"];
+        OB -- "功能" --> OSF["基本"];
+        O --> ON["未能自动安装Next.js"];
+        ON --> OM["需手动配置"];
+    end
+
+    G --> TE["测试案例: 财务预算应用"];
+    C --> TE;
+    O --> TE;
+
+    TE --> PM["性能评估"];
+    TE --> FT["功能评估"];
+    TE --> VS["视觉效果评估"];
+
+    PM --> BR["最终推荐"];
+    FT --> BR;
+    VS --> BR;
+    BR --> RCC["Claude Code"];
+
+    style A fill:#FDF5E6,stroke:#333,stroke-width:2px,color:#333;
+    style G fill:#E0FFFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style C fill:#E0FFE0,stroke:#008000,stroke-width:1px,color:#000;
+    style O fill:#FFDEAD,stroke:#CC9900,stroke-width:1px,color:#000;
+
+    style GF fill:#CCEEFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style GA fill:#CCEEFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style GM fill:#CCEEFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style GW fill:#CCEEFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style GP fill:#CCEEFF,stroke:#0066CC,stroke-width:1px,color:#000;
+    style GB fill:#FFDDC2,stroke:#FF9900,stroke-width:1px,color:#000;
+    style GSG fill:#FFB6C1,stroke:#FF0000,stroke-width:1px,color:#000;
+
+    style CR fill:#CCFFCC,stroke:#008000,stroke-width:1px,color:#000;
+    style CI fill:#CCFFCC,stroke:#008000,stroke-width:1px,color:#000;
+    style CP fill:#CCFFCC,stroke:#008000,stroke-width:1px,color:#000;
+    style CB fill:#D9FFD9,stroke:#009900,stroke-width:1px,color:#000;
+    style CSC fill:#90EE90,stroke:#008000,stroke-width:1px,color:#000;
+    style CSF fill:#98FB98,stroke:#008000,stroke-width:1px,color:#000;
+    style CD fill:#FFB6C1,stroke:#FF0000,stroke-width:1px,color:#000;
+    style CS fill:#ADD8E6,stroke:#0066CC,stroke-width:1px,color:#000;
+
+    style OW fill:#FFE0B2,stroke:#CC9900,stroke-width:1px,color:#000;
+    style OH fill:#FFE0B2,stroke:#CC9900,stroke-width:1px,color:#000;
+    style OP fill:#FFE0B2,stroke:#CC9900,stroke-width:1px,color:#000;
+    style OB fill:#FFDDC2,stroke:#FF9900,stroke-width:1px,color:#000;
+    style OSG fill:#FFB6C1,stroke:#FF0000,stroke-width:1px,color:#000;
+    style OSF fill:#FFB6C1,stroke:#FF0000,stroke-width:1px,color:#000;
+    style ON fill:#FF8C00,stroke:#FF4500,stroke-width:1px,color:#000;
+    style OM fill:#FFDAB9,stroke:#FF9900,stroke-width:1px,color:#000;
+
+    style TE fill:#FFFFCC,stroke:#FFCC00,stroke-width:2px,color:#000;
+    style PM fill:#DDA0DD,stroke:#800080,stroke-width:1px,color:#000;
+    style FT fill:#DDA0DD,stroke:#800080,stroke-width:1px,color:#000;
+    style VS fill:#DDA0DD,stroke:#800080,stroke-width:1px,color:#000;
+    style BR fill:#FFD700,stroke:#FF8C00,stroke-width:2px,color:#000;
+    style RCC fill:#FFC0CB,stroke:#FF1493,stroke-width:2px,color:#000;
+</Mermaid_Diagram>
+
+Content:
+ Gemini, Claude, OpenAI, all have released their own terminal-based CLI to integrate with AI agents. And just as I was making this video, another one dropped. Quincode is the latest in coding IDs that are appearing. I have a few questions I want to answer in this video, such as, what's the point of working in a terminal? Do these terminal CLI's have AI models that perform better than their regular Claude or Gemini models? Because I'm seeing a lot of integrations. Even cursor now integrates Claude code straight into the IDE to make it more accessible. I've only just gotten used to the idea of a vibe coding and having an AI chat constantly in my coding ID. And I don't know if I'm ready to close down my coding editor and work directly in the terminal. But according to Reddit, I've got no choice but to be ready. So I'm going to take a look at Gemini CLI, Claude code, and OpenAI's codec CLI. Let's start with Gemini. Gemini CLI is open source and available to download on GitHub for both Windows and Mac OS. You can run it simply with NPX or install it globally with NPM. And if you're wondering why you should try it, it's because it comes with a free tier, which means that you get access to Gemini 2.5 Pro, the biggest model with up to 16 requests per minute and 1000 requests per day, all for free. It's just finished installing, so I'm going to run it by calling in Gemini in my terminal. And here I'm going to set the theme, log into my Google account, and now I'm ready to start. First up, I want to see how good Gemini CLI is at editing some of my websites and adding some animations on the hero sections. You see, I have this website on Wix Studio and the websites on here are using a special programming language called Vello, which I'm not familiar with quite yet. I could normally code a write down here in the coding terminal, but instead I'm going to connect this website up to GitHub so I can run it up in VS code and edit it myself. In VS code, I've opened up the terminal called Gemini, and I've requested it to add some animation to the home page. Just like in AI chat, it goes through and starts making these changes. But unlike AI chat, you can run up multiple versions of Gemini that can run all in parallel in the background completing different tasks. It's just finished making those changes, and I've pushed them out to production. Now, if I preview a website, it has this animation fade in after one second. Another cool thing about Gemini is that it's already able to connect to MCP servers. So I'm going to connect it to the Wix MCP server. Using this JSON file here, I relaunched Gemini, it authenticated my MCP servers, and now it's got access to make changes on my behalf. But we're just getting started. On Twitter, I've seen people run multiple Gemini's all concurrently, which is insane. And since it has a huge context window, let's see how far we can push the limits. I'm going to ask Gemini to create an entire financial calculator for me to help me do budgeting from scratch. It created a high level plan for the project, built it on top of next JS, and here it is. I'll admit that I've seen better one shots on things like lovable or bold.new, but this isn't playing into the strengths of using a CLI. Now that the project is running, we can start using that huge context window, as well as multiple instances of CLI's to start performing multiple feature installations all at the same time. Gemini CLI does offer a few other things such as being able to search the web, create diagrams, but be aware that you might run out of credit before you know it. Now I want to take a look at Cloud Code, the original CLI, before they were cool. While Gemini has grown in popularity very quickly, Cloud Code has sustained a continuous growth due to its performance being reliable and consistent. I'll start by installing Cloud Code. Just like with Gemini CLI, we need to install it in Terminal as a global package that we can use. Then you'll need some billing details. You'll need to connect it to Anthropic API or your paid Cloud account. Getting started with Cloud Code feels a lot more structured. This first recommendation is to create a README file by running forward slash initialize, and this goes through the project using some of your tokens in order to get a better understanding of it and create a basic context that allows it to understand what the project as a whole looks like. It's so well written that it would be useful even to another engineer if they were just jumping on this project for the first time. Now let's see how Cloud Code goes at building a financial app similar to what Gemini did. I've got cursor open and it's got Cloud Code integrated. I'll test out a similar prompt to what I had earlier, which is to build a budgeting app from scratch to see how it compares to Gemini CLI. Since I've used it for a couple of weeks now, I've noticed that Cloud Code does something different than most of the other ways that you normally use an AI, especially when you're just using it in chat. You see, it uses a lot of tokens, especially when it's trying to figure out exactly what to do. And that isn't necessarily a bad thing, because if you have a look at how it completes tasks with a plan and then carries them out and tests them properly, you'll realize why it performs so well. This budgeting app just finished and it's now running. Let's test it out and see what it looks like. Visually, it looks a lot better than the Gemini CLI version. It has more features like adding expenses depending on the week, month or year, as well as how much money I would save each month based on the budget I create. There is one drawback when using things like Cloud Code or even Gemini. It's the fact that there is no version control. One thing that I do like about using chat in cursor or in VS code is the fact that I have revisions as well as history. And this lets me see exactly what's changed and improved or rejected. However, if I'm using something like a Cloud Code to do the same sorts of changes, visually I'm not going to see the same sort of version tracking, though I have figured out a way around this. I'm using Git a lot more to commit any changes that I made. And this way I can also use it to track when changes do appear from the AI and see exactly what's changed or discard those changes if I don't like them. Hopefully these coding CLI's will have something better for version tracking in the future, but this works for now. Cloud Code instances can also run simultaneously. There's a few ways to do this. The first is to simply open up multiple terminals where you can create or request different types of features to be set up or simply ask it to. Since Cloud actually knows how to run sub-agents in parallel, you just have to bake it into the system prompt. So be aware because it can use up a lot of tokens if you're running a lot of requests at the same time. The final contender for an AI-based CLI is the one from OpenAI called Codex CLI. It's also available on GitHub and you can install it in your terminal, but they also have a web version that lets you interact directly with your own GitHub repo to make changes in parallel in a much more user-friendly way. I want to try out the web version first before I open up the terminal. It connects up to my GitHub and I'm going to open up the same project I had earlier, which is that in a week's studio site, I was trying to configure. It creates three initial tasks, which is to explain the codebase, check if there's any bugs, and then also go through to see if there are any issues that can be fixed. Once I confirm, these are now all running in parallel in the background with their own agents performing the tasks that they're meant to. I can expand these out and it can show me what's happening, which is a container is starting up. I can see the log of what's happening inside of that container and here it's giving me snapshots of the terminal as it's going through and completing that task. For the first task, it gives me a summary of the project. Here it is on the left, which tells me that it's a week's studio site as well as what that codebase looks like. In terms of the other task, things like locating and fixing bugs, I can click through and see what it's found. Here it's identified a better way to run this command for hiding and showing that top menu we created earlier. I have the option to create a pull request here at the top right, view it and then push it to my repo. That's pretty cool for a web version, but we're looking at a CLI's. So let's have a look at how the codecs version works on my own terminal. Here I've just installed it. Then I'll need to log into my open AI account and connect my organization. Once done, I can load up codecs by simply calling codecs in my terminal. Here it requests that I make sure I run it inside of a project I'm currently working on. I'm going to ask it to create that financial app with a budget that I can track my finances and see how it performs compared to Claude and Gemini. It runs in the background and takes about as much time as Gemini CLI as well as Claude code, but unfortunately unlike those two, it doesn't install next JS. This means I have to open up a new tab in my terminal, actually install and run up the project to test what it looks like. And here it is. Visually, it doesn't look as good as the Gemini or Claude's version, but in terms of the functionality, it still works the same, though it doesn't have some of the great features that Claude code had such as weekly, monthly and yearly tracking for expenses. My final thoughts are that Claude code is the best. So if there's one, you're going to pick, definitely try that one.
