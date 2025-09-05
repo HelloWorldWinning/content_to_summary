@@ -1,0 +1,127 @@
+Timestamp: 2025-09-06T02:08:38.555618
+Title: 白嫖CF算力，部署AI 多模型GPT-oss-120B  deep seek Qwen2.5 等多个模型  free VtN_Hiows00
+URL: https://youtube.com/watch?v=VtN_Hiows00&si=k8v7Nc0Ow2fyuQKV
+Status: success
+Duration: 6:15
+
+Description:
+**核心要点：**
+本教程详细指导用户如何在Cloudflare Workers上部署各类大型语言模型（LLMs），利用每日免费额度实现私有化部署和日常交互，并支持聊天记录持久化。
+
+**总括框架：**
+Cloudflare Workers上的大型语言模型（LLM）私有化部署与应用框架。
+
+**总结纲要：**
+
+**I. 引言**
+    A. 目的：在Cloudflare (CF) Workers上部署DB Sec、GBT等文生文大模型。
+    B. 支持的模型类型：
+        1.  DB Sec, GBT
+        2.  KOS, KOS 120B, KOS 20B
+        3.  Llama
+        4.  QianWen 2.5
+        5.  Google的模型
+    C. 费用与免费额度：
+        1.  模型服务通常收费。
+        2.  每个CF账户每日有10,000个“神经元”的免费使用额度。
+        3.  神经元换算Token示例：
+            *   KOS-TBC: 约30万Token
+            *   KOS 120B: 约22万Token
+            *   KOS 20B: 约50万Token
+            *   Llama: 约30万Token
+        4.  免费额度每日凌晨12点重置，日常使用通常足够。
+
+**II. 部署步骤**
+    A. 准备工作：
+        1.  访问提供的GitHub仓库。
+        2.  将GitHub仓库Fork到自己的账户。
+    B. Cloudflare KV数据库配置：
+        1.  登录CF后台，导航至“存储和数据库” -> “KV”。
+        2.  新建一个KV命名空间（例如“Demo”）。
+        3.  复制新建KV的ID。
+    C. Cloudflare Workers环境变量配置：
+        1.  返回CF后台，导航至“Workers & Pages” -> 选择你的项目 -> “设置” -> “环境变量”。
+        2.  添加环境变量，将KV ID粘贴进去。
+        3.  修改项目代码中第19行的密码（例如改为“mi123”），并保存。
+    D. 部署Workers应用：
+        1.  导航至CF后台“Workers & Pages” -> “创建应用程序” -> “导入Git存储库”。
+        2.  绑定GitHub账户，选择之前Fork的项目。
+        3.  为应用命名（例如“Demo3”）。
+        4.  构建命令和部署命令保持默认，点击“创建和部署”。
+        5.  等待部署完成（约1至8分钟）。
+
+**III. 应用使用**
+    A. 访问与验证：
+        1.  部署完成后，点击提供的域名链接。
+        2.  输入之前配置的密码进行验证。
+    B. 模型选择与交互：
+        1.  验证成功后，选择所需的大模型（例如KOS 120B）。
+        2.  开始与模型进行对话或提问（例如“用Python写一个计算器”）。
+    C. 功能与管理：
+        1.  神经元使用情况实时显示。
+        2.  聊天记录会通过KV数据库持久化存储。
+        3.  可选择“清空List记录”来清除聊天历史。
+        4.  代码回复可以直接复制使用。
+
+**IV. 总结**
+    A. 优势：利用Cloudflare基础设施便捷部署LLM，享受免费额度，支持会话记录。
+    B. 适用场景：个人日常使用、学习测试、轻量级应用。
+
+<Mermaid_Diagram>
+graph TD
+    A["'用户'"] -- "'希望'" --> B{"'部署大型语言模型(LLM)'"};
+
+    subgraph "部署前准备阶段"
+        B --> C["'获取GitHub项目代码'"];
+        C -- "'Fork到自己账户'" --> D["'个人GitHub项目'"];
+        D -- "'修改代码文件'" --> E["'配置登录密码'"];
+    end
+
+    subgraph "Cloudflare平台配置"
+        E --> F["'Cloudflare控制台'"];
+        F -- "'创建KV命名空间'" --> G["'KV数据库 (会话记录)'"];
+        G -- "'复制KV ID'" --> H["'CF Workers环境变量'"];
+        E --> H;
+        H -- "'配置KV ID & 密码变量'" --> I["'CF Workers应用'"];
+    end
+
+    subgraph "CF Workers应用部署"
+        I -- "'从GitHub导入项目'" --> J{"'创建并部署Worker'"};
+        J -- "'等待部署完成 (约1-8分钟)'" --> K["'已部署LLM应用域名'"];
+    end
+
+    subgraph "LLM应用使用与管理"
+        K -- "'访问域名'" --> L{"'输入配置密码验证'"};
+        L -- "'验证成功'" --> M["'模型选择与交互界面'"];
+        M -- "'选择模型 (如KOS 120B)'" --> N["'支持模型列表'"];
+        M -- "'进行对话/提问'" --> O["'LLM响应 (代码/文本)'"];
+        M -- "'实时显示消耗'" --> P["'免费额度监控 (每日1万神经元)'"];
+        M -- "'保存/检索记录'" --> Q["'KV数据库 (存储会话记录)'"];
+        Q -- "'提供'" --> R["'会话记录管理功能'"];
+        R -- "'清除历史'" --> M;
+        N -- "'包含'" --> S["'DB Sec, GBT, KOS, Llama, QianWen, Google等模型'"];
+    end
+
+    style A fill:#FFFACD,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#D9EAD3,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#D9EAD3,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#D9EAD3,stroke:#333,stroke-width:1px,color:#333;
+    style F fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#FFDDC1,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#FFDDC1,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#90EE90,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#C8E6C9,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#D8BFD8,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#A9D18E,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#FFE0B2,stroke:#333,stroke-width:1px,color:#333;
+    style Q fill:#FFDDC1,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#E0BBE4,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+而论的要我上一次教大家如何在CF掌面部署SB的突兴模型白飘SF的算了很多同学留言说想要在CF上面部署DB Sec或者说GBT的这种文顿模型今天给大家带来如何部署首先的话我现在支持的模型有DB SecGBT 钢OSS钢120B的和20B还有LAMA还有千万2.5以及谷歌山的模型每个模型有不同的作用这里我看到的说明再给大家说一下这些模型都是要收费的但是每个人的账户每天有免费的一个私种额度稍后会给大家说比如说这边可以看一下CF的定价它是这样子的每个人每天会有1万个的神经缘是每天12点名程会进行一个重字那么换算成Token头比如说我以这边提醒个颜色TBC可能会打约在30万的一个头肯左右120B的话大概在22万左右的一个头肯还有20B的话在50万的一个头肯左右LAMA差不多在30万这几个模型基本上在30万头肯一左右日常使用的话是足够的然后我这边也不说好也可以看得到也没什么问题聊天的话不是我TESTA把一个信心给它然后您好它也回记已经不回复也是没问题的然后这里的话在CF后台我可AI这边也能看到是实在一个雕用情况可以看到我这边神经缘的话使用的是3.8K了相当于是3800那么每个人互动户的话是1万左右的一个神经缘天日常使用是肯定没问题我们直接进行一个颜色首先的话我们打开不客打开不客以后我们打开这个给它号本的相这是我自己显得一个给它号本相我们打开这个项目以后喜欢的统一可以点个SDA支持一下然后我们点击这个Fok到自己的一个项目窗户里面Fok完以后我们来到CF后台这边我们打开你着侧的存组和数据库我们点击KV我们新建一个KV名字的话比如说以Demo进行个演示我创建创建完以后我们需要复制左上角的ID我们复制这个ID我们再来到CF后这边我们点击统这个配置文件我们点击点击完以后我们点击这个边界这里的IDT判程刚才创建KV的数据库对ID我们进行一个T判稍微等一下T判完以后我们需要赶一下19行的密码这个密码的话默认也可以当然大家最好改一下比如说我改善判的密123改完以后我们点击进行个保存证明这里的密码就是自己使用的设则我们点击保存保存好了以后我们再来到CF这边我们打开计算Walk这边然后我们点击新建Walk选择倒入存组库我们点击开始使用然后这里保定自己的一个DitHub然后我这边保定过了就不保定了然后我们选择刚才Fok的这个像CF我们选择选择完以后这里名字的话许便起比如说我Demo3构建命令和不属命令这些都不用管我们直接点击创建和不属就好了然后我们等待它的不属机型了大约需要1分钟左右好了大概过了8分钟左右可以看到不锁好了不锁好了以后我们直接点击这个玉米就行了我们点击这个玉米输入刚才这一点英雄许输入刚才自己配置到一个密码我配置的是按点密123然后我们点击会车要验证可以看到验证成功因此成功以后这里就可以选择自己配一个模型比如说我选择120Ni的这个模型了然后我比如让它帮我许个计算器使用Python帮我写个计算器光我使动使动Python写一个计算器要有机油海也密我们发送然后等待它对一个思考不行可以看到这边回复完成回复完成以后这里上面有代码我们往上翻我们这往上翻这里可以看到有小细的一个蛋如果要负责的话我们可以点击这个负责我们点击负责完以后我们直接进行的比如说在这里粘贴进行粘贴就行了也是没什么问题直接可以运行然后再给大家说一下这边也可以看到这个价格以及上下午如果说超幻超出了这个上下午我们可以轻空一下List记录就行了比如说我这边轻空一下我们点击确认点击确认了以后它这边List记录就轻空了然后再给大家说一下这边是可以记录因为有KV的数据库那么会记录List的一个记录聊天记录都会记录的
