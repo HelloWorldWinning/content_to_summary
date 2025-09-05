@@ -1,0 +1,190 @@
+Timestamp: 2025-09-06T07:33:44.072362
+Title: 【AI技术分享19】 Claude Code VS Codex CLI  编程对比测试 BV1VFaYz5EkC
+URL: https://b23.tv/dtKWHHH
+Status: success
+Duration: 10:35
+
+Description:
+### 核心观点
+
+最终的选择取决于开发者对流畅易用、功能全面性与潜在成本优势、特定模型偏好及输出风格的优先权衡。
+
+### 宏观框架
+
+AI编程助手的综合性能与用户体验对比分析。
+
+### 总结大纲
+
+1.  **引言**
+    *   目的：深入探讨Anthropic的Claude Code与OpenAI的Codex CLI。
+    *   数据来源：江陵派社区的对比测试报告及开发者一线使用体验。
+    *   背景：两款工具均在深刻改变开发者工作，Codex CLI能力可能接近GPT-5。
+
+2.  **核心对比维度**
+
+    *   **易用性与成本**
+        *   **Codex CLI:**
+            *   潜在成本优势：可能包含在ChatGPT订阅内（20美元/月）。
+            *   缺点：具体使用限制和额度不透明。
+        *   **Claude Code:**
+            *   成本较高：需单独订阅Anthropic服务，Opus模型费用更高（可能达100美元/月）。
+
+    *   **用户体验与界面**
+        *   **Claude Code:**
+            *   普遍好评：人体工程学佳，可读性高。
+            *   优点：AI思考中间步骤可折叠，界面清爽；Markdown支持更好；认知负荷小。
+        *   **Codex CLI:**
+            *   缺点：输出信息量大，有时“吵闹”（展示思考步骤）；Markdown效果不理想；需多花心思过滤信息。
+
+    *   **核心功能差异**
+        *   **自定义命令：**
+            *   Claude Code：支持用户自定义命令（项目/全局）。
+            *   Codex CLI：内置命令较少，目前不支持用户自定义。
+        *   **上下文记忆：**
+            *   两者均支持：Code.MD（Claude Code），Agence.MD（Codex CLI）。
+            *   Claude Code：管理方式更清晰、直接。
+        *   **模型切换：**
+            *   Claude Code：工具内直接选择切换。
+            *   Codex CLI：需修改全局配置文件并重启工具，不便。
+        *   **会话恢复：**
+            *   Claude Code：核心优势，有`RESUME`命令和`CE`标志，随时恢复。
+            *   Codex CLI：记录历史但缺少内置便捷恢复功能。
+        *   **规划模式：**
+            *   Claude Code：有专门规划模式（Shift+Tab），只规划不执行。
+            *   Codex CLI：无此模式，需迂回操作。
+        *   **Agent功能：**
+            *   Claude Code：提供沙箱式Agent功能，隔离任务上下文。
+            *   Codex CLI：目前无直接对应功能。
+        *   **IDE与云集成：**
+            *   Codex CLI：发力方向，有VS Code/Cursor扩展，提供代码差异对比、撤销等，有云端执行能力（但测试报告有BUG）。
+
+    *   **性能与输出质量（实际测试案例）**
+        *   **操作系统应用：**
+            *   Codex CLI（据称GPT-5）：生成UI美观度高（8分），但功能有小毛病，部分无法运行。
+            *   Claude Code：功能修复更佳（如浏览器正常），但UI美观度稍逊，也有BUG。
+            *   结论：Codex CLI侧重外观/初始框架，Claude Code侧重功能修复。
+        *   **愤怒的小鸟游戏：**
+            *   Claude Code：一次提示生成可玩版本，有物理效果、关卡、瞄准线。
+            *   Codex CLI：初始失败，后生成版本图像好看，但物理引擎和玩法核心有问题。
+            *   结论：Claude Code在可玩性、遵循核心指令方面胜出。
+        *   **习惯追踪器：**
+            *   两者均能做可用的版本。
+            *   Codex CLI：UI更吸引人。
+            *   Claude Code：处理表情符号选择器表现更好。
+            *   Codex CLI：可通过IDE扩展利用云端/本地Agent修复问题。
+
+3.  **综合总结**
+
+    *   **Claude Code 优势：** 更好的人体工程学、高可读性、CLI功能强大（自定义命令、会话恢复、规划模式、Agent）、首次生成功能代码可靠性高。
+    *   **Codex CLI 优势：** 潜在的成本优势（与ChatGPT订阅绑定）、强大的OpenAI模型、UI有时更漂亮、正在发展的IDE和云集成潜力。
+    *   **Codex CLI 短板：** 使用体验问题（输出吵闹、配置复杂）、缺少便捷会话恢复功能。
+
+4.  **选择建议**
+
+    *   若追求流畅、易用、功能全面的体验，Claude Code更合适。
+    *   若看重潜在成本优势、OpenAI模型输出风格，并愿接受现有易用性局限，Codex CLI可能更适合。
+
+5.  **未来展望**
+
+    *   AI工具发展迅速，对比结果可能随版本更新而变化。
+    *   终极编程助手可能并非二选一，而是如何聪明地组合和利用多个AI工具的强项。
+    *   对集成化、多智能体协作编程未来的思考。
+
+### Mermaid Conceptual Map
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "核心讨论点"
+        A("AI编程助手对比") --- B("Claude Code (Anthropic)")
+        A --- C("Codex CLI (OpenAI)")
+    end
+
+    subgraph "数据来源"
+        D["江陵派社区对比测试报告"] --> A
+        E["开发者一线使用体验"] --> A
+    end
+
+    subgraph "Claude Code 优势特点"
+        B -- "易用性与成本" --> F["成本较高 (单独订阅, Opus更贵)"]
+        B -- "用户体验与界面" --> G["更好的人体工程学"]
+        B --> H["输出可读性高 (信息折叠)"]
+        B --> I["Markdown支持好"]
+        B -- "核心功能" --> J["支持自定义命令"]
+        B --> K["便捷会话恢复 (RESUME, CE)"]
+        B --> L["专属规划模式 (Shift+Tab)"]
+        B --> M["Agent功能 (沙箱环境)"]
+        B -- "性能与输出质量" --> N["首次代码生成可靠性高"]
+        B --> O["功能修复能力强 (测试)"]
+        B --> P["处理表情符号出色"]
+    end
+
+    subgraph "Codex CLI 优势特点"
+        C -- "易用性与成本" --> Q["潜在成本优势 (或含于ChatGPT订阅)"]
+        C -- "用户体验与界面" --> R["输出信息噪音大 (思考步骤)"]
+        C --> S["Markdown渲染不佳"]
+        C -- "核心功能" --> T["内置命令少, 不支持自定义"]
+        C --> U["模型切换复杂 (需重启工具)"]
+        C --> V["缺少便捷会话恢复功能"]
+        C --> W["无专属规划模式"]
+        C --> X["无Agent功能"]
+        C --> Y["强大的OpenAI模型支持"]
+        C -- "性能与输出质量" --> Z["UI有时更漂亮 (测试)"]
+        C --> AA["IDE/云集成潜力 (VS Code/Cursor扩展)"]
+        C --> BB["部分功能有BUG (测试)"]
+        C --> CC["云端/本地Agent可修复问题"]
+    end
+
+    subgraph "结论与展望"
+        F,G,H,I,J,K,L,M,N,O,P --> DD["选择取决于个人优先级"]
+        Q,R,S,T,U,V,W,X,Y,Z,AA,BB,CC --> DD
+
+        DD --> EE["Claude Code: 流畅、易用、功能全面"]
+        DD --> FF["Codex CLI: 成本、OpenAI模型、输出风格"]
+        DD --> GG["AI工具快速进化"]
+        DD --> HH["多智能体协作编程的未来"]
+        GG --> HH
+    end
+
+    style A fill:#F9F7D8,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+
+    style D fill:#E2E3E5,stroke:#333,stroke-width:1px,color:#333;
+    style E fill:#E2E3E5,stroke:#333,stroke-width:1px,color:#333;
+
+    style F fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style G fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style K fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style L fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style M fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style N fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style O fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style P fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+
+    style Q fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style R fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style S fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style T fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style U fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style V fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style W fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style X fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style Y fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style Z fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style AA fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style BB fill:#F8D7DA,stroke:#333,stroke-width:1px,color:#333;
+    style CC fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+
+    style DD fill:#FFE4B5,stroke:#333,stroke-width:2px,color:#333;
+    style EE fill:#D4EDDA,stroke:#333,stroke-width:1px,color:#333;
+    style FF fill:#FFF3CD,stroke:#333,stroke-width:1px,color:#333;
+    style GG fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+    style HH fill:#FFE4B5,stroke:#333,stroke-width:1px,color:#333;
+
+</Mermaid_Diagram>
+
+Content:
+大家好 我是AGI向拍摄去的创始人码孔我们是在美国归股由斯坦夫大学校有开始的人工智能社区专注去做人工智能相关的关于投资人创业者和技术大男的一线访谈我也说替这个AI边城助手确实是在深刻地改变我们开发者的日程工作今天我们就想深入聊一聊两款现在特别火的工具一个是Antropic的Cloud Code另一个就是 OpenAI的Colics.se跟著江陵派社区里大家的推测和一些测试来看后者能力可能接近Gpt5了我们这次讨论主要的信息来脸就是为你整理的好几份来自江陵派社区的对比测试报告还有不少开发者的低受使用体验这些报告里头详细记录了这两工具在实际边城场上的表现怎么样我们的目标也很明确就是帮你书里清楚这两工具他们的核心差异在哪个字的优点缺点是什么然后呢看看根据这些来自一线的测试反馈哪个可能更是和你你自己的特定需求和工作习惯好那我们就是开始吧行那我们先从大家可能最关心的点开始就是义用性和成本Codex CLI这边有个潜在的吸引力就是说他可能已经包含在那个刷Gpt定月里了比如说一个月20美金那个这样你就能用上挺强的模型能力不过呢有些测试报告也提到他你个具体的使用限制还有额度什么的好像不是那么透明这个限制不透明确实是个问题那Codecode呢成本上是不是就高一些对Codecode这边你就得单独去定月Andthropic的服务了而且如果你想用更好的模型比如那个Opus那费用可能就高不少社区里有人提到过可能一个月要到100美金哇这个成本差异还挺大的那抛开钱咱们看看实际用户体和介面这块感觉怎么样将领派社区的反馈是不是差别挺大是的这方面差别就挺明显的Codecode普遍反应就是这个可独性做的特别好好在哪比如他会把那个AI思考的中间步骤就是比较啰嗦的部分给你折叠起来见面看著就清爽很多还有就是对Morgange式的支持页更好这样确实能建设感染对有电发者直接说感觉他的人体工程学做得更好用起来没那么累这个认知负荷小很多写代码的时候就能更专注减少认知负荷这个对开发者来说太重要了那反过来看CodexCoi呢体验上有什么操点吗相比之下CodexCoi的输出就有些开发者觉得有点吵吵是指信息太多对就是他会把那部思考的步骤也给你展示出来有时候信息量就很大而且那个Morgan虽然效果有时候不太理想看代码或者文档就有点费劲感觉用起来得得多花点心思去过滤信息明白了那我们再深入看看核心功能上的差别这个就更有意思了比如那个协量命令就是输入调用的功能两个都有对这个现在挺常见的但是呢CodeCloud它允许用户自己去订义命令你可以根据项目需求设置或者设置全局的这个就比较灵活而CodexCoi根据我们看到的测试信息它内置的命令好像比较少而且目前似乎还不支持用户自订义自订义命令这个确实很实用能提高不少效率那上下文记忆呢他们都能记住之前的对话吗都能记住他们都有相应的机制比如CodeCloud是Code.MD文件Codex是Agence.MD不过呢感觉上CodeCloud提供的管理方式好像更清晰更直接一点CodexCoi虽然也能让它去更新那个Agence.MD文件但开发者反馈说管理起来不如CodeCloud那么指关嗯管理方式也很重要还有模型切换这个方面吗这个区别也挺不大的CodeCloud可以在工具里头直接选你想用哪个模型就缺换哪个CodexCoi就麻烦一点通常你得去改那个全局的配置文件改完还在重启工具才行哎呀重启啊那确实可能会打断思路还有其他重要的功能点吗有几个挺关键的一个是会化恢复这个可以说是CodeCloud一个大杀气会化恢复对他有那个RESION命令还有个CE标志你随时可以停下来回头再接著之前的任务继续干CodexCoi虽然也会记录历史但就缺少这种特别方便的内置的恢复功能将零派社区里好多人都觉得这是个很大的不变之处嗯这个确实有时候被打断了想接回去很麻烦然后CodeCloud还有个专门的规划模式按Shift plus tab就能进他就只帮你规划步骤但不真的执行代码方便你先看看计划怎么样先规划再执行这个思路好Codex没有吗CodexCoi没有这个专门模式你想让他只规划不执行就得想点别的办法比如让他别写代码或者把计划写到文件里总归是麻烦点还有就是Clote code搞了个Agence功能你可以理解成一个个格里的小环境在里面跑特定任务不会污染你主对话的上下文哦像沙箱一样有点那个意思CodexCoi目前好像没有直接对应的功用不过CodexCoi在那个ID和云几成方面看起来是在法例我们看到有给VS code或者Cursor用的扩展能提供代码差异对比啊撤销案扭这些还有云端执行能力虽然降临派社区的测试力也报告说遇到了一些BUG但这个方向潜力还是有的功能上确实各有千秋那我们来看实际跑起来性能和输出质量怎么样那些测试报告里有什么具体的例子吗有的比如在一个达个人操作系统应用的测试力用了据说是Gpt5 Hi的Codex生成的介面嗯视觉上挺新人的刀翻还挺高比如给了8分但是呢有些功能有点小毛便跑不起来然后Code生成的版本呢功能上修复的要好一些比如说Browzer能正常用了但是介面每关度上可能就稍微差一点当然也有BUG所以这次是一个好看的不太好用一个没那么好看的功能稍微强点可以这么理解测重点母太一样Codex偏每关和出实框架Code在功能修复上好像表现更好点有意思还有别的测试吗还有一个是做那个分怒的小鸟类型的游戏据说Codecode一次提示就生成了一个能玩的版本有物理效果观卡瞄准线什么的虽然介面比较简单Codex一开始没成功后来生成的版本呢图像更好看但是物理硬情和玩法核心有问题比如那个小鸟居然是跟蛋工联在一起的好好好这儿怎么玩是啊所以这次呢就是Codecode在可玩性和遵循核心指令方面胜出了还有一个是做习惯追踪器这个两个工具都能做出来能用的版本不过呢Codex的UI好像更是喜欢一点但Codecode在处理那个表情符号选择器的时候出示表现又更好而且Codex通过ID扩展还能用云端或者本地A振车来修复问题这点也挺有意思的听了这么多对比咱们来总结一下吧这些信息综合起来看到底意味著什么呢嗯 简单来说就是个全横Codecode优势主要在于更好的人体工程学就是用著舒服可独性高然后它的CLI功能更强像自定义命令绘画绘复规画模式Agent这些而且通常在第一次生成功能代码的时候呃 可靠性好像高一些那CodexCLI这边呢它的优势在于如果你已经有CatchBT订阅了那成本上可能有优势你能用上强大的OpenAI模型有时候生成的UI确实更漂亮还有就是那个正在发展的IDE和云技成虽然还不完美但也是个潜力它的主要短板就是使用体验上的一些问题比如输出信息有点吵配置相对复杂还有那个嗯 缺少方便的绘画绘复功能酸矣啊你看这选择每个工具其实很大程度上就看你自己的优先级了你是更追求那种流畅、义用功能全面的体验呢那可能Codecode更合适还是说你更看中潜在的成本优势或者就是想用OpenAI的模型喜欢它那种输出风格并且愿意接受它目前在义用性上的一些呃 局限性那可能Codec Codec Code就是你的态以上就是我们基于将零派社群那些测试报告和反馈为你深入探讨的Cloud Code和Codex CLI的一番对比当然了 最后得提醒一句这个AI工具发展速度实在是太快了我们今天聊的这些对比可能过几个月随著版本更新 情况就又不一样了没错 最后留给你一个问题可以自己做摸做摸既然这些工具都在非速的进化不断的集成新功能也许未来的终极编程助手并不仅仅是二选一这么简单关键会不会在于我们开发者如何学会更聪明的去组合去利用多个AI工具各自的强项呢一个真正集成化的多智能体协作的编程未来它到底会是什么样子的
