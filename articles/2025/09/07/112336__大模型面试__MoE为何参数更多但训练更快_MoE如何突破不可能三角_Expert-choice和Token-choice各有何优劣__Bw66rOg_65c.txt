@@ -1,0 +1,162 @@
+Timestamp: 2025-09-07T11:23:36.415950
+Title: [大模型面试] MoE为何参数更多但训练更快 MoE如何突破不可能三角 Expert-choice和Token-choice各有何优劣？ Bw66rOg_65c
+URL: https://youtube.com/watch?v=Bw66rOg_65c&si=t3qvY1aLaqjYs-lx
+Status: success
+Duration: 27:27
+
+Description:
+**MoE模型：架构、动机与优化策略的全面解析**
+
+**核心结论：**
+MoE模型通过引入稀疏性架构，有效解耦了模型参数量与实际计算量，从而在保证高性能的同时显著提升了大规模模型的训练效率和可扩展性。
+
+**Overarching Framework (总体框架):**
+MoE模型：架构、动机与优化策略的全面解析
+
+---
+
+**详细总结:**
+
+**一、MoE模型概述**
+*   **定义与对比：** MoE模型是一种“稀疏模型”(Sparse Model)，与传统的“稠密模型”(Dense Model) 相对。它通过选择性激活部分参数进行计算，而非全部。
+*   **核心架构：** MoE模型将Transformer中的Feed-Forward Network (FFN) 层替换为MoE层。MoE层包含一个“Router”和多个“Expert”（每个Expert通常是一个MLP）。
+*   **工作机制：** Router根据输入（例如Token）计算每个Expert的分配概率，并通过“Top-K”超参数选择性地激活K个Expert进行计算。未被选中的Expert不参与计算，从而实现稀疏性。
+*   **发展历程：** MoE概念提出较早，但Google (Switch Transformer, ST-MoE) 和近期DeepSeek (DeepSeek-MoE) 在大规模MoE模型的训练和实践中做出了重要贡献，使其真正可行并广受关注。
+
+**二、MoE模型的提出动机**
+*   **Scaling Law的瓶颈：** 大模型的发展遵循Scaling Law（模型大小、数据量、计算量增加会提升性能），但传统稠密模型在扩展时遇到了“不可能三角”问题，即无法同时兼顾“模型性能”、“计算成本”和“模型大小”。
+*   **解耦参数量与计算量：** MoE模型的核心思想是解耦模型的总参数量和实际计算量。MoE模型可以拥有巨大的总参数量（带来高性能潜力），但每次推理或训练的实际计算量仅与激活的Expert参数相关，从而有效控制计算成本。
+*   **知识专业化：** 将FFN层分解为多个Expert，类似于引入了“专家”的概念。不同的Expert可以学习并专注于处理不同的专业知识，使模型内部具备一定程度的专业化区分，提升知识容量。
+*   **稀疏归纳偏置：** MoE通过人为设计引入了“稀疏性”这一归纳偏置，类似于CNN在图像处理中利用局部连接和权值共享引入稀疏性。这种稀疏性可以帮助模型从数据中捕捉低维稀疏模式，提高学习效率和样本效率。
+
+**三、MoE模型的优势**
+*   **性能提升：** 在相同计算量或训练时间预算下，MoE模型通常能达到比稠密模型更高的性能。
+*   **训练效率：** 相同性能目标下，MoE模型的训练时间更短（如可加速2倍），并且所需浮点运算量（Flops）更少（如可节省3倍），显著降低训练成本。
+*   **样本效率：** MoE模型学习速度更快，在相同训练Token数量下能更快达到更高性能，使其更易于扩展。
+
+**四、MoE模型架构的常见改进与讨论**
+*   **细粒度Experts：** 增加Expert的数量，同时减小单个Expert的规模。研究表明，Expert数量并非越多越好，存在一个“甜点”，过多反而性能提升不明显。
+*   **共享Experts：** 引入一部分Expert，不经过Router选择，所有输入都通过它们。该改进的实际效果存在争议，一些研究认为其作用不大，甚至不如让模型自主学习知识划分。
+*   **路由策略：**
+    *   **Token Choice (默认方式)：** Router为每个输入Token选择Top-K个Expert。
+        *   **问题：** 容易出现“负载不均衡”(Load Imbalance)，部分Expert过载或未被激活。
+        *   **解决方案：** 引入Load Balancing Loss等机制进行缓解。
+    *   **Expert Choice：** 每个Expert主动选择Top-K个Token进行处理。
+        *   **优点：** 能确保每个Expert的负载相对均衡。
+        *   **问题：** 可能导致“Token Dropping”（部分Token未被任何Expert处理），且在推理时因自回归模型的特性，难以预先选择Token。
+    *   **结论：** 尽管Expert Choice能解决负载均衡，但Token Choice在实际应用中性能通常更优，是目前主流的选择。
+
+**五、MoE模型的挑战**
+*   **训练不稳定性：** 稀疏模型（特别是MoE）的训练相对稠密模型更具挑战性，可能出现“训练崩溃”等不稳定性问题。
+*   **负载均衡问题：** 尽管有Load Balancing Loss等方法，如何确保Expert的均衡利用仍然是一个持续的挑战。
+
+---
+
+<Mermaid_Diagram>
+graph LR
+    subgraph "I. MoE模型核心概念"
+        A["MoE模型"] -- "定义" --> A1("稀疏模型");
+        A1 -- "对比" --> A2("Dense模型");
+        A -- "主要贡献者" --> A3("Google (Switch Transformer)");
+        A3 -- " & " --> A4("DeepSeek (DeepSeek-MoE)");
+    end
+
+    subgraph "II. MoE模型架构"
+        B["MoE Layer"] -- "包含" --> B1("Router (FFN + Softmax)");
+        B1 -- "控制分配" --> B2("多个Expert (MLP)");
+        B1 -- "根据" --> B3("Top-K 超参");
+        B3 -- "选择激活" --> B2;
+        B2 -- "最终输出" --> B4("Aggregation + Add&Norm");
+    end
+
+    subgraph "III. 提出MoE模型的动机"
+        C["大模型发展瓶颈"] --> C1("Scaling Law有效性");
+        C1 --> C2("Dense模型 '不可能三角'");
+        C2 -- "包含" --> C3("性能");
+        C2 -- "包含" --> C4("计算成本");
+        C2 -- "包含" --> C5("模型大小");
+        C["MoE解决"] --> C6("解耦参数量与计算量");
+        C6 --> C7("总参数大 ≠ 计算量大 (仅激活Expert)");
+        C["额外优势"] --> C8("知识专业化 (Experts学习不同知识)");
+        C["哲学思想"] --> C9("稀疏归纳偏置");
+    end
+
+    subgraph "IV. MoE模型优势 (对比Dense模型)"
+        D["相同计算量/训练时间"] --> D1("更高性能");
+        D["训练过程"] --> D2("更高训练效率");
+        D2 -- "例如" --> D3("训练时间少2倍");
+        D2 -- "例如" --> D4("Flops少3倍");
+        D["学习能力"] --> D5("更高样本效率");
+        D5 --> D6("更易Scale Up");
+    end
+
+    subgraph "V. MoE模型改进与挑战"
+        E["架构改进"] --> E1("细粒度Experts (更多更小)");
+        E1 -- "效果" --> E2("Expert数量非越多越好");
+        E["架构改进"] --> E3("共享Experts");
+        E3 -- "效果讨论" --> E4("实际效果存疑");
+        E["路由策略"] --> E5("Token Choice (默认)");
+        E5 -- "问题" --> E6("负载不均衡");
+        E5 -- "解决" --> E7("Load Balancing Loss");
+        E["路由策略"] --> E8("Expert Choice");
+        E8 -- "优点" --> E9("负载均衡");
+        E8 -- "问题" --> E10("Token Dropping");
+        E10 -- "问题" --> E11("推理困难 (自回归)");
+        E5 -- "实践结论" --> E12("Token Choice 性能更优");
+        E["主要挑战"] --> E13("训练不稳定性");
+    end
+
+    A -- "是" --> B;
+    C -- "是提出原因" --> A;
+    D -- "是MoE优点" --> A;
+    E -- "是MoE演进" --> A;
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px,color:#333;
+    style A1 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style A2 fill:#F0F8FF,stroke:#333,stroke-width:1px,color:#333;
+    style A3 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+    style A4 fill:#E0FFFF,stroke:#333,stroke-width:1px,color:#333;
+
+    style B fill:#98FB98,stroke:#333,stroke-width:2px,color:#333;
+    style B1 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style B2 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style B3 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style B4 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+
+    style C fill:#FFD700,stroke:#333,stroke-width:2px,color:#333;
+    style C1 fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style C2 fill:#FFB6C1,stroke:#333,stroke-width:2px,color:#333;
+    style C3 fill:#FFFAFA,stroke:#333,stroke-width:1px,color:#333;
+    style C4 fill:#FFFAFA,stroke:#333,stroke-width:1px,color:#333;
+    style C5 fill:#FFFAFA,stroke:#333,stroke-width:1px,color:#333;
+    style C6 fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style C7 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style C8 fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+    style C9 fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333;
+
+    style D fill:#90EE90,stroke:#333,stroke-width:2px,color:#333;
+    style D1 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style D2 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style D3 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style D4 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style D5 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style D6 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+
+    style E fill:#FFC0CB,stroke:#333,stroke-width:2px,color:#333;
+    style E1 fill:#FFFAF0,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style E3 fill:#FFFAF0,stroke:#333,stroke-width:1px,color:#333;
+    style E4 fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333;
+    style E5 fill:#FFFAF0,stroke:#333,stroke-width:1px,color:#333;
+    style E6 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+    style E7 fill:#FFFAF0,stroke:#333,stroke-width:1px,color:#333;
+    style E8 fill:#FFFAF0,stroke:#333,stroke-width:1px,color:#333;
+    style E9 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style E10 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+    style E11 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+    style E12 fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style E13 fill:#FF6347,stroke:#333,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+今天来给大家录一个主题也就是mexture of expertsmoe models这是面试当中经常被问到的一个话题moe model我认为是最近被deep seekwe3这个模特给待火了但其实moe model早在2017年的时候Google就做了很多这方面的工作比较有名的就是Google的switch transformer还有随后的stmoemoe虽然提出的比较早但真正能把moe这类的模特做大并且能够训练出来我觉得Google还有deep seek做出了非常重要的贡献moe这个话题可以分为几个部分第一就是moe这类模型它的架构第二个就是moe的训练第三个可能就是moe在inference的时候一些病情的策略那么今天这个视频主要集中在给大家讲讲moe model的架构方面第一个问题就是什么是moe model那我们用这篇配合的图给大家解释一下其实moe model是一个sbus model它是相对于我们常说的dance model而言的dance model也就是我们早期常见的transformer的架构简单的可以把早期的iRM架构给理解为有两个部分第一个就是腾胜的部分第二个就是这个fn的部分那所谓的dance model也就是这里的fn是一个dance的mlp架构那如果是moe也就是sbus架构就是把这里的fn换成了很多mlp在这里称之为expert那这里有一个区别就是对于输入这里有一个rauter来控制这个输入会进入到哪些expert里面进行计算因为这里在实际计算当中只会挑部分的expert进行击活也就是这里所看到的expert1expert3和expert6那么其他的expert这里都没有参与计算所以这类的model是一个sbus model等会我们再具体再来讨论一下sbus的moe model会不会比dance model更好好在哪里我们再来通过这个图看一下moe架构类部的细节这个图展示的就是一个moe架构对于这四个输入分配的机制下面这里就是前面所提到的attention layer那这里就是把fn换成的moe layer如果我们先看这一个输入的话这个输入进入到一个rauter之后它会通过一个fn也就是这个rauter本身就是一个fn再加上一个softmax计算出每个expert所蹲进的分配的properability然后这里还有一个重要的超参也就是topk选多少个expert这里k.2也就是选两个所以在计算了softmax之后就会有一个properability distribution因为这里k.2所以就选properability最大的那两个expert那这里里面就是0.7对于的是第一个expert然后是这里的0.2对于的就是第三个expert这样这个头肯就被分配到了这两个expert上面最后再做一个accregation也就是加合然后再通过add and the normalation layer得到最终的输出那对于第二个input也是类似的经过这个rauter之后因为这个输入不一样了所以这个输入就被分配到了第一个和第三个expert那对于第三个输入就被分配到了第二个和第四个expert那这个输入就被分配到了第三个和第四个expert所以从概念上来理解moe的话就是把之前一个dance的ffn layer换成了mo里面的sbusmoe layer我们讨论完了第一个问题什么是moe之后我们讨论第二个问题为什么大家要提出moe这样的架构或者说提出moe这种架构它背后的motivation是什么这就是我经常说的知气然还要知气所以然知道what还要知道why所以我们来讨论一下这个why的问题为了回答这个问题我们首先得从sgaming law开始说起现在的大原模型的发展基本上已经证明sgaming law是有效的简单的说就是从三个方面将模型给sgaming up这三个方面分别就是模型大小也就是参数量训练数据还有计算量当我们从这三个方面把模型sgaming up之后这个模型的性能也会随之提升所以领域类现在都是基本严用这个slog去开发新的模型但是对于弹死这一类的模型我们在演用sgaming law的时候就发现遇到了瓶景这个瓶景我用一个词来解释叫不可能三角什么叫不可能三角呢就是这里有三个因素互相制约对于弹死模型来说我们不可能三者兼顾这三个因素分别是模型的性能也就是performance其次就是计算的成本第三个就是模特的size也就是我们sgaming law想继续增大的我们来看一下为什么这个弹死模特会遇到impossible triangle这个问题如果继续严用sgaming law的思想那么我们必然要在这个纹度上面增加弹死模特的大小但同时因为它是一个弹死模特所以你增加了参数量之后虽然performance也跟着上去了但是它的cost也会几句的增加这个cost包括训练也包括推理时候的cost所以这就出现了不可能三角不可能对于弹死模型来说同时改善这三个伟度所以这个时候就提出了moe这样的一个思想moe模型本质是把模型的大小也就是它的参数量和计算量的关系进行了解诺这里解诺的意思就是我们可以把模型的参数做得很大很多但是能够控制住模型的计算量使得计算量不会像弹死模特一样随着这个参数增加而几句的增加因为moe模特它只击火部分的experts所以它存在两种参数一种就叫做total parameters另外一种就叫做实际的击火参数真正模型的计算量是跟这个击火参数相关的跟总参数量没有直接的必然关系所以再回到我们这个不可能三角上面这样我们就能把模型的参数量变大从而是的模型有更好的performance但同时因为有击火参数的存在所以这个cost我们也能很好的控制住所以moe价格从不可能三角这个角度来说就比弹死模特要好这是第一个解释第二个解释就是一般来说我们认为现在的大元模型Lolage也就是知识的部分是存在于ff这样的价格里面的也就是知识其实是存在于ff参数里面的当我们把f分分成一个个小的experts之后我们其实是引入了所谓的专家的概念这样不同的小的专家当然也是ff分了对应的就是不同的知识这样使了模型类部就有一些专业化的区分可能这个experts对应的是某一类的专业知识这个experts可能对应的就是另外一类的专业知识比如说某个专家可能就对边程类的知识比较擅长那可能另外一个专家就对艺术或者是稳资类的比较擅长同时因为moe的模型可以做得更大使得这个整体moe的layer可以有更多的参数量所以它可以存主下更多的知识相比较淡丝摸到你们的f分而言但又因为它每次计算的时候只击火少量的experts所以这种知识的增加并不会导致计算量的增加第三个解释是我自己个人的一个理解我觉得moe比淡丝摸得好很重要的一个关键点就出在spos这个点上面如果大家对syn对的模型比较了解的话syn模型本质上就是在模型价格里面引入了一个spos的性质让模型通过convolution的layer去形造数据里面存在的那些spos pattern那spos这个哲学思想我觉得能贯穿整个moe's能力甚至是dp能力的发展在早期moe's能力的时候很多的时候就是通过人为的设计故意的在模型当中去引入这种spos的性质我觉得这种spos本质就是从过数据当中去找一些dway的 pattern就类似于现心带数里面的sved所以回到moe这个价格上面来说我认为这种moe的设计其实就是类似于syn里面的convolution的设计人为的加入了一些prire这个prire就是通过人类的鲜艳知识知道这个数据里面或者是信心里面存在一些spos pattern从而去设计这种spos的架构去补拙信息当中的这些node dimension pattern这样做的一个好处就会使你的能力efficiency提高这就是为什么syn model在图像上面它的性能要好于比如说mrop尤其是当你的数据量比较小的时候这就是因为syn model引入了这种inductive bias所以我觉得moe架构从本上来说也就是人为设计的一种架构引入了这种spos的inductive bias使得它的学习效率更高了所以在同样数据量的情况下moe架构要好于dance架构当然这是我个人的一些理解大家可以拿去进行批判式的思考我们再来看一下这个图通过这个图我想给大家强调一个知识点这个图展示的是训练好的moe模型里面experts的机火的情况很做标展示的这些就是experts的ID综络标这里展示的是dome and specialization的百分比然后这里有几个不同的domegithub,archive,gpdf,boost,cf这里我想给大家强调的一个点就是这里其实是有不同的layer的layer0,layer7和layer15因为我们常说moe model里面有多少个expert很可能会给大家产生一个错觉就是这个model里面只有那么些expert但其实不是的每一个layer都有对应的比如说这里可能是64xperts所以整个模型是有很多个这样moe layer叠加起来的所以它不存在某一个expert的学习或者是代表某一类的知识而是不同层的expert一个综合体我们就来具体看一下这什么意思比如说我们看archive这上面可能是一些科研相关的paper你看这个的几火就不是某一个特定expert几火比如说在layer0可能是这个expert到layer7之后就变成这些experts到layer15又变成这些experts所以这个experts几火是横跨不同层的很多expert的一个综合体对于这一个模型来说它不存在某一个或者某几个expert在archive这样的培论上面几火所以大家要理解这个layer的存在回到了what外的问题那剩下就是号的问题Moe这样的架构到底比但是架构好在哪里那我们就来看一下这篇paper来自于alentinstitute这里我想稍微解释一下为什么讲面试题还要给大家误paper因为我觉得现在知识更新实在是太快了很多的知识你是没法在教科书甚至是课堂上面获得的大部分面试当中问到的那些问题很可能就来自于最新的paper所以这也是为什么我想带着大家看看这些原始的paper我知道网上现在有一些讲解面试题提供那种巴股的回答是直接让大家背送我觉得这种方式其实是一种很糟糕的学习方式你可能记住了答案但很快也忘记了而且在面试当中如果你遇到像我这样的面试观不超过三个问题我就能知道你到底是真懂了还是通过突击背送巴股面试题如果你是后者的话那给我的印象将会是非常的糟糕所以我建议大家还是知气然并且知气所谓然从根本上去理解这些知识点的源头当然我也知道大家不可能花时间去读这些paper所以这也是我为什么想作为一个英口的目的我想帮大家把这些问题进行加工这样解释大家的时间我们先来看一下这个图这个图比较的是在相同的Trining Flops下Dance Dream的EyeCrisseyDance Dream的任务就有上面展示的这些具体我就不给大家解释了这里比较了三个模型两个是Dance Model一个是1B 一个是7B另外一个就是一个Moe Model总参数量是7B机火参数量是1B所以机火参数就跟1B的Dance Model可以进行比较总参数量7B就可以跟这个7B的Dance Model进行比较这个红色的线在所有的Banch Mark上面都是比另外两个模型要好的这就表明Moe Model在总参数量一样的情况下也就是跟这个Dance 7B的进行比较Moe Model是要好的哪怕机火参数是一样的比如说两个都是1B的模型Moe模型仍然是1BDance模型要好的我们再来看一下这个图Moe比Dance Model另外一个好处就是它的训练时间要少很多并且它的Flops也要少很多这里比较的是一个Moe Model和一个Dance Model他们的机火参数是一样的也这个Dance Model有1.3个BinLin的参数这个Moe Model也有1.3个BinLin的机火参数但是总参数量是6.9个BinLin上面这一行展示的是消耗相同Token或者是相同Flops情况下所对应的TrinityLoss我也认识Loss和Halaswag这个Banch Mark上面的性能下面这一行展示是在同样TrinityTime情况下上面这三个指标的性能我们就先看TrinityTime可以看到这个红线在TrinityLoss上面是比Dance模型这个蓝线要低一些同时BadationLoss也是要低一些换句话说也就是相同的TrinityTimeMoe Model可以达到更好的Trinity和BadationLoss这里展示的就是Moe Model达到同样的性能训练起来所消耗的时间是更少Moe Model要比Dance模型快两倍大家不要想看两倍当训练一个Moe Model并且参讯很大的时候能结少50%的训练时间这已经是一个巨大的结盛了在看上面的FloxMoe Model要比对应的Dance Model少三倍的Flox所以从这个角度来说Moe Model是比Dance Model更加高效的一个网络架构我们再来看一下Google的这篇Switch Transformers这是Moe里面非常经典的一篇配合Google把Moe这种架构给ScaleUp做到了Trilling Parameters这个图展示的就是Spaus Model也就是Moe它的一个Scaling Law这一类意就表示Expert数目1R4一直到256表示的就是有多少个Expert很做标就是模型的参数这个图想表示的就是这种Moe的架构它是可以被ScaleUp的随着Expert数量的增多模型参数也在不断的增大同时Taslox在不断的减小也就是性能在不断的提升然后这里做者跟Dance Model也就是这里的T5Base进行了比较上面这些都是Moe Model但是有不同的Expert的数目可以看到在相同的TriningStab下面这些Moe模型是要源号于Dance Model的Google的做者在这篇配方里面想要传达的一个重要的结论就是Moe Model比Dance Model是更加的Sumple Efficient在同样的训练的Token情况下这种Moe模型学习是更快的因此这样的模型更容易的ScaleUp这也呼应了我在前面讲外的时候给大家解释了为什么现在要提出Moe这样的架构Google在这里也做了一个比较把Moe架构和Dance架构进行了直接的比较这里主要比较的是两个方面一个是Trining的Stabs一个是TriningTime也就是实际的训练时间可以看到不论是从TriningStabs还是TriningTime来讲这种Moe的架构都要比这两个Dance架构要更加的Efficient的一些因为Moe架构是更加的Sumple Efficient所以实际训练起来所消耗的时间是更短在这里有25倍到7倍的加速这个是相当可观的所以Google的这篇paper这里问了一个问题给定一个Trining的Duration和Construction of Budget我们是选择训练一个Dance model还是选择训练一个Sprs model根据这些结果我相信大家一期目中已经有了答案如果我们训练的Budget是很定的话我们当然会选一个Sprs model因为训练起来效率更高我们逐完了Moe的基本架构再来看一下Moe里面的一些常见的改进这个图来自于Dipsick MoeDipsick Moe就引入了两个非常重要的改进第一个叫Fine Green的Expert简单的说就是把之前的比较大的Expert做得更小但是更多比如说之前是N个大Expert现在就做成二N个小Expert另外一个比较重要的改进就是引入了SharedExpert这个想法简单的说就是在模型里面有一些Expert是不经过Router选择的也就是说所有的输入都会经过Expert因此叫做SharedExpert那剩下的Expert是要经过Router选择的那这些改进到底有没有好处呢我们来看一下这个图这个图比较的就是不同Expert的数目从832到64Moe架构的性能那注意这里在增加Expert的数目的时候同时也保证懂得参数量不变还有计算的Cost也不变所以每个Expert相对应该都变小了那很多标这里展示的是TokenS也就是Flops纵作标是Poformance可以看到在相同的Flops情况下32也就是这个潜绿色的线是要好于8也就是这个深紫色线的也就是说当我们把Expert从8增加到32的时候模型的性能是有一定提升的但是如果将Expert数目增加到64的时候这个提升就非常的小了可以看到这个潜绿色的线基本跟红色线已经是重合了虽然在MIMIU这个数据级上面64Gasper的6WAB32个要好一点这个结果就说明Expert数目并不是越多越好它有一个Sweetpoint在这个实验里面就是32当Expert数目过多的时候这个性能的提升就不太明显了我觉得这个用我前面的Low-Dermansion SuperCity那个很容易理解你可以简单的理解为这里是在找一个Low-Dermansion能够将模型所学校的指示进行降为如果大家对Sweet比较熟悉的话Sweet地去恢复一个图片只选8个违度的话可能图片恢复的效果并不是特别好当你选32个违度的时候图片能够被恢复得很好当你继续增加这个违度的时候比如说到64的时候可能恢复出来的都只是一些造型了也就是说很可能你的图像信息就在一个约等于32的低纪空间里面所以类似的我们也可以把Moe放到我刚才的思考框架里面去理解那么可能在它这组实验里面模型所学的Low-Lage可能就已经能够应蛇到一个32位的Expert的Low-Dermansion Space里面我们接着再来看一下这个图这个图展示的是有没有Share-Expert模型的性能有多大的差别红色的是32个没有Share-Expert蓝色的是31个Row-D的Expert加上一个Share-Expert从它这组实验来看似乎加入一个Share-Expert这个模型性能并没有太大的改善甚至还略为的差了一些比如说Valrication Loss这个率显甚至还在这个红线上面一点点所以这跟Dipsick Moe原实的陪伴里面的结论是有一些想法这篇Paper做着Age的一个点就是这种Share-Expert其实人为注入了一个鲜眼知识那其实如果不设Share-Expert让模型自己去学哪些Expert对应的是CominLow-Lage这些学习应该让模型自己去完成而不是由人从价格上来设定所以这篇Paper做着认为这个Share-Expert可能作用不大另外Moe你们还有一个比较重要的支持点就是这个头肯的分配问题也就是Routing Strategies有两种常见的头肯Fipic方式一种叫Token Choice一种叫Expert Choice这个背后的Motivation是因为常见的Token Choice也就是我们前面所说的那种方式我们按照Token来分配这个Router是针对每一个头肯如果这个地方是Top2的话那么对于第一个头肯V从中选两个Expert出来比如说这里选的是Xper 1和Xper 3对于Token 2的话这个Router选择的是Xper 3和Xper 4那这里就会有一个问题也就是Moe里面最常见的Low Balance问题有可能这些Token都会集中的分配到某些Expert上面然后有一些Expert可能没有分配这样的话这些没有分配的Expert可能训练的就不充分也就失去了Moe这个价格他本身的意义所以这个时候就有人提出那我们可以不从Token的角度来分配而是从Expert的角度来分配所以这里的TopK就是指我从Expert的角度来选TopK出来这样的话因为每个Expert都会选TopK所以对于Expert来说他分配到的Token数目是一致的所以这就有Balance的Workload那具体怎么做呢也非常简单只不过把选头肯的这种方式给倒过来对于Expert 1我还是通过这个Router选四个头肯那这里选的是We love to study那对于Expert 2这里应该是写错了应该是2选的是We love quiet library因为站在Expert的角度选所以这些Token有可能会被重复的选到大家可以看到通过这种Expert choice的方式每个Expert收到了都是四个头肯所以就不存在Token choice里面所遇到的 load balance的问题那这个Expert choice这个方法也有一些问题那第一个问题就是Token抓平的问题大家注意到We love to study是第一个Expert选We love quiet library是第二个Expert选那这些没有选到的Token比如说印则这两个头肯没有被选到那么他们就会被抓不掉这就是Token抓平这种Token抓平可能会影响到模型的性能因为他们没有经过计算那第二个比较大的问题就是在Trinity的时候你有这样完整的句子进行选择但是在Inference时候因为模型是一个Otorough Glass所以你没法看到后面的这些Token所以这个方法在Inference的时候使用会有很大的问题那常用的方法就是在Router里面再加入一个MLP的小的网络通过这个小的网络对于每一个Inference时候看到了Token进行预测这个Token会不会在TokenK里面如果会的话就用这种方式分配Token因为MLP比较小所以在Trinity的时候很容易就能够训练出来这种ExpertChoice和TokenChoice这两种Token分配方式哪一种更好横作标是Flops也就是Token动作标是Performance红色的是TokenChoice浅绿色是ExpertChoice可以看到TokenChoice的性能是源好于ExpertChoice性能的从ValutationLoss的客户上面还有TrinityLoss的客户上面都能看到这样类似的结论这就是为什么在现在的Moee Model里面TokenChoice仍然是首选当然也会有很多其他的比如说像Low the Balance Loss去客户TokenChoice里面Low the Balance的问题那大家可能会好奇如果Moee有这么多有点的话为什么直到最近Moee这个架构才活起来那答案就是这一类的SpotS Model它训练起来是比较困难的会存在所谓的Trinity instability的问题这边配合里面就有一个图展示了这种SpotS Model也就是Moee训练中存在的问题那左图这个就是一个安Stable的TrinityRan也就是不稳定的训练可以看到这个TrinityLoss训练到最后的时候直接就崩掉了所以如何能够稳定的训练一个Moee Model这是一个十分有挑战的问题这你们也有很多的技术细节和支持点那我想在单独的视频里面给大家讲解那关于Moee架构这方面的支持我就给大家录完了希望这些支持能够帮助到大家对大家的面试有用另外也想宣传一下我跟几个小伙伴打造的一个网站网站的地址是Stadis.winStadis就是学习但是是付出win就是WN 胜利的意思这个网站主要是给大家刷客学习的然后我会把我的大模型面试系列作为一个课程放到网站上面所以我网级我录制的关于大模型面试的视频然后每个视频我还设计了一些Quiz看完视频之后可以做一下这些练习体验检验你的支持是否学得扎实目前这个网站还是免费的注册登录就可以开始学习如果大家感兴趣的话请抓紧时间注册在我没有改变主义收费之前欢迎大家试用也欢迎大家给我提一简最后祝大家Good luck拿到好的我访问
