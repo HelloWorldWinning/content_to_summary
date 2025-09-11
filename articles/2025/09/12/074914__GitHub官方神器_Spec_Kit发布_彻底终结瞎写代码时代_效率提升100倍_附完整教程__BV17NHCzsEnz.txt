@@ -1,0 +1,140 @@
+Timestamp: 2025-09-12T07:49:14.427768
+Title: 【GitHub官方神器】Spec Kit发布！彻底终结瞎写代码时代，效率提升100倍（附完整教程） BV17NHCzsEnz
+URL: https://b23.tv/Qer7HN9
+Status: success
+Duration: 4:37
+
+Description:
+以下是对文本内容的总结：
+
+**一、 speckit 简介**
+
+*   **A. 定义**：GitHub 发布的一款开源工具包，旨在赋能开发者利用其偏好的AI工具（如GitHub Co-Pilot, Cloud Code, Gemini CLI等）进行规范驱动开发。
+*   **B. 核心理念**：通过将“规范”置于工作流的核心，改变传统AI开发中仅依赖简单提示（Vipoding）并期望代码成功的模式。规范成为活态的、可执行的文档，指导AI代理，随项目演进，并确保所有环节高度一致。
+*   **C. 优势**：
+    *   开源（MIT许可），完全托管于GitHub。
+    *   监控围绕规范的开发过程。
+    *   确保更高的一致性、可靠性，并产出更高质量的AI驱动开发成果。
+    *   减少AI“幻觉”，优化资源（如token）使用。
+*   **D. 主要特性**：支持多种AI编码工具，提供结构化的开发流程。
+
+**二、 speckit 工作流程：四阶段过程**
+
+speckit 采用一个包含四个关键检查点的流程：
+
+*   **A. 规范 (Specify)**：
+    *   **目标**：明确项目目标和用户预期成果。
+    *   **操作**：使用 `/specify` 命令描述要构建的内容及其原因。
+*   **B. 规划 (Plan)**：
+    *   **目标**：匹配技术栈、架构和约束条件。
+    *   **操作**：使用 `/plan` 命令提供技术实现路线图，配置所需模板和脚本。
+*   **C. 任务 (Task)**：
+    *   **目标**：将项目分解为可测试的小单元。
+    *   **操作**：使用 `/task` 命令生成实施任务列表。
+*   **D. 实施 (Implement)**：
+    *   **目标**：AI根据规划和任务逐步实现代码并进行审查。
+    *   **操作**：AI代理依据前几阶段的规范和任务进行编码实现，确保功能性和高质量。
+
+**三、 speckit 使用指南**
+
+*   **A. 工具安装与初始化**：
+    *   通过CLI工具 `specify` 进行操作。
+    *   使用 `specify init` 命令初始化项目，并选择AI助手（如Cloud Code）。
+*   **B. IDE 集成与斜杠命令**：
+    *   在支持的IDE（如VS Code）中，结合AI工具（如Cloud Code）使用。
+    *   **`/specify` 命令**：创建项目规范。
+    *   **`/plan` 命令**：生成实施计划，包括技术栈和架构。
+    *   **`/task` 命令**：生成具体的实施任务。
+    *   **更新宪法文件**：`constitution.md` 文件用于记录项目的不可协商原则。
+
+**四、 核心价值**
+
+speckit 通过规范驱动的迭代工作流，显著提升AI辅助开发的质量和效率，使AI能够遵循明确的结构和原则，减少错误并交付功能更完善的应用程序。
+
+---
+
+**核心观点：**
+speckit通过以规范为核心的四阶段工作流，赋能开发者利用AI工具构建高质量、高可靠且与项目目标高度一致的AI驱动型应用，显著降低幻觉并提升开发效率。
+
+---
+
+**Overarching Framework (核心框架):**
+规范驱动开发 (Specification-Driven Development)
+
+---
+
+**<Mermaid_Diagram>**
+graph TD
+    A["speckit: 开源AI开发工具包"] -- "赋能" --> B["AI开发工具 (如Co-Pilot, Cloud Code, Gemini CLI)"];
+    A -- "替代" --> C["传统AI开发 (Vipoding)"];
+
+    subgraph "核心理念与框架"
+        D["规范驱动开发 (Specification-Driven Development)"]
+        D -- "以...为核心" --> E["规范作为中心件 (Central Artifact)"];
+        E -- "带来" --> F["优势: 更高一致性、可靠性、质量"];
+    end
+
+    A -- "基于" --> D;
+
+    subgraph "speckit 四阶段工作流"
+        direction LR
+        G["1. 规范 (Specify)"]
+        H["2. 规划 (Plan)"]
+        I["3. 任务 (Task)"]
+        J["4. 实施 (Implement)"]
+
+        G -- "定义目标与用户成果" --> H;
+        H -- "匹配技术栈、架构与约束" --> I;
+        I -- "分解为小测试单元" --> J;
+        J -- "AI逐步代码实现" --> K["高质量AI驱动应用产出"];
+    end
+
+    A -- "通过" --> G;
+
+    subgraph "speckit 使用方式"
+        L["CLI工具: specify"]
+        M["IDE集成 (如VS Code + Cloud Code)"]
+        N["斜杠命令 (如 /specify, /plan, /task)"]
+
+        L -- "初始化项目" --> A;
+        M -- "启用" --> N;
+        N -- "驱动" --> G;
+        N -- "驱动" --> H;
+        N -- "驱动" --> I;
+    end
+
+    K -- "实现" --> F;
+
+    style A fill:#4CAF50,stroke:#388E3C,stroke-width:2px,color:#fff;
+    style B fill:#81C784,stroke:#66BB6A,stroke-width:1px;
+    style C fill:#FFCDD2,stroke:#EF9A9A,stroke-width:1px;
+
+    style D fill:#2196F3,stroke:#1976D2,stroke-width:2px,color:#fff;
+    style E fill:#90CAF9,stroke:#64B5F6,stroke-width:1px;
+    style F fill:#C8E6C9,stroke:#A5D6A7,stroke-width:1px;
+
+    style G fill:#FFD54F,stroke:#FFC107,stroke-width:1px;
+    style H fill:#FFB74D,stroke:#FF9800,stroke-width:1px;
+    style I fill:#FFA726,stroke:#FB8C00,stroke-width:1px;
+    style J fill:#FF9800,stroke:#F57C00,stroke-width:1px;
+    style K fill:#4CAF50,stroke:#388E3C,stroke-width:1px,color:#fff;
+
+    style L fill:#BBDEFB,stroke:#90CAF9,stroke-width:1px;
+    style M fill:#E0E0E0,stroke:#BDBDBD,stroke-width:1px;
+    style N fill:#F0F4C3,stroke:#E6EE9C,stroke-width:1px;
+
+    linkStyle 1 stroke:#D32F2F,stroke-width:2px;
+    linkStyle 2 stroke:#1976D2,stroke-width:2px;
+    linkStyle 6 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 7 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 8 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 9 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 10 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 11 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 12 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 13 stroke:#FBC02D,stroke-width:2px;
+    linkStyle 14 stroke:#FBC02D,stroke-width:2px;
+**</Mermaid_Diagram>**
+
+Content:
+ Did you know that GitHub just released an impressive new open source toolkit that empowers developers to use your AI tool of choice by that's GitHub Co-Pilot, Cloud Code, Gemini CLI, and many others for spectrum and development? It's called speckit. Instead of relying on Vipoding, where you can just throw a prompt to an AI agent and hope the code works. speckit makes the specification the central artifact of your workflow. Specs become living executable documents that guide your coding agent, evolve with your project, and keep everything aligned. But why would you even use speckit? Well, this is an open source tool that is under the MIT license, and it is fully hosted on GitHub. It's also monitoring your development process around specifications. It essentially works in a four-phase process, where you have different checkpoints. You first start off with the specification where you define the goals and the user outcomes, the planning phase where it match stacks architecture and constraints. You have the task phase, which is where it breaks it down into small testable units. And lastly, is the implementation where the AI codes step-by-step for review. And overall, with all of this being taken into account, specs become living artifacts, which is ensuring better alignment, reliability, and higher quality AI power develop really simple, head over to the speckit, toolkit on GitHub, which I'll leave a link to in the description below. And essentially, it's a CLI tool that you can work with called specify. You can initialize it to your project depending on your coding agent you're using. So if you're using something like Cloud Code, you can initialize it to that with this command over here. You can simply go ahead and copy this portion and then paste in your project name. So for example, I can paste in this command that was given from GitHub, and then I can specify my project name and click enter. So you can see right here that it has created the new project based off of the name that I've given it, and it is going to request me to choose my AI assistant. So I have the option to use GitHub, Cloud Code, as well as Gemini CLI, and I can even use another coding agent, which I would have to configure in the back end. But what I recommend you use this with is obviously GitHub, Cloud Code works really well with specify. So I can go ahead and click enter, and it's going to initialize the specify project. This is the project name that I have. It's going to have it so that it checks required tools, select AI assistant, which is Claude, fetch the latest release, download the template, and essentially just initialize that overall project. Now, what it recommends that I do is head over to the specified project, but it also recommends that I open it up within my IDE, and I can use the slash commands with Cloud Code. This is where you can type in the slash command in any file to see available commands specified to create specifications, the slash plan command to create the implementation plan, and the slash task command to generate the test. And then it is going to update the constitution.md file within your projects, non-negotiable principle. And essentially, that is how you can get started with spectrum and development. Like we had mentioned before, it works in a force that process where you specify plan, task, and implement. So I've opened this up within VS Code. I can open up a new terminal, and we can follow the steps that AI has told us. So what I can do now is within my specify project folder with Cloud Code, initialize, I can now use any of the slash commands with spec kit. So what I can do now is use these different slash commands like plan, I can specify, use the task command as well as implementation, start off, whatever you're trying to do, you want to first create the spec. You want to specify the command to describe what you want to build and focus on what and why, not just to text that. So in this case, they recommend that you specify, use the slash specify command, and you can paste in whatever prompt you want. So I'm just going to use the example that they have, and I'm specifying that I want to build an application that can build and organize my photos in a separate photo album. And you can see that it is going to create the specifications for the AI to follow. Next is where we're going to then drop it off to the planning phase. So in this case, it'll use minimal number of libraries, use vanilla, HTML, CSS, etc. So the second phase is the technical implementation phase with the planning. So after it finishes creating the spec file, we can then use the plan command to provide the tech stack and the architecture. So it looks like it has finished generating the specifications where it gives a rough guideline on what we need to do to create this. So now we can actually take a look at this. So if you click on specifications, if you open the preview up, it'll give you a rundown on the specifications that the AI agent will follow. Now what we can do is go on to the next phase. This is the planning phase. If you scroll all the way to the bottom, we can paste in the next command, which is slash plan, which is where we're going to have it now generate the implementation roadmap for all the features ahead and configure all the different templates that will be necessary for the AI agents to follow. You'll also focus on creating all the different scripts to use as well as keeping a memory of everything that was generated. Now what I can do is have it ready for implementation, where I can run the slash task command to command the generated order implementation task following the different principles that were basically outlined with the different planning phases. So essentially now it's going to create the actual list and it's going to have the agent break it down and implement it. So it will then work on creating it. And now it will thoroughly focus on following the each different specifications that were listed out from the planning and specification phase. And it's going to implement all of it. So rather than going ahead and having an AI coding agent take your prompt and developing a full on application, which probably has a lot of errors, it hallucinates and doesn't generate almost perfectly. In this case with the spec driven workflow, it is going to be able to thoroughly work on iterating on your project idea with the planning phase, which you can iterate on further and add more specifications. It has less chances to hallucinate, uses less tokens in my opinion. You can see quite quickly, it was able to focus on developing all the different features that we wanted a part of our photo album organizer. You can upload different thumbnails like the spec hit them over here. You can upload the photo to the different albums that you have uploaded or created. And you also have the ability to manage all these different albums within the main tab. This is a really simple app that lets you organize your different photo albums. But more importantly, it was able to follow the structure as well as focus on the back end as well as the front end system. So it is going to be able to thoroughly develop your app with all the features that are actually functional and gets a job done with higher quality.
