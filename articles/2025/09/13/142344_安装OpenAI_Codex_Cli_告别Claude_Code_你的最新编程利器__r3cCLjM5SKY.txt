@@ -1,0 +1,97 @@
+Timestamp: 2025-09-13T14:23:44.505649
+Title: 安装OpenAI Codex Cli：告别Claude Code，你的最新编程利器！ r3cCLjM5SKY
+URL: https://www.youtube.com/watch?v=r3cCLjM5SKY
+Status: success
+Duration: 6:31
+
+Description:
+**总结核心观点**
+
+CodeX CLI 是 OpenAI 推出的一款强大的开源命令行工具，支持 Windows 系统，通过简单的安装和登录步骤即可使用，并提供多种高级功能和与 VS Code 的集成，有效提升开发效率。
+
+**核心观点**
+
+CodeX CLI 是由 OpenAI 开发的强大命令行工具，它简化了开发流程，通过高级AI功能和VS Code集成，为开发者提供高效的智能辅助。
+
+**Overarching Framework**
+
+本内容采用“工具安装与使用指南”的框架，详细介绍了OpenAI CodeX CLI从系统要求、安装部署、登录使用到高级功能和集成应用的全过程。
+
+**Mermaid conceptual map**
+<Mermaid_Diagram>
+graph TD
+    A["CodeX CLI：OpenAI 开源命令行工具"] --> B{"核心功能与优势"}
+    A --> C{"系统要求"}
+    A --> D{"安装与部署流程"}
+    A --> E{"VS Code 集成"}
+
+    subgraph "核心功能与优势 Capabilities & Benefits"
+        B_CAP_1["强大功能 (媲美 Copilot)"]
+        B_CAP_2["支持 GPT-5 模型 (需 Plus 会员)"]
+        B_CAP_3["多种思考模式 (如 GPT-5 Hack)"]
+        B_CAP_4["项目管理与对话控制工具"]
+        B_BENEFIT["高效完成开发任务"]
+        B --> B_CAP_1
+        B --> B_CAP_2
+        B --> B_CAP_3
+        B --> B_CAP_4
+        B --> B_BENEFIT
+    end
+
+    subgraph "系统要求 Prerequisites"
+        C_REQ_1["Node.js & NPM 环境"]
+        C_REQ_2["可访问 OpenAI 服务"]
+        C_REQ_3["兼容 Windows (无需 WSL)"]
+        C --> C_REQ_1
+        C --> C_REQ_2
+        C --> C_REQ_3
+    end
+
+    subgraph "安装与部署流程 Installation & Setup"
+        D_STEP_1["验证 Node.js/NPM 版本"]
+        D_STEP_2["全局安装 (`npm i -g @openai/codex-cli`)"]
+        D_STEP_3["验证 CodeX 版本 (`codex --version`)"]
+        D_STEP_4["登录 ChatGPT 账户并授权"]
+        D --> D_STEP_1
+        D --> D_STEP_2
+        D --> D_STEP_3
+        D --> D_STEP_4
+    end
+
+    subgraph "VS Code 集成 Integration"
+        E_INT_1["CodeX VS Code 插件"]
+        E_INT_2["插件安装方式 (市场/浏览器)"]
+        E_INT_3["在 VS Code 中运行 CodeX"]
+        E --> E_INT_1
+        E --> E_INT_2
+        E --> E_INT_3
+    end
+
+    style A fill:#D4E6F1,stroke:#2C3E50,stroke-width:2px,color:#2C3E50;
+
+    style B fill:#E6F3E6,stroke:#27AE60,stroke-width:1px,color:#27AE60;
+    style B_CAP_1 fill:#D4EDDA,stroke:#27AE60,stroke-width:1px,color:#27AE60;
+    style B_CAP_2 fill:#D4EDDA,stroke:#27AE60,stroke-width:1px,color:#27AE60;
+    style B_CAP_3 fill:#D4EDDA,stroke:#27AE60,stroke-width:1px,color:#27AE60;
+    style B_CAP_4 fill:#D4EDDA,stroke:#27AE60,stroke-width:1px,color:#27AE60;
+    style B_BENEFIT fill:#C0F0C0,stroke:#27AE60,stroke-width:2px,color:#2C3E50;
+
+    style C fill:#FFF3E6,stroke:#E67E22,stroke-width:1px,color:#E67E22;
+    style C_REQ_1 fill:#FDEBD0,stroke:#E67E22,stroke-width:1px,color:#E67E22;
+    style C_REQ_2 fill:#FDEBD0,stroke:#E67E22,stroke-width:1px,color:#E67E22;
+    style C_REQ_3 fill:#FDEBD0,stroke:#E67E22,stroke-width:1px,color:#E67E22;
+
+    style D fill:#E6F3F7,stroke:#3498DB,stroke-width:1px,color:#3498DB;
+    style D_STEP_1 fill:#D6EFF6,stroke:#3498DB,stroke-width:1px,color:#3498DB;
+    style D_STEP_2 fill:#D6EFF6,stroke:#3498DB,stroke-width:1px,color:#3498DB;
+    style D_STEP_3 fill:#D6EFF6,stroke:#3498DB,stroke-width:1px,color:#3498DB;
+    style D_STEP_4 fill:#D6EFF6,stroke:#3498DB,stroke-width:1px,color:#3498DB;
+
+    style E fill:#F2F2F7,stroke:#8E44AD,stroke-width:1px,color:#8E44AD;
+    style E_INT_1 fill:#E4E4EB,stroke:#8E44AD,stroke-width:1px,color:#8E44AD;
+    style E_INT_2 fill:#E4E4EB,stroke:#8E44AD,stroke-width:1px,color:#8E44AD;
+    style E_INT_3 fill:#E4E4EB,stroke:#8E44AD,stroke-width:1px,color:#8E44AD;
+</Mermaid_Diagram>
+
+Content:
+好 大家好今天要跟大家讲解一下如何在我们的电脑中安装由 OpenAI推出的 CodeX CLI CodeX它是由 OpenAI推出的一款开源命令行工具然后它是被和Color Code一样强大的功能那我们今天就讲解一下如何在你的电脑中去安装 CodeX CLI首先 CodeX CLI 安装需要我们去满足一下系统要求就是你需要在电脑中安装弄的 GAS然后你的网络要能够访问 OpenAI的服务也就是说你能够正常的使用器的 GPT然后安装 CodeX CLI 目前官网中说 CodeX CLI 只能够在 Mac OS 还有 Linux 中取缘生的运行但是经过足够的测试呢 CodeX 现在目前不需要通过 WSL也就是 Wubong 推出一种单去安装的它可以直接在我们的 Windows 系统里面安装那么下面我就以 Windows 系统为列来讲解一下如何在我们的电脑中安装 CodeX CLI首先要确保你能够有安装的 NONONO DAX还有 NPM 管理工具检查一下这个有没有安装呢也非常简单我们又去看看你的 Note 版本还有 NPM 版本我们打开中端然后先看一下 Note 版本这边的话如果出现你的 Note 版本号的话就说明已经安装了 Note那么 NPM 的话也是同样的我们沾铁正好 命令好 代码然后预先一下可以看到我这边的话 Note 版本和 NPM 版本是都已经出现了那说明我们已经成功了在你的电脑中安装了 Note DS 还有 NPM 的工具如果你发现你就是没有谈吃版本号说明已经换你就没有安装那么你就可以在我之前的一些视频中可以看到就是如何去安装 Note DS还有 NPM 的一个环境就是你的环境配置好之后下面我们就可以直接安装我们的 Codex CRL了首先我们就是不止这个中端指令然后打开你的中端然后沾铁正常指令然后点击回车运行安装完成之后我们可以运行 Codex 微型然后来看一下你的 Codex 似乎安装成功我们来看一下可以看到我们这边的话就已经成功的是安装的 Codex CRL 0.3.0这个版本安装完成之后我们就可以去登录我们的 Codex我们直接在中端里面输入 Codex然后点击回车可以看到这边的话我们就是谈出了一个要你登录你的现在GPD的一个帐号的变化框然后我们点一登录一下这边的话都让我们去使用现在GPD 登录 Codex CRL然后我们点一继续让它给你一个授权可以看到这边的话我们就已经成功的登录 Codex我们打开这个对话框点击回车继续可以看到我们这边的话就已经是成功的在使用 OpenEye 的 Codex然后是在一个文件目录下然后我们来看一下就是它有什么功能我们输入写杠因为下来了写杠然后这边的话有模型选择目前的话是有GPD5的一个原生的模型就是如果你订阅了切得GPD的一个Planet 会员的话就可以使用切得GPD5来使用 Codex关于就是如何订阅切得GPD呢我在这期视频中也有讲过如何以第三本的价格去订阅我们的切得GPDPlanet 一个会员大概是不到我15元左右的一个价格大家可以去看一下然后我们这边的话它是看到有四种水平就是四种思考模式我们直接选用GPD5Hack就是它的一个最高思考模式我们点击回车然后我们继续点击写杠这边的话就是它让我们是否选择在没有Planet 情况下让我们的 Codex去工作我们这边的话可以选择4 or 6就是全部通过就不需要我们去再去在项目锅程中去Planet然后这边的话是让我们去开始一个新的对话这个的话就是让我们创建一个项目的说明书不是当于是我们需要运习一个命令之后我们可以去创建一个项目的说明书给 Codex这个Compat就是让我们去压缩我们的上下午那个对话还可以看到我们这边的话它是可以安装我们的MCP工具我们点击回车看一下然后这边的话我是没有安装任何MCP大家如果有想用的MCP的话可以在 Codex中去安装MCP工具就我个人提案来说 Codex它的体验过程是相对于 Codex是不弱的甚至在一些问题的解决上 Codex相比 Codex是更有优势的特别是当你使用的就是GPT5HID的一个思考模式的话它是能够很好地去完成我们的工作任务的在就是你的中端中去安装这个 Codex之后我们可以在 West Code中通过 Codex插件来运行我们的 Codex比如说你可能不喜欢就是中端里面用 mini行工具来运行我们的 Codex的话 Open-A它也是提供 Codex的一个 West Code插件假如你在 West Code的插件事上没有找到这个插件的话你可以在浏览器里面输入 Codex Open-AX Codex Agint然后可以通过浏览器来安装又是可能有些人在这个插件事上就没有收到这个插件然后安装这个插件之后我们就可以在 UBIN的对话篮里面去进行一个备化然后来完成我们的任务也可以在这边的话就是中端里面输入 Codex去运行我们的 Codex然后帮助我们去完成任务然后这就是本期关于如何安装 Codex CI的视频我这个 Open-A.C.D 引擎库也是有非常多的教程然后如果你感兴息的话也可以去我的主页去看看然后这就是本期的视频的全部内容谢谢大家
