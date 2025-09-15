@@ -1,0 +1,120 @@
+Timestamp: 2025-09-15T17:51:10.593145
+Title: Why Linus Torvalds doesn't use Ubuntu or Debian qHGTs1NSB1s
+URL: https://youtube.com/watch?v=qHGTs1NSB1s&si=DTB11jkyqjGVjgaT
+Status: success
+Duration: 2:42
+
+Description:
+以下是对文本的总结：
+
+### 总结大纲
+
+**1. 引言与历史背景**
+    * 发言人回顾了2007年的一次采访，当时他提及从未尝试过Debian Linux发行版，原因是其安装过程复杂。
+    * 他确认自那以后便再未尝试过Debian。
+
+**2. 对Linux发行版的普遍看法**
+    * 发言人认为发行版本身并不“有趣”，其核心价值在于易于安装，以便他能专注于更重要的内核开发工作。
+    * 他期望发行版能“易于安装”，让他能尽快投入主要工作。
+
+**3. 个人安装操作系统的经历**
+    * 他坦承自己在安装操作系统方面经常遇到挑战，甚至能发现导致安装失败的各种问题。
+    * 曾尝试在MacBook Air上安装Debian，但尽管安装程序能启动，最终仍未能成功。
+
+**4. 不愿更换发行版的主要原因**
+    * **个人运维能力不足：**
+        * 他强调自己不是MIS（管理信息系统）人员，称自己在机器维护方面是“彻底的灾难”。
+        * 这种能力上的不足导致他不愿处理复杂的系统管理任务。
+    * **家庭多设备管理负担：**
+        * 尽管他会定期升级自己的机器，但家庭成员（包括妻子和孩子）的机器并不常升级。
+        * 他不希望在不同机器上运行多种发行版，因为这会进一步加剧他糟糕的运维能力带来的管理困境。
+        * 他认为发行版对他来说“粘性”很高，一旦选定就很难更换，因为更换意味着必须同时更新所有家庭机器，这是一个“痛苦”的过程。
+
+---
+
+**核心观点 (Core Point):**
+尽管在内核开发领域技术能力卓越，但发言人因个人不擅长系统维护以及管理家庭多台设备的实际负担，导致其在选择和更换Linux发行版时表现出极度保守和抵触的态度。
+
+**总体框架 (Overarching Framework):**
+个人技术偏好（专注于内核、追求易安装）与实际运维能力限制及家庭责任（不擅长维护、多设备管理负担）之间的冲突与权衡。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "核心视角：发言人"
+        A["发言人：技术精湛但运维短板"]
+        style A fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#333
+    end
+
+    subgraph "历史与现状"
+        B["2007年Debian难安装言论"]
+        C["至今未再尝试Debian"]
+        style B fill:#E0E0E0,stroke:#333,stroke-width:1px,color:#333
+        style C fill:#D3D3D3,stroke:#333,stroke-width:1px,color:#333
+    end
+
+    subgraph "对发行版的理念"
+        D["发行版本身不有趣"]
+        E["追求易于安装"]
+        F["核心关注：内核开发"]
+        style D fill:#FFFACD,stroke:#333,stroke-width:1px,color:#333
+        style E fill:#98FB98,stroke:#333,stroke-width:1px,color:#333
+        style F fill:#98FB98,stroke:#333,stroke-width:1px,color:#333
+    end
+
+    subgraph "安装体验"
+        G["个人安装：屡次受挫"]
+        H["Debian在MacBook Air上安装失败"]
+        style G fill:#FFDAB9,stroke:#333,stroke-width:1px,color:#333
+        style H fill:#FFC0CB,stroke:#333,stroke-width:1px,color:#333
+    end
+
+    subgraph "不更换发行版的根本原因"
+        I["个人运维能力限制"]
+        J["非MIS人员"]
+        K["机器维护一团糟"]
+        L["家庭多设备管理挑战"]
+        M["需统一发行版"]
+        N["切换家庭设备极其痛苦"]
+        O["发行版高粘性"]
+        style I fill:#FFB6C1,stroke:#333,stroke-width:1px,color:#333
+        style J fill:#FFD700,stroke:#333,stroke-width:1px,color:#333
+        style K fill:#FF6347,stroke:#333,stroke-width:1px,color:#333
+        style L fill:#DA70D6,stroke:#333,stroke-width:1px,color:#333
+        style M fill:#BA55D3,stroke:#333,stroke-width:1px,color:#333
+        style N fill:#9370DB,stroke:#333,stroke-width:1px,color:#333
+        style O fill:#C71585,stroke:#333,stroke-width:1px,color:#333
+    end
+
+    A -- "提及" --> B
+    B -- "缘由" --> C
+    A -- "持有观念" --> D
+    D -- "引发" --> E
+    E -- "目的" --> F
+    A -- "亲身经历" --> G
+    G -- "具体案例" --> H
+    A -- "主要因素" --> I
+    I -- "表现为" --> J
+    I -- "表现为" --> K
+    A -- "主要因素" --> L
+    L -- "导致" --> M
+    M -- "后果" --> N
+    N -- "强化" --> O
+    O -- "解释了" --> C
+    O -- "强化了" --> I
+    O -- "强化了" --> L
+    F -- "与...矛盾" --> K
+    F -- "与...矛盾" --> N
+
+    linkStyle 0 stroke:#0000FF,stroke-width:1px;
+    linkStyle 1 stroke:#008000,stroke-width:1px;
+    linkStyle 2 stroke:#0000FF,stroke-width:1px;
+    linkStyle 3 stroke:#008000,stroke-width:1px;
+    linkStyle 4 stroke:#008000,stroke-width:1px;
+    linkStyle 5 stroke:#0000FF,stroke-width:1px;
+    linkStyle 6 stroke:#008000,stroke-width:1px;
+    linkStyle 7 stroke:#0000FF,stroke-width:
+
+Content:
+ I'll start with something non-controversial. No, no, I'm fine with controversial. That's not usually my problem. It's well known around these parts that in 2007 you did an interview where you said that although you've used many Linux distributions, you had never used Debian because you found it difficult to install. Yes. Have you tried it since? Um, no. That was quick. So, I'm sure it's gotten much easier to install. To me a distribution is, I'm sorry, you may want to close your ears now. A distribution is not very interesting. I wanted to be easy to install so that I can just get on with my life, right? Which is mostly the kernel. The closest I got to installing Debian was there was one machine. I forget which one it was. It may have been the MacBook Air that actually had trouble installing something. And Debian, the installer would boot but then it didn't install there either. And eventually I figured out what was the problem with that machine. But by then it was too late. If there's a way to break installing an operating system, I've found it multiple times. And if there isn't one you already know if I found it, and Debian last time, super easy. Highly recommended trying. Maybe I should try. I mean one of the problems I have is I am not an MIS person. I mean, I may do kernels and people think that that means that I'm technical. When it comes to actually maintaining machines, I am a complete disaster. And I change my own machines regularly. So changing the system I run on my machine would be easy. I end up upgrading machines a couple of times a year usually. But I end up having also to maintain my family's machines. And that ends up being the one that I don't upgrade my family's machines very often. And I don't want to run multiple different distributions across different machines because I suck at MIS. So it ends up being, for me, a distribution is something very sticky. Once I started with one thing, I have a really hard time just doing something else because that means I have to switch over all my kids' machines, my wife's machine. And that's just painful. So that's why.
