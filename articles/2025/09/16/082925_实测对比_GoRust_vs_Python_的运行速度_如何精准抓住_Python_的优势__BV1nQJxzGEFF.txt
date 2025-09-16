@@ -1,0 +1,138 @@
+Timestamp: 2025-09-16T08:29:25.956883
+Title: 实测对比：GoRust vs Python 的运行速度，如何精准抓住 Python 的优势？ BV1nQJxzGEFF
+URL: https://b23.tv/lveRsBu
+Status: success
+Duration: 9:53
+
+Description:
+## API 后台服务器性能评测与语言选择建议
+
+### 一、概述
+
+本评测旨在比较不同主流编程语言（Python、Go、Rust、.NET）构建的API后台服务器的性能表现，重点关注响应时间与吞吐量，并据此提供语言选择建议。
+
+### 二、评测方法
+
+1.  **被测服务器端框架：**
+    *   **Python：** FastAPI
+    *   **Go：** Fiber 框架
+    *   **Rust：** Actix-web/类似框架 (提及“Ike Tx”，实际应指常见Rust Web框架)
+    *   **.NET：** ASP.NET Core (隐式)
+2.  **测试客户端：** 采用异步HTTP客户端（基于`asyncio`实现），对服务器进行压力测试。
+3.  **优化程度：** 所有服务器端代码均未进行过度优化，旨在考察语言的基础性能。
+4.  **衡量指标：** 响应时间（Latency）和吞吐量（Throughput）。
+
+### 三、性能评测结果
+
+#### 3.1 响应时间（Latency）
+
+*   **Python (FastAPI)：** 约 **14秒** (明显最慢)
+*   **Go (Fiber)：** 约 **2秒**
+*   **Rust (Actix-web/类似)：** 约 **2.5秒**
+*   **.NET (ASP.NET Core)：** 约 **2.53秒**
+*   **结论：** Go、Rust、.NET 在响应时间上显著优于 Python，且三者表现相近。
+
+#### 3.2 吞吐量（Throughput）
+
+*   **Rust：** **最高**
+*   **Go：** **居中**，表现较为均衡
+*   **.NET：** **最低** (约 107.78 QPS，评测者怀疑可能与运行在 Linux 环境有关)
+*   **结论：** Rust 的吞吐量表现最佳，Go 次之，.NET 相对最低。
+
+### 四、核心结论与建议
+
+1.  **Python 的定位：** 适合快速原型开发和产品快速迭代，但其生产环境下的性能表现较差。
+2.  **高性能语言选择：** Go、Rust、.NET 均能提供优秀的生产级性能。
+3.  **生产环境建议：** 在有条件的情况下，建议将 Python 代码重构为 Go、Rust 或 .NET 以提升性能。
+4.  **语言选择考量：** 最终选择取决于项目需求、团队对特定语言的掌握程度以及相关生态系统的成熟度。
+5.  **其他语言表现：**
+    *   **Node.js：** 性能优于 Python，但仍远低于 Go、Rust、.NET。
+    *   **Java：** 性能与 Go、Rust、.NET 处于同一梯队，表现良好。
+
+### 五、核心观点总结
+
+在API后台服务器性能方面，Go、Rust和.NET在响应时间和吞吐量上均显著优于Python，其中Rust在吞吐量表现最佳，Go较为均衡，而Python仅适合快速开发但生产性能不佳。
+
+### <Mermaid_Diagram>
+graph TD
+    A["API 后台服务器性能评测与语言选择建议"] --> B{"评测目标: 性能表现"};
+
+    subgraph "评测方法 Methodology"
+        B --> C["被测服务器: FastAPI (Python), Fiber (Go), Actix-web/类似 (Rust), ASP.NET Core (.NET)"];
+        C --> D["测试客户端: 异步HTTP客户端 (asyncio)"];
+        D --> E["优化程度: 均无过度优化"];
+        E --> F{"衡量指标: 响应时间 & 吞吐量"};
+    end
+
+    subgraph "性能评测结果 Performance Results"
+        F --> G{"响应时间 (Latency)"};
+        G --> G1["Python: ~14秒 (最慢)"];
+        G --> G2["Go: ~2秒"];
+        G --> G3["Rust: ~2.5秒"];
+        G --> G4[".NET: ~2.53秒"];
+        G1 -- "明显慢于" --> G2;
+        G1 -- "明显慢于" --> G3;
+        G1 -- "明显慢于" --> G4;
+        G2 -- "相似" --> G3;
+        G2 -- "相似" --> G4;
+
+        F --> H{"吞吐量 (Throughput)"};
+        H --> H1["Rust: 最高"];
+        H --> H2["Go: 居中 (均衡)"];
+        H --> H3[".NET: 最低 (107.78 QPS)"];
+        H1 --> H2;
+        H2 --> H3;
+    end
+
+    subgraph "核心结论与建议 Core Conclusions & Recommendations"
+        H3 --> I["Python: 适合快速原型开发"];
+        H2 --> I;
+        I --> J["劣势: 生产环境性能拉垮"];
+        J --> K["优势: 开发效率高"];
+        J --> L["建议: 有条件时重构为 Go/Rust/.NET"];
+
+        H1 --> M["Go/Rust/.NET: 生产级高性能"];
+        M --> K;
+        M --> N["语言选择考量: 项目需求, 团队掌握度, 生态"];
+    end
+
+    subgraph "其他语言 Other Languages"
+        N --> O["Node.js: 性能优于Python, 劣于Go/Rust/.NET"];
+        N --> P["Java: 性能与Go/Rust/.NET同梯队"];
+    end
+
+    A -- "总结" --> L;
+    A -- "总结" --> M;
+
+
+    style A fill:#FDF5E6,stroke:#8B4513,stroke-width:2px,color:#8B4513;
+    style B fill:#E0FFFF,stroke:#008B8B,stroke-width:1px,color:#008B8B;
+    style C fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#DAA520;
+    style D fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#DAA520;
+    style E fill:#FFFACD,stroke:#DAA520,stroke-width:1px,color:#DAA520;
+    style F fill:#ADD8E6,stroke:#4682B4,stroke-width:1.5px,color:#4682B4;
+
+    style G fill:#FFDDC1,stroke:#FF8C00,stroke-width:1px,color:#FF8C00;
+    style G1 fill:#FFC0CB,stroke:#FF1493,stroke-width:1.5px,color:#FF1493;
+    style G2 fill:#98FB98,stroke:#008000,stroke-width:1.5px,color:#008000;
+    style G3 fill:#98FB98,stroke:#008000,stroke-width:1.5px,color:#008000;
+    style G4 fill:#98FB98,stroke:#008000,stroke-width:1.5px,color:#008000;
+
+    style H fill:#E6E6FA,stroke:#8A2BE2,stroke-width:1px,color:#8A2BE2;
+    style H1 fill:#C3FFC3,stroke:#228B22,stroke-width:1.5px,color:#228B22;
+    style H2 fill:#DDA0DD,stroke:#9932CC,stroke-width:1.5px,color:#9932CC;
+    style H3 fill:#FFB6C1,stroke:#FF6347,stroke-width:1.5px,color:#FF6347;
+
+    style I fill:#F0F8FF,stroke:#6A5ACD,stroke-width:1px,color:#6A5ACD;
+    style J fill:#FFDAB9,stroke:#FF4500,stroke-width:1.5px,color:#FF4500;
+    style K fill:#B0E0E6,stroke:#20B2AA,stroke-width:1.5px,color:#20B2AA;
+    style L fill:#FFC125,stroke:#CD6600,stroke-width:2px,color:#CD6600;
+    style M fill:#7FFFD4,stroke:#00CED1,stroke-width:2px,color:#00CED1;
+    style N fill:#F5DEB3,stroke:#D2B48C,stroke-width:1px,color:#D2B48C;
+
+    style O fill:#FFE4B5,stroke:#FF8C00,stroke-width:1px,color:#FF8C00;
+    style P fill:#D8BFD8,stroke:#9370DB,stroke-width:1px,color:#9370DB;
+</Mermaid_Diagram>
+
+Content:
+各位网友大家早上好我现在理今天给大家评测一下PySyncGoRustDonightBug同样做一个API后台服务器我们看一下它的性能方面的一些表现首先我对这个代码做一些介绍那这个Serve.py这个文件呢我是用了一个Fast API做了一个构建了一个后台的API韩署一个API服务通过这个API服务我们对它在性能进行压测然后这是一个客服装这个ISINISINGoRust这是一个E-B的一个AIO那一个HTTP的一个E-B Cool通过ISINISINAIO来对这个服务器做了一个压力的测试那这里还有一些主赛事的主赛的和多信诚的主赛的和多信诚的它的性能可能是比较差肯定是没有E-B的快所以我这里就不对这两个性能做一些测试了我主要是考察了这个E-B的测试那首先我们将这个服务器给运行起来怎么去运行这个服务器呢是这样的OK那服务器运行起来了运行起来之后我们通过模拟一个客服装来对它进行一个测试那么我们这个客服装是叫做ISIN这个那我们对它进行一个压力的测试那最后呢我们来看一下这个时间是多少大家稍等一下我们可以看到这个时间是14秒多这个后面什么秒单位什么秒是14秒多那这是一个拍成的一个数据14秒多我们可以再将它进入一下来好那这个时候呢我们再来看一下购物园的这个购物园在这里我们去看一下购物园的把这个设备给关掉那我们看一下这个购物是准备写的我们这个购物园是通过另外一个宽家叫Fabre这个这个宽家写的然后这里我们使用那个购物园也就是购的那个写成在哪里呢我们看一下对对这里后面再说我们来现在测试一下它的性能我们先把这个服务被跑起来那这时候Fabre这个服务已经请到了然后这个服务我们又做了对它做一些任何的优化就是比较出照的然后我们再来对它进行一个测试好那我们可以看一下这个时间它是只是花会在2秒多弄然后我们可以在这里进入一下够浪的事件那我们再来看一下这个RustRust我们这样简单运行一下一下它Rust wrong very nice好这个服务已经请到了我们再来测试一下看一下我们Rust它是使用那2.5秒多的时间Rust它是产源的一个也是产源的一个外部宽家它产源的宽家是这个Ike Tx这个我用的比较少它这个软件这个这段代表的话也没有做过度的区域优化也没有采用什么其他的什么TOKIO这些一部一部的宽家什么的比较负责然后我这个就是做了一些初步的一个就是直接做了一个宽家外面的一个比较出照的没有做一些过度的优化了但是我们可以看它实现它是运了大概12.5秒的时间然后这个实现的基本上是和和够辣是差不多的最后一个还有一个Don't light我们看一个Don't light它的表现怎么样我们进入它进步了看一下怎么长这就是一个伏器音跑起来了然后我们来测试一下让等一下这点好像出错了然后刚才那个启动伏杰你小问题我们来看一下重新来把这个Don't light的伏器启动一下这样子启动好启动了然后我们来测试一下那我们可以看到它后来的时间是2.530我们给你进入一下我们可以看一下这个出了拍绳之外其他的这个其他的这个主比较主流的语言比如说够辣Rush的和Don't light它的性能想像你的时间花会的时间据来说都大增长差不多这个时间这个程序我没有做据这类企划其实比较出找一个评测但是他们来说的话是比拍绳是快很多的比拍绳这个14的话是要快很多的还有一个就是我要给告诉大家一个结论这个结论是什么呢就是这个结论就是虽然他们的想因想因的时间这个想因的时间呢大致残来所多差不多但是他们呢发现他一个问题他就是说他们的那个通通量可能会有一些差异性那这里首先说结论就是Don't light它的那个通通量是最低的你看在这里是107.78要要2.6因为这个Don't light他是运行程Linux下面的我不知道跟这个有没有关系运行程序运动程序上面会不会好一点不太清楚其次就是那个Gol-LangGol-Lang的通通量呢它是在RUSH的和抖来的字尖的Gol-Lang它是够远的话它是比较均衡一点然后通通量最高的话RUSH的通通量最高的是RUSH的所以这是告诉大家一个结论就是我们在做产品的时候或者是做软件方案的时候然后我们首先考虑的是产品运行再来产品运行我们要快速够紧传命运行的社我们可以采用PythonPython来做但是我们也必须清楚Python的性能呢就是比较拉垮的Python的性能是比较拉垮的它这个性能的话是比较差的在生产条件下的话我们有条件的话还是尽量这样这个Python的代码重构成Gol-Lang RUSH的这两个或者是Dol-Light这个GT看大家在学球了也要看这个生态了也要看大家的对这个集中语源的掌握的能力了另外还有其他的一些外版的一些一些宽价比如说NoteNote的GISNoteGIS的性能其实比Python好拉麦一点点但是跟Gol-Lang RUSHDol-Light的比起来的话也会差很多抓完的话也是在这个踢队里面的性能外面跟外面也是比较好的好吧那今天就跟大家分享在这里这个代码只可以给大家做一个仓口如果有什么问题的话可以平常去留言告诉我喜欢我的视频的话可以点阅订阅我好了今天就分享在这里再见
