@@ -1,0 +1,122 @@
+Timestamp: 2025-09-17T13:36:00.117540
+Title: 一团伙将木马病毒植入色情网站，拍下受害人观看裸聊时不雅举动进行敲诈 BV1DZ4y1u7YL
+URL: https://www.bilibili.com/video/BV1DZ4y1u7YL/?spm_id_from=333.788.recommend_more_video.17&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 1:51
+
+Description:
+**总结纲要：**
+
+I. **案件起始与初步侦查**
+    *   **案发背景：** 今年4月，福建警方接到多起报案，受害人称在网上直播间“裸聊”后遭到敲诈。
+    *   **资金流向：** 受害人被骗款项经多账户流转，最终在广西南宁的ATM机被取走。
+    *   **警方发现：** 经侦查，锁定了一个以王某为首的犯罪团伙。
+
+II. **犯罪手法揭露**
+    *   **诱骗手段：** 犯罪团伙在网络群组发布色情网站信息，并植入木马病毒。
+    *   **窃取证据：** 当受害人观看网站内容并做出“出格举动”时，木马软件会偷拍整个过程形成不雅视频。
+    *   **敲诈勒索：** 团伙随后以将不雅视频发送给受害人亲友为要挟，索要钱财。
+    *   **持续纠缠：** 即使受害人付款，也无法“破财消灾”，仍会持续遭到纠缠勒索。
+
+III. **犯罪团伙构成与运作**
+    *   **组织架构：** 王某自称受雇于一名“台湾李老板”，并按指示来到南宁。
+    *   **区域分工：** 王某及其手下共六人在南宁专门负责取款任务。
+    *   **独特取款流程：**
+        1.  接到取款任务后，王某安排人员行动。
+        2.  “上头老板”会邮寄一张撕成两半的纸币的一半作为接头信物。
+        3.  取款人员按指定时间、地点与“街头人”会合，核对纸币能否重合。
+        4.  核对成功后，将取出的钱款交给“街头人”。
+
+IV. **案件规模**
+    *   自今年4月以来，王某等六人团伙已取回的涉案钱款初步统计超过1000万元。
+
+---
+
+**核心总结句 (Core Point):**
+该犯罪团伙利用植入木马病毒的色情链接获取受害人不雅视频，继而进行敲诈勒索，并通过复杂的取款和销赃链条运作，初步统计涉案金额已超千万元。
+
+---
+
+**内容总体框架 (Overarching Framework):**
+网络色情敲诈勒索犯罪团伙的运作模式、犯罪链条及其规模。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "案件起始与犯罪手法 Modus Operandi"
+        A["网络群组发布色情网站信息"] -- "植入" --> B["木马病毒"];
+        B -- "诱导点击 & 观看" --> C{"受害人"};
+        C -- "不雅举动" --> D["木马软件偷拍不雅视频"];
+        D -- "掌握证据" --> E["犯罪团伙 (敲诈者)"];
+        E -- "威胁发布视频给亲友" --> C;
+        E -- "勒索钱财" --> F["受害人转账"];
+        F -- "以为破财消灾，实则..." --> C;
+        C -- "持续纠缠勒索" --> E;
+        style A fill:#F0F8FF,stroke:#333,stroke-width:2px;
+        style B fill:#FFDDC1,stroke:#FF8C00,stroke-width:2px;
+        style C fill:#FFFFCC,stroke:#FFD700,stroke-width:2px;
+        style D fill:#FFB6C1,stroke:#FF6347,stroke-width:2px;
+        style E fill:#FF4500,stroke:#8B0000,stroke-width:2px,color:#FFFFFF;
+        style F fill:#90EE90,stroke:#32CD32,stroke-width:2px;
+    end
+
+    subgraph "资金流转与取款 Money Flow & Withdrawal"
+        F --> G["指定账户"];
+        G -- "多账户流转" --> H["资金中转"];
+        H -- "指令下达" --> I["王某 (南宁取款团伙负责人)"];
+        I -- "安排取款任务" --> J["王某等六人 (南宁取款团队)"];
+        J -- "接收半张纸币凭证" --> K["取款任务执行"];
+        K -- "指定时间地点对接" --> L["街头对接人"];
+        L -- "核对纸币重合" --> K;
+        K -- "交付钱款" --> L;
+        K -- "南宁ATM机取款" --> M["钱款被取走"];
+        M -- "初步统计" --> N["涉案金额：1000万+"];
+        style G fill:#E0FFFF,stroke:#00CED1,stroke-width:2px;
+        style H fill:#E6E6FA,stroke:#8A2BE2,stroke-width:2px;
+        style I fill:#ADD8E6,stroke:#4682B4,stroke-width:2px;
+        style J fill:#B0E0E6,stroke:#6A5ACD,stroke-width:2px;
+        style K fill:#C1FFC1,stroke:#00CD00,stroke-width:2px;
+        style L fill:#FFEBCD,stroke:#CD853F,stroke-width:2px;
+        style M fill:#98FB98,stroke:#3CB371,stroke-width:2px;
+        style N fill:#FFD700,stroke:#DAA520,stroke-width:2px;
+    end
+
+    subgraph "犯罪团伙结构 Criminal Gang Structure"
+        O["台湾李老板 (上级幕后指挥)"] -- "聘用并指示" --> I;
+        I -- "领导" --> J;
+        style O fill:#FFDEAD,stroke:#CD853F,stroke-width:2px;
+    end
+
+    P["福建警方接到警情"] -- "立案侦查" --> E;
+    P -- "追踪资金流向" --> M;
+    E -- "被警方锁定" --> P;
+
+    style P fill:#F0FFF0,stroke:#228B22,stroke-width:2px;
+
+    linkStyle 0 stroke:#0000FF,stroke-width:1px;
+    linkStyle 1 stroke:#0000FF,stroke-width:1px;
+    linkStyle 2 stroke:#0000FF,stroke-width:1px;
+    linkStyle 3 stroke:#FF0000,stroke-width:2px;
+    linkStyle 4 stroke:#FF0000,stroke-width:2px;
+    linkStyle 5 stroke:#FF0000,stroke-width:2px;
+    linkStyle 6 stroke:#FF0000,stroke-width:2px;
+    linkStyle 7 stroke:#008000,stroke-width:2px;
+    linkStyle 8 stroke:#008000,stroke-width:2px;
+    linkStyle 9 stroke:#008000,stroke-width:2px;
+    linkStyle 10 stroke:#008000,stroke-width:2px;
+    linkStyle 11 stroke:#008000,stroke-width:2px;
+    linkStyle 12 stroke:#008000,stroke-width:2px;
+    linkStyle 13 stroke:#008000,stroke-width:2px;
+    linkStyle 14 stroke:#008000,stroke-width:2px;
+    linkStyle 15 stroke:#008000,stroke-width:2px;
+    linkStyle 16 stroke:#008000,stroke-width:2px;
+    linkStyle 17 stroke:#008000,stroke-width:2px;
+    linkStyle 18 stroke:#0000FF,stroke-width:2px;
+    linkStyle 19 stroke:#0000FF,stroke-width:2px;
+    linkStyle 20 stroke:#0000FF,stroke-width:2px;
+    linkStyle 21 stroke:#0000FF,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+今年4月份 福建警方陆续接到警情 包吻人称在网上直播间进行访路裸聊后 被人敲炸垃圾前才警方通过进一步侦查发现 受害人将前款打入嫌疑人指定的账户后这些钱又通过了多个账户的流转 最终在难宁的自动贵源机上被人取走警方经过磨牌调查 掌握了一个以嫌疑人王某为首的犯罪团伙的基本情况警方了解到 嫌疑人会在一些网络群里发布色情网站的信息并在这些信息里植入木马病毒对方在观看不雅信息时 如果做出了一些出格的举动 木马软件就会拍下整个过程随后 嫌疑人则表示 要把不雅视频发给当事人的亲朋好友以此来邀写所要前才 受害人本以为能破财消灾不了转款后 仍然会被纠缠据嫌疑人王某交代 他接受一个自称是台湾人李老板的凭用并按照李老板的指示 来到了难宁他们在难宁的这六人仅仅负责取钱如果有取钱任务的话 王某就安排人出去上头老板就会给他邮寄一张医源的纸币的一半然后告诉他在什么时间 什么地点 去干什么人街头然后拿这半张纸币跟街头人去对接当两个人对接上 能重合把钱交给这个对接人今年4月份以来 王某等六人取回的钱款 初步统计大概有1000多万元
