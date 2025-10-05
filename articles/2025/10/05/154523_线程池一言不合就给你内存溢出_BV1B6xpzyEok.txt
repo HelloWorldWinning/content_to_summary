@@ -1,0 +1,129 @@
+Timestamp: 2025-10-05T15:45:23.715559
+Title: 线程池一言不合就给你内存溢出 BV1B6xpzyEok
+URL: https://b23.tv/uQb8Riz
+Status: success
+Duration: 8:05
+
+Description:
+总结如下：
+
+### **一、问题背景与现象**
+A. **系统场景**: 模拟商品信息查询，涉及频繁使用线程池执行任务。
+B. **观察到的异常现象**:
+    1. JVM内存（特别是老年代）持续增长，疑似内存泄漏。
+    2. 应用程序的线程数量异常激增，且不下降。
+    3. `jstack`诊断发现大量线程长时间阻塞在 `Future.get()` 方法上。
+
+### **二、问题复现与诊断**
+A. **模拟示例设计**:
+    1. **线程池配置**: 核心线程数与最大线程数均为2，工作队列容量为1，意在快速触发拒绝策略。
+    2. **自定义拒绝策略**: 仅仅打印日志信息，不进行其他处理。
+    3. **任务定义**: 创建 `MiTask`，内部逻辑为库存乘以数量值。
+    4. **任务执行流程**:
+        *   在一个大循环中，每100毫秒启动一段逻辑（模拟定时任务）。
+        *   该逻辑内部循环10次，创建 `MiTask` 并使用线程池的 `submit()` 方法提交。
+        *   `submit()` 返回的 `Future` 对象被收集到列表中。
+        *   随后遍历该列表，通过调用 `Future.get()` 获取任务结果并输出。
+B. **现象分析与问题定位**:
+    1. 执行模拟代码后，内存和线程数确实如问题背景描述，呈现异常增长。
+    2. 深入调试发现，所有激增的线程都阻塞在 `Future.get()` 方法，具体是 `FutureTask.get()`。
+    3. `FutureTask.get()` 内部调用 `awaitDone()` 方法，而该方法最终会执行 `LockSupport.park()` 来阻塞当前线程。
+C. **核心机制解析 (FutureTask的唤醒机制)**:
+    1. `LockSupport.park()` 需要对应的 `LockSupport.unpark()` 才能唤醒阻塞线程。
+    2. `FutureTask` 在两种情况下会调用 `unpark()` 唤醒阻塞在 `get()` 方法上的线程：
+        *   任务正常执行完毕 (`FutureTask.run()` 内部调用 `set()` 方法)。
+        *   任务执行过程中抛出异常 (`FutureTask.setException()` 方法)。
+    3. 这两种情况都会通过 `finishCompletion()` 方法最终触发 `LockSupport.unpark()`。
+
+### **三、根本原因**
+A. **拒绝策略处理不当**: 模拟示例中的自定义拒绝策略只负责打印日志，并未抛出异常或执行其他阻止任务继续流程的动作。
+B. **任务未被执行**: 由于线程池的核心/最大线程数和队列容量都非常小，很快就会有大量任务被拒绝。因为拒绝策略没有抛出异常，`submit()` 方法会顺利返回一个 `Future` 对象，但这个 `Future` 对应的任务实际上并没有被线程池执行。
+C. **`LockSupport.unpark()` 未被触发**: 因为任务未被执行，`FutureTask` 的 `run()` 或 `setException()` 方法从未被调用，导致唤醒机制 `LockSupport.unpark()` 始终没有机会被触发。
+D. **线程无限阻塞与资源累积**: 调用 `Future.get()` 的线程在任务实际未被执行的情况下，无限期地阻塞在 `LockSupport.park()` 处，且永远无法被唤醒。随着循环执行，越来越多的线程被创建并阻塞，最终导致线程数激增和内存泄漏。
+
+### **四、解决方案**
+A. **优化拒绝策略**:
+    1. 最关键的改变是，当线程池执行拒绝策略时，**必须抛出 `RejectedExecutionException` (或其他合适的运行时异常)**。
+    2. 这样，当任务被拒绝时，外部的 `submit()` 调用会立即抛出异常，阻止 `Future` 对象被错误地添加到集合中，从而避免了对未执行任务调用 `Future.get()`。
+B. **设置 `Future.get()` 超时**:
+    1. 即使拒绝策略正确处理，也建议为 `Future.get()` 方法设置一个合理的超时时间（例如 `Future.get(timeout, TimeUnit.MILLISECONDS)`）。
+    2. 这样可以避免在某些极端情况下（如任务执行时间过长、或系统资源耗尽导致任务无法完成）仍然导致线程长时间阻塞。
+
+### **五、效果验证**
+A. 修正拒绝策略后，系统资源监控图显示内存使用和线程数量均恢复正常，并保持稳定。
+
+---
+
+**核心要点（一句话）**:
+核心问题在于线程池拒绝策略处理不当，导致 `FutureTask` 任务未能被执行，从而使调用 `Future.get()` 的线程无限期阻塞，造成阻塞线程数量和内存占用持续增长。
+
+**Overarching Framework (总体框架)**:
+线程池误用导致资源耗尽问题的诊断与解决框架。
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "问题背景与现象"
+        A["应用场景：商品信息查询"] --> B["异常现象：内存泄漏 & 线程数激增"];
+    end
+
+    subgraph "模拟与诊断过程"
+        C["模拟示例：定时任务执行逻辑"] --> D["线程池配置：核心/最大=2, 队列容量=1"];
+        C --> E["自定义拒绝策略：仅输出信息"];
+        C --> F["任务创建：创建 MiTask"];
+        F --> G["任务提交：线程池 submit(MiTask) 返回 Future"];
+        G --> H["结果获取：循环集合，调用 Future.get()"];
+        B --> I["初步诊断：jstack显示线程阻塞在 Future.get()"];
+        H --> I;
+    end
+
+    subgraph "核心机制解析"
+        I --> J["Future.get()内部机制：FutureTask.get()"];
+        J --> K["FutureTask.get()调用 awaitDone()"];
+        K --> L["awaitDone()调用 LockSupport.park() 阻塞当前线程"];
+        M["LockSupport.unpark() 唤醒线程"];
+        N["FutureTask正常执行(run())或异常结束(setException())"];
+        N --> M;
+    end
+
+    subgraph "根本原因分析"
+        E --> O["拒绝策略：未抛出异常，仅记录信息"];
+        O --> P["后果1：被拒绝任务未被线程池执行"];
+        P --> Q["后果2：FutureTask的run()或setException()未被调用"];
+        Q --> R["后果3：LockSupport.unpark() 未被触发"];
+        R --> S["最终结果：调用 Future.get() 的线程持续被park()，无限阻塞"];
+        S --> B;
+    end
+
+    subgraph "解决方案与效果"
+        S --> T["解决方案1：修改拒绝策略抛出 RejectedExecutionException"];
+        H --> U["解决方案2：为 Future.get() 设置超时时间"];
+        T --> V["效果：内存稳定，线程数保持预期，系统正常运行"];
+        U --> V;
+    end
+
+    style A fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#333;
+    style B fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#333;
+    style C fill:#E3F2FD,stroke:#2196F3,stroke-width:1px,color:#333;
+    style D fill:#BBDEFB,stroke:#2196F3,stroke-width:1px,color:#333;
+    style E fill:#BBDEFB,stroke:#2196F3,stroke-width:1px,color:#333;
+    style F fill:#90CAF9,stroke:#2196F3,stroke-width:1px,color:#333;
+    style G fill:#64B5F6,stroke:#2196F3,stroke-width:1px,color:#333;
+    style H fill:#FFECB3,stroke:#FB8C00,stroke-width:2px,color:#333;
+    style I fill:#FFD54F,stroke:#FB8C00,stroke-width:2px,color:#333;
+    style J fill:#C8E6C9,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style K fill:#A5D6A7,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style L fill:#81C784,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style M fill:#81C784,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style N fill:#66BB6A,stroke:#4CAF50,stroke-width:1px,color:#333;
+    style O fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#333;
+    style P fill:#FFC107,stroke:#FF9800,stroke-width:2px,color:#333;
+    style Q fill:#FFB74D,stroke:#FF9800,stroke-width:2px,color:#333;
+    style R fill:#FFA726,stroke:#FF9800,stroke-width:2px,color:#333;
+    style S fill:#EF5350,stroke:#E53935,stroke-width:3px,color:#333;
+    style T fill:#A8E6CF,stroke:#00C853,stroke-width:2px,color:#333;
+    style U fill:#D4EDDA,stroke:#00C853,stroke-width:1px,color:#333;
+    style V fill:#81C784,stroke:#00C853,stroke-width:3px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+故意你啊,成年看85文看的野子噶了今天心恶就给你整个汗糊直接上真实阿利给你只有多现成的使用又在外面的分析排查把他玩明白了你去面试,那绝对是母流定床刮蕾BBC牛B后空的不像样好,那我们就直接开始走起这个问题的场景总结起来就是查询商品信息会经常掏实数据后终产品量其实也不大也不存在什么慢色后的问题接着就是看这些M的活动过程会发现复制一些的情况是挺多的而且能被回收的内存也没有多少那这就得留个心眼了应该是发生内存泄露了那么比你女朋友还贴心的心格为了样里更好的理解根据这个问题特意写出了一个例子出来把这个例子给弄动了就知道到底是怎么回事的首先有个现成池核心和最大的现成数都是2对列的容量是1这样是为了能更快的执行拒绝策者拒绝策者是自灵意识家的会输出这么一行化如果是Future Task类型还会输出具体的状态那么接着就是执行拒绝的逻辑了会循环10次循环中会创建出一个Mitask任务任务创建时会获取库存素量和循环式的塑炎值然后用现成池来执行这个任务里面的逻辑就是库存成一素量值然后返回这里用现成池的Supreme的方法返回的是Future这样就可以拿到任务返回值Future会放到集合里然后循环这个集合通过盖的方法来输出结果这段逻辑最终会放在一个大循环中执行这个循环就相当于会一直的执行每个100毫秒就开一个现成的执行这段逻辑这样是为了可以模拟定是任务的执行到这里你就可以暂停下自己想想这个例子是哪里存在问题如果有的话怎么解决呢为了能更明显的看出问题我将对内存设置了16兆那么这张图就是执行使得在外M活动过程这一看就不正常了看着内存对象还有现成用互联网大厂官方的化来做是你们RR涨吗这样下去这个程序就像年轻的小伙碰上了独手多年的小伙伏这甚至少要通吗网呢尤其是这个现成数量长得这叫一个快我知道这时候肯定有人说这是对内存不够我家内存就行了可问题是家内存就一定能解决问题吗这就好比你感觉生活法位那是因为你没有对象结果你有把所有钱都拿来买护手刷你这不研究只可适得起反我们可以点进去其中一个现成看见看这行你是不是手机了这明显就是被组色了能定位到剧带烟污代码就是循环这里也就是一直卡在Future.Guy的这里了其实这么多的现成都是这个问题那么这个Future到底是个什么玩意那就点进去看一些它是整个创建出来的那就得从现成尺这个Supin-Way的方法进去了进去后重点就是NewTask-Full再进去原来是个叫FutureTask的东西这里就得把它记住了它是后续的一切重点刚才也说了每个现成都是一直卡在Future.Guy的这里的那么其实也就是FutureTask点盖的那还是进去看见会执行这个偶尔的当方法再往你看别看这里面这么长都不用看其实它会执行到最后一行这个你肯定就熟悉了像烙铺铁层也是用的这个东西直行它就可以把现成主色主了现成就只能老老实实地待着从干涨的最为M活动分析图也能看出来现成确实是都被主色主了所以关键就是要弄明白被主色主了后到底怎么样才能被换行答案就是只有当现成尺直行的时候现成尺直行时会直行到FutureTask的乱方法别看这里这么长同样只看重点就行这里是业务的直行当正常直行结束了会直行到这个Sight方法如果直行出现一常了就会直行Sighting a Cypherthan方法会发现这两个方法最终都会直行到Fenix-Compolition这个方法那它又是个什么玩意呢那就点进去看一看你看这东西挺多但还是只要看这一行就行了Lock Superl的点安帕古这不就是关键现成的操作吗确实是验证了我刚才说的被FutureTask的盖子组色的现成只要当现成尺直行的时候无论是直行结束或者出现一常都会把它的换醒但现在就是这个现成没被换醒它是因为啥没被换醒的那还是要回到现成尺SupinMate的方法看看它里面有什么猫腻这回就要记录这个Exq的方法关键就是最后一行这个Reject它的作用就是当现成尺中的现成和堆列都不用了用来执行拒约策略的例子中现成尺的拒约策略不就是自定意的吗所以当执行拒约的时候它就会执行到这里这里就是输出一些信息没有别的处理了到这里如果你基础比较好的话那应该就明白到底是怎么回事那卢文脑子里还是跟降不一样乱的席力糊涂那就听新歌舞来给你好好旅渔旅整个完整的流程就是当现成尺直行任务的时候会先把FewToss的先给创建出来接着开始现成尺的执行但这时候任务太多了现成数和堆列都不够用了那就只能执行拒约了也就是执行自定意的拒约输出这些信息现成尺的Summate方法就完事了那么接着就是回到例子中的流程了把FewToss放到这个集合中再循环这个集合每个循环会执行这个FewToss的点盖上其实也有是FewToss的点盖上在这个方法里会执行一个Log of Supault点Park的操作让这个现成给组色主不知道你发现没有整个过程中因为任务太多了现成尺只能执行拒约错误它根本就没有机会来真正的执行任务也就是根本就不会执行FewToss的乱方法其实也就是正常的执行还是一场的执行都不会执行到那也就是说根本就不会执行这个Log of Supault点Park幻想现成的操作那这样可不就随着执行次数越来越多被FewToss的点盖上组色的现成也越来越多了吗和这个图那不就一致了吗那要怎么解决呢这就需要抓住重点来分析现成不是因为FewToss的点盖子被组色了吗那我们就往回导导到现成只执行这里结合目前自定义的处理方式来看是不是觉得有那么一点不对劲临营的现成尺这时候已经不够用了是不是就不应该接着执行了呀既然不应该接着执行是不是就应该抛出一场了呀所以当现成尺执行了拒绝策略时就要抛出一场不让它接着执行也就是不给机会让它执行到FewToss的点盖子所以就在这个自定义的策略中把一场给抛出来也就是这样改成这样后再看一件最外N的活动图能看到这回是正常了那双回收也是有来有回的现成也不是RO长了一直稳定在这个数量了和一开始那个图对比一看是不是完全不一样了除了抛出一场外还有个地方需要又画下就是这个FewToss点盖子要设置一个超市时间不能让它一直站着等着到这里整个问题才算是真正的解决了
