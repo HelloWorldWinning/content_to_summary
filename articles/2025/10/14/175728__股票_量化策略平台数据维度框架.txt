@@ -1,0 +1,127 @@
+Timestamp: 2025-10-14T17:57:28.682009
+Title: (股票)量化策略平台数据维度框架
+URL: https://atwar.eu.org/liang-hua-ce-lue-ping-tai-shu-ju-wei-du-kuang-jia/
+Status: success
+Duration: 0:00
+
+Description:
+好的，这是根据您的要求从文本中提炼的核心思想、摘要和Mermaid概念图。
+
+### **核心思想与结构化摘要**
+
+这是一个为（股票）量化投资策略平台设计的综合性数据维度框架，旨在通过系统化的数据组织，满足从被动投资到复杂量化策略等不同类型投资者的需求。框架共分为八个核心维度：
+
+1.  **市场行情数据 (Market Data)**
+    *   **核心内容**: 提供实时与历史的价格、成交量、盘口及复权数据。
+    *   **覆盖市场**: 包括美国（如S&P 500）和香港（如恒生指数）的主要股票及其他资产指数。
+    *   **主要支持**: 量化投资者和被动投资者。
+
+2.  **基本面数据 (Fundamental Data)**
+    *   **核心内容**: 包含公司的财务报表（资产负债表、利润表、现金流量表）、各类财务比率以及分析师的增长预测数据。
+    *   **主要支持**: 价值投资者和主题投资者。
+
+3.  **技术指标数据 (Technical Indicators)**
+    *   **核心内容**: 预计算好的各类技术分析指标，如趋势动量（MA, MACD）、均值回归（Bollinger Bands）和波动性（ATR）等。
+    *   **主要支持**: 系统化交易的量化投资者。
+
+4.  **宏观经济数据 (Macroeconomic Data)**
+    *   **核心内容**: 涵盖经济增长（GDP）、通胀（CPI）、利率政策（Fed Funds Rate）和市场情绪（VIX）等宏观指标。
+    *   **主要支持**: 宏观投资者进行多资产配置。
+
+5.  **公司行为与事件数据 (Corporate Actions & Events)**
+    *   **核心内容**: 跟踪并购、分红、拆股、回购以及内部交易等特定公司事件。
+    *   **主要支持**: 事件驱动型投资者。
+
+6.  **替代数据 (Alternative Data)**
+    *   **核心内容**: 包含ESG评分、供应链数据、专利申请、卫星图像、社交媒体情绪等非传统数据源。
+    *   **主要支持**: 前瞻性量化策略和主题投资者。
+
+7.  **参考数据 (Reference Data)**
+    *   **核心内容**: 平台的基础支撑数据，如证券代码、公司信息、行业分类和各类日历。
+    *   **主要支持**: 所有策略共用的基础信息。
+
+8.  **风险管理数据 (Risk Management Data)**
+    *   **核心内容**: 提供协方差矩阵、风险模型输出（VaR）和压力测试场景，用于评估和控制投资组合风险。
+    *   **主要支持**: 所有策略的风险控制环节。
+
+---
+
+### **核心结论**
+
+**核心要点**: 该框架构建了一个全面、多维度的量化投资数据体系，通过整合从市场行情到另类数据的八大维度，系统性地支持价值、量化、宏观及事件驱动等各类投资策略的分析、决策与风险管理。
+
+---
+
+### **整体框架**
+
+该内容的核心框架是一个由八个主要数据维度构成的分层结构，旨在为量化投资平台提供一个完整的数据生态系统。这个框架从基础的市场行情和基本面数据，延伸到前沿的替代数据和专业的风险管理数据，并明确了每个数据维度所支持的核心投资者类型与策略需求，形成一个从数据到策略应用的完整逻辑闭环。
+
+---
+
+### **Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    A["(股票)量化策略平台数据维度框架"]
+
+    subgraph "核心数据维度"
+        D1["1. 市场行情数据<br/>(Market Data)"]
+        D2["2. 基本面数据<br/>(Fundamental Data)"]
+        D3["3. 技术指标数据<br/>(Technical Indicators)"]
+        D4["4. 宏观经济数据<br/>(Macroeconomic Data)"]
+        D5["5. 公司行为与事件<br/>(Corp. Actions & Events)"]
+        D6["6. 替代数据<br/>(Alternative Data)"]
+    end
+
+    subgraph "基础支撑与风控"
+        D7["7. 参考数据<br/>(Reference Data)"]
+        D8["8. 风险管理数据<br/>(Risk Management)"]
+    end
+
+    subgraph "支持的投资策略与用户"
+        S1["量化/被动投资<br/>(Quant / Passive)"]
+        S2["价值/主题投资<br/>(Value / Thematic)"]
+        S3["宏观配置<br/>(Macro Allocation)"]
+        S4["事件驱动<br/>(Event-Driven)"]
+    end
+
+    A --> D1
+    A --> D2
+    A --> D3
+    A --> D4
+    A --> D5
+    A --> D6
+    A --> D7
+    A --> D8
+
+    D1 -- "支持" --> S1
+    D2 -- "支持" --> S2
+    D3 -- "支持" --> S1
+    D4 -- "支持" --> S3
+    D5 -- "支持" --> S4
+    D6 -- "支持" --> S2
+    D6 -- "支持" --> S1
+    
+    D7 -- "所有策略共用" --> A
+    D8 -- "所有策略共用" --> A
+
+    style A fill:#003366,stroke:#fff,stroke-width:2px,color:#fff
+    
+    style D1 fill:#ADD8E6,stroke:#333,stroke-width:1px
+    style D2 fill:#90EE90,stroke:#333,stroke-width:1px
+    style D3 fill:#FFB6C1,stroke:#333,stroke-width:1px
+    style D4 fill:#F0E68C,stroke:#333,stroke-width:1px
+    style D5 fill:#FFA07A,stroke:#333,stroke-width:1px
+    style D6 fill:#DDA0DD,stroke:#333,stroke-width:1px
+    
+    style D7 fill:#E6E6FA,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    style D8 fill:#E6E6FA,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+
+    style S1 fill:#f9f7d8,stroke:#333,stroke-width:1px,color:#333
+    style S2 fill:#f9f7d8,stroke:#333,stroke-width:1px,color:#333
+    style S3 fill:#f9f7d8,stroke:#333,stroke-width:1px,color:#333
+    style S4 fill:#f9f7d8,stroke:#333,stroke-width:1px,color:#333
+</Mermaid_Diagram>
+
+Content:
+By WeTrade — 14 Oct 2025 (股票)量化策略平台数据维度框架 一、市场行情数据 (Market Data) 支持被动投资者、量化投资者的核心需求 1.1 股票行情数据 实时/历史价格数据 ：开盘价、最高价、最低价、收盘价、调整后收盘价 成交数据 ：成交量、成交额、成交笔数 盘口数据 ：买卖五档、逐笔成交 复权数据 ：前复权、后复权因子 1.2 指数数据(USA) 美国股票指数 ：S&P 500、Nasdaq Composite、Nasdaq-100、DJIA、Russell 2000、Wilshire 5000 全球指数 ：MSCI World、MSCI ACWI、FTSE Global All-World 其他资产类别指数 ：Bloomberg US Agg Bond、DJ US Real Estate、S&P GSCI、VIX 1.3 指数数据（HongKong） 香港股票指数 (Hong Kong Stock Indices): 恒生指数 (Hang Seng Index, HSI): 香港股市最主要的旗舰指数，反映了规模最大、成交最活跃的蓝筹股公司的表现。 恒生中国企业指数 (Hang Seng China Enterprises Index, HSCEI): 通常被称为“国企指数”或“H股指数”，追踪在香港上市的中国内地大型企业的表现。 恒生科技指数 (Hang Seng TECH Index): 代表在香港上市的30家最大的科技公司，被视为香港的“纳斯达克指数”。 其他资产类别指数 (Other Asset Class Indices): 香港政府债券指数 (Hong Kong Government Bond Indices): 例如，由不同提供商标普、富时罗素等编制的，追踪香港政府发行的港元债券表现的指数。 恒生地产分类指数 (Hang Seng Properties Index): 追踪在恒生综合指数成份股中，被划分为“地产建筑业”的上市公司表现。 恒生波幅指数 (Hang Seng Volatility Index, VHSI): 衡量恒生指数期权的引申波幅，被认为是香港市场的“恐慌指数”，类似于美国的VIX指数。 二、基本面数据 (Fundamental Data) 支持价值投资者、主题投资者的核心需求 2.1 财务报表数据 资产负债表 ：比如：总资产、总负债、流动/非流动资产细分 等等....... 利润表 ：营业收入、营业成本、毛利润、营业利润、净利润、等等....... 现金流量表 ：经营性现金流、投资性现金流、融资性现金流、自由现金流 等等....... 2.2 财务比率指标 估值比率 ：P/E、P/S、P/B、P/CF、PEG、EV/EBITDA、Dividend Yield、Earnings Yield 盈利能力比率 ：Gross/Operating/Net Profit Margin、ROE、ROA、ROIC 流动性与偿付能力比率 ：Current Ratio、Quick Ratio、Cash Ratio、D/E、Debt-to-Assets、Interest Coverage 效率比率 ：Asset Turnover、Inventory Turnover、DSO、AR Turnover 每股指标 ：EPS、BVPS、Revenue Per Share、FCF Per Share 2.3 增长与预测数据 历史增长率 ：Revenue Growth (YoY/QoQ)、EPS Growth、FCF Growth 分析师预测 ：EPS预测、收入预测、目标价、评级（买入/持有/卖出） 盈利预测修正 ：上调/下调次数、预测一致性 三、技术指标数据 (Technical Indicators) 支持量化投资者的系统化策略需求 3.1 趋势与动量指标 MA (5/10/20/50/100/200日)、EMA、MACD、RSI、ADX、OBV、Supertrend 3.2 均值回归与价值指标 Bollinger Bands、Stochastic Oscillator、CCI、Z-Score 3.3 波动性指标 ATR、Standard Deviation、Keltner Channels、Donchian Channels 3.4 成交量与其他因子 VWAP、MFI、CMF、Hurst Exponent、Sharpe Ratio、Sortino Ratio 四、宏观经济数据 (Macroeconomic Data) 支持宏观投资者的多资产配置需求 4.1 经济增长与活动指标 GDP增长率、ISM Manufacturing PMI、失业率、零售销售、工业生产、消费者信心指数 4.2 通胀与价格稳定指标 CPI、PPI、Breakeven Inflation Rate、大宗商品价格指数 4.3 利率与货币政策指标 Fed Funds Rate、国债收益率曲线（2Y/10Y/30Y）、实际利率、SOFR 4.4 市场情绪与风险指标 VIX、信用利差（IG/HY spreads）、Financial Conditions Index、美元指数（DXY） 五、公司行为与事件数据 (Corporate Actions & Events) 支持事件驱动投资者的特殊情况策略 5.1 并购套利数据 M&A公告、交易价差、隐含成功概率、终止费用、监管审批状态、股东投票日期 5.2 不良资产与重组数据 债券价格/YTM、CDS利差、Altman Z-Score、预期回收率、DIP融资、资本结构偿付顺序 5.3 公司行动数据 分红（除息日、股息率）、拆股/合股、分拆、股票回购、配股增发 激进投资者持仓（13D/13G文件）、内部交易（Form 4） 六、替代数据 (Alternative Data) 支持主题投资者和前瞻性量化策略 6.1 主题识别数据 TAM规模与增长率、VC融资趋势、专利申请数量、政府政策与补贴、技术采用曲线 6.2 公司级主题敞口 主题收入占比、供应链定位、资本支出方向、研发费用占比 6.3 ESG数据 ESG综合评分（MSCI、Sustainalytics等） 碳排放强度（Scope 1/2/3） 排除性筛选标志（Sin Stock） 董事会多样性与独立性 争议事件评分 6.4 另类数据源 卫星图像数据、信用卡消费数据、网络爬虫数据、社交媒体情绪、应用下载量 七、参考数据 (Reference Data) 基础支撑数据，所有策略共用 7.1 证券主数据 股票代码（Ticker）、ISIN、CUSIP、公司名称、行业分类（GICS/ICB）、上市交易所 7.2 公司基本信息 成立日期、IPO日期、总部位置、员工数量、业务描述、网站 7.3 日历数据 交易日历、财报发布日期、分红日历、经济数据发布日历 7.4 因子库 预计算的多因子数据（如Fama-French三因子、五因子、动量因子等） 八、风险管理数据 (Risk Management Data) 8.1 协方差矩阵与相关性 股票间相关系数矩阵、行业/板块Beta、市场Beta 8.2 风险模型输出 VaR（Value at Risk）、CVaR、最大回撤、波动率预测 8.3 压力测试场景 历史情景（2008金融危机、2020疫情）、假设情景参数 Previous issue USA indicators By WeTrade — 14 Oct 2025 (股票)量化策略平台数据维度框架 一、市场行情数据 (Market Data) 支持被动投资者、量化投资者的核心需求 1.1 股票行情数据 实时/历史价格数据 ：开盘价、最高价、最低价、收盘价、调整后收盘价 成交数据 ：成交量、成交额、成交笔数 盘口数据 ：买卖五档、逐笔成交 复权数据 ：前复权、后复权因子 1.2 指数数据(USA) 美国股票指数 ：S&P 500、Nasdaq Composite、Nasdaq-100、DJIA、Russell 2000、Wilshire 5000 全球指数 ：MSCI World、MSCI ACWI、FTSE Global All-World 其他资产类别指数 ：Bloomberg US Agg Bond、DJ US Real Estate、S&P GSCI、VIX 1.3 指数数据（HongKong） 香港股票指数 (Hong Kong Stock Indices): 恒生指数 (Hang Seng Index, HSI): 香港股市最主要的旗舰指数，反映了规模最大、成交最活跃的蓝筹股公司的表现。 恒生中国企业指数 (Hang Seng China Enterprises Index, HSCEI): 通常被称为“国企指数”或“H股指数”，追踪在香港上市的中国内地大型企业的表现。 恒生科技指数 (Hang Seng TECH Index): 代表在香港上市的30家最大的科技公司，被视为香港的“纳斯达克指数”。 其他资产类别指数 (Other Asset Class Indices): 香港政府债券指数 (Hong Kong Government Bond Indices): 例如，由不同提供商标普、富时罗素等编制的，追踪香港政府发行的港元债券表现的指数。 恒生地产分类指数 (Hang Seng Properties Index): 追踪在恒生综合指数成份股中，被划分为“地产建筑业”的上市公司表现。 恒生波幅指数 (Hang Seng Volatility Index, VHSI): 衡量恒生指数期权的引申波幅，被认为是香港市场的“恐慌指数”，类似于美国的VIX指数。 二、基本面数据 (Fundamental Data) 支持价值投资者、主题投资者的核心需求 2.1 财务报表数据 资产负债表 ：比如：总资产、总负债、流动/非流动资产细分 等等....... 利润表 ：营业收入、营业成本、毛利润、营业利润、净利润、等等....... 现金流量表 ：经营性现金流、投资性现金流、融资性现金流、自由现金流 等等....... 2.2 财务比率指标 估值比率 ：P/E、P/S、P/B、P/CF、PEG、EV/EBITDA、Dividend Yield、Earnings Yield 盈利能力比率 ：Gross/Operating/Net Profit Margin、ROE、ROA、ROIC 流动性与偿付能力比率 ：Current Ratio、Quick Ratio、Cash Ratio、D/E、Debt-to-Assets、Interest Coverage 效率比率 ：Asset Turnover、Inventory Turnover、DSO、AR Turnover 每股指标 ：EPS、BVPS、Revenue Per Share、FCF Per Share 2.3 增长与预测数据 历史增长率 ：Revenue Growth (YoY/QoQ)、EPS Growth、FCF Growth 分析师预测 ：EPS预测、收入预测、目标价、评级（买入/持有/卖出） 盈利预测修正 ：上调/下调次数、预测一致性 三、技术指标数据 (Technical Indicators) 支持量化投资者的系统化策略需求 3.1 趋势与动量指标 MA (5/10/20/50/100/200日)、EMA、MACD、RSI、ADX、OBV、Supertrend 3.2 均值回归与价值指标 Bollinger Bands、Stochastic Oscillator、CCI、Z-Score 3.3 波动性指标 ATR、Standard Deviation、Keltner Channels、Donchian Channels 3.4 成交量与其他因子 VWAP、MFI、CMF、Hurst Exponent、Sharpe Ratio、Sortino Ratio 四、宏观经济数据 (Macroeconomic Data) 支持宏观投资者的多资产配置需求 4.1 经济增长与活动指标 GDP增长率、ISM Manufacturing PMI、失业率、零售销售、工业生产、消费者信心指数 4.2 通胀与价格稳定指标 CPI、PPI、Breakeven Inflation Rate、大宗商品价格指数 4.3 利率与货币政策指标 Fed Funds Rate、国债收益率曲线（2Y/10Y/30Y）、实际利率、SOFR 4.4 市场情绪与风险指标 VIX、信用利差（IG/HY spreads）、Financial Conditions Index、美元指数（DXY） 五、公司行为与事件数据 (Corporate Actions & Events) 支持事件驱动投资者的特殊情况策略 5.1 并购套利数据 M&A公告、交易价差、隐含成功概率、终止费用、监管审批状态、股东投票日期 5.2 不良资产与重组数据 债券价格/YTM、CDS利差、Altman Z-Score、预期回收率、DIP融资、资本结构偿付顺序 5.3 公司行动数据 分红（除息日、股息率）、拆股/合股、分拆、股票回购、配股增发 激进投资者持仓（13D/13G文件）、内部交易（Form 4） 六、替代数据 (Alternative Data) 支持主题投资者和前瞻性量化策略 6.1 主题识别数据 TAM规模与增长率、VC融资趋势、专利申请数量、政府政策与补贴、技术采用曲线 6.2 公司级主题敞口 主题收入占比、供应链定位、资本支出方向、研发费用占比 6.3 ESG数据 ESG综合评分（MSCI、Sustainalytics等） 碳排放强度（Scope 1/2/3） 排除性筛选标志（Sin Stock） 董事会多样性与独立性 争议事件评分 6.4 另类数据源 卫星图像数据、信用卡消费数据、网络爬虫数据、社交媒体情绪、应用下载量 七、参考数据 (Reference Data) 基础支撑数据，所有策略共用 7.1 证券主数据 股票代码（Ticker）、ISIN、CUSIP、公司名称、行业分类（GICS/ICB）、上市交易所 7.2 公司基本信息 成立日期、IPO日期、总部位置、员工数量、业务描述、网站 7.3 日历数据 交易日历、财报发布日期、分红日历、经济数据发布日历 7.4 因子库 预计算的多因子数据（如Fama-French三因子、五因子、动量因子等） 八、风险管理数据 (Risk Management Data) 8.1 协方差矩阵与相关性 股票间相关系数矩阵、行业/板块Beta、市场Beta 8.2 风险模型输出 VaR（Value at Risk）、CVaR、最大回撤、波动率预测 8.3 压力测试场景 历史情景（2008金融危机、2020疫情）、假设情景参数 Previous issue USA indicators
