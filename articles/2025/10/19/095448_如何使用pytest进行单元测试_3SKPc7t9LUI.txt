@@ -1,0 +1,133 @@
+Timestamp: 2025-10-19T09:54:48.226461
+Title: 如何使用pytest进行单元测试 3SKPc7t9LUI
+URL: https://youtube.com/watch?v=3SKPc7t9LUI&si=ti2vHrhzYgb1fPiD
+Status: success
+Duration: 12:33
+
+Description:
+好的，这是根据您提供的文本内容提炼的核心思想摘要。
+
+### Pytest 核心用法与优势摘要
+
+#### 1. Pytest 简介与核心优势
+*   **痛点解决**: 解决了传统 `unittest` 框架模板代码繁多、必须继承类、断言方法复杂等问题。
+*   **简洁强大**: 被誉为 Python 社区中最简洁且强大的测试框架，极大地提升了测试代码的编写效率和可读性。
+
+#### 2. 基础入门与工作流
+*   **测试发现**: 自动发现并执行 `tests` 目录下，以 `test_*.py` 或 `*_test.py` 命名的文件中的 `test_*` 开头的函数。
+*   **原生断言**: 直接使用 Python 原生的 `assert` 语句进行断言。
+*   **断言重写**: `pytest` 通过“黑科技”重写 `assert` 语句，当断言失败时，能提供非常详细的上下文对比信息，便于快速定位问题（Debug）。
+*   **IDE 集成**: 与 VS Code、PyCharm 等主流 IDE 完美集成，提供图形化界面来运行、调试和管理测试用例，支持单用例执行和断点调试。
+
+#### 3. 四大核心功能详解
+*   **异常测试 (`pytest.raises`)**:
+    *   **目的**: 验证代码在特定条件下是否如期抛出指定的异常。
+    *   **用法**: 使用 `with pytest.raises(ExpectedException):` 上下文管理器包裹会抛出异常的代码块。
+
+*   **Fixtures (测试固件 - `@pytest.fixture`)**:
+    *   **目的**: 用于管理和提供测试前置准备（Setup）与后置清理（Teardown）的资源，解决测试用例中重复的初始化代码。
+    *   **用法**:
+        1.  创建一个用 `@pytest.fixture` 装饰的函数（工厂函数），函数内创建并返回所需资源（如对象实例、数据库连接）。
+        2.  测试函数通过将该 Fixture 函数名作为参数来接收并使用这些资源。
+    *   **资源清理**: 在 Fixture 函数中使用 `yield` 关键字。`yield` 之前的代码为准备阶段，`yield` 之后的代码为清理阶段。
+    *   **作用域 (`scope`)**: 通过 `scope` 参数 (`function`, `class`, `module`, `session`) 控制 Fixture 的生命周期，实现资源在不同范围内的共享，提高测试效率。
+
+*   **参数化 (`@pytest.mark.parametrize`)**:
+    *   **目的**: 使用多组不同的输入数据和预期结果来重复执行同一个测试函数，避免为相似逻辑复制粘贴测试代码。
+    *   **用法**:
+        1.  使用 `@pytest.mark.parametrize()` 装饰器。
+        2.  第一个参数是以逗号分隔的字符串，定义参数名。
+        3.  第二个参数是一个列表，列表中的每个元素（通常是元组或列表）对应一组完整的测试数据。
+
+*   **插件生态**:
+    *   `pytest` 拥有强大的插件生态系统，可轻松扩展功能，例如：
+        *   `pytest-cov`: 用于生成测试覆盖率报告。
+        *   `pytest-xdist`: 用于分布式和并行测试。
+        *   `pytest-asyncio`: 用于测试异步代码。
+
+---
+
+### 核心结论
+
+**核心点**: Pytest 是一个功能强大且简洁的 Python 测试框架，它通过原生断言、Fixtures 和参数化等核心特性，极大地简化了单元测试的编写，并提高了代码的可维护性和测试效率。
+
+---
+
+### 内容的总体框架
+
+该内容采用了一个**渐进式教学框架**，从问题出发，逐步引导用户掌握 `pytest` 的核心用法：
+
+1.  **问题引入**: 指出 Python 自带 `unittest` 框架的复杂性与不便。
+2.  **解决方案**: 引入 `pytest` 作为更优越的替代方案。
+3.  **基础入门**: 讲解最基本的项目结构、测试发现机制、运行方式和 `assert` 断言。
+4.  **核心功能详解**: 深入介绍解决常见测试痛点的三大核心功能：异常测试、Fixtures（包括 Setup/Teardown 和 Scope）和参数化。
+5.  **生态扩展**: 最后提及强大的插件生态，展示其可扩展性。
+
+---
+
+### Mermaid 概念图
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "传统测试框架的问题"
+        A["unittest 框架"] -- "存在痛点" --> B["模板代码多<br>必须继承类<br>self.assert* 繁琐"];
+    end
+
+    subgraph "Pytest 解决方案"
+        C["Pytest 测试框架"]
+    end
+
+    B -- "催生更优方案" --> C;
+
+    subgraph "核心功能与特性"
+        D["原生 assert 断言<br>(通过'断言重写'提供详细错误)"]
+        E["Fixtures (测试固件)"]
+        F["参数化 (parametrize)"]
+        G["异常测试 (pytest.raises)"]
+    end
+
+    C -- "提供" --> D
+    C -- "提供" --> E
+    C -- "提供" --> F
+    C -- "提供" --> G
+
+    subgraph "Fixture 详解"
+        H["@pytest.fixture 装饰器"]
+        I["Setup / Teardown<br>(使用 yield 实现)"]
+        J["作用域 Scope<br>(function, class, session 等)"]
+    end
+
+    E -- "通过" --> H;
+    H -- "实现" --> I;
+    H -- "控制生命周期" --> J;
+
+    subgraph "强大生态系统"
+        K["丰富的插件"]
+        L["pytest-cov (测试覆盖率)"]
+        M["pytest-xdist (并行测试)"]
+        N["pytest-asyncio (异步测试)"]
+    end
+
+    C -- "可扩展" --> K;
+    K -- "例如" --> L;
+    K -- "例如" --> M;
+    K -- "例如" --> N;
+    
+    style A fill:#FFDDC1,stroke:#BF360C,stroke-width:1px
+    style B fill:#FFC3A0,stroke:#BF360C,stroke-width:1px
+    style C fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,font-weight:bold
+    style D fill:#B3E5FC,stroke:#01579B,stroke-width:1.5px
+    style E fill:#B3E5FC,stroke:#01579B,stroke-width:1.5px
+    style F fill:#B3E5FC,stroke:#01579B,stroke-width:1.5px
+    style G fill:#B3E5FC,stroke:#01579B,stroke-width:1.5px
+    style H fill:#E1BEE7,stroke:#4A148C,stroke-width:1px
+    style I fill:#F3E5F5,stroke:#4A148C,stroke-width:1px
+    style J fill:#F3E5F5,stroke:#4A148C,stroke-width:1px
+    style K fill:#CFD8DC,stroke:#37474F,stroke-width:1.5px
+    style L fill:#ECEFF1,stroke:#37474F,stroke-width:1px
+    style M fill:#ECEFF1,stroke:#37474F,stroke-width:1px
+    style N fill:#ECEFF1,stroke:#37474F,stroke-width:1px
+</Mermaid_Diagram>
+
+Content:
+你写过拍son的单元测试吗?拍son虽然自带了UNITEST COOL但它的设计是仿照JUNIT来实现的但我们想写一个单元测试时我们不得不计成各种各样的类然后再使用各种self方法做断言模板带码一多就会显得特别的麻烦今天我们就来介绍一款解决了UNITEST所有通点的工具它就是拍son设驱中最简介也是最强大的单元测试酷拍test今天我们要测试的diamar就是这个计算器类逻辑太简单了这里我就不多解释了整个工程我们使用了设驱中最流行的src布局也就是把diamar都放到src文件加入想了解更多拍son工程结构的同学可以参考我的这期视频或者加入我的知识星球里面不仅有本视频完整的工程diamar还有我原创的各种关于AI和pison的文章根据src布局的习惯单元测试都会放到test文件加下test文件加的目标结构一般有和src文件加1 1对应因为我们想要测试的diamar位于pytest-diamar目标下的coculator点pyt文件下所以我们在test文件加中也将了一个同名的目标pytest-cue会自动搜索名字包含test-sharwha-sian前锤的pison文件作为单元测试的文件这里我们就叫test-coculator点pyt和测试文件类似pytest也会自动识别以test-sharwha-sian开头的寒树作为测试寒树现在我们来为加法和厨法分别编写一个测试用力名字就叫test-add和test-diamar按practice然后再命令行钟可以执行pytest命令就可以运行所有的测试用力了可以看到拍Test发现了两个测试用力并且全部都通过了测试我们注意到拍Test使用的段言是直接使用Python 远生的Azure的语句通常情况下如果Azure的表达是为FosePython只会抛出一个不带任何详细信息的AzureShen Error我们来测试一下可以看到这里的AzureShen Error是不带任何的上下文信息的但是Python不一样它会通过一种叫做段言重写的黑科技自动改写Azure的逻辑来显示更加丰富的上下文信息比如说这里我们故意把这个测试用力改错让二出一一等于零然后我们再来运行一下Python命令可以看到Python不仅显示出了AzureShen Error还为我们提供了详细的对比信息让我们可以更方便的进行第8个如果说你用的是VS Code或者Python它还为Python提供了非常好用的图形化界面这里我使用的是VS Code我们来快速的配置一下在Mac系统中我们可以按Comand Shift加P在Windows和Linux下面则是按看错加Shift加P打开命令面板选择Python Config Test在弹出的选项里我们选择PyTest然后它会问我们测试用力在哪个目录下面我们就选择包含了所有测试的Test目录配置完之后我们就可以在左边这个叫做Testing的测试面板里面看到PyTest自动发现的所有测试用力了通过这个UI界面我们既可以只跑一个测试韩束或者也可以跑整个测试文件甚至我们还可以加锻底来进行第8个总之就是非常的方便现在我们顺便修复一下刚刚失败的测试用力好现在我们的两个含束都已经通过了现在我们来加强一下测试用力我首先观察到的是我们带着含束的处理一场这一段逻辑还没有被检测到我们试着来增加一个测试用力覆盖这一段逻辑在我们的代码中如果处数是领的话会抛出ZeroDivisionAryl错误但是如果像我们现在这样直接运行测试用力的话整个测试就会因为这个位补货的一场耳失败针对这种情况我们就可以使用Pytas.resist这个功能来明确地告诉Pytas的这个含束调用会抛出一场这是我预期的行为来看代码怎么写我们会把抛出一场的代码贵处一场的代码块放到一个Vis的语句之中现在我们再来运行一下试试看可以看到现在这个用力就按照我们的预期成功的通过了现在我们就可以按照这个模式不断的增加测试用力了但是这里我发现了一个问题每个测试用力开头我们都需要手动的创建Coccurator实力其实对于我们现在的这个代码还好但是假如这个CoccuratorLate创建之后还需要额外的出使化那岂不是说每次我们都要写一遍出使化的代码吗这个问题我们可以使用Pytas提供的Fixed功能来解决首先我们修改一下每一个测试用力这一次我们就不建立Coccurator的实力了而是把实力当作一个残数接收进来那么这个残数中的Coccurator实力要怎么创建呢我们可以边写一个和残数名字相同的工厂寒数比如说这里我们所有的残数都叫CAC所以我们就可以创建一个寒数名字也叫做CAC然后它应该返回一个Coccurator实力最后我们在这个工厂寒数中来创建Coccurator这个工厂寒数在Pytas中被叫做FixedCirc我们需要用FixedCirc标柱来把它注册到Pytas的之中这样当我们再次运行测试用力的时候Pytas就会发现测试用力中有一个叫做CAC的残数然后它就会调用同名的FixedCirc来创建这个残数了现在如果我们的Coccurator需要一些出实化的代码我们就可以直接写到CACFixed成终了如果说我们的情况再复杂一点假如我们的Coccurator不仅需要外的出实化在使用完之后还需要主动的释放资源就像文件和Sockade那样处理这种情况我们可以直接把Return一句改成E-ode然后在E-ode的语句之后再进行资源释放因为我们的Hansu使用了E-ode的语句也就是创建了一个Jenerator所以Hansu的标柱我们也需要更新一下或者说如果你觉得Jenerator的标柱很麻烦的话也可以不写类型或者类型直接写Anni这样以来PyTest每次运行一个带有CAC参数的测试用力的时候都会先调用CACFixed成当遇到了E-ode的语句的时候PyTest就会暂停执行这个Fixed成然后开始执行测试用力的Hansu体验测试Hansu直行完之后就会再回到Fixed成终继续运行E-ode之后的清理操作了这样我们就完成了测试对象的出实化和清理操作除此之外Fixed还有一个同样重要的概念就是它的作用率Scope在默认情况下这里每一个测试用力都会单独调用一遍CACHansu所以说每个用力拿到的都是自己私有的计算器实力但是有的时候我们可能会想要共享同一个实力比如说我们想要所有的测试用力都共享同一个数据库合同一个数据库合接这个时候我们就可以在Fixed标注上面加上Scope等于Sci-Sense这个参数这代表每次执行PyTest的时候CAC只会执行一次当遇到E-ode的语句的时候PyTest就会开始执行全部所有的测试用力只有当全部测试用力执行完之后E-ode才会返回来进行清理除了Sci-Sense之外Scope的参数还可以是PyCage,Model,Closs和默认的Function他们的意思都很明确我这里就不一一的展开了最后我们再来介绍一下参数化比如说这个EdTest测试用力目前我们只测了2加1等于3这个Case假如我还想测试一下复数比如说复2加复1等于复3要怎么办呢除了在复制粘贴一遍Test的EdHansuPyTest还提供了一个更加优雅的方法我们可以把两个加数和预期的结果都变成测试韩数的参数现在我们为韩数增加N1N2和Expecte的3个参数作为两个加数和预期结果然后我们使用PyTest提供的PyRomyTries这个装饰器来标注TestEye的韩数PyRomyTries的第一个参数是一个自负串用来告诉PyTest需要被参数化的参数名是什么用豆豪隔开这里我们就这样写第二个参数是一个可迭带对象通常情况下会是一个列表而这个列表之中的每一个元素又是另外一个可迭带对象比如说一个元族丘炮或者一个列表List而这个列表里面的每一个元素就对应着一组完整的测试数据它里面的值就会按照顺序11应设到我们前面定义的参数名上面比如说这里的123就会被分别应设到N1N2和Expecte假如说我们还想测付1加付2等于付3我们就只需要再加一组数据就可以了现在我们来运行一下这个测试用力可以看到Vscode的UI也已经十别出来这里面包含了两组测试数据好了这就是Pitest的最核心最基础的用法了除了这些基础的功能Pitest还提供了许多强大的插件比如说测试覆盖率的PitestCoff多进程并行测试的Pitest XDist用来测试一不代码的Pitest A-Sync IO等等等等对插件感兴趣的同学请留言告诉我如果说人多的话我会单独做一些视频来专门介绍Pitest的插件好了 今天的视频就到这里这里儿 成千老王我们下期再见
