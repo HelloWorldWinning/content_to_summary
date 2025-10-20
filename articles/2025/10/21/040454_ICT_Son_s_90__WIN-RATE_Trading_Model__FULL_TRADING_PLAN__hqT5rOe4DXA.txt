@@ -1,0 +1,115 @@
+Timestamp: 2025-10-21T04:04:54.678221
+Title: ICT Son's 90% WIN-RATE Trading Model {FULL TRADING PLAN} hqT5rOe4DXA
+URL: https://youtube.com/watch?v=hqT5rOe4DXA&si=whwG8qk0pwMyBNRm
+Status: success
+Duration: 11:03
+
+Description:
+好的，这是根据您提供的文本内容提炼和总结的要点。
+
+### **核心观点纲要**
+
+#### **一、 策略概述：ICT之子交易模型**
+这是一个由ICT（Inner Circle Trader）的儿子提出并使用的日内短线交易模型，其核心特点如下：
+*   **高胜率**：声称回测胜率可达85%-90%以上，实盘初期甚至达到100%。
+*   **负风险回报率**：止盈目标（10 handles）小于止损（12 handles），专为追求高成功率而设计。
+*   **适合初学者**：规则相对简单，易于执行。
+
+#### **二、 交易框架与执行步骤**
+1.  **前提条件**:
+    *   **交易品种**：主要用于E-mini纳斯达克100指数期货（NQ），但也适用于外汇货币对（如EUR/USD）。
+    *   **交易时间**：严格限定在纽约时间上午10:00至11:00的“银色子弹”（Silver Bullet）窗口期，也可扩展至9:30开盘后的整个时段。
+
+2.  **执行流程**:
+    *   **步骤 1 (高时间框架分析 - 15/5分钟)**：首先在高时间框架上（15分钟或5分钟图）识别一个明确的流动性目标（如清晰的卖方或买方流动性池），以此建立当日的交易方向偏见（Bias）。
+    *   **步骤 2 (低时间框架确认 - 5/1/30秒)**：切换到低时间框架（5分钟、1分钟甚至30秒图），等待价格首先扫过一个与你偏见**相反**方向的短期高点或低点（即猎取止损/流动性）。
+    *   **步骤 3 (市场结构转变)**：在流动性被扫过之后，观察价格是否迅速向你偏见的方向移动，并形成市场结构转变（Market Structure Shift）。
+    *   **步骤 4 (入场)**：在市场结构转变后，寻找由此产生的“公允价值缺口”（Fair Value Gap - FVG），当价格回测至该缺口时入场。
+
+3.  **仓位管理**:
+    *   **止损 (Stop Loss)**：固定为12个“handles”（期货术语，相当于点）。
+    *   **止盈 (Take Profit)**：固定为10个“handles”。
+
+#### **三、 视频作者的个人交易偏好**
+*   作者本人更喜欢使用5分钟图表来寻找入场信号。
+*   他会调整止损为10个点，并追求更高的风险回报比（如1:2或1:3），目标是更远处的流动性池，而非固定的10点止盈。
+
+---
+
+### **核心结论**
+
+该内容的核心是介绍一个名为“ICT之子”的高胜率短线交易模型，其关键在于纽约开盘特定时段内，在价格扫过流动性并发生市场结构转变后，利用形成的公允价值缺口（FVG）进行入场，并采用固定的、风险回报率为负的止盈止损策略。
+
+---
+
+### ** overarching Framework (总体框架)**
+
+这是一个基于ICT（Inner Circle Trader）概念的，结合了**特定时间窗口（银色子弹时段）**、**流动性猎取**和**市场结构转变**的日内短线交易框架。
+
+---
+
+### **Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "模型总览: ICT之子交易模型"
+        M["核心理念: 高胜率短线交易"]
+    end
+
+    subgraph "第一步: 前提与背景"
+        direction LR
+        P1["交易品种: NQ/外汇"]
+        P2["交易时间: 银色子弹时段 (10-11 AM)"]
+        P3["高时间框架偏见 (15/5分钟)"]
+    end
+
+    subgraph "第二步: 交易执行流程"
+        A["1. 扫过反向流动性"]
+        B["2. 市场结构转变 (MSS)"]
+        C["3. 形成公允价值缺口 (FVG)"]
+        D["4. 价格回测FVG"]
+        E["5. 入场交易"]
+    end
+
+    subgraph "第三步: 仓位管理"
+        direction LR
+        F["止损: 12 Handles"]
+        G["止盈: 10 Handles"]
+    end
+
+    subgraph "模型特点"
+        direction LR
+        H["高胜率 (85%+)"]
+        I["负风险回报率"]
+    end
+
+    M -- "设定" --> P1
+    M -- "设定" --> P2
+    M -- "分析" --> P3
+    P3 -- "触发条件" --> A
+    A -- "导致" --> B
+    B -- "留下" --> C
+    C -- "等待" --> D
+    D -- "执行" --> E
+    E -- "设置" --> F
+    E -- "设置" --> G
+    M -- "结果是" --> H
+    M -- "结果是" --> I
+
+    style M fill:#FFF2CC,stroke:#333,stroke-width:2px
+    style P1 fill:#E0F7FA,stroke:#00796B,stroke-width:1px
+    style P2 fill:#E0F7FA,stroke:#00796B,stroke-width:1px
+    style P3 fill:#B2EBF2,stroke:#00796B,stroke-width:2px
+    style A fill:#E8F5E9,stroke:#388E3C,stroke-width:1px
+    style B fill:#E8F5E9,stroke:#388E3C,stroke-width:1px
+    style C fill:#E8F5E9,stroke:#388E3C,stroke-width:1px
+    style D fill:#E8F5E9,stroke:#388E3C,stroke-width:1px
+    style E fill:#A5D6A7,stroke:#2E7D32,stroke-width:2px
+    style F fill:#FFCDD2,stroke:#D32F2F,stroke-width:1.5px
+    style G fill:#C8E6C9,stroke:#388E3C,stroke-width:1.5px
+    style H fill:#EDE7F6,stroke:#5E35B1,stroke-width:1px
+    style I fill:#EDE7F6,stroke:#5E35B1,stroke-width:1px
+</Mermaid_Diagram>
+
+Content:
+What is up guys? Welcome back to another video today. We're going to be talking about an exciting new model. This is ICTs very own sons trading model. Okay. Now let's get into the video because this one's going to be a good one. I'm going to show you an in-depth full plan. This is the only video you're going to need me to watch on his son's model. Okay, I'm going to teach you it how he teaches it. We've all learned it. We all know it. It's got a high strike rate. He tried it started trading it last Thursday and he's had 100% win rate. You can probably back test and have anywhere from 85 to 9 year more win rate with this. Okay, so let's get into it. We're going to be looking at runs on liquidity from the 15 or 5 minute. And then we're going to look at the 5, 1 or even down to the 32nd, which is what he's using, the 32nd to enter. His stop loss is 12 handles. And take profits, 10 handles. Now, why are we talking handles because you can use it in USD pairs of your USD GBP USD and the and 4X. But the main asset that he's using is in futures on top step is the E mini NASDAQ 100 futures. Okay. Now, he trades in the silver bullet window, which is from 10 to 11. Okay. Now we can be looking from 9, 30 to 11 though and have that whole opening kill zone to use. Okay. So we see here on the 15 minute. Let's look at liquidity here. We've taken some liquidity there on the 15. We have some nice equal lows down here. We're sell side liquidity. Okay. So, drop down to the 5 minute. Okay, come up. Now, bias here is sell side because this is pretty clean down here. Okay. We've already taken out a lot of the sellers here in this whole range down and tapped up into this small 5 minute for value gap here, which you can see if we drag it over. Okay. We started to shift down. So now I'm waiting for this highs taken. Okay. This high is taken. Let's move forward here. Okay. So if we see here, this swing high here, just in here. See that swing high there. We take that high. Okay. Boom. Okay. So take that high in here. Go down to the one minute. Have a nice fair value gap in here. We broke market structure with this with down. Okay. So let's take an entry here. Short in that gap. Oh, I won. Short in here. Okay. Well, handles. And we're, and ICT says the Senate only goes for 10. Okay. This is a beginner model. You're going to be negative are, but it has a really high strike rate. Okay. So we're already down. And within two candles, boom, you've already hit your take profit. Okay. Now. I mean, this is it. Let's see if we go down to the 32nd. It's the same thing. Nice break to the downside. We have this. For value gap, we don't enter. We have another one break market structure. Let's see if we get. Cool. So we break structure again. Here. We leave this fair value gap. See if it takes you out there. It does. But again. One there. One there. No return back. But as soon as we took this five minute high there, right, this was. That five minute high. On the one minute. Fair value gap. Entry 12 panel stop 10 point take profit. Now. We looked down where was the sell side, right? Move this over. We could have targeted this low here. Right. And then we have sell side down here. See if we take that out. Let me use the. Well, sell side taken. Okay. Now I should use a himself. I'm not sure. I'm not sure. Okay. Now I should use a himself says this is not a complete model. Okay. But. He's had. Huge, huge win rate with this. Okay. Now the way I trade. We'll just go through this real quick. The way I trade is off to five minute. Okay. My favorite entry is off to five minute. I believe this. Is where I entered off this five minute. Okay. Silver bullet style. In this gap. Okay. To take the. To take the. Here. We're going to get a six to. Retracement. And then this is where we take our short from. Right in here. Okay. I like to have a 10. Point stop. And then I will shoot for. One to two or one to three. In this case, if we look on the one hour. Today. We had this nice sell side here. And we had some nice sell side down here. Okay. So go back to five minute. So targeting this low down here. Would be a nice one to five. Okay. Let me see. I'm going to log in here real quick. Okay. Let me see. I'm going to log in here real quick. Okay. Show. Show. Show. I can do this one. Show. Let me see. I can do this one on the executions here. It shows them. No? Okay. Well, if we look in the discord here. I don't think I posted on today. Main chat. At something like that. I've posted them in Market Volicia. Yes… we'll take this will to the south side but got out early. So it took the self to five minute. I really like five minutes inside of the silver bullet window from 10 to 11. That's my bread and butter. That's what I trade live every single day. Okay, so if you wanna trade live with us, this is a Discord. It's only 50 bucks for a lifetime payment. So get in before it does increase. Also have the master class, which is awesome. It's on discount right now too. But the Discord is amazing. We trade live from Tuesday through Thursday in the morning. Bootcamps will be coming back in October. So if you wanna sign up for that, that will be coming soon. But we trade live in here. We have classroom, tons of chats, extras. And then people passing their challenges, getting payouts, where's the payouts? Right in here. Okay. Nice payout there. We're gonna be doing another giveaway here soon. We're gonna be giving away two 50K top step challenges. So be sure to get in here. And if you're interested and you wanna take your training to the next level, and we even have some more strategies inside here that if you're interested. So, but it's not necessary. Only if you really wanna take your training to the next level, okay? So thank you guys for watching. Remember, this is our model here. This is for ICT. Don't forget to hit that like, comment, and subscribe. And until next time, guys, trade safe.
