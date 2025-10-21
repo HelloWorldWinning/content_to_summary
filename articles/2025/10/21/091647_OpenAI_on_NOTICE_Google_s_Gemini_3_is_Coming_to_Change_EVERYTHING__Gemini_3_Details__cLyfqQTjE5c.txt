@@ -1,0 +1,109 @@
+Timestamp: 2025-10-21T09:16:47.995575
+Title: OpenAI on NOTICE Google's Gemini 3 is Coming to Change EVERYTHING (Gemini 3 Details) cLyfqQTjE5c
+URL: https://youtube.com/watch?v=cLyfqQTjE5c&si=_J-pqfGAOgPeDjER
+Status: success
+Duration: 14:27
+
+Description:
+好的，这是根据您的要求从文本中提炼的核心思想摘要。
+
+### **一、Gemini 3.0 核心摘要大纲**
+
+1.  **官方发布与预期**
+    *   **发布预告**：谷歌CEO Sundar Pichai 确认 Gemini 3.0 正在开发中，并计划于今年（2024年）发布。
+    *   **发布时间推测**：尽管 Polymarket 预测有62%的可能在10月31日前发布，但根据谷歌过往习惯，更可能在年底推出。
+
+2.  **核心能力突破（基于早期模型 "Lithium Flow" 的测试）**
+    *   **编码能力**：
+        *   **基准测试领先**：在旨在评估真实世界AI能力的 Kingbench 排行榜上，Gemini 3.0 超越了包括以编码著称的 Sonnet 4.5 在内的所有模型，位居第一。
+        *   **实践案例**：能够“一键式”生成复杂的网站（如Apex Alpha）和游戏（如《几何冲刺》翻版），展示了强大的代码生成和理解能力。
+        *   **官方佐证**：谷歌AI高管及SemiAnalysis等分析机构均暗示，编码是Gemini 3.0的重点突破方向。
+    *   **多模态视觉能力**：
+        *   **解决“AI视觉盲点”**：成功解决了以往视觉模型普遍存在的难题——准确识别并读出图片中时钟的时间，而其他模型（如旧版Gemini、Claude Sonnet）均失败。
+        *   **视觉推理提升**：在SVG基准测试中持续优于其他模型，包括GPT-5，显示出卓越的视觉理解和生成能力。
+    *   **高级推理能力**：
+        *   **基准测试表现**：在衡量创造性、非线性连接能力的 Harugliff 基准测试中，Gemini 3.0 Pro 的得分相较于2.5 Pro实现了翻倍式增长，表现出强大的横向思维能力，仅次于GPT-5i。
+
+3.  **市场定位与影响**
+    *   **主要竞争优势**：预计将在**编码**和**多模态**两大领域建立显著优势，挑战Anthropic（Sonnet）和OpenAI（GPT系列）等竞争对手。
+    *   **成本效益**：谷歌凭借其庞大的计算资源和资金，可能以更具竞争力的价格提供Gemini 3.0，从而颠覆市场格局。
+
+### **二、核心结论**
+
+基于早期泄露的基准测试和用户体验，Gemini 3.0 有望成为一个在编码和多模态视觉能力上实现突破性进展的顶级AI模型，从而在AI竞赛中对现有领导者构成重大挑战。
+
+### **三、内容 overarching 框架**
+
+该内容以谷歌官方发布预期为引子，通过整合多个早期、非官方的基准测试数据（Harugliff, Kingbench）和具体用户实例（时钟识别、网站与游戏生成），深入剖析了 Gemini 3.0 在**推理、编码和多模态视觉**三大核心领域的潜在突破，最终对其发布时间和市场竞争力进行了预测与展望，构建了一个从“官方预告”到“非官方证据分析”再到“市场影响预测”的完整逻辑链条。
+
+### **四、Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "信息来源与预期 Information Sources & Expectations"
+        A["谷歌CEO Sundar Pichai 公告"] --> C;
+        B["市场预测 (Polymarket)"] --> D{"发布时间预测"};
+        A -- "确认今年发布" --> D;
+    end
+
+    subgraph "Gemini 3.0 核心模型 (Lithium Flow)"
+        C["Gemini 3.0"];
+    end
+
+    subgraph "核心能力突破 & 证据 Core Capabilities & Evidence"
+        E["强大的编码能力"] --> F["Kingbench 排行榜第一"];
+        E --> G["一键生成复杂网站/游戏"];
+        H["卓越的多模态视觉"] --> I["解决'时钟识别'难题"];
+        H --> J["SVG基准测试表现优异"];
+        K["显著提升的推理能力"] --> L["Harugliff 基准测试得分翻倍"];
+    end
+
+    subgraph "市场竞争与对标 Market Competition"
+        F -- "超越" --> M["Sonnet 4.5"];
+        J -- "优于" --> N["GPT-5"];
+        L -- "仅次于" --> O["GPT-5i"];
+    end
+
+    subgraph "市场影响与展望 Market Impact & Outlook"
+        P["挑战行业领导者 (OpenAI, Anthropic)"];
+        Q["具备成本与性能双重优势"];
+        R["AI开发与应用进入新阶段"];
+    end
+    
+    C --> E;
+    C --> H;
+    C --> K;
+    
+    E --> P;
+    H --> P;
+    D --> Q;
+
+    P --> R;
+    Q --> R;
+
+    style C fill:#FFD700,stroke:#333,stroke-width:2px,color:#000;
+    style A fill:#B0E0E6,stroke:#333,stroke-width:1px;
+    style B fill:#B0E0E6,stroke:#333,stroke-width:1px;
+    style D fill:#F0E68C,stroke:#333,stroke-width:1px;
+    
+    style E fill:#98FB98,stroke:#333,stroke-width:2px;
+    style H fill:#98FB98,stroke:#333,stroke-width:2px;
+    style K fill:#98FB98,stroke:#333,stroke-width:2px;
+
+    style F fill:#C1FFC1,stroke:#333,stroke-width:1px;
+    style G fill:#C1FFC1,stroke:#333,stroke-width:1px;
+    style I fill:#C1FFC1,stroke:#333,stroke-width:1px;
+    style J fill:#C1FFC1,stroke:#333,stroke-width:1px;
+    style L fill:#C1FFC1,stroke:#333,stroke-width:1px;
+
+    style M fill:#FFC0CB,stroke:#333,stroke-width:1px;
+    style N fill:#FFC0CB,stroke:#333,stroke-width:1px;
+    style O fill:#FFC0CB,stroke:#333,stroke-width:1px;
+
+    style P fill:#DDA0DD,stroke:#333,stroke-width:2px;
+    style Q fill:#DDA0DD,stroke:#333,stroke-width:2px;
+    style R fill:#BA55D3,stroke:#333,stroke-width:2px,color:#fff;
+</Mermaid_Diagram>
+
+Content:
+We have had, you know, now we have Gemini 2.5 outside. We are working on Gemini 3.0, which we will release this year. And the progress has been extraordinary. And I think the progress in 26 is going to be even more exciting than 25. So I couldn't be more excited. And so that was Sundar Pichai talking about the release of Gemini 3.0. As most of you know, Gemini is currently on 2.5. It's currently stated they are in many areas. I know most people are using this model and they are pleasantly surprised. And Google's AI efforts have been continually ramping up with all sorts of different releases across an entire suite of products from Nalobanana, taking the industry by storm to Vio 3.1 and doing everything that it does. And now we are speculating on when will Gemini 3.0 be released. So one of the first things I do want to talk about when it comes to Gemini 3 is of course the benchmarks. Now, some of these are going to be unofficial benchmarks because if you haven't been paying attention or you may not have noticed in the large language model space, there is something called LMRina. And in this arena, there are early models that are constantly put there. So Google or OpenAI may actually decide to release an LMR early so that they can get feedback from users to see how it compares against other users so that they can, you know, fine-tune, tweak it a bit so that when it is actually released, it's the one that most people prefer. And what we can see here is remarkable. So in the benchmarks and this benchmark, I didn't actually know that this benchmark even existed prior to making this video, but this is called the Harugliff benchmark. And this is a newly introduced evaluation framework that was introduced in August of 2025, designed to measure the lateral reasoning ability in AI models. Specifically, their skill in finding non-obvious or creative connections between seemingly unrelated ideas. Now, if we look at this benchmark, it does seem that Gemini 3.0 Pro, which by the way, some people are calling this model, I think it's lithium flow by the way. So if you go on Twitter and you search for lithium pro, you're going to find a variety of different benchmarks and just a bunch of different things that I'm going to cover by the way in this video. So this is the benchmark that, you know, focuses on how, you know, well, a model can connect abstract clues, analogies or hidden relationships that require intuitive leaps rather than straightforward logical inference. And this differs actually from most straightforward benchmarks that test linear reasoning or factual recall. And, you know, therefore, alongside other benchmarks, like brain teaser or big bench hard, it's specifically aimed at out-of-the-box thought processes, similar to what humans do in lateral thinking possible. So where is Gemini 3.0 Pro? Now, it's not easy to see, but we can see that Gemini 3.0 Pro is here just under GPT-5i. Now, it's not a bad score, but it does show us that compared to Gemini 2.5 Pro thinking, that is a significant jump in terms of the reasoning capabilities. Now, remember, that's just on this benchmark, but we can see here that Gemini 3.0 Pro would essentially, if this, you know, lithium flow model is, you know, essentially almost doubling the reasoning efforts of a standard model. And I'm guessing that this is different because this isn't like a thinking model. At the moment, I'm sure they'll have a thinking model for, of course, one that has change of thoughts. But comparing this model to, you know, the other models, which you can see here, the only thing surprising is that we don't have Grok'thore. But of course, we can see that GPT-5i is, you know, a really, really compute intensive model that reasons for a really long time. So Gemini 3.0 Pro being the base model. That is particularly surprising. Now, if we want to take a look at another benchmark, we have the Kingbench leaderboard and Kingbench AI is a relatively new AI large language model benchmark. And this was introduced in mid 2025 to measure real world AI reasoning, you know, coding and world modeling performance across open and closed weight models. And unlike earlier benchmarks, such as MMOU or Arc, Kingbench aims to simulate the dynamic cognitive reasoning situations rather than a static QA data set providing a border range, you know, of tests born LLM's adaptability, robustness and bias resilience. And, you know, it features, you know, a few dimensions. But what we can see here is that all of the models on, you know, the Gemini standard, we can see Gemini 3, Gemini 3.0 Pro and Gemini 3, which I think is thinking, we can see here is that this model manages to top the board here. And Kingbench, you know, evaluates the models using five main dimensions, core reasoning, logical tasks, solving capabilities, you know, factual grounding, the ability to handle up to date complex knowledge and respond accurately across domains and coding and problem solving. So this is super, super surprising, because not only is it number one leaderboard, but surprisingly seems to be outperforming Sonnet 4.5. Now, you might think that that's not that crazy, but you have to understand that this kind of thing is incredible, because Sonnet 4.5 and Sonnet 4.5 max, you know, this is a standard model, this is the thinking model. And Sonnet is essentially the number one software engineer in the world. So when we take a look at Google potentially coming for anthropics neck in the AI race, that is going to be a huge, huge shake up, because we all know that Google tend to offer their products at a huge discount, because they have so much compute, they have so much money, and they're able to do things that other companies, like anthropic, you are essentially, you know, it's kind of like still like an AI startup that, you know, are they don't I wouldn't say they're strapped for cash, but I would say that they can't be as cost efficient as others. Now, if we look at the SVG benchmarks, we can see here for one user can 064 that Gemini three seems to just consistently outperform everything else. I've seen tons and tons and tons of these SVG benchmarks where we can see that lithium flow, like I said before, or Gemini three just manages to outperform others in a way that we just simply haven't seen before. Now, I'm guessing that this shows us that, you know, the model has just a real understanding of visual reasoning and other forms of reasoning where GPT five we can see here, you know, the prompt, if you guys didn't know, was actually an Xbox controller. So this is super, super interesting GPT five versus lithium flow. We can see that those models, you know, are super, super different there so super, super interesting on this benchmark. Now the next one, this one is super, super important. Now, at first glance, this looks like something simple, okay, because it's just the clock and the clock reads two past six. But the point here is that vision models are essentially blind and I'm gonna, you know, show you guys a paper, and this is a bit weird and a bit nerdy that I even remember that this paper exists, but there was a paper that I was fascinated with and I'm going to show you guys right now. And so this paper was called vision language models are blind. Now, I remember reading this paper for the first time and it just blew my mind because I have not dated it, but at the time it was still very surprising. So these models that they were using weren't that like deals Gemini 1.5 Pro, Sonnet three five GPT four, oh, and you might say to me, well, those models are old, there's no way that, you know, they would fail those tests now, but you have to understand that like, it's a different kind of reasoning that I guess is somewhat intuitive for humans, but really hard for AI systems. And I want to show you guys exactly what it is and why it's so crazy. So you can see right here, if I just zoom in a bit, we have four different intersections of lines and I'm going to relate this back to the clock point in just a second, just bear with me. But we can see here that like, if you ask yourself to do these lines have any intersections, meaning do they touch, it's easy to say no, do this does the slide have any intersection that has one, this has one, and this has two, but you would be surprised to find out that for AI systems, they actually don't get this right that often. We can see right here that these models, even these basic models, such a basic question, you could ask them how many times do they intersect. And you can see that the models really, really struggled with this, essentially showing you guys that like, when you have these models like trying to do visual reasoning tasks, text reasoning was really good, but visual reasoning was really, really, really bad. Now I did run a few tests on Google Gemini and it does seem to be getting some of these questions correct. And I am guessing that, you know, maybe it might not be in the training data, maybe it might be, you know, that's kind of a question, of course, I need a broader range of things to test it on. However, the point is, is that previously LLMs couldn't really tell the time. And it was this thing that was, you know, floating around on Twitter, because, you know, a lot of people like Asia is just around the corner, but these vision models can't even test the time. And most people have put this clock into separate different models. And we finally have a model that is super, super accurate when it comes to telling the time based on the clock in the image. So here we can see that Google Gemini fails and says that this is 1230. You can also see Claude Sonnet here says that this is, you know, 1230 as well, they actually do fail. And yeah, after a bit more reasoning, just telling it's 630, bro, it says looking at it again, you're right, it is 630. And this is something that a lithium flow, which is Google's model was able to get correct. Now, most people won't realize this because this is not something that most people are doing. But you have to understand that every time vision improves, and, you know, we get more use cases, like, you know, let's say, like, you know, vision was at this level, and now it's at this level, which is a bit higher, you get millions more use cases when you jump from like 70 to like 80%, you get a lot more use cases, and thus a lot more very interesting products. So this is the kind of thing I don't know, like most people wouldn't have cared about this. But for me, this one was super, super fascinating, because vision models inherently, the way they're designed is just super, super tricky. Now, if we're talking about, you know, other things as well, for example, like, you know, potentially the other capabilities, I can talk about the fact that it managed to, you know, one shot this website, this one right here was really, really cool. This is something called Apex Alpha, I'm guessing this is like a virtual, like website that doesn't really exist. But this doesn't look like your traditional, you know, Claude, lovable, basic website that looks super, super simple. And the point here is that like, what we do have, is we have a situation on our hands where Gemini 3.0 Pro, and this is something I want you guys to understand, might be the best coding model to exist. And, you know, you can look at the other parts of this website as well, this design looks super, super amazing, super, super incredible. And there was also some other coding abilities of the model, and it managed to code this. And honestly, I apologize for my poor gameplay here. But, this is essentially a version of geometry dash, which is a pretty hard game. And honestly, I'm terrible at this. So you can't take my gameplay for how good the game is. But basically, I was able to code this in one shot, just like thousands of lines of code, and I was able to code this pretty effectively. I'll be sharing everything within, you know, in the description on, you know, the games I played, like there's a community sharing all the prompts and stuff. And so, it's super interesting, because this is pretty much confirmed. We're seeing from testing catalog that, you know, Gemini 3.0 Pro, we're going to upgrade you like the lines already there. And it's important to know that, okay, we've spoken about capabilities and stuff like that. When is the potential release date for Gemini 3.0? Most people want to know when is this model going to be coming out? Now, some information on Polymarket says that there is a 62% chance that it is going to be coming out by the end of October 31st. I'm not sure if I believe that that much, because historically, Google have released their models towards the end of the year. And I do believe that that's probably what they're going to be doing again. I don't see any reason for them to push this out, especially considered they just pushed an update to V0 3.1. Maybe they will. I'm not entirely sure. But I do know that these Polymarket predictions do hold a decent amount of weight for, you know, different kind of worldwide predictions. And they usually are pretty accurate. But just me personally, I don't see any need to do that unless Google feels like they're falling behind. Of course, if there are certain things that happen in the AI space, maybe they may release it earlier, but I'm not expecting it. But if they do release it, then I certainly will be there. Now, of course, this is why I say that, you know, Google are probably going to release the best coding model. So a more Rishi, this guy, I think he's the lead of Google AI studio. And someone said, yeah, you can't really vibe code with Gemini 2.5 pro right now, when all the others are far superior at coding, grok or even solves issues, 4.1 opus couldn't solve for me. We definitely need something like a Gemini three pro vibe for vibe coding, if they're serious about it. And then he says everything sets up for the next thing. So it's quite, you know, indicative of the fact that they're really trying to solve this coding area for Gemini three and semi analysis, which is a specialized research and consulting firm known for its deep technical analysis of the semiconductor and AI industries founded by the Nptel. They tweeted out something super interesting. They said, because Google is so bad at tweeting, we'll do it for them. Gemini three is shaping up to be an incredibly performant model, especially at coding and multimodal capabilities. So this essentially means that like coding is going to be one of those areas where we're likely to see a big jump, potentially even faster passing, what we currently do have from other systems. And additional to that, we also do have multimodal capabilities, which I've just spoken about, which is what I personally do believe will, you know, happen once we do get that situation on our hands, when the model is finally released, and we're able to test those vision capabilities. So for me personally, I do believe that Gemini three point oh, once it's here, it's likely going to be a model that is great at coding and multimodal capabilities, because realistically, the industry isn't focusing that much there. And Google can once again make some ground. And this is once again, another clip of where Sunda Pichai, and once again, we can look at where Sunda Pichai references Gemini three point oh, in regards to 2026, and of course, the future model capabilities, but it does seem like they're targeting it for the end of this year. The agenda enterprise, I look at the model trajectory ahead. You know, as we're working with Gemini three point oh, in 26, we're going to make, you know, we've already had dramatic progress for the past couple of years. The progress ahead is probably going to be you're going to feel that these models are going to be really intelligent agents.
