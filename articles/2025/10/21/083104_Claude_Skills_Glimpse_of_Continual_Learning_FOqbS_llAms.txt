@@ -1,0 +1,120 @@
+Timestamp: 2025-10-21T08:31:04.797047
+Title: Claude Skills Glimpse of Continual Learning FOqbS_llAms
+URL: https://youtube.com/watch?v=FOqbS_llAms&si=bkEtlP2_xcXtveje
+Status: success
+Duration: 13:48
+
+Description:
+好的，这是根据您提供的文本内容提炼的核心摘要和分析。
+
+### **核心思想摘要**
+
+#### **一、 核心概念：什么是Claude技能 (Skills)？**
+*   **定义**：技能是为AI代理（Agent）设计的一套**指令和资源的集合**，用于执行可重复的、标准化的工作流程（SOPs）。
+*   **目标**：将专业知识打包，让Claude成为特定领域的专家，可以看作是一种无需修改模型权重的**“持续学习”**的早期模式。
+*   **实现**：通过一个核心的 `skill.md` 描述文件和一系列相关的资源文件（如代码、文档）来定义。
+
+#### **二、 关键区别：技能 vs. 其他工具**
+*   **核心差异点**：**上下文窗口（Context Window）的管理方式**。
+*   **对比 MCP 服务器**：
+    *   **MCP**：一次性加载所有可用工具，即使不用也会占据大量上下文空间（文中例子占用了32,000 tokens）。
+    *   **技能**：采用“渐进式披露”机制，仅在需要时加载信息，极大地节省了上下文。
+*   **对比 子代理 (Subagents)**：
+    *   **子代理**：拥有完全隔离的上下文，执行任务后只返回最终结果，主代理无法获知其内部过程。
+    *   **技能**：与主代理在同一上下文中运行，过程透明，信息可以共享。
+*   **对比 项目/自定义指令**：
+    *   **项目/指令**：提供的文档更像是静态的“知识库”，供模型查阅。
+    *   **技能**：是**可组合、可执行**的工作流，Claude能自动识别并协调使用，且可跨平台（Web, App, API）复用。
+
+#### **三、 工作原理：“渐进式披露” (Progressive Disclosure)**
+这是一个类似查阅书籍（从目录到章节再到附录）的高效信息加载过程：
+1.  **加载元数据 (目录)**：初始阶段，代理仅加载所有技能的简短描述（约150 tokens），占用空间极小。
+2.  **选择技能 (找章节)**：根据用户请求，从元数据中匹配并选择最相关的技能。
+3.  **加载主体 (读章节)**：仅加载被选中技能的详细指令和工具定义（约<5000 tokens）。
+4.  **访问资源 (看附录)**：在执行过程中，按需调用技能包含的具体资源文件（代码、文档等）。
+
+#### **四、 核心优势与应用**
+*   **上下文效率**：根本上解决了因工具过多导致上下文窗口被占满的问题。
+*   **可扩展性与灵活性**：可以轻松地为代理添加新功能，而不会增加系统负担。
+*   **标准化流程 (SOPs)**：非常适合企业或个人开发者定义和执行标准化的操作流程，如代码审查、品牌指南等。
+*   **跨平台复用**：一次构建，即可在Claude的网页端、桌面应用和API中通用。
+
+---
+
+### **核心结论 (一句话)**
+Claude技能通过其“渐进式披露”的上下文管理机制，为构建可复用、可扩展的AI工作流提供了一种比MCP和子代理等传统方法更高效、更灵活的解决方案。
+
+---
+
+### **内容整体框架**
+本文的整体框架是一种**“对比分析”框架**。它首先引入新概念“Claude技能”，然后通过将其与现有的MCP服务器、子代理和自定义指令等技术进行系统性对比，着重突出其在**“上下文管理”**上的革命性优势，从而论证其作为构建AI工作流的卓越价值和未来潜力。
+
+---
+
+### **概念关系图 (Mermaid)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "核心概念"
+        A["Claude 技能 (Skills)"]
+        style A fill:#FFDDC1,stroke:#333,stroke-width:2px
+        B["实现方式: skill.md + 资源文件"]
+        style B fill:#E0E0E0,stroke:#333,stroke-width:1px
+        A -- "定义与实现" --> B
+    end
+
+    subgraph "革命性机制: 渐进式披露 (Progressive Disclosure)"
+        C["1. 加载元数据 (小)"]
+        D["2. 根据请求选择技能"]
+        E["3. 加载选中技能的主体 (中)"]
+        F["4. 按需访问资源文件 (大)"]
+        C --> D --> E --> F
+        style C fill:#C1E1FF,stroke:#333,stroke-width:1px
+        style D fill:#C1E1FF,stroke:#333,stroke-width:1px
+        style E fill:#C1E1FF,stroke:#333,stroke-width:1px
+        style F fill:#C1E1FF,stroke:#333,stroke-width:1px
+    end
+
+    A -- "核心工作原理" --> C
+
+    subgraph "核心优势"
+        G["高效上下文管理"]
+        H["可扩展性与灵活性"]
+        I["标准化流程 (SOPs)"]
+        J["“持续学习”雏形"]
+        K["跨平台复用"]
+        style G fill:#D4EDDA,stroke:#28a745,stroke-width:2px
+        style H fill:#D4EDDA,stroke:#333,stroke-width:1px
+        style I fill:#D4EDDA,stroke:#333,stroke-width:1px
+        style J fill:#D4EDDA,stroke:#333,stroke-width:1px
+        style K fill:#D4EDDA,stroke:#333,stroke-width:1px
+    end
+
+    A -- "带来" --> G
+    A -- "带来" --> H
+    A -- "带来" --> I
+    A -- "带来" --> J
+    A -- "带来" --> K
+    
+    subgraph "与其他技术对比"
+        L["MCP 服务器"]
+        M["缺点: 上下文占用高"]
+        style L fill:#FFE4E1,stroke:#333,stroke-width:1px
+        style M fill:#F8D7DA,stroke:#dc3545,stroke-width:2px
+        L -- "一次性加载所有工具" --> M
+
+        N["子代理 (Subagents)"]
+        O["缺点: 上下文隔离"]
+        style N fill:#FFE4E1,stroke:#333,stroke-width:1px
+        style O fill:#F8D7DA,stroke:#dc3545,stroke-width:2px
+        N -- "执行过程独立" --> O
+    end
+
+    G -- "优于" --> M
+    G -- "优于" --> O
+    linkStyle 10 stroke:#28a745,stroke-width:2px,stroke-dasharray: 5 5
+    linkStyle 11 stroke:#28a745,stroke-width:2px,stroke-dasharray: 5 5
+</Mermaid_Diagram>
+
+Content:
+Okay, so in Tropic recently released skills for Clon. And according to some people, this is probably bigger and better than MCP servers. Well, we'll have to see that. However, I think if you are trying to build repeatable workflows where the agent has to follow certain SOPs, then skills is definitely something you want to look at. So in this video, we're going to try to understand what skills are, how they're different from MCPs, subagents, and slash commands, and when you should start thinking about using them. So we're going to try to address the last question first. So according to in Tropic, we need to think of them as custom onboarding material that that you package expertise, making Clod a specialist on what matters to you. So think of this is very early patterns of continual learning without modifying the model weight. Now this might sound like a big claim. I will try to explain that later in the video. But in general, skills are a set of instructions along with a set of resources that the agent can use to execute a repeatable pattern that you want the agent to follow. And this is going to be defined in terms of folder with skill.md and set of other files, which the agent can refer to if it tries to solve a specific set of problems. And Tropic actually use this internally. So one example that we have seen is the file creation capability of entropic. It basically is a skill that is defined using a skill.md file, and then a bunch of Python files or Python set of instructions that the agent executes if it wants to create a new file or modify an existing file. Now you might be thinking, we can potentially do all of these things using subagents and mcp's and you are right. But there is a huge difference. And it mostly comes down to how the context window is managed. So if I were to go and open a new instance of cloud, this is a completely fresh instance. Now if I check here, I have three mcp's that are currently connected. If we look at the usable context that is left right now, we're going to see that currently just the mcp servers using about 16% of the context that is almost 32,000 tokens. The way this happens is that whenever you connect an mcp server, it is going to load all of the different tools that are available to that mcp server. And then the agent has to figure out which tool to use at what step. Now there is another way we can create agents. So agent agent is going to be specialized. If you look at there are some built in agents, the problem with agents is that their context is very different from or completely isolated from the main agent. So when we call a sub agent, the sub agent is going to execute a set of instructions, do set of operations. But the output is not is going to only contain the final outcome or the results. It doesn't actually pass on the rest of the context or the operations that it did to the main agent. Now cloud skills are very different. And it all comes down to this skill dot md file, which basically contains the system prompt or what exactly this skill is supposed to do, along with some tools that are going to be available to this specific skill. So for example, here's a custom skill. This is created by an anthropic team. And it just contains a bunch of Python functions, which are wrapped in a class, which does multiple different things. Now, if you look at the skill dot md file for this, it basically describe what the skills is. So this provides comprehensive financial ratio analysis for evaluating company performance, profitability, liquidity, and valuation. Here are different capabilities, how to use it, what are the input format, output format, and a couple of usage examples. Now you might be thinking, it looks very similar to an mcp server. If we think of these as tools, right, but there is a huge difference. The first thing is skill and specialized. So these are for repeatable workflows. And you actually tell the agent how to use these tools and in which order. And the second is how exactly the context is managed when we're using skills. So for this, we're going to quickly look at the structure of skill dot md. The first part is a very quick description of what exactly the skill does. Then there's another section, which basically goes into a little bit more details, how to use different files, what capabilities are available. And this is the most important part to keep in mind when you are trying to build skills and how to think about the usage. So the first part, which is basically just the metadata is going to contain about 100, 150 tokens. Then the second part, which tells the agent what actual tools are available are going to contain probably less than 5000 tokens. And then the next part is the actual files or resources, which could potentially contain unlimited tokens. Right now with that in mind, here is exactly what happens when the agent decides to use a skill. If you're using a number of different skills, it will initially have only the description or metadata. So for every, we are looking at around 100, 250 tokens only, not the full 32,000 tokens with all the tool descriptions. When the user request comes in, it will just pick one or multiple skills based on the similarity with what the user is asking for. Now, if it finds out that that skill is not relevant, the agent can simply discard it and just look at another skill. And then it loads the body and start using those tools. Now, according to a topic, this progressive disclosure is the core design principle that makes agent skills flexible and scalable, like a well organized manual that starts with a table of content, then specific chapters and finally a detailed appendix, skills, let cloud load information only as needed. This is I think a huge benefit of skills when it comes to context management. They actually released a whole engineering blog post about equipping agents for the real world with agent skills, which is definitely worth reading. Now, a skill can also include subagents and even MCP servers. But I hope this gives you a very good idea of how skills are different than MCP servers, subagents, slash commands. Now, I don't think we talked about slash commands in this video, but these are essentially custom workflows that you can trigger manually. Cloud code comes with some of these slash commands that you probably have seen in action. So what exactly is inside the skill in the markdown, you can have references to other markdowns. This is the skill dot MD file, which will enable the model or the agent to perform different actions. And this also brings me to that continual learning concept that I mentioned in the beginning of the video. But before that, let's have a quick look at this example markdown file. Now, depending on the action that the agent wants to perform, there are different markdown or instruction files. And they are kind of hierarchical instruction. So from this instruction file or MD file, there will be further instructions on how to use a set of different available tools. Now, this is I think very beautiful, because this lets you use a single skill to define multiple different workflows that the agent can execute on user behalf. And it's going to be extremely helpful for the agent to learn new SOPs or standard operating procedures that the companies or individual developers wants to teach the agent. So the idea would be to expand the capabilities of your agent by just bringing in new skills that it hasn't seen before. But since you have very well defined instructions on how to use these different tools is supposed to accomplish, the agent can run on the fly. Now, this is a crude example of continual learning where you don't have to retrain your model anymore, but you're able to provide new skills or capabilities. Now, that being said, these are very early days. We don't know if this is the pattern that everybody is going to adopt or not. But anthropic has been releasing some very interesting tools and techniques lately. And I think you have to appreciate some of the engineering elegance of these solutions and tools. Now, you might be thinking, well, you can do all of this with custom instructions and projects, both within Cloud as well as chat TPD. And you're right. But there is a huge difference. The first thing is that the documents that you provide to a project that becomes just the knowledge base. Right. Here, it's composable. So Cloud automatically identifies which skills are needed and coordinates they use. But I think here's the best part that you can use the same skill that you built once across Cloud apps, Cloud code and APIs. And I think you will be able to potentially also share the skills that you create, which I think is going to be extremely helpful. So skills are already available on the API, Cloud code and cloud web interface. So if you go to actually the desktop app as well, if you go to capabilities, you're going to see these are skills created by entropic, you can create your own skills as well. I'll show you the structure. There are a number of different skills. So for example, there's a canvas design, a brand key guidelines. So this is a really good example of custom skills. If you want to create some brand guidelines, you can actually create a skill around that. There is also a pretty neat skill creator. So Cloud can actually use this to create your skills for you automatically. There's also an MCP builder. And I believe there are going to be a number of different skills coming up. Okay, so I'm going to go to Cloud and I'm going to ask it to create a skill. Can you create a skill that is going to enable the agent to do thorough code reviews? Okay. Okay, so we're going to just send this and let's see what it does. All right, so it's right now using the skill creator. That's basically the documentation. And you can see that it kind of goes through multiple different levels. So initially, it looks at the top level, then it looks at the tools that are available and so on and so forth. Now right now it's creating that skill.md file for us. It basically has different workflows that the agent needs to follow if it's going to perform a code review. So this is extremely helpful because sometimes companies have their own internal templates that they want the developers to follow. There might be specific guidelines. Right. So if you just create a sub agent that is going to do code review, that might not be as customizable as a skill that you can provide very specific instructions to. And instruction in this case could be just simple guidelines documentation. Now once that is done, you can actually just copy with that folder that cloud is going to create for us into cloud code. And you will be able to use this new skill. So do let me know if you are interested in that. They have very interesting developer documentation around how to think about building skills, what exactly is supposed to be in there. So we need to have that higher level skill.md file, then references examples of the different workflows that you want to build and then the actual tool implementation. So if you're interested in learning more about this, let me know. I'll probably create a more detailed video on this topic. Now the future is going to tell whether this is going to be adopted by the industry or not, but I think there is a potential. Although we are also seeing kind of a divide. So for example, if you look at something like agents.md, almost every other coding agent is adopting it, except cloud code. But these are very early days. And we're going to see some standards coming up. Do let me know what your thoughts are. But I hope this video was useful in understanding what these new skills are. Anyways, I hope you found this video useful. Thanks for watching. And as always, see you in the next one.
