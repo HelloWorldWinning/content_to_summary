@@ -1,0 +1,121 @@
+Timestamp: 2025-11-04T11:27:11.970131
+Title: 从3000美金开始到月赚5万美金，六十多万人关注的超人气交易员Mayne，“结构+OTE交易模型”大公开！！策略的参数太精确，人人能学能复制的机械设置！！#交易策略 #btc #流动性策略
+URL: https://youtube.com/shorts/fonS6oePD5A?si=cUS4NwakuAijEXoa
+Status: success
+Duration: 3:00
+
+Description:
+好的，这是从您提供的文本中提炼出的核心思想摘要。
+
+### **交易系统核心思想纲要**
+
+#### **一、 宏观趋势分析 (大时间周期)**
+
+*   **核心：** 通过市场结构来确认主趋势的方向是延续还是反转。
+*   **方法 (结构突破 - BOS)：**
+    *   **上升趋势延续：** 价格有效突破前一个波段高点，并收盘于其上方。
+    *   **下降趋势延续：** 价格有效跌破前一个波段低点，并收盘于其下方。
+
+#### **二、 关键入场区域识别 (POI - Point of Interest)**
+
+*   **核心：** 在大级别图表的趋势波段中，找到高概率的潜在交易区域。
+*   **工具与区域划分：**
+    1.  使用**斐波那契工具**标记最近一次实现结构突破的波段。
+    2.  **溢价区 (Premium Zone / >50%)：** 寻找卖出机会。
+    3.  **折扣区 (Discount Zone / <50%)：** 寻找买入机会。
+    4.  **最佳交易入场区 (OTE / 0.618 - 0.705)：** 重点关注区域。
+*   **识别三类POI (按优先级)：**
+    1.  **订单块 (Order Block)：** 引发结构突破的关键订单区域，优先级最高。
+    2.  **突破块 (Breaker Block)：** 被突破后可能被回测的支撑/阻力转换区。
+    3.  **公允价值缺口 (FVG)：** 市场快速运动留下的不平衡区域，是大资金行为的体现，作为强信号加分项。
+
+#### **三、 微观入场执行 (小时间周期)**
+
+*   **核心：** 当价格进入宏观POI后，切换至小级别图表，等待一个机械化的确认信号。
+*   **入场流程：**
+    1.  **等待流动性清扫：** 等待价格在POI内部形成一个局部摆动点，然后被快速刺破（扫除早期入场者的止损）。
+    2.  **等待反转确认：** 在流动性被清扫后，观察价格是否出现快速反转信号（如强力反包K线或形成新的小级别FVG）。
+    3.  **入场：** 在这个由反转确认形成的新POI位置入场。
+    4.  **模型失效：** 如果被扫掉的那个摆动点再次被突破，则此次入场模型失效。
+
+#### **四、 风险与交易管理**
+
+*   **止损 (Stop Loss)：** 设置在被清扫的那个流动性高点/低点的外部。
+*   **止盈 (Take Profit)：** 首要目标是更高时间周期的外部流动性（即前一个大波段的起点或终点）。
+*   **盈亏比 (Risk/Reward Ratio)：** 潜在回报必须至少是风险的2倍（>1:2），否则放弃交易。
+*   **仓位管理：** 大小周期趋势方向一致时，信号权重更高；当到达1:2盈亏比时，可考虑部分减仓或将止损移至保本位。
+
+---
+
+### **核心要点**
+
+该交易系统的核心是在高时间周期趋势的折扣或溢价区内，等待价格扫除低时间周期的流动性后，寻找确认信号，顺势捕捉高盈亏比的交易机会。
+
+---
+
+### **总体框架**
+
+这是一个基于“智能货币”概念（SMC）的多时间周期交易框架，其核心逻辑是“**跟随机构、猎取流动性**”。它采用自上而下（Top-Down）的分析方法：首先通过市场结构突破确定高时间周期（HTF）的交易方向；然后利用斐波那契工具定位到高概率的溢价/折扣交易区，并在其中识别出订单块（Order Block）等关键兴趣点（POI）；最后，在价格进入POI后，切换到低时间周期（LTF）寻找流动性被猎取（Liquidity Sweep）后的反转结构作为精准的入场确认，从而确保每笔交易都具备结构性优势和高盈亏比。
+
+---
+
+### **概念关系图 (Mermaid)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "第一步：宏观趋势分析 (HTF)"
+        A[" xác định xu hướng thị trường"] --> B{"Phá vỡ cấu trúc (BOS)?"};
+        B -- "Giá vượt qua đỉnh trước đó" --> C["Xu hướng tăng tiếp tục"];
+        B -- "Giá phá vỡ đáy trước đó" --> D["Xu hướng giảm tiếp tục"];
+    end
+
+    subgraph "第二步：识别关键入场区 (POI)"
+        E["Vẽ Fibonacci trên sóng đẩy tạo ra BOS"];
+        E --> F{"Khu vực giá"};
+        F -- ">50%" --> G["Khu vực cao cấp (Cơ hội bán)"];
+        F -- "<50%" --> H["Khu vực chiết khấu (Cơ hội mua)"];
+        I["Xác định các vùng POI trong khu vực"] --> J["Khối lệnh (Order Block) - Ưu tiên cao nhất"];
+        I --> K["Khối phá vỡ (Breaker Block)"];
+        I --> L["Khoảng trống giá trị hợp lý (FVG) - Tín hiệu mạnh"];
+    end
+
+    subgraph "第三步：微观入场执行 (LTF)"
+        M["Giá tiếp cận vùng POI của HTF"] --> N["Chuyển sang khung thời gian thấp hơn"];
+        N --> O{"Chờ xác nhận"};
+        O --> P["Giá tạo ra một điểm xoay cục bộ"];
+        P --> Q["Giá quét qua điểm xoay đó (Quét thanh khoản)"];
+        Q --> R["Xuất hiện cấu trúc đảo chiều nhanh (Engulfing/FVG)"];
+        R --> S["Vào lệnh tại vùng POI mới hình thành"];
+    end
+
+    subgraph "第四步：交易与风险管理"
+        S --> T["Đặt Stop Loss bên ngoài điểm quét thanh khoản"];
+        S --> U["Đặt Take Profit tại thanh khoản bên ngoài của HTF"];
+        S --> V["Kiểm tra tỷ lệ R:R > 1:2"];
+        V -- "Không đạt" --> W["Bỏ qua giao dịch"];
+        V -- "Đạt" --> X["Thực hiện giao dịch"];
+        X --> Y["Quản lý giao dịch (Chốt lời một phần / Dời SL về hòa vốn)"];
+    end
+
+    C --> E;
+    D --> E;
+    J --> M;
+    K --> M;
+    L --> M;
+
+    style A fill:#D6EAF8,stroke:#333,stroke-width:2px
+    style E fill:#D6EAF8,stroke:#333,stroke-width:2px
+    style M fill:#D6EAF8,stroke:#333,stroke-width:2px
+    style S fill:#D5F5E3,stroke:#28B463,stroke-width:2px
+    style W fill:#FADBD8,stroke:#C0392B,stroke-width:2px
+    style G fill:#f9e79f,stroke:#333
+    style H fill:#aed6f1,stroke:#333
+    style J fill:#abebc6,stroke:#333,stroke-width:1.5px
+    style K fill:#abebc6,stroke:#333,stroke-width:1.5px
+    style L fill:#abebc6,stroke:#333,stroke-width:1.5px
+    style Q fill:#f5b7b1,stroke:#333
+    style R fill:#a9dfbf,stroke:#333
+</Mermaid_Diagram>
+
+Content:
+这个留着安因斯坦发行的人是少有的能在外汇和加密货币市场都拿到大结果的交易员从最初只有3000美金的账户开始做现在已经能每个月都稳定赢力几万美金以上全网有超过60多万人关注他就是自营交易公司breakout的联合创始人mean就是被craken交易所收购的那个最近他就公开了自己专门用在避圈的交易系统不管你是新手还是已经交易多年的交易员这套模型都能帮你捕捉到高胜率的交易机会对了没有注册交易所的朋友可以用下方的练结注册都是最高级别的手续费自动反进入交易的第一步是确认趋势结构判断趋势是不是延续或反转拒绝于结构是否被破坏结构破坏是趋势恢复的信号在上升趋势中价格突破前一个波段高点并收盘在上方价价量趋势中价格跌破前一个波段低点并收盘在下方就表示趋势延续第二步是划定波段趋势在大级别突表标记出最近一次的波段用废波纳器工具从低点画到新高点只留下50%的中线和ICT中常用的OTE趋势区0.618和0.70550%以上的趋势是一架趋提供卖出机会50%以下是折扣趋提供买入机会交易机会主要关注趋势内的三个位置OTE趋势区的最好依是引发结构突破的那个定单快优先级最高20倍反向打破往往会被回测的突破快但是未遗强缺口大的供允价值缺口F危机这是大资金在推动价格的表现是强信号的加分项这三个位置后面统成为POI第三步是执行交易当价格进入POI内部就要切换到小级别突表开始等待确认信号流程非常机械化首先是等价格在POI的内部形成一个局部的摆动点然后等价格次破这个点清楚早期进场资金的直损完成流动性清扫注意如果被扫掉的摆动点再次被次破就说明模型失效最后再看是否出现快速的反包反转最好同时有一个小级别的F危机出现这时候我们就可以在新的POI位置入场直损要放在被扫的高点或低点之外指引的第一目标总是大时间周期的外部流动性也就是前一个波段的高点或低点如果预期风险回报低于1比2可以直接放弃这笔交易大小周期的趋势方向一致的时候尽号全重可以更高如果方向不一致它位就尽量降低到风险回报比1比2左右的位置时可以选择检伴或把直损移到保本的位置是不是提前锁定赢力要取决于你对模型的信心在交易中的时候出现一两次假信号也很正常只要风险回报比很好严格的直损就不会影响总体结果特略不难直情力越高交易就越稳不管是外汇市场还是加密货币人性都是一样的流动性在哪咱就在哪肩又倒大多数人进场在反方向收割交易就是一场受力好了娱乐节目没有任何投资建议
