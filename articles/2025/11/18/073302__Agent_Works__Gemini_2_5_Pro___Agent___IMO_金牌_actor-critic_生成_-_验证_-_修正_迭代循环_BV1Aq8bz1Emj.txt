@@ -1,0 +1,100 @@
+Timestamp: 2025-11-18T07:33:02.523818
+Title: [Agent Works] Gemini 2.5 Pro + Agent = IMO 金牌，actor-critic，生成 - 验证 - 修正 迭代循环 BV1Aq8bz1Emj
+URL: https://b23.tv/08PkCNE
+Status: success
+Duration: 24:13
+
+Description:
+好的，这是对所提供文本内容的结构化总结和分析。
+
+### **一. 核心框架：生成-验证-修正 (Generate-Verify-Correct)**
+
+该工作流借鉴了经典的“生成器-评估器-优化器”模式，构建了一个通过迭代循环来解决复杂数学问题（如IMO题目）的自动化系统。其本质是模拟人类专家解决问题、检查错误、然后修正思路的过程。
+
+### **二. 详细工作流程**
+
+#### **A. 初始解生成阶段**
+1.  **第一步 (S1 - 初步解答):**
+    *   使用一个精心设计的 **解题者Prompt (Solver Prompt)**，要求模型（Gemini Pro）针对问题生成一个初步的、详细的解题方案。
+2.  **第二步 (S2 - 自我改进):**
+    *   在第一步输出的基础上，立即追加一个 **改进Prompt (Improvement Prompt)**，要求模型重新审视并改进自己的答案，填补逻辑跳跃或修正潜在错误。
+    *   S1和S2共同生成一个用于后续流程的 **“初始解 (Initial Solution)”**。
+
+#### **B. 验证与修正迭代循环**
+3.  **第三步 (S3 - 验证):**
+    *   引入 **验证者Prompt (Verifier Prompt)**，要求模型扮演一个严谨的数学家角色，对上一步生成的解进行验证。
+    *   **核心原则：** 验证者只负责**发现问题**，不负责修正。
+4.  **第四步 (S4 - 生成漏洞报告):**
+    *   如果验证者发现解中存在错误（无论是严重的逻辑错误还是思路跳跃），它会生成一份结构化的 **“漏洞报告 (Bug Report)”**。
+    *   报告会明确指出错误的具体位置、原因和类型。
+5.  **第五步 (S5 - 修正):**
+    *   将 **“上一轮的解”** 和 **“漏洞报告”** 作为新的输入，要求模型根据报告中的反馈来修正原有的解，从而生成一个 **“新解 (New Solution)”**。
+6.  **循环:**
+    *   这个“新解”会再次被送回第三步（验证者）进行验证，形成一个**“验证 -> 发现漏洞 -> 修正 -> 新解”**的闭环。
+
+#### **C. 循环终止条件**
+*   **成功：** 如果一个解**连续5次**通过了验证者的审核，系统便认为找到了一个完美解，流程成功结束。
+*   **失败：** 如果迭代循环**持续10次**后，仍然无法产出一个能通过验证的解，系统则判定该问题无法解决，流程失败退出。
+
+### **三. 关键要素：结构化Prompt设计**
+
+Prompt的设计是整个工作流成功的基石，其特点是高度结构化和角色化。
+
+*   **解题者Prompt (Solver Prompt):**
+    *   **指令:** 强调逻辑严谨性、诚实性（如果无法解决要明确说明）。
+    *   **输出格式:** 要求使用Markdown格式，并包含一个关键的 `Verdict` 字段，用于程序判断是否已找到解，方便后续进行流程分支控制。
+*   **验证者Prompt (Verifier Prompt):**
+    *   **角色扮演:** 明确指定其为“顶尖的、严谨的数学家”。
+    *   **指令:** 严格限定其职责为“验证”，禁止其“修正”或“补充”解题步骤。
+    *   **输出格式:** 同样要求包含 `Verdict` 字段（判断解是否有效）和 `Findings` 字段（即详细的漏洞报告），以供后续程序解析和使用。
+
+### **核心结论**
+
+该工作流的核心是通过“生成-验证-修正”的迭代循环，系统性地发现并纠正数学解题过程中的逻辑漏洞，但其成功与否在很大程度上依赖于初始解的质量。
+
+### **Overarching Framework**
+
+The overarching framework is a **Reflective Iterative Optimization** model, specifically tailored for complex problem-solving. It operates on a "Generate-Verify-Correct" loop, where an AI agent first generates a solution, a separate verification persona critically evaluates it, and if flaws are found, the original solution is refined based on the specific feedback. This cycle repeats until a robust solution is achieved or a failure limit is reached, mimicking a methodical and self-correcting human reasoning process.
+
+### **Mermaid概念图**
+<Mermaid_Diagram>
+graph TD
+    subgraph "初始解生成阶段"
+        A["问题 (Problem)"] --> B["S1: 解题者Prompt (Solver)"];
+        B --> C["初步解"];
+        C --> D["S2: 自我改进Prompt (Self-Improvement)"];
+        D --> E["初始解 (Initial Solution)"];
+    end
+
+    subgraph "验证-修正迭代循环 (Verification-Correction Loop)"
+        E --> F{"S3: 验证器 (Verifier)"};
+        F -- "解题有效 (Valid)" --> G{"计数器: 连续通过次数"};
+        F -- "解题无效/有漏洞 (Invalid/Buggy)" --> H["S4: 生成漏洞报告 (Bug Report)"];
+        
+        H --> I["S5: 修正器 (Corrector)"];
+        E --> I;
+        I -- "生成" --> J["新解 (New Solution)"];
+        J --> F;
+
+        G -- "连续5次通过" --> K["✅ 求解成功 (Success)"];
+        I -- "循环10次" --> L["❌ 求解失败 (Failure)"];
+    end
+    
+    style A fill:#D2E9FF,stroke:#333,stroke-width:2px
+    style K fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px
+    style L fill:#FFCDD2,stroke:#C62828,stroke-width:2px
+    
+    style E fill:#FFF9C4,stroke:#333,stroke-width:2px
+    style J fill:#FFF9C4,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+    style H fill:#FFEBEE,stroke:#D32F2F,stroke-width:1px
+    
+    style B fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+    style D fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+    style F fill:#E3F2FD,stroke:#1565C0,stroke-width:2px
+    style I fill:#E3F2FD,stroke:#1565C0,stroke-width:2px
+    
+    style G fill:#E0F2F1,stroke:#00695C,stroke-width:1px
+</Mermaid_Diagram>
+
+Content:
+亲爱的朋友们 大家好今天是比较激动给大家介绍一篇本周对我而言起发和影响非常非常大的一篇工作就是劲美大日 pro是用能力及应该二零二零二零二零一个金盘因为它这个Walkflow是基于原生的劲美大日 pro不是第一半的官方的那个退过的一个模型它仅仅是二零二 pro就是求解了今年六到一体中的五到千五到一也是人类的一个劲美水平那这期呢 我们主要关注两个点第一 它这个Walkflow是什么设计的另外就是我们要详细的分析它两个比较重要的proms就是一个是产生出示解的一个proms另外就是它refection的一个proms首先我们看它的这个流程非常非常清晰第一步呢 我们基于一个proms基于监制2.5%产生一个出示器然后第二步的话会有一个自我提升这里面的提升呢 就是说它是其实但是后面我们会分析的话Celebrittu是的比较性是存疑的因为它当时有个Clemish说就是Celebritt的时候因为我们Celebrittu是一个Synchemal的我们可以试试它最大的一个Synchem的一个Barget 32K32K 接触Bar它当时它去完成这样一个工作的时候就发现SW1 生存SW1的时候就是你有一个IMT的原题然后它去Synchem去求解的时候它已经把这个Synchem把Barget的去打满了也就是它不得不结束思考然后生存一个借它觉得这个地方对于模型不公平所以它继续这个Synchemal让它肯定有去生成去完成了第二步也就是希望我们希望把它的Synchemal巴结再给充分地去利用它的Synchemal能力这Celebrittu要做的事情它是SW2是共享SW1的Synchemal的这个时候就产生了一个初始节SW1和SW2复责产生一个初始的Selushen然后这个Selushen就交给后面所有的各成和欢迎SW3对SW2产生的这个初始节进行验证验证的时候会有数会输出有没有解决问题这个解是不是好的或者是它不够好不够好的时候还要提供它不好不够好的一个依据它的Taiwanai bargeBarget report review它哪些过程的一个漏洞好有了Snap3的一个Barget report review之后然后你有Snap2的一个初始的一个Selushen然后你再用模型去基于这个Reverse的意见相当于Reverse的意见你去纠正这个初始的节Crosse这样的话你就拿到了一个新的一个Selushen然后再交给Werfaction去验证然后不断的循环流行过程什么时候结束什么时候结束什么时候拒绝什么时候结束呢就说你加上你一个Selushen你连续的五次连续的五次Werfaction都认为Werfaction或者里边都认为它是一个好的没有瑕疵的一个节那我们就接受如果你你这个循环你持续了十次还是没有通过Reverse的一个验证我们就认为这个节是没办法求解这个问题的对什么情况下它这里面其实有一个我觉得有一个结论大概这个结论就是说你Snap2如果你Snap2生存了解离真正的离能求解的能求解问题的那个节Overlap比较大的话那你大概率经过后面的循环之后是可以取决这个问题的因为模型的生存能力和现在能力都非常强它是很容易很夸的去发现这个漏洞然后补伤之后最终骚不着问题的但是如果你出使的Snap2给出来的一个出使的一个节离标了答案偏差表远或者它是求解的方向就是错的那你后边大概率是纠正不回来的有这样一个大概有这样一个Clean吧OK好自制它完了的一个流程好那我们就直接看代表我这边有些有些还在的一些简单的一个重点就是它这里边重要的一个事情就是生成验证修正的一个迭达迅环那这个呢这个这种Walkflow我们之前介绍这个标定一发个CleanA进子的时候其实也聊过这个事情我们它里边有这样一个比较经典的一个WalkflowEvaluate Optimizer就是有一个生成器有一个验证器验证器的话会对这生成进行凭固接受的话就就输出如果拒绝的话会提供对应的VitBug这和这个流程是一样的好就是连续五字验证通过求解成功连续试次从一生成都是失败的在退出从来都关键在于出日节是否跟政界节有较大的一个偶来好那这一期我们用到的我们可能第一次去聊这个节目辆软数的IPi这里面我可能要重点讲一个事情第一星期部分其实说我们让的输出的时候去输出它的星期的过程其实我们看到的星期它是一个Summer Rounds之后的一个结果它不是原生的星期的一个过程这里面有一个重点然后另外呢它这个角色就是System User ModelYuzer Model不是Yuzer or Citizen其实呢我们最后再看吧这里面我其实想跟大家请看到一个问题就是我自己发现这个Sync 8G8G4G控制的是控制的不是很严格就是那个我是设置三二级率但是有人说会达到三万四千多的一个头肯的一个长度好行那下面我们直接看代码首先谈完讲它这个代码其实不够好但是它送在这个TapRoundless的表好然后流程也整体也没有清晰好我们这里面很大的一个我其实我谈完讲我没有我去负账它这个A型的PY这个文件因为我这个通过这种这个最夸斯的请求Pose的请求去因为它那个Sync的过程很长这个也就是说你要请求的时候时间很长我这个请求始终失败的后来我自己是改召成这样一个SDK的方式去做请求就是用谷歌的这个将于R这个将于SDK去做的请求是能够成功的而且它这里边它也没有用流氏的话就是大家注意好你几万的一个头肯的一个思考或者是一个输出的话它是非常非常好使的你其实说一秒算了100个头肯它始终还能达到一个将近10分钟的一个量级这里边也就说你这个执行的时候大部分时间都是空的就是你什么都看不到的所以我最后还是用SDK的方式而且用到的这个流氏的一个输出这样的话我们可以动它的去先控它这个过程就是这个Centerage 肯称则srpm好我们还是看它的这个在哪里边这个流程就是我们看这个Main里边它核心的就是这个Ezense大家注意好这个外部的这个maxRuns就是你要就加说你加说这个你这个过程里面你这一步是厌证失败了我们要重新重启这样一个流程然后重启的流程的数量就是最大的一个Runs这A的内部是完成这样一个SW1到SW1的一个一个一个完整的Govlo这边我们我们简单可以看一下这个是初始Ez Exploration就是初始的这个我们产生去初始一个节有问题我们要做第一步我们看这个PE问题的SW1的promise下面我们就来正式的去介绍SW1的promise就是产生解的这个promise把这个它的promise放到一个我们去一个Online的那个当去看一下我们放到这里边可以看到比比较清楚它是一个标准的非常非常标准的一个结果画清晰的一个马上当的一个文本我们我们用这个翻译工具把它给翻译一下就这里边我其实我这边讲了一个几个重点第一它首先它这个标准的一个马上当的一个格式包括Virfaer的promiseSidzone Promise也是其实它分了几部分我们这里边也看得比较清楚第一它有指令部分核心的指令第二部分是Otop的Fumise舒服的格式第三部分是自我厌证的一个因素而生好我们先来看一下这个核心的指令这说严谨性是最关重要的因为我们需要求解IMO的IMO大部分的正明体最后判军的一个依据还是你这个逻辑的严谨性另外就是要成实对待你的结果就这里边就是我们包括我们自己平常也会我们让我们原本先去回答一些问题的时候有的时候也是它中间其实它硬熬了一个结果也就是它有时候会存在一个存在一个所谓的女光的Hacken的一个一种情况其实它其实不知道但是它最终硬熬了一个结果它就它的正明了得正了就是我们通过这个指令去约束它的一个换却就是支持为不止为不止你不会的话你不要我下边大概这个意思好然后第三个核心指令里面就是说要全文都要用Tax输出的格式的话第一部分是总结总结里面包含两部分Wordex 就是你最终的结论你有没有找到一个完全的结局方然后你方法的一个概述然后第二部分就是用来是详细的结局方那这里面我其实想讲一个事情就是用一些现代的一些AZN的开发工具比如Long-SianLong-Growl其实我们一般让它结构画出出的但是本文到它的这个代码写的是非常难写的就是基于API一些挣责的一个T曲是因为这个Jemme的R-O Pro的一个指令过程的能力非常难强的我们待会还会看它具体的一个输出我们去看它符符和这样的格式因为我们去搭建Wordex Flow的时候一个环节到另一个环节一个环节的输出所谓另外一个环节的输入你这个环节中间是要有一些格式会是要一些所谓的一些标准化的一个约束就是我们这里面要基于Stab1的或者前两个Stab的一个输出去做一些分支的一个判断就是如果你没有求解的话那你就是没有拿到也就是这个Wordex的这个地方你如果没有拿那个手楼身的话我吃后边的菌花是没有意义的你并没有拿到一个手楼身的话后边我们怎么去改正都是没有意义的这个Wordex也就用来做分支判断的如果你这个Wordex是微 false的话就是你没有拿到一个解的话我们要重新进行Stab1好然后这个详细的解决方案是用来做后边的一个Virafaction的我们是通过政治的方式去提取这里面的相关的内容去后续环节的一个条件判断以及内数据的一个流向就大概意思就是这个Summererd里面这个Wordex是用来做后续的一个分支判断然后详细的手楼身的后续做Marafaction好那我们接着看我们看这个它的Walkerflow应该的好我们第一步我们应该是个问题基于这个Stab1的proms就是声称一个解我们去掉这个API去拿去提取它的文本这个文本的话就是从就是去看那里的0的proms0的txt好然后我们要进入第二步大家可以看到Stab2和Stab1是共享Compatxt的是接着做的我们看PE我们继续追加了一个模型的一个输出我们同时追加了一个Stab2的一个proms这个proms不要简单的因为一个机会去改进你的结果因为要归约你的仔细的语维优你的solution就认为一个错误以及填充一些加速兴的概论如果存在的话你的第二了的opus 续的Strategy Followed Instruction in the Citizen Proms好然后再掉一次API然后提取它的去svenge这就是我们拿到的一个solution好下面我们要判断是否这个solution claim它已经找到了一个solution就是基于vadax然后我们要判断这里面也是用来做分断的也是用了一个原本型去做判断是否这个如下的文本声称它这个solution是完整的如果不完整就其实就退出这楼是寻还了要重新三步写就如果它这个解释完整的我们就进入一次vadax的一个过程我们提取它的详细的解我们就是从这个dital的solution里面提取这个solution然后我们去做验证好然后我们看看我们看这个pr就是然后我们就开始证实的就是要这个vadax的svenge同样的大家可以看到不要清楚它也是一个标准的markdown这里面我这一种节它首先有学习扳演的一个部分就是你是谁你是一个着月的一个数学家也是imo的其别的一个严谨的一个幼稚圆人然后另外就是核心的指令以及它对问题的一个分类还有就是autoport的firmize大概还是这些我们简单看一下吧就是所谓的核心的说明就是你仅仅是用来扮演vadax你不是一个server你不要尝试去纠正错误或者天中概异发现而且你要stab its best但是实际上整个solution然后第二部分就是所谓它对问题的一个分类一个严重的错误比如你a大一笔c大一笔你就推出来a简 c大一笔简低这是错误的这是非常非常严重的另外它是概异就你在跳步了好这两种分类就是用了一个autoport of mind就是说首先有一个summerysummery里边同样有一个vadaxvadax就是说这也是用来后续做分支的一个依据就是你验证vada的时候你要给出来首先这个解这个server是有效的还是invalid是有瑕疵的还是没有瑕疵的这也是就是路人里边就是说我们要通过vadafirmish的去技术就是如果连续五次通过的话就是在这个地方做判断的就是vadax是没有任何瑕疵了然后这个时候我们就说这个解决方案是完全正确的然后另外就是你的方定子就是所谓的bugreport就是你发现来bug好最后要给出来一个detail的一个vadafirmalog就是我们看它给出来个例子就第一final的vadax这solution is invalidsbecause it contains a critical error然后它具体的一个wage他们的例子到方定子所有的一个错误的wage以及它的原因这是vadafirm的一个vadafirmal的一个promise好那下面我们去看拿到了这个我们去再够建议师请求然后提取出来这个vadafaction好首先我们要看正确信那这边又做了这样一个这样一个角形A字falling statementssing的也就是说我们要进入这个vadax判断vadafirm绝对这个解是不是有效的就是answer in yes or no好我们去提取出来好也就是如果这个里面包含了yes也就是vadafirm认为这个解是ok的如果不ok的话我们要去做一个vadafirmal就提取出来它的detailed一个vadafaction就是从这个最终的输出里面去找到这个detailed的一个vadafaction的部分好这是vadafirm的一个解一个过程好我们看这个vadafirm它这个蛋码写得不好就是bubbleypulse然后go to verify解决是否这个解释好的一个这个solution是ok了好我们去看这个流程但这个流程其实也有点怪就首先要做第一步的一个initial的一个探索就生成一个粗识解这个solution是step 2的一个输出然后这个我们在这个initial的这个韩数里面还玩着了一次验证这个vadafirm是一个bubbleypulse这个go to verify就是说它是一个boar它是个boar好我们看首先它这里面crytac看得就加一了这个蛋码写得有点古怪当然也是合理的就说如果你的这个vada里面不包含颜色也就是没有其实是有bubble的那这个时候我们要把正确的答案清空错误加一然后再生成一般解我们看对这个时候我们要基于这个solution加上一个craction的proms这个时候我们要完成哪一步呢就是就是这一步是要完成这个cractionstep 5就是拿到step 2的一个solution拿到step 4的一个bubbleypulse然后去做纠正我们看这个proms这个不让它不日本重要比罗尔云斯这个bubbleypulse如果你同意就是这个很简单这里面我因为它我第一次接触这个solution就是你看这里面它有part它就不叫concentral它这个part本来我自己我自己找现在理解我它是用来监融多摩太的多个摩太的因为我们的摩太你会图片的摩太你会看到一个摩太但这里面是有两个tac我觉得我自己的理解它是为了刻画顺序大家可以看到这个crushingproms就是说Below is the buggypulse也就是这个地方这个varefirevarefire是bubbleypulse一个具体的内容就是list of phonemes因为哪位置放了什么错误错误原因是什么这一步是用来做纠正的这样的话我们就拿到了一个新的solution就是step 5拿到一个新的solution然后继续做交给varefansion好交给varefansion这个时候我们要判断要再做一次验证就seco这个循环验证那班伯爷破的内容以及它这里面是不是一个好的几是不是刺车路身是足够好的了已经同样的如果这里面包含了是yes的我们就正确加一如果是错误的话如果是yes的话正确加一好这个时候我们要技术了我们对这个airconce和这个crytheconce进行技术如果大家等于10楼法那我们也确实说这个解是没希望了对如果是大一等于5楼的话那我们就退出了就找到一个解了也就是某个解它连续5次都通过这个varefansion的一个验证好我们看这个yes的一个循环就是yes的话也就是说就加二说我去历史加二说这个地方这个固定的varefans就是已经是yes的话我们会找这个地方我们再验证一次再验证一次大家可以看然后继续验证所以这个地方crytheconce唯一啊这个逻辑有点怪但是逻这个戴门逻辑有点怪但是其实内部的逻辑是对的我们再验证一次如果yes的话我们再加一然后其他的没了然后就进入之后就再做一次验证OK就是如果其他的又没了我觉得没啥要讲的了行我们去看一下它最终嗯它求求的一个过程啊它把所有的日子都打印出来了我们看这个软哈软就是它甚至说低道题它软了一次也就是说它在外部的这个循环它只软了一次就找到了一些世界我们看它这个这个迭代它走了多少个迭代好就走了八次迭代也就是它这个编号啊就是08它八次找到这个机我们看这个过程哈首先这个随它这个戴马云段怪哈它第一次的时候这个namal crysis是1OK好因为它因为这一次哈它是觉得有8个的哈然后namal iris就等于1等于2等于3好第4步的时候它找到了一个好的是它这个纠正之后通过了Virv的一个样子namal crysis等于1开始了然后等于2等于3第3次通过第4次通过第5次通过就一次通过OK我们看一下这个过程哈就是首先初始的proms产生第1Stab1产生一个解然后做了一次Savage Crytion就是Savage Improvement就是Sav2然后得到一个已经要得到一个最终的一个手楼审而得到一个手楼审是用来交给后面的VirvOK好我们要先验证这个解是不是完整的就是它有没有可领说它找到了一个解Yes好那就开始验证开始验证这是验证那个promsOK好这是验证那个结果这个结果我我就不打不打来看了这是验证那个结果OK这个我们这个Virv的输出的时候它这个Final VardicYes or No在那边什么都就是我们要提取它的BugleyParts就用来交给模型去做proms好BugleyParts这就是第一次然后然后就开始就错这个地方是就错大家可以看到这个问题这是Virv Flagshin的这是用来做重新生成这是问题这是模型的输出这是模型的输出BlowAzureBugleyParts这是BugleyPartsOK然后又产生了一个新的解它就这么之后产生了一个新的解然后这个新的解要清这个球鞋的过程是完整的可领说是完整的那我们交给Virv Flag去做验证然后OKVirv Flag的一个结果好我们看看它还是说这个这个这个是没有通过这个Virv Flag验证的好继续叠带好继续夸张然后然后夸张的一个solutionOK那我们交给Virv Flag的验证交给Virv Flag去做验证好Final的你大家可以看到这个Virv Flag的结果这solution isApplege is valuableBugR6GugOKOK好我们看最后通过验证的通过Virv Flag验证的OK这次又就做了一次question好Virv Flag去继续去对一个新的solution去做验证在solution condense还是有IroOK我们去学好OK就正一个新的solution然后要再做一次Virv Flag的验证OKThis is the solution is the correctLeast of the fountainsNo issues or fountsOK好那这里面就说那么就开始总是的进入加异的这个训练开始找到一个能够打动Virv打动Virv的一个结果好以上就是本身的全部内容
