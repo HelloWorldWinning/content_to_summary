@@ -1,0 +1,121 @@
+Timestamp: 2025-11-19T06:16:31.815652
+Title: Gemini 3 PRO: recensione e test per scrivere libri (BookBench™)
+URL: https://youtube.com/watch?v=mZq5FntfRv0&si=TNiVDGXRa4bQMH5-
+Status: success
+Duration: 10:41
+
+Description:
+好的，这是对所提供文本的分析和总结。
+
+### **核心思想纲要**
+
+1.  **评测目标**
+    *   测试新发布的 **Gemini 3 Pro 预览版** 在图书写作方面的综合能力。
+
+2.  **评测框架：图书基准测试 (Book Bench)**
+    *   这是一个用于评估人工智能图书写作效率的综合指数。
+    *   它通过 **10个核心参数** 对AI进行打分（1-100分制）：
+        *   标题 (Title)
+        *   摘要 (Summary)
+        *   风格 (Style)
+        *   内容 (Content)
+        *   长度 (Length)
+        *   可读性 (Readability)
+        *   人性化 (Humanity)
+        *   单章节写作 (Single Chapter)
+        *   全书写作 (Full Book)
+        *   Token上下文 (Token Context)
+
+3.  **Gemini 3 Pro 评测过程与得分**
+    *   **标题：7/10** - 生成了5个标题，平均得分不错。
+    *   **摘要：9/10** - 生成的5章节大纲结构清晰、有吸引力，获得85/100的高分。
+    *   **风格：7/10** - 引言部分的写作风格获得了认可。
+    *   **内容：9/10** - 引言部分的内容质量非常高。
+    *   **长度：10/10** - 精准地生成了接近要求（2000词）的文本量（2139词）。
+    *   **可读性：8/10** - 文本的可读性指数（Gulpise）良好。
+    *   **人性化：6/10** - 生成的文本难以被检测为AI生成，具有较好的人类写作特征。
+    *   **单章节写作：5/10** - 要求10000词，实际生成了5360词。虽然未达标，但单次输出量已非常可观。
+    *   **全书写作：2/10** - 要求40000词，实际生成了约6379词后中断。这是其最薄弱环节。
+    *   **Token上下文：8/10** - 拥有巨大的上下文窗口（10/10）和输入能力（10/10），但输出长度受限（4/10），综合得分为8。
+
+4.  **最终得分与结论**
+    *   **总分：71/100** - 这是一个非常优秀的成绩，使其位列顶级AI写作工具之中。
+    *   **核心优势**：在**内容质量、结构化和段落划分**方面表现出色，比旧版模型更有条理。
+    *   **主要局限**：与前代模型类似，在生成**超长篇幅（数万词）的连贯文本**方面能力依然有限。
+    *   **总体评价**：Gemini 3 Pro 是当前图书写作的最佳选择之一，未来正式版可能还会有所改进。
+
+---
+
+### **核心结论（一句话）**
+
+尽管在生成超长文本方面仍有局限，但 Gemini 3 Pro 预览版凭借其卓越的内容质量和结构化能力，在图书基准测试中获得71分，证明了其是目前最顶尖的AI图书写作工具之一。
+
+---
+
+### **内容的总览框架**
+
+该内容使用一个名为 **"图书基准测试" (Book Bench)** 的标准化评测框架，通过设定一个具体的写作任务（撰写一本关于“打造个人权威”的书），系统性地、分步骤地对 Gemini 3 Pro 的10个关键写作维度进行量化评估，并最终汇总成一个综合得分，以此来判断其在专业写作领域的实力和局限性。
+
+---
+
+### **概念图 (Mermaid Map)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "评测核心: Gemini 3 Pro 图书写作能力"
+        A["Gemini 3 Pro (预览版)"]
+    end
+
+    subgraph "评测框架: Book Bench (图书基准测试)"
+        B["10项量化指标"]
+        
+        subgraph "A. 基础构思"
+            P1["1. 标题 (Title)"] --> R1["得分: 7/10"]
+            P2["2. 摘要 (Summary)"] --> R2["<b style='color:green'>得分: 9/10</b>"]
+        end
+        
+        subgraph "B. 文本质量"
+            P3["3. 风格 (Style)"] --> R3["得分: 7/10"]
+            P4["4. 内容 (Content)"] --> R4["<b style='color:green'>得分: 9/10</b>"]
+            P5["6. 可读性 (Readability)"] --> R5["得分: 8/10"]
+            P6["7. 人性化 (Humanity)"] --> R6["得分: 6/10"]
+        end
+        
+        subgraph "C. 生成能力与篇幅"
+            P7["5. 长度控制 (Length)"] --> R7["<b style='color:green'>得分: 10/10</b>"]
+            P8["8. 单章节写作 (Single Chapter)"] --> R8["<b style='color:orange'>得分: 5/10</b>"]
+            P9["9. 全书写作 (Full Book)"] --> R9["<b style='color:red'>得分: 2/10</b>"]
+            P10["10. Token 上下文 (Token Context)"] --> R10["得分: 8/10"]
+        end
+    end
+
+    subgraph "最终评定"
+        C["<b>总分: 71/100</b>"]
+        D["结论: 顶尖AI写作工具，内容质量高，但超长文本生成仍是短板"]
+    end
+
+    A -- "接受评测" --> B
+    B --> P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8 & P9 & P10
+    
+    R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 & R9 & R10 -- "汇总计算" --> C
+    C --> D
+
+    style A fill:#4285F4,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#f9f9f9,stroke:#333,stroke-width:1px
+    style C fill:#f4b400,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#e8f0fe,stroke:#4285F4,stroke-width:1px
+    
+    style P1 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P2 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P3 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P4 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P5 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P6 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P7 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P8 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P9 fill:#e0e0e0,stroke:#333,stroke-width:1px
+    style P10 fill:#e0e0e0,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+Content:
+Allora, amici, oggi testiamo Gemini 3, una versione che è stata veramente tanto attesa che sta facendo numeri incredibili in tutti i benchmark. E per questo che andiamo a testarlo immediatamente nella sua capacità di scrivere, in particolare di scrivere libri, con il test del book bench. Che cos'è il book bench? È un indice che calco la quanto un'intrigenza artificiale è efficace nella scruttura di un libro. E' un traverso 10 parametri come il titolo, il sommario, lo stile, i contenuti, la lunghezza, la leggibilità, l'umanità del testo, la capacità di scrivere un capitolo intero, la capacità di scrivere un libro intero e il contesto di token. Quindi diciamo la memoria interna e di input e di output di un'intelligenza artificiale. Quindi in pochi test, 10 agenti che misurano tutta la capacità e danno risultato che finale che arriva da uno a cento, al momento nessuno ancora mai arrivato a cento. E allora siamo qui su Gemini 3 con Google i studio, Gemini 3 Pro previo, quindi la versione Pro quella che pensa nella sua versione previo appena uscita da pochi minuti annunciata su X. E allora iniziamo subito con il solito prompt, e gli diciamo che voglio scrivere un libro, sono un'iditoria di to qualche dretta su di me e gli chiedo di scrivere 5 idee di titoli in due parole e sotto titoli non è molto più parole. Tito l'originali di grande impatto efficace, eccetera eccetera. Ed ecco che in pochi secondi mi ha tirato fuori questi 5 titoli autoreoli 60 nascrivi e domina, libro vesseller da esperto a star e il tuo miglior asset. Bene, l'endiamo a prendere, li copiamo sul bookbench evaluator e vediamo come se la cava. Ed eccoci quale abbiamo scritti, l'abbiamo copiati e abbiamo la valutazione. Allora il primo titolo, l'autore valizio 60 nascro, che vi derò mi piace anche, ma il nostro evaluator la, gli ha dato un 5 praticamente, un 55 su 100, poco in patto emozionale, a sudire chiarezza scarza, memorabilità scarza, non gli è piersuto. Invece scrivi e domina, gli è piersuto tantissimo, forse in un impatto emozionale più grande, quindi 75 su 100, il libro vesseller 69 centesimi, per me questo è un po' vago, diciamo, e invece di episodio da esperto a star mi piace molto anche a me, 75 su 100 e il tuo miglior asset 63 su 100. Voto medio, 7 su 10, allora andiamo in tante inserere i risultati, quindi, allora, qui abbiamo Gemini 3, primo risultato, un bel 7. Dopo di che torniamo a Google i studio, gli echidiamo di preso il primo titolo come definitivo, di scriver il sommario di tagliato in 5 capitoli, in stile come fare per ogni un 5 paragraphy. Ed ecolo qua, quindi capitolo 1 come definire la stile giovre di tarli del tuo mercato, con tutti i suoi paragraphy, come progettare i contenuti, come scrivere un testo persosivo, come confezionare il tuo libro, per trasplanarmi un vesseller, e come monetizzare la tua autorevolenza a quesire clienti altospendenti. Quindi, compiamoci tutto il sommario, e gli orandiamo a incolare alle valduretor, andiamo sul samarino, incoliamo e lo facciamo valutare, e vediamo cosa ci dice. Wow, wow, un bel 85 su 100, quindi un 9 decimi, querenza linguistica, in patte emozionale, chiarezza, a Pilco Merciale, memorabiliti. Bene, diciamo che il sommario è piaciuto parecchio, quindi andiamo su Samary 9 su 10. Ancora, andiamo poi sullo stile, e adesso qui ci chiedereà l'introduzione, quindi andiamo a semmandate a fare l'introduzione, abbiamo chiesto, ho l'introduzione di 2000 parola, che spiega perché l'autora ha voluto scrivere questo libro usando uno stile emozionale convogente, dando il tuo lettore, segù questa scaletta, storia ha detto sull'autore, sul perché ha deciso di scrivere libro, sfida il lettore, parla di opportunità, sfogli problemi, spiega il percorso che trova ed è una strategia concretta ad utilizzare, subito. Ecco l'introduzione, bella ricca, ben sudivisa, paragraphi importanti, non è come GPT che fa 8000 righe, fa una riga, fa una riga, fa un riga, fa un cavo, fa le inchi puntati, no, molto in stile libro, ecco in questo fase non dire gemini se la cava molto bene, perché è veramente fatta bene. Leggiamo una prima parte, giusto per avere un'idea anche della qualità, ricordo ancora vivamente il momento isatto in cui capito che le regole del giocono erano cambiate per sempre, non è rossum palco e il luminato dei rifiuttori, ne stavo firmando un contratto milionario in un grattacelo di cristallo, ero situto alla scrivania del mio vecchio ficio, cercandato del pile di carta, con il ronzio del computer come unico compagno, è una tazza di terra ma i freddo dimenticata cantata la tastiere. Davanti abbiamo due profili a confronto, da una parte un professionista straordinario, eccetera, eccetera. Mi chiesi dove è l'errore perché il mercato ho deciso di scriver un torrelezzo istantana proprio per questo motivo, sono stanco, sono sinceramente stanco di vedere imprenditori brillanti, professionisti capaci e persone con un valore inmenso da offrire, venere schiacciati da riusciti da riusciti di fondo di un mercato saturo. E così via, bello mi piace un linguaggio anche molto emozionale. Allora coppiamo il testo, andiamo sulla valueta dell'introduzione e facciamo lo valutare. Vediamo allora stile 7, 8, 6, querenza linguistica, chiarezza e struttura, contenuto 8, 9, 9, ottimo quindi sulla stile c'è dato un 7 e sul contenuto 9, quindi a me lo stile piaceva perché strutturato bene sono libero, comunque il 7 è un bel voto, contenuto 9 è un ottimo voto, quindi stile 7 contenuto 9 e andiamo adesso a valutare la lunghezza, la leggibilità secondo l'indice Gulpise. Abbiamo 130 i frasi, 2.139 parole, ricordo ne arrivamo chieste 2.000, quindi ha risposto molto bene, nel contrario di tante altre intelligenze artificiali che invece non sono capaci di stare nelle parole ricchieste. Indice Gulpise ci 48,4 che corrisponde a un'indice di leggibilità di 8 su 10, che comunque molto buono, quindi leggibilità 8 e lunghezza 10, andiamo a inserire i dati, lunghezza 10, leggibilità 8. Poi vediamo ancora un testo, con questo testo, la humanitice è la capacità di essere detectato, di essere scoperto come ai, e qui è abbastanza basso, mix dancerto, quindi con il colore è un 2% non è sicuro che sia intelligenza artificiale, quindi l'atto vuoto bobbence è di 6 su 10, molto buono, 6 su 10. Adesso quello che abbiamo chiesto dopo l'introduzione è stato quello di scrivere i capitoli, vediamo dove la nostra chiesta, partiamo dal capitolo 1 sulla base del somario scrivi i paragrafi 1, 2, 3, 4, 5, in 2.000 parole ciascuno, però in totale di 10.000 per nulla facili, chiedere 10.000 parole non solo output, cosa ha fatto il suo capitolo 1, con i suoi 5 paragrafi, guardate qui, belli lunghi, belli lunghi, non credo siano 10.000 parole a occhio, perché non mi sembra 2.000 parole singoli, i paragrafi mi mai comunque molto lungo, considerate che un ciasc gpt anche nell'ultima versione 5 non va più di 2.500 parole, quindi copiamo e andiamo a vedere il voto sui capitoli, quindi incoliamo qua, siamo a 5.360 parole, molto molto buono, non sono 10.000 richieste, quindi il voto è di 5 su 10, ma comunque è un bel risultato, 5.000 è un solo colpo, non sono niente male, quindi capitolo voto 5, tutt'altro che è semplice, e poi il test è difficile. Quindi adesso sulla base del somario, chiediamo di scrivere tutti gli altri 4 capitoli, capitolo 2, 3, 4, 5, ognuno da 5 paragrafi, quindi 10.000 parole è capitolo, totale 40.000 parole, questo non risottato preso che impossibile, mai nessuna intelligenza artificiale riuscita, quindi ascritto tanto, capitolo 2, col suo paragrafo 1, paragrafo 2, paragrafo 3, paragrafo 4, 5, poi il capitolo 3 e andiamo avanti, capitolo 3, si è fermato al 4, quindi ha iniziato il 4, è in realtà fatto il capitolo 2, il capitolo 3, fa tommetà della richiesta, poi dice che non ce la fa, ha già 4, 5,000 parole, vediamo se vero, andiamo a calcolare il full book, come standard, e c'è dato 6,379 parole, un po' meglio di prima, ma comunque non dare, ricordo due su 10, volevamo 40.000 e ne ha fatto 6,000 6,000 parole, e quindi abbiamo un 2 su 10 sul full book come risultato, infine, a livello di token, a livello di token, beh, la contest windows è famosa 1 milioni di token per gemini tra le più alte in assoluto, in puttoken, quindi prende, ne abbiamo provato anche 240.000 senza problemi, quindi veramente 10,000 output, c'è una fatte, abbiamo detto 6,000, 6,000, 3,179, 3,179, quindi il tocast score 10 su 10 finestre contesto, 10 su 10, l'impote 4 su 10 lello di output, la media di questi voti è di 8 su 10, quindi 8 su 10, è livello di token, calcoliamo il total bookbench di gemini 3, 71 punti su 100, ok, è un ottimo risultato, è nella top delle migliori, che sono tutte più o meno gestite da gemini, prima c'era il 2.5, però, c'è il 2.5 flash, ma 3 è un altro livello di contenuto, quindi al livello di parametri molto simile, direi, alla vecchia edizione, non ha grandi inovità da quello che vedo in termini di contesto, di lunghezza, di profondità, però sicuramente al livello di contenuto è un po' più curato di visime i paragraphi, quindi per la scrittura del libro, in questo momento gemini 3 è sicuramente una delle scelte migliori, vediamo se appena questa è una preview di gemini 3, vediamo se la versione definitiva c'è qualche miglioramento e in tal caso, ve lo segniano, quindi seguiteci e scrivi un commento se vuoi vedere tutta la classifica generale del book badge con tutti quanti test che abbiamo fatto. A presto!
