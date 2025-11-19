@@ -1,0 +1,101 @@
+Timestamp: 2025-11-19T08:26:37.520461
+Title: Gemini 3 Pro: Probando el Modelo de IA Más Potente de Google 🚀
+URL: https://youtube.com/watch?v=TxhowyC5L-g&si=tUCCVTDn2n-Q7_q5
+Status: success
+Duration: 13:45
+
+Description:
+好的，这是对所提供文本的分析、总结和可视化。
+
+### **核心思想纲要**
+
+1.  **Gemini 3 发布与定位**
+    *   **市场领先**：谷歌发布了Gemini 3，并宣称其为当前全球最强大的模型，在基准测试中优于其前代产品及竞争对手（如GPT和Claude模型）。
+    *   **核心特性**：它被定位为一个“推理模型”，强调其逻辑分析和解决问题的能力。
+    *   **即时可用性**：该模型已通过Gemini聊天界面和API向公众开放，包括免费用户，降低了使用门槛。
+    *   **成本考量**：虽然API成本高于旧版本，但理论上其更高的效率能以更短的对话完成任务，可能抵消成本增加。
+
+2.  **模型能力实测分析**
+    *   **基础推理测试（字母计数）**：
+        *   暴露了大型语言模型的普遍缺陷：当面对一个拼写错误的单词时，它会先“纠正”单词再回答问题，而不是严格按照用户的字面输入进行回答。
+        *   展现了“工具使用”的重要性：当启用代码执行功能后，模型能编写并运行代码，准确地完成了对原始错误单词的计数任务。
+        *   揭示了“推理级别”的灵活性：并非最高的推理级别就是最优解，有时较低的推理级别反而能更直接、准确地回答简单问题。
+    *   **复杂任务测试（网站开发）**：
+        *   展示了强大的“智能体”（Agent）能力。用户仅需提出一个高级指令，模型便能自主地进行多步骤、多工具的调用（如规划、编码、设计）来完成整个项目。
+        *   最终结果令人印象深刻，生成了一个结构合理、内容丰富且包含营销文案的网站，证明了其在复杂、端到端任务上的巨大潜力。
+
+3.  **市场前景与生态系统**
+    *   **生态优势**：Gemini 3的竞争力不仅在于模型本身，更在于其背后强大的谷歌生态系统，包括顶级的图像、视频生成模型以及Gemma系列开源模型。
+    *   **积极反响**：与一些竞争对手更新后面临的争议不同，Gemini 3的发布获得了普遍的积极评价。
+    *   **未来展望**：作者认为，凭借Gemini 3的强大性能和完善的生态，谷歌很有可能在这一轮AI竞赛中迅速占据领先地位。
+
+---
+
+### **核心结论**
+
+Gemini 3不仅是一个在基准上更强大的模型，更通过其先进的智能体能力和与谷歌强大生态的深度整合，展示了解决复杂现实世界任务的巨大潜力，预示着谷歌可能在AI竞赛中占据新的领先地位。
+
+---
+
+### **内容总体框架**
+
+本文的总体框架是**“发布-评测-展望”**。它首先介绍新模型Gemini 3的发布及其市场定位，然后通过一系列从简单到复杂的实际测试来深入评测其核心能力（特别是推理和工具使用），最后基于评测结果和谷歌的生态系统优势，对未来的AI市场竞争格局进行展望。
+
+---
+
+### **概念关系图 (Mermaid)**
+
+<Mermaid_Diagram>
+graph TD
+    A["Gemini 3 Pro"] --> B{"发布与定位"}
+    A --> C{"核心能力评测"}
+    A --> D{"市场影响与展望"}
+
+    subgraph "发布与定位"
+        B -- "宣称" --> B1["当前最强模型"]
+        B -- "类型" --> B2["推理模型"]
+        B -- "成本" --> B3["更高但更高效"]
+        B -- "可用性" --> B4["API/免费账户可用"]
+    end
+
+    subgraph "能力评测"
+        C --> E{"简单任务 (字母计数)"}
+        C --> F{"复杂任务 (网站开发)"}
+        
+        E --> G["暴露传统LLM缺陷"]
+        G -- "具体表现" --> G1["纠正问题而非回答字面问题"]
+        
+        E --> H["通过工具弥补"]
+        H -- "方法" --> H1["代码执行"]
+        H -- "方法" --> H2["调整推理级别"]
+        
+        F -- "展现" --> F1["强大的智能体(Agent)能力"]
+        F1 --> F2["自主多步骤执行"]
+        F1 --> F3["调用多种工具"]
+        F1 --> F4["高质量的最终产出"]
+    end
+
+    subgraph "市场影响与展望"
+        D -- "优势" --> I["强大的谷歌生态系统"]
+        I --> I1["图像生成"]
+        I --> I2["视频生成"]
+        I --> I3["开源模型 (Gemma)"]
+        
+        D -- "对比" --> J["挑战竞争对手 (OpenAI)"]
+        D -- "预测" --> K["有望引领AI竞赛"]
+    end
+    
+    style A fill:#4285F4,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#DB4437,stroke:#333,stroke-width:1px,color:#fff
+    style D fill:#0F9D58,stroke:#333,stroke-width:1px,color:#fff
+    style C fill:#F4B400,stroke:#333,stroke-width:1px,color:#000
+    
+    style G fill:#FFCDD2,stroke:#B71C1C,stroke-width:1px,color:#333
+    style H fill:#C8E6C9,stroke:#1B5E20,stroke-width:1px,color:#333
+    style F1 fill:#C8E6C9,stroke:#1B5E20,stroke-width:1px,color:#333
+    
+    style K fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#000
+</Mermaid_Diagram>
+
+Content:
+Hace algunas horas acaba de ser lanzado Gemini 3 y por aquí vemos la información. Según lo que ellos nos comentan es el modelo más potente del mundo en este momento y lo comparan en este caso con su versión anterior, el Gemini 2.5 Pro también tenemos Cloud Zone 4.5 y Gpt 5.1, los referentes de la competencia vemos por aquí que aparentemente en casi todo. El Gemini 3 Pro es superior, sin embargo hay que tener en cuenta que lógicamente es más nuevo además de que es un modelo razonador comparado por ejemplo con este otro. De cualquier forma tal como estamos viendo, por lo menos bajo este tipo de evaluaciones y bajo este tipo de tareas es un modelo que está funcionando muy muy bien. De momento ya se puede utilizar tanto desde el chat de Gemini como desde la API aún sin siquiera pagar, vemos por aquí en este caso tengo la cuenta gratuita y tengo acceso a Gemini 3 Pro. Nosotros vamos a hacer algunas pruebas desde la API simplemente mencionar que de poco sirven dichas pruebas porque no necesariamente representan el uso diario además de que en este momento el modelo está como en versión preview así que lógicamente con el paso de los días debería de funcionar aún mejor. Una pequeña desventaja de este nuevo modelo es que es más costoso que las versiones anteriores de cualquier forma teóricamente es mejor y más eficiente con lo cual con menos conversación lograríamos nuestros cometidos haciendo que teóricamente pues el consumo sea igual simplemente haciendo las cosas más rápido. Perfecto, lo tenemos por aquí y lo vamos a estar probando por aquí en vez de directamente desde Gemini ¿Por qué? Porque dado que no tengo cuenta de pago podemos suponer que se funciona mal es por eso pero por acá lo estoy pagando en la API y el modelo completo sin nada más así que por aquí podemos hacer cualquier consulta para ver las respuestas dado que este es un modelo razonador y hace un año nos habían dicho que los modelos razonadores o pero ya ya podían resolver por ejemplo cuantos caracteres tienen unas palabras y ese tipo de cosas pues solo para seguir con esa tradición vamos a hacer la típica pregunta sin embargo esto no es algo que nos representa el uso real ni siquiera algo que realmente nos sirva pero de igual forma ¿Cuántas r tiene la palabra? Strau, Berri la voy a escribir mal a propósito simplemente para ver qué es lo que nos dice el modelo le doy en ejecutar y aquí pues entonces debería de contar las r's de esta palabra esto sirve para poco o para prácticamente nada y de hecho en este caso la respuesta podemos decir que es incorrecta ¿Por qué? Dice que tiene tres r's tiene dos el problema es que aquí está escribiendo la palabra correctamente con lo cual pues sí esta tiene tres pero es que esto no fue lo que le preguntamos así que lo que está diciendo aquí es correcto pero esta no es una respuesta correcta desgaseadamente para esto de por acá con esto a pesar de que veamos nuevos avances en los modelos y todo ello pues entendemos claramente sus deficiencias o sea no es que sean perfectos a un entareas que para nosotros pudieran resultar simples esto es solo un ejemplo me da igual que esto lo responda viendo mal porque en todo caso hasta pudiéramos usar código para ello si yo por aquí activo la llamada a funciones o la ejecución de código con ello lo debería de hacer mejor vamos a ver si aplica código y si hace código debe describir esta palabra para con ello que el código pues la cuente bien si las que ve bien pues de poco sirven en este caso ahí está vemos que en la palabra strawberry tal como la escribiste hay dos letras r entonces seguimos con los mismos inconvenientes de los modelos claro sigue siendo la misma forma en la que funcionan estos modelos solo que perfeccionando un poco y entre las cosas que se han ido perfeccionando pues es el uso de herramientas de código y demás aquí en vez de que el modelo por si solo responda escribió un código para a partir del código contarlas con el código y responder correctamente tal como estamos viendo perfecto entonces mismas carencias de siempre mismas mejoras de siempre así que esto no es negativo es el camino correcto el camino que se ha ido siguiendo desde hace tiempo aquí además vemos que en este modelo tenemos varios niveles de razonamiento por el por el momento solo dos bajo y alto veamos que tal funciona el modelo con el razonamiento al mínimo o lo que es lo mismo casi no razones sino que casi que se lanza directo a dar la respuesta aquí en este caso curiosamente sin ejecutar código nos dio la respuesta bien para nuestra palabra y luego nos dio la respuesta para la palabra correcta así que interesante estamos viendo además que no necesariamente el razonamiento al máximo es lo mejor para todo tipo de consultas que de todos vos repito está pregunta de poco sirve pero el razonamiento no siempre es lo mejor porque porque entre tanto razonamiento entre tanta cosa que vas escribiendo el código también lo que puede suceder es que escriba demasiado a tal grado que se pierda de la consulta original y diga no error así nos escribe se escribe así pues sí, se escribe de otra forma el problema es que nosotros preguntamos para esa palabra, cierto? Ok, simplemente para ver un poco el funcionamiento para entender pues que seguimos teniendo un modelo típico solo en este caso mejorado más optimizado tratando de que se equivoque menos vamos ahora a otro tipo de consulta y en este caso lo vamos a hacer haciendo que pueda buscar en internet con esto debería deshabérdese irnos algo extremadamente simple que de hecho ni siquiera haría faltado un modelo y menos tan potente para esto cuántos pesos mexicanos son un dólar ponemos esto por aquí le damos en ejecutar y con esto pues empezaremos a ver que va a buscar en internet y que nos entregaría una respuesta haciendo además el uso de una herramienta cuál herramienta buscar en internet y aquí nos dice que alrededor de 18.29 pesos mexicanos el martes 18 de noviembre del 2025 el día de hoy así que perfecto nos da la fuente de donde sacó la información vamos ahora a ver las verdaderas habilidades de este modelo más allá de consultas simples porque porque estas consultas prácticamente cualquier modelo las sabe hacer las consultas del día a día pero este modelo pues ok puede ser consultas del día a día pero está pensado para ser de momento el modelo más inteligente haciendo cosas extremadamente sorprendentes no decirnos cuantas erres tiene una palabra entonces por aquí ve esta opción BipCode GNI Apps vamos a entrar por aquí y vemos que esto es una especie de agente de herramientas conectadas al modelo las cuales nos permiten que nosotros hagamos una única consulta y que a partir de ahí el modelo con el uso de herramientas haga varias cosas no solo una respuesta y a partir de todas esas cosas que va ir realizando obtener algo más funcional al final si nosotros ir de apóquito en poquito pidiendo las cosas vamos a poner por ejemplo desarrolla un sitio web en el que se ofrezca un hosting por 20 dólares anuales con dominios bases de datos subdominios cuentas FTP cuentas de correo ilimitadas y solo 5 GB de almacenamiento SSD el servicio de hosting se llama Niche Un Aute que por cierto si te interesa este servicio no es falso nosotros lo que hacemos es dentro de van a hosting compramos reseller de este por todo un año y dado que es para revender pues lo compramos en comunidad y el que que era una cuenta individual dentro de todo esto todo sin límite excepto el espacio cada que le toca 5 GB es su hosting individual típico sepan el idemás pues por solo 20 dólares si te interesa pues Niche Un Autoroba y email.com ahí me contactas el servicio de hosting se llama Niche Un Aute y para ponerse en contacto Niche Un Auta arroba y email.com con esto entonces el modelo nos debería de crear algo mejor no solo por ser este modelo sino porque son un montón de prompts consultas, herramientas y demás a las que está conectada para realizar el proceso no es una única pregunta y respuesta nosotros dimos una única pregunta pero aquí por sí solo va a hacer un montón de cosas esto mismo funciona lógicamente en modelos anteriores pero en este debería de funcionar mejor no solo porque se supone que programa mejor sino además porque está usando herramientas requiere mucho contexto de lo demás prestar a tensionar todo a hacer una cosa a hacer la otra veamos qué tal está funcionando aquí solo a tener en cuenta ¿Qué? pues no es que tengamos tanto control de cada cosa que se va haciendo ¿Por qué? pues porque se van haciendo solas entonces aquí veamos lo que sí estoy notando es que va bastante rápido realmente cómo va avanzando aquí está muy bien así que veamos ¿Qué tal avanza esto? aquí parece ser que acaba de terminar y después de hacer todo esto este es el resultado bastante bueno la verdad y en este caso ¿Por qué? pues sencillamente porque no es pregunta y respuesta es pregunta y pregunta y respuesta por si solo un montón de veces a partir del uso de herramientas y todo ello y tal como estamos viendo por aquí en el año de los agentes parece que estamos consiguiendo buenas cosas con agentes vemos un buen logon nichonauta inicio características precios contacto comenzar la mejor oferta del mercado para nicheros interesante hasta por lo de nicho entendió y también lo de nauta puso la navecita hosting de otro planeta precio terrenal bastante bien tenemos hasta marketing aquí adentro despliega tus redes de sitio web sin preocuparte por límites de dominios o bases de datos todo lo que estas para escalar tus nichos por solo 20 dólares al año pero oferta características domino limitados activación inmediata gratis por siempre certificados ssl certificados ok almacenamiento pues la verdad es que está muy muy bien ahora cuánto código hizo interesante vemos por aquí no sólo que el resultado fue bueno sino que está muy bien estructurado y usando un montón de cosas de todos modos lo hacía si de bien porque no es html css y llavas que es nativo sino que está usando un framework un conjunto de librerías para desarrollar más rápido pero eso da igual porque de todos modos en este caso al ser una un sitio web informativo pues esto ya me sirve no necesito hacerle nada más entonces pues muy muy bien la verdad tal como estamos viendo sin embargo y qué tal funcionaba en los anteriores model o sería interesante saber eso de cualquier forma nos da igual porque este debería de ser un mejor modelo que en algunas cosas quizás sea peor tal vez es imposible que lo hagan bueno en todo pero dado que de forma general es un modelo excelente según los benchmark y según lo que estamos viendo en usos reales pues seguramente le va a quitar mucho mercado a chat GPT porque mientras que en chat GPT la versión 5 hubo a mucha gente que no le gustó en Gemina y 3 por lo menos las opiniones que he visto han sido positivas porque no solo están apuntando hacia un modelo razonador y de código sin un modelo generalista es quienes tienen el mejor modelo de edición de imágenes que desde llemina el punto Google el punto com te comunicas con este y te hace las imágenes con la no banana son los que mejor estienen modelo para crear videos son los que mejor ecosistema tienen todos ya tenemos un Gmail así que en este caso pues parece que van a tomar la delantera muy rápidamente mientras cuando estábamos con barb la primera versión de Gemina y de hecho también el Gemina y 1.0 1.5 no eran tan buenos desde la versión 2 vimos cosas interesantes y ahora en esta versión 3 aún más teniendo en cuenta que apenas es una versión preview sigamos viendo cómo avanza todo esto además de que cada vez que sale un nuevo modelo también salen sus modelos de pesos abiertos los GMA y en ese caso yo llevo bastante tiempo utilizando seguramente es lo que más uso no para programar y eso sino para redacción creación de títulos visión y todo lo demás estos son los que estaba usando los GMA 3 a ver con este nuevo lanzamiento si sacan un GMA 4 que seguramente sí y veamos que tal funciona periodes aquí estaba excelente al igual que acá con el Gemina y 2.5 Muy bien tenemos la versión Gemina 3 Pro preview en este caso aún sólo está no tenemos de momento la versión Flash versión Flash Light ni nada pero esta está muy bien perfecta ninguna funcional afortunadamente casi todas y teniendo otro digno componente que seguramente con el paso de los días veremos más y más resultados y sin importar estas primeras impresiones esperemos 2 meses y veamos cuál es el que se sigue usando más mientras tanto la competencia no se va a quedar quieta así que si quiere seguir bien este tipo de videos simplemente da like y suscríbete
