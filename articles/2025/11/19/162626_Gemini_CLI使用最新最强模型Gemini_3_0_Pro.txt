@@ -1,0 +1,121 @@
+Timestamp: 2025-11-19T16:26:26.115306
+Title: Gemini CLI使用最新最强模型Gemini 3.0 Pro
+URL: https://youtube.com/watch?v=smaAMJDigQA&si=48NPvzAcphdPyJPQ
+Status: success
+Duration: 9:53
+
+Description:
+好的，这是根据您提供的文本内容提炼的核心思想摘要。
+
+### **核心内容摘要**
+
+#### **一、 Gemini 1.5 Pro 模型介绍**
+*   **发布与定位**: 视频介绍了最新发布的Gemini 1.5 Pro模型，称其为当前最强、最具推理和多模态能力的模型。
+*   **性能对比**: 引用基准测试图表，表明Gemini 1.5 Pro在多项测试中表现优于Gemini 1.0 Ultra（文本中误称为2.5 Pro）、Claude 3 Opus（文本中误称为Closel内）、GPT-4o（文本中误称为4.5/5.1），在诸多领域得分最高。
+*   **核心优势**: 强调其非常适合作为智能化的AI辅助编程工具。
+
+#### **二、 Gemini CLI工具的配置与激活**
+*   **接入条件**:
+    1.  **直接使用**: Google AI Ultra 订阅用户。
+    2.  **API Key**: 拥有可付费的Gemini API Key。
+    3.  **等待列表**: 其他用户（如Google AI Pro订阅者、免费用户）需加入等待名单。
+*   **安装与认证**:
+    *   通过 `npm install` 安装命令行工具。
+    *   通过命令行进行用户认证，支持Google账号或API Key。视频演示者使用Google账号认证未能直接看到模型，后切换为 **API Key认证成功**。
+*   **激活预览功能**:
+    *   要使用Gemini 1.5 Pro，必须启用“预览功能 (Preview features)”。
+    *   通过命令 `/settings` 进入设置，将`Preview features`选项设为开启。
+    *   **注意**: 切换认证方式或设置后，需要**重启命令行工具**才能看到模型列表更新。
+*   **选择模型**:
+    *   配置成功后，通过 `/model` 命令可以看到并选择 `gemini-1.5-pro-preview` 模型。
+
+#### **三、 实际编码能力演示**
+*   **任务场景**: 使用该模型从零开始创建一个功能完备的React Native项目模板。
+*   **目标**: 项目不仅要完成编码，还要成功完成基于iOS的编译、打包，并最终在模拟器中运行。
+*   **执行过程与结果**:
+    *   整个开发过程非常顺利，没有任何技术问题。
+    *   模型成功完成了编码、iOS应用打包、部署和运行的全流程。
+    *   演示者强调，之前使用其他AI编程助手执行类似任务时遇到了各种问题，未能成功，凸显了Gemini 1.5 Pro的强大和可靠性。
+
+#### **四、 性能分析与总结**
+*   **会话统计**: 使用 `/stats` 命令查看会话详情。
+*   **缓存效率**: 本次任务中，67%的输入Token来自缓存（Cache），这表明其具备高效的上下文记忆能力，能显著降低Token消耗和成本。
+*   **结论**: Gemini 1.5 Pro是一款非常强力的AI编程模型，有潜力成为开发者的主力工具，值得尝试。
+
+---
+### **核心结论**
+集成在开发工具中的Gemini 1.5 Pro模型，通过简便的配置和强大的端到端编程能力，能高效顺畅地完成从编码到部署的复杂任务，展现了其作为主力AI编程助手的巨大潜力。
+
+---
+### **内容框架**
+该内容遵循了典型的“技术产品测评与教程”框架：
+1.  **介绍与预期 (Introduction & Hype)**：发布新模型Gemini 1.5 Pro，通过基准测试对比，建立其“最强”的预期。
+2.  **准入与配置 (Access & Setup)**：详细说明使用该模型的先决条件和一步步的安装、认证、激活配置过程，并点出关键的注意点（如使用API Key、启用预览功能、重启工具）。
+3.  **实践与验证 (Practical Demonstration)**：通过一个具体的、有挑战性的编程任务（创建并运行React Native模板项目）来展示模型的实际能力。
+4.  **评估与号召 (Evaluation & Call to Action)**：分析任务结果，通过数据（如缓存命中率）量化其优势，并最终鼓励观众亲自体验和使用。
+
+---
+### **Mermaid 概念图**
+<Mermaid_Diagram>
+graph TD
+    subgraph "Gemini 1.5 Pro: AI编程助手实践"
+        A["Gemini 1.5 Pro 模型"]
+        B["开发者 (User)"]
+    end
+
+    subgraph "第一步: 配置与准备"
+        direction LR
+        C["安装 Gemini CLI 工具"]
+        D{"认证方式"}
+        E["Google账号 (失败)"]
+        F["Gemini API Key (成功)"]
+        G["启用预览功能 (/settings)"]
+        H["重启CLI并选择模型 (/model)"]
+
+        B -- "1. 安装" --> C
+        C -- "2. 认证" --> D
+        D --> E
+        D --> F
+        F -- "3. 激活" --> G
+        G -- "4. 重启并选择" --> H
+    end
+
+    subgraph "第二步: 编码任务与流程"
+        I["任务: 创建React Native模板项目"]
+        J["编码与配置"]
+        K["iOS编译与打包"]
+        L["模拟器部署运行"]
+        M["✅ 任务成功"]
+
+        H -- "输入指令" --> I
+        A -- "赋能" --> J
+        I --> J --> K --> L --> M
+    end
+
+    subgraph "第三步: 评估与结论"
+        N["性能分析 (/stats)"]
+        O["高缓存命中率 (67%)"]
+        P["开发过程顺畅无阻"]
+        Q["成为主力编程模型的潜力"]
+
+        M -- "进行" --> N
+        N -- "揭示" --> O
+        M -- "证明" --> P
+        P -- "推导出" --> Q
+        O -- "推导出" --> Q
+    end
+
+    style A fill:#D6EAF8,stroke:#3498DB,stroke-width:3px
+    style B fill:#F9E79F,stroke:#F39C12,stroke-width:2px
+    style F fill:#D5F5E3,stroke:#2ECC71,stroke-width:2px
+    style E fill:#FADBD8,stroke:#E74C3C,stroke-width:1px
+    style M fill:#A9DFBF,stroke:#229954,stroke-width:3px
+    style Q fill:#F5B7B1,stroke:#C0392B,stroke-width:3px,color:#000
+
+    linkStyle 2 stroke:#E74C3C,stroke-width:1.5px,stroke-dasharray: 5 5;
+    linkStyle 3 stroke:#2ECC71,stroke-width:1.5px;
+
+</Mermaid_Diagram>
+
+Content:
+大家好,我是小摩头GEMNA模型系列又发布了新版本3.0 Pro这也号称是最强的最具推理能力同时兼具多摩探能力的模型作为开发者在日常的模型使用中最多的应该就是左边层了那本期视频我们会在GEMNA CERAN来提案一番如何使用3.0 Pro并且看看它的边层能力究竟如何现在就开始咱们今天的分享咱们首先还是参考官方文档来对机做一番检验的了解GEMNA CERAN这也是目前GEMNA模型系列中最强大的具有非常强的推理能力也非常适合做智能化的 AF 辅助边层要如何使用它呢目前已经提升到了许多的应用场景中比如聊天应用在GEMNA的外部聊天应用中我们已经可以原生使用它另一方面在这里也介绍到了Google Andy Gravity可以点击Download按钮大家来体验一番这是一款新一代的集成开发环境不知道大家已经是否用起来了呢当然了作为一款适合边层的模型它必然也已经集成了GEMNA Mini-Hungicl CERAN我们在后续的演示中会看到如何配置如何使用从表现来讲一系列的基准测试都揭示出的GEMNA CERAN非常强大从一系列测试的数据图表来看相较于GEMNA 2.5可能Sony 4.5以及GT5.1它的表现都是最佳的在诸多领域都分都最高下面这张数据图表也给到了我们一份对比在诸多的模型对比中这个图表对比的也是刚才怎么介绍的像GEMNA 2.5 ProClosel内 4.5以及GT5.1相较而言GT3 Pro它表现都是最好的我想大家最感兴趣的或许就是在Mini-Hungicl中模型的使用情况现在我们就来看看在GEMNA CERAN如何的配置使用GEMNA CERAN Pro首先当然我们需要安装GEMNA CERAN通过NPM install完成这非常类似于Clockcode那是否大家都能够使用这款模型论呢到也还并不是在GEMNA CERAN如果大家已经订阅了Google AI Ultra那么是可以直接使用自己的帐号通过GEMNA CERAN使用这款模型另一方面大家如果具有可付费的GEMNA API key也是可以使用的对于其他的用户比如像Google AI Pro这类订阅用户或者是GEMNA CERAN assistant标准版的以及其他的像FreeTier的用户可以加入它的等待对列在目前我所分享这个控制台咱们首先来完成安装安装完成后通过GEMNA MING-LIN就可以进入这么一个江湖界面现在我们要做的是完成用户的认证认证支持几种模式一种能使用自己的 Google 帐号登录还可以使用GEMNA API key或Velux AI至于刚才咱们介绍的是一致的如果大家具备了Google AI Ultra membership订阅直接使用自己帐号登录就好否则推荐大家使用 API key我们现在先用Google帐号登录来看看效果登录完成完成了身份验证接下来就可以回到MING-LIN行在这里我们可以通过SlashModelMING-LIN来看看模型的情况目前GEMNA SLEE已经可以使用了不过在我这里的模型列表中并没有看我们要使用GEMNA SLEE需要启用这个叫Prayview features这个选项可以通过SlashSellingsMING-LIN来设置我们也可以点击这个链接来了解更多关于预览功能链接会打开的就是现在这一份GET HOP的文档也命这里面介绍了关于GEMNA SLEE Pro的使用情况一方面我们通过SlashSellingsMING-LIN来启用它另一方面大家可以尝试加入等待对列我们现在就回到MING-LIN行通过SlashSellingsMING-LIN启用Prayview features这个选项来到Sellings大家能看到Prayview features目前是FOSS我们将几稍微去接下来可以选择将其保存为用户级别的设置还是工作区还是整个系统级别我将其就保存为用户级别的设置通过SlashModel来查看模型的情况目前依然是没有GEMNA SLEE模型的选项所以表示目前似乎我还不能够使用这款模型现在我重新启动了GEMNA MING-LIN行接口来看看在更新的预览功能的选项目前能看到什么样的模型至少目前我在模型列表这里是看不到的大家如果具有了AI Outre的订阅可以来尝试一下看看是否能够直接使用到它不过我们可以选择API-K的方式现在我就通过API-K来做用户认证我们首先要做的当然是来到AS.DU6获取一份自己的API-K在咱们的GoogleAS.DU6创建一个API-K就好我完成了API-K的配置依然来到Sellings当我们使用新的用户认证方式月览功能的开启也需要重新做一份配置我们使用它并且将其应用到用户设置级别同样我们先退出这个MING-LIN行接口重新启动现在我们来看看模型的情况现在我们应该能够看到在第二个选项Pro这里有了GEMNA MING-LIN CREEPRO preview这表示咱们应该能够使用的GEMNA MING-LIN CREEPRO这款模型咱们选择它在右下角咱们能看到Pro这么一个选项现在就给它一个任务看看它在编码方面究竟表现如何当前这个项目是一个RAT-NATIVE的模板项目目的是能够完成项目的达建和配置并且成为一份模板这样在未来的移动运用开发中我们直接使用它就好不需要去反复的完成必要的一些组件的安装与配置加速咱们的应用开发这类项目其实已经很多了在开源生态当中我们能够找到许多像RAT-NATIVE之类的BODY的PLATE也就是模板项目不过在ES代我似乎发觉自己特别喜欢重复的照轮子那么不妨咱们再来构建一个模板项目在演示后我也会尝试这样这个项目提交并分享有兴趣的朋友可以来使用一下看看效果如何我的希望是能够完成项目的配置至少能够完成机于 iOS的编辑打包从而在模拟器中讲起运行起来看看它的执行情况如何吧好了GEM-SER现在完成了这个模板项目的创建也在我本地的模拟器运行起来的这个 iOS应用在整个过程中不仅完成了编码还完成了 iOS 应用的打包不属运行整个开发过程非常顺利没有任何的问题为什么我做这个演示呢这是因为在不久前我也尝试使用其他的开发工具或AI变成助手帮助我完成台湾的任务在开发中似乎遇到了大大小小各种各样的小的技术问题总是无法成功的完成打包和部署这方面大家可以来评估一下看看在其他的工具或自己的应用场景当中GEM-SER模型究竟表现如何最后我们可以通过Slice Start这个命令来查看这个绘画的对话情况一方面能够查看工具调用的情况成功率另一方面能了解模型的使用情况在这次的对话当中就用到了GEM-SER Pro请求书8个输入输出偷肯分别是这么多另一方面是偷肯的节省情况在这个对话场景当中一共有67%的输入偷肯来自于Cache这次的开箱大幅降低了感兴趣的朋友可以来体验一下在日常开发当中是否GEM-SER Pro能够成为主力模型感兴趣的朋友赶紧来尝试一下在日常的AI变成中似乎有多了一款非常强力的模型可供大家使用我们就下期视频分享再见同学们,拜拜
