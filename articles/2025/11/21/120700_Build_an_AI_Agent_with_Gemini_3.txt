@@ -1,0 +1,112 @@
+Timestamp: 2025-11-21T12:07:00.283178
+Title: Build an AI Agent with Gemini 3
+URL: https://youtube.com/watch?v=9EGtawwvlNs&si=yUNb7Gl5_Ii-IYLm
+Status: success
+Duration: 6:23
+
+Description:
+好的，这是根据您提供的文本内容提炼和总结的核心要点。
+
+### **核心思想纲要**
+
+1.  **引言：Gemini 3 Pro 的优势**
+    *   模型具备出色的高级推理能力和复杂指令遵循能力。
+    *   这些特性使其成为构建“代理式操作”（Agentic Operations）和强大 AI 代理的理想选择。
+
+2.  **第一阶段：环境搭建与项目初始化**
+    *   **项目设置**：创建一个空的项目文件夹。
+    *   **包管理器**：使用 `uv`（一个 Python 包管理器）初始化项目。
+    *   **安装依赖**：添加项目所需的两个核心库：`Google ADK` 和 `Google's JDI`。
+    *   **API 密钥配置**：从 Google AI Studio 获取 API 密钥，并通过命令行 `export` 命令将其设置为环境变量。
+    *   **激活环境**：启动项目的 Python 虚拟环境。
+
+3.  **第二阶段：AI 代理的创建与定制**
+    *   **生成代理框架**：使用 ADK 的命令 `ADK create <agent_name>` 快速生成代理的基本文件结构（脚手架）。
+    *   **选择模型**：在命令行提示中，选择 Gemini 3 Pro作为代理的核心模型。
+    *   **代码定制 (`agent.py`)**：
+        *   清除默认的样板代码。
+        *   从 ADK 官方文档中复制一个使用 Google 搜索工具的示例代码作为基础。
+        *   **核心修改**：
+            1.  将模型名称从旧版本更改为 Gemini 3 Pro。
+            2.  提供更详细、更具体的指令集，要求代理在回答时隐式引用其信息来源。
+            3.  导入 `asyncio` 库以支持异步操作。
+
+4.  **第三阶段：部署、交互与能力分析**
+    *   **部署**：在终端中运行命令，将本地开发的代理部署到 ADK Web 平台。
+    *   **交互测试**：通过 ADK Web 提供的链接与代理进行实时对话（示例：询问关于在多伦多学习马术课程的信息）。
+    *   **“思维链”分析**：
+        *   通过 ADK Web 的“事件(Events)”标签页，可以深入探查模型的思考过程。
+        *   **思想签名 (Thought Signature)**：观察 Gemini 模型理解上下文和规划行动的方式。
+        *   **行为溯源**：查看代理为生成答案实际搜索过的网站和使用的具体网络搜索查询词条。
+        *   **推理过程**：分析代理如何从一个宽泛的初始查询（如“多伦多马术课程”）逐步深入到更具体、更精细的查询（如“多伦多市中心附近的马术”、“最佳马术学校”、“是否支持公共交通”等），展示了其强大的链式思考和解决问题的能力。
+
+---
+
+### **核心结论**
+
+利用 Gemini 3 Pro 的高级推理能力和 ADK 开发套件，开发者可以快速构建、部署并分析能够执行复杂、多步任务的强大 AI 代理。
+
+---
+
+### **内容的总览框架**
+
+这是一个**端到端的 AI 代理快速原型开发框架**，它涵盖了从**①环境准备**、**②基于模板的代码定制**、**③一键式云端部署**，到**④真实场景交互**，并最终**⑤通过可视化工具深入分析其内部“思维链”工作流**的完整生命周期。
+
+---
+
+### **核心概念图 (Mermaid)**
+<Mermaid_Diagram>
+graph TD
+    A["构建 Gemini 3 Pro AI 代理"] --> B_SG
+
+    subgraph "第一步: 环境准备"
+        B1["创建项目文件夹"] --> B2["使用 UV 初始化项目"]
+        B2 --> B3["安装依赖库 (Google ADK & JDI)"]
+        B3 --> B4["配置 Google AI Studio API 密钥"]
+        B4 --> B5["激活 Python 环境"]
+    end
+
+    B_SG --> C_SG
+
+    subgraph "第二步: 代理开发"
+        C1["`ADK create` 生成代理脚手架"] --> C2["选择 Gemini 3 Pro 模型"]
+        C2 --> C3["定制 `agent.py` 核心代码"]
+        subgraph "代码修改要点"
+            C3_1["更新模型名称"]
+            C3_2["编写详细指令"]
+            C3_3["集成工具 (Google 搜索)"]
+        end
+        C3 --> C3_1
+        C3 --> C3_2
+        C3 --> C3_3
+    end
+
+    C_SG --> D_SG
+
+    subgraph "第三步: 运行与分析"
+        D1["部署代理至 ADK Web"] --> D2["用户通过 Web 界面提问"]
+        D2 -- "输入: 在多伦多哪里学骑马?" --> D3["AI 代理生成详细回答"]
+        D3 --> D4{"深入分析: 探索'事件'标签页"}
+        D4 -- "揭示" --> D5["模型的思维链 (Chain of Thought)"]
+        subgraph "思维链构成"
+            D5_1["思想签名 (Thought Signature)"]
+            D5_2["搜索查询序列 (从宽泛到具体)"]
+            D5_3["引用的信息源网站"]
+        end
+        D5 --> D5_1
+        D5 --> D5_2
+        D5 --> D5_3
+    end
+
+    style A fill:#FFD700,stroke:#333,stroke-width:2px,color:#333
+    style B_SG fill:#E0F7FA,stroke:#00796B,stroke-width:1px
+    style C_SG fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style D_SG fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    style C3 fill:#C8E6C9
+    style D5 fill:#E1BEE7
+    style D3 fill:#D1C4E9,stroke:#4527A0,stroke-width:2px
+    style D2 fill:#FFF9C4,stroke:#F57F17,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+Hi everyone. Gemini 3 Pro just launched, Hi everyone. Gemini 3 Pro just launched, and I'm super excited by all the new and, and I'm super excited by all the new and, and I'm super excited by all the new and, improved updates. The model is really, improved updates. The model is really, improved updates. The model is really, great at advanced highle reasoning and, great at advanced highle reasoning and, great at advanced highle reasoning and, things like following along with really, things like following along with really, things like following along with really, complex instructions which make it ideal, complex instructions which make it ideal, complex instructions which make it ideal, for building agentic operations and, for building agentic operations and, for building agentic operations and, ultimately building great AI agents, ultimately building great AI agents, ultimately building great AI agents, with. So in this video I'm going to show, with. So in this video I'm going to show, with. So in this video I'm going to show, you exactly how you can go about, you exactly how you can go about, you exactly how you can go about, building your very first AI agent with, building your very first AI agent with, building your very first AI agent with, Gemini 3 Pro and the agent development, Gemini 3 Pro and the agent development, Gemini 3 Pro and the agent development, kit. To start off, let's create an empty, kit. To start off, let's create an empty, kit. To start off, let's create an empty, project folder where our AI agent will, project folder where our AI agent will, project folder where our AI agent will, live. I've done that and I've named it, live. I've done that and I've named it, live. I've done that and I've named it, Gemini 3 Pro AI agent and I've opened, Gemini 3 Pro AI agent and I've opened, Gemini 3 Pro AI agent and I've opened, terminal. We're then going to initialize, terminal. We're then going to initialize, terminal. We're then going to initialize, our project folder with UV. UV is a, our project folder with UV. UV is a, our project folder with UV. UV is a, Python package manager. And if you don't, Python package manager. And if you don't, Python package manager. And if you don't, have it installed, you can find, have it installed, you can find, have it installed, you can find, installation instructions in the, installation instructions in the, installation instructions in the, description box below., And next, we'll add the two libraries, And next, we'll add the two libraries, that we need for this project, which is, that we need for this project, which is, that we need for this project, which is, Google ADK's library and Google's JDI, Google ADK's library and Google's JDI, Google ADK's library and Google's JDI, library., Now, it's time to add your Google AI, Now, it's time to add your Google AI, Studio API key. To find this API key, Studio API key. To find this API key, Studio API key. To find this API key, all you have to do is navigate to Google, all you have to do is navigate to Google, all you have to do is navigate to Google, AI Studio and get your API key there. Uh, AI Studio and get your API key there. Uh, AI Studio and get your API key there. Uh, once you have that, you can export it, once you have that, you can export it, once you have that, you can export it, here in this type of command. Now we, here in this type of command. Now we, here in this type of command. Now we, will activate our Python environment., will activate our Python environment., will activate our Python environment., Once we're in our Python environment, we, Once we're in our Python environment, we, Once we're in our Python environment, we, can now create our ADK agent scaffolding, can now create our ADK agent scaffolding, can now create our ADK agent scaffolding, with just one simple command. All you, with just one simple command. All you, with just one simple command. All you, have to do is type in ADK create, have to do is type in ADK create, have to do is type in ADK create, followed by the name of your agent., followed by the name of your agent., followed by the name of your agent., At which point you'll be prompted to, At which point you'll be prompted to, At which point you'll be prompted to, select a model for your agent. Since, select a model for your agent. Since, select a model for your agent. Since, we're going to be using Gemini 3 Pro, we're going to be using Gemini 3 Pro, we're going to be using Gemini 3 Pro, I'm going to select option two., I'm going to select option two., I'm going to select option two., And you can see the files which have, And you can see the files which have, And you can see the files which have, been created as a result of that, been created as a result of that, been created as a result of that, command. Now we can hop into Visual, command. Now we can hop into Visual, command. Now we can hop into Visual, Studio Code and start writing in our, Studio Code and start writing in our, Studio Code and start writing in our, Asian. py file. Once you navigate to VS, Asian. py file. Once you navigate to VS, Asian. py file. Once you navigate to VS, Studio and you open your Asian py file, Studio and you open your Asian py file, Studio and you open your Asian py file, you'll notice it already comes with some, you'll notice it already comes with some, you'll notice it already comes with some, boilerplate code. Let's remove all of, boilerplate code. Let's remove all of, boilerplate code. Let's remove all of, that. Let's go over to ADK's, that. Let's go over to ADK's, that. Let's go over to ADK's, documentation and copy a piece of code, documentation and copy a piece of code, documentation and copy a piece of code, from there. We're going to be making use, from there. We're going to be making use, from there. We're going to be making use, of this code right here, which comes, of this code right here, which comes, of this code right here, which comes, under the Google search tool in ADK's, under the Google search tool in ADK's, under the Google search tool in ADK's, documentation. The link for this will be, documentation. The link for this will be, documentation. The link for this will be, in the description box below, as well as, in the description box below, as well as, in the description box below, as well as, the link to the repository of our final, the link to the repository of our final, the link to the repository of our final, agent as well, because we are going to, agent as well, because we are going to, agent as well, because we are going to, be making some changes to this code. So, be making some changes to this code. So, be making some changes to this code. So, let's go ahead and copy this. Head back, let's go ahead and copy this. Head back, let's go ahead and copy this. Head back, to VS Code, and then let's paste it., to VS Code, and then let's paste it., to VS Code, and then let's paste it., Now, we want to make some changes to, Now, we want to make some changes to, Now, we want to make some changes to, this code. First off, we want to use, this code. First off, we want to use, this code. First off, we want to use, Gemini 3 Pro instead of Gemini 2.0, Gemini 3 Pro instead of Gemini 2.0, Gemini 3 Pro instead of Gemini 2.0, Flash. So let's make that change., This is the model name for Gemini 3 Pro., This is the model name for Gemini 3 Pro., Next, I want to change the instruction, Next, I want to change the instruction, Next, I want to change the instruction, set. So instead of this single line of, set. So instead of this single line of, set. So instead of this single line of, instruction, we want to make it a bit, instruction, we want to make it a bit, instruction, we want to make it a bit, more detailed. We also want to give, more detailed. We also want to give, more detailed. We also want to give, instructions to the agent to site its, instructions to the agent to site its, instructions to the agent to site its, sources implicitly by providing the, sources implicitly by providing the, sources implicitly by providing the, answers clearly based on search results., answers clearly based on search results., answers clearly based on search results., And for this basic search agent, we are, And for this basic search agent, we are, And for this basic search agent, we are, giving it one tool which is access to, giving it one tool which is access to, giving it one tool which is access to, Google search. The final thing we want, Google search. The final thing we want, Google search. The final thing we want, to do is make some changes here., And we also want to import async io., And we also want to import async io., And that's our basic agent which is, And that's our basic agent which is, And that's our basic agent which is, built with Gemini 3 Pro and it has, built with Gemini 3 Pro and it has, built with Gemini 3 Pro and it has, access to Google search. Now back in, access to Google search. Now back in, access to Google search. Now back in, terminal, we are going to be deploying, terminal, we are going to be deploying, terminal, we are going to be deploying, our agent to ADK web., You can now use this link to access your, You can now use this link to access your, agent., agent., agent., We can now start interacting with our, We can now start interacting with our, We can now start interacting with our, agent in ADK web. I've been meaning to, agent in ADK web. I've been meaning to, agent in ADK web. I've been meaning to, take horse riding lessons in my city and, take horse riding lessons in my city and, take horse riding lessons in my city and, but I just don't know where to get, but I just don't know where to get, but I just don't know where to get, started. So, let me ask about that., So, now we're getting some detailed, So, now we're getting some detailed, response from our agent on exactly where, response from our agent on exactly where, response from our agent on exactly where, I can find these lessons. It has also, I can find these lessons. It has also, I can find these lessons. It has also, listed out places and locations where I, listed out places and locations where I, listed out places and locations where I, can get started and also categorized, can get started and also categorized, can get started and also categorized, them best in terms of how serious or how, them best in terms of how serious or how, them best in terms of how serious or how, basic they are., basic they are., basic they are., Let's explore the model's chain of, Let's explore the model's chain of, Let's explore the model's chain of, thinking to get to this response., thinking to get to this response., thinking to get to this response., To do this, let's explore the events tab, To do this, let's explore the events tab, To do this, let's explore the events tab, and click on this tab right here with, and click on this tab right here with, and click on this tab right here with, the text. So this text is what is being, the text. So this text is what is being, the text. So this text is what is being, returned by the model., returned by the model., returned by the model., And then if we go over to the next, And then if we go over to the next, And then if we go over to the next, event, we get to see something very, event, we get to see something very, event, we get to see something very, interesting which is the thought, interesting which is the thought, interesting which is the thought, signature of Gemini. And the thought, signature of Gemini. And the thought, signature of Gemini. And the thought, signature in Gemini 3 Pro helps the, signature in Gemini 3 Pro helps the, signature in Gemini 3 Pro helps the, model to understand the context in the, model to understand the context in the, model to understand the context in the, conversation. We also see some really, conversation. We also see some really, conversation. We also see some really, interesting data which is the websites, interesting data which is the websites, interesting data which is the websites, that Gemini 3 Pro actually searched. So, that Gemini 3 Pro actually searched. So, that Gemini 3 Pro actually searched. So, horseport.com, the best toronto.com, horseport.com, the best toronto.com, horseport.com, the best toronto.com, Reddit and many many more. And then if, Reddit and many many more. And then if, Reddit and many many more. And then if, we scroll further, we actually see the, we scroll further, we actually see the, we scroll further, we actually see the, web search queries that Gemini 3 Pro, web search queries that Gemini 3 Pro, web search queries that Gemini 3 Pro, does and in what order. So first it, does and in what order. So first it, does and in what order. So first it, starts off by doing a generic search for, starts off by doing a generic search for, starts off by doing a generic search for, horse riding lessons Toronto. And then, horse riding lessons Toronto. And then, horse riding lessons Toronto. And then, it digs deeper and does uh horseback, it digs deeper and does uh horseback, it digs deeper and does uh horseback, riding near downtown Toronto and then, riding near downtown Toronto and then, riding near downtown Toronto and then, followed by best horse riding schools, followed by best horse riding schools, followed by best horse riding schools, Toronto. And at that point, I'm sure it, Toronto. And at that point, I'm sure it, Toronto. And at that point, I'm sure it, determines some of the names of the, determines some of the names of the, determines some of the names of the, horse riding schools available in that, horse riding schools available in that, horse riding schools available in that, area. So you see the searches actually, area. So you see the searches actually, area. So you see the searches actually, start to get way more specific. And then, start to get way more specific. And then, start to get way more specific. And then, it even looks up if it's accessible by, it even looks up if it's accessible by, it even looks up if it's accessible by, public transit, which is very, public transit, which is very, public transit, which is very, interesting. And then it also looks up, interesting. And then it also looks up, interesting. And then it also looks up, on the status of whether these stables, on the status of whether these stables, on the status of whether these stables, are actually open. So from just a single, are actually open. So from just a single, are actually open. So from just a single, prompt of where can I learn horseback, prompt of where can I learn horseback, prompt of where can I learn horseback, riding in Toronto, Gemini 3 was able to, riding in Toronto, Gemini 3 was able to, riding in Toronto, Gemini 3 was able to, go through this chain of thought, go through this chain of thought, go through this chain of thought, thinking in order to arrive at this, thinking in order to arrive at this, thinking in order to arrive at this, response. And I think that's pretty, response. And I think that's pretty, response. And I think that's pretty, cool. There's so many more amazing, cool. There's so many more amazing, cool. There's so many more amazing, agents that you can build with Gemini 3, agents that you can build with Gemini 3, agents that you can build with Gemini 3, Pro and ADK. If you're interested in, Pro and ADK. If you're interested in, Pro and ADK. If you're interested in, learning more, check out the links in, learning more, check out the links in, learning more, check out the links in, the description box below. And happy, the description box below. And happy, the description box below. And happy, building.
