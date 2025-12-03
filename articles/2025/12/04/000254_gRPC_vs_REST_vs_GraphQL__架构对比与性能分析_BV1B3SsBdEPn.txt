@@ -1,0 +1,120 @@
+Timestamp: 2025-12-04T00:02:54.414757
+Title: gRPC vs REST vs GraphQL： 架构对比与性能分析 BV1B3SsBdEPn
+URL: https://b23.tv/r25ZYe0
+Status: success
+Duration: 4:35
+
+Description:
+好的，这是根据您的要求对所提供文本的分析和总结。
+
+### **核心思想摘要**
+
+#### **1. 测试背景与方法**
+*   **目标**: 比较 REST API (Rust实现)、GraphQL 和 gRPC 的性能。
+*   **环境**: 在 AWS 的 Kubernetes (K8s) 集群上部署应用程序。
+*   **核心指标**: 延迟 (P90)、吞吐量 (每秒请求数)、CPU使用率、网络使用率和内存使用率。
+
+#### **2. 性能测试结果对比**
+*   **吞吐量 (Throughput)**:
+    *   **gRPC**: 表现最佳，达到约 90,000 请求/秒。
+    *   **REST API**: 表现良好，达到约 66,000 请求/秒。
+    *   **GraphQL**: 表现最差，仅能处理约 32,000 请求/秒，并在约 24,000 请求/秒时开始出现失败。
+
+*   **延迟 (Latency)**:
+    *   **REST API**: 在低负载下延迟最低。
+    *   **gRPC**: 在高负载下表现更稳定，延迟接近 REST API。
+    *   **GraphQL**: 由于其内部查询引擎，延迟最高。
+
+*   **网络使用率 (Network Usage)**:
+    *   **gRPC**: 网络资源消耗显著最低，这得益于其高效的 Protobuf 序列化，能有效降低云服务成本。
+    *   **REST API / GraphQL**: 使用基于文本的 JSON，网络开销远大于 gRPC。
+
+*   **CPU & 内存使用率 (CPU & Memory Usage)**:
+    *   **CPU**: 在测试后期，gRPC 和 REST API 的 CPU 使用率相当。
+    *   **内存**: gRPC 的内存占用最小。
+
+#### **3. 结论与技术选型建议**
+*   **Web 应用程序**: 首选 **REST API** (特别是高性能实现的，如本例中的 Rust API)。
+*   **移动应用程序**: 推荐使用 **gRPC**，以获得更低的延迟和更好的用户体验。
+*   **服务到服务 (微服务) 通信**: 明确推荐使用 **gRPC**，因其高吞吐量、低延迟和高网络效率。
+
+---
+
+### **核心要点 (一句话总结)**
+
+在高负载性能基准测试中，gRPC凭借最高的吞吐量和网络效率成为微服务通信的首选，而高性能的REST API是Web应用的可靠选择，GraphQL则最早达到性能瓶颈。
+
+---
+
+### **内容的总览框架**
+
+该内容采用**量化对比基准测试 (Quantitative Comparative Benchmarking)** 的框架。它通过在统一的云原生环境（AWS Kubernetes）中，对三种主流API技术（REST, GraphQL, gRPC）进行高负载压力测试，并系统性地测量和比较包括延迟、吞吐量、CPU、网络和内存在内的多维度性能指标，最终根据实证数据为不同的应用场景提供明确的技术选型建议。
+
+---
+
+### **Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "测试框架: API性能基准测试"
+        A["测试环境: AWS Kubernetes"]
+        B["核心性能指标"]
+        A --> T1["gRPC"]
+        A --> T2["REST API (Rust)"]
+        A --> T3["GraphQL"]
+    end
+
+    subgraph "性能结果对比"
+        direction LR
+        subgraph "gRPC: 性能最佳"
+            gRPC_TP["吞吐量: 最高 (9万 req/s)"]
+            gRPC_LAT["延迟: 稳定且低"]
+            gRPC_NET["网络: 消耗最低"]
+            gRPC_MEM["内存: 占用最小"]
+        end
+        subgraph "REST API: 表现稳健"
+            REST_TP["吞吐量: 良好 (6.6万 req/s)"]
+            REST_LAT["延迟: 极低"]
+            REST_NET["网络: 中等"]
+        end
+        subgraph "GraphQL: 性能瓶颈"
+            GQL_TP["吞吐量: 最低 (3.2万 req/s)"]
+            GQL_FAIL["高负载下最早失败"]
+            GQL_LAT["延迟: 最高"]
+        end
+    end
+
+    subgraph "结论与应用场景推荐"
+        R1["服务间通信"]
+        R2["移动应用"]
+        R3["Web应用"]
+    end
+
+    T1 -- "测试" --> gRPC_TP
+    T2 -- "测试" --> REST_TP
+    T3 -- "测试" --> GQL_TP
+
+    gRPC_TP -- "推荐用于" --> R1
+    gRPC_LAT -- "推荐用于" --> R2
+    REST_TP -- "推荐用于" --> R3
+
+    style T1 fill:#90EE90,stroke:#2E8B57,stroke-width:2px
+    style T2 fill:#ADD8E6,stroke:#4682B4,stroke-width:2px
+    style T3 fill:#FFB6C1,stroke:#B22222,stroke-width:2px
+    style gRPC_TP fill:#D4EDDA,stroke:#155724
+    style gRPC_LAT fill:#D4EDDA,stroke:#155724
+    style gRPC_NET fill:#D4EDDA,stroke:#155724
+    style gRPC_MEM fill:#D4EDDA,stroke:#155724
+    style REST_TP fill:#D1ECF1,stroke:#0C5460
+    style REST_LAT fill:#D1ECF1,stroke:#0C5460
+    style REST_NET fill:#D1ECF1,stroke:#0C5460
+    style GQL_TP fill:#F8D7DA,stroke:#721C24
+    style GQL_FAIL fill:#F8D7DA,stroke:#721C24
+    style GQL_LAT fill:#F8D7DA,stroke:#721C24
+    style R1 fill:#E2D9F3,stroke:#58427C
+    style R2 fill:#E2D9F3,stroke:#58427C
+    style R3 fill:#E2D9F3,stroke:#58427C
+</Mermaid_Diagram>
+
+Content:
+在本视频中,我们将比较REST API,GraphQL和GRPC。我们将这些应用程序部署到AWS中的Cobernetic集群,并测量延迟,吞吐量以及每个应用程序的保核度。好了,让我们开始运行测试。整个测试耗时约两小时,我通常在编辑时将其压缩到几分钟。所以,对于任何面向客户的应用程序来说,最重要的指标之一是延迟。我们使用P90%位数来测量它。在最初几分钟,您可能会注意到GraphQLPC在无负在情况下,略慢于其它应用程序。这可以通过序列化和反序列化,而PC消息的开销来解释,但这种情况很快就会改变。在大约每秒一望个请求时,您可以看到GraphQL开始性能下降。GraphQL是一个带有查询引擎的REST API,因此预计它会比常规REST API慢,如本例所使。在右侧,您可以看到应用程序的CPU使用率、内存使用率以及最重要的网络使用率。从这个网络图中,您可以清楚地看到GRPC客户端使用的网络资源少得多,这直接转化为您月底的AWLS或ISJ.在大约每秒两万四千个请求时,GraphQL应用程序开始失败,我决定在测试结束前将其从图表中移除。然后我们将逐个查看每个图表。所以,真正的竞争,在于GraphQL和GRPC之间,您会看到他们在几秒钟内发生翻转。让我在运行这个测试一分钟。如我所说,整个测试耗时约两小时。首先,我们来看吞吐量,仅每个应用程序可以处理的每秒请求时。所以,GraphQL只能处理每秒三万两千个请求。这三API能处理每秒六万六千个请求,至于我所有其他测试非常相似。您实际上可以将此测试,与我在VM和Cobernetis上运行相同应用程序的测试进行比较。亲自查看Cobernetis给工作负债带来的开销。最后,我们有GRPC,它达到了每秒九万个请求,这是一个非常出色的结果,可以Rust和Zic的RustAPI相P妹。接下来,我们来看延迟。正如预期的那样,GraphQL由于其查询引擎增加了额外的延迟,而GRPC和RustAPI非常接近。在测试的前半段,CPU使用率低于40%时,RustAPI的延迟较低,到我们增加更多负债时,GRPC更加稳定。这正是微服务所需的。接下来,我们来看CPU使用率。您可以看到,到最后,GRPC和Rust区域一致。然后,网络使用率。GraphQL最终使用率较低,仅仅是因为它无法处理相同数量的请求。同样的情况,也是用于测试结束时的RustAPI。所以,您实际上可以看到,JSAN和GRPC在网络使用率上的巨大差异。最后,内存使用率,在这个测试中并不其重要作用,但您可以看到,GRPC的内存占用小的多。所以,在我看来,如果您需要为Wab应用程序提供API,RustAPI是首选。对于移动应用程序,如果您可以使用GRPC,它将改善延迟和用户体验。您绝对应该将GRPC用于服务到服务的通信。也请查看这个关于,postgres与 MySQL以及 Redis与Memcake的基准测试。Memcake您可能会学到新东西。
