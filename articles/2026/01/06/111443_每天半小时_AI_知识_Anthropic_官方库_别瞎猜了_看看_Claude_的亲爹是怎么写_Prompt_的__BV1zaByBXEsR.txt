@@ -1,0 +1,110 @@
+Timestamp: 2026-01-06T11:14:43.876469
+Title: 每天半小时 AI 知识｜Anthropic 官方库：别瞎猜了！看看 Claude 的亲爹是怎么写 Prompt 的？ BV1zaByBXEsR
+URL: https://b23.tv/UpZr6gt
+Status: success
+Duration: 1:11
+
+Description:
+好的，这是根据您提供的文本内容提炼和总结的核心思想。
+
+### **核心思想摘要**
+
+#### **一、 核心问题：传统提示语（Prompt）的缺陷**
+*   **结构混乱：** 将规则、指令、素材等混杂在一起，导致AI模型难以清晰分辨。
+*   **逻辑跳跃：** 输出结果的逻辑性差，内容发散且不可预测。
+*   **可控性低：** 难以保证输出的格式和稳定性。
+
+#### **二、 核心框架：Anthropic官方推荐的XML结构化提示法**
+该方法的核心是利用Claude模型对XML标签的结构高度敏感这一特性，将提示语进行模块化拆分。
+
+#### **三、 XML结构化提示法的三大优势**
+1.  **提升清晰度 (Clarity)：**
+    *   通过`<role>`, `<task>`等标签，对任务进行“物理拆解”。
+    *   将不同角色的指令、任务要求、参考素材等清晰分离，使AI的理解不再混乱。
+2.  **引导链式思考 (Chain-of-Thought)：**
+    *   通过引入特定标签（如`<thinking>`），强制模型在输出最终答案前，先进行一步一步的内部推理。
+    *   这种“先思考，再回答”的模式，可以显著提升答案的逻辑性和准确性。
+3.  **保障输出格式 (Format Control)：**
+    *   结构化的指令可以精确控制输出内容的格式。
+    *   通过提供格式样本（Examples），可以进一步提高输出的稳定性和质量。
+
+#### **四、 可用资源**
+*   Anthropic官方提供了丰富的学习和实践资源，包括：
+    *   **Cookbook：** 包含详细方法论和案例。
+    *   **Prompting Library：** 内含50多个可以直接使用的高级XML模板。
+    *   **Prompting Tools：** 辅助生成结构化提示的工具。
+
+---
+
+### **核心要点**
+为Claude这类AI模型采用XML结构化提示语，通过清晰的任务拆解和强制推理过程，可以显著提升输出结果的质量、逻辑性和稳定性。
+
+---
+
+### **核心框架**
+XML结构化提示工程框架 (XML Structured Prompting Framework)
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "问题: 非结构化提示语"
+        A["传统自由格式提示"] --> B["指令与素材混淆"];
+        A --> C["逻辑跳跃, 结果不可预测"];
+    end
+
+    subgraph "解决方案: XML结构化提示框架"
+        D["XML结构化提示框架"]
+        D -- "优势一" --> E["提升清晰度 (Clarity)"];
+        D -- "优势二" --> F["引导链式思考 (CoT)"];
+        D -- "优势三" --> G["保障输出格式 (Format)"];
+    end
+
+    subgraph "核心机制"
+        E -- "通过 ->" --> H["物理拆解 (标签分离)"];
+        F -- "通过 ->" --> I["强制推理 (Thinking Tags)"];
+        G -- "通过 ->" --> J["提供样本 (Examples)"];
+    end
+
+    subgraph "成果: 高质量AI输出"
+        K["高质量、高逻辑性、高稳定性的输出结果"]
+    end
+    
+    subgraph "支持资源"
+        L["Anthropic 官方资源"] --> M["Cookbook"];
+        L --> N["Prompt Library (50+模板)"];
+        L --> O["Prompting Tools"];
+    end
+
+    H -- "解决" --> B;
+    I -- "解决" --> C;
+    E & F & G --> K;
+    
+    P["Claude AI 模型"] -- "对XML结构敏感" --> D;
+    D -- "被支持" --> L
+
+    style A fill:#FFCCCC,stroke:#B22222,stroke-width:2px
+    style B fill:#FFE5E5,stroke:#B22222,stroke-width:1px
+    style C fill:#FFE5E5,stroke:#B22222,stroke-width:1px
+    
+    style D fill:#D4EDDA,stroke:#155724,stroke-width:3px
+    style E fill:#D1ECF1,stroke:#0C5460,stroke-width:2px
+    style F fill:#D1ECF1,stroke:#0C5460,stroke-width:2px
+    style G fill:#D1ECF1,stroke:#0C5460,stroke-width:2px
+
+    style H fill:#E2E3F3,stroke:#2C3065,stroke-width:1px
+    style I fill:#E2E3F3,stroke:#2C3065,stroke-width:1px
+    style J fill:#E2E3F3,stroke:#2C3065,stroke-width:1px
+    
+    style K fill:#C3E6CB,stroke:#155724,stroke-width:3px,font-weight:bold
+    
+    style L fill:#FFF3CD,stroke:#856404,stroke-width:2px
+    style M fill:#FFF9E8,stroke:#856404,stroke-width:1px
+    style N fill:#FFF9E8,stroke:#856404,stroke-width:1px
+    style O fill:#FFF9E8,stroke:#856404,stroke-width:1px
+    
+    style P fill:#f9f,stroke:#333,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+我们来看一下Cloud的清晰是怎么写pront解析AstropeG的官方库来看一下让Cloud变出名的核心密集普通社会写pront你的数字机构会很乱AF分分清楚什么是规则什么是素材逻辑会跳远桌出还不可空对于长下下胎为模型结化的提示是非常关键的AstropeG的特别的跟我们节目讲的一样通过写太版的方式来写提示他们发现的Cloud对于XMM表现名感度机构所以用这个方式来写我们可以看右边官方的写法通过已入肉Task等表现当指定进行物理的拆解也通过已入肉向新品表现强制模型先推理再给大家我们来看个damp我们打开收音点他一些强制要求先进行推理再给大家还可以控制他的格式提供他一些样本来提高他的资点为什么官方库则推荐XMM的第一个善往物理分成这样跟清晰第二个能通过新品表现强制引到推理第三个能够保障结束快速诺科技材料这个方体是库的我们可以访问AstropeG的cookbook也可以通过他的朋友声音工具或者是直接看他的pronouncing library这里有50个已经做好的高级用的XMM模板XMM持A的API续位他可以帮我们去给AI下更清晰的质力我是安迪教育用AI接受工作自由
