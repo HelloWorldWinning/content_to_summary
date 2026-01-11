@@ -1,0 +1,91 @@
+Timestamp: 2026-01-11T16:25:42.993201
+Title: 功能开发不再翻车：Claude Code 官方 Feature Dev 的 7 阶段工作流 BV1uoqQBdEQE
+URL: https://www.bilibili.com/video/BV1uoqQBdEQE?buvid=YB4D74B19EB360774A1BBADC5ED2ADC71F8C&from_spmid=tm.recommend.0.0&is_story_h5=false&mid=ymSBpUF7hSVgC9ltK6yYCA%3D%3D&plat_id=116&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=B54ABE38-8FC7-43C6-81DC-ACCFB10B63F9&share_source=GENERIC&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1768034796&unique_k=BIYEscg&up_id=373454111&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 5:11
+
+Description:
+好的，这是从您提供的文本中提炼出的核心思想、摘要和概念图。
+
+### **核心思想摘要**
+
+1.  **问题背景：传统开发的痛点**
+    *   **盲目开工：** 在未完全理解需求、代码库结构和设计模式的情况下直接编写代码。
+    *   **AI 局限性：** AI 工具虽然能快速生成代码，但往往不理解项目上下文，导致代码风格不一、架构混乱。
+    *   **最终结果：** 开发方向错误，导致大量返工，即“功能开发翻车”。
+
+2.  **解决方案：官方插件 Feature Dev**
+    *   **定义：** 一款将功能开发结构化为七个阶段的自动化工作流插件。
+    *   **核心理念：** 开发功能远不止是编写代码（Building a feature requires more than just writing code），它是一个完整的工程实践，包含需求理解、架构设计和质量审查等关键环节。
+
+3.  **核心框架：引导式七阶段工作流**
+    *   **第一阶段：需求理解** - 澄清模糊需求，明确最终目标。
+    *   **第二阶段：代码库探索** - 分析现有代码结构和设计模式 (使用 `Codebase Explorer` 智能体)。
+    *   **第三阶段：架构设计** - 进行业务、模块和接口的深思熟虑的设计 (使用 `Code Architect` 智能体)。
+    *   **第四阶段：实现开发** - 遵循设计模式进行编码。
+    *   **第五阶段：代码审查** - 验证代码质量并提供改进建议 (使用 `Code Reviewer` 智能体)。
+    *   **第六/七阶段：** (原文提及但未详述) 最终完成并进行总结，确保流程完整性。
+
+4.  **特点与优势**
+    *   **结构化：** 比通用的 `plan` 模式更有条理，固化了最佳实践。
+    *   **轻量级：** 是 `OpenSpec` 等工具的轻量替代品，无需复杂配置和规范文件 (`spec.md`) 的编写。
+    *   **易用性：** 开箱即用，通过一个简单的命令 (`feature-dev "你的需求"`) 即可启动。
+
+### **核心要点**
+
+Feature Dev 插件通过一个结构化的七阶段工作流，将功能开发从单纯的编码转变为一个涵盖需求理解、架构设计到质量审查的完整工程实践，从而系统性地避免开发过程中的常见陷阱和返工。
+
+### **整体框架**
+
+该内容介绍的核心框架是 **“Feature Dev 引导式七阶段功能开发工作流”**。
+
+### **Mermaid 概念图**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "传统开发痛点"
+        A["- 需求不清, 直接编码<br/>- AI 输出质量差, 架构混乱<br/>- 风格不一, 频繁返工"]
+    end
+
+    subgraph "解决方案"
+        B["官方插件<br/>Feature Dev"]
+        C["核心理念<br/>开发功能 > 写代码"]
+    end
+    
+    subgraph "引导式七阶段工作流"
+        direction LR
+        D1["1. 需求理解"] --> D2["2. 代码库探索"] --> D3["3. 架构设计"] --> D4["4. 实现开发"] --> D5["5. 代码审查"] --> D6["..."] --> D7["7. 完成总结"]
+    end
+
+    subgraph "插件优势"
+        E1["结构化流程"]
+        E2["轻量 & 开箱即用"]
+        E3["官方出品, 更友好"]
+    end
+
+    F["最终目标: <br/>让功能开发不再翻车"]
+
+    A -- "针对痛点<br/>推出" --> B
+    B -- "基于" --> C
+    B -- "提供" --> D1
+    B -- "具备" --> E1
+    B -- "具备" --> E2
+    B -- "具备" --> E3
+    D7 -- "达成" --> F
+    
+    style A fill:#FADBD8,stroke:#943126,stroke-width:2px
+    style B fill:#D4E6F1,stroke:#2874A6,stroke-width:2px
+    style C fill:#FEF9E7,stroke:#B7950B,stroke-width:1px
+    style D1 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D2 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D3 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D4 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D5 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D6 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style D7 fill:#D5F5E3,stroke:#1D8348,stroke-width:1px
+    style F fill:#F9E79F,stroke:#9A7d0A,stroke-width:2px
+
+</Mermaid_Diagram>
+
+Content:
+好 今天我们来看一下Klow code 官方的插件Failure D-Way这几个期间的工作流让功能开发不再翻车这个是一个大老的一个练生工房一个工作号我们先来看一下我们在平常的写代码的时候其实最怕什么呢最怕上来上来就开始开盖写到一半的时候发现方向错了由于AI不离解你的代码库的结构也不离解现有的设计模式它没有问清楚你的真实需求是什么上来就开始疯狂输出代码结果往往是代码风格和项目风格不一致价格设计一塌糊涂最后还得推找从来这个官方已经意识到这个问题了然后推出了Failure D-Wayplugging这个插件就是这个是一个将功能开发插件为7个阶段的结构化的功能流一个组件然后我们来看一下它的核心理念什么呢核心理念就是Building FueureWayquired Modern Jazz Writing Code就是开发功能不止是写代码你还需要什么起码是需要你去理解代码库就在修改之前你去把代码库进行好好理解通过提出问题的方式来澄清你模糊的需求在实现代码之前深思熟绿的去与价格设计比如说你的业务设计你的价格设计你的模块设计你的接口设计在完成以后构结完成以后去进行质量审查Failure D-Way插件是把这些最佳的时间固化成了七阶段的一个自动化的工作流我们现在再见我看了网上有一个图计的图片这个我觉得挺好的可以给大家看一下你看它这个一个颜导式的功能开发工作流七阶段的第一阶段是需求理解这个阶段主要用来做明确目标澄清需求确定第二个是代码库的探索它会去分析一下你的现在鞋带码的模式实际上关键点这时候使用了AZN的叫toateExproller下阶段是什么是加购设计这一阶段使用了AZN它自己本身有个AZN的叫toateExact就是代码加购第四阶段就是实现开发实现开发的时候这个就没什么可说了就变成代码然后遵循这个模式是吧第五阶段就是代码审查验证你的质量然后提供一些建议它的AZN的使用的是toateReviewer就是代码审查者那在最终的时候会完成一个总结这时候就是我们一个整体期断的一个模式然后还有一些市面还有一些比如说像ZCF像OpenSpact像SpactK其实也都是一样的但是这个是官方的话对于开发来说我觉得更友好一点而且它有一个使用场景这个做这也说了的其实对于它来说你可以里程这是一个planned计划模式的一个增强版但是一个OpenSpact的一个轻量替代比这个planned更结构化一点planned其实正常它是没有这个7个阶段的这个说法的就出为说你自己去定义了给它定义的这个7个阶段否则它是按照它的理解是比如说它只有7个阶段都某一些段比如说去救生青开发然后按照去救生青炸锅设计开发测试它不会有严格的这个7个流程的这个每一个都走到而我们这个FeelTor.DV它是从续救生精到质量检查一个都不辣的然后比OpenSpact更轻量的几开箱极用一个命令就能启动无需复达的配置之前过程中也无需创建各种规范或者TNOpenSpact的和Spackage是需要创建那个Spec它叫SpecTN的也会去生成这个规范然后我们来看一下使用方式使用方式也比较简单第一个是你去前加一个官网的这个Market这个市场就是这个科学科官方的然后去安装查件PlackingGun Placking然后Install FeaturedV然后用的时候就只是这么用一下 FeaturedV下花线然后加上你的东西就可以了就这么简单三板斧好今天这个分享就到此为止欢迎大家直接点赞投屁和转发
