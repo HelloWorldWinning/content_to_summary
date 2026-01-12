@@ -1,0 +1,118 @@
+Timestamp: 2026-01-12T09:36:56.159752
+Title: Rust在科学计算方向的应用潜力 BV19Sy6BjEBD
+URL: https://b23.tv/J6KNZDP
+Status: success
+Duration: 6:20
+
+Description:
+### **核心思想摘要**
+
+1.  **核心论点：Rust是科学计算领域的未来之选**
+    *   **背景**：当前科学计算领域缺乏绝对主导的编程语言，且存在国产化替代的市场机遇。
+    *   **论据**：Rust凭借其独特优势，完全有能力成为开发下一代科学计算软件的强大工具。
+    *   **现状**：尽管生态系统仍在发展，但已涌现出多个高质量的关键库，覆盖了从底层计算到上层应用的多个方面。
+    *   **实践**：演讲者通过自研的Zeno框架和Windows Studio项目，证明了使用Rust进行大规模、高性能科学计算软件开发的可行性与优越性。
+
+2.  **Rust在科学计算中的独特优势**
+    *   **高性能**：性能与C/C++、Fortran相媲美，内存利用率极高。
+    *   **安全性**：编译器保障内存安全，代码正确性更高。
+    *   **易于并行化**：相比传统的MPI/OpenMP等方案，实现并行计算更简单、安全。
+    *   **强大的抽象能力**：拥有与Haskell媲美的类型抽象，但更注重工程实用性。
+    *   **高生产效率**：开发效率远超C/C++和Fortran。
+
+3.  **关键生态库概览**
+    *   **底层与数值计算**：
+        *   **Fair**：高性能、可并行的底层线性代数库。
+        *   **Malachite / Rudge**：任意精度计算库。
+        *   **Rayon**：简单易用的数据并行计算库。
+    *   **数据处理与分析**：
+        *   **Polus**：性能远超Pandas的结构化数据处理库。
+        *   **Argman**：功能丰富的优化问题求解库。
+    *   **符号计算与排版**：
+        *   **Symbolicch**：可处理超大规模表达式的高性能符号计算系统。
+        *   **Typist**：融合编程与排版的新一代排版系统，可替代LaTeX。
+    *   **领域应用**：
+        *   **Rust-bio**：高性能生物信息学库。
+        *   **Rust-quant**：全面的量化金融库。
+    *   **可视化**：
+        *   **Plotters**：目前生态中唯一的底层绘图库选项。
+
+4.  **作者的实践：Windows Studio**
+    *   基于自研的**Zeno框架**，开发了一款名为**Windows Studio**的新一代交互式Notebook。
+    *   该产品旨在打造一个智能融合计算与创作的平台，是作者在Rust科学计算软件开发领域迈出的第一步。
+
+### **核心结论**
+
+尽管生态尚在发展，但Rust凭借其在性能、安全、并发和生产力上的综合优势，为开发下一代高性能科学计算软件提供了巨大的潜力和市场机会。
+
+### **内容框架**
+
+该内容采用“**机遇分析 → 方案提出 → 优势论证 → 生态盘点 → 实践展示**”的逻辑框架。
+1.  **机遇分析**：首先指出科学计算软件领域语言分散和国产化替代的市场缺口。
+2.  **方案提出**：提出Rust是填补这一缺口的理想选择。
+3.  **优势论证**：从高性能、安全性、并行化、抽象能力和生产效率五个方面详细阐述Rust的独特优势。
+4.  **生态盘点**：通过列举一系列关键库，证明Rust生态虽不成熟但已具备相当的基础和活力。
+5.  **实践展示**：以作者亲身开发的Zeno框架和Windows Studio为例，将理论优势落地为实际产品，增强了论点的说服力。
+
+### **概念关系图**
+
+<Mermaid_Diagram>
+graph TD
+    A["Rust在科学计算中的应用前景"]
+
+    subgraph "驱动力 (Driving Forces)"
+        B["市场机遇"] -- "催生需求" --> A
+        C["语言独特优势"] -- "提供能力" --> A
+    end
+
+    subgraph "生态系统支撑 (Ecosystem Support)"
+        D["关键库与项目"]
+    end
+
+    subgraph "实践与成果 (Practice & Outcome)"
+        E["作者的实践: Windows Studio"]
+    end
+
+    A -- "依赖于" --> D
+    A -- "验证于" --> E
+
+    B --> B1["语言格局分散"]
+    B --> B2["国产化替代政策"]
+
+    C --> C1["高性能"]
+    C --> C2["内存安全"]
+    C --> C3["易于并行化"]
+    C --> C4["强大类型抽象"]
+
+    D --> D1["数据处理: Polus"]
+    D --> D2["线性代数: Fair"]
+    D --> D3["符号计算: Symbolicch"]
+    D --> D4["并行计算: Rayon"]
+    D --> D5["其他领域库"]
+
+    E -- "基于" --> F["Zeno开发框架"]
+    F -- "构建" --> G["智能融合计算与创作平台"]
+    G -- "具体产品" --> E
+
+    style A fill:#FFD700,stroke:#333,stroke-width:3px,color:#000
+    style B fill:#FFC0CB,stroke:#333,stroke-width:1px
+    style C fill:#90EE90,stroke:#333,stroke-width:1px
+    style D fill:#ADD8E6,stroke:#333,stroke-width:1px
+    style E fill:#DDA0DD,stroke:#333,stroke-width:2px
+    style F fill:#E6E6FA,stroke:#333,stroke-width:1px
+    style G fill:#F0E68C,stroke:#333,stroke-width:1px,color:#000
+    style B1 fill:#FFE4E1,stroke:#333,stroke-width:1px
+    style B2 fill:#FFE4E1,stroke:#333,stroke-width:1px
+    style C1 fill:#D4EDDA,stroke:#333,stroke-width:1px
+    style C2 fill:#D4EDDA,stroke:#333,stroke-width:1px
+    style C3 fill:#D4EDDA,stroke:#333,stroke-width:1px
+    style C4 fill:#D4EDDA,stroke:#333,stroke-width:1px
+    style D1 fill:#D1ECF1,stroke:#333,stroke-width:1px
+    style D2 fill:#D1ECF1,stroke:#333,stroke-width:1px
+    style D3 fill:#D1ECF1,stroke:#333,stroke-width:1px
+    style D4 fill:#D1ECF1,stroke:#333,stroke-width:1px
+    style D5 fill:#D1ECF1,stroke:#333,stroke-width:1px
+</Mermaid_Diagram>
+
+Content:
+大家好,今天我想和大家分享一个我认为非常有前景的技术话题,Rost在科学计算方向的应用前例。我是Fotino,一名长期关注系统编程高性能计算以及编程语言眼镜的技术爱好者。十年来,我一直都很看好Rost的语言,但苦于生态发展的比较慢,只是偶尔用它来写一些科学计算的小项目。累计起来还不到三万行代码。直到两年前,我感觉使用Rost进行大规模开发的试级已经到来。就开发了Zeno开发框架,主打低成本快速开发高性能应用。实际上证明这个选择是正确的,相比于Node,GoJava中的主流开发框架。使用Zeno框架可使应用性能提升二到十倍,开发时间减少50%到80%,所以说我现在几乎是All in Rost了。回到我们要聊的科学计算方向,我感觉Rost的应用前例也是十分巨大的。本视频将从以下三个方面展开,一,Rost语言在科学计算方向的独特优势,二,Rost和科学计算相关的库的调言。三,我用Rost开发科学计算工具的一些实践。首先,说到科学计算从最古老的Fortrunt到CC家家Pyton,再到近些年比较新的旧量。其实并没有一个算得上战绝对主导地位的编程语言。至于专用的商业软件那就更多了。除了MathLab,Mathematica,Maple这三大通用的科学计算软件,还有维数众多的像Anesys,Comso,SPSS之类特定应用领域的专业软件。这里软件的开发门槛茅王比较高,投入周期也比较长,在国内真正从事这方面研发的也比较少。在想想几年前,哈工大被进入MathLab的事件。这些年的政策都提倡国产化替代,所以说主报认为,从事科学计算软件的开发,市场机会还是不小的。Nature杂志早在2020年就看法了一篇分析科学家转向Ruster的文章,感兴趣的可以去看看。那么Rust,在科学计算方向究竟有哪些独特的优势呢?高性能,内存利用率极高,性能可以CC家家Fortrunt相提并论。安全性,由编异器确保内存安全,代码正确性更有保障,一于病行化,比NPI OpenMP之类容易太多了。强大的类型抽象,屁美于Huskown的抽象能力,但不是学究派。生产效率高,比CC家家Fortrunt不知高到哪里去了。但是,就目前来讲,Rust生态中和科学计算相关的库并不是很多。下面我们来介绍几个值得关注的项目。Argman,一个用于求解优化问题的库,实现了非常多的算法,架构设计得很灵活。Fair,一个偏底层的现性代数库,功能类似于Blast LAPAC。支持病行化,在大举阵计算上表现出色,可以说是目前Rust生态中性能最好的现性代数库。Malachite,一个任意精度计算库。基于Rust,从头开发的,虽然还是比Gnew的GMP性能差不少,但已经是目前Rust的生态中,性能最好的任意精度计算库了。Plotters,一个偏底层的会图库。支持多种渲染后端,包括位图、使量图、Paystant, GTK, Carro,以及Web Summit里,虽然这库并不怎么好用,但这几乎是目前唯一的选择了。Polus,一个处理结构化数据的库。使用了Appache Arrow,劣势存储和SMD加速。性能非常强,很多情况下能比Pandas提高几十倍。Continue,一个量子计算机模拟,实现了一些常见的量子门,但功能并不是很完整。Rail-on,一个数据并行计算库,可以很容易将一个顺序计算转换为并行计算,而不需要担心数据竞争的问题。Rudge,一个任意精度计算库,提供了对Gnew著名的开源库,GMP,MPFR和MPC的风庄。Rust-by-o,一个用于生物信息血的库。它所实现的算法性能甚至超过了使用C加加实现的Sikin。Rust-quant,一个量化金融血的库,提供了很全面的算法实现,非常有参考价值。Sallych,一个符号计算系统和Sage有一点点像,可惜的是已经有两年不怎么更新了。Synbolicch,一个符号计算系统,即于Rust开发,同时提供有Pyzen,Rust和C加加的API绑定。性能非常强,做着声称可以处理数实异级别的符号项。由使用过Mathematica的独占。不难理解,符号计算本质上就是模式匹配,这正是Rust比较擅长的地方。而且Rust和Mathematica一样也是面向表达式的,Tipist,一个全新的排板系统,在功能上取代了Jax。融入了MarchDung的语法,并且具有强大的代码模式。真正实现了把边成和排板融为一体,相比之下Latux那种以红展开为主的变码模式太不友好了。此外Rust远还有几个为何并或稳定的feature。对科学计算很有意义,BeginthelperMathematica,添加了几个有关进位加法,惩罚的辅助寒数。可用于实现任意精度整数,F16,F16,Antibog,F16,类型,可用于图像处理或机器学习,引入四精度赋点数F128类型,可用于高精度计算。最后是我最近继于Rust实现的新一代交互视Notbook。叫做Windows Studio,最近发布了0.1版。Window正是基于我们自然的Zeno框架,构建的智能融合计算与创作平台。这也是我用Rust进行科学计算软件开发的第一步。我们的产品核心是为让Window自定一文件合适。采用类似于GTRNOTBOK的交互视计算单元,把大模型和编程技术融合起来,打造新一代的AI软件。欢迎大家在Window网站下载试用。
