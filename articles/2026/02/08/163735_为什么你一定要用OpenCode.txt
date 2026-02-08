@@ -1,0 +1,74 @@
+Timestamp: 2026-02-08T16:37:35.574549
+Title: 为什么你一定要用OpenCode
+URL: https://youtube.com/watch?v=a6yEOBh5gh8&si=DX9n5zkq31e__LnY
+Status: success
+Duration: 12:55
+
+Description:
+**提纲式总结**
+
+1.  **文件类型**: 这是一个M3U8播放列表文件，用于HTTP Live Streaming (HLS)。
+2.  **HLS协议版本**: 指定使用HLS协议版本3。
+3.  **播放列表类型**: 标记为VOD (视频点播) 类型，表示内容是预录制的，而非实时直播。
+4.  **目标媒体段时长**: 定义了媒体段的最大建议时长为600秒（即10分钟）。
+5.  **媒体段信息**: 播放列表包含两个媒体段，均指向YouTube API提供的WebVTT（字幕/时间文本）资源。
+    *   **第一个媒体段**:
+        *   **时长**: 600秒。
+        *   **资源链接**: 一个指向YouTube API的URL，提供自动生成的WebVTT字幕，指定时间范围为0-600秒。
+    *   **第二个媒体段**:
+        *   **时长**: 174秒。
+        *   **资源链接**: 一个指向YouTube API的URL，提供自动生成的WebVTT字幕，指定时间范围为600-174秒 (此范围按原文描述，可能表示从600秒开始的相对时长，或为数据录入格式的特殊表示)。
+6.  **列表结束**: 包含一个`#EXT-X-ENDLIST`标记，表示播放列表的结束。
+
+**核心要点**
+
+这份M3U8文件是一个HLS VOD播放列表，旨在以分段形式提供来自YouTube API的自动生成WebVTT字幕资源。
+
+**总体框架**
+
+HLS (HTTP Live Streaming) 协议标准及其在VOD场景下对时间文本（如WebVTT字幕）资源的分段与管理。
+
+**Mermaid conceptual map**
+
+<Mermaid_Diagram>
+graph TD
+    A["M3U8 播放列表"] --> B["HLS 版本: 3"]
+    A --> C["播放列表类型: VOD"]
+    A --> D["目标段时长: 600秒"]
+
+    subgraph "媒体段 Media Segments"
+        E1["段 1"]
+        E2["段 2"]
+
+        E1 --> F1["时长: 600秒"]
+        E1 --> G1["URL: WebVTT 字幕资源 (0-600)"]
+        G1 --> H["来源: YouTube API"]
+        G1 --> I["格式: WebVTT"]
+
+        E2 --> F2["时长: 174秒"]
+        E2 --> G2["URL: WebVTT 字幕资源 (600-174)"]
+        G2 --> H
+        G2 --> I
+    end
+
+    A --> E1
+    A --> E2
+    A --> J["列表结束: #EXT-X-ENDLIST"]
+
+    style A fill:#E0FFFF,stroke:#333,stroke-width:2px,color:#333;
+    style B fill:#F0FFF0,stroke:#333,stroke-width:1px,color:#333;
+    style C fill:#FFF0F5,stroke:#333,stroke-width:1px,color:#333;
+    style D fill:#F5F5DC,stroke:#333,stroke-width:1px,color:#333;
+    style E1 fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style E2 fill:#ADD8E6,stroke:#333,stroke-width:1px,color:#333;
+    style F1 fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style F2 fill:#B0E0E6,stroke:#333,stroke-width:1px,color:#333;
+    style G1 fill:#87CEEB,stroke:#333,stroke-width:1px,color:#333;
+    style G2 fill:#87CEEB,stroke:#333,stroke-width:1px,color:#333;
+    style H fill:#E6E6FA,stroke:#333,stroke-width:1px,color:#333;
+    style I fill:#DDA0DD,stroke:#333,stroke-width:1px,color:#333;
+    style J fill:#FFB6C1,stroke:#333,stroke-width:2px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+#EXTM3U, #EXT-X-VERSION:3, #EXT-X-PLAYLIST-TYPE:VOD, #EXT-X-TARGETDURATION:600, #EXTINF:600, https://www.youtube.com/api/timedtext?caps=asr&v=a6yEOBh5gh8&lang=zh-CN&ip=141.98.196.100&ipbits=0&expire=1770561440&sparams=ip,ipbits,expire,caps,v&signature=824BE3558D8066CD7A20E2F742A995C57477DB6E.83C60F0A29A87E5ECC581C202042C7D614BBF700&key=dg_yt0&fmt=vtt&range=0-600, #EXTINF:174, https://www.youtube.com/api/timedtext?caps=asr&v=a6yEOBh5gh8&lang=zh-CN&ip=141.98.196.100&ipbits=0&expire=1770561440&sparams=ip,ipbits,expire,caps,v&signature=824BE3558D8066CD7A20E2F742A995C57477DB6E.83C60F0A29A87E5ECC581C202042C7D614BBF700&key=dg_yt0&fmt=vtt&range=600-174, #EXT-X-ENDLIST
