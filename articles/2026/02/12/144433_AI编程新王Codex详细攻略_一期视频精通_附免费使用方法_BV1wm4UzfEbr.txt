@@ -1,0 +1,167 @@
+Timestamp: 2026-02-12T14:44:33.603551
+Title: AI编程新王Codex详细攻略，一期视频精通，附免费使用方法 BV1wm4UzfEbr
+URL: https://b23.tv/BrSxpfV
+Status: success
+Duration: 14:09
+
+Description:
+**CodeX 全面教程：AI 编程新范式**
+
+**引言**
+本视频详细介绍了 CodeX，一款当前热度高、对中国用户友好且功能强大的 AI 编程工具。相比之下，Cloud Code 近期表现平平。视频内容涵盖 CodeX 的四种运行环境、一系列进阶功能、免费模型接入方法，并通过实际编程案例对比了其与 Cloud Code 的编程效果。
+
+**一、核心优势**
+*   **便宜大碗**：CodeX 的 Plus 会员额度充足，个人使用很少触发速率上限。
+*   **对中国用户友好**：相较于其他工具，CodeX 极少出现封号等问题。
+*   **功能强大且灵活**：提供多种运行环境，支持自定义和扩展。
+
+**二、CodeX 四种运行环境**
+
+1.  **CRI (命令行环境)**
+    *   **安装与启动**：首先安装 Node.js，然后通过 GitHub 提供的命令安装 CodeX。
+    *   **付费使用 (ChatGPT Plus)**：需要国外上网环境订阅 ChatGPT Plus，CodeX 启动后登录 ChatGPT 账户即可。
+    *   **免费使用 (接入国产模型)**：
+        *   在摩大社区等平台注册并获取免费模型的 API 端点和 API Key。
+        *   修改 CodeX 配置文件 `config.toml`，填入模型名称、API 端点，并将 API Key 设置为系统环境变量。
+        *   **注意**：自定义模型可能存在修改文件时倾向使用 Shell 工具的 Bug，可中断或通过提示词引导解决。
+    *   **模型切换**：使用 `/模糊` 命令可在通用模型 (GBT5) 和编程专用模型 (GBT5CodeX) 之间切换，并选择响应速度与推理效果的档位。
+    *   **编程案例对比**：以“你画我猜”游戏为例，GPT5 表现最佳（97分），GPT5CodeX 次之（95分），国产模型 JRM4.6 因 Bug 表现一般（80分）。结论是 GPT5 配合 CodeX 的编程效果与 Claude 基本持平。
+
+2.  **ID (集成开发环境插件)**
+    *   **安装**：在 VS Code 插件市场搜索并安装官方 CodeX 插件。
+    *   **特点**：与命令行环境共享配置和历史记录，提供可视化文件对比、`AWN2` (一键撤销) 功能，并支持在对话中便捷粘贴图片。
+
+3.  **云端环境**
+    *   **访问**：通过 CodeX GPT 网页版，绑定 GitHub 账户。
+    *   **功能**：可将项目上传至 GitHub，CodeX 会自动在云端创建运行环境，异步执行代码修改任务。
+    *   **自动化 Pull Request 与审核**：CodeX 能自动创建 Pull Request 并提交到 GitHub，还提供自动化代码审核功能，帮助提早发现 Bug。
+
+4.  **SDK (软件开发工具包)**
+    *   **安装与使用**：初始化 Node.js 项目，安装 `codex-sdk`，编写代码调用 SDK 接口（无需配置 API Key，直接调用本地 CodeX），然后运行 Node.js 脚本。
+
+**三、CodeX 进阶功能与命令**
+*   **核心命令**：
+    *   `/Init`：通读当前文件，生成 `AZENC.MD` 作为对话上下文，可手动补充项目信息。
+    *   `/Agent.MD`：生成更通用的 `AZENC.MD` 文件。
+    *   `/Compact`：压缩对话上下文，提高 AI 专注力，降低 Token 消耗。
+    *   `/New`：开启新对话，清除历史记录。
+    *   `/ApproveMode`：调整运行权限（手动、自动、Full.sx）。
+*   **MCP 工具箱 (AI 调用外部工具)**：
+    *   通过在 CodeX 配置文件中添加 MCP 服务器配置（如 Context 7, XL MCP Server），AI 可调用外部工具执行任务，如生成 Excel 数据。
+*   **自定义命令**：
+    *   在 CodeX 配置文件夹的 `Prompts` 目录下，以文件形式创建自定义命令（文件名即命令名），支持添加参数，实现定制化任务（如 Git 分支对比总结）。
+
+**核心观点总结**
+CodeX 是一款功能全面、运行环境多样且对中国用户友好的 AI 编程工具，通过集成免费模型和提供自动化协作功能，极大地提升了开发效率和代码质量。
+
+**Overarching Framework**
+CodeX: A Comprehensive Guide to its Features, Environments, and Applications in AI-Powered Programming.
+
+<Mermaid_Diagram>
+graph TD
+    A["CodeX：AI编程工具全面指南"] --> B{"核心优势"};
+    A --> C["CodeX运行环境"];
+    A --> D["CodeX进阶功能"];
+
+    subgraph "核心优势"
+        B1["便宜大碗"]
+        B2["对中国用户友好"]
+        B3["功能强大"]
+    end
+
+    subgraph "CodeX运行环境"
+        C --> C1["命令行环境 (CRI)"];
+        C --> C2["ID插件 (VS Code)"];
+        C --> C3["云端环境"];
+        C --> C4["SDK"];
+    end
+
+    subgraph "命令行环境 (CRI)"
+        C1 --> C1a("安装与启动")
+        C1a --> C1b["Node.js安装"];
+        C1a --> C1c["CodeX安装"];
+        C1 --> C1d("模型管理");
+        C1d --> C1e["付费模型 (ChatGPT Plus)"];
+        C1d --> C1f["免费模型 (国产模型接入)"];
+        C1f --> C1f1["摩大社区API获取"];
+        C1f1 --> C1f2["CodeX配置文件修改"];
+        C1f2 --> C1f3["环境变量设置"];
+        C1f --> C1f4["Bug提醒：修改文件倾向Shell"];
+        C1d --> C1g["模型切换命令(/模糊)"];
+        C1 --> C1h("编程案例对比");
+        C1h --> C1h1["GPT5"];
+        C1h --> C1h2["GPT5CodeX"];
+        C1h --> C1h3["JRM4.6 (国产)"];
+    end
+
+    subgraph "ID插件 (VS Code)"
+        C2 --> C2a["安装插件"];
+        C2 --> C2b["共享配置与历史"];
+        C2 --> C2c["可视化文件对比"];
+        C2 --> C2d["AWN2 (一键撤销)"];
+        C2 --> C2e["粘贴图片便捷"];
+    end
+
+    subgraph "云端环境"
+        C3 --> C3a["绑定GitHub账户"];
+        C3 --> C3b["项目上传至GitHub"];
+        C3 --> C3c["云端代码修改"];
+        C3c --> C3c1["异步并行任务"];
+        C3 --> C3d["创建Pull Request"];
+        C3 --> C3e["自动化代码审核"];
+    end
+
+    subgraph "SDK"
+        C4 --> C4a["初始化Node.js项目"];
+        C4a --> C4b["安装codex-sdk"];
+        C4b --> C4c["编写SDK调用代码"];
+        C4c --> C4d["运行Node.js脚本"];
+    end
+
+    subgraph "CodeX进阶功能"
+        D --> D1["核心命令"];
+        D1 --> D1a["/Init (生成AZENC.MD)"];
+        D1a --> D1b["/Agent.MD (通用上下文)"];
+        D1 --> D1c["/Compact (压缩对话)"];
+        D1 --> D1d["/New (新开对话)"];
+        D1 --> D1e["/ApproveMode (调整权限)"];
+        D --> D2["MCP工具箱"];
+        D2 --> D2a["安装MCP服务器 (如Context 7, XL)"];
+        D2 --> D2b["通过AI操作外部工具"];
+        D --> D3["自定义命令"];
+        D3 --> D3a["在Prompts文件夹创建文件"];
+        D3a --> D3b["支持参数与定制化任务"];
+    end
+
+    C1e -- "订阅方式" --> C1e1("谷歌Play订阅");
+    C1f -- "需要配置" --> C1f1;
+    C1f4 -- "影响体验" --> C1h3;
+    C1h1 -- "97分" --> E1["最佳表现"];
+    C1h2 -- "95分" --> E2["次佳表现"];
+    C1h3 -- "80分 (Bug)" --> E3["有待优化"];
+
+    C3e -- "自动发现Bug" --> F1["提高代码质量"];
+
+    style A fill:#FFD700,stroke:#B8860B,stroke-width:2px,color:#333;
+    style B fill:#9ACD32,stroke:#6B8E23,stroke-width:1px,color:#333;
+    style B1 fill:#ADFF2F,stroke:#6B8E23,stroke-width:1px,color:#333;
+    style B2 fill:#ADFF2F,stroke:#6B8E23,stroke-width:1px,color:#333;
+    style B3 fill:#ADFF2F,stroke:#6B8E23,stroke-width:1px,color:#333;
+
+    style C fill:#87CEEB,stroke:#4682B4,stroke-width:1px,color:#333;
+    style C1 fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#333;
+    style C2 fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#333;
+    style C3 fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#333;
+    style C4 fill:#ADD8E6,stroke:#4682B4,stroke-width:1px,color:#333;
+
+    style D fill:#FFB6C1,stroke:#DB7093,stroke-width:1px,color:#333;
+    style D1 fill:#FFC0CB,stroke:#DB7093,stroke-width:1px,color:#333;
+    style D2 fill:#FFC0CB,stroke:#DB7093,stroke-width:1px,color:#333;
+    style D3 fill:#FFC0CB,stroke:#DB7093,stroke-width:1px,color:#333;
+
+    style C1e fill:#FFE4B5,stroke:#D2691E,stroke-width:1px,color:#333;
+    style C1f fill:#FFE4B5,stroke:#D2691E,stroke-width:1px,color:#333;
+    style C1f1 fill:#FFFACD,stroke:#
+
+Content:
+最近CodeX已经超越了Cloud Code成为了当前热度最高的AI编程工具CodeX最大优势是便宜大碗而且对中国用户友好相比之下Cloud Code的近期平凡出现线素、封号、降制等问题本期视频是一个CodeX的完成教程主要介绍CodeX的四种运行环境还有一系列的进接功能视频里还会把免费的模型接入CodeX来实现免费使用我还准备了一个实际的编程案例来对比一下CodeX与Cloud Code的编程效果CodeX有四种运行环境CRI、ID、XDK、SDK还有云端环境我们先看最重要的一个CRI也就是命令行环境在开始之前需要先把Note.js安装一下我们来到Note.js的首页点击GAT根据自己的操作系统下载队营的安装包、安装即可Note.js安装完成以后来到CodeX的Github首页找到这个安装命令我们打开一个命令行窗口把命令复制进来回车安装在OpenAI的官网可以看到CodeX是CATGBT的订阅会员才可以使用当然我们也可以免费接入国产模型来免费使用CodeX视频的后面我们会介绍免费使用的方法我们先看如何弄一个CATGBTPlus用户我们来到CATGBT的首页注意要有国外的上网环境才可以访问到这个页面点击免费注册先注册一个账户安卓手机可以下载一个谷歌play商店把手机切换到美国的上网环境账号和设备偏好设置把地区切换成美国这里可以绑定一个国内的银行卡然后我们在谷歌play里面下载CATGBT手机板打开手机板的CATGBT顶部有一个获取Plus点击一下订阅方式选择谷歌play这样我们就订阅好了CATGBTPlus接下来打开任意一个文件墙右键打开一个命令行窗口然后输入命令CodeX进行启动这里会谈出一个CATGBT的登录页面把自己的账户登录一下回到命令行这边敲了一下回车打个招呼成功给到了输出CodeX CRA就配置完成了我们可以输入这个命令协格模糊用来切换模型这里有两类模型GBT5是一个通用模型有着更广泛的支持GBT5CodeX是OpenAI推出的一个编程专用模型特别为编程还有任务处理做了优化然后还有三个党位可以选择漏的话响应速度最快但是推理效果比较差选择害的话推理效果最好但是响应速度最慢这里一般我选择中间这个我们可以绑定免费的国产模型达到一个免费使用的效果我们看到摩大社区每天提供2000次的免费批调用没有账户的话需要先注册一个然后来到账号设置左侧的访问令牌点击新进随便起个名字切换到上面的模型库在上面的筛选器估选上支持推理API比如这里我以GDRM4.6为例点击进去右侧推理API有一个代码范例我们主要需要这里的达到UR还有APIK我们来到COTAX的配置文件墙一般在C盘用户你的用户名然后点COTAX这个文件墙找到这个配置文件config.tulmr如果没有的话可以新建一个进来以后把它远有的内容删除我们填写上这一段这里的模型名称填写摩大社区提供的模型名称达到UR填写摩大社区提供的API端点配置文件里面不能直接写APIK这里只能填写存储了APIK的环境编辆的名字编辆写好以后再搜索了安搜索环境编辆点击环境编辆然后点击新进编辆名就是我们刚才填写的这个编辆值填写摩大社区我们刚才申请的APIK这样确定保存一下再把配置文件保存一下我们回到命令行这边在启动下COTAX这样我们就把国产的免费模型接入了COTAX没有赤的GPT帐户也可以直接使用使用自定模型接入COTAX有一个Bug就是修改文件的时候它总是倾向于使用社要工具来修改这样效率很低而且容易出错如果出现这个Bug我会中途打断它告诉它使用COTAX自带的APIK配置工具来修改文件然后往后的操作就正常了我们也可以把这句话放到提示词里面减少出现Bug的概率因为这个Bug的存在使用自定模型不如使用COTAGPT的官方模型表现好接下来我们用一个例子来对比一下几个模型的编程效果创建一个你画我猜的再现游戏玩家可以在画不上面做画AI系统负责猜测是什么内容我们先来看GPT5模型它一次性就完成了功能的开发而且整个页面比较美观功能也是正常的挑不出什么问题我可以给它一个97分接下来是OpenAI的编程专用模型GPT5COTAX也是一次性就完成了功能的开发这里有一个按钮看不太清楚最终得分95分感觉这个编程专用模型比GP5反而要差一点最后是JRM4.6这里猜测结果显示是黑平它有一个Bug可能是这个画部背景没有甚至好这样给它一个80分从这个例子可以看出表现最好的是GPT5模型GPT5模型搭配COTAX它的编程效果跟KLDCO的基本是吃平的COTAX比起KLDCO的还有一大优势就是它的PLAS会员给的额度是比较充足的一般个人使用很难触发到它的速率上限而且CATGPT对中国用户更加友好很少遇到过像KLD那样的封号问题我们来看几个COTAX中央命令首先第一个命令邪杠Init这个命令让COTAX通读当前文件下COTAX会把它学到的关于项目的信息保存到一个叫做AZENC.MD文件里面后续我们跟COTAX所有对话都会带上这个文件作为上下文这个文件有助于帮助AA更快速的理解整个项目当然我们也可以修改这个文件补充上一些认为重要的知识比如这里我补充一句它使用的技术战士Next.js15这个命令跟COTAX的Init命令很像有点区别是这个AZENC.MD文件是一个更通用的文件可以被大部分的AI变成工具识别使用下一个重要命令邪杠Compact用来压缩对话的上下文执行完以后COTAX会把之前对话的一些不重要的内容排除掉可以有效提高AI的专注力并且降低偷恨消耗下一个命令邪杠New用来新开一个对话并且清除之前的对话记录当我们需要开始一个新任务的时候就需要New一下下一个重要命令邪杠AppleWose可以调整COTAX的运行全线有三个党位指动模式下面所有修改操作都需要人工审核自动模式只有敏感操作需要人工审核Full.sx全线不再需要人工审核它可以自动执行命令修改文件下一个命令邪杠MCP列出所有安装过的MCP工具MCP是一种标准化的工具箱可以由AI调用并且来操作一些外部工具我们看如何把MCP安装进COTAX里面这里我以Contax 7MCP Server举例这个MCP可以为AI提供一些最新的技术文档我们来到它的Github首页在下面有安装方式我们找到COTAX这一类这里有它的配置文件我们来到COTAX配置文件墙Windows电脑就是C盘用户你的用户名点COTAX苹果电脑的话是屏幕上的地址进来以后还是找到这个Config点TOM我们在最下面加上这个配置后面的API-K可以不用写如果是苹果电脑的话就用这套配置就可以了但是Windows电脑有点麻烦Windows电脑需要用下面这一套我们把下面这一段复制过来然后粘贴上下面的API-K可以不用写Windows电脑必须用这个格式然后保存一下重启一下COTAX我们再执行MCP命令就可以看到我们刚才安装的Context7我们再看一个例子XLMCP server允许AA通过它来操作XL文件这里有一段配置我们需要在COTAX里面配置一下访照刚才的写法把刚才这一段复制出来这里需要改的是下面的参数因为这是一个Python的MCP server所以命令改成UVX这里有两个参数杠Y不需要把这个参数添加上打一个豆腐后把下面的参数STDIO添加上MCP server的名字改成XL这样第二个也配置完成了我们重启一下COTAX这里显示了我们配置好的两个MCP server新建一个小学数学成绩的XL格式的策置数据我需要它输出20个学生调用了MCP工具生成了XL数据可以成功显示数据MCP的功能是正常的除了使用COTAX这些内置的命令以外我们也可以创建自地应命令这里还是来到COTAX的配置文件侧在这里面新建一个文件侧叫做Prompt在Prompt里面就可以以文件的形式来创建自地应命令每创建一个文件就可以增加一个自地应命令文件的名字就是命令的名字这里我新建一个文件叫做Git夏娃线Def困染名字MD我想使用这个自地应命令来对比两个分支之间的差异然后用自然语言进行总结在自地应命令里面支持添加参数比如我要对比分支1与分支2的差异这样使用两个站位服务作为自地应命令的参数等下输入命令的时候就可以使用这两个参数冲起一下COTAX然后我们输入鞋线GitDef这个自地应命令后面就可以接两个参数然后我前两个参数就是要对比的两个分支的名字回撤COTAX通过Git命令对比了两个分支的差异并且进行了归纳总结前面的视频里面我们主要介绍的从命令行里面使用COTAX接下来我们看另外一个重要的使用环境就是在ID议的差践里面我们可以在VS Code里面或者是那些基于VS Code开发的ID里面使用差践这里我以VS Code为例我们找到这个extensions差践市场搜索COTAX安装这个OpenAI出品的官方的差践点击Install如果之前在命令行里面配置过COTAX在差践这边不需要任何配置直接就可以使用它的历史记录还有配置文件跟命令行是共通的我让AI来改一下把这个蓝色按钮改成绿色COTAX差践有一个好处它可以谈出这种可实化的文件对比这里点击Ello点击VS Code的VS Code还可以在这个代码式图里面打开对比我再让它把按钮改成粉色差践版还有一个好处它提供了AWN2也就是可以一键撤回更改我们看到现在按钮是粉色我点击AWN2这样把最新一次改动撤回了按钮变成了绿色我找到上面的AWN2再点击一下绿色也被撤回了还原回来最初的蓝色COTAX差践这个找回历史记录的功能非常好用差践版还有一个好处粘贴图片很方便我们可以随便捷一个图然后粘贴到差践的对话窗口非常方便在AI对话里面插入图片COTAX还有一个重要的运行方式就是云端运行环境不需要本地下载代码配置环境COTAX可以直接在云端完成代码的修改并且创建PURRECAST我们来到COTAXGBT的网页板在左侧有一个COTAX选项点击一下云端运行所有代码都是基于Github的所以我们这里需要先绑定一下Github账户点击中间这个按钮然后登录一下Github完成绑定我们以这个项目为例我让AI帮我把这个按钮修改一下让它变得更加显眼一些在云端运行需要做的第一步是先把项目上传到Github上面这里回到VS Code的找到左侧的Source Control这里有一个Publish我们给项目起个名字我点击Publish to Github上面然后是一个私有仓库上传成功以后我们回到COTAX的网页板在存储库这里选择刚才上传的项目我说按钮字体看不清弄成一个显眼的颜色然后开始COTAX会自动在云端创建运行环境我们可以点进去看到它的直行日质它会自动完成代码的修改而且整个修改过程都是异步的它可以在后台自动进墨直行我们可以同时开启多个任务让它在后台并行直行任务完成点进去看一下在这个页面可以审核它的代码修改右上角有一个重要按钮创建Lachii请求点击一下然后点击查看Pierre这个改动就以一个PureQuest的形式提交到了Github上面在这上面可以审核代码如果没问题直接点击这个墨转按钮这样就把改动墨制进了主干分支整个代码修改就完成了在VS Code的这边可以点击S1nc把远端的分支同步过来然后在本地也同步过来了修改后的效果Codex的云端运行环境还有一个非常好用的功能就是自动的代码审核我们在Codex网页板这边点击启动代码审核个人偏好设置这里的按钮把它打开这样我们自己的仓库所有的PureQuestCodex都会自动进行CodeReview提出它对于PureQuest的建议帮助我们提早发现Bug更好的优化代码这里我来试一下我还是以刚才的仓库为例这里我先建一个分支New Branch Feature我在新建的分支上面改点东西然后提交接下来创建一个PureQuest把我刚才建的分支网主干核变一下点击Create等待了一分钟Codex自动进行了代码Review它提出了自己的建议认为把HDDPS改成HDDP不合理会导致一批爆错这样在Codex的帮助下面我们可以提早发现代码问题这个功能非常的有用给它点个赞如果想把Codex能力接入你自己的代码里面可以使用CodexSDK这也是我们要介绍的最后一种运行环境我们打开一个新的文件墙执行第一个命令NPME-NIT GANWIDE把这个文件墙出使化成一个Note工程接下来执行第二个命令安装CodexSDK接下来新建一个代码文件我就问Dir MGS把官网的这个实力代码沾贴进来这里需要加一个配置跳过Gate的安全检查代码里不需要配置任何的API-K它是直接掉用电脑上的Codex进行工作让我们代码就边写完成了回到命令行这边使用Note把它运行一下回车成功给到的输出我们的CodexSDK就配置成功了好 今天的视频就到这里感谢大家我们下期再见
