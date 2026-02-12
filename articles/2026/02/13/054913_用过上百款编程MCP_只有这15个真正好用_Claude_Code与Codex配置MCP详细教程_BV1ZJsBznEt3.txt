@@ -1,0 +1,149 @@
+Timestamp: 2026-02-13T05:49:13.740636
+Title: 用过上百款编程MCP，只有这15个真正好用，Claude Code与Codex配置MCP详细教程 BV1ZJsBznEt3
+URL: https://b23.tv/9oT7Cg8
+Status: success
+Duration: 22:53
+
+Description:
+MCP（模型上下文协议）是AI编程工具的标准化工具箱，它赋予AI与外部系统对话和操作的能力，从而在软件开发全流程中实现自动化并显著提高生产力。本视频通过Color the Code和Codex两个AI编程工具的实战演示，详细介绍了15款MCP工具及其应用。
+
+**一、核心要点概述**
+
+*   **MCP定义**：MCP是AI的标准化工具箱，使AI能够与外部系统对话，代替人类完成特定操作。它允许AI编程工具突破自身知识和能力限制，实现任务自动化和功能扩展。
+*   **MCP的广泛应用领域**：从浏览器自动化、数据库操作、设计稿转代码，到知识检索、图像生成、项目部署、代码协作与安全扫描，乃至支付集成和自定义功能，MCP几乎覆盖了软件开发的各个环节。
+*   **配置方式**：MCP的配置通常涉及在AI编程工具（如Color the Code, Codex）中添加特定命令，并可能需要API密钥授权。配置可分为项目级别或用户级别。
+*   **核心价值**：极大地提升了开发效率，减少了重复性工作，使AI能够处理更复杂、更贴近实际业务的编程任务。
+
+**二、MCP工具分类与应用案例**
+
+1.  **浏览器与界面自动化**
+    *   **Cromwell Dev2 MCP**: 谷歌官方出品，无需复杂配置，直接操作浏览器（如打开网页、搜索、点击、辅助调试、获取网络请求和控制台报错）。
+2.  **数据管理与后端服务**
+    *   **Neon MCP**: 为AI提供免费的云端PostgreSQL数据库操作能力（如创建数据库、表、插入数据）。
+    *   **SuperBase MCP**: 在PostgreSQL基础上提供用户认证、文件存储、可视化运维面板等完整后端基础设施（如创建业务表、实现用户登录认证）。
+3.  **设计与前端开发**
+    *   **Figma MCP**: 将Figma设计稿直接对接AI编程工具，实现一句话生成网页（如将登录页面设计稿转换为Next.js网页）。
+    *   **Shadcn/ui MCP**: 帮助AI自动查找并集成Shadcn/ui前端组件代码。
+4.  **知识与信息智能检索**
+    *   **Context 7 MCP**: 帮助AI查找最新文档，补充其知识体系之外的编程知识（如了解Python 3.14的T字符串新特性）。
+    *   **REF MCP (文献检索)**: 更灵活地深入检索冷门文档（如论文、GitHub仓库）。
+5.  **创意内容生成**
+    *   **REF MCP (图像生成)**: 通过API调用，让AI生成产品配图，提升产品美观度（如为销售套餐页面生成配图）。
+6.  **部署与运维效率**
+    *   **Vercel MCP**: 免费提供项目部署服务，并可查询项目信息（如一键部署Next.js项目）。
+    *   **IZONE PAGEPACE MCP**: 国内类似的免费项目部署平台。
+    *   **Codeflare MCP**: 提供多样化的服务，包括文档查找、项目部署、日志监控、全球互联网流量趋势查询、启动沙箱开发环境等。
+7.  **代码质量与协作**
+    *   **Gitlab MCP**: 连接AI到Gitlab平台，实现资源库读取、问题管理、PR创建、代码分析和自动化流程执行（如自动修复Issue并创建Pull Request）。
+    *   **Semgrep MCP**: 安全的静态分析工具，内置5000+安全规则，用于代码安全漏洞扫描。
+8.  **业务功能集成**
+    *   **Stripe MCP**: 对接Stripe收款服务平台，使AI能创建商品支付页面并处理交易。
+9.  **自定义与扩展**
+    *   **MCP SDK (Gitlab MCP官方仓库提供)**: 允许开发者使用各种编程语言创建属于自己的MCP Server，满足个性化需求。
+
+**三、总结**
+
+MCPs作为AI的标准化工具箱，极大地扩展了AI编程工具与外部世界的交互能力，从而实现了软件开发全流程的自动化与效率飞跃。
+
+**四、Overarching Framework**
+
+AI编程工具通过模型上下文协议（MCP）与外部系统集成，实现了能力扩展、任务自动化，并显著提升了软件开发的生产力。
+
+**五、Mermaid Conceptual Map**
+<Mermaid_Diagram>
+graph TD
+    A["AI编程工具<br/>(Color the Code, Codex)"]:::aiTool
+    B["模型上下文协议 (MCP)<br/>AI的标准化工具箱"]:::mcpCore
+    C["生产力飞跃<br/>与全流程自动化"]:::outcome
+
+    subgraph "浏览器与界面自动化"
+        D1["Cromwell Dev2 MCP<br/>(操作浏览器，辅助调试)"]:::mcp
+    end
+
+    subgraph "数据管理与后端服务"
+        D2["Neon MCP<br/>(云端数据库PostgreSQL)"]:::mcp
+        D3["SuperBase MCP<br/>(后端基础设施，用户认证)"]:::mcp
+    end
+
+    subgraph "设计与前端开发"
+        E1["Figma MCP<br/>(设计稿转代码)"]:::mcp
+        E2["Shadcn/ui MCP<br/>(前端组件集成)"]:::mcp
+    end
+
+    subgraph "知识与信息智能"
+        E3["Context 7 MCP<br/>(查找最新编程知识)"]:::mcp
+        E4["REF MCP (文献)<br/>(深入文档检索)"]:::mcp
+    end
+
+    subgraph "创意内容生成"
+        F1["REF MCP (图像)<br/>(AI图片生成)"]:::mcp
+    end
+
+    subgraph "部署与运维效率"
+        F2["Vercel MCP<br/>(项目部署，信息查询)"]:::mcp
+        F3["IZONE PAGEPACE MCP<br/>(国内部署)"]:::mcp
+        F4["Codeflare MCP<br/>(多样化部署，监控)"]:::mcp
+    end
+
+    subgraph "代码质量与协作"
+        G1["Gitlab MCP<br/>(代码管理，Issue/PR自动化)"]:::mcp
+        G2["Semgrep MCP<br/>(代码安全扫描)"]:::mcp
+    end
+
+    subgraph "业务功能集成"
+        H1["Stripe MCP<br/>(支付功能接入)"]:::mcp
+    end
+    
+    subgraph "自定义与扩展"
+        H2["MCP SDK<br/>(创建专属MCP Server)"]:::mcp
+    end
+
+    A -- "利用" --> B;
+
+    B --> D1; D1 -- "自动化浏览器操作" --> C;
+    B --> D2; D2 -- "提供云数据库能力" --> C;
+    B --> D3; D3 -- "构建全栈后端服务" --> C;
+
+    B --> E1; E1 -- "设计稿快速转网页" --> C;
+    B --> E2; E2 -- "高效集成UI组件" --> C;
+    B --> E3; E3 -- "AI获取最新知识" --> C;
+    B --> E4; E4 -- "AI深入检索文档" --> C;
+
+    B --> F1; F1 -- "AI生成产品配图" --> C;
+    B --> F2; F2 -- "一键项目部署" --> C;
+    B --> F3; F3 -- "国内平台部署" --> C;
+    B --> F4; F4 -- "多样化部署与监控" --> C;
+
+    B --> G1; G1 -- "自动化代码协作与管理" --> C;
+    B --> G2; G2 -- "保障代码安全" --> C;
+
+    B --> H1; H1 -- "集成支付功能" --> C;
+    B --> H2; H2 -- "满足个性化需求" --> C;
+
+    classDef aiTool fill:#FFD700,stroke:#DAA520,stroke-width:2px,color:#333;
+    classDef mcpCore fill:#ADD8E6,stroke:#4682B4,stroke-width:2px,color:#333;
+    classDef mcp fill:#F0F8FF,stroke:#B0C4DE,stroke-width:1px,color:#333;
+    classDef outcome fill:#90EE90,stroke:#3CB371,stroke-width:2px,color:#333;
+
+    style D1 fill:#E0FFFF,stroke:#40E0D0,stroke-width:1px,color:#333;
+    style D2 fill:#FFE0B2,stroke:#FF8C00,stroke-width:1px,color:#333;
+    style D3 fill:#FFE0B2,stroke:#FF8C00,stroke-width:1px,color:#333;
+    style E1 fill:#D7E9F9,stroke:#6495ED,stroke-width:1px,color:#333;
+    style E2 fill:#D7E9F9,stroke:#6495ED,stroke-width:1px,color:#333;
+    style E3 fill:#F5E0FF,stroke:#BA55D3,stroke-width:1px,color:#333;
+    style E4 fill:#F5E0FF,stroke:#BA55D3,stroke-width:1px,color:#333;
+    style F1 fill:#E0FFE0,stroke:#7CFC00,stroke-width:1px,color:#333;
+    style F2 fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333;
+    style F3 fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333;
+    style F4 fill:#FFFACD,stroke:#FFD700,stroke-width:1px,color:#333;
+    style G1 fill:#F0FFF0,stroke:#90EE90,stroke-width:1px,color:#333;
+    style G2 fill:#F0FFF0,stroke:#90EE90,stroke-width:1px,color:#333;
+    style H1 fill:#FFFAF0,stroke:#FFA07A,stroke-width:1px,color:#333;
+    style H2 fill:#FFFAF0,stroke:#FFA07A,stroke-width:1px,color:#333;
+
+    linkStyle 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 stroke:#5F9EA0,stroke-width:1.5px;
+    linkStyle 18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 stroke:#333,stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+我试用过上百款编程类的MCP工具只有这15个是真正好用的这些MCP可以为AI编程工具赋予云端数据库操作流冷气独取设计稿生成网页产品配图 安全扫描全自动部署等等的能力许多人说MCP是一个开发者比用户还多的技术其实很多好用的MCP工具主要集中在编程领域本期视频我准备使用最近热度最高的两个AI编程工具Color the Code还有Codex来实战演示一下这些MCP server我还准备了许多具体案例来看看我们如何利用MCP让生产力翻倍MCP也就是模型上下文协议简单一句话总结MCP就是AI的标准化工具箱AI可以使用这个工具箱与外部系统对话代替人类完成一些操作我们要介绍的第一个就是让AI有能力操作流冷气的工具箱在之前的视频里面我们介绍过很多AI自动操作调适流冷气的MCP比如这期视频里面介绍的Brother to's MCP还有这期介绍的Cromwell MCP等等这些MCP其实都是社区开发的所以配置起来比较麻烦使用的时候需要先往流冷气里面安装差件现在骨骼官方亲自下场直接终结了比赛官方最近开发了一个Cromwell Dev2MCP这个MCP不再需要任何的复杂配置只要电脑上安装过Cromwell流冷气就可以直接使用我们来到Cromwell Dev2MCP的给它们首页往下找项目提供了很多种配置方式这里我们主要看Cromwell的Code还有CodeX我找到一个测试文件墙进来以后在中端打开我的电脑上已经安装过CodeCode了有关CodeCode怎么安装怎么在国内免费使用在这期视频里面有国详细介绍了我们把CodeCode的配置命令覆治过来沾贴一下回车这样就安装成功了它默认是项目级别的只对当前这个项目生效如果想对所有的项目生效可以在后面加两个Hungun ScopeKonger User添加了这个参数以后这个MCP就变成了用户级对这个电脑上的所有项目都会生效安装完成以后我们启动一下CodeCode然后输入这个命令斜杠MCP回车这里打上一个对勾显示Connected就配置完成了接下来我们来看另外一个AI变成工具CodeX怎么配置MCP我这个电脑上已经安装过CodeX了与关CodeX怎么安装配置在这期视频里面有过详细介绍了我们来到这个地址C盘用户你的用户名点CodeX这个文件夹进来以后找到这个文件config.tulml如果没有这个文件的话可以新建一个苹果电脑或者Linux系统的话就是苹果上的这个地址这里我们先以Windows电脑为例我们把Windows电脑的这一串配置附置下来来到配置文件沾贴过来可以把这个启动时间适当调高一点这里我调成60秒Windows上面配置CodeXMCP比较繁琐如果是苹果电脑的话可以进行检化把下面这两行删掉NPS可以放到上面下面的斜杠C跟NPS都不用写苹果电脑可以检化成这个样子这里我还是回退成Windows的样子把配置文件保存一下然后我们还是进入测试文件夹输入命令CodeX先把CodeX启动起来等待了一会儿启动完成我们输入斜杠MCP可以看到我们添加的MCP server这样在CodeX这边就配置完成了这个MCP的基础用法就是让AAS操作流冷气自动化完成一些操作我让CodeX打开Kitabu然后找到这个项目给他点个Star我们看到他调用了MCP工具打开了Kitabu找到了搜索栏然后输入对应的搜索指令成功搜索到了我们需要的项目这里也点上了Star除了基础的操作流冷气它这里面还有一些工具可以帮助我们辅助调适代码比如可以获取网络请求然后列出控制台的爆测等等我让AAS测试一下这个网站的提交网友看看如果有爆错的话应该如何修改我们看到AAS触发了测试并且控制台已经有了爆错它通过MCP工具独取到控制台信息还有网络请求然后CodeX在代码里面找到了爆错原因应该把这个Poot请求改成Post这样使用Cromedive ToothMCP成功进行了页面的调适并且精准修改好了代码非常的方便尿是一个基于PossGrace的风装的免费的云端数据库我们接入它的MCP就可以让AAS瞬间获得一个免费的云端数据库这里找到Dox然后搜索MCP找到这个文囊ConnectMCP里面列出了各个扣端的配置方式我们先看CodeX这里有一个遗憾配置命令配置新的MCPServer之前我先把旧的移除掉MCPServer不是配置越多越好每配置一个MCPServer都会增加一部分的上下文占用所以MCPServer最好是用哪个配置哪个输入CodeXMCPList这里列出的是之前装过的MCP我把上一个移除掉输入命令CodeXMCPREMOO然后沾贴上MCP的名字这样就移出干净了我们把尿的这个命令附置过来添加进去再启动下Code输入斜杠MCP这里显示尿的需要登录数全一下我们回车流览器会打开一个窗口要求数全点击Apple这里显示数全完成我们回到CodeX尿这里显示Connected就配置成功了接下来我们看一下CodeX怎么配置这里来到CodeX配置文件CodeX直接配置HTDP的MCP会有问题这里我从文道里面找一个MPX的配置方式这里我把之前改造一下MCPServer的名字改成尿接下来这个参数改成MCPREMOOT最后网址改成尿的网址这样就可以了如果您是苹果电脑可以把配置简化成这个样Windows的配置就复杂一些我们来启动CodeX试一下这里点击Apple回到CodeX输入命令写线MCP这样尿MCP在CodeX这边也配置完成了我准备了一个CSV文件的测试数据这里面存储的是学生的学号名字还有分数我准备让Ai创建一个数据库然后把这个表存进去我说新建一个Persect把这个数据存到一个表里面CodeX掉用了尿MCP先新建了一个Persect然后执行CCO语句把表现出来了接下来执行CCO语句把数据插入了表里面我们来到尿MCP就可以看到刚才新建的Persect在Persect里面就可以看到我们的数据表这样我们的CodeAscent就有了一个完全操作一个数据库的能力我们也可以使用AI在这里面把相应的数据表都见出来在而AI帮我们声称后段太马形成一个完整的具有数据库的后段应用SuperBase比尿MC更加强大在强大的Polsugress数据库的基础上封装了用户认证文件存储可视化的运为面板等功能为开发者提供了一整套开箱可用的后端基础设施我们来把SuperBase的MCP也配置一下我们先来到SuperBase的控制台创建一个新的项目给项目其名字TenemyMAR点击创建我们来到SuperBase的文档站在Persect这里选择我们刚才建的项目这里有一个配置方式这是一个远程调用的MCP server我们现在CodeCode里面配置一下CodeMCP的AI的SuperBase然后两个HengangTransport HDDP表示这是一个远程调用的MCP接下来就可以把UR2附置一下沾铁过来回车启动一下CodeCode输入斜线MCP选择SuperBase回车在流暖器打开的窗口下面点击授权这样就配置完成了我还是让它创建一个表把这个数据写进去这样在SuperBase的后台就可以看到我们创建的表了我而而AI用NextJS写一个项目利用SuperBase自带的用户健全功能实现用户登录好,待马写完了项目里需要配置两个环境变量一个是UR2还有一个K这个完全可以使用MCP自动生成一个我跟AI说一下你用MCP把环境变量填一下这里它成功调用了MCP帮我们填写好了UR还有API-K接下来我们把项目启动起来试一下NPM、RWRON、DV进来后是一个非常简单的登录跟注册业面这里我填一个游箱点击注册注册链接就发到了我的游箱这样来到游箱收一下验证游进游箱验证完成以后点击登录这里显示登录成功我们去SuperBase后台看一下在左侧Alcentication里面就可以看到刚才注册进来的用户然后我们还可以结合上面的书句库创建一些业务表我们通过SuperBase MCP就可以创建出一个完整的带用户登录加后台书句库的一个完整应用我们看一下Codex怎么配置SuperBase这里我从你样的上面改造一下把名字改一下我叫做SuperBase我们在SuperBase的文档站MCP这里选到自己的项目然后把这个链接附置下来沾贴进来Windows电脑就配置成这个样子如果是苹果电脑的话配置是这个样子在Codex这边也需要先登录数传一下然后我们的SuperBase MCP就可以直接用了Figma成为了今年最流行的网页与APP设计工具可以让团队在流暖器上合作设计而不必依赖复杂笨中的本地软件Figma里面有上百款可以免费使用的UI设计模板这里我找到一个登录页面并且把它改造了一下我想让APP把这个页面实现成一个网站我们可以使用Figma mCP把这个设计狗对接到Coding agent里面一句话就能生成这样的网页我们现在Codex的里面把它配置一下这个mCP有点特殊它后面需要填这些参数我们先把基础的配置好跟之前一样Codex mCP的后面起个名字可以叫FigmaConeGer mpxConeGer然后把这个mCP包的名字附置过来后面参数可以不用填直接回车它会告诉我们mCP是安装到这个文件里面接下来我们在电脑的目录里面找到这个文件把它打开找到我们的mCP这里需要把没完成的配置给它添加上首先填写一个参数杠外豆后接下来把这个参数填写上这里需要填写一个Figma的EPa key我们回到自己的Figma网站左上角点击Sightings在Security Generate New Token然后把下面的这些全线都勾选上创建Token把EPa key附置一下填写到配置文件里面打个豆后还有最后一个参数也就是STDIO这样就配置完成我们启动一下Code这里显示Figma连接成功了在CodeCode这边遇到这种参数比较复杂的mCP我们可以先在命令行这里把基础的配置好然后进入配置文件里面再把参数填写上然后我们来看Codex这是Windows电脑上在Codex配置文件里面配置Figma mCP的方式这是在Mac电脑上面配置Figma mCP的方式配置好mCP我们来试一下我的提示词是用Next.js15框架制作一个登录页面严格尊照Figma的设计稿我们选中这个设计稿的页面当然也可以选择某个区域或者某些元素选中页面右键CopyCopy Link to Selection然后把连接沾贴过来这样执行Codex调用Figma mCP获取到了这个设计稿的结构信息它还调用了当漏的方法把设计稿里面的图片下载了下来然后根据设计稿开始编写代码我们来看一下最终的效果最后声称的网页跟我的原始设计稿差不多有9层的相似稍微调整一下让A.A补充一些后台逻辑就可以直接上线使用了众所周知A.A大模型的知识都是有截止日期的A.A写一些经典代码可以完全胜任但是许多的新技术都在A.A的知识体系之外了Context 7mCP可以帮助A.A查找文团补充最新的编程知识我们先把它来配置一下这里我还是先从Codex的Code来配置一下我们把配置命令负置一下后面的APA可以不用填这样回车配置完成启动一下Code我们来看一个例子Python 3.14于25年10月7日发布这里面有一个新特性叫做模板自负串也叫做T自负串我让A.A写一个Python文件来演示T自负串有什么用我们看到A.A没有理解我的意思我说的是T自负串他给我弄成了A自负串生成的代码也是完全错误的我把这个代码删除我在刚才的提示词后面加了一个U字Context 7也就是让A.A在编码之前先用Context 7mCP查找文团我们看到A.A掉用Context 7mCP成功查找到了一些文团然后开始编写代码我们看到A.A这次写的代码这是Python 3.14引入的T自负串也就是模板自负串下面有它的著作用可以进行延迟求值自定处理最重要的一个安全检查基本上把T自负串的功能都列清楚了代码生成的很不错从这个例子里面我们使用Context 7mCP为A.A引入了Python 3.14的最新知识在它的Gitaboo文档里面有Codex配置方式苹果电脑就用这一串然后Windows电脑就用这一串这里我就不追述了与Context 7mCP类似的是这一个REFMCP也可以用来查找文团他们的主要区别是Context 7mCP只能从它的Context 7的标准文件库里面进行减锁而这个REFMCP就更加灵活一些它可以从更冷门的地方进行文团的深入减锁比如减锁论文减锁给它不残酷等等下面也有详细的配置方式它跟Context 7的功能用起来差不多这里我就不详细演示了我们使用A.A编程的时候有时候想快速生产一个产品员型但是这里面的配图不太好找这15完全可以让A.A帮我们先生成一张图片放在这里面先用著这样可以改善产品的美观度大幅提高观感这里我用的图片生成网站是REFMCP它提供API的标用方式来生成A.A图片REFMCP也有MCP我们把这个MCP来配置一下我们现在CLO的里面配置CLO的MCCPi的后面给它几个名字我就要REFMCP然后命令是MPX后面把MPX包的名字这里的参数可以先不用填然后我们来修改它生成的配置文件我们这里要做的是把这个参数添加上在E&V这里把参数添加上这里需要一个REFMCP的API Token我们来到REFMCP的首页这里找到API Token随便寄个名字然后点击Create这样把Token覆治一下沾贴到配置文件里面这样就配置成功了我们启动一下CLO的CLO的我让它生成一个可爱的Mode的图片提示词注意用英文的掉用了REFMCP工具然后生成了一张图片我们快速来看一下怎么在CodeX里面配置这个MCP进入CodeX配置文件这是在Windows上面的配置方法注意我们要在配置向里面把REFMCP的API Token写上就是这一块接下来这是Mac电脑的配置文件写法我们来看一个实践案例给这个热气球网站新建一个销售套餐网页设计6个套餐可供选择图片掉用REFMCP的生成后端可以先不用实现AI开始边写在码了这里它掉用了REFMCP工具一口气生成的6个图片我们来看一下AR做的效果这是注册页面输入PiKG死进入套餐的购买页面我们看到它的配图跟这个套餐还是很贴合的基本上完美的实现了我们的需求而且给网页增色不少代码写好了现在需要一个平台快速把它部署上线Warsel就是一个免费提供项目部署的平台NextJS就是由Warsel开发维护的框架我们使用NextJS开发的热气球网站跟Warsel平台是绝配接下来我们就使用Warsel的MCP一句话把它部署上线我们来到Warsel的文囊站这里搜索MCP在左侧找到Warsel MCP server这里有KL的扣的的配置方式把这个配置命令副置一下把命令沾贴过来回车我们启动下KL的扣的邪告MCP这里Warsel的MCP需要先登录一下回车流暖气会自动打开一个窗口我们点击授权授权完成以后就连结成功了我让AA用MCP把这个项目部署到Warsel上面这样就完成了部署这里有一个预览地址我们看一下Warsel的这个预名只有在国外的上网环境才可以看到页面都成功显示出来了部署完成除了部署项目Warsel MCP还可以用来查找信息比如我问他我又哪些Warsel项目他先调用MCP工具获取到我的团队信息然后查找这个团队下面所有的项目最终查找到了这三个项目是完全正确的我们来快速看一下怎么把Warsel的MCP配置到Codex里面这是Windows系统的配置文件的写法这是麦克电脑上面配置文件的写法Warsel是一个国外的部署平台在国内使用可能会遇到各种各样的网络问题在国内也有一个类似的部署平台IZONE PAYJACE它同样提供MCP工具可以把项目一见面费部署到IZONE PAYJACE上面在这期视频里面我对IZONE PAYJACE MCP有过详细介绍了这里我就不追溯了另外一个重要的无服气部署平台就是CodeflareCodeflare提供了很多种MCP server可以用来查找文道可以把项目部署到Codeflare worker上面可以用来监控日志可以用来查询全球互联网流量趋势启动杀箱开发环境等等每个MCP server后面都有一个对应的UI2我们在配置的时候注意把后面的UI2替换一下就可以获得各种各样的功能如果想知道它的具体功能可以点击这个链接进行更深入的查看基本上Codeflare所有的API功能都被整合进来了它的用法跟Warself比较相似这里我就不展开演示了GitabmCP server由Gitab的官方推出可以把我们的AICoding Agent直接连接到Gitab平台这样AI就能读取到资源库还有代码文件可以用来管理问题和创建PR分析代码并且自动化的执行流程这里我先从Codeclode配置一下CodemCP的I的后面其个名字我就Gitab两个Hunggong,Transport,协议是HDDP最后把它的MCP的远程地址沾贴过来回车接下来我们来到配置文件再把APIK添加上找到GitabmCP的配置像打一个豆腐在下面加HiderHider里面有填写Gitab的API token我们来到Gitab又上角Cytings左边找到DevilepartCytingGenerateNewToken这里选择经典随便寄个名字然后在下面把全线都给它沟选上然后点击声承把创建出来的Token复制一下沾贴到配置文件里面我们再启动一下Codeclode配置完成我们就把A&Gitab平台完全打通了我们来快速看一下Codex上面怎么配置GitabmCP server这是Windows的配置文件的写法注意这里要填一个参数叫Hider然后在里面填写上Gitab的APIToken这是麦克电脑上面的配置文件的写法我有这么一个A&G话我猜的游戏右下角的让A&G差一猜的按钮非常的淡看不清楚写的是什么然后代码是在Gitab上面的这时候可能下载到我这套代码的人会在上面提一个衣署有人会提交衣署说提交按钮看不清楚然后我们就可以让A&G和GitabmCP自动把这个问题修复我的提示词是你看一下衣署3然后自动修复一下创建一个PureQuest它调用了GitabmCP先获取到了这个衣署A&G行了代码修改修复了这个问题我们看到按钮已经可以看得清楚了然后它又调用了GitabmCP创建了一个PureQuest把刚才的修改以一个PR的形式提交上去我们在Gitab的PureQuest里面就可以看到A&G推送上来的代码这里有它的改动内容最终任务完成这样一个从Gitab这边产生的衣署A&G对代码进行了本地修改又以一个PureQuest的形式推送到了Gitab上面把一个8个修复的全流程就跑通了此DryP是近期最流行的收款服务平台此DryP mCP就是把此DryP平台的各种能力对阶给A&G这是我的一个测试上后现在只创建了一个杀核环境我们使用它来演示下此DryP mCP在Cloud Code里面执行Cloud mCP 爱德斯DryP两个Hong KongTransport HDDP后面是此DryP mCP的地址然后进入Cloud Code斜线mCP这里登录一下在流暖器点击授权我的提示词是UnexJS创建一个商品支付页面商品信息用mCP从此DryP获取只实现基础的支付功能即可无需复杂的后台逻辑AI掉用了此DryP mCP获取了商品的信息掉用此DryP mCP获取到了这些商品的价格然后它开始编写业务代码带码编写完成以后我们需要从此DryP的控制台获取这两个K一个公要一个思要配置完成以后我们把项目启动起来看一下这里有三个商品是从我此DryP的产品目录读取的然后客户可以下单购买这里我填写一个测试环境可以用的银行卡然后点击支付支付成功这个流程就跑通了在Strept的后台里面就可以看到这条交易信息这样我们使用Strept mCP给产品接入了支付的能力Strept C&N是一个非常好用的前端组件库在这里面几乎可以找到任何一种前端组件美观又好用我们可以在Component这里选中一个组件然后在Code这里把代码覆制到我们的项目里面来当然我们也可以让AI自动来这边查找然后把代码给我们覆制到项目里面在左边找到mCP server这里面有Kalow Code的配置方式把这个命令覆制下来执行一下我让AI帮我弄一个Strept C&N的8分组件这样AI就完成了代码的编写这个mCP用起来很方便我们使用AI写代码最不放心的就是它的安全性SEM GRIP MCCP可以帮助我们进行安全露动的扫描它是一个安全的静态分析工具内置了5000多条安全规则我们可以使用这个MCCP server把它的安全扫描能力对接给AI对我们的项目进行一个整体扫描即使发现露动在文囊站这里有一个Github的眼睛下面有它的配置方式这也是一个HDDP的我们从Kalow Code里面配置一下Kalow MCCPAI的后面寄个名字叫SEM GRIP两个横杠Transport 协议HDDP然后把它的MCCP地址添加到最后面启动一下Kalow Code这里显示Connected就配置成功了我让它用MCCP对代码进行安全扫描我们看到AI调用了MCCP工具对代码进行静态的安全扫描扫描完成为发现安全问题下面是这些扫描像都完美的符合了我们的代码还是写得不错的终于我们来到了视频的最后第15个MCCP这里我不准备介绍具体的MCCP server了我们看的是GithubMCCP的官方仓库这里面提供了很多的SDK我们可以使用这些SDK创建属于我们自己的MCCP server别人的写得再好终究不如自己的好用如果有什么想法我们可以选择自己写的编程语言创建属于自己的MCCP server在这期视频里面我详细介绍了如何使用Python SDK来创建一个属于自己的MCCP server感兴趣的观众朋友们可以去看一下好今天的视频到这里感谢大家点赞支持我们下期再见
