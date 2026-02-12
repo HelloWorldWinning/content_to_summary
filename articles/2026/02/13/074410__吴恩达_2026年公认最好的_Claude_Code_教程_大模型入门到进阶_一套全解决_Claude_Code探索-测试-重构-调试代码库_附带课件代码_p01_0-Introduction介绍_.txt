@@ -1,0 +1,179 @@
+Timestamp: 2026-02-13T07:44:10.518209
+Title: 【吴恩达】2026年公认最好的【Claude Code】教程！大模型入门到进阶，一套全解决！Claude Code探索-测试-重构-调试代码库—附带课件代码 p01 0-Introduction介绍 BV1RSFUzVEAG
+URL: https://b23.tv/VYnD0Gw
+Status: success
+Duration: 4:25
+
+Description:
+以下是根据您提供的文本内容提炼的核心思想和总结：
+
+**Cloud Code 短期课程总结**
+
+**1. 课程概述与核心价值**
+*   **什么是 Cloud Code？** 一款高度智能代理的编程助手，广受开发者喜爱，能显著提升生产力。
+*   **课程目标：** 与 Anthropic 合作，提供一个关于如何系统化、全面掌握 Cloud Code 使用的最佳实践的权威课程。
+*   **主讲人：** Anthropic 的 Edithy Shobic。
+*   **受益对象：**
+    *   **非现有用户：** 将获得系统工程能力的显著提升。
+    *   **现有用户：** 将学习到新的、实用的最佳实践和技巧。
+
+**2. AI 辅助编码的演进与 Cloud Code 的优势**
+*   **行业背景：** AI 辅助编码从最初的偶尔问答，发展到 GitHub 自动补全，再到更自主的工具。
+*   **Cloud Code 的突破：** 在“代理能力”方面实现了质的飞跃，能自主处理任务数分钟，甚至可以并行编排多个实例。
+*   **挑战：** 这种高级代理能力的协调和最佳实践尚未普及。
+
+**3. 使用 Cloud Code 的关键最佳实践**
+*   **核心准则：** 提供清晰的上下文，以帮助 Cloud Code 高效完成任务。
+*   **具体方法：**
+    *   **指向相关文件：** 让 Cloud Code 了解代码库中的关键部分。
+    *   **清晰描述功能特性：** 明确阐述所需的功能和业务逻辑。
+    *   **扩展其能力：** 利用 MCP 服务器和其他生态系统工具。
+
+**4. 课程实践案例（将应用最佳实践）**
+*   **案例一：RAG 聊天机器人**
+    *   涵盖：从前端到后端功能实现、代码重构、编写测试、GitHub 集成（PR 和问题修复）。
+    *   将使用的 Cloud Code 功能：规划、思考模式、创建并行会话、管理内存。
+*   **案例二：Jupyter Notebooks 数据探索**
+    *   涵盖：重构 Notebooks、移除冗余代码、使用 Web 应用程序创建强大的仪表盘。
+*   **案例三：Figma 视觉原型转前端应用**
+    *   涵盖：使用 Cloud Code、Figma MCP 服务器及其他 MCP 服务器，导入设计、迭代、测试并代理式构建前端应用。
+
+**5. Cloud Code 的底层架构**
+*   **核心特点：** 架构简单，依赖少量工具（如目录查找、正则表达式）在代码文件中搜索模式。
+*   **与传统 AI 编码工具的区别：** **不**依赖于语义嵌入代码库或将其转换为社会结构。
+*   **自主学习与决策：** 能代理式地阅读代码，在 `.md` 文件中做笔记，自主理解代码库状况，并驱动决策。
+*   **安全优势：** 由于无需索引代码库，代码可以保持本地化，从而带来重要的安全保障。
+
+---
+
+**核心结论：**
+通过掌握 Cloud Code 的高级代理能力、系统化最佳实践及其独特的架构原理，开发者可以大幅提升编码生产力，同时确保代码的本地安全与隐私。
+
+---
+
+**Overarching Framework (总体框架):**
+掌握基于 Cloud Code 的代理式 AI 辅助编程：最佳实践、应用场景及架构原理。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "核心产品与合作"
+        A["Cloud Code"]:::mainNode
+        B["Anthropic 合作"]:::background
+        C["Edithy Shobic (讲师)"]:::background
+    end
+
+    subgraph "课程目标与成果"
+        D["系统化使用 Cloud Code"]:::goalBenefit
+        E["掌握最佳实践"]:::goalBenefit
+        F["显著提高生产力"]:::goalBenefit
+        G["理解独特架构"]:::goalBenefit
+    end
+
+    subgraph "Cloud Code 核心优势"
+        H["高智能代理能力"]:::advantage
+        I["自主工作 (数分钟)"]:::advantage
+        J["编排多个实例"]:::advantage
+    end
+
+    subgraph "关键最佳实践"
+        K["提供清晰上下文"]:::bestPractice
+        L["指向相关文件"]:::bestPractice
+        M["清晰描述功能特性"]:::bestPractice
+        N["扩展 Cloud Code 能力"]:::bestPractice
+        O["MCP 服务器/生态工具"]:::bestPractice
+    end
+
+    subgraph "课程实践案例"
+        P["RAG 聊天机器人"]:::example
+        Q["Jupyter Notebooks 数据探索"]:::example
+        R["Figma 视觉原型转前端"]:::example
+    end
+
+    subgraph "Cloud Code 功能与机制"
+        S["规划与思考模式"]:::feature
+        T["并行会话"]:::feature
+        U["内存管理"]:::feature
+        V["GitHub 集成"]:::feature
+        W["自主阅读代码"]:::architecture
+        X["记录笔记 (.md)"]:::architecture
+        Y["驱动决策"]:::architecture
+    end
+
+    subgraph "底层架构与安全"
+        Z["简单架构"]:::architecture
+        AA["无语义嵌入/代码结构转换"]:::architecture
+        BB["本地代码库"]:::security
+        CC["安全与隐私"]:::security
+    end
+
+    subgraph "背景进化"
+        DD["AI 辅助编码进化"]:::background
+        EE["从自动补全到高度自治"]:::background
+    end
+
+    B -- "提供" --> A;
+    C -- "教授" --> E;
+
+    A -- "旨在实现" --> D;
+    D -- "通过" --> E;
+    E -- "促成" --> F;
+    A -- "基于" --> G;
+    A -- "核心是" --> H;
+    H -- "表现为" --> I;
+    H -- "表现为" --> J;
+    H -- "是" --> F;
+
+    E -- "指导" --> K;
+    K -- "包含" --> L;
+    K -- "包含" --> M;
+    K -- "包含" --> N;
+    N -- "通过" --> O;
+
+    A -- "应用于" --> P;
+    A -- "应用于" --> Q;
+    A -- "应用于" --> R;
+
+    P -- "利用" --> S;
+    P -- "利用" --> T;
+    P -- "利用" --> U;
+    P -- "利用" --> V;
+    Q -- "利用" --> S;
+    R -- "利用" --> S;
+    R -- "利用" --> O;
+
+    A -- "底层基于" --> Z;
+    Z -- "特点" --> AA;
+    Z -- "支持" --> W;
+    W -- "产生" --> X;
+    X -- "影响" --> Y;
+    Z -- "确保" --> BB;
+    BB -- "保障" --> CC;
+
+    DD -- "推动了" --> EE;
+    EE -- "Cloud Code 代表" --> H;
+
+    classDef mainNode fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#FFFFFF;
+    classDef goalBenefit fill:#BBDEFB,stroke:#1565C0,stroke-width:2px,color:#1A237E;
+    classDef advantage fill:#FFECB3,stroke:#FF8F00,stroke-width:2px,color:#4E342E;
+    classDef bestPractice fill:#DCEDC8,stroke:#558B2F,stroke-width:2px,color:#33691E;
+    classDef example fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#C62828;
+    classDef feature fill:#F0F4C3,stroke:#827717,stroke-width:2px,color:#424242;
+    classDef architecture fill:#CFD8DC,stroke:#546E7A,stroke-width:2px,color:#263238;
+    classDef security fill:#FFAB91,stroke:#BF360C,stroke-width:2px,color:#4E342E;
+    classDef background fill:#E0F2F7,stroke:#80DEEA,stroke-width:2px,color:#263238;
+
+    class A mainNode;
+    class D,E,F,G goalBenefit;
+    class H,I,J advantage;
+    class K,L,M,N,O bestPractice;
+    class P,Q,R example;
+    class S,T,U,V feature;
+    class W,X,Y,Z,AA architecture;
+    class BB,CC security;
+    class B,C,DD,EE background;
+</Mermaid_Diagram>
+
+Content:
+Welcome to Cloud Code, the highly-agientic coding assistant this short course is built in partnership with Anthropic and Anthropic's Edithy Shobic is back to share with us the practices of how to use Cloud Code. I'm really excited about this short course. Cloud Code is my personal favorite coding assistant right now and it has boosted my and many other developers' productivity by a large margin. And it is a tool with a lot of depth to it. And so we want to get together with Anthropic to teach hopefully the definitive course on all of the most important ideas behind how to use it in a systematic way. Thanks, Andrew. I'm excited to be back here and start like you mentioned from explaining what the tool is, how it works, all the way towards using it in parallel with many different tools, including get work trees and MCP servers. What I've seen over the last couple of years is AI assisted coding has evolved rapidly. It started from maybe people asking OMs occasional coding questions to then GitHub autocomplete to then your various tools that became more and more autonomous. And Cloud Code, when it was released, was definitely a step up in terms of the degree of agency or the amount of stuff that the coding assistant could do by itself. And so I think many people are surprised that you could set a task that Cloud would work on for many minutes or sometimes even more than a few minutes. And now there are developers that are orchestrating not just a single Cloud instance, but even several of them working in parallel on different parts of a code base. But coordinating all this has to say the best practices that is not widely known. And if you have not worked with people close to best practices, I think they could be a big uplift still for mastering these best practices and knowing how they drive that amazing productivity that I've seen many developers have using Cloud Code. So as we start to talk about those best practices, a key tip for working with Cloud Code is providing clear context to help Cloud Code achieve the task you want efficiently. This means pointing Cloud Code to the relevant files, clearly describing the features and functionality that you want, and making sure that you're properly extending the capabilities of Cloud Code with MCP servers and other tools in that ecosystem. In this course, you'll apply those best practices to three different examples. We'll start with a rag chatbot, and you'll implement the features from the front end to the back end, including refactoring code, writing tests, and then using the GitHub integration to work with pull requests and fixing issues. You'll make use of many Cloud Code features, like planning, thinking modes, creating parallel sessions, and managing Cloud's memory. For the second example, we'll shift gears and work with Jupyter Notebooks to explore e-commerce data. We'll refactor notebooks using Cloud Code, remove redundant code, and create powerful dashboards with web applications. Finally, we'll move to create a visual mock-up based in Figma and use Cloud Code, the Figma MCP server, and a different MCP server to import the design, iterate, test, and build, agentically, a powerful front end application. If you are not currently a Cloud Code user, I think learning this set of ideas will give you a meaningful acceleration in the way that wish you can engineer systems. And even if you are a current Cloud Code user, I think having Ellie share these best practices with you in a comprehensive and systematic way, well, I hope leave you with quite a few new things you try that will be useful for your work. I'd like to thank from Devlan.ai, Hara Salami, who had contributed to this course. In the next video, Ellie will share Cloud Code's underlying architecture, and you might be surprised by how simple the architecture is. Cloud Code relies on just a small number of tools to search for patterns within your code files, so this directories look at files, do reg eggs. It does not rely on semantically embedding your code in a code base or transforming it into a social structure. And one of the things that I think has made Cloud Code effective is how it agentically can read through your code to take notes in a file called .md to figure out autonomously what is going on in your code base to then drive decision-making on how to advance your code. That's right. Because of that and not having a need to index a code base, you can ensure the code base stays local. We'll talk about some of the security ramifications with that. So let's get started, and I'll see you in the next video.
