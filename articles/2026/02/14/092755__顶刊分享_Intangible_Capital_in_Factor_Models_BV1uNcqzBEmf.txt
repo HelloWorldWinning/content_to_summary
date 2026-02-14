@@ -1,0 +1,111 @@
+Timestamp: 2026-02-14T09:27:55.689719
+Title: 【顶刊分享】Intangible Capital in Factor Models BV1uNcqzBEmf
+URL: https://b23.tv/VZ8CtN1
+Status: success
+Duration: 19:51
+
+Description:
+总结如下：
+
+### 1. 引言
+本文分享了一项关于金融因子表现的研究，重点比较了不同构建方式的因子在累积收益上的表现。
+
+### 2. 关键因子及其构建方式
+研究对比了以下三种类型的因子构建方式：
+*   **传统因子**：仅使用“表类信息”（如财务报表数据）构建。
+*   **结合表外信息因子**：同时利用“表类信息”和“表外信息”（如非财务、市场情绪等数据，文中以“偷偷”模式指代）构建。
+*   **纯表外信息因子**：仅使用“表外信息”构建。
+
+### 3. 绩效比较
+研究观察了HML、CM和RMW等因子在不同构建方式下的累积收益表现：
+*   **HML因子**：纯粹使用表外信息构建的HML因子累积收益表现最佳，传统的HML因子表现最差。结合表外信息的HML因子介于两者之间。
+*   **CM因子**：同样，使用表外信息构建的CM因子表现最好。
+*   **RMW因子**：拉入表外信息的RMW因子表现也优于传统方法构建的RMW因子。
+
+### 4. 重要说明
+文中所提及的CM因子是基于PPR的意识表构建的，这与Fama-French五因子模型（FF5）中的CM因子存在一定区别。
+
+### 5. 核心结论
+结合或纯粹使用表外信息构建的金融因子，在累积收益表现上显著优于传统仅使用表内信息构建的因子。
+
+### 6. 总括框架
+金融因子构建与绩效分析：表外信息的重要性
+
+<Mermaid_Diagram>
+graph TD
+    A["研究主题: 金融因子表现比较"]
+
+    subgraph "因子构建方式"
+        direction LR
+        B["传统因子<br/>(仅表内信息)"]
+        C["结合表外信息因子<br/>('偷偷'模式)"]
+        D["纯表外信息因子"]
+    end
+
+    subgraph "具体因子示例"
+        direction LR
+        E["HML 因子"]
+        F["CM 因子"]
+        G["RMW 因子"]
+    end
+
+    H["绩效指标: 累积收益表现"]
+
+    subgraph "绩效结果"
+        direction TD
+        I["最佳表现:<br/>纯表外信息构建因子"]
+        J["较好表现:<br/>结合表外信息因子"]
+        K["最差表现:<br/>传统因子"]
+    end
+
+    L["CM因子特殊说明:<br/>基于PPR意识表构建, 与FF5不同"]
+    M["未解之问:<br/>为何表外信息因子表现更优?"]
+
+    A --> B
+    A --> C
+    A --> D
+
+    B -- "应用到" --> E
+    B -- "应用到" --> F
+    B -- "应用到" --> G
+
+    C -- "应用到" --> E
+    C -- "应用到" --> F
+    C -- "应用到" --> G
+
+    D -- "应用到" --> E
+    D -- "应用到" --> F
+    D -- "应用到" --> G
+
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I
+    H --> J
+    H --> K
+
+    I -- "对应" --> D
+    J -- "对应" --> C
+    K -- "对应" --> B
+
+    F -- "细节" --> L
+    A --> M
+
+    style A fill:#D1E7F0,stroke:#2C7DA0,stroke-width:2px,color:#333;
+    style B fill:#FFDDC1,stroke:#E38D2F,stroke-width:1px,color:#333;
+    style C fill:#FFE0B2,stroke:#E38D2F,stroke-width:1px,color:#333;
+    style D fill:#FFF3E0,stroke:#E38D2F,stroke-width:1px,color:#333;
+    style E fill:#E0F2F1,stroke:#00796B,stroke-width:1px,color:#333;
+    style F fill:#E0F2F1,stroke:#00796B,stroke-width:1px,color:#333;
+    style G fill:#E0F2F1,stroke:#00796B,stroke-width:1px,color:#333;
+    style H fill:#DCEDC8,stroke:#5A924D,stroke-width:2px,color:#333;
+    style I fill:#C8E6C9,stroke:#388E3C,stroke-width:2px,color:#333;
+    style J fill:#FFECB3,stroke:#FF8F00,stroke-width:2px,color:#333;
+    style K fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#333;
+    style L fill:#FFF9C4,stroke:#FBC02D,stroke-width:1px,color:#333;
+    style M fill:#E1BEE7,stroke:#9C27B0,stroke-width:1px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+大家好 今天 继续给大家分享一篇英子罗文我们首先看到的是这篇文章中的一个累积英子表现的图这个英子呢 安全L 大家应该都很熟悉它比较的是传统的HML 以及利用表类信息和表外信息一起购件的HML 偷偷和使用表外信息购件的HML 我们发现使用表外购件的这个英子它的累积收益表现会更好 最差的是传统的HML 英子然后CM 也是如此的 用表外信息购件的这个英子表现是最好的然后RMW 就是偷偷 就是拉入了表外信息的RMW 表现也比传统的更好这里有一点要提的就是这里的CM 是用PPR的意识表购件和FF5 里面的CM 还是有点区别的那么为什么会有这样的情况呢我们
