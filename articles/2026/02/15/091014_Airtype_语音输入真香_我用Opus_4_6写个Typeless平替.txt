@@ -1,0 +1,113 @@
+Timestamp: 2026-02-15T09:10:14.314385
+Title: Airtype 语音输入真香，我用Opus 4.6写个Typeless平替
+URL: https://youtube.com/watch?v=OuCk7tYLnqM&si=rqp6dKLTznen0fbZ
+Status: success
+Duration: 9:29
+
+Description:
+以下是对视频内容的总结：
+
+### 1. 产品概述
+*   **产品名称**：AirType
+*   **开发背景与目标**：在AI时代，键盘输入速度已跟不上大脑思考节奏，现有云输入产品如Typeless流行。开发者旨在利用现有云转文字模型，拼凑出一款草根、免费的云输入工具，以解放双手，提升输入效率。
+*   **核心理念**：通过简单的配置，快速开启应用，实现云输入。
+*   **产品口号**："YouSync faster than YouType"
+
+### 2. 主要功能与特点
+*   **云输入**：将语音实时转换为文字，并自动输入到光标处。
+*   **模型选择与配置**：
+    *   **语音转文字 (Speech-to-Text)**：支持 Eleven Labs (推荐 SqurapV2)、Open AI、Messro (推荐 Vox Mini Transcribe2) 等主流模型，需配置API Key。
+    *   **文字增强 (Text Enhancement)**：可选功能，用于进一步处理转写文本，支持 OpenRouter (例如 Gemeline 2.5 Flash)、OpenAI、Together、Grok、Deepseek、MunShut 等模型，也可自定义或集成本地模型。需配置API Key及模型ID。
+*   **权限管理**：需要麦克风权限和辅助功能 (Accessibility) 权限，以支持语音录入和自动文本粘贴。
+*   **快捷键**：
+    *   **默认**：Option + Space (PushToTalk，类似对讲机模式，按住录音，释放转换)。
+    *   **可选**：Option + Shift + Space (Toggle模式，自由说话，再次按下停止)。
+
+### 3. 安装与使用流程
+*   **下载与安装**：从 AirType.space 官方网站下载 DMG 安装包 (1.2MB)，拖拽至应用程序，允许打开。
+*   **配置向导**：
+    1.  **语音转文字模型配置**：选择偏好模型，创建并粘贴API Key。
+    2.  **文字增强模型配置**：选择或配置增强模型，粘贴API Key和模型ID (可选)。
+    3.  **权限授权**：授予麦克风和辅助功能权限。
+    4.  **快捷键设置**：选择或保留默认快捷键。
+*   **演示**：在VS Code或Web开发环境 (如CoreCode) 中，通过按下快捷键进行语音输入，系统实时转写文字到光标处。演示中提及转写质量高，并指出通过文字增强模型可进一步优化。
+*   **动态调整**：在使用过程中可随时调整各项参数。
+
+### 4. 未来展望与潜在功能
+*   **上下文识别**：利用辅助功能 (Accessibility) 权限，识别光标所处场景 (如控制台、浏览器地址栏)，实现更智能的上下文感知输入。
+*   **模型扩展性**：支持集成更多预设、自定义或本地模型，以适应不同语言或特殊需求。
+
+### 5. 总结与号召
+AirType是一款小巧高效的AI云输入工具，通过集成主流语音转文字及文字增强模型，旨在解放用户双手，提升AI时代下的文字输入效率。欢迎用户访问官方网站 AirType.space 下载体验，并提供宝贵的反馈和建议。
+
+---
+
+**核心观点总结 (Core Point Conclusion):**
+AirType是一款小巧高效的AI云输入工具，通过集成主流语音转文字及文字增强模型，旨在解放用户双手，提升AI时代下的文字输入效率。
+
+**Overarching Framework (总体框架):**
+AI驱动的云输入工具的开发、配置与应用。
+
+<Mermaid_Diagram>
+graph TD
+    A["用户"]:::startEndNode --> B("访问 AirType.space"):::actionNode
+    B --> C("下载 DMG 安装包"):::actionNode
+    C --> D("安装 AirType 应用"):::actionNode
+
+    D --> E("启动并进入配置向导"):::configStepNode
+
+    subgraph "配置向导 Configuration Wizard"
+        direction LR
+        E --> F1("1. 配置语音转文字模型"):::configStepNode
+        F1 --> F1a("选择主流模型提供商"):::keyOptionNode
+        F1a --> M1["Eleven Labs (推荐 SqurapV2)"]:::modelNode
+        F1a --> M2["Open AI"]:::modelNode
+        F1a --> M3["Messro (推荐 Vox Mini Transcribe2)"]:::modelNode
+        F1a --> K1("获取并配置 API Key"):::actionNode
+
+        F1 --> F2("2. 配置文字增强模型 (可选)"):::configStepNode
+        F2 --> F2a("进一步提升输出质量"):::keyOptionNode
+        F2a --> M4["OpenRouter (例如 Gemeline 2.5 Flash)"]:::modelNode
+        F2a --> M5["OpenAI, Together, Grok, Deepseek 等"]:::modelNode
+        F2a --> K2("获取并配置 API Key & Model ID"):::actionNode
+
+        F2 --> F3("3. 授权应用权限"):::configStepNode
+        F3 --> P1("麦克风权限"):::permissionNode
+        F3 --> P2("辅助功能 (Accessibility) 权限"):::permissionNode
+
+        F3 --> F4("4. 设置快捷键"):::configStepNode
+        F4 --> H1("默认: Option + Space (按键说话)"):::keyOptionNode
+        F4 --> H2("可选: Option + Shift + Space (切换模式)"):::keyOptionNode
+    end
+
+    F4 --> G("完成配置, 开始使用"):::startEndNode
+
+    G --> H("按下快捷键 (例如 Option + Space)"):::actionNode
+    H --> I("进行语音输入"):::actionNode
+    I --> J("AirType 实时转写并输出文字"):::actionNode
+
+    subgraph "应用场景与展望 Application Scenarios & Outlook"
+        direction LR
+        J --> S1("文档编辑 (例如 VS Code)"):::keyOptionNode
+        J --> S2("Web开发沟通 (例如 CoreCode)"):::keyOptionNode
+        J --> R1("未来功能: 上下文识别 (利用 Accessibility)"):::keyOptionNode
+        R1 --> R2("更智能的输入体验"):::actionNode
+        J --> R3("模型扩展: 集成本地或自定义模型"):::keyOptionNode
+    end
+
+    J --> Z("提升输入效率, 解放双手"):::startEndNode
+    Z --> X("欢迎访问官网, 下载测试, 提供反馈"):::actionNode
+
+    classDef startEndNode fill:#E6FFE6,stroke:#009900,stroke-width:2px,color:#003300;
+    classDef actionNode fill:#E0F2F7,stroke:#007BBF,stroke-width:1px,color:#002244;
+    classDef configStepNode fill:#FFFDE7,stroke:#FFC107,stroke-width:2px,color:#663300;
+    classDef modelNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:1px,color:#330033;
+    classDef permissionNode fill:#FFEBEE,stroke:#D32F2F,stroke-width:1px,color:#660000;
+    classDef keyOptionNode fill:#F5F5F5,stroke:#616161,stroke-width:1px,color:#333333;
+
+    style "配置向导 Configuration Wizard" fill:#FFF8E1,stroke:#FFC107,stroke-width:1px;
+    style "应用场景与展望 Application Scenarios & Outlook" fill:#E8F5E9,stroke:#8BC34A,stroke-width:1px;
+</Mermaid_Diagram>
+
+Content:
+大家好,我是小魔头这几天我用opus 4.6 写了一个云输入工具用了一段时间,感觉还蛮香的本期视频就跟大家分享一下在EF发展到当今这个时代似乎键盘输入已经跟不上的节奏在圈内目前最火的产品我想就是Typeless这款非常好用的云输入产品不过在Webcoating时代软件的边鞋和开放速骨门槛越来越低我想着不妨就尝试自己来写一款在圈内也有一些好用的甚至能够得到一些免费额度的原因转闻自模型那我们将它急身进来是不是就能够拼凑出一款草根的免费的云输入工具呢我将这款产品起名为AirType现在就开始咱们今天的分享吧现在咱们来到AirType官方网站AirType.space它的slugan是YouSync foster than YouType在AI时代大家非速的思考键盘输入早已经跟不上大脑的节奏那我们需要的是云输入解放双手在AirType我们的逻辑是通过简单的配置快速的开启应用AirType的使用非常简单从官方网站下载安装包安装通过简单的配置步骤就可以开始使用了我们要做的首先是选择一款自己偏好的云转闻自模型配置好对应的模型服务上App现在就可以开始愉快的通过云来输入了当然我们还可以额外的配置一款模型进一步提高云转闻自的输出质量需要提醒大家的是目前它只支持Mark OS现在我们就来掩饰一下如何安装如何使用在官方网站点击Download下载DMG安装包这是一个非常小巧的包只有1.2兆双鸡汤我们可以加AirType拖拽到Applications在英文程序这里双鸡AirType咱们需要允许打开在网络上下载的这个应用现在就进入了配置向道首先是配置于转闻自模型目前只支持到了三个共语声Eleven Labs Open E-Mex设这是我在测试后发现效果还不错的那么Eleven Labs推荐大家设计SqurapV2点击右边这个Get API key去创建一个自己API key配置进来就好在开发者控制台这里创建一个新类API key比如我请问LiveAirType需要的全线也就仅仅是Speech to Text创建复制API key站贴进来继续接下来这一步是对文字的增强大家可以使用自己偏好的模型来对于转文字的输出做进一步的处理我们以OpenRouter为例同样点击Get API key前往OpenRouter创建自己的密针站贴进来模型我以Gemeline 2.5 Flash为例复制这个ID站贴进来下一步现在我们需要给到应用一些全线既然是云书入当然要给它麦克风的全线另一个是Accessibility支持的应用能够帮助我们自动的将文字输入到光标处点击Ground Access选择AirType应用这样就完成了全线的配置下一步在这里我们可以自定一块节件目前默认的是通过Option加Space实现PushToTalk就像对讲机一样按下录音释放开始做转换大家也可以通过Option加Shift加Space进入Toggle模式在这种模式下大家可以自由地说话再次按下组合件停止录音声称文字差勒到光标处我就保持默认的块节件现在一切就许可以开始使用AirType在使用中我们可以随时对这些参数来做调整在进入演示前我要向介绍另一套模型在语音书这里还有一个MessroMessro也提供了非常非常好用的语音转文字的模型根据我的测试Messro发布的最新语音转文字模型Vox Mini Transcribe2在AirType的使用中表现在也非常稳定输出质量也非常不错我们所要做的也是来到Messro控制台在API-K这里创建一个自己的密钥我创建一个并且将这个密钥沾贴过去复制密钥在AirType沾贴进来我在这里列出了两个模型实际上这两模型只像在应该是统一款我还没有完全的确认过大家可以选择Vox Mini 2602那么在语音书这里选择的模型决定了由哪一家来处理咱们的语音现在我们就可以开始使用语音了我们要做的就是按下Action加Space我们来尝试一下吧现在我在VS-K打开一个新的文档来试试语音书的效果录音时会在右下角有一个小小的提示的组件我们来试一下今天我尝试录制一段视频来介绍自己开发的小工具AirTypeAirType帮助用乎轻松的实现语音书入它能够利用到目前市场上主流的语音转文字模型来轻松的实现这个功能大家看看这个录入的效果吧总体来讲试试还是很不错的我目前使用的是11Labs所提供的模型这里有一个小小的错我们可以改一下这个是简单的文字录入在实际的应用场景中比如在Clocode进行WebCode的时候也是非常好用的比如在这里我现在开启了一个会话我希望在会话中讨论一个新的功能或需求在AirType应用中是获得了AXSVLED的全线在这个全线的支持下应用是否能够去识别到当前输入的场景比如是控制台还是流暖器的地址栏这样在识别到场景上下文之后或许可以做更多的事情我在这里就输入自己的需求看看它的识别效果怎么样我现在想讨论一个需求在AirType应用中已经获取到了比如AXSVLED的全线那么在应用程序的执行中是否能够实实地获取到当前光标所处的位置比如它是否在控制台还是在流暖器的地址栏如果能够获取到位置信息上下文信息这样的AirType应用或许就可以做更多的事情大家来看看这个输入怎么样呢如果大家对于这个输入质量比如目前这里偶尔出现的上条文信息实际上当时我说的应该是上下文信息AirType实际上是AirType如果大家期望能够尝试不同的模型来增强这个输出的质量可以在Inhancement这里替换模型目前在列表当中有许多模型可供使用已经预制好了比如OpenAI的OpenRouterTogetherGrowk DeepseekMunShut大家可以选择国产的模型来处理中文或许会有更好的效果在这里也可以做自定义如果大家不输了本地模型也可以通过自定义或者像AOM Studio等形式把它集成进来接下来要做的就是回车把消息交给CoreCode等待它的处理今天的分享就先到这里如果大家对AirType感兴趣播放来到官方网站来了解一下播放下载一份来测试一下这是一款机器小巧的运营书主工具或许在日常的工作和生活中能够给你带来一些小小的帮助大家在使用中有任何问题或者有什么新的需求和反馈也欢迎在评论区给我留言今天的视频分享就先到这里感谢大家收看我们下次视频分享再见同学们拜拜
