@@ -1,0 +1,142 @@
+Timestamp: 2026-02-17T20:12:14.031276
+Title: 标准的奸猾之相 BV1gLZsBaEnw
+URL: https://b23.tv/lUWZ9hd
+Status: success
+Duration: 1:31
+
+Description:
+**I. 核心结论 (Core Conclusion)**
+
+该面相预示此人聪明但极度狡猾、自私、无责任感且为达目的不择手段，行事狠辣，交往时务必谨慎。
+
+**II. 总体框架 (Overarching Framework)**
+
+面相分析 (Physiognomy)，通过面部特征推断个人性格、行为模式及潜在风险。
+
+**III. 详细分析 (Detailed Analysis)**
+
+A. **整体印象与性格基调**
+    1.  **面相类型：** 这是一个标准的“煎花之象”，初步判断为不善之人。
+    2.  **核心性格：** 聪明但非常狡诈，性格和行事方式容易导致问题。
+
+B. **面部特征与性格行为关联**
+    1.  **脸型与智慧 (叔叔于大面配小碗)：**
+        *   **特征：** 脸盘整体大而局部（可能指下颌或嘴巴）相对较小。
+        *   **推断：** 比较聪明、尖诈，适合做生意和投资。
+    2.  **眉眼组合与责任感：**
+        *   **特征：** 眉毛浓密，眉心（印堂）短且窄，眼睛是标准的“线眼”。
+        *   **推断：** 非常滑头，缺乏责任心，不顾实际情况。
+    3.  **额鼻组合与胆识底线：**
+        *   **特征：** 额头高阔，鼻根挺拔。
+        *   **推断：** 胆子很大，做事没有底线，缺乏道德感，为达目的不择手段。
+    4.  **口唇与行事风格：**
+        *   **特征：** “纯粥纯线”的口型，略带胡须。
+        *   **推断：** 容易倾向于暴力求财，做事干脆利落，行事狠辣果决。
+    5.  **人中与脸颊：**
+        *   **特征：** 人中不够长，脸盘两颊少肉。
+        *   **推断：** 注定是单打独斗的“独狼”型人物，行事缺乏底线。
+
+C. **行为模式与交往警示**
+    1.  **行事特点：** 此类人不可能心慈手软。
+    2.  **交往建议：** 与这种人打交道，务必格外小心。
+
+<Mermaid_Diagram>
+graph TD
+    A["面相分析框架 (Physiognomy Framework)"] --> B{"面部特征分析"};
+
+    subgraph "面部特征 Facial Features"
+        direction LR
+        F_overall("整体眉眼组合")
+        F_face_pro("脸型比例: 大面配小碗")
+        F_eyebrows("眉毛浓密 & 眉心短窄")
+        F_eyes("眼睛: 标准线眼")
+        F_forehead_nose("额头高阔 & 鼻根挺拔")
+        F_mouth("口唇: 纯粥纯线")
+        F_stubble("略带胡须")
+        F_philtrum("人中不够长")
+        F_cheeks("脸颊少肉")
+    end
+
+    subgraph "性格与能力 Personality & Traits"
+        direction LR
+        P_base("基本判断: 不善之人 (煎花之象)")
+        P_intel("智慧: 聪明，善经商投资")
+        P_cunning("狡猾滑头")
+        P_irresp("无责任心，不顾实")
+        P_bold("胆子大")
+        P_immoral("无底线，无道德感")
+        P_ruthless("行事狠辣，干脆果决")
+        P_solitary("独狼，单打独斗")
+        P_violent("倾向暴力求财")
+    end
+
+    subgraph "行为模式 & 风险提示 Behavior & Risk"
+        direction LR
+        B_means("为达目的不择手段")
+        B_no_soft("不可能心慈手软")
+        B_prone_prob("易出问题")
+        B_caution("交往务必小心")
+    end
+
+    B --> F_overall;
+    B --> F_face_pro;
+    B --> F_eyebrows;
+    B --> F_eyes;
+    B --> F_forehead_nose;
+    B --> F_mouth;
+    B --> F_stubble;
+    B --> F_philtrum;
+    B --> F_cheeks;
+
+    F_overall --> P_base;
+    F_face_pro --> P_intel;
+    F_eyebrows --> P_cunning;
+    F_eyes --> P_cunning;
+    F_eyebrows --> P_irresp;
+    F_forehead_nose --> P_bold;
+    F_forehead_nose --> P_immoral;
+    F_mouth --> P_ruthless;
+    F_stubble --> P_ruthless;
+    F_philtrum --> P_solitary;
+    F_cheeks --> P_solitary;
+    F_mouth --> P_violent;
+
+    P_base --> B_prone_prob;
+    P_intel --> P_cunning;
+    P_cunning --> B_means;
+    P_irresp --> B_means;
+    P_bold --> B_means;
+    P_immoral --> B_means;
+    P_ruthless --> B_means;
+    P_violent --> B_means;
+    P_ruthless --> B_no_soft;
+    P_solitary --> B_no_soft;
+
+    B_means --> B_caution;
+    B_prone_prob --> B_caution;
+    B_no_soft --> B_caution;
+
+    style A fill:#D6EAF8,stroke:#1A5276,stroke-width:2px,color:#1A5276;
+    style B fill:#EBF5FB,stroke:#5DADE2,stroke-width:1px,color:#1A5276;
+
+    style F_overall fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_face_pro fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_eyebrows fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_eyes fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_forehead_nose fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_mouth fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_stubble fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_philtrum fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+    style F_cheeks fill:#EAF2F8,stroke:#AAB7B8,stroke-width:1px,color:#34495E;
+
+    style P_base fill:#FADBD8,stroke:#CB4335,stroke-width:2px,color:#CB4335;
+    style P_intel fill:#FFF5EE,stroke:#E6B0AA,stroke-width:1px,color:#CB4335;
+    style P_cunning fill:#FADBD8,stroke:#CB4335,stroke-width:1px,color:#CB4335;
+    style P_irresp fill:#FADBD8,stroke:#CB4335,stroke-width:1px,color:#CB4335;
+    style P_bold fill:#FADBD8,stroke:#CB4335,stroke-width:1px,color:#CB4335;
+    style P_immoral fill:#FADBD8,stroke:#CB4335,stroke-width:1px,color:#CB4335;
+    style P_ruthless fill:#FADBD8,stroke:#CB4335,stroke-width:1px,color:#CB4335;
+    style P_
+
+Content:
+还明显呢这是一个标准的煎花之象首先这样的一个眉眼组合以及存向注定不是一个好人那直白来讲这种性格请形式容易出问题的首先大方向来来看整个的叔叔于大面配小碗大面配小碗的通常是比较聪明的很尖炸和适合做生意搞一些投资但是呢看它的眉毛是很浓而且眉心剧非常的短非常的窄眼睛是标准的线眼这种眉眼组合和整个的眉眼的特点来看的话一定是非常的滑投资定然的做什么事情没有责任心不故实而且呢我们看额图本身很扩很高的同事比根也比较挺拔那么这个时候呢就体现出一个人的胆子很大做事呢很也没有底线没有道德感为了打到目的的不则手段并且的纯粥纯线可以看得出是容易出这种暴力球材做什么事情比较干脆比较很纯向带致并且带点点胡虚人中不够免长脸盘两家的少肉必定是单打独斗之人属于独狼的纯在独狼一样做事呢有些没有底线所以这种脸就不可能出心词手软之背和这种打交道呢有唯一要小心
