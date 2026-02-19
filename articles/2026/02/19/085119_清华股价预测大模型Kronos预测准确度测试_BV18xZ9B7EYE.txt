@@ -1,0 +1,120 @@
+Timestamp: 2026-02-19T08:51:19.384749
+Title: 清华股价预测大模型Kronos预测准确度测试 BV18xZ9B7EYE
+URL: https://b23.tv/eegkrBW
+Status: success
+Duration: 2:05
+
+Description:
+### **关于CurrentS模型预测能力的回测分析报告**
+
+**1. 引言与背景**
+    *   **模型名称：** CurrentS
+    *   **现状：** 市场对CurrentS模型的预测效果反馈不一，部分用户认为其不准确，另有用户认为在特定股票上表现优异。
+    *   **目的：** 旨在通过大规模回测，识别CurrentS模型在哪些具体A股上具有更高的预测准确性，从而为模型的实际应用提供量化依据和优化策略。
+
+**2. 回测方法论**
+    *   **回测类型：** 历史数据回测（Backtesting）。
+    *   **数据范围：** 对每只股票使用往前400天的历史数据进行分析。
+    *   **预测周期：** 按月进行预测，每次预测未来30天的股价走势。
+    *   **目标股票：** 覆盖所有5887支A股。
+    *   **计算规模与耗时：** 总任务量约为“5887支股票乘以10个时间点进行回测”，预计需3-4天才能完成全部测试。
+
+**3. 评估指标**
+    *   **方向准确率：** 衡量模型预测股价上涨或下跌的准确性。
+    *   **收盘价误差率：** 评估模型对股票收盘价预测的精确度（可能包含其他相关参数）。
+
+**4. 初期发现与进展**
+    *   **当前状态：** 回测任务正在运行中。
+    *   **初步观察：** 已完成测试的个股显示，CurrentS模型的预测准确率差异显著，部分股票的方向准确率可达100%，而另一些则仅为30%左右。
+
+**5. 后续计划**
+    *   **完成测试：** 等待所有A股的回测任务全部完成。
+    *   **结果汇报：** 将对整体回测结果进行详细的汇总、分析和汇报。
+    *   **应用指南：** 根据回测结果，提供CurrentS模型的实用使用建议，指导用户识别并利用模型在特定高准确率股票上的预测能力，以实现更有效的投资决策。
+
+---
+
+**核心观点 (Core Point):**
+CurrentS模型的历史回测旨在通过评估其在5887支A股上的方向和价格预测准确性，识别出模型表现更佳的特定股票，从而为未来的实际应用提供量化依据和优化策略。
+
+**总体框架 (Overarching Framework):**
+基于实证回测分析的量化预测模型性能评估与定向应用优化。
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "研究背景与目的"
+        A("CurrentS模型")
+        B("用户反馈不一")
+        C("确定模型优势个股")
+        A --> B
+        B --> C
+    end
+
+    subgraph "回测方法论"
+        D("回测启动")
+        E("数据范围: 400天历史数据")
+        F("预测周期: 每月预测未来30天")
+        G("测试对象: 5887支A股")
+        H("预计耗时: 3-4天")
+        I("计算进度: 5887 * 10 (任务数)")
+        D --> E
+        D --> F
+        D --> G
+        D --> H
+        H --> I
+    end
+
+    subgraph "评估指标与初步观察"
+        J("评估指标")
+        K("方向准确率 (涨跌)")
+        L("收盘价误差率")
+        M("初期发现")
+        N("个股准确率差异显著")
+        J --> K
+        J --> L
+        K --> M
+        L --> M
+        M --> N
+    end
+
+    subgraph "未来展望与应用"
+        O("等待全市场回测完成")
+        P("发布详细测试报告")
+        Q("提供模型使用指南")
+        R("优化模型应用策略")
+        N --> O
+        O --> P
+        P --> Q
+        Q --> R
+    end
+
+    C --> D
+    N --> O
+
+    style A fill:#E0F7FA,stroke:#00BCD4,stroke-width:2px,color:#000
+    style B fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#000
+    style C fill:#FFFDE7,stroke:#FFCA28,stroke-width:2px,color:#000
+
+    style D fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#000
+    style E fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#000
+    style F fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#000
+    style G fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#000
+    style H fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#000
+    style I fill:#C8E6C9,stroke:#66BB6A,stroke-width:1px,color:#000
+
+    style J fill:#EDE7F6,stroke:#7E57C2,stroke-width:2px,color:#000
+    style K fill:#D1C4E9,stroke:#9575CD,stroke-width:1px,color:#000
+    style L fill:#D1C4E9,stroke:#9575CD,stroke-width:1px,color:#000
+    style M fill:#FBE9E7,stroke:#FF7043,stroke-width:2px,color:#000
+    style N fill:#FFCCBC,stroke:#FF8A65,stroke-width:1px,color:#000
+
+    style O fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#000
+    style P fill:#BBDEFB,stroke:#64B5F6,stroke-width:1px,color:#000
+    style Q fill:#BBDEFB,stroke:#64B5F6,stroke-width:1px,color:#000
+    style R fill:#90CAF9,stroke:#42A5F5,stroke-width:2px,color:#000
+</Mermaid_Diagram>
+
+Content:
+关于CurrentS这个模型我们这个用了有一段时间了很多朋友反馈说他预测的不准也有一些朋友说在某些股票上他预测的特别准所以我之前一直想做一个特事就是看一看这些股票里头哪些股票他相应的预测的准一些所以这次呢就正好有时间咱们的做了这么一个测试大家看一下他正在跑这个呢我们等于是做了一个回测然后用的是他400天就是往后往前400天的数据然后预测30天按月去就是一个月往前我一次因为每次每支股票需要预测1414然后总共我们的股票数是5887个所以呢你看他的这个进度就是5887成一十嘛就是节面数就这么多他在一直在做我估计呢要把这个总共要跑完的话得跑个三三四天的样子吧这个是测试的时候用的我们看到这个股票啊比如这是2009040010107两的一个股票数我们可以看到呢他的预测的准确率啊还是不一样的有些股票你看前面几个呢他能照顾完入时预测准确度那后面的有些就不行你想有的30几所以呢我们可以把这个等全部都跑回来看看看看比如说如果这个准确率啊有些个股他的准确率比较高比如到60几或者70几呢那我们可以去再去观察一下看他在未来的这个里面是不是像个来讲预测的比较准那这是他的准确率方向的准确率啊就是他预测到底是长还是跌啊这个准确率后面还有他预测的这个就是书盘价的准确率无差率等等这还有一些参数大叔们呢我们等发着所有的A股全跑完了之后啊再给大家做个汇报到时候呢我们就知道这个在用这个模型的时候怎么用了好今天分享就这么多谢大家
