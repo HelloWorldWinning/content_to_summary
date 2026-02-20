@@ -1,0 +1,162 @@
+Timestamp: 2026-02-20T19:23:48.585822
+Title: Gemini 3.1 Pro: The model no one expected
+URL: https://youtube.com/watch?v=siHbORocFNk&si=mJxVKoK5jtTzG-fu
+Status: success
+Duration: 9:20
+
+Description:
+**总结核心思想**
+
+**I. Gemini 3.1 Pro 发布概览**
+A. **重大升级**: 谷歌发布Gemini 3 Pro的重大升级版本3.1，在各项基准测试中展现出显著提升。
+B. **预览版**: 目前仍处于预览阶段，尚未全面发布（GA release）。
+
+**II. 核心性能提升与亮点**
+A. **推理与代理式编程**:
+    1. 在推理能力和代理式编程方面，模型表现领先于几乎所有主要基准测试。
+    2. "人类最终考试"（Humanity's Last Exam）：在无工具条件下性能最佳。
+    3. ARC AI2 基准：衡量推理能力的关键指标，其性能几乎是前一个版本的两倍。
+B. **成本效益**:
+    1. 在性能大幅提升的同时，成本与前代版本保持一致，展现出卓越的“性能与成本帕累托前沿”优势。
+    2. Token效率更高，优于Anthropic的Sonnet 46等竞争模型。
+C. **其他关键改进**:
+    1. 工具调用（tool calling）和幻觉（hallucination）问题得到改善，使其成为更强大的代理式模型。
+    2. 延续了Gemini模型在多模态推理方面的历史优势。
+
+**III. 谷歌的AI战略**
+A. **通用模型方向**: 谷歌致力于构建通用化模型，而非像OpenAI或Anthropic那样主要聚焦于特定领域（如编程）。
+B. **代理式能力强化**:
+    1. 通过集成“代理式强化学习（Agentic RL）”技术，Gemini 3.1 Pro实现了突破性的性能提升，该技术曾在Gemini 3 Flash版本中展现出超越Pro模型的潜力。
+C. **聚焦实际价值与收入**:
+    1. 谷歌将重心放在模型的实际应用和收入生成上，而非仅仅追求基准测试的领先。
+    2. Gemini应用已拥有数百万月活跃用户，与ChatGPT用户量接近。
+    3. Gemini模型为谷歌搜索的AI模式提供支持，是重要的收入生成器，并正在被整合到更多产品中。
+
+**IV. AI Studio 平台与开发者体验**
+A. **Antigravity Agent 集成**: 谷歌已将“Antigravity Agent”直接集成到AI Studio的“构建（build）”功能中，为开发者提供更强大的代理式能力。
+B. **增强的开发体验**:
+    1. 应用程序现在可以在沙盒环境中运行，支持智能构建代理和连接各种工具集。
+    2. 开发者可选择默认模型和多种技术栈（如React、Next.js、Angular）。
+C. **高级功能与未来展望**:
+    1. 支持设置秘密（secrets）、与GitHub等平台集成，并可直接发布部署应用程序。
+    2. 未来AI Studio计划引入用户账户、安全登录、云数据存储、图片编辑、语音聊天和图片生成等更多功能。
+
+**V. 模型智能与封装的重要性**
+A. **超越原始智能**: 强调模型的原始智能并非决定性因素，其外部的“封装”或“脚手架”（wrapper/scaffolding）对性能表现至关重要。
+B. **实践示例**: Deep Think（基座模型的脚手架）和Althia（在Deep Think基础上构建的生成-验证-修正循环）证明了通过高级封装，模型能在推理任务中实现超越性的性能。
+
+---
+
+**核心结论 (Core Point)**
+
+谷歌的Gemini 3.1 Pro代表着其AI战略的核心进步，通过提供性能卓越、成本效益高且具备强大代理式能力的通用模型，并将其深度整合至AI Studio开发者平台，旨在最大化模型的实际应用价值和商业收入，而非仅仅追求单一维度的基准测试领先。
+
+---
+
+** overarching Framework (Overarching Framework)**
+
+谷歌的Gemini AI战略：通过通用化、代理式能力与成本效益，实现AI模型的深度整合与实际商业价值。
+
+---
+
+<Mermaid_Diagram>
+graph LR
+    A["Gemini 3.1 Pro 发布"]
+    
+    subgraph "核心升级点"
+        direction LR
+        B1["推理能力提升<br/>(ARC AI2, 人类最终考试)"]
+        B2["代理式编程领先"]
+        B3["多模态推理强化"]
+        B4["成本效益优化"]
+        B5["Token效率提升"]
+        B6["工具调用与幻觉改善"]
+    end
+
+    subgraph "谷歌AI战略"
+        direction LR
+        C1["通用模型方向"]
+        C2["强化学习驱动<br/>(Agentic RL)"]
+        C3["聚焦实际收入"]
+        C4["产品深度整合<br/>(搜索, Gemini App)"]
+    end
+
+    subgraph "AI Studio 开发者平台"
+        direction LR
+        D1["Antigravity Agent 集成"]
+        D2["沙盒与构建体验"]
+        D3["未来功能扩展"]
+    end
+    
+    subgraph "模型智能与封装"
+        direction LR
+        E1["原始智能 + 封装 = 强大性能"]
+        E2["Deep Think & Althia 实践"]
+    end
+
+    A -- "包含" --> B1
+    A -- "包含" --> B2
+    A -- "包含" --> B3
+    A -- "包含" --> B4
+    A -- "包含" --> B5
+    A -- "包含" --> B6
+
+    C1 -- "指导" --> A
+    C2 -- "支撑" --> B2
+    C3 -- "驱动" --> C4
+    C4 -- "赋能于" --> A
+
+    A -- "拓展至" --> D1
+    D1 -- "提供" --> D2
+    D2 -- "展望" --> D3
+
+    E1 -- "实现" --> B1
+    E1 -- "实现" --> B2
+    E1 -- "解释" --> E2
+    B -- "通过" --> E1
+
+    C4 -- "促成" --> C3
+
+    style A fill:#FFEB3B,stroke:#FBC02D,stroke-width:2px,color:#333;
+    
+    style B1 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    style B2 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    style B3 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    style B4 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    style B5 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    style B6 fill:#E0F2F7,stroke:#26C6DA,stroke-width:1px,color:#333;
+    linkStyle 0 stroke:#00BCD4,stroke-width:1.5px;
+    linkStyle 1 stroke:#00BCD4,stroke-width:1.5px;
+    linkStyle 2 stroke:#00BCD4,stroke-width:1.5px;
+    linkStyle 3 stroke:#00BCD4,stroke-width:1.5px;
+    linkStyle 4 stroke:#00BCD4,stroke-width:1.5px;
+    linkStyle 5 stroke:#00BCD4,stroke-width:1.5px;
+
+    style C1 fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style C2 fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style C3 fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    style C4 fill:#DCEDC8,stroke:#8BC34A,stroke-width:1px,color:#333;
+    linkStyle 6 stroke:#689F38,stroke-width:1.5px;
+    linkStyle 7 stroke:#689F38,stroke-width:1.5px;
+    linkStyle 8 stroke:#689F38,stroke-width:1.5px;
+    linkStyle 9 stroke:#689F38,stroke-width:1.5px;
+
+    style D1 fill:#FFCCBC,stroke:#FF7043,stroke-width:1px,color:#333;
+    style D2 fill:#FFCCBC,stroke:#FF7043,stroke-width:1px,color:#333;
+    style D3 fill:#FFCCBC,stroke:#FF7043,stroke-width:1px,color:#333;
+    linkStyle 10 stroke:#EF6C00,stroke-width:1.5px;
+    linkStyle 11 stroke:#EF6C00,stroke-width:1.5px;
+    linkStyle 12 stroke:#EF6C00,stroke-width:1.5px;
+
+    style E1 fill:#D1C4E9,stroke:#9575CD,stroke-width:1px,color:#333;
+    style E2 fill:#D1C4E9,stroke:#9575CD,stroke-width:1px,color:#333;
+    linkStyle 13 stroke:#673AB7,stroke-width:1.5px;
+    linkStyle 14 stroke:#673AB7,stroke-width:1.5px;
+    linkStyle 15 stroke:#673AB7,stroke-width:1.5px;
+
+    linkStyle 16 stroke:#4CAF50,stroke-width:1.5px;
+    linkStyle 17 stroke:#4CAF50,stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+Today Google is releasing a major, Today Google is releasing a major, upgrade to Gemini 3 Pro. They are, upgrade to Gemini 3 Pro. They are, upgrade to Gemini 3 Pro. They are, labeling it as 3.1, but it's a major, labeling it as 3.1, but it's a major, labeling it as 3.1, but it's a major, upgrade in terms of the benchmarks that, upgrade in terms of the benchmarks that, upgrade in terms of the benchmarks that, we are seeing. In this video, I want to, we are seeing. In this video, I want to, we are seeing. In this video, I want to, not only break down this release, but, not only break down this release, but, not only break down this release, but, also what I think is Google's strategy, also what I think is Google's strategy, also what I think is Google's strategy, and how it's different from other, and how it's different from other, and how it's different from other, Frontier Labs. With Gemini 3, Google, Frontier Labs. With Gemini 3, Google, Frontier Labs. With Gemini 3, Google, also released Google Anti-gravity and, also released Google Anti-gravity and, also released Google Anti-gravity and, now they're bringing that same agent, now they're bringing that same agent, now they're bringing that same agent, inside AI Studio. You will be able to, inside AI Studio. You will be able to, inside AI Studio. You will be able to, use the anti-gravity agent inside the, use the anti-gravity agent inside the, use the anti-gravity agent inside the, build feature in AI studio which is, build feature in AI studio which is, build feature in AI studio which is, being marketed as a platform for WE, being marketed as a platform for WE, being marketed as a platform for WE, coders. Now seems like with Gemini, coders. Now seems like with Gemini, coders. Now seems like with Gemini, Google is trying to build a generalized, Google is trying to build a generalized, Google is trying to build a generalized, model. Most of the other labs like, model. Most of the other labs like, model. Most of the other labs like, OpenAI or Enthropic have really focused, OpenAI or Enthropic have really focused, OpenAI or Enthropic have really focused, their efforts on coding for the last few, their efforts on coding for the last few, their efforts on coding for the last few, iterations. The closest specialized, iterations. The closest specialized, iterations. The closest specialized, coding model from Google is probably, coding model from Google is probably, coding model from Google is probably, Gemini 3 Flash that also was able to, Gemini 3 Flash that also was able to, Gemini 3 Flash that also was able to, beat Gemini 3 Pro on some interesting, beat Gemini 3 Pro on some interesting, beat Gemini 3 Pro on some interesting, benchmarks. Google has always been at, benchmarks. Google has always been at, benchmarks. Google has always been at, the potato frontier of performance, the potato frontier of performance, the potato frontier of performance, versus cost, but it has lagged behind in, versus cost, but it has lagged behind in, versus cost, but it has lagged behind in, the past few months., the past few months., the past few months., Now let's talk about the benchmarks., Now let's talk about the benchmarks., Now let's talk about the benchmarks., It's actually leading on almost all the, It's actually leading on almost all the, It's actually leading on almost all the, major benchmarks especially when it, major benchmarks especially when it, major benchmarks especially when it, comes to reasoning and agendic coding, comes to reasoning and agendic coding, comes to reasoning and agendic coding, and this is kind of the direction every, and this is kind of the direction every, and this is kind of the direction every, company is trying to go in. Now the, company is trying to go in. Now the, company is trying to go in. Now the, standout is humanity's last exam. Now, standout is humanity's last exam. Now, standout is humanity's last exam. Now, without tools, without tools, without tools, it's probably the best performing model, it's probably the best performing model, it's probably the best performing model, but I think the most important one is, but I think the most important one is, but I think the most important one is, going to be arc ai2. This is uh the, going to be arc ai2. This is uh the, going to be arc ai2. This is uh the, benchmark that measures the reasoning, benchmark that measures the reasoning, benchmark that measures the reasoning, capabilities, capabilities, capabilities, of the um agent or LLM. So not only it's, of the um agent or LLM. So not only it's, of the um agent or LLM. So not only it's, almost double or actually more than, almost double or actually more than, almost double or actually more than, double of the previous iteration, it's, double of the previous iteration, it's, double of the previous iteration, it's, actually doing this at a much lower cost, actually doing this at a much lower cost, actually doing this at a much lower cost, compared to the competitors. And this is, compared to the competitors. And this is, compared to the competitors. And this is, where the potato frontier is so, where the potato frontier is so, where the potato frontier is so, important. You don't only want the model, important. You don't only want the model, important. You don't only want the model, or uh the agent to have intelligence but, or uh the agent to have intelligence but, or uh the agent to have intelligence but, you also want it to be able to do it at, you also want it to be able to do it at, you also want it to be able to do it at, a reasonable cost. Now in terms of the, a reasonable cost. Now in terms of the, a reasonable cost. Now in terms of the, cost it's exactly the same as the, cost it's exactly the same as the, cost it's exactly the same as the, previous iteration. Also 3.1 is still a, previous iteration. Also 3.1 is still a, previous iteration. Also 3.1 is still a, preview so it's not a GA release yet., preview so it's not a GA release yet., preview so it's not a GA release yet., Now one of the complaints that we have, Now one of the complaints that we have, Now one of the complaints that we have, heard about Gemini model has been tool, heard about Gemini model has been tool, heard about Gemini model has been tool, calling and hallucination. According to, calling and hallucination. According to, calling and hallucination. According to, Google, they have improved on it and, Google, they have improved on it and, Google, they have improved on it and, hopefully that's going to make it a much, hopefully that's going to make it a much, hopefully that's going to make it a much, better agentic model. Also, the cutoff, better agentic model. Also, the cutoff, better agentic model. Also, the cutoff, date for uh training data is the same as, date for uh training data is the same as, date for uh training data is the same as, Gemini Pro 3 or 3 Pro. Now, one more, Gemini Pro 3 or 3 Pro. Now, one more, Gemini Pro 3 or 3 Pro. Now, one more, thing, it seems to be also a lot more, thing, it seems to be also a lot more, thing, it seems to be also a lot more, token efficient compared to some of the, token efficient compared to some of the, token efficient compared to some of the, other model releases that we have seen., other model releases that we have seen., other model releases that we have seen., uh especially with anthropics model, uh especially with anthropics model, uh especially with anthropics model, releases sonnet 46 is a lot more token, releases sonnet 46 is a lot more token, releases sonnet 46 is a lot more token, hungry now in this case on the, hungry now in this case on the, hungry now in this case on the, artificial analysis benchmark uh Gemini, artificial analysis benchmark uh Gemini, artificial analysis benchmark uh Gemini, 3.1 preview is now the leading model, 3.1 preview is now the leading model, 3.1 preview is now the leading model, however it doesn't come with a huge, however it doesn't come with a huge, however it doesn't come with a huge, increase in number of tokens or cost so, increase in number of tokens or cost so, increase in number of tokens or cost so, it was able to achieve this with only 2, it was able to achieve this with only 2, it was able to achieve this with only 2, million extra tokens compared to the, million extra tokens compared to the, million extra tokens compared to the, previous version with an additional ual, previous version with an additional ual, previous version with an additional ual, $25, $25, $25, or $27 which is pretty amazing. So you, or $27 which is pretty amazing. So you, or $27 which is pretty amazing. So you, won't be breaking the bank if you, won't be breaking the bank if you, won't be breaking the bank if you, replace it replace the previous version, replace it replace the previous version, replace it replace the previous version, with this new version. One area where, with this new version. One area where, with this new version. One area where, Gemini model has been historically, Gemini model has been historically, Gemini model has been historically, pretty strong is multimodal reason and, pretty strong is multimodal reason and, pretty strong is multimodal reason and, this model seems to follow the same, this model seems to follow the same, this model seems to follow the same, pattern. Now one thing is becoming very, pattern. Now one thing is becoming very, pattern. Now one thing is becoming very, clear the raw intelligence of the model, clear the raw intelligence of the model, clear the raw intelligence of the model, is not enough. the harness or the, is not enough. the harness or the, is not enough. the harness or the, wrapper around the model is becoming, wrapper around the model is becoming, wrapper around the model is becoming, more and more important. Now, we saw, more and more important. Now, we saw, more and more important. Now, we saw, this with Gemini 3 deep think where, this with Gemini 3 deep think where, this with Gemini 3 deep think where, there's a huge difference in performance, there's a huge difference in performance, there's a huge difference in performance, between the raw Gemini model and the, between the raw Gemini model and the, between the raw Gemini model and the, deep think version which essentially is, deep think version which essentially is, deep think version which essentially is, a scaffolding around the base model. A, a scaffolding around the base model. A, a scaffolding around the base model. A, better example of this is Althia which, better example of this is Althia which, better example of this is Althia which, is essentially a generator verifier, is essentially a generator verifier, is essentially a generator verifier, revisor loop built on top of deep think, revisor loop built on top of deep think, revisor loop built on top of deep think, which surpasses even deep think when it, which surpasses even deep think when it, which surpasses even deep think when it, comes to reasoning tasks. Now, comes to reasoning tasks. Now, comes to reasoning tasks. Now, historically Google's model have been, historically Google's model have been, historically Google's model have been, behind on coding. However, I don't think, behind on coding. However, I don't think, behind on coding. However, I don't think, in real world that matters. So according, in real world that matters. So according, in real world that matters. So according, to Q4 results, Gemini app had more than, to Q4 results, Gemini app had more than, to Q4 results, Gemini app had more than, million active monthly users. That's, million active monthly users. That's, million active monthly users. That's, very close to the chat GPT number which, very close to the chat GPT number which, very close to the chat GPT number which, is about 800 million. So even if they're, is about 800 million. So even if they're, is about 800 million. So even if they're, not beating every other model and, not beating every other model and, not beating every other model and, benchmarks, they are generating real, benchmarks, they are generating real, benchmarks, they are generating real, revenue for Google which I think is a, revenue for Google which I think is a, revenue for Google which I think is a, lot more important for the business., lot more important for the business., lot more important for the business., Gemini models are powering the AI mode, Gemini models are powering the AI mode, Gemini models are powering the AI mode, in search which is a real revenue, in search which is a real revenue, in search which is a real revenue, generator for Google and they are trying, generator for Google and they are trying, generator for Google and they are trying, to integrate it into more and more, to integrate it into more and more, to integrate it into more and more, products. Now just like its predecessor, products. Now just like its predecessor, products. Now just like its predecessor, uh this model has very strong multimodel, uh this model has very strong multimodel, uh this model has very strong multimodel, reasoning capabilities uh so it can, reasoning capabilities uh so it can, reasoning capabilities uh so it can, visually extract information and in fact, visually extract information and in fact, visually extract information and in fact, Google and deep mind is recommending to, Google and deep mind is recommending to, Google and deep mind is recommending to, use this as a drop-in replacement for, use this as a drop-in replacement for, use this as a drop-in replacement for, the Gemini 3 pro version. When Gemini 3, the Gemini 3 pro version. When Gemini 3, the Gemini 3 pro version. When Gemini 3, flash was released, some people were, flash was released, some people were, flash was released, some people were, thinking why or how a flash model can, thinking why or how a flash model can, thinking why or how a flash model can, beat a pro model on certain benchmarks., beat a pro model on certain benchmarks., beat a pro model on certain benchmarks., So here was the response. Kish Anand who, So here was the response. Kish Anand who, So here was the response. Kish Anand who, is part of the Gemini team. He said, is part of the Gemini team. He said, is part of the Gemini team. He said, "How can flash beat pro? RL is the, "How can flash beat pro? RL is the, "How can flash beat pro? RL is the, answer. Flash is not just a distilled, answer. Flash is not just a distilled, answer. Flash is not just a distilled, pro. We have had a lot of exciting, pro. We have had a lot of exciting, pro. We have had a lot of exciting, research progress on agentic RL which, research progress on agentic RL which, research progress on agentic RL which, made its way into flash but was too late, made its way into flash but was too late, made its way into flash but was too late, for pro. Can't wait to finally bring, for pro. Can't wait to finally bring, for pro. Can't wait to finally bring, them to pro and seems like with this new, them to pro and seems like with this new, them to pro and seems like with this new, pro model they have used that agentic rl, pro model they have used that agentic rl, pro model they have used that agentic rl, which an is referring to. Okay, let me, which an is referring to. Okay, let me, which an is referring to. Okay, let me, show you this new AI studio experience, show you this new AI studio experience, show you this new AI studio experience, where they brought anti-gravity directly, where they brought anti-gravity directly, where they brought anti-gravity directly, into AI studio. So now the your, into AI studio. So now the your, into AI studio. So now the your, application are going to run in a, application are going to run in a, application are going to run in a, sandbox environment. Okay. So here's the, sandbox environment. Okay. So here's the, sandbox environment. Okay. So here's the, uh screen that you're going to see if, uh screen that you're going to see if, uh screen that you're going to see if, you come. It says new build experiences, you come. It says new build experiences, you come. It says new build experiences, here uh with a smart build agent. Now, here uh with a smart build agent. Now, here uh with a smart build agent. Now, you can also build player experiences, you can also build player experiences, you can also build player experiences, and you'll be able to connect to, and you'll be able to connect to, and you'll be able to connect to, different tool sets. So this is pretty, different tool sets. So this is pretty, different tool sets. So this is pretty, great. Okay. And there are some other, great. Okay. And there are some other, great. Okay. And there are some other, stuff coming in the pipeline as well., stuff coming in the pipeline as well., stuff coming in the pipeline as well., Now if you click on uh the model now you, Now if you click on uh the model now you, Now if you click on uh the model now you, see some further settings. So you can, see some further settings. So you can, see some further settings. So you can, select your default model but you can, select your default model but you can, select your default model but you can, also select your text stack. Now uh you, also select your text stack. Now uh you, also select your text stack. Now uh you, have react nextgs angular. So let's say, have react nextgs angular. So let's say, have react nextgs angular. So let's say, we just want to create something using, we just want to create something using, we just want to create something using, react. Right now I'm using my API key., react. Right now I'm using my API key., react. Right now I'm using my API key., So let's say uh build me an Obsidian, So let's say uh build me an Obsidian, So let's say uh build me an Obsidian, clone where we can onboard multiple, clone where we can onboard multiple, clone where we can onboard multiple, users. Okay, we'll just send this. Okay, users. Okay, we'll just send this. Okay, users. Okay, we'll just send this. Okay, so now it's going to use the, so now it's going to use the, so now it's going to use the, anti-gravity agent to build you, anti-gravity agent to build you, anti-gravity agent to build you, applications. This right now uh is, applications. This right now uh is, applications. This right now uh is, relatively slow. Uh from what I heard, relatively slow. Uh from what I heard, relatively slow. Uh from what I heard, from the team is that they are working, from the team is that they are working, from the team is that they are working, to make it faster. And now a few other, to make it faster. And now a few other, to make it faster. And now a few other, things that you can do here. So if you, things that you can do here. So if you, things that you can do here. So if you, go to settings, not only you can set the, go to settings, not only you can set the, go to settings, not only you can set the, models and system instructions, but you, models and system instructions, but you, models and system instructions, but you, can also set your secrets. So let's say, can also set your secrets. So let's say, can also set your secrets. So let's say, if you're deploying a full stack, if you're deploying a full stack, if you're deploying a full stack, application, you will be able to uh set, application, you will be able to uh set, application, you will be able to uh set, your secrets here. Then there are, your secrets here. Then there are, your secrets here. Then there are, different integrations., different integrations., different integrations., Uh you can still push everything to, Uh you can still push everything to, Uh you can still push everything to, GitHub. And once the app is up and, GitHub. And once the app is up and, GitHub. And once the app is up and, running, you can deploy it by publishing, running, you can deploy it by publishing, running, you can deploy it by publishing, it. So I'll probably create more, it. So I'll probably create more, it. So I'll probably create more, detailed tutorials on how to build with, detailed tutorials on how to build with, detailed tutorials on how to build with, it because I think there are some uh, it because I think there are some uh, it because I think there are some uh, exciting more features coming into AI, exciting more features coming into AI, exciting more features coming into AI, studio. It's not just the anti-gravity, studio. It's not just the anti-gravity, studio. It's not just the anti-gravity, agent. So here is Logan uh sharing some, agent. So here is Logan uh sharing some, agent. So here is Logan uh sharing some, of his wipe coding trying to create a, of his wipe coding trying to create a, of his wipe coding trying to create a, newer version of AI studio with AI, newer version of AI studio with AI, newer version of AI studio with AI, studio. uh you actually see some, studio. uh you actually see some, studio. uh you actually see some, interesting things. There is supposed to, interesting things. There is supposed to, interesting things. There is supposed to, be user accounts with secure login and, be user accounts with secure login and, be user accounts with secure login and, cloud data storage. Then image editing, cloud data storage. Then image editing, cloud data storage. Then image editing, voice chat, uh image generation. I kind, voice chat, uh image generation. I kind, voice chat, uh image generation. I kind, of like this because the current version, of like this because the current version, of like this because the current version, is a lot busier compared to what they, is a lot busier compared to what they, is a lot busier compared to what they, could potentially go for. This is the, could potentially go for. This is the, could potentially go for. This is the, current version. Anyways, this was a, current version. Anyways, this was a, current version. Anyways, this was a, very exciting week with some big, very exciting week with some big, very exciting week with some big, releases. I am looking forward to the, releases. I am looking forward to the, releases. I am looking forward to the, next one. I hope you found this video, next one. I hope you found this video, next one. I hope you found this video, useful.
