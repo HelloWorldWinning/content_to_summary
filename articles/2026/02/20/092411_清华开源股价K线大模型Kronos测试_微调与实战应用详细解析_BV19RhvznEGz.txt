@@ -1,0 +1,108 @@
+Timestamp: 2026-02-20T09:24:11.765455
+Title: 清华开源股价K线大模型Kronos测试、微调与实战应用详细解析 BV19RhvznEGz
+URL: https://b23.tv/MHj5ALr
+Status: success
+Duration: 6:10
+
+Description:
+以下是对文本内容的总结、核心观点、总体框架及概念图：
+
+### 总结
+
+**I. 项目概述**
+*   **名称与来源**: 新华大学开源了一个名为K-Chanry（即ProNus）的股票K线图预测项目，短期内广受关注。
+*   **核心理念**: 该项目将大语言模型（LLM）的“预训练+微调”范式引入股票时间序列预测领域，旨在通过大量股票K线数据训练一个能够预测未来K线走势的基础大模型。
+*   **模型特点**: 区别于通过文本理解生成结果的LLM，K-Chanry专注于通过学习股票K线数据来预测K线走势；其代码和数据可在GitHub上下载。
+
+**II. 模型结构与核心组件**
+*   **核心文件**:
+    *   `LayKronaS_tokenizer.py`: 负责将股票K线数据量化为离散标记的分辨器（tokenizer）。
+    *   `KronaS_model.py`: 基于Transformer架构的核心预测模型。
+    *   `modules.py`: 包含模型中使用的各种模块组件。
+
+**III. 使用流程**
+*   **数据准备**: 用户需自行下载股票K线数据（例如通过雅虎财经或TuShare等），并处理成模型所需的格式。
+*   **运行示例**:
+    *   项目提供了示例文件（ProductionExample），通常需要GPU运行。
+    *   演示了Mac/CPU版本的运行效果，图中蓝色为实际走势，红色为预测走势，显示存在一定偏差。
+    *   展示了对未来30天的K线预测。
+*   **模型微调 (Fine-tuning)**:
+    *   为提高准确率并使其适应特定投资领域（如科创板、ETF等），建议进行微调。
+    *   微调分为两个阶段：
+        *   **阶段一**: 微调分辨器，使其适应特定领域的数据特征。
+        *   **阶段二**: 微调预测模型，此阶段通常需要GPU支持，计算量较大。
+    *   微调完成后，用户可以获得一个针对其特定研究领域定制的模型。
+
+**IV. 讲者实践与未来展望**
+*   **现有成果**: 讲者已下载数据、运行示例，并拥有一个两年收益率达262%的量化策略回测经验，但尚未将K-Chanry预测模型整合进去。
+*   **下一步计划**: 计划将K-Chanry预测模型整合到现有量化策略的选股环节中，以期提高策略的胜率。
+
+**V. 声明**
+*   本内容为技术探讨，不构成投资建议。
+
+---
+
+**核心观点 (Core Point)**
+
+K-Chanry项目通过将大模型（LLM）的“预训练+微调”范式应用于股票K线数据，旨在构建一个可预测股票走势的时间序列基础模型，并支持用户进行个性化微调以提升量化策略效果。
+
+---
+
+**总体框架 (Overarching Framework)**
+
+“基于大模型范式的股票时间序列预测模型K-Chanry的原理、应用与个性化优化”
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    A["新华大学 K-Chanry 项目"] --> B("核心理念: 将大模型范式引入股票K线预测");
+    B --> C["ProNus: 股票K线预测大模型"];
+
+    subgraph "模型核心架构"
+        C --> D["模型结构与组件"];
+        D --> D1["LayKronaS_tokenizer.py: K线量化为离散标记"];
+        D --> D2["KronaS_model.py: 基于Transformer的预测模型"];
+        D --> D3["modules.py: 各种模块组件"];
+    end
+
+    subgraph "模型使用流程"
+        E["数据获取 (如: 雅虎财经, TuShare)"] --> F{"数据预处理 (为微调准备)"};
+        E --> G1["运行示例 (ProductionExample.py)"];
+        G1 --> G2["观察预测效果 (蓝为实际, 红为预测)"];
+        F --> H{"模型微调 (提升准确率/领域适应性)"};
+        H --> H1["阶段1: 分辨器微调 (适应特定领域, 如科创板)"];
+        H1 --> H2["阶段2: 预测模型微调 (需GPU, 计算量大)"];
+        H2 --> I["输出: 特定研究领域适用模型"];
+    end
+
+    subgraph "讲者实践与展望"
+        G2 --> J["讲者实践: 已下载数据、运行示例"];
+        J --> K["量化策略回测 (2年262%收益, 尚未整合预测)"];
+        I --> L["未来计划: 整合预测模型至量化选股策略 (提升胜率)"];
+    end
+    L --> M["免责声明: 探讨非投资建议"];
+
+    style A fill:#FFD700,stroke:#DAA520,stroke-width:2px,color:#333,font-weight:bold;
+    style B fill:#ADD8E6,stroke:#4682B4,stroke-width:2px,color:#333;
+    style C fill:#90EE90,stroke:#3CB371,stroke-width:2px,color:#333,font-weight:bold;
+    style D fill:#C0C0C0,stroke:#696969,stroke-width:1px,color:#333;
+    style D1 fill:#E0FFFF,stroke:#20B2AA,stroke-width:1px,color:#333;
+    style D2 fill:#E0FFFF,stroke:#20B2AA,stroke-width:1px,color:#333;
+    style D3 fill:#E0FFFF,stroke:#20B2AA,stroke-width:1px,color:#333;
+    style E fill:#FFE4E1,stroke:#FF6347,stroke-width:1px,color:#333;
+    style F fill:#FFDEAD,stroke:#DAA520,stroke-width:1px,color:#333;
+    style G1 fill:#F0E68C,stroke:#B8860B,stroke-width:1px,color:#333;
+    style G2 fill:#F0E68C,stroke:#B8860B,stroke-width:1px,color:#333;
+    style H fill:#DDA0DD,stroke:#9370DB,stroke-width:2px,color:#333;
+    style H1 fill:#E6E6FA,stroke:#9932CC,stroke-width:1px,color:#333;
+    style H2 fill:#E6E6FA,stroke:#9932CC,stroke-width:1px,color:#333;
+    style I fill:#B0C4DE,stroke:#6A5ACD,stroke-width:2px,color:#333,font-weight:bold;
+    style J fill:#F5DEB3,stroke:#D2B48C,stroke-width:2px,color:#333;
+    style K fill:#F5DEB3,stroke:#D2B48C,stroke-width:2px,color:#333;
+    style L fill:#F5DEB3,stroke:#D2B48C,stroke-width:2px,color:#333,font-weight:bold;
+    style M fill:#FF6347,stroke:#CD5C5C,stroke-width:2px,color:#FFF,font-weight:bold;
+</Mermaid_Diagram>
+
+Content:
+最近新华大学开员了一个基于大模型股票的K-Chanry则工举就是这个ProNus在给他不上限之后短期内获得了三千多个性标这个项目之所以延期那么大关注主要是因为他把预讯练微调这种饭食引入到时间区别这个领域形成了类似我们经常使用的大圆模型的时间区别基础模型如果通统一点理解的话就说我们用的DPC和大圆模型是通过大量数据训练使他能够理解人类的上海文通过概率生成结果而这个大模型就是拿大量的股票的K-Chanry则然后沉卷出一个可以预测股票K-Chan的这个大模型这个在GitHub上可以下载到我已经下载好了这个就是他全部的数据了我想来跟大家介绍一下Dita它是这个是预制的就是他模型下载数就有他这个势力文件这个是我势力的时候用的一个一个数据刚刚下载的这个Example是势力投一些势力的文件带我们演示一下这个是一些涂型包括它这个Logo标还有它的涂型的这个逻辑价格包括它这个预测的涂型那它这个模型的核心是在这个地方这个里面有两文件首先第一个是这个这个主要是KronaS模型的一个实现包括一些核心的模型文件我们可以把它打开看一下这个LayKronaS token neither主要是用于K-Chanry则量化为理散标记的分辨器它把这个KChanry分成一个一个小单元然后我进行训练预测的这个KronaS这个Lay是主要的预测模型它是基于Transformer加过的一个预测模型模特这个里头是模型中使用的各种模块的组件我们就不相信大家介绍了我们主要来看一看怎么来用我们打开这个它这个势力文件它的势力文件原来是这个ProductionExample这个这个是需要GPU去印象的所以我就重新做了一个麦克版本的它其实是把那个CPU的价格改成麦克的单CPU的价格去印象我们去印象一下我们看到它预测画了一个图这个蓝色的部分是实际的实际的走试图红色的部分是它预测的一个走试图我们看到还是有一些偏差的它的势力文件里头我们看一看我们怎么去印它首先我们需要下载数据比如说我选了GPU PIO 6.030中心争券的这是我写的代码是用了写了一个怎么把它下载数据的代码用的是芽虎财经它的当然你也可以用比如说图圣对吧下载少量数据都是OK的把它下载完了之后把这个运行印象下载的数据就在这就是这个6.030这个数据就是这个文件下载之后我们就可以写个代码让它去运行我们的数据了我们看到运行一下试试运行结束了我们看一看它这个地方是这个红色的部分是预测的因为这是未来嘛9月1号开始总共30天现在我们还不知道它预测准不准因为未来这个还没发生的对吧这个模型怎么用呢如果你想使你的模型呢使它这个模型就是能够用于我们自己的这个量化策略里头你首先要对它进行一个微调当然你不微调也可以就是它的准确率可能没那么高你要做一个微调微调的这个里头是在这个目楼在这个fine tune这个这个目楼底下这个脚板是处理这种数据预处理的就是你帮你因为我们的投资可能不太一样比如说我专注于科创版我就把科创版的这些股票的数据都给了它然后用这个部分去对它进行将原始的数据处理成试和微调的这种格式这个是处理这个的那微调模型呢就是它是分为两个阶段首先是要微调分辨器调整分辨器来试应比如说我们研究这个特定领域比如说你研究科创版你就把科创版的数据都给它然后去让它去调整分辨器或者说你研究一体F你就可以把一体F的数据都给到它这个里头它训练微调的时候它需要用GPU所以它在计算量会比较大这个是微调分辨器的这个是微调预测模型的你把这个做完了之后你就可以打到出来一个你研究领域内施用的这个模型了那么我就是做了这么多工作因为后面的话我昨天昨天没有一个回测看过我昨天视频的小伙伴就知道我昨天那个其实这个策略跑下来可以就是它等于两年的时间是262嘛这个里头它其实是有一些玄骨的你看它有一些就是玄骨的每天都有玄骨的买卖的这样一个策略在这个玄骨里头我希望说能够刚才预测这个模型给大家加进去这样的话是不是会提高我们的胜率这部工作没有做以后我做了的话更新视频再给大家说我们这个是传出的一个探讨不过程投资建议好 谢谢大家
