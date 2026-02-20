@@ -1,0 +1,163 @@
+Timestamp: 2026-02-21T02:11:37.311213
+Title: 量化神器OpenClaw 全能托管，省心又高效 BV131FdzFEnz
+URL: https://b23.tv/icb0afG
+Status: success
+Duration: 6:44
+
+Description:
+### 总结大纲
+
+**一、核心痛点与解决方案**
+*   **痛点：** 市场行情在趋势和震荡之间频繁切换，导致传统趋势策略在震荡市中反复止损，网格策略在单边行情中深度套牢，难以准确判断当前市场状态。
+*   **解决方案：** 搭建一个以OpenClore为决策大脑的智能交易系统，实现行情自动判断、策略自动切换。
+
+**二、系统核心架构：AI驱动的“感知-思考-行动”闭环**
+1.  **感知 (Perception)：**
+    *   通过MCP协议读取“发明者平台”的实盘状态数据（账户信息、策略运行状态、收益等）。
+    *   通过文件系统读取“舆情采集工作流”抓取的加密货币新闻快讯，获取市场情绪数据。
+2.  **思考 (Thinking)：**
+    *   OpenClore依据用户在“指导语”中定义的规则，对市场情绪（通过新闻关键词分析）和策略收益进行综合分析。
+    *   判断当前市场是“恐慌”还是“贪婪”，是适合“追趋势”还是“做网格”。
+    *   核心在于“决策举证”机制。
+3.  **行动 (Action)：**
+    *   调用“发明者平台”API，启动或暂停对应的趋势策略或网格策略。
+    *   生成详细的市场分析报告。
+    *   通过“飞书”机器人将分析报告推送给用户。
+
+**三、系统搭建准备**
+1.  **MCP配置：** 在“发明者平台”申请API密钥和MCP协议地址，填入OpenClore配置文件，实现OpenClore与平台的连接。
+2.  **消息渠道：** 配置“飞书”机器人，用于接收报告和发送交互指令。
+3.  **发明者平台资产：**
+    *   部署一个“舆情采集工作流”，定时抓取并存储新闻快讯。
+    *   创建并配置两个备用实盘策略：一个“多品种超级趋势策略”和一个“专业网格交易策略”。
+
+**四、系统运行与交互**
+1.  **OpenClore“指导语”配置：** 定义AI角色、MCP配置、核心执行流程、舆情分析规则、决策举证、日志格式、报告模板、定时任务和飞书通知等。
+2.  **自动化执行：** 配置OpenClore定时任务（例如每小时整点），实现全自动感知、思考、行动。
+3.  **移动端监控与交互：**
+    *   通过飞书实时接收定时推送的分析报告，随时掌握市场情绪和策略表现。
+    *   用户可主动向OpenClore发送消息查询实盘收益、策略状态。
+    *   用户可发送指令，请求OpenClore分析问题（如策略长时间不开仓），并根据建议由AI自动调整策略参数（如ATR周期和乘数）。
+
+**五、核心价值与展望**
+*   将传统需要人工盯盘、分析、手动操作的复杂过程，转化为AI自动化管理，极大提升效率和决策准确性。
+*   实现策略管理全自动，用户无需再纠结当前行情选择哪个策略。
+*   该框架展示了不同工具（OpenClore、发明者平台、MCP、飞书）组合应用的强大潜力，为进一步创新提供了基础。
+
+---
+
+**核心观点 (Core Point)：**
+OpenClore赋能了一个AI驱动的自适应交易系统，能够智能感知市场变化、自主决策策略切换，从而有效应对趋势与震荡行情的交替挑战。
+
+---
+
+**Overarching Framework (总体框架):**
+AI驱动的自适应交易系统 (AI-driven Adaptive Trading System)
+
+---
+
+<Mermaid_Diagram>
+graph TD
+    %% Node Styles
+    classDef input fill:#F9F7D8,stroke:#FF8C00,stroke-width:2px,color:#333;
+    classDef platform fill:#ADD8E6,stroke:#1E90FF,stroke-width:2px,color:#1A237E;
+    classDef tool fill:#90EE90,stroke:#32CD32,stroke-width:2px,color:#1B5E20;
+    classDef process fill:#FFDDC1,stroke:#FF4500,stroke-width:2px,color:#4E342E;
+    classDef output fill:#DDA0DD,stroke:#8A2BE2,stroke-width:2px,color:#4A148C;
+    classDef core fill:#FFDB58,stroke:#FFA500,stroke-width:3px,color:#333;
+    classDef user fill:#FFC0CB,stroke:#FF69B4,stroke-width:2px,color:#8B0000;
+
+    A["市场痛点: 趋势与震荡难判断导致策略失效"]:::input
+    B["OpenClore AI自适应交易系统"]:::core
+
+    subgraph "感知 (Perception)"
+        direction LR
+        C1["发明者平台 (实盘数据, 收益)"]:::platform
+        C2["舆情采集工作流 (RSS新闻快讯)"]:::tool
+        C3["MCP协议"]:::tool
+        C4["舆情新闻数据"]:::input
+        C5["OpenClore 数据读取与解析"]:::process
+    end
+
+    subgraph "思考 (Thinking)"
+        direction LR
+        D1["OpenClore '指导语' (规则引擎, 决策举证)"]:::tool
+        D2["市场情绪分析"]:::process
+        D3["策略收益分析"]:::process
+        D4["策略切换决策 (趋势/网格)"]:::output
+    end
+
+    subgraph "行动 (Action)"
+        direction LR
+        E1["OpenClore (调用API)"]:::process
+        E2["启动/暂停趋势策略"]:::platform
+        E3["启动/暂停网格策略"]:::platform
+        E4["生成分析报告"]:::process
+        E5["飞书机器人通知"]:::tool
+    end
+
+    subgraph "用户交互 (User Interaction)"
+        direction LR
+        F1["用户 (移动端)"]:::user
+        F2["接收定时报告"]:::output
+        F3["主动查询/发送指令"]:::input
+        F4["参数调整/操作"]:::process
+    end
+
+    A --> B;
+    B --> C5;
+    B --> D1;
+    B --> E1;
+    B --> F1;
+
+    C1 -- "提供数据" --> C3;
+    C3 -- "连接" --> C5;
+    C2 -- "生成" --> C4;
+    C4 -- "提供数据" --> C5;
+    C5 -- "输送至" --> D2;
+    C5 -- "输送至" --> D3;
+
+    D2 -- "分析" --> D4;
+    D3 -- "分析" --> D4;
+    D1 -- "定义规则" --> D4;
+    D4 -- "驱动" --> E1;
+
+    E1 -- "控制" --> E2;
+    E1 -- "控制" --> E3;
+    E1 -- "生成" --> E4;
+    E4 -- "发送至" --> E5;
+    E5 -- "推送至" --> F2;
+
+    F1 -- "查看" --> F2;
+    F1 -- "发送" --> F3;
+    F3 -- "指令 OpenClore" --> B; %% User directly commands OpenClore
+
+    %% Styling
+    style A fill:#F08080,stroke:#DC143C,stroke-width:2px,color:#333;
+    style B fill:#FFD700,stroke:#FF8C00,stroke-width:3px,color:#333;
+
+    style C1 fill:#B0E0E6,stroke:#4682B4,stroke-width:2px,color:#1A237E;
+    style C2 fill:#C0E6C9,stroke:#66BB6A,stroke-width:2px,color:#1B5E20;
+    style C3 fill:#D8BFD8,stroke:#800080,stroke-width:2px,color:#4A148C;
+    style C4 fill:#F5F5DC,stroke:#DAA520,stroke-width:2px,color:#333;
+    style C5 fill:#FFEFD5,stroke:#FFA07A,stroke-width:2px,color:#4E342E;
+
+    style D1 fill:#DDA0DD,stroke:#8A2BE2,stroke-width:2px,color:#4A148C;
+    style D2 fill:#F0FFF0,stroke:#90EE90,stroke-width:2px,color:#1B5E20;
+    style D3 fill:#FFF0F5,stroke:#FFB6C1,stroke-width:2px,color:#8B0000;
+    style D4 fill:#FAFAD2,stroke:#B8860B,stroke-width:2px,color:#333;
+
+    style E1 fill:#FFE4B5,stroke:#FF7F50,stroke-width:2px,color:#4E342E;
+    style E2 fill:#AFEEEE,stroke:#00CED1,stroke-width:2px,color:#1A237E;
+    style E3 fill:#F0E68C,stroke:#BDB76B,stroke-width:2px,color:#333;
+    style E4 fill:#E6E6FA,stroke:#9370DB,stroke-width:2px,color:#4A148C;
+    style E5 fill:#F8F8FF,stroke:#6A5ACD,stroke-width:2px,color:#1A237E;
+
+    style F1 fill:#FFB6C1,stroke:#FF69B4,stroke-width:2px,color:#8B0000;
+    style F2 fill:#FFF0F5,stroke:#FFDAB9,stroke-width:2px,color:#4E342E;
+    style F3 fill:#E0FFFF,stroke:#40E0D0,stroke-width:2px,color:#1A237E;
+    style F4 fill:#FFFAF0,stroke:#F4A460,stroke-width:2px,color:#4E342E;
+</Mermaid_Diagram>
+
+Content:
+上期视频我们用OpenClore完成了策略代码的签移和上线但今天我们介绍一个更实用的应用搭建一个完善的交易系统我们都知道市场行情在趋势和震荡之间来回切换我们很难准确判断当前是什么状态趋势策略放在震荡室里会反复之损来回打脸网格策略碰上单边行情又会深度掏牢这个痛点相信做量化的朋友都深有体会所以今天我们来做一件更有意思的事搭建一个能自动判断行情切换策略的智能系统在这套系统里OpenClore扮演的是决策大脑的决策他要完成一个完整的闭环首先是感知通过MCP协议读取发明者平台的食盘状态通过文件系统读取于情新闻然后是思考根据我们定义的规则分析市场情绪判断当前是恐慌还是贪婪是该追趋势还是做网格最后是行动调用API起庭对应的趋势或者网格策略把分析报告推送给我们这样一来原本需要我们盯盘分析手动操作的事情就变成了AI自动化我们只需要订好规则剩下的交给他明确了思路我们来看需要准备哪些东西主要是三块第一是MCP配置让OpenClore能连接发明者平台这个待会儿详细说第二是消息渠道我用飞书如果你不熟悉飞书机器人怎么配没关系直接问OpenClore他会一步步引导你完成配置第三是发明者平台上对应的实盘策略于请采集工作流和两个交易策略一个趋势一个网格先搞定MCPMCP是一种让AI调用外部工具的标准协议通过它OpenClore就能独取和控制发明者平台的视盘配置流程是这样的首先在发明者平台的账户设置里申请API密药然后获取平台提供的MCP协议地址拿到这两样东西后打开OpenClore的配置文件把服务器地址和认证信息填进去配置完成我们来测试一下让OpenClore执行获取实盘列表的命令可以看到返回了账号下所有实盘的信息ID 名称 运行状态累计收益都有了这说明OpenClore和发明者平台已经打通了MCP通了接下来在发明者平台准备策略和数据员先说策略我在自营策略库里挑了两个一个是多品种超级趋势策略用ATR指标判断趋势方向趋势来了就顺势开仓适合单边趋势行情另一个是专业网格交易策略在设定的价格区间内第一买高卖适合横盘震荡这两个策略的适用场景正好互补但注意我们不是同时开两个诗盘而是让OpenClore根据市场情绪判断当前适合哪个执起动相应策略所以先分别创建好食盘放着备用再说与情数据员我在平台上部署了一个与情采集工作流他从九个RSS数据员定时抓取加密货币相关的新闻快讯保存成这次文件每条新闻包含标题时间和摘要后续OpenClore会分析这些新闻的关键词进行情绪判断渠道和策略都准备好了现在要给OpenClore布置具体的任务了在这份直到与中定义了AI每次执行时应该做什么我们来看具体关键点首先是角色定义食盘配置然后是核心执行流程以及与情分析规则接着是最核心的角色举身根据与情信号以及策略收益进行不同策略切换的角色最后还有日质格式报告母版定时任务和非书通知配置这些搭建了一个完善的任务执行流程直到与写好了上线之前我们先手动跑一遍验证效果出发直情后可以看到OpenClore一次完成了这些动作读取食盘状态与情分析决策直行最后生成一份完整的分析报告并发送到非书整个流程完全自动我们看一下报告情绪指数重大事件策略收益本次决策和原因都轻轻处处手动测试没问题现在让它自动跑起来在OpenClore里创建一个定时任务直情频率设为每小时整点设置完成后每小时整点OpenClore就会自动醒来进行设置好的操作从此策略管理变成全自动我们再也不用纠结当前到底是什么行情该跑哪个策略了系统跑起来之后我们不可能一直坐在电脑前盯着这时候移动端的价值就体现出来了每次定时任务直行完OpenClore会把分析报告推送到非书打开手机就能看到相当于有个AI分析师每小时给你汇报一次市场情绪和策略表现在地铁上在吃饭时随时能掌握系统运行情况当然有时候我们等不及下一次定时报告想立刻知道情况怎么办直接发消息问就行比如我发一条查看一下食盘收益OpenClore收到后立刻调用发明者接口返回两个策略的最新状态包括是否在运行运行了多久累计收益多少今日收益多少这种双向交互让整个系统非常灵活不只是被动接收报告而是随时可以主动了解情况还有更实用的玩法比如我发现趋势策略跑了一段时间一直没开仓我就发消息问策略长时间不开仓有什么优化思路OpenClore分析了一下给出建议不开仓通常是因为ATR通道太宽价格没有突破趋势线出发信号建议把ATR周期从10调到15让指标更平滑把ATR成熟从3调到2让通道变窄更容易出发我觉得有道理就回复暂停食盘按这个调整一下参数OpenClore收到指令后先调用API暂停策略然后自动打开流览器进入发明者管理后台找到参数设置面板调整ATR周期和成熟的滑快点击保存整个过程我只是问了一个问题确认了一下建议剩下的全是AI自己完成的这才是真正的智能助手好我们回顾一下今天做的这套系统核心是用OpenClore解决趋势和震荡行情难以变别的痛点通过mcp连接发明者平台或许食盘数据通过于秦工作流感知市场情绪用指导与理的决策举证自动判断该跑趋势还是网格策略用定时任务实现自动执行用消息渠道随时接收报告和发送指令当然这不是一个完美的框架可以优化的地方还有很多但今天的重点是给大家展示各种工具的组合应用方式希望能帮助大家理解这些工具怎么配合使用在此基础上做出更多更好的创造我们下期再见
