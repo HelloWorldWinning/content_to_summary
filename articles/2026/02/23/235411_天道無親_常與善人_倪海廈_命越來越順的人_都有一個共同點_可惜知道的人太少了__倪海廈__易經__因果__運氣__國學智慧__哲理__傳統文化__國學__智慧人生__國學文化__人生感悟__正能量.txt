@@ -1,0 +1,23 @@
+Timestamp: 2026-02-23T23:54:11.447906
+Title: 天道無親，常與善人！倪海廈：命越來越順的人，都有一個共同點，可惜知道的人太少了！#倪海廈 #易經 #因果 #運氣 #國學智慧 #哲理 #傳統文化 #國學 #智慧人生 #國學文化 #人生感悟 #正能量
+URL: https://youtube.com/watch?v=YCznV2cKYm4&si=vgq8yi3V-XXe5mSP
+Status: success
+Duration: 35:03
+
+Description:
+**part 1. Analyze TEXT**
+
+**核心主张 (Argument):**
+该文本是一个M3U8播放列表，其核心目的是作为特定YouTube视频（`YCznV2cKYm4`）的定时文本（字幕或旁白）的索引或清单。它结构化了如何分段获取视频在不同时间范围内的VTT格式字幕文件，以支持按需加载或流式传输字幕。
+
+**关键数据/示例 (Evidence):**
+*   **M3U8头部信息:** `#EXTM3U`, `#EXT-X-VERSION:3`, `#EXT-X-PLAYLIST-TYPE:VOD`, `#EXT-X-TARGETDURATION:600`，明确指示这是一个HLS兼容的VOD（视频点播）播放列表，最大分段时长为600秒。
+*   **分段定义:** 多个`#EXTINF:Duration, URL`对，定义了各个字幕分段的时长和对应的获取URL。例如，`#EXTINF:600, https://...&range=0-600`。
+*   **YouTube API URL:** URL指向YouTube的`timedtext` API，包含关键参数：
+    *   `v=YCznV2cKYm4`：视频的唯一标识符。
+    *   `lang=zh-TW`：指定的字幕语言（繁体中文）。
+    *   `fmt=vtt`：字幕文件格式为VTT。
+    *   
+
+Content:
+#EXTM3U, #EXT-X-VERSION:3, #EXT-X-PLAYLIST-TYPE:VOD, #EXT-X-TARGETDURATION:600, #EXTINF:600, https://www.youtube.com/api/timedtext?caps=asr&v=YCznV2cKYm4&lang=zh-TW&ip=141.98.196.100&ipbits=0&expire=1771883621&sparams=ip,ipbits,expire,caps,v&signature=7F9DB8B4E954D5943B982226CF9F622FF7D223DA.4F9ADCF1022790680B2327064B349FFC49231FE2&key=dg_yt0&fmt=vtt&range=0-600, #EXTINF:600, https://www.youtube.com/api/timedtext?caps=asr&v=YCznV2cKYm4&lang=zh-TW&ip=141.98.196.100&ipbits=0&expire=1771883621&sparams=ip,ipbits,expire,caps,v&signature=7F9DB8B4E954D5943B982226CF9F622FF7D223DA.4F9ADCF1022790680B2327064B349FFC49231FE2&key=dg_yt0&fmt=vtt&range=600-600, #EXTINF:600, https://www.youtube.com/api/timedtext?caps=asr&v=YCznV2cKYm4&lang=zh-TW&ip=141.98.196.100&ipbits=0&expire=1771883621&sparams=ip,ipbits,expire,caps,v&signature=7F9DB8B4E954D5943B982226CF9F622FF7D223DA.4F9ADCF1022790680B2327064B349FFC49231FE2&key=dg_yt0&fmt=vtt&range=1200-600, #EXTINF:303, https://www.youtube.com/api/timedtext?caps=asr&v=YCznV2cKYm4&lang=zh-TW&ip=141.98.196.100&ipbits=0&expire=1771883621&sparams=ip,ipbits,expire,caps,v&signature=7F9DB8B4E954D5943B982226CF9F622FF7D223DA.4F9ADCF1022790680B2327064B349FFC49231FE2&key=dg_yt0&fmt=vtt&range=1800-303, #EXT-X-ENDLIST
