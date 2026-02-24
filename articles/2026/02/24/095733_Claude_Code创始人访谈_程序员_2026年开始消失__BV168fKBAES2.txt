@@ -1,0 +1,152 @@
+Timestamp: 2026-02-24T09:57:33.216406
+Title: Claude Code创始人访谈：程序员，2026年开始消失？ BV168fKBAES2
+URL: https://b23.tv/AOR8ha6
+Status: success
+Duration: 11:51
+
+Description:
+## Part 1. 分析文本
+
+**核心主张 (Argument):**
+AI，特别是AI编程智能体（如Code Code），正在引发一场颠覆性的技术革命，这将使传统的软件工程师职业及其依赖的编码技能迅速贬值乃至消失。未来的价值将不再是编写代码本身，而是与庞大AI集群协同、引导、批判性思考及宏观把控复杂系统的能力。
+
+**关键证据 (Evidence):**
+1.  **权威人物背书**: Boris Cherni，前Meta IC8（顶尖技术级别）核心架构师，权威技术书籍《Programming TypeScript》作者，其言论具有极高可信度。
+2.  **Code Code的起源与核心突破**: 意外诞生，模型在测试中主动编写AppleScript解决问题，展现“使用工具的渴望”和主动解决问题的智能，而非简单指令执行。
+3.  **反直觉的产品设计理念**: 故意采用简陋的终端界面（类80年代BBS），而非华丽GUI，原因是“对AI进化速度的敬畏”，认为复杂UI很快会过时，终端界面是“战略防御”。
+4.  **生产力爆炸式增长**: Boris本人完全脱离IDE，每天交付20个P2任务。Anthropic内部PM、设计师、财务人员都在用AI写代码。公司生产力整体提升150%，甚至达到“Google顶尖工程师的1000倍”。
+5.  **AI的深度排查能力**: 案例显示AI能自主排查复杂内存泄漏，甚至现场编写专用分析工具，比资深专家更快更准。
+6.  **产品生存法则的颠覆**:
+    *   “永远寻找潜在需求”（Latin Demand）：观察用户笨拙行为，用AI使其变易（如“计划模式”）。
+    *   “为6个月后的模型开发”：不要为弥补当前模型缺陷而构建复杂脚手架，因AI迭代极快，新模型会原生支持。
+7.  **代码的“保质期”**: CrowdCrowd中6个月前的代码已被AI 100%重写，意味着传统技术债和经验积累迅速失效。
+8.  **新的招聘与工作模式**: 不再考察白板算法，而是看AI聊天记录（Transcript），评估“纠偏能力”、系统性思考和“极高谦逊感”（承认自己可能有一半时间是错的）。工程师角色转变为“AI集群的指挥家”。
+9.  **AI智能体的自主行为**: Agent之间互相聊天，查Git Blame后在Slack上追问人类工程师，甚至自主发推文，展现惊人的自主性和交互能力。
+10. **ASL4安全警示**: 提到了ASL4级别（模型递归自我改进），可能带来生物病毒设计、网络漏洞发现等失控风险，强调安全是行业终极考验。
+11. **未来核心能力**: 转向清晰的逻辑表达、科学的试错能力、对庞大AI算力的宏观把控。
+12. **颠覆性预测**: 抛出“未来软件底层是否还需要对人类可读性？”的疑问，暗示AI可能使用人类无法理解的更高效逻辑重构数字世界。
+
+**逻辑推理 (Reasoning):**
+文章首先通过Boris Cherni的权威性建立信任，接着以Code Code的意外起源和独特设计理念揭示AI的颠覆性。通过具体的生产力数据和生动的比喻（痕迹器官、抄写员），阐明AI对传统编程工作的直接替代和职业角色的大幅转变。随后，通过产品开发的反常识法则和代码保质期，强调AI进化速度的指数级，使得旧有经验和方法迅速过时。新招聘模式的出现和AI智能体的自主行为进一步描绘了人机协作的全新图景。最后，通过对ASL4的严肃安全警告和对代码可读性的终极反思，将这场技术革命的深远影响推向哲学层面，引人深思。整个论证过程层层递进，从技术现象到行业趋势，再到人类角色的根本性转变。
+
+**质疑 (Doubts - 批判性地):**
+1.  **“1000倍生产力”的普遍性和语境**: “顶尖时期Google工程师的1000倍”是一个极其夸张的数字，可能在特定任务或AI原生环境中成立，但其普遍适用性值得怀疑。这种数据可能带有宣传性质，容易导致读者对变革的程度产生不切实际的预期。对于复杂、非标、需要深刻领域知识和创造力的软件项目，AI是否也能带来同等量级的提升，文章并未详述。
+2.  **“痕迹器官”比喻的绝对性与区分度**: 将所有软件工程师视为“阑尾”可能过于简化。AI替代的更多是重复性、模式化的编码工作，但设计复杂系统架构、定义全新产品、解决前沿理论问题、处理法律/伦理等边界情况，这些依然需要人类的抽象思维、创造力和批判性判断。文章似乎没有明确区分“编码员”与更高级的“软件架构师/设计师/研究员”之间的差异。
+3.  **终端界面“战略防御”的局限性**: 尽管“避免UI过时”是理由，但一个缺乏图形界面、鼠标交互的工具，其用户友好性和普及性可能受限。当其他AI工具（如Copilot X、Devin等）开始提供更集成、更友好的UI时，这种“克制”是否会成为其进一步推广的障碍，而非单纯的优势？
+4.  **AI安全（ASL4）的解决方案缺失**: 文章强调了ASL4级别可能带来的严重安全风险，但对于Anthropic或整个行业将如何具体“构建足够的安全互拦”以应对这种递归自我改进的AI，并没有给出实质性探讨。这种警示更多是提出问题，而非提供解决方案。
+5.  **“潜在需求”识别和“为未来模型开发”对人类智能的依赖**: 尽管这些是AI时代的产品法则，但识别“潜在需求”和预测“6个月后模型的能力”依然高度依赖人类的洞察力、市场敏感度和前瞻性思维。AI目前仍是工具，而非这些决策的独立主体。
+6.  **人类“谦逊感”与组织文化变革的阻力**: 要求高级工程师具备“极高谦逊感”并愿意承认自己“一半时间是错的”，这与许多传统技术组织中工程师文化（追求权威、强观点）存在冲突。这种深层次的文化和心理转变，在实际落地中会面临巨大挑战。
+7.  **未来代码“不可读性”的信任与维护问题**: 如果AI真的构建了人类无法理解的代码，那么在系统故障、安全审计、法律合规或需要人类介入修改时，将带来巨大的风险和维护成本。一个完全“黑箱”的数字世界，其稳定性和可控性如何保障？这可能是一个为了追求极致效率而牺牲透明度和可控性的极端设想。
+
+---
+
+## Part 2. Mermaid概念图
+
+<Mermaid_Diagram>
+graph TD
+    subgraph "核心变革与背景"
+        BC["👤 Boris Cherni<br/>(前Meta IC8, 《Programming TypeScript》作者)"]:::credibility
+        INTRO["🚨 软件工程的十年积累将迅速贬值与消失"]:::introduction
+        BC --> INTRO;
+        CC_ORIGIN["🌟 Code Code的意外诞生<br/>(为测试API & 'Tool Use'功能)"]:::event
+        CC_AHA["💡 'Aha!'时刻: 模型自主编写AppleScript<br/>(展现使用工具的渴望 & 主动解决问题)"]:::breakthrough
+        CC_DESIGN["🖥️ 产品设计哲学: 终端界面<br/>(类似80年代BBS, 无鼠标, 但底层React)"]:::design_choice
+        CC_REASON["🤔 设计原因: 对AI进化速度的敬畏<br/>(复杂UI易过时, 终端是战略防御)"]:::reasoning
+        CC_ORIGIN --> CC_AHA;
+        CC_AHA --> CC_DESIGN;
+        CC_DESIGN --> CC_REASON;
+    end
+
+    subgraph "传统职业的冲击与重塑"
+        INTRO --> IMPACT_PROD;
+        IMPACT_PROD["📈 生产力与职业角色的颠覆"]:::impact_area
+        IMPACT_BORIS["👨‍💻 Boris工作模式:<br/>完全脱离IDE, 每日交付20 P2, 不手写代码"]:::role_change
+        IMPACT_METAPHOR["📉 职业比喻: 软件工程师将成为'痕迹器官'<br/>(如阑尾, 类似印刷术对抄写员)"]:::metaphor
+        IMPACT_BROAD["🌐 AI写代码的普及:<br/>PM、设计师、财务都在用AI写代码"]:::broad_scope
+        IMPACT_DATA["📊 生产力数据对比:<br/>Meta团队一年2%提升<br/>Anthropic工程师150%提升 (Google工程师1000倍)"]:::metrics
+        IMPACT_PROD --> IMPACT_BORIS;
+        IMPACT_PROD --> IMPACT_METAPHOR;
+        IMPACT_PROD --> IMPACT_BROAD;
+        IMPACT_PROD --> IMPACT_DATA;
+    end
+
+    subgraph "AI能力与协作范式"
+        AI_CAP_AREA["🤖 AI的核心能力与自主性"]:::ai_capability_area
+        AI_DEBUG["🔎 AI自主排查Bug:<br/>发现内存泄漏, 自己编写分析工具"]:::ai_feature
+        AI_AGENT_AUTO["🤝 AI智能体的自主行为:<br/>互相聊天, 查Git Blame, 追问人类, 发推文"]:::ai_feature
+        AI_CAP_AREA --> AI_DEBUG;
+        AI_CAP_AREA --> AI_AGENT_AUTO;
+    end
+
+    subgraph "未来生存与发展法则"
+        SURVIVAL_RULES["🧭 AI时代的生存法则"]:::survival_rules_area
+        SR_RULE1["法则一: 寻找潜在需求 (Latin Demand)<br/>(观察用户笨拙尝试, 用AI简化, 如'计划模式')"]:::rule
+        SR_RULE2["法则二: 为6个月后的模型开发<br/>(勿与模型对赌, 避免复杂脚手架失效)"]:::rule
+        SR_CODE_LIFE["⏳ 代码保质期:<br/>6个月前的Code Code代码100%被AI重写"]:::code_dynamics
+        SR_MT_SIMPLE["📝 Crowd MT (指令文件) 极简:<br/>Boris只用两行 (自动合PR, 发Slack), 永远别过度设计"]:::code_dynamics
+        NEW_HIRING["🎯 新的招聘与工程师心态:<br/>看AI聊天记录(纠偏能力, 系统思考, 谦逊感)"]:::hiring_shift
+        NEW_ROLE["🎭 工程师新角色:<br/>AI集群的指挥家 (Swarm Conductor), 非亲自搬砖"]:::role_change
+
+        SURVIVAL_RULES --> SR_RULE1;
+        SURVIVAL_RULES --> SR_RULE2;
+        SURVIVAL_RULES --> SR_CODE_LIFE;
+        SURVIVAL_RULES --> SR_MT_SIMPLE;
+        SURVIVAL_RULES --> NEW_HIRING;
+        NEW_HIRING --> NEW_ROLE;
+    end
+
+    subgraph "终极思考与挑战"
+        FINAL_CHALLENGE["🔮 终极思考与未来的挑战"]:::ultimate_challenge_area
+        ASL4_RISK["⚠️ 安全隐患: ASL4级别 (模型递归自我改进)<br/>(AI造更聪明AI, 生物病毒, 网络漏洞)"]:::safety_concern
+        NEW_CORE_SKILLS["🧠 未来核心能力:<br/>清晰逻辑表达, 科学试错, 宏观把控AI算力"]:::future_skills
+        UNREADABLE_CODE["❓ 挑衅性问题: 未来代码还需要人类可读性吗?<br/>(AI可能抛弃人类语言, 用自身高效逻辑重构世界)"]:::provocative_question
+        FINAL_CHALLENGE --> ASL4_RISK;
+        FINAL_CHALLENGE --> NEW_CORE_SKILLS;
+        FINAL_CHALLENGE --> UNREADABLE_CODE;
+    end
+
+    IMPACT_PROD --> NEW_HIRING;
+    AI_CAP_AREA --> SURVIVAL_RULES;
+    AI_CAP_AREA --> NEW_HIRING;
+    NEW_ROLE --> FINAL_CHALLENGE;
+
+
+    %% Node Styles
+    classDef credibility fill:#FFD700,stroke:#DAA520,stroke-width:2px,color:#333;
+    classDef introduction fill:#FF6347,stroke:#FF0000,stroke-width:2px,color:#fff;
+    classDef event fill:#87CEFA,stroke:#4682B4,stroke-width:1.5px,color:#333;
+    classDef breakthrough fill:#00FF7F,stroke:#3CB371,stroke-width:2px,color:#333;
+    classDef design_choice fill:#D3D3D3,stroke:#A9A9A9,stroke-width:1.5px,color:#333;
+    classDef reasoning fill:#FFEBCD,stroke:#DEB887,stroke-width:1.5px,color:#333;
+
+    classDef impact_area fill:#FFB6C1,stroke:#FF69B4,stroke-width:2px,color:#333;
+    classDef role_change fill:#FFDAB9,stroke:#FFA07A,stroke-width:1.5px,color:#333;
+    classDef metaphor fill:#FFC0CB,stroke:#FF69B4,stroke-width:1.5px,color:#333;
+    classDef broad_scope fill:#E0BBE4,stroke:#957DAD,stroke-width:1.5px,color:#333;
+    classDef metrics fill:#ADD8E6,stroke:#87CEEB,stroke-width:1.5px,color:#333;
+
+    classDef ai_capability_area fill:#BA55D3,stroke:#8A2BE2,stroke-width:2px,color:#fff;
+    classDef ai_feature fill:#D8BFD8,stroke:#BA55D3,stroke-width:1.5px,color:#333;
+
+    classDef survival_rules_area fill:#F0E68C,stroke:#BDB76B,stroke-width:2px,color:#333;
+    classDef rule fill:#FAFAD2,stroke:#EEE8AA,stroke-width:1.5px,color:#333;
+    classDef code_dynamics fill:#E6E6FA,stroke:#D8BFD8,stroke-width:1.5px,color:#333;
+    classDef hiring_shift fill:#AFEEEE,stroke:#40E0D0,stroke-width:1.5px,color:#333;
+
+    classDef ultimate_challenge_area fill:#DC143C,stroke:#B22222,stroke-width:2px,color:#fff;
+    classDef safety_concern fill:#FFB6C1,stroke:#FF69B4,stroke-width:1.5px,color:#333;
+    classDef future_skills fill:#A2D9CE,stroke:#48C9B0,stroke-width:1.5px,color:#333;
+    classDef provocative_question fill:#FFD700,stroke:#DAA520,stroke-width:2px,color:#333;
+
+
+    %% Subgraph Background Colors
+    style "核心变革与背景" fill:#F0F8FF,stroke:#4169E1,stroke-width:2px,color:#000;
+    style "传统职业的冲击与重塑" fill:#FFF0F5,stroke:#FF69B4,stroke-width:2px,color:#000;
+    style "AI能力与协作范式" fill:#F8F0FF,stroke:#BA55D3,stroke-width:2px,color:#000;
+    style "未来生存与发展法则" fill:#F5FFFA,stroke:#6B8E23,stroke-width:2px,color:#000;
+    style "终极思考与挑战" fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#000;
+
+</Mermaid_Diagram>
+
+Content:
+搅相一下你现在的情况你在一碗极其复杂的技术上投入了整整十年的青春对十年的心血没错你熬过无数个夜晚肯下了最难的底层逻辑终于成了这个领域里无可替代的专家但是如果有人突然跑来告诉你你这十年的积累不仅会在接下来的几个月里迅速变职甚至连这个职业本身都要消失了对甚至连你引以为熬的这个职业头显都即将变成进化史上的惨流舞面对这种底层的技术重够你会做何感想欢迎来到本次深度解析我们要探讨的正是当下在软件工程界引发大地震的一场革命是绝对是一场革命在今天的拆解中我们手头的资料份量可是非常硬核的一份是来自YKMLightcore 栏目的超常访谈嘉宾是目前最强AI编程智能体Code Code的核心地造者Boris Cherni另外还有一篇深度总结制常访谈探讨程序员是否会在2026年消失的中文分析文章这两份资料集合起来看信息量极大确实不过一开始我看到程序员消失这种标题觉得是不是又是在贩卖焦虑其实很多人第一反应都会这么想但是我们要先明学一点提出这些观点的Boris绝不是那种指挥说空话的步导师没错他是个时干派他曾是美塔的核心驾驻师而且级别达到了级高的IC8你想想看在那种大场的纯技术路线上走到这个级别那是深安抵层技术的等级即刻而且他还写过Programming TypeScript这本权威指难对吧对所以当这样一个花了十几年时间把编程技能我练到最极致状态的人亲口说出软件工程师这个头鞋即将消失是我们就必须认真听听他的理由了没错所以我们来拆解一下这个听起来要彻底重塑职业定义的code code到底是怎么衡控出事的我原本以为这种颠覆性的工具一定是个有着庞大兰图几百人团队密密研发了五年的大项目结果资料里说他的单身居然完全是个意外完全是个意外这其实是归顾很多伟大产品的供性当初在安撮屏内部Boris仅仅是为了测试一下他们刚出的API以及一个叫工具盗用的新功能就是Toe Use对吧对的为了省事他根本没想做什么红大的产品就随手写了一个在中端也就是那个黑糊糊的命令航件面里跑的小聊片应用连个像样的图形界面都没有没有就是最基础的文字交互但是这里令人找迷的是正是这个看似随意的举动促成了一个急剧的实行的时刻怎么说当Boris给这个中端里的早期模型接入了拜兴工具之后他随口问了模型一句我正在听什么歌这个问题其实很雕转因为模型根本不知道他电脑里在运行什么完全不知道但奇迹发生了这个模型竟然自己现场编写了一段Apple script我的天然后他用这段脚本去查了麦克里的音乐播放器成功找出了那首歌Boris说那是他第一次真切的感受到ADI就在眼前的震撼因为他展现出了极强的使用工具的渴望没错他不再是个指挥兔文字的幅度机他是一个会主动探索世界自己造工具来解决问题的智能体哇这里才是真重有趣的地方听完这个震撼的故事按理说他们应该立刻投入句子给智能体打造一个无比炫酷的图形用户界面但并没有是的之前还在中端里对中文文章里说这个界面看起来就像上市机80年代的BBS有系列最高只有256种颜色甚至你都没法用鼠标去点它但我看到资料里有一个很反之觉的细节它实际上是用最现代的react写的这恰恰展现了顶级即刻对产品设计的极度克制虽然看起来简陋但细节打磨的极其变态比如那个加载转圈的动画对就一个小小的 speed 动画他们一带了50到100次就为了再转个车废弃了80般的方案只为让它看起来足够自然至于为什么不用鼠标一方面是因为虚拟化滚动的全痕太复杂了另一方面呢一个面访也是更深层次的原因就是对 AI 进化速度的境为现在 AI 进化太快了你花大力气见得复杂 Ui几个月后可能就彻底爆飞了所以留在中端不仅开发成稳低更是最聪明的战略防御极其五十这反差感太绝了这就顺利成章的带我们进入下一个画面想象一下你现在作为顶尖工程师的工作状态你每天可能要在各种华后的 ID 里敲击几千行考对吗但 Boris 呢他现在每天能交付20个 P2这是个极其恐怖的数字最离一步的是他已经完全泄在了 ID 翼对他 101 里LightClote Code和 Opus 4.5 或者 4.6 模型不再熟写任何一行待吗这简直是降为打击咱们手头的中文文章里用了一个极其吸力的比喻 Boris 形容软件工程师这个头显将变成生物学上的痕迹器官痕迹器官就像人的兰尾那样完全准确兰尾在漫长的进化史上曾经是有用的但未来将失去功能如果我们把他和更红大的图景联系起来看这就好比15世纪活资金刷机发明之后那些曾经靠一笔一化精准抄写书记卫生的抄写员他们的手艺不值钱了时代抛弃你的时候联亦生再见都不会说编程正在从一种专业必类将维成每个人的基础素样资料里透露现在在 Antirpake不仅是工程师连PM 设计师甚至财务人员都在用AI写代码连财务都在这些代码这太放宽了而且说到生产力Boris给出的对比数据更是让人到稀口良息是的关于他在Mata的那段经历对以前在Mata他负责代码质量的时候几百个顶尖工程师努力整整一年可能只能把工程生产力提升区区二判但现在在Antirpake呢ClowedCold让每位工程师的生产力直接抱掌了150%甚至有人评价说现在Antirpake工程师的产出是顶尖时期Google工程师的1000倍1000倍专家对于这种深度的排查AI真的能替代那种人类读诱的直觉吗我完全理解这种怀疑但资料里提到了一个非常典型的排查八个案例以前如果遇到复杂的内存泄漏工程师要花好几个小时看当盼翻看海量的代码这简直是大海捞针但是现在工程师Cris遇到这事直接让ClowedCold去查结果你才怎么着他自己找出来了不仅找出来了AI发现手头没有现成的分析工具感觉自己写了一个专门用来跑Dump的分析工具我的天自己造工具来查八个对他跑完整个流程比资深专家还要快还要准这就是所谓的降围打击那么这一切意味着什么呢在这个疯狂的指数级进化面前如果你是一个创业者或者开发者你该怎么办Boris在放弹里极其大方的分享了他的产品生存着血两条极其反共式的法则第一条永远寻找潜在需求也就是Latin Demand不要逼用户做新事情对而是观察用户现在正在极其笨拙的试图做什么然后用AI把它变容易比如资料里提到的大受欢迎的Planned Mode计划模式这个功能的起因就是Boris发现用户在偷偷用提示权跟模型说请你先跟我做计划千万别急着写代码就是用户其实已经在自己想办法让过工具的限制了没错所以Boris在周日晚上花了30分钟把代码写好周一直接上线大受欢迎顺势而为那法则二呢法则二更硬核不要为今天的模型开发要为6个月后的模型开发这就涉及到了墙上挂着的那篇经典文章Lebeth Lassen苦涩的教训这篇文章告诉我们永远不要跟模型对赌你觉得今天的模型有点笨所以花几个月写了一大对复杂的脚收架去弥补它结果新模型一出直接原生支持了对你的代码全作费这就引出了一个让人毛骨损然的概念扣的的保质期Boris Tolo现在CrowdCrowd的代码库里任何一行代码是6个月前写下的百分之百被重写了全部被AI一遍遍重写了你想想过去程序原积累了10年的技术债质史怎么绕过某个系统的坑这些突然间一闻不止了这也是为什么Boris给出了一个关于自定义指令文件也就是Crowd MT的硬核建议对对对很多人喜欢把那个文件写的特别长长达几千个偷渴像法律条文一样但Boris自己的Crowd MT只有两行只有两行一行是自动核病PR另一行是把PR发到Slack频道就这么简单就这么简单他建议遇到模型跑偏了在慢慢家如果文件太长别犹豫直接删了重开永远别过度设计哇好既然现在连代码都不需要人类熟写了那问题来了现在的顶监科技公司到底怎么招人过去大家都在白板上熟写算法现在呢现在他们看你在Crowd Crowd里的聊天记录这太有意思了看Transcript面识观看这个到底是想考察什么看你打字快不快吗当然不是语法这就引出了一个重要的问题他们观察的是你价于庞大智能体的能力当模型产生换绝跑偏实你能把它拽回来吗也就是你的纠偏能力你懂不懂的让模型自己写测试用力你是不是具备系统性的思考这一位车心态必须发生根本转变过去的高级工程师王王以拥有强观点为容我觉得架构应该这么大那就必须这么大但在现在这种强观点反而是个巨大的劣势为什么因为在纸术几增长的时代昨天的经验就是明天的班较时现在真正需要的是具备第一性原理思考愿意承认自己有一半时间是错的并且拥有极高签讯管的人签讯感面对AI使得签讯因为你未来的工作不再是亲自举班专而是指导一个庞大的AI集群也就是Swarm就像一个交小卫团的指挥你让一个Agent去看Sever日质同时让另一个举番底成代并行的解学极其复杂的系统Bug说到这些自主运行的Agent们放弹里还提到了一些听起来有点搞怪但细想一下让人几倍发良的细节现在的这些ClawedAgent们不仅在背后互相聊天他们还会去查代码的历史对他们看完Get Blame之后发现某段代码写的有问题竟然会直接在公司的slack频道上给显列代码的人类工程时发消息追问甚至Boris的AI还会自己跑去发推文虽然他觉得语调太土味了经常得手动去删掉但这背后反应的自主性非常可怕而且中文文章里也提到像EasyClaw这样的工具正在帮助普通人实现这种高自由度的本地化AI助手部署如果我们把它和更红大的图景联系起来看这种极度的自动化正在向普罗大众蔓延但是同时带来了一个巨大的问号安全问题极度的安全问题也就是Boris这种顶尖人才加入Andphropic的核心原因这家公司极其看重ASFT思导里确实提到了具体的安全分析就像自动价是有极备一样他们目前处于ASL3但真正玄在头顶的键是那个即将到来的ASL4级别ASL4的核心特征就是模型开始能够地规自我改进AI自己造更聪明的AI没错如果达到这个阶段缺乏足够的安全互拦事情可能会彻底失控比如这种强大的极群工具被用来设计生物病毒或者寻找全球网络的致命漏洞所以在享受技术红利的同时我们真的必须实刻警惕这种指数级的力量这是整个行业必须面对的中级考验所以为今天的讨论做个总结吧AI的冲击下顾首就有的单约应技能已经彻底行不通了写代码也好做设计也好真重的互惨和变成了什么变成了什么变成了清晰的逻辑表达能力科学的试错能力以及利用庞大AI算明的红关把控感太精闭了那么再感谢你加入我们这次深度探索的同时我想在最后给你留下一个我们在前面并没有明确讨论过但绝对值得你独立次考的挑衅性问题这个问题很关键你想想看既然现在的AI已经可以完全自主的去阅读就代码修复Bug并且每个几个月就把整个系统的底层代码完美的重写一遍代码完全是AI写给AI看的对那么未来的软件底层真的还需要对人类具备可毒性吗这真是个让人吸死空脚的角度也许用不老多久AI就会觉得为了让人类看懂而使用Python或者JavaScript实在是太低效了他们可能会抛弃一切转而用一种只有他们自己能看动但愿行效率高出百万倍的全新逻辑形态来重新构建我们的数字世界高纳时人类可能连看懂代码的资格都没有了面对这样一个颠覆性的未来你准备好了吗
