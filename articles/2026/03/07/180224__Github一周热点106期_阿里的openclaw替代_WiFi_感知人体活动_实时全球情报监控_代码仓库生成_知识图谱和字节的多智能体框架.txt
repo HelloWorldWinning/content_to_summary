@@ -1,0 +1,264 @@
+Timestamp: 2026-03-07T18:02:24.439869
+Title: 「Github一周热点106期」阿里的openclaw替代、WiFi 感知人体活动、实时全球情报监控、代码仓库生成 知识图谱和字节的多智能体框架
+URL: https://youtube.com/watch?v=pHF7s-oOTx0&si=sLNJgrdo_MDL7haS
+Status: success
+Duration: 7:09
+
+Description:
+**PART 1. STRUCTURAL DECONSTRUCTION**
+
+-   **Core Thesis:** 本期Github热点汇总结介绍了包括AI个人助理、无接触人体感知、全球情报监控、代码知识图谱工具以及多智能体AI框架等在内的前沿开源项目，旨在为读者提供一周内的技术创新概览。
+-   **Evidentiary Base:**
+    *   **Copo (AI个人助理):** 通议实验室推出，对标OpenCloud，支持本地/云端部署，GitHub星标增长快（超26W），部署命令（`Pip-In-Stole`, `Copo-In-N-N-T`, `Copo-IP`），连接多平台聊天软件（丁丁、飞书、QQ、Discord等），支持Skill机制，内置主流云端模型（摩搭、DiscroP），支持自定义模型供应商和Olamar，核心组件解耦（ProM、Toe、Smimmerer）。
+    *   **Wi-Fi感知人体活动:** 基于Wi-Fi CSI（信道状态信息），通过Wi-Fi信号而非摄像头感知人体活动（姿态、呼吸、心率、存在），目标是将普通Wi-Fi设备变为隐形传感器。使用Docker部署，需要支持CSI的设备。应用场景：智能建筑（占用检测）、医疗（非接触式呼吸心率）、安全/工业（人员监测）。
+    *   **WOW的Monitor (全球情报监控):** 开源实时全球情报监控平台，整合新闻、地缘政治、市场信息、全球关键技术设施数据，可视化展示，提供LiveDemo，支持本地部署（需配置大模型API-K），可调整模块和信息来源。
+    *   **GateNexes (代码桑库知识图谱):** 开发者工具，将GitHub仓库或Zip包转换为知识图谱，可视化代码关系、模块结构、交互关系，内置Graph Drive Agent回答问题（函数调用、模块关系）。特点：浏览器架构，完全客户端运行（代码解析、图结构构建、向量嵌入、查询分析），不上传服务器，隐私友好。提供CLI模式（NPMings.GateNexes安装）。
+    *   **Fullow (字节跳动多智能体框架):** 字节跳动开源的DepartureSelts多智能体框架，目标是让AI自主研究、收集信息、分析数据并生成完整结果。结合大模型和工具（Web Search、Moyabouch、Python环境）。核心能力：多智能体自动化、协作架构、工具技能系统、沙箱环境。目前2.0版本，基于Python、Lung Graph、Lung Trin构建，支持长时间任务和记忆机制。应用场景：深度研究、内容创作、数据管道、自动化。
+    *   **两份资料分享:** 《塑造自己的下一个版本2026前一监科技趋势》（腾讯研究院报告）、《OpenClaw自我研究1.0报告》（OpenClaw自己完成）。
+-   **Logical Architecture (The Warrant):** 作者通过逐一介绍每个项目的核心功能、技术特点、部署方式、应用场景以及作者个人评价，来支持其“本期热点汇总”的主题。对于每个项目，作者都力图展现其创新性、实用性或独特的吸引力，从而佐证其“热点”的地位。
+-   **Stated Scope:** GitHub一周热点会总，本期为第1067期，内容涵盖AI工具、感知技术、情报分析、开发工具及AI框架等多个技术领域。
+
+**PART 2. HOSTILE-BUT-FAIR REVIEW**
+
+-   **Steelman**
+    *   **Copo:** 作为OpenCloud的有力竞争者，Copo在本土化UI、部署便捷性、模块化扩展和模型支持方面具有显著优势，且由“通议实验室”推出，预示着其有潜力在大厂资源支持下挑战现有市场格局。
+    *   **Wi-Fi感知人体活动:** 该技术利用现有Wi-Fi基础设施实现非接触式人体活动感知，具备颠覆传统摄像头和穿戴设备的潜力，在隐私保护和隐形监测方面具有革命性意义，应用前景广阔。
+    *   **WOW Monitor:** 这是一个集成多源信息、以“作战指挥大屏”风格呈现的实时全球情报监控工具，不仅实用性强，更能满足特定用户群体（尤其男性）对宏大叙事的心理需求，具有独特的市场吸引力。
+    *   **GateNexes:** 作为一款全客户端运行的代码知识图谱工具，它在代码隐私保护方面提供了极致的解决方案，同时通过可视化和AI代理极大地提升了开发者理解复杂代码库的效率，是隐私与效率兼顾的创新。
+    *   **Fullow:** 字节跳动开源的Fullow框架代表了AI发展的新方向，它使AI从被动问答转向主动研究、分析和生成完整结果，通过多智能体协作和工具集成，能有效处理复杂的现实任务，预示着AI自主性的重大突破。
+
+-   **Weakest Link**
+    *   **Copo:** 作者核心论证Copo优势的薄弱环节在于其对用户体验的评价：“**目前的外壁Y在使用上我觉得比OpenCloud要顺手一些至少更适合国内的使用习惯**”。这个声明是高度主观的，缺乏任何量化数据或用户测试支持。其失败在于，"我觉得"无法作为衡量产品优劣的客观标准，更不足以支撑“能撼动OpenCloud地位”的潜在推论。
+    *   **Wi-Fi感知人体活动:** 作者在描述其“神奇”之处后，随即承认：“**目前我没有支持的设备大家可以根据自己的情况来去试试效果**”。这一句话直接削弱了之前所有对该技术“神奇”和“应用价值”的论述。如果作者自己都无法亲身体验和验证其效果，那么其对技术潜力的判断就缺乏直接依据，很可能停留在理论层面或宣传层面。
+
+-   **Evidence Audit**
+    *   **Copo:** 缺乏与OpenCloud的直接、量化对比数据，例如性能基准、功能完整性、社区活跃度、生态系统成熟度等。作者仅提到“星星增长最快”，但未提供具体时间段和增长率，也未说明其与OpenCloud的绝对星标数差距。对“通议实验室”的背景也未作深入介绍，无法判断其是否真具备“大厂”资源。
+    *   **Wi-Fi感知人体活动:** 缺少关于该技术在实际应用中的准确率、抗干扰能力、有效距离、对不同体型/动作的鲁棒性等关键性能指标。文中虽提及应用场景，但未提供任何实际部署案例或效果验证。
+    *   **WOW Monitor:** 作者声称“不算难很多博主都分享过这种类似的全网信息采集的思路”，但又强调其“非常使用”且“样式让男生非常喜欢”，这种前后矛盾的描述削弱了其创新性和技术壁垒。未提供任何关于其情报来源的可靠性、信息整合的深度、去伪存真能力等方面的证据。
+    *   **GateNexes:** 虽然强调客户端运行的隐私优势，但未提及其对大型代码库的处理性能、支持的编程语言范围、代码解析的准确性或对复杂依赖关系的理解能力。也没有与其他代码分析工具进行功能或性能上的对比。
+    *   **Fullow:** 描述了其“自主研究、收集信息、分析数据并生成完整结果”的目标，但缺乏具体的案例或基准测试来证明其在实际“复杂研究任务”中的表现优于传统方法或现有AI模型。其“从0开始重构”的说法，也未解释V1版本存在的问题或V2版本带来的具体提升。
+
+-   **Hidden Premises**
+    *   **Copo:** 读者必须接受“通议实验室”有足够的资源和决心持续投入，才能与OpenCloud抗衡。同时，隐含了“更适合国内使用习惯的UI”是决定AI助理市场成败的关键因素。
+    *   **Wi-Fi感知人体活动:** 读者必须接受Wi-Fi CSI技术已经足够成熟和精确，可以替代摄像头完成高精度的人体感知任务，并且兼容CSI的设备已足够普及或易于获取。
+    *   **WOW Monitor:** 读者必须接受“作战指挥大平”的样式本身就是一种重要的产品价值，且全球情报监控的实时性和广度对于普通用户而言具有高实用性，而非信息过载。
+    *   **GateNexes:** 读者必须接受代码隐私是比性能、功能深度或易用性更重要的考量，并且客户端运行对于处理大规模、复杂代码库而言是可行的。
+    *   **Fullow:** 读者必须接受多智能体框架本身就能有效解决AI自主性问题，且AI能真正实现“自主研究”而非仅仅是工具调用和信息聚合。
+
+-   **The Blind Side**
+    *   **Copo:** 忽视了OpenCloud作为先行者所积累的庞大用户社区、丰富插件生态、品牌认知度和持续的迭代速度。这些是任何新进入者，即便有大厂背景，也难以在短期内超越的壁垒。
+    *   **Wi-Fi感知人体活动:** 忽略了Wi-Fi信号在复杂环境（如多房间、多障碍物、多人同时活动）下的局限性，以及其感知精度、识别粒度（例如区分不同个体）的挑战。此外，其“隐形传感器”的特性也可能引发新的隐私伦理争议。
+    *   **WOW Monitor:** 未考虑信息过载问题，以及如何有效过滤假新闻、识别信息偏见、确保情报来源的权威性。对于普通用户而言，如何从海量“地缘政治数据”中提炼出有价值、可行动的洞察，是一个巨大的挑战。
+    *   **GateNexes:** 未提及客户端运行可能带来的性能瓶颈，尤其是在处理超大型或高度复杂的代码库时。此外，其“图结构”在实际代码理解中，能否真正超越传统的IDE导航、代码搜索和静态分析工具，也未作深入探讨。
+    *   **Fullow:** 忽略了多智能体协作的复杂性，例如如何解决智能体之间的冲突、确保任务分解与协作的效率、避免重复工作或陷入逻辑循环。同时，对“生成完整结果”的质量控制和评估机制也未作说明，这在AI领域是一个普遍难题。
+
+-   **One hit kill**
+    *   **Copo:** 假设Copo的UI“更顺手”是其核心竞争力，那么请提供独立、盲测的用户体验研究报告，量化对比Copo与OpenCloud在安装、配置、日常使用等多个维度的用户满意度、效率提升和学习曲线，以证明其主观感受的普适性和决定性优势。
+    *   **Wi-Fi感知人体活动:** 作者在介绍其“神奇”能力时表示自己“没有支持的设备”，那么该项目在当前阶段是否具备足够的用户可玩性和实证基础，以支撑其被列为“热点”并激发用户尝试？缺乏实际体验和验证，其价值更多停留在理论设想而非实际应用层面。
+
+-   **What Would Settle It**
+    *   **Copo:** 至少三个月内，由第三方机构进行的用户体验（UX）研究报告，涵盖功能完整性、性能稳定性、社区活跃度、Bug修复速度，并与OpenCloud进行直接数据对比。同时，需要有明确的商业或社区发展路线图，展现其长期竞争力。
+    *   **Wi-Fi感知人体活动:** 官方发布详细的硬件兼容列表和易于获取的设备推荐，并提供公开可验证的实测数据，展示在不同环境下（例如有无遮挡、不同人数）其感知准确率、实时性以及与其他传感器的对比优势。
+    *   **WOW Monitor:** 发布一份独立审计报告，评估其信息来源的广度、深度和可靠性，并提供用户案例或基准测试，证明其在特定情报分析场景下，能够提供比传统新闻聚合或人工分析更及时、更准确、更有洞察力的信息。
+    *   **GateNexes:** 发布一份性能白皮书，详细说明其在处理不同规模和复杂度的代码库时的解析速度、图谱构建时间、内存占用等指标，并提供与主流IDE插件或商业代码分析工具的横向对比数据。
+    *   **Fullow:** 发布一套公开可访问的基准测试集，涵盖多种“复杂研究任务”，并提供Fullow框架在该测试集上的性能指标（如任务完成率、结果准确性、资源消耗），同时与当前顶级的单智能体或多智能体解决方案进行量化对比。
+
+<Mermaid_Diagram>
+graph TD
+    A["<b>Github一周热点会总低1067本期</b><br/>(技术创新概览)"]:::mainTopic
+
+    subgraph SG_Copo["1. Copo: 个人AI助理 (通议实验室)"]
+        direction TB
+        Copo_Desc["对标OpenCloud，可本地/云端部署"]:::projectDesc
+        Copo_Feat1["部署便捷: 一条命令/Pip-In-Stole"]:::feature
+        Copo_Feat2["多平台连接: 丁丁、飞书、QQ、Discord等"]:::feature
+        Copo_Feat3["无限能力扩展: Skill机制 (与OpenCloud思路一致)"]:::feature
+        Copo_Feat4["模型支持: 内置主流云端模型 (摩搭、DiscroP)，支持自定义/Olamar"]:::feature
+        Copo_Feat5["架构解耦: ProM、Toe、Smimmerer等核心组件"]:::feature
+        Copo_Claim["作者评价: UI比OpenCloud顺手，更适合国内习惯"]:::authorClaim
+        Copo_Growth["增长数据: 超26W星标，增长最快"]:::statistic
+        Copo_Desc --> Copo_Feat1
+        Copo_Desc --> Copo_Feat2
+        Copo_Desc --> Copo_Feat3
+        Copo_Desc --> Copo_Feat4
+        Copo_Desc --> Copo_Feat5
+        Copo_Feat1 & Copo_Feat2 & Copo_Feat3 & Copo_Feat4 & Copo_Feat5 --> Copo_Claim
+        Copo_Desc --> Copo_Growth
+        style SG_Copo fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#1A237E
+    end
+
+    subgraph SG_WiFi["2. Wi-Fi感知人体活动 (无接触传感器)"]
+        direction TB
+        WiFi_Desc["利用Wi-Fi CSI信号感知人体活动 (姿态、呼吸、心率、存在)"]:::projectDesc
+        WiFi_Goal["目标: 普通Wi-Fi设备变隐形传感器，无需摄像头/穿戴设备"]:::goal
+        WiFi_Principle["原理: CSI分析Wi-Fi信号变化推断人体活动"]:::techDetail
+        WiFi_Deploy["部署: Docker，需支持CSI设备"]:::deploy
+        WiFi_Value["应用价值: 智能建筑、医疗检测、安全监测"]:::application
+        WiFi_Claim["作者评价: 听起来很神奇"]:::authorClaim
+        WiFi_Limitation["作者自述: 目前没有支持的设备"]:::limitation
+        WiFi_Desc --> WiFi_Goal
+        WiFi_Goal --> WiFi_Principle
+        WiFi_Deploy --> WiFi_Desc
+        WiFi_Desc --> WiFi_Value
+        WiFi_Desc --> WiFi_Claim
+        WiFi_Claim --"但受限于"--> WiFi_Limitation
+        style SG_WiFi fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#1B5E20
+    end
+
+    subgraph SG_WOW["3. WOW Monitor: 实时全球情报监控"]
+        direction TB
+        WOW_Desc["开源实时全球情报监控平台"]:::projectDesc
+        WOW_Data["数据整合: 新闻、地缘政治、市场、关键技术设施"]:::feature
+        WOW_Visual["可视化: 作战指挥大屏样式"]:::feature
+        WOW_Deploy["部署: Release下载，配置大模型API-K"]:::deploy
+        WOW_Claim1["作者评价: 实用，样式让男生喜欢 (指挥千军万马梦想)"]:::authorClaim
+        WOW_Claim2["作者补充: 类似思路不难，很多博主分享过"]:::authorClaim
+        WOW_Desc --> WOW_Data
+        WOW_Desc --> WOW_Visual
+        WOW_Visual --> WOW_Claim1
+        WOW_Deploy --> WOW_Desc
+        WOW_Desc --> WOW_Claim2
+        style SG_WOW fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100
+    end
+
+    subgraph SG_GateNexes["4. GateNexes: 代码知识图谱工具"]
+        direction TB
+        GN_Desc["将代码仓库自动转换成知识图谱"]:::projectDesc
+        GN_Function["功能: 理解代码关系、模块结构、交互关系"]:::feature
+        GN_AI["AI能力: Graph Drive Agent回答问题 (函数调用、模块关系)"]:::feature
+        GN_Privacy["隐私优势: 凌浮器架构，完全客户端运行，代码不上传服务器"]:::techDetail
+        GN_Mode["模式: 外部UI + CLI模式 (NPM安装)"]:::deploy
+        GN_Desc --> GN_Function
+        GN_Desc --> GN_AI
+        GN_Desc --> GN_Privacy
+        GN_Desc --> GN_Mode
+        style SG_GateNexes fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#4A148C
+    end
+
+    subgraph SG_Fullow["5. Fullow: 字节跳动多智能体框架"]
+        direction TB
+        Fullow_Desc["字节跳动开源DepartureSelts多智能体框架"]:::projectDesc
+        Fullow_Goal["目标: AI自主研究、收集信息、分析数据、生成完整结果"]:::goal
+        Fullow_Tech["技术: 结合大模型与工具 (Web Search, Moyabouch, Python环境)"]:::techDetail
+        Fullow_Core["核心能力: 多智能体自动化、协作架构、工具技能系统、沙箱环境"]:::feature
+        Fullow_Version["版本: 2.0 (从0重构), 基于Python, Lung Graph, Lung Trin"]:::techDetail
+        Fullow_Use["应用场景: 深度研究、内容创作、数据管道、自动化"]:::application
+        Fullow_Desc --> Fullow_Goal
+        Fullow_Goal --> Fullow_Tech
+        Fullow_Tech --> Fullow_Core
+        Fullow_Desc --> Fullow_Version
+        Fullow_Desc --> Fullow_Use
+        style SG_Fullow fill:#F0F4C3,stroke:#8BC34A,stroke-width:2px,color:#33691E
+    end
+
+    subgraph SG_Resources["6. 资料分享"]
+        Res1["《塑造自己的下一个版本2026前一监科技趋势》(腾讯研究院)"]:::resource
+        Res2["《OpenClaw自我研究1.0报告》(OpenClaw)"]:::resource
+        style SG_Resources fill:#CFD8DC,stroke:#607D8B,stroke-width:2px,color:#263238
+    end
+
+    A --> SG_Copo
+    A --> SG_WiFi
+    A --> SG_WOW
+    A --> SG_GateNexes
+    A --> SG_Fullow
+    A --> SG_Resources
+
+    subgraph SG_Critique["⚔️ 批判性审视 (Hostile-But-Fair Review)"]
+        direction TB
+        C_Copo_Weak["Copo: 最弱环节: 'UI比OpenCloud顺手' 主观且无数据支持"]:::critiqueWeak
+        C_Copo_Audit["Copo: 证据审计: 缺乏量化对比、社区/生态、'大厂'背景不明"]:::critiqueAudit
+        C_Copo_Premise["Copo: 隐含前提: 通议实验室资源足够，本土UI是市场决定因素"]:::critiquePremise
+        C_Copo_Blind["Copo: 盲点: OpenCloud庞大社区、生态、品牌，迭代速度"]:::critiqueBlind
+        C_Copo_Kill["Copo: 一击必杀: 缺乏量化UX报告，主观感受如何撼动市场?"]:::critiqueKill
+        C_Copo_Settle["Copo: 解决之道: 独立UX报告、性能/功能对比、社区/商业路线图"]:::critiqueSettle
+
+        C_WiFi_Weak["Wi-Fi: 最弱环节: '神奇'论断后自承'无支持设备'"]:::critiqueWeak
+        C_WiFi_Audit["Wi-Fi: 证据审计: 缺乏实际精度/抗干扰数据、部署案例"]:::critiqueAudit
+        C_WiFi_Premise["Wi-Fi: 隐含前提: CSI技术足够成熟、兼容设备普及"]:::critiquePremise
+        C_WiFi_Blind["Wi-Fi: 盲点: 信号局限性、精度挑战、隐私伦理争议、硬件成本"]:::critiqueBlind
+        C_WiFi_Kill["Wi-Fi: 一击必杀: 作者未体验，如何断言'神奇'及'热点'价值?"]:::critiqueKill
+        C_WiFi_Settle["Wi-Fi: 解决之道: 兼容列表、公开实测数据、精度/实时性对比"]:::critiqueSettle
+
+        C_WOW_Weak["WOW: 最弱环节: '样式让男生喜欢'是技术优势? 与'不算难'矛盾"]:::critiqueWeak
+        C_WOW_Audit["WOW: 证据审计: 缺乏情报质量数据、与其他工具对比"]:::critiqueAudit
+        C_WOW_Premise["WOW: 隐含前提: '指挥大屏'样式是核心价值，情报广度=实用性"]:::critiquePremise
+        C_WOW_Blind["WOW: 盲点: 信息过载、偏见过滤、情报源可靠性、用户提炼洞察难度"]:::critiqueBlind
+        C_WOW_Kill["WOW: 一击必杀: 样式吸引力与技术实用性如何平衡，信息质量如何保证?"]:::critiqueKill
+        C_WOW_Settle["WOW: 解决之道: 独立情报质量审计、用户案例、与其他平台对比"]:::critiqueSettle
+
+        C_GN_Weak["GateNexes: 最弱环节: 客户端运行的性能限制未讨论"]:::critiqueWeak
+        C_GN_Audit["GateNexes: 证据审计: 缺乏大型代码库性能、语言支持、与其他工具对比"]:::critiqueAudit
+        C_GN_Premise["GateNexes: 隐含前提: 隐私优先于性能/功能深度，客户端能处理大规模代码"]:::critiquePremise
+        C_GN_Blind["GateNexes: 盲点: 客户端性能瓶颈、图谱复杂性、IDE集成深度、商业工具优势"]:::critiqueBlind
+        C_GN_Kill["GateNexes: 一击必杀: 客户端运行对超大型代码库的性能瓶颈如何解决?"]:::critiqueKill
+        C_GN_Settle["GateNexes: 解决之道: 性能白皮书、多语言支持、与主流工具对比"]:::critiqueSettle
+
+        C_Fullow_Weak["Fullow: 最弱环节: '自主研究'与'生成完整结果'缺乏具体案例/基准"]:::critiqueWeak
+        C_Fullow_Audit["Fullow: 证据审计: 缺乏实际任务表现数据、与其他框架对比"]:::critiqueAudit
+        C_Fullow_Premise["Fullow: 隐含前提: 多智能体本身能有效解决AI自主性问题"]:::critiquePremise
+        C_Fullow_Blind["Fullow: 盲点: 智能体协作复杂性、冲突解决、结果质量控制、AI幻觉"]:::critiqueBlind
+        C_Fullow_Kill["Fullow: 一击必杀: 如何量化'自主研究'和'完整结果'的质量和可靠性?"]:::critiqueKill
+        C_Fullow_Settle["Fullow: 解决之道: 公开基准测试集、性能指标、与其他解决方案对比"]:::critiqueSettle
+
+        style SG_Critique fill:#FFEBEE,stroke:#E53935,stroke-width:3px,color:#B71C1C
+    end
+
+    Copo_Claim --"被批判"--> C_Copo_Weak
+    Copo_Growth --"被批判"--> C_Copo_Audit
+    Copo_Desc --"被批判"--> C_Copo_Premise
+    Copo_Feat3 --"被批判"--> C_Copo_Blind
+    Copo_Claim --"被挑战"--> C_Copo_Kill
+    C_Copo_Kill --"需提供"--> C_Copo_Settle
+
+    WiFi_Claim --"被批判"--> C_WiFi_Weak
+    WiFi_Limitation --"被批判"--> C_WiFi_Audit
+    WiFi_Goal --"被批判"--> C_WiFi_Premise
+    WiFi_Principle --"被批判"--> C_WiFi_Blind
+    WiFi_Limitation --"被挑战"--> C_WiFi_Kill
+    C_WiFi_Kill --"需提供"--> C_WiFi_Settle
+
+    WOW_Claim1 --"被批判"--> C_WOW_Weak
+    WOW_Claim2 --"被批判"--> C_WOW_Audit
+    WOW_Visual --"被批判"--> C_WOW_Premise
+    WOW_Data --"被批判"--> C_WOW_Blind
+    WOW_Claim1 --"被挑战"--> C_WOW_Kill
+    C_WOW_Kill --"需提供"--> C_WOW_Settle
+
+    GN_Privacy --"被批判"--> C_GN_Weak
+    GN_Function --"被批判"--> C_GN_Audit
+    GN_Privacy --"被批判"--> C_GN_Premise
+    GN_Function --"被批判"--> C_GN_Blind
+    GN_Privacy --"被挑战"--> C_GN_Kill
+    C_GN_Kill --"需提供"--> C_GN_Settle
+
+    Fullow_Goal --"被批判"--> C_Fullow_Weak
+    Fullow_Core --"被批判"--> C_Fullow_Audit
+    Fullow_Goal --"被批判"--> C_Fullow_Premise
+    Fullow_Core --"被批判"--> C_Fullow_Blind
+    Fullow_Goal --"被挑战"--> C_Fullow_Kill
+    C_Fullow_Kill --"需提供"--> C_Fullow_Settle
+
+    %% Node Styles
+    classDef mainTopic fill:#FFD700,stroke:#DAA520,stroke-width:3px,color:#333,font-weight:bold;
+    classDef projectDesc fill:#D1C4E9,stroke:#673AB7,stroke-width:2px,color:#333;
+    classDef feature fill:#BBDEFB,stroke:#2196F3,stroke-width:1.5px,color:#333;
+    classDef techDetail fill:#C8E6C9,stroke:#4CAF50,stroke-width:1.5px,color:#333;
+    classDef deploy fill:#FFECB3,stroke:#FFC107,stroke-width:1.5px,color:#333;
+    classDef application fill:#FFE0B2,stroke:#FF9800,stroke-width:1.5px,color:#333;
+    classDef authorClaim fill:#FFCDD2,stroke:#F44336,stroke-width:2px,color:#333;
+    classDef statistic fill:#E1BEE7,stroke:#9C27B0,stroke-width:1.5px,color:#333;
+    classDef limitation fill:#FFAB91,stroke:#FF5722,stroke-width:2px,color:#333;
+    classDef goal fill:#B2DFDB,stroke:#009688,stroke-width:1.5px,color:#333;
+    classDef resource fill:#CFD8DC,stroke:#607D8B,stroke-width:1.5px,color:#333;
+
+    classDef critiqueWeak fill:#FFCCBC,stroke:#FF5722,stroke-width:2px,color:#333;
+    classDef critiqueAudit fill:#FFEBEE,stroke:#F44336,stroke-width:1.5px,color:#333;
+    classDef critiquePremise fill:#F8BBD0,stroke:#E91E63,stroke-width:1.5px,color:#333;
+    classDef critiqueBlind fill:#E1BEE7,stroke:#9C27B0,stroke-width:1.5px,color:#333;
+    classDef critiqueKill fill:#FF8A80,stroke:#D32F2F,stroke-width:2.5px,color:#333,font-weight:bold;
+    classDef critiqueSettle fill:#C8E6C9,stroke:#4CAF50,stroke-width:2.5px,color:#333,font-weight:bold;
+</Mermaid_Diagram>
+
+Content:
+Github一周热点会总低1067本期的内容包括了阿里的OpenCloud替代Wi-Fi感知人体活动实时的全球情报监控代码桑库声音支持突普和字节的多智能体框架最后还是分享2.6%如果觉得内容不错也别忘了点赞和关注Copo是通议实验室推出的一款可本地可云端部署的个人AI助理看一眼见面应该就能猜到它对标的是谁这熟悉的感觉当然是OpenCloud随着最近OpenCloud热潮补断的发酵它已经超过了26W是Github上Sdd最多增长最快的软件类项目现在大厂也开始吞吞下厂去看有精灯了你觉得大厂能汉动OpenCloud的地位吗在使用上可以通过一条命令来去完成本地的部署也可以通过Pip-In-Stole去安装安装好了之后执行Copo-In-N-N-T来进行一下配置其实这个配置当中很多内容如果你没有想好的话可以不配后面到外部UI里再配置也是可以的最后执行Copo-IP来去打开服务就可以用流暖器到8088端口来去使用Copo了功能上Copo可以连接向丁丁飞书QQDiscord的MS值等流天软件支持认识任务与主动的心跳通过Skill的机制来去实现无限能力扩展这个和OpenCloud的思路基本上是一致的它内置了一些Skill也可以自己去创建和倒入Copo内置了主流的云端的模型支持比如像摩搭和DiscroP最新的升级里还支持了自定义的模型供应商和Olamar更加方便了同时最近的升级也实现了ProM的后可Toe,Smimmerer等核心组件的节偶开发者可以根据需要去独立的创建或者扩展任意的模块按照自己的需要来去组装自己的A震盘整体来看Copo目前实现了OpenCloud整体的矿架但是也能看出来现在实现还是稍微有些粗糙很多地方还需要继续打磨好的地方是目前的外壁Y在使用上我觉得比OpenCloud要顺手一些至少更适合国内的使用习惯其实又说项目将来会怎么样关键还是看到后续是否能持续性的和高速的搭带如果没有是一个非常有意思的开玩笑它通过Wi-Fi信号而不是摄像头来去实现人体的感知能力比如像人体姿态的屏幕呼吸的检测 心率的监测 还有存在的检测简单来说它的目标就是让普通的Wi-Fi设备变成一个隐形的传感器它可以感觉到房间里人物的活动状态而不需要任何的摄像头和穿戴的设备听起来是不是很神奇对吧它的核心原理就是利用Wi-Fi的CSI 信道状态信息当人体移动或者呼吸的时候会改变Wi-Fi信号的传播路景和相位入Viu通过信号处理和积极学习惹来去分析这些变化从而推断通人体的姿态和呼吸的频率和心率所以如果你想要玩的话一定要选择支持CSI的设备安装的话可以使用项目提供的刀口来举一块做到上手有哪些使用的价值呢比如可以看一看以下的这些场景像智能的建筑当中可以用来做防污的占用检测医疗的检测当中可以做这种非接触式的呼吸和心率的检测还有像一些安全检测和工业的环境当中可以在淹物或者有遮挡的情况下去进行人员的监测目前我没有支持的设备大家可以根据自己的情况来去试试效果WOW的Monitor是一个开源的实时全球情报监控100盘我想大家都知道最近的世界又不太平了摩摩和摩摩又打起来了所以很多朋友都非常关注实时的信息WOW的Monitor把新闻地缘政治数据市场信息还有全球的关键技术设施数据整合到了一个可实化的进别当中让用户可以向作战指挥大平一样坏速的了解到世界各地端人发生的事情你可以先到下面的几个LiveDemo理去体验一下效果比如第一个代猛里大家最关注的就是一样的信息如果想在本地使用的话可以到Release里去下载适合自己操级系统的版本然后使用时会需要配置大模型的API-K也可以根据自己的需要去调整展示的模块还有信息的来源总体来看说实话这个东西其实不算难很多博主都分享过这种类似的全网信息采集的思路但是这个非常使用而且它的这种作战指挥是大平的这种样式让男生非常喜欢谁小的时候还没有过那种指挥千军万马的梦想GateNexes是一个非常有意思的开发者的空句它可以把整个代码桑库自动的转换成知识图谱帮助开发者用图结构去理解代码之间的关系你只需要把一个GateHub桑库或者是ZipBall拖进去系统就会自动地去升上代码一类的关系模块的结构以及交互关系并且提供一个可实化的探索的介面系统内置了一个Graph Drive的Agent可以继续升成的知识图谱来去回答问题比如像某个韩束在哪里被掉用那先模块存在一类的关系GateNexes比较好的就是这些工具几乎都是凌浮器架构它完全可以在流冷器当中运行包括像代码的解析图结构的构件还有相量的隐瞒顶和查询的分析都在扣物端去完成因此代码不会去被上传到任何的服气对隐私非常有好除了外部UI以外它还有CRI的模式你可以直接通过NPMings.GateNexes来去安装CRI的工具然后就可以通过CRI加MCP去分析了这种方式可以具有更好的扩展性项目也详细介绍了自己的技术站还有加购的情况感兴趣的朋友可以去深入研究一下第二Fullow是自己跳动开源的一个DepartureSelts多智能体的框架目标是让AI不只是简单的回答问题而是能够自主去研究受机信息分析数据并且声称完整的结果它把大元模型和以系列的工具比如像Web Search、Moyabouch、Python之间环境等结合到一起让AI可以实现复杂的研究任务它的核心能力包括了像DepartureSelts的自动化多智能体鞋桶的架构还有工具技能的系统和杀箱的环境目前的Departure是2.0版本它是从0开始从购的与V1没有共小任何的代码主要继续拍son、Lung Graph和Lung Trin来去购件通过Departure工作流来却主持多个AZN的执行的流程并且支持长时间的任务和记忆机制还有任务的检查点使用上主要针对于像深度研究、内容算作数据管道还有自动化的场景最后还是分成2分之料第一份是塑造自己的下一个版本2026前一监科技趋势腾讯研究院处的报告人工智能还有各领域的前人科技正以前所未有的速度去演进社会的发展正在努力的适应但人们内心依然坦特不安甚至感到迷茫来看看这个报告关注前人的趋势来思考一下如何应对未来第二是OpenClaw自我研究1.0报告看这个说明这是一个OpenClaw自己完成的对自己的研究我对PBT的风格是非常喜观这种机甲科技风真的很不错内容总体来说不算太有深度小白可以当成科普来看一下还错火有需要可以告诉我以上就是本周的小木内容我们下次再见
