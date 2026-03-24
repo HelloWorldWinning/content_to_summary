@@ -1,0 +1,180 @@
+Timestamp: 2026-03-24T19:18:17.234353
+Title: 苹果 M5 MaxM5 Pro 评测：惊喜感十足！ BV1D4w2zME6U
+URL: https://b23.tv/SkgCxlj
+Status: success
+Duration: 7:51
+
+Description:
+**PART 1. STRUCTURAL DECONSTRUCTION**
+
+*   **Core Thesis:** 苹果M5系列芯片在GPU和神经网络引擎方面实现了显著提升，尤其在处理AI大模型方面展现出强大实力，但CPU性能提升对多数用户而言已非瓶颈。因此，用户在选购MacBook Pro时应根据其核心工作负载（如GPU密集型、CPU密集型或本地AI重度需求）而非盲目追求最新或最高配置，以实现最佳性价比。
+*   **Evidentiary Base:**
+    *   **性能测试数据（跑分）：**
+        *   Synipo 2026 GPU综合得分：M5 Max“一骑绝尘”，领先M4 Max约36%。M5 Max领先M5 Pro约815（单位不明），M5 Pro与M4 Max之间的具体数据表述存在混乱。
+        *   Synipo 2026 CPU多核得分：M5 Max对比M4 Max提升30%，对比M1 Pro提升159%。M5 Pro“全面超越”M4 Max。
+        *   Synipo 2026 CPU单核性能：提升不明显。
+        *   Synipo 3 (不开光追)：M5 Max领先，M5 Pro得分8633，M4 Max领先M5 Pro约44%，M1 Pro“接近9000分”（高于M5 Pro）。
+        *   Synipo 3 (开光追)：M5 Pro与M4 Max差距从30%缩小到20%（高强度下缩小到12%）。M4 Max与M5 Max仍有40%差距（高强度下M5 Max领先M4 Max45%）。M1 Pro“直接支撑不住”。
+        *   Bland 4.5 CPU得分：M5 Max和M5 Pro处于“零跑阶段”，M5 Pro领先M4 Max约18%。M1 Pro为M4 Max的一半。
+        *   Bland 4.5 GPU得分：M5 Pro约为M5 Max的60%，落后M4 Max 30%。M1 Pro得分不足。
+    *   **实际应用测试数据（AI与视频）：**
+        *   千万三年五九B (1.59B) 本地AI模型：M5 Max和M4 Max表现好，M5 Pro稍慢，M1 Pro慢。图示速度M5 Max最快，M4 Max紧随，M5 Pro比M4 Max慢50%。
+        *   千万三年五27B (2.7B) 本地AI模型：M5 Max流畅，M4 Max响应速度不如M5 Max。M5 Pro因24Gb内存多次卡顿，“被M1 Pro 32G内存给爆杀了”。M1 Pro不建议运行。图示速度M5 Max和M4 Max差不多，M5 Pro稍慢。
+        *   4K四轨视频导出时间：M5 Pro和M4 Max“几乎没有区别”，M5 Max比M5 Pro短1分钟，M1 Pro需45分钟。
+    *   **个人使用经验：** 作者日常使用M1 Pro的CPU性能“完全够用”，软件打开速度差异微小（不超过0.5秒）。
+*   **Logical Architecture (The Warrant):** 作者通过对比不同代际和型号芯片在多种负载下的性能表现，归纳出CPU性能普遍过剩、GPU和AI加速能力是当前主要瓶颈和价值增长点的结论。在此基础上，将用户需求划分为GPU密集型、CPU密集型、本地AI重度用户及轻度用户等类别，并针对性地提出避免性能溢出、追求性价比的购买建议，旨在引导消费者根据实际需求做出明智选择。
+*   **Stated Scope:** 适用于普通个人工作者、非本地大模型/非8K剪辑的摄影师/特效师、强调CPU性能的开发者/办公/音频制作人员、有频繁本地AI模型需求的专业人士，以及经常出差并偶尔进行简单创作的用户。建议M3、M4、M1 Pro用户观望等待M6芯片发布。
+
+**PART 2. HOSTILE-BUT-FAIR REVIEW**
+
+*   **Steelman** — 苹果M5系列芯片在GPU和本地AI处理能力上实现了显著飞跃，尤其是M5 Max，但CPU性能的提升对多数日常和专业用户而言已不再是瓶颈。因此，用户购买MacBook Pro时应精确匹配其主要工作负载：重度本地AI用户应选择M5 Max并加大内存，GPU密集型（非本地AI）用户M4 Max已足够，而CPU密集型用户M5 Pro即可满足，以避免为冗余性能支付溢价。
+*   **Weakest Link** — “只要那一层一样你能在M4 Max上玩的游戏基本上在M5 Pro上也不会有太大的差距”
+    *   这句话是作者在Synipo 3光追测试后得出的关键结论，旨在说明M5 Pro在游戏性能上与M4 Max的差距不大。然而，在此前的Synipo 3（不开光追）测试中，作者明确指出“M4 Max相较于M5 Pro领先了大约由44%”，即使是光追开启后，差距也只是“缩小到了20%的差距”甚至“12%”。44%、20%乃至12%的性能差距在实际游戏体验中通常是显著的（例如帧率从60降到40，或从100降到80），远非“不会有太大的差距”所能概括。如果M4 Max在游戏方面有如此明显的领先，那么“在M4 Max上玩的游戏基本上在M5 Pro上也不会有太大的差距”这一主张便无法成立，进而削弱了M5 Pro在GPU性能上可替代M4 Max的论点，影响了对GPU密集型用户的推荐。
+*   **Evidence Audit** —
+    *   **模糊且矛盾的GPU数据：** Synipo 2026 GPU得分部分，“M5 Max一计绝成零先了M5 Pro大约815几乎一半左右零先M4 Max大约36%零先M5 Pro高达612%”的表述极度混乱，单位不明，且“M5 Pro高达612%”作为领先或落后M4 Max的百分比都非常异常，缺乏可信度。这使得读者无法准确理解M5 Pro与M4 Max在GPU上的真实相对性能，而这正是后续推荐的关键依据。
+    *   **选择性引用和矛盾点：** 在Synipo 3不开光追测试中，M1 Pro得分“接近9000”，而M5 Pro得分8633。这意味着M1 Pro在此项测试中表现优于M5 Pro，这与M5 Pro作为M4 Max的CPU升级版和整体性能提升的叙述形成矛盾，也与后续“M1 Pro有点不太够坑了”的评价不符。作者未能解释这一反常现象。
+    *   **内存影响的忽略与突出：** 在1.59B本地AI模型测试中，作者称M5 Pro“肉眼上看会稍微慢一点”，但未明确内存是否是主因。然而在2.7B模型中，M5 Pro因24Gb内存问题“被M1 Pro 32G内存给爆杀了”，这强烈暗示内存容量对AI性能有决定性影响。作者在前半段的测试中未能系统性控制或分析内存变量对性能的影响，导致部分结论可能归因不准确，且对24Gb M5 Pro的推荐存在潜在风险。
+    *   **缺乏量化对比基线：** 视频导出测试中，M1 Pro耗时45分钟，而M5 Pro/M4 Max/M5 Max耗时非常接近且显著更短。但具体数值（例如M5 Pro/M4 Max的实际导出时间）缺失，使得45分钟的对比缺乏一个明确的基线，无法量化新旧芯片的实际效率提升倍数。
+*   **Hidden Premises** —
+    *   **前提1：用户对性能的感知阈值是宽泛的。** 作者认为12-44%的性能差距在“玩游戏”时“不会有太大的差距”，但这假设了用户对帧率、流畅度等指标不敏感，或认为这些差距不影响体验。
+        *   **问题：** 对于追求高帧率或特定视觉效果的游戏玩家而言，12-44%的性能差距是否真的“不大”？作者的“不大”是基于何种标准？
+    *   **前提2：本地AI模型是未来MacBook Pro用户的重要甚至决定性工作负载。** 作者将M5 Max的“必选之本”与“跑本地模型的需求且非常平凡和必要”直接挂钩，暗示本地AI将成为许多专业用户的核心需求。
+        *   **问题：** 当前及未来几年，有多少MacBook Pro用户会频繁且必要地在本地运行大型AI模型？云端AI服务和API的普及是否会降低本地AI模型对硬件的“必要性”？
+    *   **前提3：M5 Pro的24GB内存对于CPU密集型工作是“天花板级别”。** 作者推荐CPU密集型用户选择M5 Pro，认为其是“天花板级别”，但对于2.7B AI模型测试中M5 Pro因24Gb内存被M1 Pro 32G内存“爆杀”的情况未作充分解释或区分。
+        *   **问题：** 如果CPU密集型工作（如编程、音频制作）也可能涉及内存密集型任务（如大型编译、高采样率音频项目），24GB内存是否真能达到“天花板级别”，还是会成为瓶颈？
+*   **The Blind Side** —
+    *   **软件优化与生态系统：** 苹果芯片的优势不仅在于硬件性能，更在于其与macOS及特定专业软件的深度优化。作者的测试主要集中在通用基准和少数应用，未能深入探讨不同芯片在苹果生态系统内，特别是针对特定专业软件（如Logic Pro, Final Cut Pro, Xcode）的实际优化程度和体验差异，这些差异可能比纯粹的跑分更能影响用户决策。例如，M1 Pro在某些专业软件中可能因更好的软件适配而表现出超越跑分的流畅度。
+    *   **能耗与续航：** 移动工作站用户非常关注能耗和续航表现，尤其是在高负载下。M5 Max在2.7B模型测试中“风扇拉满”，暗示其功耗可能较高。作者完全未提及不同芯片在能耗效率和电池续航方面的对比，这对于经常出差或移动办公的用户是重要的考量因素。
+    *   **价格与配置：** 作者提到“基本上都是当前挡为性价皮的版本”，但未提供具体的测试机型价格或不同配置的价格梯度，这使得读者无法将性能提升与实际成本投入进行量化的性价比分析。例如，M4 Max与M5 Pro在价格上的差异可能远小于其性能差异，从而影响用户的选择。
+    *   **升级路径与保值率：** 作者建议M1/M3/M4用户等待M6，但未考虑当前M1 Pro用户在性能需求迫切时是否应考虑M4或M5，以及不同芯片的长期保值率或二手市场价值。
+*   **One hit kill** — 考虑到M5 Pro在Synipo 3不开光追测试中得分低于M1 Pro（8633 vs 接近9000），并且在2.7B本地AI模型测试中因24GB内存被M1 Pro 32GB内存“爆杀”，作者如何调和这些具体数据与其普遍性的“M5 Pro已经全面超越了M4 Max了”、“M1 Pro的CPU完全够有”以及对M5 Pro作为CPU密集型“天花板级别”的推荐？这些矛盾点直接挑战了M5 Pro的实际性能定位及其在某些场景下优于旧款或次级芯片的论断。
+*   **What Would Settle It** —
+    *   **标准化、可重复的内存容量控制测试：** 对M5 Pro、M4 Max和M1 Pro进行相同CPU/GPU核心数但不同内存容量（例如24GB vs 32GB vs 48GB）的AI模型推理和图像生成测试，以量化内存容量对AI性能的独立影响，从而明确M5 Pro 24GB的实际局限性。
+    *   **多款主流3A游戏在不同分辨率/画质设置下的帧率对比：** 提供M5 Pro和M4 Max在多个实际游戏中的平均帧率、最低帧率等数据，以量化“12-44%”的差距在实际游戏体验中的体现，从而验证“不会有太大的差距”这一主观判断。
+    *   **专业软件（如Xcode编译、Final Cut Pro渲染、Logic Pro混音）的特定项目基准测试：** 对比M4 Max和M5 Pro在相同复杂项目下的完成时间，以更精确地评估它们在各自推荐场景（GPU/CPU密集型）中的真实性能差异，并量化M1 Pro与它们的差距，而非仅依赖通用基准。
+
+**PART 3. Generate a clear mermaid conceptual map**.
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Title["🍎 Apple M5系列芯片深度评测与购买建议"]
+        A["<b>核心主张: 根据工作负载选择M5系列芯片</b><br/>GPU/AI大幅提升，CPU多数过剩"]
+        style A fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    end
+
+    subgraph SG_Chips["💻 测试设备列表"]
+        C1["M5 Max<br/>36G / 18x32核"]:::chip
+        C2["M5 Pro<br/>24Gb / 15x16核"]:::chip
+        C3["M4 Max<br/>36G / 14x32核"]:::chip
+        C4["M1 Pro<br/>32G / 4年+"]:::chip
+        style SG_Chips fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px
+    end
+
+    subgraph SG_TestsResults["📊 性能测试与关键结果"]
+        direction LR
+
+        subgraph SG_Benchmarks["基准测试"]
+            T1["Synipo 2026 GPU"]:::test --> R1_1["M5 Max: 领先M4 Max 36%"]:::result_pos
+            T1 --> R1_2["M5 Max vs M5 Pro: 领先815 (单位不明)"]:::result_pos
+            T1 --> R1_3["M5 Pro vs M4 Max: 数据混乱/矛盾"]:::result_neg_warn
+            T2["Synipo 2026 CPU多核"]:::test --> R2_1["M5 Max vs M4 Max: 提升30%"]:::result_pos
+            T2 --> R2_2["M5 Max vs M1 Pro: 提升159%"]:::result_pos
+            T2 --> R2_3["M5 Pro: 全面超越M4 Max"]:::result_pos
+            T3["Synipo 2026 CPU单核"]:::test --> R3_1["提升不明显"]:::result_neutral
+            T4["Synipo 3 (无光追)"]:::test --> R4_1["M5 Max: 领先"]:::result_pos
+            T4 --> R4_2["M4 Max vs M5 Pro: 领先44%"]:::result_pos
+            T4 --> R4_3["M1 Pro: 接近9000分 (高于M5 Pro 8633分)"]:::result_neg_warn
+            T5["Synipo 3 (有光追)"]:::test --> R5_1["M5 Max vs M4 Max: 领先40-45%"]:::result_pos
+            T5 --> R5_2["M5 Pro vs M4 Max: 差距缩小至12-20%"]:::result_pos
+            T5 --> R5_3["M1 Pro: 无法支撑"]:::result_neg
+            T6["Bland 4.5 CPU"]:::test --> R6_1["M5 Max/M5 Pro: 领先"]:::result_pos
+            T6 --> R6_2["M5 Pro vs M4 Max: 领先18%"]:::result_pos
+            T7["Bland 4.5 GPU"]:::test --> R7_1["M5 Pro: M5 Max的60%"]:::result_neutral
+            T7 --> R7_2["M5 Pro: 落后M4 Max 30%"]:::result_neg
+            style SG_Benchmarks fill:#F0F8FF,stroke:#ADD8E6,stroke-width:1px
+        end
+
+        subgraph SG_RealWorld["实际应用测试"]
+            T8["本地AI模型 (1.59B)"]:::test --> R8_1["M5 Max/M4 Max: 表现好"]:::result_pos
+            T8 --> R8_2["M5 Pro: 稍慢; M1 Pro: 很慢"]:::result_neg
+            T9["AI图示速度 (1.59B)"]:::test --> R9_1["M5 Max > M4 Max > M5 Pro (-50% vs M4 Max)"]:::result_pos
+            T10["本地AI模型 (2.7B)"]:::test --> R10_1["M5 Max: 流畅"]:::result_pos
+            T10 --> R10_2["M4 Max: 响应不如M5 Max"]:::result_neg
+            T10 --> R10_3["M5 Pro (24Gb): 多次卡顿，被M1 Pro (32G) 超越"]:::result_crit_neg
+            T11["AI图示速度 (2.7B)"]:::test --> R11_1["M5 Max/M4 Max: 差不多"]:::result_pos
+            T11 --> R11_2["M5 Pro: 稍慢; M1 Pro: 不建议跑"]:::result_neg
+            T12["视频导出 (4K, 4轨)"]:::test --> R12_1["M5 Max: 略快 (比M5 Pro短1分钟)"]:::result_pos
+            T12 --> R12_2["M5 Pro/M4 Max: 几乎无区别"]:::result_pos
+            T12 --> R12_3["M1 Pro: 45分钟"]:::result_crit_neg
+            style SG_RealWorld fill:#F0FFF0,stroke:#90EE90,stroke-width:1px
+        end
+        style SG_TestsResults fill:#FDF5E6,stroke:#FFDAB9,stroke-width:2px
+    end
+
+    subgraph SG_ConclusionsRecommendations["💡 核心结论与购买建议"]
+        Con1["CPU性能: 多数用户已过剩，M1 Pro CPU够用"]:::conclusion
+        Con2["GPU能力: 真正瓶颈，决定快慢 (10 vs 30分钟+)"]:::conclusion
+        Con3["AI大模型: GPU大幅提升 + 神经网络引擎是关键"]:::conclusion
+        Rec1["GPU密集型 (非本地AI/8K剪辑): M4 Max足够 (性价比高)"]:::recommendation
+        Rec2["CPU密集型 (编程/办公/音频): M5 Pro 天花板级别"]:::recommendation
+        Rec3["频繁本地AI模型需求: M5 Max (必选之本，需大内存/核心数)"]:::recommendation
+        Rec4["出差+简单创作: M5芯片电脑 (甜点)"]:::recommendation
+        Wait["M3/M4/M1 Pro用户: 建议等待M6 (预计提升非30%+)"]:::waiting
+        style SG_ConclusionsRecommendations fill:#E6F7FF,stroke:#91D5FF,stroke-width:2px
+    end
+
+    subgraph SG_HostileReview["⚔️ 批判性审视"]
+        HR1["<b>最薄弱环节:</b> 'M4 Max游戏体验与M5 Pro无太大差距' 主观判断与客观数据(12-44%差距)矛盾"]:::crit_weak
+        HR2["<b>证据审计:</b> Synipo GPU数据混乱; M1 Pro在Synipo 3无光追优于M5 Pro未解释; 内存影响前后不一; 视频导出缺乏基线"]:::crit_audit
+        HR3["<b>隐藏前提:</b> 用户对性能感知阈值宽泛; 本地AI是主流需求; 24GB内存对CPU密集型足够"]:::crit_hidden
+        HR4["<b>盲点:</b> 缺乏软件优化/生态系统对比; 缺乏能耗/续航对比; 缺乏价格/配置性价比分析; 缺乏升级路径/保值率考量"]:::crit_blind
+        HR5["<b>一击致命:</b> M5 Pro在Synipo 3无光追和2.7B AI模型中表现劣于M1 Pro，如何支撑其'全面超越M4 Max'及CPU密集型'天花板级别'的论断?"]:::crit_kill
+        HR6["<b>如何解决:</b> 标准化内存测试; 多款游戏帧率对比; 专业软件基准测试"]:::crit_settle
+        style SG_HostileReview fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px
+    end
+
+    A --> C1 & C2 & C3 & C4
+    C1 --> SG_TestsResults
+    C2 --> SG_TestsResults
+    C3 --> SG_TestsResults
+    C4 --> SG_TestsResults
+
+    SG_Benchmarks --> Con1 & Con2 & Con3
+    SG_RealWorld --> Con1 & Con2 & Con3
+
+    Con1 & Con2 & Con3 --> Rec1 & Rec2 & Rec3 & Rec4 & Wait
+
+    R1_3 --"矛盾之处"--> HR2
+    R4_3 --"矛盾之处"--> HR2
+    R5_2 --"主观判断"--> HR1
+    R7_2 --"性能落后"--> HR2
+    R10_3 --"内存问题"--> HR2 & HR3 & HR5
+    R12_3 --"缺乏基线"--> HR2
+
+    Rec1 --> HR1
+    Rec2 --> HR3 & HR5
+    Rec3 --> HR3
+
+    A --"面临批判"--> HR1 & HR2 & HR3 & HR4 & HR5
+    HR1 & HR2 & HR3 & HR4 & HR5 --"需要"--> HR6
+
+    %% Class Definitions
+    classDef chip fill:#BBDEFB,stroke:#42A5F5,stroke-width:1.5px,color:#1A237E;
+    classDef test fill:#C8E6C9,stroke:#66BB6A,stroke-width:1.5px,color:#1B5E20;
+    classDef result_pos fill:#E8F5E9,stroke:#A5D6A7,stroke-width:1px,color:#2E7D32;
+    classDef result_neg fill:#FFCDD2,stroke:#EF9A9A,stroke-width:1px,color:#B71C1C;
+    classDef result_neg_warn fill:#FFECB3,stroke:#FFB300,stroke-width:1.5px,color:#E65100;
+    classDef result_crit_neg fill:#FF8A80,stroke:#E53935,stroke-width:2px,color:#B71C1C;
+    classDef result_neutral fill:#CFD8DC,stroke:#90A4AE,stroke-width:1px,color:#455A64;
+    classDef conclusion fill:#D1C4E9,stroke:#9575CD,stroke-width:2px,color:#4527A0;
+    classDef recommendation fill:#FFECB3,stroke:#FFB300,stroke-width:2px,color:#E65100;
+    classDef waiting fill:#FFF9C4,stroke:#FBC02D,stroke-width:1.5px,color:#F57F17;
+    classDef crit_weak fill:#FF5252,stroke:#D32F2F,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef crit_audit fill:#FF8A80,stroke:#E53935,stroke-width:1.5px,color:#B71C1C;
+    classDef crit_hidden fill:#FFCDD2,stroke:#EF9A9A,stroke-width:1.5px,color:#C62828;
+    classDef crit_blind fill:#FFEBEE,stroke:#FFCDD2,stroke-width:1px,color:#EF5350;
+    classDef crit_kill fill:#B71C1C,stroke:#FF1744,stroke-width:3px,color:#FFFFFF,font-weight:bold;
+    classDef crit_settle fill:#C8E6C9,stroke:#81C784,stroke-width:2px,color:#2E7D32;
+</Mermaid_Diagram>
+
+Content:
+今天我们完整的测试了M5系列的新品到底是什么实力在我桌上的四台电脑分别是M5 Max 36G 18x32盒一个粉丝朋友记过来的M5 Pro 24Gb内存15x16盒M4 Max 36G内存14x32盒最后是我已经用了4年多的M1 Pro 32G内存实家适合的版本我相信很多屏幕前的各位用的应该也是M1 Pro吧还没周计这更换吗可以打在弹幕里我们这次买的基本都是30Gb左右的内存也基本上都是当前挡为性价皮的版本这里是百数科技现在后看人生惨烂在结尾我也会分享一下我跟别人可能不太一样的给我买建议希望你可以耐心看了首先是Synipo 2026GPU的综合得分下M5 Max一计绝成零先了M5 Pro大约815几乎一半左右零先M4 Max大约36%零先M5 Pro高达612%相比CPU多盒的成绩就没有那么明显了M5 Max对比M4 Max只提升了30%对比M1 Pro提升了有159%CPU的弹色性能其实提升并不明显别看M5 Pro443的得分放在今天依旧能挡有一次的是这一代的CPU性能M5 Pro已经全面超越了M4 Max了来看一下Synipo 3可首先是不开几光追的情况下Stay on the M5 Max依旧是一计绝成M5 Pro虽然不及M4 Max但也跑出了8633的分数那么高强度下WireLive X追影下基本幅度差不多总几上在不开光追的情况下M4 Max相较于M5 Pro领先了大约由44%即使是4年前的M1 Pro也能跑到接近9000的分数了真的可以了开起光追之后M5 Pro相较于M4 Max从30%的差距缩小到了20%的差距这种差距其实已经在开始缩小了而M4 Max相较于M5 Max依旧由40%差距而高强度的光追测试中M1 Pro就直接支撑不入了而M5 Pro和M4 Max的差距更是缩小到了12%M5 Max依旧遥有领先于M4 Max45%在测完30%马克欧我们可以下一个结论只要那一层一样你能在M4 Max上玩的游戏基本上在M5 Pro上也不会有太大的差距本来的4.5 CPU的测试中M5 Max和M5 Pro的得分差不多都处于零跑阶段M5 Pro领先M4 Max大约18%左右M1 Pro只有M4 Max的一半而在Bland 4.5的GPU的得分中M5 Pro大概是M5 Max的60%落后于M4 Max30%而M1 Pro的得分4 4 2.5就有点不太够坑了看到这里我们不难发现苹果在这一代的GPU提升是非常巨大的苹果不仅换了架构还内置了强大的神经网络加速器这个其实就是用来跑本地AI大模型的据说它可以极大机身想硬速度和土磁的速度诶我们来试试看吧首先是千万三年五九B的模型M5 Max和M4 Max的表现其实差不多都是非常好的水平M5 Pro肉眼上看会稍微慢一点除了M1 Pro跑得很慢本地模型比较小的情况下几乎都看不出太大的差距而在土磁的速度上依旧是M5 Max最快M4 Max紧根其后M5 Pro慢了自己的老大哥有50%那我们换强度大一点的模型呢在千万三年五27B的模型中结果确实有点意想不到M5 Max在跑的过程中感觉一点都没有结满风扇拉满闻子快到飞起M4 Max的想硬速度就完全不如M5 Max了M5 Pro应该24Gb的内存原因虽然最后是跑下来了但是有多次卡顿表现被M1 Pro 32G内存给爆杀了在土磁速度方面M5 Max和M4 Max差不多M5 Pro要劣慢一点M1 Pro我必须要说一句了我不建议任何人用M1 Pro去跑这么大的本地模型整个过程下来看比坐牢那文字出来的速度真还不如我手敲来的快体验给我的感觉很不好最后我们稍微总结一下苹果未来的Max路已经很清晰了CPU的性能对于绝大多数的笔记版来书都已经是过渗了在我日常使用的对比中M1 Pro的CPU完全够有在打开转间的速度上慢不会超过0.5秒而在转间打开后的点击跳转调整等几乎没有多大区别真正卡到你的或者说真正慢到你的是GPU的能力是旋转的力他们的快和慢区别可不是1到2秒这么少而是10分钟和30分钟甚至是更久我做了一个视频导出时间的测试这是我叠加了4条4K轨道导出的视频M5 Pro和M4 Max几乎没有区别而M5 Pro Max只比M5 Pro短了1分钟但是我的M1 Pro导出居然要花45分钟普通的个人工作者需要用到GPU非本地大模型非8K剪辑摄影师特效是等等我建议选择M4 Max就非常足够了这种配置已经是等中顶了它能给你的内容足够了花更多的钱并不能给你等家的提升比例没有那个必要而强调CPU性能的身材力比如编程开发办公音频制作等等选择M5 Pro就已经是天花版级别了M4 Max和M5 Max都没必要一个敲带码并且没有本地模型需求的没必要如果你有跑本地模型的需求且非常平凡和必要我不会推荐你M4 Max你应该直接上今年初的M5 Max我认为它应该是你的必选之本光是数据上的面板你根本就不知道我在测试的过程中对于有多么强烈在GPU大幅提升和神经网络引擎的加持下就是跑AI大模型的5-2之选只是千万不要选我的配置更大的内存更多的核心数才是你应该需要考虑的如果你经常出差贩东并且偶尔也会做一些简单的创作那么M5芯片的电脑也是我觉得非常甜点的存在OK觉得观点和数据对你有所帮助的别忘了给博主一个在一个支持来点那个就更好了反正我不会推荐你有考虑到下半年底苹果就要给自己的MacBook Pro换可换新了我建议手上有M3、M4哪怕你是跟我一样的M1 Pro的用户都可以在得的在观观观我预测M6芯片不会想M4到M5那样提升能到30%多到时候我们也会同堂来对比分析一波我还是挺感兴趣的如果你也感兴趣的话觉得博主视频做得还不错别忘了给我点一念关注好了这里是百数推荐我们下期视频再见吧拜拜
