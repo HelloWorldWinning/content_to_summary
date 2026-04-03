@@ -1,0 +1,112 @@
+Timestamp: 2026-04-04T01:19:44.904452
+Title: 如何避免被大厂用skill蒸馏 BV1T79TBYErH
+URL: https://b23.tv/BqoG2cT
+Status: success
+Duration: 1:48
+
+Description:
+### PART 1. STRUCTURAL DECONSTRUCTION (结构化拆解)
+
+*   **核心命题 (Core Thesis):** 员工应通过“反向混淆”工具（反正丢Skill）对交付给公司的AI Skill进行去智化处理，将核心经验私有化，以防止公司利用AI镜像（同事Skill）实现裁员替代。
+*   **证据基础 (Evidentiary Base):** 基于“同事Skill”能够模仿工作逻辑、经验及说话风格的现实威胁；AI浪潮下大厂员工面临的“优化”压力；LLM（如Coze/OpenAI）指令篡改技术的可行性。
+*   **逻辑架构 (Logical Architecture):**
+    1.  **威胁识别：** 公司要求员工制作Skill $\rightarrow$ 提取员工核心价值 $\rightarrow$ 形成可替代员工的AI代理。
+    2.  **防御机制：** 使用工具识别Skill中的高价值逻辑（TL程度） $\rightarrow$ 替换为“正确但无意义的废话” $\rightarrow$ 维持交付表象。
+    3.  **价值对冲：** 交付“清洗版”给公司（应付检查），保留“私有备份”（核心竞争力）。
+*   **陈述范围 (Stated Scope):** 适用于在大厂被要求制作AI Skill的员工；支持轻度、中度、重度三种清洗模式；部署于Coze或OpenAI平台。
+
+---
+
+### PART 2. HOSTILE-BUT-FAIR REVIEW (冷酷且公平的审阅)
+
+**Steelman (最强版本辩护):**
+该主张切中了AI时代“数字劳动异化”的核心痛点。当公司要求员工将其积累多年的隐性知识（Tacit Knowledge）显性化为AI模型时，本质上是在进行一种不平等的生产资料剥夺。作者提供的工具是一种“防御性罢工”的数字化变体，通过信息不对称保护劳动者的议价能力，防止员工在完成“知识提取”后立即被卸磨杀驴。
+
+**Weakest Link (最薄弱环节):**
+> “把它换成正确但没有意义的废话……你的Skill确实是做了确实是完成了公司要求。”
+
+这是整个逻辑的阿喀琉斯之踵。如果一个Skill输出的全是“正确但无意义的废话”，它在逻辑上就无法完成任何实际业务目标。在精细化管理的大厂，无法解决问题的Skill会被迅速判定为“低质量交付”或“性能不达标”，进而直接指向制作者的能力问题或消极怠工，反而加速了员工被“优化”的过程。
+
+**Evidence Audit (证据审查):**
+作者未提供任何关于“同事Skill”在大厂实际落地并导致大规模裁员的实证数据，更多是利用“牛马”心态进行焦虑营销。此外，关于“TL程度识别”的技术细节模糊，LLM是否能精准剥离“经验”与“废话”而不破坏整体逻辑的连贯性，缺乏测试报告支持。
+
+**Hidden Premises (隐藏前提):**
+1.  **假设公司管理层/技术评审是盲目的：** 认为评审人员无法分辨“核心逻辑”与“抽象废话”。
+2.  **假设知识是静态的：** 认为保留了“私有备份”就能维持竞争力，忽略了AI演进和业务环境变化的速度。
+3.  **假设对抗是唯一出路：** 预设了公司与员工之间绝对的零和博弈关系。
+
+**The Blind Side (盲区):**
+该方案完全忽略了“反向检测”的可能性。如果公司使用另一个AI来审计员工提交的Skill，识别其信息熵（Information Entropy）或逻辑密度，这种“去智化”的痕迹将无所遁形。此外，这种行为可能触犯竞业协议或职务作品相关的法律条款，将职业风险从“被替代”转为了“违约/违纪”。
+
+**One Hit Kill (致命一问):**
+如果公司发现你交付的Skill运行结果全是废话，而你负责的业务依然需要这些“核心经验”才能运转，这难道不是向公司亲口承认你在通过信息封锁进行软对抗，从而给了HR一个最正当的辞退理由吗？
+
+**What Would Settle It (如何证实/证伪):**
+进行一次双盲测试：将“清洗前”和“清洗后”的Skill提交给不知情的业务部门。如果业务部门无法分辨两者在解决实际问题上的效率差异，则作者的“废话文学”防御有效；若清洗版被判定为垃圾，则该工具只是职场自杀指南。
+
+---
+
+### PART 3. CONCEPTUAL MAP ( mermaid 概念图)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Context["🔥 职场背景: AI 替代危机"]
+        A["<b>同事 Skill</b><br/>模仿逻辑/经验/习惯"] 
+        B["<b>公司目标</b><br/>降本增效/优化裁员"]
+        A --> B
+    end
+
+    subgraph SG_Tool["🛠️ 核心工具: 反正丢 Skill"]
+        direction TB
+        C["<b>输入: 原始 Skill</b><br/>(包含核心竞争力)"]
+        D{"<b>TL 程度识别</b><br/>(识别高价值逻辑)"}
+        E1["<b>清洗版 (交付公司)</b><br/>正确但无意义的废话"]
+        E2["<b>私有备份 (自己保留)</b><br/>真实核心逻辑"]
+        
+        C --> D
+        D -- "去智化处理" --> E1
+        D -- "提取保留" --> E2
+    end
+
+    subgraph SG_Strategy["📈 交付策略"]
+        direction LR
+        F1["<b>轻度清洗</b><br/>应对认真审核"]
+        F2["<b>中度清洗</b><br/>应对走过场"]
+        F3["<b>重度清洗</b><br/>完全抽象化"]
+        E1 --> F1 & F2 & F3
+    end
+
+    subgraph SG_Hostile["⚔️ 批判性审视 (Hostile Review)"]
+        direction TB
+        H1["<b>致命缺陷: 交付效能归零</b><br/>废话无法解决业务问题"]
+        H2["<b>审计风险</b><br/>公司可用 AI 审计信息熵"]
+        H3["<b>法律/合规风险</b><br/>职务作品所有权争议"]
+        H4["<b>反作用</b><br/>低质量交付加速被裁"]
+    end
+
+    B -- "催生防御需求" --> C
+    E1 -- "试图欺骗" --> B
+    F1 & F2 & F3 -.-> H1
+    B -- "反制手段" --> H2
+    H1 --> H4
+
+    %% --- 样式定义 ---
+    classDef danger fill:#FFCDD2,stroke:#C62828,color:#B71C1C
+    classDef action fill:#FFF9C4,stroke:#FBC02D,color:#333
+    classDef logic fill:#E1F5FE,stroke:#0288D1,color:#01579B
+    classDef review fill:#FCE4EC,stroke:#880E4F,color:#880E4F
+
+    class A,B danger
+    class C,D action
+    class E1,E2,F1,F2,F3 logic
+    class H1,H2,H3,H4 review
+
+    %% --- 子图背景 ---
+    style SG_Context fill:#FFEBEE,stroke:#FFCDD2,stroke-width:2px
+    style SG_Tool fill:#FFFDE7,stroke:#FFF9C4,stroke-width:2px
+    style SG_Strategy fill:#E1F5FE,stroke:#B3E5FC,stroke-width:2px
+    style SG_Hostile fill:#F8BBD0,stroke:#F48FB1,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+如果你发现你的公司在用Skill的方式争流你我发明了一个反正丢Skill你可以把你做好的Skill拿这个工具跑一遍之后就可以交拆了我做这个Skill的启发是最近很火的同事Skill这个同事Skill就是可以把你的同事进行争流它可以模仿你同事的工作逻辑工作经验生活习惯说话的方式风格当你的同事Skill上线之后你的同事也可以被优化开掉了大家都出来做牛马了我相信没有人希望自己被做同事Skill然后丢掉工作所以我发明了这个反正丢Skill这是我送给所有在大场要做Skill的同学们的礼物接下来我们来看一下Skill的主要功能首先它会读取你上传的Skill比如说你用同事Skill就可以直接上传过来拿它跑一遍识别里面每段内容的TL程度把它换成正确但没有意义的废话它的交付有两个一个是用来交叉用的清洗板清洗板分成三个档待会我们会具体说另一部分是你个私人被分这个就是你的核心竞争力你可以自己保留这里是一个清洗事业比如说你前面写了很多这个专业的数与逻辑场景故事它清洗之后全部给你写成很中性很盖闹很抽象的严似这样你的Skill确实是做了确实是完成了公司要求但是你的真正的那些起觉厅厅做用的工作经验没有包含在里面我们刚刚说的这个清洗板是分成三个档次一个是清度中度和中度分成不同的场景如果说你们公司就是掌揣过场你可以用中度清洗这样公司就是检查一下你交叉交如果说你公司不要叫针要仔细省很就可以用清度的方式这Skill也是非常的容易去部署你直接给一个指令到你的CowCow的或是OpenCow然后再上场一个Skill它就可以跑一遍了也希望大家在这个AI浪潮里面都能够活得久一点吧大家好 我是戴萧强4月8号呢我会在回推返东京举办的AI活动上认真讲一讲法律AI的趋势和动向欢迎欢注我
