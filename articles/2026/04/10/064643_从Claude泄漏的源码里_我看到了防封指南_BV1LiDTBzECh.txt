@@ -1,0 +1,111 @@
+Timestamp: 2026-04-10T06:46:43.504677
+Title: 从Claude泄漏的源码里，我看到了防封指南 BV1LiDTBzECh
+URL: https://b23.tv/NKceNMG
+Status: success
+Duration: 3:49
+
+Description:
+这份分析针对的是关于 Anthropic (文中称为 AndSRAPIC/AnceroPick) 及其 AI 产品 Claude (文中称为 CLODI) 遥测与封号机制的爆料文本。
+
+---
+
+### **PART 1. 结构化解构 (STRUCTURAL DECONSTRUCTION)**
+
+*   **核心论点 (Core Thesis):**
+    Anthropic 通过极其严密的、多维度的实时遥测系统（每 5 秒上报、40+ 指纹维度）对用户进行全方位监控；这种监控不仅是为了数据分析，更是为了通过极高压的封控策略（封号率极高、申诉率极低）来维持其生态的绝对控制。
+*   **证据基础 (Evidentiary Base):**
+    *   **量化指标：** 51 万行代码、640 种遥测事件、40 个设备指纹维度、5 秒上报频率。
+    *   **内部代号：** 监控系统代号“天谷”、“天狗”。
+    *   **第三方集成：** Datadog（日志分析）、Glassbox（AB 测试）。
+    *   **封控数据：** 2025 年下半年封禁 145 万个账号，申诉成功率仅 3.3%。
+    *   **技术细节：** CCH 客户端认证哈希、SHA256 用户哈希、EID 硬件标识。
+*   **逻辑架构 (Logical Architecture):**
+    *   **监控层：** 建立全量遥测 -> **识别层：** 提取不可更改的设备指纹与环境特征 -> **判定层：** 对比 IP、地理位置、客户端合法性与行为速率 -> **执行层：** 触发自动化封号。
+*   **陈述范围 (Stated Scope):**
+    主要针对使用 Claude 网页端、CLI 或第三方工具的高级用户，特别是涉及跨区使用、多账号操作或在意隐私的群体。
+
+---
+
+### **PART 2. 尖锐且公正的评述 (HOSTILE-BUT-VERY-FAIR REVIEW)**
+
+*   **强力辩护 (Steelman):**
+    作为全球顶尖的 AI 安全公司，Anthropic 面对的是规模化的黑产攻击、API 滥用以及严苛的合规要求（如出口管制）。这种“过量”的遥测本质上是数字时代的防御工事。所谓的“监控”在企业视角下是“反欺诈（Anti-Fraud）”和“服务质量监控（QoS）”的标准配置，旨在确保高昂的算力资源不被滥用，并保护模型不被非法蒸馏。
+*   **最薄弱环节 (Weakest Link):**
+    “*Github 上有人发了个 E-Shoot 说设了 Disable Telemetry 等于 E 之后 OPPS 模型被强制禁用*”。
+    这是典型的关联性误导。模型禁用通常与订阅状态、API 权限或风控等级直接挂钩，而非简单的客户端遥测开关。如果关闭遥测就能导致核心功能失效，这更像是软件依赖项报错而非主动惩罚。作者将其描述为“性能与隐私的终极两难”，有刻意制造焦虑之嫌。
+*   **证据审计 (Evidence Audit):**
+    文本中提到的“51万行代码”和“145万封号数据”缺乏可验证的来源。2025 年下半年的数据出现在当前的语境中（除非作者是穿越者或该时间点为预估），说明数据可能存在编造或夸大。此外，3.3% 的申诉成功率虽然听起来惊人，但如果封禁的绝大多数是自动化脚本号，这个比例其实是合理的。
+*   **隐藏前提 (Hidden Premises):**
+    作者默认“用户隐私”与“厂商风控”是零和博弈，且默认所有被封禁的用户都是“无辜”的隐私追求者。它忽略了一个事实：绝大多数被封控的用户是因为违反了服务条款（如在非服务区使用、虚拟卡支付等）。
+*   **认知盲区 (The Blind Side):**
+    文本完全忽略了**服务端行为分析**。即便通过“CC Gateway”伪造了完美的设备指纹，用户的 Prompt 风格、提问频率、交互模式（键盘输入节奏等）在服务端依然是裸奔的。AI 公司完全可以利用 AI 来识别操作者是否为同一个人，这种“软指纹”是任何代理网关都无法抹除的。
+*   **致命一击 (One Hit Kill):**
+    如果 Anthropic 的监控真的如你所说已经深入到内核级和硬件 EID，那么一个仅仅在应用层做替换的“CC Gateway”代理如何能绕过底层的系统调用和物理内存指纹上报？这在逻辑上是自相矛盾的——要么监控没那么深，要么代理没那么神。
+*   **如何定论 (What Would Settle It):**
+    需要一份针对 `claude.ai` 前端 JS 混淆代码的脱壳分析报告，证实其是否真的调用了 WebGL 指纹、Canvas 渲染指纹或特定的系统 API。同时，需要对比开启和关闭遥测后，网络请求包的具体内容差异。
+
+---
+
+### **PART 3. 核心逻辑图 (CONCEPTUAL MAP)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Monitor["🔍 遥测监控体系 (Telemetry Architecture)"]
+        A["<b>核心系统: 天谷/天狗</b><br/>640种事件 | 5秒/次"]:::monitor
+        A -- "内部流转" --> B1["AndSRAPIC 服务器<br/>(837个唯一事件)"]
+        A -- "外部分析" --> B2["Datadog<br/>(日志实时分析)"]
+        A -- "策略实验" --> B3["Glassbox<br/>(AB测试/灰度控制)"]
+    end
+
+    subgraph SG_Data["📊 采集维度 (Data Points)"]
+        C1["硬件层: EID / 内存 / OS版本"]:::data
+        C2["环境层: Shell类型 / 用户目录(真名)"]:::data
+        C3["认证层: CCH哈希 / 客户端签名"]:::data
+    end
+
+    subgraph SG_Risk["🚫 封控逻辑 (Ban Mechanics)"]
+        D1["<b>高风险: 身份冲突</b><br/>多IP/多设备/多时区"]:::risk
+        D2["<b>极高风险: 伪造客户端</b><br/>非官方认证哈希"]:::risk
+        D3["<b>中风险: 支付/地理不匹配</b><br/>卡区与IP所在国冲突"]:::risk
+    end
+
+    subgraph SG_Defense["🛡️ 防护体系 (Defense Strategy)"]
+        E1["<b>基础层</b><br/>固定住宅IP | 账单匹配"]:::defense
+        E2["<b>进阶层</b><br/>1机1号 | 环境变量隔离"]:::defense
+        E3["<b>终极方案: CC Gateway</b><br/>重写身份标示与指纹"]:::defense
+    end
+
+    subgraph SG_Review["⚔️ 批判性审视 (Hostile Review)"]
+        R1["<b>数据真实性存疑</b><br/>2025年封号数据来源不明"]:::review
+        R2["<b>逻辑矛盾</b><br/>应用层代理无法完全屏蔽底层硬件指纹"]:::review
+        R3["<b>隐私/性能陷阱</b><br/>关闭遥测导致模型降级可能是技术依赖而非惩罚"]:::review
+        R4["<b>被忽视的维度</b><br/>服务端AI行为分析(软指纹)"]:::review
+    end
+
+    A --> C1 & C2 & C3
+    C1 & C2 & C3 --> D1 & D2 & D3
+    D1 & D2 & D3 -- "导致" --> F["145万封号 (3.3%申诉率)"]:::final
+    E3 -- "试图对抗" --> A
+    
+    %% 批判关联
+    F -.-> R1
+    E3 -.-> R2
+    A -.-> R4
+
+    %% 样式定义
+    classDef monitor fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E
+    classDef data fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    classDef risk fill:#FFEBEE,stroke:#C62828,stroke-width:2px,color:#B71C1C
+    classDef defense fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C
+    classDef review fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#4E342E
+    classDef final fill:#212121,stroke:#000,stroke-width:3px,color:#fff
+
+    style SG_Monitor fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style SG_Data fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style SG_Risk fill:#FFEBEE,stroke:#C62828,stroke-width:1px
+    style SG_Defense fill:#F3E5F5,stroke:#7B1FA2,stroke-width:1px
+    style SG_Review fill:#FFF3E0,stroke:#E65100,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+CLODI的圆马泄漏告诉我们你的每一次操作都在被记录51万行代码里藏著640种遥测事件40多为设备指纹每5秒上报一次先看全景CLODI code内部有一套监控系统代号天谷、天狗你的数据会同时流向3个地方AndSRAPIC自己的服务器圆马里找到了837个唯一事件名P-Liang上传到他们的日志和指标接口什么意思你在CLODI code里的每一个动作打开文件、执行命令甚至切换窗口都有对应的事件在记录Dade Dog 第三方监控平台圆马里写此了64个允许转发的事件类型实实做日志分析也就是说不光AndSRAPIC自己看还有外部平台再帮他盯著你Grossbook专门做AB测试和功能灰度的每5分钟倒出一次指标你看到的功能和别人看到的可能完全不一样全靠后台分同控制数据网络送知道了但他到底在收集你什么每次启动CLODI code你电脑40多个维度的信息就被打包上传了硬件层设备为EID、物理内存、操作系统版本关键是这个设备ID换号不换机等于白换指纹还是同一个环境层你用的什么Shout、什么中端甚至你的用户目录录进都会上传没错写杠User 写杠你的真名名文发给AndSRAPIC分同著中平台架构是不是Ci环境还有一个用户哈西用SR256对你的ID取模分到30个同理你被分在哪个桶决定了你的用什么功能知道了他收集什么问题来了什么情况会被封2025年下半年AndSRAPIC分了145万个帐号申诉成功率只有3.3%极高风险更想帐号同一个帐号出现在不同设备ID不同IP不同操作系统不同时区直接封没有商量于地同样击落风险用第三方客户端原马里有一个叫CCH的客户端认证哈西会验证请求是不是来自政版第三方工具发出的请求理由五个零的站位服服务端一看就知道是假的高风险速率违规按你的帐号ID加订阅类型追踪调用频率超了就触发限制中等风险IP频繁跨国切换用数据中心IP持卡人和帐号地区不匹配这些单独不一定封你但跌在一起就危险了说了这么多风险怎么防社区总结了四层防护体系IP层用固定的住宅IP同一个IP至少保持两周换IP间隔不低于六小时每天最多换一次数据中心IP碰都不要碰支付层帐单地址要和IP所在国匹配或者直接走API key付费没有地狱限制设备层1G1号同一台电脑不要灯多个帐号同设备指纹下的所有帐号会一起封也别同时开外部加AP加CLI多个客户端环境变亮层可以设Disable Tilemetry等于E来关掉摇侧但这里有个大坑关摇侧听起来很美好但代价可能比你想得大Github上有人发了个E-Shoot说设了Disable Tilemetry等于E之后OPPS模型被进摸进用了你想要隐私它就砍你的模型你要隐私还是要性能两难设计的终极方案是一个叫CC Gateway的繁指纹代理它会重写所有身份标示设备ID油箱绘画数据40多位环境变亮全部替换成同一值让AnceroPick看到的每个用户都长得一模一样一家做AI安全的公司用了17种方式监控你的电脑640种摇侧事件40为设备指纹每5秒上报一次这到底是在保护谁我是取奇一个AI练习生让我们一起记录AI时代的个人进化
