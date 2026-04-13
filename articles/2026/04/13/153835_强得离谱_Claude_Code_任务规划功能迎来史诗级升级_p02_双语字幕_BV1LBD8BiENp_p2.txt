@@ -1,0 +1,125 @@
+Timestamp: 2026-04-13T15:38:35.405001
+Title: 强得离谱！Claude Code 任务规划功能迎来史诗级升级 p02 双语字幕 BV1LBD8BiENp_p2
+URL: https://b23.tv/4vuBKWB
+Status: success
+Duration: 15:39
+
+Description:
+### 第一部分：结构化解构 (Structural Deconstruction)
+
+*   **核心论点 (Core Thesis):**
+    Claude Code 的 "Ultra Plan" 功能通过将规划任务外传至云端多智能体集群（Multi-agent cluster），在规划速度、方案质量以及后续执行效率上全面超越了本地单智能体规划模式。其核心价值在于“磨刀不误砍柴工”——通过前期密集的云端算力投入，换取更清晰的架构和更短的整体开发周期。
+
+*   **证据支撑 (Evidentiary Base):**
+    1.  **实测对比数据：** 本地规划耗时 4+ 分钟且仍在继续，而 Ultra Plan 仅用 1 分钟即完成规划；本地执行总耗时约 45 分钟，Ultra Plan 仅需 10-15 分钟。
+    2.  **技术参数泄露：** 引用内部研究称 Ultra Plan 使用了 3 个并行探索智能体 + 1 个审核智能体（基于 Opus 4.6），而非本地的线性单智能体。
+    3.  **Token 消耗对比：** 本地执行消耗 131k token，Ultra Plan 执行阶段仅需 82k token（虽未计入云端规划消耗，但证明了执行阶段的精准度）。
+    4.  **功能特性：** Web 端交互界面、代码库 Git 同步机制、支持 Emoji/评论的反馈循环。
+
+*   **逻辑架构 (The Warrant):**
+    该论证基于**“算力红利”逻辑**：云端容器提供的多智能体并行计算（探索与批判）生成的计划具有更高的结构化程度和逻辑清晰度 $\rightarrow$ 这种高质量计划降低了本地智能体在执行阶段的理解成本和试错成本 $\rightarrow$ 最终实现总时长和执行阶段 Token 消耗的双重下降。
+
+*   **适用范围 (Stated Scope):**
+    仅限于 Claude Code CLI 环境；项目必须关联 Git 仓库；适用于需要深度规划的复杂任务；用户需持有 Pro 或 Max 订阅以覆盖云端 Token 成本。
+
+---
+
+### 第二部分：冷峻而客观的审阅 (Hostile-But-Very-Fair Review)
+
+*   **强力论证 (Steelman):**
+    Ultra Plan 本质上是 AI 开发从“即兴写作”向“架构先行”的范式转移。通过引入“批判智能体（Critique Agent）”，它在代码生成前就过滤了大量逻辑漏洞。在复杂系统中，本地单智能体容易陷入局部最优或逻辑死循环，而云端多智能体通过并行探索，能显著提升复杂工程的成功率。
+
+*   **最薄弱环节 (Weakest Link):**
+    > “Ultra Plan 并不计入本地 Token 消耗……我预测它至少消耗了 50k 以上。”
+    **批判：** 这是典型的“黑箱成本”陷阱。作者在缺乏云端 Token 消耗透明数据的情况下，宣称 Ultra Plan 更具效率。如果云端规划消耗了 500k 甚至 1M Token 来换取执行阶段 50k 的节省，那么在 API 计费模式下，这在经济上是极其低效的。这种“快”是用极高的、未披露的资源溢价堆砌出来的。
+
+*   **证据审计 (Evidence Audit):**
+    1.  **主观性偏见：** 作者承认在 UI 表现上“很难客观判断哪个更好”，这动摇了“高质量”这一核心主张。
+    2.  **样本单一：** 测试仅基于一个 Dashboard 案例。在简单任务中，云端同步和多智能体调度的开销可能远超其带来的收益。
+    3.  **技能调用失效：** 视频显示 Ultra Plan 初始并未识别到本地 Skill（可视化工具），这说明云端对本地上下文的感知并非完美，存在同步滞后或理解断层。
+
+*   **隐藏前提 (Hidden Premises):**
+    1.  **数据安全假设：** 默认用户愿意将整个私有代码库推送到 Anthropic 的云端容器中运行。对于企业级开发，这种“Git 同步”是巨大的合规风险。
+    2.  **Token 无限假设：** 论证逻辑仅对拥有“无限/大额套餐”的用户成立，完全忽略了 Token 售罄后的降级体验。
+
+*   **视觉盲区 (The Blind Side):**
+    论证忽略了**网络延迟与同步成本**。在弱网环境下，Git 推送、云端容器启动、Web 页面加载的时间总和可能抵消掉规划节省的时间。此外，它排除了不支持 Git 的临时项目或对隐私极度敏感的本地开发场景。
+
+*   **致命一击 (One Hit Kill):**
+    如果 Ultra Plan 真的因为“计划更清晰”而使执行更高效，那么为什么不直接让本地模式也生成同样格式的计划？**核心差距究竟是“多智能体算法”的优势，还是仅仅因为云端分配了比本地 CLI 更多的计算配额（Opus 4.6 vs Local Model）？** 如果是后者，这只是算力霸权，而非技术进步。
+
+*   **如何定论 (What Would Settle It):**
+    需要进行一项双盲测试：将 Ultra Plan 生成的计划文本交给本地模式执行，对比其与 Ultra Plan 自行执行的效果。如果两者效率一致，则证明价值仅在于“计划书”；如果不一致，则证明云端执行环境有未披露的优化。
+
+---
+
+### 第三部分：概念映射图 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Input["📥 输入与触发条件"]
+        A["用户输入 /ultra plan"]:::input
+        B["Git 仓库同步状态"]:::input
+        A --> C{"环境校验"}
+        B --> C
+    end
+
+    subgraph SG_Cloud["☁️ 云端多智能体引擎 (Ultra Plan Core)"]
+        direction TB
+        D["Opus 4.6 容器环境"]:::spatial
+        subgraph SG_Agents["🤖 智能体协作集群"]
+            E1["探索智能体 A"]:::temporal
+            E2["探索智能体 B"]:::temporal
+            E3["探索智能体 C"]:::temporal
+            F["批判/审核智能体"]:::final
+            E1 & E2 & E3 -- "并行方案" --> F
+        end
+        C -- "通过" --> D
+        D --> SG_Agents
+        F -- "生成结构化文档" --> G["Web 交互界面"]:::spatOut
+    end
+
+    subgraph SG_Review["💬 交互反馈循环"]
+        G -- "Emoji 反应" --> H["人类反馈"]
+        G -- "精准评论 (Targeted Feedback)" --> H
+        H -- "迭代请求" --> SG_Agents
+        H -- "Approve & Teleport" --> I["计划回传本地"]:::fusion
+    end
+
+    subgraph SG_Local["💻 本地执行阶段"]
+        I --> J["本地 Agent 执行"]:::fusion
+        J --> K["代码修改/文件创建"]:::final
+        L["传统本地规划 (Linear)"]:::input
+    end
+
+    subgraph SG_Critique["⚔️ 批判性审查 (Hostile Review)"]
+        CR1["<b>成本黑箱</b><br/>云端 Token 消耗未知"]:::review
+        CR2["<b>隐私风险</b><br/>源码强制云端同步"]:::review
+        CR3["<b>准入门槛</b><br/>仅限 CLI + Git 项目"]:::review
+        CR4["<b>边际效应</b><br/>简单任务可能更慢"]:::review
+    end
+
+    %% 逻辑连接
+    L -- "耗时长/易出错" --> J
+    I -- "高质量计划降低熵增" --> J
+    J -- "对比结论: 速度提升 2-3 倍" --> M["最终交付物"]:::final
+
+    %% 样式定义
+    classDef input fill:#FFF176,stroke:#F9A825,stroke-width:2px,color:#333
+    classDef spatial fill:#81C784,stroke:#2E7D32,stroke-width:2px,color:#fff
+    classDef temporal fill:#64B5F6,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef spatOut fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
+    classDef fusion fill:#FFB74D,stroke:#E65100,stroke-width:2px,color:#000
+    classDef final fill:#FFCDD2,stroke:#C62828,stroke-width:2px,color:#333
+    classDef review fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828,font-weight:bold
+
+    %% 背景颜色
+    style SG_Input fill:#FFFDE7,stroke:#FBC02D
+    style SG_Cloud fill:#E3F2FD,stroke:#1565C0
+    style SG_Review fill:#F3E5F5,stroke:#7B1FA2
+    style SG_Local fill:#E8F5E9,stroke:#2E7D32
+    style SG_Critique fill:#FFEBEE,stroke:#EF5350
+</Mermaid_Diagram>
+
+Content:
+So right here I have regular cloud code building me a plan and it's been running for almost four minutes now. And in this terminal I have it doing the exact same plan, but now it's doing it with ultra plan mode. You can see it says monitor progress and cloud code on the web and right here it says ultra plan ready. So if I hover on that click enter, I'm able to review this on the web and this finished in about one minute whereas this one is still running and it's been over four minutes now. And when I go to that web session we can see the actual plan. I have context, I have what already exists, the new approach with new files to be made modifications as well as just a final verification. This gives me the plan in a lot more structured way. I also sometimes get diagrams based on what it's actually planning. And in here I can go ahead and leave emoji reactions on certain places which I think is a nice touch. Or I could go ahead and comment on specific elements as you can see right here I could add a comment. And then when I want to send these comments off Claude will go back and do another iteration of the plan. Or I could click on this button which is a proof plan and teleport back to the terminal. So I do that and now it's going to send it back. And if I jump back into that session right here, we can now see the plan has been received and we can either implement it here or we could start a new conversation and implement it there. So if I just click on this now we have that full plan that cloud code on the web actually built for us and it's being worked on right here locally. And the whole time this original section is still planning it's still asking me questions and it's just moving very slow. Now I'm not saying that speed is always the most important thing but if you're getting speed and higher quality then that is a good combination. Now what else you'll notice is in this session of the cloud where it sends off my prompt to be ultra planned. It's still able to look what's inside of our directory because it syncs to get. So right here it starts off by exploring what's in the directory to see what it can build on. And it was able to find existing skills and scripts and just able to leverage those and use those in the plan. So basically this is all thanks to the new kind of secret feature called ultra plan. Plan in the cloud with ultra plan you start a plan from your CLI you draft it on the web and then you send it back to the terminal or you can just execute it remotely as well. And it's really interesting I've ran a ton of different tests between the same prompts locally and the same prompts to be ultra planned. And not only is ultra plan faster at planning but for some reason it's much faster at executing too. And I think it's just because the plan is so clear that the agents have a much easier time locally just executing on it and building everything out. And I'll show you guys an example of that in a bit. This is useful when you want a richer review surface than what the terminal offers as far as targeted feedback because you can comment on individual sections. You get a nice sort of like doc style plan as well rather than in the terminal. Sometimes it can just be like lines of text that's kind of messy to see like the structure. You also have hands off drafting and you have flexible execution. So it's really simple you just do a slash ultra plan and then you're prompt. Or if you just have the word ultra plan in there it will ask you if you want to ultra plan. So if I just come back in here and you see I literally just type the word ultra plan it lights up the same way that it would light up if you do something like ultra think so maybe you ultra think and ultra plan you burn through your entire session in one prompt. Because obviously the ultra plan is using a little bit more tokens. I'll show you guys an example of that later. We don't know exactly how many but the way that it's spinning up and it's using a lot more compute resources in the cloud it's going to use more tokens than if you just do a regular plan over here. But once again planning is so so important. It sets the whole structure and path of your project on the right path. So sometimes it really is worth spending more tokens up front in order to shoot it off. I always think of this quote by Abraham Lincoln give me six hours to chop down a tree and I will spend the first four sharpening the axe. So that's basically our planning also important to know that this has to be done in the CLI. If we are here in the desktop app and we try to do something like ultra plan build me a five day workout guide. If we shoot this off we're not going to get that whole ultra plan in the cloud functionality. In fact it actually just doesn't do anything and same exact thing if we hop over to VS code if we're doing it in the extension rather than in the terminal ultra plan and then we just let's just copy in the exact same thing. It's basically just going to do nothing. So you have to use it in the CLI. Okay so quick explanation of how this actually works and then we're going to jump into an actual example that I ran and show you guys what it looks like. So so we start talking to cloud code on our machine push an ultra plan it sends that to the cloud where that's where cloud will spin up you know different agents there using opus and it will do a really in-depth plan. Once that's ready we're able to review and we have this kind of feedback loop but then we can teleport it all the way back to our machine if we want that to happen there. Like I said you can launch it by doing slash ultra plan you can just have the keyword in there or you could you know from an existing plan like you already have one written up in locally you could say actually I want to revise this in the cloud with ultra plan and then of course you have that review loop you can do comments and you can do emojis which is a nice touch. All right so let me show you guys an example of this. So I have ultra plan on the right I have a regular plan on the left and I gave both of these a huge spec about building us a dashboard. So I used ultra plan over here pasted in and I said do not use superpower skill because I didn't want the local version to use that I wanted to just get raw you know keep the variables the same and then I wanted to give it to us on a local host. So I'm going to shoot this off you see on the right hand side it says do you want to do this in the cloud? I said yes on the left hand side it just goes straight into plan mode and once again they got the exact same prompts. So here is the link I opened this up and it takes me to the cloud where it's actually going to start building out the plan right here as you can see. It's checking the directory to see what's available and then over here it's just you know kind of doing the same thing getting acclimated with the environment. Okay so at this point we're about two minutes in right and you can see that I got the plan already on this right hand side. So I clicked through it a bit we have different tabs we also have like a little diagram and it looks really good. So what I do is I end up sending this back to the terminal as you can see right here and then it gets brought back into our local session right here. Okay so now we're at the 14 minute mark and the ultra plan version is already done. The local host is spun up so not only did it create the plan but it also built everything out whereas this regular plan mode has been going for 12 minutes and still hasn't even given me a plan to review yet. Then finally a few minutes later we're at the 15 minute mark this is when we actually finally get the plan from the local session. But you can see at the 26, 27 minute mark it is still being built out. So I end up stopping this recording to just wait until it's actually done. So now I'm going to switch over to the actual live reaction of me looking at the differences in the two dashboards to see which one really built it out better. Okay so just the regular plan mode is finally done. It's really weird. I normally stand in these videos but I had to sit because this took honestly like 45 minutes. I'm not sure what was going on but this thing on the right side we did ultra plan. The plan finished in like five and then it executed everything and built everything in you know like another five minutes so about 10 to 15 minutes total over here. And on this side it literally took half the time to plan and then half the time to build like it took a long time. So anyways we have the two dashboards here. Let's open up the regular plan mode dashboard. So let me open this up. You can see we have our pulse board. We have a nice little graphic here. We have some stats like MRR, annual run rate, total customers, churn rate. We can change this between all time, 30 days, 90 days, six months, one year. We have different tabs on the left. We can do revenue and see different tiers. We can also see enterprise and pro, top 20 accounts. Obviously all this is mock data. We've got our customers here with a nice chart and by tier. And then we have support. So resolution time tickets by category, distribution, we can do light mode or dark mode. And that all looks pretty decent. These charts look a little bit weird in light mode. But anyways, that is the plan version. Let's open up the ultra plan version on a different local host. This one obviously they're going to have very similar features as far as what we're looking at with the data. Similar statistics up here, similar charts, everything like that. If we go to 30 days, 90 days, six months, one year that all loads in good. If we go down to revenue, we can see we also have a cohort retention, we have enterprise and pro. And we got some our 20 accounts there. Customers, obviously we've got the same exact type of layout and the support over here. If we go to light mode, let's see what these look like. These all still look very, very solid. So I mean, it's not a huge difference, right? And for something like a dashboard like this from an aesthetic point of view, it's kind of hard to tell like which one objectively between these two did better. If we wanted to look at things like how accurate the data is being pulled in or reflected or how quick things load up or how buggy it is, we'd have to do some deeper investigating. But also take a look at this in the local plan version, it took 131,000 tokens. The ultra plan version took 82,000 tokens. Now, of course, the bulk of the planning work was done in the cloud. So those tokens don't count. If you guys saw earlier, when I was doing this, this is the section where we did our ultra plan on the web. And I tried to run a slash cost, see how much this took, but it wasn't working. So we don't know exactly. But I will say it's using more tokens than the local. So it looks like this is using 50,000 more tokens. I'm assuming that the planning section for the ultra plan took at least 50k. But it's hard for me to say exactly. But I think that the plan was so much better, because for some reason, it was able to execute on the plan so much quicker and better. And they were both using obviously the exact same model. And all the other tests that I've done ultra plan has always been quicker. I mean, in the cloud, there's so much more compute compared to what might be going on here on my device. But yeah, like this was a noticeable difference, not only with the plan, but when it came to the actual execution. Like I said, the execution over here was maybe maybe 10 minutes, the execution over here was upwards of 30 minutes. Okay, so I tried running some experiments for you guys. I did a session with API billing. And I ran a local plan, as you can see, and this ended up costing me about 1.5 million tokens in and 23,000 tokens out and a mix between haiku and opus. Now, unfortunately, it doesn't let you do the ultra plan with API billing, because you need basically a pro or max subscription in order to do the cloud code on the web. I tried it wasn't letting me do that. So anyways, I did do this though. When it came back, what I did is I just checked how much of my usage did it actually go up and it went up 1%. So we don't have an explicit number of tokens that we get allotted within this max 20x plan. So I don't know how many exact tokens it was. But I am going to estimate that it was more than 1.5 in and 23,000 out. And it was about 1% of my 20x max plan. So hopefully that gives you guys a little bit of context and just at least gives you a nice baseline. Okay, so let's talk about a few other things you need to know about how this works under the hood and what you need to know. So first I'm going to start off with like your project, if you want to ultra plan, it has to have some sort of Git or GitHub repo synced to it because it has to be pushed to the cloud somehow. So if you try to run ultra plan in a project that's only local, it's going to say, hey, you can't do this on the web yet. It's as simple as just initializing that Git, pushing it super easy. And then you can do it because obviously in the cloud, when it's doing the ultra plan, it needs to look through everything that you have and it needs to be able to actually work on your code base. Otherwise, it's going to be a very, very generic plan. Now, after that, sometimes I've noticed that it's not calling my skills, even though it looks through the skills are things that get invoked. So if you're not specific enough on your plan for the ultra plan, then it may not use the skills the first time. And actually, all of these visualizations here that I made, I made using ultra plan. So I'll put up a clip here where I'm showing how that worked. And what you'll notice is that I had to give it correction on using my visualization skill, because it wasn't pulling that up for some reason. Okay, so here is that clip now. It says, I want you to ultra plan and research cloud codes and new feature ultra plan. And I kept saying ultra plan because I love when it when it lights up like that. But anyways, we shot this off, right? And it goes to the web. And now it's doing a fetch on our project and getting an understanding of what we want it to do. But what you'll notice here is that it doesn't actually create the Excalagia style diagrams using my visualization skill, which uses nano banana, and it has like a prompting guide and a style guide. But it thought that I just wanted like markdown, you know, mermaid style diagrams, which is what it built as you can see here. So I realized that it was creating these not the right way. I added a comment right here that says, hey, I already have a skill set up that does this. So I want you to do it that way. And then when I shoot off that comment, it basically comes back and says, okay, I didn't see that skill. What's the name of that skill? So I had to tell it explicitly right here, which is the skill that it's looking for. So it asked me this question. And then I say it's called visualizations. And then once I said that it was able to find it and it was able to use it, which is good. But just something to keep in mind, even though it can see your whole project, sometimes you still have to prompt it in the right way. And once again, this is just in research preview. But anyways, then it came back the right way. So I send it back to the terminal. And then I was able to actually have everything be built out from my session here, because the plan had been approved. And then I just go ahead and implement it locally. Okay, so now let's talk about what is actually happening, because we're sending it to the cloud and it only works in the cloud. So that makes you think why. So obviously, it's getting more compute, but I wanted to understand why and like what that even means. So I had this agent here do a deep dive into the ultra plan feature. It looked at source code, it looked at community forums and it looked at the actual documentation. And here's what it came up with. Ultra plan off loads your planning session to a cloud hosted instance running opus 4.6. It uses multi agent exploration to build a deeper plan than the local mode can. Then it either executes in the cloud or goes back to your terminal. So what I thought was interesting is the multi agent exploration. So here's a quick comparison table. When you do local plan, it runs in your terminal. When you do ultra plan, it runs in anthropics cloud container runtime. The model is whatever session you're using. Ultra plan always uses opus 4.6. The planning approach is a single agent and it's linear thinking. Whereas ultra plan is multi agent. It is three parallel exploration agents plus one critique agent. So obviously, this is going to use more tokens. But like we talked about, if you use more tokens upfront, it's definitely worth it. If it's, you know, faster and higher quality. Now the max compute time over here is bounded by your session. But on the cloud, it's 30 minutes as a cap. I've never hit that and I don't think I will because of how quick it's been. But there is a cap on it there. The other interesting thing is your terminal gets blocked while you're in plan mode because your session is focusing on that. But in ultra plan, if you send your plan to the web, you can continue talking to that terminal session and wait for it to get teleported back. Now, truthfully, I don't know exactly when I would do that. I'd probably just spin up a different session because I'd want to keep that context clean so that I can just execute when it comes back. But that is something that is a difference. And then the review interface, you basically get text dialogue in your terminal. If you're using VS code with cloud code and you're using like this extension rather than the terminal, then you do get a nice like doc and it looks a little bit better. You can leave comments on it. But if you're not using that and you're using the terminal, then it's definitely going to be better in the ultra plan version. And really, the only requirement here is that you have to have it synced to some sort of repo so that cloud code with your web account can actually log in and look at your project before it starts planning things out. So I'm sure that this is going to evolve as more people use it as more people start to give feedback about it. One, I was testing it out. I did run into a few issues where I was getting this authentication error. I'm not sure if that was something internal or something I did wrong, but it just seemed to pop up randomly and then I run it again and it'd be fine. But it also seems like we'll start to get more clarity around how exactly this works soon, why it's so much better at executing so much faster and the fact that these are parallel exploration agents. So I'd be curious how they're prompted differently. So they're not just duplicating work or maybe they are. Maybe that's the point. I don't assume that this is some sort of agent team that they can talk to each other and share a task list. And what I'd be curious to know is if we could get more visibility on how many tokens are actually being used in that plan. But yeah, it would be nice to be able to see, hey, the Ultra plan is finished. And by the way, here's how many tokens it just ran. Anyways.
