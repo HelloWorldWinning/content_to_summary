@@ -1,0 +1,120 @@
+Timestamp: 2026-04-28T21:06:52.588445
+Title: 当模型够强，Agent 为什么还是频繁翻车？一文讲透 2026 最火 AI 工程概念：Harness Engineering
+URL: https://www.youtube.com/watch?v=Xq-s_hAjADw&pp=0gcJCd8KAYcqIYzv
+Status: success
+Duration: 22:36
+
+Description:
+这是一份针对该文本的深度结构化解构、批判性审阅及逻辑映射。
+
+---
+
+### **PART 1. 结构化解构 (Structural Deconstruction)**
+
+*   **核心主张 (Core Thesis):**
+    决定 AI Agent 性能与生产力上限的不再是模型能力或提示词（Prompt），而是其外部运行系统——**Harness Engineering（编组/马具工程）**。它是将概率性的推理模型转化为确定性生产工具的“操作系统”。
+
+*   **证据基础 (Evidentiary Base):**
+    *   **企业案例：** Anthropic 的 `Cloud Agent SDK` 与 3A 架构；OpenAI `CodexAgent` 的百万行代码实践；Google DeepMind `AlphaProof/Elizia` 的验证器架构；Stripe 的 `Minus` 环境。
+    *   **数学直觉：** 串联 20 步任务，单步 95% 成功率导致端到端仅剩 36% 成功率。
+    *   **工程观察：** 模型自评估存在“自恋偏差”；工具过多会导致 Agent 困惑。
+
+*   **逻辑架构 (The Warrant):**
+    模型能力提升 $\rightarrow$ 暴露系统性缺陷（上下文焦虑、自评失效） $\rightarrow$ 模型趋于商品化（性能拉平） $\rightarrow$ 竞争壁垒从模型转向模型运行环境（Harness） $\rightarrow$ 结论：Harness Engineering 是 AI 工程化的终极形态。
+
+*   **陈述范围 (Stated Scope):**
+    主要适用于 2025 年底至 2026 年上半年的 AI 工程环境，侧重于长路径、高复杂度的自主 Agent 任务（如编码、数学证明、自动化运维）。
+
+---
+
+### **PART 2. 批判性审阅 (Hostile-But-Very-Fair REVIEW)**
+
+*   **Steelman (最强形式辩护):**
+    该论点极其精准地捕捉到了“LLM 落地难”的痛点：即便有最强的 CPU（模型），没有主板、内存管理和 BIOS（Harness），也无法构建稳定的计算机。Harness 是对 LLM 随机性的一种“工程化驯服”。
+
+*   **Weakest Link (最薄弱环节):**
+    **“Harness 必须与模型能力边界相匹配，模型强了，有些模块反而应撤掉。”**
+    这是全篇最危险的逻辑支点。如果 Harness 的价值仅在于“补偿”当前模型的缺陷（如上下文焦虑、自评偏差），那么随着模型能力的指数级跳跃，现在的 Harness 工程可能在 12 个月内迅速演变为极其沉重的“技术债”。
+
+*   **Evidence Audit (证据审查):**
+    *   **利益冲突：** 文中引用的核心证据（Anthropic, OpenAI, Google）全部来自 AI 厂商的官方公关稿或工程博客。这些厂商有强烈的动机通过定义“新赛道”来建立技术护城河。
+    *   **缺乏独立性：** 没有任何第三方的、量化的、可复现的 Benchmark 证明 Harness 带来的收益能覆盖其增加的延迟和 Token 成本。
+
+*   **Hidden Premises (隐藏假设):**
+    *   假设 1：Agent 的未来必须是“重型系统”，忽略了端侧轻量化 Agent 的可能性。
+    *   假设 2：假设“概率性推理”永远无法通过模型自演化达到 99.9% 的可靠性，因此必须依赖“确定性硬约束”。
+
+*   **The Blind Side (盲区):**
+    **成本与延迟的爆炸。** 文本中提到的 3A 架构、自动审查循环、多 Agent 验证，会显著增加 Token 消耗和响应时间。在商业环境中，这种“用 10 倍成本换 20% 可靠性”的交易是否成立，文中完全未予讨论。
+
+*   **One hit kill (致命一问):**
+    如果 GPT-5 或 Opus 5 原生解决了“自评偏差”并能直接生成“验证代码”，那么你辛苦构建的、包含 6 大模块的 Harness 系统，是否会像当年繁琐的“提示词模板库”一样，一夜之间变得毫无意义？
+
+*   **What Would Settle It (如何验证):**
+    需要一个跨模型的 A/B 测试：在相同任务集下，对比“裸模型 + 极简 Prompt”与“旧模型 + 重型 Harness”的 ROI（成功率/总成本）。如果前者随模型升级迅速超越后者，则 Harness 只是过渡技术；反之，它才是真正的工程学科。
+
+---
+
+### **PART 3. 逻辑映射 (Mermaid Conceptual Map)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💎 核心概念：Harness Engineering"]
+        A["<b>Harness Engineering</b><br/>AI 时代的'马具'：控制并导向模型能力"]
+        style A fill:#FFD700,stroke:#DAA520,stroke-width:3px,color:#000,font-weight:bold
+    end
+
+    subgraph SG_Evolution["📈 AI 工程演进链条"]
+        direction LR
+        E1["<b>Prompt Engineering</b><br/>(2022-2024)<br/>关注：怎么说"] 
+        E2["<b>Context Engineering</b><br/>(2025)<br/>关注：看什么"]
+        E3["<b>Harness Engineering</b><br/>(2026+)<br/>关注：怎么运行"]
+        E1 --> E2 --> E3
+        style E1 fill:#E3F2FD,stroke:#1565C0,color:#1A237E
+        style E2 fill:#BBDEFB,stroke:#1565C0,color:#1A237E
+        style E3 fill:#64B5F6,stroke:#1565C0,stroke-width:2px,color:#1A237E
+    end
+
+    subgraph SG_Modules["⚙️ Harness 六大核心模块"]
+        M1["<b>上下文管理</b><br/>隔离、压缩、动态注入"]
+        M2["<b>工具编排</b><br/>精简工具集、全线沙箱"]
+        M3["<b>验证机制</b><br/>自评分离、硬约束 Linter"]
+        M4["<b>状态管理</b><br/>Git 历史、进度持久化"]
+        M5["<b>可观测性</b><br/>异常检测、反馈归因"]
+        M6["<b>人机协同</b><br/>关键决策暂停、生命周期管理"]
+        style M1 fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+        style M2 fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+        style M3 fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+        style M4 fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+        style M5 fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+        style M6 fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+    end
+
+    subgraph SG_Critique["🚩 批判性审视 (Hostile Review)"]
+        direction TB
+        C1["<b>过渡技术风险</b><br/>模型升级可能使 Harness 沦为技术债"]
+        C2["<b>成本爆炸</b><br/>多步循环导致 Token 与延迟激增"]
+        C3["<b>证据偏见</b><br/>数据主要来自厂商公关，缺乏独立测试"]
+        C4["<b>复杂度陷阱</b><br/>过度工程化可能限制 Agent 泛化能力"]
+        style C1 fill:#FFEBEE,stroke:#C62828,color:#B71C1C
+        style C2 fill:#FFEBEE,stroke:#C62828,color:#B71C1C
+        style C3 fill:#FFEBEE,stroke:#C62828,color:#B71C1C
+        style C4 fill:#FFEBEE,stroke:#C62828,color:#B71C1C
+    end
+
+    A --> E3
+    E3 --> SG_Modules
+    SG_Modules -.-> C1
+    SG_Modules -.-> C2
+    SG_Core -.-> C3
+    M3 -.-> C4
+
+    %% --- Subgraph Styles ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px
+    style SG_Evolution fill:#F1F8E9,stroke:#689F38,stroke-width:2px
+    style SG_Modules fill:#F1F8E9,stroke:#689F38,stroke-width:2px
+    style SG_Critique fill:#FFEBEE,stroke:#EF5350,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+大家好 今天我们聊一个2026年上半年AI工程宣礼 生温速度最快的概念Hardness Engineering 先说结论如果你现在还停留在 怎么写一条更好的 prompt这个层面去做 agent那今天这集视频 你一定要看完2025年底到2026年初And through a pickOpen i Google Deep MindStripeWear手这些公司 几乎同时开始公开讲一件事决定 agent 上线的 不是你给模型为了什么 prompt甚至不是你选了什么模型而是你给模型 搭了一套什么样的运行系统这个运行系统 就是他们说的 Hardness好 那我们今天就把这件事从头到尾 猜清楚第一个问题 Hardness Engineering到底是什么先说这个词本身Hardness这个词的原始含义是马俱 江省 马安 角子一整套控制马匹的装备这个领域是刻意的 马是模型 强大 快速但自己不知道该往哪跑起手是人类工程师 提供方向而马剧就是Harnes把这批马的原始能力倒向有用的工作翻译成技术语言就是一句话Harnes and engineering不是在交模型怎么回答而是在设计模型怎么工作它处理的是模型外部那一种层东西任务怎么拆解上下文怎么管理工具怎么编排全线怎么设定状态怎么交接做完了怎么验证失败了怎么恢复什么时候该把控制权交回给人类这不是一条promp的能搞定的事情这是一个完整的运行系统设计问题这个概念的解决时刻可以追溯到2026年25号H<|de|>标题就叫Harnes and engineering正式把这个数据推到台前但要注意一点Instropic实际上更早就在用这个概念了早在2025年11月Instropic发布了一篇工程博课叫Effective Harnises for Long-Rolling Agents已经把Cloud Agent SDK定以为一个通用型Agent Harnes所以Instropic是时间在先Metal是命名OPNI是推广第二个问题它跟promped engineeringContext Engineering是什么关系这三个概念形成了一条非常清晰的眼睛链条第一层promped engineering2022-2024年是主导饭饰它关注的是问什么你怎么措辞怎么给少样本势力要不要用思维链本质上是单轮的纹本层面的优化第二层Context Engineering2025年开始主导CarPathy在2025年6月公开说Context Engineering比promped engineering更重要Shallby 5的CEO也表达了类似观点CarPathy有一个很精彩的类比把大圆模型看成CPU上下文专口看成RMContext Engineering就是操作系统层面管理工作内存的技术它涵盖了RHG记忆注入工具定义对话历史管理这些动态组装模型输入的所有技术核心回答的问题是让模型看到什么第三层Harlas Engineering2026年开始显现它不仅管模型看到什么还管模型能用什么工具拥有什么全线怎么保持状态必须通过什么验证产生什么日智失败了怎么重视什么时候该暂停让人来三者之间的包含关系是Harlas包含ContextContext包含 Prompt用一个比喻来说 Prompt是命名右转Context给模型一张地图让它理解右转是什么意思而Harlas是整辆车方向盘杀车车道边界维护计划紧示灯以及确保车门不会在高速公路上脱落的所有工程设计Andthropic在2026年3月的文章里直接调明了一个判断 Prompt Engineering和Harlas Design都能显著提升效果但都会碰到上限前演Agentie coding的性能关键越来越落在Harlas Design上第三个问题为什么偏偏是2025年底到2026年初爆发的四个原因第一模型能力抬高之后系统设计变成了主要的差异来源说白了就是模型够强了但光强没用你得给它一个好的工作环境它才能把能力发挥出来第二常识任务暴露了罗模型的系统性缺陷Andthropic描述的很具体即使是opus 4.5在跨多个上下文床口运行时如果你只给一个高层级指令比如购件一个Cloud AI的克龙它依然造不出生产质量的外饼用失败模式非常典型要么试图一口气完成所有事情导致上下文耗尽要么下一个Sation看到一部分进展就提前宣布完成而不愿证这些问题换一个更强的模型不会自动消失必须靠Harlas层面的机制来治理第三有一个被广泛引用的数学直觉门说明问题的严重性假设一个多部Agent流水线中每一步的成功率是95%听起来很高了但串联20步之后端刀端的任务完成率只剩36%这就是为什么团队报告说Agent95%的时间都在正常工作但真实任务上仍然有3分之1的失败率这个问题不是靠更聪明的模型能解决的必须靠系统层面的验证第四模型正在区域商品化GPT系列Cloud系列GEMLi系列在核心能力上的差距在缩小当模型本身不再是差距化因素的时候围绕模型的系统设计也就是Harness就成了新的竞争壁类多个分析文章都在说同一句话旧护成合是模型质量新护成合是Harness质量概念讲清楚了接下来进入最硬核的部分头部公司到底是怎么做Harness的先看SROPICSROPIC的时间集中体现在两篇工程博克里一篇是2025年11月的一篇是2026年3月的两篇文章之间能看到他们方法论的明显眼镜第一版方案是双Agent的架构他们把常认物拆成两种角色一个叫初始化Agent一个叫BemaAgent初始化Agent只在第一个Session运行负责建立环境创建初始化脚本写入一个进度日质文件建立Gate机线然后这是关键把用户的高层级指令扩展成数百条具体的可测试的功能需求清单以JSN格式存下来BemaAgent在后续Session中足够功能推进每次起动先去任当前位置独进度文件审查功能清单跑一有测试这里有一个很重要的设计思想外部置品成为Agent记忆进度文件Gate历史结构化需求清单跨Session持久化每个AgentSession在动手之前先从这些置品重建上下文技术上还有个细节值得注意Andthropic自己说了这两个Agent其实并不是真正独立的Agent他们共享相同的系统提示工具级和整体Harnies无议区别只是出使用户提示不同换句话说仅通过提示工程就能在单一Harnies内创造专门化行为捞到了2026年3月方案也进行了3A整体架构Planer负责扩展需求Generator负责实现Evaluator负责用PlayRide这类工具做交互试验证和打分这里面最有意思的发现是什么是屏固气分离这件事Andthropic发现当你让模型屏固自己的工作时它会倾向于自信的表扬自己的作品即使在人类看来质量明显屏用这不是哪个模型的问题这是自屏固的系统性缺陷他们的结论是工程化一个独立的严格屏固气Agent原比教会生成气Agent自我批评要容易得多说到这里我很好奇你们自己用Agent做开发的时候有没有遇到过Agent自信满满告诉你搞定了结果一检查全是半成品的经历但目里扣个一让我看看另一个关键发现跟模型迭代有关他们早期Harnels用的是Sonic 4.5这个模型有一种很明显的上下文焦虑倾向随着上下文增长模型会变得不稳定所以Harnels里涉及了上下文重置机制但换成OPS 4.5之后模型自行消除了这个行为上下文重置机制就变得不再必要了这说明什么说明Harnels不是越负责越好它必须跟模型当前的能力编剑相匹配模型强了有些Harnels模块反而应该撤掉再看OpenAIOpenAI的案例更具传播力因为他们给出了非常具体的数字2025年8月开始一个最初只有3个人后来扩展到7个人的工程团队用GVD5去动的KotaxAgent在大约5个月里生成了约百万行代码合变了约1500个PR勾捐了一个有内部日货用户和外部AirFa测试者的生产集产品团队人均日吞吐量大约3.5个PR而且随着团队扩大吞吐量反而上升了他们还给自己加了一个极端约束灵行手写代码所有应用逻辑测试CIA,文档可观测性和内部工具全部由Kotax生成他们坦诚勾渐速度大约是熟写的10分之一但认为这是一种可接受的换取Martin Foller往占上的Beclar对OPIA的Harnis做了一个很惊念的规纳三大支柱第一是Kotax Engineering持续增强代码库中的支持库加上Agent对可观测性数据和流冷气的动态访问第二是架构约束不只是靠Agent自决遵守而是用确定性的自定义Linter和结构测试来执行第三这个很有意思叫拉机回收定期运行后台Agent扫描文档部一致和架构为归对抗系统的伤增OPIA团对发现了一个核心模式非常值得记住当Agent遇到困难时不要更努力的尝试而是访问缺少什么能力怎么让这个能力对Agent来说即可读又可执行然后让Kotax自己编写修复代码这形成了一个Harnis自我改进的庇还但这里我必须加一个诚实度提醒Beclar在他的分析里明确指出OPIA在呈现这个案例时有记得利益让我们相信AI可以维护代码而且他发现了一个有趣的细节那篇文章标题虽然叫Harnis Engineering但证文里Harnis这个词只出现了一次这个标题很可能是受Metro还是Moto那篇伯克起发后加上去的所以对这个案例该学的学该存疑的也得存疑然后是GoogleDipMindGoogle在Harnis这件事上没有像Androbic和OpenEye-Nine发一篇专门的方法论文章但他们用产品说话了2002年2月DipMind发布了Alessia一个面向数学研究的自主Agent他的核心架构恰好就是一个三组件的Agentik HarnisGenerator负责提出后选节法和证明策略Relefire用自然语言检查逻辑缺陷和换绝Reveiler负责修正验证器发现的错误三个组件循环迭代直到输出通过验证注意到了吗GeneratorVeryfireReveiler这跟Androbic的PlanterGeneratorEveraleratorSan agent架构高度对应两家公司独立走到了同一个设计模式上这不是巧合这说明生成平屋分离正在成为Agentik Harnis设计的行业共识Balithea的成果也很亮眼在IMO Proofbench Advanced上达到95.1%的准确率自主解决了Ereloh才想数据库中四个此前未备解决的开放问题但也有批评性报导指出它在更广泛的问题极上错了68.5%这恰好说明了Harnis的一个特点在特定场景下可以非常强大但泛化能力轮然受限于Harnis的设计编辑不斗在工具层面也有动作他们的Agent Development Kit检成ADK是一个开员的Agent框架定位类似AndropicclockAgent SDK里面内置了Evaluations Harnis做场景驱动测试还有Agent Starter Pack提供生产及脚手架包括CICD管道测试框架和监控配置2026年3月发布的ADK Pyson 2.0 Alpha还加入了图示工作榴编牌另外还有一个技术细节值的一题Jemenei 3在2026年3月引入了一个叫Sorting Chairs的机制模型在调源工具之前会生成一个加密的推理状态表示传回对话历史之后可以恢复精确的推理列入这本质上是在模型层面解决跨部奏的状态持续性问题Andropic用的是Harnis层面的外部制品进度文件Gate历史来保持记忆Google走常是在模型内部解决同样的问题两条路线值得持续观察哪条更有效除了三大巨头还有几个案例非常值得聊Visal提供了一个完全反直觉的经验他们最初给Agent拍了一个非常全面的工具库搜索、代码、文件、API工具全都有结果效果很差Agent变得困惑进行绒于调用执行不必要的步骤Andropicel做了一件看起来倒退的是他们一出了80%的工具结果反而获得了更好的效果更少的步骤更少的偷肯消耗更快的响应更高的成功率这件事告诉我们一个非常重要的设计原则约束Agent的解决空间反而能提升它的表现Backler把这个动杂体现到了更深的层次为了获得更多AI自主性运行时环境反而需要更多约束而非更少互拦这跟传统软件开发里给工程师更多自由度的理念完全相反Sripe的做法也很有参考价值他们的Agent叫Minus运行在隔离的预热好的Defbox环境里跟人类工程师用的开发环境一样但与生产环境和互联网隔离Agent通过MCP福气访问超过400个内部工具他们的核心理念是Agent需要跟人类工程师一模一样的上下文和工具而不是后期拼凑的极成方案还有Minus2025年初走红的自主Agent在Hannis达到生产就去之前经历了6个月5次完整的架构重写这说明Hannis的成熟是一个高成本迭代密集的过程没有人是一次就做对的好 讲了这么多案例我们来归纳一下一个成熟的Hannis到底包含哪些核心模块综合Ancerypic Open-IGoogle Deep Mind Stripe这些公司的实践我把它归纳为6大模块第1个模块上下文工程与知识管理这是最基础的一层包括项目指令文件像Agent MDCload MD这类Agent启动式独取的文道动态上下文注入从日治指标追踪信息中或取实实信息上下文隔离用子Agent作为上下文防火墙让不同紫任武在隔离的上下文窗口里运行还有上下文压缩随着窗口被填满自动丢弃或摘药无关信息Open-I有一个精闭的观察从Agent的角度看它在运行时无法反昏的任何东西都等同于不存在所以越来越多的知识需要被推送到代码枯内部成为版本化的制品第二个模块工具编排与全线设计Worsow的经验已经说了工具不是越多越好成熟的Harlas需要精心策划工具集移除鲁鱼选项还包括MCP协议集成文件系统访问管理杀乡和离等等第三个模块验证机制与硬约束这是Harlas区别与简单Scaffold和新特征包括确定性约束自定义Linter结构测试Precognitive Hooks这些不依赖LLM判断的硬性规则深层屏孤分离Andthropic已经证明了为什么这很必要还有自动审查循环OpenAI的系统里Codex会在本地审查自己的更改请求其他AZN审查回应所有反馈在循环里迭代直到所有审查者都满意第四个模块状态管理与记忆持续性大约模型是无状态的每个新Sensitert从零开始这是常认无场景中最核心的挑战解决办法是外部划级进度追踪文件结构化功能清单增量Get提交检查点与恢复机制第五个模块可观测性与反馈庇环包括直星追踪质量分析一场检测还有非常关键的反馈规因把AZN在生产中的失败模式追溯到Hannis的具体缺陷驱动持续改进第六个模块人类接管与生命周期管理在关键决策点暂停要删数据库要扣费要发客户邮件必须让人类确认还有升级路径失败重视完整的生命周期勾资这六个模块合在一起就是一个成熟Hannis的完整画像讲到这里一定有人想问这东西不就是新品装旧旧吗坦誓的说Hannis Agendiruli确实有很大一部分不是性发明TestHannis在软件工程里已经有几十年历史了CIC地馆到Linter Precomment Tux是成熟的Devops时间任务分解与边牌在分布式系统里早就被充分研究沙箱隔离是安全工程的基础概念可观测性在SRE领域已经高度成熟所以如果有人说Hannis Agendiruli全是新东西那是吹牛但如果有人说他就是纯粹的旧旧那也不对他确实在几个围杜上产生了新的方法论供现第一约束对象发生了根本变化传统软件工程约束的是确定性代码之行而Hannis Agendiruli约束的是概率性推理系统这要求在验证重视恢复等方面采用根本不同的设计模式第二约束以提升这个反执决原则Mursal的案例证明了约束Agent的解决空间减少工具限定模式强制价格编辑反而提升了他的生产力和可靠性这跟给人类工程师更多自由度的思路是相反的第三生成评估分立模式虽然灵感可以追溯到干价狗但在Agent系统中被重新发现工程化一个外部评估器比教会生成器自我批评容易得多Andsropic的Planter GeneratorEvaluatorGoogle DeepMindElizia的 GeneratorVarivarRevisor独立搜脸到了同一个模式这已经不是各别公司的偏好而是工程实践倒逼出来的结构性结论第四代码库本身成为Harness的一部分代码结构命名约定模块编解不仅服务于人类可毒性更服务于Agent的可推理性OpenAI的代码库甚至首先为CoDex的可毒性优化而不是人类的阅读偏好所以我的判断是Harness and Engineering不是纯粹的新品庄救久但也不是从临开始的全新学科它更准确的定位是在Agent生产化的压力下将多个成熟工程领域的实践重新组合调试并补充针对概率性推理系统的新模式形成了一个统一的方法论这种重组本身就是有价值的创新就像Devops重组了开发与运为实践Harness and Engineering正在重组Agent系统的构建与运为实践最后我们必须了一下风险和局限这部分很重要第一个风险是概念膨胀Harness and Engineering正在变成一个什么都能往里装的框当一个数语从Agent's MD文件到完整的生产运为系统都能涵盖时它的精确性和实用性就会被稀释第二个风险是过度工程化OpenAI自己都强调Harness必须是可撕裂的随着模型变强之前需要复杂Harness来补偿的问题可能被模型直接解决And Thropic已经给出了时阵Opets 4.5自己消除了Sonic4.5的上下文焦虑行为早期Harness里的上下文重置机制就成了多余的所以Harness不是越复杂越好过度工程化的Harness在模型升级后反而会成为包袱第三个风险也是我个人最在意的是当前的证据基础说实话支持Harness Engineering价值的大多数证据来自AI工具场上自身OpenAI报告 Codex有多厉害And Thropic报告Clock Locked Agent SDK改进了多少Lenshield报告自己的框架有多好这些来源都存在利益冲突独立的定量的可复现的Banchmark验证目前仍然缺乏And Thropic自己都在文焦里说了他们的案例缺少显著的定量成功指标学术层面虽然RKV上已经开始出现相关论文但还没有经过同行平省的被广泛引用的学术验证第四个风险是可复现性缺口OpenAI的百万行代码案例是在极其特定的条件下完成的从空仓户开始用自家的 Codex工具团队本身就是AI系统专家这个经验对普通工程团队的可复现性完全没被验证过Ir一个SRPEG自己发现的问题值的警惕更强的Horeless也可能放大新的风险他们在BrowseCom的复盘中发现多Agent配置并不一定改变模型想走接近的倾向但因为更高的Token使用量和更多并行搜索者反而提高了意外污染的怠绪但Agent配置下非遇其解法的发生率是0.24%多Agent配置下上升到0.87%Horeless不只是性能放大器也可能是风险放大器这里我想抛一个开放性的问题给大家如果Horeless必须与模型能力编辑相匹配而模型能力再快速提升那Horeless Engine Learning作为一门工程学科它的核心姿势是会持续积累还是会像很多补丁技术一样被下一代模型直接淘汰换句话说你认为Horeless最终会成为AI时代的Devoops还是会成为另一个被遗忘的过渡概念这个问题我自己也没有确定答案非常想听听评论区各类的看法好 最后说一下今天我们把Horeless Engine Learning从概念到时间到争议都过了一遍核心结论用三句话概括prompt Engineering解决怎么说Contacts Engineering解决给模型看什么Horeless Engineering解决让模型在什么运行机制里干活并且如何确保它真的把活干成对于正在做Agent开发的团队最务实的行动路径是三步总立即能做的在项目跟目录创建一个Agent's MD每次Agent反重复性错误就加一条规则中期投入的购件确定性验证层Linter 结构测试Pre-Commit Hooks加上基本的可观测性长期要做的设计模块化的可替换了Horeless架构支持模型升级时平华千疑最后引用OBI Codex团队工程师Rialo Pop-Low的一句话来结束今天的内容Agent不难Horeless才难我们下期再见
