@@ -1,0 +1,135 @@
+Timestamp: 2026-05-09T07:52:23.529049
+Title: CG - Anthropic’s Claude Code team just showed how to automate your enginee... 2052717242186690974
+URL: https://x.com/cgtwts/status/2052717242186690974?s=20
+Status: success
+Duration: 20:50
+
+Description:
+以下是对 Cloud Code SDK 和 GitHub Action 演示文本的深度解析：
+
+---
+
+### **第一部分：作者地图 (Author's Map)**
+
+**1. 核心主张 (Core Thesis)**
+Cloud Code SDK 及其配套的 GitHub Action 提供了一种将 AI 代理能力原子化、可编程化的新范式，使开发者能够将复杂的软件工程任务（如代码审查、功能实现）无缝集成到现有的 Unix 工作流和 CI/CD 自动化中。
+
+**2. 证据基础 (Evidentiary Base)**
+*   **功能演示 (Anecdote/Demo):** 在一个开源 Quiz App 上，通过 GitHub Issue 指令成功实现了“50/50 消除”功能和 UI 颜色修改。
+*   **技术原语 (Technical Primitives):** 展示了 `cloud-p` 命令行工具、JSON 结构化输出、Session ID 持久化以及 MCP（模型上下文协议）权限管理。
+*   **架构证明 (Architecture):** 说明了 GitHub Action 是构建在 SDK 之上的分层结构（SDK -> Base Action -> PR Action）。
+*   **集成现状 (Status Quo):** 已提供 Python 和 TypeScript 绑定，并支持 Bedrock 和 Vertex AI 平台。
+
+**3. 逻辑授权 (Logical Warrant)**
+该论证基于**“Unix 哲学”的归纳推理**：如果一个 AI 工具可以像 Unix 工具一样进行管道输入（Pipe-in）和输出（Pipe-out），并且具备文件系统访问权限，那么它就可以通过组合简单的指令来完成复杂的端到端工程任务。
+
+**4. 声明范围 (Stated Scope)**
+*   **适用场景：** 代码审查、功能创建、Bug 分诊、Unix 管道处理、CI 自动化。
+*   **限制条件：** 默认无破坏性权限，需通过 `allowed-tools` 显式授权；Bedrock/Vertex 用户需手动配置。
+
+**5. 隐含对手 (Implicit Opponent)**
+*   **传统的、非智能的 CI 工具：** 只能运行硬编码的 Lint 或测试，无法理解业务逻辑。
+*   **重 UI 的 AI 助手：** 强制开发者离开终端或 GitHub 界面去交互，无法实现 headless（无头）自动化。
+
+**6. 预期收获 (Intended Takeaway)**
+开发者应立即在本地安装 Cloud Code，并通过 `/install GitHub Action` 命令将其集成到代码仓库中，以 AI 代理替代重复性的工程劳动。
+
+---
+
+### **第二部分：严苛但公平的审查 (Hostile-But-Very-Fair REVIEW)**
+
+**1. 强化论点 (Steelman)**
+Cloud Code SDK 的真正价值在于它将 AI 从“聊天框”中释放出来，变成了可以被 Bash 脚本调用的**逻辑芯片**。它不只是一个插件，而是一个可以通过 JSON 交互的生产力原语，允许开发者构建自定义的、自动化的工程流水线。
+
+**2. 最薄弱环节 (Weakest Link)**
+> “Cloud code will actually output things... in JSON... And you can parse this JSON and build on top of it.”
+
+**致命伤：** LLM 输出结构化 JSON 的稳定性问题。在 Headless 模式下，如果模型在复杂的工程任务中产生非法的 JSON 格式或逻辑矛盾的 Schema，依赖该输出的自动化流水线将直接崩溃。作者并未提及如何处理 AI 输出的非确定性对 CI 稳定性的冲击。
+
+**3. 证据审计 (Evidence Audit)**
+*   **演示环境偏差：** 演示使用的是一个“小型开源 Quiz App”。在复杂的大型单体仓库（Monorepo）或具有数万个依赖项的企业级项目中，AI 寻找上下文的成本、Token 窗口限制以及修改代码的副作用会呈指数级增加。
+*   **忽略的成本：** 演示中未提及 GitHub Action 运行时间成本和 API Token 消耗。复杂的“Implement this feature”指令可能涉及多次迭代和长耗时运行，这对企业 CI 预算是不可忽视的挑战。
+
+**4. 隐藏前提 (Hidden Premises)**
+*   **前提 A：** 开发者愿意授予 AI 代理对代码库的写权限和执行 Bash 命令的权限（尽管有 `allowed-tools`，但 AI 误删文件或注入漏洞的风险依然存在）。
+*   **前提 B：** 现有的测试覆盖率足以捕获 AI 生成代码中的逻辑错误。
+
+**5. 盲区 (The Blind Side)**
+*   **幻觉风险：** 在自动化创建 PR 的过程中，如果 AI 引入了难以察觉的逻辑漏洞或安全隐患，而开发者因为信任“自动化”而简化审查，将导致生产事故。
+*   **协作冲突：** 当多个 AI 代理或开发者同时修改同一模块时， headless 模式下的冲突解决机制在文中完全缺失。
+
+**6. 一击必杀 (One Hit Kill)**
+如果 AI 代理在执行 `npm test` 失败后进入死循环尝试修复，或者在 Headless 模式下误解了复杂的业务领域逻辑，开发者该如何实时干预一个已经在 GitHub Action 运行器中自动运行的“黑盒”进程？
+
+**7. 如何验证 (What Would Settle It)**
+需要一个针对“生产级代码库”的对比测试：在 100 个真实世界的复杂 Issue（涉及跨文件修改和深层业务逻辑）中，Cloud Code Action 的 PR 合并率、代码缺陷率以及相较于人类开发者的成本效益比。
+
+---
+
+### **第三部分：架构与审查概念图**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Product["🔵 Cloud Code 核心架构"]
+        direction TB
+        SDK["<b>Cloud Code SDK</b><br/>Headless 模式核心"]
+        CLI["<b>Cloud-P CLI</b><br/>Unix 哲学: 管道与脚本化"]
+        JSON["<b>结构化输出</b><br/>JSON 格式 / Stream JSON"]
+        
+        SDK --> CLI
+        CLI -- "输出" --> JSON
+    end
+
+    subgraph SG_Action["🟢 GitHub Action 层级"]
+        direction TB
+        BaseAct["<b>Base Action</b><br/>SDK 薄封装层"]
+        PRAct["<b>PR Action</b><br/>UI 增强: 评论/列表/链接"]
+        Workflow["<b>工作流能力</b><br/>代码审查 / 功能实现 / Bug 修复"]
+        
+        BaseAct --> PRAct
+        PRAct --> Workflow
+    end
+
+    subgraph SG_Features["🟡 关键技术特性"]
+        direction LR
+        Tools["<b>Allowed Tools</b><br/>Bash/Write/MCP 权限"]
+        Session["<b>Session ID</b><br/>状态持久化与交互"]
+        Prompt["<b>System Prompt</b><br/>角色定义 (如: 海盗)"]
+    end
+
+    subgraph SG_Review["🔴 严苛审查 (Critical Review)"]
+        direction TB
+        R1["<b>稳定性挑战</b><br/>LLM 生成 JSON 的非确定性"]
+        R2["<b>安全红线</b><br/>Headless 模式下的写权限风险"]
+        R3["<b>规模化疑虑</b><br/>复杂项目中的上下文窗口限制"]
+        R4["<b>维护成本</b><br/>Token 消耗与 CI 运行耗时"]
+        
+        R1 --- R2
+        R3 --- R4
+    end
+
+    %% 逻辑连接
+    SDK -- "支撑" --> BaseAct
+    Tools -- "控制" --> SDK
+    Session -- "增强" --> JSON
+    Workflow -- "暴露问题" --> SG_Review
+    
+    %% 样式定义
+    classDef core fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E;
+    classDef action fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
+    classDef feature fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#4E342E;
+    classDef review fill:#FFEBEE,stroke:#C62828,stroke-width:3px,color:#B71C1C;
+
+    class SDK,CLI,JSON core;
+    class BaseAct,PRAct,Workflow action;
+    class Tools,Session,Prompt feature;
+    class R1,R2,R3,R4 review;
+
+    %% 背景样式
+    style SG_Product fill:#F0F4C3,stroke:#AFB42B,stroke-width:2px
+    style SG_Action fill:#C8E6C9,stroke:#388E3C,stroke-width:2px
+    style SG_Review fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px
+</Mermaid_Diagram>
+
+Content:
+My name is Sid with Asaria. I am an engineer on the Cloud Code team. And today, we're going to be talking a little bit about the Cloud Code SDK and the Cloud GitHub action that was just announced today. Cool, so a little bit about the agenda. We do a little quick start for the SDK, just to give some examples of how to get started and how to use the SDK. We will then dive into a live demo of the GitHub action, which should be fun. The GitHub Action was built on top of the SDK, so it's meant to be a source of inspiration for the kind of things that you can do using the Cloud Code SDK. We'll then dive into some more advanced features of the SDK. And then we'll end with having all of you set up the Cloud GitHub Action on your repo, so you guys can start using it and build on top of it. Cool. Before we get started, can I get a show of hands here? How many people have used Cloud Code? OK, so a lot of people. And of the people who have used Cloud Code, how many have used Cloud Dash P, or know what that is? OK, far fewer people. It's good to know. If you guys don't have Cloud Code in a laptop, that's how you get it. I'd encourage you to install it in a laptop and follow along. There will be parts of this talk that will be beneficial to follow along. And then if you don't want to, you don't have to, it's all Cool, so what is the Cloud Code SDK? It is a way to programmatically access the power of the Cloud Code agent in headless mode. This is powerful because it's a new kind of primitive and a new kind of building block that allows you to build applications that just weren't possible before. Things that you can do with the SDK are super simple things to get started. For example, you can use it like a Unix tool. The Unix, the Unix-ish tool philosophy is what really makes Cloud Code powerful, because you can plug it in anywhere where you can run bash or a terminal. So you can use it in your Unix pipelines. You can pipe stuff into it, pipe stuff out of it, have make complex chains out of it, and stuff like that. You can then build CI automation on it. So you can have Cloud review your code. Some people actually get Cloud to write new linters for them, too, so Cloud can lint your code if there's specific things that you can't define programmatically. You can get Cloud Code to do it. And then we get into fans here applications as well. So if you want to build your own chat bot that's powered by Cloud Code, that's certainly possible. If you want Cloud Code to write you code in a new environment or a separate remote environment, you can build those kinds of applications as well. And finally, these are a few features. We'll talk more about the features in the coming slides. And we have Python and TypeScript SDKs or bindings for the Cloud Code SDK coming up soon. So that should make it much easier for you guys to consume it and build on top of it. So let's jump into some basic examples. Calling Cloud, the Cloud Code SDK is as simple as doing Cloud-P, and following it up with the string that you want to ask Cloud. So in this example, I'm telling Cloud to write me a Fibonacci sequence generator. And if you notice, I also give it a dash, dash, allowed tools, right, which is a way for me to proactively give it access to the right tool. So it can write files to my file system. And then this is something I like doing too. Piping logs to Cloud. So you can do cat.app.log and then pipe that into Cloud-P. I don't like looking at logs manually, so this is something I do quite often. And as you can see, it does a pretty decent job of summarizing what the log failures were. Similarly, if you're anything like me, I just can't get myself to understand the output of ifconfig. I still don't know what it means, but Cloud does. And Cloud does it for me over here. And finally, this is kind of what makes the SDK tick. It is we have an output format. If you do it dashed, output format, JSON. Cloud code will actually output things, or its response, in JSON as opposed to plain text. And you can parse this JSON and build on top of it. So we'll talk more about details for how this is what else you can do with this JSON. But I wanted to throw that example out there. Let's get into a significantly more complex example now, which is the Cloud GitHub Action. So the Cloud GitHub Action was built on top of the SDK. And it can be used to review code. It can be used to create new features. It can be used to triage bugs and so on. And this is also open source. So I'll include a link at the very end of the talk. So you guys can go have a look at the source for inspiration for how to use it. But for now, let's jump into a live demo on my laptop. So I have cloned a popular small open source quiz app for the purposes of this demo. And we are going to fire it up just to see how that works. And then we will talk a lot to build something on top of it for us. So I just did an NPM start, which opened up my shiny new quiz app. It's actually pretty nifty. It allows you to choose a bunch of categories, how many questions you want, difficulty, definitely easy for me. I suck at trivia, type of questions, and then there's a countdown timer. So we're not going to actually answer these, unless someone feels very strongly pleased shout out the answer. But I'm just going to just fly through these just to show you guys how this quiz app works. There we go. Not surprising. You got a great F, but that's OK. So this was the little demo quiz app that's open sourced. And if we look at the issues for this repo, we see a couple very interesting ones. There's one issue that says we should add power-ups for 50-50 elimination of options and skip questions for free. Because I suck at trivia, I really like that feature, and I want to build it. And before this presentation, I already installed Cloud, the Cloud GitHub action on my repo. So it's already available. But we'll go over how to set that up later, too. OK, so here's the issue. It has pretty sparse details on how to implement this. It's just literally a wish list, really, like a wish feature. It's saying add a power-up option in the config 5050 elimination for the skip question. should award user points, even though the question was skipped. And user should be able to configure this from the config page. So there's a lot of like creative room for Cloud to do whatever it wants to do in this case. And I'm excited to see what it actually ends up building. So what I'm going to do is say, at Cloud, please implement this feature and comment on it. So it usually does take four or five seconds for it to respond. And while it's doing that for good measure, We'll just also take this other GitHub issue. This is talking about a per question timer. So we saw there was a global timer on the quiz app, but there was no per question timer. So that's what this one's talking about. So let's go and say, Cloud, please build this. And now we have two things building. Cool, so now when I get back to this tab, you see that Cloud responded with a comment on this GitHub issue, saying that it's working. It also has a link to the job run, which is the GitHub action run. If I click into it, and if I actually click on the logs, I'll see that it's doing a bunch of stuff. You can see all this JSON being output. This is from the SDK. So you want to look at the JSON too much because it's not much fun to parse it manually. But over here, we can see that it also created a to-do list for us. So the clause now going to actually go through this to-do list and try to implement the power of feature. And similarly, for the question timer, it's going to do something similar. One more thing that we should do here is there are already a couple of pull requests that have been opened for this repo. And let's get a lot to review it or change some of these pull requests, just for fun. There's this one, which is change background color to blue. All right, I actually think I like green better. So I'm just going to be like, all right, Claude, please change this to green. This one is fairly easy, and I'm pretty sure Claude's going to do this. But I just wanted to show you guys that I can also add commits for a pull request that's already open. OK, so this is going to take a few minutes to run. And while this runs, let's go back to the presentation. And then we'll check up on how this is doing towards the end. OK, cool. So let's do a little bit for deep dive on the features of the SDK. When you call Cloud-P, by default, it has no edit or destructive permission access, which is great for safety, but it's now great for actually getting things done. Which is why there is a dash dash allowed tools option, which allows you to pre-configure Cloud with any permissions that you think it might need in the future for your given task. So in this case, the first example you see that I've given it permissions, bash permissions to NPM run build, NPM test, and the right tool, which is a good set of permissions because this allows Cloud to self-verify what it's writing and build your project and test and then continue writing. Similarly, for MCP, if you have MCP servers configured, you can allow list those MCP tools as well. So it's a very similar process. Then structured output. We already saw an example of structured output, both from the GitHub actions logs and also the little screenshot I showed you earlier. But there's two modes here. There's stream JSON and JSON. It does exactly what it sounds like. If you select stream JSON, it'll actually stream messages to you as and when they're available. Versus JSON will just give you one giant blob of JSON at the end. And parsing this JSON and building on top of it is really how you can make use of the Cloud Code SDK and then create features for your users. And then you can also configure the system prompt. So you can do dash-ass system prompt, talk like a pirate, and you can get Claude code to talk like a pirate for the rest of your day, which is actually quite fun. If you haven't done it, I'd encourage you to try it out. We also have a few user interaction features built into the SDK. And what that means is that the first one is resuming session state. So when you call Claude-p in structured output or JSON mode, it's going to return a session ID. And this session ID is useful because you can then reference the session ID to go back to the same context state that Claude had when it finished that process. So by preserving these session IDs and keeping track of them, you can enable or build user interactive features, where the user says something. You pass that on to Claude, Claude returns a response, and now you want the user to give feedback on that response. And that's how this kind of enables you to build those types of interactions in your apps. And then the last one, and this one's actually pretty interesting, and it's fairly recent too. It's Dash Dash permission prompt tool. We talked a little bit about how to give Cloud permissions using the allowed tools flag. And that requires you to pre-configure them in advance. But what if you didn't want to do them? Because you don't know what tools Cloud would want to use in the future. In that case, you can use the Dash Dash permission prompt tool and offload the permission management to an MCP server. So you can ask users in real time for whether they want to accept a tool or reject a tool. And you can have an MCP server kind of handle that for you, as opposed to trying to predict which tools are OK and which tools are not. So this is fairly recent. And we'd love to get feedback on this if you guys end up trying it out. OK, let's go back to our demo and see what Cloud's done. done. All right, so this is the power-up issue. We can see that God has actually gone through his to-do list. Okay, I'm going to open a piece. There's a link over here to create a PR, and I'm going to click that and see what that gives us. I'll actually create the pull request too, so it's easier for us to review. I don't really know how this codebase works, but we'll still eyeball it to start as a c if you know it's doing the right thing so you see some set power up stuff seems alright okay there's like some configuration and the main component all right I think what we should do and what we make this fun is if you should just get this branch locally and see what cloud did because there's no way that we can actually figure out what it did in the short amount of time that we have so I'm going to go to back to my terminal, do a good fetch, check out the branch that Cloud just created, and restart our process. OK. Awesome. It looks like we have a power-up section now at the bottom of our config page. And it's a little checkbox. I like that touch. We'll keep both of them on. And let's select general knowledge and start playing this game. Let's see what it did. Oh, sweet. So you see it has this little 50-50 button on the bottom left and a skip questions button on the right. I'm just going to with 50-50 because I have no idea what the answer to this is. Does anybody know what that is? D. OK, there we go. That makes sense. Cadbury, yeah. I'm going to skip this one. And then let's just breathe through the other ones for a sake of time. All right, so we've got an F, but we got one correct answer, which is better than zero correct answers. And yeah, I guess it tricked us, it was a good one. But yeah, it seems like it worked. I think there's definitely more we could do here. We could show how the questions we use the power upon over here. And there's definitely more we can do. But at the most basic level, I think Cloud was able to do the task that we assigned it to do, which is exciting. This is kind of the power of the GitHub action, because you don't really have to run this on your own infra. You can just literally comment on a thread saying, please build this for me, it uses your GitHub action runners and just does the thing. We let's also look at the PR that we Tolator change from blue to green. It's all hex code, so let's just see what it did in the commit. So you see there's two commits, and Claude has added this last one to switch it from blue to green. And it did it for all three of the places where the color was defined, which is awesome. OK, I'm not going to go over the last one, the question timer, because we might run out of time. But this hopefully gives you insight into what the Cloud GitHub Action can do for you. Let's go back to the presentation now. So just as a recap, the Cloud GitHub Action, as it's implemented today, is able to read your code. It's able to create PRs for you from GitHub issues. Like we just saw, it's able to create commits for you. So if you already have a PR and you comment on it, it can add a commit to an existing branch or an existing PR. It can answer questions. It doesn't have to do something. It can just literally answer questions for you. If you don't understand something, you can be like, hey, Claude, how does this work? And you can get it to answer questions. And it can, of course, review your code. The best part of all of this is that you don't have to take care of the infra. It runs on existing GitHub runners, which almost everyone has configured if you're using GitHub Actions. So that's kind of the really nice thing about this is you don't have to worry about any of the infra. OK. So how were the actions built? I may have mentioned that these actions were built on top of the SDK. So the SDK does form the foundation of how these actions were built. And then we have two other actions on top. We have the Cloud Code base action. This is a thin layer that just implements the piece which talks to Cloud Code and returns the response from Cloud Code. And then we have another action on top of this, which is called the PR action. And this action is responsible for all the fancy things that you saw on the PR. So it's responsible to making comments for the to-do lists, for rendering it the right way, for adding the PR links, and things like that. So it's kind of three layers in which it's built. Both the base action and the PR action are open sourced. So I would encourage you guys to go have a look, you know, take inspiration from how that works, and maybe that inspires more ideas. Yeah. Yeah, and then finally, you guys can install the Cloud GitHub Actions today. The easiest way to do this is to open up Cloud Code in a terminal in the repo that you want to install it in. And once you open up Cloud Code, just do slash install GitHub Action. And that is going to present you with a nice flow, which guides you through configuring your GitHub action as well as merging it. So the end result of this would be a PR, which would be a YAML file for your GitHub action. And once you merge that in, and you can figure your API keys and things like that, you're off the races. And you can go ahead and start tagging Cloud and using Cloud like we just did right now. Small caveat, if you're a bedrock or vertex user, the instructions are a little bit different. And the tiny bit more manual. So please have a look at the docs. The docs are pretty comprehensive in helping you set up the GitHub action for both Bedrock and Vertex. Cool. Finally, resources. These are resources for things that we've talked about today. If you want to snap a picture, go ahead. The open source repos for both the base action and the Cloud Code action are here. And we absolutely love your feedback as well. So if you guys have any feedback on the SDK, on the GitHub action, or on Cloud Code, please go to our public Cloud Code GitHub repo and file an issue there. And someone will have a look and get back to you. Cool, that's all I have for today. Thanks for joining me. And I hope you guys have a good rest of the day.
