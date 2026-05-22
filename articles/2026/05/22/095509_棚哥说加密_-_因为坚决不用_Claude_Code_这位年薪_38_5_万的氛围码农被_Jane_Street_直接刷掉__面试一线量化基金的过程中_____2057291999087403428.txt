@@ -1,0 +1,158 @@
+Timestamp: 2026-05-22T09:55:09.145595
+Title: 棚哥说加密 - 因为坚决不用 Claude Code，这位年薪 38.5 万的氛围码农被 Jane Street 直接刷掉。 面试一线量化基金的过程中，... 2057291999087403428
+URL: https://x.com/LQP2021/status/2057291999087403428?s=20
+Status: success
+Duration: 32:00
+
+Description:
+### PART 1. 作者的主张地图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+通过将单位转换关系建模为双向加权图，并利用广度优先搜索（BFS）在图中寻找最短转换路径，可以高效、准确地解答任意给定的多步单位转换查询，并在无法转换时安全地返回不可达提示。
+
+#### 2. 论据基础 (Evidentiary Base)
+* **数据结构输入**：事实数据采用 `(String, Float, String)` 元组形式（如 `("m", 3.28, "ft")`），查询数据采用 `(Float, String, String)` 元组形式。
+* **图论直觉（类比与演绎）**：单位转换具备传递性（若 $A \to B$ 且 $B \to C$，则 $A \to C$）。这与图结构中的路径连通性完全同构。
+* **算法选择（直觉与经验）**：使用 BFS 而非 DFS。因为 BFS 能够找到边数最少（步数最短）的转换路径，从而减少浮点数连乘带来的累积精度误差。
+* **双向边修正（逻辑补丁）**：在 walk-through 过程中意识到单向图的局限，补充了互为倒数的反向边逻辑（即若 $A = k \cdot B$，则 $B = \frac{1}{k} \cdot A$）。
+
+#### 3. 逻辑推导 (Logical Warrant)
+* **大前提**：所有合法的单位转换在数学上都可以表示为线性的等价关系，且这些关系可以通过连乘进行传递。
+* **小前提**：图中的节点代表单位，有向边上的权重代表转换乘数。双向边的建立保证了转换的可逆性。
+* **结论**：从起点单位出发，通过 BFS 遍历找到终点单位的最短路径，沿途所有边权重的乘积与初始数量的乘积，即为最终的转换结果。若遍历结束仍未找到目标节点，则说明两单位不属于同一连通分量（不可转换）。
+
+#### 4. 声明范围 (Stated Scope)
+* **适用范围**：显式或隐式连通的线性单位转换（如长度单位之间、时间单位之间）。
+* **排除范围**：不连通的跨维度单位转换（如“英寸”到“小时”），算法对此会返回 `None`（不可转换）。
+* **技术限制**：不要求极致的执行效率（放弃了并查集 Union-Find 优化），优先保证代码的清晰度、可读性与正确性。
+
+#### 5. 隐含对立面 (Implicit Opponent)
+* **朴素暴力检索者**：每次查询时临时、重复地遍历原始事实列表，缺乏预处理，导致多步转换时检索效率极低。
+* **DFS 倡导者**：在路径搜索中盲目使用深度优先搜索，可能找到一条极长且迂回的转换路径，导致严重的浮点数精度漂移。
+* **单向链表设计**：未能识别转换的可逆性，导致只能计算 $A \to B$ 而无法计算 $B \to A$。
+
+#### 6. 预期收获 (Intended Takeaway)
+读者（或面试官）应当确信，该方案在结构设计上是清晰且模块化的（分为 `parse_facts` 和 `answer_query`），能够优雅、正确地处理复杂的链式单位转换，并且具备良好的可读性与健壮的边界处理能力。
+
+---
+
+### PART 2. 严厉而极其公平的审查 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强力重建 (Steelman)
+该方案最强有力的部分在于其**图论抽象的本质契合性**。将单位转换问题转化为“图的连通性与路径搜索”问题，完美契合了单位转换的传递性特征。通过预处理（`parse_facts`）构建邻接表，将后续单次查询的时间复杂度降低至 $O(V + E)$。同时，选择 **BFS** 而非 DFS，不仅在逻辑上最先找到转换步骤最少的路径，更在物理层面上最大限度地减少了浮点数乘法的次数，从而在不引入高精度数值计算库的情况下，天然地缓解了浮点数累积误差问题。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该算法最致命的隐患在于其对 **“双向边倒数计算的无条件信任”**：
+> 引用代码：`unit.add_edge(1 / multiplier, left_unit)`
+
+**致命问题**：在计算机浮点数表示法（IEEE 754）中，除法 `1.0 / multiplier` 极易引入精度丢失（例如 `1 / 3` 在二进制中是无限循环小数）。当转换链条拉长，或者存在环路时，这种微小的精度丢失会被放大。更严重的是，如果 `multiplier` 极大（如纳米到光年）或极小，直接取倒数会导致**浮点数溢出（Overflow）或下溢（Underflow）**，直接破坏转换结果的准确性，甚至导致计算崩溃。
+
+#### 3. 证据审计 (Evidence Audit)
+* **缺失“环路与多重路径一致性”的考量**：在实际数据中，完全可能存在冗余且微小冲突的事实（例如事实 A 声明 `1m = 3.28ft`，事实 B 声明 `1ft = 12in`，事实 C 却声明 `1m = 39.37in`）。算法采用 BFS，仅仅依赖于“先遍历到谁就用谁”的随机性，完全忽略了图中可能存在的环路冲突。它无法检测、调和或报错这种输入数据本身的不一致性。
+* **缺失异常值防范**：若输入的 `multiplier` 为 `0`（虽然物理上不合规，但作为通用接口必须考虑恶意或错误的输入），代码中的 `1 / multiplier` 将直接触发 `ZeroDivisionError` 导致进程崩溃。
+
+#### 4. 隐藏前提 (Hidden Premises)
+* **假设所有单位转换都是纯线性的（即 $y = kx$）**：这是最大的隐藏假设。
+  * *质疑*：如何处理非线性或带偏移量（Offset）的单位转换？例如温度转换（摄氏度 $C$ 与华氏度 $F$：$F = 1.8C + 32$）。该算法的 `multiplier` 乘数模型完全无法兼容此类转换，任何带偏移量的单位都会导致该模型彻底失效。
+* **假设内存足以容纳整个单位关系图**：若事实库极其庞大，构建全局 `name_to_node` 字典会消耗大量内存。
+
+#### 5. 盲区 (The Blind Side)
+* **复合单位与维度分析 (Dimensional Analysis) 的缺失**：算法将每个单位（如 `"m"`, `"s"`, `"ft"`）视为完全孤立的字符串节点。它无法理解复合单位。例如，如果已知 `m -> ft` 和 `s -> hr`，当查询 `m/s -> ft/hr`（速度转换）时，该算法将束手无策，因为它无法对复合单位进行拆解和维度推导。这限制了它只能解决最单一维度的简单转换。
+
+#### 6. 一击必杀 (One Hit Kill)
+> **“如果输入数据中包含温度单位转换事实（如摄氏度到华氏度），或者输入的事实中存在冗余且冲突的环路（如 $A \to B \to C \to A$ 乘积不为 1），你的算法如何在不重构核心数据结构的前提下，保证计算的正确性与一致性？”**
+
+#### 7. 如何证实/证伪 (What Would Settle It)
+设计以下四个极限测试用例运行该算法：
+1. **非线性测试**：输入事实 `("C", 1.8, "F")`（隐含偏移量 $+32$），查询 `30 C` 转换为 `F`。观察算法是否能得出正确答案 `86`（该算法必失败，因为它无法处理加法偏移）。
+2. **精度漂移与环路测试**：输入 `("A", 3.0, "B")`, `("B", 3.0, "C")`, `("C", 0.11111111, "A")`。进行多轮循环转换，检测结果是否偏离初始值。
+3. **零值溢出测试**：输入 `("A", 0.0, "B")`，观察系统是否崩溃。
+4. **复合单位测试**：输入长度和时间转换，查询 `m/s` 到 `ft/hr`。
+
+若测试1、3崩溃/失败，测试2出现明显精度漂移，测试4无法运行，则确证该算法仅是一个高度局限在“理想线性单维度场景”下的玩具实现。
+
+---
+
+### PART 3. 概念与批判性架构图 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心主张
+    A["💡 核心主张: 图论建模与 BFS 检索<br/>将单位转换抽象为双向加权图的最短路径问题"]:::mainClaim
+
+    %% Subgraph 1: 事实解析
+    subgraph SG1["🟢 阶段一：事实解析与图构建 (Parse Facts)"]
+        direction TB
+        P_Input["输入: (left_unit, multiplier, right_unit)"]:::stageNode
+        P_Dict["全局字典: name_to_node"]:::stageNode
+        P_Edge1["正向边建立: A -- multiplier --> B"]:::stageNode
+        P_Edge2["反向边建立: B -- 1/multiplier --> A"]:::stageNode
+        P_Fix["双向补丁: 解决逆向转换不可达问题"]:::stageOutcome
+    end
+
+    P_Input --> P_Dict
+    P_Dict --> P_Edge1 & P_Edge2
+    P_Edge2 --> P_Fix
+
+    %% Subgraph 2: 查询检索
+    subgraph SG2["🔵 阶段二：BFS 路径搜索 (Answer Query)"]
+        direction TB
+        Q_Input["输入: (amount, from_unit, to_unit)"]:::stageNode
+        Q_Queue["双端队列: ToVisit (存储: Node, CurrentAmount)"]:::stageNode
+        Q_Visited["哈希表: Visited (防止环路死循环)"]:::stageNode
+        Q_Loop{"队列是否为空?"}:::stageNode
+        Q_Check{"当前节点 == 目标节点?"}:::stageNode
+        Q_Success["返回 CurrentAmount (连乘结果)"]:::stageValue
+        Q_Fail["返回 None (不可转换)"]:::stageValue
+    end
+
+    Q_Input --> Q_Queue & Q_Visited
+    Q_Queue --> Q_Loop
+    Q_Loop -- "否" --> Q_Check
+    Q_Check -- "是" --> Q_Success
+    Q_Check -- "否" --> Q_Queue
+    Q_Loop -- "是" --> Q_Fail
+
+    %% 连接核心主张与各个阶段
+    A --> P_Input
+    P_Fix --> Q_Input
+
+    %% Subgraph 3: 批判性审视 (Hostile Review)
+    subgraph SG3["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_WeakLink["最薄弱环节: 浮点数精度与倒数崩溃"]:::reviewNode
+        R_WeakLink_Detail["1/multiplier 极易引入二进制精度丢失<br/>若乘数为0则触发 ZeroDivisionError 崩溃"]:::reviewDetailNode
+        
+        R_HiddenPremise["隐藏前提: 纯线性假设 (y = kx)"]:::reviewNode
+        R_HiddenPremise_Detail["完全无法兼容带偏移量的转换 (如温度 C 到 F)<br/>默认输入数据无冲突环路"]:::reviewDetailNode
+        
+        R_BlindSide["认知盲区: 复合单位与维度分析缺失"]:::reviewNode
+        R_BlindSide_Detail["将 'm/s' 视为黑盒字符串，无法拆解推导<br/>无法应对多维度物理量的交叉转换"]:::reviewDetailNode
+    end
+
+    %% 批判性指向
+    P_Edge2 -.-> R_WeakLink
+    R_WeakLink --> R_WeakLink_Detail
+    
+    A -.-> R_HiddenPremise
+    R_HiddenPremise --> R_HiddenPremise_Detail
+    
+    Q_Input -.-> R_BlindSide
+    R_BlindSide --> R_BlindSide_Detail
+
+    %% 样式定义
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333;
+    classDef stageNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064;
+    classDef stageOutcome fill:#FFECB3,stroke:#FFB300,stroke-width:1.5px,color:#E65100;
+    classDef stageValue fill:#C8E6C9,stroke:#81C784,stroke-width:1.5px,color:#2E7D32;
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C;
+    classDef reviewDetailNode fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1px,color:#C62828;
+
+    %% 应用样式
+    style SG1 fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG2 fill:#E3F2FD,stroke:#42A5F5,stroke-width:2px,color:#1976D2
+    style SG3 fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Yes. Can you just type something to make sure that I can see it? Awesome. Cool. Do you see that I've typed? Yes. The fonts. Sweet. So our technology works. That's great news. So a couple of things before we jump into this interview. The bulk of the interview today is going to be us working through a question in this shared document. I'm sure this is not how you normally write code. I'd be surprising if you normally wrote code talking to a stranger on the phone and a web browser. So a couple of things to try to make that a little more pleasant. So first off, please write in whatever language you're most comfortable in. There's syntax highlighting for a lot of popular languages in the upper right corner of your screen. And if you want to write in one that's not there, that's fine too. So you should feel free to change the language to another refer. Go ahead and use Python 3. Awesome. Sounds great. So another thing to note is that we're not going to be running your code. So while I'd like you to write real code, so code that give it a compiler interpreter, you can make run. If you do the equivalent of missing a semicolon or something like that, that's totally fine. And similarly, I'm not expecting that you have the standard library for your language of choice memorized. If you forget the name of a common library function that exists, just say something and we'll agree on a reasonable API for that function. Sure, sounds good. Awesome. And then one last note is just kind of like high level advice for what I'm looking for. We really value clear and correct code here, and so by default, I'd like you to focus on that over writing super efficient code right off the bat. That doesn't mean that you shouldn't try to make your code fast, and I'm always going to be happy to come back and ask you to make something faster if I'd like you to. Just that by default, I'd like you to focus on clear readable implementations. So I'm thinking about code structure, variable names, things like that. Cool. Sounds good. Awesome. And I'll leave a chunk of time at the end of this for any questions that you've got for for me about the interview process, or Jane Street more broadly, or whatever's on your mind. But otherwise, do you have any questions about what I just described before we get started? No, no questions about that. Sounds great. Awesome. So let's jump into it. Today, we're going to be dealing with unit conversion. And specifically, I would like to ask you to write a program that can answer unit conversion questions, like how many meters are in an inch, given a big list of conversion facts about units. So by way of example, I'm going to paste in some example facts and queries in the coderpad. So a few things to note. So the top has a list of example facts. And the bottom is like a list of example queries that you could be able to answer in this way, given those facts. You don't have to do any parsing. So I'm going to pass the facts to you as string float, string tuples. And the query is a float string string tuple. Got it. OK, cool. Yes, it makes sense. So do you have any thoughts on how we might be able to write a function that will be able to answer these queries, given those facts? Let me think a little bit about this. So what are we going to want to do? We're going to take in all of these facts. Are there two different steps? Like, should I expect to write a function like parse facts? Something like this that returns something and then answer query facts or something like that. Like is this a kind of a reasonable thing? Or what do you rather than I kind of parse the facts every query? I think this seems reasonable. What do you think? This seems a little nicer just so that I can do some pre-processing up front to kind of make answer query simple. I guess I could do that every time, but it seems a little nicer to do all of that work once. So let's think a little about what type of work we want to do here. I guess like, conceptually, we have a couple of different like disjoint graphs. There's the distance graph and the duration graph in this question in your example. And what do you mean by graph? Yeah, so we have one node in our graph is maybe meter. And we have an edge between meter and foot. And that edge has some annotation, indicating that a meter is equal to 3.28 feet, similar for feet to inches. And then maybe we have one big graph, and it's just not fully connected. But we have a separate series of connections between hours and minutes and minutes and seconds, right? And I think this is the key. Gotcha, so go ahead. Go ahead. I just wanted to confirm, so parse fax is going to take that list of fax and return some sort of set of graphs or graph. Is that what you were thinking? Yeah, yeah. I mean, I'm thinking about at a high level, let's imagine that everything was connected here. Let's imagine that there is no duration. Then our algorithm is pick some arbitrary starting point. Maybe we could be clever about what that starting point is. But pick some node in this graph. Oh, sorry. Very clearly nevermind. We pick the node that is equivalent to meters here because we're answering the two meter question. And then kind of do some type of like BFS or DFS. I don't actually know off the top of my head, which would be more appropriate here. And keeping track of the state stored in our edges until we find our inches node. and then apply some conversion based on that state, multiplying like two by the various floats that we've stored at that edges to get 78.72. And I guess like when doing that, the thing we want to do is, or I guess like if we explore every node that's connected to meters, and at no point do we find inches, which I mean isn't going to happen, but this does happen with inches and hours, then we want to return not convertible instead. So I think actually the state that I want to store to start out is going to be something like a dictionary that maps strings units to some class that represents a node and a graph. And then those nodes in the graph will store node, store, like a float node, tuple, where float is the way that we want to convert between the node that we are operating over and the node that we're linking to. And the node that we're linking to is some other unit that we can convert to. So it stores some edges type of clusterable. And then our algorithm is going to be take in a string, look it up in the dictionary, do some traversal over the nodes kind of stored in that dictionary, and return an answer, or not convertible. I think there is a clever way to keep these graphs that we're building up as small as possible. I have this vague recollection of a thing called union find, but I don't actually really remember how it works out the top of my head. I would need to go look it up. Is it all right to kind of write the naive thing that I've sketched out here, or do you want me to do something a little faster? Absolutely. Let's go for the naive solution and see how that goes. Cool. And is the thing that I've described somewhat reasonable? Does it make sense, or is it unclear? I think this makes sense to me at a high level. So you want to construct a graph that maps from some units to some other units and your keeping track of in your graph, what that conversion rate is. Does that sound right to you? Yeah. So let's maybe for the sake of being super explicit, we can make an edge class. Did you take self and Python 3? I don't remember. Multiplier. We can just go for it. Node. Self. Multiplier equals multiplier. Self.node equals node. class, node, def, self, and we are going to take in, like, a, what, unit, so that's something like m or i m, self.unit, it goes, unit, def, child, adge, self, and multiplier, and node, something like this, self.multiplier, it's multiplier, self.otherunit, it's otherunit. So hopefully, maybe that's a bit of overkill, but hopefully that makes it a little clearer how I actually want to store this data. And then we're going to, like I said, have some dictionary that tracks individual units to their node class. So you can call this whatever name, to node, it's a dictionary for, and then you said, this comes as unit, left unit, multiplier, right unit. In fact, is that right? Yeah, that seems right. String float string. Or is it, yeah, OK. String float string, that seems like a reasonable representation. So let's see what we want to do. If left unit not in name to node, node of left unit, name to node, it's left node. So we want to do that if right unit. This is surely there's like a nicer way to do this in Python, but I'd like to at least kind of sketch this out before I simplify it at all. And this is actually name to node, not name to name, which wouldn't make a lot of sense, right? Unit equals right node. And then dot add edge multiplier, right? Unit, something like that. So I think this is somewhat reasonable. I guess. Yeah, OK. So I think that's fine. Maybe I'll come back for a second pass at that in a second. But we've got this fact sedictionary mapping units to other units. And here, multiplier is something like 3.28 or 12. And the thing that I need to remember is to multiply by it all the time and never divide by it or something like that. I can imagine having a bug there. So now our query comes in as what float times left unit times rate unit. So final multiplier, left unit from unit to unit equals query. So I think my plan is just going to be to keep this final multiplier around and multiply right at, oh no, never mind, starting unit. So now what do we do? Let's have some, so we're gonna kind of have some list that represents, how do I wanna do this? Why did you change it from starting amount to, to starting point? Yeah, I guess I didn't necessarily need to do that. Originally I was thinking like I am going to have some state that I kind of produce at the end of answer query and that will be like some set of numbers multiplied by each other, or sorry, like some list of numbers And then I'll multiply all those numbers by each other, and then I'll multiply it by starting amount. But what was thinking a little more on was like, oh, it seems a little clearer to instead have multiply starting amount in real time. That is, instead of keeping some list around or something like that, every time we traverse across some edge, multiply starting amount by the value in that edge. So you just kind of keep running total. But I think what I actually want there depends on how I want to solve the underlying problem here. And I want to think about that for a second. OK. What do we want to do? I think at a given node, we want to incule a tuple of current amount and unit to check or something like that. What is unit to check? Yeah, so let's see. This is going to be given. We are at some node. It has some number of edges. We want to enumerate all of those edges. And for each of those edges, add some new tuple to a queue, where that tuple contains kind of the amount that we were already keeping track of, times the amount encoded in that edge, along with the node that edge kind of links to. When we do that, we want to be careful to not add nodes that we have seen before, so we're going to want some visited set. And I think also kind of saying all this out loud, we want to do this in kind of a BFSE way because the thing that we care about is finding a short path. We don't want to take some convoluted path because we're like multiplying floats by each other and the more we like multiply floats by each other, the more likely we are to run into like weird float routing errors. Cool, yeah, that makes sense to me. Cool. So we're trying to write a BFS here, and you're now thinking about how to effectively keep track of the running product of these conversion rates, does it? Yeah, yeah, that's right. Yeah, and so I think it's a BFS, but it's a little funny because I think, normally, at least, I don't write that many BFS, but I'm not normally trying to keep some other state associated with each different conceptual unit in the BFFs, but here we are. So we want like a visited set. And that contains only units, equals set. And I guess actually visited.ad from unit at the start. And I think, or in fact, maybe it's easier to do. I'm going to do this. I think I just need to write out a couple of lines of code to see what this looks like. So oh, I didn't do this right. Let's take a step back. We want this node class to have some other edges. Starts out as the empty list. And other node, I guess that's already a node class. So self.edges.append. Multiply or want to do something like that way we can refer to edges. So like four edges. And I guess you probably want to make that and actually use the edge class there, right? Oh, totally, yeah, huh. Edge equals I sketched these out to make my thoughts clear and then just totally failed to use them. Multiply or other. And let's just for explicitness, instead of calling this unit, call this node, to make it a little more clear that it is a full on node class. So we can grab that, and then we're going to append edge like that. So we've got this edge in, let's not do this. So the thing I want to do is instead have some queue that I am going to be pulling off of, right? And I think the thing that I want to do is to start by inserting from unit comma starting amount into that queue. And that way my loop can be like while that queue isn't empty. Otherwise, I'm going to have to awkwardly pre-fill that queue with a couple of elements and then after that iterator of the queue for a long time. Does that make sense? Yeah, I think this sounds right. Cool. I also don't quite remember what queues look like in Python. I think that there's a queue class in collections. Can I kind of import that and make up a reasonable API? Yeah. I think you should feel free to make up a reason YPI for a queue. You could feel free to use a list. And we can assume it's a queue up to you. OK, I'll do like a from collections queue. I think it's capital. So, to visit equals q, and let's not actually add from unit to the visited set yet. To visit dot push. And so what did we say? From unit starting amount, we can do while not to visit dot empty. It is empty, I don't know. And we're going to say current amount to visit.phop. If current unit equals 2 unit, return current amount. Right? Or print answer equals. But presumably returning that or returning none is maybe a reasonable API here? Yeah, I think that sounds reasonable. And I think you swapped your two poll a little. So I think it should be unit comma amount in your two visits. Your two visit queue. Oh, you're totally right. Current unit, current amount. Thank you for that. All right, so either the unit is the thing that we're looking for, or it's not, and if it's not, first we want to add it to our visited set, so visited.addcurrentunit. Then for edge in currentunit.edges, if edge dot, and what do we call these node and multiplier, edge dot node, not in visited. If it isn't visited, we don't do anything. Otherwise, this amount, this is kind of a bad name. Yeah. Updated amount, I don't know. This is all kind of abstract and high level. But we can say this is equal to current amount times edge.multiplier. I guess we can say like with latest multiplier. And then we want to do to visit.push edge.node and latest. And there's something gross here, which is that if we see the same node many times here before we process that node once, we're going to add it to two visit many times. So like a gross thing that we can do is also say visited.addedge.node. That feels gross to me because we're doing that twice. Maybe the right thing to do is to add this up here and special case of the first node. That seems reasonable. Cool, so we're going to push that in there. And I think that's it. If it's invisited, we don't need to do anything. We've added all of the edges, adding more stuff to two visit. And if we get out here, believe we can just return none, how does this look? Do you want to walk through an example? Yeah, sure. So well, there's something. One thing that we haven't done, I guess, like a pretty obvious thing is we've never referenced facts. So we probably want to do that. I think the relevant thing here is that from unit equals, you can just do something like if, from unit, not, or in facts, turn none, if two unit, no Vax, turn none. Otherwise, from, oh, from as a keyword. So we'll continue using. Well, maybe I think it's maybe a little nicer in Python to not shadow that name. So let's do something like fax of from unit. And two node equals fax of two unit. We're going to update a couple of names here, two node. conceptually, I think, like, update all of these as well. Great. OK. So that was kind of a glaring emission. Otherwise, I think I'm mostly convinced that this parse fax is correct. So I guess I'll focus on answer query. We come in, we get a query. Let's say that it is how many inches are in two meters. And I'm going to be scrolling up and down a lot in order to kind of double check the examples. So actually, maybe I'll just paste in this stuff right above my code. That way, it's a little easier for me to do that. So we get in a starting amount, which is 2, a starting unit, which is m, and an ending unit, which is inches. Both are in fax, because we've seen them referenced up here. We retrieve them from facts. We put current unit is not defined from node. We put from node and starting them out. So that's meters and two into two visit. And we also put meters into the visited set. Then we pop off meter and two. Meter is not equal to inches. So this check doesn't fire. We numerate our edges, and our only edge is going to be feet. So we, in numerate our edges, we get to feet. We add that to our visited set. We create a new multiplier, which is two times the multiplier associated with that edge, which is 3.28. So that's 6.56, I think. And then add feet and 6.56 or whatever it was that I said. We loop back up here. We're at feet now. We received a foot equals 12 inches fact. So foot should have, oh, you know what? One problem I'm going to run into. I'm not sure that I'm running it into it here, but I think one problem that I am going to run into eventually is that this parts fax thing that I'm building up isn't bidirectional, and it should be. Yeah, that makes sense. So you're saying, like, can you give me an example of what that means? Yeah, so this first query that I was walking through, this was going to, I believe, return the correct thing. Because we fed it meters is like meters to feet and we fed it feet to inches. However, I think when we did this 13 inches thing, inches would not have any edges. because, well, we never thought to add them. And so we would immediately give up. Yep. And so what are your proposing changing here? So I think that that means up online 40 and 41, we want to do something like name to node. Namely, this is all we need to do, right? You know, it dot add edge, one divided by maybe one point. I don't remember how Python 3 division works. But hopefully, if I flotify everything, It does the right thing, left unit. And so now we should be adding, like, when we add a foot as 12 inches, we also add that an inch is 1.0 over 12 feet. And so things should end up working out. Cool. Yeah, I think that makes sense. So given one particular fact, it actually gives you two conversion rates, right? Yeah, yeah, exactly. Yeah, I hadn't thought about that before, but that seems right. Well, that makes a lot of sense. Cool. But otherwise, I think that we end up doing the right thing here. Like, in the example we were walking through, we were in feet. We were enumerating its edges. We would have gotten to inches. We would have done 6.56 times 12, which I can't do in my head. We would have pushed that into our set or into our queue. We would have popped that off. Current node would be equal to two node. They're both inches, and so we would return to that amount. And I believe that the kind of reverse case converting inches to meters would now be correct.
