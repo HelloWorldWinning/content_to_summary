@@ -1,0 +1,176 @@
+Timestamp: 2026-06-27T09:48:33.511464
+Title: DeepSeek vs Qwen Comparison | Which AI Language Model Is Best?
+URL: https://youtube.com/watch?v=JwP37qwTxao&si=Hkm9p1PqfLCvM54z
+Status: success
+Duration: 3:37
+
+Description:
+# PART 1. 作者的论证蓝图 (Author's Map)
+
+## 1. 核心论点 (Core Thesis)
+尽管阿里旗下的 Qwen 在开源生态、商业化授权友好度以及中文处理上表现卓越，但 DeepSeek 凭借在核心模型质量（推理与代码能力）以及推理速度上的微弱优势，成为最适合大多数通用开发者的领先大语言模型。
+
+## 2. 证据基础 (Evidentiary Base)
+作者在论证中使用了以下几类证据和事实支撑：
+*   **硬数据 / 行业事件 (Hard Data / Industry Event)**：Qwen-2 在 2025 年曾登顶 Open LLM 官方排行榜（开源模型第一名）；DeepSeek 提供了 7B、33B、67B 等主流参数尺寸，而 Qwen 提供了从 0.5B 到 72B 的极宽光谱。
+*   **技术断言 / 经验性观察 (Technical Assertion / Empirical Observation)**：DeepSeek 在英语、代码和逻辑推理上“极度出色”（接近 GPT-4 和 Gemini-1.5），且针对快速推理进行了深度优化。
+*   **政策与条款对比 (Policy & Licensing Comparison)**：Qwen（如 Qwen-2、Qwen Mini）采用极其商业友好的开源协议；而 DeepSeek 的商用授权存在一定的“细则限制”（fine print），更偏向学术研究。
+*   **直觉与类比 (Intuition Pump)**：将两者的竞争比作一场“直道赛跑”（straight-up race），在速度上 DeepSeek 处于领跑位置。
+
+## 3. 逻辑推导 (Logical Warrant)
+作者采用的是**多维度加权归纳法**。其推理过程可整理为以下三段论：
+*   **大前提**：对于“大多数用户”而言，大模型最核心的价值在于其通用的“脑力”（即代码、推理等核心质量）以及在处理复杂提示词时的“推理速度”。
+*   **小前提**：在模型质量和速度这两个决定性维度上，DeepSeek 均略胜 Qwen 一筹；而在 Qwen 占优的开源授权和多模态生态维度上，这些属于特定商业用户或极客的加分项，而非“大多数用户”的决定性痛点。
+*   **结论**：因此，在综合权衡下，DeepSeek 微弱胜出（slightly edges it out）。
+
+## 4. 声明范围 (Stated Scope)
+作者明确划定了该结论的适用边界：
+*   **适用场景**：构建全球化应用、前沿开发者工具（Dev Tools）或以英文为主的复杂推理任务。
+*   **免责/排除场景**：如果用户的业务“聚焦于中文市场（focused on Chinese language markets）”，或者“极度看重完全免责的商业友好授权、需要极小或极大的多样化模型进行试验”，则 Qwen 是不二之选（no-brainer）。
+
+## 5. 潜在对手 (Implicit Opponent)
+本文暗中反驳的对象是**“排行榜至上主义者”**以及**“唯参数尺寸论者”**。这类观点认为，既然 Qwen-2 在 2025 年登顶了 Open LLM 排行榜，且提供了从 0.5B 到 72B 极其完整的生态，它就理所当然地在所有场景下全面超越了 DeepSeek。作者试图纠正这种片面的看法。
+
+## 6. 预期效果 (Intended Takeaway)
+作者希望读者（特别是技术决策者和开发者）放弃被厂商营销话术（Marketing jargon）误导，认识到两款模型的差异化定位：通用高性能开发选 DeepSeek，中文商业落地及多样化部署选 Qwen。
+
+---
+
+# PART 2. 尖锐而客观的同行评议 (Hostile-But-Very-Fair REVIEW)
+
+## 1. 强力辩护 (Steelman)
+如果为作者的论点进行最强辩护：在目前的生成式 AI 应用中，代码生成和复杂逻辑推理（Reasoning）确实是开发者使用频率最高、最能拉开体验差距的“硬通货”指标。DeepSeek（尤其是其 Coder 和 Chat 系列）在海外开发者社区中确实因其极高的性价比和直逼 GPT-4 的推理能力而备受赞誉。作者敏锐地抓住了“核心脑力”与“部署速度”这两个决定开发者日常体验的痛点，并以此作为裁判天平的砝码，这一立论在逻辑结构上是自洽且务实的。
+
+## 2. 最薄弱环节 (Weakest Link)
+该论证的致命阿喀琉斯之踵在于：**将“模型质量（Quality）”与“推理速度（Speed）”的判定完全建立在无数据支持的定性断言上。**
+> 支撑这一核心论点的原话是：*"For overall brain power, DeepSeek's just a bit ahead here."* 以及 *"But in a straight-up race, DeepSeek's still in front."*
+
+**崩溃链条**：作者承认 Qwen-2 在 2025 年登顶了 Open LLM 官方排行榜（这是文中唯一提及的硬性权威数据）。然而，作者在没有任何具体基准测试（如 MMLU、GSM8K、HumanEval）数据对比、也没有任何吞吐量（Tokens/sec）评测数据的情况下，仅凭主观断言就判定 DeepSeek 的“脑力”和“速度”更强，从而推导出 DeepSeek 胜出。如果 Qwen-2 在主流客观评测中的英文及代码得分实际上与 DeepSeek 持平甚至超越，那么作者赖以支撑“DeepSeek 微弱胜出”的整座大厦将瞬间坍塌。
+
+## 3. 证据审查 (Evidence Audit)
+*   **选择性忽略多模态与工具链生态**：作者在讨论生态时，轻描淡写地提到了 Qwen 拥有“multimodal, you name it”，却忽略了在实际商业应用中，多模态能力（如视觉解析、音频处理）和强大的工具调用（Function Calling）生态对“大多数用户”是多么关键。
+*   **版本模糊与时间线混乱**：文章提到了 “Qwen-2 update”，但对 DeepSeek 却未指明具体版本（是 DeepSeek-V2、DeepSeek-V3 还是 R1 Reasoner？）。用一个具体的版本（Qwen-2）去对比一个模糊的模型品牌（DeepSeek），在对比严谨性上存在严重漏洞。
+*   **硬件门槛的双重标准**：作者指出运行 DeepSeek 的巨型模型需要“beefy hardware（牛逼的硬件）”，却在对比 Qwen 时将大模型的复杂性归结为对“smaller setups（小型配置）”不友好。这实际上是两款大模型在私有化部署时的共同痛点，而非 DeepSeek 的独特优势。
+
+## 4. 隐藏前提 (Hidden Premises)
+要让作者的论证成立，读者必须默认接受以下三个未经证明的假设：
+1.  **“核心脑力”的微弱优势可以碾压合规性风险**：假设大多数开发者愿意为了 DeepSeek 所谓的“微弱脑力优势”，去忍受其“商用授权细则（licensing fine print）”带来的潜在法律与合规风险。
+2.  **排行榜数据具有滞后性或水分**：默认 Open LLM  leaderboard 的第一名（Qwen-2）在实际体验中不如未登顶的 DeepSeek。
+3.  **多语言能力的“平手”掩盖了中文的绝对权重**：假设对“大多数用户”而言，中文任务的权重与其它 20 多种非主流语言是等同的。
+
+## 5. 盲区剖析 (The Blind Side)
+作者完全忽略了**私有化部署与微调（Fine-tuning）的工程成本**。
+DeepSeek 在架构上（如大量采用 MoE 混合专家架构）虽然极大提升了推理速度，但在私有化微调、消费级显卡适配以及分布式部署的生态成熟度上，与采用传统 Dense 架构且生态极度开放的 Qwen 相比，门槛要高得多。对于“大多数”需要对模型进行下游任务微调的企业用户而言，Qwen 的工程友好度实际上构成了压倒性的优势，而这一点在作者的“脑力至上”框架中被完全屏蔽了。
+
+## 6. 一击必杀 (One Hit Kill)
+> **“既然你承认 Qwen-2 在 2025 年已经登顶了全球最权威的 Open LLM 排行榜，且在商业授权上对企业完全免责、在模型尺寸上提供了从 0.5B 到 72B 的全套工程选择，那么你判定 DeepSeek 核心‘脑力’依然超越 Qwen 并微弱胜出的具体量化基准测试（Benchmark）数据究竟是什么？如果拿不出超越官方排行榜的客观数据，这种‘微弱胜出’是否只是你个人的主观印象偏见？”**
+
+## 7. 如何实证 (What Would Settle It)
+要在 DeepSeek 和 Qwen 之间做出真正令人信服的裁决，必须设计以下对照实验：
+1.  **控制变量测试**：选择同等参数量级的模型（例如 DeepSeek-V2-Lite 16B vs Qwen-2-Beta 15B，或 DeepSeek-67B vs Qwen-2-72B）。
+2.  **标准化基准跑分**：在完全相同的硬件环境（如 8x H100）下运行：
+    *   **能力测试**：MMLU（通用知识）、HumanEval（代码）、MATH（推理）。
+    *   **性能测试**：测试在不同并发（Concurrency）下的每秒吞吐量（Tokens per second）和首字延迟（TTFT）。
+3.  **合规合规性评估**：由专业法务团队对两者的开源协议进行合规风险评分。
+*如果 DeepSeek 在上述核心能力和性能测试中无法拉开 5% 以上的绝对差距，结合其商用协议的劣势，Qwen 将自动成为真正的赢家。*
+
+---
+
+# PART 3. 概念关联拓扑图 (Mermaid Conceptual Map)
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心冲突与主张
+    A["💡 核心冲突: DeepSeek vs Qwen 开源双雄争霸"] --> B["👑 作者主张: DeepSeek 凭借'脑力与速度'微弱胜出"];
+
+    %% 维度分析（作者视角）
+    subgraph SG_Author["🟢 作者论证维度 (Author's Perspective)"]
+        direction TB
+        Dim_Quality["🧠 1. 模型质量 (Quality)"]
+        Dim_Speed["⚡ 2. 推理速度 (Speed)"]
+        Dim_Lang["🌐 3. 多语言能力 (Multilingual)"]
+        Dim_License["📝 4. 开源与授权 (Licensing)"]
+        Dim_Ecosystem["🌱 5. 生态与尺寸 (Ecosystem)"]
+        
+        Dim_Quality -- "DeepSeek 在英文、代码、推理上接近 GPT-4" --> Verdict_Q["DeepSeek 胜出"]
+        Dim_Speed -- "DeepSeek 深度优化，复杂 Prompt 吞吐极快" --> Verdict_S["DeepSeek 胜出"]
+        Dim_Lang -- "Qwen 中文称王; DeepSeek 英文极强，支持20+" --> Verdict_La["双方打平 (Tie)"]
+        Dim_License -- "Qwen 极其商业友好; DeepSeek 商用有细则限制" --> Verdict_Li["Qwen 胜出"]
+        Dim_Ecosystem -- "Qwen 覆盖 0.5B-72B，多模态丰富" --> Verdict_E["Qwen 胜出"]
+    end
+
+    B --> Dim_Quality
+    B --> Dim_Speed
+    B --> Dim_Lang
+    B --> Dim_License
+    B --> Dim_Ecosystem
+
+    %% 最终权衡
+    subgraph SG_Verdict["⚖️ 作者的加权天平 (Weighting)"]
+        direction LR
+        Weight_Core["核心脑力 + 推理速度<br/>(对大多数用户最关键)"]
+        Weight_Support["商业合规 + 尺寸多样性<br/>(属于加分项/特定场景)"]
+        Weight_Core -- "权重更高" --> B
+    end
+    
+    Verdict_Q & Verdict_S --> Weight_Core
+    Verdict_Li & Verdict_E --> Weight_Support
+
+    %% 尖锐批判（审阅视角）
+    subgraph SG_Review["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["🔗 最薄弱环节: 缺乏量化数据的定性断言"]
+        HR_WeakLink_Detail["判定质量与速度领先，却未给出 MMLU, HumanEval 等具体跑分"]
+        
+        HR_Evidence["📊 证据审计: 排行榜数据与结论冲突"]
+        HR_Evidence_Detail["承认 Qwen-2 2025年登顶 Open LLM 榜单，却仍主观判定 DeepSeek 脑力更强"]
+        
+        HR_Assumptions["👁️ 隐藏前提: 忽视商业合规与部署成本"]
+        HR_Assumptions_Detail["默认开发者愿意承担商用协议风险; 忽视 MoE 架构私有化微调的高昂门槛"]
+        
+        HR_BlindSide["🙈 视线盲区: 降维打击的多模态生态"]
+        HR_BlindSide_Detail["完全忽略了 Qwen 在 Vision/Audio 等多模态领域的生态领先优势"]
+        
+        HR_OneHitKill["🎯 一击必杀问题 (One Hit Kill)"]
+        HR_OneHitKill_Detail["既然 Qwen-2 已登顶官方榜单且商用完全免责，你判定 DeepSeek 脑力更强的客观量化证据究竟是什么？"]
+    end
+
+    %% 批判指向关系
+    B -. "批判" .-> HR_WeakLink
+    HR_WeakLink --> HR_WeakLink_Detail
+    
+    Verdict_Q -. "质疑数据来源" .-> HR_Evidence
+    HR_Evidence --> HR_Evidence_Detail
+    
+    Weight_Core -. "挑战加权合理性" .-> HR_Assumptions
+    HR_Assumptions --> HR_Assumptions_Detail
+    
+    Dim_Ecosystem -. "指出遗漏" .-> HR_BlindSide
+    HR_BlindSide --> HR_BlindSide_Detail
+    
+    B -. "终极质问" .-> HR_OneHitKill
+    HR_OneHitKill --> HR_OneHitKill_Detail
+
+    %% --- 样式定义 ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef dimNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef verdictDS fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20
+    classDef verdictQ fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef reviewDetail fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1px,color:#C62828
+
+    class A,B mainClaim
+    class Dim_Quality,Dim_Speed,Dim_Lang,Dim_License,Dim_Ecosystem dimNode
+    class Verdict_Q,Verdict_S verdictDS
+    class Verdict_Li,Verdict_E,Verdict_La verdictQ
+    class HR_WeakLink,HR_Evidence,HR_Assumptions,HR_BlindSide,HR_OneHitKill reviewNode
+    class HR_WeakLink_Detail,HR_Evidence_Detail,HR_Assumptions_Detail,HR_BlindSide_Detail,HR_OneHitKill_Detail reviewDetail
+
+    %% --- 子图背景样式 ---
+    style SG_Author fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG_Verdict fill:#FFF8E1,stroke:#FFB300,stroke-width:2px,color:#E65100
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Two cutting-edge AI models, one, Two cutting-edge AI models, one, showdown, which one actually leads the, showdown, which one actually leads the, showdown, which one actually leads the, pack? On one side, we have DeepSeek, the, pack? On one side, we have DeepSeek, the, pack? On one side, we have DeepSeek, the, rising star in open-source AI. On the, rising star in open-source AI. On the, rising star in open-source AI. On the, other, Qwen, the powerful new contender, other, Qwen, the powerful new contender, other, Qwen, the powerful new contender, from China's tech giants. We'll put them, from China's tech giants. We'll put them, from China's tech giants. We'll put them, head-to-head on language understanding, head-to-head on language understanding, head-to-head on language understanding, coding skills, reasoning, speed, cost, coding skills, reasoning, speed, cost, coding skills, reasoning, speed, cost, and more, so you get the real picture., and more, so you get the real picture., and more, so you get the real picture., No marketing jargon, just what you need, No marketing jargon, just what you need, No marketing jargon, just what you need, to know. We'll award points for each, to know. We'll award points for each, to know. We'll award points for each, category, and when it's over, you'll see, category, and when it's over, you'll see, category, and when it's over, you'll see, a clear winner. The winner might, a clear winner. The winner might, a clear winner. The winner might, surprise you. Let's get into it. Okay, surprise you. Let's get into it. Okay, surprise you. Let's get into it. Okay, before we dive into the nitty-gritty, before we dive into the nitty-gritty, before we dive into the nitty-gritty, here's the lay of the land. We're going, here's the lay of the land. We're going, here's the lay of the land. We're going, to compare these two on model quality, to compare these two on model quality, to compare these two on model quality, inference speed, multilingual, inference speed, multilingual, inference speed, multilingual, capability, open-source options, and the, capability, open-source options, and the, capability, open-source options, and the, whole ecosystem of model sizes. Kind of, whole ecosystem of model sizes. Kind of, whole ecosystem of model sizes. Kind of, covers all the bases, right? Let's start, covers all the bases, right? Let's start, covers all the bases, right? Let's start, with how smart and capable these models, with how smart and capable these models, with how smart and capable these models, really are. So, first model quality., really are. So, first model quality., really are. So, first model quality., DeepSeek, oh man, it's got some serious, DeepSeek, oh man, it's got some serious, DeepSeek, oh man, it's got some serious, brain power. If you care about coding, brain power. If you care about coding, brain power. If you care about coding, reasoning, or just want something close, reasoning, or just want something close, reasoning, or just want something close, to GPT-4 or Gemini-1.5, DeepSeek is, to GPT-4 or Gemini-1.5, DeepSeek is, to GPT-4 or Gemini-1.5, DeepSeek is, scary good. The one thing is, it does, scary good. The one thing is, it does, scary good. The one thing is, it does, best in English and uh gets a little, best in English and uh gets a little, best in English and uh gets a little, less sharp with languages off the beaten, less sharp with languages off the beaten, less sharp with languages off the beaten, path. Meanwhile, Qwen is the absolute, path. Meanwhile, Qwen is the absolute, path. Meanwhile, Qwen is the absolute, king when it comes to Chinese tasks, king when it comes to Chinese tasks, king when it comes to Chinese tasks, like it just crushes it. Their new, like it just crushes it. Their new, like it just crushes it. Their new, Qwen-2 update actually made some huge, Qwen-2 update actually made some huge, Qwen-2 update actually made some huge, leaps, but the English isn't quite, leaps, but the English isn't quite, leaps, but the English isn't quite, keeping up with the very top dogs. So, keeping up with the very top dogs. So, keeping up with the very top dogs. So, for overall brain power, DeepSeek's just, for overall brain power, DeepSeek's just, for overall brain power, DeepSeek's just, a bit ahead here., a bit ahead here., a bit ahead here., Next, let's talk speed. DeepSeek is, Next, let's talk speed. DeepSeek is, Next, let's talk speed. DeepSeek is, optimized to the max. Like, seriously, optimized to the max. Like, seriously, optimized to the max. Like, seriously, the engineers dialed it in for fast, the engineers dialed it in for fast, the engineers dialed it in for fast, inference. So, if you've got big, inference. So, if you've got big, inference. So, if you've got big, complicated prompts, it'll chew through, complicated prompts, it'll chew through, complicated prompts, it'll chew through, them fast. The only catch, if you're, them fast. The only catch, if you're, them fast. The only catch, if you're, running the really giant models, you'll, running the really giant models, you'll, running the really giant models, you'll, need some beefy hardware. Qwen's no, need some beefy hardware. Qwen's no, need some beefy hardware. Qwen's no, slouch, though, especially on new, slouch, though, especially on new, slouch, though, especially on new, hardware. It's just that the Qwen-2 big, hardware. It's just that the Qwen-2 big, hardware. It's just that the Qwen-2 big, models can get a little complicated for, models can get a little complicated for, models can get a little complicated for, smaller setups. But in a straight-up, smaller setups. But in a straight-up, smaller setups. But in a straight-up, race, DeepSeek's still in front. All, race, DeepSeek's still in front. All, race, DeepSeek's still in front. All, right, on to multilingual stuff. Here's, right, on to multilingual stuff. Here's, right, on to multilingual stuff. Here's, where it gets interesting. DeepSeek, where it gets interesting. DeepSeek, where it gets interesting. DeepSeek, handles like 20 or more languages pretty, handles like 20 or more languages pretty, handles like 20 or more languages pretty, confidently. It's not just Chinese and, confidently. It's not just Chinese and, confidently. It's not just Chinese and, English, though English is definitely, English, though English is definitely, English, though English is definitely, where it shines the most. Now, Qwen is, where it shines the most. Now, Qwen is, where it shines the most. Now, Qwen is, hands-down the best for Chinese., hands-down the best for Chinese., hands-down the best for Chinese., Nobody's going to argue that. But, Nobody's going to argue that. But, Nobody's going to argue that. But, honestly, they made some big jumps in, honestly, they made some big jumps in, honestly, they made some big jumps in, English and other Asian languages, too., English and other Asian languages, too., English and other Asian languages, too., For all-around multilingual support, I'd, For all-around multilingual support, I'd, For all-around multilingual support, I'd, say, you know what? Neither of them, say, you know what? Neither of them, say, you know what? Neither of them, really wipes the floor with the other., really wipes the floor with the other., really wipes the floor with the other., So, let's call this a tie. Oh, and, So, let's call this a tie. Oh, and, So, let's call this a tie. Oh, and, here's something cool you might not, here's something cool you might not, here's something cool you might not, know. Qwen-2, yeah, that's from Alibaba., know. Qwen-2, yeah, that's from Alibaba., know. Qwen-2, yeah, that's from Alibaba., It actually hit number one on the Open, It actually hit number one on the Open, It actually hit number one on the Open, LLM leaderboard in 2025. That's not bad, LLM leaderboard in 2025. That's not bad, LLM leaderboard in 2025. That's not bad, for an open model, right? Now, for an open model, right? Now, for an open model, right? Now, open-source and licensing for me, this, open-source and licensing for me, this, open-source and licensing for me, this, is where Qwen really pulls ahead., is where Qwen really pulls ahead., is where Qwen really pulls ahead., DeepSeek lets you play around for, DeepSeek lets you play around for, DeepSeek lets you play around for, research, and you can grab the weights, research, and you can grab the weights, research, and you can grab the weights, and all that, but if you want to use it, and all that, but if you want to use it, and all that, but if you want to use it, in your business, especially certain, in your business, especially certain, in your business, especially certain, versions, you'll probably want to read, versions, you'll probably want to read, versions, you'll probably want to read, the licensing fine print. Qwen, though, the licensing fine print. Qwen, though, the licensing fine print. Qwen, though, just went all in on open-source. Qwen-2, just went all in on open-source. Qwen-2, just went all in on open-source. Qwen-2, and Qwen Mini are super, and Qwen Mini are super, and Qwen Mini are super, business-friendly. Tons of companies, business-friendly. Tons of companies, business-friendly. Tons of companies, already jumped on board. Just watch for, already jumped on board. Just watch for, already jumped on board. Just watch for, some minor region rules here and there, some minor region rules here and there, some minor region rules here and there, but overall, Qwen is the clear winner if, but overall, Qwen is the clear winner if, but overall, Qwen is the clear winner if, you want open access. Ecosystem and, you want open access. Ecosystem and, you want open access. Ecosystem and, model sizes. If you love choices and, model sizes. If you love choices and, model sizes. If you love choices and, flexibility, this one's kind of fun., flexibility, this one's kind of fun., flexibility, this one's kind of fun., DeepSeek gives you pretty strong, DeepSeek gives you pretty strong, DeepSeek gives you pretty strong, performance at popular sizes. Like, performance at popular sizes. Like, performance at popular sizes. Like, you've got 7B, 33B, and 67B options, and, you've got 7B, 33B, and 67B options, and, you've got 7B, 33B, and 67B options, and, even some cool specialty models for, even some cool specialty models for, even some cool specialty models for, vision or coding. But it's mostly, vision or coding. But it's mostly, vision or coding. But it's mostly, focused on a few main types. Qwen?, focused on a few main types. Qwen?, focused on a few main types. Qwen?, They're dropping everything from tiny, They're dropping everything from tiny, They're dropping everything from tiny, 0.5B models up to a massive 72B, and, 0.5B models up to a massive 72B, and, 0.5B models up to a massive 72B, and, they've got code, chat, multimodal, you, they've got code, chat, multimodal, you, they've got code, chat, multimodal, you, name it. Some things are still new or in, name it. Some things are still new or in, name it. Some things are still new or in, preview, but if you want a giant, preview, but if you want a giant, preview, but if you want a giant, playground to tinker with, that's, playground to tinker with, that's, playground to tinker with, that's, totally in Qwen's favor. So, let's look, totally in Qwen's favor. So, let's look, totally in Qwen's favor. So, let's look, at the big picture. DeepSeek is way up, at the big picture. DeepSeek is way up, at the big picture. DeepSeek is way up, there for raw AI firepower and speed, there for raw AI firepower and speed, there for raw AI firepower and speed, while Qwen's ecosystem and licensing are, while Qwen's ecosystem and licensing are, while Qwen's ecosystem and licensing are, just way more flexible. Multilingual?, just way more flexible. Multilingual?, just way more flexible. Multilingual?, That's a close one, but Qwen edges ahead, That's a close one, but Qwen edges ahead, That's a close one, but Qwen edges ahead, when it comes to Chinese. DeepSeek wins, when it comes to Chinese. DeepSeek wins, when it comes to Chinese. DeepSeek wins, on Western languages, and they kind of, on Western languages, and they kind of, on Western languages, and they kind of, balance out overall. If you're building, balance out overall. If you're building, balance out overall. If you're building, anything global or focused on next-level, anything global or focused on next-level, anything global or focused on next-level, dev tools, I'd go DeepSeek all day. But, dev tools, I'd go DeepSeek all day. But, dev tools, I'd go DeepSeek all day. But, if you care about Chinese language, if you care about Chinese language, if you care about Chinese language, markets, or just want something open, markets, or just want something open, markets, or just want something open, business-friendly, and with lots of, business-friendly, and with lots of, business-friendly, and with lots of, models to experiment with, Qwen's a, models to experiment with, Qwen's a, models to experiment with, Qwen's a, no-brainer. Still, overall, for most, no-brainer. Still, overall, for most, no-brainer. Still, overall, for most, users, DeepSeek slightly edges it out as, users, DeepSeek slightly edges it out as, users, DeepSeek slightly edges it out as, our winner. But man, Qwen comes close., our winner. But man, Qwen comes close., our winner. But man, Qwen comes close., If you found this actually helpful, If you found this actually helpful, If you found this actually helpful, definitely hit that bookmark. You won't, definitely hit that bookmark. You won't, definitely hit that bookmark. You won't, want to miss our next LLM showdown.
