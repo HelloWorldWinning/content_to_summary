@@ -1,0 +1,160 @@
+Timestamp: 2026-07-06T03:19:20.510923
+Title: Claude Fable 5：5个必须立刻上手的实战用例（一周不干，损失数千） BV1e2Mu63EiF
+URL: https://b23.tv/DxprhkN
+Status: success
+Duration: 11:58
+
+Description:
+---
+
+### **PART 1. 作者地图 (Author's Map)**
+
+#### **1. 核心论点 (Core Thesis)**
+在“Fable 5”限时低成本/半额度体验的一周黄金窗口期内，用户应当摒弃盲目的直接对话，采用**“低成本模型（Opus 4.8）进行前期规划与深度研究，高强度模型（Fable 5）执行高难度编码与自动化”**的协同范式，重点攻克软件克隆、工作流审计、智能体操作系统构建、代码审查和复杂项目开发这五个高价值场景，以榨干该模型的最后一滴价值。
+
+#### **2. 论据基础 (Evidentiary Base)**
+*   **实操演示（案例 A - 软件克隆）**：展示了如何通过 Fable 5 克隆 Whisper Flow。利用 Opus 4.8 进行深度研究（Deep Research）制定本地化架构，再由 Fable 5 自动编写代码，实现了一个完全运行在本地、不泄露数据的语音转译与整理工具。
+*   **运行分析（案例 B - 工作流审计）**：让 Fable 5 分析用户过去 39 次 Cloud Code 历史会话，诊断出高价值的优化点，并将其分类整理为技能创建、自动化和配置修复建议。
+*   **产品展示（案例 C - 智能操作系统）**：展示了作者基于 Fable 5 构建的 Agentic OS。这是一个可视化的 Web 包装器，集成了 Obsidian 联动、内容看板和一键式技能/自动化触发器。
+*   **测试数据（案例 D - 代码审查）**：展示了 Fable 5 在 5 分钟内对一个代码库进行审查，从 4 个并行评审器中提取并去重得到 24 个严重程度不同的缺陷，并给出修复优先级。
+*   **开源案例（案例 E - 3D 浏览器游戏）**：引用了开发者 Braffle 的开源项目，该项目基于单份产品需求文档（PRD），由 Fable 5 编写了 21,000 行 TypeScript 代码，通过 90 多个自主命令构建了一个运行在浏览器中的 3D 游戏。
+*   **官方文档（规则依据）**：引用了 Anthropic 官方关于 Fable 5 的提示词工程指南，强调了其与 Opus/Mythos 的差异，支撑了“避免使用动态工作流以节省额度”的论点。
+
+#### **3. 逻辑桥梁 (Logical Warrant)**
+作者的推导过程基于**“成本-效能双重约束下的资源配置”**逻辑：
+1.  **大前提**：Fable 5 拥有极强的长程自主执行能力（`forward slash goal`），但其限时体验有严格的额度限制（Max计划的50%），且后续 API 极其昂贵。
+2.  **小前提**：在软件工程和复杂任务中，前期的“规划、架构设计和需求细化”消耗大量 Token，但对逻辑推理的绝对上限要求并非最高；而“代码编写与调试”对模型精度和自主执行能力要求极高。
+3.  **结论**：将低成本、高消耗的“规划阶段”外包给 Opus 4.8（通过 Deep Research），将高价值、高难度的“执行阶段”交由 Fable 5 闭环处理，是当前约束条件下 ROI（投资回报率）最高的工程范式。
+
+```
+[规划阶段: 消耗高 + 难度中] ---> 使用低成本模型 (Opus 4.8) 生成 PRD/架构图
+                                    │
+                                    ▼
+[执行阶段: 精度高 + 需长程自主] ---> 递交给 Fable 5 (Forward Slash Goal) 闭环实现
+```
+
+#### **4. 限定范围 (Stated Scope)**
+*   **时间窗口**：仅限于“7月7日之前”这一周的体验期。
+*   **额度限制**：仅能使用 Max 计划每周使用额度的 50%。
+*   **技术门槛**：主要面向有一定 AI 工具使用经验的“Power User”（重度用户），或渴望通过 AI Masterclass 转型为 AI 开发者的非技术背景人群。
+*   **使用禁忌**：明确指出“绝对不建议在 Fable 5 中运行动态工作流（Dynamic Workflows）”，否则将瞬间耗尽限额。
+
+#### **5. 潜在对立面 (Implicit Opponent)**
+*   **盲目消费主义**：反对无脑订阅各类闭源、有隐私泄露风险的 SaaS 服务（如付费版 Whisper Flow）。
+*   **低效 AI 使用者**：反对直接向顶级模型发送“帮我克隆一个某某软件”这种宽泛、低效且极度浪费 Token 的原始提示词。
+*   **API 价格焦虑者**：反对因害怕未来高昂的 API 价格而放弃尝试顶级模型，主张在窗口期内集中火力进行“资产化”开发（如构建可售卖的 Web App 包装器）。
+
+#### **6. 预期效果 (Intended Takeaway)**
+促使读者立即停止用 Fable 5 进行简单的问答，转而采用“Opus 规划 + Fable 5 落地”的协同工作流，在 7 天内为自己构建出本地克隆工具、Agentic OS 或完成代码库审计。同时，吸引读者购买其“Cloud Code Masterclass”课程和“Chase AI Plus”会员，以获取现成的提示词模板和系统配置。
+
+---
+
+### **PART 2. 无情但客观的批判性审查 (Hostile-But-Very-Fair Review)**
+
+#### **1. 强力辩护 (Steelman)**
+该视频提出的**“分层协同开发架构”**（即用低成本模型做 Deep Research 规划，用高能力模型做 Goal 导向执行）是目前大模型工程实践中极具智慧的“降本增效”策略。它敏锐地捕捉到了不同模型之间的性价比断层，通过在前期过滤掉大量发散性的自然语言 Token，确保了昂贵的 Fable 5 能够精准地在“代码生成”这一高价值窄道上满载运行。对于在有限预算内探索复杂应用边界的独立开发者而言，这一方法论具有极高的实操指导价值。
+
+#### **2. 最薄弱环节 (Weakest Link)**
+该论证中最脆弱的支柱在于其对**“克隆商业软件（SaaS）可行性”**的过度简化。
+> **原文支撑**："Why don't we just build a clone ourselves and customize it to our needs? ... It listens to what's going on with my microphone. It transcribes it, it sends it down to the local AI model to clean it up... It doesn't have all the bills and whistles of Whisper Flow, but it does the basics."
+
+**致命缺陷**：作者混淆了“功能原型（Prototype）”与“商业级产品（Product）”的本质区别。一个商业 SaaS（如 Whisper Flow）的核心壁垒绝非一个简单的“前端 UI + API 转发器”，而是其在极低延迟、极低算力消耗、多设备兼容、后台静默运行、异常处理以及专有模型微调上的深度优化。作者用 Fable 5 拼凑出的本地克隆版，本质上只是一个简陋的脚本外壳。如果用户为了省去每月十几美元的订阅费，去运行一个占用大量本地 CPU/GPU、经常因环境配置冲突而崩溃、且“没有各种花哨功能”的半成品，其付出的时间调试成本、硬件折旧成本和生产力损失，将远远超过其节省的订阅费。
+
+#### **3. 证据审计 (Evidence Audit)**
+*   **3D 游戏案例的“幸存者偏差”**：作者引用 Braffle 编写 21,000 行 TypeScript 代码生成 3D 游戏的案例，试图证明“只要有 PRD，非技术人员也能用 Fable 5 创造奇迹”。然而，他隐瞒了关键背景：Braffle 本身就是一位极具经验的资深工程师，能够写出逻辑严密、无歧义的高质量 PRD，并在 Fable 5 遇到编译和渲染瓶颈时进行精准的干预。普通非技术用户（作者课程的目标受众）如果仅凭 AI 辅助生成的 PRD，在面对 Three.js 复杂的着色器、物理引擎冲突和内存泄漏时，根本无法完成这 90 多轮的自主迭代。
+*   **代码审计的“虚警率（False Positives）”黑盒**：作者声称 Fable 5 在 5 分钟内找出了 24 个严重缺陷。但在软件工程中，未经人工验证的 AI 审计报告往往充斥着“幻觉缺陷”或“无关紧要的风格警告”。作者未提供任何关于这些缺陷的修复成功率或虚警率数据。盲目信任 AI 的代码审计，极易导致开发者陷入“防御性重构”的泥潭，反而引入新的系统不稳定因素。
+
+#### **4. 暗含假设 (Hidden Premises)**
+*   **假设 1：本地算力是免费且无限的。** 倡导“本地克隆”的前提是用户的个人电脑拥有足够的 GPU 算力来流畅运行本地 Whisper 和大语言模型。事实上，对于大多数非技术用户，本地运行这些模型会导致电脑风扇狂飙、系统卡顿，其综合体验远逊于云端高度优化的 SaaS。
+*   **假设 2：非技术人员可以通过“Masterclass”跨越工程鸿沟。** 视频暗含只要掌握了提示词和 Cloud Code 框架，就能无缝解决本地部署、环境依赖、端口冲突等底层工程问题。
+*   **假设 3：历史会话审计具有高收益。** 假设 Fable 5 对 39 次历史会话的分析能带来“高杠杆提升”。但实际上，频繁更改工作流、技能和自动化配置，往往会增加认知负荷，导致“为了自动化而自动化”的效率陷阱。
+
+#### **5. 认知盲区 (The Blind Side)**
+该论证完全忽视了**“软件生命周期中的维护成本（Maintenance Cost）”**。
+软件开发界有一条铁律：编写代码只占软件生命周期的 20%，剩下的 80% 在于持续的维护、Debug、依赖项升级和适配新系统。当用户用 Fable 5 在一周内快速克隆了 3 个本地工具后，一旦 Fable 5 的免费期结束、API 涨价，这些本地工具在未来遇到系统升级、API 变更或运行崩溃时，用户将失去“廉价的 AI 维护者”。届时，这些克隆软件将迅速沦为无法运行的“代码垃圾（Code Rot）”。付费 SaaS 真正卖给用户的，不是那几行代码，而是**持续维护的省心感**。
+
+#### **6. 一击必杀 (One Hit Kill)**
+> **致命追问**：如果利用 Fable 5 构建的本地克隆版（如本地 Whisper Flow）真的如此高效、稳定，且能完美替代原版，**为什么作为 AI 专家的你，在制作本期视频和日常工作中，依然在大量使用云端付费的商业 SaaS 工具，甚至还在极力推销你自己的付费 Masterclass 课程，而不是彻底转向你那“完全免费、不泄露隐私”的本地克隆生态？**
+
+#### **7. 如何证实/证伪 (What Would Settle It)**
+**设计一项“生产力与成本双盲对照测试”**：
+*   **实验对象**：招募 50 名具有中度办公需求、非技术背景的普通用户，随机分为两组，进行为期一个月的测试。
+*   **A组（SaaS组）**：直接付费订阅成熟的商业工具（如 Whisper Flow + 官方 Claude Web）。
+*   **B组（克隆组）**：在第一周使用作者的方法，用 Fable 5 克隆并部署本地版 Whisper Flow 及 Agentic OS，后续使用该本地系统办公。
+*   **衡量指标**：
+    1.  **任务达成率与耗时**：记录日常工作流的实际完成效率。
+    2.  **故障调试时间**：记录因软件崩溃、配置冲突导致用户停工调试的时间。
+    3.  **综合财务成本**：B组的【电费 + 硬件折旧 + Fable 5 调试期 API 费 + 调试时间的机会成本】，对比 A组的【订阅费】。
+*   **判定标准**：如果 B 组的综合生产力提升和省下的资金确实显著大于其开发和维护的时间成本，则作者的“克隆替代论”成立；若 B 组因系统不稳定和调试耗时导致净生产力下降，且综合成本未显著降低，则证实作者的论点只是“极客的自嗨”与营销噱头。
+
+---
+
+### **PART 3. Mermaid 概念图 (Mermaid Conceptual Map)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💎 Fable 5 限时最大化利用策略 (核心论点)"]
+        A["<b>核心主张: 7天窗口期内榨干 Fable 5 价值</b><br/>通过『双模型协同』攻克高价值场景，实现资产化积累"]
+        style A fill:#FFD700,stroke:#DAA520,stroke-width:3px,color:#333,font-weight:bold
+    end
+
+    subgraph SG_Method["🔄 双模型协同工作流 (降本增效范式)"]
+        direction TB
+        M1["<b>1. 前期规划阶段 (高Token消耗)</b><br/>使用低成本模型 Opus 4.8"] --> M1_Action["运行 Deep Research / 撰写精准 PRD"]
+        M1_Action --> M2["<b>2. 递交执行阶段 (高精度要求)</b><br/>切换至 Fable 5 运行"]
+        M2 --> M2_Action["使用 forward slash goal 开启长程自主代理"]
+        M2_Action --> M3["<b>成果输出</b><br/>高可用性代码、自动化技能或系统审计报告"]
+        
+        style M1 fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E
+        style M1_Action fill:#E3F2FD,stroke:#1565C0,stroke-width:1px,color:#1A237E
+        style M2 fill:#BBDEFB,stroke:#1565C0,stroke-width:2px,color:#1A237E
+        style M2_Action fill:#BBDEFB,stroke:#1565C0,stroke-width:1px,color:#1A237E
+        style M3 fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    end
+
+    subgraph SG_UseCases["🚀 作者推荐的 5 大核心项目"]
+        direction TB
+        U1["<b>UC 1: 克隆商业软件</b><br/>例如: 构建完全本地运行的 Whisper Flow"]:::usecase
+        U2["<b>UC 2: 工作流诊断审计</b><br/>分析历史 Cloud Code 会话，输出优化建议"]:::usecase
+        U3["<b>UC 3: 打造专属 Agentic OS</b><br/>构建可视化 Web 包装器，联动 Obsidian"]:::usecase
+        U4["<b>UC 4: 深度代码审查</b><br/>多评审器并行，去重并给出修复优先级"]:::usecase
+        U5["<b>UC 5: 零起步开发复杂软件</b><br/>基于单份 PRD 让 Fable 5 自主编写万行代码"]:::usecase
+        
+        classDef usecase fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20;
+    end
+
+    subgraph SG_Review["⚔️ 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_WeakLink["<b>1. 最薄弱环节: 忽略软件生命周期成本</b><br/>『功能原型』不等同于『商业级产品』<br/>克隆版缺乏深度优化，后期维护成本极高"]:::reviewNode
+        R_Evidence["<b>2. 证据审计: 存在幸存者偏差与信息黑盒</b><br/>3D游戏成功依赖原作者极强的工程素养<br/>代码审计未提供『虚警率』，易引发防御性重构"]:::reviewNode
+        R_Premise["<b>3. 暗含假设的硬伤</b><br/>假设用户本地算力富余且免费<br/>假设非技术人员能无缝解决复杂的本地部署冲突"]:::reviewNode
+        R_HitKill["<b>4. 一击必杀 (One Hit Kill)</b><br/>若本地克隆如此完美，为何作者日常仍依赖云端付费 SaaS，<br/>且极力推销自己的付费 Masterclass？"]:::reviewKill
+        R_Settle["<b>5. 验证方法 (What Would Settle It)</b><br/>开展『本地克隆组 VS 商业SaaS组』双盲对照测试<br/>核算包含调试时间机会成本在内的『净生产力 ROI』"]:::reviewSettle
+
+        style R_WeakLink fill:#FFCDD2,stroke:#E53935,stroke-width:1.5px,color:#B71C1C
+        style R_Evidence fill:#FFCDD2,stroke:#E53935,stroke-width:1.5px,color:#B71C1C
+        style R_Premise fill:#FFCDD2,stroke:#E53935,stroke-width:1.5px,color:#B71C1C
+        classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:1.5px,color:#B71C1C
+        classDef reviewKill fill:#FF8A80,stroke:#C62828,stroke-width:2.5px,color:#7f0000,font-weight:bold
+        classDef reviewSettle fill:#FFE0B2,stroke:#F57C00,stroke-width:2px,color:#E65100
+    end
+
+    %% Wiring
+    A --> M1
+    M3 --> U1 & U2 & U3 & U4 & U5
+    
+    U1 -.-> R_WeakLink
+    U5 -.-> R_Evidence
+    U1 -.-> R_Premise
+    U3 -.-> R_HitKill
+    R_HitKill --> R_Settle
+
+    %% Subgraph Background Styles
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Method fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E
+    style SG_UseCases fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+The most powerful AI model ever, Fable 5 is back. But we only have a week to play around with this thing before we lose it to API pricing. So the question you should be asking yourself is, what projects can I use Fable 5 on over the next seven days to get the most bang for my buck? How can I actually squeeze every ounce of juice out of this model? Well, in this video, I'm going to help you out. As I show you five different projects, you can point Fable 5 at and get your money's worth. So with that, let's hop in. So the first and arguably the best use case for Fable 5 is simply cloning software that already exists out in the real world, probably software you pay for. Well, why are we paying for it? Why don't we just build a clone ourselves and customize it to our needs? Fable 5 is great at doing this. And in this demo, let's have it clone Whisper Flow. A ton of you probably use Whisper Flow or something like it. Well, why are we paying for this? Furthermore, why are we giving our data to someone like Whisper Flow and having that information that we speak to our microphone, go to some cloud server. Why don't we just create a whisper flow? That's purely local. Runs at our machine is faster. And again, we can customize to our heart's desire. Well, that's exactly what Fable 5 can do. Now, when we work on these big projects, something we do need to keep in mind is our usage limits. Up until July 7th, we can use Fable 5 with our max plans. However, we can only use of the 50% of the plans weekly usage limits. So we need to be smart about how we do this. need to be smart about the sort of prompts we create. It doesn't make a lot of sense for me to just say, hey, Fable 5, go recreate whisper flow. We can probably do better than that. In fact, what we can probably do is we could use something like deep research, AKA dynamic workflows inside of Cloud Code, using a model like Opus 4.8, have it figure out a plan that actually makes sense. We could even use something like Codex to check that plan. And once we have a plan that makes sense, we hand it off to Fable 5. We do some of the upfront grunt work with Opus and let people five handle the rest. That's exactly what we're going to do. So again, I'm on Opus 4.8. I said forward slash deep research. I want to come up with a plan to clone whisper flow. I want you to do some deep research on how whisper flow works, what we would need to recreate its base functionality on our computer furthermore. I'd like to recreate it locally. So I want it to be a local model running on a moment that essentially does what whisper flow does. So we're going to run this. It's going to come back with a plan. And if that plan makes sense to us, we're going to go ahead hand it to Fable 5 and have it go to work. So when it hadn't finished the deep research, it figured out, hey, this is what a whisper flow clone should look like. Here's how it would work on your computer and here's sort of the local architecture I'm thinking about. Now, what we want to do is we want to take this whole report and we want to turn this into a prompt we can hand to Fable 5 and we can have Opus do that just fine. Ideally, we set up this prompt so it makes sense if we do forward slash goal. Remember forward slash goal is for long running agent tasks, big projects, things that are perfect for Fable 5. And with forward slash goal, we're saying, hey, this is what we want to do. And here's sort of the success criteria. And it's just going to keep working and working and working until it gets to your end state. So perfect for things like this. So it went ahead and created that prompt for me. So I'm just going to go ahead and copy this thing. We're then going ahead and just switch the model over to Fable 5. We pasted the prompt in there. And we just let it go to work. And after some back and forth, get the visuals working. we got this, which is my version of Whisper Flow, but entirely local, nothing leaves my computer. It doesn't have all the bills and whistles of Whisper Flow, but it does the basics. It listens to what's going on with my microphone. It transcribes it, it sends it down to the local AI model to clean it up. And when I'm done talking, it just populates it inside the text box. Let's see what it gives us. So hey, nothing leaves a computer, it doesn't have all the bells and whistles, et cetera, et cetera. So it just took everything I said and put it inside here. Now, all that being said is whisper flow clone, the craziest thing ever for Fable 5. No, it can actually do a lot more than it, but it just sort of depends on what you want to clone. I think you should just use the template I gave you, which is do some deep research, figure out how that particular app actually works, figure out how you want to customize it, get your prompt in order, and then bring it to Fable 5. I definitely do not suggest using dynamic workflows with Fable 5 or you're just gonna burn through all of your usage. Now let's move into use case number two, which is using Fable Five to do a complete tear down and diagnosis of how you use Cloud Code and how you can improve. Now I'm not talking about how you use Cloud Code in terms of usage. I'm saying we're going to have Fable Five look across all your previous sessions. Take a look at how you use Cloud in terms of your skills, your automations, your tasks, and then figure out what you're doing right, what you're doing wrong, and more importantly, what we can do to improve this. Does this mean changing our skills, creating new skills, adding new automations? So this is essentially doing an audit of how you're using the tool itself. So here's a look at the prompt. We're saying reflect on our past cloud code sessions to find the highest leverage improvements to my setup. You sub agents to pull raw signals from the transcripts. You cluster them across sessions and decide per cluster where there needs a new skill and automation, a fix or nothing. Write the candidates in this MD file and we're saying, hey, at first it's just a diagnosis. I want to see what it comes back with before it executes anything. Now, if you're wondering how I'm coming up with these prompts in this prompt structure, this is coming from Anthropics official documentation when it comes to prompting Cloud Vable 5, because there are some nuances between how you want to use Vable and Mythos versus something like Opus. So let's see what it comes back with. So Vable 5 ran through my last 39 sessions, and this is what it came up with. It broke it out into three different batches based on how much leverage it'd think it would gave me. And they ranged from creating new skills to setting certain skills as automations and some simple changes to things like myclaw.md. So this is a really simple use case to improve your workflows with in-clawed code. And if something you'll get a lot more out of if you fall into the power user side of the equation. So before we jump into the next use case, I just wanna give you a quick word from today's sponsor, which is me. I just released the Clawed Code Masterclass not too long ago and it is the number one way to go from zero to AI depth, especially if you don't come from a technical background. we update this every single week and all the resources you see in today's video, including my Cloud OS, can be found here inside of Chase AI Plus. There's a link to that in the pinned comment. So definitely check us out if you are trying to get more serious about your AI journey. Now let's go into use case number three, which is building your own agentic OS. What you see here is one I built with Fable 5 and this essentially acts as a custom wrapper over the top of Cloud Code. What we see here is the visual side of it, but what's most important is what's going under the hood. And it's a perfect follow on from use case number two, which is essentially codifying everything you do in your day to day, your week to week into skills and automations. But this gives us the additional advantages of certain visual metrics that we just can't get inside of the terminal. So for me, that includes things like content, right? What's been going on with my content game across multiple platforms. I can see things like my different like morning reports and things of that nature. This is all linked to obsidian. And I have all my most used skills and automations over here on the right, which are just a click away. Now again, I've done deep dives on this. I'm not gonna turn this into a deep, deep, authentic OS video, but the most important part are all those skills and automations I'm talking about. You need to use Fable 5 to come up with the skills and automations that make sense for you. For me, that has to do with like research, content, things on my agency side like sales and finance. All my individual tasks, Fable 5 turns into skills and turns them into automations, if that makes sense. And in certain cases, we apply loop engineering to those skills as well, but that really depends on the use case. But this sort of customized, agentic OS is pretty simple for Fable 5 to create. And one of the best parts about this is that if you're in the AI agency game, you can package this since it's essentially a web app that anyone can put on top of their cloud code and sell it. Or you can clone it and give this to teammates who aren't going to use the CLI or aren't going to use the cloud app because they can add whatever they want to this And you pretty much just wire up different skills and automations that you would use because it's just doing clawed headless dash P under the hood, which luckily for us isn't pulling from API prices anymore since Anthropic walked that back a few weeks ago. The use case number four comes directly from Anthropic itself and that is code review and debugging. If you have a complicated project, if you have a huge code base, now is the time to take Vable 5 and point it at that code base and see if you can figure out what code looks bad in what are actually bugs. And the problem for this doesn't have to be complicated. Hey, so I want you to take a look at this code base and I want you to do a full code review and also let me know about any bugs you find. And it's going to come back with whatever it finds. So after about five minutes, it found 45 raw findings from four parallel reviewers, D-Doop down to 24. And then it took those 24 and it broke it down by severity. And it gives us sort of an explanation of what's wrong at each step, what kind of like where the issue is. And then it gives us a specific fixed priority. And it's like, hey, do you want to go ahead and start working on these? Now, the cool thing about this is it's found all these things wrong and a code base that isn't necessarily that complicated. There's things that are infinitely more complicated than what I'm doing here. So if you are in that camp, if someone who has something very complicated, there is no reason you should not be pointing Fable 5 at it and at least having to get eyes on on the work you've already done. Now, use case number five is what you see right here. It's having Fable 5 create whatever custom software you want. Something that is going to require a long horizon This is a video game built in a browser running on three JS. And this looks wild. This is an insane accomplishment by Fable 5. You would not be able to create this using something like Opus 4.8. Unless you knew exactly what you were doing. This is, again, this is all running on the browser. This isn't like a downloaded video game. This is all browser graphics. And it's crazy. Now, I wasn't the one who actually built that. This is an open source project from Braffle who created this using Fable 5 the first time it came out. I think this is a great case study for the sort of things you can create. And the power here isn't just that Fable 5 built, but the power is that we can look at sort of how he created this from scratch. So the readme talks about the one document that they gave Fable 5 in order to create this. So the human partially wrote one document, which is this Markdown file. What is this? This is a PRD. This is a product requirements document spelling out. Hey, here's what we want to build. The visual target is a current gen on real engine 5 showcase footage, and then it goes through sort of like the pillars of this application, the instructions, the constraints, the floors, et cetera, et cetera. And like you said, this was only partially written by the human. So what you need to do, if you're trying to create your own sort of software or a game or whatever it is, some sort of crazy project that only Fable 5 can build, you need to nail this down. You need to nail down the PRD. Now, Fable 5 can help you, but we want to be very conscious of our usage. So this is something Opus 4.8 can at least get it started with you, right? You should be able to create some sort of PRD with the specific instructions and with the specific requirements with Opus 4.8 again. Use something like deep research to help you do that and then bring it to Fable 5. Essentially, recreate what we did in the first use case. And after that, you pretty much just hand it to Fable 5 and you let it execute it across a long autonomous session exactly like the Ford slash goal scenario we did earlier. In this particular setup, Fable 5 wrote 21,000 lines of TypeScript across 90 plus commands to get what you just saw. So really cool stuff and that's just a taste of what this model is able to build for you. So those are the five Fable 5 use cases you need to try out this week. As always, let me know what you thought about this video in the comments. Make sure to check out Chase AI Plus if you want to get your hands on the Cloud Code Master class or my exact Cloud OS setup, and besides that, I'll see you around.
