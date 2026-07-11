@@ -1,0 +1,88 @@
+Timestamp: 2026-07-11T13:47:35.400314
+Title: 倪海厦：四维空间的得道真人，曾在我耳边说悄悄话！ BV1Bk7W6CEMz
+URL: https://www.bilibili.com/video/BV1Bk7W6CEMz/?spm_id_from=333.1007.tianma.4-2-12.click
+Status: success
+Duration: 0:45
+
+Description:
+### 第一部分：文本分析
+
+#### 1. 核心论点 (Argument)
+超自然现象（如听到耳边低语、看到旁人看不见的实体）具有客观真实性，即使是完全没有相关文化背景和心理暗示的人（如不懂中医的外国人），也能在特定环境下感知到这些现象。
+
+#### 2. 关键证据 (Evidence)
+* **个人经历**：作者提到常有人遇到“耳边有人讲话”的情况。
+* **诊所案例**：一名完全不懂中医、没读过《黄帝内经》（文本中误写作“黄医内疑”）的外国患者，在作者的诊所（文本中误写作“整首”）接受治疗时，声称看到有“东西”真实地站在作者身旁，而作者本人对此毫无察觉。
+
+#### 3. 逻辑推理 (Reasoning)
+* **前提 1**：如果某人提前具备某种文化或理论知识（如中医、鬼神说），其感知可能是由“心理暗示”或“文化想象”引起的。
+* **前提 2**：该外国患者完全不具备此类文化背景。
+* **推导**：在该患者没有任何预设心理暗示的情况下，却能看到作者身边的“东西”，证明这种超自然现象并非主观幻觉，而是不依赖于文化背景的客观存在。
+
+#### 4. 敌对性同行评审 (Fair-But-Hostile Review)
+1. **最薄弱环节 (Weakest link)**
+   * 本文论证完全建立在**“单一外国患者的主观口头陈述”**上。一旦该患者当时处于生理病理状态（如针灸引起的神经迷走反应、低血糖、疾病导致的幻觉）、诊所光影折射产生的视觉错觉，或者是语言沟通上的误会，其陈述的真实性便会彻底瓦解，进而导致“超自然现象客观存在”的整个论证完全崩溃。
+
+2. **证据审计 (Evidence audit)**
+   * **信息源极度不严谨**：文本充斥着严重的同音错别字（如“整首”代指“诊所”，“黄医内疑”代指“黄帝内经”，“中卫”代指“中医”），且混杂着“听人家说”等道听途说之词，表明信息在传递过程中存在极大的失真风险。
+   * **缺乏控制变量与科学排除**：作者未能排除任何合理的物理或心理学解释，例如：诊所暗淡的光线、针灸对患者脑部血流量的影响、或者患者个人是否有精神分裂、滥用药物或睡眠剥夺史。
+
+3. **默示假设 (Unstated assumptions)**
+   * **假设一**：缺乏特定文化知识（如不懂中医）的人，其大脑就不会产生任何其他形式的视觉错觉或幻觉。
+   * **假设二**：无法被作者本人感知（“我怎么都不知道”）但被他人声称感知到的事物，必然是客观存在的，而非对方的个人认知偏差。
+   * **假设三**：患者所说的“看到一些东西”等同于“看到了超自然的灵体或能量场”。
+
+---
+
+### 第二部分：概念关系图
+
+<Mermaid_Diagram>
+graph TD
+    %% 节点样式定义
+    classDef claim fill:#FFF3BF,stroke:#C8A200,stroke-width:2.5px,color:#5C4800,font-weight:bold;
+    classDef evidence fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+    classDef reasoning fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064;
+    classDef attack fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#B71C1C,font-weight:bold;
+    classDef weak fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#7F0000,font-weight:bold;
+
+    A["🔮 核心论点：超自然现象/灵体具有客观真实性"]:::claim
+
+    subgraph evidence_sub["📁 诊所案例证据 (Evidence)"]
+        E1["老外患者完全不懂中医/黄帝内经<br/>(无文化背景)"]:::evidence
+        E2["老外在诊所声称看到‘东西’飘在作者身边"]:::evidence
+        E3["作者本人对此毫无察觉"]:::evidence
+    end
+
+    subgraph reasoning_sub["🧠 逻辑推导链条 (Reasoning)"]
+        R1{"排除心理暗示"}:::reasoning
+        R2["无文化背景仍能‘看到’"]:::reasoning
+        R3["推导：此现象非主观想象，而是客观存在"]:::reasoning
+    end
+
+    A --> E2
+    E1 & E2 & E3 --> R1
+    R1 --> R2 --> R3 --> A
+
+    subgraph attack_sub["⚡ 敌对评审：系统性漏洞 (Fair-But-Hostile)"]
+        W1["🚨 最薄弱环节：极度依赖单一主观孤证"]:::weak
+        W2["🔍 证据审计：信息源失真与缺乏科学排除"]:::attack
+        W3["🔑 默示假设：认知盲区等同于客观感知"]:::attack
+    end
+
+    %% 敌对评审指向漏洞
+    E2 -. "唯一支柱（极易崩溃）" .-> W1
+    E1 & E3 -. "缺乏病理、光影等控制变量" .-> W2
+    R1 -. "不合理推论" .-> W3
+
+    W1 --> D1["💥 论证崩塌：老外可能因针灸、疾病或幻觉产生视觉偏差"]:::weak
+    W2 --> D2["💥 信度极低：文本充斥'黄医内疑'等错字，且混杂'听人家说'"]:::attack
+    W3 --> D3["💥 假设破产：不懂中医不等于不会产生通用幻觉"]:::attack
+
+    %% 子图背景及语义颜色
+    style evidence_sub fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px;
+    style reasoning_sub fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px;
+    style attack_sub fill:#FFEBEE,stroke:#E53935,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+过去我就碰到很多这些可以看到看到这些在所谓的事实中间的这些知人还在会常在耳边讲话有的人遇到这种事情遇到这种事情到底怎么样子我也不敢讲我们听人家说比如说我在整首里面的时候老外老外根本没有看过中医什么中医的书 黄医内疑他根本不知道中卫的东西讲到英文他会看到一些东西在我整首里面我帮我一下一条有没有真的过在旁边我怎么都不知道只是说出这种事情那可能很多地方里面都会遇到这种事情的估计停止估计性子估计性子
