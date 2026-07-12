@@ -1,0 +1,97 @@
+Timestamp: 2026-07-12T09:09:09.723966
+Title: 一句提示词，GPT-5.6 Codex 自己做完了整支视频：没录音、没剪辑、没审查 p01 video_trimmed BV1RdNL6mEcw
+URL: https://b23.tv/uMT1iAS
+Status: success
+Duration: 4:03
+
+Description:
+### Part 1: 文本分析 (Text Analysis)
+
+#### 1. 核心论点 (Argument)
+GPT 5.6 Codex 结合 Otra/Oltre 多智能体协同（Orchestration）框架，已经具备极其强大的跨工具链自主执行能力。它能够仅凭单一、模糊且带情绪的提示词，自主协调多个 Agent 并调度 11 Labs、HeyGen、HyperFrames 等外部工具，在无人工干预的情况下完成高复杂度的端到端视频创作，且成本和效率显著优于竞争对手（如 Fable）。
+
+#### 2. 关键证据 (Evidence)
+* **基准测试数据**：Codex 在 Terminal Bench 2.1 评分中达到 91.9%（高于 GPT 5.5 的 85.6%）；在 Browse.com 浏览器测试中得分 92.2%。
+* **实测胜率**：在作者进行的 13 项小规模本地实测中，Codex 获得 97% 的客观分（5胜 8平 0负）。
+* **自动化工作流实现**：Codex 成功驱动 11 Labs 生产音频（控制在60秒内以保持音色一致），通过浏览器自动化控制 HeyGen 生成 Avatar 虚拟形象，并使用 HyperFrames 进行画面渲染剪辑。
+* **资源与成本对比**：通过 9 个智能体、运行 2.5 小时、消耗约 8600 万 Tokens（实际核算），总成本约为 300 多美元，远低于 Fable 5 的价格（基本是其一半）。
+
+#### 3. 逻辑推导 (Reasoning)
+作者的逻辑链条如下：
+* **前提 1**：传统的 AI 测试基准无法完全反映实际生产力。
+* **前提 2**：真实的视频生产工作流高度复杂，涉及脚本分段、配音、形象生成、渲染和事实核验等多个异构系统的调用。
+* **推导过程**：通过将 GPT 5.6 Codex 注入 Oltre 框架并给出一个模糊提示词，该模型能自动分解任务，通过自查（QA）与重渲染机制解决 API 不稳定和渲染失败等问题，最终产出成片。
+* **结论**：这证明了 Codex 在“不确定性与变化”中把控复杂成果的极高设计与执行判断力，AI “全自动导演”时代已经到来。
+
+---
+
+#### 4. 对抗性同行评议 (Fair-But-Hostile Review)
+
+##### (1) 最脆弱的链条 (Weakest Link)
+**“单一提示词实现全自动流水线”的真实性。**
+整个论证彻底建立在“作者仅输入了一条提示词，其余全由 Codex 自主规划和操作”这一假设之上。然而，文中提到“通过浏览器自动化打开 HeyGen 编辑器并将片段改为 Avatar V”。浏览器自动化（如 Playwright/Selenium）通常需要极度精确的 DOM 元素定位和硬编码逻辑。如果这些自动化脚本或 API 桥接是作者提前针对该任务高度定制、预设好的，那么 Codex 的“自主规划”就只是在一个极为狭窄的“铁轨”上运行，而非其宣传的“自主决策”。一旦 HeyGen 的 UI 发生微小变动，整个流水线就会崩溃。
+
+##### (2) 证据审计 (Evidence Audit)
+* **“97% 客观分”的算法欺骗**：作者称在 13 项测试中“5胜 8平 0负”获得了“97% 的得分”。在统计学上，5 胜 13 负/平的纯胜率仅为 38.5%。将“平局”计入得分或通过有利于己方的加权算法得出 “97%” 显然存在严重的樱桃挑选（Cherry-picking）和数据美化。
+* **不可考的模型与技术**：文中提及的“GPT 5.6 Codex”和“Oltre/Otra 框架”在目前公开的技术语境中并不存在（OpenAI 尚未发布 GPT 5.6，且 Codex 早期系列已停用/合并）。作者未指明其是否为内测 API，或是某种虚构/炒作概念，数据源的真实性无法核实。
+* **Token 与成本计算混乱**：文中先是提到“两小时半用 300 万 Tokens”，后又称“实际启动九个智能体总计消耗 8600 万 Tokens，成本 300 多美元”。数据前后矛盾，缺乏透明的账单支撑。
+
+##### (3) 无形假设 (Unstated Assumptions)
+* **假设工具链的完美鲁棒性**：默认 11 Labs、HeyGen 和 HyperFrames 在面对不同场景时，都能通过简单的 AI 提示完美对齐，忽视了音视频生成中常见的口型对不齐、画面伪影、情绪断层等 AI 生成顽疾。
+* **忽视了隐性的人类劳动**：默认“提供提示词并授权声音和形象”是极轻量的工作，而实际上，前期的声音克隆、形象素材采集、API 账户打通及工作流调试需要耗费人类工程师数十甚至数百小时的劳动。
+* **商业可行性误区**：假设 300 美元制作一个几分钟且质量不可控的短视频在商业上是“便宜”的。对于大多数企业级视频制作，这个成本和不确定性依然远高于成熟的模块化模板工具。
+
+---
+
+### Part 2: 概念关系图 (Conceptual Map)
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 初始模糊提示词 (Single Prompt)"] --> B["🤖 GPT 5.6 Codex (核心大脑)"]
+    
+    subgraph Orchestrator ["Oltre / Otra 多智能体协调系统"]
+        B --> B1["📋 Agent 1: 脚本分段与规划"]
+        B --> B2["⚙️ Agent 2: 工具调度执行"]
+        B --> B3["🔍 Agent 3: 独立自查与纠错"]
+        B --> B4["🛡️ Agent 4: 事实与合规核验"]
+    end
+
+    subgraph Toolchain ["🛠️ 跨平台多模态工具链"]
+        B1 -.->|"分段脚本 (&lt;60s)"| T1["🎙️ 11 Labs<br/>(克隆音色/音频合成)"]
+        T1 -->|"合成音频"| T2["👤 HeyGen Editor<br/>(浏览器自动化调用 Avatar V)"]
+        T2 -->|"虚拟形象视频"| T3["🎬 HyperFrames<br/>(画面对齐与最终剪辑渲染)"]
+    end
+
+    subgraph QA_Loop ["🔄 闭环自查与质量控制"]
+        T3 --> Q1["🧐 独立代理视频核验"]
+        Q1 --> Q2{"核验入退场/文字/音画是否始终可见?"}
+        Q2 -- "Fail (失败帧)" --> Q_Fix["🛠️ 自动触发修复与重渲染"] --> T3
+        Q2 -- "Pass (通过)" --> Out["📹 最终高质成品视频"]
+    end
+
+    subgraph Critiques ["🛡️ 对抗性审查 (Hostile Audit)"]
+        C1["⚠️ 脆弱链条: 自动化幻觉"] -.->|"浏览器自动化极度依赖预设脚本<br/>而非Codex真正的即兴推理"| B2
+        C2["📊 数据美化: 97%胜率质疑"] -.->|"13战5胜8平<br/>通过将平局算作非输来粉饰数据"| Q2
+        C3["💰 隐性成本与商业伪命题"] -.->|"单次成片耗资$300/消耗86M Tokens<br/>极易因工具链断裂导致成本倍增"| Out
+    end
+
+    %% Styles
+    classDef brain fill:#FFF3BF,stroke:#C8A200,stroke-width:2.5px,color:#5C4800,font-weight:bold;
+    classDef tools fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#1A237E;
+    classDef qa fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20;
+    classDef crit fill:#FFEBEE,stroke:#E53935,stroke-width:2px,color:#B71C1C,font-weight:bold;
+    
+    class B,B1,B2,B3,B4 brain;
+    class T1,T2,T3 tools;
+    class Q1,Q2,Q_Fix,Out qa;
+    class C1,C2,C3 crit;
+
+    %% Subgraph Styling
+    style Orchestrator fill:#FFFDE7,stroke:#FBC02D,stroke-width:1.5px;
+    style Toolchain fill:#E1F5FE,stroke:#0288D1,stroke-width:1.5px;
+    style QA_Loop fill:#E8F5E9,stroke:#388E3C,stroke-width:1.5px;
+    style Critiques fill:#FFEBEE,stroke:#D32F2F,stroke-width:1.5px;
+</Mermaid_Diagram>
+
+Content:
+我给GPT 5.6 Codex一个提示词离开一会后回来就得到了这个你看到并听到的是内但它没出境它没路旁白也没打开编辑器它只给了我一个提示词就这样我是运行在 Codex 奥特总的GPT 5.6 Codex控制了创建你接下来将看到的每一句文字每个剪辑 每个动态徒刑和每项质量检查的工作流程OpenAI于7月9日在有线御览后正式广泛推出 Codex成其为公司目前最强的模型更大的变化在于Otra它可同时协调4个Agent完成整套制作我会准确说明这意味着什么包括我在哪些环节需要11 LabsHey Gen和Hyperframs来完成制作Codex 成长跨工具处理复杂场任务OpenAI成其为公司其近最强的代码模型在Otra中其 Terminal Bench 2.1得分为91.9高于GPT 5.5%的85.6%在测试Agent流览的Browsecom中优触得分92.2%但几准测试并非全貌我得调言发布区分试试于炒作查看内系统按内口温写作都要用付费API等渲染并合验在这台设备上进行的一次小规模13项测试中Codex获得了可得客观分的97%气胜5平一副这并不证明它试试领先于我所见一致Codex在编程和结构画执行方面有其强配音时我将脚本分段每段不超60秒将片段保持简短能让内的柯隆音色始终一致每段都使用内售权的11 Labs音色随后我将音频上传到Hey-Zen并与它的虚拟形象配对API无法让我可靠的锁定最新的动作引擎因此我通过刘兰期自动画打开Hey-Zen编辑器将每个片段都改为Avatar V重新生成合验设之后下载完成的渲染结果接着转到HyperFrames每个画面都对应出发它的原剧我没着内改一期形象用卡片补充观点全程可见11 Labs制作音频Hey-Zen制作虚拟形象HyperFrame渲染剪辑Codex规划并操作整条流程随后自查独立代理检查渲染视频针合查每次入退场约界文字形象始终可见并对照OpenAI发布说明合验事实任何失败针都要修复重渲染和复查OpenAI称GPT5.6更擅长设计判断与字件这比右翼业基准测试换灯片更能简验这一说法内提供了一个提示词并授权使用它的声音和虚拟形象在你看到这支视频之前它没有露致简机或审查过它这一切是于一条指令现役成片Codex擅长在变化中把控成果这才第一天这很不错《非不误》发布时我做过类似实验想看《非不》给我做的视频点这里说说哪个更好这里显示它两小时半用300万Tocons但我怀疑这数字我们在欧唆上用GPT5.6Codex本营大量伟派并启动其他智能体我让它检查日质算出实际成本主汇化还启动了九个智能体总计约4.5ETocons8600万数量相当大若按输入输出分有算约为300多美元GPT5.6Codex发布后我就提交了这个提示词我整天都在试用它并将它与Fable对比而且几乎每次运行GPT5.6都比Fable便宜得多那个视频也将很快发布但如果看实际API机费尽管这里我用的是Codex定约人能看出Codex的定价低得多基本是Fable5的一半GPT5.6Codex定价与OPOS 4.8相近我认为不用EotreGPT5.6Codex也能轻松做出类似视频Oltre是它想得过多伟派过渡偷恳解增加了我敢说若用高档跑同一提示或者用机高档也能得到类似结果成本约检伴因此用这类强模型时我通常不把头入调到高档以上但我真正想展示的是这些模型很擅长处理带有情绪模糊且含混的提示并自行判断如何完成任务它查看了我的项目和其它视频从中获得灵感只要别干扰它并在提示中加入伟派和验证等要求你会发现能走很远在不断迭待你会围绕它构建技能加入反馈并完成许多实用工作这期很短喜欢的话请点赞感谢看到最后下期见感谢大家
