@@ -1,0 +1,164 @@
+Timestamp: 2026-07-12T19:02:41.115428
+Title: GPT-5.6最便宜的Luna，编程实测竟接近满分？ p01 video_trimmed BV1FbNT6NEW9
+URL: https://b23.tv/IL6sTAL
+Status: success
+Duration: 8:49
+
+Description:
+### PART 1. 作者的思想地图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+在网页开发日常任务中，新一代 GPT-5.6 家族中的轻量级模型 Luna（在中等推理档位下）凭借极高的性价比和出色的指令遵循能力，完全可以且应当取代上一代的 GPT-5.4/5.5 mini 模型。
+
+#### 2. 论据基础 (Evidentiary Base)
+*   **硬数据（基准测试）**：作者使用了包含 5 个实际 Web 开发项目（技术栈为 PHP/Laravel、React、TypeScript）的 25 个提示词，每个提示词重复运行 5 次，以此评估模型的稳定性和成本。
+*   **Luna Medium 表现**：在 25 次测试中取得了 23.5 分的高分（仅在 Filament 框架枚举约定和复杂的 CSV 导入边界处理上各失手一次），平均单次提示成本为 18 美分，且在避免 N+1 查询（自验证）等高难任务中拿到满分。
+*   **Luna Low 表现**：得分降至 19 分，平均单次提示成本降至 11 美分，但在面对不明确的复杂逻辑时错误率明显上升。
+*   **Terra Medium 表现**：25 次测试中取得 24 分，几乎完美，但单次提示成本显著增高，性价比不如 Luna Medium。
+*   **竞品对比数据**：引入了 GPT-5.4 mini、Composer 2.5、GPT-5.5 mini、Anthropic Opus 等模型的历史测试成本与得分作为基准对比。
+
+#### 3. 逻辑推导 (Logical Warrant)
+作者的推导过程基于**归纳推理**与**性价比折衷分析（Cost-Benefit Trade-off）**：
+*   **前提 A**：在 Web 开发中，日常任务（如生成 React 组件、构建 Laravel API）是高频且模式相对固定的。
+*   **前提 B**：测试表明，Luna Medium 在这些任务中的通过率（94%）几乎与昂贵的 Terra 或前代大模型持平，而成本（18美分）远低于后者。
+*   **前提 C**：降低到 Luna Low 档位虽然能省钱（11美分），但通过率跌至 76%，开发者的调试时间成本会大幅增加。
+*   **结论**：Luna Medium 是目前日常开发中最具性价比的“黄金平衡点”，可以安全替代 GPT-5.4/5.5 mini。
+
+```
+[Luna Medium 成功率 94% 且成本极低] + [日常任务无需极高推理] ➔ 推荐使用 Luna Medium
+[Luna Low 成功率降至 76%] ➔ 排除使用 Low 档位
+```
+
+#### 4. 适用范围 (Stated Scope)
+*   **技术栈限制**：作者明确声明其所有评测均针对“网站开发项目”（具体为 PHP/Laravel、React、TypeScript）。对于其他技术栈或不同类型的项目，结果可能会有所不同。
+*   **任务难度限制**：仅适用于“日常开发任务”（如生成新代码、基础 API 构建）。
+*   **档位限制**：明确不推荐将 Luna 用于“低推理强度（Low）”档位。
+
+#### 5. 潜在对手 (Implicit Opponent)
+*   **盲目高消费派**：认为便宜模型（如 Luna）无法胜任日常严肃开发工作，必须依赖高成本、高推理强度模型（如 Terra 或 GPT-5.5/Opus）的开发者。
+*   **极端省钱派**：主张在 API 层面使用最便宜的“低算力档位（Low）”来压榨每一分钱成本的开发者（作者用数据证明了低算力会导致模型频繁崩溃，得不偿失）。
+
+#### 6. 期望读者采取的行动 (Intended Takeaway)
+*   立即在开发工作流中将底座模型从 GPT-5.4/5.5 mini 升级/切换为 GPT-5.6 Luna（并保持在中等推理档位 Medium）。
+*   放弃在生产或高频开发中使用极低算力的 Luna Low 档位。
+*   期待并关注作者后续针对 2026 年新一代超强模型（如 Grok 4.5 等）设计的全新高难度基准测试。
+
+---
+
+### PART 2. 无情但客观的同行评审 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强力辩护 (Steelman)
+如果站在作者的立场，该研究最强有力的论点在于：**它在控制变量的前提下，为开发者提供了一份极具实操价值的“降本增效”量化指南**。作者没有空谈模型的参数或官方跑分，而是用 25 个固定的、高频出现的真实 Web 开发任务，在不同的推理档位下重复运行，并精确计算了每一次 API 调用的美分成本。这证明了在特定垂直领域（Web 绿地开发），新一代轻量级模型（Luna Medium）已经跨越了“好用”的临界点，打破了“便宜无好货”的行业偏见。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该论证最致命的“阿喀琉斯之踵”在于**测试基准的严重过时与单一性**。
+
+> 引用作者原话：“因为在2026年7月，我们拿到的最新一代模型上……这些任务似乎都变得太简单了……只是基本门槛。”
+
+**致命逻辑漏洞**：既然作者自己承认这 25 个测试任务对于 2026 年的模型而言已经变成了“太简单”的“基本门槛”，那么用一个**无法测试出模型极限、无法拉开代际差距**的过时基准，去得出“Luna Medium 可以完全放心替换 GPT-5.4/5.5 mini”的普适性结论，在逻辑上是完全失效的。这就好比用“小学的加减乘除题”去测试两个大学生，并得出“他们水平完全一样，所以可以用便宜的那个替代贵的那个”一样荒谬。一旦面对真正复杂的现实业务（如多模块重构、深层逻辑 debug），Luna Medium 的崩溃临界点在哪里？作者并未给出答案。
+
+#### 3. 证据审查 (Evidence Audit)
+*   **样本代表性极窄**：测试完全局限于 PHP/Laravel 和 React/TS。对于 Python 异步处理、Go 并发控制、Rust 内存安全等其他主流开发场景完全没有覆盖，却得出了普适性的“日常开发任务”结论。
+*   **测试规模过小**：25 个提示词虽然重复了数次，但在统计学上依然属于微型数据集，极易受到 OpenAI 平台偶发性延迟或微调版本波动的影响。
+*   **核心数据缺失**：作者提到由于 OpenAI 额度重置的 Twitter 安排，导致他“没法可靠地测量订阅版的使用量”。这意味着对于每月支付 20 美元的普通订阅用户，该测试失去了最直接的额度消耗指导意义，只能依赖 API 价格进行推估。
+
+#### 4. 隐藏假设 (Hidden Premises)
+*   **假设 1**：Web 开发的日常工作可以被等同于“单次提示词生成任务”。（事实上，真实开发是高度依赖多轮对话、上下文召回和复杂 codebase 理解的，单次提示通过率高并不代表多轮对话不崩溃）。
+*   **假设 2**：单次提示的微小成本差异（如 18 美分 vs 11 美分）是开发者决策的决定性因素。（事实上，开发者的时间成本远超 API 成本，因模型微小失误导致的 debug 时间损失，其价值远超省下的几美分）。
+
+#### 5. 盲区分析 (The Blind Side)
+该论证完全忽略了**“绿地开发（Greenfield）”与“棕地开发（Brownfield）”的本质区别**。
+作者的测试项目（如“生成一个 Laravel API”、“生成一个 React 组件”）均属于从零开始的“绿地开发”。在这类场景下，模型只需遵循标准框架的最佳实践即可。然而，现实中 80% 的开发工作是“棕地开发”——在已有数十万行、充满历史包袱的代码库中进行重构、Debug 和接口对接。在这种上下文极其庞大且充满非标准约定的场景下，轻量级模型（如 Luna）的上下文窗口召回率（Needle in a Haystack）和深层推理能力通常会发生断崖式下跌，而这正是 Terra 或更高级模型值钱的地方。作者的测试完全屏蔽了这一现实痛点。
+
+#### 6. 一击必杀问题 (One Hit Kill)
+> **“既然您承认现有的 25 个测试任务对 2026 年的最新一代模型来说已经‘太简单了’、‘成了基本门槛’，那么用一个无法测试出模型极限的过时基准，得出的‘Luna 表现完美、可完全替代前代’的结论，如何能保证在面对哪怕稍微复杂一点的、非‘基本门槛’的真实项目时不会迅速崩溃？”**
+
+#### 7. 如何盖棺定论 (What Would Settle It)
+需要设计一套**“2026 代际高难度 Web 开发基准测试（High-Difficulty Web Benchmark）”**。
+该测试必须包含：
+1.  **多文件关联重构**：修改 A 文件的接口，观察模型能否自动识别并重构 B、C 文件中的调用逻辑。
+2.  **复杂 SQL/ORM 性能优化**：给出带有深层嵌套和性能瓶颈的真实数据库 Schema，要求模型优化查询。
+3.  **未知第三方 API 对接**：提供一份虚构的、未在模型训练集中的 API 文档，测试其即时学习与生成能力。
+
+在此高难度基准下，对比 Luna Medium、Terra Medium 和 GPT-5.5 的通过率与调试轮数。如果 Luna Medium 依然能保持 90% 以上的成功率，则作者的“完全放心替换”结论成立；若其通过率跌至 50% 以下，则证明其仅能作为“初级代码生成器”，无法替代高级模型。
+
+---
+
+### PART 3. 概念关系图 (Mermaid Map)
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心主张
+    subgraph SG_Core["💎 核心论点 Core Thesis"]
+        A["<b>GPT-5.6 降本增效主张</b><br/>在网页开发日常任务中<br/>Luna Medium 完全可放心替代 GPT-5.4/5.5 mini"]
+        style A fill:#FFD700,stroke:#DAA520,stroke-width:3px,color:#000,font-weight:bold
+    end
+
+    %% 论据与测试设计
+    subgraph SG_Evidence["📊 测试设计与数据 Evidentiary Base"]
+        direction TB
+        B1["<b>测试基准 (Benchmark)</b><br/>5个Web项目 (PHP/Laravel, React, TS)<br/>共25个提示词，各重复5次"]:::evidence
+        B2["<b>Luna Medium 结果</b><br/>得分: 23.5 / 25<br/>成本: 18美分/次<br/>特点: 完美通过N+1查询自验证"]:::evidence_good
+        B3["<b>Luna Low 结果</b><br/>得分: 19 / 25<br/>成本: 11美分/次<br/>特点: 遇到模糊逻辑易崩溃"]:::evidence_bad
+        B4["<b>Terra Medium 结果</b><br/>得分: 24 / 25<br/>成本: 显著偏高<br/>特点: 几乎完美但日常性价比低"]:::evidence_neutral
+        
+        B1 --> B2 & B3 & B4
+    end
+
+    %% 逻辑推导
+    subgraph SG_Logic["🔄 逻辑推导与决策 Logical Warrant"]
+        direction TB
+        L1{"<b>性价比折衷分析</b>"}:::logic
+        L2["<b>Luna Medium</b><br/>极高成功率 + 极低成本"]:::logic_recommend
+        L3["<b>Luna Low</b><br/>成本微降 + 错误率激增"]:::logic_reject
+        L4["<b>Terra Medium</b><br/>成功率极高 + 成本过高"]:::logic_reject
+        
+        L1 --> L2 -->|"黄金平衡点 (推荐)"| L5["<b>替换 5.4/5.5 mini</b>"]:::action
+        L1 --> L3 -->|"不建议使用"| L6["<b>排除 Low 档位</b>"]:::action_stop
+        L1 --> L4 -->|"不划算"| L7["<b>边缘化 Terra</b>"]:::action_stop
+    end
+
+    %% 批判性审视
+    subgraph SG_Review["⚔️ 批判性审视 Hostile Review"]
+        direction TB
+        R_WeakLink["<b>最薄弱环节 (Weakest Link)</b><br/>测试任务对2026年模型'太简单'<br/>用'基本门槛'的测试无法证明真实业务不崩溃"]:::review_fatal
+        R_Audit["<b>数据审计 (Evidence Audit)</b><br/>1. 技术栈局限于 PHP/React/TS<br/>2. 样本量小 (25个提示)<br/>3. 因额度重置缺失订阅版真实数据"]:::review_node
+        R_Blind["<b>工程盲区 (The Blind Side)</b><br/>只测试了'绿地开发' (从零生成)<br/>忽略了真实业务中80%的'旧代码重构'与'上下文召回'"]:::review_node
+        R_Kill["<b>一击必杀问题 (One Hit Kill)</b><br/>过时的测试基准，如何能保证<br/>非'基本门槛'的复杂项目不迅速崩溃？"]:::review_fatal
+    end
+
+    %% 关系链接
+    A -->|"基于以下测试"| B1
+    B2 & B3 & B4 --> L1
+    
+    %% 批判指向
+    B1 -.->|"测试任务过时"| R_WeakLink
+    B1 -.->|"技术栈与样本局限"| R_Audit
+    L2 -.->|"忽略复杂上下文与重构"| R_Blind
+    R_WeakLink --> R_Kill
+
+    %% 样式定义
+    classDef evidence fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#000
+    classDef evidence_good fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
+    classDef evidence_bad fill:#FFCDD2,stroke:#C62828,stroke-width:2px,color:#000
+    classDef evidence_neutral fill:#FFE0B2,stroke:#E65100,stroke-width:1.5px,color:#000
+    
+    classDef logic fill:#EDE7F6,stroke:#5E35B1,stroke-width:1.5px,color:#000
+    classDef logic_recommend fill:#D1C4E9,stroke:#5E35B1,stroke-width:2px,color:#000
+    classDef logic_reject fill:#F5F5F5,stroke:#9E9E9E,stroke-width:1.5px,color:#9E9E9E
+    
+    classDef action fill:#66BB6A,stroke:#2E7D32,stroke-width:2px,color:#fff,font-weight:bold
+    classDef action_stop fill:#EF5350,stroke:#C62828,stroke-width:1.5px,color:#fff
+    
+    classDef review_node fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px,color:#000
+    classDef review_fatal fill:#FFEBEE,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C,font-weight:bold
+
+    %% 背景样式
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#000
+    style SG_Evidence fill:#F0F4C3,stroke:#AFB42B,stroke-width:2px,color:#000
+    style SG_Logic fill:#E1F5FE,stroke:#0288D1,stroke-width:2px,color:#000
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+各位好我们得认真聊聊GPT5.6了 不是齐届模型搜而是Terra和Luna 你还在评论区问我能不能测测Terra和Luna 尤其是楼档 问题是用便宜模型能不能省钱 因为GPT5.4mm表现相当不错 这种情况下 Luna或者Terra我已经试过了 问题就是便宜到什么程度模型才会崩 这个问题问得很好 在我的编程排行榜上 GPT5.4分钟 外在中等推理党位表现相当靠前 单次提示价格也很低 Luna和Terra在这里表现如何 结果相当出人意料 当使用Codex CLI或XGPT里的Codex现在改名了时 在应用里选择Luna 在选择推理党位 我先试了一下Luna用的是中等党位 顺带一提Terra和Luna的区别在于单个Token的定价 这是官方定价页面 Terra的价格只有搜的一半 而Luna又比Terra便宜两倍半 在Enthropic那边就是Opus,Sornath,Hikou这三个名字 我个人不太喜欢这些名字 还得记住太阳系哪一套 不过将就这用吧 Luna最便宜 但好用吗 像网长一样我跑了25个提示 5个项目每个提示各跑5次 这是评估测试的结果 然后我就把结果保存到表格里了 不想讲得太细 因为这几个项目 我在YouTube频道上多次展示过 不过你可以看到Luna最初的结果还是挺乐观的 所有测试都通过了 成本相对不高 27每分仍然通过 再试一次也通过 对开发者的日常任务来说 比如购件一个Larvo API Luna表现不错 然后我又跑了更多提示和更多次尝试 想尽量把它逼出问题 但结果是20中20全过 几乎每次都表现良好 只有几少数几次失手 露娜中等水平的整体层级不出锁料是25T中对23.5T 这是更新后的排行榜可以看到每次提示的平均成本和GPT5.4分钟会一样 中等水平也一样 露娜的得分明显高于5.4分钟1 速度也快得多 在全部25个提示里说实话 他只失手了两次 你看这里弗洛们除了一次错 所以也许他对弗洛们的每举7约没训练的那么充分 然后他在react 和TypeScript 任务上也拿了满分 这对所有模型来说都是基本门口 但在避免N正义查询这道题上 他同样拿到了满分 这让我意外 因为这道题用的是一个陌生的包 说明他在自我验证 通过测试方面表现不错 而这一点其他模型通常都很吃力 但他这里5题全对 另外唯一一次使手的地方是一个相当复杂的任务 倒入CSV,并覆盖所有边界情况 第一次满分,第二次出了一个错 0.5分,之后又对同一提示尝试了三次 全部满分,满分再一次满分 所以看到GPT5.6家族里最弱模型的这个结果时 我觉得该升级一下我的LLM基准测试了 因为在2026年7月,我们拿到的最新一代模型上 包括GROG4.5 这些任务似乎都变得太简单了 我之前的视频里也提过有一些想法可以改进 基本上是重新做一般整个机准测试 但对于我说的这类日常任务 Luna几乎表现完美 而这是在中等党位下车的 但YouTube评论区有人问能不能再往下降一点 Luna Media每次提示还是18美分 很便宜了 但低算力党更便宜 我也测试了这个 这次是同样25次尝试的提示 用在Luna模型上 结果开始出现一些食物 就是这样,中间有一次filement没通过,但下一次又拿了满分,然后满分满分,接着又失败一次 失误多了一点,但你看看这价格,这些当然是API价格,评论区,有人让我测试一下订阅价格,确实不太好办到 所以我结了这张Codex 5小时使用线额的截图,在20美元掏餐上,Luna Media跑完全部25次提示后,用掉了5小时线额的40%到41% 我心想 那就多接几张图测测吧 每次尝试之后 但接下来OpenAI这边T-Board的Twitter上另有安排 随着GPT5.6的发布 他们的套餐使用线额多次重置 之后又来了一次重置 又来了一次 基本上我又回到了100% 感谢OpenAI这对整个社区来说是好消息 但我就没法可靠第一次算订阅版的使用量了 抱歉各位 回到RunaLow这边 有时会失败 但最终结果到底如何 这个排行榜跟之前一样 其实Lunarlo也在上面 只是我没往下翻到哪 Lunarlo党的结果是25t中对19t 可以看到两个项目拿了满分 这是生成Reac组件 生成Larvo API 这些现在对几乎所有模型来说都太简单了 用主流框架生成新代码 只是基本门砍 但当Lunarlo开始出错时 往往是遇到不明确的情况,需要多一点思考,低推理强度就更容易出问题。 Luna Medium的平均单次提示成本从18枚分降到了11枚分。 这张表里气晶为止成本最低最接近的对手是Composer 2.5,每次提示17枚分。 那么关于低推理强度到底能低到什么程度,还不出问题这个问题,我的答案是不建议使用低强度的Luna。 因为中等强度的龙效果要好得多 价格确直贵了一点点 那GPT5.6TR呢 这些是我对TR的测试结果 可以看到全部通过 在很多次尝试中都是这样 Filement那像在24次尝试里 对了20次 不过看看这个成本 我们现在进入了一个全新的成本区间 差距相当大 N正一查询验证也完全正确 但成本更高成本波动 波动其实相当大 有时候 有时候贵一点有时候便宜一点 偷肯数量和耗时不算特别稳定 不过五个项目每个个侧 五次平均值应该还是可信的 可以看到所有项目的 所有尝试仍然是满分 只有几少数几次失手 出现在最复杂的任务上 也就是我最新的那个 带CSV导入加固的项目 29次测试对了28次 这次是列数不对导致的失败 属于边界情况 得分是0.5 而不是1 然后再同一个项目的另一次尝试里 也有一次因为一个测试没通过 而是手 其余的都完全正确 如果刷新一下排行榜 Taira是25次里对了24次 但看看号时和成本 号时和5.5mm基本相当 估计正好是Taira的对手 但API定价比5.5便宜不少 但同时价格比Luna Medium贵得多 日常任务花这么多钱 是否划算就值得伤去了 当然请记住,我的所有评测都是针对网站开发项目的,所以,如果你有 其他类型的项目或不同技术站,结果可能会有所不同 我用的是PSP和Laravale,其中一个评测项目是React和TypeScript 整个排行榜就是基于这个测试的,可能会偏向网站开发 但我觉得结果的分布还是挺准确的 总结一下,对于这里网站开发日常任务 Luna Media和Terra Media的得分 几乎都是满分 几乎与GPT5.5 Media和opus.8 Media 持平 如果想更省钱 低推理强度的Luna也可以 但失手的次数会更多 此次排行榜每次任何高推理强度的模型 因为我觉得 Media就足够拿到接近满分了 所以没 白白浪费偷根去高强度测试这些模型 这也是为什么排行榜上看不到GPT5.6 因为针对更强大的模型 我基本需要弄一套新的排行榜和评测体系 进行期待 我会带来更多内容 拍摄针对更高级的模型 挑战更大的新排行榜视频 回到最初的问题 希望我在旅途中拍的这几期视频 已经回答了大家关于 S.O. Tara和 Luna 的疑问 所以问题是要不要用 GPT 5.6 声音 替换 GPT 5.4 米里 我觉得完全可以放心替换 你怎么看 你们试过了吗 对GPT5.6生物还有什么其他结果或看法 像网上一样 欢迎在评论区讨论 订阅频道 第一时间看新模型视频 我会一如既往的在这个频道持续更新 这次就到这里 我们下期视频再见
