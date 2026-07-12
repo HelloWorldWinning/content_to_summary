@@ -1,0 +1,117 @@
+Timestamp: 2026-07-12T09:12:11.619099
+Title: 我们测试了售价200美元的GPT-5.5 Pro在博士级数学问题上的表现 BV1A8orBPEZF
+URL: https://b23.tv/6pIO5KJ
+Status: success
+Duration: 13:31
+
+Description:
+### 第一部分：文本多维剖析
+
+#### 1. 核心论点 (Argument)
+GPT 5.5 Pro 对个人订阅用户而言，是一次**“换汤不换药”的非实质性升级（Hype）**。虽然模型在运行效率（推理时间和 Token 消耗）上有了显著提升，但在解决前沿科研级难题（如未解决的数学与 Agent 编程任务）的**实际智力/解题上限上，与 GPT 5.4 Pro 相比没有任何突破**。这种升级主要有利于 OpenAI 优化自身算力成本和 API 利润，而非造福消费端用户。
+
+#### 2. 关键证据 (Evidence)
+*   **行业基准测试**：在 Frontier Math 极难数学基准上，GPT 5.5 在 Tier 1-3 仅提升了 2.4%（50% $\rightarrow$ 52.4%），在 Tier 4 仅提升了 1.6%。
+*   **前沿数学测试（随机矩阵理论）**：GPT 5.4 耗时 60+ 分钟，GPT 5.5 耗时 16 分钟。虽然速度快了数倍，但两者的解题思路和瓶颈完全一致，5.5 依然无法给出闭式解。
+*   **Agent 编程测试（LaTeX 论文合并重写）**：在 VS Code + Codecs 环境下，GPT 5.5 思考 6分03秒（比 5.4 快约 15%），但输出的 PDF 质量与 5.4 几乎无异，同样遗漏了关键方程，并产生了无用的“面条式证明”。
+*   **商业与成本对比**：5.5 虽然减少了推理 Token，但其 API 价格反而比 5.4 更贵，表明消费者并未从技术效率中获得财务红利。
+
+#### 3. 逻辑推理 (Reasoning)
+作者建立的因果链条如下：
+$$\text{推理时间/Token 显著减少} \neq \text{智力上限提升}$$
+在科研等极限瓶颈任务中，用户对时间并不敏感（愿意让模型思考整晚），他们唯一在乎的是“能否解出”。GPT 5.5 在缩短思考时间的同时，给出的最终答案与 GPT 5.4 完全相同。这表明模型在更高能效比下触碰了相同的“能力天花板”，即**缩减 Token 规模并不能通过单纯的 Scaling 转化为更强的逻辑攻坚能力**。因此，OpenAI 频繁发布 $0.1$ 的微迭代版本，本质上是在用“效率优化”伪装“智力飞跃”，以维持订阅制的商业热度。
+
+---
+
+#### 4. 敌意同行评议 (Fair-But-Hostile Review)
+
+##### (1) 最薄弱环节 (Weakest link)
+*   **“高效率对科研无用”的狭隘设定**：
+    作者的论证完全建立在“科研用户只在乎终极答案，不在乎推理耗时”的假设上。然而在实际科研工作流中，**“快速失败”（Fast Failure）是极具价值的**。从 60 分钟缩短至 16 分钟，意味着研究员在一天内能够迭代尝试的假说数量提升了近 4 倍。高效率带来的“高频互动”本身就是一种间接的智力放大器。作者以自身“不差 Token、不急于一时”的极端个人画像，武断地否定了效率提升对整体科研群体的生产力赋能。
+
+##### (2) 证据审计 (Evidence audit)
+*   **极端小样本偏差**：作者得出“智力未提升”的结论，仅依赖于**两个高度主观且未标准化的测试样例**（一个特定的随机矩阵理论问题，以及一个高度杂乱的个人 LaTeX 文档整理）。这种极度狭窄且没有对照组的“买家秀式”测试，完全无法推翻 Frontier Math 基准测试中数百道硬核题目带来的统计学净增长（1.6% - 2.4%）。在未解决的 PhD 级数学难题领域，百分之二的绝对提升往往意味着攻克了数个此前人类 AI 历史上从未攻克的堡垒，不能被轻描淡写地贬为“微不足道”。
+
+##### (3) 未明示假设 (Unstated assumptions)
+*   **“思考时间与智力水平呈线性正相关”**：作者默认“只要模型能用更多 Token 思考更久，就应该给出更好的答案”。他忽视了 LLM 固有的架构瓶颈（如幻觉累积、上下文窗口内的注意力漂移）。在某些情况下，过度延长的 Chain-of-Thought（思维链）反而会导致逻辑死循环。GPT 5.5 用更少的 Token 达到同等水平，恰恰证明其剪枝了冗余推理，这在信息论上是更高级的智力体现，而非退步。
+*   **“消费级 Plus 体验应以解决未解决数学难题为标准”**：默认 $200 订阅费的定位应当满足顶尖 PhD 科研探索的极端需求。事实上，消费级产品的定价主要面向大众商用和通用编程，用“能否解决世界数学难题”来衡量大众订阅服务的性价比，存在严重的标准错配。
+
+---
+
+### 第二部分：Mermaid 概念图谱
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心论点
+    Claim["👑 核心论点: GPT 5.5 Pro 属商业宣传<br/>效率提升未能带来实质智力飞跃"]:::claim
+
+    %% 证据分支 1：数学测试
+    subgraph Math_Sub["🧪 随机矩阵理论测试 (PhD 级难题)"]
+        M_In["输入: 未解决的随机矩阵问题<br/>(引导既有推理路线)"]:::math
+        M_54["GPT 5.4 Pro<br/>⏱️ 思考 60+ 分钟"]:::math
+        M_55["GPT 5.5 Pro<br/>⏱️ 思考 16 分钟 (大幅缩短)"]:::math
+        M_Bench["Frontier Math 榜单<br/>📈 仅微幅提升 1.6% - 2.4%"]:::math
+        M_Out["最终结果<br/>❌ 均未给出闭式解<br/>❌ 建议与推理完全雷同"]:::math
+    end
+
+    %% 证据分支 2：Agent 编程测试
+    subgraph Code_Sub["💻 LaTeX Agentic 编程测试"]
+        C_In["输入: 跨项目 LaTeX 迁移<br/>(含不相关预印本格式 + 未完稿公式)"]:::code
+        C_54["GPT 5.4 Pro<br/>⏱️ 思考 6分55秒"]:::code
+        C_55["GPT 5.5 Pro<br/>⏱️ 思考 6分03秒 (快15%)"]:::code
+        C_Out["输出质量<br/>❌ 漏掉核心方程<br/>❌ 产生面条式多余证明<br/>⚠️ 两者 PDF 几乎难辨雌雄"]:::code
+    end
+
+    %% 商业逻辑分析
+    subgraph Biz_Sub["💰 商业与成本算盘"]
+        B_Token["模型运行 Token 减少"]:::biz
+        B_Cost["降低 OpenAI 自身推理算力成本"]:::biz
+        B_API["API 调用价格反而上浮"]:::biz
+        B_Cons["对包月用户 (Plus/Pro) 无实质红利"]:::biz
+    end
+
+    %% 敌意审查分支
+    subgraph Crit_Sub["⚡ 敌意同行评议 (Fair-But-Hostile)"]
+        Cr_WLink["最薄弱环: 效率即智力<br/>(16 min vs 60 min 极大加速科研试错迭代)"]:::crit
+        Cr_Audit["数据审计: 样本量极小 (N=2)<br/>(Frontier Math 2% 提升对极难问题已是质变)"]:::crit
+        Cr_Asmp["未明示假设: 默认 Scaling 无瓶颈<br/>(盲目迷信延长思考时间可解决一切问题)"]:::crit
+    end
+
+    %% 连接线
+    Claim --> Math_Sub
+    Claim --> Code_Sub
+    Claim --> Biz_Sub
+    
+    M_In --> M_54 & M_55
+    M_54 & M_55 --> M_Out
+    M_Bench -.-> M_Out
+    
+    C_In --> C_54 & C_55
+    C_54 & C_55 --> C_Out
+
+    M_Out & C_Out -->|"逻辑推理: 智力天花板未变"| B_Token
+    B_Token --> B_Cost
+    B_Cost & B_API --> B_Cons
+
+    %% 批判指向
+    Crit_Sub -.->|"系统性反驳"| Claim
+    Cr_WLink -.->|"反驳"| M_55
+    Cr_Audit -.->|"质疑"| M_Bench
+    Cr_Asmp -.->|"指出逻辑漏洞"| B_Token
+
+    %% 样式定义 (确保暗色文字易读，边框加粗)
+    classDef claim fill:#FFF3BF,stroke:#C8A200,stroke-width:3px,color:#5C4800,font-weight:bold;
+    classDef math fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+    classDef code fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+    classDef biz fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#E65100;
+    classDef crit fill:#FFEBEE,stroke:#E53935,stroke-width:2.5px,color:#C62828,font-weight:bold;
+
+    %% 子图背景色定义
+    style Math_Sub fill:#ECEFF1,stroke:#90A4AE,stroke-width:1.5px;
+    style Code_Sub fill:#F5F5F5,stroke:#BDBDBD,stroke-width:1.5px;
+    style Biz_Sub fill:#FFE0B2,stroke:#FFB74D,stroke-width:1.5px;
+    style Crit_Sub fill:#FFCDD2,stroke:#E57373,stroke-width:2px;
+</Mermaid_Diagram>
+
+Content:
+So over there I have just released GPT 5.5 and in the last few days since it's been released I've been testing out on some of these benchmark questions which are essentially just research level maths problems which are unsolved which I have some methods which I think could solve them but haven't yet managed to actually solve them. These are things which we've tested on all of the state-of-the-art models like Google's Gemini Ultra, we tested it on Claude with extended thinking and we've also tested $200 at GPT a lot and today we're going to be testing $200 GPT 5.5 Pro. Now the claims are that GPT 5.5 is better at providing enter and solutions, is better at using certain tools which might involve other forms of compute like CPU compute that it's better at agentic tasks with regards to programming, that it's got longer context reliability and the main thing at least from my test so far is that it's more efficient and by that I mean that it will use fewer tokens in order to provide roughly the same type of answer. Now generally speaking when I see a launch of a new product like GPT 5.5 or any product you know the new iPhone, any new console I do expect a better product on my end as the consumer that's paying for that product and so one of the immediate concerns that I had when launching GPT 5.5 and testing it is that they may be improved the efficiency on their end but that the actual product that you're getting is much the same and although the idea of a model answering more efficiently with the lower token usage is useful at least on my end in the last few months of paying for $20 chat GPT plus and $200 chat GPT Pro I've never run out of token usage either on codecs or within the main conversation threads on chat GPT. So buckle up as we put $200 GPT 5.5 Pro against a suite of research level PhD maths problems. Now on open AI's API notes it does claim that GPT 5.5 is more efficient and that you should be able to get the same quality of answer for less usage of tokens and if we trust the frontier math benchmark it does seem like there has been some improvement in GPT 5.5. On the tier 1 to 3 frontier math benchmark it goes from scoring 50% to 52.4% and we get a 1.6% improvement on the tier 4 benchmark. So there is supposedly some improvement in the ability of GPT 5.5 to answer advanced level maths problems. So the first test I wanted to give GPT 5.5 Pro is a question that we've tested multiple models on to see whether they can actually develop a line of reasoning which I've already started for them. This is a problem in random matrix theory that doesn't have a solution yet but that would be really really cool to see if they can come up with one. So far across all of my tests of Google's DeepThink which is about $200, Claudopus on extended thinking mode we also tested Grock and DeepSeek. GPT 5.4 Pro has given the best answers that I've seen so far. In fact when we tested 5.4 Pro last time across a conversation involving multiple prompts we had multiple instances of it thinking for well over an hour of thinking time and it made some suggestions as to how one might solve this problem although for sure it didn't give a closed form answer that I was looking for. It really couldn't go past the type of reasoning that it was suggesting. In a way it felt like it kind of found a groove or a way that it thinks to solve the problem. It suggests that it could solve the problem like this but then after multiple prompts of asking to see if it can solve the problem like this it wasn't able to solve the problem. So we gave that same test to GPT 5.5 Pro and it managed to get an answer which was very similar in much less thinking time. I'd say this is academically very interesting just that the model is able to produce a similar quality answer much more efficiently in much less thinking time. In this case it went from over 60 minutes to 16 minutes and in terms of its usefulness it's definitely more useful to have the answers come fairly quickly than to have to wait over an hour to get your answer. This is something that I found was actually a bit of a problem for GPT 5.4 Pro in the last month of testing it. I felt that I ended up not really using it that much because it would just take so long to get your answers back but now that they've improved the efficiency of the model you're getting your answers back in like half the time or less. So at least in that sense there is some notable improvement that you're getting with GPT 5.5 over GPT 5.4. However at least in this question specifically the benefits of 5.5 Pro ended there. I didn't find it ever gave any better suggestions than 5.4 Pro in fact the suggestions were pretty much exactly the same and in this sense at least I find it slightly frustrating that they keep releasing these models as if it's like the kind of next generation of models for the consumer but if you're considering this solely in terms of the subscription service your benefits with this new 5.5 aren't necessarily that much better than 5.4. And so seeing OpenAI release these models which are increasing by .1 every time you know 5.2, 5.3, 5.4 and now 5.5 on the consumer subscription side it starts to feel a bit like a hype cycle that the product that you're getting isn't actually much better than the one that you had before but they're trying to get more people to buy it by releasing a new model. Equally though if you're someone that uses the API this model is a genuine improvement over the previous ones because you might be able to solve the problem using half the reasoning tokens as you did before but then again on this note about the API efficiency cost sure you get an efficiency improvement but then the cost for the GPT 5.5 API calls are more expensive than that of GPT 5.4. So it does feel slightly like who is actually benefiting from the release of this model is it OpenAI that's benefiting because they're selling you something which on their end has higher margins and then they're releasing this as if it's some sort of new product to the consumer but the consumer's actually getting nothing in return really they're getting a model which performs pretty much exactly the same as it did before and the only benefit I can see at least in testing 5.5 Pro in the few days that I have done is that the answers come slightly faster than before. It also started to make me wonder perhaps they are able to improve the efficiency of these models in that you get the same answer using fewer tokens but perhaps after scaling up this more efficient model to use more tokens they're not necessarily finding an improved quality of answer which might explain why GPT 5.5 Pro will give the same answer as GPT 5.4 Pro using half the tokens as opposed to using the same number of tokens to give a better answer. It might be the case that although the model is more efficient they're unable to get a higher quality of answer by scaling it up. So next up we're going to try and test the claims that GPT 5.5 is better at agentic coding tasks. In particular we're going to be using the standard setup of VS code with codecs and we're going to be comparing a fairly complicated but very doable project in which we're going to compare GPT 5.4 and GPT 5.5 at a fairly comprehensive agentic coding task which is basically to take this project that you can see here in Overleaf it's a research project that I did a while ago an unfinished project so what are we going to ask it to do? So I've basically exported this old Overleaf files you can think of this as just the file for this project and we're going to try and give codecs loads of information. So the first bit of information is a full draft for an unrelated research project in maths which is a paper on archive which I released fairly recently with some collaborators and my PhD supervisor and the reason that I'm giving codecs this context is because I'd like it to try and rewrite the draft results which I made two years ago in the same sort of template as this preprint which is on archive. Not only this but we're actually also testing GPT 5.5 Pro because I've given it this whole document I've asked it in a sequence of kind of questions open problems that I had with this project so like I said it was incomplete and I've kind of asked it to go through and to implement these changes and make suggestions based on the kind of things which I thought were the limitations of this like kind of procedure which is to do with what's called a sparse non-homission matrix model so you put random variables into the matrix it's got lots of zero entries so it's like somewhat more tractable but it lacks these symmetry conditions which normally are kind of like the gift which makes random matrix theory solvable in some sense but anyway that's that and after this long conversation what I've basically asked it to do is to summarize the suggestions that it's making so given the file I gave you and the current suggestions I'd like you to try to put some related file so that I can show these suggestions to codecs so that I can basically ask it to implement these changes into the main original file all of these things can then be combined so that it can rewrite this file in a format of a draft which hopefully will look more similar to the preprint which I released recently but will contain the research of a completely unrelated problem so I'd say this task is pretty complicated and I think definitely like an agent task I'm asking it to do lots of different things I'm giving loads of different contexts I'm actually asking it to write a completely new file based on a combination of different things so the information or the mathematics will come from this kind of draft of work from two years ago along with the improvements that GPT 5.5 Pro has suggested given the things that I kind of asked it to look into and just to clarify all of this is going to be inside a folder which I've asked codecs to turn into a git folder and what we're going to do is we're going to duplicate this git folder and then we're going to put the same test to GPT 5.4 and to GPT 5.5 and the main things that we're going to compare is how long each model takes to do this task and whether one model does the task better than the other one and here is what we're going to be giving codecs with GPT 5.4 and 5.5 and the following tasks you've been given three important files and you have one deliverable. You should produce by any means possible spawning maximum number of agents if need be or uncapped chain of thought etc. The first file which is main.txt which contains research mathematics which is unfinished which I would like to complete into a pre-print. The second file is called codecs work which contains some suggestions of the final results which we'd like to state and the direction that we'd like to go when stating these results. Then I give some description of basically what it is that I'd like to state and thirdly there's a folder called CUE moments which contains kind of unrelated mathematics but a text file which is formatted to better quality to be in line as a normal pre-print file. The deliverable which you should attempt to produce the best quality possible with no concern of how much codecs usage this takes up is to combine the main.txt file codecs work.txt into a new file called spasnon-hamission pre-print which has the same typeset and format as the pre-print tech file which is in the CUE folder namely tried to combine all of the mathematical results from the two files codecs work and main.txt in order to produce a new pre-print which again is in the same format as the already uploaded pre-print. Okay so this is a fairly complicated task in my opinion. For me to do this would probably take me an afternoon I would have thought so I'm definitely excited to see what codecs is able to do so we're going to set the kinders off now to see what they can do. Let's go. Equipped with gpt5.5 codecs thought for six minutes and three seconds which is about a minute less than gpt5.4 thought for which was six minutes and 55 seconds. Both models were set to fast mode with extra high thinking time and on the left you can see gpt5.4 and on the right gpt5.5. Both files look very similar even in mathematical detail. I would argue that gpt5.5 takes an incremental edge over gpt5.4 solely because of one equation that it included which helps to actually put into picture what exactly this document is looking into but to be honest it still didn't include loads of equations which were already in the main draft which I gave it which would have definitely made way more sense to include in a final draft for the archive in order to better explain exactly what it is that this paper is trying to look at. To be honest if someone had given me the two outputs and the thinking times associated to each of them and asked me which model is the newer model it would be actually quite hard to distinguish between them. In my opinion the PDFs that both of these models outputted was pretty much exactly the same in terms of quality and as someone that uses codecs quite a lot and I've found it to be very useful for particular problems examples like this do make me think just how incapable these models are without being guided at every step by the researcher or the person actually kind of guiding the project or some sort of harness which to be honest doesn't seem to be available on the consumer and models. In this case specifically given the prompt I am surprised that both models decided to only use six minutes of chain of thought and to be honest the outputs of both gpt5.4 and 5.5 looked rushed and were overall very disappointing. The task that I had given it in principle wasn't particularly mathematical because the actual mathematical structures were already outlined in the files that were included within the repository and I thought when I structured this task that what I'd given it was kind of more of an agentic task asking it to take information that it already had and to kind of formalize it into a file with a different format. Both models did manage to do this to some extent but it also seems like codecs started to write its own kind of spaghetti proofs of various identities which I hadn't asked it to do. The mathematics was already written up within the draft and all it had to do was to kind of move that draft into this new file type and ideally to polish it up in the process. We saw about a 15% improvement in the efficiency in that it took gpt5.5 one minute less of chain of thought in order to produce the same PDF as gpt5.4 but so far as I can see any claims of this model being better than gpt5.4 outside of the efficiency gains are pretty limited. So I guess I am slightly disappointed to be honest with gpt5.5 when they release a new model I do expect some notable improvement in the kind of intellectual capacity of these models otherwise I feel a bit like they shouldn't have released it as a new model and it should just be some sort of patch notes for the previous model. If you're just improving the efficiency I don't really see why I should care as someone paying for your service. It's not really something that the consumer benefits from that much. Sure it is very impressive that they've managed to do this. I mean halfing the cost is really cool but to release this is if it's like the next best thing that they've released and then seeing all of these claims on twitter that it's solved an air dish problem and all of the stuff you know it's all to build type around the model to get people to subscribe. But it is from what I've seen it's not really any better than gpt5.4 other than in the sense that you get your answers quicker which is actually kind of useful to be fair but for the particularly difficult questions where I don't actually care how long the model thinks for you know I'd be happy for it to use as many tokens as my subscription allows it for it to even think overnight on the problem. For questions like this I do not care if the model is more efficient. So in that sense it seems like 5.5 is more of an improvement on their end than it is on your end. If you're someone that wants to pay for these models I wouldn't go in expecting that you're going to get something much better than what was available before but perhaps it will improve the operational efficiency of OpenAI. Of course as Sam Altman's porn I am going to keep testing gpt5.5 Pro but I'm definitely not looking to over hype something which I don't think brings a huge benefit on the side of the consumer. I want to say a huge thank you to channel members. I recently launched the discord server and we've got a couple of people that are paying for that too and it's been really fun bouncing ideas back. There's just been so much information about all of the models being released. You know there's a new model of deep-seek which actually seems more impressive to me. So if you're interested in joining that your support would be much appreciated otherwise thank you guys so much for all of the support and liking the videos commenting and the hype. It makes a huge difference and it really really tells me a lot. So as always I hope you enjoyed the video and have a good one.
