@@ -1,0 +1,193 @@
+Timestamp: 2026-07-17T01:53:55.669675
+Title: MIT传奇教授揭开AI的数学底座 BV1JMNQ64EDq
+URL: https://b23.tv/Vkcmb4K
+Status: success
+Duration: 10:01
+
+Description:
+### PART 1. 作者蓝图 (Author's Map)
+
+#### 1. 核心论点 (Core Thesis)
+现代应用数学与计算科学正在经历一场范式融合：通过将经典的物理建模（如微分方程、有限元方法）与现代机器学习的矩阵理论及优化算法（如随机线性代数、随机梯度下降SGD、神经网络结构函数）深度结合，能够突破传统数值计算的瓶颈，解决如湍流等复杂的非线性现实问题。
+
+#### 2. 论据支撑 (Evidentiary Base)
+*   **课程大纲设计（专家课程经验）**：引入 constructive linear algebra（构造性线性代数）、张量与非负矩阵、随机线性代数（如针对 $10^5$ 维大矩阵的随机化SVD计算）以及压缩感知，证明传统线性代数教学急需向高维、随机化和实用化转型。
+*   **Ben Recht 的学术文献（权威学者研究）**：伯克利教授 Ben Recht 的论文指出，虽然 Adam 等自适应优化算法在深度学习初期收敛极快，但若运行至收敛，其最终解的泛化性能（Generalization）不如随机梯度下降（SGD），证明了 SGD 在高维参数空间中寻找“好解”的独特数学优势。
+*   **Julia & JuMP 的应用案例（行业技术现状）**：麻省理工学院（MIT）同事 Juan Pablo Vialma 推动的 JuMP 优化工具箱在商学院和工业界的普及，以及 Julia 语言在物理建模中的应用，证明优化算法已成为连接数据科学与物理世界的关键桥梁。
+*   **有限元方法（FEM）与神经网络的结合构想（学术前沿假说）**：提出将神经网络（由矩阵乘法和非线性激活函数 ReLU 构成的多层结构）作为有限元方法中的“试探函数（Trial Functions）”，用以逼近偏微分方程（PDE）的解。
+*   **湍流问题（物理学经典难题）**：将“湍流（Turbulence）”定位为物理规律与机器学习优化相结合的天然且最迫切的应用场景。
+
+#### 3. 逻辑推导 (Logical Warrant)
+作者的推导过程基于**跨界类比与功能互补推理**：
+1.  **大前提**：深度学习在本质上是线性代数、概率统计与优化算法（特别是具有极佳泛化能力的 SGD）的结合体，擅长在极高维度的非凸空间中寻找优秀的近似函数。
+2.  **小前提**：经典物理建模（如偏微分方程）依赖传统的数值方法（如有限元），这些方法在处理复杂、高维或随机性极强的物理场景（如湍流）时面临严峻的计算瓶颈。
+3.  **结论**：如果将深度学习的非线性网络结构作为新型的试探函数空间引入有限元计算，并利用具有高泛化能力的优化算法（SGD）进行求解，就能将物理学的“第一性原理”与深度学习的“高维逼近能力”相融合，从而攻克传统数值方法无法解决的物理计算难题。
+
+#### 4. 设定边界 (Stated Scope)
+本讨论严格限定在**现代应用数学、科学计算、高维优化算法以及物理建模的交叉领域**。作者明确指出了该融合路径面临的理论局限：
+> “Well, that's alarming to think that we lose, we don't have, we don't have a vector space. You know, if we add these functions together, we don't necessarily get another one.”
+> （令人担忧的是，我们失去了向量空间。如果我们将这些[神经网络]函数相加，我们不一定能得到另一个[在同空间内的]函数。）
+
+#### 5. 隐性对手 (Implicit Opponent)
+作者含蓄地反对两种孤立的学术倾向：
+*   **传统的、排斥数据科学的物理建模派**：这类学者固守经典的确定性微分方程和传统数值分析（如纯粹的有限元、谱方法），忽视了机器学习工具在处理高维复杂系统时的巨大潜力。
+*   **盲目、缺乏物理约束的纯深度学习派**：这类从业者完全依赖黑盒模型和自适应优化算法（如盲目使用 Adam），不理解 SGD 的深层泛化机理，也忽视了物理定律（第一性原理）在科学计算中的决定性作用。
+
+#### 6. 预期效果 (Intended Takeaway)
+作者希望读者（特别是应用数学、工程计算与计算机科学交叉领域的学者和学生）打破学科壁垒，认识到未来的科学计算是“物理模型 + 机器学习优化”的结合体。读者应积极探索随机线性代数、新型优化算法以及非线性网络结构在传统物理数值解法中的前沿应用。
+
+---
+
+### PART 2. 严厉但极度公平的同行评审 (Hostile-But-Very-Fair Review)
+
+#### 1. 强力重建 (Steelman)
+在求解高维、复杂的偏微分方程（如湍流）时，传统有限元方法（FEM）由于网格划分和多项式基函数的局限，面临严重的“维度灾难”和计算瓶颈。而深度学习本质上提供了一种极具表现力的非线性参数化函数表示法。通过将多层神经网络（矩阵乘法与非线性激活的组合）作为有限元中的试探函数，并利用在超参数化空间中表现出优异泛化性能的随机梯度下降（SGD）进行参数优化，我们有望构建一种全新的非线性数值逼近范式。这种范式既保留了物理方程的结构约束，又释放了深度学习逼近高维复杂流体的能力。
+
+#### 2. 最薄弱环节 (Weakest Link)
+整个论证中最关键的致命悬挂点在于：**神经网络试探函数空间彻底丧失了“向量空间（Vector Space）”的线性叠加性质。**
+作者在文中也表达了这种担忧：
+> "Well, that's alarming to think that we lose, we don't have, we don't have a vector space. You know, if we add these functions together, we don't necessarily get another one."
+
+**后果分析**：
+传统有限元方法（FEM）之所以在工程和物理界立足，是因为其背后有极其严谨的希尔伯特空间（Hilbert Space）、索伯列夫空间（Sobolev Space）以及拉克斯-米尔格拉姆定理（Lax-Milgram Theorem）作为数学支撑。这些理论完全建立在“向量空间”的线性叠加原理之上，从而能够严格证明解的存在性、唯一性、收敛阶（Convergence Rate）和误差界（Error Bound）。
+一旦引入神经网络作为试探函数，函数空间变成了非线性流形。由于失去了线性叠加性，传统的Galerkin投影和变分法完全失效。我们不仅无法在数学上证明解的存在唯一性，甚至无法给出任何可靠的误差估计。这种方法在工程实践中将沦为完全不可控的“黑盒试探”，这对于要求极高安全性和确定性的物理工程计算（如航空航天中的湍流模拟）是不可接受的。
+
+#### 3. 证据审计 (Evidence Audit)
+*   **SGD 泛化优势的外推过度（Overgeneralization）**：作者引用 Ben Recht 关于 Adam 与 SGD 在深度学习中泛化差异的论文，来暗示 SGD 在物理模型优化中同样能收敛到“好解”。然而，Recht 的研究背景是超参数化的图像分类网络。在物理建模中，优化目标通常是满足特定边界条件和守恒律的偏微分方程（即约束优化）。在物理约束的损失地形（Loss Landscape）中，SGD 是否依然具备这种神奇的泛化能力？作者没有提供任何理论或实证支持。
+*   **缺乏量化实证与对比**：对话中仅将“湍流”作为天然的应用场景一笔带过，属于典型的“概念炒作（Hype）”。作者未能提供任何具体的、在计算效率或精度上击败传统高阶数值方法的实证数据。
+*   **对软件瓶颈的模糊抱怨**：提到物理建模优化“被软件卡住”、“都是垃圾（It's all junk）”，却未深入剖析究竟是自动微分（AD）的内存瓶颈、非凸求解器的算法局限，还是硬件异构计算的适配问题。
+
+#### 4. 隐性假设 (Hidden Premises)
+*   **假设一：物理系统的损失地形与深度学习类似**。论证默认了物理方程变分形式的优化地形可以通过 SGD 轻易驾驭。事实上，物理信息损失（如残差极小化）往往伴随着极度尖锐、多峰且病态的损失地形，SGD 在此类地形中极易陷入无物理意义的局部极小值。
+*   **假设二：非线性逼近的计算开销低于线性逼近**。论证默认了训练一个庞大的非线性神经网络来逼近试探函数，在时间上会优于高度优化的传统线性方程组求解器（如多重网格法 multigrid）。然而实际情况是，神经网络的非凸优化迭代开销往往比传统线性求解器高出几个数量级。
+
+#### 5. 盲区剖析 (The Blind Side)
+作者在畅想“神经网络作为有限元试探函数”时，完全忽视了学术界在**物理信息神经网络（PINN）**和**算子学习（如 FNO, DeepONet）**领域已经发现的硬伤。例如：
+*   **谱偏差（Spectral Bias）**：神经网络倾向于优先学习低频平滑函数，在面对湍流这种具有多尺度、高频剧烈振荡特征的物理现象时，网络极难收敛。
+*   **守恒律无法严格保证**：由于失去了向量空间和显式基函数的几何结构，神经网络逼近的解在边界处极易出现微小的泄漏，无法严格满足质量、动量和能量守恒定律。在物理学中，不守恒的近似解往往是灾难性的。
+
+#### 6. 致命一击 (One Hit Kill)
+**如果将神经网络作为试探函数引入有限元，在失去了向量空间的线性叠加性质后，你如何定义并严谨证明该近似解的收敛阶（Convergence Rate）与误差界（Error Bound）？如果无法给出严谨的数学收敛性保证，工程界有什么理由放弃精度可控、边界条件严格满足的传统有限元方法，转而采用这种无法预测最大误差的黑盒方法？**
+
+#### 7. 如何平息争议 (What Would Settle It)
+必须设计一个标准的**二维不稳态纳维-斯托克斯方程（Navier-Stokes Equations）求解基准测试**，并在以下严苛条件下进行对比：
+1.  **控制变量**：在相同的计算资源上限（限制相同的 FLOPs 和最大内存占用）和相同的精度要求（如 $L^2$ 相对误差 $< 10^{-3}$）下。
+2.  **对比方案**：
+    *   **方案 A（传统派）**：采用高度优化的经典高阶有限元法（FEM）或谱方法。
+    *   **方案 B（融合派）**：采用作者设想的、以神经网络为试探函数并用 SGD 优化的非线性代数求解器。
+3.  **测试指标**：
+    *   在未见过的边界条件和高雷诺数（湍流区）下的**泛化预测误差**。
+    *   解是否严格满足**质量与动量守恒**（测量守恒残差）。
+    *   **收敛所需的时间**。
+
+如果方案 B 在计算效率、泛化性上均显著击败方案 A，且能保证守恒误差在机器精度范围内，则作者的范式融合主张成立；否则，该构想仅能被视为一种无法落地于严肃工程的数学空中楼阁。
+
+---
+
+### PART 3. 概念关系图谱 (Mermaid Conceptual Map)
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心冲突与主题
+    A["💡 现代应用数学范式革命"] --> B["核心议题: 物理建模与深度学习优化的深度融合"];
+
+    %% 肯定阶段：传统物理建模与数值计算
+    subgraph SG1["🔵 物理建模与数值计算 (经典派 - Thesis)"]
+        direction TB
+        S1_FEM["有限元方法 (FEM) / 偏微分方程 (PDE)"]
+        S1_MathBase["数学基石: 索伯列夫空间与线性叠加原理"]
+        S1_Space["核心特征: 严格的向量空间 (Vector Space)"]
+        S1_Pros["优势: 精度可控、收敛性证明、严格守恒"]
+        S1_Cons["瓶颈: 面对高维复杂系统 (如湍流 Turbulence) 遭遇维度灾难"]
+        
+        S1_FEM --> S1_MathBase
+        S1_MathBase --> S1_Space
+        S1_Space --> S1_Pros
+        S1_Pros --> S1_Cons
+    end
+
+    %% 否定阶段：深度学习与优化算法的崛起
+    subgraph SG2["🟠 深度学习与高维优化 (数据派 - Antithesis)"]
+        direction TB
+        S2_DL["深度学习与神经网络结构"]
+        S2_Opt["优化算法: SGD 与 Adam 的权衡"]
+        S2_Recht["Ben Recht 研究: SGD 具备更优的高维泛化性能"]
+        S2_Pros["优势: 极强的高维非线性表征与逼近能力"]
+        S2_Cons["劣势: 缺乏物理约束、黑盒机制、泛化缺乏严谨保证"]
+        
+        S2_DL --> S2_Opt
+        S2_Opt --> S2_Recht
+        S2_Recht --> S2_Pros
+        S2_Pros --> S2_Cons
+    end
+
+    B --> S1_FEM
+    B --> S2_DL
+
+    %% 否定之否定：融合构想
+    subgraph SG3["🟣 范式融合：非线性物理计算 (Synthesis)"]
+        direction TB
+        S3_Idea["前沿构想: 将神经网络作为有限元试探函数 (Trial Functions)"]
+        S3_Structure["网络结构: 矩阵乘法 + ReLU 激活的多层复合"]
+        S3_Solver["求解机制: 利用具有高泛化力的 SGD 进行参数优化"]
+        S3_Target["应用目标: 攻克湍流等经典非线性物理难题"]
+        
+        S3_Idea --> S3_Structure
+        S3_Structure --> S3_Solver
+        S3_Solver --> S3_Target
+    end
+
+    S1_Cons -- "寻求突破" --> S3_Idea
+    S2_Pros -- "提供工具" --> S3_Idea
+
+    %% 严厉但公平的同行评审
+    subgraph SG4["🚩 严厉但公平的同行评审 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["🚨 致命薄弱环节: 丧失向量空间性质"]
+        HR_WeakLink_Detail["无法通过线性叠加构造新解, 传统收敛性与唯一性证明完全失效"]
+        
+        HR_Audit["🔍 证据审计与假设质疑"]
+        HR_Audit_1["SGD 在超参数化分类任务的泛化性被盲目外推至物理约束优化"]
+        HR_Audit_2["忽视谱偏差 (Spectral Bias) 导致网络难以捕捉高频湍流特征"]
+        HR_Audit_3["无法严格保证物理守恒律 (质量/动量泄漏)"]
+        
+        HR_Kill["⚔️ 致命一击 (One Hit Kill)"]
+        HR_Kill_Detail["若无法严谨证明收敛阶与误差界, 工程界有何理由放弃精度可控的传统有限元?"]
+        
+        HR_Settle["🧪 验证标准 (What Would Settle It)"]
+        HR_Settle_Detail["二维不稳态纳维-斯托克斯方程基准测试: 对比传统高阶法与网络试探法在相同 FLOPs 下的收敛速度、守恒残差及泛化误差"]
+        
+        HR_WeakLink --> HR_WeakLink_Detail
+        HR_Audit --> HR_Audit_1 & HR_Audit_2 & HR_Audit_3
+        HR_Kill --> HR_Kill_Detail
+        HR_Settle --> HR_Settle_Detail
+    end
+
+    S3_Idea -.-> HR_WeakLink
+    S3_Solver -.-> HR_Audit
+    S3_Target -.-> HR_Settle
+
+    %% 样式定义 - 确保所有文字均为深色以保证可读性
+    classDef mainNode fill:#FFF9C4,stroke:#FBC02D,stroke-width:3px,color:#333000;
+    classDef blueNode fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1;
+    classDef orangeNode fill:#FFE0B2,stroke:#F57C00,stroke-width:2px,color:#E65100;
+    classDef purpleNode fill:#F3E5F5,stroke:#8E24AA,stroke-width:2.5px,color:#4A148C;
+    classDef redNode fill:#FFEBEE,stroke:#E53935,stroke-width:2.5px,color:#B71C1C;
+    classDef redDetail fill:#FFFFFF,stroke:#EF9A9A,stroke-width:1.5px,color:#C62828;
+
+    class A,B mainNode;
+    class S1_FEM,S1_MathBase,S1_Space,S1_Pros,S1_Cons blueNode;
+    class S2_DL,S2_Opt,S2_Recht,S2_Pros,S2_Cons orangeNode;
+    class S3_Idea,S3_Structure,S3_Solver,S3_Target purpleNode;
+    class HR_WeakLink,HR_Audit,HR_Kill,HR_Settle redNode;
+    class HR_WeakLink_Detail,HR_Audit_1,HR_Audit_2,HR_Audit_3,HR_Kill_Detail,HR_Settle_Detail redDetail;
+
+    %% 背景样式
+    style SG1 fill:#F1F8E9,stroke:#558B2F,stroke-width:2px,color:#33691E
+    style SG2 fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#F57F17
+    style SG3 fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    style SG4 fill:#FFEBEE,stroke:#E53935,stroke-width:3px,color:#B71C1C
+</Mermaid_Diagram>
+
+Content:
+So, so was I supposed to say something about the, no, the new course. Right. Yeah. But the table content is back up perhaps. Oh, whatever you would like. Yeah, so it begins with linear algebra, you know, topics that we know, but sort of constructive linear algebra. I'm still writing some of it, but it's, so like 1.12, of the right there, tensors and non-negative matrices. How many of you have worked with tensors, or so that needs to be, that's a topic that hasn't made it into general linear algebra courses. And if you keep going a little bit, so then randomized linear algebra. So we all know now that if the matrix is like 10 to the 5th, computing the SVD by a regular method is probably not the way to go, but randomized, linear algebra will do it. So that's a topic. Are you saying that not everybody knows how important the matrix theory is? Well, it's just always a constant effort to tell people. Yeah, and then low-ranked topics that are compressed sensing, but if you move on, so for me, machine learning, deep learning, is a mixture of linear algebra, mostly. And then, what would you like to do? Well, optimizations, probability and statistics would be the second thing, and then optimization. So those last topics, gradient descent and stochastic gradient descent, that's key. Am I saying what everybody knows, that the algorithms of stochastic gradient descent are the workhorse of learning, and actually there's still debate about it. you know about adaptive methods, Adam and other guys in deep learning. So some Ben Wrecked is really a superstar, in my opinion, in Berkeley. And he published a paper that Adam, the family of methods, which people like because they speed up the convergence at the start. But he says that if you wait and wait till it converges, it doesn't converge to a good solution. You know the big question is, so if you have so many parameters you often have many, many possible solutions to converge to, why does stochastic gradient descent converge to a good one, one that you can then use on test data and it's successful? That's really a deep question and hard to get your hands on when most mass proofs, if you prove convergence, okay, you've done it. But here we want to know, does it converge to a set of weights that generalizes well to new data? And the answer with stochastic gradient to thank God is yes, it does. And so anyway, the question was whether Adam and related methods always preserved that good generalization. And now it looks like probably with some tweaks we're okay, but the standard Adam method could go wrong. Yeah. So those proofs actually rigorous, or? Yeah. construct examples fairly realistic examples where they can do it and see what limit is chosen by different methods and so you've got the wrong one in papers is by ref and others. So it's, well, it's an amazing subject. Yeah, yeah. So speaking of optimization, and for sure, the recent developments and popularity of machine learning has certainly become the killer app for optimization. Of course, optimization is a much bigger, has many, many more applications, even beyond machine learning. We have one Pablo Vialma here, our colleague at MIT, who's helped build the junk set that's become very popular in business schools and so forth. It's really pro-optimization to a new level. And I wanted to ask you, you've been involved a lot with physical modeling. And I've learned so much in this Julia world. I've learned that, you know, in the old days, getting a physical model just to work It was sort of exciting enough. But I'm hearing that now that's yesterday's news. And now people are surrounding this with optimization. But they're getting stuck by the software. I'll say. It's all junk. It's all Julia and junk in luck. But do you have any thoughts about how optimization around physical models is changing? Well, actually, so I always visit Oxford in the summer for a month or so. It's just a great place to move from one office to another office, but it's a different office. And I have a bus pass in Oxford, so I go everywhere enough. But I got into a conversation with some of the applied math people there. And so really the question is, how does machine learning connect to the deep learning connect to differential equations, physical principles. Right now, there are kind of two different worlds, would you say, with deep learning, you use the CASTIC gradient descent to find an answer. And with physical principles, you use the principle. You, at least, do differential equations. And we have an American methods to solve those. And that's another big, big world, science-specific world. But are there problems? And I think there are in which you want to do physical problems, physical things. But there's sort of a very random aspect to the context. And so there'd be the opening for deep learning to for gradient descent and optimization to play a part. I don't know if you have any thoughts about that. I mean, I've read a few suggestions, and papers are beginning to appear. Like, could you take the learning function that's created by gradient descent? Could you use that function, very complicated function, but it's, well, many, many parameters in that learning function. But it's built out of layers of simple structure, matrix multiplications followed by the Ray-Lew nonlinear thing. Could you use those functions in the finite element method? Could you approximate the solution to physical problem by creating trial functions of this totally new kind, very many, many variable functions, but with a special neural net structure? Anyway, I don't know if that's a nonlinear algebraic mic. Well, yeah, that's the trouble. Say you're old, you're in a world. Well, that's alarming to think that we lose, we don't have, we don't have a vector space. You know, if we add these functions together, we don't necessarily get another one. So, we're, it's a question whether, it just seems that if this learning is going to be important And we know that physical laws and the PDs that they lead are fundamental, are the two going to meet and have, yeah. There are applications, people. Terbulence would be unnatural, right? Yeah. Yeah. So there's a reason for being. Right. So we end over the microphone. Otherwise, we'll all be picked up by. Oh, but we can just repeat it. Terbulence is a great example. Yeah, where it's happening, yeah, right, right. Yeah. I think, I don't know if Christopher Cochis is in the room, but probably we should say that Chris is ready to give you a whole keynote speech. Oh, I'm the subject. Well, that's good.
