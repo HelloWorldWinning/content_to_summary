@@ -1,0 +1,160 @@
+Timestamp: 2026-07-17T08:48:19.951602
+Title: 23 分钟！顶级交易员从零演示如何用Claude AI搭建交易工具 BV1Xm7h6pEWt
+URL: https://b23.tv/bYhOben
+Status: success
+Duration: 23:11
+
+Description:
+---
+
+### **PART 1. 作者图谱 (Author's Map)**
+
+#### **1. 核心主张 (Core Thesis)**
+即使没有编程背景的交易员，也可以利用 Claude AI 作为“能力倍增器”，将 TradingView 中回测表现优异的交易策略（如 Trend-Join Long 策略）转化为运行在 Interactive Brokers (盈透证券) API 上的全自动交易系统，实现每 30 分钟一次的选股、下单与风险管理循环。
+
+#### **2. 论据支撑 (Evidentiary Base)**
+*   **硬数据 (Hard Data)**：展示了 TradingView 上的历史回测结果——胜率 64%、利润因子 (Profit Factor) 2.48、最大回撤 7%、总收益率 12%。
+*   **实例演示 (Examples/Demos)**：
+    *   展示了 Interactive Brokers TWS（Trader Workstation）的 API 接口配置步骤（端口 7497、受信任 IP、解除只读限制）。
+    *   展示了 Claude 在“自动模式 (Auto Mode)”下成功生成 Python 连接代码并读取纸交易（Paper Trading）账户的资产信息（100万美元虚拟资金）。
+    *   演示了通过 Claude 自动向 TWS 发送 Nvidia（NVDA）1 股限价单的操作。
+    *   展示了每 30 分钟运行一次的标普 500 筛选器，成功筛选出当天跳空高开超过 3% 的前 20 只股票。
+    *   展示了 Telegram 机器人发送的实时交易提醒和模拟 P&L 看板。
+*   **个人经验/直觉泵 (Anecdote/Intuition Pump)**：作者强调自己没有任何编程或技术背景，仅凭交易员的直觉和 Claude 的辅助就完成了整套系统的搭建，以此向读者证明“我能做到，你也可以”。
+
+#### **3. 逻辑推导 (Logical Warrant)**
+作者的论证建立在**技术可行性与流程自动化**的逻辑桥梁上：
+1. **大前提**：任何成功的交易策略都可以被拆解为明确、非黑即白的规则（如跳空幅度、均线过滤、移动止损、分批止盈）。
+2. **小前提**：LLM（如 Claude）具备无损理解自然语言规则并将其转化为无 Bug 的 Python 自动化执行代码的能力。
+3. **结论**：因此，交易员只需提供规则（`rules.json`），Claude 就能完美接管从选股（Scanner）到执行（Execution）和风控（Exit Logic）的整个生命周期，消除人工交易的情绪干扰。
+
+#### **4. 限定范围 (Stated Scope)**
+*   **前置条件**：AI 只是一个放大器，前提是交易员自身必须已经拥有具备“优势（Edge）”的成熟策略。“如果策略本身不赚钱，自动化只会让你亏钱更快。”
+*   **测试限制**：目前系统必须且只能在**纸交易账户（Paper Trading）**中运行数周，直至运行完全无误，严禁直接上实盘。
+*   **标的限制**：该策略（Trend-Join Long）仅适用于市值超过 10 亿美元、股价大于 3 美元的大盘股（本视频中限制在标普 500 成分股内）。
+
+#### **5. 隐含对手 (Implicit Opponent)**
+*   **传统观念**：认为只有具备高超编程技术的量化工程师（Quant）或程序员才能开发自动交易系统。
+*   **低效的人工交易**：容易受到情绪波动影响、无法在盘中每 30 分钟不间断、无偏差地扫描市场并严格执行止损止盈的散户交易员。
+
+#### **6. 预期效果 (Intended Takeaway)**
+激发读者的行动欲望，促使其订阅作者的博客、复制提示词，并尝试使用 Claude 搭建属于自己的 Interactive Brokers 自动化交易管道；同时在结尾处给读者泼冷水，警告回测数据与实盘执行之间存在巨大鸿沟，引导读者保持理性。
+
+---
+
+### **PART 2. 无情但客观的审阅 (Hostile-But-Very-Fair REVIEW)**
+
+#### **1. 强力重建 (Steelman)**
+该方案最强有力的部分在于其**原型快速开发与轻量化监控的工程落地**。作者成功打通了“自然语言描述 -> LLM 代码生成 -> 盈透证券 API 底层执行 -> Telegram 移动端实时反馈”的闭环。对于缺乏编程能力的交易员，这套框架极大地降低了量化准入门槛，使得验证“策略自动化可行性”的成本几乎降为零。通过 `rules.json` 将策略规则结构化，也迫使交易员去精确定义自己的主观指标，这是向系统化交易迈出的关键一步。
+
+#### **2. 最薄弱环节 (Weakest Link)**
+该系统最致命的逻辑漏洞在于：**宣称“无需编程经验”即可运行自动化实盘交易系统**。
+> *"I have no background in coding, but I am a trader, so if I can do this, then so can you."*
+
+**崩塌逻辑**：在金融市场的实盘微观结构中，API 连接经常因网络波动、盈透证券每日强制重启、速率限制（Rate Limits）或订单类型不匹配而中断。当系统在实盘中遇到未捕获的异常（Exception）时，一个“没有编程背景”的交易员将完全处于盲区。Claude 无法在瞬息万变、真金白银流失的毫秒级实盘异常中进行实时“热修复（Hot-fix）”。缺乏自主调试代码的能力，在自动化交易中等同于将账户控制权交给一个随时可能死机且无法刹车的黑盒。
+
+#### **3. 证据审查 (Evidence Audit)**
+*   **回测与实盘的巨大偏差**：作者展示了极为亮眼的 TradingView 回测数据（胜率 64%，利润因子 2.48），但在视频后半段不得不承认实盘执行结果“非常一般（meh）”。
+*   **幸存者偏差与选择性忽略**：
+    *   **滑点与流动性损失**：回测假设所有订单都能在理想价格成交。然而，该策略在开盘阶段寻找跳空 >3% 的高波动股票，此时市场买卖价差（Bid-Ask Spread）极大，30分钟一次的市价或限价单会遭遇严重的负滑点。
+    *   **执行延迟**：每次循环需要扫描 500 只股票，即使 Claude 14 秒完成了筛选，但通过 API 轮询获取实时 Tick 数据并下单的延迟，在实际交易中足以吞噬掉微小的动量优势。
+    *   **回测时段限制**：TradingView 的 PineScript 回测往往无法完美模拟日内多资产并发持仓限制和资金分配的动态过程。
+
+#### **4. 隐藏前提 (Hidden Premises)**
+*   **假设 1：人类交易员的“主观微调”可以被 100% 代码化。**
+    作者承认，他无法将自己作为人类交易员的全部主观盘感（如对市场情绪、板块轮动的感知）转化为死板的指标代码（如“swing lows”的精准数学定义）。
+*   **假设 2：Claude 的“自动模式 (Auto Mode)”在交易中是安全的。**
+    在金融交易中授权 AI 自动运行（不经人工确认）是极度危险的。LLM 的“幻觉（Hallucination）”或代码生成中的微小逻辑漏洞（例如死循环下单），可能在几秒钟内耗尽账户的所有购买力。
+
+#### **5. 盲区分析 (The Blind Side)**
+*   **市场 Regime（状态）切换**：Trend-Join Long 是一个典型的“强趋势多头策略”。在今年半导体板块疯涨的背景下，该策略表现优异；一旦市场进入震荡市或均值回归市，该策略将被反复“左右打脸”，而 Bot 无法自主识别市场状态的切换。
+*   **微观结构灾难**：30 分钟的扫描频率在当今算法主导的市场中显得极其笨拙。它既无法享受高频交易的延迟优势，又失去了日线级别交易的容错空间，尴尬地卡在中间，极易成为高频做市商和算法机构的“猎物”。
+
+#### **6. 一击必杀 (One Hit Kill)**
+**追问作者**：如果 TWS 在美东时间下午 1:00 发生常规网络闪断，导致 Python 脚本抛出 `ConnectionError` 并异常退出，而此时 Bot 正持有 3 只高杠杆半导体股票，且由于连接中断，止损单（Stop Order）未能成功上报至盈透证券服务器（仅保存在本地内存中）。作为一名“完全不懂代码”的交易员，你如何在不爆仓的前提下，确保系统能自动重连并安全平仓？
+
+#### **7. 如何判定 (What Would Settle It)**
+进行为期 **30 个交易日**的对照实验：
+*   **A 组**：作者完全手动执行该 Trend-Join Long 策略。
+*   **B 组**：由该 Python-Claude 自动交易 Bot 独立执行。
+*   **判定标准**：对比两者的**夏普比率（Sharpe Ratio）**和**每笔交易平均滑点（Average Slippage per Trade）**。如果 B 组的滑点和回撤显著高于 A 组，且净值曲线跑输 A 组（如作者目前承认的现状），则证明“无代码基础的 AI 自动交易系统”在当前散户技术条件下只是一个无法盈利的“玩具”。
+
+---
+
+### **PART 3. 概念与架构图谱 (Mermaid Map)**
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 核心主张: 利用 Claude API 与 Python 零代码门槛构建 IB 自动化交易系统"]
+
+    subgraph SG1["⚙️ 系统架构与数据管道 (System Architecture)"]
+        direction TB
+        TWS["Interactive Brokers TWS<br/>(Socket Port: 7497)"]
+        PyEnv["Python 3.12 运行环境"]
+        ClaudeDesktop["Claude Desktop / Codex<br/>(Auto Mode 自动模式)"]
+        TelegramBot["Telegram API<br/>(实时通知与警报)"]
+        
+        ClaudeDesktop -- "1. 生成并运行" --> PyEnv
+        PyEnv -- "2. API Socket 连接" --> TWS
+        PyEnv -- "3. 发送运行状态" --> TelegramBot
+    end
+
+    subgraph SG2["📊 交易策略与执行循环 (Strategy & Loop)"]
+        direction TB
+        Universe["S&P 500 股票池<br/>(市值 > $1B, 股价 > $3)"]
+        Scanner["30分钟循环扫描器<br/>(过滤跳空高开 > 3% 的前20只股票)"]
+        Rules["rules.json<br/>(Trend-Join Long 策略规则)"]
+        Executer["执行引擎<br/>(下单、移动止损、分批止盈、尾盘强平)"]
+        
+        Universe --> Scanner
+        Rules --> Executer
+        Scanner -- "提供标的" --> Executer
+        Executer -- "发送订单" --> TWS
+    end
+
+    subgraph SG3["🛑 局限性与实盘落差 (Reality Gap)"]
+        direction TB
+        Gap["回测与实盘巨大落差<br/>(Backtest vs Live Execution)"]
+        Cause1["回测局限性<br/>(未考虑滑点、高波动开盘价差)"]
+        Cause2["主观交易难以代码化<br/>(人类直觉与盘感无法 100% 翻译)"]
+        
+        Gap --> Cause1 & Cause2
+    end
+
+    subgraph SG4["🚩 批判性审视与安全隐患 (Hostile Review)"]
+        direction TB
+        HR_WeakLink["🚨 致命软肋: '无编程经验'<br/>无法应对实盘异常与连接中断"]
+        HR_Safety["⚠️ 自动模式风险 (Auto Mode)<br/>AI 幻觉或逻辑漏洞可能导致疯狂下单"]
+        HR_Microstructure["📉 微观结构劣势<br/>30分钟循环极其笨拙，易被高频算法狙击"]
+        
+        HR_WeakLink --> HR_Safety & HR_Microstructure
+    end
+
+    %% --- Connection Lines ---
+    A --> SG1
+    SG1 --> SG2
+    SG2 --> SG3
+    SG3 -.-> SG4
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333;
+    classDef techNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064;
+    classDef strategyNode fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+    classDef gapNode fill:#FFF3E0,stroke:#FFB300,stroke-width:2px,color:#E65100;
+    classDef reviewNode fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828;
+
+    class A mainClaim;
+    class TWS,PyEnv,ClaudeDesktop,TelegramBot techNode;
+    class Universe,Scanner,Rules,Executer strategyNode;
+    class Gap,Cause1,Cause2 gapNode;
+    class HR_WeakLink,HR_Safety,HR_Microstructure reviewNode;
+
+    %% --- Subgraph Background Styles ---
+    style SG1 fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG2 fill:#E3F2FD,stroke:#42A5F5,stroke-width:2px,color:#1976D2
+    style SG3 fill:#FFF8E1,stroke:#FFB300,stroke-width:2px,color:#E65100
+    style SG4 fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Imagine this. Every morning you wake up, your AI trading bot has already scanned the market and sent you a list of gappers that fit your strategy. After the market opens, it triggers buy and sell orders for you autonomously, and it continues to run the cycle every 30 minutes throughout the trading day. This is the power of connecting interactive brokers API with Cloud Code, and I'll show you how to do that in this video. So this is what you're going to learn. How to set up a broker API and connect clock code to it safely. How to create your strategy with help of AI. The full pipeline I built from universe scan decision loop executions and exit logic. And finally setting up telegram alerts like this so you get notifications every 30 minutes from your bot. Last but not least, we're also going to build a dashboard that tracks the are multiples per trade. In my last video, I showed you how you've clawed and trading view together to build a pre-market trade planning process with the high-win rate and back test strategy. But the one thing that trading view and clawed connection couldn't do was actually pull the trigger to buy and sell. So in this video, I'm going to show you how to go from a back access strategy to an actual trading bot that places its own orders, manages own stops, takes part shows, trails the winners, and force closes everything before the market closes. All of this pipeline is running on my computer with interactive brokers API and Clawed, and I'm completely hent off. I want to give you the same disclaimer as last time. AI is simply a multiplier. You still need to know how to trade first. I'm not a developer, I have no background in coding, but I am a trader, so if I can do this, then so can you. So buckle up, make sure to like this video and subscribe down below to see more step by step video lessons on using AI to optimize your trading. Okay, let's get started with setting up interactive brokers API. There's three things you need to install. I'll keep this one really short. The full steps and the details are on my blog. You can use that article as a video companion to follow along here and copy all the prompts from that blog. The link is down below. Before we do anything with Cloud and AI, you need to have these things to have installed on your computer. First is Trader Workstation, TWS, which is interactive brokers trading platform and you also need Python. Again, no coding experience is necessary here because we have Cloud. So I already have Python installed and and I'm just gonna start running my interactive brokers. I'm gonna be using a paper trading account on TWS because we're not putting in real money on this yet until it runs clean for weeks. So I'm gonna log in to my paper trading account and make sure you go through the process. You can download TWS on the interactive brokers website. I'll leave a link down below and can open up a free paper trading account. Even if you don't have market data subscription. All right, we're in. You can see now we're in the interactive brokers, TWS platform. I've done video lessons in tutorials on how to optimizing and make it look prettier. I tried my best, but it still looks like this, I know. So what you want to do is to set up the API access. Go to file up here and go to global configuration. And once you're in here, you want to go to API, go to settings, and you want to enable active X and socket clients. And over here, the next part is wanna make sure the socket port here is labeled as 7497. This is the paper port. If you're changing this up to a live account later, you just need to change a number to 7496. Next, scroll all the way down, uncheck that and create a trusted IP. You wanna add 1, 2, 7, 0, 0, 1 to the trusted IPs. I've really done this one. So I'm just redoing this again with a new paper training account for this demo. So once you have that ready, you want to click a buy, but I want to check one thing. One more thing, up here on the general, you want to check off read only API because you want the API to actually be able to execute trades for you. So make sure you have these things enabled and the trusted IP and you're going to click apply and okay, and okay. Okay, and after that you don't really need your TWS anymore, so I'm going to minimize it. Another thing I want to make sure you have is you need to have Python tools installed on your PC. I already have Python installed, if you don't, just download Python 3.12 or newer, Cod or Codex can walk you through that easily. And I forgot to mention you obviously also need either Cod or Codex on desktop. So if you don't, make sure you go to their website and at least get the, I think the $20 per month, minimum max plan, the paid subscription, they not should be enough to get you started. So after we're done with TWS and Python, we want to create a new environment for us to working. So I'm just going to copy this prompt from a blog here. So next, we want to start a fresh project. In Clod, you can see I named this one, Interactive Brokers Clod Demo. So I want to make sure that Clod can now talk to Interactive Brokers. I'm working on connecting Interactive Brokers, Python and Clod together. I have an Interactive Brokers paper trading account and global configuration setup already. Can you walk me through the connection process? Okay, so you can see that cloud is walking me through the process. Do you want to place order placement label or read only? We want to do full trading, which is with paper. So now I think about it. You can start at the very beginning of the video, just asking cloud to walk you through as well. And really important, I like to use auto mode because it allows cloud to kind of proceed without asking all the permissions. I hate that. But obviously, if you're more careful, you can use Ask permissions, but you just gotta be here and you'll have questions for you like every 10 seconds. I've been doing a lot of projects and tasks on Cloud, so that's uncomfortable using the Auto Mode. As you can see, Cloud just did a whole connection pipe for us with Python and Interactive Brokers. Now we can test the connections. Like I mentioned at the beginning of the video, AI won't magically make you profitable. Cloud can help you build scanners, analyze news, and even automate parts of your trading process. But if the underlying strategy has no edge, the bot will only help you lose money faster and more consistently. At the end of the day, the edge is still in your strategy and in your ability to identify opportunities in the market. For the momentum day trading strategies I personally trade, I tend to focus on sectors showing outsize relative strength. And this year, one of the biggest themes has been semiconductors and all the companies powering the AI boom. If your strategy also writes momentum in that sector, BetaPro offers a 3X leveraged semiconductor-bow ETF that can potentially provide amplified exposure to the semiconductor market movements. On the other hand, if the strength fades and the sector turns bearish, There are also inverse semiconductor ETFs designed to provide inverse exposure to declines in the sector. Just remember, leverage ETFs are trading tools, not investing products. They reset daily, and in volatile markets, losses can add up just as fast. They're built for daily short-term trading, and aren't typically meant to be held long-term. Make sure you understand the risks before trading leverage products. You can learn more about Beta Pro's line-up of leverage ETFs using a link down below. Now let's get back to building the trading box with the help of AI. As you can see, Claude just did a whole connection pipe. For us, with Python and Interactive Brokers, now we can test the connections. Now I'm going to ask you some questions. Tell me if I have any open positions in this paper trading account. on interactive brokers, TWS, and also give me my buying power. All right, let's see if it can. This is how you test the connections. Oh wow, okay. So you can see the snapshot for my paper account. There's a million in paper money. You know, the prototype, don't start paper trading with a million. I will reset this to like $10,000 or something. I just, like I said, it's a brand-new paper trading account that I just set up yesterday, so I forgot to do that. Next, let's see. So you can see this, that's, this is the account, that's polling, let's see what else can you do. So this is the account that is polling a data from. You can see the cash is, you know, the paper trading cash is a million. That's great. Let's see if you can try to place an order for us. Can you place a buy order on Nvidia with a limit price of $100? I want to buy just one share. All right, so let's test the connection. If NCF clause can now place the order for us. So this is the first paper trade I'm placing on interactive broker CWS here. So you can see there's a pop up for simulated trading. You can enable APN orders. There's a precautions. This basically just telling you that you are placing trades via an API, which yes, that's what we're doing. So I'm going to click yes. So you can see they just tried or called just tried to buy one share of quantity right here. If you zoom in, quantity of one share of a video with a limit price of $100. So obviously that's not going to get filled, but you can see now the connection is working because I'm really just trading at $219 right now. But that's just a test. Okay. So I just canceled the order. Now we can move on to part two, building the interactive brokers API bot and we're going to start with building the strategy. In the previous video, we already have a back test strategy from trading view and Claude and these were the results on the last video. You can see this is pretty good. Profitable 64% of the time, profit factors 2.48 and the max drawdown is 7%. Total PNL is 12%. And you can see the list of trades. You can see the entire detail actually in the last video. So this is a simple trend-join long setup that we created in the last video. You think called and trading view to do the back test and creating the Pinescript strategy over here. So what we're going to do now is to turn this exact trading strategy, the trend-join long setup into one that can be read by the new interactive brokers API bot. So the bot is going to read all the rules, all the entry and exit criteria that we created here and it's going to run it on every single cycle and we're going to build that right now. So what we'll need to do now is to create a strategy rules file called rules.json and we can ask Claude to do that for us. Hey Claude, build me a rules.json file for the trading bot. The strategy name is Trend Joined Long. This is a long only strategy. It's gonna be traded on the five minute chart and here are the daily filters. The stock needs to be above the previous days high. The previous days close, also need to close above the 200 day. Here's the exit criteria. The initial stop is 1% below the low of day. Partial take profit is at 0.75R. Then you set the break even at 1R, then trail under the five-minute swing lows. Here is the risk. 1% account size per trade. Maximum 10% position size of the entire account. So I know that was a long prompt, but you can just go to my blog again and just go to the strategy file here. You can see this all the daily filters here. You can just copy this here. You can just copy the prompt. So it'll be a lot less work for you. So let me see if everything's correct. I'm just going to clean this up really quick. So we'll input in the prompt into Cloud right now to build up rules of JSON file. So you can see Cloud is working its magic right now. This is amazing. So you can see it created the file, strategy name, long only index. So one thing I forgot to mention is that when did the strategy demo and the back testing in the previous video? I only did it on the S&P 500 stocks just to keep it simple. But obviously when I trade day-to-day, the trend-joying long setup, I'll trade it on all the stocks over a billion market cap and over $3 per share. So just a caveat here, you can add any stock universe that you want. Before we move on, just a reminder that if you're enjoying step-by-step videos like this, that are really easy to follow along. They make sure to drop a like down below and subscribe if you wanna see more like this. Now that we have the strategy file ready, next we need to build a settings file that tells the bot our interactive broker's port, position limits, account information, and telegram tokens for later. This is really boring but necessary. So what I'm just gonna do here is go to my blog and copy the prompt here and then going back to cloth and paste. So what this prompt does is that it builds the bot that actually talks to interactive brokers, reads the rules, and decides if we should trade. And it also orchestrates everything and places the orders on the back end. And the connection and everything is all firing correctly. That's what we want to see. Okay, amazing. Like this is so much easier than our last video with trading view connection to cloth. So what we just did is we set up interactive brokers API and cloud connection. We also built the trading bot with our back test strategy. Now we can actually have cloud take the trades for us. So what's next is the fun part. We're going to build out the rest of the trading pipeline and create a brain for this bot. So now the bot will have a way to scan the market for you for all the potential stocks that fit your strategy. It will filter through the gapers and repeats this process. every 30 minutes. And if there are potential trades to take every 30 minutes, you'll pull the trigger and execute on the entries and exits. So we're going to identify the kind of stocks we want to trade. For the trend-wing loan strategy specifically, like I mentioned earlier, I want to trade bigger cap stocks. So for this demo, we're going to limit the stock universe to all the stocks in the S&P 500. Hey, Claude, create a Python list called SP500 underscore tickers and put in all the stocks, all the tickers, from the current S&P 500 listings in there. Okay, great. You can see Claude created the list for us of all the stocks in our universe that the bot is going to trade. But now you need to give that bot a filter. So to create the filter, I'm going to enter this prompt here. What this prompt does is to further narrow down the list of the 500 tickers. So what we're filtering for top 20 stocks that gaped up more than 3% on the day. Remember, that's the criteria for this trend-joying loan strategy. So you can see cloud is working its magic. You can see it asked me earlier to move the 500 tickers list we created to somewhere else. So I said yes, and now it's working in the background. Okay, so now I created a morning pre-filter. see what that filter looks like. Okay, that's what it looks like. So you can see now I created a morning pre-filter based on the criteria we just told it. The top 20 stocks that's gapped up more than 3% on the day. We can run a test. You can see it's asking to run a test. So I'm just gonna do that. So okay, so that's run the test to see the pre-filter stocks that spit out. All right, amazing. You can see, Claw is doing all the hard work for us right now. Okay, so here's a summary. They screened the 503 tickers from the S&P 500 in 14 seconds and gave us the top 20 stocks that have gapped up about 3%. So here are the results. Over here, you can see it listed it out. And by the way, this is a list that we're going to wire through to our telegram notifications later on. So I want to see this list of the pre-filtered stocks every 30 minutes, so I'll show you how to set up later as well. So this is pretty cool, you can see also give some observations. Heavy semiconductor and memory stocks today, which is the case today, all those stocks are fine to the moon. Speaking of watchlist, I send out a free weekend watchlist every single Sunday, which includes three to four stocks I'm watching for the week for day trading and swing trading. You can sign up for free with the link down below. Okay, so now that we have the API bots, the strategy, the scanner, everything in place, we just need to automate it and set up the alerts. That set up the brain cycle now. This is a key to automating the entire trading bot cycle every single day. And this is a prompt I'm going to use. So I'm going to copy and paste. So, what this is doing is asking Claw to set up the cycle of scanning and taking the order entries every 30 minutes during the market hours. You can change this to 5 minutes if you want, but for trend to in low, I think 30 minutes is fine. So, you can see we missed a step earlier. We need to create the watchist file, and this is the file that's updated every 30 minutes. So, Claw is going to do that for us. All right. So that took about a couple of minutes, not bad, not bad. So this is the cycle that's created. So you can read through this over here, all the different cycles and timing with Eastern Time and what it created with all the files and the project tree. I just want to say that I have no coding or tech background. So as long as it's doing what I told Acid to do, which is I'm the trader, I created a strategy. I gave it to Claude, and with API and Python, I wrote me this cycle. As long as it's executing the trade and running the cycles and scanners, like I asked it to do, then it's perfect. Like I already said, I came here with no technical background. Next, let's move on to telegram alerts, like the ones I showed you on screen earlier. As part of the automation, I want to set up these alerts to be sent to my phone. So you're notified during the scanning process every 30 minutes. When a bot takes a trade, you are notified as well or even when it gets out or take losses or profit. And I also wanted to create an end of a day summary. This can be done easily with telegram notifications. I showed you the step-by-step process in the last trading view video so you can check out the full breakdown if you need more details. But for this demo, I just want to set up this prompt. All right, so it looks done. That's to a test right now. Okay, so you can see that it sends some examples clearly on our telegram. You can see the pre-market filters, the pre-filters sent at 9.30 to AM. You can see the top 20 list of stocks. You can see some examples of buying a stock, selling a stock, part shows, trailing stocks, and it doesn't have a good example of the end of the day summary. But you can see the call is explaining that you don't have a real P&L summary right now, but if it does take some trade, it's supposed to look like this. I'm not going to lie, building this automated trading system hasn't been the simplest thing. Well yes, the strategy was already back-tested on trading view to be really high win rate and really profitable once it's transported to Interactive Brokers API for actual executions, The results are just very... man. This is a dashboard I asked Claude to build. You can do the same as well, just use a prompt on my website. I think there are many reasons why there's a huge discrepancy between the two trading performance. The back test was limited. We bring an unlimited number of tickers with limited time frame on trading view. Second is, I haven't quite figured out how to translate all the executions I do manually as a human, to be 100% defined as a code with indicators and other technical parameters. That's the part I'm still testing out, and I'll make future video updates on this. The honest results so far, the back test and numbers don't perfectly translate to live execution. Right now my own performance as an actual human being trading a trend joint loan setup is is still much better than any of these bots on automations. But I do think this trading view and interactive brokers API system, it's a solid starting point. So I'm gonna keep working on this. It's not finished yet. So make sure to follow along because I'm gonna make a lot more videos on how I'm optimizing my strategy, performance, and trading executions with AI, cloud, and all the tools out there. Special thanks to Beta Pro ETFs.
