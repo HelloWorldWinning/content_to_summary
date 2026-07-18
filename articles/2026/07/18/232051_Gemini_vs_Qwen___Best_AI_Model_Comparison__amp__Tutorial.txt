@@ -1,0 +1,158 @@
+Timestamp: 2026-07-18T23:20:51.562356
+Title: Gemini vs Qwen | Best AI Model Comparison &amp; Tutorial
+URL: https://youtube.com/watch?v=eAs-YuRn_6s&si=4vuCjjnrhii8ARJP
+Status: success
+Duration: 3:54
+
+Description:
+---
+
+### **PART 1. 作者地图 (Author's Map)**
+
+*本部分旨在不带任何偏见地、客观且善意地还原原文作者的论证结构，呈现作者眼中的核心逻辑。*
+
+#### **1. 核心主张 (Core Thesis)**
+在当前的人工智能版图中，谷歌的 **Gemini** 与阿里巴巴的 **Qwen（通义千问）** 分属闭源与开源生态的顶尖代表；用户无法在两者中做出绝对的“优劣”评判，而必须根据自身对**“极致多模态性能与谷歌生态无缝集成（Gemini）”**或**“开源自托管、中文主导与零授权成本（Qwen）”**的特定业务需求进行选择。
+
+#### **2. 证据基础 (Evidentiary Base)**
+作者通过六个核心维度的对比，为上述主张提供了如下证据支撑：
+*   **模型范围 (Model Scope)**：Gemini 具备原生多模态能力（文本、图像、代码、音频、视频）并提供 Ultra/Pro/Nano 尺寸（硬数据/产品事实）；Qwen 主要集中在文本和代码，多模态能力和生产级模型范围相对有限（产品事实）。
+*   **开源度 (Openness)**：Qwen 采用 Apache 2.0 协议，完全开源，支持修改、商用及复制训练管线（行业规范）；Gemini 仅提供沙盒式的 API 访问，模型权重完全封闭（产品事实）。
+*   **性能表现 (Performance)**：Gemini 基准测试达到 GPT-4 级别，推理和代码能力极强（硬数据/基准测试）；Qwen 在中文基准测试中占据统治地位，在长文本和翻译上表现优异，但在深度推理和复杂代码上略显逊色（硬数据/基准测试）。
+*   **语言支持 (Language Support)**：Gemini 以英语为核心，小语种表现一般（直觉/使用体验）；Qwen 凭借强大的中英双语能力及开源社区贡献，拥有极丰富的小语种衍生版本（社区生态事实）。
+*   **集成与生态 (Integration & Ecosystem)**：Gemini 深度嵌入谷歌 Workspace、Android 和 Search（产品生态事实）；Qwen 强调自托管的灵活性，开源社区活跃，但缺乏大厂级的系统深层集成（生态事实）。
+*   **成本与许可 (Cost & Licensing)**：Qwen 在自托管模式下完全免费，无 Token 计费（商业模式事实）；Gemini 虽有免费额度，但实质上是按量付费的商业闭源模式（商业模式事实）。
+
+#### **3. 逻辑授权 (Logical Warrant)**
+作者的论证建立在**“分类多维对比法”**之上。其底层逻辑可以概括为以下三段论：
+*   **大前提**：评估一个大模型的综合价值，不能仅看单一的性能指标，而必须综合考量其技术能力（多模态、性能、语言）与工程落地维度（开源度、生态集成、使用成本）。
+*   **小前提**：Gemini 在技术前沿性（多模态、绝对推理性能）和谷歌生态集成上占优；而 Qwen 在工程落地维度（开源免授权费、自托管掌控权、中文本地化支持）上占优。
+*   **结论**：因此，不存在一个能绝对压倒对方的单一赢家，两者的选择是一场在“闭源前沿生态”与“开源自主控制”之间的战略权衡。
+
+#### **4. 声明边界 (Stated Scope)**
+作者明确限制了该论证的适用边界：
+*   **Gemini 的适用边界**：“如果你想要最前沿的功能、无缝的谷歌集成，且不介意在封闭的生态系统中运行……”
+*   **Qwen 的适用边界**：“如果你热衷于开源、想要构建自己的专属应用，或者需要顶尖的中文支持……”
+
+#### **5. 潜在对手 (Implicit Opponent)**
+作者论证的对立面是**“大模型一元论”**或**“唯参数/唯指标论者”**。这类观点通常认为，只要某个大模型在 MMLU 等基准跑分上取得微弱领先，它就应该在所有商业和开发场景中被无脑选用，从而忽视了开源性、数据主权、多语言本地化以及实际落地成本的巨大差异。
+
+#### **6. 预期收获 (Intended Takeaway)**
+作者希望读者在剥离市场营销的喧嚣（"forget the hype"）后明白：在选择大模型时，**“最适合业务场景的技术路线”远比“纸面跑分第一的名头”重要**。读者应当根据自身的数据合规要求、预算结构（API 账单 vs 算力硬件折旧）以及语言环境，理性地在这两家巨头的产品中做出抉择。
+
+---
+
+### **PART 2. 刻薄但极客观的同行评审 (Hostile-But-Very-Fair REVIEW)**
+
+*本部分采用严苛的学术与工业级审视标准，指出该对比中被刻意忽略、简化或掩盖的深层问题。*
+
+#### **1. 强力辩护 (Steelman)**
+该论证最强有力的部分在于**精准地指出了“开源自托管”与“闭源 API 生态”之间的商业与技术鸿沟**。在企业级 AI 落地中，这确实是无法调和的终极抉择：选择 Gemini 意味着将核心业务逻辑和数据资产绑定在谷歌的云端沙盒中，以换取极高的开箱即用性能；而选择 Qwen 则是用前期的硬件投入和运维成本，换取对模型权重、数据流向和商业化衍生品的绝对控制权。作者没有陷入简单的跑分崇拜，而是抓住了这个商业本质，这一点非常务实。
+
+#### **2. 最薄弱环节 (Weakest Link)**
+该论证最致命的逻辑漏洞在于对 **Qwen 成本优势的过度简化与误导性陈述**：
+> **引文**: *"Quen is free. Like really free if you're self-hosting. No strings, no per token bill showing up at the end of the month." (Qwen是免费的。如果是自托管，那就是真的免费。没有任何限制，月底不会有任何按Token计费的账单。)*
+
+**致命缺陷分析**：
+“免许可证费（License-free）”绝对不等于“免费（Really free）”。运行 Qwen 的高性能版本（如 Qwen-72B 或更高版本）需要极其昂贵的企业级算力硬件（如多卡 A100/H100 显卡服务器）。其**前期硬件采购成本、高昂的电费、机房托管费、以及专业算法工程师的运维与微调人力成本**，在绝大多数中小型企业和开发场景中，远远超过了直接调用 Gemini API 的按量付费账单。作者通过煽动对“月底账单”的恐惧，掩盖了自托管大模型极其高昂的**总体拥有成本（TCO）**，这是极不负责任的。
+
+#### **3. 证据审计 (Evidence Audit)**
+*   **选择性忽略 Qwen 的多模态进展**：作者声称 Qwen "mostly about text and code"（主要关注文本和代码），这完全忽略了 Qwen 社区极其重要的多模态分支（如 Qwen-VL 视觉模型、Qwen-Audio 音频模型）。事实上，Qwen 在开源多模态领域的地位举足轻重，作者为了维持“Gemini=多模态，Qwen=文本”的二元对立，刻意抹杀了这一事实。
+*   **双向产品线的刻意隐瞒**：
+    *   作者将 Gemini 定位为纯粹的“闭源沙盒”，却对谷歌开源的 **Gemma** 系列模型（共享 Gemini 技术栈）只字不提。
+    *   作者将 Qwen 定位为纯粹的“开源自托管”，却刻意忽略了阿里巴巴同样提供商业化 API 服务（阿里云百炼平台）的事实。
+    *   这种“非黑即白”的分类法虽然让对比显得清晰，但严重脱离了目前两家巨头“开源+闭源”双轨布局的真实市场现状。
+
+#### **4. 暗含假设 (Hidden Premises)**
+为了让作者的结论成立，读者必须无条件接受以下假设：
+*   **假设一：用户具备极强的工程与运维能力**。如果用户根本没有能力部署和优化本地大模型，Qwen 的“开源自由度”和“自托管能力”就会变成无法落地的空中楼阁。
+*   **假设二：谷歌生态是绝对的资产而非负担**。作者默认“与 Android、Workspace 集成”是绝对的加分项。但在实际商业中，许多企业由于极度敏感的数据合规和隐私政策，严禁将数据输入谷歌生态，这种“深度集成”反而成为了技术选型时的“一票否决项”。
+
+#### **5. 盲区视野 (The Blind Side)**
+该对比完全忽视了**“地缘政治与合规性（Geopolitics & Compliance）”**这一决定大模型生死的隐藏上下文：
+*   **Qwen 的出海合规风险**：作为中国本土大模型，Qwen 在海外（尤其是美欧市场）面临着极度严苛的数据合规审查、出口管制以及潜在的政策风险。
+*   **Gemini 的地理准入限制**：由于众所周知的原因，谷歌的 Gemini API 无法在中国大陆直接稳定访问。
+*   在不讨论这一背景的情况下进行“全球化技术选型对比”，就像是在真空中讨论两辆无法在对方国家上牌的跑车谁更好一样，缺乏实际工程指导意义。
+
+#### **6. 一击必杀 (One Hit Kill)**
+> **质问作者**：“既然你将 Qwen 塑造成‘开源自托管且免费’的代表，将 Gemini 塑造成‘极致多模态性能’的代表；那么当一个企业面临**‘必须在本地局域网内（数据合规要求），对海量监控视频进行高并发多模态实时分析’**这一工业级刚需时，你的对比框架该如何给出答案？是承认 Qwen 在多模态推理上的工程短板，还是承认 Gemini 无法私有化部署的硬伤？”
+
+#### **7. 如何一锤定音 (What Would Settle It)**
+要真正解决这场争论，需要进行一项**“全生命周期成本（TCO）与任务投资回报（ROI）”的实测对照实验**：
+*   **实验设计**：设定一个标准的混合企业级任务集（包含 40% 中文推理、30% 复杂代码生成、30% 多模态图像分析）。
+*   **对照组 A (Gemini 路线)**：直接调用 Gemini Pro/Ultra API，记录达到 90% 任务准确率所需的 Token 账单费用、网络延迟（Latency）以及数据传输开销。
+*   **对照组 B (Qwen 路线)**：租用或购买运行 Qwen-72B（或 Qwen-VL）所需的 8卡 H100 GPU 服务器，将硬件折旧、电费、网络带宽费、以及微调运维的人工成本折算为日均成本，记录相同准确率下的日均支出。
+*   **判定标准**：对比在相同任务量和准确率阈值下，哪条路线的**单次任务综合成本（Cost per Query）**更低。这才是能够终结所有营销修辞的硬核工业证据。
+
+---
+
+### **PART 3. 概念映射图 (Mermaid Diagram)**
+
+<Mermaid_Diagram>
+graph TD
+    %% --- Core Node ---
+    Core["💡 巨头对决: Gemini vs Qwen<br/>(闭源生态 vs 开源力量)"]:::mainClaim
+
+    %% --- Gemini Branch (Thesis) ---
+    subgraph SG_Gemini["🔵 肯定视角：谷歌 Gemini (前沿闭源生态)"]
+        direction TB
+        G_Scope["模型范围: 绝对多模态<br/>(文本/图像/代码/音频/视频)"]
+        G_Size["全尺寸覆盖: Ultra, Pro, Nano"]
+        G_Perf["性能表现: GPT-4 级别<br/>(推理与代码能力极强)"]
+        G_Eco["生态集成: 谷歌全家桶深度绑定<br/>(Workspace/Android/Search)"]
+        G_Weak["致命痛点: 权重锁定 / 纯粹的谷歌沙盒"]
+    end
+
+    %% --- Qwen Branch (Antithesis) ---
+    subgraph SG_Qwen["🟢 否定视角：阿里 Qwen (开源自主力量)"]
+        direction TB
+        Q_Open["开源度: 完全开源 (Apache 2.0)<br/>(支持商用/修改/复制管线)"]
+        Q_Lang["语言支持: 中英双语统治力<br/>(开源社区衍生出海量小语种)"]
+        Q_Cost["成本模式: 自托管免许可证费<br/>(无月底 Token 账单)"]
+        Q_Perf["性能表现: 中文基准极强 / 长文本翻译优秀"]
+        Q_Weak["技术局限: 深度推理/复杂代码略逊 / 官方多模态生态相对单薄"]
+    end
+
+    %% --- Hostile Review Branch (Synthesis/Critique) ---
+    subgraph SG_Review["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_Cost["<b>1. 虚假的'免费'假设 (TCO 陷阱)</b><br/>忽略了自托管昂贵的 GPU 算力采购、电费及运维人力成本"]:::reviewNode
+        HR_Audit["<b>2. 证据审计偏差</b><br/>刻意忽略 Qwen-VL 等多模态分支<br/>隐瞒 Gemini 的开源兄弟 Gemma 与 Qwen 的商业 API 服务"]:::reviewNode
+        HR_Compliance["<b>3. 地缘政治与合规盲区</b><br/>未提及 Qwen 的海外合规风险与 Gemini 的国内准入限制"]:::reviewNode
+        HR_OneHit["<b>4. 终极一击 (One Hit Kill)</b><br/>本地化部署 + 高并发多模态任务 = 两者皆无法完美解决的硬伤"]:::reviewNode
+    end
+
+    %% --- Wiring ---
+    Core -->|"评估维度一: 极致性能与生态"| G_Scope
+    G_Scope --> G_Size --> G_Perf --> G_Eco --> G_Weak
+
+    Core -->|"评估维度二: 自主掌控与本地化"| Q_Open
+    Q_Open --> Q_Lang --> Q_Cost --> Q_Perf --> Q_Weak
+
+    %% --- Review Connections ---
+    G_Weak -.->|"对比映射"| Q_Open
+    Q_Cost -.->|"遭遇批判"| HR_Cost
+    G_Scope & Q_Weak -.->|"遭遇批判"| HR_Audit
+    G_Eco & Q_Lang -.->|"遭遇批判"| HR_Compliance
+    G_Weak & Q_Weak -.->|"共同指向"| HR_OneHit
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333,font-weight:bold
+    classDef stageNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+
+    class Core mainClaim
+    class G_Scope,G_Size,G_Perf,G_Eco,G_Weak stageNode
+    class Q_Open,Q_Lang,Q_Cost,Q_Perf,Q_Weak stageNode
+    class HR_Cost,HR_Audit,HR_Compliance,HR_OneHit reviewNode
+
+    %% --- Subgraph Background Styles ---
+    style SG_Gemini fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E
+    style SG_Qwen fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+---
+
+Content:
+Two AI giants, both pushing boundaries., Two AI giants, both pushing boundaries., One big question, which one truly stands, One big question, which one truly stands, One big question, which one truly stands, out? On one side, Google's advanced, out? On one side, Google's advanced, out? On one side, Google's advanced, Gemini, and on the other, the formidable, Gemini, and on the other, the formidable, Gemini, and on the other, the formidable, Quen from Alibaba. We're putting them, Quen from Alibaba. We're putting them, Quen from Alibaba. We're putting them, head-to-head in real world tasks that, head-to-head in real world tasks that, head-to-head in real world tasks that, count: reasoning, language skills, count: reasoning, language skills, count: reasoning, language skills, coding, creativity, price, and more., coding, creativity, price, and more., coding, creativity, price, and more., Let's forget the hype and focus on what, Let's forget the hype and focus on what, Let's forget the hype and focus on what, really matters. Each category gets a, really matters. Each category gets a, really matters. Each category gets a, score, and by the end, you'll know, score, and by the end, you'll know, score, and by the end, you'll know, exactly who claims the crown. But the, exactly who claims the crown. But the, exactly who claims the crown. But the, winner just might surprise you. Let's, winner just might surprise you. Let's, winner just might surprise you. Let's, get into it. Okay, before we jump into, get into it. Okay, before we jump into, get into it. Okay, before we jump into, the details, here's a quick look at our, the details, here's a quick look at our, the details, here's a quick look at our, mind map. We're going to compare Gemini, mind map. We're going to compare Gemini, mind map. We're going to compare Gemini, and Quen across six main categories., and Quen across six main categories., and Quen across six main categories., Model scope, openness, performance, Model scope, openness, performance, Model scope, openness, performance, language support, integration and, language support, integration and, language support, integration and, ecosystem, plus cost and licensing., ecosystem, plus cost and licensing., ecosystem, plus cost and licensing., Sound good? Let's get into it. First up, Sound good? Let's get into it. First up, Sound good? Let's get into it. First up, model scope. Honestly, Gemini is just, model scope. Honestly, Gemini is just, model scope. Honestly, Gemini is just, flexing here. I mean, it's multimodal, flexing here. I mean, it's multimodal, flexing here. I mean, it's multimodal, which means it can handle not just text, which means it can handle not just text, which means it can handle not just text, but also images, code, audio, even, but also images, code, audio, even, but also images, code, audio, even, video. How wild is that? And you get it, video. How wild is that? And you get it, video. How wild is that? And you get it, in Ultra Pro, Nano, all the flavors. Of, in Ultra Pro, Nano, all the flavors. Of, in Ultra Pro, Nano, all the flavors. Of, course, it's super tight with all things, course, it's super tight with all things, course, it's super tight with all things, Google. But the catch, the model weights, Google. But the catch, the model weights, Google. But the catch, the model weights, are locked up. On the flip side, Quen's, are locked up. On the flip side, Quen's, are locked up. On the flip side, Quen's, mostly about text and code. Oh, and some, mostly about text and code. Oh, and some, mostly about text and code. Oh, and some, imageability sneaks in there, too. Now, imageability sneaks in there, too. Now, imageability sneaks in there, too. Now, it's super strong in Chinese and, it's super strong in Chinese and, it's super strong in Chinese and, English, but real talk, the range isn't, English, but real talk, the range isn't, English, but real talk, the range isn't, as broad, and their productionready, as broad, and their productionready, as broad, and their productionready, models are kind of limited. So, Gemini, models are kind of limited. So, Gemini, models are kind of limited. So, Gemini, definitely edges out Quen in terms of, definitely edges out Quen in terms of, definitely edges out Quen in terms of, sheer muscle here. Next, let's talk, sheer muscle here. Next, let's talk, sheer muscle here. Next, let's talk, openness. And uh this is where the, openness. And uh this is where the, openness. And uh this is where the, tables totally turn. Gemini, it gives, tables totally turn. Gemini, it gives, tables totally turn. Gemini, it gives, you API access and you can use it for, you API access and you can use it for, you API access and you can use it for, free kind of, but let's be honest, it's, free kind of, but let's be honest, it's, free kind of, but let's be honest, it's, all Google sandbox. Everything's closed, all Google sandbox. Everything's closed, all Google sandbox. Everything's closed, off. But Quen, I mean, it's fully open, off. But Quen, I mean, it's fully open, off. But Quen, I mean, it's fully open, source. like Apache 2.0 open ready for, source. like Apache 2.0 open ready for, source. like Apache 2.0 open ready for, you to tinker, repurpose, even build, you to tinker, repurpose, even build, you to tinker, repurpose, even build, your own business on replicable training, your own business on replicable training, your own business on replicable training, pipelines, commercial use, the whole, pipelines, commercial use, the whole, pipelines, commercial use, the whole, shebang. The downside, the docs love, shebang. The downside, the docs love, shebang. The downside, the docs love, Chinese, and if you want to run the big, Chinese, and if you want to run the big, Chinese, and if you want to run the big, models, get ready for some hefty, models, get ready for some hefty, models, get ready for some hefty, hardware. Still, this round is all Quen., hardware. Still, this round is all Quen., hardware. Still, this round is all Quen., Now, let's get into performance here., Now, let's get into performance here., Now, let's get into performance here., Gemini is packing some serious, Gemini is packing some serious, Gemini is packing some serious, firepower. It's benchmarking up with the, firepower. It's benchmarking up with the, firepower. It's benchmarking up with the, best right at GPT4 levels on a bunch of, best right at GPT4 levels on a bunch of, best right at GPT4 levels on a bunch of, tasks. It's especially spicy for, tasks. It's especially spicy for, tasks. It's especially spicy for, reasoning and code, and the API solid as, reasoning and code, and the API solid as, reasoning and code, and the API solid as, a rock. Sure, it can hallucinate, but, a rock. Sure, it can hallucinate, but, a rock. Sure, it can hallucinate, but, let's face it, so can every LLM these, let's face it, so can every LLM these, let's face it, so can every LLM these, days. Quen holds its own, especially, days. Quen holds its own, especially, days. Quen holds its own, especially, with translation and long chats, and, with translation and long chats, and, with translation and long chats, and, absolutely owns on Chinese benchmarks., absolutely owns on Chinese benchmarks., absolutely owns on Chinese benchmarks., Sometimes it even beats llama models, Sometimes it even beats llama models, Sometimes it even beats llama models, but for tough code stuff and deep, but for tough code stuff and deep, but for tough code stuff and deep, reasoning, it trails a bit, and the, reasoning, it trails a bit, and the, reasoning, it trails a bit, and the, bigger models can lag. So, Gemini is, bigger models can lag. So, Gemini is, bigger models can lag. So, Gemini is, still king of the hill here. Oh, and, still king of the hill here. Oh, and, still king of the hill here. Oh, and, here's something cool you might not, here's something cool you might not, here's something cool you might not, know. Quinn's open weights actually, know. Quinn's open weights actually, know. Quinn's open weights actually, inspired a whole wave of new Chinese, inspired a whole wave of new Chinese, inspired a whole wave of new Chinese, language models in 2024. Yep, it was, language models in 2024. Yep, it was, language models in 2024. Yep, it was, kind of a big deal. Language support is, kind of a big deal. Language support is, kind of a big deal. Language support is, next, and this is where Quen struck., next, and this is where Quen struck., next, and this is where Quen struck., Gemini is basically the native speaker, Gemini is basically the native speaker, Gemini is basically the native speaker, of English and it does well with major, of English and it does well with major, of English and it does well with major, languages but when it comes to Chinese, languages but when it comes to Chinese, languages but when it comes to Chinese, or more niche ones me quen though is, or more niche ones me quen though is, or more niche ones me quen though is, just insanely good in both Chinese and, just insanely good in both Chinese and, just insanely good in both Chinese and, English and the community's rolled out, English and the community's rolled out, English and the community's rolled out, all these extra languages so you can, all these extra languages so you can, all these extra languages so you can, find a version in pretty much anything., find a version in pretty much anything., find a version in pretty much anything., Yeah, some smaller languages get well, Yeah, some smaller languages get well, Yeah, some smaller languages get well, the short end but it's still a win for, the short end but it's still a win for, the short end but it's still a win for, Quen. All right, integration and, Quen. All right, integration and, Quen. All right, integration and, ecosystem time and come on Gemini is the, ecosystem time and come on Gemini is the, ecosystem time and come on Gemini is the, superstar here. It's everywhere. Google, superstar here. It's everywhere. Google, superstar here. It's everywhere. Google, search Workspace your Android phone just, search Workspace your Android phone just, search Workspace your Android phone just, baked in. You know devs are jumping on, baked in. You know devs are jumping on, baked in. You know devs are jumping on, board fast. The only weird thing, board fast. The only weird thing, board fast. The only weird thing, sometimes you need a Google account to, sometimes you need a Google account to, sometimes you need a Google account to, get the full experience. Quen though, get the full experience. Quen though, get the full experience. Quen though, lets you run your own show. It's super, lets you run your own show. It's super, lets you run your own show. It's super, flexible. You can self-host and its open, flexible. You can self-host and its open, flexible. You can self-host and its open, source community is really picking up, source community is really picking up, source community is really picking up, steam. Still, you're just not going to, steam. Still, you're just not going to, steam. Still, you're just not going to, see those Google scale integrations., see those Google scale integrations., see those Google scale integrations., Last up, cost and licensing. Honestly, Last up, cost and licensing. Honestly, Last up, cost and licensing. Honestly, this is an open source love letter., this is an open source love letter., this is an open source love letter., Quinn is free. Like really free if, Quinn is free. Like really free if, Quinn is free. Like really free if, you're self-hosting. No strings, no per, you're self-hosting. No strings, no per, you're self-hosting. No strings, no per, token bill showing up at the end of the, token bill showing up at the end of the, token bill showing up at the end of the, month. Of course, you'll need your own, month. Of course, you'll need your own, month. Of course, you'll need your own, hardware or pay for cloud, but there are, hardware or pay for cloud, but there are, hardware or pay for cloud, but there are, no hidden fees. Meanwhile, Gemini gives, no hidden fees. Meanwhile, Gemini gives, no hidden fees. Meanwhile, Gemini gives, you a taste for free, but switches to, you a taste for free, but switches to, you a taste for free, but switches to, paper use fast. And you guessed it, paper use fast. And you guessed it, paper use fast. And you guessed it, everything's proprietary. So, Quen is, everything's proprietary. So, Quen is, everything's proprietary. So, Quen is, just the obvious pick if you care about, just the obvious pick if you care about, just the obvious pick if you care about, open pricing. Let's pull up a side by, open pricing. Let's pull up a side by, open pricing. Let's pull up a side by, side on this radar chart. You can really, side on this radar chart. You can really, side on this radar chart. You can really, see where each one shines. Gemini stands, see where each one shines. Gemini stands, see where each one shines. Gemini stands, out on multimodality, raw performance, out on multimodality, raw performance, out on multimodality, raw performance, and integration, while Quinn owns, and integration, while Quinn owns, and integration, while Quinn owns, openness, language support, and, openness, language support, and, openness, language support, and, obviously affordability. So, bottom, obviously affordability. So, bottom, obviously affordability. So, bottom, line, if you want state-of-the-art, line, if you want state-of-the-art, line, if you want state-of-the-art, features and seamless Google, features and seamless Google, features and seamless Google, integration, and you don't mind playing, integration, and you don't mind playing, integration, and you don't mind playing, in a closed ecosystem, Gemini is your, in a closed ecosystem, Gemini is your, in a closed ecosystem, Gemini is your, new best friend. But if you're into open, new best friend. But if you're into open, new best friend. But if you're into open, source, want to build your own stuff, or, source, want to build your own stuff, or, source, want to build your own stuff, or, need top-notch Chinese support, Quen is, need top-notch Chinese support, Quen is, need top-notch Chinese support, Quen is, kind of unbeatable right now. If you, kind of unbeatable right now. If you, kind of unbeatable right now. If you, found this helpful, don't forget to, found this helpful, don't forget to, found this helpful, don't forget to, subscribe for more expert AI, subscribe for more expert AI, subscribe for more expert AI, comparisons. I'll keep the good stuff, comparisons. I'll keep the good stuff, comparisons. I'll keep the good stuff, coming.
