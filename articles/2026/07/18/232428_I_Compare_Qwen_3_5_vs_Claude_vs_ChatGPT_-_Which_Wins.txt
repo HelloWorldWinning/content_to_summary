@@ -1,0 +1,171 @@
+Timestamp: 2026-07-18T23:24:28.356097
+Title: I Compare Qwen 3.5 vs Claude vs ChatGPT - Which Wins?
+URL: https://youtube.com/watch?v=BGzPijcCAhY&si=O2698-UI8G8Rbv_u
+Status: success
+Duration: 3:49
+
+Description:
+### PART 1. 作者地图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+Q1 3.5系列混合专家（MoE）模型以极低的激活成本提供了比肩甚至超越顶尖闭源模型（如GPT-5.2、Claude Opus 4.5）的性能，彻底颠覆了高成本的云端AI开发范式，使开发者能够以极低的成本在本地或廉价云端构建高效能、高变现（CPM）的Agent应用。
+
+#### 2. 证据基础 (Evidentiary Base)
+*   **模型参数与架构数据（硬数据）**：
+    *   **A7B旗舰模型**：总参数397B，单次Prompt仅激活17B。
+    *   **A10B推理模型**：专为多步骤工作流设计，激活参数10B。
+    *   **35B A3B轻量模型**：总参数35B，仅激活3B参数。
+*   **基准测试跑分（硬数据）**：
+    *   **IFBench（指令遵循）**：A7B得分76.5（声称击败GPT 5.2和Claude Opus 4.5）。
+    *   **文档识别与理解**：得分90.8。
+    *   **Agent搜索与浏览**：得分78.6。
+    *   **SWE-bench（代码解决率）**：得分76.4%。
+*   **性能与成本指标（硬数据）**：
+    *   输出速度达 218 tokens/second。
+    *   运行成本比 Claude Opus 便宜6倍。
+    *   支持 1M（百万）超长上下文窗口。
+    *   语言支持从119种扩展至201种。
+*   **使用途径与演示（案例）**：
+    *   Hugging Face上的Transformers库部署代码。
+    *   `chat.q1.ai`在线聊天平台。
+
+#### 3. 逻辑推论 (Logical Warrant)
+该论证基于**技术效率与成本的因果推论**：
+*   **大前提**：AI模型的运行成本和速度直接取决于单次推理时激活的参数量。
+*   **小前提**：Q1 3.5采用MoE（混合专家）架构，拥有巨大的总参数量（保证脑容量），但单次仅激活极少参数（3B-17B），且跑分超越了全激活的昂贵闭源巨型模型。
+*   **结论**：开发者无需再为昂贵的云端API（如GPT/Claude）支付溢价，可以直接在本地或低成本硬件上运行Q1 3.5，从而以极低的成本实现商业化变现。
+
+```
+[MoE 架构: 巨量总参数 + 微量激活参数] ──> [极低计算成本 + 极高推理速度] ──> [跑分超越昂贵闭源模型] ──> [结论：无需再支付高昂云端API溢价，可本地/廉价运行变现]
+```
+
+#### 4. 声明范围 (Stated Scope)
+*   **适用人群**：独立开发者（如印度开发者）、技术机构（Agencies）、自力更生（Bootstrapping）的初创企业。
+*   **应用场景**：视觉支持Agent（自动UI导航、表单填写）、全球化多语言SEO内容应用、企业级本地隐私SaaS（完全运行在企业内部硬件上）。
+*   **已知局限**：由于稀疏路由（Sparse Routing）架构，目前API存在一定的运行痛点（API pains）。
+
+#### 5. 潜在对手 (Implicit Opponent)
+*   **直接对手**：收取高昂API费用的闭源大模型巨头（如OpenAI、Anthropic）。
+*   **技术对立面**：传统的、需要复杂RAG（检索增强生成）管道的架构设计（作者声称其1M上下文可直接取代RAG）。
+*   **认知对立面**：认为“只有支付高额云端费用才能获得顶级AI性能”的传统开发者认知。
+
+#### 6. 预期收获 (Intended Takeaway)
+读者应当立即停止向闭源云端AI支付高昂费用，转向使用Q1 3.5系列开源模型（通过Hugging Face或本地部署），利用其高速度、低成本、强Agent能力和多语言优势，快速构建并变现高利润的本地化或企业级AI应用。
+
+---
+
+### PART 2. 无情但客观的审阅 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强版本假设 (Steelman)
+如果忽略文中具体的专有名词争议，该论证最强有力的核心在于：**MoE（混合专家）架构确实在推理成本与模型容量之间取得了突破性的平衡**。通过将庞大的参数网络拆分为多个专家网络，并在每次推理中仅激活一小部分（如35B模型中仅激活3B），可以在不显著牺牲模型上限能力的前提下，将硬件推理门槛降低数倍。对于追求隐私、低延迟和零API费用的开发者而言，本地部署这类高效率的开源MoE模型，确实是摆脱闭源巨头生态垄断、降低初创企业运营成本的有效路径。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该论证最致命的漏洞在于**基准测试对比对象的虚构与事实幻觉**。
+> **引文**："76.5 which beats out GPD 5.2 and completely crash Cloud Opus 4.5... outperforming both GPD 5.2 and Claude."
+
+**崩溃分析**：截至目前，全球AI市场上根本不存在“GPT 5.2”或“Claude Opus 4.5”这两款模型。作者在陈述Q1 3.5的领先地位时，使用了完全虚构的未来模型作为对比标杆，并给出了精确到小数点后一位的跑分（76.5 vs 90.8）。这种虚构不仅使IFBench和文档识别的基准对比数据彻底失去真实性，也直接瓦解了整篇文章的诚信基础。如果对比的“行业巨头”是凭空捏造的，那么“超越闭源巨头”的核心结论便完全无法成立。
+
+#### 3. 证据审查 (Evidence Audit)
+*   **内存（VRAM）占用的物理常识缺失**：
+    *   作者声称“35B A3B模型在运行中仅激活3B参数，这意味着你完全可以在中端笔记本（medium man laptop）上运行它，且风扇都不会转”。
+    *   **事实反驳**：MoE模型在推理时虽然仅计算激活的专家参数（3B），但**整个模型的全部参数（35B）必须完整加载到显存/内存中**。一个35B的模型即使进行4-bit量化，也至少需要约20GB的闲置显存/内存。普通“中端笔记本”根本无法加载如此庞大的模型。一旦内存不足触发虚拟内存交换，系统将极度卡顿，绝不可能“风扇都不转地流畅运行”。
+*   **上下文成本的误导**：
+    *   作者声称“1M的上下文窗口可以让你直接丢入整个代码库，而不需要复杂的RAG管道”。
+    *   **事实反驳**：在Transformer架构中，注意力机制的计算复杂度随上下文长度呈二次方（$O(N^2)$）增长。即使模型支持1M上下文，在不使用RAG的情况下直接输入百万Token，其首字延迟（TTFT）和计算成本也将呈指数级上升，且极易触发“迷失在中间”（Lost in the Middle）的信息遗失问题。
+
+#### 4. 隐藏前提 (Hidden Premises)
+*   **假设1：基准测试高分等于实际业务场景中的高可用性。**
+    *   *追问*：在真实的Agent交互和复杂的UI导航中，MoE模型由于稀疏路由导致的“专家分歧”和幻觉问题，是否真的能通过IFBench等静态跑分反映出来？
+*   **假设2：本地部署的综合成本低于云端API。**
+    *   *追问*：企业自建、维护本地GPU服务器或高性能工作站，其硬件折旧、电力消耗、技术运维人力成本，真的比按Token付费的云端API更便宜吗？
+
+#### 5. 盲区 (The Blind Side)
+该论证完全忽视了**MoE架构在实际部署中的工程痛点**：
+1.  **稀疏路由的延迟与抖动**：MoE模型在处理高并发请求时，如果大量请求被路由到同一个“热门专家”网络，会导致严重的计算瓶颈和排队延迟，这正是作者轻描淡写提到的“API pains”的底层原因。
+2.  **吞吐量与显存带宽瓶颈**：本地运行35B模型时，限制速度的往往不是算力，而是显存带宽。中端笔记本的统一内存带宽（通常为100GB/s左右）根本无法支撑高Token输出速度，218 tps的极速只能在昂贵的高端多卡服务器上实现。
+
+#### 6. 一击必杀 (One Hit Kill)
+> “请问您在文中引用的‘GPT 5.2’和‘Claude Opus 4.5’的官方发布渠道和基准测试数据来源是什么？如果这些对比对象在现实中并不存在，您又是如何得出Q1 3.5‘完全碾压闭源巨头’这一结论的？”
+
+#### 7. 如何解决争议 (What Would Settle It)
+必须在**完全相同且公开的硬件环境**（例如单卡 RTX 4090 24GB 与标准 M3 Max 笔记本）下，使用**当前市面上真实存在且开源/闭源的标杆模型**（如 Llama 3.1 70B、Claude 3.5 Sonnet、GPT-4o），在标准的第三方评测集（如 MMLU-Pro、SWE-bench Verified）上进行端到端的精度、显存占用、首字延迟（TTFT）及吞吐量对比测试。
+
+---
+
+### PART 3. 概念架构图 (Mermaid Conceptual Map)
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心论点
+    subgraph SG_Core["💎 核心冲突与论点 Core Thesis"]
+        A["<b>核心主张</b><br/>停止为高昂的云端API付费<br/>利用Q1 3.5 MoE模型构建极低成本、高CPM的AI应用"]
+        style A fill:#FFD700,stroke:#DAA520,stroke-width:3px,color:#333,font-weight:bold
+    end
+
+    %% 技术架构与模型线
+    subgraph SG_Tech["⚙️ Q1 3.5 技术矩阵与特征"]
+        direction TB
+        B["<b>混合专家架构 (MoE)</b><br/>大容量脑容量 + 极低激活成本"]
+        
+        M1["<b>旗舰 A7B</b><br/>总397B / 激活17B<br/>主打指令遵循与文档理解"]
+        M2["<b>推理器 A10B</b><br/>激活10B<br/>主打多步骤复杂工作流"]
+        M3["<b>奇迹模型 35B A3B</b><br/>总35B / 激活3B<br/>主打本地轻量化运行"]
+        
+        F1["<b>1M 超长上下文</b><br/>声称可完全替代RAG"]
+        F2["<b>多模态视觉 Agent</b><br/>UI导航、屏幕读取、表单自动填写"]
+        F3["<b>201种语言支持</b><br/>全球化内容本地化"]
+        
+        B --> M1 & M2 & M3
+        B --> F1 & F2 & F3
+    end
+
+    %% 商业化应用
+    subgraph SG_Business["💰 商业变现路径 Monetization"]
+        direction TB
+        App1["<b>视觉支持 Agent SaaS</b><br/>自动监控用户屏幕并解决技术问题"]
+        App2["<b>全球化 SEO 内容内容站</b><br/>利用201种语言能力横扫长尾流量"]
+        App3["<b>企业隐私第一 SaaS</b><br/>完全在企业本地硬件运行35B模型"]
+    end
+
+    %% 审阅与批判
+    subgraph SG_Review["🚩 批判性审阅 Hostile-But-Very-Fair Review"]
+        direction TB
+        R_Fact["<b>⚠️ 虚构对比对象 (事实幻觉)</b><br/>跑分对比的 'GPT 5.2' 与 'Claude Opus 4.5' 在现实中根本不存在"]
+        
+        R_VRAM["<b>⚠️ 显存常识错误 (物理瓶颈)</b><br/>35B模型即便只激活3B，也必须完整加载至显存(约20GB+)<br/>中端笔记本根本无法流畅运行"]
+        
+        R_RAG["<b>⚠️ 1M 上下文不等同于无RAG</b><br/>长上下文会导致计算成本呈二次方爆炸<br/>且存在 'Lost in the Middle' 遗失问题"]
+        
+        R_Routing["<b>⚠️ 稀疏路由痛点 (Sparse Routing)</b><br/>高并发时易产生路由瓶颈，导致API延迟抖动"]
+    end
+
+    %% 逻辑连接与批判指向
+    A --> B
+    M1 & M2 & M3 --> App1 & App2 & App3
+    
+    %% 批判关联
+    M1 -.->|"声称超越虚构模型"| R_Fact
+    M3 -.->|"声称可在中端笔记本无风扇运行"| R_VRAM
+    F1 -.->|"声称无需RAG"| R_RAG
+    B -.->|"导致API Pains的根源"| R_Routing
+
+    %% 样式定义
+    classDef coreNode fill:#FFFACD,stroke:#FFD700,stroke-width:2px,color:#333;
+    classDef techNode fill:#E3F2FD,stroke:#2196F3,stroke-width:1.5px,color:#0D47A1;
+    classDef bizNode fill:#E8F5E9,stroke:#4CAF50,stroke-width:1.5px,color:#1B5E20;
+    classDef reviewNode fill:#FFEBEE,stroke:#F44336,stroke-width:2px,color:#B71C1C;
+
+    class A coreNode;
+    class B,M1,M2,M3,F1,F2,F3 techNode;
+    class App1,App2,App3 bizNode;
+    class R_Fact,R_VRAM,R_RAG,R_Routing reviewNode;
+
+    %% 背景颜色
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Tech fill:#E1F5FE,stroke:#03A9F4,stroke-width:2px,color:#0D47A1
+    style SG_Business fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#1B5E20
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Stop paying premium prices for cloud and, Stop paying premium prices for cloud and, charge. Today we are going to cover the, charge. Today we are going to cover the, charge. Today we are going to cover the, secret Q1 3.5 release which is letting, secret Q1 3.5 release which is letting, secret Q1 3.5 release which is letting, the developers in India build massive, the developers in India build massive, the developers in India build massive, high CPM apps for literal pennies. Let's, high CPM apps for literal pennies. Let's, high CPM apps for literal pennies. Let's, see how the massive AI models that you, see how the massive AI models that you, see how the massive AI models that you, are paying top dollars are burning a, are paying top dollars are burning a, are paying top dollars are burning a, hole in your pocket for absolutely no, hole in your pocket for absolutely no, hole in your pocket for absolutely no, reason. If you are building tech, reason. If you are building tech, reason. If you are building tech, running an agency or bootstrapping a, running an agency or bootstrapping a, running an agency or bootstrapping a, startup, the game has fundamentally, startup, the game has fundamentally, startup, the game has fundamentally, shifted. Today we are breaking down the, shifted. Today we are breaking down the, shifted. Today we are breaking down the, Q 3.5 evolution. The basic architecture, Q 3.5 evolution. The basic architecture, Q 3.5 evolution. The basic architecture, of these models is the MOE architecture, of these models is the MOE architecture, of these models is the MOE architecture, or mixture of experts. This means that, or mixture of experts. This means that, or mixture of experts. This means that, these models have huge brains for tiny, these models have huge brains for tiny, these models have huge brains for tiny, activation costs. Let's look at the, activation costs. Let's look at the, activation costs. Let's look at the, lineup of the models released. First, we, lineup of the models released. First, we, lineup of the models released. First, we, have the flagship A7B model, which has, have the flagship A7B model, which has, have the flagship A7B model, which has, 397 billion total parameters, but it, 397 billion total parameters, but it, 397 billion total parameters, but it, only activates 17 billion per prompt., only activates 17 billion per prompt., only activates 17 billion per prompt., This allows it to run at massive, This allows it to run at massive, This allows it to run at massive, efficiency comparable to the other AI, efficiency comparable to the other AI, efficiency comparable to the other AI, joints. Next is the reasoner, the A10B, joints. Next is the reasoner, the A10B, joints. Next is the reasoner, the A10B, model. Designed for complex multi-step, model. Designed for complex multi-step, model. Designed for complex multi-step, workflows using just 10 billion active, workflows using just 10 billion active, workflows using just 10 billion active, parameters. Finally, we have the miracle, parameters. Finally, we have the miracle, parameters. Finally, we have the miracle, model, the 35B A3B. This efficiency king, model, the 35B A3B. This efficiency king, model, the 35B A3B. This efficiency king, actually outperforms older 235 billion, actually outperforms older 235 billion, actually outperforms older 235 billion, parameter models while activating just 3, parameter models while activating just 3, parameter models while activating just 3, billion parameters, meaning you can, billion parameters, meaning you can, billion parameters, meaning you can, literally run it on a medium man laptop., literally run it on a medium man laptop., literally run it on a medium man laptop., Next, we'll look at their native agentic, Next, we'll look at their native agentic, Next, we'll look at their native agentic, powers. The Q1 3.5 family isn't just, powers. The Q1 3.5 family isn't just, powers. The Q1 3.5 family isn't just, about text. First, they are visual, about text. First, they are visual, about text. First, they are visual, agents. This means the AI natively sees, agents. This means the AI natively sees, agents. This means the AI natively sees, the images and screens, navigate UIs, the images and screens, navigate UIs, the images and screens, navigate UIs, read pixel perfect elements, and can, read pixel perfect elements, and can, read pixel perfect elements, and can, automatically fill out forms. Second, automatically fill out forms. Second, automatically fill out forms. Second, you get a massive 1 million context, you get a massive 1 million context, you get a massive 1 million context, window. You can dump entire code bases, window. You can dump entire code bases, window. You can dump entire code bases, or dozens of financial reports into it, or dozens of financial reports into it, or dozens of financial reports into it, without needing complex rack pipelines., without needing complex rack pipelines., without needing complex rack pipelines., Third, it has native tool use built-in., Third, it has native tool use built-in., Third, it has native tool use built-in., It can do web scrapping, run code, It can do web scrapping, run code, It can do web scrapping, run code, interpretations, and directly pull data, interpretations, and directly pull data, interpretations, and directly pull data, from APIs with perfect precision. And, from APIs with perfect precision. And, from APIs with perfect precision. And, lastly, for the international market, it, lastly, for the international market, it, lastly, for the international market, it, boasts deep cultural nuance by, boasts deep cultural nuance by, boasts deep cultural nuance by, supporting 201 languages. A massive jump, supporting 201 languages. A massive jump, supporting 201 languages. A massive jump, from its previous 119, giving you the, from its previous 119, giving you the, from its previous 119, giving you the, total global dominance. Now, let's look, total global dominance. Now, let's look, total global dominance. Now, let's look, at the actual benchmark numbers. Look at, at the actual benchmark numbers. Look at, at the actual benchmark numbers. Look at, the official scorecards. The A7B model, the official scorecards. The A7B model, the official scorecards. The A7B model, completely dominates in instruction, completely dominates in instruction, completely dominates in instruction, following on ifbench benchmark scoring, following on ifbench benchmark scoring, following on ifbench benchmark scoring, 76.5 which beats out GPD 5.2 and, 76.5 which beats out GPD 5.2 and, 76.5 which beats out GPD 5.2 and, completely crash Cloud Opus 4.5. When it, completely crash Cloud Opus 4.5. When it, completely crash Cloud Opus 4.5. When it, comes to document recognition and, comes to document recognition and, comes to document recognition and, understanding, Q1 3.5 hits a staggering, understanding, Q1 3.5 hits a staggering, understanding, Q1 3.5 hits a staggering, 90.8 again outperforming both GPD 5.2, 90.8 again outperforming both GPD 5.2, 90.8 again outperforming both GPD 5.2, and Claude. For Aentic Search and Browse, and Claude. For Aentic Search and Browse, and Claude. For Aentic Search and Browse, Comp, it scores a massive 78.6 blowing, Comp, it scores a massive 78.6 blowing, Comp, it scores a massive 78.6 blowing, past the competition. But here is the, past the competition. But here is the, past the competition. But here is the, real kicker. You're getting all this, real kicker. You're getting all this, real kicker. You're getting all this, reasoning power hitting around 76.4% 4%, reasoning power hitting around 76.4% 4%, reasoning power hitting around 76.4% 4%, on SWE bench for coding while operating, on SWE bench for coding while operating, on SWE bench for coding while operating, 6x cheaper than cloud opus. You're, 6x cheaper than cloud opus. You're, 6x cheaper than cloud opus. You're, getting bleeding edge prolevel, getting bleeding edge prolevel, getting bleeding edge prolevel, intelligence at output speeds of roughly, intelligence at output speeds of roughly, intelligence at output speeds of roughly, 218 tokens per second. This is massive., 218 tokens per second. This is massive., 218 tokens per second. This is massive., So what is the community pulse on this?, So what is the community pulse on this?, So what is the community pulse on this?, Developers are obsessed with the local, Developers are obsessed with the local, Developers are obsessed with the local, capabilities. The sentiment is the vibe, capabilities. The sentiment is the vibe, capabilities. The sentiment is the vibe, is local. People are running the 35, is local. People are running the 35, is local. People are running the 35, billion model on their own hardware, billion model on their own hardware, billion model on their own hardware, getting insane performance without their, getting insane performance without their, getting insane performance without their, laptop fans ever spinning up. However, laptop fans ever spinning up. However, laptop fans ever spinning up. However, we do need to note some growing API, we do need to note some growing API, we do need to note some growing API, pains because of the sparse routing in, pains because of the sparse routing in, pains because of the sparse routing in, the architecture. Next look at how you, the architecture. Next look at how you, the architecture. Next look at how you, can build high CPM monetization apps, can build high CPM monetization apps, can build high CPM monetization apps, with this. First is a visual support, with this. First is a visual support, with this. First is a visual support, agents. You can build a vision app with, agents. You can build a vision app with, agents. You can build a vision app with, Q1 models to watch a user screen and fix, Q1 models to watch a user screen and fix, Q1 models to watch a user screen and fix, technical issues autonomously. Second, technical issues autonomously. Second, technical issues autonomously. Second, idea is to hit the global content hubs., idea is to hit the global content hubs., idea is to hit the global content hubs., Use the 201 language adaptability power, Use the 201 language adaptability power, Use the 201 language adaptability power, of the Q1 models to build highly, of the Q1 models to build highly, of the Q1 models to build highly, localized SEO apps in untapped markets, localized SEO apps in untapped markets, localized SEO apps in untapped markets, or you can build local ad software as a, or you can build local ad software as a, or you can build local ad software as a, service apps. Just sell privacy first AI, service apps. Just sell privacy first AI, service apps. Just sell privacy first AI, tools to enterprises that can run, tools to enterprises that can run, tools to enterprises that can run, entirely on their own internal hardware, entirely on their own internal hardware, entirely on their own internal hardware, using the 35 billion models. Next, how, using the 35 billion models. Next, how, using the 35 billion models. Next, how, to use these models yourself? Just head, to use these models yourself? Just head, to use these models yourself? Just head, over to the link given in the, over to the link given in the, over to the link given in the, description to open up the hugging face, description to open up the hugging face, description to open up the hugging face, page of the Q1 models. Here you can, page of the Q1 models. Here you can, page of the Q1 models. Here you can, check their whole Q1 page and you'll see, check their whole Q1 page and you'll see, check their whole Q1 page and you'll see, all the models listed under the 3.5, all the models listed under the 3.5, all the models listed under the 3.5, category here. Let's say if I open their, category here. Let's say if I open their, category here. Let's say if I open their, flagship model A7B to use this model, I, flagship model A7B to use this model, I, flagship model A7B to use this model, I, can click on this link and then the, can click on this link and then the, can click on this link and then the, transformers library. Then you can use, transformers library. Then you can use, transformers library. Then you can use, this code to set up the pipeline for the, this code to set up the pipeline for the, this code to set up the pipeline for the, Q1 model. This will download the model, Q1 model. This will download the model, Q1 model. This will download the model, using the transformers library. You can, using the transformers library. You can, using the transformers library. You can, paste this code in any Python ID like, paste this code in any Python ID like, paste this code in any Python ID like, Google Collab, Google Anti-gravity or VS, Google Collab, Google Anti-gravity or VS, Google Collab, Google Anti-gravity or VS, Code. Or you can directly chat with, Code. Or you can directly chat with, Code. Or you can directly chat with, these models using the Q1 chat site., these models using the Q1 chat site., these models using the Q1 chat site., Just go to chat.q1.ai. You will see the, Just go to chat.q1.ai. You will see the, Just go to chat.q1.ai. You will see the, Q13.5 models listed here. You can select, Q13.5 models listed here. You can select, Q13.5 models listed here. You can select, any one of and can post your queries, any one of and can post your queries, any one of and can post your queries, here. Start building workflows with, here. Start building workflows with, here. Start building workflows with, these powerful models and follow the, these powerful models and follow the, these powerful models and follow the, channel for more AI builds and updates.
