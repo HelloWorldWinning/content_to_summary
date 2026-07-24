@@ -1,0 +1,203 @@
+Timestamp: 2026-07-24T22:00:27.995953
+Title: Khusboo Tayal - The founder of a Chinese AI company valued at over $20,000,000,000 ha... 2080513490847252738
+URL: https://x.com/KhusbooT14835/status/2080513490847252738?s=20
+Status: success
+Duration: 39:17
+
+Description:
+### PART 1. 作者的论证地图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+开源模型要达到并超越闭源前沿，不能仅依赖无脑的数据堆叠，而必须通过**优化器创新**（Muon/QK-Clip）、**架构重构**（Kimi Linear、Attention Residue）以及**协同范式转变**（Agent Swarms）在“Token效率、长上下文、多智能体系统”三大维度上进行系统性扩展，从而突破智能的物理与效率极限。
+
+#### 2. 论据支撑 (Evidentiary Base)
+*   **硬数据 (Hard Data)**：
+    *   **Muon 优化器**：在相同参数和 Token 量下，实现 2 倍的 Token 效率提升；在大规模万亿参数（1T）K2 模型训练中，通过 QK-Clip 将 Max Logits 稳定控制在 100 左右，解决了训练发散问题。
+    *   **Kimi Linear**：在长文本任务（Ruler）和短文本任务（MMLU）上均超越 MLA 和 GDM 架构，并在 1M 以上超长上下文中表现出极高的计算效率。
+    *   **Kimi K2.5**：在 15T + 15T Token 上进行极其稳定的多模态联合预训练；在“零视觉 SFT（Zero Vision SFT）”下，仅靠文本 SFT 和联合 RL 达到视觉任务的 SOTA 表现。
+    *   **Attention Residue**：在 Scaling Law 实验中，相比传统残差连接，提升了 24% 的 Token 效率，显著降低了验证集 Loss。
+*   **学术先例与经典研究 (Academic Precedents)**：
+    *   引用 Kaplan 等人的 Scaling Law 经典曲线（2020），作为 Token 效率研究的起点。
+    *   引用 Transformer 与 LSTM 的对比研究，证明 Transformer 优于 LSTM 的核心在于其在长上下文下的 Per-token Loss 持续下降能力。
+    *   引用何恺明等人的 ResNet（2016）以及 Ilya Sutskever 对残差连接本质（“旋转 90 度的 LSTM”）的阐述，作为 Attention Residue 的理论前置。
+*   **类比与直觉 (Analogy & Intuition)**：
+    *   将 **Agent Swarms（智能体集群）** 类比为人类社会的公司架构（CEO/协调者、研究员、事实核查员、开发者的协同），用以解释并行子任务分发与结果聚合的有效性。
+
+#### 3. 逻辑推导 (Logical Warrant)
+作者的推导逻辑基于以下三段论：
+*   **大前提**：在高质量数据红利触顶（Data Wall）的行业背景下，单纯依靠增加训练数据量已无法有效提升模型智能上限；提升智能必须依赖于在相同数据量下压榨出更多信息（Token 效率），以及支撑极长运行轨迹的上下文承载力（长上下文）。
+*   **小前提**：二阶优化器（Muon）能使梯度更新正交化，细粒度衰减线性注意力（Kimi Linear）能突破全注意力的计算瓶颈，深度方向的注意力残差（Attention Residue）能优化层间信息流。
+*   **结论**：通过在优化器、时间轴（上下文）和空间轴（深度残差、智能体协同）上进行多维重构，可以实现超越现有闭源黑盒模型的开源智能。
+
+#### 4. 声明范围 (Stated Scope)
+该论证主要适用于**大规模语言模型（LLMs）与多模态模型（LMMs）的预训练与对齐阶段**，特别是万亿参数规模的超大型模型训练，以及需要长时间跨度、多步骤推理的复杂智能体应用场景。
+> *限制性语言/边界声明*：“...to make MIME memory efficient across all this Nvidia GPU clusters, we also develop a distributed MIME optimizer implementation...” 指出其工程优化高度依赖于特定的分布式 GPU 架构（如 NVIDIA H800 集群及 NVLink）。
+
+#### 5. 隐形对手 (Implicit Opponent)
+*   **闭源“黑盒”主导论**：反对“只有闭源巨头才能维持前沿智能”的行业偏见。
+*   **暴力 Scaling（Brute-force Scaling）保守派**：反对不进行算法重构、只靠堆叠算力和原始数据来提升模型性能的粗放路线。
+*   **多模态后期嫁接派**：反对先训练纯文本模型、再通过少量多模态数据“缝合”出视觉能力的 Late Fusion 做法。
+
+#### 6. 预期效果 (Intended Takeaway)
+作者期望读者（尤其是开源社区与 AI 研究员）相信：开源模型完全有能力在架构和算法创新上引领前沿。读者应当放弃传统的 Adam 优化器和标准的 ResNet 残差连接，转向使用 Muon 优化器、Kimi Linear 架构以及 Attention Residue 深度残差机制，并在应用层积极采用多智能体集群（Agent Swarms）范式。
+
+---
+
+### PART 2. 严苛而极度公正的同行评审 (Hostile-But-Very-Fair Review)
+
+#### 1. 强力重建 (Steelman)
+作者提出了一套极其罕见的、从**数学底层到系统协同层**的全面重构方案。传统的 Transformer 架构和 Adam 优化器已经沿用了近十年，逐渐显露出其在“数据墙（Data Wall）”面前的乏力。作者团队不仅指出了这一点，还给出了具体的替代方案：
+在优化器端，用二阶正交的 Muon 替代一阶的 Adam，并用 QK-Clip 解决了万亿参数训练的发散顽疾；在时间轴上，用细粒度通道衰减的 Kimi Linear 解决了全注意力机制在超长上下文下的算力灾难；在深度轴上，将沿用十年的“加法残差连接”升级为“层间注意力残差（Attention Residue）”；在应用端，用多智能体并行协同克服了单智能体推理步数的上限。这不仅是局部的微调，而是一次对现代深度学习基础设施的系统性挑衅，其展现出的工程落地能力（在 15T+15T Token 上的超稳定训练曲线）令人瞩目。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该论证中最具风险的支柱在于其对**“Token 效率等同于智能上限提升”**的等式假设：
+> *引文*: "...token efficiency is not just about efficiency. It's actually also about improving the upper bound of intelligence... if we suppose that is a constant amount, then we increase the token efficiency. It means that we're going to get better intelligence out of it."
+
+**致命漏洞**：
+“Token 效率”在作者的实验中主要是通过“更低的 Loss 收敛速度”来衡量的。然而，**收敛速度快并不等同于泛化上限高**。在有限的高质量数据集（例如 50T）上，使用二阶优化器（Muon）或 Attention Residue 可能会让模型“更快地榨干”这些数据，但如果数据集本身的熵和知识多样性已经见顶，优化器的加速拟合并不能无中生有地产生“超越数据本身”的泛化智能。如果这种效率提升只是加速了模型对特定分布数据的过拟合，那么在面对全新的、分布外（OOD）的复杂推理任务时，其“智能上限”并不会发生质的飞跃。作者将“训练效率”与“智能上限”混为一谈，缺乏理论和实证支撑。
+
+#### 3. 证据审计 (Evidence Audit)
+*   **关于“Zero Vision SFT”的宣称**：
+    作者声称在 Kimi K2.5 中实现了“零视觉 SFT”，仅靠文本 SFT 和联合 RL 就在视觉任务上达到了 SOTA。然而，这极有可能掩盖了**预训练阶段视觉-文本配对数据（Joint Pre-training）的极端清洗与高质量对齐工作**。视觉能力并非凭空产生，而是预训练阶段（Early Fusion）大量视觉 token 强行对齐的结果。作者未公开预训练中视觉数据的具体配比和清洗成本，却将功劳归结于“Zero Vision SFT”的算法奇迹，有误导之嫌。
+*   **Agent Swarms 的“奖励黑客（Reward Hacking）”问题**：
+    作者设计了 Instantiation Reward（鼓励分裂子智能体）和 Finish Reward（鼓励完工率）来训练智能体集群。但在强化学习中，这种人工设计的辅助奖励极易诱发 Reward Hacking。例如，主智能体可能会倾向于分裂出大量极易完成、但对解决最终复杂任务毫无帮助的“垃圾子智能体”来刷取 Instantiation 和 Finish 奖励。作者展示了其规避“串行塌陷”的成功，却未提供防止 Swarm 内部无效冗余和信用分配（Credit Assignment）失效的消融实验数据。
+
+#### 4. 隐藏前提 (Hidden Premises)
+*   **前提一：Attention Residue 的推理开销是完全可承受的**。
+    *   *质问*：在 Attention Residue（层间残差注意力）架构中，为了计算当前层的输出，必须对前面所有层的隐藏状态（Hidden States）进行注意力计算。这是否意味着在**推理（Inference）阶段，所有的层间激活值都必须保留在显存中**？对于一个万亿参数、拥有上百层的模型，这会导致推理显存占用呈二次方或极大的线性增长，彻底摧毁大模型高并发推理的吞吐量。作者在宣称提升 24% 训练 Token 效率时，刻意回避了这一极其致命的推理显存和延迟代价。
+*   **前提二：Muon 优化器的通信开销在大规模无盘集群上可忽略不计**。
+    *   *质问*：Muon 作为二阶优化器，涉及大量的矩阵正交化计算（如 Newton-Schulz 迭代）。尽管作者声称开发了分布式状态切分版本，但在百亿、千亿参数的跨节点分布式训练中，其引入的额外通信开销在非 H800（如低带宽集群）上是否会成为新的瓶颈？
+
+#### 5. 盲区剖析 (The Blind Side)
+作者构建了一个完美的“训练端”高效闭环，却完全忽视了**“推理端经济学（Inference Economics）”**的残酷现实：
+1.  **Agent Swarms 的 Token 暴涨**：多智能体集群通过并行化降低了执行时间，但其代价是 **Token 消耗量的指数级增长**。为了解决一个问题，Swarm 可能会消耗单智能体数十倍甚至数百倍的 Token。在商业化落地中，这种“用空间换时间”的范式可能会因为高昂的推理成本而变得完全不可行。
+2.  **Kimi Linear 的混合架构复杂度**：将线性注意力与全注意力按 1:3 混合，虽然在长文本上比纯全注意力高效，但混合架构极大地增加了推理引擎（如 vLLM、TensorRT-LLM）的定制化算子开发难度。
+
+#### 6. 一击必杀 (One Hit Kill)
+> **“请问：在 Attention Residue 架构中，为了在推理阶段计算第 $L$ 层的注意力残差，推理引擎是否必须将前面 $1$ 到 $L-1$ 层的所有 Key-Value 激活值（层间 KV Cache）常驻显存？如果是，这是否意味着该架构在实际线上高并发推理中，其显存开销和带宽瓶颈将比标准 Transformer 膨胀数倍，从而导致该技术在商业化落地上完全不可行？”**
+
+#### 7. 如何平息争议 (What Would Settle It)
+必须设计一个**严格限制推理算力预算（Inference FLOPs & Memory Bound）的基准测试**：
+在相同的显存容量（如单张 H800 80G）和给定的推理延迟限制（如 Time-to-First-Token < 50ms）下，对比“标准 AdamW 训练的 Transformer”与“使用 Muon + Attention Residue 训练的模型”在完全未见过的、需要强泛化能力的外部复杂任务（如 GPQA、SWE-bench）上的表现。如果后者在**推理资源受限**的前提下，依然能实现显著的性能超越，才能真正确立这套新架构的划时代地位。
+
+---
+
+### PART 3. 概念关联图 (Mermaid Conceptual Map)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💎 Kimi 核心演进主张 (Core Thesis)"]
+        A["<b>开源模型超越闭源前沿</b><br/>通过多维度 Scaling 与底层架构重构实现"]
+        style A fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333,font-weight:bold
+    end
+
+    subgraph SG_Token["🔵 维度一：Token 效率 (Token Efficiency)"]
+        direction TB
+        T1["<b>Muon (MIME) 二阶优化器</b><br/>梯度更新相互正交"]
+        T2["<b>QK-Clip 技术</b><br/>限制 Max Logits 稳定在 100 左右"]
+        T3["<b>分布式状态切分</b><br/>解决显存与通信瓶颈"]
+        T4["<b>成效</b><br/>相同 Token 量下实现 2x 效率提升"]
+        
+        T1 --> T2
+        T1 --> T3
+        T2 & T3 --> T4
+    end
+
+    subgraph SG_Context["🟢 维度二：长上下文 (Long Context)"]
+        direction TB
+        C1["<b>Kimi Linear 架构</b><br/>线性与全注意力 1:3 混合"]
+        C2["<b>Kimi Delta Attention</b><br/>引入细粒度对角衰减矩阵 Alpha"]
+        C3["<b>分块化数学重构</b><br/>无损的 GPU 并行化计算"]
+        C4["<b>成效</b><br/>超长上下文下 Loss 持续下降且计算高效"]
+
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4
+    end
+
+    subgraph SG_Agents["🟣 维度三：智能体集群 (Agent Swarms)"]
+        direction TB
+        G1["<b>Orchestrator (主智能体)</b><br/>任务拆分与结果聚合"]
+        G2["<b>Sub-Agents (并行子智能体)</b><br/>多角色并行执行"]
+        G3["<b>强化学习三重奖励</b><br/>1. Instantiation (鼓励分裂)<br/>2. Finish (鼓励完工)<br/>3. Outcome (最终结果)"]
+        G4["<b>成效</b><br/>极大缩短复杂任务执行时间"]
+
+        G1 --> G2
+        G2 --> G3
+        G3 --> G4
+    end
+
+    subgraph SG_Kimi["🔥 成果落地：Kimi K2.5"]
+        direction TB
+        K1["<b>原生多模态 Early Fusion</b><br/>文本与视觉 Token 从第一天起联合训练"]
+        K2["<b>双向能力增强</b><br/>视觉 RL 提升文本表现<br/>强文本 Base 实现 '零视觉 SFT'"]
+        K3["<b>万亿参数 K2 模型</b><br/>15T + 15T 极稳定训练曲线"]
+
+        K1 --> K2
+        K2 --> K3
+    end
+
+    subgraph SG_NextGen["⚡ 下一代架构：Attention Residue"]
+        direction TB
+        R1["<b>层间残差注意力</b><br/>将残差连接升级为深度方向的 Attention"]
+        R2["<b>Block Attention Residue</b><br/>分块应用以降低计算开销"]
+        R3["<b>成效</b><br/>提升 24% Token 效率，降低验证 Loss"]
+
+        R1 --> R2
+        R2 --> R3
+    end
+
+    subgraph SG_Review["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR1["<b>最薄弱环节 (Weakest Link)</b><br/>收敛快 (Loss低) 不等于泛化上限高<br/>可能只是加速拟合，未突破数据墙"]
+        HR2["<b>隐藏前提 (Hidden Premises)</b><br/>1. Attention Residue 推理时层间 KV Cache 极度膨胀<br/>2. Muon 在非高宽带集群上的通信开销未披露"]
+        HR3["<b>盲区 (The Blind Side)</b><br/>1. Swarm 范式导致 Token 推理成本指数级暴涨<br/>2. 混合架构增加推理引擎部署与算子开发难度"]
+        HR4["<b>一击必杀 (One Hit Kill)</b><br/>推理时是否必须保留所有前层激活值？<br/>若是，万亿模型商业化高并发推理将彻底瘫痪"]
+
+        HR1 --> HR2
+        HR2 --> HR3
+        HR3 --> HR4
+    end
+
+    %% 核心演进路线连接
+    A --> SG_Token
+    A --> SG_Context
+    A --> SG_Agents
+    SG_Token & SG_Context & SG_Agents --> SG_Kimi
+    SG_Kimi --> SG_NextGen
+
+    %% 批判性指向连接
+    SG_Token -.-> HR1
+    SG_NextGen -.-> HR2
+    SG_Agents -.-> HR3
+    SG_NextGen -.-> HR4
+
+    %% --- 节点样式定义 ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333;
+    classDef tokenNode fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+    classDef contextNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
+    classDef agentNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
+    classDef kimiNode fill:#FFE0B2,stroke:#E65100,stroke-width:2px,color:#E65100;
+    classDef nextGenNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064;
+    classDef reviewNode fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828;
+
+    class A mainClaim;
+    class T1,T2,T3,T4 tokenNode;
+    class C1,C2,C3,C4 contextNode;
+    class G1,G2,G3,G4 agentNode;
+    class K1,K2,K3 kimiNode;
+    class R1,R2,R3 nextGenNode;
+    class HR1,HR2,HR3,HR4 reviewNode;
+
+    %% --- 子图背景样式 ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Token fill:#E3F2FD,stroke:#90CAF9,stroke-width:2px,color:#0D47A1
+    style SG_Context fill:#E8F5E9,stroke:#A5D6A7,stroke-width:2px,color:#1B5E20
+    style SG_Agents fill:#F3E5F5,stroke:#CE93D8,stroke-width:2px,color:#4A148C
+    style SG_Kimi fill:#FFE0B2,stroke:#FFB74D,stroke-width:2px,color:#E65100
+    style SG_NextGen fill:#E0F7FA,stroke:#80DEEA,stroke-width:2px,color:#006064
+    style SG_Review fill:#FFEBEE,stroke:#EF9A9A,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Hi everyone. Thank you so much for the introduction. It's great to be here. It's great to have this opportunity to share with you guys some of our latest progress and efforts. So one of our major pursuers is to build better open models and we believe in democratizing intelligence. With open models you can deploy anywhere. You can be on your local servers. You can be on the cloud and you can access every single bit of the weights in the modeling instead of just using a black box. And this is one of the slides that I took from Jensen's talk earlier this year, SES. So as you can see, open models are quickly closing the gap with proprietary models and it's reaching the frontier. And we believe that with better met open models, we're going to make intelligence more accessible to anybody in the world, in every corner of the world. But open models cannot be just open. They have also to be great. So in this talk, we're going into this guess how we make open models great. So as we know, scaling is a primary driver for a lot of progress, maybe all of the major AI developments that we have witnessed in the last few years. And here we're going to discuss how we scale our model in different dimensions. So on the left-hand side, the first figure you see here is the standard scaling law. So on the X axis, you have the log of the number of training tokens, and on the Y axis, you have the log loss. And as you scale the number of training tokens, you get a lower loss. But here, the point is, we're not going to just scale the number of training tokens. but we also want to improve the token efficiency, meaning that we want to move this curve to the left-hand side so that we can achieve a lower loss and much lower loss using the same number of training tokens. And this can be achieved by having better architectures and optimizers as we'll discuss in our latest slides. And the second scaling dimensions that we're very interested in is to scale the context lens. So as you can see in the second figure, if we increase the context lens, then we can have a much higher accuracy in terms of predicting the token loss at a given position. And this means that we can increase the capability of the model to achieve more complex tasks by increasing the context lens. So this is the second scaling dimensions that we're going to talk about. And the third scale dimension is the number of agents. So we introduced this new learning paradigm of agents ROMs, where we don't just rely on a single agent, but we also orchestrate a swarm of agents that can accomplish the subtasks in parallel so that we can increase the task capacity. And we can translate all of this into the language of agents. So if you look at token efficiency, is mostly about having a stronger prior, so that you can have more efficiency when you do Asian RL to search for a better solution. And you think about long contacts, is mostly about increasing the context then so that you can have a longer-rounding agent. It can probably run for days or even weeks or months to accomplish more tasks, more complex tasks. And for agent swamps, it's another dimension that added it. And at the end of the day, we're going to have a swarm of agents that each of them have a super long context. And each of them have a very strong prior for us to search in this entire agent RL system. So we're going to start from token efficiency. So this is one of the most classical figures in the history of machine learning. is taken from Kaplan et al. It basically says that if we scale proportionally the number of training tokens, the model parameters, and also the amount of compute, we can get lower and lower loss. And this is one of the major breakthroughs that the entire community has achieved in the last few years to get better intelligence. But here what we're interested in is is to have better and better token efficiency. And here's the thing. So one thing that I would like to emphasize is that token efficiency is not just about efficiency. It's actually also about improving the upper bound of intelligence. So here's why. So suppose you have, say, 50 trillion tokens, 50 trillion high quality tokens, And then you apply this new optimizer, maybe the new optimizer. And then all of a sudden, you have a two-time token efficiency. So it means that it's almost like magic that you get equivalently 100 trillion tokens. And nowadays, we are scaling towards the data wall, and we're hitting the data wall. And the amount of high-color data is quite limited. And if we suppose that is a constant amount, then we increase the token efficiency. It means that we're going to get better intelligence out of it. It's not just about infrastructure efficiency. It's about better intelligence. So this is why we spend a lot of efforts in this aspect because it's going to push the frontier of intelligence. And me on Optimizer is one of the things that we have heavily invested in since last year. So it's a second-order optimizer. And basically, every single gradient update is transformed in a way that each entry is off-dog and out to each other. And this is very different from the traditional Adam optimizer. And if we implement this optimizer properly, you can get a two-time token efficiency improvement. So we are one. We are the first work. We published the first work to demonstrate that its real optimizer is actually scalable for LLAM training. And these are two key techniques that we employ to make it effective for large-scale training. So one of them is WDK. It is critical for scaling to large models. And the second is we want to ensure a consistent RMS updates compared to Adam. So we have this adjustable coefficients that is applied to each update so that the resulting RMS is going to be comparable to Adam. And to make MIME memory efficient across all this Nvidia GPU clusters, we also develop a distributed MIME optimizer implementation that petitions the states across the data parallel group so that we can have a very efficient implementation for the MIME optimizer. And this is some of the results that we presented in the paper. So as you can see, with the same number of parameters and the same number of training tokens, which is we've placed the original add-and-w optimizer with the new meal optimizer, is going to improve the performance across the board significantly. But there was this new challenge that we encounter when we tried to scale it up further. We will try to scale millions for a one-trillion parameter model. We encounter a new issue about training instability. So as you can see on the left figure, we observe that the max logets quickly explodes and quickly exceeds 1,000. And the typical values for training for this max logets is about say 50 or maybe less than 100. But for MIRO, it quickly exists 1,000. And at the same time, we observed training divergence on the left-hand side. If you look at the training loss, it goes down a bit, but then at the end of the day, it explodes, and it cannot converges as expected. So this is one of the technical challenges that we have to address. And the solution to this is to introduce this new technique called QK clip. So basically, what it says is that for each attention had in this entire neural network, we're going to, in the forward path, we're going to compute the max logit, and then we're going to calculate a dividing factor that can be applied to each key projection as well as the query projection so that we can sort of clip the maximum value of the query and the key to sort of constrain it into a given range. So that we're not going to have explosion anymore. So these are some of the empirical results. On the left hand side, there are two curves, but there are strictly overlapped with each other. So these are the training curves before and after applying the ClipTin technique. So you can see the ClipTin technique does not affect the training loss decrease at all. But on the right hand side, if we inspect the intermediate magic, if we inspect the max logic, it's going to be effectively constrained. So if we first expose, as before, but at the value of 100, it's going to be clip at the constant value for a long time. And then after a certain number of steps, it will just naturally go down. So the neural networks sort of find a way to constern the maximum value of the max logic it to ensure a stable training process. And at the same time, it doesn't affect the training convergence as shown in the left figure. So we employed this technique in our K2 model training and successfully scaled it to one trillion parameters. And this is the first example of a a large-scale meal training in the history of machine learning. And the second dimension that we're very interested in is long contacts. So this is another figure. It's probably less known. It's one of the hidden gems in these papers. So instead of just pushing down the training laws by training or mortocans, it has some insights from a perspective. So as we can see, this is a comparison between Transformers and LSTMs. So on the left hand side, we can see the Transformers achieve a lower training loss given the same number of parameters and the same number of training tokens as expected. And this is why Transformers become the sort of the facto architecture that people are using right now. But on the right hand side, it's really interesting to see that Transformers are actually better because it can improve through the whole context. So the x-axis is the token index in context. And if you increase the token index, you can see that the training loss of transformers actually dropped by a lot. If you just continually increase the context lens, the loss just continuously drops down. But if you look at the curve of our DM, it's saturated after a certain number of tokens. It means that transformers have this better capability of capturing longer contacts. And this is what makes it better. Because if we go back to like 10 years ago, people use LSTN for tasks like machine translation, but it is not good for, for example, understanding entire code base, or running a super long agent trajectories to solve a, for example, writing Linux kernels from scratch. It's not going to be accomplished by LSTNs. So this is a very much needed capability in the era of agents, because tasks are becoming harder and harder. It will need longer and longer context. So the research idea here is to develop a better architecture so that we can efficiently scale to a longer context lens. And at the same time, achieve a lower per token loss at larger token indices. And this is the motivation for which we introduced this new architecture called Kimi Linear. And it contains this new linear attention variance called Kimi Delta Attention, which improves the original data rule, GDR, by improved recur memory. I will show the details later. And at the same time, we're going to mix linear attention layers with 4 attention layers using a 1, 2, 3 ratio so that you can balance between this long context capabilities and at the same time having a more efficient implementation. So this is some of the formulation. The basic idea is simple. If you look at linear attention in the original formulation, the memory is going to be global. So there is a global single decay factor that is apply along the way. So it means that there are only two cases. In one case, in one case, you're going to forget basically everything, and you're not going to retain any information. And in the second case, you can choose to retain almost everything, but at the same time, you don't have the capability to leave out some of the unnecessary information in this long context. So we introduced this key idea of having a fine-gram decay factor as shown in this highlighted alpha term. So instead of being a scalar, it's going to be a diagonal matrix, which controls the decay rate for each channel, so that we can have two possibilities. For some of the channels, we can decay really, really slow, meaning that we can return this lung context information across a very long range. And at the same time, for the other channels, we can quickly forget the information from the past indices to refresh it and observe new information. And this is to increase the expressivity of this model. And of course, to leverage modern GPUs, we have to use this chunkwise formulation so that we can parallelize the computation of modern GPUs. So the first equation here is the chunk-chunkwise formulation of Chimilinia, but as you can see, this is going to bring massive infrastructure challenges because of this newly introduced alpha term, because now it is the matrix instead of a scalar, it can now easily be factor out. So to achieve a efficient information, we rewrite the entire equation into the bottom three equations, so we introduced this matrix inversion operation as well as introducing the cumulative decay factor so that we can implement this entire thing in parallel without sacrificing any efficiency. And more importantly, this is not an approximation. It's an exact mathematically equivalent formulation so that we can achieve much efficient implementation without sacrificing any loss in terms of performance. So it's going to be as efficient as, you know, previous linear attention variance, but at the same time, much more expressive. So these are some of the results that we obtain using a fair comparison. So on the left-hand side, we see the performance on two different types of tasks. So MMAU is a short-context task. So for short context tasks, Kimi Linear achieved a better performance compared to MLA and GDM. And at the same time, for longer context tasks such as Ruler, Kimi Linear is also better than the variance, the other variance, while being much more efficient compared to MLA. And when we scale the context sense further to, for example, one million tokens or even longer, It's going to be much more efficient compared to the baseline. And this is also the first architecture that can upperforms for attention across the board, including short context tasks, long input tasks, and long output tasks. So these are two key dimensions that we are interested in. And the third dimension is the agent's warmth. So here is a diagram to showcase how we design this agent's warm paradigm to solve some of the more complex task compared to single agent paradigms. So here, we have an orchestrator. Or you can call it a main agent. It's responsible for orchestrating tasks. It has different options. For example, we can spawn a group of subagents and assign new tasks to these subagents. or you can collect results from the return of these sub-agents. And you can sort of perform this process in an iterative way. And at the end of the day, you can accomplish a more complex task compared to using one single agent. And it's analogous to human society. For example, if we build a company, we need different roles. And we need, for example, orchestrator, or maybe we need a CEO to decompose and assign the task to different roles. And then at the end of the day, the entire organization is going to have to move towards this same goal. And here, for example, in this case, we have maybe you have the AI researchers. You have the web developers. You have physics researchers. And they can study different topics. And at the end of the day, you just collect results and spawn a group of fact checkers and write developers and file the loaders to assemble the results to into a single report. And this is another perspective to look at this new paradigm. So the x-axis is the complexity of the task. And the y-axis is the execution time. And the complexity of the task is measured by the accuracy of a group of models on such tasks. So we can see with agents ROMs, it's going to substantially reduce the execution time compared to single agents. It's going to be more effective. And this means that we can scale this agents ROM paradigm to, for example, if you run this agents ROMs with 100 or maybe even 1,000 sub-agents you can accomplish a complex task within a certain period of time that is tolerable for producing real economical value. And we can certainly scale it in different dimensions. We can scale the inputs. For example, we can download and read hundreds of sources, or even maybe thousands of doses in parallel, or you can output write a 100 page literature review in parallel. Or you can take actions at scale. You can perform data analysis for 10 different tasks. And also, it is orchestration at scale. You have to learn to design sub-tasks and aggregate the results. And technically, we define some new objective functions to guide the learning process of our agent's warm system. So there are three rural functions, rural objectives that are considered here, compared to the conventional single-Asian IRL learning. So the first term is what we call the instantiation reward. It incentivizes sub-Asian instantiation to prevent this serial collapse of phenomenon from happening. So basically, we don't want it to default to single-age execution. We want to encourage the parallel executions, especially when it's early stage in training. And of course, we can decay the weight for this instantiation reward term over training course, because when it learns parallel execution, we can reduce the weight. And the second term here is finish reward. And it is it was because we observed one of the things in training that some of this subtasks are just created, but never finished. So it's almost like it's going to hack the first term by just spawning a bunch of some agents and the task might be too complex, or maybe the task just doesn't make sense. And here we use this finish reward So basically, encourage that each of the sub-tas should have a relatively high ratio of completion. Instead of just spawning a bunch of pseudo-tas, we need it to be manifold. So this is the second term that we use. And of course, we use the same decay strategy. We use the right way at the beginning of training and we decay it to a relatively low way at the end of training. And of course, the third term is the standard term. It's the outcome rework. It's going to measure whether the entire task is completed. And then we're going to add these three terms in our reinforcement learning system. And of course, we have to build the entire infrastructure because right now you need to support the parallel execution and they need to support different rework functions and to maximize the efficiency of the entire agents from our system. Here are three different things that we have tried scaling. The me on clip optimizer improves token efficiency and key media attention in the key millenial architecture improves long contacts and we also have the agents rooms paradigm to further create a new dimension of scaling. And all of this put together. We created Kimi K205, a new model that we just released over one month ago. Here's a short video to demonstrate some of its capabilities. So yeah, there are a lot of interesting things, capabilities that we discover from the model. For example, it merges the visual capabilities with coding capabilities. So a lot of new things just emerge out of it. It can read a video and then produce a website that sort of replicates or style transfer the original video. And all of this are due to successful and stable training at the pre-training stage. So this is also one of the most beautiful curves that I observe in my life. So this is the training curve of the K2.5 based model. So as you can see, it went through over 15 trillion tokens and of course, in K2.5, we additionally trained another 15 trillion tokens. And the entire training process is just so stable. There's no lost spike, especially when we introduced this new million optimizer. We didn't observe any spike. And this smooth stable training process produces a very stable outcome, a very strong base model that we can find to you on top of it to achieve new capabilities as we introduce and show in the video. And this is also, of course, trend or in video, H800 GPUs. And each know in this H800 cluster contains to TB RAM and HGPUs that are connected by M-link. And one of the, you know, key innovation of KeymeK2.5 is that it is the first open model with native joint vision text capabilities. So if you look at previous open models, usually their visual capabilities are added on top of a text space, meaning that, for example, if you train the text models for 20 trillion tokens, and then on top of it, you do another 2 trillion sort of a post-training process to add additional visual capabilities on top of it. But for K205, it's different in a sense that we feel the training process of vision and text from day one. So it's called early fusion here. We start from 0% of the progress. So from day one, we're going to merge the vision and text tokens and as shown in our preliminary experiments. It all performs a late fusion. And some of the new capabilities that we observe also come from this training recipe. For example, if you want to do vision to kill, you really have to merge vision and text into a single brand to achieve that. If you separate these two brands, it's not going to happen. You have to align these two modalities into a share embedding space, a share representation space so as to achieve this. And another interesting thing that we observe is that these two modalities can actually enhance each other. So that's been long been a challenge that if you add vision capabilities into a text model, it's going to somewhat hurt the text performance. But here we found that if you turn it properly, these two modalities can actually enhance each other. So this is one of the key findings that we observed in our training. So first, vision-improved tags. So this is so interesting. So before VisionRL, the performance in the first column, and then we have the performance after VisionRL. So here VisionRL refers to a process that we only use VisionTask. So there is no task task involved here. We only have VisionTask. For example, we teach the model how to count, how to answer some of these visual QA problems without any, for example, math and encoding problems in this space. But we observed that it's going to improve the performance for even, you know, reasonably heavy text task. And on the other hand, text also improves vision. If you have a very strong text space, you actually don't need any vision SFT data in a training process. And this is the approach that we adopt. So it's called zero vision SFT. Basically, we have basically zero vision SFT data. And the only SFT data that we have is the text SFT data. And then we do a joint hire over text and vision. And you can see that we can achieve almost state-of-the-art performance across the board on vision tasks without any vision data. So it's clear that if you have a strong text base, it's also going to improve the vision if you align these two modalities into a share space in your app. And also, these are some of the examples of, yeah, as I've shown in the video. So it demonstrates strong capabilities of visual design in front and coding. And this also emerges from our vision text through training. So after all this, so these are all about KBK 205. And as far we know, we released our new architecture yesterday in our tech report. It's called attention residue. So here I'm also going to briefly talk about our new work which serves as a snippet into our next generation architecture that we're probably going to adopt in our later models. So here the motivation is quite simple. Can we apply some of our techniques that we use in the temporal dimension and we just take some of the inspirations and apply it to the death dimension. So and it starts from this residual connection. So I still remember listening to Kamen's talk at the tutorial in ICML 2016, 10 years ago. So it was a brilliant idea. So basically, before ResNet, nobody was able to train deep networks. If you increase the depth, if you increase the number of layers for neural networks, nobody was able to train it. Because you observe this gradient exposure, gradient vanishing, all these stability issues. But then after the introduction of ResNet, we can train an arbitrarily large number of layers. you can stack as many layers as you want, and you don't have to worry about the trainings, the ability issue and stuff. And as discussed in Ilya's talk two years ago, it basically says that residue connection is a variance of LSTM, but just rotated 90 degrees. So how do you understand this? If you look at LSTM, it's a variance of recurrent net, right? And it's a recurrent model process. So we're going to take the hidden states from the last step, and then we're going to have some gating mechanisms, some function, to produce the current states. And if you look at the depth dimension, the regulatory connection is basically the same. We're going to take the outputs from the last layer, and then we're going to apply some sort of function, on top of it, to produce the current outputs of the current layer, it's just the formulation is different. For example, for a registry connection, we're going to use a fixed addition. We're going to have this, we're going to add the previous hidden stage with the current output. It's just the formulation that's different. But the basic idea is the same. It's a recurrent net apply in the dimension of death. But on the other hand, we can think about reformulating this function. Instead of having an SDM, can we have an attention in the dimension of that? And it's going to create new possibilities, because attention has been demonstrated to be so successful in the transformer era. So what we're going to do is not just to take the last hidden state, but we're going to consider all the previous hidden states and use the attention operation, the attention mechanism to assemble and aggregate all of these previous hidden states to compute the current states. So this is exactly attention rotated by 90 degrees. It's sort of, we view it as a natural generalization of residual connections in the LSTM analogy. And here's the detailed formulation. So on the left hand side is a standard residue. as I said, is basically LCM rotated by 90 degrees. And the second figure is attention rotated by 90 degrees. So what we do is to collect all the previous hidden states and have a simple attention operation on top of it to produce the current layers outcome. And of course, to increase the efficiency to reduce the infrastructure, for example, communication and memory overhead, we also design a new variant called block attention residue on the right-hand side. So basically, the idea is also simple. We're going to divide all the layers in the new networks into multiple blocks. For example, each block can contain, say, 16 layers, or you can contain maybe four layers. And then for each block, we're going to apply this attention residue only on the outputs of each block. But within each block, we still adopt the standard residue. So this is going to reduce a lot of overhead, while having minimal loss in terms of training accuracy. And this is some of the impressive results that we achieve on this New York texture. So on the scaling law, we can improve the token efficiency by 24%, meaning that if you have 50 trillion high-quality tokens, Now you just magically have over 60 trillion tokens. And then for the validation loss, you can also observe that it's consistently lower than the original curve demonstrating this stability across optimization and also achieves the best improvement on some of this coding math and reasoning heavy task as shown in the benchmark results of GPU-A, math, and human value. So the entire community keeps moving forward, and we're happy that we're able to contribute to the community with new technologies. And some of these technologies have been sort of standard and de facto for a long time. But as you can see, we still see a lot of opportunities to improve it, to have revolutionary new design to achieve better performance. If we multiply all of these gains together, you can actually have a much better model. So Adam was invented in 2014. And now we scale and open source MionClip, a dropping replacement for Adam. And I'm sure that if you're trying to transform our LLM, is going to be much better if you use neon clip instead of Adam. And attention was invented over eight years ago. And then now we have Kimi Linear, which is a linear version. We don't have to use full attention across all layers. We can have linear attention that performs better on short, long contacts at the same time. And also, residual connections are now also challenged. We scaled an open source attention residue. So I think one of the interesting things about our error is that we sort of adopt a different mindset for doing research. So if we go back to 10 years ago, it's mostly about publishing a new idea. But then I think the lack of the rigor of the experiments is very hard to produce a solid experimental results. But now we have this skating ladder. We have enough resources to, you know, trend the model and running at different scales. We can have, you know, a whole set of benchmarks to measure the progress. So it becomes easier to make confident and solid conclusion out of it. And this is one of the reasons why we are observing, you know, new progress on this ancient techniques. And I'm sure that we'll see more and more, especially in the open source community. I think we're going to have more and more even better architectural and optimization improvement in the next few years. So to summarize, we're going to keep scaling models. And so these are three dimensions. For example, we see different architectures and optimizers that optimize all three dimensions. And we'll keep, you know, seeing new dimensions for scaling. Agents ROMs is not the end. And we are glad that we can move forward with the entire open source community to achieve better and better, you know, intelligence. Thank you so much.
