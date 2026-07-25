@@ -1,0 +1,167 @@
+Timestamp: 2026-07-25T20:39:21.276685
+Title: 為了跑 AI，我花 10 萬買了這台「發光鐵盒」... 實測結果太驚人了！✨
+URL: https://www.youtube.com/watch?v=6-FQWcu4hWU&t=602s&pp=0gcJCaMLAYcqIYzv
+Status: success
+Duration: 12:20
+
+Description:
+以下是对视频内容的结构化分析、批判性同行审阅以及逻辑概念图。
+
+---
+
+### PART 1. Author's Map（原作者论证地图）
+
+#### 1. Core Thesis（核心主张）
+对于个人开发者与AI爱好者而言，搭载 128GB 统一内存的 ASUS Ascent GX10（DGX Spark）虽然在核心算力与内存带宽上不及顶级消费级显卡或高配 Mac Studio，但凭其庞大的 VRAM 容量与完整的 NVIDIA CUDA 生态，是以约 10 万新台币（约 3000 美元）价格实现本地大模型推理、多模态生成及模型微调的最具性价比选择。
+
+#### 2. Evidentiary Base（论据支撑清单）
+*   **硬件参数与规格**（硬数据）：NVIDIA GB10 芯片（20核 ARMv9.2 CPU + Blackwell GPU）、FP4 精度下理论 1 PFLOPS 算力、128GB LPDDR5X 统一内存、273 GB/s 内存带宽、180W PD 输入、双 400Gbps ConnectX-7 网卡（支持 RoCE）。
+*   **市场价格与购买经历**（实证/案例）：原价屋虾皮商城购买经历（10万台币入手，随后受内存涨价潮影响提价至12万台币）；对比 Mac Studio 及企业级 GPU 昂贵的价格。
+*   **实测运行数据**（硬数据/测试）：使用 LM Studio 运行 Qwen 3.6 35B A3B 模型，Q4 量化版生成速度为 40–50 tokens/s，Q8 量化版速度为 30–40 tokens/s。
+*   **实际应用演示**（案例）：通过 LM Studio 开启 OpenAI 兼容 API 接口，连接 VSCode 成功生成现代风格科技博客网页代码，并直观展示其相较于 Qwen 3.5 的布局进化。
+*   **外观与开箱体验**（直观体验）：整机重 1478g（近两斤半），全金属机身，通电即自动开机（服务器属性）。
+
+#### 3. Logical Warrant（逻辑桥梁）
+*   **演绎推理与瓶颈优先论**：在 AI 大模型运行中，“显存（VRAM）容量”是决定模型能否加载的**硬性门槛**（0与1的区别），而“计算速度”仅影响运行效率（快与慢的区别）。
+*   **对比筛选逻辑**：
+    1. 消费级显卡（如 RTX 4090/5090）算力强，但 VRAM 极小（24GB/32GB），无法运行中大型开源模型；
+    2. Mac Studio 统一内存大，但在微调、vLLM 及 NVIDIA 独占生态（CUDA）上存在天然壁垒；
+    3. 因此，兼具 128GB 大显存与 N 卡生态的 DGX Spark 是当前本地 AI 部署的最佳平衡点。
+
+#### 4. Stated Scope（适用边界）
+*   **适用人群**：希望在本地独立部署开源 AI 服务、测试多种大模型、运行 ComfyUI（文生图/文生视频）、以及进行 Lora/模型微调的个人开发者或技术创作者。
+*   **明确排除/限制**：明确指出其算力无法与 RTX 4090/5090 相比，且 273 GB/s 的内存带宽在大型语言模型推理时会成为性能瓶颈，无法达到标称的最高理论性能。
+
+#### 5. Implicit Opponent（隐性对手）
+*   **纯算力派（4090/5090 拥趸）**：主张显卡核心算力和带宽才是硬通货的人群。
+*   **Apple 硬件派（Mac Studio 用户）**：认为苹果 M 系列芯片的超高内存带宽（400–800 GB/s）才是运行本地大语言模型唯一解的人群。
+*   **纯云端 API 依赖者**：质疑花 10 万台币购买本地算力设备的必要性、主张直接调用云端 API 的人群。
+
+#### 6. Intended Takeaway（预期行动）
+让观众认可 ASUS Ascent GX10 在 10 万台币价位段的独特价值与高性价比，确立作者频道作为本地 AI 硬件实测与应用探索的视角，并引导观众在评论区留言提出后续希望测试的模型或应用场景。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（批判性审阅）
+
+#### 1. Steelman（强力重述）
+ASUS Ascent GX10 (DGX Spark) 彻底打破了“大显存必须依赖数十万企业级显卡”的垄断局面。对于需要本地运行 30B–70B 参数量模型、频繁使用 CUDA 原生生态（如 ComfyUI、vLLM、LLaMA-Factory 微调）的开发者而言，它以约 3000 美元的门槛提供了 128GB 显存与完整 NVIDIA 软件栈，这是显存受限的消费级 N 卡和缺乏 CUDA 原生支持的 Mac Studio 均无法提供的生态位。
+
+#### 2. Weakest Link（最薄弱环节）
+内存带宽瓶颈（273 GB/s）与“128GB 大显存”宣称功能之间的内在矛盾。
+> **原文引用**：“虽然说它的记忆体频宽仅有 273GB/s... 相较于苹果现在 M 系列的统一记忆体来说有著频宽上的劣势... 但至少它大，我们可以将它看作是一个拥有 128GB VRAM 的显卡。”
+
+*   **失效分析**：自回归语言模型（LLM）的推理速度严重依赖内存带宽（Bandwidth-bound）。273 GB/s 的带宽甚至低于单张 RTX 3090（936 GB/s）或 Mac Studio M2 Ultra（800 GB/s）。当真正加载需要吃满 100GB+ VRAM 的 70B（Q8）或 120B 大模型时，理论生成速度将断崖式下跌至 2–5 tokens/s 以下。**如果加载了大模型却因为带宽太低导致生成速度慢到无法正常使用，那么“128GB VRAM”的实际实用价值将大打折扣。**
+
+#### 3. Evidence Audit（证据审查）
+*   **选择性测试（Cherry-picked Benchmark）**：作者选用的测试模型是 Qwen 3.6 35B A3B。这是一个 MoE（混合专家）模型（A3B 意为激活参数仅约 3B），其对计算和带宽的需求远低于同参数量的密集型（Dense）模型，因此掩盖了 273 GB/s 带宽带来的真实性能短板。
+*   **缺乏横向对比**：未将同等价位（或更低成本）的 Mac Studio（在 LLM 推理速度上）或双 RTX 3090/4090 组网进行同工作流的实际 Benchmarking 性能数据对比。
+*   **价格合理性渲染**：将购买到 10 万台币设备归结为“幸好赶在涨价前买到”，但未核算该硬件折旧速度与直接调用 API（如 DeepSeek-R1 / OpenAI）的成本效益比（10万台币可调用数以亿计的 API Token）。
+
+#### 4. Hidden Premises（隐藏前提）
+*   **前提 1**：假设用户必须在“本地”完成全流程 AI 工作（包括微调与私有部署）。
+    *   *质问*：对于 90% 的开发者，在云端按需租用 H100/A100 进行微调，本地仅保留轻量推理，总成本是否远低于购买一台 10 万台币且算力有限的物理机？
+*   **前提 2**：假设 ARM 架构下的 Linux + Blackwell GPU 在现有复杂开源 AI 库（如某些极度依赖 x86 CUDA 编译的社区插件）中具备 100% 的无缝兼容性。
+    *   *质问*：ARM64 架构在运行非标准 PyTorch 环境或编译特定 CUDA 扩展时面临的“环境踩坑成本”有多少被隐瞒了？
+
+#### 5. The Blind Side（盲区与忽视）
+*   **长时间高负载下的功耗与散热表现**：整机仅由 180W Type-C PD 供电，全金属小机身在长时间进行模型微调（GPU+CPU 双全速运转）时，极易触及功耗墙与热墙，导致降频。
+*   **初始软件体验缺陷**：开机即遇到蓝牙鼠标连接错误（系统已连上却提示未连），显示出该平台操作系统（基于 Ubuntu 定制）在消费级交互细节上的粗糙。
+
+#### 6. One Hit Kill（致命一问）
+> **当你在 GX10 上加载一个真正需要消耗 90GB 以上显存的 70B 密集型（Dense）模型（如 Q8 量化）时，其实际 Token 生成速度是多少？如果该速度跌破人类阅读速度（＜10 tokens/s），你如何证明花 10 万台币购买 128GB 显存比直接租用云端算力或购买高带宽设备更具实用价值？**
+
+#### 7. What Would Settle It（判定标准）
+进行一项标准化的**三方基准测试**：
+1. **测试对象**：ASUS Ascent GX10 vs. Mac Studio M3/M4 Max（大内存版） vs. 双 RTX 3090（48GB VRAM）组网。
+2. **测试项目**：
+   * 70B Q8 密集型模型推理速度（Tokens/s）与首包延迟（TTFT）；
+   * 运行 LLaMA-Factory 对 30B 模型进行 Lora 微调的耗时与稳定度（温度/功耗）；
+   * 运行复杂 ComfyUI 工作流（文生视频/FLUX 模型）的逐帧渲染时间。
+
+---
+
+### PART 3. Concept Map（概念图）
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 核心主张 (Core Thesis)"]
+        direction TB
+        A["<b>ASUS Ascent GX10 (DGX Spark)</b><br/>售价约10万台币的本地AI桌面超级电脑"]
+        A_Claim["<b>核心定位</b>: 以低成本获取128GB VRAM<br/>本地运行/微调大模型的最佳性价比方案"]
+        A --> A_Claim
+    end
+
+    subgraph SG_Hardware["🛠️ 硬件与生态优势 (Evidentiary Base)"]
+        direction TB
+        HW_Spec["<b>硬件规格</b><br/>GB10芯片 / 20核 ARM CPU / Blackwell GPU"]
+        HW_VRAM["<b>128GB 统一内存</b><br/>打破消费级显卡显存天花板"]
+        HW_Ecosystem["<b>NVIDIA CUDA 生态</b><br/>支持 vLLM / LLaMA-Factory / ComfyUI"]
+        HW_Conn["<b>高级扩展性</b><br/>180W PD供电 / 双400Gbps ConnectX-7 (RoCE)"]
+        
+        HW_Spec --> HW_VRAM
+        HW_VRAM --> HW_Ecosystem
+        HW_Spec --> HW_Conn
+    end
+
+    subgraph SG_Tradeoff["⚖️ 原作者承认的权衡 (Logical Warrant)"]
+        direction TB
+        TR_Compute["<b>算力劣势</b><br/>单卡核心算力不及 RTX 4090/5090"]
+        TR_Bandwidth["<b>带宽瓶颈</b><br/>仅 273 GB/s (低于苹果 M 系列及高端 N 卡)"]
+        TR_Logic["<b>关键逻辑</b><br/>显存决定『能不能跑』(硬门槛)<br/>算力/带宽仅决定『快不快』"]
+        
+        TR_Compute & TR_Bandwidth --> TR_Logic
+    end
+
+    subgraph SG_Testing["🧪 软件实测与应用 (Practical Verification)"]
+        direction TB
+        TS_OS["<b>系统部署</b><br/>Ubuntu改版 DGX OS / 内置 Dashboard & JupyterLab"]
+        TS_Tool["<b>工具选择</b><br/>选用 LM Studio (优于 Ollama，支持 Speculative Decoding)"]
+        TS_Bench["<b>Qwen 3.6 35B A3B 实测</b><br/>Q4量化: 40-50 tok/s<br/>Q8量化: 30-40 tok/s"]
+        TS_API["<b>VSCode API 联调</b><br/>成功本地生成现代风格科技博客网页"]
+        
+        TS_OS --> TS_Tool --> TS_Bench --> TS_API
+    end
+
+    subgraph SG_Review["⚔️ 批判性审阅 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        REV_WeakLink["<b>最薄弱环节 (Weakest Link)</b><br/>273 GB/s 低带宽与 128GB 大显存的矛盾<br/><i>加载超大模型时生成速度将面临断崖式下跌</i>"]
+        REV_Evidence["<b>证据审查 (Evidence Audit)</b><br/>测试选用 MoE 模型(A3B)，掩盖了真实带宽短板<br/>缺乏与 Mac Studio / 云端 API 的直观性能成本对比"]
+        REV_Premise["<b>隐性假设 (Hidden Premises)</b><br/>预设本地部署比云端 API 更划算<br/>忽视了 ARM64 Linux 下 CUDA 环境的踩坑成本"]
+        REV_Killer["<b>致命一问 (One Hit Kill)</b><br/>当加载吃满100GB显存的70B Q8模型时<br/>生成速度是否会跌破人类阅读速度(＜10 tok/s)？"]
+
+        REV_WeakLink --> REV_Killer
+        REV_Evidence --> REV_Premise
+    end
+
+    %% --- Connections between main subgraphs ---
+    SG_Core -- "依靠硬件展开论证" --> SG_Hardware
+    SG_Hardware -- "面对性能短板做出妥协" --> SG_Tradeoff
+    SG_Tradeoff -- "通过测试进行验证" --> SG_Testing
+    
+    SG_Testing -. "触发对手盘审阅" .-> SG_Review
+    SG_Tradeoff -. "暴露逻辑漏洞" .-> REV_WeakLink
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef hwNode fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#0D47A1
+    classDef tradeNode fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#E65100
+    classDef testNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20
+    classDef reviewNode fill:#FFEBEE,stroke:#C62828,stroke-width:2px,color:#B71C1C
+
+    class A,A_Claim mainClaim
+    class HW_Spec,HW_VRAM,HW_Ecosystem,HW_Conn hwNode
+    class TR_Compute,TR_Bandwidth,TR_Logic tradeNode
+    class TS_OS,TS_Tool,TS_Bench,TS_API testNode
+    class REV_WeakLink,REV_Evidence,REV_Premise,REV_Killer reviewNode
+
+    %% --- Subgraph Background Styles ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2.5px,color:#333
+    style SG_Hardware fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#0D47A1
+    style SG_Tradeoff fill:#FFF8E1,stroke:#FFA000,stroke-width:2px,color:#E65100
+    style SG_Testing fill:#F1F8E9,stroke:#7CB342,stroke-width:2px,color:#33691E
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+{, "wireMagic": "pb3", "pens": [ {, } ], "wsWinStyles": [ {, } ], "wpWinPositions": [ {, } ], "events": [ {, "tStartMs": 3008, "dDurationMs": 2300, "segs": [ {, "utf8": "今天我们难得的要来开箱东西", } ], }, {, "tStartMs": 5308, "dDurationMs": 1280, "segs": [ {, "utf8": "而这个东西", } ], }, {, "tStartMs": 6588, "dDurationMs": 1280, "segs": [ {, "utf8": "可是个大东西", } ], }, {, "tStartMs": 18588, "dDurationMs": 2216, "segs": [ {, "utf8": "Hello 大家好 这里是步行鱼的频道", } ], }, {, "tStartMs": 20804, "dDurationMs": 2336, "segs": [ {, "utf8": "正如大家在影片标题看到的", } ], }, {, "tStartMs": 23140, "dDurationMs": 1020, "segs": [ {, "utf8": "我喷了10万", } ], }, {, "tStartMs": 24160, "dDurationMs": 2492, "segs": [ {, "utf8": "买了一台 ASUS Ascent GX10", } ], }, {, "tStartMs": 26652, "dDurationMs": 2592, "segs": [ {, "utf8": "也就是华硕版的 DGX Spark", } ], }, {, "tStartMs": 29244, "dDurationMs": 1800, "segs": [ {, "utf8": "用来跑 AI 模型", } ], }, {, "tStartMs": 31044, "dDurationMs": 2560, "segs": [ {, "utf8": "虽然单就核心计算能力来看的话", } ], }, {, "tStartMs": 33604, "dDurationMs": 4600, "segs": [ {, "utf8": "它无法与 4090、5090 这类消费级的旗舰显卡相比", } ], }, {, "tStartMs": 38204, "dDurationMs": 3080, "segs": [ {, "utf8": "但它那高达 128GB 的统一记忆体", } ], }, {, "tStartMs": 41284, "dDurationMs": 1800, "segs": [ {, "utf8": "才是这台机器的精髓", } ], }, {, "tStartMs": 43084, "dDurationMs": 1520, "segs": [ {, "utf8": "毕竟 VRAM 不够大的话", } ], }, {, "tStartMs": 44604, "dDurationMs": 1280, "segs": [ {, "utf8": "计算能力再强", } ], }, {, "tStartMs": 45884, "dDurationMs": 1800, "segs": [ {, "utf8": "模型也还是一样跑不了", } ], }, {, "tStartMs": 47684, "dDurationMs": 2040, "segs": [ {, "utf8": "所以在思考了许久之后", } ], }, {, "tStartMs": 49724, "dDurationMs": 2320, "segs": [ {, "utf8": "我最终还是决定花10万", } ], }, {, "tStartMs": 52044, "dDurationMs": 1280, "segs": [ {, "utf8": "买了这台机器", } ], }, {, "tStartMs": 53324, "dDurationMs": 2560, "segs": [ {, "utf8": "也方便让我可以自架一些服务", } ], }, {, "tStartMs": 55884, "dDurationMs": 2491, "segs": [ {, "utf8": "以及测试更多的不同开源模型", } ], }, {, "tStartMs": 58375, "dDurationMs": 3815, "segs": [ {, "utf8": "像是最近刚出的 Qwen 3.6 35B A3B", } ], }, {, "tStartMs": 62190, "dDurationMs": 1780, "segs": [ {, "utf8": "以前在我的电脑上面", } ], }, {, "tStartMs": 63970, "dDurationMs": 2560, "segs": [ {, "utf8": "也许只能够稍微用 Ollama 玩一下", } ], }, {, "tStartMs": 66530, "dDurationMs": 1800, "segs": [ {, "utf8": "但现在有这台机器", } ], }, {, "tStartMs": 68330, "dDurationMs": 2300, "segs": [ {, "utf8": "则是真的可以拿它来做一些事情", } ], }, {, "tStartMs": 70630, "dDurationMs": 1280, "segs": [ {, "utf8": "作为 API 使用", } ], }, {, "tStartMs": 71910, "dDurationMs": 1700, "segs": [ {, "utf8": "语言模型之外的地方", } ], }, {, "tStartMs": 73610, "dDurationMs": 2040, "segs": [ {, "utf8": "像是在 ComfyUI 的部分", } ], }, {, "tStartMs": 75650, "dDurationMs": 3469, "segs": [ {, "utf8": "也可以来尝试看看更多不同的文生图片模型", } ], }, {, "tStartMs": 79119, "dDurationMs": 1960, "segs": [ {, "utf8": "甚至是生成影片的模型", } ], }, {, "tStartMs": 81079, "dDurationMs": 2358, "segs": [ {, "utf8": "需要的话也可以进行模型的微调", } ], }, {, "tStartMs": 83437, "dDurationMs": 2240, "segs": [ {, "utf8": "至于详细的硬体规格以及能做的事", } ], }, {, "tStartMs": 85677, "dDurationMs": 1360, "segs": [ {, "utf8": "我们晚点再来讲", } ], }, {, "tStartMs": 87037, "dDurationMs": 2240, "segs": [ {, "utf8": "现在我们先来开箱这台电脑", } ], }, {, "tStartMs": 89277, "dDurationMs": 1920, "segs": [ {, "utf8": "首先就外观来看的话", } ], }, {, "tStartMs": 91197, "dDurationMs": 1040, "segs": [ {, "utf8": "我们可以看到", } ], }, {, "tStartMs": 92237, "dDurationMs": 2080, "segs": [ {, "utf8": "它的这个箱子是相当大", } ], }, {, "tStartMs": 94317, "dDurationMs": 1896, "segs": [ {, "utf8": "我们把它给拆开来", } ], }, {, "tStartMs": 102886, "dDurationMs": 3824, "segs": [ {, "utf8": "在旁边它垫了真的还蛮多的泡棉", } ], }, {, "tStartMs": 106710, "dDurationMs": 1270, "segs": [ {, "utf8": "但这些都不重要", } ], }, {, "tStartMs": 107980, "dDurationMs": 3400, "segs": [ {, "utf8": "重点就是中间这个小小的盒子", } ], }, {, "tStartMs": 111380, "dDurationMs": 2240, "segs": [ {, "utf8": "它这个拿起来其实还蛮重的", } ], }, {, "tStartMs": 113620, "dDurationMs": 3440, "segs": [ {, "utf8": "然后外面还有再包一层这个东西", } ], }, {, "tStartMs": 117060, "dDurationMs": 1680, "segs": [ {, "utf8": "我们先把它给剪开", } ], }, {, "tStartMs": 121960, "dDurationMs": 2620, "segs": [ {, "utf8": "然后就可以看到包装的本体了", } ], }, {, "tStartMs": 124580, "dDurationMs": 2760, "segs": [ {, "utf8": "不得不说它这个盒子其实做得还蛮好看的", } ], }, {, "tStartMs": 127340, "dDurationMs": 2120, "segs": [ {, "utf8": "NVIDIA 跟 ASUS 的标志", } ], }, {, "tStartMs": 129460, "dDurationMs": 3880, "segs": [ {, "utf8": "然后上面它就使用这种一条一条雷射反光的材质", } ], }, {, "tStartMs": 133340, "dDurationMs": 1920, "segs": [ {, "utf8": "接下来就是要来打开它", } ], }, {, "tStartMs": 135260, "dDurationMs": 1680, "segs": [ {, "utf8": "看看我们的机器本体", } ], }, {, "tStartMs": 140260, "dDurationMs": 4120, "segs": [ {, "utf8": "它这个封口的贴纸真的有够难撕", } ], }, {, "tStartMs": 144380, "dDurationMs": 2040, "segs": [ {, "utf8": "还是直接用剪刀把它割开好了", } ], }, {, "tStartMs": 147733, "dDurationMs": 3407, "segs": [ {, "utf8": "那么接下来就是见证奇迹的时刻了", } ], }, {, "tStartMs": 154508, "dDurationMs": 3112, "segs": [ {, "utf8": "这个就是一台要价10万的机器", } ], }, {, "tStartMs": 157620, "dDurationMs": 3000, "segs": [ {, "utf8": "它的机器本体虽然说看起来小小一台", } ], }, {, "tStartMs": 160620, "dDurationMs": 1520, "segs": [ {, "utf8": "但其实蛮重的", } ], }, {, "tStartMs": 162140, "dDurationMs": 3520, "segs": [ {, "utf8": "可能因为要利于导热或者是某种质感的关系", } ], }, {, "tStartMs": 165660, "dDurationMs": 2720, "segs": [ {, "utf8": "所以它的整个外壳也都是使用金属的", } ], }, {, "tStartMs": 168380, "dDurationMs": 2200, "segs": [ {, "utf8": "等一下来稍微给它秤重一下好了", } ], }, {, "tStartMs": 170580, "dDurationMs": 2280, "segs": [ {, "utf8": "因为感觉这个东西应该有两斤", } ], }, {, "tStartMs": 172860, "dDurationMs": 4160, "segs": [ {, "utf8": "接下来就是再来看看它里面盒装有附些什么东西", } ], }, {, "tStartMs": 177020, "dDurationMs": 1720, "segs": [ {, "utf8": "首先就是说明书", } ], }, {, "tStartMs": 178740, "dDurationMs": 1640, "segs": [ {, "utf8": "这个没有很重要", } ], }, {, "tStartMs": 180380, "dDurationMs": 1360, "segs": [ {, "utf8": "再来往下看", } ], }, {, "tStartMs": 181740, "dDurationMs": 1760, "segs": [ {, "utf8": "把这个盒子拿开", } ], }, {, "tStartMs": 183500, "dDurationMs": 4000, "segs": [ {, "utf8": "底部这个是一个盖子", } ], }, {, "tStartMs": 187500, "dDurationMs": 2000, "segs": [ {, "utf8": "它的设计有点诡异", } ], }, {, "tStartMs": 189500, "dDurationMs": 1520, "segs": [ {, "utf8": "没有说很好抠出来", } ], }, {, "tStartMs": 191020, "dDurationMs": 2520, "segs": [ {, "utf8": "里面放的是它的变压器", } ], }, {, "tStartMs": 193540, "dDurationMs": 2560, "segs": [ {, "utf8": "它这个电源的接头是 Type-C", } ], }, {, "tStartMs": 196100, "dDurationMs": 1800, "segs": [ {, "utf8": "之前插的时候没有特别注意", } ], }, {, "tStartMs": 197900, "dDurationMs": 880, "segs": [ {, "utf8": "还蛮有趣的", } ], }, {, "tStartMs": 198780, "dDurationMs": 1360, "segs": [ {, "utf8": "它竟然是吃 PD", } ], }, {, "tStartMs": 200140, "dDurationMs": 2320, "segs": [ {, "utf8": "那么接下来就让我们来跟大家介绍一下", } ], }, {, "tStartMs": 202460, "dDurationMs": 2480, "segs": [ {, "utf8": "这台机器它的规格长什么样子", } ], }, {, "tStartMs": 204940, "dDurationMs": 3000, "segs": [ {, "utf8": "首先这台机器的大名大家应该都已经听过了", } ], }, {, "tStartMs": 207940, "dDurationMs": 1360, "segs": [ {, "utf8": "前 Project Digit", } ], }, {, "tStartMs": 209300, "dDurationMs": 1760, "segs": [ {, "utf8": "现在的 DGX Spark", } ], }, {, "tStartMs": 211060, "dDurationMs": 3120, "segs": [ {, "utf8": "由华硕出版的 ASUS Ascent GX10", } ], }, {, "tStartMs": 214180, "dDurationMs": 2480, "segs": [ {, "utf8": "是一款桌上型的 AI 超级电脑", } ], }, {, "tStartMs": 216660, "dDurationMs": 3360, "segs": [ {, "utf8": "里面使用的晶片架构是 NVIDIA 的 GB10", } ], }, {, "tStartMs": 220020, "dDurationMs": 4080, "segs": [ {, "utf8": "结合了高效能的 20核心 ARMv9.2 A CPU", } ], }, {, "tStartMs": 224100, "dDurationMs": 2120, "segs": [ {, "utf8": "与 NVIDIA 的 Blackwell GPU", } ], }, {, "tStartMs": 226220, "dDurationMs": 2480, "segs": [ {, "utf8": "理想上在 FP4 的精度下", } ], }, {, "tStartMs": 228700, "dDurationMs": 2720, "segs": [ {, "utf8": "能够提供高达 1 PETAFLOPS 的算力", } ], }, {, "tStartMs": 231420, "dDurationMs": 3400, "segs": [ {, "utf8": "当然实际上限制于它的记忆体频宽", } ], }, {, "tStartMs": 234820, "dDurationMs": 4080, "segs": [ {, "utf8": "在运行大型语言模型之类会有大量资料交换的推理时", } ], }, {, "tStartMs": 238900, "dDurationMs": 2760, "segs": [ {, "utf8": "表现是没有办法到它标称这么好的", } ], }, {, "tStartMs": 241660, "dDurationMs": 2520, "segs": [ {, "utf8": "再来就是它的统一记忆体架构", } ], }, {, "tStartMs": 244180, "dDurationMs": 3640, "segs": [ {, "utf8": "使用了高达 128GB 的 LPDDR5X 记忆体", } ], }, {, "tStartMs": 247820, "dDurationMs": 3640, "segs": [ {, "utf8": "虽然说它的记忆体频宽仅有 273GB/s", } ], }, {, "tStartMs": 251460, "dDurationMs": 3360, "segs": [ {, "utf8": "相较于苹果现在 M 系列的统一记忆体来说", } ], }, {, "tStartMs": 254820, "dDurationMs": 1600, "segs": [ {, "utf8": "有著频宽上的劣势", } ], }, {, "tStartMs": 256420, "dDurationMs": 3120, "segs": [ {, "utf8": "以及也没有办法跟一般的显卡相对比", } ], }, {, "tStartMs": 259540, "dDurationMs": 2080, "segs": [ {, "utf8": "但至少它大", } ], }, {, "tStartMs": 261620, "dDurationMs": 4080, "segs": [ {, "utf8": "我们可以将它看作是一个拥有 128GB VRAM 的显卡", } ], }, {, "tStartMs": 265700, "dDurationMs": 2640, "segs": [ {, "utf8": "但是售价仅 3000 美金左右", } ], }, {, "tStartMs": 268340, "dDurationMs": 3360, "segs": [ {, "utf8": "虽然说还要考量一些进口关税及台湾的鬼岛价", } ], }, {, "tStartMs": 271700, "dDurationMs": 1520, "segs": [ {, "utf8": "但至少在台湾", } ], }, {, "tStartMs": 273220, "dDurationMs": 3160, "segs": [ {, "utf8": "以能跑来作为一个基准来看的话", } ], }, {, "tStartMs": 276380, "dDurationMs": 2480, "segs": [ {, "utf8": "它是 CP 值相当高的选择", } ], }, {, "tStartMs": 278860, "dDurationMs": 3960, "segs": [ {, "utf8": "这次的购买我是在原价屋的虾皮商城上面购买的", } ], }, {, "tStartMs": 282820, "dDurationMs": 2480, "segs": [ {, "utf8": "我在买的前后还犹豫了非常久", } ], }, {, "tStartMs": 285300, "dDurationMs": 2600, "segs": [ {, "utf8": "甚至可以算得上是一种趣闻吗？", } ], }, {, "tStartMs": 287900, "dDurationMs": 1400, "segs": [ {, "utf8": "跟大家稍微讲一下好了", } ], }, {, "tStartMs": 289300, "dDurationMs": 2080, "segs": [ {, "utf8": "随著这波记忆体涨价的浪潮", } ], }, {, "tStartMs": 291380, "dDurationMs": 3600, "segs": [ {, "utf8": "我们在网路上找到各种 DGX Spark 的设备", } ], }, {, "tStartMs": 294980, "dDurationMs": 2560, "segs": [ {, "utf8": "应该都会看到各个地方卖的价格", } ], }, {, "tStartMs": 297540, "dDurationMs": 1400, "segs": [ {, "utf8": "即便是 1TB 版本", } ], }, {, "tStartMs": 298940, "dDurationMs": 3360, "segs": [ {, "utf8": "都已经从原价的 10 万涨价到了 12 万", } ], }, {, "tStartMs": 302300, "dDurationMs": 2320, "segs": [ {, "utf8": "就只有原价屋它的 1TB 版本", } ], }, {, "tStartMs": 304620, "dDurationMs": 2560, "segs": [ {, "utf8": "虽然说可能有时候有货有时候没货", } ], }, {, "tStartMs": 307180, "dDurationMs": 2640, "segs": [ {, "utf8": "但它就是一直维持 10 万的价格", } ], }, {, "tStartMs": 309820, "dDurationMs": 2600, "segs": [ {, "utf8": "而在我终于下定决心下订之后", } ], }, {, "tStartMs": 312420, "dDurationMs": 5240, "segs": [ {, "utf8": "把原价屋在虾皮商城上的最后一台 ASUS Ascent GX10 给下订走后", } ], }, {, "tStartMs": 317660, "dDurationMs": 1600, "segs": [ {, "utf8": "隔天上去看后发现", } ], }, {, "tStartMs": 319260, "dDurationMs": 1320, "segs": [ {, "utf8": "虽然说它有补货", } ], }, {, "tStartMs": 320580, "dDurationMs": 2160, "segs": [ {, "utf8": "但是它的价格变成了 12 万", } ], }, {, "tStartMs": 322740, "dDurationMs": 2000, "segs": [ {, "utf8": "只能说这波记忆体涨价潮", } ], }, {, "tStartMs": 324740, "dDurationMs": 1640, "segs": [ {, "utf8": "真的是相当的可怕", } ], }, {, "tStartMs": 329536, "dDurationMs": 3244, "segs": [ {, "utf8": "而且苹果的 Mac Studio 它的价格并没有比较便宜", } ], }, {, "tStartMs": 332780, "dDurationMs": 4560, "segs": [ {, "utf8": "再来就是 Mac Studio 基本上是几乎只能够拿来进行推理", } ], }, {, "tStartMs": 337340, "dDurationMs": 2360, "segs": [ {, "utf8": "而 NVIDIA 的 DGX Spark 系列", } ], }, {, "tStartMs": 339700, "dDurationMs": 2840, "segs": [ {, "utf8": "毕竟现在 AI 大多数还是吃 N 卡", } ], }, {, "tStartMs": 342540, "dDurationMs": 2120, "segs": [ {, "utf8": "它有更丰富的生态系优势", } ], }, {, "tStartMs": 344660, "dDurationMs": 2600, "segs": [ {, "utf8": "除了使用各种模型推理更方便之外", } ], }, {, "tStartMs": 347260, "dDurationMs": 2280, "segs": [ {, "utf8": "还可以进行模型的微调训练", } ], }, {, "tStartMs": 349540, "dDurationMs": 1560, "segs": [ {, "utf8": "再来看到接口的部分", } ], }, {, "tStartMs": 351100, "dDurationMs": 1440, "segs": [ {, "utf8": "我们转到后面来", } ], }, {, "tStartMs": 352540, "dDurationMs": 1920, "segs": [ {, "utf8": "可以看到它的最左侧", } ], }, {, "tStartMs": 354460, "dDurationMs": 2200, "segs": [ {, "utf8": "是一个 USB Type-C 的供电口", } ], }, {, "tStartMs": 356660, "dDurationMs": 2200, "segs": [ {, "utf8": "支援 180W 的 PD 输入", } ], }, {, "tStartMs": 358860, "dDurationMs": 3240, "segs": [ {, "utf8": "往右三个是 24Gbps 的 Type-C 介面", } ], }, {, "tStartMs": 362100, "dDurationMs": 2000, "segs": [ {, "utf8": "支援 DP 2.1 协议", } ], }, {, "tStartMs": 364100, "dDurationMs": 2640, "segs": [ {, "utf8": "再来是一个 HDMI 2.1 的介面", } ], }, {, "tStartMs": 366740, "dDurationMs": 3200, "segs": [ {, "utf8": "以及一个 10 Gbps 的 RJ45 网路孔", } ], }, {, "tStartMs": 369940, "dDurationMs": 1520, "segs": [ {, "utf8": "最右边的两个", } ], }, {, "tStartMs": 371460, "dDurationMs": 2240, "segs": [ {, "utf8": "则是 DGX Spark 的特点", } ], }, {, "tStartMs": 373700, "dDurationMs": 2840, "segs": [ {, "utf8": "是 ConnectX-7 网卡的连接孔", } ], }, {, "tStartMs": 376540, "dDurationMs": 2560, "segs": [ {, "utf8": "这个网卡是 NVIDIA 自家所研发", } ], }, {, "tStartMs": 379100, "dDurationMs": 2680, "segs": [ {, "utf8": "支援高达 400Gbps 的传输速度", } ], }, {, "tStartMs": 381780, "dDurationMs": 1760, "segs": [ {, "utf8": "并且支援 RoCE", } ], }, {, "tStartMs": 383540, "dDurationMs": 3160, "segs": [ {, "utf8": "简单来说就可以直接透过网路来存取记忆体", } ], }, {, "tStartMs": 386700, "dDurationMs": 3760, "segs": [ {, "utf8": "相信这点大家在网路上看到 DGX Spark 介绍的时候", } ], }, {, "tStartMs": 390460, "dDurationMs": 1480, "segs": [ {, "utf8": "应该可能有看过了", } ], }, {, "tStartMs": 391940, "dDurationMs": 3360, "segs": [ {, "utf8": "就是可以直接将两台机器用光纤对接", } ], }, {, "tStartMs": 395300, "dDurationMs": 2160, "segs": [ {, "utf8": "来达到一个分布运算的效果", } ], }, {, "tStartMs": 397460, "dDurationMs": 2000, "segs": [ {, "utf8": "OK 开箱的部分就在这边结束", } ], }, {, "tStartMs": 399460, "dDurationMs": 2560, "segs": [ {, "utf8": "接下来就让我们来点亮这台机器", } ], }, {, "tStartMs": 402020, "dDurationMs": 1480, "segs": [ {, "utf8": "喔对了差点忘了", } ], }, {, "tStartMs": 403500, "dDurationMs": 2480, "segs": [ {, "utf8": "要稍微秤重一下这台机器到底多重", } ], }, {, "tStartMs": 405980, "dDurationMs": 3160, "segs": [ {, "utf8": "最后秤出来的结果是 1478 克", } ], }, {, "tStartMs": 409140, "dDurationMs": 1160, "segs": [ {, "utf8": "接近两斤半", } ], }, {, "tStartMs": 410300, "dDurationMs": 2280, "segs": [ {, "utf8": "只能说不愧是全金属机身", } ], }, {, "tStartMs": 412580, "dDurationMs": 2160, "segs": [ {, "utf8": "这个份量真的是相当的足", } ], }, {, "tStartMs": 414740, "dDurationMs": 2920, "segs": [ {, "utf8": "那么接下来就让我们来点亮看这台机器", } ], }, {, "tStartMs": 417660, "dDurationMs": 2720, "segs": [ {, "utf8": "首先这里遇到的第一个大难题就是", } ], }, {, "tStartMs": 420380, "dDurationMs": 2720, "segs": [ {, "utf8": "呃我好像没什么地方可以放这个东西", } ], }, {, "tStartMs": 423100, "dDurationMs": 2000, "segs": [ {, "utf8": "最后决定整理一下我的书架", } ], }, {, "tStartMs": 425100, "dDurationMs": 1600, "segs": [ {, "utf8": "把几个东西拿走", } ], }, {, "tStartMs": 426700, "dDurationMs": 3200, "segs": [ {, "utf8": "将 GX10 放在我萤幕后方的书架上", } ], }, {, "tStartMs": 429900, "dDurationMs": 1280, "segs": [ {, "utf8": "再来就是牵线", } ], }, {, "tStartMs": 431180, "dDurationMs": 1560, "segs": [ {, "utf8": "牵线也是一个大难题", } ], }, {, "tStartMs": 432740, "dDurationMs": 1600, "segs": [ {, "utf8": "因为线不好牵的关系", } ], }, {, "tStartMs": 434340, "dDurationMs": 2400, "segs": [ {, "utf8": "以及我的萤幕只有一个 HDMI 孔", } ], }, {, "tStartMs": 436740, "dDurationMs": 2840, "segs": [ {, "utf8": "所以我就先不打算将它放在上面", } ], }, {, "tStartMs": 439580, "dDurationMs": 2640, "segs": [ {, "utf8": "我在初步设定测试的时候", } ], }, {, "tStartMs": 442220, "dDurationMs": 1640, "segs": [ {, "utf8": "我就放在我的书桌旁", } ], }, {, "tStartMs": 443860, "dDurationMs": 2560, "segs": [ {, "utf8": "那么接下来就是准备插上电", } ], }, {, "tStartMs": 446420, "dDurationMs": 1280, "segs": [ {, "utf8": "然后开机", } ], }, {, "tStartMs": 447700, "dDurationMs": 3520, "segs": [ {, "utf8": "喔等等没有开电", } ], }, {, "tStartMs": 451220, "dDurationMs": 1680, "segs": [ {, "utf8": "OK", } ], }, {, "tStartMs": 452900, "dDurationMs": 1880, "segs": [ {, "utf8": "然后", } ], }, {, "tStartMs": 455460, "dDurationMs": 1800, "segs": [ {, "utf8": "它这个好像是已经开机了", } ], }, {, "tStartMs": 457260, "dDurationMs": 2480, "segs": [ {, "utf8": "它好像只要有通电就会自动开机", } ], }, {, "tStartMs": 459740, "dDurationMs": 4520, "segs": [ {, "utf8": "可能是因为它本身设计就是一个伺服器的关系的样子", } ], }, {, "tStartMs": 464260, "dDurationMs": 2240, "segs": [ {, "utf8": "那接下来我们就直接来看看", } ], }, {, "tStartMs": 466500, "dDurationMs": 1840, "segs": [ {, "utf8": "来看一下这个画面", } ], }, {, "tStartMs": 468340, "dDurationMs": 1480, "segs": [ {, "utf8": "它亮了", } ], }, {, "tStartMs": 469820, "dDurationMs": 2000, "segs": [ {, "utf8": "看到华硕的 LOGO 出现了", } ], }, {, "tStartMs": 471820, "dDurationMs": 2800, "segs": [ {, "utf8": "然后我们这边就给它稍等一下", } ], }, {, "tStartMs": 480170, "dDurationMs": 2130, "segs": [ {, "utf8": "它弹出了要连接键盘的提示", } ], }, {, "tStartMs": 482300, "dDurationMs": 1280, "segs": [ {, "utf8": "然后可以用蓝牙", } ], }, {, "tStartMs": 483580, "dDurationMs": 2120, "segs": [ {, "utf8": "那刚好我的键盘还是有支援蓝牙", } ], }, {, "tStartMs": 485700, "dDurationMs": 2000, "segs": [ {, "utf8": "我就直接稍微切一下模式", } ], }, {, "tStartMs": 487700, "dDurationMs": 1920, "segs": [ {, "utf8": "OK 连上", } ], }, {, "tStartMs": 489620, "dDurationMs": 2000, "segs": [ {, "utf8": "再来就是滑鼠", } ], }, {, "tStartMs": 491620, "dDurationMs": 3400, "segs": [ {, "utf8": "滑鼠也是一样切蓝牙", } ], }, {, "tStartMs": 495020, "dDurationMs": 2000, "segs": [ {, "utf8": "然后进连线", } ], }, {, "tStartMs": 505875, "dDurationMs": 3345, "segs": [ {, "utf8": "OK 这边它好像", } ], }, {, "tStartMs": 509220, "dDurationMs": 3120, "segs": [ {, "utf8": "我才刚购买就遇到一个 BUG 了", } ], }, {, "tStartMs": 512340, "dDurationMs": 3880, "segs": [ {, "utf8": "这边大家应该可以很明显看到我的滑鼠是已经连上了", } ], }, {, "tStartMs": 516220, "dDurationMs": 2000, "segs": [ {, "utf8": "可是它却还是一样显示著", } ], }, {, "tStartMs": 518220, "dDurationMs": 2000, "segs": [ {, "utf8": "就是请连接你的滑鼠", } ], }, {, "tStartMs": 520220, "dDurationMs": 2000, "segs": [ {, "utf8": "那这个好吧", } ], }, {, "tStartMs": 522220, "dDurationMs": 3520, "segs": [ {, "utf8": "没有办法我只好拿线出来直接用线连了", } ], }, {, "tStartMs": 525740, "dDurationMs": 2000, "segs": [ {, "utf8": "连上后就是同意条款", } ], }, {, "tStartMs": 527740, "dDurationMs": 1680, "segs": [ {, "utf8": "然后创建本机使用者", } ], }, {, "tStartMs": 529420, "dDurationMs": 2000, "segs": [ {, "utf8": "接下来就是连接 WiFi", } ], }, {, "tStartMs": 531420, "dDurationMs": 3760, "segs": [ {, "utf8": "在连接完之后它就会开始进行一个漫长的更新", } ], }, {, "tStartMs": 535180, "dDurationMs": 2920, "segs": [ {, "utf8": "这个更新速度就取决于各自网路的速度", } ], }, {, "tStartMs": 538100, "dDurationMs": 2520, "segs": [ {, "utf8": "我更新了将近一个小时才更新完", } ], }, {, "tStartMs": 540620, "dDurationMs": 3080, "segs": [ {, "utf8": "等更新完我们就可以输入我们的帐号", } ], }, {, "tStartMs": 543700, "dDurationMs": 3120, "segs": [ {, "utf8": "正式进入到 DGX Spark 的桌面了", } ], }, {, "tStartMs": 546820, "dDurationMs": 4560, "segs": [ {, "utf8": "DGX Spark 的作业系统是一个基于 Ubuntu 改来的系统", } ], }, {, "tStartMs": 551380, "dDurationMs": 3920, "segs": [ {, "utf8": "所以大家可以看到它基本上就是跟 Ubuntu 长得一样", } ], }, {, "tStartMs": 555300, "dDurationMs": 4400, "segs": [ {, "utf8": "只不过内建了一些 NVIDIA 的驱动以及应用程式", } ], }, {, "tStartMs": 559700, "dDurationMs": 2560, "segs": [ {, "utf8": "简单来说就是该装的都帮我们装好了", } ], }, {, "tStartMs": 562260, "dDurationMs": 4160, "segs": [ {, "utf8": "然后第一次开的时候它也会打开一下 DGX Spark 的网页", } ], }, {, "tStartMs": 566420, "dDurationMs": 3080, "segs": [ {, "utf8": "跟我们介绍一些 DGX Spark 的应用", } ], }, {, "tStartMs": 569500, "dDurationMs": 2000, "segs": [ {, "utf8": "像是前一段时间的 OpenClaw", } ], }, {, "tStartMs": 571500, "dDurationMs": 2520, "segs": [ {, "utf8": "或者用它来架 Open WebUI", } ], }, {, "tStartMs": 574020, "dDurationMs": 1200, "segs": [ {, "utf8": "ComfyUI 等", } ], }, {, "tStartMs": 575220, "dDurationMs": 3720, "segs": [ {, "utf8": "再来再往下可以看到像可以架 vLLM", } ], }, {, "tStartMs": 578940, "dDurationMs": 4000, "segs": [ {, "utf8": "还有使用 LLaMA Factory 等专案来进行模型微调", } ], }, {, "tStartMs": 582940, "dDurationMs": 2600, "segs": [ {, "utf8": "系统内又有预装了 DGX Dashboard", } ], }, {, "tStartMs": 585540, "dDurationMs": 2920, "segs": [ {, "utf8": "能让我们快速的查看当前的系统状态", } ], }, {, "tStartMs": 588460, "dDurationMs": 1520, "segs": [ {, "utf8": "以及开启 JupyterLab", } ], }, {, "tStartMs": 589980, "dDurationMs": 2760, "segs": [ {, "utf8": "来执行一些 AI 训练等相关程式", } ], }, {, "tStartMs": 592740, "dDurationMs": 3480, "segs": [ {, "utf8": "那么我首先要做的当然是装一些我需要用到的东西", } ], }, {, "tStartMs": 596220, "dDurationMs": 2960, "segs": [ {, "utf8": "像是首先先把 Ubuntu 内建的远桌开起来", } ], }, {, "tStartMs": 599180, "dDurationMs": 1800, "segs": [ {, "utf8": "这边还不小心吃了一个瘪", } ], }, {, "tStartMs": 600980, "dDurationMs": 2240, "segs": [ {, "utf8": "就是第一次用 Ubuntu 的 RDP", } ], }, {, "tStartMs": 603220, "dDurationMs": 3080, "segs": [ {, "utf8": "要先在系统上先按过一次登出", } ], }, {, "tStartMs": 606300, "dDurationMs": 2240, "segs": [ {, "utf8": "那我才能够从 Windows 连进来", } ], }, {, "tStartMs": 608540, "dDurationMs": 2760, "segs": [ {, "utf8": "不然就会在连上的瞬间直接断线", } ], }, {, "tStartMs": 611300, "dDurationMs": 2560, "segs": [ {, "utf8": "再来就是要装 LM Studio", } ], }, {, "tStartMs": 613860, "dDurationMs": 2920, "segs": [ {, "utf8": "我自己是不打算在这台上面装 Ollama", } ], }, {, "tStartMs": 616780, "dDurationMs": 3960, "segs": [ {, "utf8": "毕竟 LM Studio 它能够比较方便的去下载模型", } ], }, {, "tStartMs": 620740, "dDurationMs": 4240, "segs": [ {, "utf8": "而 Ollama 如果要运行自己已经下载好的 GGUF 档的话", } ], }, {, "tStartMs": 624980, "dDurationMs": 1920, "segs": [ {, "utf8": "整个操作虽然说也没几步", } ], }, {, "tStartMs": 626900, "dDurationMs": 1680, "segs": [ {, "utf8": "但就是会比较麻烦", } ], }, {, "tStartMs": 628580, "dDurationMs": 3320, "segs": [ {, "utf8": "而且 LM Studio 还支援 Speculative Decoding", } ], }, {, "tStartMs": 631900, "dDurationMs": 1960, "segs": [ {, "utf8": "这也是 Ollama 还没支援的功能", } ], }, {, "tStartMs": 633860, "dDurationMs": 2000, "segs": [ {, "utf8": "最后就来简单给大家测试一下", } ], }, {, "tStartMs": 635860, "dDurationMs": 1440, "segs": [ {, "utf8": "它运行模型的效果", } ], }, {, "tStartMs": 637300, "dDurationMs": 3480, "segs": [ {, "utf8": "我这边已经先载了一个才刚出几天热腾腾的", } ], }, {, "tStartMs": 640780, "dDurationMs": 2480, "segs": [ {, "utf8": "Qwen 3.6 35B A3B", } ], }, {, "tStartMs": 643260, "dDurationMs": 1720, "segs": [ {, "utf8": "跑一下给大家看看效果", } ], }, {, "tStartMs": 644980, "dDurationMs": 2360, "segs": [ {, "utf8": "Q4 量化的时候它的运行速度", } ], }, {, "tStartMs": 647340, "dDurationMs": 3320, "segs": [ {, "utf8": "大约落在 40-50 tokens/s 左右", } ], }, {, "tStartMs": 650660, "dDurationMs": 1920, "segs": [ {, "utf8": "如果改成 Q8 量化", } ], }, {, "tStartMs": 652580, "dDurationMs": 3560, "segs": [ {, "utf8": "则是会变慢至 30-40 tokens/s 左右", } ], }, {, "tStartMs": 656140, "dDurationMs": 1800, "segs": [ {, "utf8": "都还在可以接受的速度", } ], }, {, "tStartMs": 657940, "dDurationMs": 3120, "segs": [ {, "utf8": "当然这个是只使用 llama.cpp 为核心工具", } ], }, {, "tStartMs": 661060, "dDurationMs": 1440, "segs": [ {, "utf8": "来跑的情况之下", } ], }, {, "tStartMs": 662500, "dDurationMs": 2280, "segs": [ {, "utf8": "使用 vLLM 或 SGLang", } ], }, {, "tStartMs": 664780, "dDurationMs": 1760, "segs": [ {, "utf8": "它的速度可能会比较快", } ], }, {, "tStartMs": 666540, "dDurationMs": 2400, "segs": [ {, "utf8": "而 LM Studio 它当然也有支援", } ], }, {, "tStartMs": 668940, "dDurationMs": 3080, "segs": [ {, "utf8": "可以运行 OpenAI 兼容 API 伺服器的功能", } ], }, {, "tStartMs": 672020, "dDurationMs": 2560, "segs": [ {, "utf8": "这边我们就一样给它运行一下", } ], }, {, "tStartMs": 674580, "dDurationMs": 2840, "segs": [ {, "utf8": "这边就先将它直接接到 VSCode", } ], }, {, "tStartMs": 677420, "dDurationMs": 3400, "segs": [ {, "utf8": "简单测一下其他的东西之后再来测试看", } ], }, {, "tStartMs": 680820, "dDurationMs": 3280, "segs": [ {, "utf8": "然后我这边测试的内容就是一样测试", } ], }, {, "tStartMs": 684100, "dDurationMs": 3400, "segs": [ {, "utf8": "让它生成一个现代简约风格的科技部落格", } ], }, {, "tStartMs": 687500, "dDurationMs": 1720, "segs": [ {, "utf8": "而它生成出来的效果", } ], }, {, "tStartMs": 689220, "dDurationMs": 3280, "segs": [ {, "utf8": "至少在美观上我们可以看到有很明显的进步", } ], }, {, "tStartMs": 692500, "dDurationMs": 2600, "segs": [ {, "utf8": "相较于 Qwen 3.5 35B A3B", } ], }, {, "tStartMs": 695100, "dDurationMs": 1520, "segs": [ {, "utf8": "它设计出来的东西", } ], }, {, "tStartMs": 696620, "dDurationMs": 2600, "segs": [ {, "utf8": "有明显增加了更多的细节", } ], }, {, "tStartMs": 699220, "dDurationMs": 2400, "segs": [ {, "utf8": "也拥有更完整的网页架构", } ], }, {, "tStartMs": 701620, "dDurationMs": 2320, "segs": [ {, "utf8": "当然它的上方这个 Hero 区域", } ], }, {, "tStartMs": 703940, "dDurationMs": 2880, "segs": [ {, "utf8": "它设计成这样对于一个部落格来说", } ], }, {, "tStartMs": 706820, "dDurationMs": 2000, "segs": [ {, "utf8": "可能用处没有这么大", } ], }, {, "tStartMs": 708820, "dDurationMs": 1960, "segs": [ {, "utf8": "它使用的这个 Hero 设计", } ], }, {, "tStartMs": 710780, "dDurationMs": 2680, "segs": [ {, "utf8": "会比较像是个人的作品集履历", } ], }, {, "tStartMs": 713460, "dDurationMs": 2240, "segs": [ {, "utf8": "或是一些咨询服务的设计方式", } ], }, {, "tStartMs": 715700, "dDurationMs": 2720, "segs": [ {, "utf8": "但整体来说是可以看到明显进步的", } ], }, {, "tStartMs": 718420, "dDurationMs": 2720, "segs": [ {, "utf8": "至于 Qwen 3.6 35B 详细的测试", } ], }, {, "tStartMs": 721140, "dDurationMs": 1440, "segs": [ {, "utf8": "那就放到之后吧", } ], }, {, "tStartMs": 722580, "dDurationMs": 2000, "segs": [ {, "utf8": "毕竟今天开这个开箱", } ], }, {, "tStartMs": 724580, "dDurationMs": 1600, "segs": [ {, "utf8": "还有设定与测试", } ], }, {, "tStartMs": 726180, "dDurationMs": 1720, "segs": [ {, "utf8": "其实就花了不少时间", } ], }, {, "tStartMs": 727900, "dDurationMs": 1720, "segs": [ {, "utf8": "之后有想要看我测什么的", } ], }, {, "tStartMs": 729620, "dDurationMs": 1640, "segs": [ {, "utf8": "也欢迎在影片下方留言", } ], }, {, "tStartMs": 731260, "dDurationMs": 1400, "segs": [ {, "utf8": "毕竟现在机器都有了", } ], }, {, "tStartMs": 732660, "dDurationMs": 2720, "segs": [ {, "utf8": "肯定要好好的拿来测试玩玩看", } ], }, {, "tStartMs": 735380, "dDurationMs": 1720, "segs": [ {, "utf8": "好啦那么各位观众", } ], }, {, "tStartMs": 737100, "dDurationMs": 1183, "segs": [ {, "utf8": "我们就", } ], } ], }
