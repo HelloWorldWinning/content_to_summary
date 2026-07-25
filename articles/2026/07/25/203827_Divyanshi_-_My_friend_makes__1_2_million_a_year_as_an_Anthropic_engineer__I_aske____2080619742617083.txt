@@ -1,0 +1,145 @@
+Timestamp: 2026-07-25T20:38:27.465959
+Title: Divyanshi - My friend makes $1.2 million a year as an Anthropic engineer. I aske... 2080619742617083971
+URL: https://x.com/Divyyanshishrma/status/2080619742617083971?s=20
+Status: success
+Duration: 14:58
+
+Description:
+以下是对所提供文本的深度剖析、同行评审以及概念结构图。
+
+---
+
+### PART 1. Author's Map (作者地图 - 中立架构解读)
+
+1. **核心论点 (Core Thesis)**
+   在多人协同开发与长期迭代的场景下，大型语言模型（LLM）的系统提示词（System Prompt）会因无序追加、语种混杂及格式失控而面临严重的“提示词退化”（Prompt Rot）；必须通过建立规范的提示词重构、剪枝与协同维护机制，才能确保模型的指令遵循能力与系统稳定性。
+
+2. **证据基础 (Evidentiary Base)**
+   * **极端退化文本样本 (病态案例/Anecdote)**：文本本身展示了一个由多语言乱码（威尔士语、英语、中文、俄文等）、格式破损、高冗余断句交织在一起的病态提示词形态，用作“未经治理的提示词”的具象化反面教材。
+   * **团队协同痛点描述 (专家证言/Expert Testimony)**：文中指出“a prompt that multiple people have been collaborating on, contributing to”，以此作为多人协作导致提示词失控的现实场景支撑。
+
+3. **逻辑授权 (Logical Warrant)**
+   * **归纳推理与技术债务类比**：提示词本质上是运行在 LLM 上的自然语言代码。如果缺乏统一的重构规范，多人协同追加的指令会导致“逻辑膨胀与语言噪音”。正如软件开发中不重构代码会导致系统崩溃一样，不重构提示词必将导致 LLM 执行失效。
+
+4. **陈述范围 (Stated Scope)**
+   * 适用于大型语言模型（LLM）的复杂系统级提示词（System Prompt）开发、多人跨团队协同 Prompt 工程以及长期维护的 AI 应用场景。
+   * 引用限定表达：“...the prompt that you're working with a longer and more complex than the one we'll see today, but it's representative of some common problems that you might encounter when maintaining a prompt.”
+
+5. **隐式对手 (Implicit Opponent)**
+   * **随意追加式 Prompt 工程**：即认为“提示词越长越好、只要遇到边界情况就直接在末尾贴一段新指令”的盲目开发模式，以及否认提示词存在“技术债务”的工程偏见。
+
+6. **预期收获 (Intended Takeaway)**
+   * 促使 Prompt 工程师与 AI 产品研发团队放弃“野蛮生长”的提示词编写习惯，转而建立包含版本控制、结构剪枝、语义去冗与定期重构的提示词治理（Prompt Governance）规范。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW (冷酷而严谨的同行评审)
+
+1. **强力重构 (Steelman)**
+   提示词是软件工程在 LLM 时代的“自然语言代码”。随着产品功能迭代与多人协作，提示词必然会累积冗余、冲突和语义噪音。作者通过展示一个极度退化的混乱文本，深刻警示了缺乏提示词治理机制的严重后果。建立严谨的提示词重构标准，是保障复杂 AI 应用可维护性与确定性的必然选择。
+
+2. **最薄弱环节 (Weakest Link)**
+   * **承重论断**：文中提到 *“...representative of some common problems that you might encounter when maintaining a prompt.”*（代表了维护提示词时可能遇到的常见问题）。
+   * **失效机制**：这一论断混淆了**“语言/传输编码错误（ASR/OCR 乱码）”**与**“逻辑语义冲突（真正的提示词退化）”**。文本中充斥的大量多国乱码字符属于低级技术故障或极端异常，而非“多人协作”产生的典型逻辑冗余。若将这种极端失真归咎于“协同维护不当”，其整个病理分析的基石便会瓦解。
+
+3. **证据审计 (Evidence Audit)**
+   * **样本偏差**：作者所呈现的“混乱提示词”样本高度人工化或遭到了严重的管道污染（如翻译模型崩塌与 ASR 识别失败的混合产物），缺乏真实生产环境中由于需求叠加产生的“真实逻辑冲突 Prompt”样本。
+   * **缺失量化对比**：未提供任何控制变量数据（例如：该混乱 Prompt 与重构后 Prompt 在 GPT-4/Claude 上的 Token 消耗对比、响应延迟变化率、指令遵循率测试报告）。
+
+4. **隐藏前提 (Hidden Premises)**
+   * **前提 1**：假设 LLM 对提示词中的文字噪音极其敏感，噪音必然导致系统瘫痪。
+     * *质疑*：现代长上下文模型（如 Claude 3.5 Sonnet 或 GPT-4o）具备极强的语义纠错与抗噪能力，真的会因为少量的非关键噪音而彻底失效吗？
+   * **前提 2**：假设提示词的重构必须依赖人工团队的规范化维护。
+     * *质疑*：既然 Prompt 是自然语言，为什么不直接使用自动化提示词优化框架（如 DSPy 或 AutoPrompt）来自动清理和重构？
+
+5. **盲区分析 (The Blind Side)**
+   * **过度简化风险**：在试图清理和“重构”提示词的过程中，开发者极易误删那些为了应对极其边缘的安全漏洞或特殊格式要求而设立的“防御性提示词（Defensive Prompts）”。
+   * **忽略 LLM 演进趋势**：随着模型推理能力（Reasoning Ability）的提升，模型对结构不良提示词的理解力大幅增强，过度精细的人工 Prompt 治理可能很快面临边际效益递减。
+
+6. **一击致命 (One Hit Kill)**
+   如果使用 DSPy 等编译型 Prompt 框架，提示词可以直接根据评估集自动生成和优化，那么人工花费大量精力建立的“多人协同提示词重构规范”是否从根本上沦为了无意义的过度工程（Over-engineering）？
+
+7. **裁决标准 (What Would Settle It)**
+   选取 30 个处于生产环境的复杂业务提示词，将其分为三组进行对比测试：
+   * A 组：保留多人协作追加的原始长提示词（未经重构）；
+   * B 组：由专家团队人工重构剪枝后的提示词；
+   * C 组：通过自动化框架（如 DSPy）根据 Ground Truth 编译生成的提示词。
+   在相同基准测试集（Benchmark）上测量其**准确率、边界条件通过率、Token 成本与耗时**。若 B 组与 C 组相比无显著优势，甚至在准确率上低于 A 组（因误删防御指令），则该论文的重构主张被推翻。
+
+---
+
+### PART 3. Mermaid Conceptual Map (概念结构图)
+
+<Mermaid_Diagram>
+graph TD
+    %% Node Styles
+    classDef mainClaim fill:#FFF176,stroke:#F57F17,stroke-width:3px,color:#212121;
+    classDef coreStage fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#0D47A1;
+    classDef detailNode fill:#E3F2FD,stroke:#42A5F5,stroke-width:1.5px,color:#1565C0;
+    classDef problemNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#B71C1C;
+    classDef reviewNode fill:#FFE082,stroke:#FF8F00,stroke-width:2px,color:#E65100;
+    classDef reviewDetail fill:#FFF8E1,stroke:#FFA000,stroke-width:1.5px,color:#BF360C;
+
+    %% Core Claim
+    A["<b>💡 核心主张: 复杂提示词治理与重构</b><br/>多人协同开发会导致 Prompt 产生严重技术债务，必须建立重构规范"]:::mainClaim
+
+    %% Part 1: Author's Architecture
+    subgraph SG1["🟢 PART 1: 作者逻辑架构 (Author's Map)"]
+        direction TB
+        B1["<b>1. 痛点归纳 (Problem)</b><br/>长提示词退化与污染"]:::coreStage
+        B1_1["多源协作追加指令"]:::detailNode
+        B1_2["逻辑冲突与语义冗余"]:::detailNode
+        B1_3["文本破损与格式失控"]:::detailNode
+
+        B2["<b>2. 解决路径 (Solution)</b><br/>系统性 Prompt 重构工程"]:::coreStage
+        B2_1["定期剪枝与去冗余"]:::detailNode
+        B2_2["标准化版本管理与协同规范"]:::detailNode
+        B2_3["模块化结构重组"]:::detailNode
+
+        B3["<b>3. 预期目标 (Outcome)</b>"]:::coreStage
+        B3_1["提升 LLM 指令遵循能力"]:::detailNode
+        B3_2["降低 Token 成本与响应时延"]:::detailNode
+
+        B1 --> B1_1 & B1_2 & B1_3
+        B1 --> B2
+        B2 --> B2_1 & B2_2 & B2_3
+        B2 --> B3
+        B3 --> B3_1 & B3_2
+    end
+
+    A --> B1
+
+    %% Part 2: Peer Review
+    subgraph SG2["⚔️ PART 2: 同行评审与批判 (Hostile-But-Fair Review)"]
+        direction TB
+        C1["<b>最薄弱环节 (Weakest Link)</b><br/>混淆乱码故障与逻辑退化"]:::reviewNode
+        C1_D["文本充斥 ASR/编码错误，非典型协作退化案例"]:::reviewDetail
+
+        C2["<b>证据审计 (Evidence Audit)</b><br/>缺乏量化测试支撑"]:::reviewNode
+        C2_D["未提供真实生产 Prompt 样本及准确率/Cost 对比数据"]:::reviewDetail
+
+        C3["<b>隐藏前提与盲区 (Blind Side)</b><br/>忽视模型抗噪与自动优化"]:::reviewNode
+        C3_D1["现代 LLM 具备强抗噪与语义补全能力"]:::reviewDetail
+        C3_D2["过度人工剪枝可能误删边界防御指令"]:::reviewDetail
+
+        C4["<b>一击致命 (One Hit Kill)</b><br/>DSPy 等自动优化框架的冲击"]:::reviewNode
+        C4_D["若 Automated Prompt Engineering 可自动演化，人工治理将失能"]:::reviewDetail
+
+        C1 --> C1_D
+        C2 --> C2_D
+        C3 --> C3_D1 & C3_D2
+        C4 --> C4_D
+    end
+
+    B1 -. "存在概念混淆" .-> C1
+    B2 -. "缺乏实验验证" .-> C2
+    B2 -. "忽视自动化替代" .-> C3
+    B3 -. "面临范式挑战" .-> C4
+
+    %% Subgraph Styling
+    style SG1 fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG2 fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#E65100
+</Mermaid_Diagram>
+
+Content:
+Eidag iun yn ymg fel gweithio yn ffyd ei ddweud ar y ddweud ac fel yna mel hynny ar y fffyd yn ei ffyd ei ddweud. Dyna gigiad lwyth i oedor unrhyw i pywyddiol rhan yn lluni'r ffyddol, egafodol fel gallu unrhyw i my golech i folkór am yna, fel ei hwbhau'r ffyddol ar yma yn ei zyfyd gallu ceirau i domi. Mae'r amser cy GRAD diwr o fel Blwyd Warthau yma ar ondau yma'r amer amser amser byddol yn gallu ddarwyl gallu gwysfyd oedor unrhyw i domi. Yn ymill yn y fawr yais ychw fan cyfynor yw'n yw'n ymyth ar y cyfynor drwyr i yw'r cy biliwyr, ac mae'n yw'r cyfynor drwyr un swgwwfwaithi'u dysgu ac ynpeithol o'r cymdeulu o'r cyfynor drwyr ein gweithio. Efallai cyfriflyddau i'n sylw i fynd yw'r cyfynor drwyr ein gyfer â'r cyflwy yn rhywb ar amdudeau a'r cyflwy i'n rhywb fawr mae'n gadwfyr i'n gyfer音ol bryr yn98 yn ffyrdd, yn ffyrdd i'r sgwbysio ac yn ffyrdd bafrwythosti'r iawnan gwyllfa'r llwy'n ymw'r llwythosti'r llwythosti'r llwy'n gwirionedd. I'r llwyf yw'n gwirionedd yn ac arallígu os yna, wrth Ddo yn unig llwyllfa. Yna enw'r llwyf yna ôl nad yna a'r llwyd yn gweithio. Mae'r iedниedd cywedd yn bi'r iedn sydd iedd yn unwyr i wylawn i'n gi tooen i'n doeddystod nurse, ac ond i'n siar adhau yure i'n siar adhau yure i'n siar adhau yure i'n siar adhau yure mandatory yna oeddwn i'r eu ac i'n siar adhau yna oeddwn i'n siar adhau yna oeddwn i'n siar adhau yna oeddwn i'r eu cymryg. Massai cofn oeddwn i'r rwy myself yngu gofyn, ydy uwysil yn y cofn yma. Is これ directly the prompt accessible is—the prompt that you're working with a longer and more complex than the one we'll see today, but it's representative of some common problems that you might encounter when maintaining a prompt. So imagine that we have a prompt that multiple people have been collaborating on, contributing to. Clareón-o'r a thw mwy sy'n gwas, ac yn diolch, wnaeth y gallach bod tenantol, iconicol, cynnwau a i'r ddyn ar glydigau, a'n gwasanodol, i'r eithai yn tylfaol callus fel cyflwyddau, mae'n wynodol ei bwysiliau gwaithio bod a arall o gwaithio. Mae'n gwaithio bod yn gwasaethau bod yn gwaithio, ac mae'r ein sydd yna yn gwaithio cwestiaeth ar ôl hyn y cwestiaeth ar ôl hyn. yng Nghymru'r byddwn wedi gweithio i ddim? Ond yn dod o'r deir eisiau sylfaen hynny ymgymnau cyfleidio, mae'n drod sylfaen hynny, mae'n rhaethu tead Mae yn ei mynd i'r ymwyma'n bwysigird? Mae'n jawnaethau yw'r i fathir am yna doedd y byddi bwysigird. Ar gyda'r i Llywodraeth bobl meud yn ei modellu a'r ihymaeth o'r i'r gethoet yr ymgymnau fel gychyn yn y flylion yn cyfroeth y cyfroethan am gyda fel pryd o amg i'n mynddau, lle hyn, mae yna'n confellor sy'n responds ac fel rytu o'r cyfryft gynllun fy y nhw. Mae yna o'r cyfroethan am gyda'r cydbau einogol ar yma o lefnoddi sylweddol y f僚at ar gyda fel rydda cyfroethan am gyda dio'r cyfroethan am yma o lefnoddi sy'n rydda yma o lefnoddi sylweddol yma o lefnoddi yn yu come fydd ar gondol a ddyfoded yn ffordd ac sut wedi ei cof yn mhtaethениaeth a sefyllfa yn fforddai. I wedi ddynol cwp yn 3rd confiogi, ac rai yn y cyfodd oedig ei dynol ddownr! A yw i'ch doeddur yn ffordd o blaenig i failis a ffordd mynd, yw i'r cyfodd i'ch doedd gargiaethol maen nhw, yn ffordd ffordd yw ar gydynol. Mae adnwch i ddoedd y ffordd ffordd y ffordd i'm a oeddion a ffordd y ddodol ac mae rhaid cyfodd o deur o sem diad? Tebladach yn cael ei gydig ac fod yn caelossi gyda fe i fyna iadau. Mae'r gydig dy�wyr ac ei gweld yn y gladig, efyllwyr cyfle i fyntaf, rhwyr cyfle iadau dan gyda gyda'r gwaith, ac yn gydig ymwyddig meddwl. Mae'r gydig ffadau am gyda gwildu gydig, o'r glyde gan gydig ymwyddig fe ar yna wedi bod yn cael ei gweld. Mae'n gydig yw'r glydag glath o eidag. mae'n oedig gwneud ei wneud. Mae gyda teg yn ameguol achotig ar ym wneud, mae'n ameguol achotig ar ymlo edni. Y mae'n ameguol bwyllai, deal â'r iawn i'u cymrys am Lynneau a Lyfnwng bren ameguol cael ei ddiolch, y dang, mae'r ameguol i ddiolch. Mae maen nhw yn ei unrhywnau ddiolch yn ameguol yng Nghyionedd. Mae'n ameguol y byddoeddol ei ddyn nhw'n ameguol. Mae hyn am yw'n ymgyrch ymrydd ymfu Midwyr Ysgwy seasons bounced enw i'n fath yn cynny finger, o'r iedd fel sydd ei pwynt clasau ac yn yr ond defnyddu sydd ei hyn am yw'r ymgyrchyn sy'n deuxiaff o'r ai gyfer yw bench? Mae'r llenysbawreud yn yneud o rydyn ni'n niw'r ymgyskil ei gallau yw'n yna i'n gallu yw'r gyfer yw'n yr yw lle i dyn ni'n niw'r yw'r ymwchyn sef Ysgwy. o fydd y fydd ymr只raeth cympanio, i ffydd yn ymrhyddig, ond rhan y chi ty i'r drwy'r cylko, ac rhydalen yn rhywbeth sydd ar eidion yn nifrossol, dweud yn ei liwch rai cyfibrebrillio, cyfibrebrillio o triwbethau oedulau o fydd yn y cyfibrebrillio. Cymru rhan y ceisoarir y cyfibrebrillio fyntru, ac yn yw'r cyfibrebrillio o ar gyf包 rhan yma, o fydd yn fyddau yn gyfibrebrillio a i'r cyfibrebrillio a rhan yma. Ar hyn ddatgegd a fyrdor llan hir. Yn nid eitag ydw i gwyllau, gwneud fel deud gennych. Mae'r gwyllau a fyrdor llan wneud, what will my, wna'n gwyllau'n gwyllau ydy gwneud? Yng Nghech yw hynny. Mae dydganen adredåd yn gwyllau phliwedda, ac mae na fydd yn dwi llweith o fydd yn dgynedd yna, ac yng ngwyllanc fel hynny i gwyllau i gwyllau, ac y caelch i mynd? chi dod yn fel gwyliad efallai, yn ffordd yn pweithile ddwyzg yma i gwrsg. Mae'r gwrsg i glair i ffordd. Mae'r gwrsg yn sut, mae'r g동nu sydd wedi ffordd eu gwoithrwrsg yma byddai, a ffordd o'r gong ni'n pwyllfa i nankas yna o yna perlu. Mae'r gwiraidd nhw oedan yn djodd eu. Mae'r gwiaidd nhw'n ymodaethau yn ymro a ffordd yma. os diolch i darwch beth o gyda sgolan i fod yn cymryg y conti wyraethau yn oed. Mae'r rirmau dostatol ffethch y gyda hwnnod y pwt yn pragdyn y ceynau. Run pwyd y cylod o rhan o fionrwyngol o ffruck a'r pr gwybod ac yn gweith i'n pracht. Bethch yn prachtol y gwybod o ysgol a gwybod. Mae'r trwybwaio gwybod o ffethch yw sgol hydu yn mynd i fod yn ei fod yn rhan o fionrwyngol yng Nghymru yn lau bennu fydd gyfer yn edrydol a gysylltol ar gyfer cofnwyd, mae hynnydd yma yma yn y hollunog yma i gallu ac wneud oedd ei done. Gleibol yn arall own i wneud oedd yn fris? Mae i'r pethau na ni'r pethau gath y mae gyfer cofnwyd drwy wedi'r pethau ac sydd wedi'r pethau o gfrontau foal yma i'r pethau foal yma gimeud, mae rwyweith yn yn oedd yn pethau foal oedd yn pethau foal oedd yn ceirau. rij岩 yn ffordd o ffordd o p sûr. Olrgywch, "' não roinglively neg ni'n mewn ni a'u Caniscoi'r ce? Detail ef canisco clinical roe drygyma Madeid. Sut mewn i'r gyd gyhadol somuriau a'u Macará, greatio trwy papornt o d Platformt, o'r dynau mwynod eistedd i mynd, a ond gwy oedig sydd reissai'i cywbryd o hidden虚i mor. Mae'n ymran amser ar gyda mewn gwirwyn ac rwyfalid, a teithio gyda mewn gyn nhw sydd ar y g Model mewn gwirwyn ac ar gyda mewn gwirwyn a'r cymrydd Ieiliau ar gyda mewn gwirmynt i'n mynd i'n mynd i'n mynd i'n mynd i'n gwirwyn a'r ar gyda mewn gwirwyn. Dyna fi adwchysu i'n rydyn i'n p 않i hynny am ywn gwirwyn Yum mae'r gweithniag i gypsor cylpoedd fynd cyfyti meddwl'n y ffordd mae hynny, iawани'r gwneud yn y rebynidol, cael y prod eilegolioedd a wasbwysbwyd, yn gweithniag i gymsor ac rwy'n mae'r ambygwyd Dioswyr, a gweithniu yn yn pryd i pwyllwyd, gweithniu o eilegolioedd. Sbwy, mae'r gyfrant hynny i fynd cyfyti am byddwn yn pleur. Mae'r gyfrant hynny, o gyfrant hynny ar y ffordd y pwyllwyd o osbwyd o pwyllwyd? Mae gweithio dduno ar fath o'n gwashoe, ac mae'n gweithio fel ddygoes rhywbeth sydd yn pwawnn. Fysylltu sydd yn gweithio fel genweddol gyfyniador hyn, sy'n enorme gylo yn gweithio oedd yn sfer y rhwyntor yrfa yn gwashoe, a yn gwaithio fel gwaithio ddysgoes y rhwyntor yrfa yn gweithio feid angfon ei dyddoeddwn. Mae'n gweithio hynny llwyg ddyn yn gweithio fel gweithio ffordd o gydaioedd yn gweithio. o gyda'r pridd sydd am fladd y ffynwauc y cyflwydd i dybyra dynawr i hy byddeg. Mae'n siŵr yn ai rhan o ffyniradau wedi'n ffordd â'r yr unrhyw gwybod ac yngwyd am yw ffyniradau wedi'r olyfd yng ngadungi, a wneud bo yn ffordd i dod o yng Ngadungi Dyna. Mae'n yn iawn gwaweith am oeddadau wedi gwybod ffyniradau wedi ein ph duż'r gallu gallu unrhyw gwarfau mewn cyntau unrhyw gwaith am yna gan dyna'n siŵr i'n iawn gweith a ffyniradau mo'n Whyr, ac ymdeg yn Llychegio'r fyrdd i'n gysylltu. Mae'r fforddu yn fforddu eich dyltawn, oedd yn fforddu ar dyna. Mae'r fforddu edrych chi'n datblygu'r fforddu'r fforddu fel ni fel ei gwneud, ac yng Nghor yn fforddu i'r fforddu hefyd. Mae'r fforddu fel ni'n fforddu fel ni'n dgywch chi'n ddylw i'r fforddu reig… y cyntaf o'n cyntaf o febh newi ac ynny ar y lleolau ac doeddiadillig. A'r cyntaf o febhau rydm yn ddiadillig pwyd Diamaldun ond yn adon dim ni'n rhwyr. Nog sylfa wedi'r adorau pa newi ddu, wrth wedi'u norfodio'r ffynniadau o'r daweith o'r sef ar- ymwys 쉬 o'r modell ynened i yna o'r cyntaf o febhau o'r cyntaf o febhau ´s einig. fe i am ment hwnnateatau i yw yna datigol ei yr yli fel o blodis o gallu gyfneud tim o fagydraethau i ffeld i yw el wnaud. Felly, mae'n cymdeindau cyffinatau fel o sysfyrydlu yn y gwaith o yng Ngha kaçau wnau sefyd meg ar rwybiddaeth yn feriaid. Plyty, felly, yn rhywbethiau yn ffordd o swydlín gyda'r gwybod cyngyd o ffordd o ffordd o fe i sysfylltu fel erhoes, yn gydraethau yna i ffordd o ffordd o ffordd o ffordd o ffordd o ffordd o ffordd o ffordd, beth gyd y ffwst yn jent mwyn ei ffwst yn i ni'n amdeus wneud āg it impactu i ffwst yn rebu profi o fo likellfin. Mae geniad o rhywbbl sydd cyfryd i fwyma yn gyfrif. Felly, byddwn ychyddeus, ac yn ffwst yn gwneud o gyfu'r cymdiadu, amser y ffwst yn ei ffwst i ffwst. Daut ffwst y mynd i'r profiad am dwyma ddiadu'r cyfu'r cymdiadu, i i'r cymdiadu en ffwst yn na ffwst yn eu gwneudgt yn ei ffwst yma. Mae'n ungymregynwch ar yr cyfl wrth ϰill giddyn wir y cyminor am nnegau sdwnau gyda beth. lleid yn â fy coenua dda nhw'n llawer gyda piean yn seithezaf a cyfem a rechrau dat Yng Ngubi Sh Mimigau, deillwn yn hwn y gall esbynden cylfenân ei meddwl parfaizu stellu i gan curydyn ar a pwymaden mwo i pletau gweithod'ot gwndo gen i'n arall ai fod cael agulach sefyllwyr odau'r aîdol 하나aethol. Ayr yn un arfynad yna cewa i ddol, i roedd yn ddwymaedd yn fel egforthaiddai wedi пожell arall wedi ac rymnau feidraethówch, i ddwymaedd yshwnt yn rhywbeth yn amlydoedd yn rhywbethau fel gwbidd yma, ac rymnau, ag ond. Et, ac rymnau arall yn adraethwch, ac rymnau Iain ymwyr a laid yn rhaid yn am ar y sgwntau 😤. A tais sylwntau ar yr wedi ac arall eithydraethan no, ac rymmaedd eithydraethan moch deffynir Geir ykaillu gweithorau o vacunatau folliri am fawr, unionatau ploori chyodau bpaidotau, lle oherwydd o follebodaeth. Gdyna hwnau ei hiw ar fawr y lle i'n reis I1 aafed ac mae cirfancutau a ffernaethau gweithorau. Ys oeddwn gwaith ddellun fel swine hwag i sgydlog sefyddiw eisiau gwneud. Ys i taethau llenau gwneud gweithorau gwneud agroedd cyfrifotau petau amser. Ys i yma sydd wedi gweithorau gwneud yma gwaith ddethau eisiau icingau gweithorau gwneud. Felly Mae o bl vaccin ac mae fod yn gwneud atgol engherneud biftysloiούi anglaedos dod eisiau ek gran turni hyn yn dwi'r gyfergyj我在ulau fel gwneud pag acknowledgo premieraetholiol yn kil цен yn Feyfa fforddillu syddме yn dew خ Bureauiag y blagen rydyn am yw i ddoedd ywn lleen cwyr i dde lying sydd packed jagu. Felly mae gwneud o Dw precon, un cwyr gèyn Lobrach yw ein bodd𫖇ac mdïd Babydys seekledd gallu yr kahborthai gryf greu yma y neigh силair yn byddai yn refraithau Ysgwy rampwydd cur yn ffrang yn meddwl yn cyf RHR, mae ymydd yr unrhyw i'r Nyn i fffrang yn fy yna chi'n ffrangoddiad. Ysgwy'n ffrang yn yna'n email ar eithy, mae yr yna cynneud itis yn edryddol yna y Llywodraedd yn ym yn conti'r rwy'r temper yn mynd. oey yma am ddechwyr i dal i ddiddorol. Echeworthu allan, amdwch aye wedi dda, am ddod yma yna, amdwch ar yma yma a ffyr o leit. A wedi'r polisioid o gyfer o chyffred yma i ddod yma amdwch ar eithael. ni'n ni'n ni'n ni ni'n ni'n ni'n ni'n ni'n ni'n ni'n ni'n ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni ni
