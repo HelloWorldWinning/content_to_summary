@@ -1,0 +1,147 @@
+Timestamp: 2026-07-25T20:35:42.296802
+Title: Divyanshi - My friend makes $1.2 million a year as an Anthropic engineer. I aske... 2080619742617083971
+URL: https://x.com/Divyyanshishrma/status/2080619742617083971?s=20
+Status: success
+Duration: 14:58
+
+Description:
+以下是对所提供文本的结构化解读、冷酷且公平的同行审查以及 Mermaid 概念图谱。
+
+---
+
+### PART 1. Author's Map（作者图谱）
+
+1. **核心论点 (Core Thesis)**
+   构建可靠且符合业务规范的 LLM 客服系统，必须结合结构化的 Prompt 架构（角色定义、上下文注入、输出契约与停止序列）以及针对复杂边界场景（按比例计费计算、政策合规问答、人工转接）的自动化/半自动化评估集（Evals）测试。
+
+2. **论据基础 (Evidentiary Base)**
+   * **测试集与用例 (Hard Data/Test Cases)**：包含 5 个核心测试用例（Evals）用于评估 Prompt 表现。
+   * **边界场景示例 (Examples/Edge Cases)**：月中更换套餐时的按比例账单计算（Pro-ration bills）、基于公司政策的核心问题准确回答、触发人工客服转接机制（Human escalation）。
+   * **Prompt 结构规范 (Engineering Principles)**：顶部定义 Bot 角色、注入推理所需的上下文数据、定义输出契约（Output Contract）以及配置生成停止序列（Stop sequence）。
+
+3. **逻辑论证 (Logical Warrant)**
+   * **工程推理路径**：通过在 Prompt 顶层明确角色与业务逻辑，结合上下文与输出格式限制，能大幅提高模型回答的稳定性；同时通过在后台运行 Evals 测试集对边界用例进行持续检验，才能确保模型在真实生产环境中的准确性与合规性。
+
+4. **明确界限 (Stated Scope)**
+   * **适用范围**：聚焦于 LLM 驱动的客户服务（Customer Support）对话机器人系统。
+   * **限制性声明**：作者明确指出，对于简单对话场景，输出契约可能不会带来显而易见的性能飞跃，但在复杂 Schema 输出或特定生成终止点上是不可或缺的工程规范。
+
+5. **隐性对立面 (Implicit Opponent)**
+   * 反对无结构、无约束的“裸 Prompt”设计；反对不经过 Evals 边界用例检验就直接将大模型推向生产环境的做法；反对忽视数值计算与人工转接边界能力的盲目乐观态度。
+
+6. **预期行动 (Intended Takeaway)**
+   * 开发者应建立规范的 Prompt 工程流程（角色+数据+输出契约），并在后台常态化运行评估集（Evals），重点审查按比例计算、政策遵从度与人工转接三个关键边界指标。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（冷酷且公平的同行审查）
+
+1. **强化论点 (Steelman)**
+   该方案给出了一个极具实践价值的 LLM 客服系统落地方案：拒绝将大模型视为黑盒，而是通过结构化的 Prompt 设计约束模型行为，并引入工程化的 Evals 评估机制，重点攻克客服场景中最易翻车的“计算准确性”、“政策边界”与“转人工机制”，为大模型的商业化落地提供了可操纵的质量控制框架。
+
+2. **最薄弱环节 (Weakest Link)**
+   * **核心依赖假设**：“通过 Prompt 提示词引导与上下文数据，大模型可以可靠地完成复杂的数值计算（如月中按比例计费）。”
+   * **崩溃机制**：LLM 本质上是基于概率的 Token 预测器，缺乏确定性的数值推理能力。一旦面对跨跨年/闰年、复杂套餐折扣叠加或非标准计费周期时，纯 Prompt 指令极易产生幻觉计算错误。如果此处失效，整个客服系统的财务准确性基础将彻底崩溃。
+
+3. **证据审查 (Evidence Audit)**
+   * **样本量严重不足**：文中仅提及“5 个测试用例（all five test cases）”，这在真实的客户服务场景中连边缘用例的 1% 都无法覆盖。
+   * **缺乏量化指标**：未给出准确率、幻觉率、延迟或格式违规率的具体量化数据。
+   * **忽视输入噪声**：文本前段夹杂大量高噪/乱码文本（如 Welsh 语碎片与语音识别失真），而评估框架中完全未提及系统对高噪输入的鲁棒性与容错测试。
+
+4. **隐性前提 (Hidden Premises)**
+   * **前提 1**：大模型能够准确识别自身的“能力边界”，并在无法回答时精准触发“转接人工（Escalation）”，而不会产生强行自信的误导性回答。
+   * **前提 2**：提示词中的“输出契约（Output contract）”足以强行约束模型的格式，无需下游专业的结构化校验层（如 JSON Schema Parser / Pydantic）。
+
+5. **盲区分析 (The Blind Side)**
+   * **违背工程解耦原则**：将确定性的“数值计算”逻辑交由确定性极差的 LLM 执行，而非通过 Function Calling / API 调用外部计费引擎，这增加了不必要的系统风险。
+   * **上下文污染与延迟**：注入大量的政策数据与推理逻辑会导致 Prompt 长度激增，进而带来首 Token 延迟（TTFT）升高与推理成本翻倍的问题。
+
+6. **一击必杀 (One Hit Kill)**
+   在不引入外部确定性计算 API（如 Function Calling）的前提下，仅靠 Prompt 指令，你的系统能否保证在面对包含多折扣叠加、跨时区与非标准月份的按比例计费时达到 100% 的财务准确率？如果不能，直接给用户呈现错误的账单计算结果所引发的法律与财务合规风险，由谁承担？
+
+7. **判定标准 / 检验方法 (What Would Settle It)**
+   构建一个包含 1,000+ 个极值场景（月末最后一秒切换套餐、多优惠券叠加、跨币种与跨时区）的真实账单测试集，对比“纯 Prompt 计算”与“LLM 意图识别 + 外部计费 API”两种架构在结算准确率、延迟与运营成本上的差异。
+
+---
+
+### PART 3. Mermaid Conceptual Map（概念图谱）
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 LLM 客服系统 Prompt & Evals 工程架构"] --> B["核心目标: 构建高可靠性与合规的 AI 客服机器人"];
+
+    subgraph SG1["🔵 Prompt 结构化设计 (Prompt Architecture)"]
+        direction TB
+        S1_Role["1. 顶层角色定义 (Bot Role)"]
+        S1_Data["2. 上下文与推理数据 (Context & Data)"]
+        S1_Contract["3. 输出契约 (Output Contract)"]
+        S1_Stop["4. 停止生成序列 (Stop Sequences)"]
+        S1_Role --> S1_Data --> S1_Contract --> S1_Stop
+    end
+
+    subgraph SG2["🟢 边界用例与 Evals 评估 (Edge Cases & Evaluation)"]
+        direction TB
+        S2_EvalRun["后台运行 Evals 评估集 (5 个核心测试用例)"]
+        S2_Calc["按比例计费计算 (Pro-ration Bills)"]
+        S2_Policy["政策覆盖与合规问答 (Policy Compliance)"]
+        S2_Escalation["人工转接触发 (Human Escalation)"]
+        S2_EvalRun --> S2_Calc & S2_Policy & S2_Escalation
+    end
+
+    subgraph SG3["🟣 预期效果与工程输出 (Intended Outcome)"]
+        direction TB
+        S3_Format["输出格式一致性 (Format Consistency)"]
+        S3_Tone["对话语气拟人化 (Conversational Tone)"]
+        S3_Safety["安全边界与兜底控制 (Boundary Control)"]
+        S3_Format & S3_Tone & S3_Safety
+    end
+
+    subgraph SG4["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["最薄弱环节: 纯 Prompt 概率计算按比例账单"]
+        HR_WeakLink_Detail["LLM 缺少原生确定性计算能力，极易产生计算幻觉风险"]
+        
+        HR_Evidence["证据缺陷: 评估集规模过小 (仅 5 个用例)"]
+        HR_Evidence_Detail["无法覆盖生产环境真实复杂性，缺乏准确率量化数据"]
+        
+        HR_BlindSide["架构盲区: 未进行工程解耦 (应该使用 Function Calling)"]
+        HR_BlindSide_Detail["应将计算交给外部 API，LLM 仅负责意图识别与参数抽取"]
+
+        HR_WeakLink --> HR_WeakLink_Detail
+        HR_Evidence --> HR_Evidence_Detail
+        HR_BlindSide --> HR_BlindSide_Detail
+    end
+
+    B -- "通过规范引导" --> S1_Role;
+    B -- "通过测试验证" --> S2_EvalRun;
+    S1_Stop -- "产生" --> S3_Format;
+    S2_Escalation -- "保障" --> S3_Safety;
+
+    S2_Calc -. "致命风险指向" .-> HR_WeakLink;
+    S2_EvalRun -. "漏洞审查" .-> HR_Evidence;
+    S1_Data -. "架构质疑" .-> HR_BlindSide;
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef stageNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef evalNode fill:#C8E6C9,stroke:#4CAF50,stroke-width:2px,color:#1B5E20
+    classDef outcomeNode fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef reviewDetail fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1px,color:#C62828
+
+    class A,B mainClaim
+    class S1_Role,S1_Data,S1_Contract,S1_Stop stageNode
+    class S2_EvalRun,S2_Calc,S2_Policy,S2_Escalation evalNode
+    class S3_Format,S3_Tone,S3_Safety outcomeNode
+    class HR_WeakLink,HR_Evidence,HR_BlindSide reviewNode
+    class HR_WeakLink_Detail,HR_Evidence_Detail,HR_BlindSide_Detail reviewDetail
+
+    %% --- Subgraph Background Styles ---
+    style SG1 fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#1A237E
+    style SG2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    style SG3 fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C
+    style SG4 fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+Mae cymaint o hynny mynd i gael eu fydm o ddigitanc cyrredu ac. Mae gorau oeddau eu cylwyr i menthu sydd am unig yna. Mae cael eu fydd i sichau, mewn englygu ran, cywyt! Mae cylwyr i'n cylwyr i'n cylwyr i'n rhoi o'r cylau. Mae cael cael prŷtig yn sn konuşwyr i gynnal Isaacson Gover a'i yma yr i'n unig. I'r eu yma yma i arad yma yn cylwyr, darwyn yn cylwyr i'n cylwyr i'n unig. Mneud atrwythaf, sy'n cylwyr i'n unig. y ons, prof econom THOM o telica rydym o debatoc? Mae'r gam拍 wrth gael yn amgy sprintorai? Si sydd wedi ran ei amג pan, chagol��dol uwogi Ungerloza M sailbitan ddysggeithwan jegol הי guendes envu fashion Learn's inigo sy'n amshフyd i ti'r gu boardsiild, ac codוטiosisol yn gweld gwneud wrth gydroedd. a gwaith'r twin sylfa mewn eisiau'r prynaball, fel gymryddiad yn gwneud a gyda'r syslfa, yw syslfa ennig o'r ein new model a sefyddech yn cyfle i'r yr architech chi, i yw'r heapa, mae'n cwest term arweithiad, yw'r goollbod sy'n tylfaethau yw'r gwaith â mwyn yn cyfyddech chi, yna yn cyfydden y sylfaethau yw'r prynaball, yw yma yma. Felly, ennwthw i'n eiol, perth? oesydd i fod yn ddymaiad. Dwi'n nefysiadol amser ac ei gwaith unig o byddu mewn ei amser rydym ni y brocydd i'n mor amser. Ond ar y cyflwyth内ol yn ymwybod yn ni. Yn sy'n gymryd ac oes yn daad yma yn ymwybod yn amser i oes yn rhan i'r creu diwyth hynny. ac o gael target? Teurwch bomen ar ffordd o parodd fel pridpiru a ffordd o brag beth amd. F course, yn ei meddwl i o ddod eu ni yw hynna wedi cy penni amdwban manyun ar ymdodioorol mae'n mynd rydym wedyn a ffordd o cymhydd i'n cymhydd i'n llawer ac mae'n mewn job ngholr i'n cymhydd yn mewn i'n i'n ofrân, o mny'n gwybod yn cymhydd chi o ffordd o cformluchol i mweithau au wneud Cyfniodu ar gyfyd un ar ffordd o hynn o drafedd yma. Jeffnau'r bi'nngor. Mae'r ffoman canbefantrys i'r rydyn ni'n gwaith ar yna amd胞u i defnyddio yn union. Mae'r ffoman sy nid oid yn eu ffoman a'r ffoman amd Europaethau amd oed yn rhawedd, yma a ffoman jaaethau mwyafl yn hynny oedau amdebod, a ffoman a'r y ffoman a ffoman a ffoman a ffoman a ffoman a ffoman a ffoman a yma. bath tego gweithu ac idolмотрите는 a pouna cyn nhw lein— o cebu fel hyn gael onog? Mae ginterafodd ar ddeindroedd eu toydd lle am yn oddo leinos ei rhайffu y lluodol, fel yna fel beth dyd gofynó ac amdDJ. Mae dads amodn gael noaz rhайffu neu nhau fel hyn gael i'n idol dd Condoru onge o'u ar Adag 실�aw of yn y fir y sylorth yr barwith yn cyweddwl'n fawrdiad yn yr widew Murr y Cymru yn y ffordd â Barthol Iwyd, ac ondym y hynnyffiliad, o ffordd â ffordd syllfa fel dynaedd eu wneud inspired. Mae ffordd â ffordd sydd eu ridd, ffordd y cymru yn ddau sylfa Ysgwch i hynnyfodd oedd y yna ffordd sylfa fel ymfiliad oedd yma ffordd sylfa Ysgwch i Vym��wyd. Mae cael ei gw contour efo yna ffordd cyfrifiiliau wneud eu cuwch i hwnnwyr amser y cymru oír i'r cyfle sydd yma. Hymnag y ni'n y mhwylu sy'n naamr ywa'r gandol, ynropsbadwch ddiad y llwydru, oeddach yn y cwestiad ac yn rhom, yn y cwestiad, ac yn ceithi angwbfeld o'r gandol alawfeld oedd yn adnau ac, sgodol oeddill, yw'r cwestiad a'r rwyfeld yn darlyg yn caram. Ideal b yng,) yw'r cyfodol oeddill yn ffordd sylwyd ar ôl. Hefyd, yn ymddoethu dyslwm yn bodd yn ceithi, chi a ffordd yn oesbodol oeddwnn wedi nesbwylu'r fi sy'n conti sydd ei gwneud i'r fforddgau hynny. Felly, yn y pairn ddedon, mae aynu fel ei dillau carellaw o foyn yn fforddín sy'n ffordd ayolodidu o mynd ein ni'n bryddu hon ym wedi arall, o rei coel ni o fforddus eithaeth o gwneud i ffordd. Mae adhwodd i'r ffordd yn eu'r yng Nghymru yn mor ran eithau eithau esteblygu ac yn y swydd cwystal sylfa â sotol bwysio gydru yn y castingi modu fynd amostach. Felly g Vivnau'r ôl i fynd amostach yn cyfle mewn y cyflwyl hynny hynru y dynadod mewn cymbrňgadol mewn anghod i bwysio'r cyflwyl hynny bod y cyflwyl hynny ar y cyfle lefnwyl. Y've mae y stackreth cymbrňy fydd am cyntag nhw, eu yn ffyd arall yn y ffyd yn cyflwyl hynny yw bod y dynadod mewn amostach yn cyflwyl hynny. Yw unnwfyd. We are also looking at edge cases such as its ability to do calculations such as calculating pro-ration bills if I switch my bill halfway through the month or if I switch my plan halfway through the month, what will my bill look like? We want to check that it's accurately addressing key questions which are covered by our policy. We need to make sure that it's escalating to a human mor sgwyd vi'r cent yn lyswydu llwyd. Ymdithio hwnnwyr, oAndry'r aml, ac yn unrhyww i chi'r amser o'r modol o honol ar gyferol o adelwen. Mae'r cyfle i'w illad, dyna fydd yn rhaid fel iawn ei dynau lle, yn wneud hyfnodd fel iawn i newid. Mae'r cyfle i'u unrhyw i'w i'r cyfle siarad y myllaf meddwl gydw i'r cynnwyr i'r cyw itul. fel i mewn amser gyfer yng nghyllwyd hynny fydd yn ymeid o fel yng Nghyliddo oedd wedi'n llwrs i'r niddiadau y gallu rwy amser rwy�ol. Mae'r yng Nghymru yn ffordd o'r un arod i ffordd u ffordd y bod yn ni'n diwydd neu ffordd bwyd i ffordd ar y floriau fy yng Nghymru yn gwerthu. Fydd gwerth, ac yng Nghymru yn mwyfod yna rheunau fewn o felio moig sydd wneud i fullPHD Dynailliad o dros, y Sylwyn a maidd ylu tyla الإch disgrassenoedd gensyghandraff i yw dros o ddylwood blnychigareddiIL y sylín sipain ar ei ddim cent stiport b Lyfod i lotu amdioddol creduDI nadaeth gynnir gyda ednau'r cyfle gypro anael yn dod os y cyfrifioedd pysnicwch seg dydodd dyd طurwolio on all five test cases and inspect the results in a little bit more detail. So, before we have a look at the prompt, I'm just going to run the evils in the background. This is a pretty good fast pass at a prompt. When we look at this, we've defined the bots role at the top. When we scroll down, we've given it some data, we've given it some information on how to reason over o diodd yn llyfrag i-menっung yn llon, a grafnegio arall yn llynau rwy yma. Mae'r gwyllf dodych esu hynny'r aadau. Mae'r gweithio'r ag��mig a fwy. Mae mae hwnnw i'n gweithio i'r gweithio, mae'r gweithio arall yn cael ei gweithio. Mae'r gweithio arall yn gallu'r gweitho'r gweithio bryd! Mae'r gwaithio'r gweithio yma. Mae'r gwisio yna, mae yng Nghymnaurichtor ollawnmau arall yn gweithio ac bethau i ddwn i ddewtra pwy i ddiw i ddewt rwyma dwi'n ddewtra pwy. Mae'r wnes nhw, wrth byddei wedi ddewt reis nhw i ddewt deillw i ddewt rwyma i ddewt eisiau fel gyda, Gymraeg elig o fel bu eisiau yn ei'm i dweud fwyth gydwig. Mae'n oes maen, mae'n unrhyw i ddiwt yw i ddewt rwyma hefn dwy nes i ddewtania. Mae'n ddewt rwyma i wneud o gwyll i ddewt gyd yn i ddewt gydlef yn oes maen nhw. With a wnaethau wrth gwaith y trwy ni'n Islandraedd, ac gwaithau mi'n gwaithwch yma gwaith, mae nid-awn yn ddefaidd cancerio'n maen nhw'n wyfynu gwy'n myfyni fod'D i'r gwaithau unrhyw yngwach pan y gyda yw'r gwaith yr yrau am yn ymw i oafdyn ni'n gwaith yr yr iawn Iewa'n gwaith yr o'r gwaith yr physio'r angen a i'r gwaith yr bwysio'r y gwaith yr yr caith yr a'r gwaith yr a'r dynch yn dyl ei yw cyffatio Cychau'r gwaith yr angen a gwaith yr o cymgegial a ffmwwf cygoflydd cefysdu o fy hwnu cadwe mwら. Mae'u ffmwffwff yr adni yn eu fel yn adni o ffmwfff yr adni o ffmwff yndag y ni'n bw pleasantwf ar un rwyth o ffmwff y ni'n adni metwfff yr hapw. iaith i dar wrthteddau, maenaw edem beid o wydolau, chygo eich strategio lewyd ei dyma ar gydyma wedi unu a myndpain iaith fel skol fodon让 meffin o finnysau gan gyda ddi Awardsham o llifet我og dyma i peŵr ar gael nillithol maenadyffuriaid sallshw o mo i beth i dwebd Dyma offi am na ffa eiffneithol i cof esteu os i maenawydd i mlam o fujdenio rofki o mi yna. Mae honnymiadau dazgoladau lewyd sy'n gofyn meddeithol iellu eutau i Rhogiad cwyftain yna cwaio awynaf, yn den cavity grewó o eidor. So, before looking at some of those cases in more detail, there's a little bit more general cleanup we can do specifically here looking at creating an output contract. This is a key best practice to follow if you're struggling with your output format consistency. Now, in this case, we have a customer support, but we want it to reply in a conversational tone. So, it's unlikely to be a big issue in this case, but it's something to bear in Felly, yw'r cyflut yn ei fod yn luwn ar ymwch yn cynud yn ystwwci gwaith ar yna syddfa, ar yna rhywbeth ar ymfwch i ffordd, ac ond yr amdyn hynny, mae'r cyflut wrth y cyflut a'r defytens yn defytwy yn ei погledig rwy'r cyflut. O fellym yn gyfer wedi gwael efo'r ard yn arall yn yr cael eu reiad o bwethaeth o lefnwch. O fellym yn mor yna doeg yna osfyn yn yna siotau olwch i ffordd. eu'n amewg oaldau'r yna llawer i'r cyfordd fod. Ys ânchement y Twineau yw'n gydwch arall treag hynny dyna fel mae'n gydatog sydd drwy, ond yna wneud sydd ar enthw boundu gydbarodol, yn y gael ei bain yna. Ym wedi dod gefnad yng Nghymru a'r apiol yn diolch yn gael cytryn dewlig i ff0rg yn cael ei ddylafnaur o'r beth dewlig eisiau cypwl, ac mae'n gael arall ni, yn gwneud o'r opti yn arall a ff0rgai at the model to stop generating a response at the point. Now, when I run the e-vill here, I don't necessarily expect to see any clear improvement in performance, but it's a general best practice that we should be following, and as I said, it's something that we should remember in particular when we have more complex output schemas. One thing to point out here, as well, if you do have a more complex output schema, mae'r adag yn gwaithio fel fellywyr'r berbaut i dudol yn gweimio ddungaad oysglidol lot yn y prosadwarogol. Ond yn ddaethu fowr y dweud, ymdag cynnwyd fel hynny wedi ffud yn casodau usudol o pethau a'r gwlerfon, i ymdag cynnwyd yn gwaithorol yn gwaithol, ond yn gwaithol o'r ffordd yr cyflwydd o spraeddol. I Kell hamgyddor y gyfle. Weithor, sy'n gofnod oserb couldyn nador o ffordd o ffordd yn gwasnodol ddysfryd o gyfer y fforddau o advisant o gydraffaethau o gyda'r puzzăraeth, o gydraffael baranc yma ei hodg, ffydmau, o gydraffaethau o osig yma dro i dydraffaethau o sydraffaethau o wedin ar yma amser ar unrhymnaeth gwybod yma. Eich hon pan, dysgu bod wedi dod yn ffordd o bobl sydd o balgu, am doord Scaredybyd mae gyddo dael o gyda'r gydraffaethau, tim o ffordd o gydraffaethau, a gydraffaethau ran at dydraffaethau, o gydraffaethau a gydraffaethau a gydraffaethau, tim o ffordd o gan beth yn完ihedd gweld gweld ached o gyda'r gwyneud yn creithio at yw. Gwyneud gwyneud sylfaethu eraidill wasail, ac yn gall Тest Cais. En gwyneud, ac ph NRD' yn YTW, yn YTW, yn pwnnwch yma, yn gwneud â YTW yn YTW hawn lle cyfliwnen. Mae'r ffffwethu sylfaethuush gydaethau bod sicrhau eto am werlo yma yn pwnnwch. Popwn y ffyr i'n ymw'n dcyj oes yn eu amser i'r gynllunion oes. Os ymw'n bug i'r cyّn yn ei sgynllunion bod oesau fel arfynar oesau fel ymw y edryd lawr gynllunion oesau fel arfynar y megawagdohd, mae eu newethau yn yr unw'r cy honnau roi o ffordd elan ei hollfa mewn i'r amser yn ymw'n agor hamol. A yw'n meddwl am arfynar oesau fel rwy'n gwisेfod I'r unw'r cyfrifog Mae rhannau gollygu yn gwblir. Mae rhannau golymaol ym fill yn rhai cynlchedau eti'r fill sydd y pleiseni bwneud y rhôl â cy Japanese Plan i'r yna cysdorde fo i'n gwneud yna cysdemol ddellunau edrych yn gron y plym llyfnod y plym
