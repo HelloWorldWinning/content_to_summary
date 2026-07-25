@@ -1,0 +1,151 @@
+Timestamp: 2026-07-25T09:36:16.120290
+Title: 新版Codex的5个坑，用错真的很费token BV1upgx6SEhq
+URL: https://b23.tv/Wr91NvE
+Status: success
+Duration: 5:23
+
+Description:
+### PART 1. 作者思想导图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+为了在高度受限的 Token 额度和复杂的模型生态中高效使用新版 Codex (及内嵌的 GPT-5.6)，用户必须通过**精准的模型分档选择、规避插件冲突、时空分离的异步工作流以及利用额度溢出漏洞**来最大化开发效率。
+
+#### 2. 论据支撑 (Evidentiary Base)
+*   **高强度实测经验**：作者（唐师兄）连续一周每天耗尽 Pro 会员额度的极限使用体验（个人案例/叙事证据）。
+*   **社群与网民反馈**：社群成员及多位博主在使用“寿麦克斯（Shou Max）”和“奥传（Ultra）”档位时，频繁遇到与 Super Power-S 插件冲突的现象（社群共识/轶事证据）。
+*   **功能实测与观察**：
+    *   新版 Codex 界面中 GitHub PR 直接评审/合并功能的演示（功能实测）。
+    *   ChatGPT Work 自动推送账单和 AI 学习资料的实际运行结果（个人应用案例）。
+    *   Token 剩余 3%-4% 时启动长任务，在额度归零后任务仍能继续运行直至结束的现象（操作性漏洞实测）。
+
+#### 3. 逻辑推导 (Logical Warrant)
+作者的推导过程主要基于**因果推论**和**经验归纳**：
+*   **模型选择**：任务复杂度与模型档次呈正相关（简单/单步 $\rightarrow$ Tarer Hike；中等/多步 $\rightarrow$ 售秘/Somi $\rightarrow$ 售麦克斯/Shou Max；极难 $\rightarrow$ 扫奥巧/Shao Ultra）。
+*   **冲突解决**：因为 Super Power-S 插件会导致高阶模型（Shou Max/Ultra）产生多余输出并使任务复杂化，所以卸载该插件并引入 Grimmy（或 Grimmy Docks）来强化需求，能够确保任务精准落地。
+*   **效率与额度优化**：因为白天等待模型长任务生成会浪费人力和 Token 效率，而 Codex 在额度归零时不会强制杀死已在运行的任务；所以“白天用 Grimmy 确认需求、晚上睡觉时挂机跑长任务”的异步工作流，既能利用人的精力，又能白嫖额度超额部分的 Token。
+
+#### 4. 适用边界 (Stated Scope)
+*   **适用对象**：正在使用或准备使用新版 Codex (GPT-5.6) 的专业 Pro 会员用户、重度开发者。
+*   **局限声明**：仅针对新版 Codex 的特定 UI 界面、特定模型档次（如 Somi、Shou Max、Shao Ultra、Tarer Hike）及特定插件（Super Power-S/Grimmy）。不建议选择其他中间档次，以防浪费极度珍贵的 Token。
+
+#### 5. 潜在对立面 (Implicit Opponent)
+*   **盲目乐观的开发者**：无视 Token 消耗，在白天盲目等待复杂任务运行，且不加筛选地开启所有辅助插件，导致频繁遭遇生成冲突和额度早谢的普通用户。
+*   **平台运营方/规则制定者**：设置严格 Token 限制、试图阻止用户“白嫖”算力，并频繁调整 UI 的平台方（如 OpenAI/GitHub）。
+
+#### 6. 核心诉求 (Intended Takeaway)
+读者应当改变即时交互的习惯，转向**“白天理清需求、夜间挂机跑路、极限利用漏洞、精简插件干扰”**的系统化、异步化开发模式，以极低的 Token 成本榨干新版 Codex 的性能。
+
+---
+
+### PART 2. 无情但客观的批判性审查 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强力重建 (Steelman)
+该主张的合理之处在于，它极其敏锐地捕捉到了当前大语言模型（LLM）工程落地中的核心痛点——**算力/额度焦虑与人机协同的效率瓶颈**。在 Token 极度昂贵且生成耗时长的背景下，作者提出的“时空分离工作流”（白天确认需求、夜间挂机执行）是一种非常聪明的异步生产力方案。同时，指出特定高阶模型与辅助插件（Super Power-S）之间的冗余冲突，对于避免生成对抗、减少 Token 无谓浪费具有极强的实操指导价值。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该论证最致命的支柱在于**对“Token 额度溢出漏洞”的路径依赖**。
+> 引用原文：“通常来说 codex 不会因为线红到期直接把这个任务杀掉，还会直到这个任务跑完……就可以不停地薅我碰爱了 token……当然你一定要在 poken 3% 4% 的时候去执行这个任务了。”
+
+**崩溃逻辑**：这一“薅羊毛”技巧完全建立在平台未完善的限流计费 Bug 之上。作为一种临时性的系统漏洞，平台方随时可以通过热更新进行拦截（例如：一旦额度归零，立即切断 API 响应，或实行严格的滑动窗口限流）。一旦该漏洞被修复，作者所提倡的“在 3%-4% 额度时启动超长任务”将直接导致任务在中途因额度耗尽而中断，不仅无法完成任务，还会白白浪费最后的 3% 额度。将整个工作流的“压轴戏”寄托于一个不稳定的系统漏洞，具有极高的工程风险。
+
+#### 3. 证据链审计 (Evidence Audit)
+*   **概念命名极其含混且缺乏定义**：文中出现的“GPT5.6”、“售秘（Somi）”、“售麦克斯（Shou Max）”、“扫奥巧（Shao Ultra）”、“Tarer Hike”、“Grimmy”等名词，极大概率是某种特定翻译软件误译、拼音谐音或特定小众社群的黑话（例如：“售秘/Somi”可能是 Sonnet 的误译，“扫奥巧”可能是 Haiku/Opus 的变体）。作者未对这些核心模型概念做任何背景解释，导致证据链在非特定语境下几乎不可读、不可复现。
+*   **缺乏量化对比数据**：作者声称新版 Codex “非常非常的好 Token”（极其消耗 Token），但全文未提供任何定量数据（例如：一个中等复杂度的任务在不同档位下分别消耗多少 Token？卸载 Super Power-S 后能节省百分之多少的 Token？）。所有的结论均建立在“唐师兄”个人一周内的感性体验和社群聊天记录上。
+*   **幸存者偏差**：关于“Super Power-S 会与高阶模型冲突”的结论，仅源于“很多网友包括我们的群友都发现”，缺乏系统性的控制变量测试（如排除其他浏览器插件干扰、测试不同的 Prompt 模版）。
+
+#### 4. 隐藏前提 (Hidden Premises)
+*   **假设一：用户的开发任务允许长达数小时的反馈延迟。** “白天写 Plan，晚上挂机跑”暗含了一个前提，即任务在夜间自动执行时不需要任何“人机交互”（Human-in-the-loop）。然而在实际开发中，Codex 极易在执行长任务的第 10% 阶段就因为一个小小的路径错误或语法理解偏差而彻底跑偏，导致后半夜生成的代码全部变成垃圾。
+*   **假设二：用户的个人时间成本低于 Token 额度成本。** 频繁在不同模型档位间切换、卸载/安装插件、白天反复用 Grimmy 确认需求，这需要耗费大量的肉体精力。作者默认了“省 Token”的优先级远高于“省人力”。
+
+#### 5. 认知盲区 (The Blind Side)
+作者将视线完全局限在**“如何在 Codex 官方 Web-UI 框架内进行微操和薅羊毛”**。他忽略了更广阔、更彻底的替代解决方案：
+*   如果 Token 额度如此紧张、Web 端限流如此严重，为什么不直接转向 **API 计费模式**、使用第三方客户端（如 Cursor、Cline）或本地轻量级模型进行辅助开发？
+*   通过精简 Prompt 结构、上下文裁剪等工程化手段来控制 Token，其稳定性和效率远超“卸载插件”和“夜间挂机”。
+
+#### 6. 一击必杀 (One Hit Kill)
+如果平台在今晚修复了限流漏洞，并且你的夜间挂机任务在运行到第 5 分钟时因为一个简单的配置错误发生中断，你该如何挽回白天花了一整天时间确认需求、却在晚上颗粒无收且额度彻底归零的生产力损失？
+
+#### 7. 终极判定标准 (What Would Settle It)
+进行一项 A/B 测试：
+*   **A组（作者推荐法）**：使用官方 Web 界面，白天用 Grimmy 磨需求，深夜利用 3% 残存额度挂机跑长任务，手动开关 Super Power-S 插件。
+*   **B组（标准工程法）**：使用 API 接入开发工具（如 Cursor），不依赖任何限流漏洞，采用即时报错即时修改（Human-in-the-loop）的敏捷开发模式。
+*   **判定指标**：在 3 天内，针对同一中等难度项目，对比两组**最终交付的可用代码行数**、**因生成错误导致的人力修改时间**以及**实际资金消耗**。若 A 组的综合性价比（含时间成本折算）低于 B 组，则作者的“5个坑”指南将失去其实践意义。
+
+---
+
+### PART 3. 概念与批判关联图 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 唐师兄的新版 Codex (GPT-5.6) 使用指南"] --> B["核心主张: 通过策略、工作流与漏洞绕过限制"];
+
+    subgraph SG1["🟢 官方模型与插件优化 (Thesis)"]
+        direction TB
+        S1_Model["1. 阶梯模型选择"]
+        S1_Model_Detail["简单: Tarer Hike<br/>中等: Somi (售秘)<br/>复杂: Shou Max / Shao Ultra"]
+        S1_Conflict["2. 规避插件冲突"]
+        S1_Conflict_Detail["高阶模型易与 Super Power-S 冲突<br/>建议卸载, 改用 Grimmy 强化需求"]
+        S1_UI["5. UI 高效集成"]
+        S1_UI_Detail["内置 GitHub PR 评审合并<br/>Logo 隐藏 ChatGPT Work 自动化"]
+    end
+
+    B --> S1_Model;
+    B --> S1_Conflict;
+    B --> S1_UI;
+    S1_Model --> S1_Model_Detail;
+    S1_Conflict --> S1_Conflict_Detail;
+    S1_UI --> S1_UI_Detail;
+
+    subgraph SG2["🟠 额度与时间管理 (Thesis)"]
+        direction TB
+        S2_Time["3. 异步工作流 (时空分离)"]
+        S2_Time_Detail["白天: 与 Grimmy 确认需求、写 Plan<br/>晚上: 睡觉时挂机执行长任务"]
+        S2_Hack["4. Token 溢出漏洞 (薅羊毛)"]
+        S2_Hack_Detail["额度剩 3%-4% 时启动超长任务<br/>归零后任务不会被杀, 持续运行"]
+    end
+
+    B --> S2_Time;
+    B --> S2_Hack;
+    S2_Time --> S2_Time_Detail;
+    S2_Hack --> S2_Hack_Detail;
+
+    subgraph SG3["🚩 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["🚨 最薄弱环节: 漏洞依赖性"]
+        HR_WeakLink_Detail["平台若修复限流 Bug, 3% 额度启动长任务将直接中断并导致额度归零"]
+        
+        HR_Evidence["📋 证据链审计问题"]
+        HR_Evidence_Detail["1. 概念术语极其含混 (GPT5.6, 售秘, 扫奥巧)<br/>2. 缺乏定量 Token 消耗数据<br/>3. 社群反馈存在幸存者偏差"]
+        
+        HR_Assumption["🧠 隐藏前提与盲区"]
+        HR_Assumption_Detail["1. 默认长任务无需人工即时干预 (易跑偏)<br/>2. 忽略了 API 接入 (Cursor/Cline) 等根本性替代方案"]
+    end
+
+    S2_Hack_Detail -.-> HR_WeakLink;
+    S1_Model_Detail & S1_Conflict_Detail -.-> HR_Evidence;
+    S2_Time_Detail -.-> HR_Assumption;
+    HR_WeakLink --> HR_WeakLink_Detail;
+    HR_Evidence --> HR_Evidence_Detail;
+    HR_Assumption --> HR_Assumption_Detail;
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef stageNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef stageDetail fill:#E3F2FD,stroke:#42A5F5,stroke-width:1.5px,color:#1976D2
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef reviewDetailNode fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1px,color:#C62828
+
+    class A,B mainClaim
+    class S1_Model,S1_Conflict,S1_UI,S2_Time,S2_Hack stageNode
+    class S1_Model_Detail,S1_Conflict_Detail,S1_UI_Detail,S2_Time_Detail,S2_Hack_Detail stageDetail
+    class HR_WeakLink,HR_Evidence,HR_Assumption reviewNode
+    class HR_WeakLink_Detail,HR_Evidence_Detail,HR_Assumption_Detail reviewDetailNode
+
+    %% --- Subgraph Background Styles ---
+    style SG1 fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG2 fill:#FFF8E1,stroke:#FFB300,stroke-width:2px,color:#E65100
+    style SG3 fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+正也是新版Codex,你必须要注意的5个坑 过去一周,唐师兄一直在高强度的使用新版的Codex和GPT5.6 基本每天都会把我的PRO会员用光,然后等Tibo重置 最后,我总结出5个最常见也最容易被忽略的问题 作为一个专业的Codex2 Pro主 今天,我就也刺信把这5个问题讲清楚 如果你正准备用Codex或者已经在使用的话 建议你看完整个视频,再动手 那么废话少说,一见三年,让我们直接开始 第一个问题,怎么选模型 这次GPT5.6一次发布了三个模型 而且每个模型有六档 这个选择困难症患者就造成了很大的困扰 到底我该怎么使用模型和它的党位 我也总结了一些网上网友们和一些知名博主的经验 基本总结出以下的规律 简单总结起来就是首先从售秘点开始尝试 如果任务教佛杂有多个步骤的话 可以提升到售、害 如果难度再上一个等级 拿到了宜兰杂证这种超高难度级别 那么就要提升到扫 凹巧 如果明确的任务或一些单步的执行任务 可以使用Tarer Hike 那其他的模型和档次呢 这里为了结业的Token 我就不建议大家选择了 一定新版的Codex 非常非常的好Token 我们必须省著用 第二 需要注意的是 我们前面说到一些复杂的任务 要用扫 Macs或者凹巧 但是很多网友 包括我们的群友都发现 使用这两个党位的时候 非常容易跟一些技能产生冲突 尤其是Super Power-S 所以推荐使用 寿麦克斯和奥传的时候 关掉我们的Super powers 建议直接卸展 免得他跳出来干扰我们的任务 把任务整个恒复杂 他会做很多多余的东西 其实很多东西都不是我们想要的 那如果卸掉Super powers以后 我们可以使用grimmy 或者grimmy docks这个是Gios 来帮助我们明确我们的任务 给模型强化和重复我们的需求 这样来确保模型最后落地的应用是我们想要的 所以第二个肯总结就是 在使用寿麦克斯和奥传的时候 一定要关掉我们的Superpowers 不过朋友也有反馈说 如果是用骚或者骚蜜蜊 可以造成使用Superpowers 不影响整个模型的诉求效果 第三个看 新版的5.6说这个模型 它的任务耗时通常会非常久 非常的好偷看 所以我们的线纹本容易就花光了 有时候你看似没有那么复杂的任务 它也给你跑很久 这时候我们就只能在一边等待 浪费了很多宝贵的时间 和偷肯的分配的这个效率 我自己想到了一个提升效率的办法 就是我们白天专门花时间来跟模型来进行需求确认 来完善我们的需求文档 尤其是我们可以通过和GREEMY来进行重复确认 因为这其中也要花很多时间跟模型进行对话 然后等我们的是必可和我们的 plan 都完成以后 就可以利用晚上睡觉的时间 只行这个任务 这样我们的人的精力和我们的脱肯的有效分配 都能得到一个很好的结合 不至于在白天一直等任务在跑 这样子我们白天来确认需求 写plan 然后晚上睡觉之后 执行的方式可以有效分配我们的经历 第四 一个好token的小技巧 这样我们的线红快要用完的时候 我们可以专门跑一个长计划任务 通常来说codex不会因为线红到期 直接把这个任务杀掉 还会直到这个任务跑完 那这时候虽然我们的线红已经到了百分之凝 但这个任务还在不停地跑 就可以不停地好 我碰爱了token 这也是我自己最近几个任务时间出来的一个想技巧 当然你一定要在poken 3% 4%的时候就要去执行这个任务了 如果你到百分之年已经没有陷阅了 那这个任务直接就没法跑起来 所以通过这种方式我们可以好一些opinion的狼狼 能够转移一下更多的token额度 最后一个就是新版codex的界面有了很大的更新 但其实它整个更新并不影响我们的肉层开发任务 不过我需要提2点 第一点就是 我们合并PI 和我们跟GitHub的交互更加高效了 我们可以在这里点击就可以看到我们提交的PR情况 以及自己提交了哪些PI 并且在CodeX就完成 这个PI的评审Review、合并等等工作 不需要再跳到GitHub 这是一个提升效率的小技巧 另一个就是众手都知道 Channel GPT已经和CodeX合并了 那经过几次UI调整以后 现在Channel GPT藏在了Logo都这里 点击它以后跳转到切的GPT 然后你可以安排自己的工作或者对话 这样的话我们也可以 更少的跳转我们的应用 能够再扣掉个时钟 就完成一些 你先要去许问的日常问答 以此来提升效率 而且我发现这个Walk也挺好用的 比如我自己我就用它来做几件事情 第一就是我会用它来订阅我的机枭账单 比如我的有一些苹果的订阅或者其他的 订阅的账单我其实平时都没发现 但是每次消费它就会给我推送一台消息 那我从中就发现了一些我没试用的 订阅账单 第二就是我自己在选AI过程中 我懒得去找资料 我就在这个Work里面 让它每天给我推送一篇 或者也份关于AI相关的学习资料 然后我说在15分钟之内可以越堵完 那切的GBTWork就会给我推送相关的学习资料 我就能按照它难安排每天的AI学习 我想这个Work还有很多用法 只不过我们还没有发现 如果你有更好的试用技巧或者经验想要分享 欢迎你在评论区进行留言 今天的分享就到这里 这就是我花了很多偷肯 学出来的五个肯 如果感到对你有帮助的话 经典一个小小的关注 我是唐师兄 我们下个视频再见 拜拜
