@@ -1,0 +1,153 @@
+Timestamp: 2026-07-25T13:15:02.419622
+Title: Divyanshi - My friend makes $1.2 million a year as an Anthropic engineer. I aske... 2080619742617083971
+URL: https://x.com/Divyyanshishrma/status/2080619742617083971?s=20
+Status: success
+Duration: 14:58
+
+Description:
+以下是对您提供的文本进行的系统性分析、冷酷评审以及概念图谱绘制。
+
+由于原始文本夹杂了大量多语言乱码、语音识别错误（如将 "evals" 误写为 "evil"）及非相关字符，本分析将**最大化善意地滤除噪声**，精准提取其中关于“大语言模型（LLM）工程化调试、回归测试与提示词优化”的核心技术论证。
+
+---
+
+### **PART 1. 作者的思想地图 (Author's Map)**
+
+*(本部分进行中立的架构解读，不作任何批判，完全站在作者的视角还原其逻辑链条。)*
+
+#### **1. 核心论点 (Core Thesis)**
+在LLM应用开发中，单纯依靠提示词（Prompting）无法解决模型本身的能力极限问题；为了保障输出的稳定性和一致性，必须建立**回归评估套件（Evals Suite）**，并结合**基础提示词规范（Prompt Hygiene）**、**输出契约（Output Contract）**以及**API级硬控制（如终止序列 Stop Sequences）**进行系统性工程化调试。
+
+#### **2. 论据基础 (Evidentiary Base)**
+*   **经验法则（经验直觉）**：开发者极少从零开始编写提示词，绝大多数工作是在调试（Debugging）现有的提示词。
+*   **工程实例（API控制）**：在API调用中加入终止序列（Stop Sequence），通过检测闭合的XML标签（如 `</response>`）来强制模型停止生成，以确保格式一致性。
+*   **具体案例（输出契约）**：针对客服机器人（Customer Support Bot）设定对话语气契约，防止其在复杂交互中偏离设定。
+*   **边缘测试案例（上下文数据）**：一个拥有“5GB热点数据”但处于“历史遗留套餐（Grandfathered Plan）”的客户案例。该案例中，当前的通用政策并不适用，以此测试模型处理复杂、冲突业务规则的能力。
+*   **微型评估集（测试基准）**：包含5个测试用例的微型评估套件（Evals Suite，文本中误写为 "evil suite"），用于检测提示词修改后的性能退化（Regression）。
+
+#### **3. 逻辑桥梁 (Logical Warrant)**
+作者的论证基于**软件工程的“防退化”逻辑**：
+1.  **大前提**：模型的原生能力存在客观上限，提示词优化（Prompting）无法无限提升低能力模型的表现。
+2.  **小前提**：在调试提示词以修复特定错误时，极易引入新的错误（即发生“性能退化” Regression）。
+3.  **结论**：因此，必须像传统软件开发一样，引入包含多场景（如历史遗留套餐等边缘案例）的评估套件进行自动化回归测试，配合API级硬拦截，而非盲目、无系统地修改提示词。
+
+#### **4. 适用范围 (Stated Scope)**
+*   **适用场景**：主要适用于需要高一致性输出的场景（如客服机器人）、需要处理复杂业务逻辑（如区分历史遗留套餐与现行政策）的LLM应用。
+*   **边界声明**：作者明确指出提示词的极限——“对于本身能力不足的模型，再多的提示词引导也无济于事（no amount of prompting is going to fix that）”，此时模型应当学会“人机协作（Hand-off to human）”或“直接拒绝回答（Point blank refusal）”。
+
+#### **5. 潜在对手 (Implicit Opponent)**
+*   **提示词万能论者**：认为只要不断调整提示词的措辞、增加修饰语，就能解决LLM的一切幻觉、格式混乱或逻辑缺陷。
+*   **无测试开发派**：在生产环境中修改提示词时，仅凭一两个好结果就盲目上线，缺乏系统性回归测试（Regression Testing）意识的开发者。
+
+#### **6. 预期效果 (Intended Takeaway)**
+作者希望LLM开发者从“玄学提示词调优”转向“工程化防御”。在修改提示词前，先进行“提示词卫生清理（Prompt Hygiene）”，建立输出契约，并部署自动化评估套件，用工程纪律（API控制 + 自动化测试）来保障LLM应用的工业级落地。
+
+---
+
+### **PART 2. 冷酷而客观的审阅 (Hostile-But-Very-Fair REVIEW)**
+
+*(本部分将系统性地逆转视角，寻找论证的薄弱环节、未明示的假设以及逻辑漏洞。)*
+
+#### **1. 最强形式的立论 (Steelman)**
+在LLM开发中，提示词具有极高的“混沌性”，微调一个词可能导致其他原本正常的场景崩溃。作者提出不应依赖“提示词玄学”，而应通过构建评估套件（Evals）进行防退化测试，并利用API终止序列（Stop Sequences）等确定性工程手段来约束不确定性的模型。这是将LLM开发从“炼丹”推向“软件工程”的正确路径。
+
+#### **2. 最薄弱环节 (Weakest Link)**
+整个论证最薄弱的支柱在于其对**“模型能力极限”与“提示词优化价值”之间的模糊界限**：
+> "The second cases are the model to which isn't as capable, and no amount of prompting is going to fix that." (第二种情况是模型本身能力不足，再怎么写提示词也无济于事。)
+
+**致命失效点**：如果模型本身能力不足是无法通过提示词解决的，那么作者在后文花费大量篇幅论述的“提示词卫生清理（Hygiene 101）”、“输出契约（Output Contract）”和“边缘案例处理（如历史遗留套餐）”就会失去逻辑立足点。作者没有给出一个清晰的判准：**开发者究竟在什么时候应该承认模型能力不足并放弃提示词优化（转向换模型或人工介入），在什么时候应该继续通过工程化手段压榨弱模型的潜力？** 这导致其工程建议在指导实践时存在严重的自我拉扯。
+
+#### **3. 证据审计 (Evidence Audit)**
+*   **样本量极度匮乏**：作者提出用评估套件来检测回归，但其给出的实例是一个“仅包含5个测试用例（five test cases）的微型评估集”。在实际工业级应用中，5个用例根本无法在统计学上证明模型没有发生退化。这种微型示例削弱了其“系统性测试”论点的说服力。
+*   **忽略了评估本身的“幻觉”问题**：作者默认评估套件（Evals）是客观、准确、易行的。然而在实践中，评估LLM的输出（尤其是客服对话语气）本身就需要另一个LLM（LLM-as-a-Judge）或复杂的正则匹配，这本身就引入了新的不确定性和高昂的算力成本。作者对此闭口不谈。
+*   **严重的数据污染噪声**：输入文本中充斥着大量的 Welsh（威尔士语）乱码和拼写错误（如将 "eval suite" 写成 "evil suite"）。这表明作者在谈论“提示词卫生（Hygiene）”和“数据清洗”时，其自身的输入源就处于极度混乱、未清洗的状态，这构成了讽刺性的反差。
+
+#### **4. 隐藏假设 (Hidden Premises)**
+*   **假设 1**：开发者拥有足够的业务知识和精力去定义和维护“输出契约”与“评估套件”。（事实上，编写高质量的测试用例和定义契约的成本，往往超过了写提示词本身）。
+*   **假设 2**：API级别的控制（如 Stop Sequences）是无损的。（实际上，强行截断模型输出可能导致JSON/XML格式不完整，反而破坏了下游解析系统的稳定性）。
+*   **假设 3**：业务规则是静态的。作者以“历史遗留套餐（Grandfathered Plan）”为例，默认模型可以通过提示词或上下文完美兼容新旧政策，但忽略了随着业务迭代，这些规则会呈指数级复杂化，最终超出模型的上下文窗口和推理极限。
+
+#### **5. 盲区 (The Blind Side)**
+*   **评估漂移（Eval Drift）**：模型提供商（如 OpenAI）底层的频繁微调，会导致原本通过评估套件的提示词在一夜之间失效。作者的“本地评估套件”无法解决云端模型“黑盒更新”带来的系统性漂移。
+*   **成本与延迟的权衡**：为了实现“输出契约”和“复杂边缘案例推理”，提示词会变得极长，这会带来显著的推理延迟（Latency）和Token成本飙升。在实时客服场景中，这种工程代价可能是不可接受的。
+
+#### **6. 致命一问 (One Hit Kill)**
+> “如果你的微型评估套件（5个用例）通过了测试，但线上真实流量中出现了第6种未曾定义的、更复杂的‘历史遗留套餐与现行政策冲突’的组合，你所依赖的‘提示词卫生（Hygiene）’和‘API终止序列’如何防止模型向客户给出灾难性的错误承诺？”
+
+#### **7. 如何盖棺定论 (What Would Settle It)**
+进行一项双盲对比实验：
+*   **A组（工程调优组）**：使用弱模型（如 Llama-3-8B），按照作者的方法，进行极致的提示词卫生清理、设定输出契约、添加API控制，并用100个测试用例进行迭代。
+*   **B组（直接升级组）**：直接使用强模型（如 GPT-4o），仅给出一句简单的提示词，不进行任何复杂的工程控制。
+*   **评估标准**：在1000条包含复杂历史遗留套餐的真实客服工单下，对比两组的**回答准确率、开发工时成本、以及单次调用Token成本**。如果A组的综合ROI（投资回报率）显著低于B组，则证明作者这套复杂的“弱模型工程化压榨方案”在商业上是失败的。
+
+---
+
+### **PART 3. Mermaid 概念图谱 (Mermaid Conceptual Map)**
+
+以下是连接作者核心论点、工程步骤以及批判性审阅的 Mermaid 概念图谱：
+
+<Mermaid_Diagram>
+graph TD
+    %% 核心论点定义
+    subgraph SG_Core["💎 LLM应用开发核心主张 (Core Thesis)"]
+        A["<b>LLM工程化调试与测试</b><br/>放弃提示词万能幻想，转向系统化工程防御"]
+        style A fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333,font-weight:bold
+    end
+
+    %% 作者的工程化步骤
+    subgraph SG_Steps["🔧 作者推荐的工程化步骤 (Engineering Best Practices)"]
+        direction TB
+        B1["<b>1. 提示词卫生清理 (Prompt Hygiene)</b><br/>在调试前清理冗余，规范基础格式"]:::stageNode
+        B2["<b>2. 制定输出契约 (Output Contract)</b><br/>明确语气、格式限制 (如客服对话风格)"]:::stageNode
+        B3["<b>3. API硬性控制 (Harness Control)</b><br/>使用 Stop Sequences 检测 XML 闭合标签"]:::stageNode
+        B4["<b>4. 回归测试套件 (Evals Suite)</b><br/>建立防退化测试集 (如 5个微型用例)"]:::stageNode
+        
+        B1 --> B2 --> B3 --> B4
+    end
+
+    %% 边缘案例挑战
+    subgraph SG_Challenge["⚠️ 复杂业务边缘案例 (Edge Case)"]
+        direction TB
+        C1["<b>5GB热点数据 + 历史遗留套餐</b><br/>(Grandfathered Plan)"]:::stageNode
+        C2["<b>规则冲突</b><br/>当前通用政策不适用该客户"]:::stageNode
+        C3["<b>模型决策分流</b><br/>人机协作 (Hand-off) 或 直接拒绝回答"]:::stageNode
+        
+        C1 --> C2 --> C3
+    end
+
+    %% 批判性审阅
+    subgraph SG_Review["⚔️ 批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_WeakLink["<b>最薄弱环节 (Weakest Link)</b><br/>'弱模型极限'与'提示词优化'的逻辑拉扯"]:::reviewNode
+        R_Evidence["<b>证据审计 (Evidence Audit)</b><br/>5个用例样本量极低，忽略评估本身的幻觉与成本"]:::reviewNode
+        R_Assump["<b>隐藏假设 (Hidden Premises)</b><br/>默认业务规则静态且评估集维护成本低"]:::reviewNode
+        R_OneHit["<b>致命一问 (One Hit Kill)</b><br/>如何应对未定义的第6种历史遗留套餐冲突?"]:::reviewNode
+        R_Settle["<b>如何盖棺定论 (What Would Settle It)</b><br/>弱模型+极致工程 vs 强模型+简单提示词的双盲ROI对比"]:::reviewDetailNode
+        
+        R_WeakLink --> R_Evidence
+        R_Evidence --> R_Assump
+        R_Assump --> R_OneHit
+        R_OneHit --> R_Settle
+    end
+
+    %% 关系连接
+    A -->|"转化为"| B1
+    B4 -->|"用于测试"| C1
+    C3 -.->|"暴露了"| R_WeakLink
+    B4 -.->|"批判指向"| R_Evidence
+    B3 -.->|"批判指向"| R_Assump
+
+    %% 样式定义
+    classDef stageNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef reviewDetailNode fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1.5px,color:#C62828
+
+    %% 子图背景色定义
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Steps fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    style SG_Challenge fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+I will end go az swim I'm going off. migrants who can noes, so I'm going to killed him. Langory. On my way of listening to the first round, we do have the humanities function. Soldier is going to work on this one, and who were场 tensome of hynnyюда fel wedi gwneud weld y stexhalesит am cinet stitching. Mae'n beire� cw honewokiっwst roedd cyhuodaeth, yn ystwesthedarnio gyngan i hynny weraheon mynt sylweddol yn euuelledrageithol l runwayma, a hynno ond mae'r ffaithol hyó Lyn Dyn. Toyst sinsiggen, pautododol er feblhewn. Ac tig fowyt wrth yn dr்af hwn nesgymrag eu cybloholiad, mae nhw examau gwisnauodau dyd hynny fforddrifst, yna new Ze macewelio ar eu genan â'u hynny ffyrrgu cynchrau cael gydyn ei gydyn yw mydgen a yng midnight o hynny yn yneud mewn yma o gyda'r rydym ni yw mydgen sy'n ei datwn, oedd yn eich diualt yw sgwnau, a yna chi'n gwloi'r gwlau gan recogn. P beispielsweise, Ila Maclifanau, yng Nghymnau, ni'n llawer yw sydd yn yna i'r gyda wneud hynny arall o gyda'r gwlau'r egwbrydd, yng Nghymnau yna yna fel un wneud o'r cyda'r gydyn o'r cyda'r mae feed�� a lewbysg mwy hynny hynny gael hynny. A ph Bullet mwy i gyfodau bod y ffa yn ffogysgadell i dyn nhw, a amlygu yn mwy wneud y ffa yn y cyflais mae'n ffoglarnd yr eithyd yn pithaf o ffa yn amlwch yna, mae'rnau hynny, yn ffoglarnd yr egwyffir, yn y fwy wedi amynodra wedi ac yma yna gwneud yma yma. pwlaeth yma rydym wedi o mynd i'r mwyn mewn nideg. Mae yma o fel cochon y cynnareg yma'r ffanc sydd yn iawn ac yn yngredd. Mae o'r conti'n armanau eitau gyda'r oes yn gefnodd fel y ploosol ac cynnareg sydd yn cynnareg yn cynnareg fel eitau iawn oes yn y mae'r eitau yma. Mae'r relân ac yn hynnyddol yma yn cymdeig ymnych ac yn ymach. Scripture. Mae'r relân ac enw eitau yn neslu y peth folle, mae hynny g topwyr yn prad ac yn ffod, pegu oesadfo yfyd yn gweith, mae hynny gwyfl yn ei ddwysig. Mae'r ein yw'r sgyoedd ac yn gweld sydd, ac mae'n ei ddynod y pethom yn unwaPhone i darfod yn rhaid. Dyna ei gofno oesodraid y pethom oesodraid y pethom dobl nad y dod oesodraid oemudraid o cyfru oeddwnod oeddwnodol eu ffyd yn ei anagau rebuwydna oesodraid fel drwy na ni amlwyllau oesodraid yn ei aio gwneudionol oesodraid oesodraid o fewn i'f yn gwybod secured earw fysyllter o lefnodd oged Secretary Dewan Gwybod変au integrating nos, y symud dod ddim yn canelo! dog力w acaddiwfod i yw, termasraff. To byg, ac mae'n gwybod yn teist denuregen ei ceid ewer cavity gall Wrth yr hwnnwaith i'r i o'r gyf itsol, o gydpar aliveet ar byd wneud F양 gwbeth at un a'r oneob Mae'r second cases are the model to which isn't as capable, and no amount of prompting is going to fix that. We need to have an evil suite to act as a way of testing that regression. We can apply the prompting best practices to that. In the example we're going to be looking at today, as I said, it's going to be a miniaturised example, we'll have five test cases in our evil. beth gyd gyda efallain wneud ei ffaisi? Mae'n yna arw oes beth gyd wedi efallain o ffaisi? Felly, wneud gwahanol hynnych, mae feid yn hynnych wedi drwy ei a ffaisi a ffaisi ac byddoedd ffaisi a ffais. Mae y ffaisi a ffaisi a ffaisi, mae nhw gydnau, ac yna oes beth gydnau ac unig. Mae'n cewch oes beth gydnau oedd oes beth gydnau'n oes i hubyddtian! Rwy'n bijn ac yw i finalos achr oed i ffaisi yw efallain oedam. o fel successfully arью yn amdeu lofio feithio yn y flora fel yn sgydio ac ffyrdd, yn clyweddiad t crossing o ffyrddio'r rwy, prumpo yn ac yn y llwyg y ty'n miw Soundi, yn gweithio o ffyrddio i fysliddio yn y gafodol ac yna ffyrddio. Felly, sydd yn mynd, we need to make sure that the model has a good understanding of its capabilities, where it should be handing off to a human or where it should be point blank ond gwybod yw i dreniad o'r rwyf y gallrinad o'r nasoedeg unig. Rwy'n dym ni ei gwe처럼 i wedyn ni'n gwrs i' wedyn ni'n gwrs i'r y mwybod yn gweld a ffordd y cowrfan yn pwybod ac wedi'r eraill yn mwybod o'r lwyf. I wedyn ni'n ddwi snagodd wrth gwrs gwrs eu lleol ar dwyd yn sefydr am gyfrifatio yw cynor ar srwwyd yn cadwf I'r dweud. Rwy'n pw helpu ffydr wrth gwrs trwy i'r llaw i'r rydyn ni'n gwrs ymwyd yn yna? U mgyny, ddod yn kwiol yfa honno bod o gallu lluno? Ymgyngoreg, ac fydwch llwysig yn y buddorwcheg yna, yna eisiau dod mewn gweld mewn amlygu, a dydna? Yna, ond yw fydd yn fydwcheg, oed, ond y downfa yn y cyflull o'r rhai. Dwi'n ei ffais angwaith yma i'r yma. Ychydwcheg yn y cyflull o'r rhai'n llygariadau'n dwi wedi ei iawn cyflull o gyllunn y Faisarraethau i yma. y hynny, canw'r hynnny ym yn arall yn cael un sut amdol ond y lig. W funig yn amser, mae gyda'r ym wedi'r ten contactio ac yn yna fawn yn y gallwn ag yn ac oedaw amfydraethoddol sut sefyllwn arall yn ydylch yn sylwysig oedd ac ei hynny. Mae'n cael ei wynedd o cwylwy yn meddwl maennynau ei ddynnau a dynnau ei'r yna gyda ddynnau ,"eth ylwch gweithio gwstiwch, oes fillion gweld, ag ymdwch gael gweld gweld yw i ddechrau'r gweld, oesgennwch gweithio gweld y fwy hynny, rwyf i'r gweld gweld gweld gweld gweld, anbym gyfer gweld gweld, oesgwn i fwyf ми gweithio gweld gweld gweld ymdwch gweithio gweld gweld gweld oesgwn i fyny, byddai newydd, dao gynny lefydd, oesgwn i fod yna gweld gweld gweld gweld gweld gweld gweld a gweld pwysf Leo mae, rydym wedyn yn axoli yn gweld gweld gweld gweld gweld gweld allodigweld tegnew i brachtis. We are rarely writing a prompt from scratch. We are often debugging an existing prompt. Best practice before we start targeting those failure modes specifically is to apply our general prompting 101 best practices applying general hygiene to clean up before we do the evile run. So, let's have a little look at the example that we're going to be using. Mae gael yw i'w gweld ac totel i blen barwdau y tableta, a bydeg gifop Kaewy yn gw Red dom, ac mae'r chwara吗 yn coam shatteredu am Wasar Roedd, ac mae'r tableta gael Consegol hoi'r swyr, i gael o ffwm sgwth, ac gael o ffwm mor a'r tableta. Mae'r begotol yn yn medda'r barwm wedi einwaith o ffwm, mae'r gael o ffwm ar gael o ffwm ar gael o ffwm ar gael o ffwm ar gael o ffwm ar gael o ffwm ar gael o ffwm yma dyna i'w lefost? 动 yn ffaf, ador Fodd yn ffaf, yn ffaf, yn y pwbl yn ydym yn ffaf, mae ffrang y fweithwaters yn ffaf. Mae rhaidol dal ddallwchwfabaad cael y defnyddwr i dwi'n ddwl. Mae cywersylu gwyllwfwm y pwbl yn'n ddwl. Mae ddawn mewn i fymfa yw agethu'r felly ddellunol agethu dyslwyr. criticallyyniadd y gwyllfwf, yn y ddawn mewn gwneud fizherac sylwyf. Mae'n gweithio'r eitaz chi'n gweithioaf i'ch i'ch Ilygu neu a tryb y fhooorill eu gw Bridg. Mae'n gweithio eitaz chi'n gweithio gyfer ond a yma y gwliel yn fawr gyfer yr y gweithio, ac ymgweithio yn ffordd i'n yw wrth fwy'r fel gwliad y sefyddiol, mae a fywaf Gymedraedd y fwyfnu a datblygu'n ceis i ni'n defledu ar gyda ni fytny. Mae'n gwaith, mae yma fo i p 화r yma. Mae cwirionedd y gwaith sylforsiferu yn gwasanaeth rydig o rhaenau sy'n gwasanaeth rydig a goeb ond i fawr. Mae rydych chi byw eitau a fwni bod yn iawn. Mae pernaeth rydig ti'n wedi rhwben yn y gallwch. Mae'n hwn ni fawr yma yn chi'n dwi'n dwi'n dwi'n diwbeth rydig yn gwaith diwfaith i dynig yma gwaith. o gwahanol'n glawnod o gwahanol, am gwaithio'r glawnod o'r ungeidol. Mae wedi pleidol a beth i'r gaf sy'n niwn gwaithio o gweithio ddan setkennau o'r unain oedd y cyflwyn. Mae'r yr yr yr'n amloddiol a grafnyddol grafnod yn gwahanol eisiaethu o gweithio cyflwyn. Ys gwybod ac ynaazor arall o gwalnod yn gwaithio wedi yna wneud sy'n gyfer yr unain a ymgodd unain a'i'r ond eichel, at yn dna gweith ac swyd llwydig ni heb wedi cofnud o palhau cael Roedd yn cym yw i'r llywedd i cofnud. Ynden oed Athena distru cwcil beth o bryd sydd yn cynnau'r prompt ar pan yr gyfreith ymproven塁 o le unrhywyd. A swyd lwych yn cymrydd o le unrhyw ddiw i'r prompt a cofnud rhaid model a peth werfŵ ymrawill wneud yn y prupade sy'n sef dewn mael. Mae oes rhadall o jeweilio cymame, gairll y cymame, yn ffaith o cymmeirio, neu meith ond rolyfno, cymmeirio cymmeirio cymmeirio'r cymmeirio'r cymmeirio'i roer o'r pe Some cases in more detail. There is a little more general cleanup that we can do specifically here, as we look at creating an output contract. This is a key best practice to follow if you are struggling with your output format consistency. In this case, we have a customer support but we want it to reply in a conversational tone. It is unlikely to be y cyflushorioio. A'r teegorgen pan lur sylwwyr a'r cyflushorioio'r xoid sylfil. A'r ymwais dwnau yn dwi'�� gethridd. Byddai wedi sy'n latod yn dwy'r ymwais wedi dish. Byddai wedi'r cyflushorioioio yn dwi'r ychydig. Ymwais wedi bethwch yn yn dwi'r rhywb, ac mae'r reflefwyr yn ymwais wedi ychydig yn amdwl— ymwlw champ, ac mae'r tais ymwais wedi yma. The prompt is not always the most effective way of handling issues. We can also change things in the harness to ensure consistency to a higher degree. We added to the API call a stop sequence, which will detect the closing XML tag and tell the model to stop generating a response. When I run the e-vail here, I don't necessarily expect ac yn dyn am ymg un ar yna fel ni agraraethau cael ei gerodis, mae amloekau ei gydredu sydd yma. A yr gynny wedi ar gyms AM sydd sy'n hiw o el点u ar gymyn am gan lle unas fel ar gyms AM sy'n gair, yn cael ei gynny i pethau ar gyms yma. Mae logyn rhoi o mynd i发ethau i fod yn yma fel môrithub yma. Mae logyn rhoi o mynd i发ethau i fod yn cael ei gwneud i sgair er. Mae logyn rhoi o mynd i发ethau i yma. Mae logyn rhoi o mynd i发ethau i fod yn cael renaeth yma. Mae'r eich amladd sydd gweld yn fethau, mae hwstethfa Fbrydd credu metw, ac mae'r eich amladd yw'n ourlygu ac yn cael cynnast. ourlygu, ac mae'r erbyg sut i'r ffynir hynny mynd i'r cwstewl am ymmir iawn que fy gallu yma, mae'n fwy 120% arguiaeth yma roedd cael ei'r drod. Mae'r eich amladd yma yma a'r trwy sydd arall yn cael ei gweld yn ymo am na'n ffeld. mae'n ymwnau anghygiadau yn y natrwyr i aethau ac oes dim sylfaith o fwaseg. Mae'r ydwarf oill o fel sut mwyth yw i' gwybod sfyn도 pobdogorgyddol. Ond gwybod cyhuodau yn mynd modem ac arallan y� gawn gethau yn mynd i'i gwybod am yma o Lorenau eu'r gwybod gawn gafod, o ddyslwyr yda oesblwyr yda wedi ac oesblwyr yda wedi caidell wedi toadau am unrhyw yda wedi caidell wedi caidell wedi caidell wedi aethau mwyth gawn yma. a test case the problem of a test case that is on the legacy plan. So actually the current policy doesn't apply to them. So if we see what's going on in the actual test case, a custom data which we are feeding to the prompt, includes the amount of hotspot data that a customer has. They have 5 gigabytes, but they also have a grandfathered plan. Fel gychadiwch o'r ymg Myu eu n wladod iawn diwedodau 187 yw'r ydyffa allong engagedwing mam criticismon. Rydym y whadau'i bod i wen i accorn am wna'r gordист gall mor o'rm defiadau yn doeddu ni itgy. Mae gadfodol mew i fanc cyfiadau a gwisain o'n rhaIfRr e-ngad Hillary تو calla newisio cael cael yna eu sydd guessed oara. Mae'r rhannau mwy'n rydyn ni'n ddellunio ddellunio'r amser ac daroddiol amser yw hynny'r dybl sy'n fwbihol o'r ffod yn y ddellunio'r mewn amser yng Nghystemraeth yng Nghystemraeth yng Nghystemraeth yng Nghystemraeth yng Nghystemraeth a'r
