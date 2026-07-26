@@ -1,0 +1,160 @@
+Timestamp: 2026-07-26T15:37:17.518643
+Title: Transformer 架构挑战者出现？ 两篇顶级论文拆解 BV1g2Ex6kErC
+URL: https://b23.tv/mRAiZ49
+Status: success
+Duration: 10:28
+
+Description:
+### PART 1. 作者架构图谱 (Author's Map)
+
+#### 1. 核心论点 (Core Thesis)
+Transformer 架构因二次复杂度（$O(N^2)$）带来的算力爆炸与能源瓶颈，以及其静态模式匹配的本质局限，无法独自带领人类走向真正的 AGI；以 Google 的 Memory-Cached RNN（工程效率路线）与 Sakana AI 的 CTM（生物神经动力学路线）为代表的新架构，证明了打破 Transformer 独裁地位、实现高效与真实动态推理的可行性。
+
+#### 2. 证据基础 (Evidentiary Base)
+*   **计算瓶颈事实（工程痛点/类比）**：长文本下 Transformer 的二次复杂度导致计算成本爆炸、API 账单飙升、超长文本检索慢且易失误，全球 AI 数据中心面临物理世界的能源与用电墙。[硬事实/直觉泵]
+*   **Google 论文证据**：arXiv 论文《*Memory Caching RNNs with Growing Memory*》（作者包含 Ali Bashir, Veda Mirhoseini 等顶级研究员），提出为线性复杂度（$O(N)$）的传统 RNN 引入动态检查点缓存与稀疏选择机制。[专家论文/工程证明]
+*   **Sakana AI 论文证据**：NeurIPS 2025 Spotlight 论文《*Continuous Thought Machines (CTM)*》（作者包含 Transformer 原始论文八位作者之一 Llion Jones），提出在模型内部引入时间维度与神经元同步矩阵，在静态输入下展开连续时间计算。[专家论文/基准测试]
+*   **团队背景背书**：Sakana AI 曾凭 AI 算法在 EKFP2025 编程赛夺冠，并将 SAT 编码求解速度提升近 10 倍。[历史先例/专家背书]
+
+#### 3. 逻辑推演 (Logical Warrant)
+*   **前提 1**：Transformer 依赖空间上一次性摊开信息的静态模式匹配，在处理长上下文时计算复杂度呈二次方上升，物理能源不可持续。
+*   **前提 2**：Google 方案通过在 RNN 中增加“智能缓存按钮”，保留线性复杂度的同时实现了记忆随输入动态增长，弥补了长文本能力。
+*   **前提 3**：Sakana 方案通过恢复生物大脑的“时间维度”与“节律同步”，使得极小参数模型也能通过内部动态展开完成深层推理。
+*   **结论**：AI 的未来不应盲目通过 Scaling Law 堆叠参数和测试时算力（如 CoT 查表），而必须转向具备动态记忆选择与连续神经动力学的优雅新架构。
+
+#### 4. 明确界定的适用范围 (Stated Scope)
+*   **局限与保留**：作者明确承认“断言 Transformer 时代结束还为时过早”。
+*   **性能限定**：引用 Memory-Cached RNN 论文原话，承认在纯粹的上下文召回（Long-Context Recall）能力上，Transformer 目前依然“最能打”。
+*   **领域限定**：CTM 目前仅在图像、迷宫和强化学习任务上完成验证，在语言建模（LLM）上的应用仍属于“未来的工作”。
+
+#### 5. 隐性对立面 (Implicit Opponent)
+*   **Scaling Law 决定论/盲目崇拜者**：认为只要持续投入数百亿资金砸 GPU、喂数据、盲目扩大 Transformer 参数量，或仅靠在测试时增加链式思考（CoT）计算量，就能自然解决所有推理与复杂任务并达成 AGI 的主流观点。
+
+#### 6. 预期行动/观点改变 (Intended Takeaway)
+*   引导读者摒弃“Transformer 必为 AGI 唯一解”的认知定势，将评估未来 AI 架构的视角从“单次推理算力与静态参数量”转向“内部时间展开能力、动态内存选择与底层神经表示的质量”。
+
+---
+
+### PART 2. 冷酷而严谨的同行评审 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强化提炼 (Steelman)
+视频作者精准地切中了当代 AI 产业的根本焦虑：Transformer 带来的 $O(N^2)$ 计算瓶颈与物理世界能源墙不可调和。Google 与 Sakana AI 的论文并非泛泛的理论空谈，而是直击算力效率与生物智能特性的底层问题。前者尝试在工程上修复 RNN 的致命缺点（遗忘），后者尝试在算法范式上重新引入生物大脑的时间动态与神经同步。这两条路线均证明了：追求智能并不只有“无限增加静态参数”这一条蛮力道路。
+
+#### 2. 最薄弱环节 (Weakest Link)
+*   **被攻击的核心论点**：视频宣称 CTM “只要把时间维度用好，极少的参数也能爆发出惊人的动态推理能力”。
+*   **崩溃推导**：CTM 所谓的“高参数效率”，本质上是将空间计算转移到了时间循环（Internal Ticks）中。虽然**参数量**降低了，但单次推理的前向传播**总计算量（FLOPs）与时间延迟（Latency）**并没有减少，甚至因为连续时间步的串行依赖，导致现代 GPU/TPU 的高度并行算力利用率剧烈下降。若“少参数”的代价是“高延时与高训练/推理耗时”，则其在工业界彻底替代 Transformer 的工程根基将瞬间坍塌。
+
+#### 3. 证据审查 (Evidence Audit)
+*   **隐瞒工程优化的成熟替代方案**：视频将 Transformer 的 $O(N^2)$ 描述为非死即生的绝境，忽略了工程界早已大规模落地的优化技术（如 FlashAttention-3、MQA/GQA、StreamingLLM、Context Compression）以及线性 Attention（如 RWKV、Mamba）的最新进展。
+*   **玩具任务与 LLM 范式的外推谬误**：CTM 目前仅在图像识别、迷宫寻路等低维控制/感知任务上取得成功。学术界历史上充斥着在迷宫与强化学习中表现惊艳、但一旦扩展到语言建模（LLM）就因容量不足而完全崩溃的神经动力学架构。将 CTM 的成果直接外推为“通向世界模型的路径”缺乏证据支持。
+*   **选择性忽略记忆召回劣势**：Memory-Cached RNN 尽管实现了线性复杂度，但在最关键的 Needle-In-A-Haystack（大海捞针）无损记忆召回任务上依然落后于 Transformer。长文本理解的“无损”才是当前 Agent 和代码处理的关键，这使得该架构在核心场景中处于劣势。
+
+#### 4. 隐藏假设 (Hidden Premises)
+*   **假设 1**：模拟生物大脑的脉冲时间差与节律同步是实现高阶智能的*必要条件*，而非碳基生物受限于低能耗演化出的*妥协产物*。
+    *   *质问*：如果硅基芯片的最佳算力形态就是大规模并行矩阵乘法，为什么必须削足适履去模拟碳基大脑的串行时间步？
+*   **假设 2**：内存状态的稀疏缓存可以在保持 $O(N)$ 复杂度的同时，不丢失深层语义的非线性跨度关联。
+    *   *质问*：信息的有损压缩必然存在边界，当面临需要跨越几十万字进行复杂逻辑交织推演的任务时，稀疏选取的检查点凭什么保证关键状态不被丢弃？
+
+#### 5. 盲区盲点 (The Blind Side)
+*   **硬件与软件生态的“硬件彩票”（Hardware Lottery）**：Transformer 的统治地位不仅在于算法本身，更在于其完美契合了 GPU 的矩阵乘法单元（Tensor Cores）与 CUDA 生态。无论是 CTM 的内部连续动态，还是 Memory-Cached RNN 的动态检查点，都在并行化训练（Data Parallelism / Tensor Parallelism）和显存流水线调度上面临巨大的硬件适配阻力。离开硬件协同设计的架构改写，注定只能停留在实验室阶段。
+
+#### 6. 致命一问 (One Hit Kill)
+> “如果 CTM 或 Memory-Cached RNN 真的能在保持算力优势的同时实现同等泛化的智能，为什么 Sakana AI 或 Google 至今无法训练出一个在千亿级 Token 标准语言建模基准（如 Pile/SlimPajama）上，Perplexity（困惑度）与 LongBench 性能击败同等训练算力下 Transformer 的语言模型 Demo？”
+
+#### 7. 如何终局裁决 (What Would Settle It)
+*   **同等算力基准测试（FLOPs-to-FLOPs Benchmark）**：在固定训练 FLOPs 与推理延迟预算的条件下，将 Memory-Cached RNN 或 CTM 扩展至 7B-70B 参数规模，在通用语言理解、长文本召回及代码生成任务上与 Llama-3 架构进行盲测。
+*   **裁决标准**：
+    *   若新架构在**推理延迟不高于 Transformer** 的前提下，长文本准确率达到 Transformer 的 95% 以上且吞吐量提升 3 倍以上，则证明其具备颠覆性；
+    *   若在扩展到千亿 Token 训练时出现梯度消失、训练崩溃或硬件利用率低于 30%，则证明其无法超越 Transformer 范式。
+
+---
+
+### PART 3. 概念图谱 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 核心争议: Transformer 统治地位是否真的不可动摇?"] --> B["分析对象: 2025/2026 两篇挑战底层的重量级论文"];
+
+    subgraph SG1["🔴 Transformer 的统治与根本硬伤 (Context & Limitations)"]
+        direction TB
+        T1["底层机制: 空间摊开模式匹配"]
+        T2["核心缺陷: O(N²) 二次复杂度"]
+        T3["现实后果: 计算成本爆炸 / 算力与能源墙"]
+        T4["推理局限: 靠测试时堆计算量 (CoT 查表)"]
+        T1 --> T2 --> T3 --> T4
+    end
+
+    B --> SG1;
+
+    subgraph SG2["🔵 路线一：Sakana AI - Continuous Thought Machines (CTM)"]
+        direction TB
+        C1["代表人物: Llion Jones (Transformer 原作者)"]
+        C2["核心思想: 重塑时间维度 + 神经元同步矩阵"]
+        C3["机制: 静态输入下内部展开多回合动态推理 (Ticks)"]
+        C4["优势: 极小参数爆发惊人推理能力 (已在视觉/迷宫/RL验证)"]
+        C1 --> C2 --> C3 --> C4
+    end
+
+    subgraph SG3["🟢 路线二：Google - Memory-Cached RNN"]
+        direction TB
+        G1["代表人物: Veda Mirhoseini 等 Google 顶级研究员"]
+        G2["核心思想: 改造老牌 RNN (线性 O(N) 复杂度)"]
+        G3["机制: 隐藏状态检查点缓存 + 稀疏选择机制"]
+        G4["优势: 记忆随长度动态增长，平衡线性效率与长文本理解"]
+        G1 --> G2 --> G3 --> G4
+    end
+
+    B -- "生物智能启示" --> SG2;
+    B -- "计算效率优化" --> SG3;
+
+    subgraph SG4["🟣 作者预测: 未来 AI 架构的三大走向 (Author's Vision)"]
+        direction TB
+        P1["1. 长效记忆与检索标配 (动态内存/持续学习)"]
+        P2["2. 生成认知突破 (内部神经动力学计算替代 CoT 硬扛)"]
+        P3["3. 通向真正世界模型 (理解时间流逝与长期状态维持)"]
+        P1 --- P2 --- P3
+    end
+
+    SG2 & SG3 -- "共同指向" --> SG4;
+
+    subgraph SG5["⚔️ 严谨同行评审批判 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R1["致命弱点: CTM 内部时间展开牺牲并行性，FLOPs/延迟并未降低"]
+        R2["证据缺失: CTM 未在大语言模型 (LLM) 上证明 Scaling 能力"]
+        R3["工程劣势: Memory-Cached RNN 在无损长文本召回上仍逊色 Transformer"]
+        R4["硬件彩票: 缺乏 GPU/CUDA 级别的软硬件协同优化生态支持"]
+        R5["终局裁决: 需在同等 FLOPs 条件下完成 7B+ LLM 基准盲测"]
+        R1 --> R2 --> R3 --> R4 --> R5
+    end
+
+    SG1 -. "忽视工程优化 (FlashAttn)" .-> R3;
+    SG2 -. "外推谬误与串行开销" .-> R1;
+    SG2 -. "缺少 LLM 证据" .-> R2;
+    SG3 -. "长文本召回率落后" .-> R3;
+    SG4 -. "离硬件生态实现太远" .-> R4;
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef tfNode fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#B71C1C
+    classDef ctmNode fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1
+    classDef rnnNode fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20
+    classDef visionNode fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    classDef reviewNode fill:#FFF3E0,stroke:#FB8C00,stroke-width:2.5px,color:#E65100
+
+    class A,B mainClaim
+    class T1,T2,T3,T4 tfNode
+    class C1,C2,C3,C4 ctmNode
+    class G1,G2,G3,G4 rnnNode
+    class P1,P2,P3 visionNode
+    class R1,R2,R3,R4,R5 reviewNode
+
+    %% --- Subgraph Background Styles ---
+    style SG1 fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828
+    style SG2 fill:#E3F2FD,stroke:#42A5F5,stroke-width:2px,color:#1565C0
+    style SG3 fill:#E8F5E9,stroke:#66BB6A,stroke-width:2px,color:#2E7D32
+    style SG4 fill:#F3E5F5,stroke:#AB47BC,stroke-width:2px,color:#6A1B9A
+    style SG5 fill:#FFF8E1,stroke:#FFA726,stroke-width:2.5px,color:#EF6C00
+</Mermaid_Diagram>
+
+Content:
+大家好,我是为什么叫QQ? Tanchen is all unique 这局AI圈无人不知的名言 自2017年以来影响了整个行业近9年 大家看看现在手里用的Chat GPT Cloud Gemini 绝大多数主流大模型的底层 基本都讨不出Transformer或它的便体加购 但我就现在想一个问题 这个看起来不可疑似的加购真的就没有硬伤吗? 有意思的是最早站出来指出这个硬伤的 不仅有Google内部的顶级研究员 甚至还有当年写出 潭春 is all unique的共同作者 就在2025年和2026年 两篇重量集论文先后发布 他们没有去凑大摩行跑分的参数热闹 而是分别从效率和神经动态 这两个完全不同的角度 挑战了Transformer的底层局限 今天我们就来硬核拆解一下 这两篇论文到底发现了什么 Transformer的统治地位 是不是真的像我们想像中那么稳固 现在很多人有一种错觉 AI已经很强了 只要继续往里砸显卡被数据 Transformer就能一路把我们带到AGI 但稍微在工程一线采过坑的朋友肯定身有体会 当你给大摩行为了一本几十万字的小说 让他在里面找个小细节 他不仅算得慢 而且API障弹能让你肉疼 或者在一些需要规划和精确状态跟踪的人物上仍可能失败 这背后的根本原因在于 Transformer架构在设计之初就带有了一个缺陷 为了记住上下文 他必须把当前输入的每一个词 跟前面出现过的所有词都拿出来比对一次 搞计算机的朋友都知道这叫二次复杂度 也就是说你输入的提示词越长 计算成本不是跟着现心网上涨 而是直接爆炸是标升 这就好比你为了想起来今天中午吃了什么 非得把你这辈子吃过的每一顿饭都在脑子里过了一遍 这种简单粗暴的计算方式 真的是通向智能的围解吗 而且为了维持这种算力消耗 全球AI数据中心的投入和用电需求正在直线上升 这套玩法在物理世界的能源限制面前 显然不可持续 其实学术界和工业界早就开始极了 大家都在疯狂找后路 今天我们要拆解的两篇论文 刚好代表了目前最顶级的两种突卫思路 第一篇是Archive的 memory catching R&N's with growing memory 这篇论文的作者正容非常豪华 包括 Ali Barrow's Zimony 等Google研究员 还有Google Research的VP Google Fellow Veya Miracene 他们给出的解法很奇特 把古老的二人恩循环神经网络反了出来 给他加了一个智能缓存按钮 这个思路是图在二人恩的低成本 和Transformer的高算力之间 找一个完美的平衡点 第二篇是Skana AI团队拿出的 Continuous Thought Machines 减成CTM 这篇工作还拿到了Newrips 2025的Spotlight 论文的作者之一Line Jones 正是当年Transformer论文的八位共同作者之一 创造了现代AI基础价购的人 离开大厂创办了斯康的AI后反过头来说 我们当年为了算力抛弃时间违度的决定 可能需要重新审视了 CTM亚根每打算去刷大模型的绑胆 他的野心是把神经时间动态 和同步表示重新塞回模型内部 一边是算法优化领域的顶级正规军 一边是Transformer架勾地造者出来单干的特种部队 他们从完全不同的切入点 向同一个行业罢主发起了挑战 路线一,CTM重塑时间违度 我们先来看看斯卡纳AI的CTM 到底在搞什么名堂 CTM的核心动查非常反之觉 他们认为现代AI和人脑之间最大的红钩 其实不是算力不够 而是少了一个违度 时间回想当年设计Transformer的时候 为了让模型在GPU上能并行跑得飞快 科学家们做了一个妥协 砍掉了生物神经园那种 随时间变化的状态 但在真实的人脑里 神经园可不是简单的凌合一开关 他们是通过放电的时间差 通过节率的同步来传递信息的 CTM是怎么解决这个问题的 他在模型内部创造了一个 节有的时间围度 哪怕你只给他为一张静态的图片 他也能在内部低达低达走上几十个回合 让推理的过程有展开的空间 更硬核的是 他不再死丁着单个神经园输出的具体数值 而是直接把神经园之间的同步举证 当成了理解世界的语言 顺便说个八卦,Sakana,AI的另一个项目深刻vove 曾经帮一个团队拿下了,EKFP2025编程竞赛的第一名 还把SAT编码相关的求解速度最高提了将近10倍,这至少侧面说明 这帮人在神经计算和推理上的底子非常深厚 目前,CTM已经在图像,迷宫强化学习这些任务上展示了不俗的潜力 至于能不能用在语言键模上,论文里说那是未来的工作 但它已经证明了一点,只要把时间维度用好 几少的参数也能爆发出惊人的动态推理能力 路线2 Google memory cache 智能缓存机制 看完CTM我们再来看看Google的这篇 memory cache 如果说CTM是想从生物学底层推导重来 Google的方案就是把工程优化做到了极致 面对transformer那个让人头疼的二次复杂度 Google的研究员把目光投向了老牌的Arnen Arnen有个好处速度快成本低 因为它是现性复杂度的 但它有个知名商 内存是固定的 你给它卫一篇长文章 它看着后面的前面就忘了 Google是怎么改造的 他们没有让RNN傻糊糊的 不断覆盖自己的内存 而是给它设计了一个保存机制 这个技术允许RNN在读取信息的时候 把隐藏状态的检查点给缓存下来 这样一来RNN的有效记忆容量 就可以随着输入训练的变长 而动态增长了 他们甚至还搞了个吸书选择机制 让AI自己去挑历史记录里哪些检查点最重要 哪些可以丢掉 这就非常巧妙的在R&N的高校和Transformer的长文本理解能力之间 搭起了一座桥 不知道大家看出来没有 这两篇论文其实代表了两种完全不同的技术信仰 Google的 memory cache 是从计算复杂度出发的 它要解决的是怎么在不加钱的情况下 算得又快又多 它没有抛弃现有的工程体系 而是通过极其聪明的缓存机制 在不增加二次方成本的前提下 大幅提升了常上下文的理解能力 而Sakana AI的CTM是从生物智能处发的 它在问 AI怎么才能像人脑一样灵火 它抛弃了现有的静态计算饭饰引入了神经动力学 追求的是极高的参数效率和模型的可解事情 一个是工程优化的颠缝操作 一个是寻找生物灵感的底层重够 聊到这里事情开始变得有意思了 过去几年 我们整个行业都有一个纸念 只要参数够大,只要Skeling Law还在 大力就能出奇迹 我们砸了成百上千亿美元 去对Transformer的算力 因为我们以为那是实现复杂推理的唯一出路 但这几篇论文 像是在这个狂热的派对上破利盆冷水 GoGo告诉我们 其实我们不需要每次都把历史记录从头到尾搅一遍 一个聪明的缓存就够了 CTM告诉我们 光靠对参数 你最后可能只得到一个反应 特别快的查表机器 想要真正的智能计算过程 得内化到神经动态里去 大家平时用OE这类推理模型的时候 有没有觉得他们那种恋式思考 其实更多是通过增加测试式的计算量来提升表现 底层的逻辑依然是大圆模型那一套 而CTM在尝试一种完全不同的路子 当然 严谨点说这两篇论文只是从不同角度 挑战了Transformer的局限 现在就断言 Transformer时代结束还维持过早 Memory Catching的论文理也承认 虽然缩小的差距,但在上下文召回能力上, Transformer目前还是最能打的。 但的至少说明,寻找替代方案或者改进方案的努力已经看到了鼠光。 这两篇论文虽然走的路完全不同, 但他们有一个极其重要的共识, 都在试图打破静态处理的组织。 Transformer本质上是一个静态的模式匹配机器, 它把所有信息在空间上摊开一眼看过去。 但真正的智能,不管是独长文章还是解逻继题, 都需要在时间违度上去动态的筛选沉淀信息 这给了我们一个全新的视角 去评估未来的AI架构 未来的AI不能指定的参数量有多大 也不能只算单次推理花了多少算力 它必须得有动态适应能力 要么像MemoryCash那样 能动态的增长和选择记忆 要么像CTM那样 在内部展开时间违度的神经同步 只有摆脱了二次复杂度的算力绑架 跳出死基因倍的参数依赖 AI才能真正卖进下一个时代 如果大家都在找下一代AI架构 那未来的AI到底长什么样 我在这里大胆预测几个方向 首先长效记忆与减锁肯定会成为标配 Memory Catching目前解决的是 长上下文里的零食记忆问题 但这种动态内存的思路 未AI在多轮对话中 更好的利用历史信息 打开了想象空间 未来能不能演变成真正的持续学习机制 非常值得期待 其次是生成认知的突破 未来的推理模型 也许不会在单纯靠增加测试时的计算量来硬扛 而是像CTM那样 在模型内部展开真实的神经动力学计算 这会比现在的练书思考 更接近我们理解的生物智能 最让人期待的其实是通向世界模型的那条路 一个真正的世界模型不能只靠近太空间应设 它得像CTM那样理解时间的流氏 得像 memory cache 量高效的维持长期状态 当有一天 工程师们把这两种思路融会惯通 我们可能会看到一个完全不同的AI生态 它不再是一个冰冷的数据处理器 而是一个真正具备生物适应性的智能体 我们曾经以为 Transformer是拿到AGI门票的唯一解 但科学最敏人的地方 就在于它总是不断推翻昨天的自己 无论是Google的智能缓存 还是Sakana AI的时间伪度 其实都在告诉我们一件事 AI的未来不在于盲目的堆气算力 而在于架构的优雅与智慧 底层表示的质量 最终决定了智能能达到的高度 大家觉得未来的AI发展 是会继续沿着Transformer对参数的路线一路狂奔 还是会慢慢转向这些全新的架构 欢迎把你的看法打在公平上 或者在评论区和我讨论 如果这期视频让你对AI架构 有了那么一点点新的认知 别忘了一件三连 我是非什么叫QQ 我们下期见
