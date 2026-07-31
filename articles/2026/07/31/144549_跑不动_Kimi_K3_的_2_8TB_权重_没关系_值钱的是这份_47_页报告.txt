@@ -1,0 +1,150 @@
+Timestamp: 2026-07-31T14:45:49.098519
+Title: 跑不动 Kimi K3 的 2.8TB 权重？没关系，值钱的是这份 47 页报告
+URL: https://youtu.be/yryTXpvCamE?si=Ew5THEs1J_I7YdrU
+Status: success
+Duration: 14:30
+
+Description:
+以下是对视频内容的深度解构、批判性审视与架构逻辑图谱。
+
+---
+
+### PART 1. Author's Map（作者论证图谱）
+
+#### 1. Core Thesis（核心主张）
+Kimi K3 的 2.8T 权重虽然因显存与算力门槛对个人开发者不可运行，但其开源的真正价值在于 47 页技术报告与配套工程仓库（FlashKDA、MoneyP、Agent-TNV）所代表的“软硬件协同设计”与“工程踩坑解法”，开发者应将关注点从“模型部署”转向“架构方案复用”。
+
+#### 2. Evidentiary Base（论据支撑）
+*   **硬核数据与参数**：2.8T 参数 MoE 架构、1.56TB 权重文件、驻留显存 1.4TB；运行底线为 19 张 H100 或 8 张 GB300；CPU 部署速度极慢（0.05~1 Token/s，3.2万 Token 需 9 小时）。
+*   **核心技术解法**：
+    *   *KDA*：数值范围限定在 $[-80, 0]$ 以契合 BF16 动态范围；C++ 内核 FlashKDA 在 H20 上比 Triton 快 1.8~2.3 倍。
+    *   *混合架构*：69 层 KDA + 24 层 MLA（3:1 配置），全层 MLA 采用 NOPE（无位置编码），依赖 KDA 隐式编码实现 1M 上下文外推。
+    *   *Eternus 深度残差*：分块（8块$\times$12层）在深度维度进行检索减法，避免传统残差的深度瓶颈。
+    *   *MoE 优化*：896 选 16（稀疏度 56%），路由空间压缩至 3584 维；采用 RMSNorm + SwiGLU GAU (Cap 100) + Quantile Balancing（分位数均衡）。
+*   **工程基础设施**：
+    *   *QAT*：SFT 与 RL Rollout 阶段全流程开启 MXFP4 权重 + MXFP8 激活量化。
+    *   *MoneyP*：通过冗余专家与在线规划实现静态路由通信，消除点对点 Barrier。
+    *   *Agent-TNV*：基于 Firecracker MicroVM (Rust) 实现 Pause/Resume，暂停挂起仅占增量快照，恢复耗时 49ms。
+*   **测评与商业体验数据**：AA Ominations 幻觉率由 39% 升至 51%；长文本 300K 压缩版得分（91.2）高于全量 1M（90.4）。
+
+#### 3. Logical Warrant（逻辑纽带）
+*   **硬件倒推数学参数化**：计算卡（Tensor Core）和数据格式（BF16/FP8）的物理特性决定了注意力机制数学公式的推导与截断形状。
+*   **训练/推理一致性归因**：RL 阶段与推理阶段采用不一致的量化方案会导致 Performance Missmatch，因此必须在训练第一天定死量化配置。
+*   **瓶颈转移逻辑**：将通信和计算的瓶颈从“算力规模”转移到“静态结构规划”（如静态路由、固定维度 Latent 空间），从而在大规模专家并行下维持 Scaling Efficiency（2.5倍训练效率提升）。
+
+#### 4. Stated Scope（适用边界）
+*   **适用场景**：企业级自托管部署（8*B200 等大集群）、大模型 Infra 工程师、Agent 系统架构师、云服务厂商。
+*   **明确排除**：个人开发者自建本地推理（绝对不可行）、直接将 1M 上下文作为无脑信息垃圾桶、多轮对话中修改/丢弃 `reasoning` 内容。
+
+#### 5. Implicit Opponent（隐性对立面）
+*   **媒体与社区的盲目炒作**：将开源等同于“人人可用本地跑”、混淆 2.5 倍 Scaling Efficiency 为“推理速度提升 2.5 倍”、误报开源许可证（误以为是纯 MIT）。
+*   **传统“后量化”与“黑盒微调”范式**：发版前才做量化（导致精度崩溃）、忽略 Agent 运行中 98% 的等待时间浪费、依赖单一 Harness 脚手架导致的过拟合。
+
+#### 6. Intended Takeaway（预期行动）
+*   放弃在个人设备运行 K3 全重的幻想。
+*   拆解并复用其工程代码库：引入 Agent-TNV 思想优化沙箱管理、参考 MoneyP 解决专家并行不均、借用 Eternus 分层提取特征。
+*   在生产环境中实施严格的 API 路由策略（混合路由）与思考协议（Preserve thinking contract）。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（批判性审视）
+
+#### 1. Steelman（最强姿态重述）
+Kimi K3 的开源是一场高水准的“软硬件协同设计”示范。它证明了当大模型参数突破万亿级别时，纯粹的算法创新已无法独立拯救性能，必须通过底层硬件特性（BF16 动态范围、Tensor Core 矩阵乘法、MicroVM 挂起）倒推数学公式与系统工程。它为业界提供了一套在极致稀疏度（896选16）下维持稳定训练、通信与推理的完整基础设施蓝图。
+
+#### 2. Weakest Link（最薄弱环节）
+*   **核心断裂点**：作者主张“权重跑不动，但工程方案完全可以学”。
+*   **文本锚定**：*“模型权重我们确实办不动 但它采坑跑通的工程方案 我们完全可以学”*
+*   **致命逻辑漏洞**：K3 解决的绝大多数工程痛点（如 MoneyP 消除多节点专家并行屏障、FlashKDA 针对 SM90 架构的 C++ 内核、Quantile Balancing 的超大阵列 Reduce）**高度绑定于万卡/千卡级别的超级集群与专用网络拓扑**。对于 99% 的中小企业和中小型 Infra 团队，其业务规模根本达不到触发这些“极限工程瓶颈”的阈值；盲目引入其复杂的静态路由或前向专属 C++ 内核，反而会带来巨大的维护成本与兼容性灾难。
+
+#### 3. Evidence Audit（证据与隐患审查）
+*   **选择性展示**：作者极力赞扬 FlashKDA 比 Triton 快 1.8~2.3 倍，但轻描淡写地提到*“官方目前只开源了前向传播”*。没有反向传播代码，意味第三方团队根本无法基于此内核进行完整的微调或二次训练。
+*   **被忽略的反例**：作者提及 K3 训练效率（Scaling Efficiency）提升 2.5 倍，但未能深入探讨其代价——在 AA Ominations 测试中，**幻觉率从 K2 的 39% 剧增至 51%**。这种“极度自信地胡说八道”表明模型在极致稀疏路由和过激的 Agent 训练下牺牲了事实精准度。
+
+#### 4. Hidden Premises（未明示前提）
+*   **假设 1**：开发者具备重构 LLM 运行时（Runtime）的基础设施能力。
+    *   *提问*：如果企业连 vLLM 的源码都没有定制能力，如何将 KDA Prefix Caching 的二阶段查找与严格并发规则落到实处？
+*   **假设 2**：商业公司会自觉遵守Chimic K3 LICENS 中的“集团总收入 2000 万美元”触发条款。
+    *   *提问*：在全球分布式部署和复杂母子公司架构下，Moonshot 如何审计并执行这一 MaaS 商业勾子？
+
+#### 5. The Blind Side（视角盲区）
+作者重点关注了 1M Token 上下文的能力，却忽略了**上下文增加带来的注意力稀释与边际递减效益**。报告自承 300K 压缩版得分（91.2）高于 1M 全量版（90.4）。这揭示了一个残酷现实：盲目推高上下文窗口在工程上虽然可行，但在认知推理上可能是一个“负优化”的盲目指标追逐。
+
+#### 6. One Hit Kill（致命一问）
+> **“既然 FlashKDA 仅开源了前向传播，MoneyP 依赖特定的多节点网络拓扑，且 CPU/单卡自托管推理速度低至不可用（3.2 万 Token 需 9 小时），那么对于没有万卡集群的非头部企业，这套工程方案除了写在 PPT 里作为技术储备外，到底有哪一行代码能直接在现有生产环境中无缝替换现有方案？”**
+
+#### 7. What Would Settle It（判定性验证标准）
+如果在未来 6 个月内，主流开源推理框架（如 vLLM、SGLang、TRT-LLM）能够在不依赖 Moonshot 专属硬件拓扑的前提下，成功将 MoneyP 与 FlashKDA 模块化集成，并帮助中小规模集群（如 8~32 张 H800/H20）实现 1.5 倍以上的实测吞吐提升，则作者的“工程可学论”成立；反之，若这些仓库沦为无人问津的“实验室样品”，则证明其仅是对顶尖厂商自娱自乐的工程秀场。
+
+---
+
+### PART 3. Conceptual Map（Mermaid 逻辑图谱）
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 Kimi K3 开源拆解: 权重之外的工程宝藏与现实落差"] --> B["核心主张: 权重办不动，但工程方案与技术报告价值连城"];
+
+    subgraph SG1["🟢 第一部分：底层四大数学与架构创新 (Architectural Innovations)"]
+        direction TB
+        S1_KDA["1. KDA (Kimi Delta Attention)<br/>逐通道遗忘门 + 截断LogDecay [-80,0]<br/>契合BF16动态范围消灭计算瓶颈"]
+        S1_Hybrid["2. 69 KDA + 24 MLA 混合架构<br/>3:1比例配置，全层MLA采用NOPE<br/>依赖KDA隐式编码外推1M上下文"]
+        S1_Eternus["3. Eternus 深度注意力残差<br/>打破RNN式深度瓶颈<br/>分块检索(8块x12层)兼作特征抽取"]
+        S1_MoE["4. Stable Latent MoE (896选16)<br/>压缩至3584维隐空间，分位数均衡(Quantile Balancing)<br/>RMSNorm + SwiGLU Softcap 100 防溢出"]
+    end
+
+    B -- "技术报告核心亮点" --> SG1;
+
+    subgraph SG2["🟠 第二部分：落地工程套件与最佳实践 (Engineering Implementation)"]
+        direction TB
+        S2_QAT["QAT 量化感知训练<br/>SFT/RL全流程MXFP4权重+MXFP8激活<br/>消灭训练推理不一致(Mismatch)"]
+        S2_MoneyP["MoneyP 静态路由通信库<br/>冗余专家在线规划，消除后室Barrier同步<br/>H20上运行速度超越DPV2"]
+        S2_Agent["Agent-TNV 杀箱系统<br/>Rust + Firecracker MicroVM API<br/>Pause/Resume设计(暂停增量快照,49ms恢复)"]
+        S2_Routing["生产环境坑点与路由策略<br/>必须保留Thinking Contract<br/>分层路由:日常用DeepSeek -> 复杂Agent用K3"]
+    end
+
+    B -- "工程代码仓库与落地教训" --> SG2;
+
+    subgraph SG3["🚩 第三部分：批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["最薄弱环节: '工程方案完全可以学'<br/>前提虚妄: 高度绑定万卡集群与顶级拓扑<br/>中小团队缺乏移植与维护能力"]
+        HR_Evidence["证据缺陷与隐患<br/>1. FlashKDA仅开源前向传播，无法用于微调<br/>2. 幻觉率飙升至 51% (头铁硬猜)<br/>3. 1M上下文存在认知衰减(得分低于300K)"]
+        HR_KillQuestion["致命一问<br/>缺乏反向传播与专用拓扑，中小企业生产环境中<br/>到底有哪一行代码能直接无缝替换上线?"]
+    end
+
+    B -- "反面视角与局限审视" --> HR_WeakLink;
+    SG1 -.-> HR_Evidence;
+    SG2 -.-> HR_WeakLink;
+    HR_WeakLink --> HR_Evidence;
+    HR_Evidence --> HR_KillQuestion;
+
+    subgraph SG4["🟣 第四部分：现实定位与最终结论 (Final Verdict)"]
+        direction TB
+        S4_Enterprise["对企业/资本<br/>逼出闭源大厂真实成本地牌<br/>提供8*B200自托管避开API封锁选项"]
+        S4_Engineers["对开发者/工程师<br/>模型跑不动，但代码库中的工程巧思<br/>(Pause/Resume, Prefix Caching)是绝佳借鉴"]
+    end
+
+    SG1 & SG2 -- "价值沉淀" --> S4_Enterprise & S4_Engineers;
+    HR_KillQuestion -- "修正预期后" --> S4_Engineers;
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef archNode fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef engNode fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px,color:#E65100
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef verdictNode fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20
+
+    class A,B mainClaim
+    class S1_KDA,S1_Hybrid,S1_Eternus,S1_MoE archNode
+    class S2_QAT,S2_MoneyP,S2_Agent,S2_Routing engNode
+    class HR_WeakLink,HR_Evidence,HR_KillQuestion reviewNode
+    class S4_Enterprise,S4_Engineers verdictNode
+
+    %% --- Subgraph Background Styles ---
+    style SG1 fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    style SG2 fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100
+    style SG3 fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+    style SG4 fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20
+</Mermaid_Diagram>
+
+Content:
+大家好,我是为什么叫QQ? 2026年7月27日,蒙萨的把Kimi K3的权重 正式放上了Hugging Face 2.8T参数的Moe整个仓库高达1.56TB 看到这个新闻,我的第一反应非常成实 这东西跟咱们普通开发者没啥关系 按权重驻流来粗算 光是把这套权重塞进显存 就需要19张H100这个量级 而VLLM官方respy给出的门坦 是至少8张Gb300 生产环境更是建议多节点 可以说个人跑这个模型的时间可行性 完全是个空极 但当我肯完内47页的技术报告后 我的看法变了 这次开源真正值钱 能被你我拿走的东西 其实是那份报告和附带的 三个infoer藏库 模型权重我们确实办不动 但它采坑跑通的工程方案 我们完全可以学 所以这期视频 我们依然用纯正的工程师视角 来应合拆解一下 在K3的开源里 我到底学到了什么 先把这次的开源轻单盘轻处 总共五大块 第一块模型全重 2.8T的MOE架构 原生MXF-P4 全重搭配 MXF-P8几火 注意这两个数字别搞混 你需要下载的是1.56TB的118个文件 但它助流显存大约是1.4TB 第二块47页技术报告 这也是本期视频的绝对主角 第三块FlashKDA 这是一个用Catholics的KDA内盒 要求SM-90架构起步 实测在H20上 Preview速度比TRITEN极限 快了约1.8-2.3倍 不过要注意官方目前只开源了前向传播 第四款MUNIP 一个专门为Moe训练打造的通信库 核心就是解决专家并行的负债均衡痛点 第五款AZEN TNV 用RUST的写的AZEN的杀箱 底层是Firecracker MicroVMAPI完美金融 ERB 而且是MIT许可 除此之外还顺手开了一些编较料 比如K3团队自己手错的 Triton类编异器 Mini Triton 以及花48小时搞出来的KDA 推理芯片RTL代码Nano-KPU 如果算上之前的Kimilini 整个KDA的技术站基本全放出来了 甚至幕细绕台给VLLM上游贡献了 KDA的Prefix Caching实现 再讲技术前必须把开源许可说清楚 因为发布前媒体出现了大面积的误报 K3并没有掩用K2的 Modify的MIT 而是搞了一个专门的Chimic K3 LICENS 在Chief上标的是LICENS OTHER 它的主体条款依然接近MIT 免费用随便改可为条可商用 但里面藏了两个钩子 MAS条款模型及服务 如果你把K3包装成API对外提供推理服务 并且你所在集团任意连续12个月的总收入 超过了2000万美元 抱歉你得先跟穆斯亚的另谦商业协议 注意门槛看的是你集团的总收入 不管你靠K3赚了多少钱 属明条款 如果你的商业产品越活过疑异 或者越收入过2000万美元 UI界面上必须显著标诛KIMIKI-3 当然也有货面条件 纯内不使用走官方或认证伙伴 调用纯转发服务都不算貌似 简单总结就是自己微调灵异物转售推理先签合同 接下来进入报告证纹 这47页里我挑了四个最值得操作业的底层设计 第一个KDA,Kimi Delta Tension 它的数学本质是Delta Roo线性注意力 外加一个逐通道的一望门 你可以这么理解 每个Key通道都有独立的保留率 一望的力度被切得非常细 相比之前的Kimi Linear K3做了两处改动 一是引入了全制输出门 20把LogDK硬设改成了有阶的Soft Sigma 下届磁磁卡在复武 报告里说的极其之摆 目的就一个 在16个Token的Tile里 累积的LogadeK刚好落在复八十到零之间 重缩放音子完美器盒BF-16的动态范围 结果就是所有英国Tile都能走筹密的Tensor Core举证成 彻底消灭了InchTrump的计算平景 这叫什么? 这就是典型的背硬件倒推出来的数值参数化设计 BF-16和Tensor Core的特性 直接决定了数学公式的形状 第二个混合机构设计 K3采用的是69层KDA 加上24层MLA的配置 具体是每个Block里三层KDA配一层Gated MLA 总共23个Block 最后再收尾一层MLA KDA负责近期信息的高效混合 MLA负责无限制的全聚交互 最绝的是所有MLA层全部使用Nope 五位置编码 位置信息全靠KDA的地规门控来影视编码 这就意味着一照的超长上下文直接外推 你根本不需要去调什么Rope或者一二 为了匹配这个能力 他们在数据预测专门合成了 必须堵满一兆才能解的任务 做了一个从8K到一兆的Curriculum爬升 第三个设计,Utunus 注意力残差 这个动机非常巧妙 传统的标准残差 是把全部历史状态声硬的压进一个单一表示里 这其实在深度违度上制造了一个类似R&N的平静 当年Transformer是怎么用注意力干掉时间违度地规的 Eternus就把同一招搬到了深度违度上 每一层用数据一来的权重去减所前面层的表示 不再是五脑的均匀累加 因为完整版开销太大 K3用了分块版 8块成12层 这里还爆出了个彩蛋福利 1.93这个操控模型 可以直接提取第一第四和莫尉 Atenance快的输出当特征 因为块边界 天然就是绝家的分层特征抽取点 第四个 Stable Layton TmoE K3的MmoE是896 选16 吸书度高达56 怎么做到的 它把路由专家 塞进了一个3584围的前空间 只有黑顿维度的一半 这样一来通信和群众的流量 就不再跟着活跃专家的数量现性爆炸了 这也是896选16 能在经济上成立的根本前提 但代价是激活几亿爆炸 且上千专家的负责均衡 超出了传统算法的工作级线 K3给出了解法三件套 Wapp前强行插入RMSNORM 引入Satugang GAU给激活加上Southcap上线100 专制MXF-P4和FP8的翼出风险 分位数均衡,Conto Balancing 这是我觉得最漂亮的一首 把专家偏制直接射成编辑分数的分位数 但此前向传播就能推导出均衡解 彻底抛弃了学习率超残 通信时只要做一个几百变脂肪图的RReduce 部署的时候偏制一动节 这就退化成了普通的TopK极其优雅 这里我要插播纠正一个被广泛误读的数字 2.5倍 scaling efficiency 很多人把它当成推理速度 也有人当成成本倍数 全是错了 看报告3.2节 这是在你和K2和K3的 scaling 落曲线 横轴flops 重轴验证 loss 它的意思是 再达到同等loss的前提下 K3需要的训练flops 大约只有K2的5分之二 这是一个预训练效率口径 大家写bbt 引用时千万别掏错场景 接下来的工程化部分 我认为是对咱们日常打工写代码 最有其罚的 五个亮点挨个过 一 QAT 亮化感知训练 从SFT阶段就全程开启 前面说过 全中MXFP4 激活MXFP8 但核心在于 他们RL 强化学习的Rollout和训练 用的也是完全相同的亮化方案 这就从根源上抹平了Tren Infrance Miss Match 训练与推理不一致的实际难题 思路必须转变了 量化不是发版钱的一锤子买卖 它是训练配置第一天力相就得定死 2.Money P 用静态形状消灭后室的同步 思路极度硬核 通过在线规划和签移荣誉专家 确保美张卡恰好收到S&K个偷肯 报告里甚至给出了严谨的数学定理 只需而分支一个荣誉专家 就能保证均衡可行 收益是什么 每层MOE的后室的vice同步 核可能轮浪只停顿全没了 在H20上它跑得比DPV2还快 而且对流量不均衡完全免疫 DPV遇到高不均衡可是会直接OOM的 3KDA prefix catching的力度节奏 MLA的KV缓存按Token分野 但KDA的状态是定常的每个请求只有1分 如果供用BlockHash 缓存命中率会极其残弹 K3怎么减 力度节奏 前对Haxi跑系力度512Token练习Haxi 但KDA状态是在哈西端典的西书紫籍里存checkpoint 查找分两阶段外加极度延科的病发一致性规则 这套方案已经合进了VLLM 但默认是关闭的 不属时必须显示传 Nable prefix catching 容量规划时送大家一句话 KDA的状态值大小就是你系统的病发上线 4.Agent-TNV的暂停极林资源设计 数据很夸张 训练加评测 它们拉起了超5100万个杀箱 核心设计在于Poss Resume 报告指出 AZN的运行期间 98%的时间都在等大模型推理 既然在干等把杀箱暂停 不就等于零字元占用了吗 增量检查点只要133毫秒 恢复只要49毫秒 早期用刀gear被AZN的搞出 过死所和Colonel Panic 后来B一直换成了MicroVM 这个仓库是MIT许可在Covercase AI组织下 作为AZN的底层的兄弟们 直接拿去用 5 多Harness 脚手架 动态实力化 工具Skame 系统提示 Skills 全被抽象成可组和模块 训练时动态实力化 Kimi Code Cold Code Coldex 等多种环境防止模型 对单一脚手架 过你和 这就是为什么K3换套皮依然那么稳的原因 前面讲的是神仙怎么造轮子 下面讲反人怎么用轮子 全片最实用的一段 全是这几天设计用真金白银杂出来的教训 建议直接点赞收藏 第一条死手preserved the thinking contract 官方明确要求 多轮对话里必须原样回传assistent消息 reasoning, content,一个字幅都不能丢 如果你中途从其他模型切到了K3 官方原话是声承质量会高度不稳定 社区共识,切模型,避开新会话 改reasoning effort,避开新会话 监融 OpenAI 的接口格式 值代表网络能通 不代表行为监融 第二条接入配置的按坑 K3永远带思考过程关不掉 K2.7code收到非Thinking请求会直接报错 最坑的是如果Web Search配置无效 请求会直接降级录油到K2.6 很多人以为在调K3看了账单才发现是2.6 另外接入CloudCode时 必须把Innibo2 Search社为force 这都是敲无声息的质量降级点 第三条算清楚成本账 K3API的价格差是巨大的 缓存命中0.3刀每百万偷肯 每命中三刀整整十倍 输出更是高达15刀 所以把能吃缓存的东西全部牵制 系统提示词 代码仓库快兆工具定义 通通放最前面第四条 别把一兆上下文当拉机桶 报告里的Broscom数据清晰显示 300K压缩版的得分是91.2 全量一兆反而掉到了90.4 记住上下文窗口只保证容量不保证理解力 第五条分层录油 社区目前已经收脸出一套最有解 日常杂活Hans Deepseek或GM5.2 前端视觉长程Agent任务上K3 高风险验证丢给Fable5 有网友晒单 同样的杂活 Deepseek2.5 K3要2块 差了80倍结论 好刚用在刀刃上 第6条防备模型的过渡主动 官方说模型可能会替用护作决定 虽然目前社区还没拿出食水的灾难性负限 但在生产环境,我们必须按存在危险来设访 沙箱隔离,显示网络边界必须加上 写操作前加上人工审批 永远把LLM的输出当成不可信的注入面 最后讲几个我们必须面对的现实 首先是跑分的水分 脚手架 Hannes,对成绩的影响极大 官方脚筑里自己都承认 在KCB2.0上K3用Cloud Code能跑73.7 用自家Kimiko的反而只有72.9 换到Skale AI平台的测试,17.3分的差距完全是因为换了搅手架,所以以后看AZN的跑分 补代Hannels名字的裸数字毫无意义 其次是换决率的上升,在AA的Ominations测试中 K3的换决率从之前的39%升到了51% 翻以下就是它变头铁了,巨大率下降,遇到不会的问题 有一半的概率它在极其自信的胡说八道 生产商用业务教验层绝不能省 最后是个人自拖管的幻想 目前拉马 CPP 欧拉马 LAMS Studio 全部支持KDA架构 欧拉马上的那个K3其实只是个API转发器 接着27号 全网没有任何真实环境的自拖管跑分 根据估算 CPU加大内存方案 速度大约是0.05到1TG 每秒 这意味着生成3.2万个推理Token 你要干等9个小时 那这次开源究竟谁受益 Hacker News 上的讨论一真见写 海外企业主权场景 8KB200跑企业自拖管绕过了API封锁 推理厂商与云服务商3T模型的第三方部署 将首次逼出大厂服务成本的真实地牌 看看闭原厂到底有没有在倒贴钱不贴偷肯 我们这些工程师模型跑不动 但代码仓库里的设计模式全是宝藏 至于社区传闻的claw的征流嫌疑和水军商单 目前军位有权重和数据级别的失垂 大家引用时注意分寸结尾总结一下 K3的这次开源权重是送给企业和资本的 但报告和代码是10大时送给咱们工程师的 2.8T的据说我确实跑不动 但KDA的数字推导 Adness的特征提取MoneyP的静态路由 Prefix Caching的力度节奥 以及AgentNV的Pause Resume 这些工程巧思 多少我们都可以有所借件 有时候开源最大的诚意 并不在1.56TB的文件里 而是藏在Github的Chemy的记录中 评论去聊聊 这份47页的报告里 你最想超哪个设计 你现在业务里的模型路由策略又是怎么配的 绝对有用 别忘了三连支持一下 我是为什么叫QQ 我们下期见
