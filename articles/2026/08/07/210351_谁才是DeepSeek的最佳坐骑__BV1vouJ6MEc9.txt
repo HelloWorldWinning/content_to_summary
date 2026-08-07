@@ -1,0 +1,153 @@
+Timestamp: 2026-08-07T21:03:51.270150
+Title: 谁才是DeepSeek的最佳坐骑？ BV1vouJ6MEc9
+URL: https://b23.tv/vhr6vqL
+Status: success
+Duration: 4:55
+
+Description:
+以下是针对该测评视频文本的系统化结构梳理、严苛学术同行评审以及 Mermaid 概念关系图。
+
+---
+
+### PART 1. Author's Map (作者论证地图)
+
+#### 1. Core Thesis (核心主张)
+在 DeepSeek（文本中简写为 duc/D4G）缺乏官方 Harness（客户端/适配框架）的现状下，通过统一接入官方 API 并将采样温度调至最大的实测对比，**Z-Code（最Code）在综合代码能力、运行速度与 Token 成本上表现出最优的综合性价比**，是当前该模型最佳的第三方搭档客户端。
+
+#### 2. Evidentiary Base (论据基础)
+*   **硬数据（Hard Data）**：7 道模拟真实项目的测试题（3 道 Bug 修复、1 道新功能开发、2 道信息推理、1 道数据处理）在 5 个客户端框架下的第一轮/多轮得分、总得分、耗时（分钟）及消耗 API 的费用（人民币元）。
+*   **具体案例与归因（Anecdotal/Case Data）**：
+    *   Q1（简单编程）：Codex 拿下 91 分（首轮第一），Z-Code 速度最快（8分钟）。
+    *   Q2（复杂 Bug 修复）：全员表现低迷，Codex 耗时 >80 分钟且得分最低（出现退化改错）；KlaudeCode 与 Z-Code 表现较好（>70 分）。
+    *   Q3（代码修复）：KlaudeCode 出现严重代码退化（首轮高分后续改坏），Z-Code 稳扎稳打夺得第一。
+    *   Q4（功能开发）：Ryzenx 与 ClawedCode 并列第一，Ryzenx 耗时最短（22分钟）；Z-Code 发生代码退化。
+    *   Q6（假论文核查）：20 篇文献辨别，多数框架误判真实论文，仅 ClawedCode 将虚假论文误判为真实。
+    *   Q7（数据处理）：全员均得 95.5 分。
+
+#### 3. Logical Warrant (逻辑论证)
+*   **推理模式**：多维度指标加权决策与归纳推理。
+*   **推导逻辑**：单凭“一句话生成玩具小游戏”无法评估生产级能力。通过设置覆盖“代码修复/开发/推理/数据”的真实项目模拟关卡，并在统一环境（官方 API + Max 温度）下测量“准确率（得分）”、“效率（时间）”与“经济性（价格）”。综合得分接近最高（仅次于 ClawedCode）、速度排第二且价格最低的选手（Z-Code），在实用价值上优于其他框架。
+
+#### 4. Stated Scope (声明边界)
+*   **测试条件限制**：仅限 DeepSeek 官方 API，采样温度（Temperature）统一设置为 Max。
+*   **对比范围限制**：仅对比常用的 5 个第三方代码框架（Codex, OpenCode, CodeCode, Z-Code, Ryzenx/ClawedCode）。
+*   **场景限制**：基于作者设计的 7 道特定真实项目模拟题。
+
+#### 5. Implicit Opponent (隐性对立面)
+*   **观点 1**：认为第三方框架只是“套壳”，对大模型底座能力没有本质影响。
+*   **观点 2**：仅依靠简单的单轮小示范（如生成单文件 HTML 游戏）来评估模型/框架能力的粗糙测评者。
+*   **观点 3**：盲目追捧高价或知名框架，忽视实际使用成本与多轮对话下的“代码退化/改坏”问题。
+
+#### 6. Intended Takeaway (预期行动)
+引导开发者在官方客户端（Harness）尚未发布之前，选择综合性能强、速度快且最省钱的 Z-Code 作为 DeepSeek API 的代码开发框架；同时关注作者后续关于官方 Harness 及微调版（Pro）的跟进测评。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW (严苛但极其公平的审阅)
+
+#### 1. Steelman (最强形式重述)
+作者摒弃了目前 AI 测评圈普遍存在的“玩具级 Demo 测试”浮夸风气，构建了一套多环节、带惩罚机制（多次尝试按比例扣分）且涵盖真实工程场景（修复、开发、逻辑查重、数据处理）的测试集。在控制变量（统一 API、极端温度）的前提下，从“准确率”、“时间成本”和“资金成本”三个商业落地核心维度进行了量化对比，得出了 Z-Code 具有极高性价比的实用工程建议。
+
+#### 2. Weakest Link (最薄弱环节)
+*   **关键支撑假设**：“将采样温度（Temperature）统一开到最大（Max）是评估框架能力的合理设定。”
+*   **文本依据**：“四号程度开到max 来做本轮测试”
+*   **失效后果**：代码生成任务通常需要极高的确定性（通常建议 Temperature 在 0.0 ~ 0.2 之间）。将 Temperature 强行开到 Max 会注入巨大的随机噪声，直接导致大模型产生幻觉和代码退化（如 Codex 和 KlaudeCode 频繁把前面改对的代码改错）。**这种测试测出的不是“框架对模型能力的发挥程度”，而是“框架在极端随机噪声干扰下的抗扰抗退化能力”**。若在正常的低温度下测试，各框架的准确率排名和代码改坏概率可能会发生颠覆性改变。
+
+#### 3. Evidence Audit (证据审查)
+*   **缺失对比基准（No Baseline）**：缺少“不使用任何第三方框架，直接通过原生的 API 或官方 Playground 提示词”的裸测对照组。无法判断框架究竟是增强了 DeepSeek，还是因为框架冗余的 System Prompt 拖累了 DeepSeek。
+*   **样本量与重复性不足**：每种题型仅 1~3 道，且在 Max 温度（高随机性）下仅运行了一轮（单次采样）。没有进行 N>5 次的重复实验计算均值与标准差，单次测试的偶发误差极高。
+*   **区分度天花板（Q7 效应）**：第 7 题所有选手得分均为 95.5 分，作者自己也承认“后续还要加强难度”，说明部分题目缺乏足够的区分度。
+
+#### 4. Hidden Premises (隐藏前提)
+*   **假设 1**：框架在测试中的耗时完全代表了框架本身的效率（忽视了网络波动、API 服务端推理延迟抖动以及框架本地 Token 截断/压缩算法的差异）。
+*   **假设 2**：“代码退化（越改越错）”完全由框架责任或模型性能决定（未考虑框架是否向 API 传入了过长的历史 Invalid 堆栈）。
+
+#### 5. The Blind Side (盲区分析)
+*   **上下文管理与 Prompt 策略透明度**：不同框架在底层对代码库进行了不同的索引（如 RAG、AST 解析、AST 剪枝）和历史对话压缩。测评仅输出了最终的得分和 Token 费用，未分析造成费用差异的根本原因（例如：Ryzenx 为什么最贵？是因为它传入了更完整的上下文，还是因为系统提示词太冗长？）。
+*   **开发者交互体验（UX）的遗漏**：代码框架不仅包含“跑分”，还包含终端 UI 渲染、Diff 预览、手动干预接管等体验，单靠跑分无法替代真实的 IDE 使用体验。
+
+#### 6. One Hit Kill (致命一击)
+> **如果将 API 采样温度降至推荐的代码生产环境标准（例如 0.1），并在消除随机性后对相同题目重复运行 3 次取平均值，Z-Code 的得分优势和 Codex 的退化现象是否依然存在？还是说目前的胜负完全是由 Max 温度带来的随机抖动决定的？**
+
+#### 7. What Would Settle It (如何最终证实/否证)
+在标准生产配置（Temperature = 0.2）下，引入标准的自动化代码评测集（如 **SWE-bench Lite** 或 **HumanEval-In-Filling**），对这 5 个框架进行自动化 N=5 次的重复对比测试，统计各框架的 **Pass@1（首次通过率）**、**代码退化率（Regression Rate）** 以及 **单位成功任务的平均 Token 成本**。
+
+---
+
+### PART 3. Mermaid Conceptual Map (概念流程与评估图)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 核心背景与测试主张"]
+        direction TB
+        A["<b> DeepSeek (duc) 缺乏官方 Harness </b><br/>需评估第三方客户端框架表现"] --> B["<b>核心论点</b><br/>综合得分、速度与成本，Z-Code (最Code) 是最佳搭配"];
+    end
+
+    subgraph SG_Methodology["🧪 测试设计与变量控制"]
+        direction TB
+        M_API["<b>统一接口</b><br/>DeepSeek 官方 API"]
+        M_Temp["<b>极端设置</b><br/>Temperature = Max (最大)"]
+        M_Tasks["<b>7项真实项目模拟题</b><br/>3道Bug修复 | 1道功能开发<br/>2道信息推理 | 1道数据处理"]
+        M_Scoring["<b>阶梯式评分机制</b><br/>1次通过: 满分 | 2次通过: 1/2分<br/>3次通过: 1/4分 | 5次通过: 1/8分"]
+
+        M_API & M_Temp & M_Tasks --> M_Scoring
+    end
+
+    subgraph SG_Benchmark["⚔️ 选手实测表现 (5个第三方框架)"]
+        direction TB
+        F_Codex["<b>Codex</b><br/>Q1绝尘(91分) | Q2/Q3严重退化改错<br/>耗时极长(>80m) | 总分最低(~600)"]
+        F_Klaude["<b>ClawedCode / Klaude</b><br/>总得分第一(621分) | 速度最快<br/>假论文判真 | 价格较贵"]
+        F_ZCode["<b>Z-Code (最Code)</b><br/>总分第二 | 速度第二(Q1最快8m)<br/>Q4出现代码退化 | 价格最便宜(¥4.7)"]
+        F_Ryzenx["<b>Ryzenx / Resence</b><br/>Q4功能开发第一(速度最快22m)<br/>总耗时最慢(多30m) | 最贵(¥7.5)"]
+        F_OpenCode["<b>OpenCode / CodeCode</b><br/>表现中规中矩 | 价格较低(¥4.8~6+)"]
+    end
+
+    subgraph SG_Results["📊 终局评估维度"]
+        R_Score["<b>得分维度</b><br/>KlaudeCode (621) > Z-Code ≈ Ryzenx > Codex (600)"]
+        R_Speed["<b>速度维度</b><br/>KlaudeCode > Z-Code > ... > Ryzenx (最慢)"]
+        R_Cost["<b>价格维度 (性价比)</b><br/>Z-Code (¥4.7) < OpenCode (¥4.8) < ... < Ryzenx (¥7.5)"]
+        
+        R_Score & R_Speed & R_Cost --> Final_Choice["<b>推荐结论: 攻守兼备选择 Z-Code</b>"]
+    end
+
+    subgraph SG_Review["⚔️ 严苛审阅 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_TempFault["<b>致命假设缺陷 (Weakest Link)</b><br/>Temperature=Max 引入巨大随机噪声<br/>测出的是'抗噪能力'而非常规代码效能"]
+        HR_NoBaseline["<b>缺失对照组 (Evidence Audit)</b><br/>缺乏无框架纯API裸测对照<br/>无法证实框架究竟是增强还是拖累模型"]
+        HR_SampleLimit["<b>样本与重复性不足</b><br/>每种题型仅1-3题，单次运行存在偶发性<br/>未计算 N>5 重复实验的标准差"]
+        HR_OneHitKill["<b>一击必杀提问 (One Hit Kill)</b><br/>若将 Temp 降至生产级 0.1/0.2，<br/>Z-Code 优势与 Codex 退化是否依然成立？"]
+    end
+
+    %% 结构连接
+    B --> M_API;
+    M_Scoring --> F_Codex & F_Klaude & F_ZCode & F_Ryzenx & F_OpenCode;
+    F_Codex & F_Klaude & F_ZCode & F_Ryzenx & F_OpenCode --> R_Score & R_Speed & R_Cost;
+    
+    %% 审阅指向
+    M_Temp -. "引发质疑" .-> HR_TempFault;
+    M_Tasks -. "缺乏基准/样本不足" .-> HR_NoBaseline & HR_SampleLimit;
+    Final_Choice -. "面临挑战" .-> HR_OneHitKill;
+
+    %% 节点样式
+    classDef mainNode fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px,color:#333333;
+    classDef testNode fill:#E1F5FE,stroke:#0288D1,stroke-width:1.5px,color:#01579B;
+    classDef frameworkNode fill:#E8F5E9,stroke:#388E3C,stroke-width:1.5px,color:#1B5E20;
+    classDef resultNode fill:#EDE7F6,stroke:#512DA8,stroke-width:2px,color:#311B92;
+    classDef reviewNode fill:#FFEBEE,stroke:#D32F2F,stroke-width:2px,color:#B71C1C;
+
+    class A,B,Final_Choice mainNode;
+    class M_API,M_Temp,M_Tasks,M_Scoring testNode;
+    class F_Codex,F_Klaude,F_ZCode,F_Ryzenx,F_OpenCode frameworkNode;
+    class R_Score,R_Speed,R_Cost resultNode;
+    class HR_TempFault,HR_NoBaseline,HR_SampleLimit,HR_OneHitKill reviewNode;
+
+    %% 子图样式
+    style SG_Core fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#333333;
+    style SG_Methodology fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064;
+    style SG_Benchmark fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E;
+    style SG_Results fill:#F3E5F5,stroke:#AB47BC,stroke-width:2px,color:#4A148C;
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828;
+</Mermaid_Diagram>
+
+Content:
+上周duc发布v4flash正式版之后能力已经非常可用了 但重则众之duc一直没有官方的阿尼斯 只能搭配第三方框架来使用 但第三方的框架有很多 对于模型的能力具体有多大影响 哪个效果最好 哪个速度最快 哪个又最省钱 这些一直都没人测试 那今天咱们来全部测一下 这次我想的codex codecode opencode 最code和resence的这几个我常用的框架 多统一接入duc的官方epi 四号程度开到max 来做本轮测试 我看目前网上测试模型能力的视频 主要是一句话生成一个HTM玩的小游戏 也算是一种参考 不过我们来测量不一样的 我用真实像模达了七个测试题 三道是第八个 一道功能开发 两道信息类的和一道数据处理 每个题目都有几个大象 每个大象里又有一些小象 都有各自对应的分支 一次通过拿碗分 秒试通过拿一半的分支 三次通过得四分之一的分支 五个参加选手都已经跑完了 我们来看一下距离情况 首先是最简单的一个编程体 算是开场热身 以上来Codex一击绝层 第一轮就拿下了91分 OpenCode和Codecode也表现不错 第一轮都在70以上 把燕瘦情况返亏回去 第二轮哥哥选手全部通过 最终成绩Codex的摇摇顶线 耗时14分钟 速度最快的是ZCode 8分钟 最慢的是Codecode 用了半个小时 难道说D4G真的针对Codex做了优化 先不及 这只是热身场 真正的强度从第二体开始 果然啊 到了第二体 各个选手都败下镇来 8个的难度我超出了模型的能力范畴 扣待个死更是一反第一题的表现 直接拉的 花了80多分钟时间 拿了最低的粉 甚至第三轮还把前面改对的地方改错了 表现比较好的是Klaude扣的和Z-扣的 都拿了70多分 Klaude扣的得分稍高 且速度更快 Z-扣的则是改对8个数据最多的 另外两位选手算是中间表现 接下来看第三题 可以看到Klaudex通订司统 决定发力了 手轮取得了最高分,结果第二轮又把第一轮修好的8个改错了,倒是最后又成了最后一名 而其他几位选手指是稳扎稳打 这一扩的一扩第一轮的优势,拿下第一 还是老话说得好啊,跑得快不一定赢,不跌跟头才是成功 虽然安扩待死,用了速度85分钟,跑得还是最慢的 跑得扩的本轮速度最快,用了25分钟 这扩的花了38分钟,也非常优秀 接下来进入第4题,功能开发 看来开发新功能对于DeepSake还是要宽松一点 各个悬手手轮就拿下了不错的成绩 Z-Code的Ryzenx ClawedCode都是95 而Codex和OpenCode80 在三轮修改后 Z-Code的饭了和Codex一样的错误 把之前做好的功能弄坏的只剩90分 Ryzenx和ClawedCode拿下第一 Ryzenx在这一轮速度最快 只用了22分钟 在几个小时搏斗之后 来点简单的信息推理 就是从一堆信息中理出一个正确的事实 这个提并不算拿 我以为都能议论马分的 结果扩大个死犯了一个小错误 第二轮才改对 用实也是最多 马上来到D6题 亲戚合查 我准备了20片参考文现 里面10片是真实的 10片是虚假的 虚假轮文里3片是平衡节奏 对AR来说不难分辨 7片是从真实轮文里修改出来的 让AR来合适 几位选手得分很统一 都是变别错了一片 但有一点不一样 其他几位选手都是把一片真实轮文当成了虚假的 而Klaus的扣的是把一片虚假论文当成了真实的 这两个中哪个更恶的我也不好说 就扣的统一分值 最后一提是数据处理类型的 难度也不高 各位全手都拿了95.5 看来这个题目后续还要加强一下难度 会总其道题的总得分和总耗时 咱们来看一下 先看得分 其实区别并不是很大 扣这个时是得分最低的一个 也有600分 虽然第一题表现惊人 但后续总是平凡犯错 最终遗憾落败 Klaus的扣的表现最好 拿下621分 这一扣的和RZNX也没有落后多少,扣的X是排在第四 速度方面,KL的扣的再得分最高的同时速度最快 这一扣的则是得分第二个,速度第二块 并且和KL的扣的非常接近 最慢的是RZNX比优秀选手慢了半个小时 KL的X在速度上也表现不加 而且KL的干活式给出的阶段性反馈很少 体感上也非常糟糕 最后,我们来看一下另一个很重要的指标 价格,看看各位选手都花了多少 最后的非常省钱,只花了4块期 OpenCode的第二,花了4块8 CodeCode跟CodeX都是6块多 Racex最贵,花了7块5 性价比是这样 最后的价格最低的同时,得分第二 而且和得分第一的CodeCode比 价格有明相优势,得分却非常接近 所以在本次测试中,综合性能、速度和价格 让我们攻击最后的成为DB6的最佳作气 其实也不意外,毕竟加了M和DB6和一样没有眼睛 所以适配确实不错 以上就是本期视频内容 等过几天DWC官方的哈尼斯发布后 我也会第一时间做一个测试 包括正式版微视pro的性能 大家如果有兴趣可以点个关注 我们下期视频再见
