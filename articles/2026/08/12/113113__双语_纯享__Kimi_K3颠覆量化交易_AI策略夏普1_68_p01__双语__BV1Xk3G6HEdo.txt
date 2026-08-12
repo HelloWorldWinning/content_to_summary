@@ -1,0 +1,154 @@
+Timestamp: 2026-08-12T11:31:13.728511
+Title: 【双语+纯享】🔥Kimi K3颠覆量化交易！AI策略夏普1.68 p01 【双语】 BV1Xk3G6HEdo
+URL: https://b23.tv/64PerCl
+Status: success
+Duration: 15:37
+
+Description:
+以下是针对文本内容的深度架构分析、批判性审阅以及 Mermaid 概念图谱。
+
+---
+
+### PART 1. Author's Map (作者地图)
+
+#### 1. Core Thesis (核心论点)
+Moonshot AI 推出的开源模型 Kimi K3 在量化交易研究与代码生成（特别是策略编写、指标融合及统计验证）方面表现极佳，能高效构建高夏普比率的交易策略，但目前其较高的定价和严格的用量速率限制削弱了其整体性价比。
+
+#### 2. Evidentiary Base (论据基础)
+*   **基准测试数据 (Hard Data)**：作者提及 K3 在各项 Benchmark 中位列前三，并在部分测试中超越 GPT-5.6 和 Claude Fable 5。
+*   **量化回测与验证数据 (Hard Data)**：
+    *   *初次尝试 (4小时周期)*：夏普比率 1.94，净利润 21%。
+    *   *二次迭代 (30分钟执行+4小时锚定)*：夏普比率 1.68，最大回撤 -9%，胜率 62%，通过规则显著性检验。
+    *   *长周期扩展测试 (2.5年数据)*：夏普比率 1.49，最大回撤 -10%，胜率 52%。
+    *   *蒙特卡洛模拟*：原始回测夏普比率 (1.67) 处于模拟中位数 (1.22) 与前 5% 极值 (3.22) 之间，证明未严重过拟合。
+*   **额度消耗数据 (Hard Data)**：完成本次研究使用了 5 小时配额限制的 38%，对应约 $40/月的订阅成本。
+*   **工具链整合演示 (Anecdote/Case Study)**：Kimi CLI + Zed Editor + Jesse Trade Framework + Jesse MCP 自动化工作流。
+
+#### 3. Logical Warrant (逻辑推论)
+*   **推论前提**：如果一个大语言模型能够独立根据自然语言需求，结合多时间框架（30m/4h）编写复杂的策略代码（包含布林带、肯特纳通道、ADX、斜率等），并通过规则显著性测试与蒙特卡洛测试生成盈利回测，则说明该模型具备顶尖的量化编程与逻辑推理能力。
+*   **归纳推理**：基于其消耗的 API/订阅额度与生成质量的对比，得出“模型能力顶级，但当前算力成本/配额性价比不如 Codex 或 Cursor”的结论。
+
+#### 4. Stated Scope (声明范围)
+*   **标的与框架限制**：仅限定于 ETH/USDT 标的及 Jesse 交易框架。
+*   **免责声明**：明确声明非财务建议（Non-financial advice），视频内容仅供教育用途。
+*   **样本量警示**：明确指出 7.5 个月的数据不足以证明实盘鲁棒性，必须扩展到 2.5 年以上的长周期。
+
+#### 5. Implicit Opponent (暗含对手)
+*   **单纯依赖 Benchmark 的宣发派**：盲目宣传模型排名却缺乏实际复杂场景（如 Quant/MCP 工作流）落地能力的模型开发商。
+*   **以往只能生成简单逻辑的旧一代 LLM**：过去只能写双均线交叉等极其简单、无法通过防过拟合测试代码的大模型。
+*   **性价比更高的竞品**：如 OpenAI（20美元无5小时严格限制）及 Cursor/Codex。
+
+#### 6. Intended Takeaway (预期行动)
+引导观众关注 Kimi K3 在量化研究中的强大实用价值，展示如何利用 MCP 与 CLI 工具实现无干预策略开发；同时提醒读者在实盘前必须使用长周期与蒙特卡洛进行严格验证，并理性看待其当前订阅价格。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW (严苛但公平的审阅)
+
+#### 1. Steelman (强力重述)
+作者展现了一个高度自动化且严谨的 AI 量化研究工作流。Kimi K3 不仅成功理解了复杂的金融工程指令（要求挤压形态、ADX 过滤、多时间框架锚定），还能自我纠错（配置 MCP 全局作用域），并自主调用统计显著性检验与蒙特卡洛模拟工具来防范过拟合。在长达 2.5 年的扩展测试中，策略仍维持了 1.49 的高夏普比率与仅 -10% 的最大回撤，这证明了 K3 确实具备生成非玩具级（non-toy）、具备实际统计边缘（Statistical Edge）策略代码的能力。
+
+#### 2. Weakest Link (最薄弱环节)
+> *“Every time you develop a strategy, validate the result using a statistical significance test... At the end, apply Monte Carlo simulations to ensure the results are not overfit.”*
+
+**崩塌逻辑**：作者将“通过蒙特卡洛模拟”误等同于“策略没有过拟合”。事实上，AI Agent 在Prompt引导下进行了多轮参数迭代与逻辑筛选（换时间框架、加 ADX 阈值、加 Slope 过滤）。这种**在同一数据集上由 AI 进行的反复Prompt尝试，本身就是一种高阶的“提示词过拟合（Prompt-driven Overfitting / Data Snooping）”**。即便蒙特卡洛打乱了交易顺序，也无法消除策略逻辑本身对历史数据微观特征的深度贴合。
+
+#### 3. Evidence Audit (证据审查)
+*   **缺乏样本外测试 (Out-of-Sample Testing)**：作者直接将测试集从 7.5 个月扩大到 2.5 年，但这依然属于“样本内回测”。模型是在知道了 2.5 年整体走势的前提下筛选出 ADX=19 等超参数的。完全缺失了真正的 Hold-out（留存样本外数据）或跨币种（如 BTC、SOL）交叉验证。
+*   **交易摩擦力未全面考量**：虽然提及了交易费（Trading fees），但未明确说明是否加大了高频 30 分钟周期下的**滑点（Slippage）**与**盘口深度限制**。
+*   **Benchmark 引用模棱两可**：视频开头提到的“Fable 5”和“GPT 5.6”并非公开发布的真实模型型号（可能为未来预测或口误），以此建立“超越竞争对手”的基调缺乏事实锚点。
+
+#### 4. Hidden Premises (隐藏前提)
+*   **前提一**：策略指标越复杂（BB + Keltner + ATR + ADX + Squeeze + Slope），策略越鲁棒。
+    *   *质疑*：多指标叠加往往是曲线拟合（Curve-fitting）的温床，AI 是否只是在不断增加条件来强行排除历史亏损单？
+*   **前提二**：YOLO 模式（Permissionless）在量化研究中是安全且必要的。
+    *   *质疑*：允许 AI Agent 无限制运行终端指令，在复杂的 Python/CLI 环境中存在极高的系统安全与代码注入风险。
+
+#### 5. The Blind Side (盲区盲点)
+*   **市场 regime 切换风险**：加密货币市场在 2.5 年间经历了剧烈的波动率切换（从熊市震荡到 ETF 批准后的结构性牛市）。AI 生成的策略可能高度依赖过去某一特定 Regime 的波动特征，一旦市场进入低波动流失期（Low-volatility bleed），30 分钟频繁交易的摩擦成本将快速侵蚀利润。
+*   **生存者偏差与选择偏差**：视频仅展示了最终成功的案例，未披露 AI 在提示过程中产生过多少次彻底失败的策略、报错代码或逻辑幻觉。
+
+#### 6. One Hit Kill (致命一击)
+如果将该策略在未经任何修改的情况下，直接运行在**完全未参与提示词迭代的全新市场数据（例如未来 3 个月的实时数据或另一个未调优过的流动性代币）**上，其夏普比率是否会瞬间崩塌至 1.0 以下？如果答案是肯定的，那么 Kimi K3 生成的并不是“ Alpha 策略”，而只是一个“极其擅长在历史数据里找答案的考霸”。
+
+#### 7. What Would Settle It (如何终结争议)
+开展一项严格的**双盲样本外检验**：
+1. 给定 AI 2021-2023 年的数据进行策略生成与参数优化；
+2. 锁定代码与超参数，在完全未知的 2024 年至今数据上进行盲测；
+3. 将该策略与简单的无参数策略（如纯买入持有或基础均线）进行前向模拟盘（Paper Trading）对比，观察扣除真实滑点后的 Alpha 留存率。
+
+---
+
+### PART 3. Mermaid Conceptual Map (概念图谱)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core ["💡 核心主张与工作流架构"]
+        A["<b>Kimi K3 量化研究能力评估</b><br/>通过 Jesse MCP 自动化构建 ETH/USDT 策略"]:::mainClaim
+        A --> B["基准测试与性能表现"]:::mainClaim
+        A --> C["部署与执行环境"]:::mainClaim
+    end
+
+    subgraph SG_Setup ["🛠️ 实验环境与工具链"]
+        direction TB
+        C --> C1["<b>终端与编辑器</b><br/>Kimi CLI + Zed Code Editor"]:::nodeBase
+        C --> C2["<b>交易框架与扩展</b><br/>Python + Jesse Trade Framework + Jesse MCP"]:::nodeBase
+        C --> C3["<b>运行模式</b><br/>YOLO Mode (无权限自主运行)"]:::nodeBase
+    end
+
+    subgraph SG_Workflow ["🔄 策略迭代与验证流程"]
+        direction TB
+        D1["<b>提示词输入</b><br/>ETH/USDT 趋势跟踪, BB Squeeze, Sharpe >= 1.5"]:::nodeBase
+        D2["<b>初次生成 (4h 周期)</b><br/>Sharpe: 1.94, Profit: 21%"]:::nodeSuccess
+        D3["<b>需求变更迭代</b><br/>30m 周期执行 + 4h 锚定时间框架"]:::nodeBase
+        D4["<b>指标组合生成</b><br/>BB + Keltner + ATR + ADX (>19) + Slope"]:::nodeBase
+        D5["<b>长周期扩展回测 (2.5年)</b><br/>Sharpe: 1.49, Max DD: -10%, Win Rate: 52%"]:::nodeSuccess
+        D6["<b>防过拟合验证</b><br/>规则显著性测试 + 蒙特卡洛模拟"]:::nodeSuccess
+
+        D1 --> D2 --> D3 --> D4 --> D5 --> D6
+    end
+
+    subgraph SG_Value ["💰 性价比与成本评估"]
+        direction TB
+        E1["<b>模型表现</b><br/>具备强量化代码编写与逻辑自检能力"]:::nodeSuccess
+        E2["<b>资源消耗</b><br/>5小时限额消耗 38% (月费可达 $40)"]:::nodeWarning
+        E3["<b>最终结论</b><br/>模型能力顶级，但目前性价比低于 Cursor/Codex"]:::nodeWarning
+
+        E1 & E2 --> E3
+    end
+
+    subgraph SG_Review ["⚔️ 严苛但公平的审阅 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        HR_WeakLink["<b>最薄弱环节: AI 驱动的高阶过拟合</b><br/>在同一数据集上多次Prompt迭代本质是 Data Snooping"]:::reviewNode
+        HR_Evidence["<b>证据缺陷: 缺失样本外盲测</b><br/>2.5年测试仍属于样本内，未考量高频真实滑点"]:::reviewNode
+        HR_Premise["<b>隐藏前提: 复杂指标 = 高鲁棒性?</b><br/>指标叠加可能仅是针对历史亏损单的曲线拟合"]:::reviewNode
+        HR_OneHitKill["<b>致命一击</b><br/>若应用于未训练的样本外数据，Sharpe 是否会瞬间崩塌?"]:::reviewKill
+
+        HR_WeakLink --> HR_Evidence --> HR_Premise --> HR_OneHitKill
+    end
+
+    %% 结构连接
+    B --> D1
+    D6 --> E1
+    E3 -.-> HR_WeakLink
+    D4 -.-> HR_Premise
+    D5 -.-> HR_Evidence
+
+    %% 节点样式指定
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333;
+    classDef nodeBase fill:#E3F2FD,stroke:#2196F3,stroke-width:1.5px,color:#0D47A1;
+    classDef nodeSuccess fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#1B5E20;
+    classDef nodeWarning fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100;
+    classDef reviewNode fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828;
+    classDef reviewKill fill:#FFCDD2,stroke:#B71C1C,stroke-width:3px,color:#B71C1C;
+
+    %% Subgraph 样式指定
+    style SG_Core fill:#FAFAFA,stroke:#9E9E9E,stroke-width:2px,color:#333
+    style SG_Setup fill:#F0F4C3,stroke:#AFB42B,stroke-width:2px,color:#333
+    style SG_Workflow fill:#E1F5FE,stroke:#0288D1,stroke-width:2px,color:#333
+    style SG_Value fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px,color:#333
+    style SG_Review fill:#FFEBEE,stroke:#E53935,stroke-width:2.5px,color:#B71C1C
+</Mermaid_Diagram>
+
+Content:
+Moonshot AI just released Kimi K3, an open source model that is competing with Cloud Fable. And if you take a look at the benchmarks, we can see that in every single benchmark, it is in the top three. And in some of them such as this one, it is even beating all other models such as Fable 5 and GPT 5.6. So, this is absolutely crazy. And something that I did not expect to see until maybe in the next two or three months. But as you guys know, on this channel, we care about the quality of the model for doing algo trading research. So how good it is at writing trading strategies running back to us on them optimization and also Monte Carlo simulations to ensure the results that it finds for us aren't overfit. So that's what we're gonna do. Now we'll be using the Kimi K3 model using Kimi CLI tool which you can run on your terminal and I'm also running the terminal inside my Z code editor which is my favorite disease. Of course we'll be using the the Python language, specifically through the Jesse trade trading framework, which also has a support for Jesse MCP, which allows us to basically write the strategy, run back test optimization, rule testing, and Monte Carlo simulations all through our AI agent. And at the end, it will give us reports in both text and charts that we can check out. So anyways, I should also mention that I'm not a financial advisor and this video is for educational purposes only. So without out of the way, let's continue. To initial kimi code inside your CLI, you can just use this command here and it's really simple. Just paste it into your terminal like this and press enter. I've already done this, so I don't have to do it again. And if I simply write kimi and hit enter, I should be able to enter it. And there we go. So the first time you do this, you're going to need to run the login command in order to login your account. I've already done that. Next, you see the model selected is kimi2.7. let's switch the model K3. Next, I'm going to read the prompt and the request that I have for the agent. Like what type of strategy I needed to write for me, okay. Alright, so I'm going to say hey there, I need you to do research for me and find trend following strategy to trade ETH use DT and it needs to be a squeezed type of strategy using volunteer bands as the base indicator and of course use any other indicator alongside with it that you see fit. I need the results of it to be good since the beginning of the year until now, and when I say good, I mean a sharp ratio of at least 1.5, which is 3% of the account per each trade. Every time you develop a strategy, validate the result using a statistical significance test before writing the full strategy. Only proceed if the strategy's metrics demonstrate genuine statistical significance. Feel free to use optimization to improve the results. At the end, apply Monte Carlo simulations to ensure the results are not overfit. Continue until you find strategies that fully meet the criteria requested. Do not prompt me in the meantime. Good luck and hit enter. So there we go. It started thinking. Everything seems fine. I actually really like the interface of the terminal version of it. It may even be my favorite so far. Alright, I'm just gonna go and come back a little bit later. Alright, next is asking me to improve forward to run this command. And the thing is whenever I run an AI agent such as codecs or cloud code I always let them to run on the yolo mode or permission list because I don't want the model he's asking me for permission of course this is not a super safe option so many people don't do this but because I wanted to be able to run for hours without prompting me I have to do this I don't have any choice so I cannot really recommend you to do the same but that's how I do it so here's the thing let's actually stop this and see if we can give it the the permission that I want. All right, so the YOLO mod is here and next I'm just gonna say continue. So hopefully this should not ask me for permissions anymore. All right, so I face another issue, it's telling me that it cannot access the MCP. This is really weird because I did test it, so once I ask like, can you access the MCP and it said yes, so that's why I thought it'd find. But either way, it is telling me how to do it. So it's telling me that hard, so let's just run slash MCP config, all right, so it's being a smart here and it did some figuring itself, tried to copy it from my cloud config and now I see it asking which scope do I want it and yes I do want it in user global instead of the project or project local and you can do this of course but I'm going to go with global because I want to be able to use this even if I'm running it from another director. Right so there we go you see it found it it says the gcmcp is an htpmcp server running at this address configured in cloud code. And you see, if I go to the terminal that is running this, this is what I'm getting. So the MCB server is running at this address. And this is exactly what the agent was showing. All right. So it says that it is connected now. And to pick it up, let's just test it works. So it says no MCB servers can fix. So I'm just going to stop this and come back copy this whole thing. And now it says MCB server just MCP connected. And if I say this, it should also show it here. Alright brilliant. So let's just say continue. Alright, now that everything is fine, let's go and come back a bit later. Now while that's going, I want to quickly remind you guys about our telegram. It's the fastest way to get notified about my future work, whether it's a new tutorial or a tool that I create. Also, don't forget to check out a free discord where more than 5,000 members like you and I are hanging out there and helping out each other with the algorithm trading so we can all succeed together. The links for both are down in the description. Alright the results are here. So very quickly it was able to find a strategy with a sharp ratio of 1.94 which is way above the target that I was expecting and a net profit of 21%. This is brilliant. It also validated so it says that the rule significance test is saying that the entry rules of the strategy were not locked and it has an actual edge, so this is all good, it also ran a Monte Carlo in order to ensure that it was an overfit. And then it gave us URLs for the backtest, the Monte Carlo significance test and optimization so we can check them out ourselves. Let's open this, so here's the result, looks really good and yes the sharpest indeed 1.94, but there is a problem and the problem is that it is trading the 4 hour timeframe and I don't want it, so I actually wanted to trade with the 30 minutes timeframe, so I went back and I said it's okay what you found for me but I wanted on the 30 minutes time frame instead it's okay for you to use the 4 hours time frame as the anchor time frame so it switched that and continued working and at the end it was able to find me a good strategy with a sharp ratio of 1.68 max rodon of minus 9 which is amazing if we know it of 62% on the 30 minutes time frame and it use the 4 hours for the anchor. Time frame to get the overall direction of the trade. So this is a really good filter and I use it all the time myself. But anyway, so it did that it also validated everything using the rule significance test. But it also gave us your else for the rule significance test, the final backtest and the Monte Carlo. So let's open the result of the backtest and also Monte Carlo. So here's the result of the backtest. You see this equity curve looks really good. It's almost flat while the market was also flat and it went up as soon as the market was in a trend. The monthly return is acceptable so just one month of negative in other months it's positive and here we can see the P&L, the number of trades it took, the pin weight was 62%, sharp ratio is 1.68 so everything looks good. The average trades per month was also 1.24 which isn't that much. Now we can also take a look at the trades that it took on an actual chart. so I went back and I said, hey, please add indicator values to the chart. So I asked for this and it didn't exactly know how to do that and that's okay because I updated this section just recently and I have to give it some examples. But by the time that you're using this tool, hopefully it will be updated and you don't need to do that. Anyway, so I give it an example and then when I came back and run it again, I saw this. So now not only we can see the candlesticks here, so let's slaps all to see the charts better. All right. So you see we can see the trades that the strategy took. So for example, with this one, if I click here, it will go to that trade and if I zoom out a little bit, you can see all right. So this is the trade that it took. So you see we can even see on the chart where exactly it opened it and where it closed the trade. We can go to another trade by clicking here again. We can check out a losing trade. So let's zoom in a little bit. All right. So if I hover on this trade I can see exactly so this was a short trade but the price went up and if one of these indicator values are on my way I could just toggle them to disable them and that's handy so we can see them like this so pretty helpful and if I do want to see one of the indicator values I click on this and it will reappear. Also we have some escalators so I collapse it by clicking here so if I click here I can expand them again so here we can see for example the ADX and this red line here is the threshold so we are only interested in taking trades if the value of ADX is above the threshold like in these cases but for example during this we would have been in a clear range the strategy would have avoided taking any trades we can also see other indicator values I can collapse whichever that I don't want to make more room for the actual candle chart so I can also rearrange the trades based on whichever that was more profitable and if I click on them by the way I can also see more details. So for example, what was the exact enterprise and exit price of the trade, what was the P&L number, how much trading fees we've paid and things like that. Next, let's take a look at the Monte Carlo results and as you can see this clearly isn't overfed. So the original backtask equity curve is right in the middle of the simulations and if we take a look at the table here we can see the sharp ratio of the original practice is 1.67 while the median is 1.22 and the best 5% is 3.22 so the result that we got is not even near the best 5% so we weren't being lucky in simulation as a really good sign that the strategy isn't over it. Now that being said I want to be very clear about one thing that in this experiment the period that I picked, which is since the beginning of the year until today, is not actually enough for proving that one strategy is robust in order to start trading it live. Now, if you do not have enough data for a certain asset, so for example, let's say I'm trading some sort of coin that has recently came out, and I just don't have more data. Then, sure, I could use Monty Harder like this, And this is just as good as I can get and I might risk it and just start trading it. But if you're trading something like BTC or ETH in this case, you don't want the duration of it to be just seven and a half month. This is not enough. You want it to trade it on more data. So let's go back to this strategy and change the duration to beginning of let's say 24. Let's is able this because I don't want to see the interactive charts just yet right let's begin there we go so now we executed the same strategy everything is the same really but the period is 2.5 years instead and you see the equity curve is still looking good in fact maybe it looked even better now and if I look at the monthly returns these are absolutely amazing the shop ratio is 1.49, which is definitely acceptable, that we know it is 52%, the max rate on is only minus 10%. So this is really really awesome guys. Now I'm gonna leave it at here, but if you want to continue, of course I will put the source code of the strategy on our strategy space, so if you want to, for example, see its results on other trading periods or symbols, go ahead and do that. But here's the thing, I highly recommend to continue development of the same strategy if you want to go live with it. So for example, yes, even on a back test for a longer period, it looks really good. But I did not run Monte Carlo on it yet. And if you're wondering why, that's because, well, I just ran the experiment and I didn't really have time to continue it. So I leave that to you. But the point that I'm trying to make is that before starting trading a strategy with your hard earned money, you want to use as many tools as possible. Such as Monte Carlo, which we already have to ensure you have better chances of the strategy being robust. Now, let's also take a look at the code of the strategy. So it's called bb-squeeze-trend, and it has explained everything. And if I come down, we can see the hyper-parameters of the strategy, the anchor candles, which in this case, it's pointing to four hours, so that's what I asked a model. And this is how it defines the Bollinger bands indicator, the Kelter channel, the ATR, the ADX, and you see the syntax is really simple. So we turn TA.ADX and then it is passing the anchor candles and then the period is set to 14. And here it defined a filter, so it says that whether or not the current ADX is above the threshold, which I can just find it here, so by default it is set to 19. Here we can see the squeeze fired, so this is basically another filter. It is checking out to ensure that the SQS is happening, the Slub, so this is also really interesting. I actually never used this indicator myself, and here we can see the entry rules of the strategy for long positions, for short positions, and here we define the position sizing of the strategy. It defined the enterprise, the sub-price, the quantity, and this is the syntax for submitting the actual trade. So, overall, this actually isn't really a simple code. Like most strategies that I wrote with previous models, they use very simple strategies, but this one I would say is a bit more complex, but the result was really amazing, so I'm actually quite happy about this. Also this is the amount of limit that I have left, so you see it used 38% of my 5 hour limit, which is good, but considering that we paid almost 40 dollars for this, I wouldn't say this is super great. Just for example, I have this $20 plan of OpenAI, which doesn't even have the 5-hour limit anymore, and they keep getting me usage limit resets, and I have 3 of them left. So if you want the best bank for the buck kind of deal, I wouldn't say this model is the absolute best, but to be fair, they just release this model and everyone started using them, and it's not like they are a huge company such as Anthropical OpenAI to be able to handle such a huge traffic on the launch day. maybe that's why maybe in the coming days they're gonna increase my limits I'm not sure but for today if you want my honest answer yes this is a brilliant model but it is not the best value I think right now Cortex is offering the best model for the amount of money that you're paying them so that's my honest take with this so anyways guys I hope you enjoyed this video if you did please make sure to hit the like button and subscribe to the channel because I released tutorials like this all the time. Thank you so much for watching the video. I'll see you in the next one.
