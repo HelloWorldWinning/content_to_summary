@@ -1,0 +1,174 @@
+Timestamp: 2026-08-13T22:55:52.004659
+Title: Dockerfile 优化技巧，构建提速！ 构建速度  镜像体积  最佳实践 BV1Uogk68EE9
+URL: https://b23.tv/s0RD9uF
+Status: success
+Duration: 16:50
+
+Description:
+以下是对文本内容的结构化拆解、深度批判审阅以及对应的 Mermaid 概念图谱。
+
+---
+
+### PART 1. Author's Map (作者图谱)
+
+#### 1. Core Thesis (核心主张)
+许多基础设施构建者因盲目遵循惯性习惯（“五只猴子效应”）或盲从 AI 建议，在 Dockerfile 中犯下严重的反模式错误；通过理解 libc 差异、优化镜像层缓存、实施多阶段构建以及使用 SHA 摘要锁定版本，能够大幅提升交付速度、缩减容器体积并保障生产系统的稳定性。
+
+#### 2. Evidentiary Base (论据基础)
+*   **心理学/管理学寓言（直觉泵）**：五只猴子因传统惩罚规则而攻击新成员的故事，类比技术团队“以前就是这么干的”的技术惯性。
+*   **对比实测数据（硬数据/案例）**：
+    *   *C扩展编译*：Python Alpine 因 `musl libc` 缺失 `glibc` 预编译包，被迫从源码编译 LMDB 等 C 库，添加编译工具后耗时 10 秒；切换至 Debian Slim 镜像后构建时间降至 1 秒以内（速度提升近 15 倍）。
+    *   *镜像体积*：Go 语言应用从 Alpine 基础镜像（272MB）通过多阶段构建优化至 11MB，再到 `scratch` 极简镜像（2.3MB）。
+*   **架构范例（案例）**：在未达到 Kubernetes 规模的小型项目中，使用 `supervisord` 在单个容器内同时管理 Nginx 和 Python Web 服务的可行性。
+
+#### 3. Logical Warrant (逻辑授权)
+*   **因果与底层机制推理**：
+    1.  大多数二进制包依赖基于 `glibc`，而 Alpine 采用 `musl libc`，这种底层 C 标准库的不兼容性打破了预编译依赖的适配，强制触发源码编译，进而拉长构建时间并增加构建工具链开销。
+    2.  Docker 镜像采用层叠加与缓存失效机制（任何改动都会导致后续所有层缓存失效）。因此，将频繁变动的源代码拷贝（`COPY . .`）置于不变的依赖安装（如 `npm ci`）之前，会导致每次代码微调都重新冷构建。
+
+#### 4. Stated Scope (明确界定范围)
+*   **适用场景**：现代云原生基础设施、Web 应用及微服务容器化（涵盖 Python、Node.js、Go 等语言平台）。
+*   **排除/边界条件**：明确指出“一容器一进程”仅是理念而非铁律；对于未达到 K8s 复杂度的轻量级服务，单容器多进程是合理且成本更低的选择。
+
+#### 5. Implicit Opponent (隐性对手)
+*   **教条主义与盲目技术崇拜**：
+    *   盲目认为“Alpine 永远是镜像最小最佳选择”的经验主义者。
+    *   教条恪守“一容器单进程”而强行引入复杂编排工具（如 K8s）的 DevOps 工程师。
+    *   不看报错原理、直接把错误贴给 AI 并盲目复制 `apk add build-base` 补丁的开发者。
+
+#### 6. Intended Takeaway (期望行动)
+*   **放弃 Alpine 盲崇**：在涉及原生 C 扩展的语言（Python/Node）中优先考虑 Debian Slim。
+*   **优化 Dockerfile 顺序**：严格按照“极少变动层（基础镜像） $\rightarrow$ 低频变动层（依赖定义） $\rightarrow$ 高频变动层（源码）”的顺序构建，并配置 `.dockerignore`。
+*   **进阶构建模式**：编译型语言（如 Go/Rust）必须采用多阶段构建（Multi-stage）并尽量使用 `scratch` 或 `distroless`；生产环境改用 SHA256 摘要（Digest）锁定基础镜像。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW (严苛但公平的审阅)
+
+#### 1. Steelman (强力重塑)
+作者精准切中了现代 CI/CD 流程中被普遍忽视的“Docker 惯性工程学”漏洞。通过具体的编译时长与镜像体积对比，直观展示了 `musl` 带来的隐形源码编译成本，打破了“Alpine 必定最优”的技术迷信；同时提炼出洋葱剥离式的缓存层优化法则，对提升企业级 CI/CD 效率具有极高的实用价值。
+
+#### 2. Weakest Link (最薄弱环节)
+*   **承重主张**：作者认为“Alpine 带来的体积削减（如省 90MB）不足以抵消其由于 `musl libc` 导致的 C 扩展编译耗时与运行时性能损耗，因此 Slim 镜像几乎全面优于 Alpine。”
+*   **崩溃推导**：该论断高度依赖于“应用包含 C 语言原生扩展”这一特定前提。如果应用是纯 Go/Rust 编译的静态二进机制，或是无原生 C 依赖的纯脚本应用，Alpine 或 Scratch 的体积优势与极小攻击面依然成立。将“原生 C 库编译坑”推广为“Alpine 不如 Slim”的泛化结论，逻辑上存在偷换概念。
+
+#### 3. Evidence Audit (证据审查)
+*   **选择性样本**：作者特意挑选了 Kafka (`confluent-kafka`) 和 LMDB 这种重度依赖 C 原生代码的 Python 包作为反面教材。对于绝大多数不依赖 C 扩展的纯 Python/Node 业务包，Alpine 并不需要安装 `build-base`，也不存在 15 倍的时长差距。
+*   **关键安全指标缺失**：在对比 Alpine 与 Debian Slim 时，作者仅统计了构建时长与磁盘占用，完全忽略了**安全漏洞（CVE）**这一核心指标。Debian Slim 内置的软件包数量远高于 Alpine，其 CVE 暴露风险通常高出数倍。
+
+#### 4. Hidden Premises (隐藏前提)
+*   **前提 1**：开发者将“构建速度与 CI/CD 流转效率”置于“最小化运行时安全攻击面（CVE 治理）”之上。
+*   **前提 2**：在同一个容器中运行 Supervisord + Nginx + App 进程，不会带来操作系统级的信号传递（Signal Forwarding）失真与僵尸进程（Zombie Processes）回收问题。
+
+#### 5. The Blind Side (盲区)
+*   **PID 1 进程与 Linux 信号传递**：在单容器中使用 Supervisord 管理多进程时，若 Supervisord 未妥善处理 `SIGTERM`/`SIGINT` 信号传递，会导致 Docker/K8s 在优雅停机（Graceful Shutdown）时无法将终止信号透传至底层应用进程，造成未处理的连接中断或数据丢失。
+*   **容器镜像安全与合规审查**：Alpine 的核心优势不仅在于体积小，更在于其内置组件极少导致安全扫描软件报出的 CVE 极少。Slim 镜像虽然免去了编译烦恼，但后续安全治理（CVE 漏洞修复）的隐形成本被作者完全剥离出了讨论范围。
+
+#### 6. One Hit Kill (致命一击)
+> “如果在生产容器中引入 Supervisord + Nginx 多进程架构，如何确保在 Docker 接收到停机信号时，PID 1 能够透传 `SIGTERM` 信号给底层的 Python/Node 应用以实现优雅停机（Graceful Shutdown），而不是超时后被 `SIGKILL` 暴力抹杀？”
+
+#### 7. What Would Settle It (裁决标准)
+在相同生产负载下，对基于 **Alpine**、**Debian Slim** 和 **Distroless** 的容器镜像进行三维综合评估测试：
+1.  **CI/CD 构建与传输时延**；
+2.  **漏洞扫描工具（如 Trivy）检测出的 High/Critical CVE 数量**；
+3.  **容器停机时的信号响应时延与未完成事务丢失率**。
+
+---
+
+### PART 3. Conceptual Map (概念图谱)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 核心主张与思维定势 (Core Thesis & Mindset)"]
+        direction TB
+        A["<b>反思 Docker 构建惯性</b><br/>打破'五只猴子效应'与盲从 AI 建议"]:::mainClaim
+        A --> B["<b>目标: 构建现代化最小单元容器</b><br/>更快的 CI/CD 交付、轻松扩展与长效稳定"]:::mainClaim
+    end
+
+    subgraph SG_AntiPatterns["⚠️ 5大 Dockerfile 常见误区与优化方案"]
+        direction TB
+        
+        subgraph SG1["1. 基础镜像选择 (Alpine vs Slim)"]
+            direction TB
+            P1_Err["<b>误区: 盲目崇拜 Alpine 镜像</b><br/>以为体积最小即最优"]:::errorNode
+            P1_Reason["<b>问题根源: musl libc vs glibc 不兼容</b><br/>缺乏预编译 Wheel，迫使从源码编译 C 扩展"]:::detailNode
+            P1_Fix["<b>正确方案: 优先选择 Slim 镜像</b><br/>（如 node:slim, python:slim）<br/>避免 build-base 编译链，构建速度提升近 15 倍"]:::fixNode
+            P1_Err --> P1_Reason --> P1_Fix
+        end
+
+        subgraph SG2["2. 缓存策略与层级顺序"]
+            direction TB
+            P2_Err["<b>误区: 在安装依赖前复制全量源码</b><br/>如 COPY . . 位于 npm ci 之前"]:::errorNode
+            P2_Reason["<b>洋葱剥离原理: 代码微调打破后续所有层缓存</b><br/>导致每次构建都是冷构建"]:::detailNode
+            P2_Fix["<b>正确方案: 优化指令分层顺序</b><br/>先 COPY package.json $\rightarrow$ 运行依赖安装 $\rightarrow$ 再 COPY 源码"]:::fixNode
+            P2_Err --> P2_Reason --> P2_Fix
+        end
+
+        subgraph SG3["3. 上下文污染与忽略文件"]
+            direction TB
+            P3_Err["<b>误区: 将垃圾文件送入构建上下文</b><br/>如把 node_modules, dist, log 打入镜像"]:::errorNode
+            P3_Fix["<b>正确方案: 配置 .dockerignore</b><br/>彻底排除构建无关与本地临时产物"]:::fixNode
+            P3_Err --> P3_Fix
+        end
+
+        subgraph SG4["4. 臃肿单阶段 vs 多阶段构建"]
+            direction TB
+            P4_Err["<b>误区: 运行环境留存完整编译工具链</b><br/>产生数百 MB 的冗余体积"]:::errorNode
+            P4_Fix["<b>正确方案: 多阶段构建 (Multi-stage)</b><br/>Builder 阶段编译 $\rightarrow$ 仅提取二进制至 scratch / distroless"]:::fixNode
+            P4_Err --> P4_Fix
+        end
+
+        subgraph SG5["5. 架构教条与版本不可控"]
+            direction TB
+            P5_Err1["<b>误区 A: 教条化恪守单容器单进程</b><br/>增加不必要的 K8s 复杂编排成本"]:::errorNode
+            P5_Fix1["<b>实用方案: Supervisord 管理多进程</b><br/>轻量级场景下 Nginx + App 单容器协同"]:::fixNode
+            
+            P5_Err2["<b>误区 B: 使用可变的镜像 Tag</b><br/>如 :latest 或 :20-slim 易引发环境漂移"]:::errorNode
+            P5_Fix2["<b>锁定方案: 使用 SHA256 摘要 (Digest)</b><br/>永久固定基础镜像版本"]:::fixNode
+            
+            P5_Err1 --> P5_Fix1
+            P5_Err2 --> P5_Fix2
+        end
+    end
+
+    subgraph SG_Review["⚔️ 严苛但公平的审阅 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_Steelman["<b>强力重塑 (Steelman)</b><br/>精准击中 CI/CD 隐形耗时漏洞，打破 Alpine 盲崇，实用性极强"]:::reviewGood
+        
+        R_WeakLink["<b>最薄弱环节 (Weakest Link)</b><br/>过度依赖 C 扩展案例，将 'Alpine 源码编译坑' 错误概括为 'Slim 普遍优于 Alpine'"]:::reviewBad
+        
+        R_BlindSide1["<b>盲区 1: CVE 漏洞风险被剥离</b><br/>Debian Slim 内置软件包多，CVE 风险数通常高于 Alpine"]:::reviewBad
+        
+        R_BlindSide2["<b>盲区 2: PID 1 信号传递失真</b><br/>Supervisord 多进程可能导致停机 SIGTERM 无法透传，引发数据丢失"]:::reviewBad
+        
+        R_Kill["<b>致命一击 (One Hit Kill)</b><br/>如何确保 Supervisord 多进程模式在 K8s 停机时不丢失未完成请求？"]:::reviewFatal
+        
+        R_Steelman --> R_WeakLink --> R_BlindSide1 & R_BlindSide2 --> R_Kill
+    end
+
+    %% 链接核心主张与误区
+    B --> SG_AntiPatterns
+    SG_AntiPatterns -. "接受同行审阅" .-> SG_Review
+
+    %% Styling Rules
+    classDef mainClaim fill:#FFF9C4,stroke:#FBC02D,stroke-width:3px,color:#333
+    classDef errorNode fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#880E4F
+    classDef detailNode fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px,color:#E65100
+    classDef fixNode fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#1B5E20
+    classDef reviewGood fill:#E1BEE7,stroke:#8E24AA,stroke-width:1.5px,color:#4A148C
+    classDef reviewBad fill:#FFCCBC,stroke:#F4511E,stroke-width:2px,color:#BF360C
+    classDef reviewFatal fill:#FF8A80,stroke:#D32F2F,stroke-width:3px,color:#B71C1C
+
+    %% Subgraph Styling
+    style SG_Core fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#333
+    style SG_AntiPatterns fill:#FAFAFA,stroke:#BDBDBD,stroke-width:2px,color:#333
+    style SG1 fill:#E3F2FD,stroke:#1E88E5,stroke-width:1.5px,color:#0D47A1
+    style SG2 fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20
+    style SG3 fill:#F3E5F5,stroke:#AB47BC,stroke-width:1.5px,color:#4A148C
+    style SG4 fill:#E0F2F1,stroke:#00897B,stroke-width:1.5px,color:#004D40
+    style SG5 fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px,color:#E65100
+    style SG_Review fill:#FFEBEE,stroke:#E53935,stroke-width:2.5px,color:#B71C1C
+</Mermaid_Diagram>
+
+Content:
+你知道那个五只猴子的故事吗? 他们发现帕梯子会导致所有猴子都受罚 后来虽然惩罚取消了 并且所有猴子都慢慢被换掉了 但整个群体依然会攻击任何试图帕梯子的成员 说起来有点尴尬 但这种情况在科技行业太普遍了 我们做事只是因为以前就是这么干的 我太了解这个了 我遇到的很多例子中有一个一直在搞垮公司 比如使用巨大的镜像糟糕的缓存策略 甚至完全没有缓存 不理解核心原则 却盲目听从AI的建议 当我们讨论优化 甚至从零构建容器的时候 巨头警告 情况很糟 非常糟 现在 当真正的工程技能如此稀缺 工丝们也慢慢意识到 他们确实需要一个董行的人 来审视他们的系统时 我们有必要聊聊 现代基础设施的最小单元容器 他可以成就你的系统 也能分分钟让你破产 但如果做得对 你就能更快交付 轻松扩展享受那些长期稳定运行的系统 多年来我习惯用某种特定的方式 购件容器 因为我以为自己最懂 但我们以前一直这么干 是与原中最危险的一句话 这是隔类似获迫的观点 所以今天我们要深入探讨 五个关于Dockefile的常见物区 以及如何正确解决他们 看完这个视频 你会清楚在购件容器时 该用什么什么时候用 甚至可能成为一个专家籍的购件者 那我们现在就开始吧 你可能知道这个平台甚至也见过这个镜像 但你真的了解所有这些标签的含义吗 我是说你可能知道alpine 但你真的该用它吗 那sling 你是拿他们当标签用吗 好 我们重新来过 先关注三个选项 拉取默认的pison镜像 然后是alpine版本 再是slim版本 从大小来看 胜负很明显 但更重要的是 差距有多大 以及这对你的应用意味着什么 这里只是拿Python举例别担心 我们很快会讨论 NodeGoLan和其他语言 Alpine和Slim之间 大约有90兆自己的差距 而完整版 又比Slim大了整整一个几 为了省纳90兆去用Alpine 值得吗 我们又会失去什么 还能不能更进一步 OK Python Dockerfile 它用了Python的Alpine版本 并且运行CalfCalfCalf 这就是个随机的过程 然后我接着够见了 这个镜像 Confluent Kafka会失败 因为找不到匹配的发型版 奥盘很小 但它用的Lib C 有点奇怪 Lib C是标准的C元库 即便你写的是 Python Note JS GO之类的代码 底层很多原生代码 依然调用的是CGB的操作系统盘数 比如 Open, Read, Write Mossalib C就是其中一种实现 它小巧而干净 这也是奥盘这么小的原因 但它与Glib C不坚容 而Glip C 才是大多数硬程序 实际使用和构建时依赖的库 Glip C 是Debian Ubuntu Fedora 等系统默认使用的C 元库 所以简单来说 Mozolib C 并不等于Glip C 你的应用要么从头重新 编译原生依赖 要么在运行时默默变慢 回到我们的容器文件 你可能注意到了 only binary 标志 它坚持使用预编议好的二进之包 而不是从圆码编译 如果我们没加这个标记 奥品就会选择从原码编译 而这件事我在不知情的情况下 做了好几年 只需切换到Slim基础镜箱 然后重新构建同一个镜箱 我们就能得到一个干净成功的构建结果 考虑到两折在体积上的细微差别 我觉得这个选择是值得的 尤其当你考虑到 从原码重新编译 每一个依赖向所需的时间 现在奥拍无法构建LMDB 这是一个用C语源编写的 小型建筑存储库 我们刚提到了 奥派使用的 Model Libacy 它的 Libacy 在发行版里得不到 很好的支持 所以需要从原码构建 人们通常的做法 是把错误信息 沾铁给 Chat Tpt 让他帮忙修复 而 Chat Tpt 通常会给出一条 像 APK Add Build Base 这样的命令 这是一个包含了 GCC的 C语源构建工具链 还有 Make Muscle Dev 以及其他一些小库 你很可能以前也手动添加过 如果我们现在构建这个镜像 它会成功完成 构建时间也很短 当然10秒钟不算多 但这还只是重多库中的一个 那么如果我们去掉这些构建工具 改用slim镜像 再次使用到可构建 时间不到1秒钟 速度快了将近15倍 想象一下 这个效果放大到大规模 这些关于alpine的物区非常普遍 真实令人惊讶 你想想看 在大型企业中 每天都有成千上万个构建过程 想象一下试图去优化 结果却在做完全相反的事情 好了 关于奥派和Slim的讨论 就到此为止 让我们再来看看另一个 非常常见的错误缓存的使用 更准确的说是烂用 所以你有一个NodeJS进向 你明智的选择了Slim 因为你在视频的第一部分 学到了这一点 但与此同时 你还包含了一堆东西 比如你的Package Jason 当他被调用时会生成一个臭名招助的 note modules 文件夹 我相信你以前肯定见过这个 让你大致感受一下他的平均大小 我们的应用其实就是一个简单的控制台输出 接着处理进行我们添加一个工作墓路 然后把所有东西复制进去 NPMCR的全程是clean install 也就是你在ci流程中需要用到的那种 构建容器的时候也是一样 接下来我们运行NPM start 基本上这就准备好可以构建了 这个标签也在向我们暗示问题所在 我们构建好了 NPMCI也跑完了 AI变成工具让生成代码变得极其简单 有时候甚至简单过头了 你一不留神一个上万行代码的拉曲请求 就冒出来了 根本没人回去试 code rabbit is the rig这种情况而生得审核层 它可以审核拉曲请求 也能在IDE或命令行李提前解入工作 这样你就能在代码推送之前 发现并修复八个安全问题和反模式 它会从你的整个代码库关联的问题 文党和团队规则中提取上下文 然后在后台运行40多种Lintr和安全扫描器 给你提供真正有用且可操作的反馈 coderabate还可以自动声称修复代码 你只需要提交这个补丁 或堆叠的拉曲请求 就能省去无修指的 请再审查一遍的循环 审去那个请再审查一遍的循环 我特别喜欢的是CodeRabbit的审查UI 它不会像其他AI工具那样 把整个拉去请求 按文件名的字母顺序 一股脑列出来 按文件名字母顺序 它会实别出变更中的逻辑层次 这些层次是相互构建的 并用通俗议董的语言总结和图表来呈现 在他们真正值得用的时候才会出现 你还能在slag上使用CodeRabbit代理 团队可以通过它来调查代码 从多个系统 包括工单和稳党拉取上下文规划工作 从多个系统拉取上下文 包括工单和稳党 规划工作 并且所有操作都在 slack现成中进行 配有严格的范围限制 如果AI在帮你写更多代码 那你肯定需要一个靠谱的工具 来审查它 现在回到视频正题 我把主代码从版本1改成了版本2 现在重新构建进行 他就会把全部东西都重新构建一遍 但这其实没必要 依赖像根本没有变化 没必要再跑一次NPM and Store 我唯一改动 就是应用打印的那个字幅 核心概念是这样的层顺序 就是你的缓存策略用得好 后续每次构建都能受益于它 烂用它 那基本上每次都是冷构建 每一次都是 刀坑会复用已有的层 直到前面有输入发生变化 如果你在安装依赖之前就复制了原来嘛 那么每一次代码修改都会让依赖安装的层 十小 曾经有人教我把这想象成一个洋葱 你要从外道里 一层层的剥 你做的改动越深 你就需要把这个洋葱剥的更深才能重建它 外部变化越多 缓存就越充足 需要重够的东西 就越少 我来演示一下 第一步就是复制关键内容 包括初始的数据包 Json和日治文件 然后安装NPM 接着加入COPIO 他通常会处理代码本身 也就是说 如果我们修改了代码 这不会导致NPM安装过程失效 现在切换到版本3 这又是一次代码改动 Dalker购件几乎把所有内容都缓存了 从工作目录到复制包文件 是的 NPMCII几乎是0秒 因为他已经缓存在磁盘上了 有些人看到我们刚购件的镜像 为立刻觉得COPIO不好 直接删掉它 其实不好的模式 不是copy.号真正的错误是把垃圾文件送入了 docker 构建上下文 如果合理的忽略掉不必要的东西 这就不再是问题 同时还能让docker file更易读 比如我们的node modules 是个巨大的庸种包 如果你用过DD来生成测试用负载 你就会熟悉下一行的用法 所以是50造的数据 我们不想让docker挂在这些 我们可能也不需要日质文件 或NS之类的东西 构建容器就能知道我们正在传输大量的 数据到容器里 而且注意 我这里对大小已经很保守了 正确的方法是忽略不必要的内容 就像Gate处理 Dalker的Node Modules一样 Gate文件日治 你的Dist 产物都不应该出现在哪里 我见过太多团队要么不熟悉这个选项 要么认为它是一个没人用的冷门功能 他们反而会写一个很长的copy命令来精确 或许他们应用你的每个文件或文件家 你应该知道那样做的后果吧 后果吧 一旦正确地忽略了无关文件 我们就不用再动手了 COPY.号命令还在那里 重新构建竞相识 传输的内容基本为零 传送到容器里的上下温数据非常完美 但有时候即使你尽力了 还是会激累庸种 比如为了确认成果而构建临时产物 或者一些其他漏网的东西 构建阶段就是庸种的重灾区 最终阶段 尽包含运行环境 下一个演示会 清洗展示大小的差异 这个技巧中 我将使用GoLine作为编译语言 为Go语言构建容器 通常需要多花点功夫 构建容器时 我能弄到 有史以来最小的打印 H.I.韩束库开玩笑的 C语言大神们别骂我 然后运行Go Run May High 很好 所以在Alpine进向下 先看看大小 272照字节 跟我们以前知道的情况相比 不算小 就像拍藏的奥盘进向的130招那样 主要是因为购在生成二进至文件时需要更大的空间 如果它生成了二进至文件 再跑在一个完整的操作系统上就没意义了 对吧 我的意思是它当然能跑 但为什么那么多应用 尤其是基于购的容器都这么购件 自认为很完美 但实际上却造成了巨大的浪费 我们来聊聊多阶段购件 但更重要的是该怎样使用它们 如果你不熟悉这个做法 要留意了你通常会把第一个容器 秘名为Builder Builder是一个常见的名称 然后你可以把所有东西都复制到它上面 这基本上就是你项目里本地的所有内容 排除掉Dalker 忽略文件 然后我们执行GoBuild 这会生成一个弹很小的二进制文件 这个基本上可以随处运行的二进制文件 不需要勾浪运行时或者任何运行时 然后我们从Builder里只复制一样东西 就是这个应用二进制文件 然后作为这个容器的启动命令 直接运行它 没有包装器 没有什么也没有 Dalker build很简单 想看看体积吗 跟我们之前的272照相比 我们现在降到了11照 很惊人 对吧 但我们还能做得更好 进一步 所小体积 我们的二进制文件 可以随处运行 对吧 在什么都没有的环境下运行 它怎么样 Dalker 由From Scratch从头够见 它基本上什么也没有 确能运行你的二进制文件 一个scratch进向加上我们的二进制文件 只有2.3兆大小 简直离铺 而且它也能正常运行 所以 这就是你保持最终成果轻量的方法 但这可能是一把双认见 就像slim版本似乎比alpine更实用一样 discordless is scratch 更实用 概念相同 依然很小 没有shel 没有包管理器 但有一些你偶尔会用到的实用运行时机处 并且在用户认证 等方面有更好的默认设置 简单来说就是比 Scratch 省心值得思考 与此同时让我们再跳过另一个火坑 同一个容器里跑两个进程 先别急着拿番茄扔我 听我说有时候你有一个很小的容器 里面跑着一个拍色服务器进程 然后处于各种原因 你需要通过NGX来提供服务 频道上有个很好的NGX视频来解释这点 但你不希望仅仅为了这个 而引入两个容器的复杂性 这个服务器本身就能工作 我们通过NGX来为给它流量 但在同一个进行内部很简单 一个从HTTP转发到后端800端口的流程 接下来是Supervisor D 一个进程控制系统本质上就是个看门狗 确保一切正常运行在容器中 所有进程都受它统一管理 配置文件存放各项设置 然后才是进程或应用 用专业数据来说接着是他们的命令 同时告诉看门狗 如果进程失败就自动重启 我们的镜像包括ngx和supervisor 需要负质代码配置以及supervisor的配置文件 以及supervisor的配置文件 DalkerBuild运行的很顺利 DalkerRound启动容器应用 我们来测试一下它是否真的在工作 我们把80端口暴露给本地主机 然后boom应用服务器 返回了Hello 打火成功 推特上有人说过一个容器一个进程 只是一种理念不是铁绿 如果你的应用需要ngx加上应用服务器 而且还没到用cobanetis的规模 家C Supervisor就行 一个进程这种教条 带来的麻烦比省掉的多 有时候可能是我老了 但有些时候这个梗图看起来还真有点道理 你追求的是风平浪静和稳定 而不是一套复杂的旁然大物 还得另外五个人来维护 就为了维护它 接下来这部分 我看到好多工程师都没搞懂 我觉得必须得讲一下 我称之为摘药 剩余标签 让我解释一下 当我们使用像node 26 slim 这样的标签时 通常能得到我们想要的东西 但标签是可以变的 明天这个标签就像latest 或nightly 一样 可以被指向另一个不同的构建版本 无论是有意义还是无意 如果你运行darker buildax image tools inspect 再加上你的竞象名 就能看到一个唯一的构建摘药哈西直 这个是不会变的 标签可以变 但这个是永久的 如果你把它加到你的尽向里 就相当于永久所订版本 不再依赖作者们的好心了 官方尽向通常好办 但涉及内部尽向的时候 出错的概率就大多了 保护好自己固定摘要哈西纸 在收尾之前 我想给你们介绍一下 Drost一个Rust编写的工具 它能对你的Dockefile进行批评指证 这样你们在这个视频里 学到的一些知识 就能派上用场了 本地开发和CI环境 都很好用安装他用进向民运行 他就会给你日治风格的建议 包括信息和实际错误 比如用NPM install 代替NPM CI 或者没有ignore 文件就copy all 他会毫不客气的指出你的问题 如果你脸皮不够厚 他还有个不批评选项 直接给你个要点 告诉你哪些地方可能需要修正 我们讲了不少内容 虽然关于如何正确够建容器 还有很多可说我觉得90%的重点都讲到了 有什么一路的话 欢迎在评论区留言补充 当你把dog 搭建的像专业人士那样 你肯定希望进程的日治一目了然 容器的各项指标也轻轻处处 最好还能有告警功能 大多数人都安装了一套 有五六个组件拼凑起来的用重系统 但我发现了个特别棒的工具 接下来看看这个视频里介绍的打走 你一定会感谢我的 感谢观看下个视频见
