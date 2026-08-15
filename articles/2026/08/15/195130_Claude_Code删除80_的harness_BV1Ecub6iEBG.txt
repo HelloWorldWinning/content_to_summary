@@ -1,0 +1,157 @@
+Timestamp: 2026-08-15T19:51:30.715424
+Title: Claude Code删除80%的harness BV1Ecub6iEBG
+URL: https://b23.tv/0XhjhYe
+Status: success
+Duration: 5:27
+
+Description:
+### PART 1. Author's Map（作者主张图谱）
+
+#### 1. Core Thesis（核心主张）
+随着大语言模型（特别是代码生成模型）基础能力的持续增强，原本用于指导和约束模型的冗长系统提示词（System Prompt）与硬编码“脚手架”（Harness/Rules）已从保障手段转变为性能负担；最佳实践已从“显式给规则、给硬性案例、预先注入全部上下文”转向“极简系统提示词、角色与接口设计、渐进式按需披露（Skills/文件系统记忆）”。
+
+#### 2. Evidentiary Base（证据基础）
+*   **专家证言与案例（Expert Testimony & Anecdote）**：引用 Anthropic / Claude Code 团队成员（如 Boris Cherny 等）发布的实证总结。
+*   **硬数据/实践结果（Hard Data/Case Result）**：Claude Code 团队删除了 80% 以上的系统提示词与 `CLAUDE.md` 中的硬规则后，在代码生成能力上**未观察到任何可测量的性能损失**。
+*   **类比（Analogy）**：将传统 Prompt 比作给“初级工程师”的防错规则，而新模型如同“有经验的高级工程师”；将渐进式上下文加载比作“诸葛亮的锦囊妙计”（按需打开，而非一次性告知全部）。
+*   **业内共识/预言（Expert Deference）**：引用 OpenAI 研发人员的观点——“当下可以尝试做 Prompt/Harness，但不要花太多时间，因为大部分 Harness 能力在三个月后都会被模型本身内化替代”。
+
+#### 3. Logical Warrant（逻辑推导）
+*   **因果推理与内化假说**：模型在预训练/微调（Trace）阶段已经学习并内化了大量的工具调用、代码规范与上下文自适应能力。
+*   **矛盾消除推导**：预先注入冗长、强烈的指导规则 $\rightarrow$ 产生上下文冗余与前后信息矛盾 $\rightarrow$ 限制模型自适应能力并降低效果。因此：删减保护性硬规则 $\rightarrow$ 消除信息矛盾 $\rightarrow$ 充分释放模型内生的自适应与推理能力。
+
+#### 4. Stated Scope（明确适用边界）
+*   **适用领域**：主要面向基于大模型（如 Opus 3.5/5 级别）的代码生成、AI Agent 系统及复杂工具调用场景。
+*   **量化指标**：系统提示词应控制在原有的 60% 削减量以内，核心系统提示词绝对行数通常**不超过 300 行**。
+
+#### 5. Implicit Opponent（隐性对立面）
+作者在批判过去流行的“ Prompt 工程万能论”与“过度脚手架化（Over-scaffolding）”的做法——即试图通过编写几千行的系统指令、死记硬背的限制规则（如“绝不要写多行注释”）、硬编码 Few-Shot 示例来强行控制大模型输出的开发模式。
+
+#### 6. Intended Takeaway（预期行动/结论）
+开发者应立即对 Agent 和代码工具的系统提示词进行“瘦身”：
+1. 从“给规则”转向“给予角色空间”；
+2. 从“写死 Few-Shot”转向“设计标准接口让模型自发探索”；
+3. 从“一次性注入全局 Prompt”转向“基于技能（Skills）与文件系统的渐进式披露”；
+4. 停止在短期 Prompt 技巧上进行过度工程化投资。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（同行严苛审阅）
+
+#### 1. Steelman（最强版本重构）
+在基座模型能力发生阶跃的前提下，将原本硬编码在 Prompt 中的控制逻辑剥离，转向“接口化”与“渐进式检索加载”，确实能有效降低 Token 消耗、减少上下文污染，并避免由于指令矛盾引发的模型推理性能衰减。这是 Agent 架构从“人工干预”向“模型自主推理”演进的必然趋势。
+
+#### 2. Weakest Link（最薄弱环节）
+> **引文**：“在删除了 CloudCode 系统提示 480% 以上内容之后，在编码新的上没有观察到任何可测量的性能损失。”
+
+*   **失效分析**：该结论的成立高度依赖于**评估基准（Benchmark）的覆盖度**。如果测试基准主要覆盖的是标准开源库、通俗架构模式或常规 CRUD 开发，模型凭借内化的公有数据 Trace 确实可以表现良好。然而，在涉及**企业级私有框架、极度冷门的遗留系统、或对安全性/合规性有零容忍要求的边缘场景**时，缺乏硬性保护约束将直接导致模型产生不可预测的破坏性行为（如调用废弃接口、破坏安全协议）。删去 80% Prompt 的“无性能损失”很可能是测试集的度量盲区。
+
+#### 3. Evidence Audit（证据审查）
+*   **选择性汇报**：文章仅引用了 Claude Code 这类特定 Agent 开发团队的内部削减经验，缺乏在其他主流模型（如 GPT-4o、DeepSeek-V3/R1、Llama 3 等）上的横向对比数据。
+*   **遗漏反例**：未提及在多 Agent 协同（Multi-Agent Systems）、严格安全审计（Cybersecurity Guardrails）以及复杂状态机控制中，删除系统级硬约束后系统失控率（Out-of-Control Rate）的变化。
+
+#### 4. Hidden Premises（隐含假设）
+1.  **假设一**：模型在微调中内化的“通用经验”能够无缝映射到具体业务的“特定偏好”。
+    *   *质问*：当团队的特定代码规范（如内部安全库命名、特定并发锁逻辑）与公有域最佳实践冲突时，没有 Prompt 显式覆盖，模型凭什么放弃内化的“通用惯例”？
+2.  **假设二**：基于文件系统/Skill 的动态检索能够实现 100% 的准确率与零延迟覆盖。
+    *   *质问*：若模型在渐进式探索中遗漏了关键 Skill 或加载了错误的上下文，这种“按需披露”带来的隐性错误成本是否高于一次性静态注入？
+
+#### 5. The Blind Side（盲区呈现）
+文章混淆了**“生成自由度（Creativity/Style）”**与**“确定性约束（Deterministic Constraints）”**。
+*   对于代码注释密度、变量命名等“风格类”需求，给予模型自主空间确实优于硬性规则；
+*   但对于数据隐私防泄露、文件删除权限控制、破坏性 API 变更等“安全与架构合规”需求，模型自发判断的失误率无法满足生产级系统的可用性要求。
+
+#### 6. One Hit Kill（致命一击）
+**如果在私有代码库中存在与公有数据完全背离的严格架构规范（如禁止使用某种常见的语法糖或必须通过特定私有网关调用接口），在删除系统提示词硬约束、仅靠模型“自行匹配周围代码”的前提下，如何确保模型不会产生毁灭性的隐蔽 Bug？**
+
+#### 7. What Would Settle It（最终验证标准）
+进行一项**大型私有遗留系统重构的双盲测试**：
+*   **对照组 A**：保留 3000 行包含强约束规则与合规防御的传统系统 Prompt；
+*   **实验组 B**：采用本文主张的 <300 行极简 Prompt + 渐进式 Skill 架构。
+*   **评估指标**：在 1000 次复杂 Pull Request 中，统计**合规性违规率（Security Failure Rate）**、**私有 API 误用率**以及**人工纠错（Human Intervention）所需的平均工时**。若实验组 B 在违规率不上升的前提下显著降低人工干预，则论点成立；反之，则证明极简 Prompt 仅适用于理想的通用开发环境。
+
+---
+
+### PART 3. Mermaid Conceptual Map（概念架构图）
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 核心主张 (Core Thesis)"]
+        A["<b>大模型 Harness 与 Prompt 演进趋势</b><br/>从硬编码保护性规则转向模型自适应与渐进式暴露"]
+    end
+
+    subgraph SG_Shift["🔄 范式转变对比 (Paradigm Shift)"]
+        direction TB
+        subgraph Old_Way["❌ 旧范式：高约束脚手架"]
+            O1["<b>强规则注入</b><br/>系统 Prompt 庞大冗长"]
+            O2["<b>硬编码案例</b><br/>静态 Few-Shot 示例"]
+            O3["<b>全局预载</b><br/>一次性塞入所有上下文"]
+            O4["<b>结果</b><br/>信息矛盾、限制高级模型发挥"]
+        end
+
+        subgraph New_Way["✅ 新范式：极简与自适应"]
+            N1["<b>角色与空间</b><br/>极简 System Prompt (&lt;300行)"]
+            N2["<b>标准接口设计</b><br/>让模型自主探索与调配工具"]
+            N3["<b>渐进式披露</b><br/>动态加载 Skill / 文件系统 Memory"]
+            N4["<b>结果</b><br/>释放模型内生推理能力、降低成本"]
+        end
+
+        Old_Way -- "基座模型能力提升 (Trace内化)" --> New_Way
+    end
+
+    subgraph SG_Arch["🏗️ 推荐的目标分层架构 (Target Architecture)"]
+        direction TB
+        L1["<b>1. User Prompt</b><br/>最简需求表达"]
+        L2["<b>2. Reference Files</b><br/>Spec / Artifacts / 动态参考资料"]
+        L3["<b>3. Thin System Prompt</b><br/>&lt;300行，定义身份/核心目标"]
+        L4["<b>4. Thin CLAUDE.md</b><br/>极其轻量、固定的仓库级规范"]
+        L5["<b>5. Dynamic Skills</b><br/>按需调用的工具与技能树 (渐进披露)"]
+        L6["<b>6. File-System Memory</b><br/>基于文件分级的自动化记忆"]
+
+        L1 --> L2 --> L3 --> L4 --> L5 --> L6
+    end
+
+    subgraph SG_Review["🚩 严苛审阅 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_WeakLink["<b>薄弱环节 (Weakest Link)</b><br/>'无性能损失'高度依赖既有 Benchmark<br/>忽视边缘场景与特定安全防护"]
+        R_Audit["<b>证据审查 (Evidence Audit)</b><br/>仅源自单一团队经验<br/>缺少私有/复杂合规场景的对比数据"]
+        R_Premise["<b>隐含假设 (Hidden Premises)</b><br/>假设模型 Trace 包含全量偏好<br/>且动态 Skill 检索率可达 100%"]
+        R_BlindSide["<b>盲区分析 (The Blind Side)</b><br/>混淆了'生成自由度'与'确定性合规约束'"]
+        R_Kill["<b>致命一击 (One-Hit Kill)</b><br/>私有非标框架下，无硬约束如何保证零违规？"]
+        R_Settle["<b>如何最终验证 (What Would Settle It)</b><br/>私有高危生产环境下的双盲 A/B 测试<br/>(对比合规违规率与人工纠错工时)"]
+
+        R_WeakLink --> R_Audit --> R_Premise --> R_BlindSide --> R_Kill --> R_Settle
+    end
+
+    %% Wiring Relationships
+    A --> SG_Shift
+    SG_Shift --> SG_Arch
+    A -- "审阅与批判" --> SG_Review
+    New_Way -. "可能存在的漏洞" .-> R_WeakLink
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef oldNode fill:#FFCDD2,stroke:#EF5350,stroke-width:1.5px,color:#B71C1C
+    classDef newNode fill:#C8E6C9,stroke:#81C784,stroke-width:1.5px,color:#2E7D32
+    classDef archNode fill:#E3F2FD,stroke:#42A5F5,stroke-width:1.5px,color:#1565C0
+    classDef reviewNode fill:#FFEBEE,stroke:#D32F2F,stroke-width:2px,color:#C62828
+    classDef reviewDetail fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px,color:#E65100
+
+    class A mainClaim
+    class O1,O2,O3,O4 oldNode
+    class N1,N2,N3,N4 newNode
+    class L1,L2,L3,L4,L5,L6 archNode
+    class R_WeakLink,R_Kill reviewNode
+    class R_Audit,R_Premise,R_BlindSide,R_Settle reviewDetail
+
+    %% --- Subgraph Background Styles ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Shift fill:#FAFAFA,stroke:#BDBDBD,stroke-width:2px,color:#333
+    style Old_Way fill:#FFEBEE,stroke:#FFCDD2,stroke-width:1.5px,color:#B71C1C
+    style New_Way fill:#E8F5E9,stroke:#C8E6C9,stroke-width:1.5px,color:#2E7D32
+    style SG_Arch fill:#E3F2FD,stroke:#90CAF9,stroke-width:2px,color:#0D47A1
+    style SG_Review fill:#FFF8E1,stroke:#FFE082,stroke-width:2px,color:#E65100
+</Mermaid_Diagram>
+
+Content:
+And Fabric在推出opus 5 公司,他的记录团队成员 Berck-Skipa 发了一个文章介绍了与关 Anise 层面的趋势的变化 这里面很有意思的点 就是他们在Galco 上据说 删掉了80%的系统T-4 就是所谓的原来的交手架的工作 现在与模型并且强大而慢慢的拆除了 前来说就是模型越强 就越不需要保护式的指导 融偿的熟写规则 除了浪费都肯 还有可能让效果变差 因为存在上线信息矛盾的问题 新的Cloud到MD应该保持绝对的经济 高级要团队控制在60%以内 通常绝不会超过300号 大开系统提示丝之后 可以把那些特定任务的商业文叫给sq 就是越南是放在系统提示丝 你越南在lowsq的时候 在sq里面对你提示丝 就能看到 这样的话就不会出现前后矛盾的问题 那据说对于office5 非非5这样的模型的团队 在山调了CloudCode系统提示 480%以上内容之后 在编码 新的上没有观察到任何可侧量的性能的损失 这其实背后一个 uis 的解释就是在去年 《非卜发誉》和《opeless 5》的时候 其实这些形容其实是生成了《trace》出去已经录应了 所以模型其实在过自己的理解 来写符合需求的哈利斯 那我们看看之前的最压实践和现在的最压实践什么区别 所以之前就是在模型面那么强大的时候的 《交耳价》的这种哈利斯的体制式的数据方式 而现在的最压实践就是模型变得更强大之后 如何帮助模型松宝 让模型发布出更大的内声的能力 取言是从最开始的给靠的定规则 到现在让靠自行判断 KalbKal刚推出的时候 安法培为了去吧 他不会踩到最坏的情况的一句 比如说删除文件 所以在TS中写出很多的语气 很强的指令 但这些指令并不是总是成立 这里面就很烦杂了 比如说一些代码时 默认不写注视 绝不要写多段式的到String 或多行注视快 最多一行短数式 这些内容其实说实在 都是给初级的工程师的一些上手 阶段的规则 主要是放上他们犯错 但对于有经验的功能出来说 这些信息反而限制他们的发挥 所以类似的对于印象大的模型来说 也要进入进阶的状态 最新的系统题势就是一句话 叫做写出的代码 要都起来 将它周围的代码 匹费其注持密度 秘名方式和官员写法 基本上就是把这些角色都丢给了 靠自己决所谓的从给规则到给予角色空间 第二个转化的叫做 从给靠的取例子到设计好接口 设计好接口 原来可能是要为了FewShots 我按理直到模型去如何使用工具 现在是一号结合之后把所有探索工作的交给了 模型在探索的列表中 过去到对应的参数和对应的信息 就可以自行的在工具库律和sq库律 找到能完成目标的组合 所以原来呢 所谓的按理其实就是用脚手架 如果换一种场景 可能这些按理就过实了 现在把探索空间已经不断放大了 它从原来的举议反三的工作 变成现在的匹配需求和供给的一个工作 借充分的证明了 模型其实已经不需要再举与反强了 它已经通过大人的案例中 已经内身学会了 如何调取工具和使用scuse 第三变化叫的一股脑 宣言在前面到现在的 渐进是披露 其实就是一个辣的MD和sqmD的区别 原来大门其实死得起了 系动机的死免机靠MD里面 现在其实是通过漏的scuse的方式 把需要的其实死加进来 在不需要的时候 其实它的商量纹的信息量 其实是可以进行不压缩的 原来的一个场景的物区 是必须把所有可能用到的 总体的似否则克拉举找不到 现在实际上是建立一个文件数 在施荡的时候 这一下子 有点像诸位量给赵云的警闹 让他在需要什么的打开 而不是一开始就让他知道所有的信息 让他每个线点 专注当时的核心进度 剩下的一些就比较 trivia了 比如说从越来的反复强调 到现在的简洁的工具描述 反方强调原因是 信念太大 你不重复的话 他前面的信息 就把后面的信息给牺牲了 现在其实完全不需要关注这些地 从越来的把记忆 写进Cloud md 到现在的自动机 个md 就是会系动第一次 其实现在是越简直也好 现在的记忆大部分都是用文件系统分成极的 压缩的电剑 深入的自动化的去实践 从原来的简单的一个文档到现在的丰富的参考 材料 因为模型新来学会 自动价载 自动匹配 自动使用skill和toose 所以没必要像原来的方式 去写死一些逻辑 所以最终落到发展室里面应该是什么样子呢 应该是一个完整的成极 从最开始的用户的Prob 这个可能遇见的也好 到第二层的reference 就是需要参考的文件 包括spec grigge 包括一些会被stime 包括 artifacts 一些深层物 这些内容呢 想到来说都是越来越间接 在到下面 到一层很薄的 distant prompt 系统体日词 系统体日词之下 是cloud md 系统体日词呢 主要是cloud cloud 绝对是什么 甚至有什么产品 再做什么事 需要究竟怎么样的 Agent Connits 这部分呢 其实是需要投入经历 但是呢 就要我们刚刚说的 硬必要特别长 最长的一约应该用来三百行以内 这到下面是CADMD 这是一个非常薄的轻量级的 相对比较固定的文档 说明这个仓库是做什么 包括一些重要的信息 一面成熟那些是可以在长周期 和多人的协作中保持一定的规范 这到下面就是建议是在入的SQ 就是技能 最后是一个自动化 玩你的一个基于Fudge System 文件系统的Memory 通过这一个完整的分解 购华的Hardless体系 我来让用户的工作变得越来越紧急 让系统的充分发挥模型能力以及自动化沉淀一些用户的喜好 所以总结下 所以这模型变得更加强大 所以哈利斯能力通过Trace的方式 均匀到模型之中 未来的哈利斯一面的其实是会越来越紧急 所以呢 就像OpenAI的营业员弄说的 我们现在可以去尝试做哈利斯 但是不要花太多时间 因为大部分哈利斯能力在三个月之后 都会为模型所替代
