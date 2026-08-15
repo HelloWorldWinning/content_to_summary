@@ -1,0 +1,150 @@
+Timestamp: 2026-08-16T00:23:57.013571
+Title: 用Claude Code搭建高端网站，轻松收费1万美元（完整教程） BV1UZgJ6hEGs
+URL: https://b23.tv/s7woSJ2
+Status: success
+Duration: 9:22
+
+Description:
+以下是对视频内容的结构化重构与深度批判性分析：
+
+---
+
+### **PART 1. 作者地图 (Author's Map)**
+
+#### 1. 核心主张 (Core Thesis)
+零编程基础的初学者，可以通过 **Claude Code** 结合特定技能文件（Skills）、组件扩展（MCPs）以及自动化部署工具（Hostinger MCP），低门槛且高效地构建并发布视觉质感达“万美金级别”的高端商业网站。
+
+#### 2. 证据基础 (Evidentiary Base)
+*   **演示案例 (Anecdote/Demonstration)**：展示了两个由 Claude Code 构建的网站实例——摄影工作室服务网站（包含高质感排版、表单与预约功能）与耳机品牌产品网站（包含 Three.js 3D 模型交互与平滑滚动改变颜色特效）。
+*   **工具栈与框架 (Tools & Infrastructure)**：
+    *   *技能文件 (Skills)*：UIUX Pro Max、Impeccable、Front end design。
+    *   *组件库 MCPs*：Magic UI MCP、React Bits MCP。
+    *   *动效与渲染库*：GSAP（高级动效库）、Three.js（3D 网页渲染库）。
+    *   *部署集成*：Hostinger MCP（自动化域名解析与主机发布）。
+*   **操作流示范 (Workflow Example)**：现场演示了环境搭建、插件安装、提示词输入到一键部署的完整闭环。
+
+#### 3. 逻辑推导 (Logical Warrant)
+*   **前提 1**：平庸网站与价值 $10,000 高端网站的核心区别在于“视觉设计质感”与“动态/3D交互体验”（通过 GSAP 和 Three.js 实现）。
+*   **前提 2**：Claude Code 在加装设计类 Skill 文件与组件库 MCP 后，具备生成专业级前端动效代码的能力。
+*   **前提 3**：Hostinger MCP 屏蔽了传统 Web 部署（域名配置、服务器设置、DNS 映射）的复杂性。
+*   **结论**：因此，用户只需复制特定提示词、配置好 AI 插件体系，即可跨过代码与设计门槛，交付专业级商业网站。
+
+#### 4. 明确的适用范围 (Stated Scope)
+*   **目标人群**：零基础初学者（Total beginners）及寻求高效建站的开发者。
+*   **适用场景**：产品销售型网站（如硬件品牌）、服务展示型网站（如摄影工作室）。
+*   **平台兼容**：macOS、Windows、Linux。
+
+#### 5. 隐性对立面 (Implicit Opponent)
+*   **平庸的 AI 生成网站（"Basic Vibe Coded Websites"）**：缺乏动态交互、视觉排版廉价、缺乏品牌高级感的普通 AI 网页。
+*   **传统高价外包团队/低效开发流程**：收费昂贵、周期长、需要多专业岗位协作的传统网站定制开发流程。
+
+#### 6. 预期行动 (Intended Takeaway)
+引导读者下载 Claude Code，配置指定的 Skills 与 MCPs，通过作者提供的免费社区链接获取 Prompt 模板，并通过其推广链接购买 Hostinger 服务完成极简部署。
+
+---
+
+### **PART 2. 严苛但公平的审阅 (Hostile-But-Very-Fair REVIEW)**
+
+#### 1. 最强形式表达 (Steelman)
+AI 编码 Agent 与专业级组件/部署 MCP 的结合，确实将前端高阶特效（如 Three.js 3D 场景渲染和 GSAP 复杂滚动动效）的实现门槛降低了数个数量级。对于只需要“视觉冲击力”和“品牌概念验证”的商业落地页（Landing Page），该方案极大地压缩了从设计到上线的周期与成本，使个人开发者具备了快速构建高视觉溢价展示页的能力。
+
+#### 2. 最薄弱环节 (Weakest Link)
+该论证最薄弱的支撑点在于：**将“高视觉冲击力的前端动效”等同于“价值 $10,000 的商业网站”**，并假设“初学者仅凭 AI 就能应对真实交付中的工程问题”。
+
+> 引用：*“And these websites were both made with only a couple of problems, so if you're a total beginner, don't worry, I'll guide you through each one step-by-step.”*
+
+**破裂过程**：$10,000 级别的商业网站，其核心价值极少仅仅体现在静态 UI 或演示级的动效上，更在于后端的安全性、高并发性能、SEO 架构、跨设备/多浏览器兼容性调优、合规性（GDPR/CCPA）以及业务逻辑接入（如真实支付网关、CRM 数据库同步、库存管理等）。AI 生成的复杂 3D/GSAP 代码极易导致低端移动设备的卡顿甚至崩溃。一旦初学者面临性能优化或代码死循环，缺乏底层代码能力的他们将无法进行任何排错与维护。
+
+#### 3. 证据审查 (Evidence Audit)
+*   **采选证据**：视频仅展示了在理想网络环境与桌面端浏览器下的静态页面或简单交互预览，并未展示移动端适配体验、加载延迟（Lighthouse 评分）、网络吞吐量及实际运行帧率（FPS）。
+*   **隐瞒事实**：Three.js 资源（3D 展品）和 GSAP 动效需要高度的资源压缩与内存管理，视频未提及 Claude Code 在生成这类代码时产生的 Token 极速消耗，以及遇到复杂动画冲突时产生的幻觉重试成本。
+*   **商业归因偏差**：将价值“$10,000”作为标题噱头，但缺乏真实客户的付费凭证或合同证明；这本质上是一个包含联盟营销（Hostinger 推广）与社群引流的商业漏斗。
+
+#### 4. 隐藏前提 (Hidden Premises)
+*   **前提 1**：真实客户愿意仅仅为了“看起来很炫”的落地页支付一万美元，而不需要深度的业务系统对接。
+    *   *质疑*：如果没有真正的后端交互、动态数据绑定与 SEO 优化，这种网站在市场上通常仅属于几百美元的模板范畴。
+*   **前提 2**：Claude Code 生成的代码在缺乏人工Code Review的情况下是安全且可扩展的。
+    *   *质疑*：当项目规模扩大或需要新增功能时，完全由 AI 生成的混沌代码（Spaghetti Code）能否顺利被二次开发？
+
+#### 5. 盲区分析 (The Blind Side)
+视频展现的是一个被**极度简化和理想化的“前端视觉建站”视角**，完全忽略了完整软件工程体系中的其他要素：
+*   **性能瓶颈**：Three.js 引擎在未优化的模型下会导致手机发热、掉帧甚至浏览器崩溃。
+*   **维护灾难**：没有模块化架构和测试用例的代码，随着迭代将变成无法维护的“黑盒”。
+*   **SEO 与无障碍访问（a11y）**：大量重度依赖 Canvas 渲染或复杂 DOM 动画的页面，极易破坏搜索引擎爬虫的读取与屏幕阅读器适配。
+
+#### 6. 致命一问 (One Hit Kill)
+“如果一个真实付费客户要求在网站中接入自定义数据库与支付系统，并要求在 3 年前的低配 Android 手机上以 60fps 流畅运行 Three.js 动画且 Pass 谷歌 Lighthouse 90+ 分数，完全不懂代码的初学者在遇到 Claude Code 遇到死循环幻觉时，该如何交付这个‘万美金网站’？”
+
+#### 7. 如何裁决争议 (What Would Settle It)
+进行一项对比测试：招募 5 名零代码基础的初学者，使用该视频中的“Skills + MCP + Claude Code”方案，接单 5 个预算在 $5,000-$10,000 的真实商业网站开发项目。考核指标包括：
+1. **交付成功率**（是否满足客户全部后端与业务功能要求）；
+2. **上线后 3 个月稳定性**（崩溃率、平均加载时间）；
+3. **客户最终验收付款率**。
+如果初学者能够独立完成全流程验收并获得高满意度，则该方案主张成立；反之则证明其仅停留在“演示级原型”阶段。
+
+---
+
+### **PART 3. 概念与流程架构图 (Mermaid Diagram)**
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 视频核心主张 (Core Thesis)"]
+        A["<b>Claude Code 辅助构建 $10,000 高端网站</b><br/>初学者通过 AI 生态链实现零代码高质感建站与发布"]
+        style A fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    end
+
+    subgraph SG_Workflow["⚙️ 自动化构建与部署工具链 (Technical Pipeline)"]
+        direction TB
+        W1["1. 环境配置: Claude Code 客户端"]
+        W2["2. 引入提示词技能库 (Skills)<br/>UIUX Pro Max / Impeccable / Frontend Design"]
+        W3["3. 挂载组件扩展 (MCPs)<br/>Magic UI MCP + React Bits MCP"]
+        W4["4. 高级视觉与交互引擎<br/>GSAP 滚动平滑动效 + Three.js 3D 渲染"]
+        W5["5. 自动化运维与发布<br/>Hostinger MCP 一键部署上线"]
+
+        W1 --> W2 --> W3 --> W4 --> W5
+        style W1 fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px,color:#006064
+        style W2 fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px,color:#006064
+        style W3 fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px,color:#006064
+        style W4 fill:#E040FB,stroke:#AA00FF,stroke-width:2px,color:#fff
+        style W5 fill:#C8E6C9,stroke:#388E3C,stroke-width:1.5px,color:#1B5E20
+    end
+
+    subgraph SG_Review["🚩 严苛审阅与工程盲区 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_Weak["最薄弱环节: 混淆 '视觉原型' 与 '交付级商业工程'"]
+        R_Weak_Detail["高额价值依赖于后端安全、高并发、SEO 与维护能力，而非单纯的 UI 特效"]
+
+        R_Evidence["证据缺陷: 忽略真实移动端性能与加载延迟"]
+        R_Evidence_Detail["Three.js 与 GSAP 在低配设备易掉帧崩溃；视频含有带货漏斗性质"]
+
+        R_Premise["隐藏前提: 假设客户仅凭视觉买单且 AI 代码无死角"]
+        R_Premise_Detail["当面临复杂业务逻辑与数据库交互时，初学者无法解决 AI 幻觉与 Bug"]
+
+        R_Kill["致命一问: 遇到性能调优、安全合规与定制后端时，初学者如何交付？"]
+
+        R_Weak --> R_Weak_Detail
+        R_Evidence --> R_Evidence_Detail
+        R_Premise --> R_Premise_Detail
+        
+        style R_Weak fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px,color:#B71C1C
+        style R_Evidence fill:#FFCDD2,stroke:#D32F2F,stroke-width:1.5px,color:#B71C1C
+        style R_Premise fill:#FFCDD2,stroke:#D32F2F,stroke-width:1.5px,color:#B71C1C
+        style R_Kill fill:#FF8A80,stroke:#C62828,stroke-width:2.5px,color:#B71C1C,font-weight:bold
+    end
+
+    A --> SG_Workflow
+    SG_Workflow -- "推导支撑" --> A
+    
+    A -.-> R_Weak
+    SG_Workflow -.-> R_Evidence
+    SG_Workflow -.-> R_Premise
+    R_Weak_Detail & R_Evidence_Detail & R_Premise_Detail -.-> R_Kill
+
+    %% --- Subgraph Background Styles ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px,color:#333
+    style SG_Workflow fill:#F3E5F5,stroke:#AB47BC,stroke-width:2px,color:#4A148C
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+</Mermaid_Diagram>
+
+Content:
+In today's video, I'm going to show you how to create $10,000 websites using Cloud Code. By the end of this video, you'll be able to build the websites just like this one that sells a product and this one that sells a service. And these websites were both made with only a couple of problems, so if you're a total beginner, don't worry, I'll guide you through each one step-by-step. And once you understand the process, you'll be able to apply this to any website you're trying to create. Follow along and let's get into it. First things first, if you're a total beginner, what we need to do is download cloud code. So let's head over to cloud.com slash product slash cloud-code and then we'll download it for either macOS, Windows or Linux depending on what you have. And once we downloaded cloud code, what we want to do is log in and open up a new project. Now once we downloaded the cloud app, we have our tabs right here for chat, code work code. What we want to do is go click on the code tab and here on the top left we have our new session, our artifacts, routines and our customize button. The new session is used to start a new chat. Artifacts are little things that cloud can make for you in order to display certain information. Routines are automations you could use in order to set up different tasks to run at a certain time of day. So for example, checking your email every day at 10 a.m. And customize is where you can customize how your cloud code acts. So you have your skills right here, your connectors right here, and your plugins right here. Now, we'll be using skills and connectors today. So skills are files of instructions that allow Cloud Code to know what you're trying to do or a direction that you're trying to go. So for example, if I want to create a website like we're doing today and I want to Cloud to create that website in a certain way, I could write a skill file and that skill file can guide Cloud on how we want it to approach website creation. So you can either create skills yourself or you can download them from the internet. So for today, we'll be downloading three different skills from the internet that make Claude have a better ability to create websites. And for our connectors this basically gives Claude the ability to connect to different apps on the internet or websites and once it's connected it could pull information directly from those sources in order to achieve whatever task we give it. So let's get into the website creation. So what I recommend is to have Claude download these three skills right here. We'll have them linked down below. The first skill is UIUX Pro Max. second skill is impeccable and the third skill is front end design. So we can either add them in our customized tab right here or we can just link all of them to cloud and ask it to download the skills. So once the skills are downloaded, as you could see, cloud tells me that all these three skills are ready to go and that each skill is in the folder we're working in. So once you are starting a new session, make sure that you have a folder that you want all your project files to go in. Now, I know this setup might be a little bit complicated but this is the best way to reach really, really good web design using Clot code. Now, the next thing we want to do is connect Clod to a specific connector. Now, that connector is made by Magic UI. So all we need to do is look up Magic UI MCP on Google, open up this page right here and click Copy the page. Now, as you can see right here on their component section on the left side, what this does is basically gives Clod access to a bunch of these components that it can use within your websites. So now when you're copying the page, make sure you select Clawed right here and then click Copy Page and then this will make it easy for Clawed to just add the MCP. Then you paste that into your chat and before we click Enter another MCP that I like using is the React Bits MCP and this one also has a ton of animations and components for Clawed to use on your website. So we'll go here to MCP, click Clawed Code, copy this right here and paste it onto our Clawed Chat. After you added both of those MCPs, you want to make sure that you restart your cloud app by just quitting it and opening it back up again because that lets cloud register those MCPs and actually use them correctly. And now onto the fun part. So what is the difference between a bad website and a $10,000 website? I think the main thing that separates the two are design and animation. So this is a basic vibe coded website versus this one right here that we made with cloud. So in order to achieve this style and this feeling on the website, which you could clearly tell is more premium than regularly cloud-coded website. We have to think about how our website feels when the user gets into it and what motion it carries along with the colors of the website, the typography, and everything like that. So there are a couple things that you need to also do. You need to make sure that cloud code uses something called G-SAP and you need to make sure that cloud code uses something called 3JS. Now an explanation of G-SAP is pretty much how you animate anything on a website. So this is the code that helps animate things on different websites and a ton of different websites use it, a ton of different apps use it and it makes things feel very premium and very cool. Now since this is all done with code, Cloud is very good at using it. And now onto 3JS. So 3JS is basically a 3D library that allows you to use 3D just through code. Now obviously we're not coding things ourselves. Cloud will be able to do that for us so we just need to specify what we want in in order to get a good outcome. So for this first website for a photography studio, this is the prompt I used. Now if you wanna get the exact prompts, we have it in our school community. That's totally free and it's linked down below. Now obviously this prompt is a little bit long, so what you wanna do is just copy the prompt from our community and pretty much give context to Claude on what website you're trying to build. So whether it's for a headroom brand like this one right here or for anything else that you want to build, you can always just copy the prompt and tell Cloud to adapt it to whatever website you're trying to make. Then Cloud code will change everything necessary within the prompt and give you back a prompt that is usable for your use case. But anyways, we pretty much tell it to add a lot of cool scroll effects and we tell Cloud to treat this as if it was the creative director of the studio and its job is to make this super beautiful and on-brand. We want the website to feel premium, editorial and like a professional. Did it? We also told it to use any skills off the internet if it feels like it needs to. Once we submit our prompt, Cloud will work for a while. As you could see, it worked for a long time and did a bunch of different things. And once it is done, it will give you a link like this. Typically, it says local host, semicolon, 80, 80, or any other number. And once you have that, you can click on it and pretty much view a preview of the website. Now here is the website it created for us. It looks very nice. Very much on-brand with photography studios. The Texas Cool has like these cool spaces that have to do with the photographer's bio. Obviously you can change this to whatever you want. Once you made it, cool animations, some bunch of reviews and a booking link right here. And also a forum to enter your info if you're trying to reach out to the website. Now once you have this version done, you can obviously edit it and change whatever you like. Don't like things like that. Now other than the photography website we just made, this is another one I made using the same strategy. So this is for a headphone brand. And as you can see, it has these cool scrolling effects. It looks very premium, moves around, so the headphones themselves are done with 3GS, which is the 3D thing I talked about earlier. All these cool little animations that it has in the background. And as you scroll down, it changes the colors of the headphones based on which model you're looking at. Also this typing animation right here, and then an email inquiry to request an invitation. But once you're done making these cool websites, the issue is nobody can actually access them. They're currently only hosted on your computer, and in order to access them, have to be deployed somewhere on the web. That's where hosting her comes in. So like I talked about earlier, we have our connectors right here. Now connectors and MCPs are pretty much the same thing, but hosting her just released one. And what does that mean? It means that we don't have to deal with a lot of stuff that comes with the complexity of web hosting. We can just connect hosting her to Clawd and then we'll have Clawd do the whole thing. The easiest way to set it up is to click the link down below and select a business plan. Once you selected a plan, make sure to use our discount code. And you can either follow the instructions you get on the screen or install it by copy pasting this right here into Claude and once you paste this into Claude, it will open up your rub browser and ask you to sign in with your account. So sign in with your account and click authenticate. After you did that, you can paste this in right here to make sure the MCP is registered on your Claude account and after pasting this into Claude, you want to quit your Claude app and then restart it and open it back up again. And after you restarted Claude, you can ask it, do you have access to the hosting or MCP? And it will tell you, yes, I have access to the hosting or MCP. And from from here you can mess around with hosting your domains, your DNS, your buildings, and your reach. Now this makes it super easy because you don't have to deal with anything manually. So now your page can go live instantly straight through Cloud Code. So you can either ask Cloud to connect to an existing domain that you already own or you can deploy it on a free hosting or subdomain for quick access. So let's test out the free deployments real quick. So we told Cloud to deploy it on free hosting or subdomain for now and Cloud is doing some work and we will be able to see in a second how our website is live. And guess what, you'll be able to access it through the link down below. And there we go, we have our live website. So as you can see, it is fully deployed to the internet. It works perfectly and it was probably the easiest time I've ever had deploying a website. But yeah, I hope you're able to follow along and eventually create your own high end website and deploy it to the internet. We post a ton of different AI tutorials and business content as well as finance content on this channel. So if you enjoy this video, make sure to like, comment what website you're building and subscribe to the channel. You can test out the website. just deployed with this link right here and yeah I hope you enjoyed and I will see you in the next video.
