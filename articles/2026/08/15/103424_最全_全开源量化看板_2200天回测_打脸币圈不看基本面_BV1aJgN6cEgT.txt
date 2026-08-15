@@ -1,0 +1,173 @@
+Timestamp: 2026-08-15T10:34:24.972515
+Title: 最全！全开源量化看板，2200天回测，打脸币圈不看基本面 BV1aJgN6cEgT
+URL: https://b23.tv/LJNbhLt
+Status: success
+Duration: 2:19
+
+Description:
+以下是对该加密货币基本面量化策略及看板文本的深度架构映射与同行评审分析。
+
+---
+
+### PART 1. Author's Map（作者架构映射）
+
+#### 1. Core Thesis（核心主张）
+利用基于恐惧贪婪指数、稳定币占比及均线偏离度的基本面量化策略，能够在加密货币交易中有效识别极值买入点，并通过“煞车”机制降低持仓最大回撤。
+
+#### 2. Evidentiary Base（论据基础）
+*   **硬数据（Hard Data）：** 
+    *   2,200天历史回测数据；16年公开行情数据（包含OKX、Alternative.me、DeFiLlama免费接口）。
+    *   前20%极度恐慌日买入，未来30天胜率为75.4%；前20%极度贪婪日追高，胜率低于40%（胜率差达35.4个百分点）。
+    *   近4年策略累计收益率88.8%，最大回撤从满仓持有的53%降至46%（降低7个百分点）。
+    *   近4年48个月的月度抽样散点图（FGI vs 30天收益率），极值点收益跨度最高达130个百分点（文本描述为13个百分点/130%）。
+*   **分析工具（Tools & Analytical Framework）：**
+    *   实时监控：K线叠加MA均线与布林带；右侧RSI与MACD。
+    *   资金费率（合约多空付费动态）、稳定币构成饼图（USDT占比及场外潜在流动性）。
+    *   7个主流币种走势与相关性矩阵。
+
+#### 3. Logical Warrant（逻辑纽带）
+*   **推导类型：** 逆向均值回归推理（Mean Reversion Inference）与情绪周期归纳法。
+*   **三段论逻辑：**
+    *   *大前提：* 加密市场由极端情绪（恐慌与贪婪）驱动，极度恐慌往往对应价格底部，极度贪婪对应价格顶部。
+    *   *小前提：* 恐惧贪婪指数（FGI）、稳定币资金占比和200日均线偏离度能精准量化这种极端情绪与场外流动性储备。
+    *   *结论：* 在极度恐慌（FGI低位）时买入、贪婪时避险（煞车），能够以高胜率获取未来30天正向收益，并减少整体账户回撤。
+
+#### 4. Stated Scope（适用边界）
+*   **适用对象：** 加密货币市场及7个主流币种（如BTC/ETH等）。
+*   **功能定位：** 该策略主要作为“煞车”（风险控制与择时避险），而非追求“超级超额收益”。
+*   **免责声明：** “历史回测不代表未来收益，仅供学习研究，不构成投资建议”。
+
+#### 5. Implicit Opponent（隐性对立面）
+*   **纯技术分析派：** 只看K线、MACD、RSI等滞后技术指标而无视宏观资金与情绪基本面的人。
+*   **盲目追高与情绪化散户：** 在市场狂热时追高、恐慌时割肉的无策略交易者。
+*   **基本面无用论者：** 认为加密货币缺乏真实业绩支持、因而完全没有“基本面”可言的怀疑论者。
+
+#### 6. Intended Takeaway（预期行动）
+*   使读者相信情绪与流动性指标在加密量化中的有效性；
+*   促使读者通过“一键三连+关注+截图私信”获取开源代码（.html/.sqml文件及源码）。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（苛刻但客观的同行评审）
+
+#### 1. Steelman（最强支持）
+在加密货币这种高波动、高度受散户与博弈心理驱动的资产类别中，利用恐惧贪婪指数与场外流动性（稳定币占比）进行反向操作（逆向投资），确实能在市场极度出清时提供正期望值的左侧建仓机会，并利用规则化择时有效降低系统性尾部风险（回撤）。
+
+#### 2. Weakest Link（最薄弱环节）
+> **引文：** “近四年的基本面策略累积收益百分之八十八点，相比全舱买入持有的收益有所减少，但是可以观察到回撤从满舱的百分之五十三压到了百分之四十六。”
+
+*   **崩溃逻辑：** 策略的效用建立在“牺牲部分牛市收益换取显著风险控制”上。然而，在长达4年的加密周期中，最大回撤仅从53%微幅降至46%（仅改善7个百分点），却付出了收益率落后于简单的“买入并持有（Buy & Hold）”的代价。如果风控系统在遭遇类似2022年系统性去杠杆的黑天鹅事件时，仍然要承受46%的巨幅回撤，那么该策略所谓的“煞车功能”在实际资金管理中性价比极低。
+
+#### 3. Evidence Audit（证据审查）
+*   **样本量极小与采样偏差：** 散点图分析中声明“在过去的4年中每个月取一个样本，一共48个散点”。48个月度数据点在统计学上对于高频/中频量化交易而言样本量严重不足，且月度抽样极易受到抽样日期（如月初 vs 月末）选择偏差的影响。
+*   **时间线矛盾与数据拼接：** 文本同时提到“2,200天回测”（约6年）、“16年公开数据”与“近4年策略”。事实是：加密市场整体历史极短，比特币诞生至今仅约15年，恐惧贪婪指数（Alternative.me）始于2018年，DeFiLlama稳定币数据更晚。所谓的“16年数据”存在严重的指标数据拼接与后视偏误（Look-ahead bias）。
+
+#### 4. Hidden Premises（隐含前提）
+*   **前设1：** 稳定币存量增加一定代表“场外待买入的弹药”，而不是资金从加密市场永久性流出或退回法定货币离岸账户避险。
+    *   *提问：* 如果稳定币市值增加是因为避险情绪升温（资金从山寨币退守USDT），而非等待抄底，该指标逻辑是否失效？
+*   **前设2：** 恐惧贪婪指数（FGI）的计算权重在未来不会被衍生品做市商或算法操纵。
+    *   *提问：* 当市场主流参与者都意识到FGI到达极值会引发均值回归买盘时，机构是否会利用该指标构建反向流动性陷阱？
+
+#### 5. The Blind Side（盲区分析）
+*   **市场微观结构剧变：** 该策略严重依赖过去散户主导时期的情绪周期。随着比特币ETF通过及传统金融（TradFi）巨头入场，加密市场的定价权已转向宏观利率、美联储资产负债表及ETF净流入流出。过去4-6年基于FGI与传统稳定币比例的历史规律，正在面临结构性失效风险。
+
+#### 6. One Hit Kill（致命一问）
+**如果在回测中加入真实的现货/合约交易摩擦成本（交易手续费、跨期资金费率损耗、极度恐慌时的深度滑点与流动性枯竭），该策略在恐慌日买入的30天实际扣税/扣费后收益率，是否还能显著跑赢简单的无风险利率或定期定投（DCA）？**
+
+#### 7. What Would Settle It（如何检验）
+在不调整任何参数的前提下，将该开源代码在2024-2025年（样本外数据）进行实时模拟盘（Paper Trading）测试，加入0.1%单边手续费与滑点成本，对比其与“200日均线单择时策略”及“BTC定投策略”的夏普比率（Sharpe Ratio）与索提诺比率（Sortino Ratio）。
+
+---
+
+### PART 3. Mermaid Conceptual Map（概念与评审架构图）
+
+<Mermaid_Diagram>
+graph TD
+    %% Base Node Styles
+    classDef thesis fill:#FFF59D,stroke:#FBC02D,stroke-width:3px,color:#333;
+    classDef dataNode fill:#E1F5FE,stroke:#0288D1,stroke-width:2px,color:#01579B;
+    classDef logicNode fill:#E8F5E9,stroke:#388E3C,stroke-width:2px,color:#1B5E20;
+    classDef scopeNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:1.5px,color:#4A148C;
+    classDef reviewWeak fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C;
+    classDef reviewDetail fill:#FFEBEE,stroke:#EF5350,stroke-width:1.5px,color:#C62828;
+    classDef settleNode fill:#FFE0B2,stroke:#F57C00,stroke-width:2px,color:#E65100;
+
+    %% Core Thesis
+    subgraph SG_Thesis ["💡 核心主张 (Core Thesis)"]
+        A["<b>加密基本面与情绪量化看板</b><br/>利用恐惧贪婪指数/稳定币/均线进行择时避险"]:::thesis
+    end
+
+    %% Author's Map
+    subgraph SG_AuthorMap ["🗺️ 作者论证地图 (Author's Map)"]
+        direction TB
+        
+        subgraph SG_Data ["📊 数据与论据 (Evidentiary Base)"]
+            D1["2200天/16年公开历史数据<br/>(OKX / Alternative.me / DeFiLlama)"]:::dataNode
+            D2["恐慌买入30天胜率 75.4%<br/>vs 贪婪追高胜率 <40%"]:::dataNode
+            D3["策略4年收益 88.8%<br/>最大回撤 53% 降至 46%"]:::dataNode
+        end
+
+        subgraph SG_Logic ["⚙️ 推导逻辑 (Logical Warrant)"]
+            L1["市场情绪存在极端均值回归"]:::logicNode
+            L2["稳定币占比 = 场外预备弹药"]:::logicNode
+            L3["基本面指标构建风险『煞车系统』"]:::logicNode
+        end
+
+        subgraph SG_Scope ["🎯 适用边界与对象 (Scope & Targets)"]
+            S1["目标：主流加密货币 (BTC/ETH等)"]:::scopeNode
+            S2["定位：风控煞车而非追求暴利"]:::scopeNode
+            S3["免责：历史回测不代表未来收益"]:::scopeNode
+        end
+
+        D1 & D2 & D3 --> L1
+        L1 & L2 --> L3
+        L3 --> A
+        S1 & S2 & S3 -.-> A
+    end
+
+    %% Hostile-But-Very-Fair Review
+    subgraph SG_Hostile ["⚔️ 苛刻但客观的同行评审 (Hostile Review)"]
+        direction TB
+
+        R_Weak["<b>最薄弱环节 (Weakest Link)</b><br/>风控效能极低"]:::reviewWeak
+        R_Weak_Desc["回撤仅从53%降至46%<br/>却牺牲大量牛市持仓收益"]:::reviewDetail
+
+        R_Evidence["<b>数据与证据漏洞 (Evidence Audit)</b>"]:::reviewWeak
+        R_Ev_1["样本量过小 (仅48个月度点)"]:::reviewDetail
+        R_Ev_2["历史数据拼接与后视偏误 (FGI始于2018)"]:::reviewDetail
+
+        R_Blind["<b>市场盲区与假定 (The Blind Side)</b>"]:::reviewWeak
+        R_Bl_1["传统金融ETF入场，微观结构改变"]:::reviewDetail
+        R_Bl_2["稳定币增加可能是永久避险离场"]:::reviewDetail
+
+        R_Kill["<b>致命一问 (One Hit Kill)</b><br/>扣除滑点、手续费与资金费率后<br/>实盘夏普比率是否跑赢定投？"]:::reviewWeak
+
+        R_Weak --> R_Weak_Desc
+        R_Evidence --> R_Ev_1 & R_Ev_2
+        R_Blind --> R_Bl_1 & R_Bl_2
+    end
+
+    %% Settlement
+    subgraph SG_Settle ["🔬 最终检验标准 (What Would Settle It)"]
+        ST["样本外实时模拟盘 (Out-of-sample Paper Trading)<br/>计入真实摩擦成本，对比200日均线择时与定投的Sharpe/Sortino比率"]:::settleNode
+    end
+
+    %% Cross Links
+    A -- "同行审视" --> R_Weak
+    D3 -- "质疑表现" --> R_Weak
+    D1 & D2 -- "质疑可靠性" --> R_Evidence
+    L2 -- "假设缺陷" --> R_Blind
+    R_Kill -- "决定性验证" --> ST
+
+    %% Subgraph Styling
+    style SG_Thesis fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#333
+    style SG_AuthorMap fill:#F1F8E9,stroke:#689F38,stroke-width:2px,color:#33691E
+    style SG_Data fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px,color:#006064
+    style SG_Logic fill:#E8F5E9,stroke:#4CAF50,stroke-width:1.5px,color:#1B5E20
+    style SG_Scope fill:#F3E5F5,stroke:#AB47BC,stroke-width:1.5px,color:#4A148C
+    style SG_Hostile fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+    style SG_Settle fill:#FFF3E0,stroke:#FF9800,stroke-width:2px,color:#E65100
+</Mermaid_Diagram>
+
+Content:
+遇见不看基本面,这句话我用两千两百天真实回测打脸了 这个是我做的避迟基本面量化看板,避懂实施价格 恐惧贪婪指数稳定必总量,总是值多因此信靠 一两无余,注意这几个数字 把过去几年最恐慌的百分之二十日子和最贪婪的百分之二十日子拉出来对比 恐慌那天买入未来三十天胜率百分之七十五点四 贪婪那天追高,只有不到百分之四十,差了三十五个点 这不是选选,十六年公开数据回测出来的 这整个看板我都已经测试完了 全部开源 结尾有免费或窗尺 大家收到的话帮我发个诞墓 主业实施监控 K线叠加了MA军线 和布林代 右侧是RSI和MACD 技术面刚开始们这里一瓶讲完 资金费率则在告诉你合约市场多空水单付钱 稳定币构成饼图告诉你 场湾淡药还剩多少 USDT加就有1831 英子研究页面 这个页面是我们的项目核心 首先 三个免费指标 恐惧汤兰指数 稳定币占比 200日军线偏离 2022年以后,他们的方向一年比一年稳定 可以看到极致到未来30天收益差 最高跨度达到了13个百分点 3点连动图X-O是F-G-I 恐惧贪婪指数零代表 极度恐慌 100代表极度贪婪 Y-ZO代表未来30天的收益 那个时间点以后30天比特别长的多少 我们在过期的4年中每个月取一个样本 一共48个3点 红绿代表未来30天营丽亏损 收益越大点越大 这个3点可以单击互动 一点表格就连动 回撮对比业面 我们把信号做成策略 近四年的基本面策略累积收一百分之八十八点 相比全舱买入持有的收益有所前少 但是可以观察到回彻从满舱的百分之五十三 压到了百分之四十六 这一位的基本面策略可以相比满舱持有 或少会七点 这就是基本面的一大用处 它不适应超级 它是煞车 立种分析见面 七个主流壁的规划走势 以及相关性举证 一眼看清 下方列表点击任意行 还能跳出这个壁的完整走势和技术指标 那有人教问了 这些数据从哪里来的 我们采用成功开数据员 OKX行情 Orturnalcive.me的恐惧贪婪指数 D5LM的稳定闭试纸 全部免费接口 代码力就是真实的地址 2,200天回错每天 一个信号 未来30天收益怎么样 全部都在里面 当然历史回错不代表未来收益 进攻学习研究不够生任和投资建议 整套圆码我都已经开援了 打包在一个sqml文件里面 双击打开就能用 还可以一键刷新实施行情 想要户期待马的话,一键三连加关注,节图私信我,原码和完整文档直接发给你 小白都能上手,我是小白数量化,我们下期再见,拜拜
