@@ -1,0 +1,156 @@
+Timestamp: 2026-09-03T15:12:23.338867
+Title: 中国特供CPU上身！铭凡 UM870 Slim 8745H迷你主机全面评测！65W性能释放超越7840HS！接近8845HS！#4k #pc BV1zW1TYzE1W
+URL: https://www.bilibili.com/video/BV1zW1TYzE1W/?spm_id_from=333.337.search-card.all.click&vd_source=0eeb7ad2c1a37164e848fbfa306683ca
+Status: success
+Duration: 14:05
+
+Description:
+### PART 1. Author's Map（作者论证地图）
+
+#### 1. Core Thesis（核心论点）
+搭载 AMD 锐龙7 8745H 处理器的高性能迷你主机（以名凡 UM870 Slim 为例），虽然在 CPU/GPU 睿频上比 8845HS 微降 0.1~0.2GHz 且彻底砍掉了 NPU，但在 65W 性能释放下其实际性能表现、游戏体验与大模型推理速度与 8845HS 基本无异；结合准系统不到 2000 元的定价，它是目前极具性价比的旗舰级 780M 核显迷你主机。
+
+#### 2. Evidentiary Base（论据支撑库）
+*   **硬核实测数据（Hard Data）**：
+    *   *功耗与散热*：FPU 单烤稳定 65W（整机功耗约 88W，120W DC 电源），单烤 1 小时 CPU 极值温度 87°C，噪音控制在 41~50dB。
+    *   *理论跑分*：Cinebench R23 多核 17,199 分 / 单核 1,766 分；CPU-Z 多核 7,190.6；Geekbench 6 多核 13,202；3DMark Time Spy 图形分 3,043。
+    *   *实际应用*：视频转码耗时 590 秒（优于 780HS/790HS）；Ollama 3.1 8B 大模型推理速度达 13.9 tokens/s；《黑神话：悟空》1080p 低画质+帧生成平均 68 帧；《地平线5》1080p 高画质 70~80 帧。
+*   **硬件规格拆解（Product Specs）**：
+    *   8核16线程，无 NPU，双通道 DDR5 5600MHz，双 PCIe 4.0 NVMe SSD 接口（带主动散热风扇与硅胶垫）。
+    *   满血 HDMI 2.1、全功能 USB4（支持 PD 供电）、DP 1.4、联发科 Wi-Fi 6E 及螃蟹（Realtek）2.5G 网卡。
+*   **市场价格（Market Context）**：双十一前夕准系统售价低于 2000 元。
+
+#### 3. Logical Warrant（逻辑推导路径）
+*   **推导类型**：比较归纳推理（Comparative & Inductive Reasoning）。
+*   **三段论逻辑**：
+    1.  *大前提*：决定迷你主机体验的核心是实际性能释放、散热噪控、扩展接口与性价比，而非宣称但目前利用率极低的功能（如弱势 NPU）。
+    2.  *小前提*：8745H 在 65W 释放下的跑分和游戏帧数与 8845HS 几乎持平，缺失的 NPU 在当前生态下无实际用途，且机器售价大幅降低（<2000元）。
+    3.  *结论*：名凡 UM870 Slim 是一款舍弃边缘功能（NPU）、保留核心性能（65W+780M）的高性价比优质产品。
+
+#### 4. Stated Scope（论述边界）
+*   **适用场景**：预算 2000 元左右、追求高性价比、有轻中度 3A 游戏需求、轻量化生产力（视频转码/本地大模型）及多屏输出需求的迷你主机用户。
+*   **限制条件**：明确指出该机型**缺少 OCuLink 接口**，不适合对外接独立显卡有极高无损带宽要求的用户。
+
+#### 5. Implicit Opponent（隐性对立面）
+1.  **AI PC 概念炒作者**：盲目夸大现阶段移动端 NPU 价值、利用 NPU 概念进行产品溢价的厂商。
+2.  **“阉割芯片论”持持者**：认为 8745H 相较于 8845HS 频率微降并去除了 NPU 就会导致性能大幅缩水的硬件偏见。
+
+#### 6. Intended Takeaway（预期行动引导）
+消除读者对 8745H“阉割处理器”的性能顾虑，确立名凡 UM870 Slim 在 2000 元价位段核显迷你主机的性价比标杆地位，引导预算有限但追求高性能的消费者购买。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW（批判性同行评审）
+
+#### 1. Steelman（最强版本重构）
+评测者通过极其详尽的硬件拆解、烤机压力测试、生产力转码、丰富游戏帧数测试以及最新的LLM大模型推理速度，有力地证明了 R7 8745H 在去掉不成熟的 NPU 后，凭借 65W 的高功耗释放，在绝大多数实际使用场景中与 8845HS 表现基本一致，且在不到 2000 元的售价下提供了极佳的品质和极低的噪音控制。
+
+#### 2. Weakest Link（最薄弱环节）
+> **文中原话**：“双通道DDR5内存5600MHz ... 预装一条280 PCIe 4.0插槽的NVMe SSD ... 跑出了780M核显的最高值”
+
+*   **崩溃逻辑**：评测未严格控制**内存配置与核显带宽的敏感性变量**。Radeon 780M 核显对内存带宽（频率与双通道）极度敏感。评测中使用的是 32GB DDR5 5600 高规格双通道配置跑出的高分，但该主机作为“不到2000元”的准系统出售，用户自备单条内存或低频内存时，核显性能将面临 20%~35% 的断崖式下跌。将“准系统的低价”与“满配内存下的极致核显性能”绑定宣传，存在性能预期错位。
+
+#### 3. Evidence Audit（证据审计）
+*   **选择性展示游戏设置**：《黑神话：悟空》跑出 68 帧看似惊艳，但采用了“自定义画质（低画质）+ 超采50% + 帧生成（FSR）”。这本质上是靠极度牺牲画质分辨率和画面延迟换取的“虚高帧数”，并非 780M 具备原生畅玩 3A 大作的硬实力。
+*   **大模型测试参数缺失**：宣称 Ollama 3.1 跑出 13.9 t/s 的“780M 最高成绩”，但未说明使用的大模型量化精度（是 Q4_K_M、Q8_0 还是 FP16）。缺乏精度的速度对比在学术和工程上是没有意义的。
+*   **无线网卡异常的归因回避**：Wi-Fi 6E 网卡实测带宽仅 400Mbps+（评测者坦承为其网络环境中较差表现），评测者将其直接归咎于“个人网络环境差”，回避了迷你主机金属/塑料混合机身对联发科网卡天线信号屏蔽或兼容性的潜在大坑。
+
+#### 4. Hidden Premises（隐含前提）
+1.  **假设“NPU 目前无用 = 未来也无用”**：随着 Windows 11 Copilot+ 特性（如实时翻译、局部生成、本地语音小模型）的逐步更新，物理 NPU 的缺失可能导致该机器在 1-2 年内直接无法调用系统级 AI 硬件加速 API，导致软件生态脱节。
+2.  **假设“USB4 可以完美替代 OCuLink”**：评测将缺少 OCuLink 列为唯一缺点，但认为有 USB4 即可补偿。隐含前提是 USB4 外接显卡够用，忽略了 USB4 在协议转换中存在高达 20%-30% 的性能损耗，与无损传输的 OCuLink 有质的区别。
+
+#### 5. The Blind Side（盲区与忽视）
+*   **长期积灰与小风扇衰减**：底部风扇直接面向 SSD 和 D 盖，在紧凑空间内采用了吹拂式散热。此类小型高转速风扇在运行 6-12 个月积灰后，风噪和散热效率衰减极快，短期 1 小时新机烤机数据无法代表长期体验。
+
+#### 6. One Hit Kill（致命一问）
+> **如果 Windows 操作系统在未来的年度更新中，将硬件级 NPU 设为某些核心系统级 AI 功能（如 Copilot 本地加速、自动实时超分辨率）的强制门槛，这台彻底剥离了 NPU 的 8745H 主机，是否会面临“刚过保修期即无法使用新系统核心功能”的尴尬局面？**
+
+#### 7. What Would Settle It（判定性实验）
+在装配单通道 5600MHz 与双通道 5600MHz 内存的对比下，运行相同画质下的《黑神话：悟空》与 CB R23，记录性能差距；并在未来 Windows 11 AI 功能全面下放时，测试 8745H 与 8845HS 在系统级 AI 任务中的兼容性与 CPU 占用率差异。
+
+---
+
+### PART 3. Mermaid Conceptual Map（概念与批判逻辑图）
+
+<Mermaid_Diagram>
+graph TD
+    A["💡 核心评价: 名凡 UM870 Slim (R7-8745H)"] --> B["评测主线逻辑 (Part 1)"];
+    A --> C["批判性审阅 (Part 2)"];
+
+    subgraph SG1["🟢 评测主线: 硬件规格与性能表现 (Author's Map)"]
+        direction TB
+        S1_CPU["CPU: R7 8745H<br/>(8C/16T | 4.9GHz | 削减NPU)"]
+        S1_Power["散热与功耗释放<br/>(性能模式65W | 烤机87°C | 噪控41-50dB)"]
+        S1_Bench["基准跑分测试<br/>(CB R23 多核17199 | CPU-Z 7190.6)"]
+        S1_Game["游戏与AI体验<br/>(黑神话68帧 | LLM 13.9 t/s)"]
+        S1_Price["价格优势<br/>(准系统 < 2000元)"]
+        
+        S1_CPU --> S1_Power
+        S1_Power --> S1_Bench
+        S1_Bench --> S1_Game
+        S1_Game --> S1_Price
+    end
+
+    B --> S1_CPU
+
+    subgraph SG2["🔴 批判性审阅: 证据审计与隐患 (Hostile Review)"]
+        direction TB
+        R_WeakLink["⚠️ 最薄弱环节: 内存配置依赖"]
+        R_WeakLink_D["准系统低价 vs 满配双通道内存<br/>单通道下核显性能将大幅缩水"]
+
+        R_Audit["🔍 证据审计漏洞"]
+        R_Audit_D["1. 黑神话依靠50%超采+插帧换取68帧<br/>2. LLM测试未标明Quantization精度<br/>3. Wi-Fi 6E 网卡实测性能偏弱"]
+
+        R_Premise["🧠 盲点与隐性假设"]
+        R_Premise_D["1. 假设NPU未来依然无用 (忽视Copilot+生态)<br/>2. 缺失OCuLink, USB4外接显卡损耗高达30%"]
+
+        R_Killer["🎯 致命一问 (One Hit Kill)"]
+        R_Killer_D["未来Windows强制要求NPU进行系统AI加速时<br/>无NPU的8745H是否会提前淘汰？"]
+
+        R_WeakLink --> R_WeakLink_D
+        R_Audit --> R_Audit_D
+        R_Premise --> R_Premise_D
+        R_Killer --> R_Killer_D
+    end
+
+    C --> R_WeakLink
+    C --> R_Audit
+    C --> R_Premise
+    C --> R_Killer
+
+    subgraph SG3["🟣 最终裁决与条件结论 (Synthesis)"]
+        direction TB
+        F_Conclusion["推荐购买的先决条件"]
+        F_Cond1["1. 必须配置双通道DDR5高频内存"]
+        F_Cond2["2. 不依赖 OCuLink 无损外接独显"]
+        F_Cond3["3. 认同当前‘无NPU’的纯CPU/GPU性价比路线"]
+        
+        F_Conclusion --> F_Cond1
+        F_Conclusion --> F_Cond2
+        F_Conclusion --> F_Cond3
+    end
+
+    S1_Price --> F_Conclusion
+    R_Killer_D -.-> F_Conclusion
+
+    %% --- Node Styles ---
+    classDef mainNode fill:#FFF9C4,stroke:#FBC02D,stroke-width:3px,color:#333
+    classDef mainClaim fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#006064
+    classDef reviewNode fill:#FFCDD2,stroke:#D32F2F,stroke-width:2.5px,color:#B71C1C
+    classDef reviewDetail fill:#FFEBEE,stroke:#EF9A9A,stroke-width:1px,color:#C62828
+    classDef finalNode fill:#E8F5E9,stroke:#388E3C,stroke-width:2px,color:#1B5E20
+
+    class A mainNode
+    class S1_CPU,S1_Power,S1_Bench,S1_Game,S1_Price mainClaim
+    class R_WeakLink,R_Audit,R_Premise,R_Killer reviewNode
+    class R_WeakLink_D,R_Audit_D,R_Premise_D,R_Killer_D reviewDetail
+    class F_Conclusion,F_Cond1,F_Cond2,F_Cond3 finalNode
+
+    %% --- Subgraph Styles ---
+    style SG1 fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#0D47A1
+    style SG2 fill:#FFEBEE,stroke:#FF5252,stroke-width:2px,color:#B71C1C
+    style SG3 fill:#F1F8E9,stroke:#7CB342,stroke-width:2px,color:#33691E
+</Mermaid_Diagram>
+
+Content:
+软人期8745H是MD专供中国去的移动标压CPU 它最高锐频4.9GHz 相对8845HS说出了0.2GHz 780M和谴率2600GHz 相对8845HS说出了0.1GHz 它还没有NPU 虽然目前这个弱极NPU 在温度之下并没有发挥杀作用 那么8745H 相对8845HS,性能表现有很大的不同吗? 其实并没有,跑黑神化乌空测试,平均争率一模一样 掩个了NPU的8745H,在喇嘛3.1大模型测试中 跑出了780M核显的最高值是3.9%每秒 大家好,我是老白,今天给大家介绍 装置MD1M78745H CPU的高性能迷力主机 MD4ZM 名范BM870SLAVE 今年一直高局高大的名范 在双十一前推出了相对亲民的SLAVE系列 有UM690SLAVE UM760SLAVE 还有这台UM870SLAVE 它的开卖价格据说不到2000元 是不是相当便宜啊 大家觉得这个价格的小主机算是有性价比吗? 民凡un870s装置md178745h8和16线程 移动标压CPU 绿制md12780m和显 双通到DDR5内成5600mHz 双PC14.0插式的nvmESSD 三瓶显示出 2.5G网卡 叫Wi-Fi6E 大家来看一下 主机和所有的配件都在这了 电源线 HDMI线栏 显示器背架和螺丝 还有两个角电 说明书 这D3小电源是9V6.32n 1.120W功率 小主机是银白色金属和数量的混合机身 并不有MIDISFORM品牌logo 机身接口 前面板电源开关键 双USB3.2A口 耳麦接口 后面板 49V电源接口 2.5G网络接口 满血的HDM-2.1接口 可以PD输入的全功能USB4接口 DP1.4接口 双USB2.0接口 双侧 后部 底部都有通风口 取下背部四个角点 再取下四颗螺丝 从这个缺口接开底盖 看看内部接口情况 右边抵开上有一个精英风扇 预先装置好两片SSD的贵交扇着电 两条DDR5内存插槽 预装一条280 PCIe 4.0插式的NVMESSD 控制另一组 共两组PCIe 4.0的NVMES接口 SSD下面是连发科WiFi6E无线网卡 BIOS里显示是RUN78745H CPU 32GB的DDR5 5600罩贺责略臣 这里可以设置性能释放 平衡模式54W性能模式65W 我们测试的是性能模式 这里可以修改显存大小 问题是我们最关心的问题之一 我们打开i大6式跑FPU单烤的压力测试 CPU一条直线跑在65W 整机功耗跑在88W左右 CPU频率稳定在4.3GHz 我们单考了一小时 10.24度的情况下 CPU温度最高到87度 SSD最高温度31度 我们用民凡UM8000英区内的迷力主机的 RUN78745H CPU来专码 看看实际效能如何 最后结果是9分50秒 攻击590秒 590秒是相当出色的成绩 超过了自己品牌的780HS和790HS 稍低于自己品牌的8845HS CPUZ多线层7190.6 单线层697.3 多线层超过了所有的780HS 低于自己品牌的8845HS 给个本机5多核12211 单核19333 跑上了12000分 多核成绩和其他家的8845HS 是差不多的 这个分析6,多核13,202,当核2624,多核成绩和其他家的8845HS差别不大 CB23,多核17,199,当核1766,多核成绩上了17,000分 超过了我们所有测试过的7840HS和8845HS打得有来有回 CB2024,多核979,当核105 仍然是在780M核显CPU的前列 TASMAC多线层3.299,3.927 多线层几乎高于所有的780HS 中核上面的比较 民凡UM870 Slim 8745H 多核性能超过了几乎所有的780HS 和8845HS相比性能接近 然后看娱乐大师总分149,830 CPU得分 94,6891 我们给REN78745H 运行OpenW测试 AS929,647 插插2036,5777 KOMAK 50,1305 KOMAK成绩上了50,000 以自家的780HS稍高 地域支架的8845HS 我们来打游戏 地平线51080p高画质 不开抗拒尺 普通场景80多针 复杂场景70多针 地平线41080p超高画质 开了两倍抗拒尺80针左右 非常不错 英雄眉蒙4K中等画质 最后大阵战平均70针左右 原神1080p高画质 跑起来 战斗起来60针纹是不动 荒野大标号21080p低画质 运行评估测试 最后结果平均针45针 黑神花无空使用官方的信能测试工具 1080p制定画质 超采开到50开启正声盛 最后结果是平均68针每秒 实战一下 这就是锐点780M核显 来给我们的游戏体验 先来看一下游戏时的温度情况 CPU最高82.9度 绿层做显成最高63.5度 SSD最高35度 游戏时散热表现是很好的 看一下3DMark的图形得分 Time Spy 3.043 FileStrike 8662 SteelLomad Knight21.8 FTS 稳定度98.9% 我们把3DMark的测试数据做成图表 8745H各项成绩 和8845HS差不多 跑达马3.18B大模型 升级到0.3.5版本的RM STUDIO全部性能纳满 贪值蛇变成 竟然跑到了13.9TW每秒 是780M核显小主机的最好成绩 显示出出HDM2.1接口最高能输出 4K14核子10位RGB非压述信号 USB4和DP接口最高能输出 4K14格子10位RGB非压出信号 我们的显示器滴B接口可以超频到160Hz 此时这台小主机可以输出 4K160Hz10位RGB非压出信号 连接锁力偶来电视 HDMI接口能够输出 4K120Hz10位YSBCR44非压出信号 锐点780M核显的视频结满能力 它能应结本地8K60帧AVE视频 EGB 8K60MF114.0 流畅播放 原厂硬盘测试 4600 照片每秒 PCIe 4.0 插式的入门速度 USB4 接口外接雷电3硬盘核 3100 照片每秒 这是不错的USB4 外接存储的性能 我们还测试了小主机Wi-Fi 网卡 这次是连发科Wi-Fi 6E 无线网卡 平宽只有80 噪盒子 跑到了400 照PPS 以上 算是我的无线网络环境中叫差的无线性能 螃蟹2.5G网卡 我们也使用ipef3测试了录网性能 无论担心能上船下载 还是多线程上船下载 都跑到了2.37G 跑满了贷宽 这块2.5G网卡没有建议性问题 民凡UM870SFAM 装置了1.78745HCPU 在Windows下的性能释放是65W 工号表现我们列表给大家看 最高没有超过95瓦 120瓦的单槽小电源能够搞定 10瓦24度的时候 CPU带据温度30.5度 SSD带据温度26度 生产力测试CPU100的时候 机身50分倍 放到耳边位置只有41分倍 民凡UM8000英式内 它装置了MD178745HCPU 出场65W的功耗释放 CPU性能超过了几乎所有的七八四零HS 接近自家的8845HS 图形性能也和七八四零HS 8845HS差不多 散热和进行都非常优秀 目前来看 这是名番出品的最便宜的一款旗舰 准夕同定价低于了2000元 说到缺点 接口少了Oklink 算是最大的遗憾了 至于NPU 真是属于接类般的存在 没有也好 总结一下 民凡U-M870s LAM 装置R7-8745H 65W的性能释放相当不错 性能超过了几乎所有的780HS 散热又秀 静音又秀 满血全功能USB-4 能接入PD电源 接口监用性非常好 优良做工 强悍性能 价格相当便宜 是目前最有性价比的780M核显小组机之一 值得我们推荐 好了 今天就讲到这里了 我是老白 谢谢大家的观看 再见
