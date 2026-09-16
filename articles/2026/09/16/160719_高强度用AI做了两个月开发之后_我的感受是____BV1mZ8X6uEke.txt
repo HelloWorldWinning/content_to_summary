@@ -1,0 +1,165 @@
+Timestamp: 2026-09-16T16:07:19.104320
+Title: 高强度用AI做了两个月开发之后，我的感受是... BV1mZ8X6uEke
+URL: https://b23.tv/D1Q8W6A
+Status: success
+Duration: 10:38
+
+Description:
+### PART 1. Author's Map (作者主张映射)
+
+#### 1. Core Thesis (核心主张)
+利用开源且可自定义的AI Harness/客户端（如 Kimi Code 网页版），通过“高低搭配”的模型策略（即使用高智商/高能力的 Kimi K3 负责架构、UI及复杂设计，配合极高速且低成本的 DeepSeek Flash 负责文件读取与子代理计划执行），是目前国产 AI 模型辅助游戏开发中最具性价比与高效的工程化实践方案。
+
+#### 2. Evidentiary Base (证据基础)
+*   **个人实操经验（主观经验/案例）**：作者过去一个月内进行高强度游戏开发（参加展会前版本制作及展会后修 Bug、做优化）的实际使用体验。
+*   **额度消耗观察（经验观察）**：观察到 Kimi Work 桌面端（白色额度）消耗速度显著快于 Kimi Code 网页版（蓝色额度）。
+*   **模型性能横向对比（经验评估）**：
+    *   *Kimi K3*：最像 Claude，架构/设计/前端（HTML UI 复刻）/多模态能力极强，但 Token 吐出速度慢、额度贵。
+    *   *DeepSeek V3 / Flash*：速度极快，性价比极高，极适合作为 Sub-agent 处理基础任务。
+    *   *GLM 5.2 / 5.3*：后端与纯逻辑代码能力合格，速度较快，但完全无前端 UI 美化能力与多模态支持。
+    *   *闭源 Harness（如 Cursor）*：限制较多，需要付费且接第三方模型不稳定。
+
+#### 3. Logical Warrant (逻辑推论)
+*   **推论模式**：基于任务特性的分工优化（ Task-Model Fit Induction ）。
+*   **三段论拆解**：
+    *   *大前提*：游戏开发任务包含“高认知/视觉设计（架构、UI）”与“低认知/高频重复（读文件、写纯逻辑）”两类不同特性的工作。
+    *   *小前提*：不同 AI 模型在智力、视觉能力、速度和成本上存在剧烈差异（K3 智高速慢价贵，Flash 速快价廉）。
+    *   *结论*：将不同模型绑定到可配置的 Agent 调度工具中按需分工，能在保证开发质量的前提下，实现开发效率与经济成本的最优解。
+
+#### 4. Stated Scope (明确边界)
+*   **应用场景**：游戏开发（包含 Bug 修复、系统重构、逻辑编写、UI 前端原型绘制）。
+*   **工具范围**：以国产 AI 大模型为主（Kimi、DeepSeek、GLM、混元），运行于可灵活配置供应商 API 的开源 Harness（如 Kimi Code 网页版）或引擎（如 Godot）。
+*   **限定条件**：基于过去一个月的特定模型版本性能与计费规则。
+
+#### 5. Implicit Opponent (隐性对立面)
+*   **单一模型/工具崇拜者**：盲目依赖单一收费套壳工具（如仅使用付费版 Cursor 或仅使用 Kimi Work 原生客户端）导致成本高昂或额度迅速耗尽的开发者。
+*   **“国产模型不可用”论者**：认为国产 AI 模型无法承担复杂工程（如游戏开发）的观点。
+
+#### 6. Intended Takeaway (预期行动)
+建议开发者放弃受限的封闭式客户端，转向开源可配置的 Agent 环境（如 Kimi Code 网页版）；配置 DeepSeek Flash API 作为辅助子代理，配合 Kimi K3 构成高低搭配链条，以极低成本提升个人游戏开发生产力。
+
+---
+
+### PART 2. Hostile-But-Very-Fair REVIEW (同行评审与批判性审视)
+
+#### 1. Steelman (最强形式重构)
+在独立游戏开发或小团队协作中，将“高阶抽象/视觉决策”与“低阶文件检索/代码执行”解耦，并分别交由“高能力/高单价模型（Kimi K3）”与“超高速/极低单价模型（DeepSeek Flash）”处理，是一种极具工程智慧的调度架构。在当前开源 API 开放度提升的背景下，通过可自定义 Harness 规避单一厂商的额度墙与工具锁定，能够以最小的资金代价实现近乎全自动化的高强度开发流水线。
+
+#### 2. Weakest Link (最薄弱环节)
+> **引用原文**：“这个握板（Kimi Code 网页版）直接会打开这个网页...它号的时候是这个蓝色的额度...消耗我发现就是比用 KIMIWORK 要慢很多，至少可能是只有它的 [几分之一]。”
+
+*   **断裂分析**：整个成本优化策略的核心基石建立在“Kimi Code 网页版（蓝额度）比 Kimi Work 客户端（白额度）省额度”这一**计费漏洞或暂时的产品界面差异**上。若 Moonshot AI 官方更新了后台 Token 结算逻辑，统一了不同入口的扣费规则，或者对 API/网页端的插件输入 Context 进行了强制清洗，作者所依赖的“省额度小技巧”将瞬间失效。整个基于平台特定额度政策的工程方案缺乏长期稳定性。
+
+#### 3. Evidence Audit (证据审计)
+*   **缺乏量化基准**：全程依赖“感觉快很多”、“号额度慢很多”、“能省非常多额度”等主观感官描述，缺乏具体的 Token 消耗统计、每日 API 账单数据、Bug 解决率对比等客观量化证据。
+*   **样本偏差（N=1）**：所有推论仅基于作者个人单件游戏项目（包含特定引擎和特定 UI 需求）的一个月体验，未在大型引擎（如 Unreal Engine C++ 项目）或大型复杂代码库中验证多模型分工的有效性。
+*   **忽略上下文切换损耗**：未提及将 DeepSeek Flash 生成的上下文传输给 Kimi K3 时可能产生的格式错乱、幻觉累积及调试成本。
+
+#### 4. Hidden Premises (隐藏前提)
+*   **假设一（模型接口稳定性）**：假设国产大模型 API 服务商的计费标准、速率限制（RPS）及上下文窗口质量在未来保持长期稳定。
+    *   *质问*：如果 API 频繁涨价或限制并发，这种多模型交叉调用的维护成本是否会超过订阅单一工具的费用？
+*   **假设二（HTML 映射游戏 UI 的泛化性）**：假设“让 Kimi 生成 HTML 页面再手写浮刻到游戏引擎”是高效的。
+    *   *质问*：这种二次转译流程是否在面对复杂的动态 UI、粒子特效和引擎原生组件绑定时存在巨大的人工重构浪费？
+
+#### 5. The Blind Side (盲区分析)
+*   **系统复杂性与上下文污染**：混合使用不同厂商的模型（Kimi + DeepSeek）作为 Sub-agent，不同模型的 Tokenizer 截断机制、指令遵循倾向（System Prompt 敏感度）存在显著差异。多模型协同可能导致隐性的“上下文理解偏差”，增加难以排查的逻辑 Bug。
+*   **对 Harness 维护成本的低估**：开源/自定义 Harness 虽然自由度高，但开发者需要自行承担环境配置、API 秘钥管理、模型版本断代适配等运维成本。对于只想专注于游戏逻辑的开发者而言，这是一种注意力分散。
+
+#### 6. One Hit Kill (致命一问)
+如果平台方在下一次更新中修补了网页版与客户端的计费额度差，且将上下文输入按标准 Token 严格计费，你这套依赖特定入口“卡额度 Bug”的配置调优方案，除了增加了多模型配置的复杂性外，还能比直接使用 Cursor/Claude 保持多少实际的生产力优势？
+
+#### 7. What Would Settle It (验证标准)
+设计一项对照实验：使用相同规模的受控游戏模块（例如：在 Godot 中实现一套包含背包装备、状态合成及 UI 交互的完整系统）：
+1.  **对照组 A**：纯原生 Cursor + Claude 3.5 Sonnet 单一模型工作流。
+2.  **实验组 B**：作者提出的 Kimi Code (K3) + DeepSeek Flash API 高低搭配开源工作流。
+*   **评测指标**：记录完成该模块消耗的总时长、人工干预修正次数（Prompt 调试时间）、发生的总代码 Bug 数、以及折合人民币的最终 Token 成本。若实验组 B 在成本降低 50% 以上的同时，完成时间与 Bug 数不超过对照组 110%，则该主张成立。
+
+---
+
+### PART 3. Conceptual Map (概念与审阅图谱)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💎 核心主张 Core Thesis"]
+        A["<b>高效低成本游戏开发范式</b><br/>开源/可配置 Harness + 国产模型高低搭配策略"]
+    end
+
+    subgraph SG_Strategy["🛠️ 工作流与策略部署 Workflow Strategy"]
+        subgraph SG_Harness["入口与工具层 Harness Layer"]
+            B1["<b>放弃闭源生态</b><br/>(如付费版 Cursor 限制多)"]
+            B2["<b>避开高消耗客户端</b><br/>(Kimi Work 桌面端消耗白额度快)"]
+            B3["<b>选用开源/可配置平台</b><br/>(Kimi Code 网页版使用蓝额度慢)"]
+        end
+
+        subgraph SG_Models["模型分工层 Multi-Model Combo"]
+            M1["<b>高阶智力/视觉模型: Kimi K3</b><br/>负责: 架构设计、复杂逻辑、HTML UI原型、多模态"]
+            M2["<b>低成本/高速模型: DeepSeek Flash</b><br/>负责: 读文件、Sub-agent计划、基础代码执行"]
+            M3["<b>纯逻辑补充: GLM 5.2/5.3</b><br/>负责: 纯后端/Godot引擎逻辑编写"]
+        end
+
+        subgraph SG_Execution["执行效果 Execution Impact"]
+            E1["<b>UI复刻流</b>: HTML UI原型 -> 引擎原生UI浮刻"]
+            E2["<b>成本优化</b>: 极低API费用 (一天约10元) 突破会员额度瓶颈"]
+        end
+    end
+
+    SG_Harness --> SG_Models
+    SG_Models --> SG_Execution
+    SG_Execution --> A
+
+    subgraph SG_Review["⚔️ 批判性审阅 Hostile-But-Very-Fair Review"]
+        subgraph SG_WeakLinks["最薄弱环节 & 隐藏假设"]
+            R1["<b>最薄弱环节 (Weakest Link)</b><br/>高度依赖特定平台暂时的计费差漏洞<br/>(若Kimi统一扣费逻辑，方案优势骤降)"]
+            R2["<b>隐性假设 (Hidden Premises)</b><br/>假设HTML转化游戏UI无损消耗；<br/>假设开发者维护多API Harness的时间成本为零"]
+        end
+
+        subgraph SG_Audits["证据审计与盲区"]
+            R3["<b>证据缺失 (Evidence Audit)</b><br/>缺少 Token 消费明细与定量基准测试；<br/>基于 N=1 的主观经验"]
+            R4["<b>系统盲区 (The Blind Side)</b><br/>异构模型 (K3 + DeepSeek) 上下文拼接<br/>易引发指令遵循偏差与隐性Bug"]
+        end
+
+        subgraph SG_Kill["致命一问与验证标准"]
+            R5["<b>致命一问 (One Hit Kill)</b><br/>除去平台计费差，多模型频繁切换的运维损耗<br/>是否掩盖了实际的生产力提升？"]
+            R6["<b>验证标准 (What Would Settle It)</b><br/>同等 Godot 模块下 Cursor/Claude 与<br/>K3+DeepSeek 组合的成本/Bug率/时长对照组测试"]
+        end
+    end
+
+    %% 批判关联
+    B3 -. "批判核心依赖" .-> R1
+    E1 -. "质疑转译效率" .-> R2
+    E2 -. "缺乏定量支撑" .-> R3
+    M1 & M2 -. "上下文一致性风险" .-> R4
+    A -. "挑战可行性" .-> R5
+    R5 --> R6
+
+    %% --- Node Styles ---
+    classDef mainClaim fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    classDef harnessNode fill:#E3F2FD,stroke:#2196F3,stroke-width:2px,color:#0D47A1
+    classDef modelNode fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#1B5E20
+    classDef execNode fill:#E0F7FA,stroke:#00BCD4,stroke-width:2px,color:#006064
+    classDef reviewWeak fill:#FFCDD2,stroke:#F44336,stroke-width:2px,color:#B71C1C
+    classDef reviewAudit fill:#FFE0B2,stroke:#FF9800,stroke-width:2px,color:#E65100
+    classDef reviewKill fill:#F8BBD0,stroke:#E91E63,stroke-width:2.5px,color:#880E4F
+
+    class A mainClaim
+    class B1,B2,B3 harnessNode
+    class M1,M2,M3 modelNode
+    class E1,E2 execNode
+    class R1,R2 reviewWeak
+    class R3,R4 reviewAudit
+    class R5,R6 reviewKill
+
+    %% --- Subgraph Background Styles ---
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2.5px,color:#333
+    style SG_Strategy fill:#FAFAFA,stroke:#BDBDBD,stroke-width:2px,color:#424242
+    style SG_Harness fill:#E3F2FD,stroke:#1E88E5,stroke-width:1.5px,color:#0D47A1
+    style SG_Models fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20
+    style SG_Execution fill:#E0F7FA,stroke:#00ACC1,stroke-width:1.5px,color:#006064
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#C62828
+    style SG_WeakLinks fill:#FFCDD2,stroke:#E53935,stroke-width:1.5px,color:#B71C1C
+    style SG_Audits fill:#FFE0B2,stroke:#FB8C00,stroke-width:1.5px,color:#E65100
+    style SG_Kill fill:#F8BBD0,stroke:#D81B60,stroke-width:1.5px,color:#880E4F
+</Mermaid_Diagram>
+
+Content:
+哈喽 大家好 我是烤拉 这一期呢 我想在分享点我最均用AI做游戏的一些新的新的体会吧 首先就是 我想说这个其实是一个我特别具体的关于AZN的使用这个新的嘛 首先就是说我上期其实我讲了一些比较推荐使用的这个 算哈尼斯文或者AZN的 当时我是推荐的Opencode跟Curser 然后我最近这一个多月时间 因为现在国产的模型不是水平慢慢都追上来嘛 所以说我现在其实看看是主建的用国产的模型了 然后我说一下我现在主要在用呢就是Kimi 然后Kimi呢我是现在是买了他这个最高一党的会员 然后我上一个月 当时还有一个从朋友家里蹭的他那个200到那一党会员 然后随时我是算是高强度的 登了一个多月 包括我去参加交易之前那个版本 去参加交易之后的我修Bug 然后做一些优化的 也都是基本上大部分是厅密帮完成的 然后我说一下厅密的一个 也使用的新的吧 主要是一个是有个度问题 就大家这厅密 它这个模型在国产里面算是比较贵的 现在是最贵的 然后它即使是这个最高位党的这个模型 就是说你如果你使劲等它也是不太精用的 然后但是我发现一个小技巧吧 或者说是一个小技巧 就是很多时候我们是用这个 它的这个APP就是这个KIMIWORK在中面上使用 这个KIMIWORK呢 就是你用的时候它是会号这个白色的格度嘛 然后我个人的发现就是KIMIWORK用起来的时候 这个格度号是比较快的 是明显想快很多 可能是因为它有KIMIW里面带了大量这种插件 他他自带很多差距 自带很多这种差距啊这种东西你可以装个不装我 所以我怀疑他给的这个 参加本给的输入会比较多 所以说我现在发现一个新的一个小技巧就是用这个tme code tme code就是他本身是一个 类似于这个 以前cloud code这种这种课例的形式 但是他有一个网页一样 你可以装中用这个网页一样 然后我现在用了就是这个网页 这个东西你只要 就跟那个 dpc 哈底斯一样呢 你说kimi code的 这个握板 就直接会打开这个网页 这个网页AI呢 我发现就是它就是kimi code的 它号的时候是这个蓝色的额度 然后这个小号 我发现就是比用kimi我可以 要慢很多 至少可能是只有它的 然后还有个好处就是说这个东西呢 它第一是开源的你可以改 第二是它有一个设置嘛 然后有这个供应商 然后你可以添加供应商 所以说比如您可以添加一些 Depsy Flash或者说你有的一些 第三方的这个模型的 API 我就是把Depsy加进来了 然后或者你还可以用一些其他东西 就是你自己有什么东西可以加 加起来之后你就可以让它的子A人 比如说去读文件或什么用Deficit Flash 然后做计划 还有做整体思考用KMe的K3 因为KMeK3它毕竟是一个 实际比较大模型它的能力还是比较强的 包括讨论设计 做架构的时候KMeK3能力还是比较强 还有前端 还有视觉这一块 它都比较不错 这样的话你就能省非常多的额度 就是因为Depthicflash很便宜嘛 就是你一天时间灯你可能灯个十块钱安就已经很多了 然后 这样的话你的这个会员啊基本上应该是可以够用的 这是我的一个 小心德吧 然后另外是我可以说一下就是国产的这几个模型嘛我就是基本上我用的比较多的 Depthic然后 Kimi然后是Kimi实际上是我主力然后GLM我也用过 然后其他的就是那个混员用物段时间 然后我说了有自己的感觉 就是说首先我用最多的就是 KinP3我觉得这个模型是我用起来 就鼓产模型里面最像Claw的那种感觉 就是它的可能是因为模型持统比较大 然后它是世界知识比较丰富 你跟它讨论价格我矿价 然后还有甚至可以跟它讨论一些 有去设计的问题的时候 它给你的思维 就是说能给出一些比较有价值的一些 一些建议或讨论结果 然后呢就是他有很强的事情能力 就是他的前端应该是现在 所有模型里面包括古外的模型里面应该是最强的嘛 各种感觉就是 我在做游戏里面有些优惠的重够的时候就是我是会让 PIMI先给我做一个 HTML做一个前端的这个介面 然后他错了牌其实非常漂亮你去可以按照他的 ATMM的往业的UI的感觉去做你游戏内的UI就是重新浮课一边的游戏内容 你请里面重新浮课一边 我觉得这个他前端这个能力真的是非常强 然后他有很好弄的摩炭 你们可以给他图片来让他试别 然后去试别里面那些内容 然后他唯一的问题就是他的偷跟送律是比较慢的 就是说模型的速度比较慢 但是最近好像好了一些的 比最初刚开始用的时候这个速度要快一些 可能是用人少了还什么原因 所以说这点上就是他就很适合跟我 我说的就dpsiqflash来解合 因为dpsiqflash是一个速度非常非常快的模型 其实可能是现在所有模型里面 国内国外就说速度跟这个性能之间的 平风点非常好的一个模型 所以说我是真的很推荐大家用dpsiqflash 让它价格也很便宜 然后说说GAMGAM这个5.2和5.3 这个5.35还没怎么用 5.20前是用过段时间 然后5.2给我感觉是它代版能力确实还可以 然后后端的能力不错 但是它完全前端是不行的 就是而且它也没有动不太 然后你用它纯写代码 我觉得问题基本不大 但是如果你是像我是需要大人的MCP操作的话 我感觉GAM这方面的效率不升好 当然有一个好处 西亚版它速度也比较快 它比K3要快不少 但是没有dcflash快 然后但是一般的游戏的这种纯螺机操作 就纯螺机的代码编写 我觉得GM5.2和5.3 基本上是肯定是绝对够用的 如果你是用勾道的或者什么引擎的话 我觉得GM是一个很合适的一个模型 因为它就全都不行 它做于外做的会很难看 但是它能做出来 然后它也没办法给你这个 美观上的一些 评价吧 然后第四个 第四个的话 其实这个东西 大家应该 了解比较多 因为网上现在这种视频很多 第四个的这个 微视的processor是版口感觉 就是一边半 然后有些人说 就是这个第四个 你要再进行一个集见模式会好一些 我觉得可能会确实是好一些 但是我没有举举是 但是Depth这个WisePro的这个证实版的价格 现在来说其实它不是为便宜 就涨价之后了 之后这个WiseFlash真的是 还是非常非常划算的一个模型 即使它涨价之后也仍然非常便宜 它去做一些快速攻 而且它的速度实在是快的不可思议 所以说你去做很多工作的时候 我觉得Flash跟一个另外的模型 进行一个高低搭配 信心一个高级搭配 我就是非常好的一个组合 这个经过在我之前视频也讲过 所以我现在开始 由于这个悉米扣的他本身是开员 马上可以配置 这个Suppet agent这个模型选择 所以说我现在考虑就是说 用悉米批试来跟这个Dipsick V6 Flash来做一个高级搭配 我觉得这样的话 效率会有高很多 然后说一下其他的哈里斯选择 就是因为现在这个哈里斯或Agent 他跟模型线越来越绑定了 所以说你其实 不太好说做一些这种自定义了 就是就越来越难了 尤其是一些避养的这种 比如说上Cursor Cursor现在就是说 你必须开会员 才能接敌散放的模型 而且不是特别稳定 所以说我基本上还是Cursor 主要用它自己的模型 然后Cursor的话 现在它的那个Gurk 就是马斯克那模型 它还不是有4.6了吗 然后4.6的能力还可以 但是我问题就是它也比较慢 它不是一个很快的模型 然后 其他像Cloud Code的然后CodeX 这个应该是大家应该比较CodeX 确实是一个不错的那个 但是它的刺定的意义不是特别强 所以说我 我还是没有怎么去用CodeX 然后而且拼透的它现在也增加了 这个computer use 所以说我感觉 这个目前来说可能未来的这种替代会越来越多 然后就是Depsy Harnies的话 就是说你只使用Depsy的话 我觉得它还不是不错的 但是它接别的模型的话 就是这个效率就比较比较 比较一般的它的能力比较简单 但我觉得这个开源模型 开源的这个Harnies在未来可能是 是会有一些比较好的一些 一些进步或者优化 但是现在来说我觉得它使用上去还比较厉害 然后就是它功能还偏少 Keyboard现在是我觉得是它功能是国产这几个里面 我现在来说用的比较多 所以就是这一期我大概就讲下我最近一个多月 用AI一些心得吧 这期视频就到这里我们下期再见
