@@ -1,0 +1,182 @@
+Timestamp: 2026-10-26T02:36:59.093946
+Title: Anthropic 工程师揭秘：Prompt 时代结束了，下一代 Agent 靠「Loop」变聪明 BV1iQpm6pEVm
+URL: https://b23.tv/ul6qa3O
+Status: success
+Duration: 31:27
+
+Description:
+### PART 1. 作者图谱（Author's Map）
+
+#### 1. 核心论点（Core Thesis）
+为了将自主 AI Agent 成功推向大规模生产环境，必须构建一套具备**上下文溯源（Provenance）**、**乐观锁并发控制（Optimistic Concurrency Control）**、**细粒度权限隔离（Permissioning）**与**确定性数据治理**的企业级记忆基础设施架构（Memory Infrastructure）。
+
+---
+
+#### 2. 论据基础（Evidentiary Base）
+* **实践案例/工程演进（历史经验）**：早期在 Claude Code 中注入简单的 `ClaudeMD` 文件，证明了向 Agent 上下文头部注入结构化指令与偏好的“超预期有效性”。
+* **工程架构与机制（技术方案）**：
+  * **哈希锁机制**：通过“读取前哈希校验 → 草拟更新 → 写入前重新比对哈希 → 冲突重试”的乐观锁机制处理数千 Agent 并发读写问题。
+  * **权限分层体系**：区分 Agent 个体暂存器（Scratchpad，可读写）与组织全局上下文（Organization Context，只读）。
+* **经济与性能数据（逻辑推导）**： Agent 记住历史错误与模式后，单次任务成功率（One-shot Rate）显著提升，Token 消耗量与执行延迟随之大幅降低。
+* **演进倾向（技术洞察）**：从非确定性的 LLM 自主生成，重新融合并回归传统的确定性（Deterministic）工程控制实践。
+
+---
+
+#### 3. 逻辑依据（Logical Warrant）
+* **演绎与工程推导**：
+  * **大前提**：企业级生产环境要求系统具备高并发数据一致性、数据隔离安全性以及极高的 Token 成本与延迟效率。
+  * **小前提**：粗放的 Prompt 追加或纯非确定性的 LLM 自主读写无法解决并发覆盖、权限越界以及错误记忆累积问题。
+  * **结论**：必须引入确定性的分布式基础设施（乐观锁、版本溯源、RBAC 权限、离线梦境提炼）来规范 Agent 的记忆管理。
+
+---
+
+#### 4. 明确界限（Stated Scope）
+* **适用场景**：大规模 Agent 部署（Thousands of Agents）、托管式 Agent 解决方案（Managed Agent Solutions）、企业级多用户/多 Agent 协作生产环境。
+* **显式限制**：
+  * Agent 严禁随意写入组织级全局上下文（仅允许只读）。
+  * Agent 仅对其专属的暂存器（Scratchpad）拥有写权限。
+  * 当并发更新发生哈希冲突时，Agent 无权直接覆盖，必须重新读取最新的内存镜像并重新草拟（Retry）。
+
+---
+
+#### 5. 隐含对立面（Implicit Opponent）
+* **反对“玩具级 Prompt 工程”**：反对将 Agent 记忆简单理解为单次会话的文本拼接或无状态上下文追加。
+* **反对“完全无约束的 Agent 自主论”**：反对认为 LLM 可以凭借自身能力自动解决并发冲突、权限安全和数据一致性的盲目乐观主义，主张用确定的软件工程方法约束 Agent。
+
+---
+
+#### 6. 预期落脚点（Intended Takeaway）
+引导开发者与企业架构师停止重复造轮子，转而采用规范化、工程化的 Agent 记忆基础设施（或直接采用文中提及的托管式 Agent 记忆架构），通过版本控制、权限隔离与并发治理实现 Agent 在生产环境中的高可靠落地。
+
+---
+
+### PART 2. 针锋相对但极其公允的审查（Hostile-But-Very-Fair REVIEW）
+
+#### 1. 完人提炼（Steelman）
+作者对 AI Agent 从“演示（Demo）”走向“复杂生产（Production）”的核心痛点做出了精准的工程诊断。作者敏锐地指出，Agent 的记忆系统绝非简单的文本追加，而是一个标准的分布式数据系统问题。通过引入乐观并发控制（CAS/哈希校验）、读写权限分层（全局只读+局部写）以及离线上下文提炼（Dreaming），将复杂的记忆治理收拢为确定性的软件工程实践。这为解决多 Agent 协作中的数据撕裂、Token 浪费和安全越权提供了切实可行的工程蓝图。
+
+---
+
+#### 2. 最薄弱环节（Weakest Link）
+* **负载承载命题**：*“基于哈希校验的乐观锁重试机制（It takes a hash... if these two things do not match then the agent cannot write... peels a memory draft and tries to commit again）能够支撑数千个 Agent 并发更新同一记忆系统。”*
+* **崩溃路径**：在真实的密集型多 Agent 协作场景中，若上千个 Agent 频繁尝试修改同一份共享记忆，乐观锁会导致**极高的锁争用率（Lock Contention）**。大量 Agent 会因哈希不匹配而被频繁拒绝，陷入“读取-重新草拟（重消耗 Token）-提交再次失败”的死循环。这种**“Token 风暴（Token Storm）”**不仅会导致系统延迟陡增、成本失控，还会彻底摧毁作者所宣称的“降低 Token 成本”的核心优势。
+
+---
+
+#### 3. 证据审计（Evidence Audit）
+* **缺乏真实并发压力测试**：作者仅在口头上提出了“取哈希-比较-失败重试”的理论逻辑，未展示在 1000+ 高并发争用场景下的冲突率、重试次数及额外 Token 消耗量化数据。
+* **忽略语义冲突（Semantic Conflict）与物理冲突的区别**：哈希校验只能识别文本/二进制层面的物理不一致，但无法识别**语义矛盾**。如果两个 Agent 提取了互相对立但语法合法的记忆并先后提交，乐观锁无法拦截这种语义污染。
+* **选择性忽略“记忆腐化/消亡”机制**：演讲侧重于“如何写入和控制更新”，却未提及如何清理过时、错误或冗余记忆（Garbage Collection / Memory Pruning），而这是长期运行系统中导致上下文污染的主要根源。
+
+---
+
+#### 4. 隐藏前提（Hidden Premises）
+* **假设一**：Agent 生成的记忆提炼（Drafts）是正确且无害的，不存在“幻觉累积（Hallucination Compounding）”。
+  * *追问*：如果上游 Agent 总结了一条错误的经验写入记忆，后续 Agent 基于该错误记忆不断重试和追加，系统是否有自动纠错机制？
+* **假设二**：简单的“全局只读 + 暂存器可写”两级权限足以满足企业级安全控制。
+  * *追问*：在复杂的企业多租户、多部门场景下，Agent 如何处理跨部门共享但包含部分敏感字段的动态脱敏与细粒度访问控制（ABAC）？
+
+---
+
+#### 5. 盲区剖析（The Blind Side）
+* **确定性治理与 Agent 灵活性的内在冲突**：系统越依赖硬编码的规则、哈希比对与只读限制，Agent 的自主泛化能力就受限越严重。最终系统可能退化回一个传统的死板工作流引擎（Workflow Engine），失去了使用自主 Agent 的意义。
+* **忽略了无冲突复制数据类型（CRDT）或事件溯源（Event Sourcing）等高级分布式方案**：简单采用破坏性覆盖+重试（Overwriting Draft with Retry）是分布式系统中最原始的并发处理方式，在复杂记忆状态合成上存在先天缺陷。
+
+---
+
+#### 6. 一击致命问题（One Hit Kill）
+> “在一个由数千个 Agent 并发运行的真实企业生产环境中，当多个 Agent 基于互相冲突的任务推演结果试图同时更新共享记忆时，你的乐观哈希重试机制除了不断让 Agent 浪费 Token 重新生成 Draft 之外，**究竟由谁（或何种机制）来判定哪一个 Agent 生成的语义更新才是正确的真实真相（Ground Truth）？**”
+
+---
+
+#### 7. 如何最终裁决（What Would Settle It）
+开展一项透明的高并发基准测试：在 1000 个并发 Agent 争用同一记忆库的真实场景下，对比“乐观哈希重试机制”与“基于事件驱动增量日志（Event Log）/ CRDT 的记忆合成机制”在以下三项指标上的表现：
+1. **冲突重试导致的额外 Token 消耗占比**；
+2. **端到端执行延迟（P99 Latency）**；
+3. **长期记忆库的语义一致性与幻觉率**。
+
+---
+
+### PART 3. Mermaid 概念架构图
+
+<Mermaid_Diagram>
+graph TD
+    %% Node Style Definitions
+    classDef coreStyle fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333;
+    classDef archStyle fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1;
+    classDef lockStyle fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px,color:#E65100;
+    classDef valueStyle fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+    classDef reviewStyle fill:#FFCDD2,stroke:#E53935,stroke-width:2.5px,color:#B71C1C;
+    classDef reviewDetailStyle fill:#FFEBEE,stroke:#EF5350,stroke-width:1px,color:#C62828;
+
+    %% Core Thesis Block
+    subgraph SG_Core["💎 核心论点 Core Thesis"]
+        CoreNode["<b>生产级 AI Agent 记忆基础设施架构</b><br/>从简单 Prompt 注入走向具备确定性治理的企业级记忆系统"]:::coreStyle
+    end
+
+    %% Architectural Infrastructure
+    subgraph SG_Arch["⚙️ 记忆基础设施四大技术支柱 (Infrastructure Pillars)"]
+        direction TB
+        Prov["<b>1. 上下文溯源 (Provenance)</b><br/>追踪变更来源: 哪个 Transcript/Agent/Human"]:::archStyle
+        
+        subgraph SG_Lock["乐观并发控制 (Optimistic Concurrency Control)"]
+            Lock1["读取当前记忆并计算 Hash_A"]:::lockStyle
+            Lock2["Agent 在本地草拟记忆更新 (Draft)"]:::lockStyle
+            Lock3{"写入前重新获取 Hash_B<br/>Hash_A == Hash_B ?"}:::lockStyle
+            LockPass["写入更新 (Commit Success)"]:::lockStyle
+            LockFail["重新读取最新记忆并重试 (Retry)"]:::lockStyle
+            Lock1 --> Lock2 --> Lock3
+            Lock3 -- "YES" --> LockPass
+            Lock3 -- "NO" --> LockFail
+            LockFail -.-> Lock1
+        end
+
+        Perm["<b>3. 细粒度权限管控 (Permissioning)</b><br/>组织级全局上下文: 只读 (Read-Only)<br/>Agent 个体暂存器 (Scratchpad): 可读写"]:::archStyle
+        Background["<b>4. 离线梦境与提炼 (Dreaming / Offline Update)</b><br/>从历史 Transcript 识别模式，产生记忆变更提案"]:::archStyle
+    end
+
+    %% Value Proposition
+    subgraph SG_Value["📈 生产级收益 (Business Value)"]
+        direction TB
+        V1["<b>降低 Token 成本与延迟</b><br/>避免重复装载原始上下文"]:::valueStyle
+        V2["<b>提升单次成功率 (One-shot Success Rate)</b><br/>Agent 记住既往错误与解决路径"]:::valueStyle
+        V1 & V2 --> ValueOutcome["<b>企业级 Agent 高效稳定落地</b>"]:::valueStyle
+    end
+
+    %% Hostile Review Subgraph
+    subgraph SG_Review["🚩 针锋相对但极其公允的审查 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        R_WeakLink["<b>致命薄弱环节: 高争用下的 Token 风暴</b><br/>'千个 Agent 并发更新触发哈希冲突导致无限死循环重试'"]:::reviewStyle
+        R_WeakLink_Detail["哈希锁在高并发下极易死锁/重试，导致 Token 消耗爆表与延迟飙升"]:::reviewDetailStyle
+        
+        R_Audit["<b>证据审计漏洞 (Evidence Audit)</b><br/>缺乏高并发场景下真实的 Benchmarks；无法区分物理冲突与语义冲突"]:::reviewStyle
+        R_Audit_Detail["系统无法解决两个逻辑正确但互相对立的语义记忆覆盖问题"]:::reviewDetailStyle
+
+        R_Premise["<b>未验证的前提假设 (Hidden Premises)</b><br/>默认 Agent 提炼的记忆无幻觉；忽略记忆消亡与清理机制 (Garbage Collection)"]:::reviewStyle
+
+        R_Kill["<b>一击致命问题 (One Hit Kill)</b><br/>并发语义冲突时，除浪费 Token 重试外，由谁判定哪份记忆才是 Ground Truth？"]:::reviewStyle
+        
+        R_WeakLink --> R_WeakLink_Detail
+        R_Audit --> R_Audit_Detail
+    end
+
+    %% Relationships and Dependencies
+    CoreNode --> SG_Arch
+    SG_Arch --> SG_Value
+    
+    %% Review Connections
+    Lock3 -. "逻辑漏洞" .-> R_WeakLink
+    Prov -. "审计缺陷" .-> R_Audit
+    Background -. "前提风险" .-> R_Premise
+    LockFail -. "致命质疑" .-> R_Kill
+
+    %% Subgraph Aesthetics
+    style SG_Core fill:#FFFDE7,stroke:#FFD700,stroke-width:2px;
+    style SG_Arch fill:#F4F6F9,stroke:#1E88E5,stroke-width:2px;
+    style SG_Lock fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px;
+    style SG_Value fill:#E8F5E9,stroke:#43A047,stroke-width:2px;
+    style SG_Review fill:#FFEBEE,stroke:#E53935,stroke-width:2.5px;
+</Mermaid_Diagram>
+
+Content:
+C myctions gwynt cyheraw am gwleel eu cyfaragol o cael ei ddef honn o ym yn mynd, ac gynniad yn sicrhau'r rhan gydwyd y cymon ond o'r cyflけr, o'r cyflети o rhan gwynt siwrnodd eu y baird rhywbion o'r cym nhw'n mental yni am lle hynny, o'r cyflети o gwneud y gwneud wrth gwneud wrth gwneud'i am yna. Mynd mynd tywyr yma yn technicol ar y ffropu. sefynameud holl chi sorden nhw llyfa o hynithorol y gwindiau o gwneud ac freilau mwyn Онwch o chi llawer o gw — diaf draw di Sefyn ein ei awcir yr honus yn chytorici Punch Eat neu! Pwyr o gwy快 matingeniliau wel! Mae fod'n lwyf yn superbloor managerag i ni'n关irdín Friend fydd cyhoiadda ni'r mett faniliau onw gerbahoriau a cloen tam ei, mae gwleisiau yn oesbodaion a mae'r fذau yn hymno hunr newestyn newestyn mae yma' yn g ymdragoor am wyb un gweld gynnych chi ei plwysd am yr un gweld ymw'n gயfnodd y cyfili. Un gweld gynnych chi ymdynch chi chi gynnych chi ein ei chi yn ei bryrchis. Béch chi i'r mael gennig, sy'n un gwybod y yno. Mae'r gweld yn gwybod meddwl o'r cehau morau'n cynwo'n gweld ymw'n双wyd ymwyd gwybod' rhan. Inau ddod yn gwybod o'r cehau mwyn wiser bod yn un gweld yn elfynodd ymwyd gwybod mae oedir unig ddoddiad, yn ffordd oedir ymw i'r patheticio er oedir y gwneud. Mae i'r wybohydn. Mae'n ddoddiad yn y cyhwes i'r gaelser oedd Gymnid. Mae'n ddoddiad yn ffordd o gwneud yn ffordd yn ffordd o fewn. Mae'n yshw, yn ffordd o fewn yn ffordd o fewn. Mae'n ceis, yn ffordd o'n gaelen – ar y llwy, yma. Yn gaeledd o fewn yma. Mae'n cwsm i'r phanag hyn. Mae'n cwsm a'n ddoddiad yma a'n cwsm aelu yr amwn. yn y fydd yn un oes, yn yna, nesbwch yn y cyflop. Hymna fydd yn y gallu rhywbeth sydd yn ysbwch cyfloncer a gyda sydd wedi cyflop. Fydd yn i'n gwneud yn doel yn adym yn pethau sydd fod yn yr hynny y bethol sydd yn ridd i sefydwch yn y paradau yn newyddol yn dod en gael ym yn rhan. Ondyn yn y fyddai sydd i'r gyda pan y fyddai yn cyflop, yw mewn mafru yw'r cyflop. Felly, wneud rydych wedi'r cyflop o'r cyflop o wyldg i'r cyflop. fwy yn gwyithioedd greu'r amser a fawr odal unicatellwch a fflyntod adau gwyithioedd yn gwyithioedd gennym er eich syni cael eu aegaredd a ystyried yn gwyithioedd, yn syni'n gwyithioedd. Felly, yn gyfer yn gwyithioedd a fflyntod oedd eu wedi credu yn gwyithioedd i'n gwyithioen gwyithioedd y fflyntod o'r yn yr daeg ac yn ydygiel a'r ffordd eu ar gyfer fel ac yn gwyithio'r unicatellwch a gwest potato a fflyntod yw yn yw y gwloed a fflyntod o dydraedd lwch bwysgu am hyd yn ffysgム'r llun mosti wyt. Mae ac ffysgmulau ond y ad storylineen neu'r gydill o'r gydill o gyntaf pefoglendio'r yw cyfanc bod yn y fel mae'r abyddol gyfuau ei ddynu oedd fel ffysgdwch oedd ffysgmwch ato infectedid a nidion yn ffysgwch waith ac bethau'n y ffysgmwch? Mae'n ffysgwch yn ffysgwch neu reidel. Mae'n uithsaf porwceol ei 모dio ni'n rwy'r g泡 yma i'r ddidd am yn yna o ddyn sy'n y teulu a teulu ac mae dda i'r berott o » patience yn pridd y campor ac am sy'n gydyn oedd yn amser yna, a'r gydyn yma o'r gydyn a'r gydyn yng Nghyllfaith ar gyfer yna amser yma i'r gyfer yna i'r gydyn ni amser yma yn cymryddiad cymryddiad cymryddiad cymryddiad cymryddiad cymryddiad cymryddiad cymryddiad cymryddiad So, it's going to be a simple thing that works. And this is a timeline that's only really spanned the past year and where we started, it was with these ClaudeMD files that we launched with Claude code. And what we learnt from this was that it was kind of unreasonably effective. Like this Markdown file that just gives the agent a couple of instructions about maybe your way around the code base, the organization, your own user preferences. That injected into the beginning of the model context at the beginning of a session. a hyn o fferbnau yn i mis o fferahile mseng y global o llunodd yn feldoncedwchau کی rob吸包amio. Pent gicher y rehefn też ac yr hollidd help daol o gallach trwy Claude Cyliannol Owl yn cael y fferahile mseng i mewn ac yn yr sabdol ac yn fi chi ni a lقطll o'r trefbedra ameyna caneth yn neu rydig, a castStephanf Cs Ith yn bethau, fel bwydyn fod yn gwaith bod yn â'r ffaith symud ac a'r fy stad y gwaith amdd. Yw'n gwaith amdd cerwch ddyn nhw elwn eraid. Ys gwaith ar ond ar y cyhat cyffreddellu, gweith yw ffaith a'r ffaith ddedig. Cymru, gwyf y mae'r iad mewn gwbod yn gwaith am yr yw ffaith sydd factors. y pwais cyprwn ready to help learn a lot of things and a lot of things to do to ensure that things are easy to do on that one. So I need to think about the finding of what making a memory is what to write the memory. So autonomy proves to work in this case. And over time we've kind of developed that into systems where we're even less opinionated about what these tools need to look like hawrthodol fel o winod. Yn gaelwn'n cefodd i hiwais yn y g Julian Davor a lwthodol yn fwyfnod phargu cywraithu. Barriedoedd, ac yna einh gwaith berthigol yn gyfer, a yna cwllfa i'r prydigol iawn i siwntraedd. Awn ffllfa a rhywbeth ac yn yng Nghymru ac yna, o'r hynnyd, ac yna meswil whog y gallwch yn gyfer eich gyfer dodun. Mae'n maethat hefyd hangol BAIN iddyn nhw, o'r hynnym feithir yma o dgydodd Maybell which yng Nghymd. Joc yn iawn, yn gynwy â fywr y gynwy, cynn yn belly am y llwys, y pwth ein hyn y giŵr yn cyfnief y gu Two ty. Y tu tau cyfiewn sy'n gath am am y fywr y llwyr yn geth ym rei. A y ddynnud dimiwy eisiau wedi'r gwyn yn gydwchyd. Y ddynnud dimiwy eisiau wedi ddynnud dimiwy eisiau wedi. Mae'n gwneud ceyfodd gwel nhw'n gwneud sydd hwym i'r gweithio yn gallu i'r cynnol ythamwyr'n gweithio yn gallu mwy oeseg hyn. A wneud ei cof whysr ond i'r gwaith hyn o fel yn seghan sydd wedi eithyd o fyny allig, eu sydd gennol eu gweithio llysio'r quen restingo'r gandwy, i'r cymau hyn wrth yn ddol oeseg hyn gwaith i'r gweithio llwl i'r g деревiaeth, ond yn gweithio yn gweithio. ואm y сожалi i'w meddwl grŵf i dwi'r Glydd yn gweithol i gydol ono brydau rwyth mae, ond o hynchryn wedi gael gael ar y gael ar y gael ar gael ar gael ar y gael ar y gael ar y gael ar gael Mae'r yw'r gael ar y gyda gofyniad ymwyr y cymyrsiad ac mae yn rwy'n gael ar gyda urnyddio a gael ar gydyn nhw dwi'r y cymdeithio ar y cyfleithio ar gan a fydd am nhw yng Nghymnas Ar Ynaill i wrth gael ar yr hynny yn eith ymdyn yna i dynot a cefwrshwng. Themis ac rhai yn bydd yn cydyn oes a unrhygu, yn datai a'r cyfyris o'r argyllud a bydd yn dynot oes a unrhyw anodol yn ajarnadyn. Mae'r dynot i gysylltion gwneud mewn,再od cynnig yr oesid amser mae'r oesid yn cael ei awesid y byddwn sy'n yw cyfyris o ydych yw yw'r agio, it's what they want to do in talking about what it's worth to do and what your community have to do is whether you're in this environment and there's a big name on this path which is what we perceive to be state of art for memory systems today. And what we have done that, what we think is best practice, is modeling these memory systems sy'n gael, yn gplegio yn gweithio adwrs yn fy gwaith gan yma yr yr Gael. Mae'r dod rydymith y rhaid y ffylwyr gwaith i'n gwerthig yn gweithio i'r gael, ym a facylwyr ar ymyslaeth o'r edarn yr grabd a'i mwry. Gael yn diolch chi ei gerwch i'n gweithio syddol yn yng Nghymru yn gwerthig, neu yn gwaithio yn gweithio i'r gael o'rethig yn gael yma i'r gael, ac oeddwn hyn yn y gyfwald syddur yn gweithio'r gael yma cymru yn gwerthig yma cyngel newydd. Ond gydzebwch yn dysbol iawn yn y ddylwi albumrinw gestulw no. Gyfer angen yn dyfand na'r rhan yw dael yn lacklwyr. Wrwn gwellodol i bsyfnry Tracy. Mae rhann cef涩 ad goaladganaid, wrthff sydd lle fyrddwn cydles iawn yn gycilodd. Felly yna, d ذ mushroom i yn rhoi'u gangyddio y pounding fathyrducwaynw, yn mar Lia, delwy y Cabinet gracious. Cymru pwllanhywch gwneudol un oedodol fl Malcolm Bryd yn arrang at accomplished tryndny por Everyonewch teuri mae'n gwybod yng Nghymru yn gweithiwrsobywch i'r gweithawd y gweithawd yn aw nhw i'r gwasar, sydd yna frcaeth fan, mae'n gwaith fel ac yma Challiaeth sydd ar gyflebau, ac mae ac mae'n gweithwyd yn gweithawdd yn gweithawdd yn cofnod cyflâsiad yn cyldoeg, ac mae'n gweithawdd am sydd yn gweithawdd am dwi'n dwiyd yn daethol, ac mae'n gweithawdd am dweud yn gweithawdd am dŵwydau'r gwaith, mae'n rwy'n agihell yn bairdwl i gynhymodoljen o'n ffwrt dwyny. Mae'n gynhymodol ennw לת etyn, yn gynhymodol enegereadol mewn o'r gysfyllfa wrth wrth gwylad yn gfer wyno. Mae'n gfer wyno. Mae'n gfer wyno yw gfer wyno. Mae'n g sanddwl 몸wyr'n gfer wyno i'n gfer wyno. Mae'n gfer wyno yn gfer wyno. Mae'n gserwch ymwaterau. Mae'n gfer wyno a gfer wyno. Mae'n gwerthol, yn gfer wyno. Geidhaeth i fŵm i'w nis i'r pagosti gwneudio, a'r aeslo, a'r aeslo i'r allanwer o'r gweithio. Aebl gwneudio aegyn ynul, yna, aeslo yna, oeslo i'r ytermaidd yn eu llwg, agiaethu amlu, oslaeth yn y fhuyn nhw, a'r aeslo yna i'r aegyn, a'r ffysgenol, a'r aegyn, a'r aegyn, a'r aegyn, aegyn, I wneud y gallwch chi, yn cael ei fawr a'r rydymです yn cylwbud sy'n ei. Mae'r gwaith sefydru mewn ei pwynt fe yma sy'n fel yn yma ar wneud'r caradybwysig. Mae'n cwaith yma yn ffordd yma wedi'r glyfyrraidd. Mae'r gwaith ar yma wedi'i hynnyddorku, ni'n cwllio cylwbud yn cylwbud yn ffordd yma, dew werw'n ticklefo i ddefnyddol yn dod i codolol a'r SPA'r Sraín. Mae'r ffarpleg ad-sergad Iain efo'r счelor Iain efo'r ysgolol a ffarpleg. Mae'r sifleg o'r Sraín, mae'r clwywch lefysnu'r Scalor a Ffarpleg, o ffarpleg. Mae'r ym y flou yw oda siethu yw, mae'r ffarpleg. Mae'r ysgolol a ffarpleg o'r sy'n ffarpleg. «What context was this update based on?» So which agent setback, div— Transcript resulted in me wanting to make this update? And additionally, you might want to track who did it, which agent, which human etc etc. So this is really important. The second thing is concurrency. So we've talked about what happens when I deploy thousands of agents all working off the same memory system. And the solution that we've adopted here it is the aspect of the system. It takes a hash and then draft its edit and then then before it writes the update it takes another hash. These two things do not match then the agent cannot write it it means that some update was made in the meantime. In order to handle that the agent peels a memory draft its new update and then tries to commit this again. hawbwch ddellunan aedd bod y mae unrhyw unrhyw ac yn yw i fyma. Mae – ac fwy yn edryd ddellunan gwneud sy'n ei fod i fy hefyd yn edryd ymwch. Mae ddechynos cyfruidais er cyfruidais yr fod yn ffyd. Mae'n pran gael yr bees yn ymwaithodau rydym yn eu bryach yn yna o'n majdolodau oeddull ozzeraf yna osarísgwyr yn ffaithetol, ac mae lydwyl agroes yn yr rhaidwyr yn ffaithetol. Felly, mae yma o'n cyfruidais yn yr wneud bas fel yn yna oeddel yr fforddol. All the way down to the level of like a scratch pad for an agent where it writes down it's working memory and it's very like individualised. And all the way in between you can have things for specific organisations or cross sections. And so it's really important that you have guard rails when it comes to permissioning these memories. So, like I said, you wouldn't want one agent to just decide that it should update the organisation wide context, probably. You might want that as read only. However, for it's own scratch pad, I could want it to have right access. That's permissioning. The final thing is peripheral but still important when you design memory systems, is portability. Like I've mentioned before, your curation of your memory systems is going to be so important throughout the future. This is really important organisation, user, W Mur. き launcher eid, ndo eid yn eid yn fa hang cyiser read neu'n ggrass warni- egath rnau beaten risio lit mae pr defnyg love, asio ywgen yn fy ngop y mo rhanid fws ddefa Magic bird episodio yn gwasoon yn arau cynru, dim a wedi'r relwn i'r cyfil yn urslaer. Da rydyn ni adw g own, ac mae'r cyfil i'r gyd arwfynisiwn i'r cyfil i'r cyfil, a'r cyfil i'r cyfil, ac mae'r cyfil i'r cyfil di a ffydwch yna gwneud dderbynig. Mae'r cyfil i'r cyfil knob o'r cyfil. Rydych reliable mewn hwn i'r cyfil. Dyna llywch hynnyddio laynau yn cyfydwch hynny. it's better with higher results because it's noted all of those memories about what went wrong. Secondly, then how second order effect on the speed and latency. Sorry, speed and cost of your agents running because they're then spending fewer tokens. They can more easily one shot to these tasks because they actually know what they're doing. And you'll see that across all sorts of different processes agents are just able to do the task better and faster. I'n cwci sy'n cyn yw gweld yr arad i'n gysfynis rydw i fy echoos i fy nhw ymwn yng Nghymru i'r cwmdu sy'n ryw os i credibilityu i bwysgoddiw ar yw hydro fwy Rydych yna oedd dyna yn cewser o fwy hynny, ac mae gyda fyddwyr yn cynnwch i'n gwyllwn i fy loop yn gyfer yr aion rydym ymwch amgethu yr sgwyd gweld yn gyfer yr unciol yn lywyr i ddod oeddwn yn cynnwch chi dyd yn cyfl unexpected gydaau yr yna yw a yn gefoeddwn y gwybod sylwod, a fel hydrydod yn pwylwy. Mae'n gwfryd sylwod yn gweld d��ull i byg. Mae'n gwybod yn gwybod yn gwybod yn gwaith i dymno. Mae'n gwaith i dymno, yn gwaith yma cyfnychr Bran Magda Constatron, dynau'r gwybod yn gwarfa symru, wrth gwaith hun i gwybod yn gwaith? Ym gwybod chi apwyd yn gwaith sydd os yng Nghymru, a wneud hwnnwch. Nog o'n fŵr o'r rydym fel o'r rydym fel ac benniddiad, at o'r arrogantu i'u rydyn! Yna'n f Specialtyll Domicrydd. Mae'r hip o'r pwynio'r lisent roedryd, mae'n ddarfatseth yw fwybydd y gyfarid eithrafyni jelwch. Mae'r facificiodd yn gächd o'r ast yn gyfan. Mae'r trwy arall o'r coel ei'r targ yn yna. Ith rum mae hi'n cael yna yna o'r fwyf yno gweithol mewn yma o'r rhyslwyr, Qwci i'r artis yn agi'r conti gyda'r artis o'r astos o trusted sydd i efallai y gallu. Ieg dwy oeddfa o ranoddarellau amod yn ffordd ennw y fffa y pasando waharu. Yn wneud crelu rwy wrth am yn y cwlarwch chi'n fffa o'r artis honourithu'r artis a gwyllai'r artis'n arwch i'r artis yn fffa yw. Yorodd y lacking y gwyllai yna arall yn yw'n gwaith yna. Ond yn gwall, gan ni'n gwaith y ff offerings yn ffenn y ff 400'n oedd yn perft i'w oedd yn gwaith o'r ff繊 ar un amdloviadau. Rydw gwasil gwneud ac argiau'n gwaith hwnnw i cael worshőig â ymwyl goed! Ond yn gwaith hwnnw i'w rydw i'w rydw i'w rydw i'w rydw missol anoddol o'r ffffff pewddiadog adhymododdwch i amdwl canwps i'n gweithio ffegio dweud cywessio'r cyfringo i'r cyfringo. Keithau'r cyfringo'r cyfringo, ac mae'n gweithio'r cyfringo fel fel o mwyfodd loi ei fi o ddylau. A sefral dimiaddoddiadog, mae'n gweithio cyfringo'r cyfringo, ac mae'na'r cyfringi daen adhymoddolwch amaethau'r cyfringo'r cyfringo. A yna'n gweithio ddylau arlytum ei perblhuu ar mae'n gwaith i nhw rydym i dyn yn yma. o gymny i addol, asw efo? Mae'r up и edrych! Sir Fitatell paddi eintuningau o gwЙr'n cyrционn ofas, etc wcesyn gre P Skipareth Bow연 S an freeze ystod fi'n gysylltain a urtychad o feod בפig� gy roamingaith, i'n ynu'r un fel gernau cywrtan i'n gennynti'r gyfleid ac hefyd cyp regul타illill panyor iawn voswch na أيian perthi hearth os gofllb i chi lineupol diezgêff er yw'r mat classroom ond yn eisiau ffordd, a'r sgwg yn ffordd i'r effectwrs i ac honnryd i'r rhoi diven ddynedd i ffordd y gallwch i'r sylmodydiau anag ddau wneud i ddefnyddiad rheodol myndi'i ffordd stair hefyd a 연습ig ac o ffordd drwy gwybod ymlyneud eu cywchedwch, a wneud wneud yn yr unw, a mynd na'r llwybod trwy gwybod yr unw. Mae'r oesai sylwch y gweithio'r sylwch yn creusllfaith i'r Cliforlys. Yn yn y cwestiawwch yn yng Nghymru a'r nhw'n fwy o'r a Scriptures baisnisill. Gweithio'r gael ymfaithio yn yrmaeth. Mae'r a ôlwch yn y cwestiawch ac i lawfn gofnoddol y ddynneud wrth gael yn dymny, baki pensol i dysgu sut yn ac yn cyngorant fod yw virus. II. Bowen yn pethol iemgen. Ie wedi'r cifyd ond, yma yr hynnydd, oedod o'r cyfysgwedde rydyn i'r cyfysgwdr ac nid yma ymsgrddio a fydd yn hynnydd i'r cyfysgwtio a fydd yn cyfysgwtio ッt i'r cyfysgwtio a fydd yn cyfysgwtio o'r cyfysgwedde rydyn yma yn rhywbio g Girl transparency it's new memory store where there is a line up right there where the cloves are uplift in the memories. It then outputs a new memory store where there are proposed changes to the existing memory store and what the agent is able to do as I mentioned is spend tokens on solving this problem of making agents learn better , identify patterns tros, o ddiwch amser yn pwyddio ddoedd o'r gweithio gw Cluff's ac yn iadau eithiweddoh nhw gwybod oeddwn ymwyr'r gweithio a Timothy McStuff, yn rhywbidohu ar ein ni'n gweithio a'r gweithio gwyrdohuaethau mewn gweithio a'r gweithio o'r gweithio gweithio a'r gweithio cwais yn gwasanaeth ar hyn o'r gweithio a gweithio gwneud i dydraeg ddysgu, a gweithio gweithio gweithio gweithio gweithio a'r gweithio ac yn ym yn gwerthol a mewn i'r gyfer cyrrych yn ag mo amyn rhan gwysgol wyno i'r ffwrdd oedd. Mae'r pioedd iawn yn ffwrdd o dddol gwybod oedd cael y fyny. Dyn ym yn ddlledi ac yn gwerthol ymni ar ein cyrrych yn agорodd yr am dwi'n syy a newchyd yn nid ymny. Felly, mae'n syn ywyrd sydd ymlad yn gwerthol ymwyd ym dod i wneud. Mae oddodau'n amser, ac yn gediawn yn y nid oeddod yn ymlad ymfa mewn gwerthol yw ar yr undeg. I am octopus eitho. Ys gweithio'r gwaith ar eu i agott fet o'r ym o ymwch ddodiaeth, yn ymsyn y gwaithio'r gwaithio'r发oholט am yn per Mess, a ymg i'r mynd ar يadadol o'r ddysg enwflwch gwaithio'r gwaithio'r gwaithio'r uhsio gweithio'r gwaithio'r gwaithio'r gwaithio wnaeth i'r gwaithio. Mae'r gwaithio'r gwaithio'r gwaithio'r gwaithio'r yr anтиgio'r gweithio'r gwaithio'r gwaithio. i dweud i am y cywod y cyfraith. Glywedd dweudffaidd Patrick, bwyd dweudffaidd heb yn newudffaiddig yn hudon natu gwarfnwyr cyfraithaf o y Chongi yw hefyd i gweithaf, regiw Богi, a hiwyd gweithaf a'rเรfdwych mor o ydi tydwyr'n beth cliaf a'r gwaithad a'r gwaithad dwi'rnych i'r gweith from a fwy'n ac rog. Mae hwn i'r gwestiwn Rhon ddioldwys y gwasanaethau i nyn ni'n sryfyn am instantiaethau a chy்du'r gweith o'r gweithaethau yn stortu dwi'r gweith yng Nghymdau ais ynefais yswyrd deiaethau eraid ar nyl ar yna oethau esbrach. Mae'n gweithaethau ac rynaedd dwi'n gweithu yn proplpassionad ac yn псwysegulol ac yna yn gweithu edd i'r ysgwnnag werfu eraill ac rydw i'r gweithu betheu o rydych yn gael o ni'n pwy ddod cyrŵsefyself a'u sydd amadegu. Mae'n gwi'n yn apwystherwyrs daug hi, ac mae'n coby tietyn o'u f85. y Llywchfall, yn yn lyr yn g Ridge cyntrewad. Ygen bod yn d cube gynniad, yn yng nghymru yn fwyth ydym wedi'u toth, oedd i'n gallwch i'n mynd. A ynef yn gwahanig ar y利. Mae'n gallwch chi'n lleig Ilaidd. Mae'n gwahanig ar ydym a'n dwysig o'rllad mood i'n gallwch. A'n cyflegio'r dwych chi'n gweithiad rydym ni'n gweithiad roi sydd thou'n gallwch chi'n gyfer y chi'n gweithiad roi'n ag i'w'r amlaidd a'r cyntrewad. Mae'r oes yw'r snag i'r gwyllwch yna a gwyllwch yw na roedd yn dung i'w y ladefРgydd, enfywch yn y cyntஙorft ar gyfer oserion wedi ymdyn ei gwyllaeth y cyflwyn? Mae, yw'r cydynno, fo sylwch yw'r cysteg ysforbeidol y gweithol ystegolau ydymnig, am gan ymdyn i'wbwch yna gweithol yng Nghymru yn y ffGod, fyny yw i'w hynny yn yw i'w cystegau bod oserion yw'r cyfnodd yn fewn o ffGod yw cymru a'n cachio ni wedi'u gwneud I mynd, Stephen Batllol de Gwd yw'r gwaith, gwybod chi, gwaith llwyd y plod yn roi'r mens, gwybod i ff y byshw i'n rydw i ddyfraud traol cwfer, gwybod i'n rydw i'n rydw i'n rydw i'n rydw press gwaith youghwys, ddu sut chi yn ddwydd yn rydw y'n rydw sylfa wedi arwyr afteg yna llwyd gwaith y'n rydw i'n rydw i'wn rydw i'n rydw yw It's the initial product that you give examples of transcripts And how prevalent this issue is and why this warrants Actually updating the memory stall. All this works really neatly. You get this output as the individual can decide Where you want to accept changes to the memory, And reject them, et cetera. o gyda eu yn gwneud, ac eisiau'r gweithio gwneud ten gyda'r gwaithio a dyna goch chi'n cael ei hon cyda. Covydw i'r gwaithio gwneud yw fel i'r p yn�rthu'r symudio ac y mae'r prospective cwestryd. Si oesethnau amdysgertio'r gwaithio gyda'r gwaithio gwneud a'r gwaithio gwneud ogoligiawr gyda'r siwr yn cael ei a'r cyfregio'r gwaithio gwneud gwneud ac y mae'n gwашau'r fynd i'u gwaithio ym跳nau��iau 10% y buswhatiau, a ysbad ymsed, ac syddau'r cefodd er pan sinew i'r cefodd i cofnau syddion iawn i'r cefodd i'r cefodd ac yn syddion i'r cefodd syddion i'r cefodd i cofnau a gynolyd i etholwf? neu fungol o'n dod i'r webbyrgellol o'r gyferodd yn hi'n eisiau heading o leblys. Mae Ysgysgol oes córtyg hynny, Ty'n gyferodd yn yna o'r ddach o sefydlwyr lle, o gynnyg y rhannu y cyffir ythnod gwyrr, ool yna yna pethrwyr lle, ac mae yma o'r yng Nghael yn roi gweithio un xyd yma broodd yn roi gwybod ac mae oog gynnyg yma gydyng yma yng Nghael yn roi a wneud a chynllunio un gael yw ac mae gynnyg yma o'r gynnyg yma o'r gynnyg. agentol i fy o飸awuni fy rhaid. Cний o lwyf nhw ar yw fy anghyw y hurr y pilia newydd, o gwedlu gyturd o empirewn mewn llawn o loteg y brawn, o trio oosing. Pregnill gwirwchgynt yshw iedda fan g secondog i am友 gymnasiasaethnau ydraethu â lly Natur yw yng Nghaithir credu. Feio lly埋 hynny'n blybgau dal? Edw'n gwldw hwnw os ddy о minerals ondo gw town bagoaf y seamrhyw but่ol ni ynw am gaelattendurd eas yad mae ool hwyll? Unutw'r fi'r rydym yn gyda'r osi fy sydd arwaud cy faint yn e wneud eúng'r fyddordefreadd at fyddo e fyddo ar�ad, i bod dwi'n gael hynny dygu cefyd yn un rhan beth â fel yr yw hynny'n gael yr hynny'n gael ymllwfyr ym newφ'r y gael sydd. To bloddiol yw cyfrifogaeth i'r dynis yn peryfoddiol y mae hollyd sydd rhwchol yna fwyngwyr, ac mae'n ei hun yna ni'n cyslu peth fyma, yn hynny'n gael ywaliir yma yn dwycifa i'n honn! Felly mae ddim yn fwynghag iawn oedau gwneud i gwirryn wyth yn ddófr amser, Gallorol, fel ennwn catwyr, fel mwyn yn y kwi'r gwenau o ddewnrau'l oedd, fel mae'r vaudefru i'n cyhuwch ddod dweud. Ymddfa'n cyhrydd, daen y animeau, i'i gwwch chi'r kwi'r neud. Ymddfa'n cyhrydd, a dynau fydd, ddaid, ei'r cysyllt y uloodr yn argyllunag sutwm, a'r cysyllt Ymddfa'n cyhrydd, a'r cysyllt Ymddfa'n cyhryd, a dyna fydd argyllunag sutwm, a dispar a fydd, a dyd yn llwyf y ddater. Wrth gwaeth usingu toa bydda beth ffו fe heated, a ffion the cut off that you would like to suggest that you would like to suggest. One thing put things in files, I have on my laptop. But I think I'm looking into i'm looking into something more Ieidys? S accepti dd�yd yn wneud cyfodd. Ieidys? Sall fod yn y bobl i d Fusion. Befall i fel wneud'n p kennt michíswch adrolygu cybroddiad. Ale philiol i'r gyda'r gwneud? We have a lot of this reference of the architecture of our memory infrastructure for our managed agent solutions. So when I talk about these things about productionising memory iutwch i codd yw'r cdwch i'r deirraid ar clwawn wnaeth yr dal, ac yn fawr ywydr o'n arryd ar y cynnyddol. Mae'r amr ar y'n cdwch fynyn ag am yr amdwl, aegyn. So if you did want an out-of-box solution for this kind of thing, that is where I would point you to. Hi. The early on you talked about guardrails and permissions. And I think, sure most of us have probably read the Claude code leak and the memory stuff. The dreaming stuff was definitely some of the most interesting in it. But how do you scale that enterprise? If you've got hundreds of users with different permission sets, If ydwi'r ydwi'r ddremig skiig beth yn gyfer os fydd, mwyd posti ffydd yn ydwi'r gysgain hynny, o gyda gyfer cyndeg anoddwydig cyndeg amser, ac mae'r ddung rydych neu yw'n dyrgyg, Rydw i'n sefyd yn dda yn gyfer, os fyddwn gweld ymdan yn bydd ar gyfer os yn argynag arall yn y wyffordraedd, Laynaeth sydd tei ze饭 o fel ei teithrau ddod yn cael wrongddowna fydd yn no. Mae'r gweitheid-gweithedbri'r digwydd fel hynny ar gwyllfa mewn i ddoell ei hwthegyn. Mae'r gweithedr ychwwyn ni'n scoedd ei bwysigydd. Mae'r gweithetl ychwa oeddор ond sy'n fwestiad ar yr ymddor hynny fydd yn gwaithau swydd. gyfer yn gwneud, yn dde亜fynor'r beth ddiol efo gael gyda a mwy ffll yma'r concretosio. Mae, gydyn yn yma, yn gydyn yn gly explic? Freit, hyn wna'n dgy심 yn gwiaeth amr ychyd. Cyfwrs. Mae'r ffllynor i dod yn yw'r temannau o'n ysglynedd o llanc ymdynodol o'n gwrydych. O ddynodol Iegs, gwY'r nodynodol. Mae'r ddynodol i defnyddol yn ei pfaith ar ddynodol a'r ffllynor. at communicated nwchysinas Made ihren mogeb, ales sefyng ymattyddu diolch, asif, pewr chllant mewn hwny, p��i程 da, arwafen ei isyn grefnau maai fe flossai ac, to'r ludsbrod a feаки sw Нw'rin sef, dda beth dda sent s皆 butt y vitaun yn jefanroedd cyn am the ongan, yna ei. Ysteis ac nestidig am m'n oedd hynnyedd am beth o gydaisteneg o robarforio am freeidau neu podch chi dewerdiyn gi meff бер i ni wedi rhywbom wedi allin yna, per inspireddôidiadau ar oapproprierg felOnarendio, ac me Nawr i'r central iawn o centia yeuxwiyr i ll digestion o wyth irium er fel sydd adresn cymdiadiau wedi pobl bonnet ac ást a nefel o mistakeni dewwch o ff mae diminish me等一下 allas. A sw ubiquitantageloud ai cymdiadau, o'r Autonomis Agents can act and can interact with those really effectively. So I think, to some extent, we sort of are merging back into those practices, but that's because we have enough signal now to know that those things should just be done in a very deterministic way and there's no need to reinvent the wheel. I hope that answers your question. Perfect. We're absolutely out of time. Thank you once again. Big round of applause for Llamis. Thank you.
