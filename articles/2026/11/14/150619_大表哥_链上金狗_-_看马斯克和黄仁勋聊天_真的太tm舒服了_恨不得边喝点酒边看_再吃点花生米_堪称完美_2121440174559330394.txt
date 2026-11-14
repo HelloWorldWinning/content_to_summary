@@ -1,0 +1,160 @@
+Timestamp: 2026-11-14T15:06:19.924841
+Title: 大表哥 链上金狗 - 看马斯克和黄仁勋聊天，真的太tm舒服了，恨不得边喝点酒边看，再吃点花生米，堪称完美 2121440174559330394
+URL: https://x.com/holdonyourrope/status/2121440174559330394?a=Fo5KSbAg8NbciZ-30XY&s=20
+Status: success
+Duration: 19:31
+
+Description:
+以下是对文本中埃隆·马斯克（Elon Musk）与黄仁勋（Jen-Hsun Huang）关于自动驾驶与人工智能对话的结构化梳理、批判性审视及逻辑可视化图解。
+
+---
+
+### PART 1. 作者地图 (Author's Map)
+
+#### 1. 核心主张 (Core Thesis)
+自动驾驶属于低风险的“狭义人工智能”（Narrow AI），其技术复杂性远低于公众普遍认知，在工程上已接近“已解决问题”；随着硬件支持与“暗影模式”软件算法的持续迭代，自动驾驶将以超越人类驾驶员一个数量级的安全性全面颠覆未来的交通与汽车设计范式。
+
+#### 2. 论据基础 (Evidentiary Base)
+*   **历史类比 (Analogy)**：电梯从早期的“人工操作员”演变为当代的“自动化按键呼叫及智能调度”。
+*   **硬件与感知数据 (Hard Data / Technical Specs)**：Tesla 现有硬件配置（360度5米超声波雷达、前置摄像头、前置毫米波雷达、NVIDIA Tegra 计算平台）。
+*   **产业规模数据 (Hard Data)**：全球车队存量约 20 亿辆，全球汽车年产能约 1 亿辆，完全替换全球车队需 15–20 年。
+*   **场景分段模型 (Intuition Pump / Case Partitioning)**：
+    *   低速环境（<10 mph）：利用超声波防碰撞，简单可控。
+    *   高速环境（>50 mph）：高速公路场景确定性高，处理相对简单。
+    *   中速复杂环境（10–50 mph）：郊区/市区非结构化场景（儿童、自行车、井盖、道路封闭），为核心难点。
+*   **安全防御架构 (Technical Precedent)**：动力与转向控制器采用物理/逻辑隔离设计，防止系统级远程黑客入侵。
+
+#### 3. 逻辑保证 (Logical Warrant)
+*   **归纳与分治推理**：将复杂的驾驶环境按“车速-复杂度”解构后，发现绝大多数场景已具备可解性，中间中速难点可通过提升计算能力与扩大传感器套件逐步覆盖。
+*   **统计学验证演演推**：在“暗影模式”（Shadow Mode）下运行自动驾驶系统，将计算机决策与实际碰撞数据进行海量对比，产生压倒性的统计学安全证据以说服监管机构。
+*   **降维演化逻辑**：碰撞事故率大幅下降 $\rightarrow$ 无需沉重的车身碰撞保护结构和安全气囊 $\rightarrow$ 汽车实现轻量化与高能效。
+
+#### 4. 明确的适用边界 (Stated Scope)
+*   **技术类型限制**：论断仅适用于自动驾驶、智能空调等“狭义AI”（Narrow AI），明确摒弃对“深层/通用AI”（Deep Intelligence）的乐观态度（后者仍被视为潜在的“召唤恶魔”）。
+*   **时间与产能限制**：受限于全球 20 亿辆庞大基数与 1 亿辆年产能，即使技术明日成熟，车队更新与电动化/自动化替换也需要 15–20 年。
+*   **监管滞后限制**：即使技术安全性达标，监管机构仍需额外的 2–3 年进行数据审核与统计验证。
+
+#### 5. 隐性对手 (Implicit Opponent)
+*   **AI 恐惧论者**：将通用 AI 的毁灭性风险混淆并套用到自动驾驶领域的人群。
+*   **传统汽车工业思维**：依赖“增加车重、厚化机械碰撞防护结构”来提升安全性的保守工程路线。
+*   **盲目与早熟的监管机构**：在缺乏统计证据前盲目禁止，或在技术未成熟时盲目立法的行政干预。
+
+#### 6. 预期落脚点 (Intended Takeaway)
+向行业开发者、投资者和公众表明：自动驾驶在技术底层已通达（几年内即可落地），呼吁开发者投身自动驾驶技术生态建设，同时引导监管机构在未来的验证期内保持理性与审慎。
+
+---
+
+### PART 2. 批判性审视 (Hostile-But-Very-Fair Review)
+
+#### 1. Steelman (最强形式)
+马斯克将极其复杂的自动驾驶难题进行了精准的模块化解构：摒弃了通用AI的哲学困境，将驾驶拆解为硬件传感、多源融合计算与按车速划分的环境认知问题。他准确预见了基于海量实车数据的“暗影模式”统计验证法，并深刻剖析了汽车工业庞大产能基数所决定的长达 15–20 年的平滑过渡期，其对“无碰撞设计降低车重”的展望在逻辑上极其自洽。
+
+#### 2. 最薄弱环节 (Weakest Link)
+> **“I almost view it as like a solved problem. Like, we know exactly what to do, and we'll be there in a few years.”**  
+> *（我几乎把它看作一个已经解决的问题。我们确切地知道该做什么，几年内就能实现。）*
+
+*   **崩溃逻辑**：该断言将中速复杂环境（10–50 mph）中的“长尾边缘场景”（Edge Cases）严重低估为单纯的技术迭代工程。现实世界的边缘场景（如极端天气感知失效、非标准障碍物识别、伦理抉择）并不是简单的“算力和传感器堆叠”就能线型解决的。一旦长尾问题在统计学上无法收敛到绝对零失效，其“几年内解决”的承诺以及后续的“监管快速批准”逻辑链条便彻底崩塌。
+
+#### 3. 证据审计 (Evidence Audit)
+*   **数据选择性忽略**：马斯克声称“基于现有的传感器套件（前视雷达/摄像头+5米超声波）就能实现全自动驾驶，只是可靠性不够”，这掩盖了视觉与毫米波雷达在低分辨率、无深度信息以及恶劣天气（暴雪、大雾、强光直射）下的物理感知上限。
+*   **不正当类比**：将封闭物理环境下的“电梯自动化”直接套用到高开放度、高随机性的“道路交通系统”。电梯仅在单一维度（升降）及高度规则化的轨道内运行，而道路包含了无数非规则行为的主体（行人、宠物、违章车辆）。
+
+#### 4. 隐藏前提 (Hidden Premises)
+*   **前提 1**：公众和法律对“算法致命错误”的容忍度与对“人类驾驶员致命错误”一致。  
+    * *必须提出的质疑*：即便统计表明 AI 比人类安全 10 倍，当发生一次罕见但极其荒谬的算法死机致死事故时，社会舆论和司法体系是否会因“非人称失控”而彻底禁绝该技术？
+*   **前提 2**：车载娱乐系统与动力转向系统的逻辑隔离足以彻底抵御网络攻击。  
+    * *必须提出的质疑*：随着车辆越来越多地依赖 Over-The-Air (OTA) 远程总线更新，若黑客获取了车企的云端签名密钥，隔离层是否会在系统级固件刷写面前形同虚设？
+
+#### 5. 盲区盲点 (The Blind Side)
+*   **责任归属与伦理真空**：当人类不再掌握驾驶盘（没有方向盘和踏板），发生不可避免的碰撞事故时，法律主体是软件开发者、汽车制造商还是车主？马斯克完全避开了这一重大的法律与伦理盲区。
+*   **传感与高精地图的依赖矛盾**：对话中过度强调纯车载传感与计算（NVIDIA 芯片），忽略了道路基础设施数字化、车路协同（V2X）以及高精地图在解决郊区中速难点中的关键作用。
+
+#### 6. 致命一击 (One Hit Kill)
+如果 10–50 mph 郊区环境中的边缘场景（Edge Cases）在概率分布上呈现“无限长尾”，且单次失效即可引发致命事故，你凭什么断定这是一个“只需几年堆叠算力与传感即可完成的已知工程问题”，而非一个“当前计算机科学与感知理论尚未突破的本质难题”？
+
+#### 7. 如何验证 (What Would Settle It)
+在取消安全员、不依赖特定限定区域（Geo-fencing）的前提下，让数万辆量产车在全天候复杂城市道路中完成数十亿公里的实际行驶；若其百公里事故率及致命率连续多年显著低于人类，且车企愿意在法律上承担 100% 的事故赔偿责任，则马斯克的论断成立。
+
+---
+
+### PART 3. 概念映射图 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core ["🟢 第一部分：核心主张与框架 (Core Thesis)"]
+        direction TB
+        Core_Thesis["<b>核心主张</b><br/>自动驾驶是低难度狭义AI<br/>几年内可技术完备，安全性超越人类一个数量级"]:::mainClaim
+        Scope_NarrowAI["<b>明确边界: 狭义AI vs 深层AI</b><br/>自动驾驶为狭义AI (安全可控)<br/>深层AI具备毁灭性风险 (召唤恶魔)"]:::scopeNode
+        Core_Thesis -- "适用范围界定" --> Scope_NarrowAI
+    end
+
+    subgraph SG_Tech ["🔵 第二部分：技术解构与推演 (Technical Roadmap)"]
+        direction TB
+        Env_Partition{"<b>环境复杂度分段模型</b>"}:::techNode
+        
+        Env_Low["<b>低速环境 (<10 mph)</b><br/>超声波近距防撞<br/>难度: 极低"]:::easyNode
+        Env_High["<b>高速环境 (>50 mph)</b><br/>高速公路确定性高<br/>难度: 较低 (公路巡航)"]:::easyNode
+        Env_Mid["<b>中速郊区环境 (10-50 mph)</b><br/>儿童/自行车/盲区/施工<br/>难度: 极高 (核心攻坚点)"]:::hardNode
+
+        Env_Partition -- "解构" --> Env_Low
+        Env_Partition -- "解构" --> Env_High
+        Env_Partition -- "解构" --> Env_Mid
+
+        Tech_Solution["<b>破解方案</b><br/>硬件迭代 (Sensor Suite + NVIDIA算力)<br/>+ OTA软件持续升级"]:::techNode
+        Env_Mid -- "依赖" --> Tech_Solution
+
+        Shadow_Mode["<b>验证路径: 暗影模式 (Shadow Mode)</b><br/>后台对比算法与人类操作<br/>积累海量统计证据"]:::techNode
+        Tech_Solution -- "算法训练" --> Shadow_Mode
+    end
+
+    subgraph SG_Industry ["🟣 第三部分：产业与监管预测 (Industry Horizon)"]
+        direction TB
+        Fleet_Replace["<b>车队替换周期</b><br/>存量20亿辆 / 年产1亿辆<br/>完全更新需 15-20 年"]:::indNode
+        Reg_Lag["<b>监管滞后期</b><br/>技术达标后<br/>需 2-3 年统计数据审批"]:::indNode
+        Design_Shift["<b>终极形态</b><br/>零碰撞风险 $\rightarrow$ 消除安全气囊与防撞梁<br/>车辆轻量化/高能效/禁止人类驾驶"]:::indNode
+
+        Shadow_Mode -- "提交统计数据" --> Reg_Lag
+        Reg_Lag -- "全面放行" --> Design_Shift
+        Fleet_Replace -- "物理约束" --> Design_Shift
+    end
+
+    subgraph SG_Review ["🚩 第四部分：批判性审视 (Hostile-But-Very-Fair Review)"]
+        direction TB
+        REV_WeakLink["<b>致命弱点 (Weakest Link)</b><br/>将长尾边缘场景 (Edge Cases)<br/>误判为『几年内解决的已知工程问题』"]:::reviewNode
+        
+        REV_Evidence["<b>证据缺陷 (Evidence Audit)</b><br/>1. 强行类比封闭电梯与开放道路<br/>2. 忽略视觉/雷达的物理感知极限"]:::reviewDetail
+        
+        REV_Premise["<b>隐含前提 (Hidden Premises)</b><br/>1. 假定社会对算法致命的容忍度同人类<br/>2. 假定物理隔离可完全免疫网络攻击"]:::reviewDetail
+        
+        REV_Kill["<b>致命一击 (One-Hit Kill)</b><br/>若边缘场景概率呈无限长尾分布<br/>凭什么断定无需底层理论突破？"]:::reviewKill
+    end
+
+    %% Wiring Core to Tech & Industry
+    Core_Thesis -- "技术解构" --> Env_Partition
+    Core_Thesis -- "产业推演" --> Fleet_Replace
+
+    %% Wiring Review Links
+    Tech_Solution -.- REV_WeakLink
+    Shadow_Mode -.- REV_Premise
+    Env_Mid -.- REV_Evidence
+    REV_WeakLink --> REV_Kill
+
+    %% Stylings
+    classDef mainClaim fill:#FFF9C4,stroke:#FBC02D,stroke-width:3px,color:#333333;
+    classDef scopeNode fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#4A148C;
+    classDef techNode fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1;
+    classDef easyNode fill:#C8E6C9,stroke:#388E3C,stroke-width:1.5px,color:#1B5E20;
+    classDef hardNode fill:#FFCCBC,stroke:#D84315,stroke-width:2px,color:#BF360C;
+    classDef indNode fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
+    classDef reviewNode fill:#FFCDD2,stroke:#E53935,stroke-width:2.5px,color:#B71C1C;
+    classDef reviewDetail fill:#FFEBEE,stroke:#EF5350,stroke-width:1.5px,color:#C62828;
+    classDef reviewKill fill:#B71C1C,stroke:#D32F2F,stroke-width:2px,color:#FFFFFF;
+
+    style SG_Core fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#333;
+    style SG_Tech fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#333;
+    style SG_Industry fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#333;
+    style SG_Review fill:#FFEBEE,stroke:#EF5350,stroke-width:2.5px,color:#333;
+</Mermaid_Diagram>
+
+Content:
+Ladies and gentlemen, please welcome Tesla CEO, founder, Elon Musk. Elon, come on up. I've never seen anybody walk this low. How are you? Welcome. Welcome. Guys, Elon Musk. Now, you know, we made it a point not to rehearse anything. And so I just want to just as a reminder, you're my last thing. OK. Okay, could you not ruin the whole thing? All right. So now speaking of that, speaking of that, I think everybody would like to, before we get into all of the good stuff. Okay. And they want to go directly to the juicy stuff. Okay. And the juicy stuff is this. Look, you know, you were quote as a saying that artificial intelligence is more dangerous than nuclear weapons. And I said potentially. And, and, well, it goes on, it goes on, and you say that it's like summoning the demon. Could be. How do you consolidate, rationalize the conflict between artificial intelligence, of course, deep learning that obviously is going to be very important to self driving cars? How do you think through that? Well, I don't think we have to worry about autonomous cars, because that's sort of like a narrow form of AI. And it's not something that I think is very difficult, actually. I think to do autonomous driving to a degree that's much safer than a person is much easier than people think. And yeah, I think it's can just become normal. Like, it'd be like an elevator. Like, do you step elevator operators? And then we, you know, we developed some simple circuitry to have elevators just automatically come to the floor that you're at and you can just press the button that nobody needs to operate the elevator. The car is just going to be like that. And the elevators these days are even smart. I mean, it knows where to position an elevator, so that if you were to need an elevator, it's pretty close to you. Cars in the future will be pretty smart about that too. Yeah, you'll be able to tell your car, like take me home, go here, go there, anything, and it'll just do it. Yeah, at an order of magnitude, safer than a person. In fact, in the distant future, I think it's probably going to be if people may outlaw driving cars. Because it's too dangerous. You can't have a person driving a two-ton death machine. Now, if we have to write type of intelligence in a car, we also don't have to make the cars that heavy. I would think cars are getting heavier and heavier, and it's got more and more stuff in it. because it needs to survive all these incredible collisions and things like that. I wonder if we were to design cars that just simply don't collide as much. I wonder if we could relax on some of those laws and make cars more fuel efficient and lighter and better to drive. You could definitely do that. If you could count on not having an accident, then you can get rid of a huge amount of the crash structure and the airbags. And it'll be a very long way from that because there's always gonna be some, for a very long time, there'll be some amount of legacy cars in the road, and I think it is important to just appreciate the size of the automotive industrial base. It's not as though when somebody makes an autonomous car, that suddenly all the cars will be autonomous. It's like there's two billion of them. The total number of cars and trucks in the road is two billion in climbing, the capacity of car and truck production is about a hundred million a year. So if tomorrow all cars were autonomous, it would take 20 years to replace the fleet, assuming the fleet stayed the same size, arguably it could get smaller if things were autonomous. But still, it's still, you know, maybe 15 years or something, and it's not all going to transition immediately. It'll take quite a while. So, and it's the same for electrification of cars, changing that industrial base to be electric. I mean, if all cars were suddenly, all four cars produced were electric tomorrow. It would still take 20 years to replace the fleet. And right now it's less than 1%. So. Now, you mentioned just now about self-driving cars being easier than people think. Now, you have your vision of how to go from where we are today. Now, my Model P85D has lane detection and so it gets a little, you know, when I get close to a lane, it detects the speed signs and then uses computer vision technology to do that. And that's today's ADAS, what is your roadmap, you know, how is that different than other people's roadmap, how do you think about how to get to self driving cars? Yeah, well, you kind of need the hardware foundation, the sort of sensor and computing foundation. And then you can keep uploading new software, at least you can with the Tesla, because it's always connected. So the car that you have, you'll notice that the features are steadily improving. We now have active cruise control, so it'll use radar and camera fusion to track the car in front of you. It's also looking at with some of the things that are coming out, it looks at the brake lights, so it anticipates that the car's got the brake lights are active, it's gonna get basically smarter and smarter even with the current hardware suite. So the current hardware suite is 360 degree ultrasonic sensors that go up to about just over five meters. It's a Ford camera and a Ford radar. So we'll make, even with just that sensor suite, we can actually make a huge progress in autonomy. We can certainly make the car steer itself on a freeway and do lane changes. It's really, autonomy is about what level of reliability and safety do you want? Even with the current census suite, we could make the car go fully autonomous, but not to a level of reliability that would be safe and say a complex, urban environment, 30 miles now with the lane markings out there, and children could be playing, and things could be coming at you from the side. So in order to solve that, you need a bigger sensor suite, and you need more computing power. And I think what you're doing, actually, with the Tegris and the Futures is super interesting, and will really be a big enabler for autonomous driving. So I think, you know, Nvidia is doing really great stuff on that front. I appreciate that. And so some of the challenges that you see, what are some of the technological hurdles that, and there's all kinds of researchers in the room, they're all kinds of engineers in the room, what are some of the technological hurdles that you think are really important for us to go tackle? Surely we're gonna get to some better cruise controls on highways. But beyond that, what are some of the things that you would like us to go focus on the tackle for the car industry? Well, it's, you know, where it gets tricky is just the, is that sort of open environment around 30 or 40 miles an hour. So, like right now it's fairly easy to deal with, say, things that are sub 5 to 10 miles an hour because we can do that with the ultrasonics. We just make sure it doesn't hit anything. Right. You know, because you can always- It's just the right thing to do in large. Like, just why would you want to hit anything with your car? Exactly. At 5-10 miles an hour you can stop within the range of the ultrasonics. And then from, let's say, 10 miles an hour to, you know, quote, sort of 50 miles an hour, that that area in complex suburban environments, that's where you can get a lot of unexpected things happening. Like, let's say there's a road closure or a manhole cover open. children playing as a big issue, bicycles. Once you get about 50 miles an hour and you're in kind of a freeway environment, then it also gets easier again. Like the set of possibilities is much reduced. So highway cruise is easy, low speed is easy, intermediate is hard. And so being able to recognize what you're seeing and make the right decision in the suburban environment, in that 10 miles an hour to 50 mile an hour zone, is the challenging portion. But I really think, I mean, I almost, this may sound a little complacent, but I almost view it as like a solved problem. Like, we know exactly what to do, and we'll be there in a few years. Right, just like Mars. But that's kind of the quietest. That's kind of the spirit of innovators, I mean, in a lot of ways in your mind, you kind of see things solvable or arguably solved. And a lot of it is really about getting there. Yeah, we'll take autonomous costs for granted in quite a short period of time. It's amazing how comfortable you get and how quickly you get comfortable with it. So. Now, what about government policies? Like, one of the things that I would like to do is I would just like to keep working on my email as I'm driving to work. Sure. There's a 30. You will do that already. Like I said, I would like to do it without breaking the law. So where do you think government intervention falls in some of this stuff? Because obviously, if you car drives by itself and it does it even better than people, you would like it to drive by itself. But largely, the laws don't allow you to do that today. Right. Absolutely. And how do you think about government intervention regulations? Right, so I think it'll be from the point at which a car is definitely safer than a person. There's probably at least another two or three years after that before regulators will allow that to be the case. Because they will want to see a large amount of statistical proof that it's not merely as safe as a person, but much safer. So, I think what you can do is you can run it in shadow mode and essentially say, okay, this is what the computer would have done in all these circumstances. And was there a crash or was there not? Like what are the false positives, false negatives? And then it's achieved a large population group and then make a really clear to sql argument with the regulators. And then they're going to digest that, observe it for a while, see if they agree with it. And then I think they will because the evidence will be overwhelming. Yeah. And the evidence is actually already quite overwhelming that if you would have noticed break light in front of you in the highway and you didn't crash into a rear-end collision. Right. But a lot of lies are said. Ideally, hopefully people don't overreact with this unknown technology and prematurely regulate. Yeah. No premature regulations. I mean, regulate. I was a joke. Haha. Haha. I think when it comes to public safety, I think there's an argument for being quite cautious and making sure that things are okay before there's a change. And I don't think it's the case that right now there's a fully autonomous system and regulators and not approving it, that that really be a substitute for people, but there will be in a few years. Now, as we get more computer-erased technology into these cars, this car becomes really a software-defined car. I mean, a lot of your engineers are software engineers. Yeah, absolutely. One of the great things about Tesla, you guys right here in Silicon Valley, you're rich with software engineers, and you have that computer sensibility about architecting a computer properly, designing the software properly, designing the software for many generations of cars, so we find and get better and better. And it has been getting better. I mean, the software, from the first time you sent me my Tesla to the now, it's just like unrecognizable software. Right, big improvement. I mean, that's what the first thing we try to do is establish the hardware platform, make sure that we have the sensors and compute power. And so we do that first, even though the software is only taking advantage of a small percentage of the sensors and compute power. And then we do continuous updates to make the car more and more capable. And we're gonna see a lot of that happen later this year. I didn't have an announcement about Thursday morning. I would be saying a lot more. But yeah. The audience doesn't understand why they had to wait until Thursday morning. You tweeted it already. You're announcing you're gonna do an OTA. What kind of announcement is that? I'm gonna do an OTA on Thursday. That's like a new product announcement these days. It's just saying that there's going to be a call on this same warning and I'm going to describe what's going to be in version 6.2. Where anyone who's interested. That's so awesome though. I'm interested. I get excited every time I get an OTA. And one of the things that was really interesting is in the beginning, when we first built the first Tesla together, the Tegrit in it, we thought was more than enough. And recently you said, can we just squeeze more performance out of that platform? And it's just happened in literally two years. Several versions of your software updates all of a sudden the computing platform is not powerful enough. And it's because you want to add more features and a lot of features these days are based on software. True. So one last question, and it has to do with, I guess, something that a lot of people are very concerned about, which is your car becomes a software platform and software platforms get hacked. How do you think about that? How do you think about security and what are some of the things that we could do to try to make the car more resilient to security attacks? Yeah, I think that that becomes really important when the cars are fully autonomous. I mean, the way the cars work right now, every system of the car it's assumed could actually have a mechanical failure of some kind or a logic failure, a fundamental logic failure. So you can always overwhelm the breaking of the car with your foot and you can overwhelm the steering wheel with your hands. So, but when there isn't this steering wheel, there isn't break paddles, something like, you know, many years from now, then it's really dangerous, you know. But even as it is right now, what we spend most of our time on is making sure that it's very difficult to do a multi-car hack. Like if you have direct access to a car just like if you've got direct access to a computer or even a conventional car, you can do a lot of things to it. But that's less of a concern than somebody being able to hack an arbitrary car or multiple cars. So that's what we focus our energy on is making sure that, in that way it's a lot like a cell phone or a laptop, you know, you focus on making sure that it's very difficult for that to be any kind of system-wide hack. So we put a lot of effort into that and we have third parties try to attack it. And in certain parts of the car, at the very fundamental level, like the drive unit controller or the steering controller, have an additional level of security. So somebody may be able to hack something that's cosmetic, but it's much harder to hack something that's actually physically dangerous. There's multiple levels of security. And so this way, if you were able to penetrate maybe the infotainment system, it doesn't allow you to quickly as a result of that. Right, I may display a funny message or something, but it would not, you would not be able to then control the steering or the motor. Yeah, well, the future of cars is so exciting, and the work that you guys are doing are so exciting, and it's great to see you guys pioneering these computer-wise cars. I mean, a lot of people think about Tesla's the electric car, but I think it's obviously more than that. It's an electric car, but it's a whole computer platform on top of that. Yeah, I think Tesla is sort of the leader in electric cars, but I think it will also sort of be the leader in autonomous cars, at least autonomous cars that people can buy. And there's anybody interested in working on autonomous cars would love to have you work at Tesla, by the way. So we're gonna put a lot of effort into automotive autonomous driving. Because it's gonna be the default thing and it could save a lot of lives. Yeah, to save a lot of lives and hopefully one of these days it would be nice if Envides campus has no parking lot. Yeah. Right, it drops us off and it meanders off to a place where the land's a little cheaper and you know, and it parks a whole bunch of cars there and when it's time to go home, we can just summon it to come. It will be extremely transformative, that's for sure. But yeah, I mean, when it comes to AI, I'm not really worried about sort of an AI like autonomous cars cars or like, you know, a smart air conditioning unit at the house or something. It's more like sort of the deep intelligence stuff that is where we need to be cautious. I actually think there's many potential flavors of AI and you know it's odd that we're so close to the advent of AI like it's strange that we're alive in this time. Well come back every year, come back every year and And you'll see the work that this group is going to do. I mean, there's so much deep learning work being done here. You have a lot of engineers here as well. And it's fantastic to see the whole community focused on advancing this field. And along the way, we're going to spin off a whole bunch of new capabilities as you know. That's going to make cars just safer and more fun to drive long before we have to get to essentially a self-driving car. There's going to be a lot of versions along the way. That's just going to bring joy to a lot of people. Yeah, absolutely. I just hope there's something left for us humans to do. Well, I'm not going to let that go of my steering wheel. You know, I've got mine on the craziness mode and the sports steering mode. Is that the way you have it? You get driven to work now. No, no. Well, I drive half the time, actually. And which mode do you have it in? I always have it in the same mode. Yeah. All right. All right. Thank you. All right.
