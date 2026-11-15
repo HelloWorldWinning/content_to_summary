@@ -1,0 +1,166 @@
+Timestamp: 2026-11-15T15:17:25.818240
+Title: 2025.10.21 【Switched to Linux】我们是否可以通过VPN信任Firefox ？ BV1NbWdz5E4k
+URL: https://www.bilibili.com/video/BV1NbWdz5E4k/?spm_id_from=333.337.search-card.all.click&vd_source=f3fc537b70657d6818fbe4beb0d21d38
+Status: success
+Duration: 20:16
+
+Description:
+以下是对文本内容的结构化拆解、批判性审阅及逻辑关系图谱。
+
+---
+
+### PART 1. 作者地图 (Author's Map)
+
+#### 1. 核心论点 (Core Thesis)
+用户不应当信任 Mozilla/Firefox 提供的内置 VPN 服务，因为使用该服务意味着将所有浏览器流量交由 Mozilla 处理，而 Mozilla 过去在数据商业化（如 PPA 机制与隐私条款修改）及政治审查意图（如 2021 年倡议浏览器级内容过滤）上的记录，证明其已偏离绝对隐私的初衷。
+
+#### 2. 论据基础 (Evidentiary Base)
+*   **事实/报道**：引用 Windows Central 报道，Firefox 正在对随机抽取的少数用户测试内置、免费、免安装的浏览器级 VPN 功能。
+*   **机制分析（推论基础）**：VPN 的底层逻辑是流量重定向（将信任从 ISP 转移至 VPN 运营商）。内置于浏览器的 VPN 会将该实例下的所有数据流经 Mozilla 的服务器。
+*   **商业/数据隐私争议（历史例证）**：
+    *   Firefox 推行 PPA（Privacy-Preserving Attribution，隐私保护属性），主张收集并以“匿名化”方式向广告商提供数据。
+    *   2024年3月更新隐私条款，提示可能将用户数据用于广告推销，虽随后澄清为“语言法律规范调整”，但引发生态信任危机。
+*   **政治/审查争议（历史例证）**：
+    *   2021年1月8日 Mozilla 官方博客文章（现已被删除/归档），在特朗普被社交媒体封禁后，呼吁在“浏览器层级”过滤“虚假信息”及政治言论。
+*   **竞品/工具对比（行业参照）**：
+    *   推荐独立且无推广返佣（Affiliate）的 VPN 供应商（如 Mullvad、ProtonVPN）或自建 VPN。
+    *   指出大部分科技 YouTuber 推广 NordVPN 等产品纯粹出于商业赞助/加盟分成。
+
+#### 3. 逻辑授权 (Logical Warrant)
+*   **推论逻辑（演发式）**：
+    1. 使用 VPN 本质上是“全盘信任”VPN 运营商对流量的处理。
+    2. Mozilla 在商业模式上正在试图利用“匿名化数据”服务广告商（PPA），且在政治立场上曾表达过在浏览器端进行内容过滤与审查的意图。
+    3. 因此，将全量浏览流量通过 VPN 委托给 Mozilla 存在数据被收集、匿名化出售或被政治审查的现实风险。
+
+#### 4. 显性范围 (Stated Scope)
+*   **适用边界**：主要面向考虑使用 Firefox 内置试用 VPN 的普通用户。
+*   **例外/保留场景**：作者明确承认 VPN 在公共 Wi-Fi（如星巴克）或防止雇主监控（如公司 Wi-Fi）时属于合法且合理的使用场景；指出绝大多数家庭固定宽带用户并不需要商业 VPN。
+
+#### 5. 隐性对手 (Implicit Opponent)
+*   盲目信任 Mozilla “隐私标签” 的忠实用户；
+*   依靠加盟分成（Affiliate Links）过度吹嘘 VPN 隐私功效的科技 YouTuber 与主流网红（如 Linus Tech Tips、Ben Shapiro 等受赞助者）；
+*   推动数据商业化及政治正确审查的 Mozilla 高管与策略制定者。
+
+#### 6. 预期意图 (Intended Takeaway)
+*   告诫用户拒绝试用或使用 Firefox 内置 VPN，保护自身流量不被 Mozilla 集中接管；
+*   敦促 Mozilla 放弃政治立场与数据商业化尝试，回归做“纯粹、零数据收集”的隐私浏览器；
+*   引导真正有 VPN 需求的用户选择无利益关联的专业工具（Mullvad/Proton）或自行搭建节点。
+
+---
+
+### PART 2. 严苛而公平的审阅 (Hostile-But-Very-Fair REVIEW)
+
+#### 1. 强力预审 (Steelman)
+作者抓住了网络安全与隐私架构的核心痛点：**VPN 并不创造绝对的隐私，它只是完成了“信任接力”**——将对互联网服务提供商（ISP）的信任转移给 VPN 运营商。如果运营商本身存在商业化套现压力（如广告数据合作）或曾表达过政治干预倾向，那么要求用户将全部流量经过其服务器代理，确实存在显著的信任红线问题。作者警惕商业网红营销、倡导自我托管或零加盟费产品的立场在逻辑上非常坚固。
+
+#### 2. 最薄弱环节 (Weakest Link)
+> *“Is this a company we can trust with a VPN that wants to filter every bit of our data through it?”*
+> （这是一个想要将我们每一比特数据都过滤处理、我们却能信任其 VPN 的公司吗？）
+
+*   **失效分析**：作者在此处犯了**滑坡谬误**与**概念混淆**。作者将 2021 年一篇高管表达政治观点的博客文章（且已被撤回），直接等同于 Firefox 浏览器内部部署了“技术层面的流量内容过滤器”。没有证据表明 Firefox 的 VPN 架构包含动态内容解密或审查拦截功能。如果内置 VPN 仅采用标准的 WireGuard/OpenVPN 协议进行加密隧道传输，作者“Mozilla 会通过 VPN 审查你的政治言论”这一核心恐慌构建便失去技术立足点。
+
+#### 3. 证据审计 (Evidence Audit)
+*   **选择性解读 PPA 机制**：作者将 PPA（Privacy-Preserving Attribution）简化为“卖数据给广告商”。实际上，PPA 是旨在取代第三方 Cookie 的密码学方案（利用差分隐私与聚合统计），其目标恰恰是防止广告商追踪具体个人。将其曲解为“明文收集并出售个人隐私”属于严重失真。
+*   **时空与主体错位**：引用 2021 年热点事件下的政治博客文章作为 2024 年 VPN 产品安全性判断的基础。文章表达的是对社交媒体政治风波的态度，并非软件架构说明书；且该博文后续已被删除，表明官方对该立场的修正或切割。
+*   **忽略关键历史反例**：Mozilla 此前推出的付费 Mozilla VPN，底层直接接入的是业内公认无日志且极度注重隐私的 Mullvad VPN 节点。作者在讨论“Mozilla 能否做 VPN”时，完全忽略了这一正面先例。
+
+#### 4. 隐藏假设 (Hidden Premises)
+*   **假设 1**：企业任何关于“数据匿名化”的尝试，本质上都等同于恶意侵犯隐私与商业卖卖。
+    *   *追问*：如果密码学技术能够证明数据无法逆向关联到个人，聚合统计是否必须被等同于“卖隐私”？
+*   **假设 2**：高管或官方博客的政治倾向表态，必然会转化为底层开源软件代码中的技术监控手段。
+    *   *追问*：在开源代码库（如 Firefox 核心）受全球开发者监督的前提下，Mozilla 是否真的具备在浏览器内核中植入政治审查代码而不被察觉的能力？
+
+#### 5. 盲区视野 (The Blind Side)
+*   **忽视便利性与基础防护普及**：对于非技术背景的普通用户，设置自建 VPN 或配置第三方加密隧道的门槛极高。内置免费 VPN 为普通用户在公共 Wi-Fi 场景下提供了“一键防监听”的安全底线（类似于 Edge Secure Network 或 Opera VPN），作者因政治怀疑而全盘否定了这种产品形态带来的公共安全收益。
+*   **忽略 Mozilla 的生存困境**：Mozilla 极力寻求搜索广告之外的商业模式（如隐私增值服务），正是为了摆脱对 Google 搜索默认引擎授权费的依赖。一味要求其完全放弃商业尝试，可能导致唯一非 Chromium 阵营的主要浏览器因资金枯竭而倒下。
+
+#### 6. 致命一击 (One Hit Kill)
+**“你是否有任何代码审查、流量抓包或技术协议分析证据，证明 Firefox 当前测试的内置 VPN 在技术实现层面上存在解析明文流量、记录日志或执行内容拦截的行为，而非仅凭多年前被删的博客文章进行政治动机推论？”**
+
+#### 7. 如何终局裁决 (What Would Settle It)
+由独立的权威安全审计机构（如 Trail of Bits 或 Cure53）对 Firefox 内置 VPN 的客户端代码、通信协议以及服务器端日志记录机制进行公开的源代码级审计与网络抓包验证。若审计证明其为无日志、无解密代理，则作者的政治审查质疑被驳回；若审计发现流量分析或审查接口，则作者的警告成立。
+
+---
+
+### PART 3. 概念映射图谱 (Mermaid Diagram)
+
+<Mermaid_Diagram>
+graph TD
+    subgraph SG_Core["💡 核心论点 Core Thesis"]
+        Core["<b>不可信任 Firefox 内置 VPN</b><br/>Mozilla 存在数据商业化与政治审查前科<br/>不应接管用户全量浏览流量"]
+        style Core fill:#FFFACD,stroke:#FFD700,stroke-width:3px,color:#333
+    end
+
+    subgraph SG_Context["📢 事件背景 Context"]
+        direction TB
+        Ev_VPN["<b>Firefox 测试内置 VPN</b><br/>随机抽样试用 / 浏览器级代理 / 免费"]
+        Ev_Hype["<b>商业 VPN 营销乱象</b><br/>YouTuber 利益关联加盟推广 / 夸大隐私功效"]
+        Ev_VPN_Logic["<b>VPN 本质是信任转移</b><br/>从 ISP 转移至 VPN 运营商"]
+        Ev_VPN --> Ev_VPN_Logic
+        Ev_Hype --> Ev_VPN_Logic
+        style Ev_VPN fill:#E3F2FD,stroke:#2196F3,stroke-width:1.5px,color:#0D47A1
+        style Ev_Hype fill:#E3F2FD,stroke:#2196F3,stroke-width:1.5px,color:#0D47A1
+        style Ev_VPN_Logic fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#0D47A1
+    end
+
+    subgraph SG_Case["🔴 作者的质询依据 Mozilla's Track Record"]
+        direction TB
+        Case_PPA["<b>数据商业化 (PPA)</b><br/>收集匿名数据共享给广告商"]
+        Case_ToS["<b>隐私条款争议 (2024.03)</b><br/>措辞调整引发数据利用担忧"]
+        Case_Pol["<b>政治审查倡议 (2021.01)</b><br/>呼吁在浏览器层级过滤政治言论/虚假信息"]
+        
+        Case_PPA & Case_ToS --> Risk_Data["数据隐私风险: 商业利益冲突"]
+        Case_Pol --> Risk_Censor["政治审查风险: 流量过滤隐患"]
+        
+        style Case_PPA fill:#FFEBEE,stroke:#EF5350,stroke-width:1.5px,color:#B71C1C
+        style Case_ToS fill:#FFEBEE,stroke:#EF5350,stroke-width:1.5px,color:#B71C1C
+        style Case_Pol fill:#FFEBEE,stroke:#EF5350,stroke-width:1.5px,color:#B71C1C
+        style Risk_Data fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#B71C1C
+        style Risk_Censor fill:#FFCDD2,stroke:#E53935,stroke-width:2px,color:#B71C1C
+    end
+
+    subgraph SG_Rec["🟢 作者建议 Recommendations"]
+        direction TB
+        Rec_User["<b>用户替代方案</b><br/>使用无加盟费专业 VPN (Mullvad/Proton)<br/>或自建服务器 VPN"]
+        Rec_Moz["<b>对 Mozilla 的期望</b><br/>退出政治纷争，放弃数据收集<br/>做纯粹的零数据隐私浏览器"]
+        style Rec_User fill:#E8F5E9,stroke:#4CAF50,stroke-width:1.5px,color:#1B5E20
+        style Rec_Moz fill:#E8F5E9,stroke:#4CAF50,stroke-width:1.5px,color:#1B5E20
+    end
+
+    subgraph SG_Review["🚩 批判性审阅 Hostile-But-Very-Fair Review"]
+        direction TB
+        Rev_Steelman["<b>强力预审</b><br/>精准揭示 VPN 信任转移本质<br/>对商业赞助营销警惕性合理"]
+        Rev_WeakLink["<b>最薄弱环节 (致命逻辑漏洞)</b><br/>将2021年已删除的政治博客言论<br/>直接滑坡推论为 VPN 具备技术审查功能"]
+        Rev_Audit["<b>证据审计漏洞</b><br/>1. 混淆 PPA 密码学隐私方案与卖数据<br/>2. 忽略此前与 Mullvad 合作的正面先例"]
+        Rev_Kill["<b>致命一击 (One Hit Kill)</b><br/>是否有代码审计或抓包证据证明<br/>内置 VPN 存在日志记录或动态内容拦截？"]
+        
+        Rev_Steelman --> Rev_WeakLink
+        Rev_WeakLink --> Rev_Audit
+        Rev_Audit --> Rev_Kill
+
+        style Rev_Steelman fill:#FFF3E0,stroke:#FF9800,stroke-width:1.5px,color:#E65100
+        style Rev_WeakLink fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px,color:#E65100
+        style Rev_Audit fill:#FFF3E0,stroke:#FF9800,stroke-width:1.5px,color:#E65100
+        style Rev_Kill fill:#FFCC80,stroke:#E65100,stroke-width:2.5px,color:#BF360C
+    end
+
+    %% Wiring Core Structure
+    SG_Context --> Core
+    Core --> SG_Case
+    SG_Case --> SG_Rec
+    
+    %% Wiring Review to Case
+    Risk_Censor -.- Rev_WeakLink
+    Case_PPA -.- Rev_Audit
+    Core -.- Rev_Kill
+
+    %% Subgraph Styling
+    style SG_Core fill:#FFFDE7,stroke:#FBC02D,stroke-width:2px,color:#333
+    style SG_Context fill:#E3F2FD,stroke:#1E88E5,stroke-width:1.5px,color:#0D47A1
+    style SG_Case fill:#FFEBEE,stroke:#E53935,stroke-width:1.5px,color:#B71C1C
+    style SG_Rec fill:#E8F5E9,stroke:#43A047,stroke-width:1.5px,color:#1B5E20
+    style SG_Review fill:#FFF8E1,stroke:#FFA000,stroke-width:2px,color:#E65100
+</Mermaid_Diagram>
+
+Content:
+Today on Switch to Linux we want to talk about Firefox getting a new VPN to try out and my big question is Can we trust Firefox with a VPN? Let's go ahead and talk about this Welcome back to Switch to Linux. If you like this type of content Please feel free to subscribe to the channel leave us a like and a comment down below And today we are going to be talking about Firefox's now second attempt into the VPN move now Now they used to have a Mozilla VPN, now they have a Firefox VPN. Now this is being rolled out to a select number of apparently random users. And so if you happen to be one of those randomly selected users, you will get a pop-up notification offering you a chance to try out Firefox's new VPN. We'll get into the article here in just a moment. But I do want to remind you first and foremost, VPNs have been one of those garbage products, which has been pushed and prodded to us for so long now by other YouTubers, by in some cases, people in tech and many other places, this is random people that are telling us about VPNs. In fact, I did when I was visiting a friend of mine, he knows him in a tech and he's like, well, they're about NordVPN. And of course, there's a few potentially shady things with NordVPN, nothing outright bad at this point in time. And I told them, you know, Nord is not the best VPN. I'd recommend a different one. But given his use case, Nord VPN might be better. He works at a big corporation and his phone is on that corporation's Wi-Fi and utilizing the VPN while he is at work is a good way to prevent his company from spying on him. That is a legitimate use of a VPN. Remember though, VPN does not hide your privacy as people say, you know, all these big YouTubers are telling about, good VPN, you'll be protected on the internet, protected from what? Certainly not the data brokers, because once you log into your account and chances are you're logged into a bunch of accounts when you're on the internet, they know exactly who you are. IP addresses have not really been used to track people reliably in years. And all the VPN does, of course, other than changing our IP address, is filtering every bit of your data through that VPN company. So if you trust the VPN company, that's really good. If you trust the VPN more than you trust your ISP, well, you might be in good shape. Obviously if you're at Starbucks or some other random place with public Wi-Fi, you definitely want a form of VPN. However, for your home base internet, chances are, most people do not need this, but it's been the thing that has been a hoisted into our zeitgeist by so many of the fast-toppinging YouTubers out there, which are trying to simply sell it for an affiliate or a sponsorship deal. And that is the type of thing that I tend to push against. All that being said, of course, we're actually one more thing being said. A VPN was originally created so you could access company resources when you were not at that company. I first used VPNs in the professional sense as a professor when I needed to utilize the VPN from home to access my files on the university servers. And that is really what VPN started from. It just so happens that they have an encrypted sublayer in there and that is really why people would push them. It's really a byproduct to what the VPN is supposed to be for. With that being said, let's go ahead and have a look at the article from Windows Central FireFucks gets a new security feature that Edge has had for years. Think of how much better Edge must be. I haven't looked into Edge's VPN, but if it's pushing every bit of your data through Microsoft, that is not a security feature. But what this is, is it is a feature built-in to Firefox that if you happen to randomly selected for the trial, you will have the option and it's going to root everything not through your whole computer, but just everything through that instance of the web browser will be rooting through the VPN. Okay, so that's kind of what they're doing. It does not cost anything. They do not have anything about any constraints on it at this point in time. But the big point here is that right now it is a limited test apparently done by random. Now my random guess here, they doesn't say in the article, is that most likely this is going to probably be offered to people utilizing a Mozilla account. So if you're not using a Mozilla account, probably you're not going to see it at all. If you are, you might see the pop up to give this a try. And my big question is, can we trust Mozilla with this information? Because remember, by utilizing their VPN, all of your data is running through Mozilla's servers. That is the take home message. you might think, well, they are a big privacy company, so they may not be doing anything about it. Well, hold that thought. We'll talk about that here. So it says here by concealing your real IP, as well as adding a layer of encryption or communications. Basically, your random deal, stay tuned. Ben Shapiro will be back. OK. But the VPN built into Firefox is invite only while being tested, not for everyone. So if you're the lucky user who's Selective for testing, you'll see a prompt when you launch Firefox to see if you'd like to try the VPN. If you don't see the prompt, well, you're out of luck for now. I don't know, it might be a feature to not get down. So this is our second time. They did try to use the Mozilla VPN few years ago. And I believe that did not particularly enter very well, although I remember that being an extra add-on that costs you money. Now it's possible that if this Mozilla VPN goes off that do knows they might come back and try and turn that model back on. Remember one of the things they were trying to do is trying to find other streams of income. It does kind of make sense to have a VPN in here. The question is can we trust Mozilla? So of course they do talk about the talking point here. Yes, free VPNs generally are a problem. There are some other ones. Proton mail has some free VPN options and that is one of the most highly recommended. In fact, the only two really highly recommended VPNs right now by people who actually study this stuff, neither one of them has an affiliate marketing, okay? So you're not gonna find it pushed or promoted by Ben Shapiro or Linus Tech Tips, okay? Those are Malvad VPN and Proton VPN, and neither one of them have affiliate deals that I know of. In fact, I believe Malvad takes strong stances against affiliate deals. but if you do legitimately need a VPN, I would highly recommend utilizing one of those to if you are not going to create and self-host your own VPN, which by the way, we'll get you around all those weird VPN blocker stuff. Because they know who proton VPN is, they don't know my random IP address on my server at a New Jersey. Just saying. Okay. All right. Whoever's managing the server can technically see at what everyone is doing and where their data is coming from and you want to select your VPN provider carefully. That is really the ultimate point. So you might say, well, Mozilla, they're a privacy focused company. I want to first inform us and for whatever reason, I didn't pull any articles out on this, but remember first and foremost, Mozilla is pushing this selling data to advertisers in a anonymized way to better improve advertising on Firefox. Let's not forget that whole thing. In fact, I'm even blocking that out. I think it was the Firefox PPA. Remember, it was very closely related in sound to the Ubuntu's PPA, not related. But this was a privacy protecting attribute, I believe they call it. And we talked about this. I have several videos on the channel about this. And this is where they wanted to collect a bunch of data as a means to find a better private way of sharing your data with advertisers. No, Mozilla, we're not interested in that kind of stuff. And the problem is, as if they can see more of your data, that's more of your data, they can anonymize and sell to the advertisers under the false PPA option. Now, there was another issue that came up, and that was back in March of this year, and we talked about this one as well. They had an update in their data privacy, which basically said that anything you do on Mozilla could be used to sell to advertisers. They quickly came back about like, oh no, no, we didn't really mean to do that. But ultimately, the new term suggests Mozilla had the right to leverage user data in ways that would seriously damage its data privacy reputation. Mozilla was quick to update the terms of use with clearer wording, and Firefox VP Asia Varna was quoted as saying, quote, Mozilla doesn't sell data about you in parentheses in the way that most people think about selling data and parentheses. And we don't buy data about you. We change our language because in some jurisdictions, define sell more broadly than others would usually understand. Now, this was changing coordination with that privacy-protecting attribute, which would allow them to not necessarily sell, but share anonymized data. Because remember, anonymized data is not qualified selling data about you. This is all just corporate double speak. Of course, this was when Mozilla backtracked against this back in March. They recently updated the terms of use, brewing controversy and concern among other users about its stance on data privacy and data sharing with third party vendors. So last week they were trapped between a rock and a hard place after making a controversial update to the terms of use. PCGamer originally broke that. And they basically said, yes, we can utilize data. Now, Mozilla says, well, that's really what that meant is that you have to type in stuff in that little search bar at the top or basic things like that. And we have to use that data to go out into the search engine to do that kind of stuff. Well, that's what Mozilla says they meant, although this rolled out right about the same time they were talking about having this privacy-centric advertising network system. And so it was kind of suspicious timing They did issue this particular statement. Quote, we've seen a little confusion about the language regarding licenses we wanted to clear that up. We needed a license to allow us to make some basic functionality possible. Without it, we couldn't use the information type into Firefox. For example, it does not give us ownership of your data or a right to use it for anything other than what is described in the privacy notice. I will refer you to my prior videos where we go through that privacy notice, which says it's the same type of corporate double speak that you find in most any other company, countries companies here in America that basically says yes we can use it but don't forget the privacy policy is basically only says you have to tell us what you're doing you do not a privacy policy does not mean you have to keep it from people it just means you have to be transparent in what you're doing with it and Firefox does have a better one than many other I mean I'd rather Firefox than Google but at the same time there are some serious concerns particularly with that PPA that they were trying to roll out. Now, all this being said, I do still use Firefox because it's Firefox or Chromium. And yeah, Bray, Bray, Bray, Bray, Bray, Bray. I do use Bray too, but Bray is Chromium, okay? You can do Firefox, Water Fox, Libre Wolf, Zen Browser. Those are all based on the Firefox engine. We have Firefox engine. We have Chromium engine. I don't like using Chromium browsers as much as possible. we do will have the new one out soon. Is it Lady Bird? I believe we will have that out soon. Now, there is, however, another concern. It's not just this. Don't forget that Mozilla started going against conservatives. Now, they're kind of trying to backpedal a little bit. They're trying to make sure this doesn't happen, but the internet is forever. This is news target. I believe it's probably a right-leaning organization. We will look at this article with that particular lens in scope. I remember guys, I am actually a centrist. I know that there are some left-wing radical psychopaths in the Linux community that just think on this evil psychopathic right-wing, you know, Ben Shapiro-Warshpur, something, but the reality is, I can't stand that more on. All right? I'm actually a centrist who leans right. But here is what they say, banning President Donald Trump's on social media while silencing his supporters who dare to object is simply not enough to stop quote of violence and hate. End quote. like all that violence and hate we've seen on this uh... no kings protest you know where people are actually calling out for actual political violence it's kind of kind of funny uh... actually not not funny in a in a dark sarcastic made i should say uh... from spreading on the internet according to mozilla they say the company behind the announcement mozilla expressed urgent plans to start filtering out disinformation on the browser level before he has a has a chance to show up on the internet search or the website Now, remember, this article is in 2021, right at the peak of all of the banning. This is right around that evil January stuff right after the most secure election in the world, which demonstrated that it probably wasn't. We were allowed to dispute every election up until that one, and it was kind of funny. And of course, this is what they happen to say on X or Twitter at the time. I think it was still called. We saw the culmination of a four-year disinformation campaign organized, orchestrated by the president. We have to acknowledge how the internet was misused. We get it and we have to change. Oh my lord, I'd say. And then there's a blog post, oh boy, I just don't want to tell you about that. That was kind of inconvenient, but the channel is forever, had to go on to the internet archive. They deleted it presumably somewhere in 2024. write about the time that the evil right wing conspiracy nut job of spreading disinformation across the entire internet one again and then every big tech company wanted to play nice with the new guy in charge. That's probably about the time they deleted it, but this is what the article said in January 8th, 2021, by this left-winning hack right there. Hopefully he's still not there anymore. There is no question social media playing a role in the and tights over on the U.S. Capitol, oh my lord, okay, a couple people did a couple things that, you know the funny thing, if you're actually, if you actually are a centrist and you look at people on both sides, which is really interesting, is that the vast majority of people were there or were FBI agents. That report literally just came out about a month ago, they'll be like, why don't you get on the internet, turn off that complete left leaning echo chamber you like living in and look it up a little bit official reports are actually out it's kind of funny you want to you want to deny the fact that the summer of love that happened right before this literally burned down caused billions of dollars in damage and killed several people the only people who died on January 6 was one person named Ashley Babet and there was no investigation at all into that police I mean it was the one police shooting we couldn't talk about it was kind of interesting and no Brian Siknik did not die in these things nor as a result of these things. We'll just say that and then since there's been a significant focus on the de-platforming of President Donald Trump by all means the question of when to de-platform ahead of state there's a critical one among many must be addressed when should platforms make these decisions. Is that decision making power? Oh the other thing that has just came out by the way. is that the Biden administration was forcing people to take, to de-platform people. It is probably the, you know, basically is like, if they talk about this in any way, contrary to our particular talking point, de-platform them entirely. That also is something that came out in the last month. And there's solid receipts. This isn't an anonymous source close to the circumstances said, we have the actual documents, we have the actual communications, We have the actual evidence for this. This is why YouTube right now is going back and reinstating several people who were banned from the platform for quote unquote election and quote unquote COVID misinformation. All right, this is undoing itself. This is all undoing itself. As reprehensible as the actions. Did you actually know what he tweeted? He said peacefully and patriotically make your voices known and then go home. And then actually he said, he said too, one of them was peacefully and patriotically protest. And then the second one he said is, go home, be peaceable, do not cause a riot. Okay, and that was the tweet they took it out. That's not verbatim, I forget exactly what the tweet was. But they literally banned that tweet so you couldn't show people what he actually said and then banned him from that. And then the cascade, everybody banned the sitting president of the United States Simultaneously, okay, if there is and they want to talk about no Kings that happened because the Biden administration said to you I want to talk no Kings it's that party Kind of funny kind of funny in a again dark and sarcastic sarcastic kind of way So the reprehensible actions of saying go home piece of Lee The rip and use of the internet to foam into violence and hate Reinforce white supremacy It's all anymore in personality. I can't even keep reading this. This is nonsense. This is an official Mozilla blog post. Well, before they took it down, is this a company we can trust with a VPN that wants to filter every bit of our data through it? They have that. They're collecting our data. They're anonymizing it to sell to advertisers. This is a dangerous thing. And if Lady Bird were out and viable, I might actually ditch Firefox entirely. And I don't wanna ditch Firefox entirely. I want them to process, but I want them to remember they are a tech company building a browser. Get out of politics entirely, Mozilla. Focus on being private. What does privacy mean? It doesn't mean disclosing what you're doing with your data in a privacy policy. It does not mean collecting data and selling it anonymously to advertisers. It means producing a browser that collects no data, period. You do that, you will do well in the browser wars. The reason Mozilla is losing so much user base is because as they keep walking down this path of nonsense and people are utterly sick of it. So let me know your thoughts about all that. Do you trust Firefox with your VPN? Let me know that and other things related to this and the comments down below. Thanks for watching. I hope that you enjoy switching to Linux.
